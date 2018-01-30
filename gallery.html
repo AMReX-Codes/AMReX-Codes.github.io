@@ -64,40 +64,12 @@
             </center>
           </div>
           <div class="8u$ 12u(small)">
-            Dimethyl Ether (DME) is a promising alternative fuel in the industry, 
-            especially for diesel engines and gas turbines, because it can be produced 
-            from biomass and has interesting properties in terms of low emission of 
-            pollutants. Consequently, there is a need to understand how this fuel behave 
-            in the context of turbulent combustion in realistic engine operation 
-            conditions. Experimental observations are unable to provide enough 
-            details about all the chemical reactions and their interactions with the 
-            turbulent flow. Computational Fluid Dynamics of reacting flows is a good 
-            candidate to have access to such data, but detailed numerical simulations 
-            come at a high computational cost and must rely on accurate numerical 
-            methods. <p><p>
-
-              Most CFD codes are not designed to tackle such simulations: some are 
-              based on low-order methods that provide inaccurate results; some 
-              others implement high-order numerical methods but are 
-              unable to deal with the highly stiff chemistry of fuels 
-              like DME in the context of turbulent flows, leading in 
-              practice to very slow and unpractical simulations time. 
-              This has motivated the CCSE team to develop the RNS software. 
-              The code solves the compressible reactive Navier-Stokes 
-              equations with detailed models for the chemistry. A 
-              novel time integration strategy has been developed and 
-              is based on the Multi-Level Spectral Deferred Correction 
-              method, but extended to an Adaptive Mesh Refinement (AMR) 
-              framework and employs an Implicit/Explicit (IMEX) treatment 
-              suitable for combustion applications. Coupled with 
-              finite-volume conservative WENO schemes, the RNS code provides 
-              an overall fourth-order accuracy in both time and space for 
-              all variables, while keeping the computational burden low. <p><p>
-
-              The picture on the left presents an instantaneous snapshot of the
-              temperature field of the Dimethyl Ether flame computed with 
-              the RNS code. The simulation employs three levels of mesh 
-              refinement, which are depicted with the grey and black boxes. <p><p>
+            An instantaneous snapshot of the temperature field of a Dimethyl Ether 
+            flame computed with the RNS code. RNS is a block-structured AMR code 
+            that solves the compressible reactive Navier-Stokes equations with 
+            detailed models for the chemistry, and is based on high-order numerical 
+            methods (AMLSDC and WENO) that achieve fourth-order accuracy in both 
+            time and space. <p><p>
 
               <ul class="unstyled">
                 <li><em>Efficient High-Order Combustion Simulations Using Adaptive 
