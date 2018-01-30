@@ -41,12 +41,73 @@
     <section id="main" class="wrapper">
       
       <div class="container">
+
 	<header class="major">
           <p>
             If you would like to contribute to our gallery, 
             <a href="mailto:AJNonaka@lbl.gov?subject=AMReX Gallery">please contact us</a>.
           </p>
 	</header>
+
+        <header class="major">
+          <h2>Dimethyl Ether Jet</h2>
+          <p>Detailed adaptive simulation of a burning Dimethyl Ether jet with RNS</p>
+        </header>
+        <div class="row 50% uniform">
+          <div class="4u 12u(small)">
+            <center>
+              <img src="gallery_images/DME_Jet.png" style="width: 348px; height: 696px" alt="" >
+              <br>
+              <a href="./gallery_images/DME_Jet.png"> CLICK to enlarge </a>
+            </center>
+          </div>
+          <div class="8u$ 12u(small)">
+            Dimethyl Ether (DME) is a promising alternative fuel in the industry, 
+            especially for diesel engines and gas turbines, because it can be produced 
+            from biomass and has interesting properties in terms of low emission of 
+            pollutants. Consequently, there is a need to understand how this fuel behave 
+            in the context of turbulent combustion in realistic engine operation 
+            conditions. Experimental observations are unable to provide enough 
+            details about all the chemical reactions and their interactions with the 
+            turbulent flow. Computational Fluid Dynamics of reacting flows is a good 
+            candidate to have access to such data, but detailed numerical simulations 
+            come at a high computational cost and must rely on accurate numerical 
+            methods. <p><p>
+
+              Most CFD codes are not designed to tackle such simulations: some are 
+              based on low-order methods that provide inaccurate results; some 
+              others implement high-order numerical methods but are 
+              unable to deal with the highly stiff chemistry of fuels 
+              like DME in the context of turbulent flows, leading in 
+              practice to very slow and unpractical simulations time. 
+              This has motivated the CCSE team to develop the RNS software. 
+              The code solves the compressible reactive Navier-Stokes 
+              equations with detailed models for the chemistry. A 
+              novel time integration strategy has been developed and 
+              is based on the Multi-Level Spectral Deferred Correction 
+              method, but extended to an Adaptive Mesh Refinement (AMR) 
+              framework and employs an Implicit/Explicit (IMEX) treatment 
+              suitable for combustion applications. Coupled with 
+              finite-volume conservative WENO schemes, the RNS code provide 
+              an overall fourth-order accuracy in both time and space for 
+              all variables, while keeping the computational burden low. <p><p>
+
+              The picture on the left presents an instantaneous snapshot of the
+              temperature field of the Dimethyl Ether flame computed with 
+              the RNS code. The simulation employs three levels of mesh 
+              refinement, which are depicted with the grey and black boxes. <p><p>
+
+              <ul class="unstyled">
+                <li><em>Efficient High-Order Combustion Simulations Using Adaptive 
+                    Multi-Level Spectral Deferred Correction Method</em>,
+                  M. Emmett, E. Motheau, W. Zhang, M. L. Minion and J. B. Bell, 
+                  in preparation, 2018</li>
+              </ul>
+
+              Image courtey <a href="mailto:EMotheau@lbl.gov"> Emmanuel Motheau </a>
+            </p>
+          </div>
+        </div>
       </div>
 
     </section>
