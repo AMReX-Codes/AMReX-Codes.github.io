@@ -1,0 +1,1647 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1LSCoreBase" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>amrex::LSCoreBase</compoundname>
+    <basecompoundref refid="classamrex_1_1AmrCore" prot="public" virt="non-virtual">amrex::AmrCore</basecompoundref>
+    <derivedcompoundref refid="classamrex_1_1LSCore" prot="public" virt="non-virtual">amrex::LSCore&lt; F &gt;</derivedcompoundref>
+    <includes refid="AMReX__EB__LSCoreBase_8H" local="no">AMReX_EB_LSCoreBase.H</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1ac9b4a932760260d7ac531bda2e2cd160" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; const <ref refid="classamrex_1_1EB2_1_1Level" kindref="compound">EB2::Level</ref> * &gt;</type>
+        <definition>Vector&lt;const EB2::Level *&gt; amrex::LSCoreBase::eb_levels</definition>
+        <argsstring></argsstring>
+        <name>eb_levels</name>
+        <briefdescription>
+<para>EB data used for rebuilding levels from scratch. Used by extension classes (as they rely on template parameters). NOTE: use unique_ptr because <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> does not have a default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="293" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a1f4cff404c7fed0de6bdf3bceac89ef0" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> &gt; &gt;</type>
+        <definition>Vector&lt;std::unique_ptr&lt;LSFactory&gt; &gt; amrex::LSCoreBase::ls_factory</definition>
+        <argsstring></argsstring>
+        <name>ls_factory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="294" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1af7fd409f38eaf8ed96c27825222626f5" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
+        <definition>Vector&lt;int&gt; amrex::LSCoreBase::rebuild_eb</definition>
+        <argsstring></argsstring>
+        <name>rebuild_eb</name>
+        <briefdescription>
+<para>Apparently std::vector&lt;bool&gt; isn&apos;t a thing?! (more precisely it&apos;s a different thing) =&gt; use int vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="300" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a120eaa256d41fb7834e7cd1e009dc151" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>Vector&lt;MultiFab&gt; amrex::LSCoreBase::level_set</definition>
+        <argsstring></argsstring>
+        <name>level_set</name>
+        <briefdescription>
+<para>Level set data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="304" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1ae753489d344207e275cb87c774c9a167" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt;</type>
+        <definition>Vector&lt;iMultiFab&gt; amrex::LSCoreBase::level_set_valid</definition>
+        <argsstring></argsstring>
+        <name>level_set_valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="305" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a49940ec34f953688df11638398e69978" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::LSCoreBase::eb_pad</definition>
+        <argsstring></argsstring>
+        <name>eb_pad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Resolve EB up to this many ghost cells (NOTE: these are scaled based on local refinement level) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="309" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a1d8e97ef9f32164ac040646e71ceea1c" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::LSCoreBase::max_eb_pad</definition>
+        <argsstring></argsstring>
+        <name>max_eb_pad</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="309" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="309" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1ae564241bee9d2cc16d8f812b7a78096c" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> &gt;</type>
+        <definition>Vector&lt;BCRec&gt; amrex::LSCoreBase::bcs</definition>
+        <argsstring></argsstring>
+        <name>bcs</name>
+        <briefdescription>
+<para>This is essentially a 2*DIM integer array storing the physical boundary condition types at the lo/hi walls in each direction. </para>        </briefdescription>
+        <detaileddescription>
+<para>1-component </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="316" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="316" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1af4ed8d84ded37119725a657db8b99d85" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::LSCoreBase::use_phierr</definition>
+        <argsstring></argsstring>
+        <name>use_phierr</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="318" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="318" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1afffa96e3c5577c0fef27219fd5cfd813" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::LSCoreBase::phierr_set</definition>
+        <argsstring></argsstring>
+        <name>phierr_set</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="319" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a51160f59f8c2e5aa56f7b24632ac3f1a" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt;</type>
+        <definition>Vector&lt;Real&gt; amrex::LSCoreBase::phierr</definition>
+        <argsstring></argsstring>
+        <name>phierr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="320" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1aa206bdb1903bb394742e18267dcbfc11" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::LSCoreBase::restart_chkfile</definition>
+        <argsstring></argsstring>
+        <name>restart_chkfile</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+<para>if &gt;= 0 we restart from a checkpoint </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="327" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1abe97849a2a60e1d3d785044180f393b9" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::LSCoreBase::plot_file</definition>
+        <argsstring></argsstring>
+        <name>plot_file</name>
+        <initializer>{&quot;ls_plt&quot;}</initializer>
+        <briefdescription>
+<para>plotfile prefix and frequency </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="330" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a732e8fce0435ef4ea35fb6f7f265f8a0" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::LSCoreBase::plot_int</definition>
+        <argsstring></argsstring>
+        <name>plot_int</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="331" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1aff9d9cdf797536dec02c65a05e76ad7e" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::LSCoreBase::chk_file</definition>
+        <argsstring></argsstring>
+        <name>chk_file</name>
+        <initializer>{&quot;ls_chk&quot;}</initializer>
+        <briefdescription>
+<para>checkpoint prefix and frequency </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="334" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1LSCoreBase_1a9ff86ee64b8ce1f3e7e783bfb3ef26b3" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::LSCoreBase::chk_int</definition>
+        <argsstring></argsstring>
+        <name>chk_int</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="335" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a09d1f926368093d099432498e353f2b5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::FillLevelSetTags</definition>
+        <argsstring>(int lev, TagBoxArray &amp;tags, const Vector&lt; Real &gt; &amp;phierr, const MultiFab &amp;levelset_data, const Vector&lt; Geometry &gt; &amp;geom)</argsstring>
+        <name>FillLevelSetTags</name>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1TagBoxArray" kindref="compound">TagBoxArray</ref> &amp;</type>
+          <declname>tags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>phierr</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>levelset_data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="45" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="264" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a1613bf8825eff6a563b8e64290a5d54b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::FillVolfracTags</definition>
+        <argsstring>(int lev, TagBoxArray &amp;tags, const Vector&lt; BoxArray &gt; &amp;grids, const Vector&lt; DistributionMapping &gt; &amp;dmap, const EB2::Level &amp;eb_lev, const Vector&lt; Geometry &gt; &amp;geom)</argsstring>
+        <name>FillVolfracTags</name>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1TagBoxArray" kindref="compound">TagBoxArray</ref> &amp;</type>
+          <declname>tags</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1EB2_1_1Level" kindref="compound">EB2::Level</ref> &amp;</type>
+          <declname>eb_lev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="48" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="319" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1ab2d9fc210fcb7f0d3e948aa10c05bc66" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::LSCoreBase::EBSearchBox</definition>
+        <argsstring>(const Box &amp;tilebox, const FArrayBox &amp;ls_crse, const Geometry &amp;geom_fine, const IntVect &amp;max_grow, bool &amp;bail)</argsstring>
+        <name>EBSearchBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>tilebox</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>ls_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_fine</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>max_grow</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>bail</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="378" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a189a9b3c83ead56aec690020702448bb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::FillCoarsePatch</definition>
+        <argsstring>(MultiFab &amp;mf_fne, const MultiFab &amp;mf_crse, const Geometry &amp;geom_fne, const Geometry &amp;geom_crse, const Vector&lt; BCRec &gt; &amp;bcs, const IntVect &amp;ref, int icomp, int ncomp)</argsstring>
+        <name>FillCoarsePatch</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf_fne</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_fne</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> &gt; &amp;</type>
+          <declname>bcs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="337" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1afedefc3eee09ff209239a96a5d8522f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::MakeNewLevelFromCoarse</definition>
+        <argsstring>(MultiFab &amp;ls_fine, const MultiFab &amp;ls_crse, const BoxArray &amp;ba, const DistributionMapping &amp;dm, const Geometry &amp;geom_fine, const Geometry &amp;geom_crse, const Vector&lt; BCRec &gt; &amp;bcs, const IntVect &amp;ref)</argsstring>
+        <name>MakeNewLevelFromCoarse</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>ls_fine</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>ls_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_fine</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> &gt; &amp;</type>
+          <declname>bcs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="357" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1ac943522bfc385fdc318e5751c8432d8b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::FillLevelSet</definition>
+        <argsstring>(MultiFab &amp;level_set, const MultiFab &amp;ls_crse, const EBFArrayBoxFactory &amp;eb_factory, const MultiFab &amp;mf_impfunc, const IntVect &amp;ebt_size, int eb_pad, const Geometry &amp;geom)</argsstring>
+        <name>FillLevelSet</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>level_set</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>ls_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> &amp;</type>
+          <declname>eb_factory</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf_impfunc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ebt_size</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>eb_pad</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="537" bodyend="629"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a0c1af368aa2e2d6c9796c76935a26abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::LSCoreBase::LSCoreBase</definition>
+        <argsstring>()</argsstring>
+        <name>LSCoreBase</name>
+        <briefdescription>
+<para>Constructor - reads amr in parameters from inputs file. </para>        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>sizes multilevel arrays and data structures </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="78" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="31" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a60418dd08d5d8a8229db489e3ecbf663" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::LSCoreBase::LSCoreBase</definition>
+        <argsstring>(const RealBox *rb, int max_level_in, const Vector&lt; int &gt; &amp;n_cell_in, int coord=-1)</argsstring>
+        <name>LSCoreBase</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1RealBox" kindref="compound">RealBox</ref> *</type>
+          <declname>rb</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_level_in</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
+          <declname>n_cell_in</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>coord</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="80" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="43" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aba665f12e440d33638b089be84666a06" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::LSCoreBase::~LSCoreBase</definition>
+        <argsstring>()</argsstring>
+        <name>~LSCoreBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1abdc6c0f9bcac3c53a93a474d55643352" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::InitData</definition>
+        <argsstring>(bool a_use_phierr=false)</argsstring>
+        <name>InitData</name>
+        <param>
+          <type>bool</type>
+          <declname>a_use_phierr</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Initializes multilevel data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a_use_phierr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="168" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aa76187fd7b5f9535bfd5049112e809d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::InitData</definition>
+        <argsstring>(const Vector&lt; Real &gt; &amp;m_phierr)</argsstring>
+        <name>InitData</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>m_phierr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="179" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a574e843e2855d44d8ee72fb55d8965ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::MakeNewLevelFromCoarse</definition>
+        <argsstring>(int lev, Real time, const BoxArray &amp;ba, const DistributionMapping &amp;dm) override</argsstring>
+        <name>MakeNewLevelFromCoarse</name>
+        <reimplements refid="classamrex_1_1AmrCore_1af472acf05bea1145b67f7022de16a664">MakeNewLevelFromCoarse</reimplements>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <briefdescription>
+<para>Make a new level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with interpolated coarse level data. Overrides the pure virtual function in <ref refid="classamrex_1_1AmrCore" kindref="compound">AmrCore</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="104" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="191" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aaa70d8f11811c1a64cf57e147344a914" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::RemakeLevel</definition>
+        <argsstring>(int lev, Real time, const BoxArray &amp;ba, const DistributionMapping &amp;dm) override</argsstring>
+        <name>RemakeLevel</name>
+        <reimplements refid="classamrex_1_1AmrCore_1a89b690a6f834d76bf96f8f1facc356c4">RemakeLevel</reimplements>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <briefdescription>
+<para>Remake an existing level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with existing fine and coarse data. Overrides the pure virtual function in <ref refid="classamrex_1_1AmrCore" kindref="compound">AmrCore</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ba</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="118" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="216" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aabe20a1818e92d5a4e976a07be8fec4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void amrex::LSCoreBase::ClearLevel</definition>
+        <argsstring>(int lev) override=0</argsstring>
+        <name>ClearLevel</name>
+        <reimplements refid="classamrex_1_1AmrCore_1a26c39ed62cd9f3383f3936f1fcdb65b3">ClearLevel</reimplements>
+        <reimplementedby refid="classamrex_1_1LSCore_1adbe3f83c44927912f413aff8c03c3671">ClearLevel</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <briefdescription>
+<para>NOTE: These are <emphasis>not</emphasis> constructed here but in the template specialization <ref refid="classamrex_1_1LSCore" kindref="compound">LSCore</ref> classes: </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aa7bc5e980ea04512e48b2c04fa1f3105" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void amrex::LSCoreBase::MakeNewLevelFromScratch</definition>
+        <argsstring>(int lev, Real time, const BoxArray &amp;ba, const DistributionMapping &amp;dm) override=0</argsstring>
+        <name>MakeNewLevelFromScratch</name>
+        <reimplements refid="classamrex_1_1AmrCore_1af037642d569d83cfe2ca14de640a4d28">MakeNewLevelFromScratch</reimplements>
+        <reimplementedby refid="classamrex_1_1LSCore_1aef08d0e705a4320bd5b9929bc02b1690">MakeNewLevelFromScratch</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Make a new level from scratch using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. Only used during initialization. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="130" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a36c38fc9573fe9bd45675e3a0f9c6649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::UpdateGrids</definition>
+        <argsstring>(int lev, const BoxArray &amp;ba, const DistributionMapping &amp;dm)</argsstring>
+        <name>UpdateGrids</name>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="238" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aff7378920896f28c99d297fcd5e27bf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::ErrorEst</definition>
+        <argsstring>(int lev, TagBoxArray &amp;tags, Real time, int ngrow) override</argsstring>
+        <name>ErrorEst</name>
+        <reimplements refid="classamrex_1_1AmrCore_1aa0f5dabb31da45d02a320a11caa96875">ErrorEst</reimplements>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1TagBoxArray" kindref="compound">TagBoxArray</ref> &amp;</type>
+          <declname>tags</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+        </param>
+        <briefdescription>
+<para>Tag all cells for refinement. Overrides the pure virtual function in <ref refid="classamrex_1_1AmrCore" kindref="compound">AmrCore</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="146" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="425" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a54d6bad6416acd9234feba1d0ba80f5d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::WritePlotFile</definition>
+        <argsstring>() const </argsstring>
+        <name>WritePlotFile</name>
+        <briefdescription>
+<para>Write plotfile to disk. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="152" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="664" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a605ae269c81717a873140d564c0a4c30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::WriteCheckpointFile</definition>
+        <argsstring>() const </argsstring>
+        <name>WriteCheckpointFile</name>
+        <briefdescription>
+<para>Write checkpoint file to disk. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="158" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="693" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a15165cf3a2f9e939f365dc4631fe84a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *</type>
+        <definition>const MultiFab* amrex::LSCoreBase::getLevelSet</definition>
+        <argsstring>(int n) const </argsstring>
+        <name>getLevelSet</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="160" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="160" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a65a1afcaaaa3be85e75d03faf91808dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *</type>
+        <definition>MultiFab* amrex::LSCoreBase::getLevelSet</definition>
+        <argsstring>(int n)</argsstring>
+        <name>getLevelSet</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="162" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="162" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a3ad5663133989fdd174cb9faa86b73de" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> *</type>
+        <definition>const iMultiFab* amrex::LSCoreBase::getValid</definition>
+        <argsstring>(int n) const </argsstring>
+        <name>getValid</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="164" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="164" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1ad56df754af5ff9aa2c9a7445ec35a7f9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="172" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="136" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a46e21b1a3e14075db9b6959ecdb9f72b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::LoadTagLevels</definition>
+        <argsstring>()</argsstring>
+        <name>LoadTagLevels</name>
+        <briefdescription>
+<para>Load tag levels from inputs database. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="178" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="112" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a6fed6ab0db7c3ca0f8f1a3d077b4364a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::SetTagLevels</definition>
+        <argsstring>(const Vector&lt; Real &gt; &amp;phierr)</argsstring>
+        <name>SetTagLevels</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>phierr</declname>
+        </param>
+        <briefdescription>
+<para>Set tag levels. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>phierr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="186" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="127" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1ad30eaa3ec2dd8ad3de93c4bfbea572dc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::ReadParameters</definition>
+        <argsstring>()</argsstring>
+        <name>ReadParameters</name>
+        <briefdescription>
+<para>Read in some parameters from inputs file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="192" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="437" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1ad8a07c96169fd40c96a6b076b2743de0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::AverageDown</definition>
+        <argsstring>()</argsstring>
+        <name>AverageDown</name>
+        <briefdescription>
+<para>Set covered coarse cells to be the average of overlying fine cells. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="198" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="453" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a611f8114b59e74745e54778d504d8e86" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::AverageDownTo</definition>
+        <argsstring>(int crse_lev)</argsstring>
+        <name>AverageDownTo</name>
+        <param>
+          <type>int</type>
+          <declname>crse_lev</declname>
+        </param>
+        <briefdescription>
+<para>More flexible version of <ref refid="classamrex_1_1LSCoreBase_1ad8a07c96169fd40c96a6b076b2743de0" kindref="member">AverageDown()</ref> that lets you average down across multiple levels. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>crse_lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="206" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="467" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a73903ccb16187bf6583ef055c203f800" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::FillPatch</definition>
+        <argsstring>(int lev, amrex::Real time, MultiFab &amp;mf, int icomp, int ncomp)</argsstring>
+        <name>FillPatch</name>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+<para>Compute a new multifab by coping in phi from valid region and filling ghost cells works for single level and 2-level cases (fill fine grid ghost by interpolating from coarse) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>icomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="220" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="480" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a33702659de5fc30dea82f82b61a1d312" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::FillCoarsePatch</definition>
+        <argsstring>(int lev, Real time, MultiFab &amp;mf, int icomp, int ncomp)</argsstring>
+        <name>FillCoarsePatch</name>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>icomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+<para>Fill an entire multifab by interpolating from the coarser level this comes into play when a new level of refinement appears. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>icomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="233" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="513" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aa67c8e06f263b996a8f83a9e9e1ff47b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::LSCoreBase::EBSearchBox</definition>
+        <argsstring>(const Box &amp;box, const FArrayBox &amp;ls_crse, const Geometry &amp;geom_fine, bool &amp;bail)</argsstring>
+        <name>EBSearchBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>ls_crse</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_fine</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>bail</declname>
+        </param>
+        <briefdescription>
+<para>Construct a box over which to search for eb facets using the coarser level to inform how many ghost cells to fill. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ls_crse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geom_fine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bail</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="245" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="526" bodyend="533"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1aeedfe5ae1a68e0648089c69b8c60a185" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string amrex::LSCoreBase::PlotFileName</definition>
+        <argsstring>(int lev) const </argsstring>
+        <name>PlotFileName</name>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <briefdescription>
+<para>Get plotfile name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="254" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="634" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1af777c924269670878cf0ec226b69e768" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>Vector&lt; MultiFab &gt; amrex::LSCoreBase::PlotFileMF</definition>
+        <argsstring>() const </argsstring>
+        <name>PlotFileMF</name>
+        <briefdescription>
+<para>Put together an array of multifabs for writing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="260" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="641" bodyend="654"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a4cf5ec26160d97c61722a2c726ef2474" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt;</type>
+        <definition>Vector&lt; std::string &gt; amrex::LSCoreBase::PlotFileVarNames</definition>
+        <argsstring>() const </argsstring>
+        <name>PlotFileVarNames</name>
+        <briefdescription>
+<para>Set plotfile variables names. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="266" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="658" bodyend="660"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a155296a717e8a459f35d4f5744b8675e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::ReadCheckpointFile</definition>
+        <argsstring>()</argsstring>
+        <name>ReadCheckpointFile</name>
+        <briefdescription>
+<para>read checkpoint file from disk </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="272" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="767" bodyend="818"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a52d93140b73361a60846a4827cea4d43" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::GotoNextLine</definition>
+        <argsstring>(std::istream &amp;is)</argsstring>
+        <name>GotoNextLine</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <briefdescription>
+<para>utility to skip to next line in Header </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="280" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="822" bodyend="825"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1LSCoreBase_1a47972302047f186f7016cfec426ec985" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::LSCoreBase::InitLSCoreBase</definition>
+        <argsstring>()</argsstring>
+        <name>InitLSCoreBase</name>
+        <briefdescription>
+<para>Initializer used by both default and specialized constructors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="349" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp" bodystart="62" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3848">
+        <label>amrex::LSCoreBase</label>
+        <link refid="classamrex_1_1LSCoreBase"/>
+        <childnode refid="3849" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3849">
+        <label>amrex::AmrCore</label>
+        <link refid="classamrex_1_1AmrCore"/>
+        <childnode refid="3850" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3850">
+        <label>amrex::AmrMesh</label>
+        <link refid="classamrex_1_1AmrMesh"/>
+      </node>
+      <node id="3851">
+        <label>amrex::LSCore&lt; F &gt;</label>
+        <link refid="classamrex_1_1LSCore"/>
+        <childnode refid="3848" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3858">
+        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
+      </node>
+      <node id="3871">
+        <label>amrex::Vector&lt; amrex::iMultiFab &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3872" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3878">
+        <label>std::vector&lt; std::unique_ptr&lt; amrex::LSFactory &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::LSFactory &gt; &gt; &gt;</label>
+      </node>
+      <node id="3863">
+        <label>Real</label>
+      </node>
+      <node id="3862">
+        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+      </node>
+      <node id="3852">
+        <label>amrex::LSCoreBase</label>
+        <link refid="classamrex_1_1LSCoreBase"/>
+        <childnode refid="3853" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3864" relation="usage">
+          <edgelabel>phierr</edgelabel>
+        </childnode>
+        <childnode refid="3866" relation="usage">
+          <edgelabel>bcs</edgelabel>
+        </childnode>
+        <childnode refid="3868" relation="usage">
+          <edgelabel>rebuild_eb</edgelabel>
+        </childnode>
+        <childnode refid="3870" relation="usage">
+          <edgelabel>plot_file</edgelabel>
+          <edgelabel>chk_file</edgelabel>
+          <edgelabel>restart_chkfile</edgelabel>
+        </childnode>
+        <childnode refid="3871" relation="usage">
+          <edgelabel>level_set_valid</edgelabel>
+        </childnode>
+        <childnode refid="3873" relation="usage">
+          <edgelabel>level_set</edgelabel>
+        </childnode>
+        <childnode refid="3875" relation="usage">
+          <edgelabel>eb_levels</edgelabel>
+        </childnode>
+        <childnode refid="3877" relation="usage">
+          <edgelabel>ls_factory</edgelabel>
+        </childnode>
+      </node>
+      <node id="3853">
+        <label>amrex::AmrCore</label>
+        <link refid="classamrex_1_1AmrCore"/>
+        <childnode refid="3854" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3877">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::LSFactory &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3878" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3855">
+        <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3856" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3868">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3869" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3870">
+        <label>string</label>
+      </node>
+      <node id="3875">
+        <label>amrex::Vector&lt; const EB2::Level * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3876" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3867">
+        <label>std::vector&lt; amrex::BCRec, std::allocator&lt; amrex::BCRec &gt; &gt;</label>
+      </node>
+      <node id="3865">
+        <label>std::vector&lt; Real, std::allocator&lt; Real &gt; &gt;</label>
+      </node>
+      <node id="3857">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3858" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3873">
+        <label>amrex::Vector&lt; amrex::MultiFab &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3874" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3876">
+        <label>std::vector&lt; const EB2::Level *, std::allocator&lt; const EB2::Level * &gt; &gt;</label>
+      </node>
+      <node id="3856">
+        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
+      </node>
+      <node id="3866">
+        <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3867" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3859">
+        <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3860" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3869">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="3872">
+        <label>std::vector&lt; amrex::iMultiFab, std::allocator&lt; amrex::iMultiFab &gt; &gt;</label>
+      </node>
+      <node id="3860">
+        <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
+      </node>
+      <node id="3864">
+        <label>amrex::Vector&lt; Real &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3865" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3874">
+        <label>std::vector&lt; amrex::MultiFab, std::allocator&lt; amrex::MultiFab &gt; &gt;</label>
+      </node>
+      <node id="3861">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3862" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3854">
+        <label>amrex::AmrMesh</label>
+        <link refid="classamrex_1_1AmrMesh"/>
+        <childnode refid="3855" relation="usage">
+          <edgelabel>dmap</edgelabel>
+        </childnode>
+        <childnode refid="3857" relation="usage">
+          <edgelabel>grids</edgelabel>
+        </childnode>
+        <childnode refid="3859" relation="usage">
+          <edgelabel>blocking_factor</edgelabel>
+          <edgelabel>n_error_buf</edgelabel>
+          <edgelabel>max_grid_size</edgelabel>
+          <edgelabel>ref_ratio</edgelabel>
+        </childnode>
+        <childnode refid="3861" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="3863" relation="usage">
+          <edgelabel>grid_eff</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.H" bodystart="34" bodyend="357"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1AmrCore_1a30f4c446e360d02875146f91f942012c" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrCore</name></member>
+      <member refid="classamrex_1_1AmrCore_1ac9680d7596a200d0a7403732101565e2" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrCore</name></member>
+      <member refid="classamrex_1_1AmrCore_1afb69ffb7fcb6a73fd03d61b5752424b4" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrCore</name></member>
+      <member refid="classamrex_1_1AmrCore_1a691bdc73902c0c5695d186ac680deb9f" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrCore</name></member>
+      <member refid="classamrex_1_1AmrCore_1ac0a84aa89a7db1e9543096d9c9f50a65" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrCore</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a163e8a28e1f841b2c174d6d34664e2d3" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrMesh</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a58e7077dec217e4bdad1f5221e6229cc" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrMesh</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ab883ddbcab8b89f8eee7e9df1ae2b41b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrMesh</name></member>
+      <member refid="classamrex_1_1AmrMesh_1aa3d1b57d3957feca7d0f897ec2e62824" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrMesh</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a43f67413ffdd911f5a91e9041bb20d0e" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AmrMesh</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ad8a07c96169fd40c96a6b076b2743de0" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AverageDown</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a611f8114b59e74745e54778d504d8e86" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>AverageDownTo</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ae564241bee9d2cc16d8f812b7a78096c" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>bcs</name></member>
+      <member refid="classamrex_1_1AmrMesh_1acdbddd33ae38b3d038fcaa14ce05e039" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>blocking_factor</name></member>
+      <member refid="classamrex_1_1AmrMesh_1af4a41ee86449b2afa949b6d68f6faf6f" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>blockingFactor</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a331d8f1ba022fc6d08c1e2be97dd2eb6" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>boxArray</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a65c25342b534c0f03ebdf9e4f5ffac51" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>boxArray</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a8d2f6e5a9f3f46c76d44215f83455475" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>check_input</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a9274bfc294d53126644ed437ac83fe56" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>checkInput</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aff9d9cdf797536dec02c65a05e76ad7e" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>chk_file</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a9ff86ee64b8ce1f3e7e783bfb3ef26b3" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>chk_int</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a29bca4cd9fb61c896130db020528e56f" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ChopGrids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1afc5fde984a1cdd6fcfddb6ff26fb92f6" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ClearBoxArray</name></member>
+      <member refid="classamrex_1_1AmrMesh_1af5ec08eb03bebbb7a0f37f2af4bbda5d" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ClearDistributionMap</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aabe20a1818e92d5a4e976a07be8fec4e" prot="public" virt="pure-virtual"><scope>amrex::LSCoreBase</scope><name>ClearLevel</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ab386f620b52b8c696aeafbfb86a18cc7" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>CountCells</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a900d9137ef4b7f6dedc412b3caecbee9" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>DistributionMap</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a0dfee271ae9f2b00ab0b2ce8abd85d2d" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>DistributionMap</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ab7f8457c3e5a0dc0295247f005e5a107" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>dmap</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ac9b4a932760260d7ac531bda2e2cd160" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>eb_levels</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a49940ec34f953688df11638398e69978" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>eb_pad</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ab2d9fc210fcb7f0d3e948aa10c05bc66" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>EBSearchBox</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aa67c8e06f263b996a8f83a9e9e1ff47b" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>EBSearchBox</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aff7378920896f28c99d297fcd5e27bf2" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>ErrorEst</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a189a9b3c83ead56aec690020702448bb" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>FillCoarsePatch</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a33702659de5fc30dea82f82b61a1d312" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>FillCoarsePatch</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ac943522bfc385fdc318e5751c8432d8b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>FillLevelSet</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a09d1f926368093d099432498e353f2b5" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>FillLevelSetTags</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a73903ccb16187bf6583ef055c203f800" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>FillPatch</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a1613bf8825eff6a563b8e64290a5d54b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>FillVolfracTags</name></member>
+      <member refid="classamrex_1_1AmrCore_1af63658d7f3eaf4c233404dc6b10fae13" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a7a466d1cfea1c18c35128fb5a7c5793f" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>finest_level</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a71cf25bbc89fd5fd140d6a7090a8b451" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>finestLevel</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a239ef06043779ea301395ae14876d6cb" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>geom</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a38a313616cf363d4848934853dd47092" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Geom</name></member>
+      <member refid="classamrex_1_1AmrMesh_1adf16ab166b53c2ae62ee664a25e31e57" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Geom</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a24f762a6fc54a0adff17d31a5ff22e8b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Geom</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a924462614f8ea65b38f21163808bdddc" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Geom</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a9650ac46b08412a6d487deee85930294" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>GetAreaNotToTag</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a15165cf3a2f9e939f365dc4631fe84a3" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>getLevelSet</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a65a1afcaaaa3be85e75d03faf91808dc" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>getLevelSet</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a3ad5663133989fdd174cb9faa86b73de" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>getValid</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a52d93140b73361a60846a4827cea4d43" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>GotoNextLine</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ae75a2551575e5fd697ab4dc8754541ad" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>grid_eff</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a7bc5798a6ef2a0c27b0141112104e087" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>gridEff</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ae53347adc8a239367f153d3705a8ed25" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>grids</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ad56df754af5ff9aa2c9a7445ec35a7f9" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Init</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1abdc6c0f9bcac3c53a93a474d55643352" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>InitData</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aa76187fd7b5f9535bfd5049112e809d8" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>InitData</name></member>
+      <member refid="classamrex_1_1AmrCore_1a309a4bad63faba98cfc57641e274413d" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>InitFromScratch</name></member>
+      <member refid="classamrex_1_1AmrCore_1a4595fb6af7383f209eedaefc606020e7" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a47972302047f186f7016cfec426ec985" prot="private" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>InitLSCoreBase</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ad47540768ade1598333374d48d3b9593" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>iterate_on_new_grids</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a120eaa256d41fb7834e7cd1e009dc151" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>level_set</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ae753489d344207e275cb87c774c9a167" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>level_set_valid</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a08cfede00ef133a4756ac22a7ea7bfe7" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>LevelDefined</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a46e21b1a3e14075db9b6959ecdb9f72b" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>LoadTagLevels</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a1f4cff404c7fed0de6bdf3bceac89ef0" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ls_factory</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a0c1af368aa2e2d6c9796c76935a26abf" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>LSCoreBase</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a60418dd08d5d8a8229db489e3ecbf663" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>LSCoreBase</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a962d1689c8b7444f4b2c8a077d3f4766" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>MakeBaseGrids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1acb422930e8e69fc386727f45607e114b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>MakeNewGrids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a0bf56e73af1dfffcba7bfcadad887751" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>MakeNewGrids</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1afedefc3eee09ff209239a96a5d8522f3" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>MakeNewLevelFromCoarse</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a574e843e2855d44d8ee72fb55d8965ba" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>MakeNewLevelFromCoarse</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aa7bc5e980ea04512e48b2c04fa1f3105" prot="public" virt="pure-virtual"><scope>amrex::LSCoreBase</scope><name>MakeNewLevelFromScratch</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a5830766b42f260b125443b90f40b0a96" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>ManualTagsPlacement</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a1d8e97ef9f32164ac040646e71ceea1c" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>max_eb_pad</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a716b7e6169d4d0a537970445941e7391" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>max_grid_size</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ac488c17bc512ae46995817401dc7a8e7" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>max_level</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a359b34414e4ab7c9b33f74b031d16af8" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>maxGridSize</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a2b5ebb9f738e77dcc2f99dfe4e4e91d6" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>maxLevel</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a8d91fffbf09ac3c696d1f7cffee76b2c" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>MaxRefRatio</name></member>
+      <member refid="classamrex_1_1AmrMesh_1acf34e7acc22898675cec3f3b8aa2346c" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>n_error_buf</name></member>
+      <member refid="classamrex_1_1AmrMesh_1afe23a9a66345fa657da022fc5a3cb349" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>n_proper</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ad5199bceb8775542859c6b51d0a2100c" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>nErrorBuf</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a071011d3702ecfc14ebc0f61a30a50ed" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>nErrorBufVect</name></member>
+      <member refid="classamrex_1_1AmrMesh_1aa1e59b567c58d9ba22c9e56f8138a22a" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>nProper</name></member>
+      <member refid="classamrex_1_1AmrCore_1ae524f7c2cee3133106953319696bd7c5" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1AmrCore_1acf424d1fa598d256d7285e7fc6f20a73" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a51e0432968299f0c83f90d9b79376a6c" prot="public" virt="non-virtual" ambiguityscope="amrex::AmrMesh::"><scope>amrex::LSCoreBase</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1AmrMesh_1af2d4364b9fd33cf012edbb2170105845" prot="public" virt="non-virtual" ambiguityscope="amrex::AmrMesh::"><scope>amrex::LSCoreBase</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a51160f59f8c2e5aa56f7b24632ac3f1a" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>phierr</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1afffa96e3c5577c0fef27219fd5cfd813" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>phierr_set</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1abe97849a2a60e1d3d785044180f393b9" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>plot_file</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a732e8fce0435ef4ea35fb6f7f265f8a0" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>plot_int</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1af777c924269670878cf0ec226b69e768" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>PlotFileMF</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aeedfe5ae1a68e0648089c69b8c60a185" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>PlotFileName</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a4cf5ec26160d97c61722a2c726ef2474" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>PlotFileVarNames</name></member>
+      <member refid="classamrex_1_1AmrCore_1a4f3c144db8f986764324e9ba788666b3" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>printGridSummary</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a155296a717e8a459f35d4f5744b8675e" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ReadCheckpointFile</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1ad30eaa3ec2dd8ad3de93c4bfbea572dc" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ReadParameters</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1af7fd409f38eaf8ed96c27825222626f5" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>rebuild_eb</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a7e3c7fc2f5598fdd4132536724933f2a" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>ref_ratio</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a95059679c4b3343198edadf7d9d860e5" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>refine_grid_layout</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a848a89635a0f509800a5d912ef7b4f0b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>refRatio</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a3e96de11d4a8b2cababa14d116b61958" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>refRatio</name></member>
+      <member refid="classamrex_1_1AmrCore_1ae80fa713b669de0f235d3ef0792e7200" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>regrid</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aaa70d8f11811c1a64cf57e147344a914" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>RemakeLevel</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aa206bdb1903bb394742e18267dcbfc11" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>restart_chkfile</name></member>
+      <member refid="classamrex_1_1AmrMesh_1aba9a6c34f6e246926e9147ef3da5b535" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetBlockingFactor</name></member>
+      <member refid="classamrex_1_1AmrMesh_1adf01c926d4f55d291a5d5a0e0b48c348" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetBlockingFactor</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a3818b75f890359e9a8042f7a3b9e4e21" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetBlockingFactor</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a04ba4d303b52fe2f1db1e7e23fca5c06" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetBlockingFactor</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a404d43ca2363907df6d3206e892a220d" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetBoxArray</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a452a3c38dd51bc37e199abe772759a3b" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetDistributionMap</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ab40e510f5cd8deda45eb675b82494808" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetFinestLevel</name></member>
+      <member refid="classamrex_1_1AmrMesh_1aa755628d0ad98daf37de1670e57d2364" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetGeometry</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a77c262385b1bd0bfc96fec96347c041a" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetGridEff</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a2c473ca991e89cf526fa0ecd967a7217" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetIterateToFalse</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a4612b4d9b23253095da92c3e323ffd73" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetMaxGridSize</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a964c875f4546f513fb285e2f90278473" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetMaxGridSize</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ae26f4d197dc68e2d26837b8ad0043dbe" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetMaxGridSize</name></member>
+      <member refid="classamrex_1_1AmrMesh_1ad6695b6090e726ea6bc405a7d3a75be8" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetMaxGridSize</name></member>
+      <member refid="classamrex_1_1AmrMesh_1aee314c43754854d98fc25ce6cd278796" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetNProper</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a6fed6ab0db7c3ca0f8f1a3d077b4364a" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetTagLevels</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a54d57857c4dd3aa50841ec74a13d4e4c" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>SetUseNewChop</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a36c38fc9573fe9bd45675e3a0f9c6649" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>UpdateGrids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a3162b5c3697f4ce32d585ca434ac40a5" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>use_fixed_coarse_grids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a15a5406d39363635d73cc1d986546fe7" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>use_fixed_upto_level</name></member>
+      <member refid="classamrex_1_1AmrMesh_1abaf8432668e3b350306a62e8662f4f96" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>use_new_chop</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1af4ed8d84ded37119725a657db8b99d85" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>use_phierr</name></member>
+      <member refid="classamrex_1_1AmrMesh_1aee758e772b5c854d121923686d1d3949" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>useFixedCoarseGrids</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a6ff4a09f169c29d17327aa37b49d3e5a" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>useFixedUpToLevel</name></member>
+      <member refid="classamrex_1_1AmrCore_1a927ec455a69cf736bb8e9ff03e5dae5e" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>Verbose</name></member>
+      <member refid="classamrex_1_1AmrCore_1a7e2ab7cbc55436aa985751b80246668f" prot="protected" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>verbose</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a605ae269c81717a873140d564c0a4c30" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>WriteCheckpointFile</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1a54d6bad6416acd9234feba1d0ba80f5d" prot="public" virt="non-virtual"><scope>amrex::LSCoreBase</scope><name>WritePlotFile</name></member>
+      <member refid="classamrex_1_1AmrCore_1aa826ec39007a18c0002a14d9a53863af" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>~AmrCore</name></member>
+      <member refid="classamrex_1_1AmrMesh_1a10865e07f3aae297cdea041881e7b9ab" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>~AmrMesh</name></member>
+      <member refid="classamrex_1_1LSCoreBase_1aba665f12e440d33638b089be84666a06" prot="public" virt="virtual"><scope>amrex::LSCoreBase</scope><name>~LSCoreBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

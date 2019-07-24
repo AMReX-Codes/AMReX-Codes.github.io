@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials/Basic &mdash; amrex 19.08-dev documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials/Blueprint" href="Blueprint_Tutorial.html" />
+    <link rel="prev" title="Tutorials/Amr" href="AMR_Tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                19.08-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/Basic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#helloworld"><strong>HelloWorld</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main"><strong>main</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#heatequation"><strong>HeatEquation</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVODE_Tutorial.html">Tutorials/CVODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">Tutorials/GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">Tutorials/SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorials/Basic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Basic_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorials-basic">
+<h1>Tutorials/Basic<a class="headerlink" href="#tutorials-basic" title="Permalink to this headline">¶</a></h1>
+<p>The tutorials in amrex/Tutorials/Basic demonstrate the most fundamental
+operations supported by AMReX.</p>
+<div class="section" id="helloworld">
+<h2><strong>HelloWorld</strong><a class="headerlink" href="#helloworld" title="Permalink to this headline">¶</a></h2>
+<p>HelloWorld_C and HelloWorld_F demonstrate the GNU Make system – with
+a sample Make.package and GNUmakefile – and the amrex::Initialize
+and amrex::Finalize functions.</p>
+<p>In addition, in HelloWorld_C, the amrex::Print() operation,
+which only prints from the I/O processor, is used to print out
+the AMReX version (as defined by amrex::Version()) being used.</p>
+<p>HelloWorld_F is a simple example of how to use the F_Interface routines,
+which are Fortran wrappers for the underlying C++ data strutures and
+iterators.  Here, for example, rather than calling amrex::Print() in C++, we
+test on whether amrex_parallel_ioprocessor() is true, and if so, invoke
+the usual Fortran print call.</p>
+</div>
+<div class="section" id="main">
+<h2><strong>main</strong><a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h2>
+<p>main_C and main_F introduce the following:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>By default, AMReX initializes MPI and uses MPI_COMM_WORLD as its communicator.
+However, applications could choose to initialize MPI themselves and pass in an
+existing communicator.</p></li>
+<li><p>By default, AMReX treats command line arguments as inputs parameters.  The expected
+format of argv is</p>
+<blockquote>
+<div><p><em>executable inputs_file parm=value</em></p>
+</div></blockquote>
+<p>Here, <cite>executable</cite> is the filename of the executable, <cite>inputs_file</cite> is the file containing
+runtime parameters used to build AMReX ParmParse database, and <cite>parm=value</cite> is an input
+parameter that will override its value in <cite>inputs_file</cite>.  Both <cite>inputs_file</cite> and
+<cite>parm=value</cite> are optional.  At most one <cite>inputs_file</cite> is allowed. Howeer, there can be
+multiple <cite>parm=value</cite> s.</p>
+<p>The parsing of the command line arguments is performed in amrex::Initialize.  Applications
+can choose to skip command line parsing.  Applications can also provide a function that
+adds parameters to AMReX ParmParse database.</p>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="heatequation">
+<h2><strong>HeatEquation</strong><a class="headerlink" href="#heatequation" title="Permalink to this headline">¶</a></h2>
+<p>The HeatEquation examples solve a 2D or 3D (determined by how you set DIM in the GNUmakefile)
+heat equation explicitly on a domain-decomposed mesh.  This example is described in detail in
+the <a class="reference external" href="https://amrex-codes.github.io/amrex/docs_html/Basics.html">Basics</a> chapter of the amrex Documentation</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Blueprint_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/Blueprint" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="AMR_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/Amr" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

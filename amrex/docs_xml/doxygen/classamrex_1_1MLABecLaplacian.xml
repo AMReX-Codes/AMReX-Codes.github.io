@@ -1,0 +1,1338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1MLABecLaplacian" kind="class" language="C++" prot="public">
+    <compoundname>amrex::MLABecLaplacian</compoundname>
+    <basecompoundref refid="classamrex_1_1MLCellABecLap" prot="public" virt="non-virtual">amrex::MLCellABecLap</basecompoundref>
+    <derivedcompoundref refid="classamrex_1_1MLTensorOp" prot="public" virt="non-virtual">amrex::MLTensorOp</derivedcompoundref>
+    <includes refid="AMReX__MLABecLaplacian_8H" local="no">AMReX_MLABecLaplacian.H</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1MLABecLaplacian_1abd0d6b7a15c37884721f1492fbfc11ed" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::MLABecLaplacian::m_needs_update</definition>
+        <argsstring></argsstring>
+        <name>m_needs_update</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLABecLaplacian_1a56c309c11b2dfa0ae7b4153cbf352329" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::MLABecLaplacian::m_a_scalar</definition>
+        <argsstring></argsstring>
+        <name>m_a_scalar</name>
+        <initializer>= std::numeric_limits&lt;Real&gt;::quiet_NaN()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLABecLaplacian_1a431b88eacbb25a6fc2704cca95790b1b" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::MLABecLaplacian::m_b_scalar</definition>
+        <argsstring></argsstring>
+        <name>m_b_scalar</name>
+        <initializer>= std::numeric_limits&lt;Real&gt;::quiet_NaN()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLABecLaplacian_1a4f2dd2fecc4cbd8df8cdf264330b6cee" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt;</type>
+        <definition>Vector&lt;Vector&lt;MultiFab&gt; &gt; amrex::MLABecLaplacian::m_a_coeffs</definition>
+        <argsstring></argsstring>
+        <name>m_a_coeffs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="87" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLABecLaplacian_1a690294478b3f4e211d738879fcc2d487" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, AMREX_SPACEDIM &gt; &gt; &gt;</type>
+        <definition>Vector&lt;Vector&lt;Array&lt;MultiFab,AMREX_SPACEDIM&gt; &gt; &gt; amrex::MLABecLaplacian::m_b_coeffs</definition>
+        <argsstring></argsstring>
+        <name>m_b_coeffs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLABecLaplacian_1a225329bffa463bc382ff2bc473a21098" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
+        <definition>Vector&lt;int&gt; amrex::MLABecLaplacian::m_is_singular</definition>
+        <argsstring></argsstring>
+        <name>m_is_singular</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1abf3b9bd60c5bffecca969aae4b710744" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MLABecLaplacian::MLABecLaplacian</definition>
+        <argsstring>()</argsstring>
+        <name>MLABecLaplacian</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a9f2ea8c16adcfb5383747d5954a2ac2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MLABecLaplacian::MLABecLaplacian</definition>
+        <argsstring>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FArrayBox &gt; const * &gt; &amp;a_factory={})</argsstring>
+        <name>MLABecLaplacian</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>a_grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>a_dmap</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1LPInfo" kindref="compound">LPInfo</ref> &amp;</type>
+          <declname>a_info</declname>
+          <defval><ref refid="structamrex_1_1LPInfo" kindref="compound">LPInfo</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; const * &gt; &amp;</type>
+          <declname>a_factory</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="9" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1aa1a6fbbfa155e18723eae717876eb6f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::MLABecLaplacian::~MLABecLaplacian</definition>
+        <argsstring>()</argsstring>
+        <name>~MLABecLaplacian</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="54" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1aad8f38a834cb6fcdddc0912b64431300" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MLABecLaplacian::MLABecLaplacian</definition>
+        <argsstring>(const MLABecLaplacian &amp;)=delete</argsstring>
+        <name>MLABecLaplacian</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a2b96df8bcb57809c6f292d39cf5713d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MLABecLaplacian::MLABecLaplacian</definition>
+        <argsstring>(MLABecLaplacian &amp;&amp;)=delete</argsstring>
+        <name>MLABecLaplacian</name>
+        <param>
+          <type><ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a79b784fd330fd2b4d0c60b7494800802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &amp;</type>
+        <definition>MLABecLaplacian&amp; amrex::MLABecLaplacian::operator=</definition>
+        <argsstring>(const MLABecLaplacian &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="27" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1acfd96476126334e014e13143f1289cf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &amp;</type>
+        <definition>MLABecLaplacian&amp; amrex::MLABecLaplacian::operator=</definition>
+        <argsstring>(MLABecLaplacian &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="28" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a609719bfe01c8fafe872acf4ff2afb9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::define</definition>
+        <argsstring>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, const LPInfo &amp;a_info=LPInfo(), const Vector&lt; FabFactory&lt; FArrayBox &gt; const * &gt; &amp;a_factory={})</argsstring>
+        <name>define</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>a_grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>a_dmap</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1LPInfo" kindref="compound">LPInfo</ref> &amp;</type>
+          <declname>a_info</declname>
+          <defval><ref refid="structamrex_1_1LPInfo" kindref="compound">LPInfo</ref>()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; const * &gt; &amp;</type>
+          <declname>a_factory</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="19" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a0c9623cbb85811d65268b7462e09764a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::setScalars</definition>
+        <argsstring>(Real a, Real b) noexcept</argsstring>
+        <name>setScalars</name>
+        <param>
+          <type>Real</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="58" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a2dc08f7d45b41d0b9b88c7a96f95b23d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::setACoeffs</definition>
+        <argsstring>(int amrlev, const MultiFab &amp;alpha)</argsstring>
+        <name>setACoeffs</name>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4746800064d0d00e8318a4e61fa59f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::setBCoeffs</definition>
+        <argsstring>(int amrlev, const Array&lt; MultiFab const *, AMREX_SPACEDIM &gt; &amp;beta)</argsstring>
+        <name>setBCoeffs</name>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>beta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="38" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="79" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1acf27ddd13356c7c675ec2527d8e80223" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool amrex::MLABecLaplacian::needsUpdate</definition>
+        <argsstring>() const override</argsstring>
+        <name>needsUpdate</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1adb891ed98442838db52ab71e703ff752">needsUpdate</reimplements>
+        <reimplementedby refid="classamrex_1_1MLTensorOp_1a07b60f41a959afec82a27d5c356b9f7c">needsUpdate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a7e612906bd561e6b5db7ce47ea0e7d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1aa107a7270bd64cf582e25812c5e5cbab">update</reimplements>
+        <reimplementedby refid="classamrex_1_1MLTensorOp_1a869e2f4f990e7cb411847fd27ad0daf4">update</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="43" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="497" bodyend="532"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a627779ad059394a0bd2b3bede177e12a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::prepareForSolve</definition>
+        <argsstring>() override</argsstring>
+        <name>prepareForSolve</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1a7d6d2646e9f6afaf7ed70bf0c86fa762">prepareForSolve</reimplements>
+        <reimplementedby refid="classamrex_1_1MLTensorOp_1a6591c6b5827c394fe13e119f33ac3fbc">prepareForSolve</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="45" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="171" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4304750fa837f09df7c0d400b147fe2f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool amrex::MLABecLaplacian::isSingular</definition>
+        <argsstring>(int amrlev) const override</argsstring>
+        <name>isSingular</name>
+        <reimplements refid="classamrex_1_1MLLinOp_1aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</reimplements>
+        <reimplementedby refid="classamrex_1_1MLTensorOp_1aaccfcd45ed23a3c9dc414d032b91e797">isSingular</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="46" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1aa0ead02bedca70191f223b455654b49b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool amrex::MLABecLaplacian::isBottomSingular</definition>
+        <argsstring>() const override</argsstring>
+        <name>isBottomSingular</name>
+        <reimplements refid="classamrex_1_1MLLinOp_1aa6ff4935f1246d7c94ac38dc65c25d7d">isBottomSingular</reimplements>
+        <reimplementedby refid="classamrex_1_1MLTensorOp_1aef4a818ac9d4702068c50ef6d8a330f4">isBottomSingular</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="47" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1af50450f5183086551355d146db360223" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::Fapply</definition>
+        <argsstring>(int amrlev, int mglev, MultiFab &amp;out, const MultiFab &amp;in) const finaloverride</argsstring>
+        <name>Fapply</name>
+        <reimplements refid="classamrex_1_1MLCellLinOp_1a34a85d0cc1fc408ad4dc4b3509cb9917">Fapply</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mglev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="48" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="211" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1aaf1b0779083ae48e7c28cd72e81d092b" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::Fsmooth</definition>
+        <argsstring>(int amrlev, int mglev, MultiFab &amp;sol, const MultiFab &amp;rhs, int redblack) const finaloverride</argsstring>
+        <name>Fsmooth</name>
+        <reimplements refid="classamrex_1_1MLCellLinOp_1a6f2e4279fbe6ebbea1e903fb0aafc745">Fsmooth</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mglev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>sol</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>redblack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="49" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="286" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a8f6176a1c3e460123ec423b001c75aa4" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::FFlux</definition>
+        <argsstring>(int amrlev, const MFIter &amp;mfi, const Array&lt; FArrayBox *, AMREX_SPACEDIM &gt; &amp;flux, const FArrayBox &amp;sol, Location, const int face_only=0) const finaloverride</argsstring>
+        <name>FFlux</name>
+        <reimplements refid="classamrex_1_1MLCellLinOp_1a984719ccb019be3050750f57138557b0">FFlux</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>flux</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>sol</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3" kindref="member">Location</ref></type>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>face_only</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="50" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="410" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1ad06bbe924dd6379bb53f3da68c8e28d6" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::normalize</definition>
+        <argsstring>(int amrlev, int mglev, MultiFab &amp;mf) const finaloverride</argsstring>
+        <name>normalize</name>
+        <reimplements refid="classamrex_1_1MLLinOp_1a3e0f34318790ba3e087ecf8b870dd12f">normalize</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mglev</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="55" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="249" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a7f59b09e1131f3dcd72e9c74be5634b4" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>Real</type>
+        <definition>virtual Real amrex::MLABecLaplacian::getAScalar</definition>
+        <argsstring>() const finaloverride</argsstring>
+        <name>getAScalar</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1a7c4aeebd8ef17280170ed19e619f076a">getAScalar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="57" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a6e100349c3387d415f75281d10bfa0d9" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>Real</type>
+        <definition>virtual Real amrex::MLABecLaplacian::getBScalar</definition>
+        <argsstring>() const finaloverride</argsstring>
+        <name>getBScalar</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1a0e67dc87e4b048beb5f44d38b3ccebfe">getBScalar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="58" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4b9b75ed0ddc0a3ecdf84e8e63154ada" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *</type>
+        <definition>virtual MultiFab const* amrex::MLABecLaplacian::getACoeffs</definition>
+        <argsstring>(int amrlev, int mglev) const finaloverride</argsstring>
+        <name>getACoeffs</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1a066785981b2814b49cd7ccc98ff01831">getACoeffs</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mglev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="59" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a231b5a037694a8fa75aff6e5ee526f8c" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, AMREX_SPACEDIM &gt;</type>
+        <definition>virtual Array&lt;MultiFab const*,AMREX_SPACEDIM&gt; amrex::MLABecLaplacian::getBCoeffs</definition>
+        <argsstring>(int amrlev, int mglev) const finaloverride</argsstring>
+        <name>getBCoeffs</name>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e">getBCoeffs</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mglev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="61" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1afdfa7bc321be610fd40835e6fdf9531f" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLLinOp" kindref="compound">MLLinOp</ref> &gt;</type>
+        <definition>virtual std::unique_ptr&lt;MLLinOp&gt; amrex::MLABecLaplacian::makeNLinOp</definition>
+        <argsstring>(int grid_size) const finaloverride</argsstring>
+        <name>makeNLinOp</name>
+        <reimplements refid="classamrex_1_1MLLinOp_1af7992c664d65948c99e3661e6d23a646">makeNLinOp</reimplements>
+        <param>
+          <type>int</type>
+          <declname>grid_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a5182a119586a9ba357e38fe5f7b8f5d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::averageDownCoeffsSameAmrLevel</definition>
+        <argsstring>(Vector&lt; MultiFab &gt; &amp;a, Vector&lt; Array&lt; MultiFab, AMREX_SPACEDIM &gt; &gt; &amp;b)</argsstring>
+        <name>averageDownCoeffsSameAmrLevel</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="109" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a850f02af43a26190e332319b9ddb8942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::averageDownCoeffs</definition>
+        <argsstring>()</argsstring>
+        <name>averageDownCoeffs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="92" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a9f80d265602f986fc8e4a4255ff3a525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::averageDownCoeffsToCoarseAmrLevel</definition>
+        <argsstring>(int flev)</argsstring>
+        <name>averageDownCoeffsToCoarseAmrLevel</name>
+        <param>
+          <type>int</type>
+          <declname>flev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="136" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a4c648c8c2131afb622bc29f4aed80f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::applyMetricTermsCoeffs</definition>
+        <argsstring>()</argsstring>
+        <name>applyMetricTermsCoeffs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="74" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="155" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a6af504f34d971e15df085a16446327d0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLABecLaplacian::FFlux</definition>
+        <argsstring>(Box const &amp;box, Real const *dxinv, Real bscalar, Array&lt; FArrayBox const *, AMREX_SPACEDIM &gt; const &amp;bcoef, Array&lt; FArrayBox *, AMREX_SPACEDIM &gt; const &amp;flux, FArrayBox const &amp;sol, int face_only, int ncomp)</argsstring>
+        <name>FFlux</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>Real const *</type>
+          <declname>dxinv</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>bscalar</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> const *, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>bcoef</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>flux</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> const &amp;</type>
+          <declname>sol</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>face_only</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="76" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp" bodystart="428" bodyend="494"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4335">
+        <label>amrex::MLTensorOp</label>
+        <link refid="classamrex_1_1MLTensorOp"/>
+        <childnode refid="4331" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4331">
+        <label>amrex::MLABecLaplacian</label>
+        <link refid="classamrex_1_1MLABecLaplacian"/>
+        <childnode refid="4332" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4334">
+        <label>amrex::MLLinOp</label>
+        <link refid="classamrex_1_1MLLinOp"/>
+      </node>
+      <node id="4332">
+        <label>amrex::MLCellABecLap</label>
+        <link refid="classamrex_1_1MLCellABecLap"/>
+        <childnode refid="4333" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4333">
+        <label>amrex::MLCellLinOp</label>
+        <link refid="classamrex_1_1MLCellLinOp"/>
+        <childnode refid="4334" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4370">
+        <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
+      </node>
+      <node id="4352">
+        <label>amrex::FabArrayBase::CacheStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
+        <childnode refid="4353" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="4355">
+        <label>amrex::FabArrayBase::FabArrayStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
+      </node>
+      <node id="4348">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="4348" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="4345">
+        <label>Real</label>
+      </node>
+      <node id="4371">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4372" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4392">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;, std::allocator&lt; amrex::Vector&lt; amrex::MultiFab &gt; &gt; &gt;</label>
+      </node>
+      <node id="4377">
+        <label>std::vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="4365">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="4346">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4347" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4347">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::BoxArray &gt;, std::allocator&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt; &gt;</label>
+      </node>
+      <node id="4336">
+        <label>amrex::MLABecLaplacian</label>
+        <link refid="classamrex_1_1MLABecLaplacian"/>
+        <childnode refid="4337" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4391" relation="usage">
+          <edgelabel>m_a_coeffs</edgelabel>
+        </childnode>
+        <childnode refid="4356" relation="usage">
+          <edgelabel>m_is_singular</edgelabel>
+        </childnode>
+        <childnode refid="4393" relation="usage">
+          <edgelabel>m_b_coeffs</edgelabel>
+        </childnode>
+        <childnode refid="4345" relation="usage">
+          <edgelabel>m_a_scalar</edgelabel>
+          <edgelabel>m_b_scalar</edgelabel>
+        </childnode>
+      </node>
+      <node id="4356">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4357" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4353">
+        <label>string</label>
+      </node>
+      <node id="4373">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="4348" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="4367">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="4383">
+        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MLCellLinOp::BndryCondLoc &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4384" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4384">
+        <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MLCellLinOp::BndryCondLoc &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MLCellLinOp::BndryCondLoc &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="4366">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4367" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4340">
+        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4341" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4343">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Geometry &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt; &gt;</label>
+      </node>
+      <node id="4368">
+        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
+        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="4388">
+        <label>std::vector&lt; std::unique_ptr&lt; amrex::BndryRegister &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::BndryRegister &gt; &gt; &gt;</label>
+      </node>
+      <node id="4342">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4343" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4379">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::BndryRegister &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4380" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4344">
+        <label>amrex::RealVect</label>
+        <link refid="classamrex_1_1RealVect"/>
+        <childnode refid="4344" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+        <childnode refid="4345" relation="usage">
+          <edgelabel>vect</edgelabel>
+        </childnode>
+      </node>
+      <node id="4381">
+        <label>amrex::Vector&lt; amrex::YAFluxRegister &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4382" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4374">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4375" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4394">
+        <label>std::vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &gt;, std::allocator&lt; amrex::Vector&lt; Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="4382">
+        <label>std::vector&lt; amrex::YAFluxRegister, std::allocator&lt; amrex::YAFluxRegister &gt; &gt;</label>
+      </node>
+      <node id="4372">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="4357">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="4362">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="4348" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="4363" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="4387">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::BndryRegister &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4388" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4339">
+        <label>amrex::MLLinOp</label>
+        <link refid="classamrex_1_1MLLinOp"/>
+        <childnode refid="4340" relation="usage">
+          <edgelabel>m_factory</edgelabel>
+        </childnode>
+        <childnode refid="4342" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+        <childnode refid="4344" relation="usage">
+          <edgelabel>m_coarse_bc_loc</edgelabel>
+        </childnode>
+        <childnode refid="4346" relation="usage">
+          <edgelabel>m_grids</edgelabel>
+        </childnode>
+        <childnode refid="4348" relation="usage">
+          <edgelabel>m_ixtype</edgelabel>
+        </childnode>
+        <childnode refid="4349" relation="usage">
+          <edgelabel>m_coarse_data_for_bc</edgelabel>
+        </childnode>
+        <childnode refid="4356" relation="usage">
+          <edgelabel>m_domain_covered</edgelabel>
+          <edgelabel>m_amr_ref_ratio</edgelabel>
+          <edgelabel>m_num_mg_levels</edgelabel>
+        </childnode>
+        <childnode refid="4374" relation="usage">
+          <edgelabel>m_dmap</edgelabel>
+        </childnode>
+        <childnode refid="4376" relation="usage">
+          <edgelabel>m_hibc</edgelabel>
+          <edgelabel>m_lobc</edgelabel>
+        </childnode>
+        <childnode refid="4339" relation="usage">
+          <edgelabel>m_parent</edgelabel>
+        </childnode>
+        <childnode refid="4378" relation="usage">
+          <edgelabel>info</edgelabel>
+        </childnode>
+      </node>
+      <node id="4391">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4392" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4386">
+        <label>std::vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *AMREX_SPACEDIM &gt; &gt;, std::allocator&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *AMREX_SPACEDIM &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="4376">
+        <label>amrex::Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4377" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4360">
+        <label>amrex::DistributionMapping::RefID</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
+        <childnode refid="4361" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="4369">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4370" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4378">
+        <label>amrex::LPInfo</label>
+        <link refid="structamrex_1_1LPInfo"/>
+      </node>
+      <node id="4390">
+        <label>std::vector&lt; std::unique_ptr&lt; amrex::MLMGBndry &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::MLMGBndry &gt; &gt; &gt;</label>
+      </node>
+      <node id="4337">
+        <label>amrex::MLCellABecLap</label>
+        <link refid="classamrex_1_1MLCellABecLap"/>
+        <childnode refid="4338" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4363">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="4361">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="4356" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
+        </childnode>
+      </node>
+      <node id="4364">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4365" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4354">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="4358">
+        <label>amrex::FabArrayBase::BDKey</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
+        <childnode refid="4359" relation="usage">
+          <edgelabel>m_ba_id</edgelabel>
+        </childnode>
+        <childnode refid="4360" relation="usage">
+          <edgelabel>m_dm_id</edgelabel>
+        </childnode>
+      </node>
+      <node id="4385">
+        <label>amrex::Vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *AMREX_SPACEDIM &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4386" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4349">
+        <label>amrex::MultiFab</label>
+        <link refid="classamrex_1_1MultiFab"/>
+        <childnode refid="4350" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4380">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::BndryRegister &gt;, std::allocator&lt; amrex::Vector&lt; amrex::BndryRegister &gt; &gt; &gt;</label>
+      </node>
+      <node id="4338">
+        <label>amrex::MLCellLinOp</label>
+        <link refid="classamrex_1_1MLCellLinOp"/>
+        <childnode refid="4339" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4379" relation="usage">
+          <edgelabel>m_undrrelxr</edgelabel>
+        </childnode>
+        <childnode refid="4381" relation="usage">
+          <edgelabel>m_fluxreg</edgelabel>
+        </childnode>
+        <childnode refid="4383" relation="usage">
+          <edgelabel>m_bcondloc</edgelabel>
+        </childnode>
+        <childnode refid="4385" relation="usage">
+          <edgelabel>m_maskvals</edgelabel>
+        </childnode>
+        <childnode refid="4387" relation="usage">
+          <edgelabel>m_crse_sol_br</edgelabel>
+          <edgelabel>m_crse_cor_br</edgelabel>
+        </childnode>
+        <childnode refid="4389" relation="usage">
+          <edgelabel>m_bndry_sol</edgelabel>
+          <edgelabel>m_bndry_cor</edgelabel>
+        </childnode>
+      </node>
+      <node id="4350">
+        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabArray"/>
+        <childnode refid="4351" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4348" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="4356" relation="usage">
+          <edgelabel>fb_recv_size</edgelabel>
+          <edgelabel>fb_recv_from</edgelabel>
+        </childnode>
+        <childnode refid="4364" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="4366" relation="usage">
+          <edgelabel>fb_recv_data</edgelabel>
+          <edgelabel>fb_send_data</edgelabel>
+        </childnode>
+        <childnode refid="4368" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="4369" relation="usage">
+          <edgelabel>fb_recv_stat</edgelabel>
+        </childnode>
+        <childnode refid="4371" relation="usage">
+          <edgelabel>fb_send_reqs</edgelabel>
+          <edgelabel>fb_recv_reqs</edgelabel>
+        </childnode>
+        <childnode refid="4373" relation="usage">
+          <edgelabel>fb_period</edgelabel>
+        </childnode>
+      </node>
+      <node id="4359">
+        <label>amrex::BoxArray::RefID</label>
+        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
+      </node>
+      <node id="4389">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::MLMGBndry &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4390" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4351">
+        <label>amrex::FabArrayBase</label>
+        <link refid="classamrex_1_1FabArrayBase"/>
+        <childnode refid="4352" relation="usage">
+          <edgelabel>m_FBC_stats</edgelabel>
+          <edgelabel>m_FPinfo_stats</edgelabel>
+          <edgelabel>m_CFinfo_stats</edgelabel>
+          <edgelabel>m_TAC_stats</edgelabel>
+          <edgelabel>m_CPC_stats</edgelabel>
+        </childnode>
+        <childnode refid="4354" relation="usage">
+          <edgelabel>distributionMap</edgelabel>
+        </childnode>
+        <childnode refid="4348" relation="usage">
+          <edgelabel>n_grow</edgelabel>
+          <edgelabel>comm_tile_size</edgelabel>
+          <edgelabel>mfiter_tile_size</edgelabel>
+          <edgelabel>mfghostiter_tile_size</edgelabel>
+        </childnode>
+        <childnode refid="4355" relation="usage">
+          <edgelabel>m_FA_stats</edgelabel>
+        </childnode>
+        <childnode refid="4356" relation="usage">
+          <edgelabel>indexArray</edgelabel>
+        </childnode>
+        <childnode refid="4358" relation="usage">
+          <edgelabel>m_bdkey</edgelabel>
+        </childnode>
+        <childnode refid="4362" relation="usage">
+          <edgelabel>boxarray</edgelabel>
+        </childnode>
+      </node>
+      <node id="4393">
+        <label>amrex::Vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4394" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4375">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt;, std::allocator&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt; &gt;</label>
+      </node>
+      <node id="4341">
+        <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="14" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="12" bodyend="91"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1MLLinOp_1a8effbacb86233a5334789092372a9bde" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>AMRRefRatio</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac80a224852d40e9dd01ef9e4d52cd1c9" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>AMRRefRatio</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a62ea55fae7824c00b3237cf57616dd1d" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>apply</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a90ee76f9285ff47a5a5130447134b3bf" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>applyBC</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1af750016d817d62fec79c71777ec48b36" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>applyMetricTerm</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a4c648c8c2131afb622bc29f4aed80f8a" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>applyMetricTermsCoeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a850f02af43a26190e332319b9ddb8942" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>averageDownCoeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a5182a119586a9ba357e38fe5f7b8f5d4" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>averageDownCoeffsSameAmrLevel</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a9f80d265602f986fc8e4a4255ff3a525" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>averageDownCoeffsToCoarseAmrLevel</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1adfefa1b34d6988c4bf97957616b61c8f" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>averageDownSolutionRHS</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a5aa01a1ef6b0b3a471f02f65ae4b4884" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>BCMode</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a622b7c2ecc46a6b476aba4fb470f3dcf" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>BCTuple</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac2e55c34bf6b5c0ed53d0ef6a4625a3f" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>BCType</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a77b33530b316399f5fb5314a846d9b7e" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>BottomCommunicator</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ae56dfc1030a8066132a2cb67334b1aaa" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Communicator</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a7537000b838b1009188ad927ce91616c" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>compFlux</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aead98967987fb3826008fc69f3270247" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>compGrad</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1ac3037ce3c60a5c1a0ccb07dc5ab67197" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>correctionResidual</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a609719bfe01c8fafe872acf4ff2afb9d" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>define</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a355691d7877fb9a9aabc65db76d0f2b4" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>doAgglomeration</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a79f98e0cf06f695dbad6052c5d53e00b" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>doConsolidation</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a0eb75c39ff8e715b524d79442b83a3fb" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Factory</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1af50450f5183086551355d146db360223" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>Fapply</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a8f6176a1c3e460123ec423b001c75aa4" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>FFlux</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a6af504f34d971e15df085a16446327d0" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>FFlux</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1af360736b1a452aa605ea48a8b2489615" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>fillSolutionBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ad00407760d4927438c355ba115aaad4e" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a5137ff000c6f8940f4b07a28f3bf9375" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>fixUpResidualMask</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1aaf1b0779083ae48e7c28cd72e81d092b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>Fsmooth</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a7b1da16499dc7b95e807a28757e0c094" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Geom</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a4b9b75ed0ddc0a3ecdf84e8e63154ada" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getACoeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a7f59b09e1131f3dcd72e9c74be5634b4" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getAScalar</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a231b5a037694a8fa75aff6e5ee526f8c" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getBCoeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a6e100349c3387d415f75281d10bfa0d9" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getBScalar</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a7c1c62615a265e25a92ce37b3b287933" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getDefaultBottomSolver</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1a913212b62872ccbdfaf19880d8114073" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getFluxes</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ad2419e6b4d384edbd5695daca078e310" prot="public" virt="virtual" ambiguityscope="amrex::MLCellLinOp::"><scope>amrex::MLABecLaplacian</scope><name>getFluxes</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a1189e4016e7757083343a93649f102aa" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>getMaxOrder</name></member>
+      <member refid="classamrex_1_1MLLinOp_1acd287b03ea1a73f47ba1f08bb10a484d" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getNComp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a10e3ecd56636236ea6c1c219630bf79b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getNGrow</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a85fa2f104bbfeaa73d55d589906ecd45" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>info</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a48b2fe73722eee0a1d50b6e0b9558174" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a0044458b3dd79241c2b74483b70cb7e7" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>interpolation</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aa1c6883eef4d4dc55d3a5fe5c921113a" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>isBottomActive</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1aa0ead02bedca70191f223b455654b49b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>isBottomSingular</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aa42fd2dfa3b0133f2b20a99026549900" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>isCellCentered</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1adf2694988cc929cdd82d3cd2dbb7b0e6" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>isCrossStencil</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a4304750fa837f09df7c0d400b147fe2f" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>isSingular</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a994a31a96c02e31fc58c4bad8ddf0150" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>isTensorOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Location</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a4f2dd2fecc4cbd8df8cdf264330b6cee" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_a_coeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a56c309c11b2dfa0ae7b4153cbf352329" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_a_scalar</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a42ca524eb4deca1132be683805d2d7ab" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_amr_ref_ratio</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a690294478b3f4e211d738879fcc2d487" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_b_coeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a431b88eacbb25a6fc2704cca95790b1b" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_b_scalar</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a20a2d5349510243c481d2b6ce1992f5c" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_bcondloc</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a60785819fb0c997419c7ee7b007e4bb3" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_bndry_cor</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1ab8f93178ea3f02ba63da966de7796970" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_bndry_sol</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a06ea1608702e52d38c0eceaa180bad7e" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_bottom_comm</name></member>
+      <member refid="classamrex_1_1MLLinOp_1abc7e6e6252f9ecc63c86dcbd99250e10" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_coarse_bc_loc</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a1ca01453776c12e634debdc6d09206c3" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_coarse_data_crse_ratio</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ad1382ee007387f65075acda2f46866f2" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_coarse_data_for_bc</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a871355473b2744ad7dd29d691e72e9ee" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_crse_cor_br</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aae58b75937a141dc599d98b034be7f3c" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_crse_sol_br</name></member>
+      <member refid="classamrex_1_1MLLinOp_1addb42fac68158f49c2508cf47d3b8d9d" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_default_comm</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_dmap</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a19bf5f2d76877e5f5777e5c44d290648" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_do_agglomeration</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a488b6dd5c1bfecef948b543bfa7e5154" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_do_consolidation</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a700409c91ec909489e19c53e601de053" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_domain_bloc_hi</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a0fd156d093aacd959e78666105ed6328" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_domain_bloc_lo</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aaba23614888f937956554945e6a2a5a0" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_domain_covered</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aca26a5ef5d68cae3dcabea0a5d8c2493" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_factory</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aeabff149eec600743faac7295cd509d2" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_fluxreg</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_geom</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_grids</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a9d6cdade5abfabf340b180cba282c3c1" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_has_metric_term</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_hibc</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a225329bffa463bc382ff2bc473a21098" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_is_singular</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a1422f7b22ae204247f5cdf20ab70e741" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_ixtype</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_lobc</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1af7504eedbd467f1237874cbc10dd6d39" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_maskvals</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aa53a765aea0ed0c4e7410d147380079f" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_needs_coarse_data_for_bc</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1abd0d6b7a15c37884721f1492fbfc11ed" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_needs_update</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_num_amr_levels</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ababf1d5df3da022563dc90ee2c81ad75" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_num_mg_levels</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a614164d6c8e680ccb5ac8fb9cf1558ed" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_parent</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a2faeb23bc1e93e2b0cd693cb94a18d08" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_raii_comm</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a2ffd8d47358983d3c013b8012eeb1b8e" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_undrrelxr</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a6249249666804079176507b88626a72c" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>make</name></member>
+      <member refid="classamrex_1_1MLLinOp_1af58f71c827253ca415f218f6cf77f1fb" prot="protected" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>makeFactory</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1acb33b0d3e94547e5e0529af6c1cb3d68" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>makeNGrids</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1afdfa7bc321be610fd40835e6fdf9531f" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>makeNLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>maxorder</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ae871a991ef83c33044a22db383c76dcd" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>mg_box_min_width</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aaa5616982aef27c68c5ae5544092c7db" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>mg_coarsen_ratio</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a3ea5c2611e98234737157e36bae6c343" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>mg_domain_min_width</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1abf3b9bd60c5bffecca969aae4b710744" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLABecLaplacian</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a9f2ea8c16adcfb5383747d5954a2ac2d" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLABecLaplacian</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1aad8f38a834cb6fcdddc0912b64431300" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLABecLaplacian</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a2b96df8bcb57809c6f292d39cf5713d3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLABecLaplacian</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1a4645fe35e39e5f36fe87938a48ea9641" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLCellABecLap</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1aff6a0f1c81880c9e944e725098d73a7c" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLCellABecLap</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1a13b727caa58ea6b165dcc414b6c14bae" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLCellABecLap</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1acc45e2dedbc266cc717ffc2239727486" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLCellLinOp</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1acba5508d208bbb531ce2fe45042b4f6f" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLCellLinOp</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a4bb69639aa4cb08113d6d8273fca03ae" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLCellLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a2a75b94dc22faffec8a686f91fbfc9c1" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a7dd2c530e984f58e5a04cc415e9a539b" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a69fbc0ca95c18b6e954c53abb41c885c" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>MLLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a9f6145ef119707fa7ce4fd43542d1c24" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>name</name></member>
+      <member refid="classamrex_1_1MLLinOp_1adcfe0a91f9b85388c17eee6172f02975" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>NAMRLevels</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>needsCoarseDataForBC</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1acf27ddd13356c7c675ec2527d8e80223" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>needsUpdate</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a257d196611ba0ab9d861dc5e0dc23502" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>NMGLevels</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a92b49ce3cd6f8877018a284c9a05663b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>nodalSync</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1ad06bbe924dd6379bb53f3da68c8e28d6" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>normalize</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a79b784fd330fd2b4d0c60b7494800802" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1acfd96476126334e014e13143f1289cf7" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1a7fd4867774038467f97cfac185e235ac" prot="public" virt="non-virtual" ambiguityscope="amrex::MLCellABecLap::"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1ac72a224155e09fd10918b66384ccdb81" prot="public" virt="non-virtual" ambiguityscope="amrex::MLCellABecLap::"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a87fd042ed7a3004a39f75564f24264ca" prot="public" virt="non-virtual" ambiguityscope="amrex::MLCellLinOp::"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a4be43b4a29bd4f7092aa870804870ae2" prot="public" virt="non-virtual" ambiguityscope="amrex::MLCellLinOp::"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ad163e1fa25935bce528783de5adb6b1a" prot="public" virt="non-virtual" ambiguityscope="amrex::MLLinOp::"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aec2118e27e9938788a89f5dda28709f7" prot="public" virt="non-virtual" ambiguityscope="amrex::MLLinOp::"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a627779ad059394a0bd2b3bede177e12a" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>prepareForSolve</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1ae233eeb511516448492f38fe53fa9cd9" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>RealTuple</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a30135624482a762f12f6e66a5b3b10ce" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>reflux</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aa95312f91d2baeeba018a231d162ad9a" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>restriction</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a2dc08f7d45b41d0b9b88c7a96f95b23d" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setACoeffs</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a4746800064d0d00e8318a4e61fa59f22" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setBCoeffs</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac161f1d53e925b82ba5defeb9b0efe70" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setCoarseFineBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac0c0882eb6092218dc09c5d60555ffed" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setCoarseFineBCLocation</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aa034da35bd05e1fb93b8d876a9840ce3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setDomainBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a2402e6343df20087a51fb653a147987d" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setDomainBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aeb7f6e87ab86b49cc97a248b4240d600" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setDomainBCLoc</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aa3a81a04971b2edce1cb836ebaad4b87" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>setLevelBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a45b72169ccf285c17f439c4e990c0f58" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setMaxOrder</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a0c9623cbb85811d65268b7462e09764a" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setScalars</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a4d96a0475759eef80d096851fdedd411" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>setVerbose</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a5a8012e233f7f198d99be52e18a30f1a" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>smooth</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1ab18841d6aec78590a56eeaed61fe4345" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>solutionResidual</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a1f2821b4a51da49d862dae1e757bb8c3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>StateMode</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1ac54e10e50b8b0a19c1424d5a7c311003" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>unapplyMetricTerm</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a7e612906bd561e6b5db7ce47ea0e7d14" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>update</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a7a111e0594b82aca829a78f2bb4ccc0c" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>updateCorBC</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aa3f690703577da48606105e0a58838f3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>updateSolBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a0815357130e78962e01abdaba2b09c21" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>verbose</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a33b01ffee4faf80cdfbe14f6f7d8a6e9" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>xdoty</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1aa1a6fbbfa155e18723eae717876eb6f5" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>~MLABecLaplacian</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1aaa11148ef1cc3386414a3b3d02f9a4b2" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>~MLCellABecLap</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1a4d46c85e7e43e5231e19607a868d3d0f" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>~MLCellLinOp</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac6793724d6b5c98581d42d9233fda1bd" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>~MLLinOp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

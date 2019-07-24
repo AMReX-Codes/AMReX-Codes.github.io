@@ -1,0 +1,904 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1ForkJoin" kind="class" language="C++" prot="public">
+    <compoundname>amrex::ForkJoin</compoundname>
+    <includes refid="AMReX__ForkJoin_8H" local="no">AMReX_ForkJoin.H</includes>
+    <innerclass refid="structamrex_1_1ForkJoin_1_1ComponentSet" prot="public">amrex::ForkJoin::ComponentSet</innerclass>
+    <innerclass refid="structamrex_1_1ForkJoin_1_1MFFork" prot="private">amrex::ForkJoin::MFFork</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" prot="public" static="no">
+        <name>Strategy</name>
+        <enumvalue id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282add5c07036f2975ff4bce568b6511d3bc" prot="public">
+          <name>single</name>
+          <briefdescription>
+<para>one task gets a copy of whole MF </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282a24f1b0a79473250c195c7fb84e393392" prot="public">
+          <name>duplicate</name>
+          <briefdescription>
+<para>all tasks get a copy of whole MF </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282aeefec303079ad17405c889e092e105b0" prot="public">
+          <name>split</name>
+          <briefdescription>
+<para>split MF components across tasks </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="13" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="enum" id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" prot="public" static="no">
+        <name>Intent</name>
+        <enumvalue id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466a13b5bfe96f3e2fe411c9f66f4a582adf" prot="public">
+          <name>in</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466ac68271a63ddbc431c307beb7d2918275" prot="public">
+          <name>out</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466a54c9ccb45f5ee60133cca31fca024432" prot="public">
+          <name>inout</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="18" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a943794e0f810e216579ad8156d11cd20" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::ForkJoin::flag_verbose</definition>
+        <argsstring></argsstring>
+        <name>flag_verbose</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>for debugging </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="175" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1ad9801acca834dcbc7ec55dd3c34f48aa" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::ForkJoin::flag_invoked</definition>
+        <argsstring></argsstring>
+        <name>flag_invoked</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>track if object has been invoked yet </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="176" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a696ffed713794753cb3d42f63eaad6ab" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
+        <definition>Vector&lt;int&gt; amrex::ForkJoin::split_bounds</definition>
+        <argsstring></argsstring>
+        <name>split_bounds</name>
+        <briefdescription>
+<para>task i has ranks over the interval [result[i], result[i+1]) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="177" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1ac7e00cc0d9436d4445b3e338b46dd003" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::ForkJoin::task_me</definition>
+        <argsstring></argsstring>
+        <name>task_me</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+<para>which forked task the rank belongs to </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="178" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a710675d78fd400523b979d941930b56e" prot="private" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="structamrex_1_1BoxArray_1_1RefID" kindref="compound">BoxArray::RefID</ref>, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &gt; &gt;</type>
+        <definition>std::map&lt;BoxArray::RefID, Vector&lt;std::unique_ptr&lt;DistributionMapping&gt; &gt; &gt; amrex::ForkJoin::dms</definition>
+        <argsstring></argsstring>
+        <name>dms</name>
+        <briefdescription>
+<para>DM cache. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="179" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="structamrex_1_1ForkJoin_1_1MFFork" kindref="compound">MFFork</ref> &gt; &gt;</type>
+        <definition>std::unordered_map&lt;std::string, Vector&lt;MFFork&gt; &gt; amrex::ForkJoin::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="180" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ForkJoin_1ac17370c5ba5f31bf037c5ca3992c3f66" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::ForkJoin::task_output_dir</definition>
+        <argsstring></argsstring>
+        <name>task_output_dir</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+<para>where to write task output </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="181" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a0390a77315df9f09143645cbecf24515" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ForkJoin::ForkJoin</definition>
+        <argsstring>(const Vector&lt; int &gt; &amp;task_rank_n)</argsstring>
+        <name>ForkJoin</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
+          <declname>task_rank_n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aac9106c8fc6d9be62cf1a73f2db0e820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ForkJoin::ForkJoin</definition>
+        <argsstring>(const Vector&lt; double &gt; &amp;task_rank_pct)</argsstring>
+        <name>ForkJoin</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; double &gt; &amp;</type>
+          <declname>task_rank_pct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="51" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a2d8bbf7d8eb515f4249b97829a733c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ForkJoin::ForkJoin</definition>
+        <argsstring>(int ntasks)</argsstring>
+        <name>ForkJoin</name>
+        <param>
+          <type>int</type>
+          <declname>ntasks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="35" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="35" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a4eaae5bd6eb7e83442d5db4529cf1443" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ForkJoin::NTasks</definition>
+        <argsstring>() const </argsstring>
+        <name>NTasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="38" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aa34da133f881a877801df750ede8e2a9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ForkJoin::MyTask</definition>
+        <argsstring>() const </argsstring>
+        <name>MyTask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a54d827907888a8e49be3d7028a867770" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::ForkJoin::Verbose</definition>
+        <argsstring>() const </argsstring>
+        <name>Verbose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="42" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1ac9e1d5f47bb112898e4bf7f56d738f0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::SetVerbose</definition>
+        <argsstring>(bool verbose_in)</argsstring>
+        <name>SetVerbose</name>
+        <param>
+          <type>bool</type>
+          <declname>verbose_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="44" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a491e6207589888fb8bdcfd3953d8a8f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structamrex_1_1ForkJoin_1_1ComponentSet" kindref="compound">ComponentSet</ref></type>
+        <definition>ForkJoin::ComponentSet amrex::ForkJoin::ComponentBounds</definition>
+        <argsstring>(const std::string &amp;name, int idx=0) const </argsstring>
+        <name>ComponentBounds</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="46" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="171" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a698d77b52ac90108cb6f8a02c48b1662" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ForkJoin::NProcsTask</definition>
+        <argsstring>(int task) const </argsstring>
+        <name>NProcsTask</name>
+        <param>
+          <type>int</type>
+          <declname>task</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="48" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a66e56de654ced923e6885ebd79bd75f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::reg_mf</definition>
+        <argsstring>(MultiFab &amp;mf, const std::string &amp;name, int idx, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <name>reg_mf</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" kindref="member">Strategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" kindref="member">Intent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>owner</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="107" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aed221768a48c51c89a5b4c2c5d0de5b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::reg_mf</definition>
+        <argsstring>(MultiFab &amp;mf, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <name>reg_mf</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" kindref="member">Strategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" kindref="member">Intent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>owner</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a3a644e5e5a02bd0c163b612784f06c24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::reg_mf</definition>
+        <argsstring>(const MultiFab &amp;mf, const std::string &amp;name, int idx, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <name>reg_mf</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" kindref="member">Strategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" kindref="member">Intent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>owner</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>these overloads are for in case the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> argument is const intent must be in </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="64" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aa15bb285525ea9be4f00ee4dbd6cd1eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::reg_mf</definition>
+        <argsstring>(const MultiFab &amp;mf, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <name>reg_mf</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" kindref="member">Strategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" kindref="member">Intent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>owner</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a578bc53c0adb9017820643c61bdb1226" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::reg_mf_vec</definition>
+        <argsstring>(const Vector&lt; MultiFab * &gt; &amp;mfs, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <name>reg_mf_vec</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
+          <declname>mfs</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" kindref="member">Strategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" kindref="member">Intent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>owner</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="75" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1ae0fe682f85964b5d7c745b1d8ca66e08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::reg_mf_vec</definition>
+        <argsstring>(const Vector&lt; MultiFab const * &gt; &amp;mfs, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <name>reg_mf_vec</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const * &gt; &amp;</type>
+          <declname>mfs</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" kindref="member">Strategy</ref></type>
+          <declname>strategy</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" kindref="member">Intent</ref></type>
+          <declname>intent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>owner</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+<para>overload in case of vector of pointer to const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="84" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a96e939e22bb7efb14a07a6f9260cce89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::modify_ngrow</definition>
+        <argsstring>(const std::string &amp;name, int idx, IntVect ngrow)</argsstring>
+        <name>modify_ngrow</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>ngrow</declname>
+        </param>
+        <briefdescription>
+<para>modify the number of grow cells associated with the multifab </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="141" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a89798a7caff182b9c8e3d5803842fd5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::modify_ngrow</definition>
+        <argsstring>(const std::string &amp;name, IntVect ngrow)</argsstring>
+        <name>modify_ngrow</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>ngrow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="94" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="94" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1acd674b9f0159c359a040afa7e3ba4fe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::modify_split</definition>
+        <argsstring>(const std::string &amp;name, int idx, Vector&lt; ComponentSet &gt; comp_split)</argsstring>
+        <name>modify_split</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="structamrex_1_1ForkJoin_1_1ComponentSet" kindref="compound">ComponentSet</ref> &gt;</type>
+          <declname>comp_split</declname>
+        </param>
+        <briefdescription>
+<para>modify how the multifab is split along components across the tasks </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="155" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aeeadf363cdd980b987df6b196dcd8c6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::modify_split</definition>
+        <argsstring>(const std::string &amp;name, Vector&lt; ComponentSet &gt; comp_split)</argsstring>
+        <name>modify_split</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="structamrex_1_1ForkJoin_1_1ComponentSet" kindref="compound">ComponentSet</ref> &gt;</type>
+          <declname>comp_split</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a7d6ce14751cb1212501bb1cdc36f57cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+        <definition>MultiFab&amp; amrex::ForkJoin::get_mf</definition>
+        <argsstring>(const std::string &amp;name, int idx=0)</argsstring>
+        <name>get_mf</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a8e0a68a47c9455b335eff47b577a44cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt;</type>
+        <definition>Vector&lt;MultiFab *&gt; amrex::ForkJoin::get_mf_vec</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>get_mf_vec</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>vector of pointers to all MFs under a name </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="113" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a9bda4e24001c99d756c6104f67925e72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::set_task_output_dir</definition>
+        <argsstring>(const std::string &amp;dir)</argsstring>
+        <name>set_task_output_dir</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="122" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a2f557068fd57a8cd131263fa6769b631" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class F</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ForkJoin::fork_join</definition>
+        <argsstring>(const F &amp;fn)</argsstring>
+        <name>fork_join</name>
+        <param>
+          <type>const F &amp;</type>
+          <declname>fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="133" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1acc05284c00f1aafed90fb1c2a2fd6386" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void amrex::ForkJoin::set_task_output_file</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>set_task_output_file</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="127" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="127" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1af6b2818bec6a86128f3594b6684d4a42" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::init</definition>
+        <argsstring>(const Vector&lt; int &gt; &amp;task_rank_n)</argsstring>
+        <name>init</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt; &amp;</type>
+          <declname>task_rank_n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="183" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="69" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1ac35ec951548cc1e54dfc60b0d65df8e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+        <definition>const DistributionMapping &amp; amrex::ForkJoin::get_dm</definition>
+        <argsstring>(const BoxArray &amp;ba, int task_idx, const DistributionMapping &amp;dm_orig)</argsstring>
+        <name>get_dm</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>task_idx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm_orig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>multiple MultiFabs may share the same box array only compute the DM once per unique (box array, task) pair and cache it create map from box array RefID to vector of <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> indexed by task ID </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="189" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="283" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a76a2bb1b6fb5ffd97b28020531b6f3f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::copy_data_to_tasks</definition>
+        <argsstring>()</argsstring>
+        <name>copy_data_to_tasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>this is called before ParallelContext::split the parent task is the top frame in <ref refid="namespaceamrex_1_1ParallelContext" kindref="compound">ParallelContext</ref>&apos;s stack </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="195" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="179" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1ad79ddeb1fdd7d6a72546c66728b3ccd8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::copy_data_from_tasks</definition>
+        <argsstring>()</argsstring>
+        <name>copy_data_from_tasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>this is called after ParallelContext::unsplit the parent task is the top frame in <ref refid="namespaceamrex_1_1ParallelContext" kindref="compound">ParallelContext</ref>&apos;s stack </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="200" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="241" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1af28d2dad955c8aeeb067472559794d86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+        <definition>MPI_Comm amrex::ForkJoin::split_tasks</definition>
+        <argsstring>()</argsstring>
+        <name>split_tasks</name>
+        <briefdescription>
+<para>split top frame of stack </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="203" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="330" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1ad4b77ac1de1547c3903014ba22c0306b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ForkJoin::create_task_output_dir</definition>
+        <argsstring>()</argsstring>
+        <name>create_task_output_dir</name>
+        <briefdescription>
+<para>create the task output directory </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="206" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="352" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aecdcd8a490ce68812e19ba6e6f17d320" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string amrex::ForkJoin::get_io_filename</definition>
+        <argsstring>(bool flag_unique=false)</argsstring>
+        <name>get_io_filename</name>
+        <param>
+          <type>bool</type>
+          <declname>flag_unique</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>unique output file for this sub-task </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="209" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="365" bodyend="387"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2760">
+        <label>amrex::ForkJoin</label>
+        <link refid="classamrex_1_1ForkJoin"/>
+        <childnode refid="2761" relation="usage">
+          <edgelabel>split_bounds</edgelabel>
+        </childnode>
+        <childnode refid="2763" relation="usage">
+          <edgelabel>task_output_dir</edgelabel>
+        </childnode>
+      </node>
+      <node id="2761">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="2762" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2763">
+        <label>string</label>
+      </node>
+      <node id="2762">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" line="10" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="9" bodyend="210"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1ForkJoin_1a491e6207589888fb8bdcfd3953d8a8f6" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>ComponentBounds</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ad79ddeb1fdd7d6a72546c66728b3ccd8" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>copy_data_from_tasks</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a76a2bb1b6fb5ffd97b28020531b6f3f6" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>copy_data_to_tasks</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ad4b77ac1de1547c3903014ba22c0306b" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>create_task_output_dir</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>data</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a710675d78fd400523b979d941930b56e" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>dms</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ad9801acca834dcbc7ec55dd3c34f48aa" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>flag_invoked</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a943794e0f810e216579ad8156d11cd20" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>flag_verbose</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a2f557068fd57a8cd131263fa6769b631" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>fork_join</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a0390a77315df9f09143645cbecf24515" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>ForkJoin</name></member>
+      <member refid="classamrex_1_1ForkJoin_1aac9106c8fc6d9be62cf1a73f2db0e820" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>ForkJoin</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a2d8bbf7d8eb515f4249b97829a733c33" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>ForkJoin</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ac35ec951548cc1e54dfc60b0d65df8e8" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>get_dm</name></member>
+      <member refid="classamrex_1_1ForkJoin_1aecdcd8a490ce68812e19ba6e6f17d320" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>get_io_filename</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a7d6ce14751cb1212501bb1cdc36f57cb" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>get_mf</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a8e0a68a47c9455b335eff47b577a44cb" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>get_mf_vec</name></member>
+      <member refid="classamrex_1_1ForkJoin_1af6b2818bec6a86128f3594b6684d4a42" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>init</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>Intent</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a96e939e22bb7efb14a07a6f9260cce89" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>modify_ngrow</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a89798a7caff182b9c8e3d5803842fd5c" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>modify_ngrow</name></member>
+      <member refid="classamrex_1_1ForkJoin_1acd674b9f0159c359a040afa7e3ba4fe8" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>modify_split</name></member>
+      <member refid="classamrex_1_1ForkJoin_1aeeadf363cdd980b987df6b196dcd8c6d" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>modify_split</name></member>
+      <member refid="classamrex_1_1ForkJoin_1aa34da133f881a877801df750ede8e2a9" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>MyTask</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a698d77b52ac90108cb6f8a02c48b1662" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>NProcsTask</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a4eaae5bd6eb7e83442d5db4529cf1443" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>NTasks</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a66e56de654ced923e6885ebd79bd75f2" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
+      <member refid="classamrex_1_1ForkJoin_1aed221768a48c51c89a5b4c2c5d0de5b3" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a3a644e5e5a02bd0c163b612784f06c24" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
+      <member refid="classamrex_1_1ForkJoin_1aa15bb285525ea9be4f00ee4dbd6cd1eb" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a578bc53c0adb9017820643c61bdb1226" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf_vec</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ae0fe682f85964b5d7c745b1d8ca66e08" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf_vec</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a9bda4e24001c99d756c6104f67925e72" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>set_task_output_dir</name></member>
+      <member refid="classamrex_1_1ForkJoin_1acc05284c00f1aafed90fb1c2a2fd6386" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>set_task_output_file</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ac9e1d5f47bb112898e4bf7f56d738f0a" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>SetVerbose</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a696ffed713794753cb3d42f63eaad6ab" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>split_bounds</name></member>
+      <member refid="classamrex_1_1ForkJoin_1af28d2dad955c8aeeb067472559794d86" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>split_tasks</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>Strategy</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ac7e00cc0d9436d4445b3e338b46dd003" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>task_me</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ac17370c5ba5f31bf037c5ca3992c3f66" prot="private" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>task_output_dir</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a54d827907888a8e49be3d7028a867770" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>Verbose</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

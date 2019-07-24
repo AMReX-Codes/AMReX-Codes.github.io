@@ -1,0 +1,1389 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__FillPatchUtil_8H" kind="file" language="C++">
+    <compoundname>AMReX_FillPatchUtil.H</compoundname>
+    <includes refid="AMReX__MultiFab_8H" local="no">AMReX_MultiFab.H</includes>
+    <includes refid="AMReX__Geometry_8H" local="no">AMReX_Geometry.H</includes>
+    <includes refid="AMReX__PhysBCFunct_8H" local="no">AMReX_PhysBCFunct.H</includes>
+    <includes refid="AMReX__Interpolater_8H" local="no">AMReX_Interpolater.H</includes>
+    <includes refid="AMReX__Array_8H" local="no">AMReX_Array.H</includes>
+    <includedby refid="AMReX__AmrLevel_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_AmrLevel.cpp</includedby>
+    <includedby refid="AMReX__AsyncFillPatch_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_AsyncFillPatch.cpp</includedby>
+    <includedby refid="AMReX__AmrParticles_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_AmrParticles.H</includedby>
+    <includedby refid="AMReX__FillPatchUtil_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp</includedby>
+    <includedby refid="AMReX__EB__LSCoreBase_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp</includedby>
+    <incdepgraph>
+      <node id="2946">
+        <label>AMReX_ParallelContext.H</label>
+        <link refid="AMReX__ParallelContext_8H"/>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2947" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2889" relation="include">
+        </childnode>
+      </node>
+      <node id="2971">
+        <label>iomanip</label>
+      </node>
+      <node id="2893">
+        <label>functional</label>
+      </node>
+      <node id="2942">
+        <label>AMReX_BoxArray.H</label>
+        <link refid="AMReX__BoxArray_8H"/>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2943" relation="include">
+        </childnode>
+        <childnode refid="2919" relation="include">
+        </childnode>
+        <childnode refid="2925" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+      </node>
+      <node id="2934">
+        <label>AMReX_BoxIterator.H</label>
+        <link refid="AMReX__BoxIterator_8H"/>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+      </node>
+      <node id="2916">
+        <label>limits</label>
+      </node>
+      <node id="2933">
+        <label>AMReX_BLProfiler.H</label>
+        <link refid="AMReX__BLProfiler_8H"/>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+      </node>
+      <node id="2972">
+        <label>AMReX_CudaContainers.H</label>
+        <link refid="AMReX__CudaContainers_8H"/>
+        <childnode refid="2954" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2969" relation="include">
+        </childnode>
+      </node>
+      <node id="2899">
+        <label>AMReX_Box.H</label>
+        <link refid="AMReX__Box_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2901" relation="include">
+        </childnode>
+        <childnode refid="2912" relation="include">
+        </childnode>
+        <childnode refid="2889" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2919" relation="include">
+        </childnode>
+        <childnode refid="2920" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2921" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+      </node>
+      <node id="2963">
+        <label>AMReX_GpuUtility.H</label>
+        <link refid="AMReX__GpuUtility_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2960" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2921" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2915" relation="include">
+        </childnode>
+      </node>
+      <node id="2885">
+        <label>cstdint</label>
+      </node>
+      <node id="2983">
+        <label>AMReX_FabArrayBase.H</label>
+        <link refid="AMReX__FabArrayBase_8H"/>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2942" relation="include">
+        </childnode>
+        <childnode refid="2944" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+        <childnode refid="2984" relation="include">
+        </childnode>
+        <childnode refid="2982" relation="include">
+        </childnode>
+        <childnode refid="2970" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2955" relation="include">
+        </childnode>
+      </node>
+      <node id="2944">
+        <label>AMReX_DistributionMapping.H</label>
+        <link refid="AMReX__DistributionMapping_8H"/>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+      </node>
+      <node id="2913">
+        <label>AMReX_IntVect.H</label>
+        <link refid="AMReX__IntVect_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2915" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2917" relation="include">
+        </childnode>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2889" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2904" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2888" relation="include">
+        </childnode>
+      </node>
+      <node id="2887">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2889" relation="include">
+        </childnode>
+        <childnode refid="2890" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2893" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2895" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+      </node>
+      <node id="2935">
+        <label>AMReX_MakeType.H</label>
+        <link refid="AMReX__MakeType_8H"/>
+      </node>
+      <node id="2962">
+        <label>AMReX_GpuLaunchFunctsC.H</label>
+        <link refid="AMReX__GpuLaunchFunctsC_8H"/>
+      </node>
+      <node id="2957">
+        <label>AMReX_GpuError.H</label>
+        <link refid="AMReX__GpuError_8H"/>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+      </node>
+      <node id="2918">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+      </node>
+      <node id="2883">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H</label>
+        <link refid="AMReX_FillPatchUtil.H"/>
+        <childnode refid="2884" relation="include">
+        </childnode>
+        <childnode refid="2977" relation="include">
+        </childnode>
+        <childnode refid="2989" relation="include">
+        </childnode>
+        <childnode refid="2994" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+      </node>
+      <node id="2970">
+        <label>AMReX_Print.H</label>
+        <link refid="AMReX__Print_8H"/>
+        <childnode refid="2909" relation="include">
+        </childnode>
+        <childnode refid="2947" relation="include">
+        </childnode>
+        <childnode refid="2971" relation="include">
+        </childnode>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2946" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+      </node>
+      <node id="2915">
+        <label>cmath</label>
+      </node>
+      <node id="2981">
+        <label>cassert</label>
+      </node>
+      <node id="2891">
+        <label>stdexcept</label>
+      </node>
+      <node id="2954">
+        <label>numeric</label>
+      </node>
+      <node id="2925">
+        <label>AMReX_BoxList.H</label>
+        <link refid="AMReX__BoxList_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2919" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+      </node>
+      <node id="2922">
+        <label>AMReX_BaseFab.H</label>
+        <link refid="AMReX__BaseFab_8H"/>
+        <childnode refid="2915" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2917" relation="include">
+        </childnode>
+        <childnode refid="2907" relation="include">
+        </childnode>
+        <childnode refid="2923" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2924" relation="include">
+        </childnode>
+        <childnode refid="2925" relation="include">
+        </childnode>
+        <childnode refid="2926" relation="include">
+        </childnode>
+        <childnode refid="2929" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2933" relation="include">
+        </childnode>
+        <childnode refid="2934" relation="include">
+        </childnode>
+        <childnode refid="2935" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2955" relation="include">
+        </childnode>
+      </node>
+      <node id="2894">
+        <label>string</label>
+      </node>
+      <node id="2969">
+        <label>AMReX_CudaAllocators.H</label>
+        <link refid="AMReX__CudaAllocators_8H"/>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2970" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2960" relation="include">
+        </childnode>
+      </node>
+      <node id="2924">
+        <label>AMReX_Loop.H</label>
+        <link refid="AMReX__Loop_8H"/>
+        <childnode refid="2899" relation="include">
+        </childnode>
+      </node>
+      <node id="2937">
+        <label>map</label>
+      </node>
+      <node id="2884">
+        <label>AMReX_MultiFab.H</label>
+        <link refid="AMReX__MultiFab_8H"/>
+        <childnode refid="2885" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2898" relation="include">
+        </childnode>
+        <childnode refid="2975" relation="include">
+        </childnode>
+        <childnode refid="2988" relation="include">
+        </childnode>
+        <childnode refid="2982" relation="include">
+        </childnode>
+      </node>
+      <node id="2932">
+        <label>unordered_set</label>
+      </node>
+      <node id="2987">
+        <label>AMReX_FabArrayCommI.H</label>
+        <link refid="AMReX__FabArrayCommI_8H"/>
+      </node>
+      <node id="2986">
+        <label>AMReX_LayoutData.H</label>
+        <link refid="AMReX__LayoutData_8H"/>
+        <childnode refid="2983" relation="include">
+        </childnode>
+        <childnode refid="2985" relation="include">
+        </childnode>
+      </node>
+      <node id="2947">
+        <label>fstream</label>
+      </node>
+      <node id="2977">
+        <label>AMReX_Geometry.H</label>
+        <link refid="AMReX__Geometry_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2978" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+        <childnode refid="2979" relation="include">
+        </childnode>
+        <childnode refid="2982" relation="include">
+        </childnode>
+      </node>
+      <node id="2985">
+        <label>AMReX_MFIter.H</label>
+        <link refid="AMReX__MFIter_8H"/>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2983" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2898" relation="include">
+        </childnode>
+        <childnode refid="2979" relation="include">
+        </childnode>
+        <childnode refid="2955" relation="include">
+        </childnode>
+      </node>
+      <node id="2912">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="2905" relation="include">
+        </childnode>
+      </node>
+      <node id="2979">
+        <label>AMReX_RealBox.H</label>
+        <link refid="AMReX__RealBox_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2907" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2980" relation="include">
+        </childnode>
+      </node>
+      <node id="2906">
+        <label>AMReX_Array.H</label>
+        <link refid="AMReX__Array_8H"/>
+        <childnode refid="2907" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2908" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2909" relation="include">
+        </childnode>
+        <childnode refid="2895" relation="include">
+        </childnode>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+      </node>
+      <node id="2968">
+        <label>AMReX_GpuReduce.H</label>
+        <link refid="AMReX__GpuReduce_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+      </node>
+      <node id="2911">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+      </node>
+      <node id="2984">
+        <label>AMReX_ParallelReduce.H</label>
+        <link refid="AMReX__ParallelReduce_8H"/>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+        <childnode refid="2970" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2923" relation="include">
+        </childnode>
+      </node>
+      <node id="2903">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="2956">
+        <label>AMReX_GpuLaunch.H</label>
+        <link refid="AMReX__GpuLaunch_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2957" relation="include">
+        </childnode>
+        <childnode refid="2958" relation="include">
+        </childnode>
+        <childnode refid="2960" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2924" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2959" relation="include">
+        </childnode>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2961" relation="include">
+        </childnode>
+        <childnode refid="2962" relation="include">
+        </childnode>
+      </node>
+      <node id="2939">
+        <label>sys/types.h</label>
+      </node>
+      <node id="2982">
+        <label>AMReX_Periodicity.H</label>
+        <link refid="AMReX__Periodicity_8H"/>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+      </node>
+      <node id="2953">
+        <label>typeinfo</label>
+      </node>
+      <node id="2895">
+        <label>cstdio</label>
+      </node>
+      <node id="2990">
+        <label>AMReX_BCRec.H</label>
+        <link refid="AMReX__BCRec_8H"/>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2991" relation="include">
+        </childnode>
+      </node>
+      <node id="2959">
+        <label>AMReX_TypeTraits.H</label>
+        <link refid="AMReX__TypeTraits_8H"/>
+        <childnode refid="2923" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+      </node>
+      <node id="2910">
+        <label>AMReX_GpuControl.H</label>
+        <link refid="AMReX__GpuControl_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+      </node>
+      <node id="2991">
+        <label>AMReX_BC_TYPES.H</label>
+        <link refid="AMReX__BC__TYPES_8H"/>
+      </node>
+      <node id="2948">
+        <label>AMReX_BLBackTrace.H</label>
+        <link refid="AMReX__BLBackTrace_8H"/>
+        <childnode refid="2949" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2908" relation="include">
+        </childnode>
+        <childnode refid="2909" relation="include">
+        </childnode>
+        <childnode refid="2895" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2950" relation="include">
+        </childnode>
+        <childnode refid="2951" relation="include">
+        </childnode>
+        <childnode refid="2952" relation="include">
+        </childnode>
+      </node>
+      <node id="2940">
+        <label>unistd.h</label>
+      </node>
+      <node id="2994">
+        <label>AMReX_Interpolater.H</label>
+        <link refid="AMReX__Interpolater_8H"/>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2990" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+      </node>
+      <node id="2949">
+        <label>stack</label>
+      </node>
+      <node id="2896">
+        <label>vector</label>
+      </node>
+      <node id="2974">
+        <label>AMReX_FabFactory.H</label>
+        <link refid="AMReX__FabFactory_8H"/>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2970" relation="include">
+        </childnode>
+        <childnode refid="2935" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+      </node>
+      <node id="2886">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="2887" relation="include">
+        </childnode>
+      </node>
+      <node id="2888">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+      </node>
+      <node id="2908">
+        <label>utility</label>
+      </node>
+      <node id="2907">
+        <label>array</label>
+      </node>
+      <node id="2975">
+        <label>AMReX_FabArray.H</label>
+        <link refid="AMReX__FabArray_8H"/>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2965" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2908" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2930" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2942" relation="include">
+        </childnode>
+        <childnode refid="2976" relation="include">
+        </childnode>
+        <childnode refid="2974" relation="include">
+        </childnode>
+        <childnode refid="2944" relation="include">
+        </childnode>
+        <childnode refid="2977" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2889" relation="include">
+        </childnode>
+        <childnode refid="2933" relation="include">
+        </childnode>
+        <childnode refid="2982" relation="include">
+        </childnode>
+        <childnode refid="2970" relation="include">
+        </childnode>
+        <childnode refid="2983" relation="include">
+        </childnode>
+        <childnode refid="2985" relation="include">
+        </childnode>
+        <childnode refid="2935" relation="include">
+        </childnode>
+        <childnode refid="2959" relation="include">
+        </childnode>
+        <childnode refid="2986" relation="include">
+        </childnode>
+        <childnode refid="2922" relation="include">
+        </childnode>
+        <childnode refid="2955" relation="include">
+        </childnode>
+        <childnode refid="2987" relation="include">
+        </childnode>
+      </node>
+      <node id="2898">
+        <label>AMReX_FArrayBox.H</label>
+        <link refid="AMReX__FArrayBox_8H"/>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2922" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2974" relation="include">
+        </childnode>
+        <childnode refid="2915" relation="include">
+        </childnode>
+      </node>
+      <node id="2909">
+        <label>sstream</label>
+      </node>
+      <node id="2988">
+        <label>AMReX_FabArrayUtility.H</label>
+        <link refid="AMReX__FabArrayUtility_8H"/>
+        <childnode refid="2975" relation="include">
+        </childnode>
+        <childnode refid="2986" relation="include">
+        </childnode>
+        <childnode refid="2970" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+      </node>
+      <node id="2890">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="2891" relation="include">
+        </childnode>
+      </node>
+      <node id="2901">
+        <label>AMReX_Algorithm.H</label>
+        <link refid="AMReX__Algorithm_8H"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2904" relation="include">
+        </childnode>
+      </node>
+      <node id="2958">
+        <label>AMReX_GpuRange.H</label>
+        <link refid="AMReX__GpuRange_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2957" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2959" relation="include">
+        </childnode>
+      </node>
+      <node id="2945">
+        <label>AMReX_ParallelDescriptor.H</label>
+        <link refid="AMReX__ParallelDescriptor_8H"/>
+        <childnode refid="2889" relation="include">
+        </childnode>
+        <childnode refid="2946" relation="include">
+        </childnode>
+        <childnode refid="2948" relation="include">
+        </childnode>
+        <childnode refid="2933" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2953" relation="include">
+        </childnode>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2893" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2954" relation="include">
+        </childnode>
+      </node>
+      <node id="2936">
+        <label>AMReX_Utility.H</label>
+        <link refid="AMReX__Utility_8H"/>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2894" relation="include">
+        </childnode>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2938" relation="include">
+        </childnode>
+        <childnode refid="2923" relation="include">
+        </childnode>
+        <childnode refid="2939" relation="include">
+        </childnode>
+        <childnode refid="2940" relation="include">
+        </childnode>
+        <childnode refid="2941" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2942" relation="include">
+        </childnode>
+        <childnode refid="2944" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+      </node>
+      <node id="2927">
+        <label>AMReX_Arena.H</label>
+        <link refid="AMReX__Arena_8H"/>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2920">
+        <label>AMReX_Orientation.H</label>
+        <link refid="AMReX__Orientation_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2886" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2888" relation="include">
+        </childnode>
+      </node>
+      <node id="2904">
+        <label>AMReX_Dim3.H</label>
+        <link refid="AMReX__Dim3_8H"/>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+      </node>
+      <node id="2941">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="2900">
+        <label>iosfwd</label>
+      </node>
+      <node id="2914">
+        <label>cstdlib</label>
+      </node>
+      <node id="2952">
+        <label>cfenv</label>
+      </node>
+      <node id="2892">
+        <label>iostream</label>
+      </node>
+      <node id="2919">
+        <label>AMReX_IndexType.H</label>
+        <link refid="AMReX__IndexType_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2889" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+      </node>
+      <node id="2992">
+        <label>AMReX_FilCC_C.H</label>
+        <link refid="AMReX__FilCC__C_8H"/>
+        <childnode refid="2993" relation="include">
+        </childnode>
+      </node>
+      <node id="2921">
+        <label>AMReX_Array4.H</label>
+        <link refid="AMReX__Array4_8H"/>
+        <childnode refid="2913" relation="include">
+        </childnode>
+      </node>
+      <node id="2928">
+        <label>cstddef</label>
+      </node>
+      <node id="2943">
+        <label>unordered_map</label>
+      </node>
+      <node id="2976">
+        <label>AMReX_BoxDomain.H</label>
+        <link refid="AMReX__BoxDomain_8H"/>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2919" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2925" relation="include">
+        </childnode>
+      </node>
+      <node id="2955">
+        <label>AMReX_Gpu.H</label>
+        <link refid="AMReX__Gpu_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2956" relation="include">
+        </childnode>
+        <childnode refid="2957" relation="include">
+        </childnode>
+        <childnode refid="2963" relation="include">
+        </childnode>
+        <childnode refid="2960" relation="include">
+        </childnode>
+        <childnode refid="2964" relation="include">
+        </childnode>
+        <childnode refid="2966" relation="include">
+        </childnode>
+        <childnode refid="2967" relation="include">
+        </childnode>
+        <childnode refid="2958" relation="include">
+        </childnode>
+        <childnode refid="2968" relation="include">
+        </childnode>
+        <childnode refid="2969" relation="include">
+        </childnode>
+        <childnode refid="2972" relation="include">
+        </childnode>
+        <childnode refid="2973" relation="include">
+        </childnode>
+      </node>
+      <node id="2917">
+        <label>climits</label>
+      </node>
+      <node id="2973">
+        <label>AMReX_CudaGraph.H</label>
+        <link refid="AMReX__CudaGraph_8H"/>
+      </node>
+      <node id="2931">
+        <label>mutex</label>
+      </node>
+      <node id="2938">
+        <label>chrono</label>
+      </node>
+      <node id="2961">
+        <label>AMReX_GpuLaunchMacrosC.H</label>
+        <link refid="AMReX__GpuLaunchMacrosC_8H"/>
+      </node>
+      <node id="2951">
+        <label>csignal</label>
+      </node>
+      <node id="2929">
+        <label>AMReX_CArena.H</label>
+        <link refid="AMReX__CArena_8H"/>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2930" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+        <childnode refid="2931" relation="include">
+        </childnode>
+        <childnode refid="2932" relation="include">
+        </childnode>
+        <childnode refid="2893" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+      </node>
+      <node id="2923">
+        <label>type_traits</label>
+      </node>
+      <node id="2930">
+        <label>set</label>
+      </node>
+      <node id="2926">
+        <label>AMReX_BArena.H</label>
+        <link refid="AMReX__BArena_8H"/>
+        <childnode refid="2927" relation="include">
+        </childnode>
+      </node>
+      <node id="2889">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+      </node>
+      <node id="2993">
+        <label>AMReX_FilCC_3D_C.H</label>
+        <link refid="AMReX__FilCC__3D__C_8H"/>
+        <childnode refid="2898" relation="include">
+        </childnode>
+        <childnode refid="2990" relation="include">
+        </childnode>
+        <childnode refid="2977" relation="include">
+        </childnode>
+      </node>
+      <node id="2966">
+        <label>AMReX_GpuElixir.H</label>
+        <link refid="AMReX__GpuElixir_8H"/>
+        <childnode refid="2927" relation="include">
+        </childnode>
+      </node>
+      <node id="2902">
+        <label>algorithm</label>
+      </node>
+      <node id="2960">
+        <label>AMReX_GpuDevice.H</label>
+        <link refid="AMReX__GpuDevice_8H"/>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2907" relation="include">
+        </childnode>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2957" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+      </node>
+      <node id="2989">
+        <label>AMReX_PhysBCFunct.H</label>
+        <link refid="AMReX__PhysBCFunct_8H"/>
+        <childnode refid="2990" relation="include">
+        </childnode>
+        <childnode refid="2977" relation="include">
+        </childnode>
+        <childnode refid="2884" relation="include">
+        </childnode>
+        <childnode refid="2912" relation="include">
+        </childnode>
+        <childnode refid="2992" relation="include">
+        </childnode>
+        <childnode refid="2959" relation="include">
+        </childnode>
+      </node>
+      <node id="2950">
+        <label>execinfo.h</label>
+      </node>
+      <node id="2965">
+        <label>cstring</label>
+      </node>
+      <node id="2980">
+        <label>AMReX_RealVect.H</label>
+        <link refid="AMReX__RealVect_8H"/>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2965" relation="include">
+        </childnode>
+        <childnode refid="2892" relation="include">
+        </childnode>
+        <childnode refid="2915" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+        <childnode refid="2896" relation="include">
+        </childnode>
+        <childnode refid="2981" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+      </node>
+      <node id="2978">
+        <label>AMReX_CoordSys.H</label>
+        <link refid="AMReX__CoordSys_8H"/>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2887" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2899" relation="include">
+        </childnode>
+      </node>
+      <node id="2897">
+        <label>memory</label>
+      </node>
+      <node id="2964">
+        <label>AMReX_GpuAsyncArray.H</label>
+        <link refid="AMReX__GpuAsyncArray_8H"/>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2965" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2959" relation="include">
+        </childnode>
+        <childnode refid="2960" relation="include">
+        </childnode>
+      </node>
+      <node id="2967">
+        <label>AMReX_GpuMemory.H</label>
+        <link refid="AMReX__GpuMemory_8H"/>
+        <childnode refid="2888" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+        <childnode refid="2960" relation="include">
+        </childnode>
+        <childnode refid="2959" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2905">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="2903" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2995">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H</label>
+        <link refid="AMReX_FillPatchUtil.H"/>
+        <childnode refid="2996" relation="include">
+        </childnode>
+        <childnode refid="2997" relation="include">
+        </childnode>
+        <childnode refid="2998" relation="include">
+        </childnode>
+        <childnode refid="2999" relation="include">
+        </childnode>
+        <childnode refid="3000" relation="include">
+        </childnode>
+      </node>
+      <node id="2998">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_AmrParticles.H</label>
+        <link refid="AMReX__AmrParticles_8H"/>
+      </node>
+      <node id="3000">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_LSCoreBase.cpp</label>
+        <link refid="AMReX__EB__LSCoreBase_8cpp"/>
+      </node>
+      <node id="2999">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp</label>
+        <link refid="AMReX__FillPatchUtil_8cpp"/>
+      </node>
+      <node id="2997">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_AsyncFillPatch.cpp</label>
+        <link refid="AMReX__AsyncFillPatch_8cpp"/>
+      </node>
+      <node id="2996">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_AmrLevel.cpp</label>
+        <link refid="AMReX__AmrLevel_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classamrex_1_1InterpHook" prot="public">amrex::InterpHook</innerclass>
+    <innerclass refid="classamrex_1_1NullInterpHook" prot="public">amrex::NullInterpHook</innerclass>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AMREX_FillPatchUtil_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FillPatchUtil_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MultiFab_8H" kindref="compound">AMReX_MultiFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Geometry_8H" kindref="compound">AMReX_Geometry.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__PhysBCFunct_8H" kindref="compound">AMReX_PhysBCFunct.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Interpolater_8H" kindref="compound">AMReX_Interpolater.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Array_8H" kindref="compound">AMReX_Array.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__EB2_8H" kindref="compound">AMReX_EB2.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="classamrex_1_1InterpHook" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18" refid="classamrex_1_1InterpHook_1a1e26496056b32e6492b27c2b91e8d7e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook_1a1e26496056b32e6492b27c2b91e8d7e7" kindref="member">~InterpHook</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook_1acaa54be15c5b4c304656c912c43e1f8d" kindref="member">operator() </ref>(<ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>fab,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classamrex_1_1NullInterpHook" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1NullInterpHook" kindref="compound">NullInterpHook</ref><sp/>final</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="classamrex_1_1NullInterpHook_1a05a64e0431bec725b08973eabe63af63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook_1acaa54be15c5b4c304656c912c43e1f8d" kindref="member">operator() </ref>(<ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>fab,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>{}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a913d4d8f55e1995cc13187a4a8683271" kindref="member">ProperlyNested</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&amp;<sp/>ratio,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&amp;<sp/>blockint_factor,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ngrow,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>&amp;<sp/>boxType,<sp/><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref>*<sp/>mapper);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a9a10ec11fd10345c8863b88a5188b38b" kindref="member">FillPatchSingleLevel</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>mf,<sp/>Real<sp/>time,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MultiFab*&gt;</ref>&amp;<sp/>smf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref>&amp;<sp/>stime,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>physbcf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcfcomp);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8b250e0f2c6f2f0537764b81e8a0a148" kindref="member">FillPatchTwoLevels</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>mf,<sp/>Real<sp/>time,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MultiFab*&gt;</ref>&amp;<sp/>cmf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref>&amp;<sp/>ct,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MultiFab*&gt;</ref>&amp;<sp/>fmf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref>&amp;<sp/>ft,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>cgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>fgeom,<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>cbc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cbccomp,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>fbc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fbccomp,</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&amp;<sp/>ratio,<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref>*<sp/>mapper,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BCRec&gt;</ref>&amp;<sp/>bcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcscomp,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref>&amp;<sp/>pre_interp<sp/>=<sp/><ref refid="classamrex_1_1NullInterpHook" kindref="compound">NullInterpHook</ref>(),</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref>&amp;<sp/>post_interp<sp/>=<sp/><ref refid="classamrex_1_1NullInterpHook" kindref="compound">NullInterpHook</ref>());</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8b250e0f2c6f2f0537764b81e8a0a148" kindref="member">FillPatchTwoLevels</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>mf,<sp/>Real<sp/>time,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EB2_1_1IndexSpace" kindref="compound">EB2::IndexSpace</ref>&amp;<sp/>index_space,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MultiFab*&gt;</ref>&amp;<sp/>cmf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref>&amp;<sp/>ct,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MultiFab*&gt;</ref>&amp;<sp/>fmf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref>&amp;<sp/>ft,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>cgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>fgeom,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>cbc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cbccomp,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>fbc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fbccomp,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&amp;<sp/>ratio,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref>*<sp/>mapper,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BCRec&gt;</ref>&amp;<sp/>bcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcscomp,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref>&amp;<sp/>pre_interp,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref>&amp;<sp/>post_interp);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a69d6f6444b4d19e5e0bb84a8aafcce02" kindref="member">InterpFromCoarseLevel</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>mf,<sp/>Real<sp/>time,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>cmf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>cgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>fgeom,<sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>cbc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cbccomp,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref>&amp;<sp/>fbc,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fbccomp,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&amp;<sp/>ratio,<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref>*<sp/>mapper,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BCRec&gt;</ref>&amp;<sp/>bcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcscomp,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref>&amp;<sp/>pre_interp<sp/>=<sp/><ref refid="classamrex_1_1NullInterpHook" kindref="compound">NullInterpHook</ref>(),</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref>&amp;<sp/>post_interp<sp/>=<sp/><ref refid="classamrex_1_1NullInterpHook" kindref="compound">NullInterpHook</ref>());</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80df" kindref="member">InterpEM_t</ref><sp/>{<sp/><ref refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80dfaea241117e55edc2764d31a18a4740ff3" kindref="member">InterpE</ref>,<sp/><ref refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80dfa9d55599aaee42c677bcd175e50bebbca" kindref="member">InterpB</ref>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a331b0725efb68a4f9224f12e6d6df4dd" kindref="member">InterpCrseFineBndryEMfield</ref><sp/>(<ref refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80df" kindref="member">InterpEM_t</ref><sp/>interp_type,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array&lt;MultiFab,AMREX_SPACEDIM&gt;</ref>&amp;<sp/>crse,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array&lt;MultiFab,AMREX_SPACEDIM&gt;</ref>&amp;<sp/>fine,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>cgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>fgeom,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ref_ratio);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a331b0725efb68a4f9224f12e6d6df4dd" kindref="member">InterpCrseFineBndryEMfield</ref><sp/>(<ref refid="namespaceamrex_1a2f30e076962c1c148d279b63851d80df" kindref="member">InterpEM_t</ref><sp/>interp_type,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array&lt;MultiFab const*,AMREX_SPACEDIM&gt;</ref>&amp;<sp/>crse,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array&lt;MultiFab*,AMREX_SPACEDIM&gt;</ref>&amp;<sp/>fine,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>cgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>fgeom,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ref_ratio);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H"/>
+  </compounddef>
+</doxygen>

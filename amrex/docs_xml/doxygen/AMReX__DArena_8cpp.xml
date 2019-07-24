@@ -1,0 +1,993 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__DArena_8cpp" kind="file" language="C++">
+    <compoundname>AMReX_DArena.cpp</compoundname>
+    <includes local="no">cstdlib</includes>
+    <includes local="no">cmath</includes>
+    <includes refid="AMReX__DArena_8H" local="no">AMReX_DArena.H</includes>
+    <includes refid="AMReX__BLassert_8H" local="no">AMReX_BLassert.H</includes>
+    <includes refid="AMReX__Gpu_8H" local="no">AMReX_Gpu.H</includes>
+    <includes refid="AMReX__Print_8H" local="no">AMReX_Print.H</includes>
+    <includes refid="AMReX_8H" local="no">AMReX.H</includes>
+    <incdepgraph>
+      <node id="14385">
+        <label>AMReX_ParallelContext.H</label>
+        <link refid="AMReX__ParallelContext_8H"/>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14386" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14342" relation="include">
+        </childnode>
+      </node>
+      <node id="14409">
+        <label>iomanip</label>
+      </node>
+      <node id="14346">
+        <label>functional</label>
+      </node>
+      <node id="14332">
+        <label>AMReX_DArena.H</label>
+        <link refid="AMReX__DArena_8H"/>
+        <childnode refid="14333" relation="include">
+        </childnode>
+        <childnode refid="14334" relation="include">
+        </childnode>
+        <childnode refid="14335" relation="include">
+        </childnode>
+        <childnode refid="14336" relation="include">
+        </childnode>
+        <childnode refid="14337" relation="include">
+        </childnode>
+        <childnode refid="14338" relation="include">
+        </childnode>
+      </node>
+      <node id="14381">
+        <label>AMReX_BoxArray.H</label>
+        <link refid="AMReX__BoxArray_8H"/>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14333" relation="include">
+        </childnode>
+        <childnode refid="14356" relation="include">
+        </childnode>
+        <childnode refid="14335" relation="include">
+        </childnode>
+        <childnode refid="14378" relation="include">
+        </childnode>
+        <childnode refid="14382" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+      </node>
+      <node id="14376">
+        <label>limits</label>
+      </node>
+      <node id="14392">
+        <label>AMReX_BLProfiler.H</label>
+        <link refid="AMReX__BLProfiler_8H"/>
+        <childnode refid="14347" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+      </node>
+      <node id="14410">
+        <label>AMReX_CudaContainers.H</label>
+        <link refid="AMReX__CudaContainers_8H"/>
+        <childnode refid="14394" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14407" relation="include">
+        </childnode>
+      </node>
+      <node id="14370">
+        <label>AMReX_Box.H</label>
+        <link refid="AMReX__Box_8H"/>
+        <childnode refid="14371" relation="include">
+        </childnode>
+        <childnode refid="14372" relation="include">
+        </childnode>
+        <childnode refid="14374" relation="include">
+        </childnode>
+        <childnode refid="14342" relation="include">
+        </childnode>
+        <childnode refid="14375" relation="include">
+        </childnode>
+        <childnode refid="14378" relation="include">
+        </childnode>
+        <childnode refid="14379" relation="include">
+        </childnode>
+        <childnode refid="14367" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14380" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+      </node>
+      <node id="14401">
+        <label>AMReX_GpuUtility.H</label>
+        <link refid="AMReX__GpuUtility_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14397" relation="include">
+        </childnode>
+        <childnode refid="14363" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14380" relation="include">
+        </childnode>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14331" relation="include">
+        </childnode>
+      </node>
+      <node id="14383">
+        <label>AMReX_DistributionMapping.H</label>
+        <link refid="AMReX__DistributionMapping_8H"/>
+        <childnode refid="14356" relation="include">
+        </childnode>
+        <childnode refid="14376" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14333" relation="include">
+        </childnode>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14340" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14370" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+        <childnode refid="14384" relation="include">
+        </childnode>
+      </node>
+      <node id="14375">
+        <label>AMReX_IntVect.H</label>
+        <link refid="AMReX__IntVect_8H"/>
+        <childnode refid="14371" relation="include">
+        </childnode>
+        <childnode refid="14330" relation="include">
+        </childnode>
+        <childnode refid="14331" relation="include">
+        </childnode>
+        <childnode refid="14376" relation="include">
+        </childnode>
+        <childnode refid="14377" relation="include">
+        </childnode>
+        <childnode refid="14369" relation="include">
+        </childnode>
+        <childnode refid="14342" relation="include">
+        </childnode>
+        <childnode refid="14367" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14373" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14363" relation="include">
+        </childnode>
+        <childnode refid="14341" relation="include">
+        </childnode>
+      </node>
+      <node id="14340">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14342" relation="include">
+        </childnode>
+        <childnode refid="14343" relation="include">
+        </childnode>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14346" relation="include">
+        </childnode>
+        <childnode refid="14347" relation="include">
+        </childnode>
+        <childnode refid="14348" relation="include">
+        </childnode>
+        <childnode refid="14349" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+      </node>
+      <node id="14400">
+        <label>AMReX_GpuLaunchFunctsC.H</label>
+        <link refid="AMReX__GpuLaunchFunctsC_8H"/>
+      </node>
+      <node id="14354">
+        <label>AMReX_GpuError.H</label>
+        <link refid="AMReX__GpuError_8H"/>
+        <childnode refid="14355" relation="include">
+        </childnode>
+        <childnode refid="14347" relation="include">
+        </childnode>
+      </node>
+      <node id="14368">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="14369" relation="include">
+        </childnode>
+        <childnode refid="14349" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+      </node>
+      <node id="14408">
+        <label>AMReX_Print.H</label>
+        <link refid="AMReX__Print_8H"/>
+        <childnode refid="14366" relation="include">
+        </childnode>
+        <childnode refid="14386" relation="include">
+        </childnode>
+        <childnode refid="14409" relation="include">
+        </childnode>
+        <childnode refid="14340" relation="include">
+        </childnode>
+        <childnode refid="14385" relation="include">
+        </childnode>
+        <childnode refid="14384" relation="include">
+        </childnode>
+      </node>
+      <node id="14331">
+        <label>cmath</label>
+      </node>
+      <node id="14344">
+        <label>stdexcept</label>
+      </node>
+      <node id="14394">
+        <label>numeric</label>
+      </node>
+      <node id="14382">
+        <label>AMReX_BoxList.H</label>
+        <link refid="AMReX__BoxList_8H"/>
+        <childnode refid="14371" relation="include">
+        </childnode>
+        <childnode refid="14375" relation="include">
+        </childnode>
+        <childnode refid="14378" relation="include">
+        </childnode>
+        <childnode refid="14370" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+      </node>
+      <node id="14347">
+        <label>string</label>
+      </node>
+      <node id="14407">
+        <label>AMReX_CudaAllocators.H</label>
+        <link refid="AMReX__CudaAllocators_8H"/>
+        <childnode refid="14356" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14376" relation="include">
+        </childnode>
+        <childnode refid="14408" relation="include">
+        </childnode>
+        <childnode refid="14338" relation="include">
+        </childnode>
+        <childnode refid="14397" relation="include">
+        </childnode>
+      </node>
+      <node id="14398">
+        <label>AMReX_Loop.H</label>
+        <link refid="AMReX__Loop_8H"/>
+        <childnode refid="14370" relation="include">
+        </childnode>
+      </node>
+      <node id="14356">
+        <label>map</label>
+      </node>
+      <node id="14334">
+        <label>unordered_set</label>
+      </node>
+      <node id="14386">
+        <label>fstream</label>
+      </node>
+      <node id="14374">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="14362" relation="include">
+        </childnode>
+      </node>
+      <node id="14364">
+        <label>AMReX_Array.H</label>
+        <link refid="AMReX__Array_8H"/>
+        <childnode refid="14336" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14365" relation="include">
+        </childnode>
+        <childnode refid="14347" relation="include">
+        </childnode>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14366" relation="include">
+        </childnode>
+        <childnode refid="14348" relation="include">
+        </childnode>
+        <childnode refid="14340" relation="include">
+        </childnode>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14367" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+      </node>
+      <node id="14406">
+        <label>AMReX_GpuReduce.H</label>
+        <link refid="AMReX__GpuReduce_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14355" relation="include">
+        </childnode>
+      </node>
+      <node id="14367">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+      </node>
+      <node id="14363">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="14353">
+        <label>AMReX_GpuLaunch.H</label>
+        <link refid="AMReX__GpuLaunch_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14354" relation="include">
+        </childnode>
+        <childnode refid="14395" relation="include">
+        </childnode>
+        <childnode refid="14397" relation="include">
+        </childnode>
+        <childnode refid="14370" relation="include">
+        </childnode>
+        <childnode refid="14398" relation="include">
+        </childnode>
+        <childnode refid="14363" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14396" relation="include">
+        </childnode>
+        <childnode refid="14333" relation="include">
+        </childnode>
+        <childnode refid="14376" relation="include">
+        </childnode>
+        <childnode refid="14369" relation="include">
+        </childnode>
+        <childnode refid="14399" relation="include">
+        </childnode>
+        <childnode refid="14400" relation="include">
+        </childnode>
+      </node>
+      <node id="14359">
+        <label>sys/types.h</label>
+      </node>
+      <node id="14393">
+        <label>typeinfo</label>
+      </node>
+      <node id="14348">
+        <label>cstdio</label>
+      </node>
+      <node id="14396">
+        <label>AMReX_TypeTraits.H</label>
+        <link refid="AMReX__TypeTraits_8H"/>
+        <childnode refid="14358" relation="include">
+        </childnode>
+        <childnode refid="14363" relation="include">
+        </childnode>
+      </node>
+      <node id="14352">
+        <label>AMReX_GpuControl.H</label>
+        <link refid="AMReX__GpuControl_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+      </node>
+      <node id="14387">
+        <label>AMReX_BLBackTrace.H</label>
+        <link refid="AMReX__BLBackTrace_8H"/>
+        <childnode refid="14388" relation="include">
+        </childnode>
+        <childnode refid="14347" relation="include">
+        </childnode>
+        <childnode refid="14365" relation="include">
+        </childnode>
+        <childnode refid="14366" relation="include">
+        </childnode>
+        <childnode refid="14348" relation="include">
+        </childnode>
+        <childnode refid="14330" relation="include">
+        </childnode>
+        <childnode refid="14389" relation="include">
+        </childnode>
+        <childnode refid="14390" relation="include">
+        </childnode>
+        <childnode refid="14391" relation="include">
+        </childnode>
+      </node>
+      <node id="14360">
+        <label>unistd.h</label>
+      </node>
+      <node id="14388">
+        <label>stack</label>
+      </node>
+      <node id="14349">
+        <label>vector</label>
+      </node>
+      <node id="14339">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="14340" relation="include">
+        </childnode>
+      </node>
+      <node id="14341">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+      </node>
+      <node id="14365">
+        <label>utility</label>
+      </node>
+      <node id="14336">
+        <label>array</label>
+      </node>
+      <node id="14366">
+        <label>sstream</label>
+      </node>
+      <node id="14343">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="14344" relation="include">
+        </childnode>
+      </node>
+      <node id="14372">
+        <label>AMReX_Algorithm.H</label>
+        <link refid="AMReX__Algorithm_8H"/>
+        <childnode refid="14369" relation="include">
+        </childnode>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14363" relation="include">
+        </childnode>
+        <childnode refid="14373" relation="include">
+        </childnode>
+      </node>
+      <node id="14395">
+        <label>AMReX_GpuRange.H</label>
+        <link refid="AMReX__GpuRange_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14354" relation="include">
+        </childnode>
+        <childnode refid="14370" relation="include">
+        </childnode>
+        <childnode refid="14396" relation="include">
+        </childnode>
+      </node>
+      <node id="14384">
+        <label>AMReX_ParallelDescriptor.H</label>
+        <link refid="AMReX__ParallelDescriptor_8H"/>
+        <childnode refid="14342" relation="include">
+        </childnode>
+        <childnode refid="14385" relation="include">
+        </childnode>
+        <childnode refid="14387" relation="include">
+        </childnode>
+        <childnode refid="14392" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14370" relation="include">
+        </childnode>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14349" relation="include">
+        </childnode>
+        <childnode refid="14347" relation="include">
+        </childnode>
+        <childnode refid="14393" relation="include">
+        </childnode>
+        <childnode refid="14369" relation="include">
+        </childnode>
+        <childnode refid="14346" relation="include">
+        </childnode>
+        <childnode refid="14376" relation="include">
+        </childnode>
+        <childnode refid="14394" relation="include">
+        </childnode>
+      </node>
+      <node id="14355">
+        <label>AMReX_Utility.H</label>
+        <link refid="AMReX__Utility_8H"/>
+        <childnode refid="14330" relation="include">
+        </childnode>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14347" relation="include">
+        </childnode>
+        <childnode refid="14356" relation="include">
+        </childnode>
+        <childnode refid="14357" relation="include">
+        </childnode>
+        <childnode refid="14358" relation="include">
+        </childnode>
+        <childnode refid="14359" relation="include">
+        </childnode>
+        <childnode refid="14360" relation="include">
+        </childnode>
+        <childnode refid="14361" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+        <childnode refid="14368" relation="include">
+        </childnode>
+        <childnode refid="14370" relation="include">
+        </childnode>
+        <childnode refid="14381" relation="include">
+        </childnode>
+        <childnode refid="14383" relation="include">
+        </childnode>
+        <childnode refid="14384" relation="include">
+        </childnode>
+      </node>
+      <node id="14338">
+        <label>AMReX_Arena.H</label>
+        <link refid="AMReX__Arena_8H"/>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14333" relation="include">
+        </childnode>
+        <childnode refid="14330" relation="include">
+        </childnode>
+      </node>
+      <node id="14379">
+        <label>AMReX_Orientation.H</label>
+        <link refid="AMReX__Orientation_8H"/>
+        <childnode refid="14371" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14367" relation="include">
+        </childnode>
+        <childnode refid="14341" relation="include">
+        </childnode>
+      </node>
+      <node id="14373">
+        <label>AMReX_Dim3.H</label>
+        <link refid="AMReX__Dim3_8H"/>
+        <childnode refid="14345" relation="include">
+        </childnode>
+        <childnode refid="14362" relation="include">
+        </childnode>
+        <childnode refid="14364" relation="include">
+        </childnode>
+      </node>
+      <node id="14371">
+        <label>iosfwd</label>
+      </node>
+      <node id="14361">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="14330">
+        <label>cstdlib</label>
+      </node>
+      <node id="14391">
+        <label>cfenv</label>
+      </node>
+      <node id="14345">
+        <label>iostream</label>
+      </node>
+      <node id="14378">
+        <label>AMReX_IndexType.H</label>
+        <link refid="AMReX__IndexType_8H"/>
+        <childnode refid="14371" relation="include">
+        </childnode>
+        <childnode refid="14342" relation="include">
+        </childnode>
+        <childnode refid="14375" relation="include">
+        </childnode>
+        <childnode refid="14367" relation="include">
+        </childnode>
+      </node>
+      <node id="14380">
+        <label>AMReX_Array4.H</label>
+        <link refid="AMReX__Array4_8H"/>
+        <childnode refid="14375" relation="include">
+        </childnode>
+      </node>
+      <node id="14333">
+        <label>cstddef</label>
+      </node>
+      <node id="14335">
+        <label>unordered_map</label>
+      </node>
+      <node id="14351">
+        <label>AMReX_Gpu.H</label>
+        <link refid="AMReX__Gpu_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14353" relation="include">
+        </childnode>
+        <childnode refid="14354" relation="include">
+        </childnode>
+        <childnode refid="14401" relation="include">
+        </childnode>
+        <childnode refid="14397" relation="include">
+        </childnode>
+        <childnode refid="14402" relation="include">
+        </childnode>
+        <childnode refid="14404" relation="include">
+        </childnode>
+        <childnode refid="14405" relation="include">
+        </childnode>
+        <childnode refid="14395" relation="include">
+        </childnode>
+        <childnode refid="14406" relation="include">
+        </childnode>
+        <childnode refid="14407" relation="include">
+        </childnode>
+        <childnode refid="14410" relation="include">
+        </childnode>
+        <childnode refid="14411" relation="include">
+        </childnode>
+      </node>
+      <node id="14377">
+        <label>climits</label>
+      </node>
+      <node id="14411">
+        <label>AMReX_CudaGraph.H</label>
+        <link refid="AMReX__CudaGraph_8H"/>
+      </node>
+      <node id="14337">
+        <label>mutex</label>
+      </node>
+      <node id="14357">
+        <label>chrono</label>
+      </node>
+      <node id="14399">
+        <label>AMReX_GpuLaunchMacrosC.H</label>
+        <link refid="AMReX__GpuLaunchMacrosC_8H"/>
+      </node>
+      <node id="14390">
+        <label>csignal</label>
+      </node>
+      <node id="14329">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DArena.cpp</label>
+        <link refid="AMReX_DArena.cpp"/>
+        <childnode refid="14330" relation="include">
+        </childnode>
+        <childnode refid="14331" relation="include">
+        </childnode>
+        <childnode refid="14332" relation="include">
+        </childnode>
+        <childnode refid="14339" relation="include">
+        </childnode>
+        <childnode refid="14351" relation="include">
+        </childnode>
+        <childnode refid="14408" relation="include">
+        </childnode>
+        <childnode refid="14340" relation="include">
+        </childnode>
+      </node>
+      <node id="14358">
+        <label>type_traits</label>
+      </node>
+      <node id="14342">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+      </node>
+      <node id="14404">
+        <label>AMReX_GpuElixir.H</label>
+        <link refid="AMReX__GpuElixir_8H"/>
+        <childnode refid="14338" relation="include">
+        </childnode>
+      </node>
+      <node id="14369">
+        <label>algorithm</label>
+      </node>
+      <node id="14397">
+        <label>AMReX_GpuDevice.H</label>
+        <link refid="AMReX__GpuDevice_8H"/>
+        <childnode refid="14330" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14336" relation="include">
+        </childnode>
+        <childnode refid="14340" relation="include">
+        </childnode>
+        <childnode refid="14355" relation="include">
+        </childnode>
+        <childnode refid="14354" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+      </node>
+      <node id="14389">
+        <label>execinfo.h</label>
+      </node>
+      <node id="14403">
+        <label>cstring</label>
+      </node>
+      <node id="14350">
+        <label>memory</label>
+      </node>
+      <node id="14402">
+        <label>AMReX_GpuAsyncArray.H</label>
+        <link refid="AMReX__GpuAsyncArray_8H"/>
+        <childnode refid="14333" relation="include">
+        </childnode>
+        <childnode refid="14403" relation="include">
+        </childnode>
+        <childnode refid="14330" relation="include">
+        </childnode>
+        <childnode refid="14350" relation="include">
+        </childnode>
+        <childnode refid="14338" relation="include">
+        </childnode>
+        <childnode refid="14396" relation="include">
+        </childnode>
+        <childnode refid="14397" relation="include">
+        </childnode>
+      </node>
+      <node id="14405">
+        <label>AMReX_GpuMemory.H</label>
+        <link refid="AMReX__GpuMemory_8H"/>
+        <childnode refid="14341" relation="include">
+        </childnode>
+        <childnode refid="14352" relation="include">
+        </childnode>
+        <childnode refid="14397" relation="include">
+        </childnode>
+        <childnode refid="14396" relation="include">
+        </childnode>
+        <childnode refid="14338" relation="include">
+        </childnode>
+        <childnode refid="14330" relation="include">
+        </childnode>
+      </node>
+      <node id="14362">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="14363" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdlib&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__DArena_8H" kindref="compound">AMReX_DArena.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLassert_8H" kindref="compound">AMReX_BLassert.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Gpu_8H" kindref="compound">AMReX_Gpu.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Print_8H" kindref="compound">AMReX_Print.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX_8H" kindref="compound">AMReX.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ptrdiff_t<sp/>make_buddy<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order,<sp/>std::ptrdiff_t<sp/>offset)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>tmp<sp/>=<sp/>offset;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>^=<sp/>1ul<sp/>&lt;&lt;<sp/>order;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::ptrdiff_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(tmp);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="classamrex_1_1DArena_1a7cb796087fa7b90048cb294e5bd2a3a3" kindref="member">DArena::DArena</ref><sp/>(std::size_t<sp/>max_size,<sp/>std::size_t<sp/>max_block_size,<sp/>ArenaInfo<sp/>info)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kindref="member">arena_info</ref><sp/>=<sp/>info;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(max_size%2<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_size<sp/>/=<sp/>2;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++<ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_size<sp/>&lt;=<sp/>max_block_size)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_size<sp/>&gt;<sp/>max_block_size)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aea69993eec3c9ca497cd0e47522b2ec6" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;DArena:<sp/>incompatible<sp/>max_size<sp/>and<sp/>max_block_size&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref><sp/>&gt;<sp/><ref refid="classamrex_1_1DArena_1a271820274e7f0fb9c6e028350f8bf291" kindref="member">m_max_max_order</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aea69993eec3c9ca497cd0e47522b2ec6" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;DArena:<sp/>too<sp/>many<sp/>orders&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>const<sp/>std::size_t<sp/>a<sp/>=<sp/>alignof(std::max_align_t);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>a<sp/>=<sp/>16;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref><sp/>=<sp/>(max_size/a)*a;<sp/><sp/></highlight><highlight class="comment">//<sp/>proper<sp/>alignment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a9532cfd8968174b10df559bd24b8061e" kindref="member">m_max_size</ref><sp/>=<sp/><ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref><sp/>*<sp/>(1u<sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;DArena:<sp/>Allocating<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1DArena_1a9532cfd8968174b10df559bd24b8061e" kindref="member">m_max_size</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a60dde49130e2e6672c0f70a63a5fde2c" kindref="member">m_baseptr</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<ref refid="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" kindref="member">allocate_system</ref>(<ref refid="classamrex_1_1DArena_1a9532cfd8968174b10df559bd24b8061e" kindref="member">m_max_size</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[<ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref>].insert(0);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="classamrex_1_1DArena_1a1c086ae3cdaba882bb0b4617878cd034" kindref="member">DArena::~DArena</ref><sp/>()</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>kv<sp/>:<sp/><ref refid="classamrex_1_1DArena_1a1fe171de824be042a8b957b2fe35d7f3" kindref="member">m_system</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" kindref="member">deallocate_system</ref>(kv.first,<sp/>kv.second);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" kindref="member">deallocate_system</ref>(<ref refid="classamrex_1_1DArena_1a60dde49130e2e6672c0f70a63a5fde2c" kindref="member">m_baseptr</ref>,<sp/><ref refid="classamrex_1_1DArena_1a9532cfd8968174b10df559bd24b8061e" kindref="member">m_max_size</ref>);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="classamrex_1_1DArena_1ae231217fe1f9796f26a006b122146940" kindref="member">DArena::alloc</ref><sp/>(std::size_t<sp/>nbytes)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nbytes<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>behavior<sp/>different<sp/>from<sp/>the<sp/>standard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>need<sp/>to<sp/>allocate<sp/>this<sp/>many<sp/>blocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nblocks<sp/>=<sp/>(nbytes+<ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref>-1)/<ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ntmp<sp/>=<sp/>nblocks;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(ntmp<sp/>&gt;&gt;=<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++order;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((nblocks<sp/>&amp;<sp/>(nblocks<sp/>-<sp/>1))<sp/>!=<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>nblocks<sp/>is<sp/>NOT<sp/>power<sp/>of<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++order;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>found<sp/>the<sp/>miminal<sp/>order<sp/>that<sp/>satisfies<sp/>2^order<sp/>&gt;=<sp/>nblocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(<ref refid="classamrex_1_1DArena_1a3118de6f458432e9ebc3529e0101c87f" kindref="member">m_mutex</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ptrdiff_t<sp/>offset<sp/>=<sp/><ref refid="classamrex_1_1DArena_1a1ca2c5bbabce7267c652b6583b8da2b2" kindref="member">allocate_order</ref>(order);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(offset<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/>*=<sp/><ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref>;<sp/></highlight><highlight class="comment">//<sp/>#<sp/>of<sp/>order<sp/>0<sp/>blocks<sp/>-&gt;<sp/>#<sp/>of<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1aa9274b236cdc85ff9d33d35f2d8027d3" kindref="member">m_used</ref>.insert({offset,order});</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DArena_1a60dde49130e2e6672c0f70a63a5fde2c" kindref="member">m_baseptr</ref><sp/>+<sp/>offset;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1DArena_1aa60ef4331c287042fd3ea4e037c4fd42" kindref="member">warning_printed</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;WARNING:<sp/>DArena<sp/>on<sp/>proc.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>()</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>calls<sp/>system<sp/>allocator<sp/>to<sp/>allocate<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>nbytes<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes.\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DArena<sp/>free<sp/>memory<sp/>size<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1DArena_1ab78d724a379d45a2b0c599dd19b80d4e" kindref="member">freeMem</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1aa60ef4331c287042fd3ea4e037c4fd42" kindref="member">warning_printed</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p<sp/>=<sp/><ref refid="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" kindref="member">allocate_system</ref>(nbytes);<sp/></highlight><highlight class="comment">//<sp/>use<sp/>the<sp/>system<sp/>malloc<sp/>as<sp/>backup.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1fe171de824be042a8b957b2fe35d7f3" kindref="member">m_system</ref>.insert({p,nbytes});</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="classamrex_1_1DArena_1a334bde7e4a70a4fd2a7b09c216dfc504" kindref="member">DArena::free</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>std::lock_guard&lt;std::mutex&gt;<sp/>lock(<ref refid="classamrex_1_1DArena_1a3118de6f458432e9ebc3529e0101c87f" kindref="member">m_mutex</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ptrdiff_t<sp/>offset<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)p<sp/>-<sp/><ref refid="classamrex_1_1DArena_1a60dde49130e2e6672c0f70a63a5fde2c" kindref="member">m_baseptr</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/><ref refid="classamrex_1_1DArena_1aa9274b236cdc85ff9d33d35f2d8027d3" kindref="member">m_used</ref>.find(offset);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1DArena_1aa9274b236cdc85ff9d33d35f2d8027d3" kindref="member">m_used</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>r-&gt;second;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1aa9274b236cdc85ff9d33d35f2d8027d3" kindref="member">m_used</ref>.erase(r);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/>/=<sp/><ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>#<sp/>of<sp/>bytes<sp/>-&gt;<sp/>#<sp/>of<sp/>order<sp/>0<sp/>blocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1aff39d5f7aae00008761d13e8cd4f429c" kindref="member">deallocate_order</ref>(order,<sp/>offset);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r2<sp/>=<sp/><ref refid="classamrex_1_1DArena_1a1fe171de824be042a8b957b2fe35d7f3" kindref="member">m_system</ref>.find(p);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r2<sp/>!=<sp/><ref refid="classamrex_1_1DArena_1a1fe171de824be042a8b957b2fe35d7f3" kindref="member">m_system</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" kindref="member">deallocate_system</ref>(r2-&gt;first,<sp/>r2-&gt;second);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1fe171de824be042a8b957b2fe35d7f3" kindref="member">m_system</ref>.erase(r2);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aea69993eec3c9ca497cd0e47522b2ec6" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;DArena::free<sp/>failed.<sp/><sp/>Unknown<sp/>pointer&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">std::ptrdiff_t</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="classamrex_1_1DArena_1a1ca2c5bbabce7267c652b6583b8da2b2" kindref="member">DArena::allocate_order</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ptrdiff_t<sp/>offset<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].empty())<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/>=<sp/>*<ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].cbegin();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].erase(<ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].cbegin());</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(order<sp/>&lt;<sp/><ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>to<sp/>allocate<sp/>from<sp/>higher<sp/>order<sp/>that<sp/>has<sp/>larger<sp/>blocks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset<sp/>=<sp/><ref refid="classamrex_1_1DArena_1a1ca2c5bbabce7267c652b6583b8da2b2" kindref="member">allocate_order</ref>(order+1);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(offset<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>succeed.<sp/>We<sp/>need<sp/>to<sp/>split<sp/>and<sp/>put<sp/>our<sp/>buddy<sp/>into<sp/>free<sp/>buckets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].insert(make_buddy(order,offset));</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>offset;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><ref refid="classamrex_1_1DArena_1aff39d5f7aae00008761d13e8cd4f429c" kindref="member">DArena::deallocate_order</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order,<sp/>std::ptrdiff_t<sp/>offset)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ptrdiff_t<sp/>buddy<sp/>=<sp/>make_buddy(order,offset);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].find(buddy);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].erase(r);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1aff39d5f7aae00008761d13e8cd4f429c" kindref="member">deallocate_order</ref>(order+1,<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(offset,buddy));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].insert(offset);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">std::size_t</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="classamrex_1_1DArena_1ab78d724a379d45a2b0c599dd19b80d4e" kindref="member">DArena::freeMem</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="161"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>r<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>bs<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>0;<sp/>order<sp/>&lt;=<sp/><ref refid="classamrex_1_1DArena_1a3c3130abd9ad3a07c1fc765e702f5301" kindref="member">m_max_order</ref>;<sp/>++order)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>+=<sp/>bs*<ref refid="classamrex_1_1DArena_1a1061832f806866fdf9902b89c7013792" kindref="member">m_free</ref>[order].size();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bs<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r*<ref refid="classamrex_1_1DArena_1a948e7568bd55ee259524b92bc872f22e" kindref="member">m_block_size</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DArena.cpp"/>
+  </compounddef>
+</doxygen>

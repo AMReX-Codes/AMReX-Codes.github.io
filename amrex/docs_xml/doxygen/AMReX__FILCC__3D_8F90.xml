@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__FILCC__3D_8F90" kind="file" language="Fortran">
+    <compoundname>AMReX_FILCC_3D.F90</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__FILCC__3D_8F90_1a85ec42a375dfe0166c7905be798e0f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine filcc</definition>
+        <argsstring>(q, q_l1, q_l2, q_l3, q_h1, q_h2, q_h3, domlo, domhi, dx, xlo, bc)</argsstring>
+        <name>filcc</name>
+        <param>
+          <type>q</type>
+          <defname>q</defname>
+        </param>
+        <param>
+          <type>q_l1</type>
+          <defname>q_l1</defname>
+        </param>
+        <param>
+          <type>q_l2</type>
+          <defname>q_l2</defname>
+        </param>
+        <param>
+          <type>q_l3</type>
+          <defname>q_l3</defname>
+        </param>
+        <param>
+          <type>q_h1</type>
+          <defname>q_h1</defname>
+        </param>
+        <param>
+          <type>q_h2</type>
+          <defname>q_h2</defname>
+        </param>
+        <param>
+          <type>q_h3</type>
+          <defname>q_h3</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>xlo</type>
+          <defname>xlo</defname>
+        </param>
+        <param>
+          <type>bc</type>
+          <defname>bc</defname>
+        </param>
+        <briefdescription>
+<para>This routine is intended to be a generic fill function for cell centered data. It knows how to exrapolate, and reflect data and can be used to suppliment problem specific fill functions (ie. EXT_DIR). </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>q</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&lt;= array to fill </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>q_l1</parametername>
+<parametername>q_l2</parametername>
+<parametername>q_l3</parametername>
+<parametername>q_h1</parametername>
+<parametername>q_h2</parametername>
+<parametername>q_h3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>=&gt; index extent of q array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>domlo</parametername>
+<parametername>hi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>=&gt; index extent of problem domain </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>=&gt; cell spacing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xlo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>=&gt; physical location of lower left hand corner of q array </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>=&gt; array of boundary flags bc(SPACEDIM,lo:hi)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+NOTE: corner data not used in computing soln but must have reasonable values for arithmetic to live </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FILCC_3D.F90" line="22" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FILCC_3D.F90" bodystart="23" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__FILCC__3D_8F90_1a02ca9842cbb4347d6ba0a920c636fb7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine hoextraptocc</definition>
+        <argsstring>(q, q_l1, q_l2, q_l3, q_h1, q_h2, q_h3, domlo, domhi, dx, xlo)</argsstring>
+        <name>hoextraptocc</name>
+        <param>
+          <type>q</type>
+          <defname>q</defname>
+        </param>
+        <param>
+          <type>q_l1</type>
+          <defname>q_l1</defname>
+        </param>
+        <param>
+          <type>q_l2</type>
+          <defname>q_l2</defname>
+        </param>
+        <param>
+          <type>q_l3</type>
+          <defname>q_l3</defname>
+        </param>
+        <param>
+          <type>q_h1</type>
+          <defname>q_h1</defname>
+        </param>
+        <param>
+          <type>q_h2</type>
+          <defname>q_h2</defname>
+        </param>
+        <param>
+          <type>q_h3</type>
+          <defname>q_h3</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>xlo</type>
+          <defname>xlo</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FILCC_3D.F90" line="46" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FILCC_3D.F90" bodystart="47" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_XSDK</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">!<sp/>-----------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FILCC__1D_8F90_1abfbfe1e8666c92ce4f15d660069f081a" kindref="member">filcc</ref>(q,q_l1,q_l2,q_l3,q_h1,q_h2,q_h3,domlo,domhi,dx,xlo,bc)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__fort__module" kindref="compound">amrex_fort_module</ref></highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal">:<sp/>rt<sp/>=&gt;<sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__filcc__module" kindref="compound">amrex_filcc_module</ref></highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal">:<sp/><ref refid="namespaceamrex__filcc__module_1a8766c9aa8507aa0dd5e44180b788be5c" kindref="member">filccn</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>q_l1,<sp/>q_l2,<sp/>q_l3,<sp/>q_h1,<sp/>q_h2,<sp/>q_h3</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>domlo(3),<sp/>domhi(3)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(rt)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>xlo(3),<sp/>dx(3)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(rt)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>q(q_l1:q_h1,q_l2:q_h2,q_l3:q_h3)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>bc(3,2)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>q_lo(3),<sp/>q_hi(3)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>q_lo<sp/>=<sp/>[q_l1,<sp/>q_l2,<sp/>q_l3]</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>q_hi<sp/>=<sp/>[q_h1,<sp/>q_h2,<sp/>q_h3]</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__filcc__module_1a8766c9aa8507aa0dd5e44180b788be5c" kindref="member">filccn</ref>(q_lo,<sp/>q_hi,<sp/>q,<sp/>q_lo,<sp/>q_hi,<sp/>1,<sp/>domlo,<sp/>domhi,<sp/>dx,<sp/>xlo,<sp/>bc)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FILCC__1D_8F90_1abfbfe1e8666c92ce4f15d660069f081a" kindref="member">filcc</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FILCC__2D_8F90_1aceaaec1fa1ad1f14d4a3b277da4f4a3c" kindref="member">hoextraptocc</ref>(q,q_l1,q_l2,q_l3,q_h1,q_h2,q_h3,domlo,domhi,dx,xlo)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__fort__module" kindref="compound">amrex_fort_module</ref></highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal">:<sp/>rt<sp/>=&gt;<sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__filcc__module" kindref="compound">amrex_filcc_module</ref></highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal"><sp/>:<sp/>amrex_hoextraptocc_3d</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>q_l1,<sp/>q_l2,<sp/>q_l3,<sp/>q_h1,<sp/>q_h2,<sp/>q_h3</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/><sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>domlo(3),<sp/>domhi(3)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(rt)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>xlo(3),<sp/>dx(3)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">real(rt)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>q(q_l1:q_h1,q_l2:q_h2,q_l3:q_h3)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">amrex_hoextraptocc_3d(q,q_l1,q_l2,q_l3,q_h1,q_h2,q_h3,domlo,domhi,dx,xlo)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FILCC__2D_8F90_1aceaaec1fa1ad1f14d4a3b277da4f4a3c" kindref="member">hoextraptocc</ref></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<highlight class="preprocessor"></highlight>    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FILCC_3D.F90"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MLMG and Linear Operator Classes &mdash; amrex 19.08-dev documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Particles" href="Particle_Chapter.html" />
+    <link rel="prev" title="Linear Solvers" href="LinearSolvers_Chapter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                19.08-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AsyncIter_Chapter.html">Asynchronous Iterators (AmrTask)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MLMG and Linear Operator Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hypre">HYPRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="LinearSolvers_Chapter.html">Linear Solvers</a> &raquo;</li>
+        
+      <li>MLMG and Linear Operator Classes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/LinearSolvers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mlmg-and-linear-operator-classes">
+<h1>MLMG and Linear Operator Classes<a class="headerlink" href="#mlmg-and-linear-operator-classes" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">MLMG</span></code> is a class for solving the linear system using the geometric
+multigrid method.  The constructor of <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> takes the reference to
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code>, an abstract base class of various linear operator
+classes, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLPoisson</span></span></code>,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLNodeLaplacian</span></span></code>, etc.  We choose the type of linear operator
+class according to the type the linear system to solve.</p>
+<ul class="simple">
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code> for cell-centered canonical form (equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>).</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLPoisson</span></span></code> for cell-centered constant coefficient Poisson’s
+equation <span class="math notranslate nohighlight">\(\nabla^2 \phi = f\)</span>.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLNodeLaplacian</span></span></code> for nodal variable coefficient Poisson’s
+equation <span class="math notranslate nohighlight">\(\nabla \cdot (\sigma \nabla \phi) = f\)</span>.</p></li>
+</ul>
+<p>The constructors of these linear operator classes are in the form like
+below</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLABecLaplacian</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span> <span class="n">a_geom</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span> <span class="n">a_grids</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span> <span class="n">a_dmap</span><span class="p">,</span>
+                 <span class="k">const</span> <span class="n">LPInfo</span><span class="o">&amp;</span> <span class="n">a_info</span> <span class="o">=</span> <span class="n">LPInfo</span><span class="p">(),</span>
+                 <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">FabFactory</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_factory</span> <span class="o">=</span> <span class="p">{});</span>
+</pre></div>
+</div>
+<p>It takes <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vectors</span></span></code> of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> and
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMapping</span></span></code>.  The arguments are <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vectors</span></span></code> because MLMG can
+do multi-level composite solve.  If you are using it for single-level,
+you can do</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Given Geometry geom, BoxArray grids, and DistributionMapping dmap on single level</span>
+<span class="n">MLABecLaplacian</span> <span class="nf">mlabeclaplacian</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span> <span class="p">{</span><span class="n">grids</span><span class="p">},</span> <span class="p">{</span><span class="n">dmap</span><span class="p">});</span>
+</pre></div>
+</div>
+<p>to let the compiler construct <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vectors</span></span></code> for you.  Recall that the
+classes <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Vector</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Geometry</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code>, and
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DistributionMapping</span></span></code> are defined in chapter <a class="reference internal" href="Basics_Chapter.html#chap-basics"><span class="std std-ref">Basics</span></a>.  There are
+two new classes that are optional parameters.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> is a
+class for passing parameters.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FabFactory</span></span></code> is used in problems
+with embedded boundaries (chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a>).</p>
+<p>After the linear operator is built, we need to set up boundary
+conditions.  This will be discussed later in section
+<a class="reference internal" href="#sec-linearsolver-bc"><span class="std std-ref">Boundary Conditions</span></a>.</p>
+<p>For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>, we next need to call member functions</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setScalars</span> <span class="p">(</span><span class="n">Real</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">Real</span> <span class="n">beta</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setACoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setBCoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">B</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to set up the coefficients for equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>. This is unecessary for
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLPoisson</span></span></code>, as there are no coefficients to set.  For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLNodeLaplacian</span></span></code>,
+one needs to call the member function</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setSigma</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">a_sigma</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">amrlev</span></span></code> parameter should be zero for single-level
+solves.  For multi-level solves, each level needs to be provided with
+<code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, or <code class="docutils literal notranslate"><span class="pre">Sigma</span></code>.  For composite solves, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrlev</span></span></code> 0 will
+mean the lowest level for the solver, which is not necessarily the lowest
+level in the AMR hierarchy. This is so solves can be done on different sections
+of the AMR hierarchy, e.g. on AMR levels 3 to 5.</p>
+<p>After boundary conditions and coefficients are prescribed, the linear
+operator is ready for an MLMG object like below.</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLMG</span> <span class="nf">mlmg</span><span class="p">(</span><span class="n">mlabeclaplacian</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Optional parameters can be set (see section <a class="reference internal" href="#sec-linearsolver-pars"><span class="std std-ref">Parameters</span></a>),
+and then we can use the <code class="docutils literal notranslate"><span class="pre">MLMG</span></code> member function</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">Real</span> <span class="nf">solve</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*&gt;&amp;</span> <span class="n">a_sol</span><span class="p">,</span>
+            <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_rhs</span><span class="p">,</span>
+            <span class="n">Real</span> <span class="n">a_tol_rel</span><span class="p">,</span> <span class="n">Real</span> <span class="n">a_tol_abs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to solve the problem given an initial guess and a right-hand side.
+Zero is a perfectly fine initial guess.  The two <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Reals</span></span></code> in the argument
+list are the targeted relative and absolute error tolerances.
+The solver will terminate when one of these targets is met.
+Set the absolute tolerance to zero if one
+does not have a good value for it.  The return value of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">solve</span></span></code>
+is the max-norm error.</p>
+<p>After the solver returns successfully, if needed, we can call</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">compResidual</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*&gt;&amp;</span> <span class="n">a_res</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*&gt;&amp;</span> <span class="n">a_sol</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_rhs</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to compute residual (i.e., <span class="math notranslate nohighlight">\(f - L(\phi)\)</span>) given the solution and
+the right-hand side.  For cell-centered solvers, we can also call the
+following functions to compute gradient <span class="math notranslate nohighlight">\(\nabla \phi\)</span> and fluxes
+<span class="math notranslate nohighlight">\(-B \nabla \phi\)</span>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">getGradSolution</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="o">&gt;&amp;</span> <span class="n">a_grad_sol</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">getFluxes</span>       <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;</span> <span class="o">&gt;&amp;</span> <span class="n">a_fluxes</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="boundary-conditions">
+<span id="sec-linearsolver-bc"></span><h1>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this headline">¶</a></h1>
+<p>We now discuss how to set up boundary conditions for linear operators.
+In the following, physical domain boundaries refer to the boundaries
+of the physical domain, whereas coarse/fine boundaries refer to the
+boundaries between AMR levels. The following steps must be
+followed in the exact order.</p>
+<p>First we need to set physical domain boundary types via <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member
+function</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setDomainBC</span> <span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">BCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">lobc</span><span class="p">,</span>  <span class="c1">// for lower ends</span>
+                  <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">BCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">hibc</span><span class="p">);</span> <span class="c1">// for higher ends</span>
+</pre></div>
+</div>
+<p>The supported BC types at
+the physical domain boundaries are</p>
+<ul class="simple">
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LinOpBCType</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Periodic</span></span></code> for periodic boundary.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LinOpBCType</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Dirichlet</span></span></code> for Dirichlet boundary condition.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LinOpBCType</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Neumann</span></span></code> for homogeneous Neumann boundary condition.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LinOpBCType</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">reflect_odd</span></span></code> for reflection with sign changed.</p></li>
+</ul>
+<p>The second step is to set up coarse/fine Dirichlet boundary
+conditions.  This step is not always needed.  But when it is, it
+must be completed before step 3. This step is not needed when the
+coarsest level in the solver covers the whole computational domain
+(e.g., the coarsest level is AMR level 0).  Note that this step is
+still needed in the case that the solver is used to do a single-level
+solve on a fine AMR level not covering the whole domain.  The
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member function for this step is</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setCoarseFineBC</span> <span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">crse</span><span class="p">,</span> <span class="kt">int</span> <span class="n">crse_ratio</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Here <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">const</span></span> <span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">*</span></span> <span class="name"><span class="pre">crse</span></span></code> contains the Dirichlet boundary
+values at the coarse resolution, and <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">crse_ratio</span></span></code> (e.g., 2)
+is the refinement ratio between the coarsest solver level and the AMR
+level below it.</p>
+<p>In the third step, for each level, we call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member
+function</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>to set up Dirichlet boundary values.  Here the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> must have
+one ghost cell.  Although <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> is used to pass the data, only
+the values in the ghost cells at Dirichlet boundaries are used.  If
+there are no Dirichlet boundaries, we still need to make this call,
+but we could call it with <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">nullptr</span></span></code>.  It should be emphasized
+that the data in <code class="docutils literal notranslate"><span class="pre">levelbcdata</span></code> for Dirichlet boundaries are assumed
+to be exactly on the face of the physical domain even though for
+cell-centered solvers the sought unknowns are at cell centers.  And
+for cell-centered solvers, the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> argument must have the
+cell-centered type.</p>
+</div>
+<div class="section" id="parameters">
+<span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
+<p>There are many parameters that can be set.  Here we discuss some
+commonly used ones.</p>
+<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> and
+<code class="code cpp c++ docutils literal notranslate"><span class="name label"><span class="pre">MLMG</span></span><span class="punctuation"><span class="pre">:</span></span><span class="name"><span class="pre">setBottomVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> can be control the verbosity of the
+linear operator, multigrid solver and the bottom solver, respectively.</p>
+<p>The multigrid solver is an iterative solver.  The maximal number of
+iterations can be changed with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setMaxIter</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code>.  We can
+also do a fixed number of iterations with
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setFixedIter</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code>.  By default, V-cycle is used.  We can
+use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setMaxFmgIter</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> to control how many full multigrid
+cycles can be done before switching to V-cycle.</p>
+<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setMaxCoarseningLevel</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> can be used to control the
+maximal number of multigrid levels.  We usually should not call this
+function.  However, we sometimes build the solver to simply apply the
+operator (e.g., <span class="math notranslate nohighlight">\(L(\phi)\)</span>) without needing to solve the system.
+We can do something as follows to avoid the cost of building coarsened
+operators for the multigrid.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLABecLaplacian</span> <span class="nf">mlabeclap</span><span class="p">({</span><span class="n">geom</span><span class="p">},</span> <span class="p">{</span><span class="n">grids</span><span class="p">},</span> <span class="p">{</span><span class="n">dmap</span><span class="p">},</span> <span class="n">LPInfo</span><span class="p">().</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="c1">// set up BC</span>
+<span class="c1">// set up coefficients</span>
+<span class="n">MLMG</span> <span class="nf">mlmg</span><span class="p">(</span><span class="n">mlabeclap</span><span class="p">);</span>
+<span class="c1">// out = L(in)</span>
+<span class="n">mlmg</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">in</span><span class="p">);</span>  <span class="c1">// here both in and out are const Vector&lt;MultiFab*&gt;&amp;</span>
+</pre></div>
+</div>
+<p>At the bottom of the multigrid cycles, we use the biconjugate gradient
+stabilized method as the bottom solver.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span></code> member method</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setBottomSolver</span> <span class="p">(</span><span class="n">BottomSolver</span> <span class="n">s</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>can be used to change the bottom solver.  Available choices are</p>
+<ul class="simple">
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">smoother</span></span></code>: Smoother such as Gauss-Seidel.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">bicgstab</span></span></code>: The default.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cg</span></span></code>: The conjugate gradient method.  The
+matrix must be symmetric.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Hypre</span></span></code>: BoomerAMG in HYPRE.  Currently for
+cell-centered only.</p></li>
+</ul>
+</div>
+<div class="section" id="curvilinear-coordinates">
+<h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Permalink to this headline">¶</a></h1>
+<p>The linear solvers support curvilinear coordinates including 1D
+spherical and 2d cylindrical <span class="math notranslate nohighlight">\((r,z)\)</span>.  In those cases, the
+divergence operator has extra metric terms.  If one does not want the
+solver to include the metric terms because they have been handled in
+other ways, one can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMetricTerm</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code> with <code class="code cpp c++ docutils literal notranslate"><span class="name builtin"><span class="pre">false</span></span></code>
+on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object passed to the constructor of linear
+operators.</p>
+</div>
+<div class="section" id="hypre">
+<h1>HYPRE<a class="headerlink" href="#hypre" title="Permalink to this headline">¶</a></h1>
+<p>AMReX can use HYPRE BoomerAMG as a bottom solver (currently for
+cell-centered problems only), as we have mentioned.  For challenging
+problems, our geometric multigrid solver may have difficulty solving,
+whereas an algebraic multigrid method might be more robust.  We note
+that by default our solver always tries to geometrically coarsen the
+problem as much as possible.  However, as we have mentioned, we can
+call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMaxCoarseningLevel</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">)</span></span></code> on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object
+passed to the constructor of a linear operator to disable the
+coarsening completely.  In that case the bottom solver is solving the
+residual correction form of the original problem.  To use HYPRE, one
+must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system. For an
+example of using HYPRE, we refer the reader to
+<code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
+</div>
+<div class="section" id="embedded-boundaries">
+<h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline">¶</a></h1>
+<p>AMReX support solving linear systems with embedded boundaries.  See
+chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Particle_Chapter.html" class="btn btn-neutral float-right" title="Particles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="LinearSolvers_Chapter.html" class="btn btn-neutral float-left" title="Linear Solvers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

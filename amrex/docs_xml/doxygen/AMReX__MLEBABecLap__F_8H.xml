@@ -1,0 +1,1185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__MLEBABecLap__F_8H" kind="file" language="C++">
+    <compoundname>AMReX_MLEBABecLap_F.H</compoundname>
+    <includes refid="AMReX__BLFort_8H" local="no">AMReX_BLFort.H</includes>
+    <includedby refid="AMReX__MLEBABecLap_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.cpp</includedby>
+    <incdepgraph>
+      <node id="56273">
+        <label>AMReX_BLFort.H</label>
+        <link refid="AMReX__BLFort_8H"/>
+        <childnode refid="56274" relation="include">
+        </childnode>
+        <childnode refid="56275" relation="include">
+        </childnode>
+        <childnode refid="56277" relation="include">
+        </childnode>
+      </node>
+      <node id="56274">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="56275" relation="include">
+        </childnode>
+      </node>
+      <node id="56277">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+      </node>
+      <node id="56276">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="56272">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H</label>
+        <link refid="AMReX_MLEBABecLap_F.H"/>
+        <childnode refid="56273" relation="include">
+        </childnode>
+      </node>
+      <node id="56275">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="56276" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="56279">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.cpp</label>
+        <link refid="AMReX__MLEBABecLap_8cpp"/>
+      </node>
+      <node id="56278">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H</label>
+        <link refid="AMReX_MLEBABecLap_F.H"/>
+        <childnode refid="56279" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__MLEBABecLap__F_8H_1a77042a502823e52dd5c5f90ccb0e2ef1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mlebabeclap_adotx</definition>
+        <argsstring>(const int *lo, const int *hi, amrex_real *y, const int *ylo, const int *yhi, const amrex_real *x, const int *xlo, const int *xhi, const amrex_real *a, const int *alo, const int *ahi, const amrex_real *bx, const int *bxlo, const int *bxhi, const int *ccmask, const int *cmlo, const int *cmhi, const void *flag, const int *flo, const int *fhi, const amrex_real *vfrac, const int *vlo, const int *vhi, const amrex_real *apx, const int *axlo, const int *axhi, const amrex_real *fcx, const int *cxlo, const int *cxhi, const amrex_real *ba, const int *balo, const int *bahi, const amrex_real *bc, const int *bclo, const int *bchi, const amrex_real *beb, const int *elo, const int *ehi, const int is_dirichlet, const amrex_real *phieb, const int *plo, const int *phi, const int is_inhomog, const amrex_real *dxinv, const amrex_real alpha, const amrex_real beta, int ncomp)</argsstring>
+        <name>amrex_mlebabeclap_adotx</name>
+        <param>
+          <type>const int *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ylo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>yhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>xlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>xhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>alo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ahi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxhi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ccmask</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmhi</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>flo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>vlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>vhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>balo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bahi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bc</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bclo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bchi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>beb</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>elo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ehi</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>is_dirichlet</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>phieb</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>plo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>phi</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>is_inhomog</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>dxinv</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>beta</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H" line="10" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MLEBABecLap__F_8H_1a2f105e2dcf2feeb37c57fc26cffad66e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mlebabeclap_gsrb</definition>
+        <argsstring>(const int *lo, const int *hi, amrex_real *sol, const int *slo, const int *shi, const amrex_real *rhs, const int *rlo, const int *rhi, const amrex_real *a, const int *alo, const int *ahi, const amrex_real *bx, const int *bxlo, const int *bxhi, const int *ccmask, const int *cmlo, const int *cmhi, const int *m0, const int *m0lo, const int *m0hi, const int *m1, const int *m1lo, const int *m1hi, const amrex_real *f0, const int *f0lo, const int *f0hi, const amrex_real *f1, const int *f1lo, const int *f1hi, const void *flag, const int *flo, const int *fhi, const amrex_real *vfrac, const int *vlo, const int *vhi, const amrex_real *apx, const int *axlo, const int *axhi, const amrex_real *fcx, const int *cxlo, const int *cxhi, const amrex_real *ba, const int *balo, const int *bahi, const amrex_real *bc, const int *bclo, const int *bchi, const amrex_real *beb, const int *elo, const int *ehi, const int is_dirichlet, const amrex_real *dxinv, const amrex_real alpha, const amrex_real beta, const int redblack, int ncomp)</argsstring>
+        <name>amrex_mlebabeclap_gsrb</name>
+        <param>
+          <type>const int *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>sol</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>slo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>shi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>rlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>rhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>alo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ahi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxhi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ccmask</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmhi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m0</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m0lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m0hi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m1</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m1lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>m1hi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>f0</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>f0lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>f0hi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>f1</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>f1lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>f1hi</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>flo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>vlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>vhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>balo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bahi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bc</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bclo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bchi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>beb</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>elo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ehi</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>is_dirichlet</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>dxinv</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>beta</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>redblack</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MLEBABecLap__F_8H_1a46a317a6d57ca1a1752ef084833bc931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mlebabeclap_flux</definition>
+        <argsstring>(const int *lo, const int *hi, amrex_real *fx, const int *fxlo, const int *fxhi, const amrex_real *apx, const int *axlo, const int *axhi, const amrex_real *fcx, const int *cxlo, const int *cxhi, const amrex_real *sol, const int *slo, const int *shi, const amrex_real *bx, const int *bxlo, const int *bxhi, const int *ccmask, const int *cmlo, const int *cmhi, const void *flag, const int *flo, const int *fhi, const amrex_real *dxinv, const amrex_real beta, const int face_only, int ncomp)</argsstring>
+        <name>amrex_mlebabeclap_flux</name>
+        <param>
+          <type>const int *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fxhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>sol</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>slo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>shi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxhi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ccmask</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmhi</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>flo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>dxinv</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>beta</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>face_only</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H" line="110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MLEBABecLap__F_8H_1a98265cbcd23c898dbd732fa91ad86a70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mlebabeclap_grad</definition>
+        <argsstring>(const int *xlo, const int *xhi, const amrex_real *dat, const int *dlo, const int *dhi, amrex_real *gx, const int *gxlo, const int *gxhi, const amrex_real *ax, const int *axlo, const int *axhi, const amrex_real *fcx, const int *fcxlo, const int *fcxhi, const int *ccmask, const int *cmlo, const int *cmhi, const void *flag, const int *flo, const int *fhi, const amrex_real *dxinv, int ncomp)</argsstring>
+        <name>amrex_mlebabeclap_grad</name>
+        <param>
+          <type>const int *</type>
+          <declname>xlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>xhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>dat</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>dlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>dhi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>gx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>gxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>gxhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>ax</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fcxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fcxhi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ccmask</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmhi</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>flo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>dxinv</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H" line="146" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MLEBABecLap__F_8H_1adf4da2f379d1ba2810829d75e73b0748" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mlebabeclap_normalize</definition>
+        <argsstring>(const int *lo, const int *hi, amrex_real *y, const int *ylo, const int *yhi, const amrex_real *a, const int *alo, const int *ahi, const amrex_real *bx, const int *bxlo, const int *bxhi, const int *ccmask, const int *cmlo, const int *cmhi, const void *flag, const int *flo, const int *fhi, const amrex_real *vfrac, const int *vlo, const int *vhi, const amrex_real *apx, const int *axlo, const int *axhi, const amrex_real *fcx, const int *cxlo, const int *cxhi, const amrex_real *ba, const int *balo, const int *bahi, const amrex_real *bc, const int *bclo, const int *bchi, const amrex_real *beb, const int *elo, const int *ehi, const int is_dirichlet, const amrex_real *dxinv, const amrex_real alpha, const amrex_real beta, int ncomp)</argsstring>
+        <name>amrex_mlebabeclap_normalize</name>
+        <param>
+          <type>const int *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ylo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>yhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>alo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ahi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bxhi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ccmask</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cmhi</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>flo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>vlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>vhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>apx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>axhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fcx</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxlo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>cxhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>ba</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>balo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bahi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>bc</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bclo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>bchi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>beb</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>elo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ehi</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>is_dirichlet</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>dxinv</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></type>
+          <declname>beta</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MLEBABecLap__F_8H_1a88486b7f73b033a5e72d478c1b570629" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_eb_mg_interp</definition>
+        <argsstring>(const int *lo, const int *hi, amrex_real *fine, const int *flo, const int *fhi, const amrex_real *crse, const int *clo, const int *chi, const void *flag, const int *glo, const int *ghi, const int *ncomp)</argsstring>
+        <name>amrex_eb_mg_interp</name>
+        <param>
+          <type>const int *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>fine</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>flo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>fhi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref> *</type>
+          <declname>crse</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>clo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>chi</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>glo</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ghi</declname>
+        </param>
+        <param>
+          <type>const int *</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H" line="214" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AMREX_MLEBABECLAP_F_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_MLEBABECLAP_F_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__BLFort_8H" kindref="compound">AMReX_BLFort.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLEBABecLap__F_8H_1a77042a502823e52dd5c5f90ccb0e2ef1" kindref="member">amrex_mlebabeclap_adotx</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>yhi,</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>xlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>xhi,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>alo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ahi,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxhi,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>by,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>byhi,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzhi,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ccmask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmhi,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>flag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>flo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fhi,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>vfrac,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vhi,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axhi,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>aylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ayhi,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azhi,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxhi,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cyhi,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czhi,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>balo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bahi,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="AMReX__INTERP__2D_8F90_1ae04db59d278a778f5a7e0d91ccaa00be" kindref="member">bclo</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="AMReX__INTERP__2D_8F90_1a91923ed602bb1cda4b0ae536d76baab0" kindref="member">bchi</ref>,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>beb,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>elo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ehi,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_dirichlet,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>phieb,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>plo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>phi,</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_inhomog,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>dxinv,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>alpha,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>beta,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLEBABecLap__F_8H_1a2f105e2dcf2feeb37c57fc26cffad66e" kindref="member">amrex_mlebabeclap_gsrb</ref><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>sol,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>slo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>shi,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>rhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>rlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>rhi,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>alo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ahi,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxhi,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>by,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>byhi,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzhi,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ccmask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmhi,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m0lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m0hi,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m2lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m2hi,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m4,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m4lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m4hi,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m1lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m1hi,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m3,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m3lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m3hi,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m5,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m5lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>m5hi,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>f0,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f0lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f0hi,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>f2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f2lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f2hi,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>f4,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f4lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f4hi,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>f1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f1lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f1hi,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>f3,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f3lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f3hi,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>f5,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f5lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>f5hi,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>flag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>flo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fhi,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>vfrac,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vhi,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axhi,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>aylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ayhi,</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azhi,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxhi,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cyhi,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czhi,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>balo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bahi,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="AMReX__INTERP__2D_8F90_1ae04db59d278a778f5a7e0d91ccaa00be" kindref="member">bclo</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="AMReX__INTERP__2D_8F90_1a91923ed602bb1cda4b0ae536d76baab0" kindref="member">bchi</ref>,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>beb,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>elo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ehi,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_dirichlet,</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>dxinv,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>alpha,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>beta,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>redblack,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLEBABecLap__F_8H_1a46a317a6d57ca1a1752ef084833bc931" kindref="member">amrex_mlebabeclap_flux</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fxhi,<sp/></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)<sp/></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fyhi,<sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fzlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fzhi,<sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axhi,<sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)<sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>aylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ayhi,<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azhi,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxhi,</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cyhi,</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czhi,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>sol,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>slo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>shi,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxhi,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>by,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>byhi,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzhi,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ccmask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmhi,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>flag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>flo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fhi,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>dxinv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>beta,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>face_only,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLEBABecLap__F_8H_1a98265cbcd23c898dbd732fa91ad86a70" kindref="member">amrex_mlebabeclap_grad</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>xlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>xhi,<sp/></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)<sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>yhi,<sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)<sp/></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>zlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>zhi,<sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">#endif<sp/></highlight><highlight class="comment">//<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>dat,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>dlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>dhi,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>gx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>gxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>gxhi,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>gy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>gylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>gyhi,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>gz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>gzlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>gzhi,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>ax,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axhi,<sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>ay,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>aylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ayhi,<sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>az,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azhi,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fcxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fcxhi,<sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fcylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fcyhi,<sp/></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fczlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fczhi,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ccmask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmhi,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>flag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>flo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fhi,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>dxinv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLEBABecLap__F_8H_1adf4da2f379d1ba2810829d75e73b0748" kindref="member">amrex_mlebabeclap_normalize</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>y,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>yhi,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>alo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ahi,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bxhi,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>by,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>byhi,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bzhi,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ccmask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cmhi,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>flag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>flo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fhi,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>vfrac,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>vhi,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>axhi,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>aylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ayhi,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>apz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>azhi,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcx,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cxhi,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcy,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cylo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cyhi,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">#</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fcz,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>czhi,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>balo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bahi,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>bc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="AMReX__INTERP__2D_8F90_1ae04db59d278a778f5a7e0d91ccaa00be" kindref="member">bclo</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/><ref refid="AMReX__INTERP__2D_8F90_1a91923ed602bb1cda4b0ae536d76baab0" kindref="member">bchi</ref>,</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>beb,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>elo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ehi,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_dirichlet,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>dxinv,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>alpha,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref><sp/>beta,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MLEBABecLap__F_8H_1a88486b7f73b033a5e72d478c1b570629" kindref="member">amrex_eb_mg_interp</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>fine,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>flo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>fhi,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>*<sp/>crse,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>clo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>chi,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>flag,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>glo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ghi,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ncomp);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_F.H"/>
+  </compounddef>
+</doxygen>

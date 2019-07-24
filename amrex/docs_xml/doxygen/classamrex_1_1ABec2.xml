@@ -1,0 +1,863 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1ABec2" kind="class" language="C++" prot="public">
+    <compoundname>amrex::ABec2</compoundname>
+    <basecompoundref refid="classamrex_1_1ABecLaplacian" prot="public" virt="non-virtual">amrex::ABecLaplacian</basecompoundref>
+    <includes refid="AMReX__ABec2_8H" local="no">AMReX_ABec2.H</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1ABec2_1a4e02e62dbdb4a886884e2863f4fe588a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ABec2::ABec2</definition>
+        <argsstring>(const BndryData &amp;bd, const Real *h)</argsstring>
+        <name>ABec2</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BndryData" kindref="compound">BndryData</ref> &amp;</type>
+          <declname>bd</declname>
+        </param>
+        <param>
+          <type>const Real *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+<para>constructor for box array, boundary data and vector mesh spacing </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1acb4151efab8c0500a51bffd57490615e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual amrex::ABec2::~ABec2</definition>
+        <argsstring>()</argsstring>
+        <name>~ABec2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="21" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1acd1c0f5a3fd3c40cb217030006e83808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ABec2::altSmooth</definition>
+        <argsstring>(MultiFab &amp;solnL, const MultiFab &amp;resL, int level, int redBlackFlag)</argsstring>
+        <name>altSmooth</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>solnL</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>resL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>redBlackFlag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.cpp" bodystart="280" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1ae6bfc959a2151d8d3c6a6a8af4f7c600" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::ABec2::smooth</definition>
+        <argsstring>(MultiFab &amp;solnL, const MultiFab &amp;rhsL, int level, LinOp::BC_Mode bc_mode=LinOp::Inhomogeneous_BC)</argsstring>
+        <name>smooth</name>
+        <reimplements refid="classamrex_1_1LinOp_1a11f5dfbd38e5b5551dbcec9df469e11d">smooth</reimplements>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>solnL</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>rhsL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5de" kindref="member">LinOp::BC_Mode</ref></type>
+          <declname>bc_mode</declname>
+          <defval><ref refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5dea2789f303c136a93263ed4b63ce83d29a" kindref="member">LinOp::Inhomogeneous_BC</ref></defval>
+        </param>
+        <briefdescription>
+<para>Smooth the level system L(solnL)=rhsL. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>solnL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhsL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bc_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="28" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.cpp" bodystart="260" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1a7db8b72c0335a15321686dca09d91001" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::ABec2::jacobi_smooth</definition>
+        <argsstring>(MultiFab &amp;solnL, const MultiFab &amp;rhsL, int level, LinOp::BC_Mode bc_mode=LinOp::Inhomogeneous_BC)</argsstring>
+        <name>jacobi_smooth</name>
+        <reimplements refid="classamrex_1_1LinOp_1a81bae1e07a9908f6b677d1619d5eb4ee">jacobi_smooth</reimplements>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>solnL</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>rhsL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5de" kindref="member">LinOp::BC_Mode</ref></type>
+          <declname>bc_mode</declname>
+          <defval><ref refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5dea2789f303c136a93263ed4b63ce83d29a" kindref="member">LinOp::Inhomogeneous_BC</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.cpp" bodystart="291" bodyend="307"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classamrex_1_1ABec2_1a1c6452da2efd04efc611cfdf3def36ed" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ABec2::altApplyBC</definition>
+        <argsstring>(int level, bool local)</argsstring>
+        <name>altApplyBC</name>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>local</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.cpp" bodystart="14" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1a042ac5559ac2d94f1d1d3ce1d3875816" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::ABec2::Fsmooth_jacobi</definition>
+        <argsstring>(MultiFab &amp;solnL, const MultiFab &amp;resL, int level)</argsstring>
+        <name>Fsmooth_jacobi</name>
+        <reimplements refid="classamrex_1_1ABecLaplacian_1a5012599654ff5181eb00d0e4435caa20">Fsmooth_jacobi</reimplements>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>solnL</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>rhsL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>apply Jacobi smoother to improve residual to L(solnL)=rhsL </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>solnL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhsL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="43" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.cpp" bodystart="168" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1af7ccba3dd25ceb15be068874150ad0d5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::ABec2::Fsmooth</definition>
+        <argsstring>(MultiFab &amp;solnL, const MultiFab &amp;resL, int level, int redBlackFlag)</argsstring>
+        <name>Fsmooth</name>
+        <reimplements refid="classamrex_1_1ABecLaplacian_1a53b99dd8b0ec239d23ce3940d9a5dc49">Fsmooth</reimplements>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>solnL</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>rhsL</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rgbflag</declname>
+        </param>
+        <briefdescription>
+<para>apply GSRB smoother to improve residual to L(solnL)=rhsL </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>solnL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhsL</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rgbflag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="47" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.cpp" bodystart="71" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1a0327b4578c321eb0595232c045a436e3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ABec2::ABec2</definition>
+        <argsstring>(const ABec2 &amp;)</argsstring>
+        <name>ABec2</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1ABec2" kindref="compound">ABec2</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Disallow copy constructors. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ABec2_1ac6faa68311e0e426f907717649460cb8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ABec2" kindref="compound">ABec2</ref> &amp;</type>
+        <definition>ABec2&amp; amrex::ABec2::operator=</definition>
+        <argsstring>(const ABec2 &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1ABec2" kindref="compound">ABec2</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="54" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>amrex::LinOp</label>
+        <link refid="classamrex_1_1LinOp"/>
+      </node>
+      <node id="0">
+        <label>amrex::ABec2</label>
+        <link refid="classamrex_1_1ABec2"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>amrex::ABecLaplacian</label>
+        <link refid="classamrex_1_1ABecLaplacian"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::MultiMask &gt;, std::allocator&lt; amrex::Vector&lt; amrex::MultiMask &gt; &gt; &gt;</label>
+      </node>
+      <node id="5">
+        <label>amrex::LinOp</label>
+        <link refid="classamrex_1_1LinOp"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>h</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>undrrelxr</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>maskvals</edgelabel>
+          <edgelabel>lmaskvals</edgelabel>
+        </childnode>
+        <childnode refid="12" relation="usage">
+          <edgelabel>gbox</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>geomarray</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>bgb</edgelabel>
+        </childnode>
+      </node>
+      <node id="41">
+        <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
+      </node>
+      <node id="13">
+        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
+      </node>
+      <node id="22">
+        <label>amrex::FabArrayBase::CacheStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
+        <childnode refid="23" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>amrex::FabArrayBase::FabArrayStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
+      </node>
+      <node id="25">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>amrex::Vector&lt; amrex::BndryRegister &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>amrex::LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>Real</label>
+      </node>
+      <node id="15">
+        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+      </node>
+      <node id="42">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>amrex::BndryData</label>
+        <link refid="classamrex_1_1BndryData"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="50" relation="usage">
+          <edgelabel>bcloc</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>masks</edgelabel>
+        </childnode>
+        <childnode refid="55" relation="usage">
+          <edgelabel>bcond</edgelabel>
+        </childnode>
+      </node>
+      <node id="36">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="27">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>string</label>
+      </node>
+      <node id="44">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="38">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="54">
+        <label>std::vector&lt; amrex::MultiMask, std::allocator&lt; amrex::MultiMask &gt; &gt;</label>
+      </node>
+      <node id="12">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="39">
+        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
+        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="53">
+        <label>amrex::Vector&lt; amrex::MultiMask &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>amrex::ABec2</label>
+        <link refid="classamrex_1_1ABec2"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="28">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="9">
+        <label>std::vector&lt; amrex::BndryRegister, std::allocator&lt; amrex::BndryRegister &gt; &gt;</label>
+      </node>
+      <node id="33">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>amrex::RealBox</label>
+        <link refid="classamrex_1_1RealBox"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>xhi</edgelabel>
+          <edgelabel>xlo</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="34" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="31">
+        <label>amrex::DistributionMapping::RefID</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
+        <childnode refid="32" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="40">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>std::vector&lt; amrex::MultiFab *, std::allocator&lt; amrex::MultiFab * &gt; &gt;</label>
+      </node>
+      <node id="46">
+        <label>amrex::CoordSys</label>
+        <link refid="classamrex_1_1CoordSys"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>inv_dx</edgelabel>
+          <edgelabel>offset</edgelabel>
+          <edgelabel>dx</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>std::vector&lt; Array&lt; amrex::MultiFab *, BL_SPACEDIM &gt;, std::allocator&lt; Array&lt; amrex::MultiFab *, BL_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="34">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="32">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
+        </childnode>
+      </node>
+      <node id="18">
+        <label>amrex::FabSet</label>
+        <link refid="classamrex_1_1FabSet"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>m_mf</edgelabel>
+        </childnode>
+      </node>
+      <node id="35">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="29">
+        <label>amrex::FabArrayBase::BDKey</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
+        <childnode refid="30" relation="usage">
+          <edgelabel>m_ba_id</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>m_dm_id</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>amrex::MultiFab</label>
+        <link refid="classamrex_1_1MultiFab"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>amrex::BndryRegister</label>
+        <link refid="classamrex_1_1BndryRegister"/>
+        <childnode refid="18" relation="usage">
+          <edgelabel>bndry</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>grids</edgelabel>
+        </childnode>
+      </node>
+      <node id="45">
+        <label>amrex::Geometry</label>
+        <link refid="classamrex_1_1Geometry"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>prob_domain</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>std::vector&lt; RealTuple, std::allocator&lt; RealTuple &gt; &gt;</label>
+      </node>
+      <node id="50">
+        <label>amrex::LayoutData&lt; RealTuple &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="51">
+        <label>amrex::Vector&lt; RealTuple &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabArray"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>fb_recv_size</edgelabel>
+          <edgelabel>fb_recv_from</edgelabel>
+        </childnode>
+        <childnode refid="35" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="37" relation="usage">
+          <edgelabel>fb_recv_data</edgelabel>
+          <edgelabel>fb_send_data</edgelabel>
+        </childnode>
+        <childnode refid="39" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>fb_recv_stat</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>fb_send_reqs</edgelabel>
+          <edgelabel>fb_recv_reqs</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>fb_period</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::ABecLaplacian</label>
+        <link refid="classamrex_1_1ABecLaplacian"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>acoefs</edgelabel>
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>bcoefs</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>a_valid</edgelabel>
+          <edgelabel>b_valid</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>a_def</edgelabel>
+          <edgelabel>beta</edgelabel>
+          <edgelabel>beta_def</edgelabel>
+          <edgelabel>b_def</edgelabel>
+          <edgelabel>alpha</edgelabel>
+          <edgelabel>alpha_def</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>amrex::BoxArray::RefID</label>
+        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
+      </node>
+      <node id="60">
+        <label>amrex::Vector&lt; Array&lt; amrex::MultiFab *, BL_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>amrex::Vector&lt; amrex::MultiFab * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>amrex::FabArrayBase</label>
+        <link refid="classamrex_1_1FabArrayBase"/>
+        <childnode refid="22" relation="usage">
+          <edgelabel>m_FBC_stats</edgelabel>
+          <edgelabel>m_FPinfo_stats</edgelabel>
+          <edgelabel>m_CFinfo_stats</edgelabel>
+          <edgelabel>m_TAC_stats</edgelabel>
+          <edgelabel>m_CPC_stats</edgelabel>
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>distributionMap</edgelabel>
+        </childnode>
+        <childnode refid="25" relation="usage">
+          <edgelabel>n_grow</edgelabel>
+          <edgelabel>comm_tile_size</edgelabel>
+          <edgelabel>mfiter_tile_size</edgelabel>
+          <edgelabel>mfghostiter_tile_size</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>m_FA_stats</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>indexArray</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>m_bdkey</edgelabel>
+        </childnode>
+        <childnode refid="33" relation="usage">
+          <edgelabel>boxarray</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; Array&lt; Real, BL_SPACEDIM &gt;, std::allocator&lt; Array&lt; Real, BL_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="10">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::MultiMask &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::Vector&lt; Array&lt; Real, BL_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" line="13" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG4/AMReX_ABec2.H" bodystart="11" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1ABec2_1a4e02e62dbdb4a886884e2863f4fe588a" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>ABec2</name></member>
+      <member refid="classamrex_1_1ABec2_1a0327b4578c321eb0595232c045a436e3" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>ABec2</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1afaf2573167e5516ad50cb8a9140500e6" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>ABecLaplacian</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a8aef1f75d83a22ab30d42c0bb227f9c7" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>ABecLaplacian</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a541312074e7fe4879a1d30c45309f6e3" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>ABecLaplacian</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1aea4bd32d44ca3eac0fb85aeb8ec080ad" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>aCoefficients</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a4fa573c9431556cf1263037afec18230" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>aCoefficients</name></member>
+      <member refid="classamrex_1_1ABec2_1a1c6452da2efd04efc611cfdf3def36ed" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>altApplyBC</name></member>
+      <member refid="classamrex_1_1ABec2_1acd1c0f5a3fd3c40cb217030006e83808" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>altSmooth</name></member>
+      <member refid="classamrex_1_1LinOp_1ac5b9fd4b970fee2132c2ea0c5db97149" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>apply</name></member>
+      <member refid="classamrex_1_1LinOp_1a7bb88ff651d23b6908c7b2bceaa34b0e" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>applyBC</name></member>
+      <member refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5de" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>BC_Mode</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1aa8a45e5abf5e72695b939175e1b634eb" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>bCoefficients</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a01188e425300574f29dad14c3237308a" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>bCoefficients</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1acc50c2803a8d51d0d5abc1dacfc522e1" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>bCoefficients</name></member>
+      <member refid="classamrex_1_1LinOp_1aa82bdf791430c2a09b3b436edf9396b5" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>bgb</name></member>
+      <member refid="classamrex_1_1LinOp_1ab6ad6639bc139043d7e905f8d50e942c" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>bndryData</name></member>
+      <member refid="classamrex_1_1LinOp_1a4091f3d4047359da4093f5174d56f13d" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>bndryData</name></member>
+      <member refid="classamrex_1_1LinOp_1a5f70912a54c7de221e2d51c4f432a11d" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>boxArray</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1afd86373fe31cc6880ee3bb8b30c5df0c" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>clearToLevel</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a4cfd0950f51135c1657069085a96f0a6" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>compFlux</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a0d844563269f4babf3a18602fd856890" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>compFlux</name></member>
+      <member refid="classamrex_1_1LinOp_1a209d6c6a23f1627c3dd246b737b342a5" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>def_harmavg</name></member>
+      <member refid="classamrex_1_1LinOp_1a46c9e9b959b202156654ab2a806d36b3" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>def_maxorder</name></member>
+      <member refid="classamrex_1_1LinOp_1a4bc7f813757f64c47583b5c110504644" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>def_verbose</name></member>
+      <member refid="classamrex_1_1LinOp_1aed40103a32e7a986e5b58594031ee887" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>DistributionMap</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a2528a367ea429b2b10faa2523db04f41" prot="protected" virt="virtual"><scope>amrex::ABec2</scope><name>Fapply</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a61e42ca31dc99b395b5f332c22c150c9" prot="protected" virt="virtual"><scope>amrex::ABec2</scope><name>Fapply</name></member>
+      <member refid="classamrex_1_1LinOp_1a3e96cce265979ab38b675c22fab24657" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1ABec2_1af7ccba3dd25ceb15be068874150ad0d5" prot="protected" virt="virtual"><scope>amrex::ABec2</scope><name>Fsmooth</name></member>
+      <member refid="classamrex_1_1ABec2_1a042ac5559ac2d94f1d1d3ce1d3875816" prot="protected" virt="virtual"><scope>amrex::ABec2</scope><name>Fsmooth_jacobi</name></member>
+      <member refid="classamrex_1_1LinOp_1aaacb98abdbfa3d9377c369fe5cc79b68" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>gbox</name></member>
+      <member refid="classamrex_1_1LinOp_1a447bf2c68e5e4fb5b275fefe879fe1e5" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>geomarray</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a44bb521dc76284823e9e5c65d9771dbf" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>get_alpha</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a1e44aab98e812a24c04e7c0685855188" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>get_beta</name></member>
+      <member refid="classamrex_1_1LinOp_1a61745f14570d6a595ab67ec1bf283c18" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>getDx</name></member>
+      <member refid="classamrex_1_1LinOp_1a399736dcc956ff8f1fffaa2757028874" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>getGeom</name></member>
+      <member refid="classamrex_1_1LinOp_1aa9588834363609399b2953a1285311fc" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>h</name></member>
+      <member refid="classamrex_1_1LinOp_1a6b431b3abaa1031a23c3d7972d7dab93" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>harmavg</name></member>
+      <member refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5deae1724332b6960ec73ce5040947963f78" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>Homogeneous_BC</name></member>
+      <member refid="classamrex_1_1LinOp_1ad5f2fc8009714c47dc63ff6a7a73a5dea2789f303c136a93263ed4b63ce83d29a" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>Inhomogeneous_BC</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a59c0c0c840034d23a0b9c211d9462a83" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>initCoefficients</name></member>
+      <member refid="classamrex_1_1LinOp_1a123f74bf002cbcc02fcfef0ac794cc57" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>initConstruct</name></member>
+      <member refid="classamrex_1_1LinOp_1a089bb8eb0f74b22a7abbd60b3e872c8f" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a4c239cdaf4567689a6aa5c5c48cd8e54" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>invalidate_a_to_level</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a6a654778bbf52e05e8d87aa66fa97248" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>invalidate_b_to_level</name></member>
+      <member refid="classamrex_1_1ABec2_1a7db8b72c0335a15321686dca09d91001" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>jacobi_smooth</name></member>
+      <member refid="classamrex_1_1LinOp_1a528f7163d138d4c86f826821e751fae5" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>LinOp</name></member>
+      <member refid="classamrex_1_1LinOp_1a11923eefafc8a3c572854a571edc03c8" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>LinOp</name></member>
+      <member refid="classamrex_1_1LinOp_1adc5128fa53133f87d6beea7127766a17" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>LinOp</name></member>
+      <member refid="classamrex_1_1LinOp_1afbf053df86bb20e076291152600f06ac" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>LinOp_grow</name></member>
+      <member refid="classamrex_1_1LinOp_1a42cf216bf54bd0cb244669a91635dbec" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>lmaskvals</name></member>
+      <member refid="classamrex_1_1LinOp_1a48100b02251f55f0394e976eca1e8211" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>makeCoefficients</name></member>
+      <member refid="classamrex_1_1LinOp_1af9de09651d7047e04a70de03facb5398" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>maskvals</name></member>
+      <member refid="classamrex_1_1LinOp_1a09492904c8111d7108412a034efd4b1e" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>maxOrder</name></member>
+      <member refid="classamrex_1_1LinOp_1a4e9d794124be8ae04fa7c4c6ab2d5fee" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>maxOrder</name></member>
+      <member refid="classamrex_1_1LinOp_1aa898f6575bb89bf315bb7a5309ad944f" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>maxorder</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a67e9fbe6e4c75b0b6755c8e59f91ba19" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>norm</name></member>
+      <member refid="classamrex_1_1LinOp_1aba1ac78a74d1ca7be2e9ef523c185800" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>numGrids</name></member>
+      <member refid="classamrex_1_1LinOp_1a8489bd97fdad9c4de15a5610a38f0652" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>NumGrow</name></member>
+      <member refid="classamrex_1_1LinOp_1a9d552129ce2624a83a6ba56ead0f4d87" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>numLevels</name></member>
+      <member refid="classamrex_1_1ABec2_1ac6faa68311e0e426f907717649460cb8" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a41e56686ca282635f1200c6c02fa8337" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>prepareForLevel</name></member>
+      <member refid="classamrex_1_1LinOp_1ab77a2e7e90d65073fccb8a54fd128177" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>residual</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a678b5184def73c9214f416f1df77bf7e" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>setCoefficients</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a9fbbce1bbf7e501b5ba77863057d79fc" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>setCoefficients</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1ab6096754bd2e6d748280a04c24ba5dae" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>setCoefficients</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a648f16346f8ff8f562fa0676d8faed3c" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>setScalars</name></member>
+      <member refid="classamrex_1_1ABec2_1ae6bfc959a2151d8d3c6a6a8af4f7c600" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>smooth</name></member>
+      <member refid="classamrex_1_1LinOp_1a58088c44f9d858885f1125efb3b4222e" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>undrrelxr</name></member>
+      <member refid="classamrex_1_1LinOp_1a24a48ff7792144be5c69884015388367" prot="protected" virt="non-virtual"><scope>amrex::ABec2</scope><name>verbose</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1addaa48eb431ffae86789d0fab6346379" prot="public" virt="non-virtual"><scope>amrex::ABec2</scope><name>ZeroACoefficients</name></member>
+      <member refid="classamrex_1_1ABec2_1acb4151efab8c0500a51bffd57490615e" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>~ABec2</name></member>
+      <member refid="classamrex_1_1ABecLaplacian_1a2e057a19eef17b3ef76332bfd6d35499" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>~ABecLaplacian</name></member>
+      <member refid="classamrex_1_1LinOp_1a62ce7afd9c1479ee90df81e055e88a1c" prot="public" virt="virtual"><scope>amrex::ABec2</scope><name>~LinOp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

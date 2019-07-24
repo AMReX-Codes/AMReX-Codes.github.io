@@ -1,0 +1,1056 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceamrex__eb__levelset__module" kind="namespace" language="Fortran">
+    <compoundname>amrex_eb_levelset_module</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a3a8c734c165f6b98f45f4deb720764da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_init_levelset</definition>
+        <argsstring>(lo, hi, phi, phlo, phhi)</argsstring>
+        <name>amrex_eb_init_levelset</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine INIT_LEVELSET </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: Initializes level-set array to the fortran huge(real(c_real)) value. This way these values of the level-set function will be overwritten by the <ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">min()</ref> function (used in these levelset_update function).</para><para>Comments: If you want to &quot;clear&quot; the whole level-set array (phi), make sure that lo and hi match the grown tile box (i.e. mfi.growntilebox()). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="26" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a1c10a6c42c5fa29ee1065812154ca161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_fill_levelset</definition>
+        <argsstring>(lo, hi, eb_list, l_eb, valid, vlo, vhi, phi, phlo, phhi, dx, dx_eb)</argsstring>
+        <name>amrex_eb_fill_levelset</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>eb_list</type>
+          <defname>eb_list</defname>
+        </param>
+        <param>
+          <type>l_eb</type>
+          <defname>l_eb</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>dx_eb</type>
+          <defname>dx_eb</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine FILL_LEVELSET </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: given a list of EB-facets, fill the level-set MultiFab between <computeroutput>lo</computeroutput> and <computeroutput>hi</computeroutput> with the closets distance to the EB-facests. Also fill a iMultiFab with 0&apos;s and 1&apos;s. 0 Indicating that the closest distance was not the result of a projection onto a facet&apos;s plane, but instead onto an edge/corner.</para><para>Comments: Distances are <bold>signed</bold> ( &lt; 0 =&gt; inside an EB). Note that at this point the algorithm assumes an edge case lies inside an EB (i.e. its distance is negative). These points are marked using valid = 0. We recommend that the EB&apos;s implicit function is used to check these cases (i.e. validate the level-set). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="69" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a6ba6037fd77f561d4f86d727b04e984a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_fill_levelset_loc</definition>
+        <argsstring>(lo, hi, eb_list, l_eb, valid, v_lo, v_hi, phi, p_lo, p_hi, ls_guess, lsg_lo, lsg_hi, ls_thres, dx, dx_eb)</argsstring>
+        <name>amrex_eb_fill_levelset_loc</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>eb_list</type>
+          <defname>eb_list</defname>
+        </param>
+        <param>
+          <type>l_eb</type>
+          <defname>l_eb</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>v_lo</type>
+          <defname>v_lo</defname>
+        </param>
+        <param>
+          <type>v_hi</type>
+          <defname>v_hi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>p_lo</type>
+          <defname>p_lo</defname>
+        </param>
+        <param>
+          <type>p_hi</type>
+          <defname>p_hi</defname>
+        </param>
+        <param>
+          <type>ls_guess</type>
+          <defname>ls_guess</defname>
+        </param>
+        <param>
+          <type>lsg_lo</type>
+          <defname>lsg_lo</defname>
+        </param>
+        <param>
+          <type>lsg_hi</type>
+          <defname>lsg_hi</defname>
+        </param>
+        <param>
+          <type>ls_thres</type>
+          <defname>ls_thres</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>dx_eb</type>
+          <defname>dx_eb</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine FILL_LEVELSET_LOC </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: given a list of EB-facets, fill the level-set MultiFab between <computeroutput>lo</computeroutput> and <computeroutput>hi</computeroutput> with the closets distance to the EB-facests. For all <computeroutput><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs(ls_guess)</ref> &gt; ls_thres</computeroutput>, level-set filling is aborted and the level-set is set to +/- <computeroutput>ls_thres</computeroutput>. This avoid unnecessary filling far from EB boundaries.</para><para>Also fill a iMultiFab with 0&apos;s and 1&apos;s. 0 Indicating that the closest distance was not the result of a projection onto a facet&apos;s plane, but instead onto an edge/corner.</para><para>Comments: Distances are <bold>signed</bold> ( &lt; 0 =&gt; inside an EB). Note that at this point the algorithm assumes an edge case lies inside an EB (i.e. its distance is negative). These points are marked using valid = 0. We recommend that the EB&apos;s implicit function is used to check these cases (i.e. validate the level-set). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="140" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a4ce3094e44f7378a03f37a74a639482c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_fill_levelset_bcs</definition>
+        <argsstring>(phi, philo, phihi, valid, vlo, vhi, periodic, domlo, domhi, eb_list, l_eb, dx, dx_eb)</argsstring>
+        <name>amrex_eb_fill_levelset_bcs</name>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>philo</type>
+          <defname>philo</defname>
+        </param>
+        <param>
+          <type>phihi</type>
+          <defname>phihi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>periodic</type>
+          <defname>periodic</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <param>
+          <type>eb_list</type>
+          <defname>eb_list</defname>
+        </param>
+        <param>
+          <type>l_eb</type>
+          <defname>l_eb</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>dx_eb</type>
+          <defname>dx_eb</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="203" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="209" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a32dc6d51e3c9086cc38f75b50d5f49d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::closest_dist</definition>
+        <argsstring>(min_dist, proj_valid, eb_data, l_eb, dx_eb, pos)</argsstring>
+        <name>closest_dist</name>
+        <param>
+          <type>min_dist</type>
+          <defname>min_dist</defname>
+        </param>
+        <param>
+          <type>proj_valid</type>
+          <defname>proj_valid</defname>
+        </param>
+        <param>
+          <type>eb_data</type>
+          <defname>eb_data</defname>
+        </param>
+        <param>
+          <type>l_eb</type>
+          <defname>l_eb</defname>
+        </param>
+        <param>
+          <type>dx_eb</type>
+          <defname>dx_eb</defname>
+        </param>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine CLOSEST_DIST </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: Find the distance to the closets point on the surface defined by the EB-facet list (from the point <computeroutput>pos</computeroutput>). Note that this distance is <bold>signed</bold> =&gt; if the vector <computeroutput>eb_center - pos</computeroutput> points <bold>towards</bold> the surface.</para><para>Comments: sometimes the closes point is on an EB-facet edge. In this case, the surface normal is not trivial, and this algorithm defaults to a negative distance. However this point is given an <computeroutput>valid</computeroutput> flag of false. It is recommended that the EB&apos;s implicit function is used to determine the weather the lies in the EB interior. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="338" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="341" bodyend="433"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a1c875b67fc227b82c5f861a36f6f46b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_threshold_levelset</definition>
+        <argsstring>(lo, hi, threshold, phi, phi_lo, phi_hi)</argsstring>
+        <name>amrex_eb_threshold_levelset</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>threshold</type>
+          <defname>threshold</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phi_lo</type>
+          <defname>phi_lo</defname>
+        </param>
+        <param>
+          <type>phi_hi</type>
+          <defname>phi_hi</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine THRESHOLD_LEVELSET </para>        </briefdescription>
+        <detaileddescription>
+<para>PURPOSE: sets max/min threshold to the level-set function. This ensures that the level-set function is a local description near boundaries.</para><para>COMMENTS: some applications (such as filling level-set from discrete) EB facets become less accurate far from the boundary. Thresholding can therefore eliminate spurious level-set values </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="449" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="452" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a467e32c29d3014fe63c552a79447303e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_validate_levelset</definition>
+        <argsstring>(lo, hi, n_pad, impf, imlo, imhi, valid, vlo, vhi, phi, phlo, phhi)</argsstring>
+        <name>amrex_eb_validate_levelset</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>n_pad</type>
+          <defname>n_pad</defname>
+        </param>
+        <param>
+          <type>impf</type>
+          <defname>impf</defname>
+        </param>
+        <param>
+          <type>imlo</type>
+          <defname>imlo</defname>
+        </param>
+        <param>
+          <type>imhi</type>
+          <defname>imhi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine VALIDATE_LEVELSET </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: ensure that the sign of the level-set (<computeroutput>phi</computeroutput>) function is the same as the sign of the implicit function (<computeroutput>impf</computeroutput>), if <computeroutput>valid == 0</computeroutput>.</para><para>Comments: Note the role of <computeroutput>valid</computeroutput> above, <computeroutput>valid</computeroutput> is 0 for points where the closest distance to the surface is on an edge. In that case, fill_levelset_eb defaults to negative distances. Hence this function can be used for checking this assumption, and flipping the level-set value&apos;s sign if necessary. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="496" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="501" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1ad9664cc193292d3d5dc3f25f8a48585d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_validate_levelset_bcs</definition>
+        <argsstring>(phi, phlo, phhi, valid, vlo, vhi, periodic, domlo, domhi, impf, imlo, imhi)</argsstring>
+        <name>amrex_eb_validate_levelset_bcs</name>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>periodic</type>
+          <defname>periodic</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <param>
+          <type>impf</type>
+          <defname>impf</defname>
+        </param>
+        <param>
+          <type>imlo</type>
+          <defname>imlo</defname>
+        </param>
+        <param>
+          <type>imhi</type>
+          <defname>imhi</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="532" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="537" bodyend="635"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1aceb5e718aea8333fa7da111bcd376318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_update_levelset_intersection</definition>
+        <argsstring>(lo, hi, v_in, vilo, vihi, ls_in, lslo, lshi, valid, vlo, vhi, phi, phlo, phhi)</argsstring>
+        <name>amrex_eb_update_levelset_intersection</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>v_in</type>
+          <defname>v_in</defname>
+        </param>
+        <param>
+          <type>vilo</type>
+          <defname>vilo</defname>
+        </param>
+        <param>
+          <type>vihi</type>
+          <defname>vihi</defname>
+        </param>
+        <param>
+          <type>ls_in</type>
+          <defname>ls_in</defname>
+        </param>
+        <param>
+          <type>lslo</type>
+          <defname>lslo</defname>
+        </param>
+        <param>
+          <type>lshi</type>
+          <defname>lshi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine UPDATE_LEVELSET_INTERSECTION </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: Update level set using the &quot;intersection&quot; selection rule: the minimum value between <computeroutput>phi</computeroutput> and <computeroutput>ls_in</computeroutput> is stored in <computeroutput>phi</computeroutput>. This is the level-set equivalent of the <computeroutput>GeometryShop::IntersectionIF</computeroutput>.</para><para>Comments: The role of <computeroutput>valid</computeroutput> here is to flag cells near (or in) regions of negative level-set. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="650" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="656" bodyend="687"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a29bb995199f1c3b055423024d8e5f73b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_update_levelset_intersection_bcs</definition>
+        <argsstring>(v_in, vilo, vihi, ls_in, lslo, lshi, valid, vlo, vhi, phi, phlo, phhi, periodic, domlo, domhi)</argsstring>
+        <name>amrex_eb_update_levelset_intersection_bcs</name>
+        <param>
+          <type>v_in</type>
+          <defname>v_in</defname>
+        </param>
+        <param>
+          <type>vilo</type>
+          <defname>vilo</defname>
+        </param>
+        <param>
+          <type>vihi</type>
+          <defname>vihi</defname>
+        </param>
+        <param>
+          <type>ls_in</type>
+          <defname>ls_in</defname>
+        </param>
+        <param>
+          <type>lslo</type>
+          <defname>lslo</defname>
+        </param>
+        <param>
+          <type>lshi</type>
+          <defname>lshi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>periodic</type>
+          <defname>periodic</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="692" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="698" bodyend="804"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1afbb0fc2ca439721fba94147c1b86ebf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_update_levelset_union</definition>
+        <argsstring>(lo, hi, v_in, vilo, vihi, ls_in, lslo, lshi, valid, vlo, vhi, phi, phlo, phhi)</argsstring>
+        <name>amrex_eb_update_levelset_union</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>v_in</type>
+          <defname>v_in</defname>
+        </param>
+        <param>
+          <type>vilo</type>
+          <defname>vilo</defname>
+        </param>
+        <param>
+          <type>vihi</type>
+          <defname>vihi</defname>
+        </param>
+        <param>
+          <type>ls_in</type>
+          <defname>ls_in</defname>
+        </param>
+        <param>
+          <type>lslo</type>
+          <defname>lslo</defname>
+        </param>
+        <param>
+          <type>lshi</type>
+          <defname>lshi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine UPDATE_LEVELSET_UNION </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: Update level set using the &quot;union&quot; selection rule: the maximum value between <computeroutput>phi</computeroutput> and <computeroutput>ls_in</computeroutput> is stored in <computeroutput>phi</computeroutput>. This is the level-set equivalent of the <computeroutput>GeometryShop::IntersectionIF</computeroutput>.</para><para>Comments: The role of <computeroutput>valid</computeroutput> here is to flag cells near (or in) regions of negative level-set. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="820" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="826" bodyend="857"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a605631bad24485775cdcb44fe4e0cabc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_update_levelset_union_bcs</definition>
+        <argsstring>(v_in, vilo, vihi, ls_in, lslo, lshi, valid, vlo, vhi, phi, phlo, phhi, periodic, domlo, domhi)</argsstring>
+        <name>amrex_eb_update_levelset_union_bcs</name>
+        <param>
+          <type>v_in</type>
+          <defname>v_in</defname>
+        </param>
+        <param>
+          <type>vilo</type>
+          <defname>vilo</defname>
+        </param>
+        <param>
+          <type>vihi</type>
+          <defname>vihi</defname>
+        </param>
+        <param>
+          <type>ls_in</type>
+          <defname>ls_in</defname>
+        </param>
+        <param>
+          <type>lslo</type>
+          <defname>lslo</defname>
+        </param>
+        <param>
+          <type>lshi</type>
+          <defname>lshi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>periodic</type>
+          <defname>periodic</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="862" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="868" bodyend="976"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1adf1d5c0269e73b0a27467dd1797809dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_fill_valid</definition>
+        <argsstring>(lo, hi, valid, vlo, vhi, phi, phlo, phhi, n_pad)</argsstring>
+        <name>amrex_eb_fill_valid</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>n_pad</type>
+          <defname>n_pad</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine FILL_VALID </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: Fills elements of valid with 1 whenever it corresponds to a position with n_pad of the level set value being negative (i.e. phi &lt; 0), and 0 otherwise. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="988" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="993" bodyend="1015"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a8e72c1507d5358338e9afd50542490bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_fill_valid_bcs</definition>
+        <argsstring>(valid, vlo, vhi, periodic, domlo, domhi)</argsstring>
+        <name>amrex_eb_fill_valid_bcs</name>
+        <param>
+          <type>valid</type>
+          <defname>valid</defname>
+        </param>
+        <param>
+          <type>vlo</type>
+          <defname>vlo</defname>
+        </param>
+        <param>
+          <type>vhi</type>
+          <defname>vhi</defname>
+        </param>
+        <param>
+          <type>periodic</type>
+          <defname>periodic</defname>
+        </param>
+        <param>
+          <type>domlo</type>
+          <defname>domlo</defname>
+        </param>
+        <param>
+          <type>domhi</type>
+          <defname>domhi</defname>
+        </param>
+        <briefdescription>
+<para>pure subroutine FILL_VALID_BCS </para>        </briefdescription>
+        <detaileddescription>
+<para>Purpose: Fills elements of valid with 1 whenever it corresponds to a position with n_pad of the level set value being negative (i.e. phi &lt; 0), and 0 otherwise. For all ghost cells outside the domain </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1030" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1032" bodyend="1111"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a1021e10493eae99fca20410e905f769d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure logical function</type>
+        <definition>pure logical function amrex_eb_levelset_module::neighbour_is_valid</definition>
+        <argsstring>(phi, phlo, phhi, i, j, k, n_pad)</argsstring>
+        <name>neighbour_is_valid</name>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>i</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>j</type>
+          <defname>j</defname>
+        </param>
+        <param>
+          <type>k</type>
+          <defname>k</defname>
+        </param>
+        <param>
+          <type>n_pad</type>
+          <defname>n_pad</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1116" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1117" bodyend="1168"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1aebc8cae9b6d75e09318a28bf888fde6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_count_facets</definition>
+        <argsstring>(lo, hi, flag, flo, fhi, n_facets)</argsstring>
+        <name>amrex_eb_count_facets</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <param>
+          <type>flo</type>
+          <defname>flo</defname>
+        </param>
+        <param>
+          <type>fhi</type>
+          <defname>fhi</defname>
+        </param>
+        <param>
+          <type>n_facets</type>
+          <defname>n_facets</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1175" bodyend="1193"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a0d02df8bee34d7c3814ca33fc8241866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_as_list</definition>
+        <argsstring>(lo, hi, c_facets, flag, flo, fhi, norm, nlo, nhi, bcent, blo, bhi, list_out, lsize, dx)</argsstring>
+        <name>amrex_eb_as_list</name>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>c_facets</type>
+          <defname>c_facets</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <param>
+          <type>flo</type>
+          <defname>flo</defname>
+        </param>
+        <param>
+          <type>fhi</type>
+          <defname>fhi</defname>
+        </param>
+        <param>
+          <type>norm</type>
+          <defname>norm</defname>
+        </param>
+        <param>
+          <type>nlo</type>
+          <defname>nlo</defname>
+        </param>
+        <param>
+          <type>nhi</type>
+          <defname>nhi</defname>
+        </param>
+        <param>
+          <type>bcent</type>
+          <defname>bcent</defname>
+        </param>
+        <param>
+          <type>blo</type>
+          <defname>blo</defname>
+        </param>
+        <param>
+          <type>bhi</type>
+          <defname>bhi</defname>
+        </param>
+        <param>
+          <type>list_out</type>
+          <defname>list_out</defname>
+        </param>
+        <param>
+          <type>lsize</type>
+          <defname>lsize</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1198" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1205" bodyend="1242"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a6243cc7992c6702f4cfc0c5fb75dc0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_interp_levelset</definition>
+        <argsstring>(pos, plo, n_refine, phi, phlo, phhi, dx, phi_interp)</argsstring>
+        <name>amrex_eb_interp_levelset</name>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <param>
+          <type>plo</type>
+          <defname>plo</defname>
+        </param>
+        <param>
+          <type>n_refine</type>
+          <defname>n_refine</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>phi_interp</type>
+          <defname>phi_interp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1247" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1251" bodyend="1296"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1aea389d97360abbcd727421c936209ef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure subroutine</type>
+        <definition>pure subroutine amrex_eb_levelset_module::amrex_eb_normal_levelset</definition>
+        <argsstring>(pos, plo, n_refine, phi, phlo, phhi, dx, normal)</argsstring>
+        <name>amrex_eb_normal_levelset</name>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <param>
+          <type>plo</type>
+          <defname>plo</defname>
+        </param>
+        <param>
+          <type>n_refine</type>
+          <defname>n_refine</defname>
+        </param>
+        <param>
+          <type>phi</type>
+          <defname>phi</defname>
+        </param>
+        <param>
+          <type>phlo</type>
+          <defname>phlo</defname>
+        </param>
+        <param>
+          <type>phhi</type>
+          <defname>phhi</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>normal</type>
+          <defname>normal</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1301" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1305" bodyend="1373"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1" column="1"/>
+  </compounddef>
+</doxygen>

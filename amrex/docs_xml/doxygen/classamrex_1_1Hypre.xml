@@ -1,0 +1,837 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1Hypre" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>amrex::Hypre</compoundname>
+    <derivedcompoundref refid="classamrex_1_1HypreABecLap" prot="public" virt="non-virtual">amrex::HypreABecLap</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1HypreABecLap2" prot="public" virt="non-virtual">amrex::HypreABecLap2</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1HypreABecLap3" prot="public" virt="non-virtual">amrex::HypreABecLap3</derivedcompoundref>
+    <includes refid="AMReX__Hypre_8H" local="no">AMReX_Hypre.H</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13f" prot="public" static="no">
+        <name>Interface</name>
+        <enumvalue id="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13fa3c1530a48aea0feaf4956bca2698ebd6" prot="public">
+          <name>structed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13faf9c3193ceb5f05f22b939a6ddbf628c5" prot="public">
+          <name>semi_structed</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13fa7bed657a775c37c2570786d0cbeefd88" prot="public">
+          <name>ij</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="20" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="20" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1abff4c8fa7e9790d9408099ffa9c57934" prot="protected" static="yes" mutable="no">
+        <type>constexpr HYPRE_Int</type>
+        <definition>constexpr HYPRE_Int amrex::Hypre::regular_stencil_size</definition>
+        <argsstring></argsstring>
+        <name>regular_stencil_size</name>
+        <initializer>= 2*AMREX_SPACEDIM + 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="57" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a49181827cb7d3a5b52f02540d7e82121" prot="protected" static="yes" mutable="no">
+        <type>constexpr HYPRE_Int</type>
+        <definition>constexpr HYPRE_Int amrex::Hypre::eb_stencil_size</definition>
+        <argsstring></argsstring>
+        <name>eb_stencil_size</name>
+        <initializer>= AMREX_D_TERM(3, *3, *3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="58" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a55f4b29b2291555432bbc82aa86c0931" prot="protected" static="no" mutable="no">
+        <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+        <definition>MPI_Comm amrex::Hypre::comm</definition>
+        <argsstring></argsstring>
+        <name>comm</name>
+        <initializer>= <ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a97c4612c2a7f58b47c36ec710cb1b0f6" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref></type>
+        <definition>Geometry amrex::Hypre::geom</definition>
+        <argsstring></argsstring>
+        <name>geom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a299be2dee6b5a28af170606d9b19615b" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::Hypre::verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a1ab65d249a3254eb6540bedcc9ebf285" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
+        <definition>MultiFab amrex::Hypre::acoefs</definition>
+        <argsstring></argsstring>
+        <name>acoefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a097bf586d48d127374ec0d293dd3bd41" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, AMREX_SPACEDIM &gt;</type>
+        <definition>Array&lt;MultiFab,AMREX_SPACEDIM&gt; amrex::Hypre::bcoefs</definition>
+        <argsstring></argsstring>
+        <name>bcoefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a5cc787cbd77e527e4c58e58904305531" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::Hypre::scalar_a</definition>
+        <argsstring></argsstring>
+        <name>scalar_a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a8cb2fde2e6ce7be52d40bc7ee19f7ae3" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::Hypre::scalar_b</definition>
+        <argsstring></argsstring>
+        <name>scalar_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a6eb22e62b62ea0d2bcfef92f18df5304" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
+        <definition>MultiFab amrex::Hypre::diaginv</definition>
+        <argsstring></argsstring>
+        <name>diaginv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a88d3049d660b7e0a5fca3002d5b78916" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; const *</type>
+        <definition>FabFactory&lt;FArrayBox&gt; const* amrex::Hypre::m_factory</definition>
+        <argsstring></argsstring>
+        <name>m_factory</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a64e1c781a5d446a7a7cc3ef1231c2218" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1BndryData" kindref="compound">BndryData</ref> const *</type>
+        <definition>BndryData const* amrex::Hypre::m_bndry</definition>
+        <argsstring></argsstring>
+        <name>m_bndry</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a7b04bbe6b54d748e48516df1695bc139" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::Hypre::m_maxorder</definition>
+        <argsstring></argsstring>
+        <name>m_maxorder</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1Hypre_1afd2d6c32022a99d96f73485d03272ec9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Hypre::Hypre</definition>
+        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, const Geometry &amp;geom, MPI_Comm comm_)</argsstring>
+        <name>Hypre</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+          <declname>comm_</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="22" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="27" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1af5b05a1271484c6bd34ebd3fbbfc85ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::Hypre::~Hypre</definition>
+        <argsstring>()</argsstring>
+        <name>~Hypre</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="27" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="60" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1ac497cc99508dff6311d584d7e0636ce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Hypre::setScalars</definition>
+        <argsstring>(Real sa, Real sb)</argsstring>
+        <name>setScalars</name>
+        <param>
+          <type>Real</type>
+          <declname>sa</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>sb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="29" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="68" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1ade6e731e7392a70b13f66c6656631cdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Hypre::setACoeffs</definition>
+        <argsstring>(const MultiFab &amp;alpha)</argsstring>
+        <name>setACoeffs</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1a993feadb0ec999bd7f2d92717fd9c486" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Hypre::setBCoeffs</definition>
+        <argsstring>(const Array&lt; const MultiFab *, BL_SPACEDIM &gt; &amp;beta)</argsstring>
+        <name>setBCoeffs</name>
+        <param>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *, <ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref> &gt; &amp;</type>
+          <declname>beta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="81" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1a1aa001ef00cb82f298c761cbf61de2e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Hypre::setVerbose</definition>
+        <argsstring>(int _verbose)</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type>int</type>
+          <declname>_verbose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1accd025c6669f7d68aa001f5c4d1582ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void amrex::Hypre::solve</definition>
+        <argsstring>(MultiFab &amp;soln, const MultiFab &amp;rhs, Real rel_tol, Real abs_tol, int max_iter, const BndryData &amp;bndry, int max_bndry_order)=0</argsstring>
+        <name>solve</name>
+        <reimplementedby refid="classamrex_1_1HypreABecLap2_1a720aace7ce8469e3abdd29a42096d69a">solve</reimplementedby>
+        <reimplementedby refid="classamrex_1_1HypreABecLap3_1a84a20efbf88131a2235d161fa5d8065e">solve</reimplementedby>
+        <reimplementedby refid="classamrex_1_1HypreABecLap_1a91c060611b4dc33fec8c6ec8b9968a56">solve</reimplementedby>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>soln</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>rel_tol</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>abs_tol</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_iter</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1BndryData" kindref="compound">BndryData</ref> &amp;</type>
+          <declname>bndry</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_bndry_order</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="33" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1Hypre_1a4120c58bf9c835d8345257e836e276b5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>HYPRE_Int</type>
+        <definition>static HYPRE_Int amrex::Hypre::ispow2</definition>
+        <argsstring>(HYPRE_Int i)</argsstring>
+        <name>ispow2</name>
+        <param>
+          <type>HYPRE_Int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1ad64dd52bc29882baff668896c2dde9cd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; HYPRE_Int, AMREX_SPACEDIM &gt;</type>
+        <definition>static Array&lt;HYPRE_Int,AMREX_SPACEDIM&gt; amrex::Hypre::loV</definition>
+        <argsstring>(const Box &amp;b)</argsstring>
+        <name>loV</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="41" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1aac6b099395a000804880b97e43407c5b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; HYPRE_Int, AMREX_SPACEDIM &gt;</type>
+        <definition>static Array&lt;HYPRE_Int,AMREX_SPACEDIM&gt; amrex::Hypre::hiV</definition>
+        <argsstring>(const Box &amp;b)</argsstring>
+        <name>hiV</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="48" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="48" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3073">
+        <label>amrex::Hypre</label>
+        <link refid="classamrex_1_1Hypre"/>
+      </node>
+      <node id="3074">
+        <label>amrex::HypreABecLap</label>
+        <link refid="classamrex_1_1HypreABecLap"/>
+        <childnode refid="3073" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3075">
+        <label>amrex::HypreABecLap2</label>
+        <link refid="classamrex_1_1HypreABecLap2"/>
+        <childnode refid="3073" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3076">
+        <label>amrex::HypreABecLap3</label>
+        <link refid="classamrex_1_1HypreABecLap3"/>
+        <childnode refid="3073" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3105">
+        <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
+      </node>
+      <node id="3088">
+        <label>amrex::FabArrayBase::CacheStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
+        <childnode refid="3089" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3091">
+        <label>amrex::FabArrayBase::FabArrayStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
+      </node>
+      <node id="3083">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="3083" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="3118">
+        <label>amrex::LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="3087" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3119" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3080">
+        <label>Real</label>
+      </node>
+      <node id="3106">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3107" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3110">
+        <label>amrex::BndryData</label>
+        <link refid="classamrex_1_1BndryData"/>
+        <childnode refid="3111" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3078" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="3113" relation="usage">
+          <edgelabel>bcloc</edgelabel>
+        </childnode>
+        <childnode refid="3116" relation="usage">
+          <edgelabel>masks</edgelabel>
+        </childnode>
+        <childnode refid="3118" relation="usage">
+          <edgelabel>bcond</edgelabel>
+        </childnode>
+      </node>
+      <node id="3100">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="3092">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3093" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3089">
+        <label>string</label>
+      </node>
+      <node id="3108">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="3083" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="3102">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="3117">
+        <label>std::vector&lt; amrex::MultiMask, std::allocator&lt; amrex::MultiMask &gt; &gt;</label>
+      </node>
+      <node id="3077">
+        <label>amrex::Hypre</label>
+        <link refid="classamrex_1_1Hypre"/>
+        <childnode refid="3078" relation="usage">
+          <edgelabel>geom</edgelabel>
+        </childnode>
+        <childnode refid="3085" relation="usage">
+          <edgelabel>acoefs</edgelabel>
+          <edgelabel>diaginv</edgelabel>
+        </childnode>
+        <childnode refid="3109" relation="usage">
+          <edgelabel>m_factory</edgelabel>
+        </childnode>
+        <childnode refid="3110" relation="usage">
+          <edgelabel>m_bndry</edgelabel>
+        </childnode>
+        <childnode refid="3080" relation="usage">
+          <edgelabel>scalar_a</edgelabel>
+          <edgelabel>scalar_b</edgelabel>
+        </childnode>
+      </node>
+      <node id="3101">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3102" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3120">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="3103">
+        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
+        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="3109">
+        <label>amrex::FabFactory&lt; amrex::FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabFactory"/>
+      </node>
+      <node id="3116">
+        <label>amrex::Vector&lt; amrex::MultiMask &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3117" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3107">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="3093">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="3098">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="3083" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="3084" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="3081">
+        <label>amrex::RealBox</label>
+        <link refid="classamrex_1_1RealBox"/>
+        <childnode refid="3080" relation="usage">
+          <edgelabel>xhi</edgelabel>
+          <edgelabel>xlo</edgelabel>
+        </childnode>
+      </node>
+      <node id="3119">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3120" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3082">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="3083" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="3084" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="3096">
+        <label>amrex::DistributionMapping::RefID</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
+        <childnode refid="3097" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3104">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3105" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3079">
+        <label>amrex::CoordSys</label>
+        <link refid="classamrex_1_1CoordSys"/>
+        <childnode refid="3080" relation="usage">
+          <edgelabel>inv_dx</edgelabel>
+          <edgelabel>offset</edgelabel>
+          <edgelabel>dx</edgelabel>
+        </childnode>
+      </node>
+      <node id="3084">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="3097">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="3092" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
+        </childnode>
+      </node>
+      <node id="3112">
+        <label>amrex::FabSet</label>
+        <link refid="classamrex_1_1FabSet"/>
+        <childnode refid="3085" relation="usage">
+          <edgelabel>m_mf</edgelabel>
+        </childnode>
+      </node>
+      <node id="3099">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3100" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3090">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="3094">
+        <label>amrex::FabArrayBase::BDKey</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
+        <childnode refid="3095" relation="usage">
+          <edgelabel>m_ba_id</edgelabel>
+        </childnode>
+        <childnode refid="3096" relation="usage">
+          <edgelabel>m_dm_id</edgelabel>
+        </childnode>
+      </node>
+      <node id="3111">
+        <label>amrex::BndryRegister</label>
+        <link refid="classamrex_1_1BndryRegister"/>
+        <childnode refid="3112" relation="usage">
+          <edgelabel>bndry</edgelabel>
+        </childnode>
+        <childnode refid="3098" relation="usage">
+          <edgelabel>grids</edgelabel>
+        </childnode>
+      </node>
+      <node id="3085">
+        <label>amrex::MultiFab</label>
+        <link refid="classamrex_1_1MultiFab"/>
+        <childnode refid="3086" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3078">
+        <label>amrex::Geometry</label>
+        <link refid="classamrex_1_1Geometry"/>
+        <childnode refid="3079" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3081" relation="usage">
+          <edgelabel>prob_domain</edgelabel>
+        </childnode>
+        <childnode refid="3082" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+      </node>
+      <node id="3115">
+        <label>std::vector&lt; RealTuple, std::allocator&lt; RealTuple &gt; &gt;</label>
+      </node>
+      <node id="3113">
+        <label>amrex::LayoutData&lt; RealTuple &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="3087" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3114" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3114">
+        <label>amrex::Vector&lt; RealTuple &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3115" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3086">
+        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabArray"/>
+        <childnode refid="3087" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3083" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="3092" relation="usage">
+          <edgelabel>fb_recv_size</edgelabel>
+          <edgelabel>fb_recv_from</edgelabel>
+        </childnode>
+        <childnode refid="3099" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="3101" relation="usage">
+          <edgelabel>fb_recv_data</edgelabel>
+          <edgelabel>fb_send_data</edgelabel>
+        </childnode>
+        <childnode refid="3103" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="3104" relation="usage">
+          <edgelabel>fb_recv_stat</edgelabel>
+        </childnode>
+        <childnode refid="3106" relation="usage">
+          <edgelabel>fb_send_reqs</edgelabel>
+          <edgelabel>fb_recv_reqs</edgelabel>
+        </childnode>
+        <childnode refid="3108" relation="usage">
+          <edgelabel>fb_period</edgelabel>
+        </childnode>
+      </node>
+      <node id="3095">
+        <label>amrex::BoxArray::RefID</label>
+        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
+      </node>
+      <node id="3087">
+        <label>amrex::FabArrayBase</label>
+        <link refid="classamrex_1_1FabArrayBase"/>
+        <childnode refid="3088" relation="usage">
+          <edgelabel>m_FBC_stats</edgelabel>
+          <edgelabel>m_FPinfo_stats</edgelabel>
+          <edgelabel>m_CFinfo_stats</edgelabel>
+          <edgelabel>m_TAC_stats</edgelabel>
+          <edgelabel>m_CPC_stats</edgelabel>
+        </childnode>
+        <childnode refid="3090" relation="usage">
+          <edgelabel>distributionMap</edgelabel>
+        </childnode>
+        <childnode refid="3083" relation="usage">
+          <edgelabel>n_grow</edgelabel>
+          <edgelabel>comm_tile_size</edgelabel>
+          <edgelabel>mfiter_tile_size</edgelabel>
+          <edgelabel>mfghostiter_tile_size</edgelabel>
+        </childnode>
+        <childnode refid="3091" relation="usage">
+          <edgelabel>m_FA_stats</edgelabel>
+        </childnode>
+        <childnode refid="3092" relation="usage">
+          <edgelabel>indexArray</edgelabel>
+        </childnode>
+        <childnode refid="3094" relation="usage">
+          <edgelabel>m_bdkey</edgelabel>
+        </childnode>
+        <childnode refid="3098" relation="usage">
+          <edgelabel>boxarray</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="16" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1Hypre_1a1ab65d249a3254eb6540bedcc9ebf285" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>acoefs</name></member>
+      <member refid="classamrex_1_1Hypre_1a097bf586d48d127374ec0d293dd3bd41" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>bcoefs</name></member>
+      <member refid="classamrex_1_1Hypre_1a55f4b29b2291555432bbc82aa86c0931" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>comm</name></member>
+      <member refid="classamrex_1_1Hypre_1a6eb22e62b62ea0d2bcfef92f18df5304" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>diaginv</name></member>
+      <member refid="classamrex_1_1Hypre_1a49181827cb7d3a5b52f02540d7e82121" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>eb_stencil_size</name></member>
+      <member refid="classamrex_1_1Hypre_1a97c4612c2a7f58b47c36ec710cb1b0f6" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>geom</name></member>
+      <member refid="classamrex_1_1Hypre_1aac6b099395a000804880b97e43407c5b" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>hiV</name></member>
+      <member refid="classamrex_1_1Hypre_1afd2d6c32022a99d96f73485d03272ec9" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>Hypre</name></member>
+      <member refid="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13f" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>Interface</name></member>
+      <member refid="classamrex_1_1Hypre_1a4120c58bf9c835d8345257e836e276b5" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>ispow2</name></member>
+      <member refid="classamrex_1_1Hypre_1ad64dd52bc29882baff668896c2dde9cd" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>loV</name></member>
+      <member refid="classamrex_1_1Hypre_1a64e1c781a5d446a7a7cc3ef1231c2218" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>m_bndry</name></member>
+      <member refid="classamrex_1_1Hypre_1a88d3049d660b7e0a5fca3002d5b78916" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>m_factory</name></member>
+      <member refid="classamrex_1_1Hypre_1a7b04bbe6b54d748e48516df1695bc139" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>m_maxorder</name></member>
+      <member refid="classamrex_1_1Hypre_1abff4c8fa7e9790d9408099ffa9c57934" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>regular_stencil_size</name></member>
+      <member refid="classamrex_1_1Hypre_1a5cc787cbd77e527e4c58e58904305531" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>scalar_a</name></member>
+      <member refid="classamrex_1_1Hypre_1a8cb2fde2e6ce7be52d40bc7ee19f7ae3" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>scalar_b</name></member>
+      <member refid="classamrex_1_1Hypre_1ade6e731e7392a70b13f66c6656631cdf" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>setACoeffs</name></member>
+      <member refid="classamrex_1_1Hypre_1a993feadb0ec999bd7f2d92717fd9c486" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>setBCoeffs</name></member>
+      <member refid="classamrex_1_1Hypre_1ac497cc99508dff6311d584d7e0636ce8" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>setScalars</name></member>
+      <member refid="classamrex_1_1Hypre_1a1aa001ef00cb82f298c761cbf61de2e1" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>setVerbose</name></member>
+      <member refid="classamrex_1_1Hypre_1accd025c6669f7d68aa001f5c4d1582ad" prot="public" virt="pure-virtual"><scope>amrex::Hypre</scope><name>solve</name></member>
+      <member refid="classamrex_1_1Hypre_1a299be2dee6b5a28af170606d9b19615b" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>verbose</name></member>
+      <member refid="classamrex_1_1Hypre_1af5b05a1271484c6bd34ebd3fbbfc85ef" prot="public" virt="virtual"><scope>amrex::Hypre</scope><name>~Hypre</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

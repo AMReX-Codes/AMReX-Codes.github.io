@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__ABec__UTIL_8F90" kind="file" language="Fortran">
+    <compoundname>AMReX_ABec_UTIL.F90</compoundname>
+    <innernamespace refid="namespaceamrex__abec__util__module">amrex_abec_util_module</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="namespaceamrex__abec__util__module" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__abec__util__module" kindref="compound">amrex_abec_util_module</ref></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__fort__module" kindref="compound">amrex_fort_module</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!-----------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="13"><highlight class="keyword"><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__abec__util__module_1a3aacc4e2819e03912881e3108b7744dc" kindref="member">tridiag</ref>(a,b,c,r,u,n)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>n</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>nmax</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>a(n)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>b(n)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>c(n)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>r(n)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>u(n)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>parameter(nmax<sp/>=<sp/>4098)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>j</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>bet</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal"><sp/>gam(nmax)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>.gt.<sp/>nmax<sp/>)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="AMReX__error__mod_8F90_1a2b9e45cff2155bd0e74d1e78a0e99bc1" kindref="member">bl_error</ref>(</highlight><highlight class="stringliteral">&apos;tridiag:<sp/>size<sp/>exceeded&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b(1)<sp/>.eq.<sp/>0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="AMReX__error__mod_8F90_1a2b9e45cff2155bd0e74d1e78a0e99bc1" kindref="member">bl_error</ref>(</highlight><highlight class="stringliteral">&apos;tridiag:<sp/>CANT<sp/>HAVE<sp/>B(1)<sp/>=<sp/>ZERO&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>bet<sp/>=<sp/>b(1)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>u(1)<sp/>=<sp/>r(1)/bet</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>2,n</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gam(j)<sp/>=<sp/>c(j-1)/bet</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bet<sp/>=<sp/>b(j)<sp/>-<sp/>a(j)*gam(j)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bet<sp/>.eq.<sp/>0)<sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="AMReX__error__mod_8F90_1a2b9e45cff2155bd0e74d1e78a0e99bc1" kindref="member">bl_error</ref>(</highlight><highlight class="stringliteral">&apos;tridiag:<sp/>TRIDIAG<sp/>FAILED&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u(j)<sp/>=<sp/>(r(j)-a(j)*u(j-1))/bet</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>n-1,1,-1</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u(j)<sp/>=<sp/>u(j)<sp/>-<sp/>gam(j+1)*u(j+1)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__abec__util__module_1a3aacc4e2819e03912881e3108b7744dc" kindref="member">tridiag</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__abec__util__module" kindref="compound">amrex_abec_util_module</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_CellMG/AMReX_ABec_UTIL.F90"/>
+  </compounddef>
+</doxygen>

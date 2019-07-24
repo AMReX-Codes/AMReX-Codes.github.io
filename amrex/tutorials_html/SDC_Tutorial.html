@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials/SDC &mdash; amrex 19.08-dev documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials/SENSEI" href="SENSEI_Tutorial.html" />
+    <link rel="prev" title="Tutorials/Particles" href="Particles_Tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                19.08-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVODE_Tutorial.html">Tutorials/CVODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">Tutorials/GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/SDC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#misdc-adr-2d"><strong>MISDC_ADR_2d</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SENSEI_Tutorial.html">Tutorials/SENSEI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorials/SDC</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/SDC_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorials-sdc">
+<h1>Tutorials/SDC<a class="headerlink" href="#tutorials-sdc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="misdc-adr-2d">
+<h2><strong>MISDC_ADR_2d</strong><a class="headerlink" href="#misdc-adr-2d" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial presents an example of using a “multi-implicit” spectral
+deferred corrections (MISDC) integrator to solve a simple scalar
+advection-diffusion-reaction equation in two dimensions.  Both
+diffusion and reaction terms are treated implicitly but solved for
+independently in an operator splitting fashion.  The advection is
+treated explicitly.  The relative strengths of the three terms can be
+adjusted by changing the coefficients a,d, and r in inputs_2d.</p>
+<p>The advection operator is a 4th-order centered difference in flux
+form.  The diffusion operator is a 2nd order discretization of the
+Laplacian, and the implicit diffusion solve is done using
+multigrid. The “reaction” term here is just a simple linear damping
+hence the implicit solve is trivial.  See the routines in
+functions_2d.f90 for the code that evaluates the rhs terms.</p>
+<p>The simple form of the equation allows for an exact solution of the
+PDE in a periodic geometry. There is a flag called “plot_err” in
+main.cpp, which if set equal 1 will cause the code to output the error
+in the solution for plotting.  If the advection term is omitted (a=0),
+then an exact solution to the method of lines ODE is computed and used
+to compute the error.  Hence the error in this case will scale in dt
+with the order of the time integrator.</p>
+<p>This code can also be run as an IMEX advection-diffusion example
+simply by setting Npieces=2 in main.cpp.  This should also be
+equivalent to setting r=0.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SENSEI_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/SENSEI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Particles_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/Particles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

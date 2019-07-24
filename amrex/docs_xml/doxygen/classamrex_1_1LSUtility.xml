@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1LSUtility" kind="class" language="C++" prot="public">
+    <compoundname>amrex::LSUtility</compoundname>
+    <includes refid="AMReX__EB__levelset_8H" local="no">AMReX_EB_levelset.H</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1LSUtility_1abf52a50c13a4213202a1254029359f8c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref></type>
+        <definition>static Geometry amrex::LSUtility::make_ls_geometry</definition>
+        <argsstring>(const LSFactory &amp;level_set, const Geometry &amp;geom)</argsstring>
+        <name>make_ls_geometry</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> &amp;</type>
+          <declname>level_set</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct geometry with the Domain (<ref refid="classamrex_1_1Box" kindref="compound">Box</ref>) inherited from the <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> <computeroutput>geom</computeroutput>, and CellSize matching the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> <computeroutput>level_set</computeroutput> resolution. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="424" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="424" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSUtility_1a7b0810e6f378fd2da9e5502c523ffe3e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref></type>
+        <definition>static Geometry amrex::LSUtility::make_eb_geometry</definition>
+        <argsstring>(const LSFactory &amp;level_set, const Geometry &amp;geom)</argsstring>
+        <name>make_eb_geometry</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> &amp;</type>
+          <declname>level_set</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct geometry with the Domain (<ref refid="classamrex_1_1Box" kindref="compound">Box</ref>) inherited from the <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> <computeroutput>geom</computeroutput>, and CellSize matching the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> <computeroutput>level_set</computeroutput> EB resolution. This is particularly useful for building <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">EBFArrayBoxFactory</ref> objects whose <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> is what&apos;s expected by the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref>&apos;s filling routines. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="438" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="438" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSUtility_1a87e62dbf51e7e917ef115f97da8e230f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>static Real amrex::LSUtility::min_dx</definition>
+        <argsstring>(const Geometry &amp;geom)</argsstring>
+        <name>min_dx</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+<para>Returns the min CellSize of the <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> object <computeroutput>geom</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="449" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="449" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSUtility_1aeafa6ce27bc71756b783bd158065b99c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int amrex::LSUtility::min_eb_pad</definition>
+        <argsstring>(Real min_resolution, const Geometry &amp;geom_eb)</argsstring>
+        <name>min_eb_pad</name>
+        <param>
+          <type>Real</type>
+          <declname>min_resolution</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>geom_eb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the minimum eb_pad (EB ghost cells) to ensure that the level-set is able to resolve a length scale of at least <computeroutput>min_resolution</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="467" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="467" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1LSUtility_1a81f50a8be2ac2789da2e1f2d2d3a113c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void amrex::LSUtility::PrintFlagType</definition>
+        <argsstring>(const Box &amp;tile_box, const EBCellFlagFab &amp;flag)</argsstring>
+        <name>PrintFlagType</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>tile_box</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref> &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>Debug utility to help interrogate runtime flag types. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="476" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="476" bodyend="490"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Collection of static functions that help with the construction of <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref> objects. </para>    </detaileddescription>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="411" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="411" bodyend="491"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1LSUtility_1a7b0810e6f378fd2da9e5502c523ffe3e" prot="public" virt="non-virtual"><scope>amrex::LSUtility</scope><name>make_eb_geometry</name></member>
+      <member refid="classamrex_1_1LSUtility_1abf52a50c13a4213202a1254029359f8c" prot="public" virt="non-virtual"><scope>amrex::LSUtility</scope><name>make_ls_geometry</name></member>
+      <member refid="classamrex_1_1LSUtility_1a87e62dbf51e7e917ef115f97da8e230f" prot="public" virt="non-virtual"><scope>amrex::LSUtility</scope><name>min_dx</name></member>
+      <member refid="classamrex_1_1LSUtility_1aeafa6ce27bc71756b783bd158065b99c" prot="public" virt="non-virtual"><scope>amrex::LSUtility</scope><name>min_eb_pad</name></member>
+      <member refid="classamrex_1_1LSUtility_1a81f50a8be2ac2789da2e1f2d2d3a113c" prot="public" virt="non-virtual"><scope>amrex::LSUtility</scope><name>PrintFlagType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1CArena" kind="class" language="C++" prot="public">
+    <compoundname>amrex::CArena</compoundname>
+    <basecompoundref refid="classamrex_1_1Arena" prot="public" virt="non-virtual">amrex::Arena</basecompoundref>
+    <includes refid="AMReX__CArena_8H" local="no">AMReX_CArena.H</includes>
+    <innerclass refid="classamrex_1_1CArena_1_1Node" prot="protected">amrex::CArena::Node</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1CArena_1a10adc62608b67926d034077109597b14" prot="public" static="no">
+        <name>@0</name>
+        <enumvalue id="classamrex_1_1CArena_1a10adc62608b67926d034077109597b14a73f4c71472036baf157528f4435be5d2" prot="public">
+          <name>DefaultHunkSize</name>
+          <initializer>= 1024*1024*8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The default memory hunk size to grab from the heap. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="53" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="classamrex_1_1CArena_1a9e8adf2bef58badafbefa442d69db64b" prot="protected" static="no">
+        <type>std::set&lt; <ref refid="classamrex_1_1CArena_1_1Node" kindref="compound">Node</ref> &gt;</type>
+        <definition>typedef std::set&lt;Node&gt; amrex::CArena::NL</definition>
+        <argsstring></argsstring>
+        <name>NL</name>
+        <briefdescription>
+<para>The type of our freelist and blocklist. We use a set sorted from lo to hi memory addresses. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1CArena_1ad1b240a0437cfcaee6788096d93a1674" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;void*,std::size_t&gt; &gt; amrex::CArena::m_alloc</definition>
+        <argsstring></argsstring>
+        <name>m_alloc</name>
+        <briefdescription>
+<para>The list of blocks allocated via ::operator new(). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="116" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1CArena_1a000d9e231672c9a28a72a05abec379fb" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1CArena_1a9e8adf2bef58badafbefa442d69db64b" kindref="member">NL</ref></type>
+        <definition>NL amrex::CArena::m_freelist</definition>
+        <argsstring></argsstring>
+        <name>m_freelist</name>
+        <briefdescription>
+<para>The free list of allocated but not currently used blocks. Maintained in lo to hi memory sorted order. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="122" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1CArena_1a88823438ee0e89721d65131d87d2f687" prot="protected" static="no" mutable="no">
+        <type>std::unordered_set&lt; <ref refid="classamrex_1_1CArena_1_1Node" kindref="compound">Node</ref>, <ref refid="structamrex_1_1CArena_1_1Node_1_1hash" kindref="compound">Node::hash</ref> &gt;</type>
+        <definition>std::unordered_set&lt;Node, Node::hash&gt; amrex::CArena::m_busylist</definition>
+        <argsstring></argsstring>
+        <name>m_busylist</name>
+        <briefdescription>
+<para>The list of busy blocks. A block is either on the freelist or on the blocklist, but not on both. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="129" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1CArena_1a7bbf66f41bc3167185236bdcd6fe67a1" prot="protected" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::CArena::m_hunk</definition>
+        <argsstring></argsstring>
+        <name>m_hunk</name>
+        <briefdescription>
+<para>The minimal size of hunks to request from system. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="131" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1CArena_1a7ec2fcdaa0d06d1fceb739d0e1661751" prot="protected" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::CArena::m_used</definition>
+        <argsstring></argsstring>
+        <name>m_used</name>
+        <briefdescription>
+<para>The amount of heap space currently allocated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" prot="protected" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex amrex::CArena::carena_mutex</definition>
+        <argsstring></argsstring>
+        <name>carena_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="135" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1CArena_1a43a76cc08d37a6c6174a05989d0bc60e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::CArena::CArena</definition>
+        <argsstring>(std::size_t hunk_size=0, ArenaInfo info=ArenaInfo())</argsstring>
+        <name>CArena</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>hunk_size</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1ArenaInfo" kindref="compound">ArenaInfo</ref></type>
+          <declname>info</declname>
+          <defval><ref refid="structamrex_1_1ArenaInfo" kindref="compound">ArenaInfo</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Construct a coalescing memory manager. hunk_size is the minimum size of hunks of memory to allocate from the heap. If hunk_size == 0 we use DefaultHunkSize as specified below. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.cpp" bodystart="11" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1a1dc0400df161a7395380b6156678918a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::CArena::CArena</definition>
+        <argsstring>(const CArena &amp;rhs)=delete</argsstring>
+        <name>CArena</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1ae491fc24a9163b864bc798acc7518852" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
+        <definition>CArena&amp; amrex::CArena::operator=</definition>
+        <argsstring>(const CArena &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1abca549bb11a9efb8b05dca10c32aab81" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::CArena::~CArena</definition>
+        <argsstring>() override</argsstring>
+        <name>~CArena</name>
+        <briefdescription>
+<para>The destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="38" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.cpp" bodystart="24" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1aeafab1fb8b884a0fc6ac916ae7d10321" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void *</type>
+        <definition>void * amrex::CArena::alloc</definition>
+        <argsstring>(std::size_t nbytes) overridefinal</argsstring>
+        <name>alloc</name>
+        <reimplements refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e">alloc</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>nbytes</declname>
+        </param>
+        <briefdescription>
+<para>Allocate some memory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="41" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.cpp" bodystart="32" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1a6920342ae3cc9420d8e59915130e138e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::CArena::free</definition>
+        <argsstring>(void *ap) overridefinal</argsstring>
+        <name>free</name>
+        <reimplements refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515">free</reimplements>
+        <param>
+          <type>void *</type>
+          <declname>ap</declname>
+        </param>
+        <briefdescription>
+<para>Free up allocated memory. Merge neighboring free memory chunks into largest possible chunk. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="47" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.cpp" bodystart="107" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1CArena_1a5f5de3e5518c0f5bcc71a6a2b4076a3f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::CArena::heap_space_used</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>heap_space_used</name>
+        <briefdescription>
+<para>The current amount of heap space used by the <ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="50" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.cpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager. It allocates (possibly) large chunks of heap space and apportions it out as requested. It merges together neighboring chunks on each <ref refid="classamrex_1_1CArena_1a6920342ae3cc9420d8e59915130e138e" kindref="member">free()</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="814">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+      </node>
+      <node id="813">
+        <label>amrex::CArena</label>
+        <link refid="classamrex_1_1CArena"/>
+        <childnode refid="814" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="817">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="816">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="817" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="815">
+        <label>amrex::CArena</label>
+        <link refid="classamrex_1_1CArena"/>
+        <childnode refid="816" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CArena.H" bodystart="22" bodyend="136"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>align</name></member>
+      <member refid="classamrex_1_1Arena_1a52dd4bf03bb4d31899bca6ca3440760a" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>align_size</name></member>
+      <member refid="classamrex_1_1CArena_1aeafab1fb8b884a0fc6ac916ae7d10321" prot="public" virt="virtual"><scope>amrex::CArena</scope><name>alloc</name></member>
+      <member refid="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>allocate_system</name></member>
+      <member refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>arena_info</name></member>
+      <member refid="classamrex_1_1CArena_1a43a76cc08d37a6c6174a05989d0bc60e" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>CArena</name></member>
+      <member refid="classamrex_1_1CArena_1a1dc0400df161a7395380b6156678918a" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>CArena</name></member>
+      <member refid="classamrex_1_1CArena_1a445be9f2ccca25ca4d2c8db026400136" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>carena_mutex</name></member>
+      <member refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>deallocate_system</name></member>
+      <member refid="classamrex_1_1CArena_1a10adc62608b67926d034077109597b14a73f4c71472036baf157528f4435be5d2" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>DefaultHunkSize</name></member>
+      <member refid="classamrex_1_1Arena_1a06dd6197d2081d7dd4c1bed308edd387" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1CArena_1a6920342ae3cc9420d8e59915130e138e" prot="public" virt="virtual"><scope>amrex::CArena</scope><name>free</name></member>
+      <member refid="classamrex_1_1CArena_1a5f5de3e5518c0f5bcc71a6a2b4076a3f" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>heap_space_used</name></member>
+      <member refid="classamrex_1_1Arena_1a9f40990a545f4d280e905117fc6a0786" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1CArena_1ad1b240a0437cfcaee6788096d93a1674" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_alloc</name></member>
+      <member refid="classamrex_1_1CArena_1a88823438ee0e89721d65131d87d2f687" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_busylist</name></member>
+      <member refid="classamrex_1_1CArena_1a000d9e231672c9a28a72a05abec379fb" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_freelist</name></member>
+      <member refid="classamrex_1_1CArena_1a7bbf66f41bc3167185236bdcd6fe67a1" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_hunk</name></member>
+      <member refid="classamrex_1_1CArena_1a7ec2fcdaa0d06d1fceb739d0e1661751" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>m_used</name></member>
+      <member refid="classamrex_1_1CArena_1a9e8adf2bef58badafbefa442d69db64b" prot="protected" virt="non-virtual"><scope>amrex::CArena</scope><name>NL</name></member>
+      <member refid="classamrex_1_1CArena_1ae491fc24a9163b864bc798acc7518852" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1Arena_1a506a68384da30629323d0839f13812c2" prot="public" virt="non-virtual"><scope>amrex::CArena</scope><name>PrintUsage</name></member>
+      <member refid="classamrex_1_1Arena_1a515142557e6b630fbad746e3c33776e5" prot="public" virt="virtual"><scope>amrex::CArena</scope><name>~Arena</name></member>
+      <member refid="classamrex_1_1CArena_1abca549bb11a9efb8b05dca10c32aab81" prot="public" virt="virtual"><scope>amrex::CArena</scope><name>~CArena</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

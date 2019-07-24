@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="fsunlinsol__dense_8f90" kind="file" language="Fortran">
+    <compoundname>fsunlinsol_dense.f90</compoundname>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNDenseLinearSolver" prot="public">fsunlinsol_dense_mod::FSUNDenseLinearSolver</innerclass>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolFree__Dense" prot="public">fsunlinsol_dense_mod::FSUNLinSolFree_Dense</innerclass>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolInitialize__Dense" prot="public">fsunlinsol_dense_mod::FSUNLinSolInitialize_Dense</innerclass>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolSetup__Dense" prot="public">fsunlinsol_dense_mod::FSUNLinSolSetup_Dense</innerclass>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolSolve__Dense" prot="public">fsunlinsol_dense_mod::FSUNLinSolSolve_Dense</innerclass>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolLastFlag__Dense" prot="public">fsunlinsol_dense_mod::FSUNLinSolLastFlag_Dense</innerclass>
+    <innerclass refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolSpace__Dense" prot="public">fsunlinsol_dense_mod::FSUNLinSolSpace_Dense</innerclass>
+    <innernamespace refid="namespacefsunlinsol__dense__mod">fsunlinsol_dense_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">!<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Programmer(s):<sp/>David<sp/>J.<sp/>Gardner<sp/>@<sp/>LLNL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">!<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">!<sp/>LLNS<sp/>Copyright<sp/>Start</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Copyright<sp/>(c)<sp/>2014,<sp/>Lawrence<sp/>Livermore<sp/>National<sp/>Security</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">!<sp/>This<sp/>work<sp/>was<sp/>performed<sp/>under<sp/>the<sp/>auspices<sp/>of<sp/>the<sp/>U.S.<sp/>Department</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">!<sp/>of<sp/>Energy<sp/>by<sp/>Lawrence<sp/>Livermore<sp/>National<sp/>Laboratory<sp/>in<sp/>part<sp/>under</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Contract<sp/>W-7405-Eng-48<sp/>and<sp/>in<sp/>part<sp/>under<sp/>Contract<sp/>DE-AC52-07NA27344.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">!<sp/>Produced<sp/>at<sp/>the<sp/>Lawrence<sp/>Livermore<sp/>National<sp/>Laboratory.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">!<sp/>All<sp/>rights<sp/>reserved.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">!<sp/>For<sp/>details,<sp/>see<sp/>the<sp/>LICENSE<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">!<sp/>LLNS<sp/>Copyright<sp/>End</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">!<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">!<sp/>This<sp/>file<sp/>contains<sp/>a<sp/>Fortran<sp/>module<sp/>for<sp/>interfacing<sp/>directly<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">!<sp/>the<sp/>SUNDIALS<sp/>dense<sp/>linear<sp/>solver<sp/>using<sp/>the<sp/>ISO_C_BINDING<sp/>module.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">!<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="namespacefsunlinsol__dense__mod" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespacefsunlinsol__dense__mod" kindref="compound">fsunlinsol_dense_mod</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">!=======<sp/>Interfaces<sp/>=========</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Constructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="interfacefsunlinsol__dense__mod_1_1FSUNDenseLinearSolver" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr)<sp/>function<sp/>fsundenselinearsolver(y,<sp/>a)<sp/>&amp;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNDenseLinearSolver&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>y</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>a</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">fsundenselinearsolver</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Destructors</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolFree__Dense" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal">fsunlinsolfree_dense(LS)<sp/>&amp;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNLinSolFree_Dense&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>ls</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal">fsunlinsolfree_dense</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>=================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>NOT<sp/>INTERFACED<sp/>SUNLinSolGetType_Dense</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>-----------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolInitialize__Dense" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>integer(c_int)<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">fsunlinsolinitialize_dense(LS)<sp/>&amp;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNLinSolInitialize_Dense&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>ls</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">fsunlinsolinitialize_dense</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolSetup__Dense" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>integer(c_int)<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">fsunlinsolsetup_dense(LS,<sp/>A)<sp/>&amp;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNLinSolSetup_Dense&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>ls</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>a</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">fsunlinsolsetup_dense</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolSolve__Dense" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>integer(c_int)<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">fsunlinsolsolve_dense(LS,<sp/>A,<sp/>x,<sp/>b,<sp/>tol)<sp/>&amp;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNLinSolSolve_Dense&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>ls</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>a</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>x</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>b</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(c_double)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>tol</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">fsunlinsolsolve_dense</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolLastFlag__Dense" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>integer(c_long)<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">fsunlinsollastflag_dense(LS)<sp/>&amp;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNLinSolLastFlag_Dense&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>ls</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">fsunlinsollastflag_dense</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="interfacefsunlinsol__dense__mod_1_1FSUNLinSolSpace__Dense" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>integer(c_int)<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal">fsunlinsolspace_dense(LS,<sp/>lenrwLS,<sp/>leniwLS)<sp/>&amp;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;SUNLinSolSpace_Dense&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>ls</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_long)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>lenrwls</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_long)</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>leniwls</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal">fsunlinsolspace_dense</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal"><ref refid="namespacefsunlinsol__dense__mod" kindref="compound">fsunlinsol_dense_mod</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS3/fsunlinsol_dense.f90"/>
+  </compounddef>
+</doxygen>

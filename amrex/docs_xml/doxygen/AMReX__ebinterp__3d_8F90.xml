@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__ebinterp__3d_8F90" kind="file" language="Fortran">
+    <compoundname>AMReX_ebinterp_3d.F90</compoundname>
+    <innernamespace refid="namespaceamrex__ebinterp__module">amrex_ebinterp_module</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__ebinterp__module" kindref="compound">amrex_ebinterp_module</ref></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__fort__module" kindref="compound">amrex_fort_module</ref></highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__ebcellflag__module" kindref="compound">amrex_ebcellflag_module</ref></highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal"><sp/>:<sp/><ref refid="namespaceamrex__ebcellflag__module_1a6fa46fba286ea97c6408222d70ad589d" kindref="member">num_neighbor_cells</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="namespaceamrex__ebinterp__module_1aec88f11d4cbe7bb0c88584b67d0d2059" kindref="member">amrex_ebinterp_pc_sv</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__ebinterp__module_1aec88f11d4cbe7bb0c88584b67d0d2059" kindref="member">amrex_ebinterp_pc_sv</ref><sp/>(tflo,<sp/>tfhi,<sp/>tclo,<sp/>tchi,<sp/>crse,<sp/>clo,<sp/>chi,<sp/>fine,<sp/>flo,<sp/>fhi,<sp/>&amp;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp,<sp/>ratio,<sp/>cdomainlo,<sp/>cdomainhi,<sp/>cflag,<sp/>cflo,<sp/>cfhi)<sp/>&amp;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bind(c,name=</highlight><highlight class="stringliteral">&apos;amrex_ebinterp_pc_sv&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>tclo(3),<sp/>tchi(3),<sp/>tflo(3),<sp/>tfhi(3),<sp/>clo(3),<sp/>chi(3),<sp/>flo(3),<sp/>fhi(3)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>ncomp,<sp/>ratio(3),<sp/>cflo(3),<sp/>cfhi(3)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>cdomainlo(3),<sp/>cdomainhi(3)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in<sp/><sp/><sp/>)</highlight><highlight class="normal"><sp/>::<sp/>crse(clo(1):chi(1),clo(2):chi(2),clo(3):chi(3),ncomp)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(amrex_real)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(inout)</highlight><highlight class="normal"><sp/>::<sp/>fine(flo(1):fhi(1),flo(2):fhi(2),flo(3):fhi(3),ncomp)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>cflag(cflo(1):cfhi(1),cflo(2):cfhi(2),cflo(3):cfhi(3))</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>ic,<sp/>jc,<sp/>kc,<sp/>n,<sp/>i,<sp/>j,<sp/>k,<sp/>imin,<sp/>imax,<sp/>jmin,<sp/>jmax,<sp/>kmin,<sp/>kmax,<sp/>glo(3),<sp/>ghi(3)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/>num_expected_ngbrs</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>kc<sp/>=<sp/>tclo(3)+1,<sp/>tchi(3)-1</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kmin<sp/>=<sp/>max(kc*ratio(3)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,tflo(3))</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kmax<sp/>=<sp/>min(kc*ratio(3)+ratio(3)-1,tfhi(3))</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glo(3)<sp/>=<sp/>max(kc-1,<sp/>cdomainlo(3))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ghi(3)<sp/>=<sp/>min(kc+1,<sp/>cdomainhi(3))</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>jc<sp/>=<sp/>tclo(2)+1,<sp/>tchi(2)-1</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jmin<sp/>=<sp/>max(jc*ratio(2)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,tflo(2))</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jmax<sp/>=<sp/>min(jc*ratio(2)+ratio(2)-1,tfhi(2))</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glo(2)<sp/>=<sp/>max(jc-1,<sp/>cdomainlo(2))</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ghi(2)<sp/>=<sp/>min(jc+1,<sp/>cdomainhi(2))</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/>tclo(1)+1,<sp/>tchi(1)-1</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imin<sp/>=<sp/>max(ic*ratio(1)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,tflo(1))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imax<sp/>=<sp/>min(ic*ratio(1)+ratio(1)-1,tfhi(1))</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>glo(1)<sp/>=<sp/>max(ic-1,<sp/>cdomainlo(1))</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ghi(1)<sp/>=<sp/>min(ic+1,<sp/>cdomainhi(1))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_expected_ngbrs<sp/>=<sp/>(ghi(1)-glo(1)+1)*(ghi(2)-glo(2)+1)*(ghi(3)-glo(3)+1)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex__ebcellflag__module_1a6fa46fba286ea97c6408222d70ad589d" kindref="member">num_neighbor_cells</ref>(cflag(ic,jc,kc))<sp/>.lt.<sp/>num_expected_ngbrs)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>1,<sp/>ncomp</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>k<sp/>=<sp/>kmin,<sp/>kmax</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>j<sp/>=<sp/>jmin,<sp/>jmax</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>imin,<sp/>imax</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>crse(ic,jc,kc,n)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__ebinterp__module_1aec88f11d4cbe7bb0c88584b67d0d2059" kindref="member">amrex_ebinterp_pc_sv</ref></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__ebinterp__module" kindref="compound">amrex_ebinterp_module</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_ebinterp_3d.F90"/>
+  </compounddef>
+</doxygen>

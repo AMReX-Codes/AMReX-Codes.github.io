@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="integrator__stats_8f90" kind="file" language="Fortran">
+    <compoundname>integrator_stats.f90</compoundname>
+    <innerclass refid="interfaceintegrator__stats__mod_1_1get__integrator__stats" prot="public">integrator_stats_mod::get_integrator_stats</innerclass>
+    <innerclass refid="structintegrator__stats__mod_1_1integrator__stats__t" prot="public">integrator_stats_mod::integrator_stats_t</innerclass>
+    <innernamespace refid="namespaceintegrator__stats__mod">integrator_stats_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="namespaceintegrator__stats__mod" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespaceintegrator__stats__mod" kindref="compound">integrator_stats_mod</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="interfaceintegrator__stats__mod_1_1get__integrator__stats" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">interface</highlight><highlight class="normal"><sp/><ref refid="interfaceintegrator__stats__mod_1_1get__integrator__stats" kindref="compound">get_integrator_stats</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/><ref refid="namespaceintegrator__stats__mod_1a8cbf294a0fc1bb77a34da9394ab53bb1" kindref="member">get_integrator_stats_dvode</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">module<sp/>procedure</highlight><highlight class="normal"><sp/><ref refid="namespaceintegrator__stats__mod_1aa199ce4575824f9ded7f510bd820d017" kindref="member">get_integrator_stats_cvode</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>interface<sp/></highlight><highlight class="normal"><ref refid="interfaceintegrator__stats__mod_1_1get__integrator__stats" kindref="compound">get_integrator_stats</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="structintegrator__stats__mod_1_1integrator__stats__t" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">type</highlight><highlight class="normal"><sp/><ref refid="structintegrator__stats__mod_1_1integrator__stats__t" kindref="compound">integrator_stats_t</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_long)</highlight><highlight class="normal"><sp/>::<sp/>n_steps</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_long)</highlight><highlight class="normal"><sp/>::<sp/>n_rhs_eval</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_int)</highlight><highlight class="normal"><sp/>::<sp/>last_order</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_int)</highlight><highlight class="normal"><sp/>::<sp/>current_order</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(c_double)</highlight><highlight class="normal"><sp/>::<sp/>last_step_size</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(c_double)</highlight><highlight class="normal"><sp/>::<sp/>current_step_size</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">real(c_double)</highlight><highlight class="normal"><sp/>::<sp/>current_time</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>type<sp/></highlight><highlight class="normal"><ref refid="structintegrator__stats__mod_1_1integrator__stats__t" kindref="compound">integrator_stats_t</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>function<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod_1aa199ce4575824f9ded7f510bd820d017" kindref="member">get_integrator_stats_cvode</ref><sp/>(cvmem)<sp/>result<sp/>(stats)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespacecvode__interface" kindref="compound">cvode_interface</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>cvmem</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structintegrator__stats__mod_1_1integrator__stats__t" kindref="compound">integrator_stats_t</ref>)<sp/>::<sp/>stats</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_int)</highlight><highlight class="normal"><sp/>::<sp/>ierr</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetnumsteps(cvmem,<sp/>stats%n_steps)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetnumrhsevals(cvmem,<sp/>stats%n_rhs_eval)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetlastorder(cvmem,<sp/>stats%last_order)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetcurrentorder(cvmem,<sp/>stats%current_order)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetlaststep(cvmem,<sp/>stats%last_step_size)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetcurrentstep(cvmem,<sp/>stats%current_step_size)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodegetcurrenttime(cvmem,<sp/>stats%current_time)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod_1aa199ce4575824f9ded7f510bd820d017" kindref="member">get_integrator_stats_cvode</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">pure<sp/>function<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod_1a8cbf294a0fc1bb77a34da9394ab53bb1" kindref="member">get_integrator_stats_dvode</ref><sp/>(iwork,<sp/>rwork)<sp/>result<sp/>(stats)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>iwork(:)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double<sp/>precision</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>rwork(:)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structintegrator__stats__mod_1_1integrator__stats__t" kindref="compound">integrator_stats_t</ref>)<sp/>::<sp/>stats</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%n_steps<sp/>=<sp/>iwork(11)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%n_rhs_eval<sp/>=<sp/>iwork(12)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%last_order<sp/>=<sp/>iwork(14)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%current_order<sp/>=<sp/>iwork(15)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%last_step_size<sp/>=<sp/>rwork(11)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%current_step_size<sp/>=<sp/>rwork(12)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stats%current_time<sp/>=<sp/>rwork(13)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod_1a8cbf294a0fc1bb77a34da9394ab53bb1" kindref="member">get_integrator_stats_dvode</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod_1a8a7aa34e67efd183d01d2d136d3be3b5" kindref="member">print_integrator_stats</ref>(stats,<sp/>print_header)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(<ref refid="structintegrator__stats__mod_1_1integrator__stats__t" kindref="compound">integrator_stats_t</ref>),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>stats</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">logical</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">optional</highlight><highlight class="normal"><sp/>::<sp/>print_header</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">present</highlight><highlight class="normal">(print_header))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(print_header)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,<sp/></highlight><highlight class="stringliteral">&apos;(7a20)&apos;</highlight><highlight class="normal">)<sp/></highlight><highlight class="stringliteral">&apos;n_steps&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;n_rhs_eval&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;last_order&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;current_order&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;last_step_size&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;current_step_size&apos;</highlight><highlight class="normal">,<sp/>&amp;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;current_time&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">write</highlight><highlight class="normal">(*,<sp/></highlight><highlight class="stringliteral">&apos;(4i20,<sp/>3es20.3e2)&apos;</highlight><highlight class="normal">)<sp/>stats%n_steps,<sp/>stats%n_rhs_eval,<sp/>&amp;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stats%last_order,<sp/>stats%current_order,<sp/>stats%last_step_size,<sp/>&amp;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>stats%current_step_size,<sp/>stats%current_time</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod_1a8a7aa34e67efd183d01d2d136d3be3b5" kindref="member">print_integrator_stats</ref></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal"><ref refid="namespaceintegrator__stats__mod" kindref="compound">integrator_stats_mod</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/CVODE/integrator_stats.f90"/>
+  </compounddef>
+</doxygen>

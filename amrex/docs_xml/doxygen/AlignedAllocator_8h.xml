@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AlignedAllocator_8h" kind="file" language="C++">
+    <compoundname>AlignedAllocator.h</compoundname>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">new</includes>
+    <incdepgraph>
+      <node id="50682">
+        <label>stdlib.h</label>
+      </node>
+      <node id="50681">
+        <label>stddef.h</label>
+      </node>
+      <node id="50683">
+        <label>new</label>
+      </node>
+      <node id="50680">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Extern/SWFFT/AlignedAllocator.h</label>
+        <link refid="AlignedAllocator.h"/>
+        <childnode refid="50681" relation="include">
+        </childnode>
+        <childnode refid="50682" relation="include">
+        </childnode>
+        <childnode refid="50683" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classhacc_1_1AlignedAllocator" prot="public">hacc::AlignedAllocator</innerclass>
+    <innerclass refid="structhacc_1_1AlignedAllocator_1_1rebind" prot="public">hacc::AlignedAllocator::rebind</innerclass>
+    <innernamespace refid="namespacehacc">hacc</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2017,<sp/>UChicago<sp/>Argonne,<sp/>LLC</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>All<sp/>Rights<sp/>Reserved</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Hardware/Hybrid<sp/>Cosmology<sp/>Code<sp/>(HACC),<sp/>Version<sp/>1.0</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Salman<sp/>Habib,<sp/>Adrian<sp/>Pope,<sp/>Hal<sp/>Finkel,<sp/>Nicholas<sp/>Frontiere,<sp/>Katrin<sp/>Heitmann,</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Vitali<sp/>Morozov,<sp/>Jeffrey<sp/>Emberson,<sp/>Thomas<sp/>Uram,<sp/>Esteban<sp/>Rangel</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Argonne<sp/>National<sp/>Laboratory)</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>David<sp/>Daniel,<sp/>Patricia<sp/>Fasel,<sp/>Chung-Hsing<sp/>Hsu,<sp/>Zarija<sp/>Lukic,<sp/>James<sp/>Ahrens</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Los<sp/>Alamos<sp/>National<sp/>Laboratory)</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>George<sp/>Zagaris</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Kitware)</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OPEN<sp/>SOURCE<sp/>LICENSE</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright<sp/>notice,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.<sp/>Software<sp/>changes,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>modifications,<sp/>or<sp/>derivative<sp/>works,<sp/>should<sp/>be<sp/>noted<sp/>with<sp/>comments<sp/>and</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>author<sp/>and<sp/>organization’s<sp/>name.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/><sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/><sp/><sp/>3.<sp/>Neither<sp/>the<sp/>names<sp/>of<sp/>UChicago<sp/>Argonne,<sp/>LLC<sp/>or<sp/>the<sp/>Department<sp/>of<sp/>Energy</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>permission.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/>4.<sp/>The<sp/>software<sp/>and<sp/>the<sp/>end-user<sp/>documentation<sp/>included<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>redistribution,<sp/>if<sp/>any,<sp/>must<sp/>include<sp/>the<sp/>following<sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>produced<sp/>by<sp/>UChicago<sp/>Argonne,<sp/>LLC<sp/>under</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Contract<sp/>No.<sp/>DE-AC02-06CH11357<sp/>with<sp/>the<sp/>Department<sp/>of<sp/>Energy.&quot;</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DISCLAIMER</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>SUPPLIED<sp/>&quot;AS<sp/>IS&quot;<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND.<sp/>NEITHER<sp/>THE</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>UNITED<sp/>STATES<sp/>GOVERNMENT,<sp/>NOR<sp/>THE<sp/>UNITED<sp/>STATES<sp/>DEPARTMENT<sp/>OF<sp/>ENERGY,<sp/>NOR<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>UCHICAGO<sp/>ARGONNE,<sp/>LLC,<sp/>NOR<sp/>ANY<sp/>OF<sp/>THEIR<sp/>EMPLOYEES,<sp/>MAKES<sp/>ANY<sp/>WARRANTY,<sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED,<sp/>OR<sp/>ASSUMES<sp/>ANY<sp/>LEGAL<sp/>LIABILITY<sp/>OR<sp/>RESPONSIBILITY<sp/>FOR<sp/>THE</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>ACCURARY,<sp/>COMPLETENESS,<sp/>OR<sp/>USEFULNESS<sp/>OF<sp/>ANY<sp/>INFORMATION,<sp/>DATA,<sp/>APPARATUS,</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>PRODUCT,<sp/>OR<sp/>PROCESS<sp/>DISCLOSED,<sp/>OR<sp/>REPRESENTS<sp/>THAT<sp/>ITS<sp/>USE<sp/>WOULD<sp/>NOT<sp/>INFRINGE</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>PRIVATELY<sp/>OWNED<sp/>RIGHTS.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>*****************************************************************************</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HACC_ALIGNEDALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HACC_ALIGNEDALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;new&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="namespacehacc" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacehacc" kindref="compound">hacc</ref><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>N&gt;</highlight></codeline>
+<codeline lineno="65" refid="classhacc_1_1AlignedAllocator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classhacc_1_1AlignedAllocator" kindref="compound">AlignedAllocator</ref></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68" refid="classhacc_1_1AlignedAllocator_1ac9a51efd884cb5eb1e8ec10d6fff7d41" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>T<sp/><ref refid="classhacc_1_1AlignedAllocator_1ac9a51efd884cb5eb1e8ec10d6fff7d41" kindref="member">value_type</ref>;</highlight></codeline>
+<codeline lineno="69" refid="classhacc_1_1AlignedAllocator_1a8a10b255de4c608b3775a315e409ef8d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>T<sp/>*<ref refid="classhacc_1_1AlignedAllocator_1a8a10b255de4c608b3775a315e409ef8d" kindref="member">pointer</ref>;</highlight></codeline>
+<codeline lineno="70" refid="classhacc_1_1AlignedAllocator_1a5830ffb5779f9588ce9f9040b4ac5db7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>T<sp/>&amp;<ref refid="classhacc_1_1AlignedAllocator_1a5830ffb5779f9588ce9f9040b4ac5db7" kindref="member">reference</ref>;</highlight></codeline>
+<codeline lineno="71" refid="classhacc_1_1AlignedAllocator_1a812e592e52eb4338a35980a143facdfc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>*<ref refid="classhacc_1_1AlignedAllocator_1a812e592e52eb4338a35980a143facdfc" kindref="member">const_pointer</ref>;</highlight></codeline>
+<codeline lineno="72" refid="classhacc_1_1AlignedAllocator_1aa04ae438c2088c702d3de3816d4f7db5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<ref refid="classhacc_1_1AlignedAllocator_1aa04ae438c2088c702d3de3816d4f7db5" kindref="member">const_reference</ref>;</highlight></codeline>
+<codeline lineno="73" refid="classhacc_1_1AlignedAllocator_1ad6bd455548ae6962f2293a67aa289721" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator_1ad6bd455548ae6962f2293a67aa289721" kindref="member">size_type</ref>;</highlight></codeline>
+<codeline lineno="74" refid="classhacc_1_1AlignedAllocator_1aa85cb38a8a671ea721f4f8d96b5d061e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>ptrdiff_t<sp/><ref refid="classhacc_1_1AlignedAllocator_1aa85cb38a8a671ea721f4f8d96b5d061e" kindref="member">difference_type</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U&gt;</highlight></codeline>
+<codeline lineno="77" refid="structhacc_1_1AlignedAllocator_1_1rebind" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structhacc_1_1AlignedAllocator_1_1rebind" kindref="compound">rebind</ref><sp/>{</highlight></codeline>
+<codeline lineno="78" refid="structhacc_1_1AlignedAllocator_1_1rebind_1a96ecc5d534254a7cab53bdfa4d78db8e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator" kindref="compound">AlignedAllocator&lt;U, N&gt;</ref><sp/><ref refid="structhacc_1_1AlignedAllocator_1_1rebind_1a96ecc5d534254a7cab53bdfa4d78db8e" kindref="member">other</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="82" refid="classhacc_1_1AlignedAllocator_1a761f44c4b8f456d6d016c21afb436091" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classhacc_1_1AlignedAllocator_1a761f44c4b8f456d6d016c21afb436091" kindref="member">AlignedAllocator</ref>()<sp/>throw()<sp/>{};</highlight></codeline>
+<codeline lineno="83" refid="classhacc_1_1AlignedAllocator_1a004c400f85ee6563f3c4178d4ee62f77" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classhacc_1_1AlignedAllocator_1a004c400f85ee6563f3c4178d4ee62f77" kindref="member">AlignedAllocator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator" kindref="compound">AlignedAllocator</ref>&amp;)<sp/>throw()<sp/>{};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>U,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>M&gt;</highlight></codeline>
+<codeline lineno="86" refid="classhacc_1_1AlignedAllocator_1aa80f9621109e48a22cbd1561d2024677" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classhacc_1_1AlignedAllocator_1aa80f9621109e48a22cbd1561d2024677" kindref="member">AlignedAllocator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator" kindref="compound">AlignedAllocator&lt;U, M&gt;</ref>&amp;)<sp/>throw()<sp/>{};</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89" refid="classhacc_1_1AlignedAllocator_1a3a710f683b06d92478d4dd13cd49b79f" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classhacc_1_1AlignedAllocator_1a3a710f683b06d92478d4dd13cd49b79f" kindref="member">~AlignedAllocator</ref>()<sp/>throw<sp/>()<sp/>{};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="92" refid="classhacc_1_1AlignedAllocator_1a787b90f2493aab00772260e426be8669" refkind="member"><highlight class="normal"><sp/><sp/>pointer<sp/><ref refid="classhacc_1_1AlignedAllocator_1a787b90f2493aab00772260e426be8669" kindref="member">address</ref>(reference<sp/>x)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;x;<sp/>}</highlight></codeline>
+<codeline lineno="93" refid="classhacc_1_1AlignedAllocator_1a34d28aeec6d0a90d33e616e6cd7d2593" refkind="member"><highlight class="normal"><sp/><sp/>const_pointer<sp/><ref refid="classhacc_1_1AlignedAllocator_1a34d28aeec6d0a90d33e616e6cd7d2593" kindref="member">address</ref><sp/>(const_reference<sp/>x)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;x;<sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="classhacc_1_1AlignedAllocator_1adc59c26a8f961814e001dc1d47017095" refkind="member"><highlight class="normal"><sp/><sp/>size_type<sp/><ref refid="classhacc_1_1AlignedAllocator_1adc59c26a8f961814e001dc1d47017095" kindref="member">max_size</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>throw()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>size_t(-1)<sp/>/<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T);<sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="classhacc_1_1AlignedAllocator_1adb796755df810806e1a03865482fc669" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator_1adb796755df810806e1a03865482fc669" kindref="member">construct</ref>(pointer<sp/>p,<sp/>const_reference<sp/>val)<sp/>{<sp/>::new<sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)p)<sp/>T(val);<sp/>}</highlight></codeline>
+<codeline lineno="98" refid="classhacc_1_1AlignedAllocator_1a5d7df6a37fdfcef93d371c3044f424d3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator_1a5d7df6a37fdfcef93d371c3044f424d3" kindref="member">destroy</ref>(pointer<sp/>p)<sp/>{<sp/>((T*)p)-&gt;~T();<sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101" refid="classhacc_1_1AlignedAllocator_1aa3873295a150cc0fbed2a47c7db9caad" refkind="member"><highlight class="normal"><sp/><sp/>pointer<sp/><ref refid="classhacc_1_1AlignedAllocator_1aa3873295a150cc0fbed2a47c7db9caad" kindref="member">allocate</ref>(size_type<sp/>n,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="comment">/*hint*/</highlight><highlight class="normal"><sp/>=<sp/>0)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>pointer<sp/>p;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(posix_memalign((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**)<sp/>&amp;p,<sp/>N,<sp/>n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T))<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::bad_alloc();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="classhacc_1_1AlignedAllocator_1ad5df7bcf7989386441a7b8fc73a81cc4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classhacc_1_1AlignedAllocator_1ad5df7bcf7989386441a7b8fc73a81cc4" kindref="member">deallocate</ref>(pointer<sp/>p,<sp/>size_type<sp/>n)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<sp/>p);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>hacc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>HACC_ALIGNEDALLOCATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SWFFT/AlignedAllocator.h"/>
+  </compounddef>
+</doxygen>

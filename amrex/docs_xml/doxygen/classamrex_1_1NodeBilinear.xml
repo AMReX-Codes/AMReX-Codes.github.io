@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1NodeBilinear" kind="class" language="C++" prot="public">
+    <compoundname>amrex::NodeBilinear</compoundname>
+    <basecompoundref refid="classamrex_1_1Interpolater" prot="public" virt="non-virtual">amrex::Interpolater</basecompoundref>
+    <includes refid="AMReX__Interpolater_8H" local="no">AMReX_Interpolater.H</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1NodeBilinear_1a6420242043deed007eccffb7f763f226" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::NodeBilinear::~NodeBilinear</definition>
+        <argsstring>() override</argsstring>
+        <name>~NodeBilinear</name>
+        <briefdescription>
+<para>The destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.H" line="136" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodeBilinear_1a12700b2249901dc280e6ab13e7c560f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::NodeBilinear::CoarseBox</definition>
+        <argsstring>(const Box &amp;fine, int ratio) override</argsstring>
+        <name>CoarseBox</name>
+        <reimplements refid="classamrex_1_1Interpolater_1aa19cea2a6579112e6cf2fa2fb52ba6b6">CoarseBox</reimplements>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>fine</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ratio</declname>
+        </param>
+        <briefdescription>
+<para>Returns coarsened box given fine box and refinement ratio. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.H" line="144" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="59" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodeBilinear_1ae2cd41e25c41c44dda1330f58f6a55e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::NodeBilinear::CoarseBox</definition>
+        <argsstring>(const Box &amp;fine, const IntVect &amp;ratio) override</argsstring>
+        <name>CoarseBox</name>
+        <reimplements refid="classamrex_1_1Interpolater_1a8afbd6f779bee1ec37defb7c0f03deb5">CoarseBox</reimplements>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>fine</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ratio</declname>
+        </param>
+        <briefdescription>
+<para>Returns coarsened box given fine box and refinement ratio. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.H" line="153" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="79" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodeBilinear_1a8c39f3181c42681018f52786727f517e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::NodeBilinear::interp</definition>
+        <argsstring>(const FArrayBox &amp;crse, int crse_comp, FArrayBox &amp;fine, int fine_comp, int ncomp, const Box &amp;fine_region, const IntVect &amp;ratio, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, Vector&lt; BCRec &gt; const &amp;bcr, int actual_comp, int actual_state, RunOn gpu_or_cpu) override</argsstring>
+        <name>interp</name>
+        <reimplements refid="classamrex_1_1Interpolater_1ab7e7a9cccec912ca707efd4fe1653da1">interp</reimplements>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>crse</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>crse_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>fine</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fine_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>fine_region</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ratio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>crse_geom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>fine_geom</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> &gt; const &amp;</type>
+          <declname>bcr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>actual_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>actual_state</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
+          <declname>gpu_or_cpu</declname>
+        </param>
+        <briefdescription>
+<para>Coarse to fine interpolation in space. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>crse</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>crse_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fine_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fine_region</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ratio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>crse_geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fine_geom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bcr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>actual_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>actual_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.H" line="172" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="99" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Bilinear interpolation on node centered data. </para>    </briefdescription>
+    <detaileddescription>
+<para>Bilinear interpolation on node centered data. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="5508">
+        <label>amrex::NodeBilinear</label>
+        <link refid="classamrex_1_1NodeBilinear"/>
+        <childnode refid="5509" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5509">
+        <label>amrex::Interpolater</label>
+        <link refid="classamrex_1_1Interpolater"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="5510">
+        <label>amrex::NodeBilinear</label>
+        <link refid="classamrex_1_1NodeBilinear"/>
+        <childnode refid="5511" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5511">
+        <label>amrex::Interpolater</label>
+        <link refid="classamrex_1_1Interpolater"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.H" line="130" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="127" bodyend="185"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1Interpolater_1a076d83ba84b125ee187a18aa8d60ee3e" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>BoxCoarsener</name></member>
+      <member refid="classamrex_1_1NodeBilinear_1a12700b2249901dc280e6ab13e7c560f2" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>CoarseBox</name></member>
+      <member refid="classamrex_1_1NodeBilinear_1ae2cd41e25c41c44dda1330f58f6a55e3" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>CoarseBox</name></member>
+      <member refid="classamrex_1_1Interpolater_1aa2f8d685993329ef439ea2925bee9cc7" prot="public" virt="non-virtual"><scope>amrex::NodeBilinear</scope><name>GetBCArray</name></member>
+      <member refid="classamrex_1_1NodeBilinear_1a8c39f3181c42681018f52786727f517e" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>interp</name></member>
+      <member refid="classamrex_1_1Interpolater_1af4eea0c724fb28ebf6cf6caacd0e70df" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>protect</name></member>
+      <member refid="classamrex_1_1Interpolater_1ad53e63eaa9b2b9b140c98f73969f2164" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>~Interpolater</name></member>
+      <member refid="classamrex_1_1NodeBilinear_1a6420242043deed007eccffb7f763f226" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>~NodeBilinear</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1DataServices" kind="class" language="C++" prot="public">
+    <compoundname>amrex::DataServices</compoundname>
+    <includes refid="AMReX__DataServices_8H" local="no">AMReX_DataServices.H</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9" prot="public" static="no">
+        <name>DSRequestType</name>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a98b03a82942b04872302d539974d8300" prot="public">
+          <name>InvalidRequestType</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9ad8032fde646b23816f422ec34e7c43d8" prot="public">
+          <name>ExitRequest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a05d19cd0b5b9a9c20320e96810edbb72" prot="public">
+          <name>NewRequest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9ab51d46fff163f6f4e6fbf895518da383" prot="public">
+          <name>DeleteRequest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a40aed13acee70704bf8458966f292801" prot="public">
+          <name>FillVarOneFab</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a43f59cb422b6dfd7c8ddd1da1b748092" prot="public">
+          <name>FillVarArrayOfFabs</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a771038382eed1afc9937f305dd7d6a99" prot="public">
+          <name>FillVarMultiFab</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a5ed9a76a3deab290b490fadcacc4a1f8" prot="public">
+          <name>WriteFabOneVar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a87e92c8c805e8484191634bfc23b88ce" prot="public">
+          <name>WriteFabAllVars</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a60513fa501bb96f4059cec668c6f0126" prot="public">
+          <name>DumpSlicePlaneOneVar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a54c4c9509960a44b3156e7a998309649" prot="public">
+          <name>DumpSlicePlaneAllVars</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9af054f888c4a6d02eefe226e674edb2d6" prot="public">
+          <name>DumpSliceBoxOneVar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9afe2794e70b17fe16bcb75ba47e1256ec" prot="public">
+          <name>DumpSliceBoxAllVars</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a97967f133c3c574eafc5784ec75db69b" prot="public">
+          <name>MinMaxRequest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9af2edde48d8bc88db394583d8e3a01588" prot="public">
+          <name>PointValueRequest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9ab1fee9049e0a58f8accfb3ef77030d30" prot="public">
+          <name>LineValuesRequest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="36" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a4770584b17b637d34ee96e06add63f83" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string amrex::DataServices::fileName</definition>
+        <argsstring></argsstring>
+        <name>fileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="208" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a974e2ca92baf2acb0925fe1d4168c38c" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Amrvis_1abfcccc9773d8b5535441ca5b3cc4f0cf" kindref="member">Amrvis::FileType</ref></type>
+        <definition>Amrvis::FileType amrex::DataServices::fileType</definition>
+        <argsstring></argsstring>
+        <name>fileType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="209" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a4dccda9d17c5bef5bd00585d8ab7f993" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1AmrData" kindref="compound">AmrData</ref></type>
+        <definition>AmrData amrex::DataServices::amrData</definition>
+        <argsstring></argsstring>
+        <name>amrData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="210" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a9bee43add415cee502f4398657b80485" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::bAmrDataOk</definition>
+        <argsstring></argsstring>
+        <name>bAmrDataOk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="211" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a7b5b5a6f71f4bef7caf3ca81377c97b3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::DataServices::dsArrayIndex</definition>
+        <argsstring></argsstring>
+        <name>dsArrayIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="212" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a5d6e7ac64333750926f2175ea5f237ad" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::DataServices::numberOfUsers</definition>
+        <argsstring></argsstring>
+        <name>numberOfUsers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="213" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a35de3364c9fb9d815d496ac8fbb31084" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::DataServices::iWriteToLevel</definition>
+        <argsstring></argsstring>
+        <name>iWriteToLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="214" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a62883d11e6cc5ff7d023eb4f21b0e422" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DataServices" kindref="compound">DataServices</ref> * &gt;</type>
+        <definition>Vector&lt; DataServices * &gt; amrex::DataServices::dsArray</definition>
+        <argsstring></argsstring>
+        <name>dsArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="216" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a2a095147c88e1356696aa47fb9bcf797" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int amrex::DataServices::dsArrayIndexCounter</definition>
+        <argsstring></argsstring>
+        <name>dsArrayIndexCounter</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="217" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1aea89d718ba649ae2217135d549e512cd" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int amrex::DataServices::dsFabOutSize</definition>
+        <argsstring></argsstring>
+        <name>dsFabOutSize</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1aa20cf93243c6cf029d82ffabe3719952" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::dsBatchMode</definition>
+        <argsstring></argsstring>
+        <name>dsBatchMode</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="219" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1DataServices_1a79516a720db5a9b896b2d87c1287930e" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::profiler</definition>
+        <argsstring></argsstring>
+        <name>profiler</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="220" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a7556808fa6723c7a9871ff7aef16e4a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::DataServices::DataServices</definition>
+        <argsstring>(const string &amp;filename, const Amrvis::FileType &amp;filetype)</argsstring>
+        <name>DataServices</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1_1Amrvis_1abfcccc9773d8b5535441ca5b3cc4f0cf" kindref="member">Amrvis::FileType</ref> &amp;</type>
+          <declname>filetype</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="111" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1ad9d1ee09b1dd9410a22267c041302e0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::DataServices::DataServices</definition>
+        <argsstring>()</argsstring>
+        <name>DataServices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="140" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a5bdb39757dd7e9db803b69385f62a8c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::DataServices::~DataServices</definition>
+        <argsstring>()</argsstring>
+        <name>~DataServices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="378" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1afb9f45ffe84ca09c6a54c59d9107c406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::Init</definition>
+        <argsstring>(const string &amp;filename, const Amrvis::FileType &amp;filetype)</argsstring>
+        <name>Init</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1_1Amrvis_1abfcccc9773d8b5535441ca5b3cc4f0cf" kindref="member">Amrvis::FileType</ref> &amp;</type>
+          <declname>filetype</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="148" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a40a30a866f8437287bd706633d3ffef5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::InitRegionTimeRanges</definition>
+        <argsstring>()</argsstring>
+        <name>InitRegionTimeRanges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="323" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a9cf93ad2e58dd4146e669e25d1a6a901" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const string &amp;</type>
+        <definition>const string&amp; amrex::DataServices::GetFileName</definition>
+        <argsstring>() const </argsstring>
+        <name>GetFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="134" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="134" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a2688b423afb3de00f6453a4d37dbe34c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1_1Amrvis_1abfcccc9773d8b5535441ca5b3cc4f0cf" kindref="member">Amrvis::FileType</ref></type>
+        <definition>Amrvis::FileType amrex::DataServices::GetFileType</definition>
+        <argsstring>() const </argsstring>
+        <name>GetFileType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="135" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="135" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a78b75b6ce0eb81d0c2551f08cf1783e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::CanDerive</definition>
+        <argsstring>(const string &amp;name) const </argsstring>
+        <name>CanDerive</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="136" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1555" bodyend="1560"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1ad38e5471f8e16d36a4ccdc53ece80e14" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::CanDerive</definition>
+        <argsstring>(const Vector&lt; string &gt; &amp;names) const </argsstring>
+        <name>CanDerive</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; string &gt; &amp;</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="137" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1564" bodyend="1569"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a432f5bbc067559df0cc58f6841ef8b3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::DataServices::NumDeriveFunc</definition>
+        <argsstring>() const </argsstring>
+        <name>NumDeriveFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="138" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1583" bodyend="1585"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a53444b30e4f2b6bd43908eddabab56c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::ListDeriveFunc</definition>
+        <argsstring>(std::ostream &amp;os) const </argsstring>
+        <name>ListDeriveFunc</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="139" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1574" bodyend="1579"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1afe86041d067e089571d8544e96b2986b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; string &gt; &amp;</type>
+        <definition>const Vector&lt;string&gt;&amp; amrex::DataServices::PlotVarNames</definition>
+        <argsstring>() const </argsstring>
+        <name>PlotVarNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="140" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="140" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a19f9eafb4a1d4d6446f89ec754096e7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1AmrData" kindref="compound">AmrData</ref> &amp;</type>
+        <definition>AmrData&amp; amrex::DataServices::AmrDataRef</definition>
+        <argsstring>()</argsstring>
+        <name>AmrDataRef</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="141" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="141" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a0d74eb70fa1a19985daef03dbf6c0055" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::AmrDataOk</definition>
+        <argsstring>()</argsstring>
+        <name>AmrDataOk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="142" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1aedf7787e5d78a2ec4920bdae6f1033c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::SetWriteToLevel</definition>
+        <argsstring>(const int iwtlev)</argsstring>
+        <name>SetWriteToLevel</name>
+        <param>
+          <type>const int</type>
+          <declname>iwtlev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="143" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="143" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a87fe4ac28bededcc329b22dc0c5d9017" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::DataServices::GetNumberOfUsers</definition>
+        <argsstring>() const </argsstring>
+        <name>GetNumberOfUsers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="146" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="146" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a1e86b7049dda4298109713894149ff36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::IncrementNumberOfUsers</definition>
+        <argsstring>()</argsstring>
+        <name>IncrementNumberOfUsers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="147" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a85a4eb7cb438f3c75d8de3ecd71a70f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::DecrementNumberOfUsers</definition>
+        <argsstring>()</argsstring>
+        <name>DecrementNumberOfUsers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="148" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="148" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a037f84af3602f01bce985c2ebdd4cf12" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::SetBatchMode</definition>
+        <argsstring>()</argsstring>
+        <name>SetBatchMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="387" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a3d198815ecb3b80907c97384e5752fa7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::Dispatch</definition>
+        <argsstring>(DSRequestType requestType, DataServices *ds,...)</argsstring>
+        <name>Dispatch</name>
+        <param>
+          <type><ref refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9" kindref="member">DSRequestType</ref></type>
+          <declname>requestType</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1DataServices" kindref="compound">DataServices</ref> *</type>
+          <declname>ds</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="408" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1abdbf701b94b7d6637e2669c3e5e86818" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::SetFabOutSize</definition>
+        <argsstring>(int iSize)</argsstring>
+        <name>SetFabOutSize</name>
+        <param>
+          <type>int</type>
+          <declname>iSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="393" bodyend="404"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a1d3fb29d1b5e861eaa281249954bc8c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::FillVar</definition>
+        <argsstring>(FArrayBox *destFab, const Box &amp;destBox, int finestFillLevel, const string &amp;varname, int procWithFab)</argsstring>
+        <name>FillVar</name>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *</type>
+          <declname>destFab</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>destBox</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>finestFillLevel</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>varname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>procWithFab</declname>
+        </param>
+        <briefdescription>
+<para>FillVarOneFab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1405" bodyend="1415"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a658dc44a58993ed228e290a2fb43f162" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::FillVar</definition>
+        <argsstring>(MultiFab &amp;destMultiFab, int finestFillLevel, const string &amp;varname)</argsstring>
+        <name>FillVar</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>destMultiFab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>finestFillLevel</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>varname</declname>
+        </param>
+        <briefdescription>
+<para>FillVarMultiFab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="92" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1419" bodyend="1428"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1abfbb38923a2649adad7874840cf5fabc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::WriteFab</definition>
+        <argsstring>(const string &amp;fabfilename, const Box &amp;region, int lev, const string &amp;varname)</argsstring>
+        <name>WriteFab</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fabfilename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>varname</declname>
+        </param>
+        <briefdescription>
+<para>WriteFabOneVar: write a single variable to one fab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="96" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1439" bodyend="1484"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a68871125127d068a8cda75a85435eac5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::WriteFab</definition>
+        <argsstring>(const string &amp;fabfilename, const Box &amp;region, int lev)</argsstring>
+        <name>WriteFab</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fabfilename</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lev</declname>
+        </param>
+        <briefdescription>
+<para>WriteFabAllVars: write all vars in one fab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1495" bodyend="1551"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a8db270eee6e8e3ac4bf1772eac21a591" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::DumpSlice</definition>
+        <argsstring>(int slicedir, int slicenum, const string &amp;varname)</argsstring>
+        <name>DumpSlice</name>
+        <param>
+          <type>int</type>
+          <declname>slicedir</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slicenum</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>varname</declname>
+        </param>
+        <briefdescription>
+<para>DumpSlicePlaneOneVar. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1181" bodyend="1239"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a3e0c29efb7a3629a66a7f41a8c5d491c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::DumpSlice</definition>
+        <argsstring>(int slicedir, int slicenum)</argsstring>
+        <name>DumpSlice</name>
+        <param>
+          <type>int</type>
+          <declname>slicedir</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slicenum</declname>
+        </param>
+        <briefdescription>
+<para>DumpSlicePlaneAllVars. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1243" bodyend="1297"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1ad7a0d0fc07fe676cdff6a917c6798688" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::DumpSlice</definition>
+        <argsstring>(const Box &amp;slicebox, const string &amp;varname)</argsstring>
+        <name>DumpSlice</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>slicebox</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>varname</declname>
+        </param>
+        <briefdescription>
+<para>DumpSliceBoxOneVar. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="109" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1301" bodyend="1350"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a8c427a00d85a1895247f6e0aa0c60aa2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::DumpSlice</definition>
+        <argsstring>(const Box &amp;slicebox)</argsstring>
+        <name>DumpSlice</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>slicebox</declname>
+        </param>
+        <briefdescription>
+<para>DumpSliceBoxAllVars. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="112" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1354" bodyend="1400"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a1b53c93511689d13ab9adf28784078c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::DataServices::MinMax</definition>
+        <argsstring>(const Box &amp;onBox, const string &amp;derived, int level, Real &amp;dataMin, Real &amp;dataMax, bool &amp;minMaxValid)</argsstring>
+        <name>MinMax</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>onBox</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>derived</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>Real &amp;</type>
+          <declname>dataMin</declname>
+        </param>
+        <param>
+          <type>Real &amp;</type>
+          <declname>dataMax</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>minMaxValid</declname>
+        </param>
+        <briefdescription>
+<para>MinMaxRequest. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="115" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1676" bodyend="1681"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a2a424e52fa830e6ff025622886c97110" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::PointValue</definition>
+        <argsstring>(int pointBoxArraySize, Box *pointBoxArray, const string &amp;currentDerived, int coarsestLevelToSearch, int finestLevelToSearch, int &amp;intersectedLevel, Box &amp;intersectedGrid, Real &amp;dataPointValue, bool &amp;bPointIsValid)</argsstring>
+        <name>PointValue</name>
+        <param>
+          <type>int</type>
+          <declname>pointBoxArraySize</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> *</type>
+          <declname>pointBoxArray</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>currentDerived</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>coarsestLevelToSearch</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>finestLevelToSearch</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>intersectedLevel</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>intersectedGrid</declname>
+        </param>
+        <param>
+          <type>Real &amp;</type>
+          <declname>dataPointValue</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>bPointIsValid</declname>
+        </param>
+        <briefdescription>
+<para>PointValueRequest. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="119" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1589" bodyend="1638"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1DataServices_1a5479c67c013863ff688941896a0636d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::DataServices::LineValues</definition>
+        <argsstring>(int lineBoxArraySize, Box *lineBoxArray, int whichDir, const string &amp;currentDerived, int coarsestLevelToSearch, int finestLevelToSearch, XYPlotDataList *dataList, bool &amp;lineIsValid)</argsstring>
+        <name>LineValues</name>
+        <param>
+          <type>int</type>
+          <declname>lineBoxArraySize</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> *</type>
+          <declname>lineBoxArray</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>whichDir</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>currentDerived</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>coarsestLevelToSearch</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>finestLevelToSearch</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1XYPlotDataList" kindref="compound">XYPlotDataList</ref> *</type>
+          <declname>dataList</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>lineIsValid</declname>
+        </param>
+        <briefdescription>
+<para>LineValuesRequest. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="126" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp" bodystart="1642" bodyend="1672"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1075">
+        <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+      </node>
+      <node id="1069">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1070" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1081">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="1081" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="1083">
+        <label>Real</label>
+      </node>
+      <node id="1078">
+        <label>amrex::Vector&lt; string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1079" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1071">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1072" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1073">
+        <label>string</label>
+      </node>
+      <node id="1065">
+        <label>std::vector&lt; Real, std::allocator&lt; Real &gt; &gt;</label>
+      </node>
+      <node id="1062">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox * &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1063" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1063">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::FArrayBox * &gt;, std::allocator&lt; amrex::Vector&lt; amrex::FArrayBox * &gt; &gt; &gt;</label>
+      </node>
+      <node id="1067">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::VisMF * &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1068" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1056">
+        <label>amrex::DataServices</label>
+        <link refid="classamrex_1_1DataServices"/>
+        <childnode refid="1057" relation="usage">
+          <edgelabel>dsArray</edgelabel>
+        </childnode>
+        <childnode refid="1059" relation="usage">
+          <edgelabel>amrData</edgelabel>
+        </childnode>
+        <childnode refid="1073" relation="usage">
+          <edgelabel>fileName</edgelabel>
+        </childnode>
+      </node>
+      <node id="1077">
+        <label>std::vector&lt; amrex::Vector&lt; Real &gt;, std::allocator&lt; amrex::Vector&lt; Real &gt; &gt; &gt;</label>
+      </node>
+      <node id="1068">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::VisMF * &gt;, std::allocator&lt; amrex::Vector&lt; amrex::VisMF * &gt; &gt; &gt;</label>
+      </node>
+      <node id="1059">
+        <label>amrex::AmrData</label>
+        <link refid="classamrex_1_1AmrData"/>
+        <childnode refid="1060" relation="usage">
+          <edgelabel>gridLocHi</edgelabel>
+          <edgelabel>gridLocLo</edgelabel>
+        </childnode>
+        <childnode refid="1062" relation="usage">
+          <edgelabel>regions</edgelabel>
+        </childnode>
+        <childnode refid="1064" relation="usage">
+          <edgelabel>vfEps</edgelabel>
+          <edgelabel>probHi</edgelabel>
+          <edgelabel>probLo</edgelabel>
+          <edgelabel>probSize</edgelabel>
+          <edgelabel>afEps</edgelabel>
+        </childnode>
+        <childnode refid="1066" relation="usage">
+          <edgelabel>dataGridsDefined</edgelabel>
+        </childnode>
+        <childnode refid="1067" relation="usage">
+          <edgelabel>visMF</edgelabel>
+        </childnode>
+        <childnode refid="1069" relation="usage">
+          <edgelabel>dataGrids</edgelabel>
+        </childnode>
+        <childnode refid="1071" relation="usage">
+          <edgelabel>compIndexToVisMFMap</edgelabel>
+          <edgelabel>refRatio</edgelabel>
+          <edgelabel>levelSteps</edgelabel>
+          <edgelabel>compIndexToVisMFComponentMap</edgelabel>
+        </childnode>
+        <childnode refid="1073" relation="usage">
+          <edgelabel>plotFileVersion</edgelabel>
+          <edgelabel>fileName</edgelabel>
+        </childnode>
+        <childnode refid="1074" relation="usage">
+          <edgelabel>probDomain</edgelabel>
+          <edgelabel>maxDomain</edgelabel>
+        </childnode>
+        <childnode refid="1076" relation="usage">
+          <edgelabel>dxLevel</edgelabel>
+        </childnode>
+        <childnode refid="1078" relation="usage">
+          <edgelabel>plotVars</edgelabel>
+        </childnode>
+        <childnode refid="1080" relation="usage">
+          <edgelabel>fabBoxArray</edgelabel>
+        </childnode>
+        <childnode refid="1083" relation="usage">
+          <edgelabel>time</edgelabel>
+        </childnode>
+      </node>
+      <node id="1060">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1061" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1072">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="1080">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="1081" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="1082" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="1057">
+        <label>amrex::Vector&lt; amrex::DataServices * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1058" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1066">
+        <label>vector&lt; vector&lt; vector&lt; bool &gt; &gt; &gt;</label>
+      </node>
+      <node id="1082">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="1061">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="1064">
+        <label>amrex::Vector&lt; Real &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1065" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1079">
+        <label>std::vector&lt; string, std::allocator&lt; string &gt; &gt;</label>
+      </node>
+      <node id="1074">
+        <label>amrex::Vector&lt; amrex::Box &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1075" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1070">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt;, std::allocator&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; &gt;</label>
+      </node>
+      <node id="1076">
+        <label>amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1077" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1058">
+        <label>std::vector&lt; amrex::DataServices *, std::allocator&lt; amrex::DataServices * &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/amrdata/AMReX_DataServices.H" bodystart="32" bodyend="233"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1DataServices_1a4dccda9d17c5bef5bd00585d8ab7f993" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>amrData</name></member>
+      <member refid="classamrex_1_1DataServices_1a0d74eb70fa1a19985daef03dbf6c0055" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>AmrDataOk</name></member>
+      <member refid="classamrex_1_1DataServices_1a19f9eafb4a1d4d6446f89ec754096e7d" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>AmrDataRef</name></member>
+      <member refid="classamrex_1_1DataServices_1a9bee43add415cee502f4398657b80485" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>bAmrDataOk</name></member>
+      <member refid="classamrex_1_1DataServices_1a78b75b6ce0eb81d0c2551f08cf1783e8" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>CanDerive</name></member>
+      <member refid="classamrex_1_1DataServices_1ad38e5471f8e16d36a4ccdc53ece80e14" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>CanDerive</name></member>
+      <member refid="classamrex_1_1DataServices_1a7556808fa6723c7a9871ff7aef16e4a4" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DataServices</name></member>
+      <member refid="classamrex_1_1DataServices_1ad9d1ee09b1dd9410a22267c041302e0c" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DataServices</name></member>
+      <member refid="classamrex_1_1DataServices_1a85a4eb7cb438f3c75d8de3ecd71a70f7" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DecrementNumberOfUsers</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9ab51d46fff163f6f4e6fbf895518da383" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DeleteRequest</name></member>
+      <member refid="classamrex_1_1DataServices_1a3d198815ecb3b80907c97384e5752fa7" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>Dispatch</name></member>
+      <member refid="classamrex_1_1DataServices_1a62883d11e6cc5ff7d023eb4f21b0e422" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>dsArray</name></member>
+      <member refid="classamrex_1_1DataServices_1a7b5b5a6f71f4bef7caf3ca81377c97b3" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>dsArrayIndex</name></member>
+      <member refid="classamrex_1_1DataServices_1a2a095147c88e1356696aa47fb9bcf797" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>dsArrayIndexCounter</name></member>
+      <member refid="classamrex_1_1DataServices_1aa20cf93243c6cf029d82ffabe3719952" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>dsBatchMode</name></member>
+      <member refid="classamrex_1_1DataServices_1aea89d718ba649ae2217135d549e512cd" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>dsFabOutSize</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DSRequestType</name></member>
+      <member refid="classamrex_1_1DataServices_1a8db270eee6e8e3ac4bf1772eac21a591" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSlice</name></member>
+      <member refid="classamrex_1_1DataServices_1a3e0c29efb7a3629a66a7f41a8c5d491c" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSlice</name></member>
+      <member refid="classamrex_1_1DataServices_1ad7a0d0fc07fe676cdff6a917c6798688" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSlice</name></member>
+      <member refid="classamrex_1_1DataServices_1a8c427a00d85a1895247f6e0aa0c60aa2" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSlice</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9afe2794e70b17fe16bcb75ba47e1256ec" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSliceBoxAllVars</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9af054f888c4a6d02eefe226e674edb2d6" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSliceBoxOneVar</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a54c4c9509960a44b3156e7a998309649" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSlicePlaneAllVars</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a60513fa501bb96f4059cec668c6f0126" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>DumpSlicePlaneOneVar</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9ad8032fde646b23816f422ec34e7c43d8" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>ExitRequest</name></member>
+      <member refid="classamrex_1_1DataServices_1a4770584b17b637d34ee96e06add63f83" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>fileName</name></member>
+      <member refid="classamrex_1_1DataServices_1a974e2ca92baf2acb0925fe1d4168c38c" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>fileType</name></member>
+      <member refid="classamrex_1_1DataServices_1a1d3fb29d1b5e861eaa281249954bc8c0" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>FillVar</name></member>
+      <member refid="classamrex_1_1DataServices_1a658dc44a58993ed228e290a2fb43f162" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>FillVar</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a43f59cb422b6dfd7c8ddd1da1b748092" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>FillVarArrayOfFabs</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a771038382eed1afc9937f305dd7d6a99" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>FillVarMultiFab</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a40aed13acee70704bf8458966f292801" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>FillVarOneFab</name></member>
+      <member refid="classamrex_1_1DataServices_1a9cf93ad2e58dd4146e669e25d1a6a901" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>GetFileName</name></member>
+      <member refid="classamrex_1_1DataServices_1a2688b423afb3de00f6453a4d37dbe34c" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>GetFileType</name></member>
+      <member refid="classamrex_1_1DataServices_1a87fe4ac28bededcc329b22dc0c5d9017" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>GetNumberOfUsers</name></member>
+      <member refid="classamrex_1_1DataServices_1a1e86b7049dda4298109713894149ff36" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>IncrementNumberOfUsers</name></member>
+      <member refid="classamrex_1_1DataServices_1afb9f45ffe84ca09c6a54c59d9107c406" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>Init</name></member>
+      <member refid="classamrex_1_1DataServices_1a40a30a866f8437287bd706633d3ffef5" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>InitRegionTimeRanges</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a98b03a82942b04872302d539974d8300" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>InvalidRequestType</name></member>
+      <member refid="classamrex_1_1DataServices_1a35de3364c9fb9d815d496ac8fbb31084" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>iWriteToLevel</name></member>
+      <member refid="classamrex_1_1DataServices_1a5479c67c013863ff688941896a0636d1" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>LineValues</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9ab1fee9049e0a58f8accfb3ef77030d30" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>LineValuesRequest</name></member>
+      <member refid="classamrex_1_1DataServices_1a53444b30e4f2b6bd43908eddabab56c4" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>ListDeriveFunc</name></member>
+      <member refid="classamrex_1_1DataServices_1a1b53c93511689d13ab9adf28784078c0" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>MinMax</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a97967f133c3c574eafc5784ec75db69b" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>MinMaxRequest</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a05d19cd0b5b9a9c20320e96810edbb72" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>NewRequest</name></member>
+      <member refid="classamrex_1_1DataServices_1a5d6e7ac64333750926f2175ea5f237ad" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>numberOfUsers</name></member>
+      <member refid="classamrex_1_1DataServices_1a432f5bbc067559df0cc58f6841ef8b3c" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>NumDeriveFunc</name></member>
+      <member refid="classamrex_1_1DataServices_1afe86041d067e089571d8544e96b2986b" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>PlotVarNames</name></member>
+      <member refid="classamrex_1_1DataServices_1a2a424e52fa830e6ff025622886c97110" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>PointValue</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9af2edde48d8bc88db394583d8e3a01588" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>PointValueRequest</name></member>
+      <member refid="classamrex_1_1DataServices_1a79516a720db5a9b896b2d87c1287930e" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>profiler</name></member>
+      <member refid="classamrex_1_1DataServices_1a037f84af3602f01bce985c2ebdd4cf12" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>SetBatchMode</name></member>
+      <member refid="classamrex_1_1DataServices_1abdbf701b94b7d6637e2669c3e5e86818" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>SetFabOutSize</name></member>
+      <member refid="classamrex_1_1DataServices_1aedf7787e5d78a2ec4920bdae6f1033c2" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>SetWriteToLevel</name></member>
+      <member refid="classamrex_1_1DataServices_1abfbb38923a2649adad7874840cf5fabc" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>WriteFab</name></member>
+      <member refid="classamrex_1_1DataServices_1a68871125127d068a8cda75a85435eac5" prot="private" virt="non-virtual"><scope>amrex::DataServices</scope><name>WriteFab</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a87e92c8c805e8484191634bfc23b88ce" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>WriteFabAllVars</name></member>
+      <member refid="classamrex_1_1DataServices_1a2ac83614f269c777434721474d55ffe9a5ed9a76a3deab290b490fadcacc4a1f8" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>WriteFabOneVar</name></member>
+      <member refid="classamrex_1_1DataServices_1a5bdb39757dd7e9db803b69385f62a8c8" prot="public" virt="non-virtual"><scope>amrex::DataServices</scope><name>~DataServices</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

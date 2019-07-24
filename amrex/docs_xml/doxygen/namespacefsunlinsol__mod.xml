@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacefsunlinsol__mod" kind="namespace" language="Fortran">
+    <compoundname>fsunlinsol_mod</compoundname>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FClassicalGS" prot="private">fsunlinsol_mod::FClassicalGS</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FModifiedGS" prot="private">fsunlinsol_mod::FModifiedGS</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FQRfact" prot="private">fsunlinsol_mod::FQRfact</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FQRsol" prot="private">fsunlinsol_mod::FQRsol</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolFree" prot="private">fsunlinsol_mod::FSUNLinSolFree</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolGetType" prot="private">fsunlinsol_mod::FSUNLinSolGetType</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolInitialize" prot="private">fsunlinsol_mod::FSUNLinSolInitialize</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolLastFlag" prot="private">fsunlinsol_mod::FSUNLinSolLastFlag</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolNumIters" prot="private">fsunlinsol_mod::FSUNLinSolNumIters</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolResid" prot="private">fsunlinsol_mod::FSUNLinSolResid</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolResNorm" prot="private">fsunlinsol_mod::FSUNLinSolResNorm</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolSetATimes" prot="private">fsunlinsol_mod::FSUNLinSolSetATimes</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolSetPreconditioner" prot="private">fsunlinsol_mod::FSUNLinSolSetPreconditioner</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolSetScalingVectors" prot="private">fsunlinsol_mod::FSUNLinSolSetScalingVectors</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolSetup" prot="private">fsunlinsol_mod::FSUNLinSolSetup</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolSolve" prot="private">fsunlinsol_mod::FSUNLinSolSolve</innerclass>
+    <innerclass refid="interfacefsunlinsol__mod_1_1FSUNLinSolSpace" prot="private">fsunlinsol_mod::FSUNLinSolSpace</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1ade449ac16b532c55e7a890cd384e69cc" prot="public" static="no" mutable="no">
+        <type>integer, parameter, public</type>
+        <definition>integer, parameter, public fsunlinsol_mod::sunlinearsolver_type</definition>
+        <argsstring></argsstring>
+        <name>sunlinearsolver_type</name>
+        <initializer>= kind(SUNLINEARSOLVER_DIRECT)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1ac59867c9259f275d51d7b675cbe1d753" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_success</definition>
+        <argsstring></argsstring>
+        <name>sunls_success</name>
+        <initializer>= 0_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a336cb2dc6020d6a3edfc34dfd256164c" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_mem_null</definition>
+        <argsstring></argsstring>
+        <name>sunls_mem_null</name>
+        <initializer>= -1_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a626e54443cad1ab71c63c0ac3aced003" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_ill_input</definition>
+        <argsstring></argsstring>
+        <name>sunls_ill_input</name>
+        <initializer>= -2_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="54" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1ab70cae1e578248ee871378936db0f989" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_mem_fail</definition>
+        <argsstring></argsstring>
+        <name>sunls_mem_fail</name>
+        <initializer>= -3_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="55" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1aa63e11579fc537e5e53cc6150e6eb588" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_atimes_fail_unrec</definition>
+        <argsstring></argsstring>
+        <name>sunls_atimes_fail_unrec</name>
+        <initializer>= -4_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a32400ef38cc87514cb2b5b28fba635d2" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_pset_fail_unrec</definition>
+        <argsstring></argsstring>
+        <name>sunls_pset_fail_unrec</name>
+        <initializer>= -5_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="57" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1ad989a89aa3804c0efa3699b2374c522c" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_psolve_fail_unrec</definition>
+        <argsstring></argsstring>
+        <name>sunls_psolve_fail_unrec</name>
+        <initializer>= -6_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="58" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a98406a11c1503788e1cd0786eaf51370" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_package_fail_unrec</definition>
+        <argsstring></argsstring>
+        <name>sunls_package_fail_unrec</name>
+        <initializer>= -7_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1acfc0752b71b92622ee7a0b4b493cac4f" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_gs_fail</definition>
+        <argsstring></argsstring>
+        <name>sunls_gs_fail</name>
+        <initializer>= -8_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a0e72804010f32318b8c2e0dc60539215" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_qrsol_fail</definition>
+        <argsstring></argsstring>
+        <name>sunls_qrsol_fail</name>
+        <initializer>= -9_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a65d288a8f90bd511278641c9ab9bad03" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_vectorop_err</definition>
+        <argsstring></argsstring>
+        <name>sunls_vectorop_err</name>
+        <initializer>= -10_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a1c7c6f91aca901930ebc70ea55be5322" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_res_reduced</definition>
+        <argsstring></argsstring>
+        <name>sunls_res_reduced</name>
+        <initializer>= 1_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1aa92e0cd09a00fa6661b6c1a199063530" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_conv_fail</definition>
+        <argsstring></argsstring>
+        <name>sunls_conv_fail</name>
+        <initializer>= 2_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a970768866c09307af12e2869c2eae47d" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_atimes_fail_rec</definition>
+        <argsstring></argsstring>
+        <name>sunls_atimes_fail_rec</name>
+        <initializer>= 3_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a5909f3c602f9e778133a0dc265236245" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_pset_fail_rec</definition>
+        <argsstring></argsstring>
+        <name>sunls_pset_fail_rec</name>
+        <initializer>= 4_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a251122dd4a69ee333d0144fb6cc7e079" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_psolve_fail_rec</definition>
+        <argsstring></argsstring>
+        <name>sunls_psolve_fail_rec</name>
+        <initializer>= 5_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a53a5351aba4bbd0c778af43ce0b0a1b1" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_package_fail_rec</definition>
+        <argsstring></argsstring>
+        <name>sunls_package_fail_rec</name>
+        <initializer>= 6_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="68" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1aea071e4afb17cb542c2781a1df2bfa0d" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_qrfact_fail</definition>
+        <argsstring></argsstring>
+        <name>sunls_qrfact_fail</name>
+        <initializer>= 7_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacefsunlinsol__mod_1a0c74b3a03f092d4a23c63202a0398d20" prot="public" static="no" mutable="no">
+        <type>integer(c_int), parameter, public</type>
+        <definition>integer(c_int), parameter, public fsunlinsol_mod::sunls_lufact_fail</definition>
+        <argsstring></argsstring>
+        <name>sunls_lufact_fail</name>
+        <initializer>= 8_C_INT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" bodystart="70" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS4/fsunlinsol_mod.f90" line="6" column="1"/>
+  </compounddef>
+</doxygen>

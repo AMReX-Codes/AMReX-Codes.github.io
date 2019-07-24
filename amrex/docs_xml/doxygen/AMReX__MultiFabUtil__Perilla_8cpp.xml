@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__MultiFabUtil__Perilla_8cpp" kind="file" language="C++">
+    <compoundname>AMReX_MultiFabUtil_Perilla.cpp</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifdef<sp/>USE_PERILLA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MultiFabUtil_8H" kindref="compound">AMReX_MultiFabUtil.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MultiFabUtil__C_8H" kindref="compound">AMReX_MultiFabUtil_C.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MultiFabUtil__Perilla_8H" kindref="compound">AMReX_MultiFabUtil_Perilla.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Perilla.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;RegionGraph.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;WorkerThread.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Amr_8H" kindref="compound">AMReX_Amr.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AmrLevel_8H" kindref="compound">AMReX_AmrLevel.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_push<sp/>(RGIter&amp;<sp/>rgi,<sp/>Amr&amp;<sp/>amr,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>MultiFab&amp;<sp/>crse_S_fine,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rgi.currentItr<sp/>!=<sp/>rgi.totalItr)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>f<sp/>=<sp/>rgi.currentRegion;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(S_crse.nComp()<sp/>==<sp/>S_fine.nComp());</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(RG_fine-&gt;graphID<sp/>==<sp/>23)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout&lt;&lt;&quot;In<sp/>avg<sp/>down<sp/>push<sp/>f<sp/>&quot;<sp/>&lt;&lt;<sp/>f<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>NOTE:<sp/>The<sp/>tilebox<sp/>is<sp/>defined<sp/>at<sp/>the<sp/>coarse<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lfi<sp/>=<sp/>crse_S_fine.IndexArray()[f];</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>Box&amp;<sp/>tbx<sp/>=<sp/>crse_S_fine[lfi].box();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>NOTE:<sp/>We<sp/>copy<sp/>from<sp/>component<sp/>scomp<sp/>of<sp/>the<sp/>fine<sp/>fab<sp/>into<sp/>component<sp/>0<sp/>of<sp/>the<sp/>crse<sp/>fab</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>because<sp/>the<sp/>crse<sp/>fab<sp/>is<sp/>a<sp/>temporary<sp/>which<sp/>was<sp/>made<sp/>starting<sp/>at<sp/>comp<sp/>0,<sp/>it<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>not<sp/>part<sp/>of<sp/>the<sp/>actual<sp/>crse<sp/>multifab<sp/>which<sp/>came<sp/>in.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tg<sp/>=<sp/>perilla::wid();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nt<sp/>=<sp/>perilla::wtid();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t=0;<sp/>t&lt;RG_fine-&gt;fabTiles[f]-&gt;numTiles;<sp/>t++)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(t<sp/>%<sp/>(perilla::NUM_THREADS_PER_TEAM-perilla::NUM_COMM_THREADS)<sp/>==<sp/>nt-perilla::NUM_COMM_THREADS)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>tbx<sp/>=<sp/>*(RG_fine-&gt;fabTiles[f]-&gt;tileBx[t]);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca2c9cfd2ca7c95d209412f983352224" kindref="member">amrex_avgdown</ref>(tbx,crse_S_fine[lfi].array(),S_fine[lfi].array(),0,scomp,ncomp,ratio);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>RG_fine-&gt;worker[tg]-&gt;l_barr-&gt;sync(perilla::NUM_THREADS_PER_TEAM-perilla::NUM_COMM_THREADS);<sp/></highlight><highlight class="comment">//<sp/>Barrier<sp/>to<sp/>synchronize<sp/>team<sp/>threads</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(RG_fine-&gt;graphID<sp/>==<sp/>23)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout&lt;&lt;&quot;In<sp/>avg<sp/>down<sp/>pushAsych<sp/>f<sp/>&quot;<sp/>&lt;&lt;<sp/>f<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>Perilla::multifabCopyPush(<sp/>RG_crse,<sp/>RG_fine,<sp/>&amp;S_crse,<sp/>&amp;crse_S_fine,<sp/>f,<sp/>scomp,<sp/>0,<sp/>ncomp,<sp/>0,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//S_crse.copy(crse_S_fine,0,scomp,ncomp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_pull<sp/>(RGIter&amp;<sp/>rgi,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,<sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rgi.currentItr<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>f<sp/>=<sp/>rgi.currentRegion;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(S_crse.nComp()<sp/>==<sp/>S_fine.nComp());</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Perilla::multifabCopyPull(<sp/>RG_crse,<sp/>RG_fine,<sp/>&amp;S_crse,<sp/>&amp;S_fine,<sp/>f,scomp,<sp/>0,<sp/>ncomp,<sp/>0,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//S_crse.copy(crse_S_fine,0,scomp,ncomp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_push<sp/>(RGIter&amp;<sp/>rgi,<sp/>Amr&amp;<sp/>amr,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>MultiFab&amp;<sp/>crse_S_fine,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>fgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>cgeom,<sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_down_push(rgi,amr,S_fine,S_crse,crse_S_fine,RG_fine,RG_crse,fgeom,cgeom,scomp,ncomp,rr*<ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>(),f);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_pull<sp/>(RGIter&amp;<sp/>rgi,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>fgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>cgeom,<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>average_down_pull(rgi,<sp/>S_fine,S_crse,RG_fine,RG_crse,fgeom,cgeom,scomp,ncomp,rr*<ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>(),f);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_push<sp/>(RGIter&amp;<sp/>rgi,<sp/>Amr&amp;<sp/>amr,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>MultiFab&amp;<sp/>crse_S_fine,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,<sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>fgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>cgeom,<sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rgi.currentItr<sp/>!=<sp/>rgi.totalItr)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>f<sp/>=<sp/>rgi.currentRegion;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(S_fine.is_nodal()<sp/>||<sp/>S_crse.is_nodal())</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac0e2e23df625040ded95611ceae98352" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>use<sp/>amrex::average_down<sp/>for<sp/>nodal<sp/>MultiFab!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::average_down_push(rgi,<sp/>amr,<sp/>S_fine,<sp/>S_crse,<sp/>crse_S_fine,<sp/>RG_fine,<sp/>RG_crse,<sp/>scomp,<sp/>ncomp,<sp/>ratio,<sp/>f);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(S_crse.nComp()<sp/>==<sp/>S_fine.nComp());</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>fvolume;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>fgeom.GetVolume(fvolume,<sp/>fine_BA,<sp/>0);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//#pragma<sp/>omp<sp/>parallel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>(MFIter<sp/>mfi(crse_S_fine,true);<sp/>mfi.isValid();<sp/>++mfi)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>NOTE:<sp/>The<sp/>tilebox<sp/>is<sp/>defined<sp/>at<sp/>the<sp/>coarse<sp/>level.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lfi<sp/>=<sp/>crse_S_fine.IndexArray()[f];</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>tbx<sp/>=<sp/>crse_S_fine[<sp/>lfi<sp/>].box();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7aa8ba815d817fa8e642d1461beec20a" kindref="member">amrex_avgdown_with_vol</ref>(tbx,crse_S_fine[lfi].array(),S_fine[lfi].array(),fvolume[lfi].array(),</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,scomp,ncomp,ratio);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>Perilla::multifabCopyPush(<sp/>RG_crse,<sp/>RG_fine,<sp/>&amp;S_crse,<sp/>&amp;crse_S_fine,<sp/>f,<sp/>scomp,<sp/>0,<sp/>ncomp,<sp/>0,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//S_crse.copy(crse_S_fine,0,scomp,ncomp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_pull<sp/>(RGIter&amp;<sp/>rgi,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>fgeom,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>cgeom,<sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rgi.currentItr<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>f<sp/>=<sp/>rgi.currentRegion;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(S_fine.is_nodal()<sp/>||<sp/>S_crse.is_nodal())</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac0e2e23df625040ded95611ceae98352" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>use<sp/>amrex::average_down<sp/>for<sp/>nodal<sp/>MultiFab!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>amrex::average_down_pull(rgi,<sp/>S_fine,<sp/>S_crse,<sp/>RG_fine,<sp/>RG_crse,<sp/>scomp,<sp/>ncomp,<sp/>ratio,<sp/>f);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(S_crse.nComp()<sp/>==<sp/>S_fine.nComp());</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>Perilla::multifabCopyPull(rgi,<sp/>RG_crse,<sp/>RG_fine,<sp/>&amp;S_crse,<sp/>&amp;S_fine,<sp/>f,<sp/>scomp,<sp/>0,<sp/>ncomp,<sp/>0,<sp/>0,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//S_crse.copy(crse_S_fine,0,scomp,ncomp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_push<sp/>(RGIter&amp;<sp/>rgi,<sp/>Amr&amp;<sp/>amr,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>MultiFab&amp;<sp/>crse_S_fine,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>average_down_push(rgi,amr,S_fine,S_crse,crse_S_fine,RG_fine,RG_crse,scomp,ncomp,rr*<ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>(),f);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>average_down_pull<sp/>(RGIter&amp;<sp/>rgi,<sp/>MultiFab&amp;<sp/>S_fine,<sp/>MultiFab&amp;<sp/>S_crse,<sp/>RegionGraph*<sp/>RG_fine,<sp/>RegionGraph*<sp/>RG_crse,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>average_down_pull(rgi,<sp/>S_fine,S_crse,RG_fine,RG_crse,scomp,ncomp,rr*<ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>(),f);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil_Perilla.cpp"/>
+  </compounddef>
+</doxygen>

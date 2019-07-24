@@ -1,0 +1,891 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1MacProjector" kind="class" language="C++" prot="public">
+    <compoundname>amrex::MacProjector</compoundname>
+    <includes refid="AMReX__MacProjector_8H" local="no">AMReX_MacProjector.H</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a6bbf0668ee0f491ae7917f308d2b393a" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLABecLaplacian" kindref="compound">MLABecLaplacian</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MLABecLaplacian&gt; amrex::MacProjector::m_abeclap</definition>
+        <argsstring></argsstring>
+        <name>m_abeclap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="44" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a385ce6f0ea12a10abd1e1c8c88f575db" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1MLLinOp" kindref="compound">MLLinOp</ref> *</type>
+        <definition>MLLinOp* amrex::MacProjector::m_linop</definition>
+        <argsstring></argsstring>
+        <name>m_linop</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="49" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a03008c95ba7a99dcccdde517843078b2" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLMG" kindref="compound">MLMG</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MLMG&gt; amrex::MacProjector::m_mlmg</definition>
+        <argsstring></argsstring>
+        <name>m_mlmg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="51" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1afd2720d0228305f0b4a55598a7b2d489" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *, AMREX_SPACEDIM &gt; &gt;</type>
+        <definition>Vector&lt;Array&lt;MultiFab*,AMREX_SPACEDIM&gt; &gt; amrex::MacProjector::m_umac</definition>
+        <argsstring></argsstring>
+        <name>m_umac</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a5687d73a10dab418a054993dd8c45ab7" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>Vector&lt;MultiFab&gt; amrex::MacProjector::m_rhs</definition>
+        <argsstring></argsstring>
+        <name>m_rhs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="54" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1aebdb712524eabf236ff67895707985a0" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>Vector&lt;MultiFab&gt; amrex::MacProjector::m_phi</definition>
+        <argsstring></argsstring>
+        <name>m_phi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="55" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a6b94f3fd70113a44a086e85c15643d7a" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, AMREX_SPACEDIM &gt; &gt;</type>
+        <definition>Vector&lt;Array&lt;MultiFab,AMREX_SPACEDIM&gt; &gt; amrex::MacProjector::m_fluxes</definition>
+        <argsstring></argsstring>
+        <name>m_fluxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt;</type>
+        <definition>Vector&lt;Geometry&gt; amrex::MacProjector::m_geom</definition>
+        <argsstring></argsstring>
+        <name>m_geom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="58" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1ac21ccd4081f20e018bd02689b363a35e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::MacProjector::m_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1ab96a1c2aef1838197721ffa39692d29d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::MacProjector::m_cg_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_cg_verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a9e671381548fd460f694ee063176efb8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::MacProjector::m_maxiter</definition>
+        <argsstring></argsstring>
+        <name>m_maxiter</name>
+        <initializer>= 200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1aa72fccd433288c1c3d6c83bfb8264e54" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::MacProjector::m_cg_maxiter</definition>
+        <argsstring></argsstring>
+        <name>m_cg_maxiter</name>
+        <initializer>= 200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1aafd94f8ce6285a8b8b12d6af7c76ee16" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::MacProjector::m_max_coarsening_level</definition>
+        <argsstring></argsstring>
+        <name>m_max_coarsening_level</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a9de0c8f9fdd877563dae993429e8cec5" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::MacProjector::m_bottom_reltol</definition>
+        <argsstring></argsstring>
+        <name>m_bottom_reltol</name>
+        <initializer>= 1.e-4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1af99ea9a90a1794b4d7eda542b545f162" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::MacProjector::m_bottom_abstol</definition>
+        <argsstring></argsstring>
+        <name>m_bottom_abstol</name>
+        <initializer>= -1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MacProjector_1a38aa95061e693248dfcf66b0bc95328f" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1a9303c93b47b7839de8ce552cb7cb21c4" kindref="member">MLMG::BottomSolver</ref></type>
+        <definition>MLMG::BottomSolver amrex::MacProjector::bottom_solver_type</definition>
+        <argsstring></argsstring>
+        <name>bottom_solver_type</name>
+        <initializer>= MLMG::BottomSolver::bicgstab</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a05d19c7221c02cf3594535ff76c1ed0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MacProjector::MacProjector</definition>
+        <argsstring>(const Vector&lt; Array&lt; MultiFab *, AMREX_SPACEDIM &gt; &gt; &amp;a_umac, const Vector&lt; Array&lt; MultiFab const *, AMREX_SPACEDIM &gt; &gt; &amp;a_beta, const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; MultiFab const * &gt; &amp;a_divu={})</argsstring>
+        <name>MacProjector</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <declname>a_umac</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <declname>a_beta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const * &gt; &amp;</type>
+          <declname>a_divu</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.cpp" bodystart="11" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a9f4cc3fbe43671a4645c523c761b8539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setDomainBC</definition>
+        <argsstring>(const Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;lobc, const Array&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;hibc)</argsstring>
+        <name>setDomainBC</name>
+        <param>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>lobc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;</type>
+          <declname>hibc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="22" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.cpp" bodystart="93" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a182106c512f6e703772e53d8ba7f79f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::project</definition>
+        <argsstring>(const Vector&lt; MultiFab * &gt; &amp;phi_in, Real reltol, Real atol=0.0)</argsstring>
+        <name>project</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
+          <declname>phi_in</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>reltol</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>atol</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.cpp" bodystart="154" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a40be11de707ada075a0353e612afc992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::project</definition>
+        <argsstring>(Real reltol, Real atol=0.0)</argsstring>
+        <name>project</name>
+        <param>
+          <type>Real</type>
+          <declname>reltol</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>atol</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="26" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.cpp" bodystart="103" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a99ff4480a6b0e8c0131bab59a1794d4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setVerbose</definition>
+        <argsstring>(int v) noexcept</argsstring>
+        <name>setVerbose</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="28" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a28c3636c49dbe98f8d198928968fbc21" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setCGVerbose</definition>
+        <argsstring>(int v) noexcept</argsstring>
+        <name>setCGVerbose</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="29" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a2d43e33053938bcb6f3edd3131e23ea9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setBottomVerbose</definition>
+        <argsstring>(int v) noexcept</argsstring>
+        <name>setBottomVerbose</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1aa190e765b472d69390d225023c6abcdf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setBottomTolerance</definition>
+        <argsstring>(Real t) noexcept</argsstring>
+        <name>setBottomTolerance</name>
+        <param>
+          <type>Real</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a950912e1d77ef8c385ae50930e21c153" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setBottomToleranceAbs</definition>
+        <argsstring>(Real t) noexcept</argsstring>
+        <name>setBottomToleranceAbs</name>
+        <param>
+          <type>Real</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a3180b889de0ac9df9c1a9949eeb43105" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setMaxIter</definition>
+        <argsstring>(int v) noexcept</argsstring>
+        <name>setMaxIter</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a97182d5c19090f2c6e3f80124f5559d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setCGMaxIter</definition>
+        <argsstring>(int v) noexcept</argsstring>
+        <name>setCGMaxIter</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="34" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1af119779c86875ee99599b499a13d3844" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setMaxCoarseningLevel</definition>
+        <argsstring>(int v) noexcept</argsstring>
+        <name>setMaxCoarseningLevel</name>
+        <param>
+          <type>int</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="35" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1a0b176787b38fb0cdf57928efda53fc8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MacProjector::setBottomSolver</definition>
+        <argsstring>(MLMG::BottomSolver bottom_solver_type_in) noexcept</argsstring>
+        <name>setBottomSolver</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a9303c93b47b7839de8ce552cb7cb21c4" kindref="member">MLMG::BottomSolver</ref></type>
+          <declname>bottom_solver_type_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="37" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MacProjector_1af840b40728ddf5e917768b8d91c5f80c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MLLinOp" kindref="compound">MLLinOp</ref> &amp;</type>
+        <definition>MLLinOp&amp; amrex::MacProjector::getLinOp</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>getLinOp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="40" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3981">
+        <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
+      </node>
+      <node id="3963">
+        <label>amrex::FabArrayBase::CacheStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
+        <childnode refid="3964" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="3966">
+        <label>amrex::FabArrayBase::FabArrayStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
+      </node>
+      <node id="3947">
+        <label>std::vector&lt; Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="3959">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="3959" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="3956">
+        <label>Real</label>
+      </node>
+      <node id="3991">
+        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+      </node>
+      <node id="3982">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3983" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3988">
+        <label>std::vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="3976">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="3957">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3958" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3958">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::BoxArray &gt;, std::allocator&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt; &gt;</label>
+      </node>
+      <node id="3967">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3968" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3964">
+        <label>string</label>
+      </node>
+      <node id="3984">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="3959" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="3978">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="3977">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3978" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3944">
+        <label>amrex::Vector&lt; amrex::MultiFab &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3945" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3951">
+        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3952" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3954">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Geometry &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt; &gt;</label>
+      </node>
+      <node id="3979">
+        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
+        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="3948">
+        <label>amrex::Vector&lt; Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3949" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3953">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3954" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3955">
+        <label>amrex::RealVect</label>
+        <link refid="classamrex_1_1RealVect"/>
+        <childnode refid="3955" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+        <childnode refid="3956" relation="usage">
+          <edgelabel>vect</edgelabel>
+        </childnode>
+      </node>
+      <node id="3985">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3986" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3983">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="3968">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="3973">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="3959" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="3974" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="3946">
+        <label>amrex::Vector&lt; Array&lt; amrex::MultiFab, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3947" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3950">
+        <label>amrex::MLLinOp</label>
+        <link refid="classamrex_1_1MLLinOp"/>
+        <childnode refid="3951" relation="usage">
+          <edgelabel>m_factory</edgelabel>
+        </childnode>
+        <childnode refid="3953" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+        <childnode refid="3955" relation="usage">
+          <edgelabel>m_coarse_bc_loc</edgelabel>
+        </childnode>
+        <childnode refid="3957" relation="usage">
+          <edgelabel>m_grids</edgelabel>
+        </childnode>
+        <childnode refid="3959" relation="usage">
+          <edgelabel>m_ixtype</edgelabel>
+        </childnode>
+        <childnode refid="3960" relation="usage">
+          <edgelabel>m_coarse_data_for_bc</edgelabel>
+        </childnode>
+        <childnode refid="3967" relation="usage">
+          <edgelabel>m_domain_covered</edgelabel>
+          <edgelabel>m_amr_ref_ratio</edgelabel>
+          <edgelabel>m_num_mg_levels</edgelabel>
+        </childnode>
+        <childnode refid="3985" relation="usage">
+          <edgelabel>m_dmap</edgelabel>
+        </childnode>
+        <childnode refid="3987" relation="usage">
+          <edgelabel>m_hibc</edgelabel>
+          <edgelabel>m_lobc</edgelabel>
+        </childnode>
+        <childnode refid="3950" relation="usage">
+          <edgelabel>m_parent</edgelabel>
+        </childnode>
+        <childnode refid="3989" relation="usage">
+          <edgelabel>info</edgelabel>
+        </childnode>
+      </node>
+      <node id="3987">
+        <label>amrex::Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3988" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3971">
+        <label>amrex::DistributionMapping::RefID</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
+        <childnode refid="3972" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="3980">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3981" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3989">
+        <label>amrex::LPInfo</label>
+        <link refid="structamrex_1_1LPInfo"/>
+      </node>
+      <node id="3943">
+        <label>amrex::MacProjector</label>
+        <link refid="classamrex_1_1MacProjector"/>
+        <childnode refid="3944" relation="usage">
+          <edgelabel>m_rhs</edgelabel>
+          <edgelabel>m_phi</edgelabel>
+        </childnode>
+        <childnode refid="3946" relation="usage">
+          <edgelabel>m_fluxes</edgelabel>
+        </childnode>
+        <childnode refid="3948" relation="usage">
+          <edgelabel>m_umac</edgelabel>
+        </childnode>
+        <childnode refid="3950" relation="usage">
+          <edgelabel>m_linop</edgelabel>
+        </childnode>
+        <childnode refid="3956" relation="usage">
+          <edgelabel>m_bottom_reltol</edgelabel>
+          <edgelabel>m_bottom_abstol</edgelabel>
+        </childnode>
+        <childnode refid="3990" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+      </node>
+      <node id="3974">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="3972">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="3967" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
+        </childnode>
+      </node>
+      <node id="3975">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3976" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3965">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="3969">
+        <label>amrex::FabArrayBase::BDKey</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
+        <childnode refid="3970" relation="usage">
+          <edgelabel>m_ba_id</edgelabel>
+        </childnode>
+        <childnode refid="3971" relation="usage">
+          <edgelabel>m_dm_id</edgelabel>
+        </childnode>
+      </node>
+      <node id="3960">
+        <label>amrex::MultiFab</label>
+        <link refid="classamrex_1_1MultiFab"/>
+        <childnode refid="3961" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3945">
+        <label>std::vector&lt; amrex::MultiFab, std::allocator&lt; amrex::MultiFab &gt; &gt;</label>
+      </node>
+      <node id="3949">
+        <label>std::vector&lt; Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="3990">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3991" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3961">
+        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabArray"/>
+        <childnode refid="3962" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3959" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="3967" relation="usage">
+          <edgelabel>fb_recv_size</edgelabel>
+          <edgelabel>fb_recv_from</edgelabel>
+        </childnode>
+        <childnode refid="3975" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="3977" relation="usage">
+          <edgelabel>fb_recv_data</edgelabel>
+          <edgelabel>fb_send_data</edgelabel>
+        </childnode>
+        <childnode refid="3979" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="3980" relation="usage">
+          <edgelabel>fb_recv_stat</edgelabel>
+        </childnode>
+        <childnode refid="3982" relation="usage">
+          <edgelabel>fb_send_reqs</edgelabel>
+          <edgelabel>fb_recv_reqs</edgelabel>
+        </childnode>
+        <childnode refid="3984" relation="usage">
+          <edgelabel>fb_period</edgelabel>
+        </childnode>
+      </node>
+      <node id="3970">
+        <label>amrex::BoxArray::RefID</label>
+        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
+      </node>
+      <node id="3962">
+        <label>amrex::FabArrayBase</label>
+        <link refid="classamrex_1_1FabArrayBase"/>
+        <childnode refid="3963" relation="usage">
+          <edgelabel>m_FBC_stats</edgelabel>
+          <edgelabel>m_FPinfo_stats</edgelabel>
+          <edgelabel>m_CFinfo_stats</edgelabel>
+          <edgelabel>m_TAC_stats</edgelabel>
+          <edgelabel>m_CPC_stats</edgelabel>
+        </childnode>
+        <childnode refid="3965" relation="usage">
+          <edgelabel>distributionMap</edgelabel>
+        </childnode>
+        <childnode refid="3959" relation="usage">
+          <edgelabel>n_grow</edgelabel>
+          <edgelabel>comm_tile_size</edgelabel>
+          <edgelabel>mfiter_tile_size</edgelabel>
+          <edgelabel>mfghostiter_tile_size</edgelabel>
+        </childnode>
+        <childnode refid="3966" relation="usage">
+          <edgelabel>m_FA_stats</edgelabel>
+        </childnode>
+        <childnode refid="3967" relation="usage">
+          <edgelabel>indexArray</edgelabel>
+        </childnode>
+        <childnode refid="3969" relation="usage">
+          <edgelabel>m_bdkey</edgelabel>
+        </childnode>
+        <childnode refid="3973" relation="usage">
+          <edgelabel>boxarray</edgelabel>
+        </childnode>
+      </node>
+      <node id="3986">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt;, std::allocator&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt; &gt;</label>
+      </node>
+      <node id="3952">
+        <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" line="14" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.H" bodystart="13" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1MacProjector_1a38aa95061e693248dfcf66b0bc95328f" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>bottom_solver_type</name></member>
+      <member refid="classamrex_1_1MacProjector_1af840b40728ddf5e917768b8d91c5f80c" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>getLinOp</name></member>
+      <member refid="classamrex_1_1MacProjector_1a6bbf0668ee0f491ae7917f308d2b393a" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_abeclap</name></member>
+      <member refid="classamrex_1_1MacProjector_1af99ea9a90a1794b4d7eda542b545f162" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_bottom_abstol</name></member>
+      <member refid="classamrex_1_1MacProjector_1a9de0c8f9fdd877563dae993429e8cec5" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_bottom_reltol</name></member>
+      <member refid="classamrex_1_1MacProjector_1aa72fccd433288c1c3d6c83bfb8264e54" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_cg_maxiter</name></member>
+      <member refid="classamrex_1_1MacProjector_1ab96a1c2aef1838197721ffa39692d29d" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_cg_verbose</name></member>
+      <member refid="classamrex_1_1MacProjector_1a6b94f3fd70113a44a086e85c15643d7a" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_fluxes</name></member>
+      <member refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_geom</name></member>
+      <member refid="classamrex_1_1MacProjector_1a385ce6f0ea12a10abd1e1c8c88f575db" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_linop</name></member>
+      <member refid="classamrex_1_1MacProjector_1aafd94f8ce6285a8b8b12d6af7c76ee16" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_max_coarsening_level</name></member>
+      <member refid="classamrex_1_1MacProjector_1a9e671381548fd460f694ee063176efb8" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_maxiter</name></member>
+      <member refid="classamrex_1_1MacProjector_1a03008c95ba7a99dcccdde517843078b2" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_mlmg</name></member>
+      <member refid="classamrex_1_1MacProjector_1aebdb712524eabf236ff67895707985a0" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_phi</name></member>
+      <member refid="classamrex_1_1MacProjector_1a5687d73a10dab418a054993dd8c45ab7" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_rhs</name></member>
+      <member refid="classamrex_1_1MacProjector_1afd2720d0228305f0b4a55598a7b2d489" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_umac</name></member>
+      <member refid="classamrex_1_1MacProjector_1ac21ccd4081f20e018bd02689b363a35e" prot="private" virt="non-virtual"><scope>amrex::MacProjector</scope><name>m_verbose</name></member>
+      <member refid="classamrex_1_1MacProjector_1a05d19c7221c02cf3594535ff76c1ed0c" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>MacProjector</name></member>
+      <member refid="classamrex_1_1MacProjector_1a182106c512f6e703772e53d8ba7f79f5" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>project</name></member>
+      <member refid="classamrex_1_1MacProjector_1a40be11de707ada075a0353e612afc992" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>project</name></member>
+      <member refid="classamrex_1_1MacProjector_1a0b176787b38fb0cdf57928efda53fc8a" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setBottomSolver</name></member>
+      <member refid="classamrex_1_1MacProjector_1aa190e765b472d69390d225023c6abcdf" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setBottomTolerance</name></member>
+      <member refid="classamrex_1_1MacProjector_1a950912e1d77ef8c385ae50930e21c153" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setBottomToleranceAbs</name></member>
+      <member refid="classamrex_1_1MacProjector_1a2d43e33053938bcb6f3edd3131e23ea9" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setBottomVerbose</name></member>
+      <member refid="classamrex_1_1MacProjector_1a97182d5c19090f2c6e3f80124f5559d4" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setCGMaxIter</name></member>
+      <member refid="classamrex_1_1MacProjector_1a28c3636c49dbe98f8d198928968fbc21" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setCGVerbose</name></member>
+      <member refid="classamrex_1_1MacProjector_1a9f4cc3fbe43671a4645c523c761b8539" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setDomainBC</name></member>
+      <member refid="classamrex_1_1MacProjector_1af119779c86875ee99599b499a13d3844" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setMaxCoarseningLevel</name></member>
+      <member refid="classamrex_1_1MacProjector_1a3180b889de0ac9df9c1a9949eeb43105" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setMaxIter</name></member>
+      <member refid="classamrex_1_1MacProjector_1a99ff4480a6b0e8c0131bab59a1794d4b" prot="public" virt="non-virtual"><scope>amrex::MacProjector</scope><name>setVerbose</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

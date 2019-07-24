@@ -1,0 +1,2019 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classCommProfStats" kind="class" language="C++" prot="public">
+    <compoundname>CommProfStats</compoundname>
+    <basecompoundref refid="classBLProfStats" prot="public" virt="non-virtual">BLProfStats</basecompoundref>
+    <includes refid="AMReX__CommProfStats_8H" local="no">AMReX_CommProfStats.H</includes>
+    <innerclass refid="structCommProfStats_1_1BarrierEntry" prot="public">CommProfStats::BarrierEntry</innerclass>
+    <innerclass refid="structCommProfStats_1_1DataBlock" prot="public">CommProfStats::DataBlock</innerclass>
+    <innerclass refid="structCommProfStats_1_1NameTagEntry" prot="public">CommProfStats::NameTagEntry</innerclass>
+    <innerclass refid="structCommProfStats_1_1ReductionEntry" prot="public">CommProfStats::ReductionEntry</innerclass>
+    <innerclass refid="structCommProfStats_1_1SendRecvPair" prot="public">CommProfStats::SendRecvPair</innerclass>
+    <innerclass refid="structCommProfStats_1_1SendRecvPairUnpaired" prot="public">CommProfStats::SendRecvPairUnpaired</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classCommProfStats_1adfeb787d05dd96d8297c678948d899fa" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::currentDataBlock</definition>
+        <argsstring></argsstring>
+        <name>currentDataBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="245" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1aae44e713714a3c31191ab760bee0d4df" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::tagMin</definition>
+        <argsstring></argsstring>
+        <name>tagMin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="248" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1ad3ce9b9573e0f43ea2f7cc97c9709110" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::tagMax</definition>
+        <argsstring></argsstring>
+        <name>tagMax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="248" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a6a49bd7619b72e7cd42e63610f9f1ce2" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; double &gt;</type>
+        <definition>std::stack&lt;double&gt; CommProfStats::nestedTimeStack</definition>
+        <argsstring></argsstring>
+        <name>nestedTimeStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="249" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1aa69e0ea415e1fd371c727d23195558af" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="structCommProfStats_1_1DataBlock" kindref="compound">DataBlock</ref> &gt;</type>
+        <definition>amrex::Vector&lt;DataBlock&gt; CommProfStats::dataBlocks</definition>
+        <argsstring></argsstring>
+        <name>dataBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="250" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1ae55d86b8b14132b2c588eee6863497ef" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt;</type>
+        <definition>amrex::Vector&lt;std::string&gt; CommProfStats::nameTagNames</definition>
+        <argsstring></argsstring>
+        <name>nameTagNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="251" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1ae8a2403290796125e47b6b85b70a0d69" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt;</type>
+        <definition>amrex::Vector&lt;std::string&gt; CommProfStats::barrierNames</definition>
+        <argsstring></argsstring>
+        <name>barrierNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="252" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1abfb633bdb2ee1411565556f31c867a32" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::map&lt; int, <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt; &gt;</type>
+        <definition>amrex::Vector&lt;std::map&lt;int, amrex::IntVect&gt; &gt; CommProfStats::TopoMap</definition>
+        <argsstring></argsstring>
+        <name>TopoMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="254" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a4bc1d2909ad88865d5905ea827e62918" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, long &gt;</type>
+        <definition>std::map&lt;int, long&gt; CommProfStats::glMap</definition>
+        <argsstring></argsstring>
+        <name>glMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="256" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1ab58dec894c1338d3e1691e0770507811" prot="private" static="no" mutable="no">
+        <type>std::map&lt; int, int &gt;</type>
+        <definition>std::map&lt;int, int&gt; CommProfStats::glSizeMap</definition>
+        <argsstring></argsstring>
+        <name>glSizeMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="257" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1ab7a4932c02acf98ae36a27c00f553094" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt;</type>
+        <definition>amrex::Vector&lt;Real&gt; CommProfStats::edisonNodeFab</definition>
+        <argsstring></argsstring>
+        <name>edisonNodeFab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="272" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="272" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a3db6cd7cebf96206f923d90fa878ec13" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt;</type>
+        <definition>amrex::Vector&lt;Real&gt; CommProfStats::edisonCPUFab</definition>
+        <argsstring></argsstring>
+        <name>edisonCPUFab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="273" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="273" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1af6a0a1c8fe03b2c8492f67761ace16c6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; int &gt; &gt; &gt;</type>
+        <definition>amrex::Vector&lt;amrex::Vector&lt;amrex::Vector&lt;int&gt; &gt; &gt; CommProfStats::edisonNodeXYZ</definition>
+        <argsstring></argsstring>
+        <name>edisonNodeXYZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="274" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classCommProfStats_1a59273fedbb862c290ba63a251a024ed3" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::cpVersion</definition>
+        <argsstring></argsstring>
+        <name>cpVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="246" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1af705693efa58487843e7624857f94399" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::csSize</definition>
+        <argsstring></argsstring>
+        <name>csSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="246" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1af6ce90c319a7c5388903fcfc2aae1f43" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::finestLevel</definition>
+        <argsstring></argsstring>
+        <name>finestLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="246" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a94641396a054d091cc6c5972397b83c9" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int CommProfStats::maxLevel</definition>
+        <argsstring></argsstring>
+        <name>maxLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="246" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a176ee76d60863bf10f9b663c21c00a38" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool CommProfStats::persistentStreams</definition>
+        <argsstring></argsstring>
+        <name>persistentStreams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="247" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a71a0a4c9fbfae52c4da448c6ac832319" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt;</type>
+        <definition>Vector&lt; IntVect &gt; CommProfStats::calcRefRatios</definition>
+        <argsstring></argsstring>
+        <name>calcRefRatios</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="253" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1abaab22e72988e0a65438fde205822073" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt;</type>
+        <definition>Vector&lt; Box &gt; CommProfStats::probDomain</definition>
+        <argsstring></argsstring>
+        <name>probDomain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="255" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a923e282e808775e9fb1578d7f41c1829" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool CommProfStats::bInitDataBlocks</definition>
+        <argsstring></argsstring>
+        <name>bInitDataBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="258" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a561c5c27d7af6c7cf8fceddc00afb95e" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; int &gt;</type>
+        <definition>Vector&lt; int &gt; CommProfStats::rankFromProx</definition>
+        <argsstring></argsstring>
+        <name>rankFromProx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="259" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1ae110ab5fe019cb5431f8954c51355933" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; int &gt;</type>
+        <definition>Vector&lt; int &gt; CommProfStats::proxFromRank</definition>
+        <argsstring></argsstring>
+        <name>proxFromRank</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="260" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a75483e35d9c71b281451d66142e996b9" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool CommProfStats::bProxMapOK</definition>
+        <argsstring></argsstring>
+        <name>bProxMapOK</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="261" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a2b9a45f7bb2aa14db0f2c0c5ec7b6877" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt;</type>
+        <definition>Vector&lt; std::string &gt; CommProfStats::commHeaderFileNames</definition>
+        <argsstring></argsstring>
+        <name>commHeaderFileNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="262" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a3ed80c76ea0624f5f2e6eb77e6d759e3" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, int &gt;</type>
+        <definition>std::map&lt; std::string, int &gt; CommProfStats::commDataFileNames</definition>
+        <argsstring></argsstring>
+        <name>commDataFileNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="263" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classCommProfStats_1a7157e096127303084fbae1e6c5929e01" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::ifstream * &gt;</type>
+        <definition>Vector&lt; std::ifstream * &gt; CommProfStats::commDataStreams</definition>
+        <argsstring></argsstring>
+        <name>commDataStreams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="264" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classCommProfStats_1a6fa096e58f6defb29bb83ac4e68643b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CommProfStats::CommProfStats</definition>
+        <argsstring>()</argsstring>
+        <name>CommProfStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="153" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="110" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1af0dd55e0822e62401a6c87570d101a5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CommProfStats::~CommProfStats</definition>
+        <argsstring>()</argsstring>
+        <name>~CommProfStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="120" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a8c515e8da3ca3c3437cd0b5bd18c656d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::CheckCommData</definition>
+        <argsstring>(amrex::Vector&lt; long &gt; &amp;nBMin, amrex::Vector&lt; long &gt; &amp;nBMax, amrex::Vector&lt; long &gt; &amp;nRMin, amrex::Vector&lt; long &gt; &amp;nRMax)</argsstring>
+        <name>CheckCommData</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>nBMin</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>nBMax</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>nRMin</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>nRMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="155" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="492" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a92f370455b087129323dcae88ae2fb57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::FillSendFAB</definition>
+        <argsstring>(long &amp;totalSends, long &amp;totalSentData, amrex::Vector&lt; long &gt; &amp;totalSendsPerProc, amrex::Vector&lt; long &gt; &amp;totalSentDataPerProc, amrex::FArrayBox &amp;sendFAB, bool proxmap)</argsstring>
+        <name>FillSendFAB</name>
+        <param>
+          <type>long &amp;</type>
+          <declname>totalSends</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>totalSentData</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>totalSendsPerProc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>totalSentDataPerProc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">amrex::FArrayBox</ref> &amp;</type>
+          <declname>sendFAB</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>proxmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="157" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="641" bodyend="761"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1adadb6ac329d2943f4b55b58602946beb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::ReportSyncPointDataSetup</definition>
+        <argsstring>(long &amp;nBMax, long &amp;nRMax)</argsstring>
+        <name>ReportSyncPointDataSetup</name>
+        <param>
+          <type>long &amp;</type>
+          <declname>nBMax</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>nRMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="161" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="765" bodyend="786"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a519fea406d86c92cba5af6e67dfa2093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::ReportSyncPointData</definition>
+        <argsstring>(amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt; &amp;barrierExitTimes, amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt; &amp;barrierWaitTimes, amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt; &amp;reductionWaitTimes, bool bDoReductions=false)</argsstring>
+        <name>ReportSyncPointData</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt; &gt; &amp;</type>
+          <declname>barrierExitTimes</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt; &gt; &amp;</type>
+          <declname>barrierWaitTimes</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt; &gt; &amp;</type>
+          <declname>reductionWaitTimes</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>bDoReductions</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="162" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="790" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a8b8ac605103da6aa68487bf7823f2f08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::ReportStats</definition>
+        <argsstring>(long &amp;totalSentData, long &amp;totalNCommStats, amrex::Vector&lt; long &gt; &amp;totalFuncCalls, int bytesPerSlot, amrex::Vector&lt; long &gt; &amp;msgSizes, int &amp;minMsgSize, int &amp;maxMsgSize, Real &amp;timeMin, Real &amp;timeMax, Real &amp;timerTime, amrex::Vector&lt; int &gt; &amp;rankNodeNumbers)</argsstring>
+        <name>ReportStats</name>
+        <param>
+          <type>long &amp;</type>
+          <declname>totalSentData</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>totalNCommStats</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>totalFuncCalls</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bytesPerSlot</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; long &gt; &amp;</type>
+          <declname>msgSizes</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>minMsgSize</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>maxMsgSize</declname>
+        </param>
+        <param>
+          <type>Real &amp;</type>
+          <declname>timeMin</declname>
+        </param>
+        <param>
+          <type>Real &amp;</type>
+          <declname>timeMax</declname>
+        </param>
+        <param>
+          <type>Real &amp;</type>
+          <declname>timerTime</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; int &gt; &amp;</type>
+          <declname>rankNodeNumbers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="166" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="863" bodyend="937"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ab1e0fdef8849f319d13a3a68234dc68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::WriteTopoFab</definition>
+        <argsstring>()</argsstring>
+        <name>WriteTopoFab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="172" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="339" bodyend="382"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1af024320c638e753af5a20def51afcde5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::FindTimeRange</definition>
+        <argsstring>(BLProfStats::TimeRange &amp;tr)</argsstring>
+        <name>FindTimeRange</name>
+        <param>
+          <type><ref refid="structBLProfStats_1_1TimeRange" kindref="compound">BLProfStats::TimeRange</ref> &amp;</type>
+          <declname>tr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="941" bodyend="947"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a45e111eb57d243d366c3146a7ac7c0c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::TimelineFAB</definition>
+        <argsstring>(amrex::FArrayBox &amp;timelineFAB, const amrex::Box &amp;probDomain, const BLProfStats::TimeRange tr, const int rankMin, const int rankMax, const int rankStride, const Real ntnMultiplier, const amrex::Vector&lt; Real &gt; &amp;ntnNumbers, const Real bnMultiplier, const amrex::Vector&lt; Real &gt; &amp;bnNumbers)</argsstring>
+        <name>TimelineFAB</name>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">amrex::FArrayBox</ref> &amp;</type>
+          <declname>timelineFAB</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &amp;</type>
+          <declname>probDomain</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structBLProfStats_1_1TimeRange" kindref="compound">BLProfStats::TimeRange</ref></type>
+          <declname>tr</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>rankMin</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>rankMax</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>rankStride</declname>
+        </param>
+        <param>
+          <type>const Real</type>
+          <declname>ntnMultiplier</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>ntnNumbers</declname>
+        </param>
+        <param>
+          <type>const Real</type>
+          <declname>bnMultiplier</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>bnNumbers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="174" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="950" bodyend="1101"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aaba7711671dac7abcce70c3a94ba4dff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::SendRecvData</definition>
+        <argsstring>(const std::string &amp;filename, const double tlo, const double thi)</argsstring>
+        <name>SendRecvData</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>tlo</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>thi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="180" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1174" bodyend="1796"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a2f1c9ef45b46be3997c49b3a1a5bf7c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::SendRecvList</definition>
+        <argsstring>(std::multimap&lt; Real, SendRecvPairUnpaired &gt; &amp;srMMap)</argsstring>
+        <name>SendRecvList</name>
+        <param>
+          <type>std::multimap&lt; Real, <ref refid="structCommProfStats_1_1SendRecvPairUnpaired" kindref="compound">SendRecvPairUnpaired</ref> &gt; &amp;</type>
+          <declname>srMMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="182" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1135" bodyend="1170"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1acfb90e6b7303a7d0bec5cec72b70aed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::InitCommDataBlock</definition>
+        <argsstring>(const int proc, const long ncommstats, const std::string &amp;filename, const long seekpos, const std::string &amp;nodename=&quot;&quot;, const int nodenumber=-1)</argsstring>
+        <name>InitCommDataBlock</name>
+        <reimplements refid="classBLProfStats_1abb32607310aba38c2f1831111d657c3c">InitCommDataBlock</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>proc</declname>
+        </param>
+        <param>
+          <type>const long</type>
+          <declname>ncommstats</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>const long</type>
+          <declname>seekpos</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>nodename</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>nodenumber</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="183" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="135" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1af04068edae93669e158694c835b0ec0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int CommProfStats::AfterBarrier</definition>
+        <argsstring>(const int proc, const double t)</argsstring>
+        <name>AfterBarrier</name>
+        <param>
+          <type>const int</type>
+          <declname>proc</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="187" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="159" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a500f34d9678754d43708a9427b9a6459" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddBarrier</definition>
+        <argsstring>(long bnum, const std::string &amp;bname, long index)</argsstring>
+        <name>AddBarrier</name>
+        <reimplements refid="classBLProfStats_1a5e7375662b3db7c36b102023c63a2703">AddBarrier</reimplements>
+        <param>
+          <type>long</type>
+          <declname>bnum</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>bname</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="189" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="181" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a997f5a337189e617326bddcfcee83a16" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddReduction</definition>
+        <argsstring>(const long rnum, const long index)</argsstring>
+        <name>AddReduction</name>
+        <reimplements refid="classBLProfStats_1aa68615e6a58655333b497ca46e2a724f">AddReduction</reimplements>
+        <param>
+          <type>const long</type>
+          <declname>rnum</declname>
+        </param>
+        <param>
+          <type>const long</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="190" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aab6ae5c2056536ac2d51e6b518c8769f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddTimeMinMax</definition>
+        <argsstring>(const double tmin, const double tmax)</argsstring>
+        <name>AddTimeMinMax</name>
+        <reimplements refid="classBLProfStats_1abb57c349adf906dd3e410a7ad4cacb3b">AddTimeMinMax</reimplements>
+        <param>
+          <type>const double</type>
+          <declname>tmin</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>tmax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="191" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="227" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ae8644de4cf3fc15441df7b92f4b50c84" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddTimerTime</definition>
+        <argsstring>(const double tt)</argsstring>
+        <name>AddTimerTime</name>
+        <reimplements refid="classBLProfStats_1a103373fc5ba85f1277abab6c775e589f">AddTimerTime</reimplements>
+        <param>
+          <type>const double</type>
+          <declname>tt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="192" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="234" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aae68d250eab5fe4721274037a223ea4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddNameTag</definition>
+        <argsstring>(const long ntnindex, const long seekindex)</argsstring>
+        <name>AddNameTag</name>
+        <reimplements refid="classBLProfStats_1a1ae1b4d9feec6c7e49adb46133f0118c">AddNameTag</reimplements>
+        <param>
+          <type>const long</type>
+          <declname>ntnindex</declname>
+        </param>
+        <param>
+          <type>const long</type>
+          <declname>seekindex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="193" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="214" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a8f4075ef4f0bf6ad7016f6b6c8ad85a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddNameTagName</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>AddNameTagName</name>
+        <reimplements refid="classBLProfStats_1a7e0528cb3bef388531f15cc67ee90f80">AddNameTagName</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="194" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="206" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a8e869b70af44fbff24da4e5462638ab0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt; &amp;</type>
+        <definition>const amrex::Vector&lt;std::string&gt;&amp; CommProfStats::NameTagNames</definition>
+        <argsstring>()</argsstring>
+        <name>NameTagNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="195" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="195" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a22cbc931b34ba5a5f9823ea4b8fb0c40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt; &amp;</type>
+        <definition>const amrex::Vector&lt;std::string&gt;&amp; CommProfStats::BarrierNames</definition>
+        <argsstring>()</argsstring>
+        <name>BarrierNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="196" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="196" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a7bc613de3ca4cd25578bdab2205f5bbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddTagRange</definition>
+        <argsstring>(const long tmin, const long tmax)</argsstring>
+        <name>AddTagRange</name>
+        <reimplements refid="classBLProfStats_1a731b87d05dc0ffcee89b72dc65efa6e4">AddTagRange</reimplements>
+        <param>
+          <type>const long</type>
+          <declname>tmin</declname>
+        </param>
+        <param>
+          <type>const long</type>
+          <declname>tmax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="197" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="220" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ad799bee97a7225cf5229845463be3b7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddGridLevel</definition>
+        <argsstring>(const int level, const int ngrids)</argsstring>
+        <name>AddGridLevel</name>
+        <reimplements refid="classBLProfStats_1accb257ef5ba6543553ad07a7c01d05af">AddGridLevel</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>ngrids</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="198" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="241" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aa2eb7356f3bcac1fa730c2e70b8c2956" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddGrid3D</definition>
+        <argsstring>(int level, int xlo, int ylo, int zlo, int xhi, int yhi, int zhi, int xc, int yc, int zc, int xn, int yn, int zn, int proc)</argsstring>
+        <name>AddGrid3D</name>
+        <reimplements refid="classBLProfStats_1accfd6ce64db294d5caf1db429c48940c">AddGrid3D</reimplements>
+        <param>
+          <type>int</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xlo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ylo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zlo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xhi</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yhi</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zhi</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>yn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>zn</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>proc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="199" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="246" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1af33e60c5ccfea7a45165d97b41c98626" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void CommProfStats::SetCPVersion</definition>
+        <argsstring>(const int cpv)</argsstring>
+        <name>SetCPVersion</name>
+        <reimplements refid="classBLProfStats_1ac3043fbd9f45ea3783a4e6901aba35e5">SetCPVersion</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>cpv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="204" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="204" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a199bfb0dca140f601d5aa32d3b08e23e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void CommProfStats::SetCSSize</definition>
+        <argsstring>(const int css)</argsstring>
+        <name>SetCSSize</name>
+        <reimplements refid="classBLProfStats_1aa5773a47f4ba65a51c85f9fa7c660d67">SetCSSize</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>css</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="206" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="206" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a954eca05e31eef7bdacb57873cde234f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void CommProfStats::AddFinestLevel</definition>
+        <argsstring>(const int lev)</argsstring>
+        <name>AddFinestLevel</name>
+        <reimplements refid="classBLProfStats_1a3aa2975da77548afbb73ca37cf820860">AddFinestLevel</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>lev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="208" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="208" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a7f6258720b8313b40605eccd777c4aa9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void CommProfStats::AddMaxLevel</definition>
+        <argsstring>(const int lev)</argsstring>
+        <name>AddMaxLevel</name>
+        <reimplements refid="classBLProfStats_1ac7a1c8cdbc47801e26193114491ce613">AddMaxLevel</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>lev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="210" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="210" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ad0db4734114f935b8eb1dfd6be4a026e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddRefRatio</definition>
+        <argsstring>(const int lev, const amrex::IntVect &amp;rr)</argsstring>
+        <name>AddRefRatio</name>
+        <reimplements refid="classBLProfStats_1af46392f4e6a3fc4b4cd121fed02ee796">AddRefRatio</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &amp;</type>
+          <declname>rr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="212" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="269" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a6a7c7ec72dddbcaab79c7e37eb90fbb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::SetRefRatio</definition>
+        <argsstring>(const amrex::Vector&lt; amrex::IntVect &gt; &amp;rr)</argsstring>
+        <name>SetRefRatio</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt; &amp;</type>
+          <declname>rr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="213" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="213" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aa280503277dc02ea36f72196b23de212" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref> &gt; &amp;</type>
+        <definition>const amrex::Vector&lt;amrex::IntVect&gt;&amp; CommProfStats::GetRefRatio</definition>
+        <argsstring>() const </argsstring>
+        <name>GetRefRatio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="214" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="214" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ad36a244d17cc3887b94206dcf28f8554" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddTopoCoord</definition>
+        <argsstring>(const int nid, const int node, const int tx, const int ty, const int tz, const bool servicenode=false)</argsstring>
+        <name>AddTopoCoord</name>
+        <reimplements refid="classBLProfStats_1a42aefb4e6f36fc0f5bb6fc5921adad95">AddTopoCoord</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>nid</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>tx</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>ty</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>tz</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>servicenode</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="215" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="287" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a2c70598493fad7c2700a509ddaf65584" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddProbDomain</definition>
+        <argsstring>(const int lev, const amrex::Box &amp;pd)</argsstring>
+        <name>AddProbDomain</name>
+        <reimplements refid="classBLProfStats_1a71a674cf8cc0fe681d5d5a8b2c78ac46">AddProbDomain</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &amp;</type>
+          <declname>pd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="278" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a4384bbd33d251a318b16a586333a54fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::SetProbDomain</definition>
+        <argsstring>(const amrex::Vector&lt; amrex::Box &gt; &amp;pd)</argsstring>
+        <name>SetProbDomain</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt; &amp;</type>
+          <declname>pd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="219" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="219" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a3560cd7a0132af162718d66a724192e1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt; &amp;</type>
+        <definition>const amrex::Vector&lt;amrex::Box&gt;&amp; CommProfStats::GetProbDomain</definition>
+        <argsstring>() const </argsstring>
+        <name>GetProbDomain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="220" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="220" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a80bb7e3cae00c7db0c7633ebe2be3b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddCommHeaderFileName</definition>
+        <argsstring>(const std::string &amp;hfn)</argsstring>
+        <name>AddCommHeaderFileName</name>
+        <reimplements refid="classBLProfStats_1a951d836df1037244b4b67b2997cb49ff">AddCommHeaderFileName</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>hfn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="221" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="303" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aa5ce920c54057a16a0f3ea4ccd49789b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; int, long &gt; &amp;</type>
+        <definition>const std::map&lt;int, long&gt;&amp; CommProfStats::GLMap</definition>
+        <argsstring>() const </argsstring>
+        <name>GLMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="222" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="222" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a9d68582959892a6626aa04b697cf181b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::map&lt; int, int &gt; &amp;</type>
+        <definition>const std::map&lt;int, int&gt;&amp; CommProfStats::GLSizeMap</definition>
+        <argsstring>() const </argsstring>
+        <name>GLSizeMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="223" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="223" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a62079444f690e518e8797d23b16defde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::InitEdisonTopoMF</definition>
+        <argsstring>()</argsstring>
+        <name>InitEdisonTopoMF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="234" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1800" bodyend="1810"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a829919a6ccc9bb521cdf384ae48625f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::WriteEdisonTopoMF</definition>
+        <argsstring>()</argsstring>
+        <name>WriteEdisonTopoMF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="235" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1814" bodyend="1831"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a8cd21057d82e32887fa0b13f4394061b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CommProfStats::AddEdisonPID</definition>
+        <argsstring>(int X, int Y, int Z, int cab, int row, int cage, int slot, int cpu, int pid)</argsstring>
+        <name>AddEdisonPID</name>
+        <reimplements refid="classBLProfStats_1a7c962294c0bd67eaf67066277d01f81a">AddEdisonPID</reimplements>
+        <param>
+          <type>int</type>
+          <declname>X</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>Z</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cab</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cage</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cpu</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="236" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1835" bodyend="1874"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a8e0ff1215f92ce779b69d858490926ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CommProfStats::IsSend</definition>
+        <argsstring>(const amrex::BLProfiler::CommFuncType &amp;cft)</argsstring>
+        <name>IsSend</name>
+        <param>
+          <type>const amrex::BLProfiler::CommFuncType &amp;</type>
+          <declname>cft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="240" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1105" bodyend="1111"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aa39af5c360eed166f1eab2758f3b3099" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CommProfStats::IsRecv</definition>
+        <argsstring>(const amrex::BLProfiler::CommFuncType &amp;cft)</argsstring>
+        <name>IsRecv</name>
+        <param>
+          <type>const amrex::BLProfiler::CommFuncType &amp;</type>
+          <declname>cft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="241" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1115" bodyend="1123"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ab0655c04de1ca1a5f803f6bae67dec18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CommProfStats::IsBlockingRecv</definition>
+        <argsstring>(const amrex::BLProfiler::CommFuncType &amp;cft)</argsstring>
+        <name>IsBlockingRecv</name>
+        <param>
+          <type>const amrex::BLProfiler::CommFuncType &amp;</type>
+          <declname>cft</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="242" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="1127" bodyend="1131"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classCommProfStats_1a6b95f5cdfd2548a030caf55a28f66a44" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CommProfStats::GetCPVersion</definition>
+        <argsstring>()</argsstring>
+        <name>GetCPVersion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="205" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="205" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a0eb157fb50325c32f5c9781851363302" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CommProfStats::GetCSSize</definition>
+        <argsstring>()</argsstring>
+        <name>GetCSSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="207" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="207" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a86c68e46ff05aaeb946b326ac767025c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CommProfStats::GetFinestLevel</definition>
+        <argsstring>()</argsstring>
+        <name>GetFinestLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="209" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="209" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a93575bb6c72c2cb7dc80a40c6efed1a3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int CommProfStats::GetMaxLevel</definition>
+        <argsstring>()</argsstring>
+        <name>GetMaxLevel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="211" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="211" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ac2f5f0735dd866d4d9dddd8e9192c94f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void CommProfStats::SetInitDataBlocks</definition>
+        <argsstring>(bool b)</argsstring>
+        <name>SetInitDataBlocks</name>
+        <param>
+          <type>bool</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="225" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="225" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a50da2373879ad991a77418e0a6210a99" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool CommProfStats::InitDBlocks</definition>
+        <argsstring>()</argsstring>
+        <name>InitDBlocks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="226" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="226" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ae236d8843e74f0b9defeb6ff27c0df9c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::InitDataFileNames</definition>
+        <argsstring>(const amrex::Vector&lt; std::string &gt; &amp;hfn)</argsstring>
+        <name>InitDataFileNames</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt; &amp;</type>
+          <declname>hfn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="227" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="125" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a599b15517a65dde41a441be3705e8c01" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::InitProxMap</definition>
+        <argsstring>()</argsstring>
+        <name>InitProxMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="228" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="313" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a0cab8d7c366a08ed7c4ea33d10be5607" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>&lt; std::string &gt; &amp;</type>
+        <definition>static const amrex::Vector&lt;std::string&gt;&amp; CommProfStats::GetHeaderFileNames</definition>
+        <argsstring>()</argsstring>
+        <name>GetHeaderFileNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="229" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a94503fc5a323afaba535e706249a9308" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::OpenAllStreams</definition>
+        <argsstring>(const std::string &amp;dirname)</argsstring>
+        <name>OpenAllStreams</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="231" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="386" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1a1785f1e8537f2cbb475187b787abf6e1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::CloseAllStreams</definition>
+        <argsstring>()</argsstring>
+        <name>CloseAllStreams</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="232" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="411" bodyend="425"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classCommProfStats_1afbced1780aae9f51df2a3ec897fdc5e7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::ReadCommStats</definition>
+        <argsstring>(DataBlock &amp;dBlock)</argsstring>
+        <name>ReadCommStats</name>
+        <param>
+          <type><ref refid="structCommProfStats_1_1DataBlock" kindref="compound">DataBlock</ref> &amp;</type>
+          <declname>dBlock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="266" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="429" bodyend="441"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1afe795502ea704a46a029d0e0a9e378ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::ReadCommStatsNoOpen</definition>
+        <argsstring>(DataBlock &amp;dBlock)</argsstring>
+        <name>ReadCommStatsNoOpen</name>
+        <param>
+          <type><ref refid="structCommProfStats_1_1DataBlock" kindref="compound">DataBlock</ref> &amp;</type>
+          <declname>dBlock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="267" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="445" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1ab5b0c11f3980a18ad4d42d9de9c4af6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CommProfStats::ReadCommStats</definition>
+        <argsstring>(DataBlock &amp;dBlock, const int nmessages)</argsstring>
+        <name>ReadCommStats</name>
+        <param>
+          <type><ref refid="structCommProfStats_1_1DataBlock" kindref="compound">DataBlock</ref> &amp;</type>
+          <declname>dBlock</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>nmessages</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="268" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="457" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classCommProfStats_1aab858210acf47eebbfa8549123cb2836" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CommProfStats::ClearCommStats</definition>
+        <argsstring>(DataBlock &amp;dBlock)</argsstring>
+        <name>ClearCommStats</name>
+        <param>
+          <type><ref refid="structCommProfStats_1_1DataBlock" kindref="compound">DataBlock</ref> &amp;</type>
+          <declname>dBlock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="269" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.cpp" bodystart="478" bodyend="488"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classCommProfStats_1a2df08e98c81c9d8bc1fd71defa327d4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend int</type>
+        <definition>int yyparse</definition>
+        <argsstring>(void *)</argsstring>
+        <name>yyparse</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="276" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="922">
+        <label>BLProfStats</label>
+        <link refid="classBLProfStats"/>
+      </node>
+      <node id="921">
+        <label>CommProfStats</label>
+        <link refid="classCommProfStats"/>
+        <childnode refid="922" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="945">
+        <label>std::vector&lt; amrex::Box, std::allocator&lt; amrex::Box &gt; &gt;</label>
+      </node>
+      <node id="924">
+        <label>BLProfStats</label>
+        <link refid="classBLProfStats"/>
+        <childnode refid="925" relation="usage">
+          <edgelabel>filterTimeRanges</edgelabel>
+        </childnode>
+        <childnode refid="927" relation="usage">
+          <edgelabel>regionTimeRanges</edgelabel>
+        </childnode>
+        <childnode refid="929" relation="usage">
+          <edgelabel>blpFNames</edgelabel>
+        </childnode>
+        <childnode refid="931" relation="usage">
+          <edgelabel>blpDataBlocks</edgelabel>
+        </childnode>
+        <childnode refid="933" relation="usage">
+          <edgelabel>blpDataStreams</edgelabel>
+        </childnode>
+        <childnode refid="935" relation="usage">
+          <edgelabel>gPercent</edgelabel>
+          <edgelabel>minRegionTime</edgelabel>
+          <edgelabel>calcEndTime</edgelabel>
+          <edgelabel>maxRegionTime</edgelabel>
+        </childnode>
+      </node>
+      <node id="928">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="926">
+        <label>std::vector&lt; std::list&lt; BLProfStats::TimeRange &gt;, std::allocator&lt; std::list&lt; BLProfStats::TimeRange &gt; &gt; &gt;</label>
+      </node>
+      <node id="923">
+        <label>CommProfStats</label>
+        <link refid="classCommProfStats"/>
+        <childnode refid="924" relation="public-inheritance">
+        </childnode>
+        <childnode refid="936" relation="usage">
+          <edgelabel>edisonNodeXYZ</edgelabel>
+        </childnode>
+        <childnode refid="938" relation="usage">
+          <edgelabel>edisonNodeFab</edgelabel>
+          <edgelabel>edisonCPUFab</edgelabel>
+        </childnode>
+        <childnode refid="940" relation="usage">
+          <edgelabel>TopoMap</edgelabel>
+        </childnode>
+        <childnode refid="942" relation="usage">
+          <edgelabel>rankFromProx</edgelabel>
+          <edgelabel>proxFromRank</edgelabel>
+        </childnode>
+        <childnode refid="929" relation="usage">
+          <edgelabel>barrierNames</edgelabel>
+          <edgelabel>commHeaderFileNames</edgelabel>
+          <edgelabel>nameTagNames</edgelabel>
+        </childnode>
+        <childnode refid="944" relation="usage">
+          <edgelabel>probDomain</edgelabel>
+        </childnode>
+        <childnode refid="933" relation="usage">
+          <edgelabel>commDataStreams</edgelabel>
+        </childnode>
+        <childnode refid="946" relation="usage">
+          <edgelabel>dataBlocks</edgelabel>
+        </childnode>
+        <childnode refid="948" relation="usage">
+          <edgelabel>calcRefRatios</edgelabel>
+        </childnode>
+      </node>
+      <node id="935">
+        <label>Real</label>
+      </node>
+      <node id="927">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; BLProfStats::TimeRange &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="928" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="930">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="931">
+        <label>amrex::Vector&lt; BLProfStats::BLPDataBlock &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="932" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="942">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="943" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="939">
+        <label>std::vector&lt; Real, std::allocator&lt; Real &gt; &gt;</label>
+      </node>
+      <node id="936">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="937" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="925">
+        <label>amrex::Vector&lt; std::list&lt; BLProfStats::TimeRange &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="926" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="940">
+        <label>amrex::Vector&lt; std::map&lt; int, amrex::IntVect &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="941" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="948">
+        <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="949" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="943">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="937">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="933">
+        <label>amrex::Vector&lt; std::ifstream * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="934" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="934">
+        <label>std::vector&lt; std::ifstream *, std::allocator&lt; std::ifstream * &gt; &gt;</label>
+      </node>
+      <node id="941">
+        <label>std::vector&lt; std::map&lt; int, amrex::IntVect &gt;, std::allocator&lt; std::map&lt; int, amrex::IntVect &gt; &gt; &gt;</label>
+      </node>
+      <node id="932">
+        <label>std::vector&lt; BLProfStats::BLPDataBlock, std::allocator&lt; BLProfStats::BLPDataBlock &gt; &gt;</label>
+      </node>
+      <node id="929">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="930" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="949">
+        <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
+      </node>
+      <node id="938">
+        <label>amrex::Vector&lt; Real &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="939" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="946">
+        <label>amrex::Vector&lt; CommProfStats::DataBlock &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="947" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="944">
+        <label>amrex::Vector&lt; amrex::Box &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="945" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="947">
+        <label>std::vector&lt; CommProfStats::DataBlock, std::allocator&lt; CommProfStats::DataBlock &gt; &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/ProfParser/AMReX_CommProfStats.H" bodystart="37" bodyend="277"/>
+    <listofallmembers>
+      <member refid="classCommProfStats_1a500f34d9678754d43708a9427b9a6459" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddBarrier</name></member>
+      <member refid="classBLProfStats_1a16c97f50e1d193a4b33f072aadb08951" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddCalcEndTime</name></member>
+      <member refid="classCommProfStats_1a80bb7e3cae00c7db0c7633ebe2be3b38" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddCommHeaderFileName</name></member>
+      <member refid="classBLProfStats_1a1a3558eb22382972cac85e8f7272d37e" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddCStatsHeaderFileName</name></member>
+      <member refid="classCommProfStats_1a8cd21057d82e32887fa0b13f4394061b" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddEdisonPID</name></member>
+      <member refid="classCommProfStats_1a954eca05e31eef7bdacb57873cde234f" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddFinestLevel</name></member>
+      <member refid="classBLProfStats_1a90d25f083cc1467c695b5bc6793a86b0" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddFunctionName</name></member>
+      <member refid="classBLProfStats_1a245cb3bb46e5543c148f5ca58879ab8e" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddFunctionName</name></member>
+      <member refid="classCommProfStats_1aa2eb7356f3bcac1fa730c2e70b8c2956" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddGrid3D</name></member>
+      <member refid="classCommProfStats_1ad799bee97a7225cf5229845463be3b7a" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddGridLevel</name></member>
+      <member refid="classCommProfStats_1a7f6258720b8313b40605eccd777c4aa9" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddMaxLevel</name></member>
+      <member refid="classCommProfStats_1aae68d250eab5fe4721274037a223ea4d" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddNameTag</name></member>
+      <member refid="classCommProfStats_1a8f4075ef4f0bf6ad7016f6b6c8ad85a8" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddNameTagName</name></member>
+      <member refid="classBLProfStats_1aad8d3f466a14930a16c027402790d39e" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>AddPiece</name></member>
+      <member refid="classCommProfStats_1a2c70598493fad7c2700a509ddaf65584" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddProbDomain</name></member>
+      <member refid="classCommProfStats_1a997f5a337189e617326bddcfcee83a16" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddReduction</name></member>
+      <member refid="classCommProfStats_1ad0db4734114f935b8eb1dfd6be4a026e" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddRefRatio</name></member>
+      <member refid="classBLProfStats_1a2365248fa0b77e322ec051d9e1073f15" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>AddRegionName</name></member>
+      <member refid="classCommProfStats_1a7bc613de3ca4cd25578bdab2205f5bbd" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddTagRange</name></member>
+      <member refid="classCommProfStats_1aab6ae5c2056536ac2d51e6b518c8769f" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddTimeMinMax</name></member>
+      <member refid="classCommProfStats_1ae8644de4cf3fc15441df7b92f4b50c84" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddTimerTime</name></member>
+      <member refid="classCommProfStats_1ad36a244d17cc3887b94206dcf28f8554" prot="public" virt="virtual"><scope>CommProfStats</scope><name>AddTopoCoord</name></member>
+      <member refid="classCommProfStats_1af04068edae93669e158694c835b0ec0c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>AfterBarrier</name></member>
+      <member refid="classCommProfStats_1ae8a2403290796125e47b6b85b70a0d69" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>barrierNames</name></member>
+      <member refid="classCommProfStats_1a22cbc931b34ba5a5f9823ea4b8fb0c40" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>BarrierNames</name></member>
+      <member refid="classBLProfStats_1ad8dbb3518a8cba134327064fd5875468" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>BarrierNumbersToNames</name></member>
+      <member refid="classBLProfStats_1a9d4b65df466fc4e6154b2c5b3af454b8" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>barrierNumbersToNames</name></member>
+      <member refid="classBLProfStats_1a70374c3c2fee588ba0cdbcdcb80ad103" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>bDefaultInclude</name></member>
+      <member refid="classCommProfStats_1a923e282e808775e9fb1578d7f41c1829" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>bInitDataBlocks</name></member>
+      <member refid="classBLProfStats_1abb120e148e578dea3b6f1a997d54c079" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>blpDataBlocks</name></member>
+      <member refid="classBLProfStats_1a78868d7cea3662827ca187695cb06bf7" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>blpDataFileNames</name></member>
+      <member refid="classBLProfStats_1a0eabcbf58e2437da683f110ef496c902" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>blpDataStreams</name></member>
+      <member refid="classBLProfStats_1ae4254a166bcebf1c002d16e350167508" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>BLPFNames</name></member>
+      <member refid="classBLProfStats_1a8d64f39f91d28ff7c34e8a5337f71b27" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>blpFNames</name></member>
+      <member refid="classBLProfStats_1ae3e98ce74ad3d01e423149655526d44c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>BLProfStats</name></member>
+      <member refid="classBLProfStats_1aff3df1b96b0cf4e527d31f366b51649e" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>blProfVersion</name></member>
+      <member refid="classCommProfStats_1a75483e35d9c71b281451d66142e996b9" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>bProxMapOK</name></member>
+      <member refid="classBLProfStats_1a6d09cb193d457f12d89dad062aaf37bc" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>bTimeRangeInitialized</name></member>
+      <member refid="classBLProfStats_1ae8e90faa9bed63294da831786b2e181f" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>calcEndTime</name></member>
+      <member refid="classCommProfStats_1a71a0a4c9fbfae52c4da448c6ac832319" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>calcRefRatios</name></member>
+      <member refid="classCommProfStats_1a8c515e8da3ca3c3437cd0b5bd18c656d" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>CheckCommData</name></member>
+      <member refid="classBLProfStats_1a9e8341b111020e68b25b6ac7e884de18" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>CheckData</name></member>
+      <member refid="classCommProfStats_1aab858210acf47eebbfa8549123cb2836" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>ClearCommStats</name></member>
+      <member refid="classCommProfStats_1a1785f1e8537f2cbb475187b787abf6e1" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>CloseAllStreams</name></member>
+      <member refid="classBLProfStats_1ac538df4b2ca012677d2f4c63a7a17eb6" prot="public" virt="virtual"><scope>CommProfStats</scope><name>CollectFuncStats</name></member>
+      <member refid="classCommProfStats_1a3ed80c76ea0624f5f2e6eb77e6d759e3" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>commDataFileNames</name></member>
+      <member refid="classCommProfStats_1a7157e096127303084fbae1e6c5929e01" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>commDataStreams</name></member>
+      <member refid="classCommProfStats_1a2b9a45f7bb2aa14db0f2c0c5ec7b6877" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>commHeaderFileNames</name></member>
+      <member refid="classCommProfStats_1a6fa096e58f6defb29bb83ac4e68643b8" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>CommProfStats</name></member>
+      <member refid="classCommProfStats_1a59273fedbb862c290ba63a251a024ed3" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>cpVersion</name></member>
+      <member refid="classCommProfStats_1af705693efa58487843e7624857f94399" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>csSize</name></member>
+      <member refid="classCommProfStats_1adfeb787d05dd96d8297c678948d899fa" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>currentDataBlock</name></member>
+      <member refid="classBLProfStats_1a59554322d0d460e70099c8eea9729aa1" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>currentProc</name></member>
+      <member refid="classCommProfStats_1aa69e0ea415e1fd371c727d23195558af" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>dataBlocks</name></member>
+      <member refid="classBLProfStats_1ad898feedcdc492a4b06a9b2bc661286c" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>dataNProcs</name></member>
+      <member refid="classBLProfStats_1a599d00f7afc5dc348ba84e2ad4ab3bb2" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>dirName</name></member>
+      <member refid="classCommProfStats_1a3db6cd7cebf96206f923d90fa878ec13" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>edisonCPUFab</name></member>
+      <member refid="classCommProfStats_1ab7a4932c02acf98ae36a27c00f553094" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>edisonNodeFab</name></member>
+      <member refid="classCommProfStats_1af6a0a1c8fe03b2c8492f67761ace16c6" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>edisonNodeXYZ</name></member>
+      <member refid="classBLProfStats_1ae52d1496a02ab9f40df9ae0ece20fc51" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>excludeSet</name></member>
+      <member refid="classCommProfStats_1a92f370455b087129323dcae88ae2fb57" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>FillSendFAB</name></member>
+      <member refid="classBLProfStats_1ababb4629f7a4f662fdd590b9e857f2f4" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>FilterStatus</name></member>
+      <member refid="classBLProfStats_1a280bcf247ab0b852e9e87cb757388f6b" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>filterTimeRanges</name></member>
+      <member refid="classCommProfStats_1af024320c638e753af5a20def51afcde5" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>FindTimeRange</name></member>
+      <member refid="classCommProfStats_1af6ce90c319a7c5388903fcfc2aae1f43" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>finestLevel</name></member>
+      <member refid="classCommProfStats_1a6b95f5cdfd2548a030caf55a28f66a44" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetCPVersion</name></member>
+      <member refid="classCommProfStats_1a0eb157fb50325c32f5c9781851363302" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetCSSize</name></member>
+      <member refid="classBLProfStats_1a8e27c91bfc20533c233d3865c211c30b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetFilterTimeRanges</name></member>
+      <member refid="classCommProfStats_1a86c68e46ff05aaeb946b326ac767025c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetFinestLevel</name></member>
+      <member refid="classCommProfStats_1a0cab8d7c366a08ed7c4ea33d10be5607" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetHeaderFileNames</name></member>
+      <member refid="classCommProfStats_1a93575bb6c72c2cb7dc80a40c6efed1a3" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetMaxLevel</name></member>
+      <member refid="classBLProfStats_1a6570ac76a6efeb25a469c384c861d669" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetMaxRNumber</name></member>
+      <member refid="classBLProfStats_1a1c3532e024fa0366c5c680a93a42e459" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetNOutFiles</name></member>
+      <member refid="classBLProfStats_1a494219dfcd91421ce123dd61aaf52f49" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetNProcs</name></member>
+      <member refid="classCommProfStats_1a3560cd7a0132af162718d66a724192e1" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetProbDomain</name></member>
+      <member refid="classBLProfStats_1aad75553e58d4f2c68aeba7be222aab8d" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetProc</name></member>
+      <member refid="classCommProfStats_1aa280503277dc02ea36f72196b23de212" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetRefRatio</name></member>
+      <member refid="classBLProfStats_1ae017d7bf6083e38e84a6a9b3fda09f94" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GetRegionTimeRanges</name></member>
+      <member refid="classCommProfStats_1a4bc1d2909ad88865d5905ea827e62918" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>glMap</name></member>
+      <member refid="classCommProfStats_1aa5ce920c54057a16a0f3ea4ccd49789b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GLMap</name></member>
+      <member refid="classCommProfStats_1ab58dec894c1338d3e1691e0770507811" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>glSizeMap</name></member>
+      <member refid="classCommProfStats_1a9d68582959892a6626aa04b697cf181b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>GLSizeMap</name></member>
+      <member refid="classBLProfStats_1aa9cbfb5bc0b3ad413e06060864eed0f8" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>gPercent</name></member>
+      <member refid="classBLProfStats_1ababb4629f7a4f662fdd590b9e857f2f4a54c51bf557fe09986321162dd762ddd1" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>INCLUDEALL</name></member>
+      <member refid="classBLProfStats_1ababb4629f7a4f662fdd590b9e857f2f4a4bc1d99bb527c9cfd1da7ed4e3b543a1" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>INCLUDENONE</name></member>
+      <member refid="classBLProfStats_1a2cf8abcd7afbb8e5e307c8420255c061" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>includeSet</name></member>
+      <member refid="classBLProfStats_1a34dbaa29f765d4ff500930aca6900d45" prot="public" virt="virtual"><scope>CommProfStats</scope><name>InitBLProfDataBlock</name></member>
+      <member refid="classCommProfStats_1acfb90e6b7303a7d0bec5cec72b70aed7" prot="public" virt="virtual"><scope>CommProfStats</scope><name>InitCommDataBlock</name></member>
+      <member refid="classBLProfStats_1a204ba9eebcc5de5315f3dab43f818822" prot="public" virt="virtual"><scope>CommProfStats</scope><name>InitCStatsDataBlock</name></member>
+      <member refid="classCommProfStats_1ae236d8843e74f0b9defeb6ff27c0df9c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>InitDataFileNames</name></member>
+      <member refid="classCommProfStats_1a50da2373879ad991a77418e0a6210a99" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>InitDBlocks</name></member>
+      <member refid="classCommProfStats_1a62079444f690e518e8797d23b16defde" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>InitEdisonTopoMF</name></member>
+      <member refid="classBLProfStats_1a07e2bf128ca1e78559870ef621c6738c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>InitFilterTimeRanges</name></member>
+      <member refid="classCommProfStats_1a599b15517a65dde41a441be3705e8c01" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>InitProxMap</name></member>
+      <member refid="classBLProfStats_1a2232121c4ccb35f8edc71cc8ce1bd244" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>InTimeRange</name></member>
+      <member refid="classCommProfStats_1ab0655c04de1ca1a5f803f6bae67dec18" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>IsBlockingRecv</name></member>
+      <member refid="classCommProfStats_1aa39af5c360eed166f1eab2758f3b3099" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>IsRecv</name></member>
+      <member refid="classCommProfStats_1a8e0ff1215f92ce779b69d858490926ba" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>IsSend</name></member>
+      <member refid="classBLProfStats_1adee7586f1673d8f37da0f0b69c25fd62" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>MakeFilterFile</name></member>
+      <member refid="classBLProfStats_1aab502367882d6717f167b9f28cb08121" prot="public" virt="virtual"><scope>CommProfStats</scope><name>MakeRegionPlt</name></member>
+      <member refid="classCommProfStats_1a94641396a054d091cc6c5972397b83c9" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>maxLevel</name></member>
+      <member refid="classBLProfStats_1a5aa5a73c572e512532ec0220ff4d4077" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>maxRegionTime</name></member>
+      <member refid="classBLProfStats_1a0a0a7ce2c13259d6280d6f82cb4971f7" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>maxRNumber</name></member>
+      <member refid="classBLProfStats_1ae1b239768583ca1b1f592d3527e5e36f" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>minRegionTime</name></member>
+      <member refid="classCommProfStats_1ae55d86b8b14132b2c588eee6863497ef" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>nameTagNames</name></member>
+      <member refid="classCommProfStats_1a8e869b70af44fbff24da4e5462638ab0" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>NameTagNames</name></member>
+      <member refid="classCommProfStats_1a6a49bd7619b72e7cd42e63610f9f1ce2" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>nestedTimeStack</name></member>
+      <member refid="classBLProfStats_1a00064a0f00714d740472a32d08596019" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>nOutFiles</name></member>
+      <member refid="classBLProfStats_1ababb4629f7a4f662fdd590b9e857f2f4a414e7c26da0e02a38a2765ff8e4ffa34" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>OFF</name></member>
+      <member refid="classBLProfStats_1ababb4629f7a4f662fdd590b9e857f2f4aa1da950ff7ae21cd354932a94d62d7e0" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>ON</name></member>
+      <member refid="classCommProfStats_1a94503fc5a323afaba535e706249a9308" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>OpenAllStreams</name></member>
+      <member refid="classCommProfStats_1a176ee76d60863bf10f9b663c21c00a38" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>persistentStreams</name></member>
+      <member refid="classCommProfStats_1abaab22e72988e0a65438fde205822073" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>probDomain</name></member>
+      <member refid="classCommProfStats_1ae110ab5fe019cb5431f8954c51355933" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>proxFromRank</name></member>
+      <member refid="classBLProfStats_1a286eebba7a2e37000c01614ea347b24c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>RangeIntersection</name></member>
+      <member refid="classCommProfStats_1a561c5c27d7af6c7cf8fceddc00afb95e" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>rankFromProx</name></member>
+      <member refid="classCommProfStats_1afbced1780aae9f51df2a3ec897fdc5e7" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>ReadCommStats</name></member>
+      <member refid="classCommProfStats_1ab5b0c11f3980a18ad4d42d9de9c4af6a" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>ReadCommStats</name></member>
+      <member refid="classCommProfStats_1afe795502ea704a46a029d0e0a9e378ff" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>ReadCommStatsNoOpen</name></member>
+      <member refid="classBLProfStats_1a47d3628566997998b287f1b5326298e2" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>RegionNames</name></member>
+      <member refid="classBLProfStats_1adda95346678c97eebb0541c0caaaed6e" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>regionNames</name></member>
+      <member refid="classBLProfStats_1a7a6bbe3f88daa4764423d252659dbfb1" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>RegionNumbers</name></member>
+      <member refid="classBLProfStats_1a11d15fe366d7be8b419cb63bbaa58443" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>regionNumbers</name></member>
+      <member refid="classBLProfStats_1a666b2b4888f161d4346d4a794aba0e31" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>regionTimeRanges</name></member>
+      <member refid="classBLProfStats_1a9302c49868eb5145be9fbb6d9d3d6b2f" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>RemovePiece</name></member>
+      <member refid="classCommProfStats_1a8b8ac605103da6aa68487bf7823f2f08" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>ReportStats</name></member>
+      <member refid="classCommProfStats_1a519fea406d86c92cba5af6e67dfa2093" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>ReportSyncPointData</name></member>
+      <member refid="classCommProfStats_1adadb6ac329d2943f4b55b58602946beb" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>ReportSyncPointDataSetup</name></member>
+      <member refid="classCommProfStats_1aaba7711671dac7abcce70c3a94ba4dff" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SendRecvData</name></member>
+      <member refid="classCommProfStats_1a2f1c9ef45b46be3997c49b3a1a5bf7c0" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SendRecvList</name></member>
+      <member refid="classBLProfStats_1a01a542102cfa448623fce9a0eac7cea9" prot="public" virt="virtual"><scope>CommProfStats</scope><name>SetBLPVersion</name></member>
+      <member refid="classCommProfStats_1af33e60c5ccfea7a45165d97b41c98626" prot="public" virt="virtual"><scope>CommProfStats</scope><name>SetCPVersion</name></member>
+      <member refid="classCommProfStats_1a199bfb0dca140f601d5aa32d3b08e23e" prot="public" virt="virtual"><scope>CommProfStats</scope><name>SetCSSize</name></member>
+      <member refid="classBLProfStats_1a8bdcae9f48495f10a0c4ab3f71c1798b" prot="public" virt="virtual"><scope>CommProfStats</scope><name>SetCSVersion</name></member>
+      <member refid="classBLProfStats_1a4a257010ca68aeaa03e8b7b02c5e5e0e" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetDirName</name></member>
+      <member refid="classBLProfStats_1aa386bd7cfe5d670537ff28fc6abd818a" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetFilter</name></member>
+      <member refid="classBLProfStats_1ab2263e1e16de499efe38609fdea5f81b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetFilter</name></member>
+      <member refid="classBLProfStats_1a863b8a020da35bf11daf6c34ea5b55a0" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetFilterTimeRanges</name></member>
+      <member refid="classBLProfStats_1ac7083da4606bbac9cd04c7ba4278a28a" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetFNames</name></member>
+      <member refid="classBLProfStats_1a2c9001171e52450c8d565a1f9106ef41" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetGPercent</name></member>
+      <member refid="classCommProfStats_1ac2f5f0735dd866d4d9dddd8e9192c94f" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetInitDataBlocks</name></member>
+      <member refid="classBLProfStats_1a6e570ba8a5d7336446bd4de9d553bd6a" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetMaxRNumber</name></member>
+      <member refid="classBLProfStats_1a1cbbd755f92181dadd9dbdbd81d92efb" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetNOutFiles</name></member>
+      <member refid="classBLProfStats_1a5b9e541dff4023978e381b997dbcc00b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetNProcs</name></member>
+      <member refid="classCommProfStats_1a4384bbd33d251a318b16a586333a54fc" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetProbDomain</name></member>
+      <member refid="classBLProfStats_1ad95846d17258a184db9a6df8a86c158d" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetProc</name></member>
+      <member refid="classCommProfStats_1a6a7c7ec72dddbcaab79c7e37eb90fbb3" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetRefRatio</name></member>
+      <member refid="classBLProfStats_1ae023b91eb3ee3bf6028a097d14279eee" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetRegionTimeRanges</name></member>
+      <member refid="classBLProfStats_1ab91fda15e1bba727710584a087572686" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetRegionTimeRanges</name></member>
+      <member refid="classBLProfStats_1a55836d3122a77f927534e5e1d017342c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>SetVerbose</name></member>
+      <member refid="classCommProfStats_1ad3ce9b9573e0f43ea2f7cc97c9709110" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>tagMax</name></member>
+      <member refid="classCommProfStats_1aae44e713714a3c31191ab760bee0d4df" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>tagMin</name></member>
+      <member refid="classCommProfStats_1a45e111eb57d243d366c3146a7ac7c0c9" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>TimelineFAB</name></member>
+      <member refid="classBLProfStats_1af986d8aadba05d068b2bdc3aa554d946" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>TimeRangeInitialized</name></member>
+      <member refid="classCommProfStats_1abfb633bdb2ee1411565556f31c867a32" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>TopoMap</name></member>
+      <member refid="classBLProfStats_1ababb4629f7a4f662fdd590b9e857f2f4ab3c2b60395f5d29de06295804afd6e42" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>UNDEFINED</name></member>
+      <member refid="classBLProfStats_1ac33caf53799dfb8c0b2160bf2a228c1b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>Verbose</name></member>
+      <member refid="classBLProfStats_1acca0fea9f472ea1fdb67cbebe9b93d5c" prot="protected" virt="non-virtual"><scope>CommProfStats</scope><name>verbose</name></member>
+      <member refid="classBLProfStats_1a727443269bcefa8b233a831ed76a0d02" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>WhichRegions</name></member>
+      <member refid="classCommProfStats_1a829919a6ccc9bb521cdf384ae48625f1" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>WriteEdisonTopoMF</name></member>
+      <member refid="classBLProfStats_1a122f7a15129ff8ed33a877f5115d083f" prot="public" virt="virtual"><scope>CommProfStats</scope><name>WriteSummary</name></member>
+      <member refid="classCommProfStats_1ab1e0fdef8849f319d13a3a68234dc68b" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>WriteTopoFab</name></member>
+      <member refid="classCommProfStats_1a2df08e98c81c9d8bc1fd71defa327d4d" prot="private" virt="non-virtual"><scope>CommProfStats</scope><name>yyparse</name></member>
+      <member refid="classBLProfStats_1a78a439d9e62c00492ada16e9466c068d" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>~BLProfStats</name></member>
+      <member refid="classCommProfStats_1af0dd55e0822e62401a6c87570d101a5c" prot="public" virt="non-virtual"><scope>CommProfStats</scope><name>~CommProfStats</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

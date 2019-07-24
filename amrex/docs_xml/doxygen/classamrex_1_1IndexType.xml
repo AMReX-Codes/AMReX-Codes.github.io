@@ -1,0 +1,496 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1IndexType" kind="class" language="C++" prot="public">
+    <compoundname>amrex::IndexType</compoundname>
+    <includes refid="AMReX__IndexType_8H" local="no">AMReX_IndexType.H</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" prot="public" static="no">
+        <name>CellIndex</name>
+        <enumvalue id="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1" prot="public">
+          <name>CELL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea410f04417a9413c9d3d862e84300eb05" prot="public">
+          <name>NODE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The cell index type: one of CELL or NODE. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="28" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="28" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1IndexType_1a748dd16ea6778b3a1c572e0fbc909373" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int amrex::IndexType::itype</definition>
+        <argsstring></argsstring>
+        <name>itype</name>
+        <briefdescription>
+<para>An integer holding the CellIndex in bits 0 - AMREX_SPACEDIM-1. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="134" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1IndexType_1adccd37eeac931837d637545e8eba842e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref></type>
+        <definition>MPI_Datatype ParallelDescriptor::Mpi_typemap</definition>
+        <argsstring>()</argsstring>
+        <name>ParallelDescriptor::Mpi_typemap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="24" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a1fbc7aaf6de044221e96860fc01abfa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::IndexType::IndexType</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>IndexType</name>
+        <briefdescription>
+<para>The default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1af2a8da6b64c188c9d66761a59ab1f70c" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::IndexType::IndexType</definition>
+        <argsstring>(const IntVect &amp;iv) noexcept</argsstring>
+        <name>IndexType</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Construct an <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> identical to an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="34" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="34" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a847136886b9283c653898da06bf029f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr amrex::IndexType::IndexType</definition>
+        <argsstring>(AMREX_D_DECL(CellIndex i, CellIndex j, CellIndex k)) noexcept</argsstring>
+        <name>IndexType</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" kindref="member">CellIndex</ref> i, <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" kindref="member">CellIndex</ref> j, <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" kindref="member">CellIndex</ref> k)</type>
+        </param>
+        <briefdescription>
+<para>Construct an <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> given an explicit CellIndex for each direction. AMREX_D_DECL is a macro that sets the constructor to take AMREX_SPACEDIM arguments. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="43" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a814260ba01c9ed9fdff62760a43e2d10" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::IndexType::set</definition>
+        <argsstring>(int dir) noexcept</argsstring>
+        <name>set</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Set <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> to be NODE based in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="50" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a96a82a3cae3ec1a5185f7c3c93e80fb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::IndexType::unset</definition>
+        <argsstring>(int dir) noexcept</argsstring>
+        <name>unset</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Set <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> to be CELL based in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a03f0252cd9221c11a5e6785ace4ff40e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::test</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>test</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>True if <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is NODE based in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a15207e8f5c9ec11a50334931b784923b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::IndexType::setall</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>setall</name>
+        <briefdescription>
+<para>Set NODE based in all directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1ae5322a60edd18d68101e3e26a63bc89d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::IndexType::clear</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>clear</name>
+        <briefdescription>
+<para>Set CELL based in all directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1aae41b2ed4529b1a15193583c327ec29c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::any</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>any</name>
+        <briefdescription>
+<para>True if this <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is NODE based in any direction. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1aa0ef085f3b357aecc4eae14f37e59bc2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::ok</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ok</name>
+        <briefdescription>
+<para>True if <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is valid. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="68" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1ade7967059ecbfe9a07f8784f6138c919" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::IndexType::flip</definition>
+        <argsstring>(int i) noexcept</argsstring>
+        <name>flip</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Change from CELL to NODE or NODE to CELL in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1ac8e3c1632ae03caac3cbdc0edbfcd90e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::operator==</definition>
+        <argsstring>(const IndexType &amp;t) const noexcept</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>True if IndexTypes are identical. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="74" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a728b7acfdb9f363b54017fd6c5fe7590" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::operator!=</definition>
+        <argsstring>(const IndexType &amp;t) const noexcept</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>True if IndexTypes are not identical. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="77" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a19c6d373f2006e78dae9401940c5ac9b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::operator&lt;</definition>
+        <argsstring>(const IndexType &amp;t) const noexcept</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &amp;</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="79" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="79" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a8b2bbd96dc5aae2d9ae4da637a3f43d5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::cellCentered</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>cellCentered</name>
+        <briefdescription>
+<para>True if the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is CELL based in all directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a9f064e6b1642a2c7f8c610c0d20d6559" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::cellCentered</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>cellCentered</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>True if the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is CELL based in dir-direction. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1afd8588da9e95238a5294d33bae5f39ec" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::nodeCentered</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>nodeCentered</name>
+        <briefdescription>
+<para>True if the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is NODE based in all directions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a242575f528e537fe4948b18f9ef0fd25" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool amrex::IndexType::nodeCentered</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>nodeCentered</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>True if the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> is NODE based in dir-direction. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="91" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a362470f2222ce71d89ac7a42166e87ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::IndexType::setType</definition>
+        <argsstring>(int dir, CellIndex t) noexcept</argsstring>
+        <name>setType</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" kindref="member">CellIndex</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+<para>Set <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> to CellIndex type t in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="94" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a3ddfa522c3996c79af3aa5985c8af10a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" kindref="member">CellIndex</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE CellIndex amrex::IndexType::ixType</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>ixType</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Returns the CellIndex in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a87ee9d1782b1b46f76a4e7a904da4320" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::IndexType::operator[]</definition>
+        <argsstring>(int dir) const noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+<para>Return an integer representing the <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> in direction dir. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a74b34f67cae6374f22cee88745b50c14" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::IndexType::ixType</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>ixType</name>
+        <briefdescription>
+<para>Fill an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> of size AMREX_SPACEDIM with IndexTypes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="103" bodyend="103"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a9f800856dcfdcc8175c7797403f213da" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE constexpr IndexType amrex::IndexType::TheCellType</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>TheCellType</name>
+        <briefdescription>
+<para>This static member function returns an <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> object of value <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1" kindref="member">IndexType::CELL</ref>. It is provided as a convenience to our users when defining a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> all of whose faces should be of type <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1" kindref="member">IndexType::CELL</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="111" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="111" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a39cdf04824a6e8cc89b9d21e4d59316c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> constexpr <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE constexpr IndexType amrex::IndexType::TheNodeType</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>TheNodeType</name>
+        <briefdescription>
+<para>This static member function returns an <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> object of value <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea410f04417a9413c9d3d862e84300eb05" kindref="member">IndexType::NODE</ref>. It is provided as a convenience to our users when defining a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> all of whose faces should be of type <ref refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea410f04417a9413c9d3d862e84300eb05" kindref="member">IndexType::NODE</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="123" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="123" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classamrex_1_1IndexType_1a7dd088bc8e2af6141a146c161e1332f8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> static <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE int amrex::IndexType::mask</definition>
+        <argsstring>(int k) noexcept</argsstring>
+        <name>mask</name>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Returns 1&lt;&lt;k. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="132" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="132" bodyend="132"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Cell-Based or Node-Based Indices. </para>    </briefdescription>
+    <detaileddescription>
+<para>The class <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> defines an index as being cell based or node (edge) based in each of the AMREX_SPACEDIM directions. This class defines an enumerated type CellIndex to be either CELL or NODE; i.e. each of the AMREX_SPACEDIM dimensions must be either CELL or NODE. </para>    </detaileddescription>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_IndexType.H" bodystart="22" bodyend="135"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1IndexType_1aae41b2ed4529b1a15193583c327ec29c" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>any</name></member>
+      <member refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>CELL</name></member>
+      <member refid="classamrex_1_1IndexType_1a8b2bbd96dc5aae2d9ae4da637a3f43d5" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>cellCentered</name></member>
+      <member refid="classamrex_1_1IndexType_1a9f064e6b1642a2c7f8c610c0d20d6559" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>cellCentered</name></member>
+      <member refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafccce" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>CellIndex</name></member>
+      <member refid="classamrex_1_1IndexType_1ae5322a60edd18d68101e3e26a63bc89d" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>clear</name></member>
+      <member refid="classamrex_1_1IndexType_1ade7967059ecbfe9a07f8784f6138c919" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>flip</name></member>
+      <member refid="classamrex_1_1IndexType_1a1fbc7aaf6de044221e96860fc01abfa3" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>IndexType</name></member>
+      <member refid="classamrex_1_1IndexType_1af2a8da6b64c188c9d66761a59ab1f70c" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>IndexType</name></member>
+      <member refid="classamrex_1_1IndexType_1a847136886b9283c653898da06bf029f8" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>IndexType</name></member>
+      <member refid="classamrex_1_1IndexType_1a748dd16ea6778b3a1c572e0fbc909373" prot="private" virt="non-virtual"><scope>amrex::IndexType</scope><name>itype</name></member>
+      <member refid="classamrex_1_1IndexType_1a3ddfa522c3996c79af3aa5985c8af10a" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>ixType</name></member>
+      <member refid="classamrex_1_1IndexType_1a74b34f67cae6374f22cee88745b50c14" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>ixType</name></member>
+      <member refid="classamrex_1_1IndexType_1a7dd088bc8e2af6141a146c161e1332f8" prot="private" virt="non-virtual"><scope>amrex::IndexType</scope><name>mask</name></member>
+      <member refid="classamrex_1_1IndexType_1a4bbe4fdc07aa019c3a4a6839cdafcccea410f04417a9413c9d3d862e84300eb05" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>NODE</name></member>
+      <member refid="classamrex_1_1IndexType_1afd8588da9e95238a5294d33bae5f39ec" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>nodeCentered</name></member>
+      <member refid="classamrex_1_1IndexType_1a242575f528e537fe4948b18f9ef0fd25" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>nodeCentered</name></member>
+      <member refid="classamrex_1_1IndexType_1aa0ef085f3b357aecc4eae14f37e59bc2" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>ok</name></member>
+      <member refid="classamrex_1_1IndexType_1a728b7acfdb9f363b54017fd6c5fe7590" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>operator!=</name></member>
+      <member refid="classamrex_1_1IndexType_1a19c6d373f2006e78dae9401940c5ac9b" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>operator&lt;</name></member>
+      <member refid="classamrex_1_1IndexType_1ac8e3c1632ae03caac3cbdc0edbfcd90e" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>operator==</name></member>
+      <member refid="classamrex_1_1IndexType_1a87ee9d1782b1b46f76a4e7a904da4320" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1IndexType_1adccd37eeac931837d637545e8eba842e" prot="private" virt="non-virtual"><scope>amrex::IndexType</scope><name>ParallelDescriptor::Mpi_typemap</name></member>
+      <member refid="classamrex_1_1IndexType_1a814260ba01c9ed9fdff62760a43e2d10" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>set</name></member>
+      <member refid="classamrex_1_1IndexType_1a15207e8f5c9ec11a50334931b784923b" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>setall</name></member>
+      <member refid="classamrex_1_1IndexType_1a362470f2222ce71d89ac7a42166e87ec" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>setType</name></member>
+      <member refid="classamrex_1_1IndexType_1a03f0252cd9221c11a5e6785ace4ff40e" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>test</name></member>
+      <member refid="classamrex_1_1IndexType_1a9f800856dcfdcc8175c7797403f213da" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>TheCellType</name></member>
+      <member refid="classamrex_1_1IndexType_1a39cdf04824a6e8cc89b9d21e4d59316c" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>TheNodeType</name></member>
+      <member refid="classamrex_1_1IndexType_1a96a82a3cae3ec1a5185f7c3c93e80fb1" prot="public" virt="non-virtual"><scope>amrex::IndexType</scope><name>unset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

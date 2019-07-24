@@ -1,0 +1,2744 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1ParmParse" kind="class" language="C++" prot="public">
+    <compoundname>amrex::ParmParse</compoundname>
+    <includes refid="AMReX__ParmParse_8H" local="no">AMReX_ParmParse.H</includes>
+    <innerclass refid="classamrex_1_1ParmParse_1_1Frame" prot="public">amrex::ParmParse::Frame</innerclass>
+    <innerclass refid="structamrex_1_1ParmParse_1_1PP__entry" prot="public">amrex::ParmParse::PP_entry</innerclass>
+    <innerclass refid="classamrex_1_1ParmParse_1_1Record" prot="public">amrex::ParmParse::Record</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1" prot="public" static="no">
+        <name>@2</name>
+        <enumvalue id="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a42c200ba823b0b1a3c16c437a264ce9e" prot="public">
+          <name>LAST</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" prot="public">
+          <name>FIRST</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" prot="public">
+          <name>ALL</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="245" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="245" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" prot="public" static="no">
+        <type>std::list&lt; <ref refid="structamrex_1_1ParmParse_1_1PP__entry" kindref="compound">PP_entry</ref> &gt;</type>
+        <definition>typedef std::list&lt;PP_entry&gt; amrex::ParmParse::Table</definition>
+        <argsstring></argsstring>
+        <name>Table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="857" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="856" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1ParmParse_1aee3a66b0ddf3b769f015c89b610db0c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Frame</definition>
+        <argsstring></argsstring>
+        <name>Frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="874" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="874" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1ParmParse_1a697483987cfb91e205b5be2a8f6752c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Record</definition>
+        <argsstring></argsstring>
+        <name>Record</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="875" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="875" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1ParmParse_1a51bb715c245488837311920be49f0050" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; std::string &gt;</type>
+        <definition>std::stack&lt;std::string&gt; amrex::ParmParse::m_pstack</definition>
+        <argsstring></argsstring>
+        <name>m_pstack</name>
+        <briefdescription>
+<para>Prefix used in keyword search. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="887" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="887" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1ParmParse_1a2c878464639af635e4915b22aa627e9f" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" kindref="member">Table</ref> &amp;</type>
+        <definition>const Table&amp; amrex::ParmParse::m_table</definition>
+        <argsstring></argsstring>
+        <name>m_table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="888" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="888" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a852480777e43313f1ae4b2180ff7c648" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ParmParse::ParmParse</definition>
+        <argsstring>(const std::string &amp;prefix=std::string())</argsstring>
+        <name>ParmParse</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+          <defval>std::string()</defval>
+        </param>
+        <briefdescription>
+<para>Construct an additional <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> object sharing the same internal table as any other such objects in existence. If prefix is specified, load this string as the code prefix for this particular <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="252" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="951" bodyend="956"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1af4728cdbfdc1409ae08d340a8698cd6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::ParmParse::contains</definition>
+        <argsstring>(const char *name) const </argsstring>
+        <name>contains</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Returns true if name is in table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="254" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1822" bodyend="1842"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a5fa6149dba1e6786bb41d612daabe9bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::countval</definition>
+        <argsstring>(const char *name, int n=LAST) const </argsstring>
+        <name>countval</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a42c200ba823b0b1a3c16c437a264ce9e" kindref="member">LAST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Returns the number of values associated with nth occurence of name (prepended with the prefix) in the table. n == -1 implies the last occurence. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="260" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1113" bodyend="1121"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a8f87715d95cc1566d9b0188867a40363" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::countname</definition>
+        <argsstring>(const std::string &amp;name) const </argsstring>
+        <name>countname</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of times the given name (prepended with prefix) appears in the table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="266" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1790" bodyend="1801"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a23502086f6a092fd49198f80b5933012" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::countRecords</definition>
+        <argsstring>(const std::string &amp;name) const </argsstring>
+        <name>countRecords</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of records of the given name (prepended with prefix) appears in the table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="271" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1804" bodyend="1815"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa9cc0776beb20447169867da02ad24c8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ParmParse_1_1Record" kindref="compound">Record</ref></type>
+        <definition>ParmParse::Record amrex::ParmParse::getRecord</definition>
+        <argsstring>(const std::string &amp;name, int n=LAST) const </argsstring>
+        <name>getRecord</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a42c200ba823b0b1a3c16c437a264ce9e" kindref="member">LAST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Returns the nth record of the given name, or zero if none found. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="273" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1845" bodyend="1854"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, bool &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to a bool and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to an bool, an error message is output and the program halts. Note that ival == 0 is the first value in the list. <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> converte the value &apos;true&apos;, and non-zero integers or floats to bool(true), and bool(false) for &apos;false&apos; or zero integer or float values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="287" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1125" bodyend="1131"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a89ba46adc293a144e85d982e0637c5ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, bool &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="292" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1134" bodyend="1139"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, bool &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="302" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1142" bodyend="1148"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a6d30fe0a4cd81ba121804385f40a65f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, bool &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="307" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1151" bodyend="1156"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a370bca8ac17e25198c845b9882d80e70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const bool val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="311" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1159" bodyend="1163"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a9da7c64a8f46a870228dc2391fa32194" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, int &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to an int and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to an int, an error message is output and the program halts. Note that ival == 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="322" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1167" bodyend="1173"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a955f50ba1656d89e5dd63bf25fdfa40d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, int &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="328" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1176" bodyend="1181"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a61a807aa25e2b55a8645b65824d1f92e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, int &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="338" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1184" bodyend="1190"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ac13a5c9849569c06779ed5d3a8d1160c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, int &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="343" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1193" bodyend="1198"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a315246869dee121211882c0359fe9f78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const int val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="347" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1201" bodyend="1205"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a3da58f57b8b5947b5abe18ef91cc6578" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, long &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to an int and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to an int, an error message is output and the program halts. Note that ival == 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="358" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1255" bodyend="1261"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a932c95344453e58707656accf5d9bf52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, long &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="363" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1264" bodyend="1269"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a78c688d76c28fe35a8dc57b893d500ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, long &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="373" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1272" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a8f1fab8a63f0952bd9a2bca34202fdaa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, long &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>long &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="378" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1281" bodyend="1286"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ab9256ecb0746632cb441a2124c582737" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const long val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const long</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="382" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1289" bodyend="1293"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a644d434b2fbd8435244c5f913961e3e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, float &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to a float and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to a float, an error message is output and the program halts. Note that ival == 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="393" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1345" bodyend="1351"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a5cd987462a8a8fd83c0591b8b9ebb1a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, float &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="398" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1354" bodyend="1359"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aef86c6c60b29981cf1891399120b0792" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, float &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="408" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1362" bodyend="1368"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aadf0b602f4aacd6888c62b5e41a43801" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, float &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="413" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1371" bodyend="1376"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a8d848df041aef2781e7c11a0dc1ff53c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const float val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="417" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1379" bodyend="1383"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aaa5cd0a8fb56dd191d47a29391453550" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, double &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to a double and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to a double, an error message is output and the program halts. Note that ival = 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="428" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1434" bodyend="1440"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1acf648d17591682f092249a2748efaf13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, double &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="433" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1443" bodyend="1448"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a311ae475ebed8991488a449825b88e9c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, double &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="443" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1451" bodyend="1457"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a905f1c84bcb326fdc5c0fdade3b6ad57" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, double &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="448" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1460" bodyend="1465"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a221601db98f0e218f68065ce218fdcc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const double val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="452" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1468" bodyend="1472"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a5d7bd679a38447d1a6be57b84567618c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, std::string &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to a std::string and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to a std::string, an error message is output and the program halts. Note that ival = 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="463" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1523" bodyend="1529"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a3d371a4375b5175ab0f47990eaaeedd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, std::string &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="469" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1532" bodyend="1537"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ad566025daaf71f4561ca7d2812e6523f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, std::string &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="479" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1540" bodyend="1546"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa3cb6e3922ba575d47ef5d07af208be4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, std::string &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="484" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1549" bodyend="1554"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a28d0faa2a576d6488b738ef309c11f44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const std::string &amp;val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="488" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1557" bodyend="1561"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a48b9982a7ca6d070082c7e65ea2f4017" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, IntVect &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to a <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>, an error message is output and the program halts. Note that ival = 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="499" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1612" bodyend="1618"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a5eb73bd4d125cfb26cc066368dc44c3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, IntVect &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="504" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1621" bodyend="1626"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a070341779e97dfdd354dc056bc7b66a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, IntVect &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="514" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1629" bodyend="1635"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ae5b90a08b1aedaeac795bc745da5b470" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, IntVect &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="519" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1638" bodyend="1643"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1af8b8124367b52af3f6f29ca09bbdff1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const IntVect &amp;val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="523" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1646" bodyend="1650"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a61d014134e0fceed40507cf155f5f9dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getkth</definition>
+        <argsstring>(const char *name, int k, Box &amp;ref, int ival=FIRST) const </argsstring>
+        <name>getkth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get the ival&apos;th value of kth occurrence of the requested name. If successful, the value is converted to a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> and stored in reference ref. If the kth occurrence does not exist or ival&apos;th value does not exist, or if the printed representation of the value cannot be converted to a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>, an error message is output and the program halts. Note that ival = 0 is the first value in the list. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="534" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1699" bodyend="1705"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ad45404f9a571d322ce50c6b298d1b9e6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, Box &amp;ref, int ival=FIRST) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="539" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1708" bodyend="1713"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ad87b8082296dee98230911c63d7055da" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::querykth</definition>
+        <argsstring>(const char *name, int k, Box &amp;ref, int ival=FIRST) const </argsstring>
+        <name>querykth</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Similar to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&apos;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="549" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1716" bodyend="1722"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a087e73892d52763f951dc97e1464ad7b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, Box &amp;ref, int ival=FIRST) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> but searches for the last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="554" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1725" bodyend="1730"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a6ec39cadf536be90cdf7bf66c00ca164" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::add</definition>
+        <argsstring>(const char *name, const Box &amp;val)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos;with value &apos;ref&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="558" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1733" bodyend="1737"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; int &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an int and stored in the std::vector&lt;int&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;int&gt;[0], std::vector&lt;int&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an int, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="572" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1208" bodyend="1215"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a5a8f186b863ed042920cb966cb490a84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; int &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="578" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1218" bodyend="1224"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; int &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="583" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1227" bodyend="1234"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a19bb5a8624fb5dc0a1cbec2bf4512965" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; int &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="589" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1237" bodyend="1243"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a101c28eac3841044445cf177eec905fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; int &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="594" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1246" bodyend="1250"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a161be7186ea48bdb626c176b3dbede98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; long &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; long &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;long&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a long and stored in the std::vector&lt;long&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;long&gt;[0], std::vector&lt;long&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a long, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="609" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1296" bodyend="1303"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a3660ee030a94c59040b923c3ec47daeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; long &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; long &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="615" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1306" bodyend="1312"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a3d7c13ebfff9e057a55ef62b760ace92" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; long &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; long &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="620" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1315" bodyend="1322"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a7c543b4c912ac5d2c0f14880d782acb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; long &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; long &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="626" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1325" bodyend="1331"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a0b745935001c13d4031ecf26512c97c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; long &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; long &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="631" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1334" bodyend="1338"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ab045acf4e16867aac480bedf757ef73e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; float &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;float&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a float and stored in the std::vector&lt;float&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;float&gt;[0], std::vector&lt;float&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a float, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="646" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1386" bodyend="1393"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ade2a00058025a47368d17321ece7b0ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; float &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="652" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1396" bodyend="1402"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a9a1fe3ef5ac7b26955814b9b0215f406" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; float &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="657" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1405" bodyend="1412"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a8d1f95855f5c2b77fa70413f77a0880e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; float &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="663" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1415" bodyend="1421"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a8eba6a33237fde0833cfdc3ff05966d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; float &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="668" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1424" bodyend="1428"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a0ed34d9e21e5c393527a7f04814af77c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; double &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;double&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a double and stored in the std::vector&lt;double&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;double&gt;[0], std::vector&lt;double&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a double, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="682" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1475" bodyend="1482"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a74d8dad78ac75d8f1e3222395af1dcba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; double &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="688" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1485" bodyend="1491"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ac9ad0f0d49086cbd7cb0d15afd9d41fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; double &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="693" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1494" bodyend="1501"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a06ab3d939a739f92f5cbd7bb48b87165" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; double &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="699" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1504" bodyend="1510"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a19fe25e479966031ebd6e0238efb6c5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; double &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="704" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1513" bodyend="1517"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a09a08a89c7964c19668c731457afc5ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; std::string &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;std::string&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an std::string and stored in the std::vector&lt;std::string&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;std::string&gt;[0], std::vector&lt;std::string&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an std::string, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="718" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1564" bodyend="1571"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a05a4a9671491442cac7b1f3395045d0d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; std::string &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="724" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1574" bodyend="1580"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1adb038832ba1d2475cc5ffa318ec3b24d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; std::string &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="729" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1583" bodyend="1590"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa10589f3d6dad215140a6d6ba994ebc1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; std::string &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name.2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="735" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1593" bodyend="1599"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a508d77c1582d48ed6ac32e39ce058501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; std::string &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="740" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1602" bodyend="1606"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aff603306fb64b0099cc8646641e0c95c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; IntVect &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> and stored in the std::vector&lt;<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&gt;[0], std::vector&lt;<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="754" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1653" bodyend="1660"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1af4b9688dff32cdd1cdda245493fe6e77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; IntVect &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="760" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1663" bodyend="1669"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a3c5378fb299a833de09450a429e52e97" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; IntVect &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="765" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1672" bodyend="1679"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1af3395dea5c52b24c9695fd859dbc02a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; IntVect &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name.2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="771" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1682" bodyend="1688"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a057e71e89695ea55895ed7fb33027c21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; IntVect &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="776" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1691" bodyend="1695"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa26a20dd955ee8eab5d75066d32ce5d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; Box &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets an std::vector&lt;<ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> and stored in the std::vector&lt;<ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;<ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&gt;[0], std::vector&lt;<ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>, an error message is reported and the program halts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="790" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1740" bodyend="1747"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a5022087243b3443074907861ecd3f5f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::getarr</definition>
+        <argsstring>(const char *name, std::vector&lt; Box &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>getarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> but searches for last occurrence of name. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="796" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1750" bodyend="1756"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a643ee75ed0e5fa2215ab353e80e8123b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryktharr</definition>
+        <argsstring>(const char *name, int k, std::vector&lt; Box &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryktharr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para><ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" kindref="member">querykth()</ref> as <ref refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" kindref="member">getktharr()</ref> is to <ref refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" kindref="member">getkth()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="801" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1759" bodyend="1766"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a4560b4286333f297ad2570c31e25bfe1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::ParmParse::queryarr</definition>
+        <argsstring>(const char *name, std::vector&lt; Box &gt; &amp;ref, int start_ix=FIRST, int num_val=ALL) const </argsstring>
+        <name>queryarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>start_ix</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" kindref="member">FIRST</ref></defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_val</declname>
+          <defval><ref refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" kindref="member">ALL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Same as <ref refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" kindref="member">queryktharr()</ref> but searches for last occurrence of name.2. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="807" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1769" bodyend="1775"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa52393dc3047539d064822ea76b80d2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::addarr</definition>
+        <argsstring>(const char *name, const std::vector&lt; Box &gt; &amp;ptr)</argsstring>
+        <name>addarr</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt; &amp;</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Add a key &apos;name&apos; with vector of values &apos;ptr&apos; to the end of the PP table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="812" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1778" bodyend="1782"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a7be7a25f863af764185b23ec156988f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParmParse::get</definition>
+        <argsstring>(const char *name, std::array&lt; T, N &gt; &amp;ref) const </argsstring>
+        <name>get</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::array&lt; T, N &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="816" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="816" bodyend="823"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a2f7436d2b62415b221bcaf93576c8f7f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>std::size_t</type>
+            <declname>N</declname>
+            <defname>N</defname>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int amrex::ParmParse::query</definition>
+        <argsstring>(const char *name, std::array&lt; T, N &gt; &amp;ref) const </argsstring>
+        <name>query</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::array&lt; T, N &gt; &amp;</type>
+          <declname>ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="826" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="826" bodyend="836"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa1ea6ad78f6496479a187785066e9100" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" kindref="member">Table</ref> &amp;</type>
+        <definition>const Table&amp; amrex::ParmParse::table</definition>
+        <argsstring>() const </argsstring>
+        <name>table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="859" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="859" bodyend="859"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1ad5376a2e65027c356b38efbef3180c28" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::dumpTable</definition>
+        <argsstring>(std::ostream &amp;os, bool prettyPrint=false)</argsstring>
+        <name>dumpTable</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>prettyPrint</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Write the contents of the table in ASCII to the ostream. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="275" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1100" bodyend="1110"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a302162fcd495ffd22ab0ebb8d8f36a05" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::Initialize</definition>
+        <argsstring>(int argc, char **argv, const char *parfile)</argsstring>
+        <name>Initialize</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>parfile</declname>
+        </param>
+        <briefdescription>
+<para>Construct an initial <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> object from the argc and argv passed in to <ref refid="CheckDecomposition_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main()</ref>. An error will be signalled if another <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> object currently exists. If parfile is specified, read the parameters in from that file first and then append those derived from argv to the table. If prefix is specified, load this string as the code prefix for this particular <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="847" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1063" bodyend="1075"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a9283fab7556352eeff908ca26cd440be" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::Finalize</definition>
+        <argsstring>()</argsstring>
+        <name>Finalize</name>
+        <briefdescription>
+<para>The destructor. The internal static table will only be deleted if there are no other <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> objects in existence. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="854" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1078" bodyend="1097"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aae5998fd0e44f742cf1154536dd56045" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::appendTable</definition>
+        <argsstring>(ParmParse::Table &amp;tab)</argsstring>
+        <name>appendTable</name>
+        <param>
+          <type><ref refid="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" kindref="member">ParmParse::Table</ref> &amp;</type>
+          <declname>tab</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="858" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1004" bodyend="1007"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a400afcf3c9990f35d3f1a77d6308b09f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> &amp;</type>
+        <definition>ParmParse&amp; amrex::ParmParse::operator=</definition>
+        <argsstring>(const ParmParse &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="872" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a2a48f59481766df708eac16332b9e7a2" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::ParmParse::ParmParse</definition>
+        <argsstring>(const Table &amp;tbl)</argsstring>
+        <name>ParmParse</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" kindref="member">Table</ref> &amp;</type>
+          <declname>tbl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="877" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="958" bodyend="962"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a08e171326a69b8908680efab0309d9dc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string amrex::ParmParse::getPrefix</definition>
+        <argsstring>() const </argsstring>
+        <name>getPrefix</name>
+        <briefdescription>
+<para>Set/Get the prefix. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="880" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="946" bodyend="949"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a97b7fee85e0a5c10246c53379b7f44df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string amrex::ParmParse::setPrefix</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>setPrefix</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="881" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a83c047347e19313480ff276fa0683ac9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::pushPrefix</definition>
+        <argsstring>(const std::string &amp;str)</argsstring>
+        <name>pushPrefix</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="882" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="922" bodyend="933"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1aa08b9450454a1835d85f684b73af3c08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::ParmParse::popPrefix</definition>
+        <argsstring>()</argsstring>
+        <name>popPrefix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="883" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="936" bodyend="943"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1ParmParse_1a709e09d39cfe4015030f4c13f0a05244" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string amrex::ParmParse::prefixedName</definition>
+        <argsstring>(const std::string &amp;str) const </argsstring>
+        <name>prefixedName</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="884" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="908" bodyend="919"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Parse Parameters From Command Line and Input Files. </para>    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> class is used to interpret parameters passed in to a program from the command line and an arbitrary collection of input files. The parameters are stored in static table that can be queried by any object of type <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref>. A parameter is a &quot;definition&quot;. A definition is of the form &quot;\&lt;name\&gt; = \&lt;value\&gt;\&lt;value\&gt;...\&lt;value\&gt;&quot;. It is stored in the table as a name, value-list pair.</para><para>In the following example, niter is a definition with the single integer value 10; name is a definition with the string value &quot;big
+ code&quot; and dx is a definition with the two floating point values 0.5 and 0.75 and iv is an IntVect(5,4)</para><para>prog niter = 10 name = &quot;big code&quot; dx = 0.5 0.75 iv=(5,4)</para><para>The <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> class has two constructors. The first is responsible for building the table and is usually called by the main routine of an application. It has arguments for the command line argc and argv parameters, as well as an optional filename argument for reading definitions from an input file. The table is built by reading the input file first (if it exists) with the command line arguments added to the end of the table. The order of a definition in the table is significant, so command line parameters can be used to override definitions in the input file. A definition of the explicit form: FILE=&lt;filename&gt; is not added to the table but is a directive to include the named file at that point in the table.</para><para>The second constructor is generally used by other classes in the code. It permits access to the table via a large collection of query functions. Both constructors have an optional prefix argument that narrows the search to entries in the table with the same prefix. For example, let PlanR be a <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> object with code prefix &quot;ope&quot;. PlanR.get(&quot;val&quot;,v) will look for an entry in the parameter list of the form: ope.val==&lt;value&gt;, and will reject all entries not starting with the correct code prefix.</para><para>The query functions search the table for definition names that match a given string (and prefix) and return values from the corresponding value list. The values can be returned as ints, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt;int&gt;s, floats, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt;float&gt;s, doubles, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt;double&gt;s, std::strings, or <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt;aSring&gt;s. All values in the table are stored as std::string objects, but if an int, float, or double is requested, the translation is done automatically. In the previous example, the value of niter could be returned as either an std::string, an int, a double, or a float. The values of dx can be returned as std::strings, floats, or doubles, but the value of name can be returned only as an std::string.</para><para>Comments in an input file include all text from a # character to the end of the line. Here is a sample input file:</para><para>niter = 100</para><para>title = &quot;Double Wammy&quot;</para><para>cell_size = 0.5 0.75</para><para>plot.var = Density 1 10</para><para>plot.var = Energy 5 12</para><para>bigarray = 1 2 3 4 5 6 7 8 <verbatim>       9 10 11 12
+</verbatim></para><para>aBox = ((0,0) (5,5))</para><para>test = apple &quot;boy blue&quot; 10 20 30 40</para><para>FILE = prob_file </para>    </detaileddescription>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" line="240" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParmParse.H" bodystart="239" bodyend="889"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1ParmParse_1a370bca8ac17e25198c845b9882d80e70" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1a315246869dee121211882c0359fe9f78" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1ab9256ecb0746632cb441a2124c582737" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1a8d848df041aef2781e7c11a0dc1ff53c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1a221601db98f0e218f68065ce218fdcc3" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1a28d0faa2a576d6488b738ef309c11f44" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1af8b8124367b52af3f6f29ca09bbdff1b" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1a6ec39cadf536be90cdf7bf66c00ca164" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>add</name></member>
+      <member refid="classamrex_1_1ParmParse_1a101c28eac3841044445cf177eec905fa" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a0b745935001c13d4031ecf26512c97c7" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a8eba6a33237fde0833cfdc3ff05966d5" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a19fe25e479966031ebd6e0238efb6c5a" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a508d77c1582d48ed6ac32e39ce058501" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a057e71e89695ea55895ed7fb33027c21" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa52393dc3047539d064822ea76b80d2d" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>addarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>ALL</name></member>
+      <member refid="classamrex_1_1ParmParse_1aae5998fd0e44f742cf1154536dd56045" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>appendTable</name></member>
+      <member refid="classamrex_1_1ParmParse_1af4728cdbfdc1409ae08d340a8698cd6a" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>contains</name></member>
+      <member refid="classamrex_1_1ParmParse_1a8f87715d95cc1566d9b0188867a40363" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>countname</name></member>
+      <member refid="classamrex_1_1ParmParse_1a23502086f6a092fd49198f80b5933012" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>countRecords</name></member>
+      <member refid="classamrex_1_1ParmParse_1a5fa6149dba1e6786bb41d612daabe9bf" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>countval</name></member>
+      <member refid="classamrex_1_1ParmParse_1ad5376a2e65027c356b38efbef3180c28" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>dumpTable</name></member>
+      <member refid="classamrex_1_1ParmParse_1a9283fab7556352eeff908ca26cd440be" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>FIRST</name></member>
+      <member refid="classamrex_1_1ParmParse_1aee3a66b0ddf3b769f015c89b610db0c7" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Frame</name></member>
+      <member refid="classamrex_1_1ParmParse_1a89ba46adc293a144e85d982e0637c5ae" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a955f50ba1656d89e5dd63bf25fdfa40d" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a932c95344453e58707656accf5d9bf52" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a5cd987462a8a8fd83c0591b8b9ebb1a1" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1acf648d17591682f092249a2748efaf13" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a3d371a4375b5175ab0f47990eaaeedd8" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a5eb73bd4d125cfb26cc066368dc44c3c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1ad45404f9a571d322ce50c6b298d1b9e6" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a7be7a25f863af764185b23ec156988f3" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>get</name></member>
+      <member refid="classamrex_1_1ParmParse_1a5a8f186b863ed042920cb966cb490a84" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a3660ee030a94c59040b923c3ec47daeb" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1ade2a00058025a47368d17321ece7b0ca" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a74d8dad78ac75d8f1e3222395af1dcba" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a05a4a9671491442cac7b1f3395045d0d" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1af4b9688dff32cdd1cdda245493fe6e77" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a5022087243b3443074907861ecd3f5f6" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1af5d6f81ef2fe67ff7f2c100fac390276" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a9da7c64a8f46a870228dc2391fa32194" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a3da58f57b8b5947b5abe18ef91cc6578" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a644d434b2fbd8435244c5f913961e3e9" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1aaa5cd0a8fb56dd191d47a29391453550" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a5d7bd679a38447d1a6be57b84567618c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a48b9982a7ca6d070082c7e65ea2f4017" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a61d014134e0fceed40507cf155f5f9dd" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getkth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a8f2356169ed148cb998651a15cdf65db" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a161be7186ea48bdb626c176b3dbede98" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1ab045acf4e16867aac480bedf757ef73e" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a0ed34d9e21e5c393527a7f04814af77c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a09a08a89c7964c19668c731457afc5ac" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1aff603306fb64b0099cc8646641e0c95c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa26a20dd955ee8eab5d75066d32ce5d0" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a08e171326a69b8908680efab0309d9dc" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getPrefix</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa9cc0776beb20447169867da02ad24c8" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>getRecord</name></member>
+      <member refid="classamrex_1_1ParmParse_1a302162fcd495ffd22ab0ebb8d8f36a05" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1ParmParse_1af264556e7f32f43af09421204a6e63c1a42c200ba823b0b1a3c16c437a264ce9e" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>LAST</name></member>
+      <member refid="classamrex_1_1ParmParse_1a51bb715c245488837311920be49f0050" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>m_pstack</name></member>
+      <member refid="classamrex_1_1ParmParse_1a2c878464639af635e4915b22aa627e9f" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>m_table</name></member>
+      <member refid="classamrex_1_1ParmParse_1a400afcf3c9990f35d3f1a77d6308b09f" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1ParmParse_1a852480777e43313f1ae4b2180ff7c648" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>ParmParse</name></member>
+      <member refid="classamrex_1_1ParmParse_1a2a48f59481766df708eac16332b9e7a2" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>ParmParse</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa08b9450454a1835d85f684b73af3c08" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>popPrefix</name></member>
+      <member refid="classamrex_1_1ParmParse_1a709e09d39cfe4015030f4c13f0a05244" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>prefixedName</name></member>
+      <member refid="classamrex_1_1ParmParse_1a83c047347e19313480ff276fa0683ac9" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>pushPrefix</name></member>
+      <member refid="classamrex_1_1ParmParse_1a6d30fe0a4cd81ba121804385f40a65f5" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1ac13a5c9849569c06779ed5d3a8d1160c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1a8f1fab8a63f0952bd9a2bca34202fdaa" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1aadf0b602f4aacd6888c62b5e41a43801" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1a905f1c84bcb326fdc5c0fdade3b6ad57" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa3cb6e3922ba575d47ef5d07af208be4" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1ae5b90a08b1aedaeac795bc745da5b470" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1a087e73892d52763f951dc97e1464ad7b" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1a2f7436d2b62415b221bcaf93576c8f7f" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>query</name></member>
+      <member refid="classamrex_1_1ParmParse_1a19bb5a8624fb5dc0a1cbec2bf4512965" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a7c543b4c912ac5d2c0f14880d782acb6" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a8d1f95855f5c2b77fa70413f77a0880e" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a06ab3d939a739f92f5cbd7bb48b87165" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa10589f3d6dad215140a6d6ba994ebc1" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1af3395dea5c52b24c9695fd859dbc02a9" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a4560b4286333f297ad2570c31e25bfe1" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryarr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a83eb7c07b692ef6123cc50ff0ffe33f0" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a61a807aa25e2b55a8645b65824d1f92e" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a78c688d76c28fe35a8dc57b893d500ac" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1aef86c6c60b29981cf1891399120b0792" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a311ae475ebed8991488a449825b88e9c" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1ad566025daaf71f4561ca7d2812e6523f" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a070341779e97dfdd354dc056bc7b66a3" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1ad87b8082296dee98230911c63d7055da" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>querykth</name></member>
+      <member refid="classamrex_1_1ParmParse_1a303e1323d381365bc1cc2a01382edb23" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a3d7c13ebfff9e057a55ef62b760ace92" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a9a1fe3ef5ac7b26955814b9b0215f406" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1ac9ad0f0d49086cbd7cb0d15afd9d41fa" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1adb038832ba1d2475cc5ffa318ec3b24d" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a3c5378fb299a833de09450a429e52e97" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a643ee75ed0e5fa2215ab353e80e8123b" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>queryktharr</name></member>
+      <member refid="classamrex_1_1ParmParse_1a697483987cfb91e205b5be2a8f6752c7" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Record</name></member>
+      <member refid="classamrex_1_1ParmParse_1a97b7fee85e0a5c10246c53379b7f44df" prot="private" virt="non-virtual"><scope>amrex::ParmParse</scope><name>setPrefix</name></member>
+      <member refid="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>Table</name></member>
+      <member refid="classamrex_1_1ParmParse_1aa1ea6ad78f6496479a187785066e9100" prot="public" virt="non-virtual"><scope>amrex::ParmParse</scope><name>table</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

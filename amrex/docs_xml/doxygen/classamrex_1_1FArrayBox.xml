@@ -1,0 +1,1422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1FArrayBox" kind="class" language="C++" prot="public">
+    <compoundname>amrex::FArrayBox</compoundname>
+    <basecompoundref refid="classamrex_1_1BaseFab" prot="public" virt="non-virtual">amrex::BaseFab&lt; Real &gt;</basecompoundref>
+    <derivedcompoundref refid="classamrex_1_1CutFab" prot="public" virt="non-virtual">amrex::CutFab</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1EBFArrayBox" prot="public" virt="non-virtual">amrex::EBFArrayBox</derivedcompoundref>
+    <includes refid="AMReX__FArrayBox_8H" local="no">AMReX_FArrayBox.H</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1FArrayBox_1a1d09202fafedb82d79c005250c3cef2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class FABio</definition>
+        <argsstring></argsstring>
+        <name>FABio</name>
+        <briefdescription>
+<para><ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> is a friend of ours. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="202" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="202" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1FArrayBox_1af0dbc00602c50f34664b6c6cb39033be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const FArrayBox &amp;fb)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>fb</declname>
+        </param>
+        <briefdescription>
+<para>Write FABs in ASCII form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="292" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="955" bodyend="961"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1FArrayBox_1ad6e8fbbe92b476fd75bf5ace98418fa6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::istream &amp;</type>
+        <definition>std::istream&amp; operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;is, FArrayBox &amp;fb)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>fb</declname>
+        </param>
+        <briefdescription>
+<para>Read FABs in ASCII form. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="295" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="964" bodyend="971"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1a2d4b7df27f35926ab4a1377d5864aed8" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::initialized</definition>
+        <argsstring></argsstring>
+        <name>initialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="401" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1a84a692c3807a4e2ab439841c70b1f004" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87a" kindref="member">FabType</ref></type>
+        <definition>FabType amrex::FArrayBox::m_type</definition>
+        <argsstring></argsstring>
+        <name>m_type</name>
+        <initializer>= <ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">FabType::regular</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="405" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="405" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1a8cb9b648353fe9b5fb90cdfccf5b0c89" prot="protected" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref></type>
+        <definition>FABio::Format amrex::FArrayBox::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+<para>Format and ordering for all FAB output. This stuff exists solely to support reading old FABs. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="411" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1a9dd03f8360cfc2cfdf803298308f53dd" prot="protected" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1FABio_1adbdc54b2ed6a4fa2d0cfd19076e5cc39" kindref="member">FABio::Ordering</ref></type>
+        <definition>FABio::Ordering amrex::FArrayBox::ordering</definition>
+        <argsstring></argsstring>
+        <name>ordering</name>
+        <initializer>= <ref refid="classamrex_1_1FABio_1adbdc54b2ed6a4fa2d0cfd19076e5cc39a8db2674dc83889b0c41bf7a2de656e0b" kindref="member">FABio::FAB_NORMAL_ORDER</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="412" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1a7b3c6612330474e7db6e4f6ff9d4f380" prot="protected" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> *</type>
+        <definition>FABio * amrex::FArrayBox::fabio</definition>
+        <argsstring></argsstring>
+        <name>fabio</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The <ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> pointer describing our output format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="415" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="415" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1ab0b477e69a1fe773b7467810181a3056" prot="protected" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::do_initval</definition>
+        <argsstring></argsstring>
+        <name>do_initval</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>initial value </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="418" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="418" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1a6657471e6437a4acab5413ea8874ff39" prot="protected" static="yes" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::FArrayBox::initval</definition>
+        <argsstring></argsstring>
+        <name>initval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="419" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="419" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1FArrayBox_1af56588e4621fc35eae763fcb44ad4633" prot="protected" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::init_snan</definition>
+        <argsstring></argsstring>
+        <name>init_snan</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="420" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="420" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1afc781bb81903fd65b313bcfb46d4aa14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>FArrayBox</name>
+        <briefdescription>
+<para>Construct an invalid FAB with no memory. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="205" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="154" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a374b94f1d571d67c7bc7025346824f1a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(Arena *ar) noexcept</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
+          <declname>ar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="207" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="156" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a78cb311711d0a1b9b479d66d71fa1edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(const Box &amp;b, int ncomp, Arena *ar)</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
+          <declname>ar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="209" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="160" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a3c853d41aecaee21ed1f5ffab2ebed76" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(const Box &amp;b, int ncomp=1, bool alloc=true, bool shared=false, Arena *ar=nullptr)</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>alloc</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>shared</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
+          <declname>ar</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct an initial FAB with the data space allocated but not inititialized. ncomp is the number of components (variables) at each data point in the <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="216" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="166" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aa2977b85f283b49740400daed8ffe97a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(const FArrayBox &amp;rhs, MakeType make_type, int scomp, int ncomp)</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a0a36c65d0681a832330b2812f16786a6" kindref="member">MakeType</ref></type>
+          <declname>make_type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="222" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="172" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a46be1bc294541cf9d677f487baa07d68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(const Box &amp;b, int ncomp, Real *p) noexcept</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>Real *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="224" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1ab9d3b69222db9fba7e76eefa32f4ce32" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(Array4&lt; Real &gt; const &amp;a) noexcept</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="227" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="227" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1acbc4049baf15df08ea1af17e3b084bce" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(Array4&lt; Real &gt; const &amp;a, IndexType t) noexcept</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="230" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a857d6be833fcf8cd638a28da1de97e36" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(Array4&lt; Real const  &gt; const &amp;a) noexcept</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const  &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="233" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="233" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1af82dd0e87633c1b097481174ec58dc78" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(Array4&lt; Real const  &gt; const &amp;a, IndexType t) noexcept</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const  &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="236" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="236" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1ae3a0d38865100d93d3c203db57198fb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::FArrayBox::~FArrayBox</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>~FArrayBox</name>
+        <briefdescription>
+<para>The destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="240" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="240" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1ae822ed6d1bc48190941617842d212243" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(FArrayBox &amp;&amp;rhs) noexcept=default</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a862dcdbd4fbb34b292075f2c7bf44428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FArrayBox::FArrayBox</definition>
+        <argsstring>(const FArrayBox &amp;)=delete</argsstring>
+        <name>FArrayBox</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a6f8accb8be245e6873219b15a933f431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox&amp; amrex::FArrayBox::operator=</definition>
+        <argsstring>(const FArrayBox &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="245" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aa68151c4f96270d35a9cde2a4ff53fc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox&amp; amrex::FArrayBox::operator=</definition>
+        <argsstring>(FArrayBox &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="246" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1afb23955cc5c661e8f041ea1864c1b35c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox &amp; amrex::FArrayBox::operator=</definition>
+        <argsstring>(Real r) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>Real</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+<para>Set the fab to the value r. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="249" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="183" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a0950587ec6e53ece5805ffb5ab71cf60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::initVal</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>initVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="251" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="191" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a49c25c07e7176c493eb665b9e2e398a1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::contains_nan</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>contains_nan</name>
+        <briefdescription>
+<para>Are there any NaNs in the FAB? This may return false, even if the FAB contains NaNs, if the machine doesn&apos;t support the appropriate NaN testing functions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="257" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="428" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a7a62cc8b6838504d75764f9dfb3bec64" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::FArrayBox::contains_nan</definition>
+        <argsstring>(const Box &amp;bx, int scomp, int ncomp) const noexcept</argsstring>
+        <name>contains_nan</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="260" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="443" bodyend="467"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a33bd0aad6c687d9207f7f7d64df00702" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::contains_nan</definition>
+        <argsstring>(IntVect &amp;where) const noexcept</argsstring>
+        <name>contains_nan</name>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>where</declname>
+        </param>
+        <briefdescription>
+<para>These versions return the cell index (though not the component) of the first location of a NaN if there is one. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="265" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="471" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1af50a85491d30e726465d81fd29b56790" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::contains_nan</definition>
+        <argsstring>(const Box &amp;bx, int scomp, int ncomp, IntVect &amp;where) const noexcept</argsstring>
+        <name>contains_nan</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>where</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="267" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="478" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a528be1634802dbdf8bfd0f4874fa2b95" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::contains_inf</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>contains_inf</name>
+        <briefdescription>
+<para>Are there any Infs in the FAB? This may return false, even if the FAB contains Infs, if the machine doesn&apos;t support the appropriate Inf testing functions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="273" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="507" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1abd3718223bf47554bbf03c303e0e0c12" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
+        <definition>AMREX_GPU_HOST_DEVICE bool amrex::FArrayBox::contains_inf</definition>
+        <argsstring>(const Box &amp;bx, int scomp, int ncomp) const noexcept</argsstring>
+        <name>contains_inf</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="276" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="522" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a3b32fddc97c624d7965f6a2ff1a133a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::contains_inf</definition>
+        <argsstring>(IntVect &amp;where) const noexcept</argsstring>
+        <name>contains_inf</name>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>where</declname>
+        </param>
+        <briefdescription>
+<para>These versions return the cell index (though not the component) of the first location of an Inf if there is one. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="281" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="550" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a96eabf866abf113295533d4ca7ab5700" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::contains_inf</definition>
+        <argsstring>(const Box &amp;bx, int scomp, int ncomp, IntVect &amp;where) const noexcept</argsstring>
+        <name>contains_inf</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>where</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="283" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="557" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1ae5a4b9b9a64a4c1cfd534bb6eefc6b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::resize</definition>
+        <argsstring>(const Box &amp;b, int N=1)</argsstring>
+        <name>resize</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>For debugging purposes we hide <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> version and do some extra work. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="286" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="220" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a3e62ab0dcf6c751e94e34f25bcc3c50b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87a" kindref="member">FabType</ref></type>
+        <definition>FabType amrex::FArrayBox::getType</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="289" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="289" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1abb6e149e86e4063464a54a87b6eb0a98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::writeOn</definition>
+        <argsstring>(std::ostream &amp;of) const </argsstring>
+        <name>writeOn</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>of</declname>
+        </param>
+        <briefdescription>
+<para>Writes out the FAB in whatever format you&apos;ve set. The default format is ASCII. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="301" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="247" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a8b18916c1151e0d296dc8eb676b591ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::writeOn</definition>
+        <argsstring>(std::ostream &amp;of, int comp, int num_comp=1) const </argsstring>
+        <name>writeOn</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>of</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_comp</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Write only selected range of components. comp specifies from which component (starting at 0) to write at each point in space. num_comp specifies how many data points to write out at each point is space <ndash/> it defaults to 1. It must be the case the comp &gt;= 0 &amp;&amp; num_comp &gt;= 1 &amp;&amp; (comp+num_comp) &lt;= <ref refid="classamrex_1_1BaseFab_1a7406ec91dc010602121f1492f2d3a748" kindref="member">nComp()</ref>. The FAB is written out in whatever format you&apos;ve set, with the default format being ASCII. The FAB that is written to disk will be an num_comp component FAB. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="314" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="624" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a8a42f4fe7d3ad41e56175103deec42e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::readFrom</definition>
+        <argsstring>(std::istream &amp;is)</argsstring>
+        <name>readFrom</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <briefdescription>
+<para>Read FAB from istream. Format is as it was written out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="319" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="634" bodyend="640"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1ac5f3bc40906e22d2e481fa87114b62f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::FArrayBox::readFrom</definition>
+        <argsstring>(std::istream &amp;is, int compIndex)</argsstring>
+        <name>readFrom</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>compIndex</declname>
+        </param>
+        <briefdescription>
+<para>Read FAB from istream. Format is as it was written out. This creates a single component FAB with data from compIndex of the FAB from the istream. Returns the number of components available in the fab. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="327" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="644" bodyend="658"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a30357415a1823591985d8a6434d296c1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::FArrayBox::skipFAB</definition>
+        <argsstring>(std::istream &amp;is, int &amp;num_comp)</argsstring>
+        <name>skipFAB</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>num_comp</declname>
+        </param>
+        <briefdescription>
+<para>Skip over the next FAB from the input stream. Return the <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> defining the domain of the FAB and the number of components. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="334" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="662" bodyend="671"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aadcc71b9080373f0846157aa5955c78c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::skipFAB</definition>
+        <argsstring>(std::istream &amp;is)</argsstring>
+        <name>skipFAB</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <briefdescription>
+<para>Skip over the next FAB from the input stream. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="338" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="253" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a6dd6c1696dd87f8345826bc2ca97cf56" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::setFormat</definition>
+        <argsstring>(FABio::Format fmt)</argsstring>
+        <name>setFormat</name>
+        <param>
+          <type><ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref></type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+<para>Set the <ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref> in the program. This is the preferred way to set the output format in &quot;new&quot; FABs. When desiging new programs, this should be the only function that needs to be called in order to set the format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="347" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="260" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aba9fe48668a79af0c5805d77472c467d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref></type>
+        <definition>FABio::Format amrex::FArrayBox::getFormat</definition>
+        <argsstring>()</argsstring>
+        <name>getFormat</name>
+        <briefdescription>
+<para>Gets the <ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref> set in the program. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="350" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="227" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a52578eab1d0f7cc7547af989033e82b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::setOrdering</definition>
+        <argsstring>(FABio::Ordering ordering)</argsstring>
+        <name>setOrdering</name>
+        <param>
+          <type><ref refid="classamrex_1_1FABio_1adbdc54b2ed6a4fa2d0cfd19076e5cc39" kindref="member">FABio::Ordering</ref></type>
+          <declname>ordering</declname>
+        </param>
+        <briefdescription>
+<para>Set the <ref refid="classamrex_1_1FABio_1adbdc54b2ed6a4fa2d0cfd19076e5cc39" kindref="member">FABio::Ordering</ref> for reading old FABs. It does NOT set the ordering for output. This is deprecated. It exists only to facilitate reading old FABs. When you&apos;re reading in an &quot;old&quot; FAB, you must set the Ordering, before attempting to read it in. This is because FABs written out in the &quot;old&quot; format weren&apos;t self-describing; i.e. information such as the Ordering was lost when the &quot;old&quot; FAB was written out. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="363" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="297" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aaa904e14fc1335783b62f47ad001348e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FABio_1adbdc54b2ed6a4fa2d0cfd19076e5cc39" kindref="member">FABio::Ordering</ref></type>
+        <definition>FABio::Ordering amrex::FArrayBox::getOrdering</definition>
+        <argsstring>()</argsstring>
+        <name>getOrdering</name>
+        <briefdescription>
+<para>Gets the <ref refid="classamrex_1_1FABio_1adbdc54b2ed6a4fa2d0cfd19076e5cc39" kindref="member">FABio::Ordering</ref> set in the program. This is deprecated. It does NOT do the right thing with the new FAB I/O format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="370" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="304" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a767556bba83027cac8eeecd67726aab8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::setPrecision</definition>
+        <argsstring>(FABio::Precision precision)</argsstring>
+        <name>setPrecision</name>
+        <param>
+          <type><ref refid="classamrex_1_1FABio_1a3b1ca82feb278c4a975a46229f229660" kindref="member">FABio::Precision</ref></type>
+          <declname>precision</declname>
+        </param>
+        <briefdescription>
+<para>Set the <ref refid="classamrex_1_1FABio_1a3b1ca82feb278c4a975a46229f229660" kindref="member">FABio::Precision</ref>. This is deprecated. It is not useful with the &quot;new&quot; FAB I/O format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="376" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="311" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a35de13164243364f3ed296772f0b750a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FABio_1a3b1ca82feb278c4a975a46229f229660" kindref="member">FABio::Precision</ref></type>
+        <definition>FABio::Precision amrex::FArrayBox::getPrecision</definition>
+        <argsstring>()</argsstring>
+        <name>getPrecision</name>
+        <briefdescription>
+<para>Returns the <ref refid="classamrex_1_1FABio_1a3b1ca82feb278c4a975a46229f229660" kindref="member">FABio::Precision</ref>. This is deprecated. It is not useful with the &quot;new&quot; FAB I/O format. Always returns FABio::Float. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="383" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="317" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a67fb916342e7c929641dbde731b8aa1b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> &amp;</type>
+        <definition>const FABio &amp; amrex::FArrayBox::getFABio</definition>
+        <argsstring>()</argsstring>
+        <name>getFABio</name>
+        <briefdescription>
+<para>Returns reference to the <ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> object used by the program. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="386" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="233" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a7a5acc633fa80ec1cb999be2c4bbdc02" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::setFABio</definition>
+        <argsstring>(FABio *rd)</argsstring>
+        <name>setFABio</name>
+        <param>
+          <type><ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> *</type>
+          <declname>rd</declname>
+        </param>
+        <briefdescription>
+<para>Sets the <ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> object used by the program. It is an error if the passed pointer rd is the null pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="392" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="239" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1adebebb841a716183dc9e48ee95a37aec" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::set_do_initval</definition>
+        <argsstring>(bool tf)</argsstring>
+        <name>set_do_initval</name>
+        <param>
+          <type>bool</type>
+          <declname>tf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="394" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="324" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1af073981013bb7c213dd103b9935f9809" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::FArrayBox::get_do_initval</definition>
+        <argsstring>()</argsstring>
+        <name>get_do_initval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="395" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="332" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aca0e59c4e500ac53bacf12280c67f225" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::FArrayBox::set_initval</definition>
+        <argsstring>(Real iv)</argsstring>
+        <name>set_initval</name>
+        <param>
+          <type>Real</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="396" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="338" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1aab5bd155e6cda0d5f6b61d1820ae5a8f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::FArrayBox::get_initval</definition>
+        <argsstring>()</argsstring>
+        <name>get_initval</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="397" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="346" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a35b1135bdf17ab4f4022cf60745ade37" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+<para>Initialize from <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> with &quot;fab&quot; prefix. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="399" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="352" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FArrayBox_1a0e43c0beef959593d4253805a22b6abc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FArrayBox::Finalize</definition>
+        <argsstring>()</argsstring>
+        <name>Finalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="400" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="452" bodyend="457"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A Fortran Array of REALs. </para>    </briefdescription>
+    <detaileddescription>
+<para>Fortran Array <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&apos;s (generally called FAB&apos;s) are objects constructed to emulate the FORTRAN array. Useful operations can be performed upon FAB&apos;s in C++, and they provide a convenient interface to FORTRAN when it is necessary to retreat into that language.</para><para><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> is derived from <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab&lt;Real&gt;</ref>. <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> adds additional useful capabilities which make sense for Real types, such as I/O and L**p norms.</para><para><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&apos;s may be output in various formats (see <ref refid="classamrex_1_1FABio" kindref="compound">FABio</ref> above).</para><para>The format and precision may be set in a file read by the <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> class by the &quot;fab.format&quot; variable. Allowed values are: ASCII 8BIT NATIVE NATIVE_32 IEEE32</para><para>FABs written using operator&lt;&lt; are always written in ASCII. FABS written using writOn use the <ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref> specified with setFormat or the <ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref> specified in the <ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref> file read by init. If the <ref refid="classamrex_1_1FABio_1a0b27140f46fecbc14d58f1a754300e9f" kindref="member">FABio::Format</ref> is not set explicitly by either of these two methods, then it defaults to NATIVE.</para><para>The C pre-processor macro AMREX_SPACEDIM must be defined to use this class. The internal precision of FARRAYBOX objects is set by defining either BL_USE_FLOAT or BL_USE_DOUBLE</para><para>This class does NOT provide a copy constructor or assignment operator, but it has a move constructor. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1987">
+        <label>amrex::BaseFab&lt; Real &gt;</label>
+        <link refid="classamrex_1_1BaseFab"/>
+        <childnode refid="1988" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1990">
+        <label>amrex::EBFArrayBox</label>
+        <link refid="classamrex_1_1EBFArrayBox"/>
+        <childnode refid="1986" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1988">
+        <label>amrex::DataAllocator</label>
+        <link refid="structamrex_1_1DataAllocator"/>
+      </node>
+      <node id="1989">
+        <label>amrex::CutFab</label>
+        <link refid="classamrex_1_1CutFab"/>
+        <childnode refid="1986" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1986">
+        <label>amrex::FArrayBox</label>
+        <link refid="classamrex_1_1FArrayBox"/>
+        <childnode refid="1987" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1992">
+        <label>amrex::BaseFab&lt; Real &gt;</label>
+        <link refid="classamrex_1_1BaseFab"/>
+        <childnode refid="1993" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1996" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+        <childnode refid="1999" relation="usage">
+          <edgelabel>dptr</edgelabel>
+        </childnode>
+      </node>
+      <node id="1995">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="1997">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="1997" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="1999">
+        <label>Real</label>
+      </node>
+      <node id="1993">
+        <label>amrex::DataAllocator</label>
+        <link refid="structamrex_1_1DataAllocator"/>
+        <childnode refid="1994" relation="usage">
+          <edgelabel>m_arena</edgelabel>
+        </childnode>
+      </node>
+      <node id="1994">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="1995" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="1996">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="1997" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="1998" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="1998">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="2000">
+        <label>amrex::FABio</label>
+        <link refid="classamrex_1_1FABio"/>
+      </node>
+      <node id="1991">
+        <label>amrex::FArrayBox</label>
+        <link refid="classamrex_1_1FArrayBox"/>
+        <childnode refid="1992" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2000" relation="usage">
+          <edgelabel>fabio</edgelabel>
+        </childnode>
+        <childnode refid="1999" relation="usage">
+          <edgelabel>initval</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="200" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="197" bodyend="421"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1BaseFab_1a2fea35d2bbc16c788b653b28534a1644" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>abs</name></member>
+      <member refid="classamrex_1_1BaseFab_1a6dee88c201ecd2c4b069a9354762522a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>abs</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3b0f42edd2b008d00f043ce5364732bb" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>abs</name></member>
+      <member refid="classamrex_1_1BaseFab_1a91513822e781492a9800ae2064f4c6ee" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>Accumulate</name></member>
+      <member refid="classamrex_1_1BaseFab_1ace3197232ecaac3818c8312702de117d" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>addFromMem</name></member>
+      <member refid="classamrex_1_1BaseFab_1a4852ae806ae958a9ba25e80025510638" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>addproduct</name></member>
+      <member refid="structamrex_1_1DataAllocator_1adcabda73bbd0120b08dbb2cda22a6427" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>alloc</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a477a75a5d73137b29f1a6ddf31af40f7" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>arena</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa456605f5709d47be9474befe9d9e128" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>array</name></member>
+      <member refid="classamrex_1_1BaseFab_1a039630ee4496b6d7fd17020a78f4f899" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>array</name></member>
+      <member refid="classamrex_1_1BaseFab_1a465cca97d23428cb99803d3645b99a05" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>atomicAdd</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad94e55a76af90b1cae932eb9bb1e4b20" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>atomicAdd</name></member>
+      <member refid="classamrex_1_1BaseFab_1a9dc9776751ca21e808ed4419597fd579" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>atomicAdd</name></member>
+      <member refid="classamrex_1_1BaseFab_1a783b783e87ed8b6261ab89b462a011a4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>atomicAdd</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7e470d7e72db0c3169e83e34ce4f657b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae5d9786facded55bfce06cc443594cab" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a83d88e02757dac7e30b2ac7a13020b22" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa42c6cb505873cad1b9c9de64a20c407" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a4b890373aa053ba5cd3aae0bf5483c1c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8553c8f3915ded4cacfba0c490b98bc5" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a2fe573448f0463cc140a1452a9510eb0" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a27f1fbad6aff0f97e0291664ab11a4e4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a54d1d483f6f2d5e455eb9d8bb290d325" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a17a67eac45989c89c30b7daa039a39b6" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a6b0fa577ec8190137939f503041e7bf7" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa2ce65c438db70645899b1d0c09f2455" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>BaseFab</name></member>
+      <member refid="classamrex_1_1BaseFab_1a0d29e1227b0a3d2381b35cce869f9e5f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>bigEnd</name></member>
+      <member refid="classamrex_1_1BaseFab_1a9359cb75c273aa3ab475d21ddc64f8f3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>box</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae428e6a2645141dd817c288331575f26" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>clear</name></member>
+      <member refid="classamrex_1_1BaseFab_1aeba81b8b4aa7054af02788dc42c797c3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>const_array</name></member>
+      <member refid="classamrex_1_1BaseFab_1a90d94d23b4c7ff81a86093956d38b332" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains</name></member>
+      <member refid="classamrex_1_1BaseFab_1a21a8ed23adcc906fd3a3814f3e851f3c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a528be1634802dbdf8bfd0f4874fa2b95" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_inf</name></member>
+      <member refid="classamrex_1_1FArrayBox_1abd3718223bf47554bbf03c303e0e0c12" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_inf</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a3b32fddc97c624d7965f6a2ff1a133a3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_inf</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a96eabf866abf113295533d4ca7ab5700" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_inf</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a49c25c07e7176c493eb665b9e2e398a1" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_nan</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a7a62cc8b6838504d75764f9dfb3bec64" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_nan</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a33bd0aad6c687d9207f7f7d64df00702" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_nan</name></member>
+      <member refid="classamrex_1_1FArrayBox_1af50a85491d30e726465d81fd29b56790" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>contains_nan</name></member>
+      <member refid="classamrex_1_1BaseFab_1a9ebd13893eb0315ec776fef5720ea8ec" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copy</name></member>
+      <member refid="classamrex_1_1BaseFab_1a464b4917cdb04317aed88eecf1dc885e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copy</name></member>
+      <member refid="classamrex_1_1BaseFab_1a24c275fec6273b1de82821fc05a1d7a3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copy</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa8ce7a6a37f7493204b7da0e3db9b61c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copy</name></member>
+      <member refid="classamrex_1_1BaseFab_1a961daafa22f0e7a8663887c374a43270" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copy</name></member>
+      <member refid="classamrex_1_1BaseFab_1aff894507d4d10d5d7e543e7df458c7eb" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copyFromMem</name></member>
+      <member refid="classamrex_1_1BaseFab_1ab6d603b9b75bc250970a3e3c6b3d8b9f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>copyToMem</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a7efc193b557d263444d91cc90c7c7073" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>DataAllocator</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a1cbea797e47f9d7448b1f574beb24d8b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>DataAllocator</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac1817d437a6ca523298e25202dd51705" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8b5f6bd26ae63d34e365dddfe1fa0991" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1BaseFab_1a06a400fb85117c65737b171b07e478aa" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1BaseFab_1a156632a48b54792083eb05adec16155d" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dataPtr</name></member>
+      <member refid="classamrex_1_1BaseFab_1a35dc22f1d61f4fb05ab75ae93f683d14" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>define</name></member>
+      <member refid="classamrex_1_1BaseFab_1a34aee96ab42d884f86949b517878662b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1adc8830f33bfb5ac06470bbce23c6c3b6" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a506e927342c09f2603d749be57b941ba" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a5f72da1858d20f1ca92f0768f4df2365" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a1c8895670a09e26f1336765898c9f431" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1afe364e34f5e7f74ba8c7a5a1ef3bcf68" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a02ea7302727d6dfeea78fc9c1f635d5a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a809d0693af0122e245b7f78467b3d4a3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7af88a57133ac8c701bce440c2817555" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>divide</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ab0b477e69a1fe773b7467810181a3056" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>do_initval</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8e95d8cfaadfe53080ae0092b53202fb" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>domain</name></member>
+      <member refid="classamrex_1_1BaseFab_1adb03ed2032296735e2b188be56558fbf" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dot</name></member>
+      <member refid="classamrex_1_1BaseFab_1a809f337b1ac6e5da6557f630149a3eca" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dot</name></member>
+      <member refid="classamrex_1_1BaseFab_1a321130e1af874c362b23bcd4ba7e3f2e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dot</name></member>
+      <member refid="classamrex_1_1BaseFab_1a0db120f3f074edbdde7a22efc8de37fc" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dot</name></member>
+      <member refid="classamrex_1_1BaseFab_1a6b8d97aba07d9806cf1e711ca44f283a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dotmask</name></member>
+      <member refid="classamrex_1_1BaseFab_1adb777343cc7e97c16caff0ff8d83b5c9" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dotmask</name></member>
+      <member refid="classamrex_1_1BaseFab_1a9236f2f88feff79c1d50b9b830750f91" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>dptr</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac5a36d719054f74a00bfc52e10ec9918" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>elixir</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a7b3c6612330474e7db6e4f6ff9d4f380" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>fabio</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a1d09202fafedb82d79c005250c3cef2c" prot="private" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FABio</name></member>
+      <member refid="classamrex_1_1FArrayBox_1afc781bb81903fd65b313bcfb46d4aa14" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a374b94f1d571d67c7bc7025346824f1a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a78cb311711d0a1b9b479d66d71fa1edf" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a3c853d41aecaee21ed1f5ffab2ebed76" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aa2977b85f283b49740400daed8ffe97a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a46be1bc294541cf9d677f487baa07d68" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ab9d3b69222db9fba7e76eefa32f4ce32" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1acbc4049baf15df08ea1af17e3b084bce" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a857d6be833fcf8cd638a28da1de97e36" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1af82dd0e87633c1b097481174ec58dc78" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ae822ed6d1bc48190941617842d212243" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a862dcdbd4fbb34b292075f2c7bf44428" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>FArrayBox</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a0e43c0beef959593d4253805a22b6abc" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa7ffb7d3ed11be2617488acee59d5d8b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ForEach</name></member>
+      <member refid="classamrex_1_1BaseFab_1af056c3d5b73627c4ea8e0e30244aedce" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ForEach</name></member>
+      <member refid="classamrex_1_1BaseFab_1a2b537482c611229a7e2b62f1bbf1d4c6" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ForEach</name></member>
+      <member refid="classamrex_1_1BaseFab_1a11ed06775cfb2c8108b56d2158dc796b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ForEach</name></member>
+      <member refid="classamrex_1_1BaseFab_1a01e76f051c01f45b50e48ef80d39d907" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ForEachIV</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3cb3ce0e34a9e6d0e6826f863f5c55da" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ForEachIV</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a8cb9b648353fe9b5fb90cdfccf5b0c89" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>format</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a5fa328945c30133a9b9c7f93ccf6e78f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>free</name></member>
+      <member refid="classamrex_1_1FArrayBox_1af073981013bb7c213dd103b9935f9809" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>get_do_initval</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aab5bd155e6cda0d5f6b61d1820ae5a8f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>get_initval</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a67fb916342e7c929641dbde731b8aa1b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getFABio</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aba9fe48668a79af0c5805d77472c467d" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getFormat</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aaa904e14fc1335783b62f47ad001348e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getOrdering</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a35de13164243364f3ed296772f0b750a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getPrecision</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a3e62ab0dcf6c751e94e34f25bcc3c50b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getType</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac195a2bbff03a7f02e30788342473d18" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1af8f8e7b8b678678f74f235b0ebdeed9f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>getVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae6cabd78f18cfc8f0d9544ef683cd640" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>hiVect</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac1f1baf311e46d9e868d76bf659dd492" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>indexFromValue</name></member>
+      <member refid="classamrex_1_1FArrayBox_1af56588e4621fc35eae763fcb44ad4633" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>init_snan</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a35b1135bdf17ab4f4022cf60745ade37" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a2d4b7df27f35926ab4a1377d5864aed8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>initialized</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a6657471e6437a4acab5413ea8874ff39" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>initval</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a0950587ec6e53ece5805ffb5ab71cf60" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>initVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8a096cb9ebbc7ebd2005aea069aacdfb" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>invert</name></member>
+      <member refid="classamrex_1_1BaseFab_1ab51ecd96dac62bd644843d0d0971af2e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>invert</name></member>
+      <member refid="classamrex_1_1BaseFab_1afcfbc5cc156daf09d0a8a11d44f71099" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>invert</name></member>
+      <member refid="classamrex_1_1BaseFab_1a340980ddd90afa284ccd3514098a2b44" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>invert</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8d6db68c9ef28ef91234e66512faceb8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>isAllocated</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7aca6d7e0e588649dcfc0721fecac117" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>isCopyOMPSafe</name></member>
+      <member refid="classamrex_1_1BaseFab_1a56b3de1c8cf4f5747c1219f411783d99" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>length</name></member>
+      <member refid="classamrex_1_1BaseFab_1a0f67d27a0d9b85b1ec3bb31cee3936de" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>linComb</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3b4780cc6fb0f5f15f3735d89c0dac2d" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>linInterp</name></member>
+      <member refid="classamrex_1_1BaseFab_1a88155ff16d4ee6f46cf3f4baf573f9d1" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>linInterp</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad138d01fb5a57ad77306a3adbf8026cb" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>loVect</name></member>
+      <member refid="structamrex_1_1DataAllocator_1a901b7f1e68950afc823ebc10c093cb94" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>m_arena</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a84a692c3807a4e2ab439841c70b1f004" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>m_type</name></member>
+      <member refid="classamrex_1_1BaseFab_1a66695e0608fe850a6c9d44b0e022b6ba" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maskEQ</name></member>
+      <member refid="classamrex_1_1BaseFab_1af4a8317171c537136ef82e4502e0d7d4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maskGE</name></member>
+      <member refid="classamrex_1_1BaseFab_1a1993ea667fc5b620195bb42fe003cc1a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maskGT</name></member>
+      <member refid="classamrex_1_1BaseFab_1aee32dcf282a28ad947aa119859ec6d9e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maskLE</name></member>
+      <member refid="classamrex_1_1BaseFab_1a554f518d10db9e4f7ba253396479b862" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maskLT</name></member>
+      <member refid="classamrex_1_1BaseFab_1a6efb5346cc42795e6cd01323117f3ac3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>max</name></member>
+      <member refid="classamrex_1_1BaseFab_1ab361c41e09518099b2a6c9f9db1f82d1" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>max</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3cdfbec8bb23d2a40379cd4819adf713" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maxabs</name></member>
+      <member refid="classamrex_1_1BaseFab_1aec266e1d4d3acc521279fe612f9d5f3b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maxabs</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8284115ab508ec6b6dc1a7bd023e3b89" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maxIndex</name></member>
+      <member refid="classamrex_1_1BaseFab_1aae5d45037d346a7a7f51611396199e8e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maxIndex</name></member>
+      <member refid="classamrex_1_1BaseFab_1a2113a9b7b7bb69febe5899ccee7f37f2" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>maxIndex</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad6a70c7c49967817b489033b4d7da696" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>min</name></member>
+      <member refid="classamrex_1_1BaseFab_1adb99491368f94a317ec81970c9ad2eee" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>min</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa0d631fbfd6b81796222a5ab5fea24d3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minIndex</name></member>
+      <member refid="classamrex_1_1BaseFab_1a890f10daf1e245f620d079b2cbfa9a31" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minIndex</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3e4a6b4a42c7a55598df8a7e2b13a567" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minIndex</name></member>
+      <member refid="classamrex_1_1BaseFab_1affb7fcc63d9eec0c3e069390fe3eaf96" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1a819253575ebcc6cdd5987808d25d98e4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac738b33cc645ea16189f8acbd126424a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1a06b5020d9b18cf3243a25bd77c6a5eef" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1af0be178f67f73995cdc90627c889759e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1af93815eec19bf87e4b7cc896f8f25a79" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa7745e9afc9d268462e4d1000676a230" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>minus</name></member>
+      <member refid="classamrex_1_1BaseFab_1a75273f716825d8cf89f7c94be5f1f81c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1adc08e477364c8ca1d6b02ddd96cfca4d" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1a577047763b367014043ff12942e83024" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1aedc9b03d4c01b48deb09f00e6980f4d2" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1a1c649fa60f13d73e3ec31433a706a135" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1a5d332d32d28da3a920c294d249ef98a3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1a0a8708a4acde10c291876afbd630eb69" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1a45f966993d9fae3aa2191fec8be53a33" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1aba010fbef99754a5fa00f7c90c8b9c97" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>mult</name></member>
+      <member refid="classamrex_1_1BaseFab_1a43f0ed693f7f5436621aaf9b27620c56" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>nBytes</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac03d6fdd6bd658196becfefc5b3b93a8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>nBytes</name></member>
+      <member refid="classamrex_1_1BaseFab_1a267006cc0717e9dfbcbd22afc1c89d8c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>nBytesOwned</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7406ec91dc010602121f1492f2d3a748" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>nComp</name></member>
+      <member refid="classamrex_1_1BaseFab_1af3ab7e9a7cb47a3eb41ba6a97ab2e798" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>nCompPtr</name></member>
+      <member refid="classamrex_1_1BaseFab_1acee01afa8dbc786f92273b8160de3912" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>negate</name></member>
+      <member refid="classamrex_1_1BaseFab_1afb0bd52c18b3df27d6d71c62d04feac8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>negate</name></member>
+      <member refid="classamrex_1_1BaseFab_1a4891ce9d3119ffb084ecad50086762de" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>negate</name></member>
+      <member refid="classamrex_1_1BaseFab_1adbd81b980cd1805611312ea49d9e3d87" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>negate</name></member>
+      <member refid="classamrex_1_1BaseFab_1af72c4b534beb0143a7b0fdc7114b1a78" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>norm</name></member>
+      <member refid="classamrex_1_1BaseFab_1af13ffa626053c497af1a0ba1dd9fc7ff" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>norm</name></member>
+      <member refid="classamrex_1_1BaseFab_1a691a8ebd9d366bf9649472d721ff0f7b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>norminfmask</name></member>
+      <member refid="classamrex_1_1BaseFab_1aaf26c270066d314a52ccdbc5f61ea302" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>numPts</name></member>
+      <member refid="classamrex_1_1BaseFab_1a99b1638f6702821a6b6e63cb860d938f" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>nvar</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad76ae6115f341053b2eb94affc5e3eee" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac1a408be29fc4bfc85971ac414c165ee" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1BaseFab_1a10931b31715309bfb452dc2c7fa662df" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3427e5ed98498ff54da5f75d22923f5f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1BaseFab_1afbd2d5c2b5c7373493f3087a997ed861" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator*=</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7f6fbdd8557753afcd63aa6ef6a00b1c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator*=</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8feafc057f39892358c3847ab154feb3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator+=</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac586b3e5e2c4400302aeaf2639622172" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator+=</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad99f9346496d005eb3425a900da03765" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator-=</name></member>
+      <member refid="classamrex_1_1BaseFab_1a80859db41888f96e580bebb09c4cd59e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator-=</name></member>
+      <member refid="classamrex_1_1BaseFab_1a6ddefb650db9f661f743e0cb79bb92dc" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator/=</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad2e08140e0b71c6030c902d49949e257" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator/=</name></member>
+      <member refid="classamrex_1_1FArrayBox_1af0dbc00602c50f34664b6c6cb39033be" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a6f8accb8be245e6873219b15a933f431" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aa68151c4f96270d35a9cde2a4ff53fc5" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FArrayBox_1afb23955cc5c661e8f041ea1864c1b35c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1BaseFab_1a9a52c7475015824cfb60e6c67ecad522" prot="public" virt="non-virtual" ambiguityscope="BaseFab&lt; Real &gt;::"><scope>amrex::FArrayBox</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae3101a71fce4d1d50de1fca73ff4b0f4" prot="public" virt="non-virtual" ambiguityscope="BaseFab&lt; Real &gt;::"><scope>amrex::FArrayBox</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ad6e8fbbe92b476fd75bf5ace98418fa6" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>operator&gt;&gt;</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a9dd03f8360cfc2cfdf803298308f53dd" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ordering</name></member>
+      <member refid="classamrex_1_1BaseFab_1a8fdf51ba6391c4c2de6785eb99c1c6f7" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1accee2eea8d148521de14c1fa4b2926a5" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1aec220df94ea87bd24c80d1afb7ddbbf7" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1afaa5ebdb3a26840f34fd042ec6cec8b5" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac9cd82780ca0eef318009cea3275ee32" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1aed983c2ce7c231bd359acfa3b6175a0e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1a54e2acf5af1775da33e83f9d693735fd" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1a5e6fd76c3bd9c55b26a934176d0c32f3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1abc633b8dc17ada2f440b7814227ed303" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>plus</name></member>
+      <member refid="classamrex_1_1BaseFab_1a338937545b28e091b3f9fbf0d133e5e8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>preAllocatable</name></member>
+      <member refid="classamrex_1_1BaseFab_1acc3fa2566c4bf2de3e6f0773e3b0601b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>prefetchToDevice</name></member>
+      <member refid="classamrex_1_1BaseFab_1aea7b9b15c8959be232fa8d0b14b2b507" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>prefetchToHost</name></member>
+      <member refid="classamrex_1_1BaseFab_1af810d23a787e64f057b5c7b100f43901" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>protected_divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae2e48b29e4c547079d0552678ca1318c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>protected_divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1acd08ca7330a5790df2af1041eda23b25" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>protected_divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1a921f825a91f4fd7a7b4997c65ad4f6c4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>protected_divide</name></member>
+      <member refid="classamrex_1_1BaseFab_1acf3b50d012730dd3521fb2be517573b9" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>ptr_owner</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a8a42f4fe7d3ad41e56175103deec42e1" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>readFrom</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ac5f3bc40906e22d2e481fa87114b62f4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>readFrom</name></member>
+      <member refid="classamrex_1_1BaseFab_1a4390286fe2327bd5f0561a75ee14499b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>release</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ae5a4b9b9a64a4c1cfd534bb6eefc6b30" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>resize</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa3293873bc0c5ccb66b367b84889e042" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>saxpy</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae39c876df7b0ebfe1d9e6dfba4e5c00e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>saxpy</name></member>
+      <member refid="classamrex_1_1FArrayBox_1adebebb841a716183dc9e48ee95a37aec" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>set_do_initval</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aca0e59c4e500ac53bacf12280c67f225" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>set_initval</name></member>
+      <member refid="classamrex_1_1BaseFab_1a03513ca096ccb98cbfc04eed4ea4bf1f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>SetBoxType</name></member>
+      <member refid="classamrex_1_1BaseFab_1aede6afede165d8f14c5bedb035654c4a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setComplement</name></member>
+      <member refid="classamrex_1_1BaseFab_1a141ba4c0b87cbaf780261ba65ac4970a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setComplement</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a7a5acc633fa80ec1cb999be2c4bbdc02" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setFABio</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a6dd6c1696dd87f8345826bc2ca97cf56" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setFormat</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a52578eab1d0f7cc7547af989033e82b6" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setOrdering</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a767556bba83027cac8eeecd67726aab8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setPrecision</name></member>
+      <member refid="classamrex_1_1BaseFab_1ab55c5cdbff39b6eb2074b4846c9efb2e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setPtr</name></member>
+      <member refid="classamrex_1_1BaseFab_1a5f8ebb9050e7ffd02a957d0bdaca9886" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1a70fedcae8298de73f286c3c673f7db04" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1a6805d31b7989de818560b68b6d830fd9" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1a10e250dac20a44c5e859ea0134a90842" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7e367253596a20e6e96bd4e9d6309b85" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1BaseFab_1a7d3b6f7bbc5e365b87402a25372084dc" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setValIf</name></member>
+      <member refid="classamrex_1_1BaseFab_1a2bb61bbdddfe8085b1cd1a82f69f0ff0" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setValIf</name></member>
+      <member refid="classamrex_1_1BaseFab_1a9faef9ada202610c6bcc248ff1fbe2dd" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setValIfNot</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad8370d1a734de79ad1f469b4bf0d7322" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setValIfNot</name></member>
+      <member refid="classamrex_1_1BaseFab_1abee51f91bf9050b56f742bb36467b791" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>setValIfNot</name></member>
+      <member refid="classamrex_1_1BaseFab_1a4e65169d29942cf3adde870d63a91834" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>shared_memory</name></member>
+      <member refid="classamrex_1_1BaseFab_1a92cb12158a09c20c51ef9347c11d31e4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>shift</name></member>
+      <member refid="classamrex_1_1BaseFab_1ad511764daeaedb9d3de8afc17ca7140c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>shift</name></member>
+      <member refid="classamrex_1_1BaseFab_1af9080211623ae547d4a77076be42eeba" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>shiftHalf</name></member>
+      <member refid="classamrex_1_1BaseFab_1a55589bcc8819d6c8a9291e79a05fbb81" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>shiftHalf</name></member>
+      <member refid="classamrex_1_1BaseFab_1a2433222c078c64fcb8c01cab64c20566" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>size</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a30357415a1823591985d8a6434d296c1" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>skipFAB</name></member>
+      <member refid="classamrex_1_1FArrayBox_1aadcc71b9080373f0846157aa5955c78c" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>skipFAB</name></member>
+      <member refid="classamrex_1_1BaseFab_1a787a8e1e40a6a13728e44ccbf5a5ec5a" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>smallEnd</name></member>
+      <member refid="classamrex_1_1BaseFab_1add7f10ec971a7d474f44c0d22fb4c750" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>sum</name></member>
+      <member refid="classamrex_1_1BaseFab_1ae46a718f3837f9b75a52220b0e47cee1" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>sum</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac5203569fe07a6ea8da8ece607fec738" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>sum</name></member>
+      <member refid="classamrex_1_1BaseFab_1aca58ac4ae57851e2883c84963ee6c331" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>Transform</name></member>
+      <member refid="classamrex_1_1BaseFab_1a105ef076b58438b9238767a574847646" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>Transform</name></member>
+      <member refid="classamrex_1_1BaseFab_1aa86e53b5d3afdae2606ab0be640bb022" prot="protected" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>truesize</name></member>
+      <member refid="classamrex_1_1BaseFab_1aac8f37b7bba5334a86bf90b58fb062d8" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>value_type</name></member>
+      <member refid="classamrex_1_1BaseFab_1a0ad9ef3212349a9c484eebaddf3ef039" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a76735e86616929030b8383a78bddaaa4" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a238a6ce02380dda577a844bd9250d109" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a5dac991f61637eb0b5ad077ea132e84f" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1acfe35cfcc6bbf643ad67ce6cc092b40b" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a3483f3893ec878a491276fae68f5062e" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a639592b0b04292117d406f9dc764cf1d" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1ac307f7499cb98666f3e625dc6165d380" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a4c6ac97444b2e697b2389738e9e64052" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1BaseFab_1a98f6f0536d0fafa36d94868dcfd83a37" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>view</name></member>
+      <member refid="classamrex_1_1FArrayBox_1abb6e149e86e4063464a54a87b6eb0a98" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>writeOn</name></member>
+      <member refid="classamrex_1_1FArrayBox_1a8b18916c1151e0d296dc8eb676b591ce" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>writeOn</name></member>
+      <member refid="classamrex_1_1BaseFab_1afd1a05b03c382d30efb2fc8ea0254eee" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>xpay</name></member>
+      <member refid="classamrex_1_1BaseFab_1acf7c1ac49465810a70b9ae1757263f30" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>~BaseFab</name></member>
+      <member refid="classamrex_1_1FArrayBox_1ae3a0d38865100d93d3c203db57198fb3" prot="public" virt="non-virtual"><scope>amrex::FArrayBox</scope><name>~FArrayBox</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

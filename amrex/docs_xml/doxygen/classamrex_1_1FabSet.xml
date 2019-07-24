@@ -1,0 +1,1059 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1FabSet" kind="class" language="C++" prot="public">
+    <compoundname>amrex::FabSet</compoundname>
+    <includes refid="AMReX__FabSet_8H" local="no">AMReX_FabSet.H</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1FabSet_1a04d9b65884e6bbe0e494af350ee9fe70" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class FabSetIter</definition>
+        <argsstring></argsstring>
+        <name>FabSetIter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="39" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1FabSet_1a73a0f9bfd301cc69846f78fbbbec0527" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class FluxRegister</definition>
+        <argsstring></argsstring>
+        <name>FluxRegister</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1FabSet_1afa58a70c61ea7368f91116f22ccea876" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
+        <definition>MultiFab amrex::FabSet::m_mf</definition>
+        <argsstring></argsstring>
+        <name>m_mf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="123" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1FabSet_1acf45d4c6544b5cf067de4b53c87e3a3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FabSet::FabSet</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>FabSet</name>
+        <briefdescription>
+<para>The default constructor <ndash/> you must later call <ref refid="classamrex_1_1FabSet_1aed21a9ab0931c16cfcd91b36f9f179c2" kindref="member">define()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="44" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a5462d217f9ec7d07c1759f26cde88be2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FabSet::FabSet</definition>
+        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, int ncomp)</argsstring>
+        <name>FabSet</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> of specified number of components on the grids. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="47" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ac79a8fcbd950fa941c9db2c7fa4e892b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FabSet::~FabSet</definition>
+        <argsstring>()=default</argsstring>
+        <name>~FabSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1aba4f91a1b74d90439746773600170fd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FabSet::FabSet</definition>
+        <argsstring>(FabSet &amp;&amp;rhs) noexcept=default</argsstring>
+        <name>FabSet</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="51" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ae8ccac97d087013c98ef349c90737123" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::FabSet::FabSet</definition>
+        <argsstring>(const FabSet &amp;rhs)=delete</argsstring>
+        <name>FabSet</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="53" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a5f606dfdb767ad78b61c72a9da1c378f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet&amp; amrex::FabSet::operator=</definition>
+        <argsstring>(const FabSet &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="54" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a320a46748e6a027a5fdf198a1ac1358d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet&amp; amrex::FabSet::operator=</definition>
+        <argsstring>(FabSet &amp;&amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1aed21a9ab0931c16cfcd91b36f9f179c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::define</definition>
+        <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, int ncomp)</argsstring>
+        <name>define</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <declname>grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dmap</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+<para>Define a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> constructed via default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a96db28bb8b40c5221f52aec1c8c2babf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> const &amp;</type>
+        <definition>FArrayBox const&amp; amrex::FabSet::operator[]</definition>
+        <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1aebd7c86b3d723170e78bddaafc4a14ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox&amp; amrex::FabSet::operator[]</definition>
+        <argsstring>(const MFIter &amp;mfi) noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a542164c14623603e9fbdf4ec7f11d264" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> const &amp;</type>
+        <definition>FArrayBox const&amp; amrex::FabSet::operator[]</definition>
+        <argsstring>(int i) const noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ae8b26fa002bf13d1120e3653686153eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox&amp; amrex::FabSet::operator[]</definition>
+        <argsstring>(int i) noexcept</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="64" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const  &gt;</type>
+        <definition>Array4&lt;Real const&gt; amrex::FabSet::array</definition>
+        <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
+        <name>array</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a2778034c104c97f952e2e96254840d5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt;</type>
+        <definition>Array4&lt;Real &gt; amrex::FabSet::array</definition>
+        <argsstring>(const MFIter &amp;mfi) noexcept</argsstring>
+        <name>array</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref> &amp;</type>
+          <declname>mfi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a3ded933a4747d8c4fce82e5355e84cfe" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const  &gt;</type>
+        <definition>Array4&lt;Real const&gt; amrex::FabSet::array</definition>
+        <argsstring>(int i) const noexcept</argsstring>
+        <name>array</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="68" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1aeaaee9c7988bd6b37096fb1a8c153d05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt;</type>
+        <definition>Array4&lt;Real &gt; amrex::FabSet::array</definition>
+        <argsstring>(int i) noexcept</argsstring>
+        <name>array</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a00af168b5073955cfd6e80fe4dbb48c2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::FabSet::fabbox</definition>
+        <argsstring>(int K) const noexcept</argsstring>
+        <name>fabbox</name>
+        <param>
+          <type>int</type>
+          <declname>K</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ad5f0d12b67fb58b830a990a104cdf87d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::FabSet::size</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ad72c5a816c7b3f066c8ba018e45ffdd1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+        <definition>const BoxArray&amp; amrex::FabSet::boxArray</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>boxArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1acfec1cd59913d525883c868bdb6794bb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+        <definition>const DistributionMapping&amp; amrex::FabSet::DistributionMap</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>DistributionMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="77" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1acf7b80e8600bf44c00c6bf420536b69e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int amrex::FabSet::nComp</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>nComp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="80" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a400f9bfe07b9e4a18bee1f6cf6b98b29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a2f119b545c70dc14f232664bc31df5ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet &amp; amrex::FabSet::copyFrom</definition>
+        <argsstring>(const FabSet &amp;src, int scomp, int dcomp, int ncomp)</argsstring>
+        <name>copyFrom</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="27" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1affeffcfe2649fbc28d92deae76916215" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet &amp; amrex::FabSet::copyFrom</definition>
+        <argsstring>(const MultiFab &amp;src, int ngrow, int scomp, int dcomp, int ncomp, const Periodicity &amp;period=Periodicity::NonPeriodic())</argsstring>
+        <name>copyFrom</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="49" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1abb11e15ccfd9eb9cf7b9cfc75f4bd30d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet &amp; amrex::FabSet::plusFrom</definition>
+        <argsstring>(const FabSet &amp;src, int scomp, int dcomp, int ncomp)</argsstring>
+        <name>plusFrom</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="58" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a20ff927f81d91df3a565fb0b06de0ef1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet &amp; amrex::FabSet::plusFrom</definition>
+        <argsstring>(const MultiFab &amp;src, int ngrow, int scomp, int dcomp, int ncomp, const Periodicity &amp;period=Periodicity::NonPeriodic())</argsstring>
+        <name>plusFrom</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="80" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ae7dcffed2be89421c4201e39acd821d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::copyTo</definition>
+        <argsstring>(MultiFab &amp;dest, int ngrow, int scomp, int dcomp, int ncomp, const Periodicity &amp;period=Periodicity::NonPeriodic()) const </argsstring>
+        <name>copyTo</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="94" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="89" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a4373be6cb5699b5158e3f47e6ae2ce2f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::plusTo</definition>
+        <argsstring>(MultiFab &amp;dest, int ngrow, int scomp, int dcomp, int ncomp, const Periodicity &amp;period=Periodicity::NonPeriodic()) const </argsstring>
+        <name>plusTo</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref> &amp;</type>
+          <declname>period</declname>
+          <defval><ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a634eeba26a1426e7c29db10d476f266f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::setVal</definition>
+        <argsstring>(Real val)</argsstring>
+        <name>setVal</name>
+        <param>
+          <type>Real</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="105" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a0d009b1309e07ed944160b4f737fbc2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::setVal</definition>
+        <argsstring>(Real val, int comp, int num_comp)</argsstring>
+        <name>setVal</name>
+        <param>
+          <type>Real</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_comp</declname>
+        </param>
+        <briefdescription>
+<para>Linear combination: this := a*this + b*src (FabSets must be commensurate). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="122" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ae4057548b7e1b8f66f5c340ec4c5f088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet &amp; amrex::FabSet::linComb</definition>
+        <argsstring>(Real a, Real b, const FabSet &amp;src, int scomp, int dcomp, int ncomp)</argsstring>
+        <name>linComb</name>
+        <param>
+          <type>Real</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <briefdescription>
+<para>Linear combination: this := a*mfa + b*mfb. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="105" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="140" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a9a76863d5b17027b20d663cd2968c790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+        <definition>FabSet &amp; amrex::FabSet::linComb</definition>
+        <argsstring>(Real a, const MultiFab &amp;mfa, int a_comp, Real b, const MultiFab &amp;mfb, int b_comp, int dcomp, int ncomp, int ngrow)</argsstring>
+        <name>linComb</name>
+        <param>
+          <type>Real</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mfa</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>a_comp</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mfb</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ngrow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="108" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="163" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a03119f3ab7d7bdc06e822b46ee1c96d3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::write</definition>
+        <argsstring>(const std::string &amp;name) const </argsstring>
+        <name>write</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Write (used for writing to checkpoint) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="114" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="213" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1FabSet_1ab5d92ff15c80180af8a7bc09bbb6c4b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::read</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>read</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Read (used for reading from checkpoint) </para>        </briefdescription>
+        <detaileddescription>
+<para>Local copy function </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="117" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="219" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1FabSet_1a469669c164630747b67a4c290884a5ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FabSet::Copy</definition>
+        <argsstring>(FabSet &amp;dst, const FabSet &amp;src)</argsstring>
+        <name>Copy</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="120" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.cpp" bodystart="228" bodyend="245"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> is a group of <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&apos;s. The grouping is designed specifically to represent regions along the boundary of <ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&apos;s, and are used to implement boundary conditions to discretized partial differential equations. </para>    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> is an array of pointers to FABs. The standard FAB operators, however, have been modified to be more useful for maintaining boundary conditions for partial differential equations discretized on boxes. Under normal circumstances, a FAB will be created for each face of a box. For a group of boxes, a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> will be the group of FABs at a particular orientation (ie. the lo-i side of each grid in a list).</para><para>Since a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> FAB will likely be used to bound a grid box, <ref refid="classamrex_1_1FArrayBox_1ae5a4b9b9a64a4c1cfd534bb6eefc6b30" kindref="member">FArrayBox::resize()</ref> operations are disallowed. Also, to preserve flexibility in applicable boundary scenarios, intersecting FABs in the <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> are not guaranteed to contain identical data<ndash/>thus copy operations from a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> to any FAB-like structure may be order-dependent.</para><para>FabSets are used primarily as a data storage mechanism, and are manipulated by more sophisticated control classes. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1539">
+        <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
+      </node>
+      <node id="1520">
+        <label>amrex::FabArrayBase::CacheStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
+        <childnode refid="1521" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="1524">
+        <label>amrex::FabArrayBase::FabArrayStats</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
+      </node>
+      <node id="1523">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="1523" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="1540">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1541" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1534">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="1525">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1526" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1521">
+        <label>string</label>
+      </node>
+      <node id="1542">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="1523" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="1536">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="1535">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1536" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1537">
+        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
+        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="1541">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="1526">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="1531">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="1523" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="1532" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="1529">
+        <label>amrex::DistributionMapping::RefID</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
+        <childnode refid="1530" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="1538">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1539" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1532">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="1530">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="1525" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
+        </childnode>
+      </node>
+      <node id="1516">
+        <label>amrex::FabSet</label>
+        <link refid="classamrex_1_1FabSet"/>
+        <childnode refid="1517" relation="usage">
+          <edgelabel>m_mf</edgelabel>
+        </childnode>
+      </node>
+      <node id="1533">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1534" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1522">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="1527">
+        <label>amrex::FabArrayBase::BDKey</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
+        <childnode refid="1528" relation="usage">
+          <edgelabel>m_ba_id</edgelabel>
+        </childnode>
+        <childnode refid="1529" relation="usage">
+          <edgelabel>m_dm_id</edgelabel>
+        </childnode>
+      </node>
+      <node id="1517">
+        <label>amrex::MultiFab</label>
+        <link refid="classamrex_1_1MultiFab"/>
+        <childnode refid="1518" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1518">
+        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabArray"/>
+        <childnode refid="1519" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1523" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="1525" relation="usage">
+          <edgelabel>fb_recv_size</edgelabel>
+          <edgelabel>fb_recv_from</edgelabel>
+        </childnode>
+        <childnode refid="1533" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="1535" relation="usage">
+          <edgelabel>fb_recv_data</edgelabel>
+          <edgelabel>fb_send_data</edgelabel>
+        </childnode>
+        <childnode refid="1537" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="1538" relation="usage">
+          <edgelabel>fb_recv_stat</edgelabel>
+        </childnode>
+        <childnode refid="1540" relation="usage">
+          <edgelabel>fb_send_reqs</edgelabel>
+          <edgelabel>fb_recv_reqs</edgelabel>
+        </childnode>
+        <childnode refid="1542" relation="usage">
+          <edgelabel>fb_period</edgelabel>
+        </childnode>
+      </node>
+      <node id="1528">
+        <label>amrex::BoxArray::RefID</label>
+        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
+      </node>
+      <node id="1519">
+        <label>amrex::FabArrayBase</label>
+        <link refid="classamrex_1_1FabArrayBase"/>
+        <childnode refid="1520" relation="usage">
+          <edgelabel>m_FBC_stats</edgelabel>
+          <edgelabel>m_FPinfo_stats</edgelabel>
+          <edgelabel>m_CFinfo_stats</edgelabel>
+          <edgelabel>m_TAC_stats</edgelabel>
+          <edgelabel>m_CPC_stats</edgelabel>
+        </childnode>
+        <childnode refid="1522" relation="usage">
+          <edgelabel>distributionMap</edgelabel>
+        </childnode>
+        <childnode refid="1523" relation="usage">
+          <edgelabel>n_grow</edgelabel>
+          <edgelabel>comm_tile_size</edgelabel>
+          <edgelabel>mfiter_tile_size</edgelabel>
+          <edgelabel>mfghostiter_tile_size</edgelabel>
+        </childnode>
+        <childnode refid="1524" relation="usage">
+          <edgelabel>m_FA_stats</edgelabel>
+        </childnode>
+        <childnode refid="1525" relation="usage">
+          <edgelabel>indexArray</edgelabel>
+        </childnode>
+        <childnode refid="1527" relation="usage">
+          <edgelabel>m_bdkey</edgelabel>
+        </childnode>
+        <childnode refid="1531" relation="usage">
+          <edgelabel>boxarray</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" line="38" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_FabSet.H" bodystart="37" bodyend="124"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>array</name></member>
+      <member refid="classamrex_1_1FabSet_1a2778034c104c97f952e2e96254840d5e" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>array</name></member>
+      <member refid="classamrex_1_1FabSet_1a3ded933a4747d8c4fce82e5355e84cfe" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>array</name></member>
+      <member refid="classamrex_1_1FabSet_1aeaaee9c7988bd6b37096fb1a8c153d05" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>array</name></member>
+      <member refid="classamrex_1_1FabSet_1ad72c5a816c7b3f066c8ba018e45ffdd1" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>boxArray</name></member>
+      <member refid="classamrex_1_1FabSet_1a400f9bfe07b9e4a18bee1f6cf6b98b29" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>clear</name></member>
+      <member refid="classamrex_1_1FabSet_1a469669c164630747b67a4c290884a5ed" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>Copy</name></member>
+      <member refid="classamrex_1_1FabSet_1a2f119b545c70dc14f232664bc31df5ef" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>copyFrom</name></member>
+      <member refid="classamrex_1_1FabSet_1affeffcfe2649fbc28d92deae76916215" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>copyFrom</name></member>
+      <member refid="classamrex_1_1FabSet_1ae7dcffed2be89421c4201e39acd821d1" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>copyTo</name></member>
+      <member refid="classamrex_1_1FabSet_1aed21a9ab0931c16cfcd91b36f9f179c2" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>define</name></member>
+      <member refid="classamrex_1_1FabSet_1acfec1cd59913d525883c868bdb6794bb" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>DistributionMap</name></member>
+      <member refid="classamrex_1_1FabSet_1a00af168b5073955cfd6e80fe4dbb48c2" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>fabbox</name></member>
+      <member refid="classamrex_1_1FabSet_1acf45d4c6544b5cf067de4b53c87e3a3c" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>FabSet</name></member>
+      <member refid="classamrex_1_1FabSet_1a5462d217f9ec7d07c1759f26cde88be2" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>FabSet</name></member>
+      <member refid="classamrex_1_1FabSet_1aba4f91a1b74d90439746773600170fd3" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>FabSet</name></member>
+      <member refid="classamrex_1_1FabSet_1ae8ccac97d087013c98ef349c90737123" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>FabSet</name></member>
+      <member refid="classamrex_1_1FabSet_1a04d9b65884e6bbe0e494af350ee9fe70" prot="private" virt="non-virtual"><scope>amrex::FabSet</scope><name>FabSetIter</name></member>
+      <member refid="classamrex_1_1FabSet_1a73a0f9bfd301cc69846f78fbbbec0527" prot="private" virt="non-virtual"><scope>amrex::FabSet</scope><name>FluxRegister</name></member>
+      <member refid="classamrex_1_1FabSet_1ae4057548b7e1b8f66f5c340ec4c5f088" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>linComb</name></member>
+      <member refid="classamrex_1_1FabSet_1a9a76863d5b17027b20d663cd2968c790" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>linComb</name></member>
+      <member refid="classamrex_1_1FabSet_1afa58a70c61ea7368f91116f22ccea876" prot="private" virt="non-virtual"><scope>amrex::FabSet</scope><name>m_mf</name></member>
+      <member refid="classamrex_1_1FabSet_1acf7b80e8600bf44c00c6bf420536b69e" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>nComp</name></member>
+      <member refid="classamrex_1_1FabSet_1a5f606dfdb767ad78b61c72a9da1c378f" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FabSet_1a320a46748e6a027a5fdf198a1ac1358d" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1FabSet_1a96db28bb8b40c5221f52aec1c8c2babf" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1FabSet_1aebd7c86b3d723170e78bddaafc4a14ea" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1FabSet_1a542164c14623603e9fbdf4ec7f11d264" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1FabSet_1ae8b26fa002bf13d1120e3653686153eb" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1FabSet_1abb11e15ccfd9eb9cf7b9cfc75f4bd30d" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>plusFrom</name></member>
+      <member refid="classamrex_1_1FabSet_1a20ff927f81d91df3a565fb0b06de0ef1" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>plusFrom</name></member>
+      <member refid="classamrex_1_1FabSet_1a4373be6cb5699b5158e3f47e6ae2ce2f" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>plusTo</name></member>
+      <member refid="classamrex_1_1FabSet_1ab5d92ff15c80180af8a7bc09bbb6c4b5" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>read</name></member>
+      <member refid="classamrex_1_1FabSet_1a634eeba26a1426e7c29db10d476f266f" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1FabSet_1a0d009b1309e07ed944160b4f737fbc2b" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>setVal</name></member>
+      <member refid="classamrex_1_1FabSet_1ad5f0d12b67fb58b830a990a104cdf87d" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>size</name></member>
+      <member refid="classamrex_1_1FabSet_1a03119f3ab7d7bdc06e822b46ee1c96d3" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>write</name></member>
+      <member refid="classamrex_1_1FabSet_1ac79a8fcbd950fa941c9db2c7fa4e892b" prot="public" virt="non-virtual"><scope>amrex::FabSet</scope><name>~FabSet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

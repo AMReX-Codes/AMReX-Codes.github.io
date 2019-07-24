@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1EArena" kind="class" language="C++" prot="public">
+    <compoundname>amrex::EArena</compoundname>
+    <basecompoundref refid="classamrex_1_1Arena" prot="public" virt="non-virtual">amrex::Arena</basecompoundref>
+    <includes refid="AMReX__EArena_8H" local="no">AMReX_EArena.H</includes>
+    <innerclass refid="structamrex_1_1EArena_1_1Node" prot="protected">amrex::EArena::Node</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1EArena_1a1b22e6b83f6b933e0b46d6866bd457d0" prot="public" static="no">
+        <name>@1</name>
+        <enumvalue id="classamrex_1_1EArena_1a1b22e6b83f6b933e0b46d6866bd457d0afe2474a51d981bd38fcc0bab1928f23e" prot="public">
+          <name>DefaultHunkSize</name>
+          <initializer>= 1024*1024*8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The default memory hunk size to grab from the heap. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="44" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="44" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="classamrex_1_1EArena_1a62a6459912f2dee99fb7dc6dfe60d851" prot="protected" static="no">
+        <type>std::set&lt; <ref refid="structamrex_1_1EArena_1_1Node" kindref="compound">Node</ref>, <ref refid="structamrex_1_1EArena_1_1Node_1_1CompareSize" kindref="compound">Node::CompareSize</ref> &gt;</type>
+        <definition>using amrex::EArena::FreeList =  std::set&lt;Node,Node::CompareSize&gt;</definition>
+        <argsstring></argsstring>
+        <name>FreeList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="95" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1EArena_1a4b262f8a364b67bc38f2db23df5dcc75" prot="protected" static="no">
+        <type>std::set&lt; <ref refid="structamrex_1_1EArena_1_1Node" kindref="compound">Node</ref>, <ref refid="structamrex_1_1EArena_1_1Node_1_1CompareAddr" kindref="compound">Node::CompareAddr</ref> &gt;</type>
+        <definition>using amrex::EArena::MergeList =  std::set&lt;Node,Node::CompareAddr&gt;</definition>
+        <argsstring></argsstring>
+        <name>MergeList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1EArena_1a05797269791825a6ff9f39ec670c5e1c" prot="protected" static="no">
+        <type>std::unordered_set&lt; <ref refid="structamrex_1_1EArena_1_1Node" kindref="compound">Node</ref>, <ref refid="structamrex_1_1EArena_1_1Node_1_1hash" kindref="compound">Node::hash</ref>, <ref refid="structamrex_1_1EArena_1_1Node_1_1equal" kindref="compound">Node::equal</ref> &gt;</type>
+        <definition>using amrex::EArena::BusyList =  std::unordered_set&lt;Node,Node::hash,Node::equal&gt;</definition>
+        <argsstring></argsstring>
+        <name>BusyList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a3b05dd7697d03b2752d96117fe50bf03" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;void*,std::size_t&gt; &gt; amrex::EArena::m_alloc</definition>
+        <argsstring></argsstring>
+        <name>m_alloc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a643d1d395c74559a883cea436b148679" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1EArena_1a62a6459912f2dee99fb7dc6dfe60d851" kindref="member">FreeList</ref></type>
+        <definition>FreeList amrex::EArena::m_freelist</definition>
+        <argsstring></argsstring>
+        <name>m_freelist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="96" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a68dd7c13d4db50eeaa1b7b075a140960" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1EArena_1a4b262f8a364b67bc38f2db23df5dcc75" kindref="member">MergeList</ref></type>
+        <definition>MergeList amrex::EArena::m_mergelist</definition>
+        <argsstring></argsstring>
+        <name>m_mergelist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a9cc0a06009f6f282f7bc260c283d970f" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1EArena_1a05797269791825a6ff9f39ec670c5e1c" kindref="member">BusyList</ref></type>
+        <definition>BusyList amrex::EArena::m_busylist</definition>
+        <argsstring></argsstring>
+        <name>m_busylist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1af16871ff173840b654ff8a3748099fa1" prot="protected" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::EArena::m_hunk</definition>
+        <argsstring></argsstring>
+        <name>m_hunk</name>
+        <briefdescription>
+<para>The minimal size of hunks to request from system. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a9286ee7b29d7014dcdb72b9302bc4f50" prot="protected" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::EArena::m_used_size</definition>
+        <argsstring></argsstring>
+        <name>m_used_size</name>
+        <briefdescription>
+<para>The amount of heap space currently allocated from system. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="108" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a35e2bae13b9e7e85a420c8e11a5f6c73" prot="protected" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::EArena::m_free_size</definition>
+        <argsstring></argsstring>
+        <name>m_free_size</name>
+        <briefdescription>
+<para>The amount of free space in arena. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="110" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1EArena_1a0418b867a5d3fb99a7035977c14fd89c" prot="protected" static="no" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex amrex::EArena::earena_mutex</definition>
+        <argsstring></argsstring>
+        <name>earena_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="112" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1EArena_1a7daa56ae6423cd9a6cfb476bfea3b3c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::EArena::EArena</definition>
+        <argsstring>(std::size_t hunk_size=0, ArenaInfo info=ArenaInfo())</argsstring>
+        <name>EArena</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>hunk_size</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1ArenaInfo" kindref="compound">ArenaInfo</ref></type>
+          <declname>info</declname>
+          <defval><ref refid="structamrex_1_1ArenaInfo" kindref="compound">ArenaInfo</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.cpp" bodystart="11" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1a64189202293cd90c54bedf35510db843" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::EArena::EArena</definition>
+        <argsstring>(const EArena &amp;rhs)=delete</argsstring>
+        <name>EArena</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1EArena" kindref="compound">EArena</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1a11977fb44e25805691551018979867f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1EArena" kindref="compound">EArena</ref> &amp;</type>
+        <definition>EArena&amp; amrex::EArena::operator=</definition>
+        <argsstring>(const EArena &amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1EArena" kindref="compound">EArena</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1aa7ffefaf198e2f27d6e28d6e92228a4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::EArena::~EArena</definition>
+        <argsstring>() override</argsstring>
+        <name>~EArena</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.cpp" bodystart="22" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1a9f316f7f2bf3ffa4528045191ebdc2b5" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void *</type>
+        <definition>void * amrex::EArena::alloc</definition>
+        <argsstring>(std::size_t nbytes) overridefinal</argsstring>
+        <name>alloc</name>
+        <reimplements refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e">alloc</reimplements>
+        <param>
+          <type>std::size_t</type>
+          <declname>sz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allocate a dynamic memory arena <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of the memory request </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>a pointer to the allocated memory </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="35" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.cpp" bodystart="30" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1a3c0b58cac2bd02c2ca5d94c31d6b1d8c" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>void</type>
+        <definition>void amrex::EArena::free</definition>
+        <argsstring>(void *vp) overridefinal</argsstring>
+        <name>free</name>
+        <reimplements refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515">free</reimplements>
+        <param>
+          <type>void *</type>
+          <declname>pt</declname>
+        </param>
+        <briefdescription>
+<para>A pure virtual function for deleting the arena pointed to by pt. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.cpp" bodystart="82" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1a55f86980147fa57369f877931c2c4d86" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::EArena::heap_space_used</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>heap_space_used</name>
+        <briefdescription>
+<para>The current amount of heap space used by the <ref refid="classamrex_1_1EArena" kindref="compound">EArena</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="39" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.cpp" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1EArena_1a795022c226b14833fce78db68a3b570f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::EArena::free_space_available</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>free_space_available</name>
+        <briefdescription>
+<para>Free space available in the arena. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="41" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.cpp" bodystart="148" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A Concrete Class for Dynamic Memory Management using best fit. This is a coalescing memory manager. It allocates (possibly) large chunks of heap space and apportions it out as requested. It merges together neighboring chunks on each <ref refid="classamrex_1_1EArena_1a3c0b58cac2bd02c2ca5d94c31d6b1d8c" kindref="member">free()</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1197">
+        <label>amrex::EArena</label>
+        <link refid="classamrex_1_1EArena"/>
+        <childnode refid="1198" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1198">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1199">
+        <label>amrex::EArena</label>
+        <link refid="classamrex_1_1EArena"/>
+        <childnode refid="1200" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1201">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="1200">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="1201" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" line="27" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_EArena.H" bodystart="24" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>align</name></member>
+      <member refid="classamrex_1_1Arena_1a52dd4bf03bb4d31899bca6ca3440760a" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>align_size</name></member>
+      <member refid="classamrex_1_1EArena_1a9f316f7f2bf3ffa4528045191ebdc2b5" prot="public" virt="virtual"><scope>amrex::EArena</scope><name>alloc</name></member>
+      <member refid="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>allocate_system</name></member>
+      <member refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>arena_info</name></member>
+      <member refid="classamrex_1_1EArena_1a05797269791825a6ff9f39ec670c5e1c" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>BusyList</name></member>
+      <member refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>deallocate_system</name></member>
+      <member refid="classamrex_1_1EArena_1a1b22e6b83f6b933e0b46d6866bd457d0afe2474a51d981bd38fcc0bab1928f23e" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>DefaultHunkSize</name></member>
+      <member refid="classamrex_1_1EArena_1a7daa56ae6423cd9a6cfb476bfea3b3c6" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>EArena</name></member>
+      <member refid="classamrex_1_1EArena_1a64189202293cd90c54bedf35510db843" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>EArena</name></member>
+      <member refid="classamrex_1_1EArena_1a0418b867a5d3fb99a7035977c14fd89c" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>earena_mutex</name></member>
+      <member refid="classamrex_1_1Arena_1a06dd6197d2081d7dd4c1bed308edd387" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1EArena_1a3c0b58cac2bd02c2ca5d94c31d6b1d8c" prot="public" virt="virtual"><scope>amrex::EArena</scope><name>free</name></member>
+      <member refid="classamrex_1_1EArena_1a795022c226b14833fce78db68a3b570f" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>free_space_available</name></member>
+      <member refid="classamrex_1_1EArena_1a62a6459912f2dee99fb7dc6dfe60d851" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>FreeList</name></member>
+      <member refid="classamrex_1_1EArena_1a55f86980147fa57369f877931c2c4d86" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>heap_space_used</name></member>
+      <member refid="classamrex_1_1Arena_1a9f40990a545f4d280e905117fc6a0786" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1EArena_1a3b05dd7697d03b2752d96117fe50bf03" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_alloc</name></member>
+      <member refid="classamrex_1_1EArena_1a9cc0a06009f6f282f7bc260c283d970f" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_busylist</name></member>
+      <member refid="classamrex_1_1EArena_1a35e2bae13b9e7e85a420c8e11a5f6c73" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_free_size</name></member>
+      <member refid="classamrex_1_1EArena_1a643d1d395c74559a883cea436b148679" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_freelist</name></member>
+      <member refid="classamrex_1_1EArena_1af16871ff173840b654ff8a3748099fa1" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_hunk</name></member>
+      <member refid="classamrex_1_1EArena_1a68dd7c13d4db50eeaa1b7b075a140960" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_mergelist</name></member>
+      <member refid="classamrex_1_1EArena_1a9286ee7b29d7014dcdb72b9302bc4f50" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>m_used_size</name></member>
+      <member refid="classamrex_1_1EArena_1a4b262f8a364b67bc38f2db23df5dcc75" prot="protected" virt="non-virtual"><scope>amrex::EArena</scope><name>MergeList</name></member>
+      <member refid="classamrex_1_1EArena_1a11977fb44e25805691551018979867f3" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1Arena_1a506a68384da30629323d0839f13812c2" prot="public" virt="non-virtual"><scope>amrex::EArena</scope><name>PrintUsage</name></member>
+      <member refid="classamrex_1_1Arena_1a515142557e6b630fbad746e3c33776e5" prot="public" virt="virtual"><scope>amrex::EArena</scope><name>~Arena</name></member>
+      <member refid="classamrex_1_1EArena_1aa7ffefaf198e2f27d6e28d6e92228a4a" prot="public" virt="virtual"><scope>amrex::EArena</scope><name>~EArena</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

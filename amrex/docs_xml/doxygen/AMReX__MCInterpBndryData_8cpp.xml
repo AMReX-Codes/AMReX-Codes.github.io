@@ -1,0 +1,1628 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__MCInterpBndryData_8cpp" kind="file" language="C++">
+    <compoundname>AMReX_MCInterpBndryData.cpp</compoundname>
+    <includes local="no">cmath</includes>
+    <includes refid="AMReX__LO__BCTYPES_8H" local="no">AMReX_LO_BCTYPES.H</includes>
+    <includes refid="AMReX__MCInterpBndryData_8H" local="no">AMReX_MCInterpBndryData.H</includes>
+    <includes refid="AMReX__MCINTERPBNDRYDATA__F_8H" local="no">AMReX_MCINTERPBNDRYDATA_F.H</includes>
+    <includes refid="AMReX__MCLinOp_8H" local="no">AMReX_MCLinOp.H</includes>
+    <incdepgraph>
+      <node id="53103">
+        <label>AMReX_ParallelContext.H</label>
+        <link refid="AMReX__ParallelContext_8H"/>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53104" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53047" relation="include">
+        </childnode>
+      </node>
+      <node id="53128">
+        <label>iomanip</label>
+      </node>
+      <node id="53051">
+        <label>functional</label>
+      </node>
+      <node id="53056">
+        <label>AMReX_BoxArray.H</label>
+        <link refid="AMReX__BoxArray_8H"/>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53058" relation="include">
+        </childnode>
+        <childnode refid="53059" relation="include">
+        </childnode>
+        <childnode refid="53060" relation="include">
+        </childnode>
+        <childnode refid="53077" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+      </node>
+      <node id="53094">
+        <label>AMReX_BoxIterator.H</label>
+        <link refid="AMReX__BoxIterator_8H"/>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+      </node>
+      <node id="53064">
+        <label>limits</label>
+      </node>
+      <node id="53093">
+        <label>AMReX_BLProfiler.H</label>
+        <link refid="AMReX__BLProfiler_8H"/>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+      </node>
+      <node id="53129">
+        <label>AMReX_CudaContainers.H</label>
+        <link refid="AMReX__CudaContainers_8H"/>
+        <childnode refid="53111" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53126" relation="include">
+        </childnode>
+      </node>
+      <node id="53078">
+        <label>AMReX_Box.H</label>
+        <link refid="AMReX__Box_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53079" relation="include">
+        </childnode>
+        <childnode refid="53080" relation="include">
+        </childnode>
+        <childnode refid="53047" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+        <childnode refid="53060" relation="include">
+        </childnode>
+        <childnode refid="53081" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53082" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+      </node>
+      <node id="53120">
+        <label>AMReX_GpuUtility.H</label>
+        <link refid="AMReX__GpuUtility_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53117" relation="include">
+        </childnode>
+        <childnode refid="53074" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53082" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53041" relation="include">
+        </childnode>
+      </node>
+      <node id="53146">
+        <label>cstdint</label>
+      </node>
+      <node id="53149">
+        <label>AMReX_FabArrayBase.H</label>
+        <link refid="AMReX__FabArrayBase_8H"/>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53101" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+        <childnode refid="53150" relation="include">
+        </childnode>
+        <childnode refid="53140" relation="include">
+        </childnode>
+        <childnode refid="53127" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+        <childnode refid="53112" relation="include">
+        </childnode>
+      </node>
+      <node id="53101">
+        <label>AMReX_DistributionMapping.H</label>
+        <link refid="AMReX__DistributionMapping_8H"/>
+        <childnode refid="53058" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+      </node>
+      <node id="53062">
+        <label>AMReX_IntVect.H</label>
+        <link refid="AMReX__IntVect_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53041" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53065" relation="include">
+        </childnode>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53047" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53076" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53074" relation="include">
+        </childnode>
+        <childnode refid="53046" relation="include">
+        </childnode>
+      </node>
+      <node id="53045">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53047" relation="include">
+        </childnode>
+        <childnode refid="53048" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53051" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53053" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+      </node>
+      <node id="53095">
+        <label>AMReX_MakeType.H</label>
+        <link refid="AMReX__MakeType_8H"/>
+      </node>
+      <node id="53119">
+        <label>AMReX_GpuLaunchFunctsC.H</label>
+        <link refid="AMReX__GpuLaunchFunctsC_8H"/>
+      </node>
+      <node id="53114">
+        <label>AMReX_GpuError.H</label>
+        <link refid="AMReX__GpuError_8H"/>
+        <childnode refid="53096" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+      </node>
+      <node id="53157">
+        <label>AMReX_MCLinOp.H</label>
+        <link refid="AMReX__MCLinOp_8H"/>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53145" relation="include">
+        </childnode>
+        <childnode refid="53142" relation="include">
+        </childnode>
+      </node>
+      <node id="53075">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+      </node>
+      <node id="53127">
+        <label>AMReX_Print.H</label>
+        <link refid="AMReX__Print_8H"/>
+        <childnode refid="53071" relation="include">
+        </childnode>
+        <childnode refid="53104" relation="include">
+        </childnode>
+        <childnode refid="53128" relation="include">
+        </childnode>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53103" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+      </node>
+      <node id="53041">
+        <label>cmath</label>
+      </node>
+      <node id="53139">
+        <label>cassert</label>
+      </node>
+      <node id="53049">
+        <label>stdexcept</label>
+      </node>
+      <node id="53111">
+        <label>numeric</label>
+      </node>
+      <node id="53077">
+        <label>AMReX_BoxList.H</label>
+        <link refid="AMReX__BoxList_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+        <childnode refid="53060" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+      </node>
+      <node id="53084">
+        <label>AMReX_BaseFab.H</label>
+        <link refid="AMReX__BaseFab_8H"/>
+        <childnode refid="53041" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53065" relation="include">
+        </childnode>
+        <childnode refid="53069" relation="include">
+        </childnode>
+        <childnode refid="53085" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53074" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53086" relation="include">
+        </childnode>
+        <childnode refid="53077" relation="include">
+        </childnode>
+        <childnode refid="53087" relation="include">
+        </childnode>
+        <childnode refid="53089" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53093" relation="include">
+        </childnode>
+        <childnode refid="53094" relation="include">
+        </childnode>
+        <childnode refid="53095" relation="include">
+        </childnode>
+        <childnode refid="53096" relation="include">
+        </childnode>
+        <childnode refid="53112" relation="include">
+        </childnode>
+      </node>
+      <node id="53052">
+        <label>string</label>
+      </node>
+      <node id="53126">
+        <label>AMReX_CudaAllocators.H</label>
+        <link refid="AMReX__CudaAllocators_8H"/>
+        <childnode refid="53058" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53127" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+        <childnode refid="53117" relation="include">
+        </childnode>
+      </node>
+      <node id="53086">
+        <label>AMReX_Loop.H</label>
+        <link refid="AMReX__Loop_8H"/>
+        <childnode refid="53078" relation="include">
+        </childnode>
+      </node>
+      <node id="53058">
+        <label>map</label>
+      </node>
+      <node id="53145">
+        <label>AMReX_MultiFab.H</label>
+        <link refid="AMReX__MultiFab_8H"/>
+        <childnode refid="53146" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53083" relation="include">
+        </childnode>
+        <childnode refid="53147" relation="include">
+        </childnode>
+        <childnode refid="53154" relation="include">
+        </childnode>
+        <childnode refid="53140" relation="include">
+        </childnode>
+      </node>
+      <node id="53092">
+        <label>unordered_set</label>
+      </node>
+      <node id="53142">
+        <label>AMReX_BndryData.H</label>
+        <link refid="AMReX__BndryData_8H"/>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53083" relation="include">
+        </childnode>
+        <childnode refid="53081" relation="include">
+        </childnode>
+        <childnode refid="53143" relation="include">
+        </childnode>
+        <childnode refid="53155" relation="include">
+        </childnode>
+        <childnode refid="53141" relation="include">
+        </childnode>
+        <childnode refid="53135" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53152" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53058" relation="include">
+        </childnode>
+      </node>
+      <node id="53153">
+        <label>AMReX_FabArrayCommI.H</label>
+        <link refid="AMReX__FabArrayCommI_8H"/>
+      </node>
+      <node id="53152">
+        <label>AMReX_LayoutData.H</label>
+        <link refid="AMReX__LayoutData_8H"/>
+        <childnode refid="53149" relation="include">
+        </childnode>
+        <childnode refid="53151" relation="include">
+        </childnode>
+      </node>
+      <node id="53104">
+        <label>fstream</label>
+      </node>
+      <node id="53135">
+        <label>AMReX_Geometry.H</label>
+        <link refid="AMReX__Geometry_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53058" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53136" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+        <childnode refid="53137" relation="include">
+        </childnode>
+        <childnode refid="53140" relation="include">
+        </childnode>
+      </node>
+      <node id="53151">
+        <label>AMReX_MFIter.H</label>
+        <link refid="AMReX__MFIter_8H"/>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+        <childnode refid="53149" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+        <childnode refid="53083" relation="include">
+        </childnode>
+        <childnode refid="53137" relation="include">
+        </childnode>
+        <childnode refid="53112" relation="include">
+        </childnode>
+      </node>
+      <node id="53141">
+        <label>AMReX_BoundCond.H</label>
+        <link refid="AMReX__BoundCond_8H"/>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53046" relation="include">
+        </childnode>
+      </node>
+      <node id="53080">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="53073" relation="include">
+        </childnode>
+      </node>
+      <node id="53137">
+        <label>AMReX_RealBox.H</label>
+        <link refid="AMReX__RealBox_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53069" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53138" relation="include">
+        </childnode>
+      </node>
+      <node id="53068">
+        <label>AMReX_Array.H</label>
+        <link refid="AMReX__Array_8H"/>
+        <childnode refid="53069" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53070" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53071" relation="include">
+        </childnode>
+        <childnode refid="53053" relation="include">
+        </childnode>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+      </node>
+      <node id="53125">
+        <label>AMReX_GpuReduce.H</label>
+        <link refid="AMReX__GpuReduce_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53096" relation="include">
+        </childnode>
+      </node>
+      <node id="53067">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+      </node>
+      <node id="53150">
+        <label>AMReX_ParallelReduce.H</label>
+        <link refid="AMReX__ParallelReduce_8H"/>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+        <childnode refid="53127" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53085" relation="include">
+        </childnode>
+      </node>
+      <node id="53074">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="53113">
+        <label>AMReX_GpuLaunch.H</label>
+        <link refid="AMReX__GpuLaunch_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53114" relation="include">
+        </childnode>
+        <childnode refid="53115" relation="include">
+        </childnode>
+        <childnode refid="53117" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53086" relation="include">
+        </childnode>
+        <childnode refid="53074" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53116" relation="include">
+        </childnode>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53118" relation="include">
+        </childnode>
+        <childnode refid="53119" relation="include">
+        </childnode>
+      </node>
+      <node id="53098">
+        <label>sys/types.h</label>
+      </node>
+      <node id="53140">
+        <label>AMReX_Periodicity.H</label>
+        <link refid="AMReX__Periodicity_8H"/>
+        <childnode refid="53062" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+      </node>
+      <node id="53110">
+        <label>typeinfo</label>
+      </node>
+      <node id="53053">
+        <label>cstdio</label>
+      </node>
+      <node id="53133">
+        <label>AMReX_BCRec.H</label>
+        <link refid="AMReX__BCRec_8H"/>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53134" relation="include">
+        </childnode>
+      </node>
+      <node id="53116">
+        <label>AMReX_TypeTraits.H</label>
+        <link refid="AMReX__TypeTraits_8H"/>
+        <childnode refid="53085" relation="include">
+        </childnode>
+        <childnode refid="53074" relation="include">
+        </childnode>
+      </node>
+      <node id="53072">
+        <label>AMReX_GpuControl.H</label>
+        <link refid="AMReX__GpuControl_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+      </node>
+      <node id="53134">
+        <label>AMReX_BC_TYPES.H</label>
+        <link refid="AMReX__BC__TYPES_8H"/>
+      </node>
+      <node id="53144">
+        <label>AMReX_FabSet.H</label>
+        <link refid="AMReX__FabSet_8H"/>
+        <childnode refid="53145" relation="include">
+        </childnode>
+        <childnode refid="53135" relation="include">
+        </childnode>
+      </node>
+      <node id="53105">
+        <label>AMReX_BLBackTrace.H</label>
+        <link refid="AMReX__BLBackTrace_8H"/>
+        <childnode refid="53106" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53070" relation="include">
+        </childnode>
+        <childnode refid="53071" relation="include">
+        </childnode>
+        <childnode refid="53053" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53107" relation="include">
+        </childnode>
+        <childnode refid="53108" relation="include">
+        </childnode>
+        <childnode refid="53109" relation="include">
+        </childnode>
+      </node>
+      <node id="53099">
+        <label>unistd.h</label>
+      </node>
+      <node id="53106">
+        <label>stack</label>
+      </node>
+      <node id="53054">
+        <label>vector</label>
+      </node>
+      <node id="53131">
+        <label>AMReX_FabFactory.H</label>
+        <link refid="AMReX__FabFactory_8H"/>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53127" relation="include">
+        </childnode>
+        <childnode refid="53095" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+      </node>
+      <node id="53044">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="53045" relation="include">
+        </childnode>
+      </node>
+      <node id="53046">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+      </node>
+      <node id="53070">
+        <label>utility</label>
+      </node>
+      <node id="53069">
+        <label>array</label>
+      </node>
+      <node id="53147">
+        <label>AMReX_FabArray.H</label>
+        <link refid="AMReX__FabArray_8H"/>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53122" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53058" relation="include">
+        </childnode>
+        <childnode refid="53070" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53090" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53148" relation="include">
+        </childnode>
+        <childnode refid="53131" relation="include">
+        </childnode>
+        <childnode refid="53101" relation="include">
+        </childnode>
+        <childnode refid="53135" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+        <childnode refid="53096" relation="include">
+        </childnode>
+        <childnode refid="53047" relation="include">
+        </childnode>
+        <childnode refid="53093" relation="include">
+        </childnode>
+        <childnode refid="53140" relation="include">
+        </childnode>
+        <childnode refid="53127" relation="include">
+        </childnode>
+        <childnode refid="53149" relation="include">
+        </childnode>
+        <childnode refid="53151" relation="include">
+        </childnode>
+        <childnode refid="53095" relation="include">
+        </childnode>
+        <childnode refid="53116" relation="include">
+        </childnode>
+        <childnode refid="53152" relation="include">
+        </childnode>
+        <childnode refid="53084" relation="include">
+        </childnode>
+        <childnode refid="53112" relation="include">
+        </childnode>
+        <childnode refid="53153" relation="include">
+        </childnode>
+      </node>
+      <node id="53083">
+        <label>AMReX_FArrayBox.H</label>
+        <link refid="AMReX__FArrayBox_8H"/>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53084" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53131" relation="include">
+        </childnode>
+        <childnode refid="53041" relation="include">
+        </childnode>
+      </node>
+      <node id="53071">
+        <label>sstream</label>
+      </node>
+      <node id="53154">
+        <label>AMReX_FabArrayUtility.H</label>
+        <link refid="AMReX__FabArrayUtility_8H"/>
+        <childnode refid="53147" relation="include">
+        </childnode>
+        <childnode refid="53152" relation="include">
+        </childnode>
+        <childnode refid="53127" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+      </node>
+      <node id="53048">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="53049" relation="include">
+        </childnode>
+      </node>
+      <node id="53079">
+        <label>AMReX_Algorithm.H</label>
+        <link refid="AMReX__Algorithm_8H"/>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53074" relation="include">
+        </childnode>
+        <childnode refid="53076" relation="include">
+        </childnode>
+      </node>
+      <node id="53115">
+        <label>AMReX_GpuRange.H</label>
+        <link refid="AMReX__GpuRange_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53114" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53116" relation="include">
+        </childnode>
+      </node>
+      <node id="53102">
+        <label>AMReX_ParallelDescriptor.H</label>
+        <link refid="AMReX__ParallelDescriptor_8H"/>
+        <childnode refid="53047" relation="include">
+        </childnode>
+        <childnode refid="53103" relation="include">
+        </childnode>
+        <childnode refid="53105" relation="include">
+        </childnode>
+        <childnode refid="53093" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53110" relation="include">
+        </childnode>
+        <childnode refid="53066" relation="include">
+        </childnode>
+        <childnode refid="53051" relation="include">
+        </childnode>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53111" relation="include">
+        </childnode>
+      </node>
+      <node id="53096">
+        <label>AMReX_Utility.H</label>
+        <link refid="AMReX__Utility_8H"/>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53052" relation="include">
+        </childnode>
+        <childnode refid="53058" relation="include">
+        </childnode>
+        <childnode refid="53097" relation="include">
+        </childnode>
+        <childnode refid="53085" relation="include">
+        </childnode>
+        <childnode refid="53098" relation="include">
+        </childnode>
+        <childnode refid="53099" relation="include">
+        </childnode>
+        <childnode refid="53100" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53101" relation="include">
+        </childnode>
+        <childnode refid="53102" relation="include">
+        </childnode>
+      </node>
+      <node id="53088">
+        <label>AMReX_Arena.H</label>
+        <link refid="AMReX__Arena_8H"/>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+      </node>
+      <node id="53081">
+        <label>AMReX_Orientation.H</label>
+        <link refid="AMReX__Orientation_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53046" relation="include">
+        </childnode>
+      </node>
+      <node id="53076">
+        <label>AMReX_Dim3.H</label>
+        <link refid="AMReX__Dim3_8H"/>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+      </node>
+      <node id="53100">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="53061">
+        <label>iosfwd</label>
+      </node>
+      <node id="53063">
+        <label>cstdlib</label>
+      </node>
+      <node id="53109">
+        <label>cfenv</label>
+      </node>
+      <node id="53050">
+        <label>iostream</label>
+      </node>
+      <node id="53060">
+        <label>AMReX_IndexType.H</label>
+        <link refid="AMReX__IndexType_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53047" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+      </node>
+      <node id="53143">
+        <label>AMReX_BndryRegister.H</label>
+        <link refid="AMReX__BndryRegister_8H"/>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53144" relation="include">
+        </childnode>
+      </node>
+      <node id="53156">
+        <label>AMReX_MCINTERPBNDRYDATA_F.H</label>
+        <link refid="AMReX__MCINTERPBNDRYDATA__F_8H"/>
+        <childnode refid="53080" relation="include">
+        </childnode>
+      </node>
+      <node id="53082">
+        <label>AMReX_Array4.H</label>
+        <link refid="AMReX__Array4_8H"/>
+        <childnode refid="53062" relation="include">
+        </childnode>
+      </node>
+      <node id="53057">
+        <label>cstddef</label>
+      </node>
+      <node id="53059">
+        <label>unordered_map</label>
+      </node>
+      <node id="53148">
+        <label>AMReX_BoxDomain.H</label>
+        <link refid="AMReX__BoxDomain_8H"/>
+        <childnode refid="53061" relation="include">
+        </childnode>
+        <childnode refid="53060" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+        <childnode refid="53077" relation="include">
+        </childnode>
+      </node>
+      <node id="53040">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_TensorMG/AMReX_MCInterpBndryData.cpp</label>
+        <link refid="AMReX_MCInterpBndryData.cpp"/>
+        <childnode refid="53041" relation="include">
+        </childnode>
+        <childnode refid="53042" relation="include">
+        </childnode>
+        <childnode refid="53043" relation="include">
+        </childnode>
+        <childnode refid="53156" relation="include">
+        </childnode>
+        <childnode refid="53157" relation="include">
+        </childnode>
+      </node>
+      <node id="53112">
+        <label>AMReX_Gpu.H</label>
+        <link refid="AMReX__Gpu_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53113" relation="include">
+        </childnode>
+        <childnode refid="53114" relation="include">
+        </childnode>
+        <childnode refid="53120" relation="include">
+        </childnode>
+        <childnode refid="53117" relation="include">
+        </childnode>
+        <childnode refid="53121" relation="include">
+        </childnode>
+        <childnode refid="53123" relation="include">
+        </childnode>
+        <childnode refid="53124" relation="include">
+        </childnode>
+        <childnode refid="53115" relation="include">
+        </childnode>
+        <childnode refid="53125" relation="include">
+        </childnode>
+        <childnode refid="53126" relation="include">
+        </childnode>
+        <childnode refid="53129" relation="include">
+        </childnode>
+        <childnode refid="53130" relation="include">
+        </childnode>
+      </node>
+      <node id="53065">
+        <label>climits</label>
+      </node>
+      <node id="53130">
+        <label>AMReX_CudaGraph.H</label>
+        <link refid="AMReX__CudaGraph_8H"/>
+      </node>
+      <node id="53091">
+        <label>mutex</label>
+      </node>
+      <node id="53097">
+        <label>chrono</label>
+      </node>
+      <node id="53118">
+        <label>AMReX_GpuLaunchMacrosC.H</label>
+        <link refid="AMReX__GpuLaunchMacrosC_8H"/>
+      </node>
+      <node id="53108">
+        <label>csignal</label>
+      </node>
+      <node id="53155">
+        <label>AMReX_MultiMask.H</label>
+        <link refid="AMReX__MultiMask_8H"/>
+        <childnode refid="53132" relation="include">
+        </childnode>
+        <childnode refid="53147" relation="include">
+        </childnode>
+        <childnode refid="53135" relation="include">
+        </childnode>
+      </node>
+      <node id="53132">
+        <label>AMReX_Mask.H</label>
+        <link refid="AMReX__Mask_8H"/>
+        <childnode refid="53084" relation="include">
+        </childnode>
+        <childnode refid="53083" relation="include">
+        </childnode>
+      </node>
+      <node id="53089">
+        <label>AMReX_CArena.H</label>
+        <link refid="AMReX__CArena_8H"/>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53090" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+        <childnode refid="53091" relation="include">
+        </childnode>
+        <childnode refid="53092" relation="include">
+        </childnode>
+        <childnode refid="53051" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+      </node>
+      <node id="53043">
+        <label>AMReX_MCInterpBndryData.H</label>
+        <link refid="AMReX__MCInterpBndryData_8H"/>
+        <childnode refid="53044" relation="include">
+        </childnode>
+        <childnode refid="53056" relation="include">
+        </childnode>
+        <childnode refid="53083" relation="include">
+        </childnode>
+        <childnode refid="53081" relation="include">
+        </childnode>
+        <childnode refid="53132" relation="include">
+        </childnode>
+        <childnode refid="53133" relation="include">
+        </childnode>
+        <childnode refid="53135" relation="include">
+        </childnode>
+        <childnode refid="53141" relation="include">
+        </childnode>
+        <childnode refid="53142" relation="include">
+        </childnode>
+      </node>
+      <node id="53085">
+        <label>type_traits</label>
+      </node>
+      <node id="53090">
+        <label>set</label>
+      </node>
+      <node id="53087">
+        <label>AMReX_BArena.H</label>
+        <link refid="AMReX__BArena_8H"/>
+        <childnode refid="53088" relation="include">
+        </childnode>
+      </node>
+      <node id="53047">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+      </node>
+      <node id="53123">
+        <label>AMReX_GpuElixir.H</label>
+        <link refid="AMReX__GpuElixir_8H"/>
+        <childnode refid="53088" relation="include">
+        </childnode>
+      </node>
+      <node id="53066">
+        <label>algorithm</label>
+      </node>
+      <node id="53117">
+        <label>AMReX_GpuDevice.H</label>
+        <link refid="AMReX__GpuDevice_8H"/>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53069" relation="include">
+        </childnode>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53096" relation="include">
+        </childnode>
+        <childnode refid="53114" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+      </node>
+      <node id="53042">
+        <label>AMReX_LO_BCTYPES.H</label>
+        <link refid="AMReX__LO__BCTYPES_8H"/>
+      </node>
+      <node id="53107">
+        <label>execinfo.h</label>
+      </node>
+      <node id="53122">
+        <label>cstring</label>
+      </node>
+      <node id="53138">
+        <label>AMReX_RealVect.H</label>
+        <link refid="AMReX__RealVect_8H"/>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53122" relation="include">
+        </childnode>
+        <childnode refid="53050" relation="include">
+        </childnode>
+        <childnode refid="53041" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53067" relation="include">
+        </childnode>
+        <childnode refid="53054" relation="include">
+        </childnode>
+        <childnode refid="53139" relation="include">
+        </childnode>
+        <childnode refid="53062" relation="include">
+        </childnode>
+      </node>
+      <node id="53136">
+        <label>AMReX_CoordSys.H</label>
+        <link refid="AMReX__CoordSys_8H"/>
+        <childnode refid="53064" relation="include">
+        </childnode>
+        <childnode refid="53045" relation="include">
+        </childnode>
+        <childnode refid="53073" relation="include">
+        </childnode>
+        <childnode refid="53068" relation="include">
+        </childnode>
+        <childnode refid="53075" relation="include">
+        </childnode>
+        <childnode refid="53078" relation="include">
+        </childnode>
+      </node>
+      <node id="53055">
+        <label>memory</label>
+      </node>
+      <node id="53121">
+        <label>AMReX_GpuAsyncArray.H</label>
+        <link refid="AMReX__GpuAsyncArray_8H"/>
+        <childnode refid="53057" relation="include">
+        </childnode>
+        <childnode refid="53122" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+        <childnode refid="53055" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+        <childnode refid="53116" relation="include">
+        </childnode>
+        <childnode refid="53117" relation="include">
+        </childnode>
+      </node>
+      <node id="53124">
+        <label>AMReX_GpuMemory.H</label>
+        <link refid="AMReX__GpuMemory_8H"/>
+        <childnode refid="53046" relation="include">
+        </childnode>
+        <childnode refid="53072" relation="include">
+        </childnode>
+        <childnode refid="53117" relation="include">
+        </childnode>
+        <childnode refid="53116" relation="include">
+        </childnode>
+        <childnode refid="53088" relation="include">
+        </childnode>
+        <childnode refid="53063" relation="include">
+        </childnode>
+      </node>
+      <node id="53073">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="53074" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="AMReX__MCInterpBndryData_8cpp_1a560e33d3eba8a528b757e7e1377cfb4f" prot="public" static="no">
+        <name>DEF_LIMITS</name>
+        <param><defname>fab</defname></param>
+        <param><defname>fabdat</defname></param>
+        <param><defname>fablo</defname></param>
+        <param><defname>fabhi</defname></param>
+        <initializer>const int* fablo = (fab).loVect();           \
+const int* fabhi = (fab).hiVect();           \
+Real* fabdat = (fab).dataPtr();</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_TensorMG/AMReX_MCInterpBndryData.cpp" line="51" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_TensorMG/AMReX_MCInterpBndryData.cpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__MCInterpBndryData_8cpp_1ad8e0b5fe209d59aa1f12967b14035faf" prot="public" static="no">
+        <name>DEF_CLIMITS</name>
+        <param><defname>fab</defname></param>
+        <param><defname>fabdat</defname></param>
+        <param><defname>fablo</defname></param>
+        <param><defname>fabhi</defname></param>
+        <initializer>const int* fablo = (fab).loVect();           \
+const int* fabhi = (fab).hiVect();           \
+const Real* fabdat = (fab).dataPtr();</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_TensorMG/AMReX_MCInterpBndryData.cpp" line="55" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_TensorMG/AMReX_MCInterpBndryData.cpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__LO__BCTYPES_8H" kindref="compound">AMReX_LO_BCTYPES.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MCInterpBndryData_8H" kindref="compound">AMReX_MCInterpBndryData.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MCINTERPBNDRYDATA__F_8H" kindref="compound">AMReX_MCINTERPBNDRYDATA_F.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MCLinOp_8H" kindref="compound">AMReX_MCLinOp.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="AMReX__MCINTERPBNDRYDATA__F_8H_1aac34416fae2fc211f82c7e6f262b6fac" kindref="member">BDInterpFunc</ref>*<sp/><ref refid="namespaceamrex_1acacfdf13ce24ba1836231106e03f7e26" kindref="member">bdfunc</ref>[2*<ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>];</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="AMReX__MCINTERPBNDRYDATA__F_8H_1a5ac96658cf4dcd448ee6f7d46e208264" kindref="member">BDPhysDerivative</ref>*<sp/><ref refid="namespaceamrex_1ab9ef0c17cdb5fd8ee696dae85c2d4b3d" kindref="member">bdider</ref>[2*<ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abd4de68ffb451b4f72483202f1d0b905" kindref="member">bdfunc_set</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a9ddde5b8b87f479d46f4c6729fa0d08c" kindref="member">bdfunc_init</ref><sp/>()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>xloface(0,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>xhiface(0,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>bdfunc[xloface]<sp/>=<sp/><ref refid="AMReX__MCINTERPBNDRYDATA__F_8H_1a1c7d82b9b581bf6386d9d19c6f00829b" kindref="member">FORT_BDINTERPXLO</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>bdfunc[xhiface]<sp/>=<sp/><ref refid="AMReX__MCINTERPBNDRYDATA__F_8H_1aff4d2d7391a1895d691e674d5273091d" kindref="member">FORT_BDINTERPXHI</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>bdider[xloface]<sp/>=<sp/><ref refid="AMReX__MCINTERPBNDRYDATA__F_8H_1a680359089cf456e45756977050f2029d" kindref="member">FORT_BDIDERIVXLO</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>bdider[xhiface]<sp/>=<sp/><ref refid="AMReX__MCINTERPBNDRYDATA__F_8H_1aef1be3f9f646f6caefc77cc62b302642" kindref="member">FORT_BDIDERIVXHI</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>&gt;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>yloface(1,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>yhiface(1,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>bdfunc[yloface]<sp/>=<sp/>FORT_BDINTERPYLO;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>bdfunc[yhiface]<sp/>=<sp/>FORT_BDINTERPYHI;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>bdider[yloface]<sp/>=<sp/>FORT_BDIDERIVYLO;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>bdider[yhiface]<sp/>=<sp/>FORT_BDIDERIVYHI;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>&gt;<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>zloface(2,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>zhiface(2,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>bdfunc[zloface]<sp/>=<sp/>FORT_BDINTERPZLO;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>bdfunc[zhiface]<sp/>=<sp/>FORT_BDINTERPZHI;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>bdider[zloface]<sp/>=<sp/>FORT_BDIDERIVZLO;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>bdider[zhiface]<sp/>=<sp/>FORT_BDIDERIVZHI;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUMDERIV<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NUMDERIV<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEF_LIMITS(fab,fabdat,fablo,fabhi)<sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">const<sp/>int*<sp/>fablo<sp/>=<sp/>(fab).loVect();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="53"><highlight class="preprocessor">const<sp/>int*<sp/>fabhi<sp/>=<sp/>(fab).hiVect();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="54"><highlight class="preprocessor">Real*<sp/>fabdat<sp/>=<sp/>(fab).dataPtr();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEF_CLIMITS(fab,fabdat,fablo,fabhi)<sp/><sp/>\</highlight></codeline>
+<codeline lineno="56"><highlight class="preprocessor">const<sp/>int*<sp/>fablo<sp/>=<sp/>(fab).loVect();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="preprocessor">const<sp/>int*<sp/>fabhi<sp/>=<sp/>(fab).hiVect();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="58"><highlight class="preprocessor">const<sp/>Real*<sp/>fabdat<sp/>=<sp/>(fab).dataPtr();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="classamrex_1_1MCInterpBndryData_1a29eae39c98abbe98cd4dc88ae06e19a1" kindref="member">MCInterpBndryData::MCInterpBndryData</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>_grids,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>_dmap,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_ncomp,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>_geom)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>BndryData(_grids,_dmap,MCLinOp::bcComponentsNeeded(_ncomp),_geom)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>At<sp/>the<sp/>coarsest<sp/>level<sp/>the<sp/>bndry<sp/>values<sp/>are<sp/>taken<sp/>from<sp/>adjacent<sp/>grids.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><ref refid="classamrex_1_1MCInterpBndryData_1a905d13c3a94b91ef00fdf13b279b40e5" kindref="member">MCInterpBndryData::setBndryValues</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/><sp/><sp/><sp/><sp/>mf,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf_start,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bnd_start,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp,</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BCRec&gt;&amp;<sp/>bc<sp/>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!bdfunc_set)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a9ddde5b8b87f479d46f4c6729fa0d08c" kindref="member">bdfunc_init</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grids.size());</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grids<sp/>==<sp/>mf.boxArray());</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nDer<sp/>=<sp/><ref refid="classamrex_1_1MCLinOp_1a5bec91ec69031287d67b5bdbf9412508" kindref="member">MCLinOp::bcComponentsNeeded</ref>(num_comp);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bc.size()==nDer);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=bnd_start;<sp/>n&lt;bnd_start+nDer;<sp/>++n)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setBndryConds(bc[n],<sp/>ratio,<sp/>n);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>h<sp/>=<sp/>geom.CellSize();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(mf);<sp/>mfi.isValid();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grids[mfi.index()]<sp/>==<sp/>mfi.validbox());</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>mfi.validbox();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(OrientationIter<sp/>fi;<sp/>fi;<sp/>++fi)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Orientation<sp/>face(fi());</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir<sp/>=<sp/>face.coordDir();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Physical<sp/>bndry,<sp/>copy<sp/>from<sp/>grid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx[face]==geom.Domain()[face]<sp/><sp/>&amp;&amp;<sp/>!geom.isPeriodic(dir))</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>up<sp/>hfine<sp/>with<sp/>perpendicular<sp/>h&apos;s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>hfine[<ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>];</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kdir<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir=0;<sp/>idir&lt;<ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>;<sp/>++idir)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idir<sp/>==<sp/>dir)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hfine[kdir++]<sp/>=<sp/>h[idir];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>and<sp/>compute<sp/>deriv.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bdider[face](bndry[face][mfi].dataPtr(bnd_start),</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ARLIM(bndry[face][mfi].loVect()),</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ARLIM(bndry[face][mfi].hiVect()),</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.loVect(),bx.hiVect(),</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf[mfi].dataPtr(mf_start),</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ARLIM(mf[mfi].loVect()),ARLIM(mf[mfi].hiVect()),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;num_comp,hfine);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(1)<sp/>set<sp/>bndry<sp/>type<sp/>and<sp/>location<sp/>of<sp/>bndry<sp/>value<sp/>on<sp/>each<sp/>face<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>each<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">//<sp/>(2)<sp/>set<sp/>actual<sp/>bndry<sp/>value<sp/>by:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>(A)<sp/>Interpolate<sp/>from<sp/>crse<sp/>bndryRegister<sp/>at<sp/>crse/fine<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>(B)<sp/>Copy<sp/>from<sp/>ghost<sp/>region<sp/>of<sp/>MultiFab<sp/>at<sp/>physical<sp/>bndry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><ref refid="classamrex_1_1MCInterpBndryData_1a905d13c3a94b91ef00fdf13b279b40e5" kindref="member">MCInterpBndryData::setBndryValues</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BndryRegister&amp;<sp/>crse,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c_start,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/><sp/><sp/><sp/><sp/><sp/>fine,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_start,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bnd_start,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_comp,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ratio,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;BCRec&gt;&amp;<sp/><sp/>bc)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!bdfunc_set)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a9ddde5b8b87f479d46f4c6729fa0d08c" kindref="member">bdfunc_init</ref>();</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grids.size());</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grids<sp/>==<sp/>fine.boxArray());</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nDer<sp/>=<sp/><ref refid="classamrex_1_1MCLinOp_1a5bec91ec69031287d67b5bdbf9412508" kindref="member">MCLinOp::bcComponentsNeeded</ref>(num_comp);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bc.size()==nDer);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n=bnd_start;<sp/>n&lt;bnd_start+nDer;<sp/>++n)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setBndryConds(bc[n],<sp/>ratio,<sp/>n);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>h<sp/>=<sp/>geom.CellSize();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First<sp/>interpolate<sp/>from<sp/>coarse<sp/>to<sp/>fine<sp/>on<sp/>bndry.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>fine_domain<sp/>=<sp/>geom.Domain();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Mask<sp/>turned<sp/>off<sp/>if<sp/>covered<sp/>by<sp/>fine<sp/>grid.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>Real*<sp/>derives<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmplen<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>finemfi(fine);<sp/>finemfi.isValid();<sp/>++finemfi)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grids[finemfi.index()]<sp/>==<sp/>finemfi.validbox());</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>fine_bx<sp/>=<sp/>finemfi.validbox();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>crse_bx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(fine_bx,ratio);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cblo<sp/><sp/><sp/><sp/>=<sp/>crse_bx.loVect();</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>cbhi<sp/><sp/><sp/><sp/>=<sp/>crse_bx.hiVect();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mxlen<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>crse_bx.longside()<sp/>+<sp/>2;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::pow((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)mxlen,(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)BL_SPACEDIM-1)<sp/>&gt;<sp/>tmplen)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>derives;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmplen<sp/>=<sp/>mxlen;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(BL_SPACEDIM<sp/>&gt;<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tmplen<sp/>*=<sp/>mxlen;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>derives<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Real[tmplen*<ref refid="AMReX__MCINTERPBNDRYDATA__2D_8F_1ad8fdc184d6f1cef563d422c5bfa5d2e6" kindref="member">NUMDERIV</ref>];</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>fine_bx.loVect();</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>fine_bx.hiVect();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>fine_grd<sp/>=<sp/>fine[finemfi];</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>finelo<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>fine_grd.loVect();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>finehi<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>fine_grd.hiVect();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>finedat<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>fine_grd.dataPtr(f_start);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(OrientationIter<sp/>fi;<sp/>fi;<sp/>++fi)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>face(fi());</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dir<sp/>=<sp/>face.coordDir();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Load<sp/>up<sp/>hfine<sp/>with<sp/>perpindicular<sp/>h&apos;s.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>hfine[<ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>];</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kdir<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir<sp/>=<sp/>0;<sp/>idir<sp/>&lt;<sp/><ref refid="AMReX__SPACE_8H_1af66ac7d7c04dad9fd54778fe5a4e816f" kindref="member">BL_SPACEDIM</ref>;<sp/>++idir)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idir<sp/>!=<sp/>dir)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hfine[kdir++]<sp/>=<sp/>h[idir];</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox&amp;<sp/>bnd_fab<sp/>=<sp/>bndry[face][finemfi];</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>blo<sp/><sp/><sp/><sp/><sp/>=<sp/>bnd_fab.loVect();</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>bhi<sp/><sp/><sp/><sp/><sp/>=<sp/>bnd_fab.hiVect();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/>bdat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>bnd_fab.dataPtr(bnd_start);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fine_bx[face]<sp/>!=<sp/>fine_domain[face]<sp/>||<sp/>geom.isPeriodic(dir))</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>or<sp/>periodic<sp/>edge,<sp/>interpolate<sp/>from<sp/>crse<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Mask&amp;<sp/>mask<sp/>=<sp/>masks[face][finemfi];</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>mlo<sp/><sp/><sp/>=<sp/>mask.loVect();</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>mhi<sp/><sp/><sp/>=<sp/>mask.hiVect();</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>mdat<sp/><sp/>=<sp/>mask.dataPtr();</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>crse_fab<sp/>=<sp/>crse[face][finemfi];</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>clo<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>crse_fab.loVect();</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>chi<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>crse_fab.hiVect();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>cdat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>crse_fab.dataPtr(c_start);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>is_not_covered<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1BndryData_1a4d31afbfcfb31a6229877bb9ad880fb9a54f598ca1ea830b90bd86719dd843014" kindref="member">BndryData::not_covered</ref>;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bdfunc[face](bdat,ARLIM(blo),ARLIM(bhi),</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo,hi,ARLIM(cblo),ARLIM(cbhi),</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;num_comp,&amp;ratio,&amp;is_not_covered,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mdat,ARLIM(mlo),ARLIM(mhi),</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdat,ARLIM(clo),ARLIM(chi),derives,hfine);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>copies<sp/>data<sp/>from<sp/>ghost<sp/>region<sp/>of<sp/>grid,<sp/>plus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>computes<sp/>derivative.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bdider[face](bdat,ARLIM(blo),ARLIM(bhi),</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lo,<sp/>hi,</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>finedat,ARLIM(finelo),ARLIM(finehi),</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;num_comp,hfine);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>derives;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/C_TensorMG/AMReX_MCInterpBndryData.cpp"/>
+  </compounddef>
+</doxygen>
