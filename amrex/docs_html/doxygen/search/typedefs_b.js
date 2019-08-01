@@ -12,5 +12,5 @@ var searchData=
   ['mpi_5fop',['MPI_Op',['../AMReX__ccse-mpi_8H.html#a1e6360539c256e76b432da612d0ec399',1,'AMReX_ccse-mpi.H']]],
   ['mpi_5frequest',['MPI_Request',['../AMReX__ccse-mpi_8H.html#a240e9d13a157e03c75e42306b13cd8d8',1,'AMReX_ccse-mpi.H']]],
   ['multifabid',['MultiFabId',['../namespaceamrex.html#a270e267cbd0e472dd8297d46a9c76854',1,'amrex']]],
-  ['mypariter',['MyParIter',['../classamrex_1_1NeighborParticleContainer.html#a9eee43a9d618075ae5aedcacc6c104e4',1,'amrex::NeighborParticleContainer']]]
+  ['mypariter',['MyParIter',['../classamrex_1_1NeighborParticleContainer.html#a9eee43a9d618075ae5aedcacc6c104e4',1,'amrex::NeighborParticleContainer::MyParIter()'],['../classamrex_1_1ParticleContainer.html#a8f484dde9d17693707879ecf2c403483',1,'amrex::ParticleContainer::MyParIter()']]]
 ];
