@@ -27,6 +27,7 @@ var searchData=
   ['planeif',['PlaneIF',['../classamrex_1_1EB2_1_1PlaneIF.html',1,'amrex::EB2']]],
   ['plotfiledata',['PlotFileData',['../classamrex_1_1PlotFileData.html',1,'amrex']]],
   ['plotfiledataimpl',['PlotFileDataImpl',['../classamrex_1_1PlotFileDataImpl.html',1,'amrex']]],
+  ['plus',['Plus',['../structamrex_1_1Plus.html',1,'amrex']]],
   ['poly_5feval',['poly_eval',['../interfacesdcquadrature__mod_1_1poly__eval.html',1,'sdcquadrature_mod']]],
   ['polynomialif',['PolynomialIF',['../classamrex_1_1EB2_1_1PolynomialIF.html',1,'amrex::EB2']]],
   ['polyterm',['PolyTerm',['../classamrex_1_1EB2_1_1PolyTerm.html',1,'amrex::EB2']]],

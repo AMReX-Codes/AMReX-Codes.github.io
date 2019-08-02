@@ -20,6 +20,8 @@ var searchData=
   ['streamretry',['StreamRetry',['../classamrex_1_1StreamRetry.html',1,'amrex']]],
   ['structofarrays',['StructOfArrays',['../structamrex_1_1StructOfArrays.html',1,'amrex']]],
   ['structofarrays_3c_20narrayreal_2c_20narrayint_20_3e',['StructOfArrays&lt; NArrayReal, NArrayInt &gt;',['../structamrex_1_1StructOfArrays.html',1,'amrex']]],
+  ['stva',['STVA',['../structamrex_1_1Scan_1_1detail_1_1STVA.html',1,'amrex::Scan::detail']]],
+  ['stva_3c_20u_20_3e',['STVA&lt; U &gt;',['../structamrex_1_1Scan_1_1detail_1_1STVA.html',1,'amrex::Scan::detail']]],
   ['sundlsmat',['sundlsmat',['../structsundials__fdlsmat_1_1sundlsmat.html',1,'sundials_fdlsmat']]],
   ['symmetricghost',['SymmetricGhost',['../structamrex_1_1MFUtil_1_1SymmetricGhost.html',1,'amrex::MFUtil']]]
 ];

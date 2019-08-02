@@ -17,6 +17,7 @@ var searchData=
   ['gpubndryfuncfab',['GpuBndryFuncFab',['../classamrex_1_1GpuBndryFuncFab.html',1,'amrex']]],
   ['gputuple',['GpuTuple',['../classamrex_1_1GpuTuple.html',1,'amrex']]],
   ['gputuple_3c_20fs_2e_2e_2e_20_3e',['GpuTuple&lt; Fs... &gt;',['../classamrex_1_1GpuTuple.html',1,'amrex']]],
+  ['gputuple_3c_20ts_2e_2e_2e_20_3e',['GpuTuple&lt; Ts... &gt;',['../classamrex_1_1GpuTuple.html',1,'amrex']]],
   ['gputupleelement',['GpuTupleElement',['../structamrex_1_1GpuTupleElement.html',1,'amrex']]],
   ['gputupleelement_3c_200_2c_20gputuple_3c_20head_2c_20tail_2e_2e_2e_20_3e_20_3e',['GpuTupleElement&lt; 0, GpuTuple&lt; Head, Tail... &gt; &gt;',['../structamrex_1_1GpuTupleElement_3_010_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html',1,'amrex']]],
   ['gputupleelement_3c_20i_2c_20gputuple_3c_20head_2c_20tail_2e_2e_2e_20_3e_20_3e',['GpuTupleElement&lt; I, GpuTuple&lt; Head, Tail... &gt; &gt;',['../structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html',1,'amrex']]],
@@ -24,6 +25,7 @@ var searchData=
   ['gputuplesize',['GpuTupleSize',['../structamrex_1_1GpuTupleSize.html',1,'amrex']]],
   ['gputuplesize_3c_20gputuple_3c_20ts_2e_2e_2e_20_3e_20_3e',['GpuTupleSize&lt; GpuTuple&lt; Ts... &gt; &gt;',['../structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html',1,'amrex']]],
   ['graphsafeguard',['GraphSafeGuard',['../structamrex_1_1Gpu_1_1GraphSafeGuard.html',1,'amrex::Gpu']]],
+  ['greater',['Greater',['../structamrex_1_1Greater.html',1,'amrex']]],
   ['gridsize',['GridSize',['../structamrex_1_1Gpu_1_1GridSize.html',1,'amrex::Gpu']]],
   ['gshoplevel',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
   ['gshoplsfactory',['GShopLSFactory',['../classamrex_1_1GShopLSFactory.html',1,'amrex']]]

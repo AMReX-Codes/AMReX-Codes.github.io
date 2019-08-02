@@ -4,6 +4,7 @@ var searchData=
   ['in',['in',['../classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a13b5bfe96f3e2fe411c9f66f4a582adf',1,'amrex::ForkJoin']]],
   ['includeall',['INCLUDEALL',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a54c51bf557fe09986321162dd762ddd1',1,'BLProfStats']]],
   ['includenone',['INCLUDENONE',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a4bc1d99bb527c9cfd1da7ed4e3b543a1',1,'BLProfStats']]],
+  ['inclusive',['inclusive',['../namespaceamrex_1_1Scan_1_1detail.html#a8219c39c16142a50fd130b53141595a7a62628cfd1cdd77d02c32812f048bada3',1,'amrex::Scan::detail']]],
   ['inhomogeneous',['Inhomogeneous',['../classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884ae9990b3a39151b6f2175caa7621e0c4b',1,'amrex::MLLinOp']]],
   ['inhomogeneous_5fbc',['Inhomogeneous_BC',['../classamrex_1_1LinOp.html#ad5f2fc8009714c47dc63ff6a7a73a5dea2789f303c136a93263ed4b63ce83d29a',1,'amrex::LinOp']]],
   ['inout',['inout',['../classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a54c9ccb45f5ee60133cca31fca024432',1,'amrex::ForkJoin']]],

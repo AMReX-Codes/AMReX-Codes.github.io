@@ -1,11 +1,13 @@
 var searchData=
 [
   ['validbox',['validbox',['../classamrex_1_1MFIter.html#a77ae102619461dabde09c7801390b841',1,'amrex::MFIter::validbox()'],['../classamrex_1_1EB2_1_1GFab.html#a9cf48022968ab6b27b6fc76b1064615a',1,'amrex::EB2::GFab::validbox()']]],
+  ['value',['value',['../classamrex_1_1ReduceData.html#a0d0638a86325d2fbf74cde6dcea98b1f',1,'amrex::ReduceData']]],
   ['variablecleanup',['variableCleanUp',['../classamrex_1_1LevelBld.html#a7ba6a4758a8402bc7d91ba7e636d2094',1,'amrex::LevelBld']]],
   ['variablename',['variableName',['../classamrex_1_1DeriveRec.html#a390fb97e437dd3b2fc3b5be48804dd0d',1,'amrex::DeriveRec']]],
   ['variablesetup',['variableSetUp',['../classamrex_1_1LevelBld.html#ab7638fd4ea5c9153a4c81797034b6688',1,'amrex::LevelBld']]],
   ['variablesetupfornewcompprocs',['variableSetUpForNewCompProcs',['../classamrex_1_1LevelBld.html#af5b8be4ad0e53d191561488d2f1136d3',1,'amrex::LevelBld']]],
   ['varnames',['varNames',['../classamrex_1_1PlotFileDataImpl.html#a4b41aced7339c79e76729d342456564e',1,'amrex::PlotFileDataImpl::varNames()'],['../classamrex_1_1PlotFileData.html#abdc4d9be2576d4f7b6f2b4af2ace47da',1,'amrex::PlotFileData::varNames()']]],
+  ['vecreduce',['VecReduce',['../namespaceamrex.html#aba3a050024df3a211f80bbfe8b332bcb',1,'amrex']]],
   ['vect',['vect',['../classamrex_1_1BCRec.html#a3a8e11f7ca6df497a8fa29179b7f85fa',1,'amrex::BCRec::vect() const &amp;noexcept'],['../classamrex_1_1BCRec.html#aa2d7756ef38cfb2063c54a6e6214cae5',1,'amrex::BCRec::vect()&amp;&amp;=delete']]],
   ['vectorlength',['vectorLength',['../classamrex_1_1RealVect.html#a4d9250b712d3d61357fdcfc7a3ee6e21',1,'amrex::RealVect']]],
   ['verbose',['Verbose',['../classamrex_1_1AmrCore.html#a927ec455a69cf736bb8e9ff03e5dae5e',1,'amrex::AmrCore::Verbose()'],['../classamrex_1_1AmrMesh.html#a9b78b807755b822ba0c46ec0e3150089',1,'amrex::AmrMesh::Verbose()'],['../classamrex_1_1ForkJoin.html#a54d827907888a8e49be3d7028a867770',1,'amrex::ForkJoin::Verbose()'],['../classamrex_1_1AmrData.html#af952472581f78b118b6337ec671d65f4',1,'amrex::AmrData::Verbose()'],['../classBLProfStats.html#ac33caf53799dfb8c0b2160bf2a228c1b',1,'BLProfStats::Verbose()'],['../classamrex_1_1ParticleContainer.html#aeed70d1b658b5fe9e82b19f53a4f4862',1,'amrex::ParticleContainer::Verbose()'],['../namespaceamrex.html#acafd26c0f64d958aed9ee56043c4f10e',1,'amrex::Verbose()']]],

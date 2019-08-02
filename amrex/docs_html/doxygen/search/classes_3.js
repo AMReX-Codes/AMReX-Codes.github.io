@@ -1,6 +1,7 @@
 var searchData=
 [
   ['darena',['DArena',['../classamrex_1_1DArena.html',1,'amrex']]],
+  ['data',['Data',['../unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html',1,'amrex::Scan::detail::BlockStatus&lt; T, true &gt;']]],
   ['dataallocator',['DataAllocator',['../structamrex_1_1DataAllocator.html',1,'amrex']]],
   ['datablock',['DataBlock',['../structCommProfStats_1_1DataBlock.html',1,'CommProfStats']]],
   ['datablock',['DataBlock',['../structRegionsProfStats_1_1DataBlock.html',1,'RegionsProfStats']]],
