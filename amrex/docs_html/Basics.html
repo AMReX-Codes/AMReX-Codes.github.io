@@ -99,7 +99,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#parallelcontext">ParallelContext</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#print">Print</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initialize-and-finalize">Initialize and Finalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialize-and-finalize">Initialize and Finalize</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#example-of-amr-grids">Example of AMR Grids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#box-intvect-and-indextype">Box, IntVect and IndexType</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#intvect">IntVect</a></li>
@@ -459,6 +462,30 @@ inserted by the compiler) do not function properly after
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Finalize</span></span></code> into its scope
 (e.g., a pair of curly braces or a separate function) to make sure
 resources are properly freed.</p>
+<div class="section" id="sharing-the-command-line">
+<h2>Sharing the Command Line<a class="headerlink" href="#sharing-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>In some cases we want AMReX to only read part of the command line – this happens, for example, when we
+are going to use AMReX in cooperation with another code package and that code also takes command-line
+arguments.</p>
+<p>In this case, we can replace a section of code like</p>
+<p>::
+int main (int argc, char* argv[])
+{
+amrex::Initialize(argc, argv);
+…..</p>
+<p>by a section of code like</p>
+<p>int main (int argc, char* argv[])
+{
+int argc_to_initialize = 2;
+amrex::Initialize(argc_to_initialize, argv);
+…..</p>
+<p>which tells the AMReX code to only read the first two arguments
+(the first one being the name of the executable).
+So, for example, if we had the command line as follows:</p>
+<p>::
+main2d*.exe inputs -tao_monitor</p>
+<p>then AMReX will parse the inputs file but will ignore the “-tao_monitor”</p>
+</div>
 </div>
 <div class="section" id="example-of-amr-grids">
 <span id="sec-basics-amrgrids"></span><h1>Example of AMR Grids<a class="headerlink" href="#example-of-amr-grids" title="Permalink to this headline">¶</a></h1>
