@@ -468,30 +468,26 @@ resources are properly freed.</p>
 are going to use AMReX in cooperation with another code package and that code also takes command-line
 arguments.</p>
 <p>In this case, we can replace a section of code like</p>
-<dl class="simple">
-<dt>::</dt><dd><p>void Initialize (MPI_Comm mpi_comm,
-int main (int argc, char* argv[])
-{
-amrex::Initialize(argc, argv);
-…..</p>
-</dd>
-</dl>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+<span class="p">.....</span>
+</pre></div>
+</div>
 <p>by a section of code like</p>
-<dl class="simple">
-<dt>::</dt><dd><p>int main (int argc, char* argv[])
-{
-int argc_to_initialize = 2;
-amrex::Initialize(argc_to_initialize, argv);
-…..</p>
-</dd>
-</dl>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+<span class="kt">int</span> <span class="n">argc_to_initialize</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc_to_initialize</span><span class="p">,</span> <span class="n">argv</span><span class="p">);</span>
+<span class="p">.....</span>
+</pre></div>
+</div>
 <p>which tells the AMReX code to only read the first two arguments
 (the first one being the name of the executable).
 So, for example, if we had the command line as follows:</p>
-<dl class="simple">
-<dt>::</dt><dd><p>main2d*.exe inputs -tao_monitor</p>
-</dd>
-</dl>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">main2d</span><span class="o">*</span><span class="p">.</span><span class="n">exe</span> <span class="n">inputs</span> <span class="o">-</span><span class="n">tao_monitor</span>
+</pre></div>
+</div>
 <p>then AMReX will parse the inputs file but will ignore the “-tao_monitor”</p>
 </div>
 </div>
