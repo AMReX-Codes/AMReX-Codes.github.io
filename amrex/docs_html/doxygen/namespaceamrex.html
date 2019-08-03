@@ -1967,9 +1967,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af7e3ca9c2455e95a21d765123c8d287e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af7e3ca9c2455e95a21d765123c8d287e">Random</a> ()</td></tr>
 <tr class="memdesc:af7e3ca9c2455e95a21d765123c8d287e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a psuedo-random double using C++11's mt19937.  <a href="#af7e3ca9c2455e95a21d765123c8d287e">More...</a><br /></td></tr>
 <tr class="separator:af7e3ca9c2455e95a21d765123c8d287e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7916c1f3adf571c67baaf478cf139bff"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7916c1f3adf571c67baaf478cf139bff">Random_int</a> (unsigned long n)</td></tr>
-<tr class="memdesc:a7916c1f3adf571c67baaf478cf139bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a psuedo-random int using C++11's mt19937.  <a href="#a7916c1f3adf571c67baaf478cf139bff">More...</a><br /></td></tr>
-<tr class="separator:a7916c1f3adf571c67baaf478cf139bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885cac80a06efd4e947f55ef585c60fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">AMREX_GPU_HOST</a> unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a885cac80a06efd4e947f55ef585c60fe">Random_int</a> (unsigned long n)</td></tr>
+<tr class="memdesc:a885cac80a06efd4e947f55ef585c60fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates one pseudorandom unsigned long integer which is uniformly distributed on [0,n-1]-interval for each call.  <a href="#a885cac80a06efd4e947f55ef585c60fe">More...</a><br /></td></tr>
+<tr class="separator:a885cac80a06efd4e947f55ef585c60fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a063e0c5d4ce2c053f2ed607639481832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a063e0c5d4ce2c053f2ed607639481832">InitRandom</a> (unsigned long seed, int nprocs=<a class="el" href="namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2">ParallelDescriptor::NProcs</a>())</td></tr>
 <tr class="memdesc:a063e0c5d4ce2c053f2ed607639481832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the seed of the random number generator.  <a href="#a063e0c5d4ce2c053f2ed607639481832">More...</a><br /></td></tr>
 <tr class="separator:a063e0c5d4ce2c053f2ed607639481832"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -26664,12 +26664,12 @@ template&lt;class FAB , class bar  = amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::
 
 </div>
 </div>
-<a class="anchor" id="a7916c1f3adf571c67baaf478cf139bff"></a>
+<a class="anchor" id="a885cac80a06efd4e947f55ef585c60fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long amrex::Random_int </td>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">AMREX_GPU_HOST</a> unsigned long amrex::Random_int </td>
           <td>(</td>
           <td class="paramtype">unsigned long&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
@@ -26678,8 +26678,8 @@ template&lt;class FAB , class bar  = amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::
       </table>
 </div><div class="memdoc">
 
-<p>Generate a psuedo-random int using C++11's mt19937. </p>
 <p>Generates one pseudorandom unsigned long integer which is uniformly distributed on [0,n-1]-interval for each call. </p>
+<p>The CPU version of this function uses C++11's mt19937. The GPU version uses CURAND's XORWOW generator. </p>
 
 </div>
 </div>
