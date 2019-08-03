@@ -2,7 +2,6 @@ var searchData=
 [
   ['v',['v',['../classamrex_1_1BoxCommHelper.html#acf6ba1d5b3161fdae4e2416e98718c18',1,'amrex::BoxCommHelper']]],
   ['val',['val',['../classamrex_1_1Orientation.html#a3a44078514365792a6288dcd61a668b0',1,'amrex::Orientation']]],
-  ['value',['value',['../structamrex_1_1Scan_1_1detail_1_1STVA.html#aa76259f63fc8b37f35274e568f69f0cd',1,'amrex::Scan::detail::STVA']]],
   ['variable_5fnames',['variable_names',['../classamrex_1_1DeriveRec.html#afef1822a23261763c6da7cc5dbe644b5',1,'amrex::DeriveRec']]],
   ['vcallstats',['vCallStats',['../structRegionsProfStats_1_1DataBlock.html#a40b142a9ce325e063b6f8003c5d3cc9d',1,'RegionsProfStats::DataBlock']]],
   ['vcartgrid',['vCartGrid',['../classamrex_1_1AmrData.html#a93d8a8d179bc25e308d12760514402c3',1,'amrex::AmrData']]],

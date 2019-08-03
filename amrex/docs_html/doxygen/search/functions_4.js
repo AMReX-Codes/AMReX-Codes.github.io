@@ -129,6 +129,8 @@ var searchData=
   ['doupdate',['doUpdate',['../classamrex_1_1InSituBridge.html#adb5a0dd2bc78011f72b1c9881139094b',1,'amrex::InSituBridge']]],
   ['dtlevel',['dtLevel',['../classamrex_1_1Amr.html#aabf57ca7f26b3f1bf6c5af3e1e2c4d66',1,'amrex::Amr::dtLevel(int level) const noexcept'],['../classamrex_1_1Amr.html#a904343b1efe2ff873b545c80a69e58e8',1,'amrex::Amr::dtLevel() const noexcept']]],
   ['dtmin',['dtMin',['../classamrex_1_1Amr.html#ace23e3b0cd924344014b8b5451d7c359',1,'amrex::Amr']]],
+  ['dtod_5fmemcpy',['dtod_memcpy',['../namespaceamrex_1_1Gpu.html#ab695bddeb3cc727225d95a1826472ae4',1,'amrex::Gpu']]],
+  ['dtod_5fmemcpy_5fasync',['dtod_memcpy_async',['../namespaceamrex_1_1Gpu.html#a00026ef5f8505586ed52acbbc11fdf91',1,'amrex::Gpu']]],
   ['dtoh_5fmemcpy',['dtoh_memcpy',['../namespaceamrex.html#a998c5815369d23cd73eea1b09f43a966',1,'amrex::dtoh_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#a8531953b8fba66482d81cad6c5dc3e73',1,'amrex::dtoh_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)'],['../namespaceamrex_1_1Gpu.html#aa443a27f05e81db793b131d3fc0b101c',1,'amrex::Gpu::dtoh_memcpy()']]],
   ['dtoh_5fmemcpy_5fasync',['dtoh_memcpy_async',['../namespaceamrex_1_1Gpu.html#a6cb0d90b937d4749b2219ad0e9fa8277',1,'amrex::Gpu']]],
   ['dumpnames',['dumpNames',['../classamrex_1_1StateDescriptor.html#a50c0aa090e4cf73ef8e8c57dda6b8929',1,'amrex::StateDescriptor']]],

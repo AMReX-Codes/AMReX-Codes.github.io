@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['s',['s',['../unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html#a856736317ca9e27fa41f05d3d0b42cd6',1,'amrex::Scan::detail::BlockStatus&lt; T, true &gt;::Data']]],
   ['s_5fmu',['s_mu',['../structsundials__fdlsmat_1_1sundlsmat.html#a83925a7fffc976a82ca5635219484816',1,'sundials_fdlsmat::sundlsmat']]],
   ['s_5fpout',['s_pout',['../namespaceamrex.html#acfcde804095e39e72c044334abee8044',1,'amrex']]],
   ['s_5fpout_5fbasename',['s_pout_basename',['../namespaceamrex.html#a2728e462d28f66dc62edc4974850d0e2',1,'amrex']]],
@@ -94,7 +93,6 @@ var searchData=
   ['states',['States',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a0765f0ebcbf2472c5229c18dc941432d',1,'amrex::AmrMeshDataAdaptor::InternalsType']]],
   ['stats',['stats',['../classamrex_1_1TinyProfiler.html#a5205c680d2a8d3fd69195aab83ce3b7a',1,'amrex::TinyProfiler']]],
   ['statsmap',['statsmap',['../classamrex_1_1TinyProfiler.html#ac803023249064c812474a5aa120ef397',1,'amrex::TinyProfiler']]],
-  ['status',['status',['../structamrex_1_1Scan_1_1detail_1_1STVA.html#a5a2e4baacb91eac373043018ffabd1fe',1,'amrex::Scan::detail::STVA::status()'],['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#aa0e103be8fb2a7e42cecf5a2522d3267',1,'amrex::Scan::detail::BlockStatus&lt; T, false &gt;::status()']]],
   ['stencil',['stencil',['../classamrex_1_1HypreABecLap2.html#a73dd70f5641b8d1fb5af628c304404a9',1,'amrex::HypreABecLap2']]],
   ['stop',['stop',['../structamrex_1_1StateData_1_1TimeInterval.html#add8128cb7af0fe0a981329a09e5fee37',1,'amrex::StateData::TimeInterval']]],
   ['stoptime',['stopTime',['../structBLProfStats_1_1TimeRange.html#a69fd0fb94f6216e039668dd5280a9bb0',1,'BLProfStats::TimeRange']]],

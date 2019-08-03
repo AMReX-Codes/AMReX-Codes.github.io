@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['i',['i',['../structamrex_1_1SrcComp.html#aa5c3f7babca38810fa13e9b419f9649b',1,'amrex::SrcComp::i()'],['../structamrex_1_1DestComp.html#ab31802a9ed04a354ae054227b10ec7e0',1,'amrex::DestComp::i()'],['../unionamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4_1_1Data.html#a957055c6af7eabda76b98c1e01e75b58',1,'amrex::Scan::detail::BlockStatus&lt; T, true &gt;::Data::i()']]],
+  ['i',['i',['../structamrex_1_1SrcComp.html#aa5c3f7babca38810fa13e9b419f9649b',1,'amrex::SrcComp::i()'],['../structamrex_1_1DestComp.html#ab31802a9ed04a354ae054227b10ec7e0',1,'amrex::DestComp::i()']]],
   ['i_5fs_5fx',['i_S_x',['../namespaceamrex_1_1algoim.html#a83f836cfcb795ee2e7cf5f031f4e33a5',1,'amrex::algoim']]],
   ['i_5fs_5fx2',['i_S_x2',['../namespaceamrex_1_1algoim.html#a07474818cba158a836bada961168c817',1,'amrex::algoim']]],
   ['i_5fs_5fx2_5fy',['i_S_x2_y',['../namespaceamrex_1_1algoim.html#a90a6f014a413b05f96c519b9dcab59dd',1,'amrex::algoim']]],
@@ -29,7 +29,6 @@ var searchData=
   ['in_5fbody',['in_body',['../classamrex_1_1EB2_1_1GeometryShop.html#a2ccca64586ef1e72de9428a89cbec5c3',1,'amrex::EB2::GeometryShop']]],
   ['in_5ffluid',['in_fluid',['../classamrex_1_1EB2_1_1GeometryShop.html#aeef1a9882f9d9ae0fc5754c41cfbe045',1,'amrex::EB2::GeometryShop']]],
   ['includeset',['includeSet',['../classBLProfStats.html#a2cf8abcd7afbb8e5e307c8420255c061',1,'BLProfStats']]],
-  ['inclusive',['inclusive',['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#a027e4f65499e79da7007b5f9507c4e4a',1,'amrex::Scan::detail::BlockStatus&lt; T, false &gt;']]],
   ['index_5fmap',['index_map',['../classamrex_1_1MFIter.html#ac482cbbf5ecee6f2593a3e4437623082',1,'amrex::MFIter']]],
   ['indexarray',['indexArray',['../classamrex_1_1FabArrayBase.html#a15c2b54df8386a9d38216410edce884c',1,'amrex::FabArrayBase']]],
   ['indexmap',['indexMap',['../structamrex_1_1FabArrayBase_1_1TileArray.html#a37311b356baf90979545e588fa7f6b6f',1,'amrex::FabArrayBase::TileArray']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['d',['d',['../structamrex_1_1Gpu_1_1DeviceScalar.html#a2e8ab226b92837706b9b1a1ae80b65d7',1,'amrex::Gpu::DeviceScalar::d()'],['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4.html#a6950160b2030b297124a1571626a19c2',1,'amrex::Scan::detail::BlockStatus&lt; T, true &gt;::d()'],['../structfarkode__mod_1_1arkodebutchertablemem.html#a3514a19ec077ba603133f86f3a0b9391',1,'farkode_mod::arkodebutchertablemem::d()'],['../classhacc_1_1Dfft.html#a5cd500fbad261878702ef0cfc4756e26',1,'hacc::Dfft::d()']]],
+  ['d',['d',['../structamrex_1_1Gpu_1_1DeviceScalar.html#a2e8ab226b92837706b9b1a1ae80b65d7',1,'amrex::Gpu::DeviceScalar::d()'],['../structfarkode__mod_1_1arkodebutchertablemem.html#a3514a19ec077ba603133f86f3a0b9391',1,'farkode_mod::arkodebutchertablemem::d()'],['../classhacc_1_1Dfft.html#a5cd500fbad261878702ef0cfc4756e26',1,'hacc::Dfft::d()']]],
   ['d2_5fchunk',['d2_chunk',['../structdistribution__t.html#a957bdfca24a116d7bb5f7bcbde3a93fa',1,'distribution_t']]],
   ['d3_5fchunk',['d3_chunk',['../structdistribution__t.html#a971ee0fe2ddf42e0669273a5ebda1512',1,'distribution_t']]],
   ['d_5fdata',['d_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#a4107f1e184ea871b40debea7a493a9bc',1,'amrex::Gpu::AsyncArray']]],
