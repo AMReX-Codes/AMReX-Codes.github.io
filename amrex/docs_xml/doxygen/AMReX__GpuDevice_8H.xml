@@ -3381,8 +3381,8 @@
 <codeline lineno="193" refid="namespaceamrex_1_1Gpu_1ab695bddeb3cc727225d95a1826472ae4" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1ab695bddeb3cc727225d95a1826472ae4" kindref="member">dtod_memcpy</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sz)<sp/>noexcept</highlight></codeline>
 <codeline lineno="194"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpy(p_h,<sp/>p_d,<sp/>sz,<sp/>hipMemcpyDeviceToDevice));,</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpy(p_h,<sp/>p_d,<sp/>sz,<sp/>cudaMemcpyDeviceToDevice));<sp/>)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpy(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>hipMemcpyDeviceToDevice));,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpy(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>cudaMemcpyDeviceToDevice));<sp/>)</highlight></codeline>
 <codeline lineno="198"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"></highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
@@ -3405,8 +3405,8 @@
 <codeline lineno="217" refid="namespaceamrex_1_1Gpu_1a00026ef5f8505586ed52acbbc11fdf91" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a00026ef5f8505586ed52acbbc11fdf91" kindref="member">dtod_memcpy_async</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sz)<sp/>noexcept</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_h,<sp/>p_d,<sp/>sz,<sp/>hipMemcpyDeviceToDevice,<sp/>gpuStream()));,</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_h,<sp/>p_d,<sp/>sz,<sp/>cudaMemcpyDeviceToDevice,<sp/>gpuStream()));<sp/>)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>hipMemcpyDeviceToDevice,<sp/>gpuStream()));,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>cudaMemcpyDeviceToDevice,<sp/>gpuStream()));<sp/>)</highlight></codeline>
 <codeline lineno="222"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal">#ifdef<sp/>AMREX_USE_GPU</highlight></codeline>
