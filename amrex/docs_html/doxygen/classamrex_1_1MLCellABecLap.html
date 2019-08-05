@@ -138,6 +138,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7d6d2646e9f6afaf7ed70bf0c86fa762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a913212b62872ccbdfaf19880d8114073"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLap.html#a913212b62872ccbdfaf19880d8114073">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_sol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> a_loc) const finaloverride</td></tr>
 <tr class="separator:a913212b62872ccbdfaf19880d8114073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbbb26f3be00d1c3cc7f04e657b356e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLap.html#afbbb26f3be00d1c3cc7f04e657b356e4">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_sol) const finaloverride</td></tr>
+<tr class="separator:afbbb26f3be00d1c3cc7f04e657b356e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c4aeebd8ef17280170ed19e619f076a"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLap.html#a7c4aeebd8ef17280170ed19e619f076a">getAScalar</a> () const =0</td></tr>
 <tr class="separator:a7c4aeebd8ef17280170ed19e619f076a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e67dc87e4b048beb5f44d38b3ccebfe"><td class="memItemLeft" align="right" valign="top">virtual Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLap.html#a0e67dc87e4b048beb5f44d38b3ccebfe">getBScalar</a> () const =0</td></tr>
@@ -264,8 +266,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a92b49ce3cd6f8877018a284c9a05663b inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7992c664d65948c99e3661e6d23a646 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLLinOp.html">MLLinOp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af7992c664d65948c99e3661e6d23a646">makeNLinOp</a> (int grid_size) const =0</td></tr>
 <tr class="separator:af7992c664d65948c99e3661e6d23a646 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2419e6b4d384edbd5695daca078e310 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ad2419e6b4d384edbd5695daca078e310">getFluxes</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_flux, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;a_sol) const </td></tr>
-<tr class="separator:ad2419e6b4d384edbd5695daca078e310 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -709,6 +709,42 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOp.html#ae6a653e83929e0f2c41482551c10b4e8">amrex::MLLinOp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afbbb26f3be00d1c3cc7f04e657b356e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLCellABecLap::getFluxes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_flux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_sol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1MLLinOp.html#ad2419e6b4d384edbd5695daca078e310">amrex::MLLinOp</a>.</p>
 
 </div>
 </div>
