@@ -66,6 +66,8 @@ var searchData=
   ['amrpargdb',['AmrParGDB',['../classamrex_1_1AmrParGDB.html',1,'amrex']]],
   ['amrparticlecontainer',['AmrParticleContainer',['../classamrex_1_1AmrParticleContainer.html',1,'amrex']]],
   ['amrtracerparticlecontainer',['AmrTracerParticleContainer',['../classamrex_1_1AmrTracerParticleContainer.html',1,'amrex']]],
+  ['apply_5fresult',['apply_result',['../structamrex_1_1detail_1_1apply__result.html',1,'amrex::detail']]],
+  ['apply_5fresult_3c_20f_2c_20gputuple_3c_20ts_2e_2e_2e_20_3e_20_3e',['apply_result&lt; F, GpuTuple&lt; Ts... &gt; &gt;',['../structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html',1,'amrex::detail']]],
   ['arena',['Arena',['../classamrex_1_1Arena.html',1,'amrex']]],
   ['arenainfo',['ArenaInfo',['../structamrex_1_1ArenaInfo.html',1,'amrex']]],
   ['arkodebutchertablemem',['arkodebutchertablemem',['../structfarkode__mod_1_1arkodebutchertablemem.html',1,'farkode_mod']]],
