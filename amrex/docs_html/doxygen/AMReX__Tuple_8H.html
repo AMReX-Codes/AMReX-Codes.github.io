@@ -98,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__IndexSequence_8H_source.html">AMReX_IndexSequence.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuQualifiers_8H_source.html">AMReX_GpuQualifiers.H</a>&gt;</code><br />
 </div>
 <p><a href="AMReX__Tuple_8H_source.html">Go to the source code of this file.</a></p>
@@ -127,6 +128,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1unwrap.html">amrex::detail::unwrap&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html">amrex::detail::unwrap&lt; std::reference_wrapper&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__t.html">amrex::detail::tuple_cat_t&lt;... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__t_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html">amrex::detail::tuple_cat_t&lt; GpuTuple&lt; Ts... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__t_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2s_8_8_8_01_4_00_01TPs_8_8_8_01_4.html">amrex::detail::tuple_cat_t&lt; GpuTuple&lt; T1s... &gt;, GpuTuple&lt; T2s... &gt;, TPs... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -159,9 +166,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a809cf12d60d66dd13c0363d64f1910fc"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
 <tr class="memitem:a809cf12d60d66dd13c0363d64f1910fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr GpuTupleElement&lt; I, GpuTuple&lt; Ts... &gt; &gt;::type const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a809cf12d60d66dd13c0363d64f1910fc">amrex::get</a> (GpuTuple&lt; Ts... &gt; const &amp;tup) noexcept</td></tr>
 <tr class="separator:a809cf12d60d66dd13c0363d64f1910fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a6c361178d55bdba420070c21d703a9"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:a3a6c361178d55bdba420070c21d703a9"><td class="memTemplItemLeft" align="right" valign="top">GpuTuple&lt; Ts... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3a6c361178d55bdba420070c21d703a9">amrex::makeTuple</a> (Ts &amp;&amp;...args)</td></tr>
-<tr class="separator:a3a6c361178d55bdba420070c21d703a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04bfb2a52fee4b6950211a7872b3256"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
+<tr class="memitem:ae04bfb2a52fee4b6950211a7872b3256"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr GpuTuple&lt; Ts... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae04bfb2a52fee4b6950211a7872b3256">amrex::makeTuple</a> (Ts &amp;&amp;...args)</td></tr>
+<tr class="separator:ae04bfb2a52fee4b6950211a7872b3256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08b8c5a81b22b77f167cc69d61056eb"><td class="memTemplParams" colspan="2">template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </td></tr>
+<tr class="memitem:ac08b8c5a81b22b77f167cc69d61056eb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac08b8c5a81b22b77f167cc69d61056eb">amrex::detail::make_tuple</a> (TP1 &amp;&amp;a, TP2 &amp;&amp;b, IndexSequence&lt; N1... &gt; const &amp;n1, IndexSequence&lt; N2... &gt; const &amp;n2)</td></tr>
+<tr class="separator:ac08b8c5a81b22b77f167cc69d61056eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a301ebb1a7f5dd87f6648dc6b4db0d8df"><td class="memTemplParams" colspan="2">template&lt;typename TP &gt; </td></tr>
+<tr class="memitem:a301ebb1a7f5dd87f6648dc6b4db0d8df"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a301ebb1a7f5dd87f6648dc6b4db0d8df">amrex::TupleCat</a> (TP &amp;&amp;a) -&gt; typename detail::tuple_cat_t&lt; detail::tuple_decay_t&lt; TP &gt; &gt;::type</td></tr>
+<tr class="separator:a301ebb1a7f5dd87f6648dc6b4db0d8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d6182635622fe383c506f0d0c96840"><td class="memTemplParams" colspan="2">template&lt;typename TP1 , typename TP2 &gt; </td></tr>
+<tr class="memitem:a28d6182635622fe383c506f0d0c96840"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a28d6182635622fe383c506f0d0c96840">amrex::TupleCat</a> (TP1 &amp;&amp;a, TP2 &amp;&amp;b) -&gt; typename detail::tuple_cat_t&lt; detail::tuple_decay_t&lt; TP1 &gt;, detail::tuple_decay_t&lt; TP2 &gt; &gt;::type</td></tr>
+<tr class="separator:a28d6182635622fe383c506f0d0c96840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8732e4395c2eaa1f7ae0c25e8f6c6770"><td class="memTemplParams" colspan="2">template&lt;typename TP1 , typename TP2 , typename... TPs&gt; </td></tr>
+<tr class="memitem:a8732e4395c2eaa1f7ae0c25e8f6c6770"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8732e4395c2eaa1f7ae0c25e8f6c6770">amrex::TupleCat</a> (TP1 &amp;&amp;a, TP2 &amp;&amp;b, TPs &amp;&amp;...args) -&gt; typename detail::tuple_cat_t&lt; detail::tuple_decay_t&lt; TP1 &gt;, detail::tuple_decay_t&lt; TP2 &gt;, detail::tuple_decay_t&lt; TPs &gt;... &gt;::type</td></tr>
+<tr class="separator:a8732e4395c2eaa1f7ae0c25e8f6c6770"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

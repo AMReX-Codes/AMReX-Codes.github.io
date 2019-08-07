@@ -12,8 +12,8 @@ var searchData=
   ['insitubridge',['InSituBridge',['../classamrex_1_1InSituBridge.html',1,'amrex']]],
   ['intdescriptor',['IntDescriptor',['../classamrex_1_1IntDescriptor.html',1,'amrex']]],
   ['integrator_5fstats_5ft',['integrator_stats_t',['../structintegrator__stats__mod_1_1integrator__stats__t.html',1,'integrator_stats_mod']]],
-  ['internalstype',['InternalsType',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html',1,'amrex::AmrMeshDataAdaptor']]],
   ['internalstype',['InternalsType',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html',1,'amrex::AmrDataAdaptor']]],
+  ['internalstype',['InternalsType',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html',1,'amrex::AmrMeshDataAdaptor']]],
   ['interpbndrydata',['InterpBndryData',['../classamrex_1_1InterpBndryData.html',1,'amrex']]],
   ['interphook',['InterpHook',['../classamrex_1_1InterpHook.html',1,'amrex']]],
   ['interpolater',['Interpolater',['../classamrex_1_1Interpolater.html',1,'amrex']]],
@@ -40,6 +40,6 @@ var searchData=
   ['isgpuable_3c_20unionif_3c_20f_20_3e_2c_20typename_20std_3a_3aenable_5fif_3c_20isgpuable_3c_20f_20_3e_3a_3avalue_20_3e_3a_3atype_20_3e',['IsGPUable&lt; UnionIF&lt; F &gt;, typename std::enable_if&lt; IsGPUable&lt; F &gt;::value &gt;::type &gt;',['../structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01F_01_4_00_01typename_01std_1_1enable__if_3_01IsG689753bc6f6f97a7132aea5fbd359250.html',1,'amrex::EB2']]],
   ['isgpuable_3c_20unionif_3c_20head_2c_20tail_2e_2e_2e_20_3e_2c_20typename_20std_3a_3aenable_5fif_3c_20isgpuable_3c_20head_20_3e_3a_3avalue_20_3e_3a_3atype_20_3e',['IsGPUable&lt; UnionIF&lt; Head, Tail... &gt;, typename std::enable_if&lt; IsGPUable&lt; Head &gt;::value &gt;::type &gt;',['../structamrex_1_1EB2_1_1IsGPUable_3_01UnionIF_3_01Head_00_01Tail_8_8_8_01_4_00_01typename_01std_1_0106a99ebe3263da4342cdd68c621473.html',1,'amrex::EB2']]],
   ['isgpuable_3c_20unionif_3c_20tail_2e_2e_2e_20_3e_20_3e',['IsGPUable&lt; UnionIF&lt; Tail... &gt; &gt;',['../structamrex_1_1EB2_1_1IsGPUable.html',1,'amrex::EB2']]],
-  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]],
-  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]]
+  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]],
+  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]]
 ];

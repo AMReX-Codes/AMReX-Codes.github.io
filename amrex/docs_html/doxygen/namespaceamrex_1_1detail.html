@@ -105,6 +105,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html">gpu_tuple_impl&lt; I, Head, Tail... &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__t.html">tuple_cat_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__t_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2s_8_8_8_01_4_00_01TPs_8_8_8_01_4.html">tuple_cat_t&lt; GpuTuple&lt; T1s... &gt;, GpuTuple&lt; T2s... &gt;, TPs... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1tuple__cat__t_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html">tuple_cat_t&lt; GpuTuple&lt; Ts... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1unwrap.html">unwrap</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1detail_1_1unwrap_3_01std_1_1reference__wrapper_3_01T_01_4_01_4.html">unwrap&lt; std::reference_wrapper&lt; T &gt; &gt;</a></td></tr>
@@ -152,6 +158,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a80728f757289cb823fe33703fe6f867c"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
 <tr class="memitem:a80728f757289cb823fe33703fe6f867c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a80728f757289cb823fe33703fe6f867c">get_impl</a> (<a class="el" href="structamrex_1_1detail_1_1gpu__tuple__element.html">detail::gpu_tuple_element</a>&lt; I, typename <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &gt; const &amp;te) noexcept</td></tr>
 <tr class="separator:a80728f757289cb823fe33703fe6f867c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac08b8c5a81b22b77f167cc69d61056eb"><td class="memTemplParams" colspan="2">template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </td></tr>
+<tr class="memitem:ac08b8c5a81b22b77f167cc69d61056eb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ac08b8c5a81b22b77f167cc69d61056eb">make_tuple</a> (TP1 &amp;&amp;a, TP2 &amp;&amp;b, <a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N1... &gt; const &amp;n1, <a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N2... &gt; const &amp;n2)</td></tr>
+<tr class="separator:ac08b8c5a81b22b77f167cc69d61056eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="a4dabd168440a362478e0d2887dfdfe23"></a>
@@ -328,6 +337,46 @@ template&lt;std::size_t I, typename... Ts&gt; </div>
 <span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac08b8c5a81b22b77f167cc69d61056eb"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr R amrex::detail::make_tuple </td>
+          <td>(</td>
+          <td class="paramtype">TP1 &amp;&amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TP2 &amp;&amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N1... &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>n1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N2... &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
