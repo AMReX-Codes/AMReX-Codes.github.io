@@ -363,6 +363,17 @@ done using the command:</p>
 “play” button on the VCR-like control panel to preview all the frames. To save
 the movie, choose “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Save movie …”, and follow the
 on-screen instructions.</p>
+<p>Caveat:</p>
+<p>With at least some (possibly all) versions of VisIt,
+the Visit reader determines “Cycle” not by reading the Header
+file but from the name of the plotfile (directory).  It appears
+to set “Cycle” by assuming the digits immediately follow the string “plt”
+in the name.</p>
+<p>So … if you call it myplt00100 or this_is_my_plt00100 then it will
+correctly recognize and print Cycle: 100</p>
+<p>But if you do not have the number immediately following “plt”,
+e.g. you name it pltx00100, then it will not be able to correctly recognize
+and print the value for “Cycle”.  (It will still read and display the data itself.)</p>
 </div>
 <div class="section" id="paraview">
 <span id="section-1"></span><h1>ParaView<a class="headerlink" href="#paraview" title="Permalink to this headline">¶</a></h1>
