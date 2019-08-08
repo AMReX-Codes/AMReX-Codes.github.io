@@ -3012,14 +3012,24 @@
 <codeline lineno="362"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Args&gt;</highlight></codeline>
 <codeline lineno="363"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="364"><highlight class="normal">constexpr<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt;Args&amp;...&gt;</highlight></codeline>
-<codeline lineno="365" refid="namespaceamrex_1a866e412fc9fa1c9935adc5340e0cda38" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1a866e412fc9fa1c9935adc5340e0cda38" kindref="member">Tie</ref><sp/>(Args&amp;...<sp/>args)</highlight></codeline>
+<codeline lineno="365" refid="namespaceamrex_1a2b46f50ec085e4d83531caf667873214" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1a2b46f50ec085e4d83531caf667873214" kindref="member">Tie</ref><sp/>(Args&amp;...<sp/>args)<sp/>noexcept</highlight></codeline>
 <codeline lineno="366"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt;Args&amp;...&gt;(args...);</highlight></codeline>
 <codeline lineno="368"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="369"><highlight class="normal"></highlight></codeline>
-<codeline lineno="370"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ForwardAsTuple</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="371"><highlight class="normal"></highlight></codeline>
-<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_TUPLE_H_*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal">...<sp/>Ts&gt;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
+<codeline lineno="374"><highlight class="normal">constexpr<sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt;Ts&amp;&amp;...&gt;</highlight></codeline>
+<codeline lineno="375" refid="namespaceamrex_1aa8ff86b8539faedaae472e050eac1380" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1aa8ff86b8539faedaae472e050eac1380" kindref="member">ForwardAsTuple</ref><sp/>(Ts&amp;&amp;...<sp/>args)<sp/>noexcept</highlight></codeline>
+<codeline lineno="376"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt;Ts&amp;&amp;...&gt;(std::forward&lt;Ts&gt;(args)...);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*AMREX_TUPLE_H_*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Tuple.H"/>
   </compounddef>
