@@ -346,10 +346,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_2D_C.cpp" line="5" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_2D_C.cpp" bodystart="5" bodyend="114"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a4326a942766ad3edeadf4eeb7499608d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a9d0c65dca42f717f214da620224b8727" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::build_cells</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm)</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Real small_volfrac)</argsstring>
         <name>build_cells</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -394,6 +394,10 @@
         <param>
           <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
           <declname>bnorm</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>small_volfrac</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -545,10 +549,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="119" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="119" bodyend="477"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a50c2e04b17b3ea318d87d0b12ef9b13b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1aeddaca0087943324ce3ed0c25edab27e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::build_cells</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;apz, Array4&lt; Real const  &gt; const &amp;fcx, Array4&lt; Real const  &gt; const &amp;fcy, Array4&lt; Real const  &gt; const &amp;fcz, Array4&lt; Real const  &gt; const &amp;m2x, Array4&lt; Real const  &gt; const &amp;m2y, Array4&lt; Real const  &gt; const &amp;m2z, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Array4&lt; EBCellFlag &gt; const &amp;ctmp)</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;apz, Array4&lt; Real const  &gt; const &amp;fcx, Array4&lt; Real const  &gt; const &amp;fcy, Array4&lt; Real const  &gt; const &amp;fcz, Array4&lt; Real const  &gt; const &amp;m2x, Array4&lt; Real const  &gt; const &amp;m2y, Array4&lt; Real const  &gt; const &amp;m2z, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Array4&lt; EBCellFlag &gt; const &amp;ctmp, Real small_volfrac)</argsstring>
         <name>build_cells</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -630,13 +634,17 @@
           <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> &gt; const &amp;</type>
           <declname>ctmp</declname>
         </param>
+        <param>
+          <type>Real</type>
+          <declname>small_volfrac</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="479" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="479" bodyend="867"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="479" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="479" bodyend="868"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a3f7a5615d8bbdbe47974e1f67f8ae9d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
