@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespaceeb__to__vtk" kind="namespace" language="Fortran">
+    <compoundname>eb_to_vtk</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceeb__to__vtk_1aa64db3c9a72c59fd44f1bb5bba4dfba9" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer eb_to_vtk::np</definition>
+        <argsstring></argsstring>
+        <name>np</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="8" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceeb__to__vtk_1a71c12e48fa772c821604d60f41edcb92" prot="public" static="no" mutable="no">
+        <type>integer</type>
+        <definition>integer eb_to_vtk::nc</definition>
+        <argsstring></argsstring>
+        <name>nc</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="9" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceeb__to__vtk_1af4aa8a71e2a1ce390c6ff3f1d76196ad" prot="public" static="no" mutable="no">
+        <type><ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), dimension(:,:), allocatable</type>
+        <definition>real(amrex_real), dimension(:,:), allocatable eb_to_vtk::points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="11" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceeb__to__vtk_1a069503eead7c58af1120d91ce45d7286" prot="public" static="no" mutable="no">
+        <type>integer, dimension(:,:), allocatable</type>
+        <definition>integer, dimension(:,:), allocatable eb_to_vtk::connectivity</definition>
+        <argsstring></argsstring>
+        <name>connectivity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="12" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceeb__to__vtk_1a6a2cf175b787124e39ed44002c759734" prot="public" static="no" mutable="no">
+        <type><ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>), parameter</type>
+        <definition>real(amrex_real), parameter eb_to_vtk::stol</definition>
+        <argsstring></argsstring>
+        <name>stol</name>
+        <initializer>= 1.0d-12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="15" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="15" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a054a74ef384f0ae871415fe28b0719eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::eb_to_polygon</definition>
+        <argsstring>(dx, lo, hi, flag, fglo, fghi, bcent, blo, bhi, apx, axlo, axhi, apy, aylo, ayhi, apz, azlo, azhi)</argsstring>
+        <name>eb_to_polygon</name>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <param>
+          <type>fglo</type>
+          <defname>fglo</defname>
+        </param>
+        <param>
+          <type>fghi</type>
+          <defname>fghi</defname>
+        </param>
+        <param>
+          <type>bcent</type>
+          <defname>bcent</defname>
+        </param>
+        <param>
+          <type>blo</type>
+          <defname>blo</defname>
+        </param>
+        <param>
+          <type>bhi</type>
+          <defname>bhi</defname>
+        </param>
+        <param>
+          <type>apx</type>
+          <defname>apx</defname>
+        </param>
+        <param>
+          <type>axlo</type>
+          <defname>axlo</defname>
+        </param>
+        <param>
+          <type>axhi</type>
+          <defname>axhi</defname>
+        </param>
+        <param>
+          <type>apy</type>
+          <defname>apy</defname>
+        </param>
+        <param>
+          <type>aylo</type>
+          <defname>aylo</defname>
+        </param>
+        <param>
+          <type>ayhi</type>
+          <defname>ayhi</defname>
+        </param>
+        <param>
+          <type>apz</type>
+          <defname>apz</defname>
+        </param>
+        <param>
+          <type>azlo</type>
+          <defname>azlo</defname>
+        </param>
+        <param>
+          <type>azhi</type>
+          <defname>azhi</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="19" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="22" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a1ef2b93ebcfa7fede387e2a7b78aacf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::write_eb_vtp</definition>
+        <argsstring>(myID)</argsstring>
+        <name>write_eb_vtp</name>
+        <param>
+          <type>myID</type>
+          <defname>myID</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="196" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="197" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a8ebfd223497119a32557c742288690d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::write_pvtp</definition>
+        <argsstring>(nProcs)</argsstring>
+        <name>write_pvtp</name>
+        <param>
+          <type>nProcs</type>
+          <defname>nProcs</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="271" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="272" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1ad9288ae5037a3088f418eb5466338df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::calc_hesse</definition>
+        <argsstring>(distance, n0, p, normal, centroid)</argsstring>
+        <name>calc_hesse</name>
+        <param>
+          <type>distance</type>
+          <defname>distance</defname>
+        </param>
+        <param>
+          <type>n0</type>
+          <defname>n0</defname>
+        </param>
+        <param>
+          <type>p</type>
+          <defname>p</defname>
+        </param>
+        <param>
+          <type>normal</type>
+          <defname>normal</defname>
+        </param>
+        <param>
+          <type>centroid</type>
+          <defname>centroid</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="313" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="314" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1aa3b6da67303e6da9e06a1634b42b6f2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::calc_alpha</definition>
+        <argsstring>(alpha, distance, n0, p, vertex, dx)</argsstring>
+        <name>calc_alpha</name>
+        <param>
+          <type>alpha</type>
+          <defname>alpha</defname>
+        </param>
+        <param>
+          <type>distance</type>
+          <defname>distance</defname>
+        </param>
+        <param>
+          <type>n0</type>
+          <defname>n0</defname>
+        </param>
+        <param>
+          <type>p</type>
+          <defname>p</defname>
+        </param>
+        <param>
+          <type>vertex</type>
+          <defname>vertex</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="336" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="337" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1ab02e4d455b745b21f541b393494f7f8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::calc_intercects</definition>
+        <argsstring>(int_count, intersect_flags, alpha)</argsstring>
+        <name>calc_intercects</name>
+        <param>
+          <type>int_count</type>
+          <defname>int_count</defname>
+        </param>
+        <param>
+          <type>intersect_flags</type>
+          <defname>intersect_flags</defname>
+        </param>
+        <param>
+          <type>alpha</type>
+          <defname>alpha</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="375" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="376" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a2394c7bbad14e1d79388ced6344a0ee6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>logical function</type>
+        <definition>logical function eb_to_vtk::intersects</definition>
+        <argsstring>(val)</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>val</type>
+          <defname>val</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="398" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="399" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a590f298fddfa740b54276cfeb0e79049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::grow_points</definition>
+        <argsstring>(nPoints, lPoints)</argsstring>
+        <name>grow_points</name>
+        <param>
+          <type>nPoints</type>
+          <defname>nPoints</defname>
+        </param>
+        <param>
+          <type>lPoints</type>
+          <defname>lPoints</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="408" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="409" bodyend="430"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a5c19ae48823ff8d6869ae04d8cc63e65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::grow_connectivity</definition>
+        <argsstring>(nConnections, lConnectivity)</argsstring>
+        <name>grow_connectivity</name>
+        <param>
+          <type>nConnections</type>
+          <defname>nConnections</defname>
+        </param>
+        <param>
+          <type>lConnectivity</type>
+          <defname>lConnectivity</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="438" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="439" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1ae9f015cd5db02ee6b08ca3391dafeac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::reorder_polygon</definition>
+        <argsstring>(lpoints, lconnect, lnormal, lcentroid)</argsstring>
+        <name>reorder_polygon</name>
+        <param>
+          <type>lpoints</type>
+          <defname>lpoints</defname>
+        </param>
+        <param>
+          <type>lconnect</type>
+          <defname>lconnect</defname>
+        </param>
+        <param>
+          <type>lnormal</type>
+          <defname>lnormal</defname>
+        </param>
+        <param>
+          <type>lcentroid</type>
+          <defname>lcentroid</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="470" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="471" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceeb__to__vtk_1a4ebc4e5e25cf11e32b2e598d933b2e6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine eb_to_vtk::eb_grid_coverage</definition>
+        <argsstring>(myID, dx, lo, hi, flag, fglo, fghi)</argsstring>
+        <name>eb_grid_coverage</name>
+        <param>
+          <type>myID</type>
+          <defname>myID</defname>
+        </param>
+        <param>
+          <type>dx</type>
+          <defname>dx</defname>
+        </param>
+        <param>
+          <type>lo</type>
+          <defname>lo</defname>
+        </param>
+        <param>
+          <type>hi</type>
+          <defname>hi</defname>
+        </param>
+        <param>
+          <type>flag</type>
+          <defname>flag</defname>
+        </param>
+        <param>
+          <type>fglo</type>
+          <defname>fglo</defname>
+        </param>
+        <param>
+          <type>fghi</type>
+          <defname>fghi</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="558" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" bodystart="560" bodyend="482"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_eb_to_pvd.F90" line="1" column="1"/>
+  </compounddef>
+</doxygen>
