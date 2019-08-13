@@ -31,10 +31,10 @@
         <briefdescription>
 <para>pure subroutine INIT_LEVELSET </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Initializes level-set array to the fortran huge(real(c_real)) value. This way these values of the level-set function will be overwritten by the <ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">min()</ref> function (used in these levelset_update function).</para><para>Comments: If you want to &quot;clear&quot; the whole level-set array (phi), make sure that lo and hi match the grown tile box (i.e. mfi.growntilebox()). </para>        </detaileddescription>
+<para>Purpose: Initializes level-set array to the fortran huge(real(amrex_real)) value. This way these values of the level-set function will be overwritten by the <ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">min()</ref> function (used in these levelset_update function).</para><para>Comments: If you want to &quot;clear&quot; the whole level-set array (phi), make sure that lo and hi match the grown tile box (i.e. mfi.growntilebox()). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="26" bodyend="44"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="24" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="27" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a1c10a6c42c5fa29ee1065812154ca161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -95,7 +95,7 @@
 <para>Purpose: given a list of EB-facets, fill the level-set MultiFab between <computeroutput>lo</computeroutput> and <computeroutput>hi</computeroutput> with the closets distance to the EB-facests. Also fill a iMultiFab with 0&apos;s and 1&apos;s. 0 Indicating that the closest distance was not the result of a projection onto a facet&apos;s plane, but instead onto an edge/corner.</para><para>Comments: Distances are <bold>signed</bold> ( &lt; 0 =&gt; inside an EB). Note that at this point the algorithm assumes an edge case lies inside an EB (i.e. its distance is negative). These points are marked using valid = 0. We recommend that the EB&apos;s implicit function is used to check these cases (i.e. validate the level-set). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="69" bodyend="107"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="70" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a6ba6037fd77f561d4f86d727b04e984a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -172,7 +172,7 @@
 <para>Purpose: given a list of EB-facets, fill the level-set MultiFab between <computeroutput>lo</computeroutput> and <computeroutput>hi</computeroutput> with the closets distance to the EB-facests. For all <computeroutput><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs(ls_guess)</ref> &gt; ls_thres</computeroutput>, level-set filling is aborted and the level-set is set to +/- <computeroutput>ls_thres</computeroutput>. This avoid unnecessary filling far from EB boundaries.</para><para>Also fill a iMultiFab with 0&apos;s and 1&apos;s. 0 Indicating that the closest distance was not the result of a projection onto a facet&apos;s plane, but instead onto an edge/corner.</para><para>Comments: Distances are <bold>signed</bold> ( &lt; 0 =&gt; inside an EB). Note that at this point the algorithm assumes an edge case lies inside an EB (i.e. its distance is negative). These points are marked using valid = 0. We recommend that the EB&apos;s implicit function is used to check these cases (i.e. validate the level-set). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="140" bodyend="198"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="134" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="141" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a4ce3094e44f7378a03f37a74a639482c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -237,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="203" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="209" bodyend="319"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="204" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="210" bodyend="320"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a32dc6d51e3c9086cc38f75b50d5f49d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -274,7 +274,7 @@
 <para>Purpose: Find the distance to the closets point on the surface defined by the EB-facet list (from the point <computeroutput>pos</computeroutput>). Note that this distance is <bold>signed</bold> =&gt; if the vector <computeroutput>eb_center - pos</computeroutput> points <bold>towards</bold> the surface.</para><para>Comments: sometimes the closes point is on an EB-facet edge. In this case, the surface normal is not trivial, and this algorithm defaults to a negative distance. However this point is given an <computeroutput>valid</computeroutput> flag of false. It is recommended that the EB&apos;s implicit function is used to determine the weather the lies in the EB interior. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="338" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="341" bodyend="433"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="339" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="342" bodyend="435"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a1c875b67fc227b82c5f861a36f6f46b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -311,7 +311,7 @@
 <para>PURPOSE: sets max/min threshold to the level-set function. This ensures that the level-set function is a local description near boundaries.</para><para>COMMENTS: some applications (such as filling level-set from discrete) EB facets become less accurate far from the boundary. Thresholding can therefore eliminate spurious level-set values </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="449" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="452" bodyend="480"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="451" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="454" bodyend="482"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a467e32c29d3014fe63c552a79447303e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -372,7 +372,7 @@
 <para>Purpose: ensure that the sign of the level-set (<computeroutput>phi</computeroutput>) function is the same as the sign of the implicit function (<computeroutput>impf</computeroutput>), if <computeroutput>valid == 0</computeroutput>.</para><para>Comments: Note the role of <computeroutput>valid</computeroutput> above, <computeroutput>valid</computeroutput> is 0 for points where the closest distance to the surface is on an edge. In that case, fill_levelset_eb defaults to negative distances. Hence this function can be used for checking this assumption, and flipping the level-set value&apos;s sign if necessary. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="496" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="501" bodyend="527"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="498" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="503" bodyend="529"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1ad9664cc193292d3d5dc3f25f8a48585d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -433,7 +433,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="532" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="537" bodyend="635"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="534" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="539" bodyend="637"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1aceb5e718aea8333fa7da111bcd376318" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -502,7 +502,7 @@
 <para>Purpose: Update level set using the &quot;intersection&quot; selection rule: the minimum value between <computeroutput>phi</computeroutput> and <computeroutput>ls_in</computeroutput> is stored in <computeroutput>phi</computeroutput>. This is the level-set equivalent of the <computeroutput>GeometryShop::IntersectionIF</computeroutput>.</para><para>Comments: The role of <computeroutput>valid</computeroutput> here is to flag cells near (or in) regions of negative level-set. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="650" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="656" bodyend="687"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="652" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="658" bodyend="689"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a29bb995199f1c3b055423024d8e5f73b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -575,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="692" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="698" bodyend="804"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="694" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="700" bodyend="806"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1afbb0fc2ca439721fba94147c1b86ebf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -644,7 +644,7 @@
 <para>Purpose: Update level set using the &quot;union&quot; selection rule: the maximum value between <computeroutput>phi</computeroutput> and <computeroutput>ls_in</computeroutput> is stored in <computeroutput>phi</computeroutput>. This is the level-set equivalent of the <computeroutput>GeometryShop::IntersectionIF</computeroutput>.</para><para>Comments: The role of <computeroutput>valid</computeroutput> here is to flag cells near (or in) regions of negative level-set. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="820" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="826" bodyend="857"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="822" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="828" bodyend="859"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a605631bad24485775cdcb44fe4e0cabc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -717,7 +717,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="862" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="868" bodyend="976"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="864" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="870" bodyend="978"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1adf1d5c0269e73b0a27467dd1797809dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -766,7 +766,7 @@
 <para>Purpose: Fills elements of valid with 1 whenever it corresponds to a position with n_pad of the level set value being negative (i.e. phi &lt; 0), and 0 otherwise. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="988" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="993" bodyend="1015"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="990" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="995" bodyend="1017"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a8e72c1507d5358338e9afd50542490bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -803,7 +803,7 @@
 <para>Purpose: Fills elements of valid with 1 whenever it corresponds to a position with n_pad of the level set value being negative (i.e. phi &lt; 0), and 0 otherwise. For all ghost cells outside the domain </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1030" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1032" bodyend="1111"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1032" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1034" bodyend="1113"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a1021e10493eae99fca20410e905f769d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure logical function</type>
@@ -844,7 +844,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1116" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1117" bodyend="1168"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1118" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1119" bodyend="1170"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1aebc8cae9b6d75e09318a28bf888fde6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -881,7 +881,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1175" bodyend="1193"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1175" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1177" bodyend="1195"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a0d02df8bee34d7c3814ca33fc8241866" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -954,7 +954,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1198" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1205" bodyend="1242"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1200" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1207" bodyend="1246"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1a6243cc7992c6702f4cfc0c5fb75dc0b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -999,7 +999,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1247" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1251" bodyend="1296"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1251" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1255" bodyend="1301"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex__eb__levelset__module_1aea389d97360abbcd727421c936209ef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>pure subroutine</type>
@@ -1044,7 +1044,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1301" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1305" bodyend="1373"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" line="1306" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset_F.F90" bodystart="1310" bodyend="1380"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

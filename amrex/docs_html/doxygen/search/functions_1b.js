@@ -156,6 +156,7 @@ var searchData=
   ['_7etagboxarray',['~TagBoxArray',['../classamrex_1_1TagBoxArray.html#aa39754ad9270741af7aa6f6278cf8229',1,'amrex::TagBoxArray']]],
   ['_7etinyprofiler',['~TinyProfiler',['../classamrex_1_1TinyProfiler.html#ac86f51f4e2e72d2b045260f22d50475d',1,'amrex::TinyProfiler']]],
   ['_7etinyprofileregion',['~TinyProfileRegion',['../classamrex_1_1TinyProfileRegion.html#a529634d28a0589df7b0e0fd5f7294834',1,'amrex::TinyProfileRegion']]],
+  ['_7etorusif',['~TorusIF',['../classamrex_1_1EB2_1_1TorusIF.html#a5510d2586434c0feb2a72da85f8970dc',1,'amrex::EB2::TorusIF']]],
   ['_7etracerparticlecontainer',['~TracerParticleContainer',['../classamrex_1_1TracerParticleContainer.html#ae0d245e958caa5df6c59bfd50ca6b83f',1,'amrex::TracerParticleContainer']]],
   ['_7evismf',['~VisMF',['../classamrex_1_1VisMF.html#adae69cdb339309e76cfb37486e60ffe4',1,'amrex::VisMF']]],
   ['_7exyplotdatalist',['~XYPlotDataList',['../classamrex_1_1XYPlotDataList.html#a96a9a8b0172262b55695862957848af0',1,'amrex::XYPlotDataList']]],

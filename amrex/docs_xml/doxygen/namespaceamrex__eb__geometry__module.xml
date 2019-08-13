@@ -3,9 +3,9 @@
   <compounddef id="namespaceamrex__eb__geometry__module" kind="namespace" language="Fortran">
     <compoundname>amrex_eb_geometry_module</compoundname>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex__eb__geometry__module_1a784eb1aab0e36fb83778e60cdc4fca85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>pure <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(c_real) function</type>
-        <definition>pure real(c_real) function amrex_eb_geometry_module::dot_3d_real</definition>
+      <memberdef kind="function" id="namespaceamrex__eb__geometry__module_1aa2f8ea77eb55ba307a7536a45f5962fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>) function</type>
+        <definition>pure real(amrex_real) function amrex_eb_geometry_module::dot_3d_real</definition>
         <argsstring>(v1, v2)</argsstring>
         <name>dot_3d_real</name>
         <param>
@@ -19,14 +19,14 @@
         <briefdescription>
 <para>Pure Function: DOT_3D_REAL. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Returns the cartesian dot product for two vectors in three dimensions.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
+<para>Purpose: Returns the cartesian dot product for two vectors in three dimensions.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="19" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="20" bodyend="27"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex__eb__geometry__module_1adef586973ed62e2731c72da95b0c9b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>pure <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(c_real) function, dimension(3)</type>
-        <definition>pure real(c_real) function, dimension(3) amrex_eb_geometry_module::cross_3d_real</definition>
+      <memberdef kind="function" id="namespaceamrex__eb__geometry__module_1a5096510d9b839051bf9841a7df86072a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>) function, dimension(3)</type>
+        <definition>pure real(amrex_real) function, dimension(3) amrex_eb_geometry_module::cross_3d_real</definition>
         <argsstring>(v1, v2)</argsstring>
         <name>cross_3d_real</name>
         <param>
@@ -40,7 +40,7 @@
         <briefdescription>
 <para>Pure Function: CROSS_3D_REAL. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Returns the cartesian cross product for two vectors in three dimensions.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
+<para>Purpose: Returns the cartesian cross product for two vectors in three dimensions.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="41" bodyend="49"/>
@@ -77,7 +77,7 @@
         <briefdescription>
 <para>Pure Function: PT_IN_BOX. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Returns true if the coordinate vector represents a point inside a three-dimensional cube of size dx and origin specified by integer vector. As a final input, the user specifies a dimension (axis) to ignore. This allows IN-BOX checking on a box face.</para><para>Comments: Position vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). Cells are enumerated using arrays of type integer and dimension(3). Pure Subroutine: CALC_FACET_EDGE</para><para>Purpose: Calculates the line (represented by a position and a direction vector) given by the intersection of two planes (defined by two normal (n1, n2) and two positions (h1 = n1.p1, h2 = n2.p2).</para><para>When one plane is the EB surface, and the other is a face of the cell. Then this line represents the edge of the EB facet.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
+<para>Purpose: Returns true if the coordinate vector represents a point inside a three-dimensional cube of size dx and origin specified by integer vector. As a final input, the user specifies a dimension (axis) to ignore. This allows IN-BOX checking on a box face.</para><para>Comments: Position vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). Cells are enumerated using arrays of type integer and dimension(3). Pure Subroutine: CALC_FACET_EDGE</para><para>Purpose: Calculates the line (represented by a position and a direction vector) given by the intersection of two planes (defined by two normal (n1, n2) and two positions (h1 = n1.p1, h2 = n2.p2).</para><para>When one plane is the EB surface, and the other is a face of the cell. Then this line represents the edge of the EB facet.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="114" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="115" bodyend="131"/>
@@ -110,7 +110,7 @@
         <briefdescription>
 <para>Pure Subroutine: LINES_NEAREST_PT. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Given an a line an a point, this subroutine finds the point one the line which minimizes the cartesian distance. It also finds the corresponing distance along the line corresponding to this point</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
+<para>Purpose: Given an a line an a point, this subroutine finds the point one the line which minimizes the cartesian distance. It also finds the corresponing distance along the line corresponding to this point</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="145" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="146" bodyend="158"/>
@@ -131,7 +131,7 @@
         <briefdescription>
 <para>Pure Subroutine: SWAP_REALS. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Stupid little subroutine which swaps the values of its inputs.</para><para>Comments: Inputs are of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> </para>        </detaileddescription>
+<para>Purpose: Stupid little subroutine which swaps the values of its inputs.</para><para>Comments: Inputs are of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="171" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="172" bodyend="180"/>
@@ -168,14 +168,14 @@
         <briefdescription>
 <para>Pure Subroutine: LAMBDA_BOUNDS. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Given a line which passes through a box in three dimensions (it can pass through the edges). Let lambda be a real value representing the coordinate along the line. This subroutine finds teh min/max values of lambda, in order for the point described by lambda to be contained within the box.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
+<para>Purpose: Given a line which passes through a box in three dimensions (it can pass through the edges). Let lambda be a real value representing the coordinate along the line. This subroutine finds teh min/max values of lambda, in order for the point described by lambda to be contained within the box.</para><para>Comments: Vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="196" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="197" bodyend="248"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="196" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="197" bodyend="251"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex__eb__geometry__module_1a959a3c30b97eba6b97a1f9e83492563a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>pure <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(c_real) function, dimension(3)</type>
-        <definition>pure real(c_real) function, dimension(3) amrex_eb_geometry_module::facets_nearest_pt</definition>
+      <memberdef kind="function" id="namespaceamrex__eb__geometry__module_1a14bc0650dde87d03fec9f51bcc843cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real</ref>(<ref refid="AMReX__REAL_8H_1a9c34e09baf6d4d1b12637402203f9e9e" kindref="member">amrex_real</ref>) function, dimension(3)</type>
+        <definition>pure real(amrex_real) function, dimension(3) amrex_eb_geometry_module::facets_nearest_pt</definition>
         <argsstring>(ind_pt, ind_loop, r_vec, eb_normal, eb_p0, dx)</argsstring>
         <name>facets_nearest_pt</name>
         <param>
@@ -205,10 +205,10 @@
         <briefdescription>
 <para>Pure Function: FACETS_NEAREST_PT. </para>        </briefdescription>
         <detaileddescription>
-<para>Purpose: Given a collision between particle and EB surface, and given that a neighbour cell owns the EB surface, a collision between the particle and the EDGE of the EB facet might occur. This function returns the coordinates of the closest point on the edge of an EB facet. This function does not check of collisions.</para><para>Comments: Position and normal vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(c_real)</ref> and of dimension(3) (i.e. indices range from 1..3). Cells are enumerated using arrays of type integer and of dimension(3). </para>        </detaileddescription>
+<para>Purpose: Given a collision between particle and EB surface, and given that a neighbour cell owns the EB surface, a collision between the particle and the EDGE of the EB facet might occur. This function returns the coordinates of the closest point on the edge of an EB facet. This function does not check of collisions.</para><para>Comments: Position and normal vectors are represented as one-dimensional arrays of type <ref refid="complex-type_8h_1ab4cafb1ab351d520eb09a05ebd0a1e13" kindref="member">real(amrex_real)</ref> and of dimension(3) (i.e. indices range from 1..3). Cells are enumerated using arrays of type integer and of dimension(3). </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="266" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="267" bodyend="377"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" line="269" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_geometry.F90" bodystart="270" bodyend="383"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -217,7 +217,7 @@ var searchData=
   ['createleveldirectory',['CreateLevelDirectory',['../classamrex_1_1AmrLevel.html#a962f9d201153832198014fba04698410',1,'amrex::AmrLevel']]],
   ['createvcallstats',['CreateVCallStats',['../classRegionsProfStats.html#a27a90e8d35f18f048f53f6af29caaa92',1,'RegionsProfStats']]],
   ['createvirtualparticles',['CreateVirtualParticles',['../classamrex_1_1ParticleContainer.html#a70ef0c7366d807b3cfc148ed1c3e5a26',1,'amrex::ParticleContainer']]],
-  ['cross_5f3d_5freal',['cross_3d_real',['../namespaceamrex__eb__geometry__module.html#adef586973ed62e2731c72da95b0c9b26',1,'amrex_eb_geometry_module']]],
+  ['cross_5f3d_5freal',['cross_3d_real',['../namespaceamrex__eb__geometry__module.html#a5096510d9b839051bf9841a7df86072a',1,'amrex_eb_geometry_module']]],
   ['crrbetweenlevels',['CRRBetweenLevels',['../namespaceamrex.html#a15ea4e09dbb2ff1919ec42ea7702d5aa',1,'amrex']]],
   ['crseadd',['CrseAdd',['../classamrex_1_1FluxRegister.html#a4f11b763bb868b4245b5135f02da8217',1,'amrex::FluxRegister::CrseAdd(const MultiFab &amp;mflx, const MultiFab &amp;area, int dir, int srccomp, int destcomp, int numcomp, Real mult, const Geometry &amp;geom)'],['../classamrex_1_1FluxRegister.html#ac01db2619376c784ccb95918f39d483e',1,'amrex::FluxRegister::CrseAdd(const MultiFab &amp;mflx, int dir, int srccomp, int destcomp, int numcomp, Real mult, const Geometry &amp;geom)'],['../classamrex_1_1YAFluxRegister.html#a24d221d7e5538a09512389d71386e9bd',1,'amrex::YAFluxRegister::CrseAdd()'],['../classamrex_1_1EBFluxRegister.html#a330b4a4a00727bc0b078af7bab02a661',1,'amrex::EBFluxRegister::CrseAdd()']]],
   ['crsehaswork',['CrseHasWork',['../classamrex_1_1YAFluxRegister.html#af466fe21e95a36341e6a099dcf9c5a97',1,'amrex::YAFluxRegister']]],
