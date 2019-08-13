@@ -172,7 +172,6 @@ var searchData=
   ['amrex_5feb2_5fif_5flathe_2eh',['AMReX_EB2_IF_Lathe.H',['../AMReX__EB2__IF__Lathe_8H.html',1,'']]],
   ['amrex_5feb2_5fif_5fplane_2eh',['AMReX_EB2_IF_Plane.H',['../AMReX__EB2__IF__Plane_8H.html',1,'']]],
   ['amrex_5feb2_5fif_5fpolynomial_2eh',['AMReX_EB2_IF_Polynomial.H',['../AMReX__EB2__IF__Polynomial_8H.html',1,'']]],
-  ['amrex_5feb2_5fif_5fracetrack_2eh',['AMReX_EB2_IF_Racetrack.H',['../AMReX__EB2__IF__Racetrack_8H.html',1,'']]],
   ['amrex_5feb2_5fif_5frotation_2eh',['AMReX_EB2_IF_Rotation.H',['../AMReX__EB2__IF__Rotation_8H.html',1,'']]],
   ['amrex_5feb2_5fif_5fscale_2eh',['AMReX_EB2_IF_Scale.H',['../AMReX__EB2__IF__Scale_8H.html',1,'']]],
   ['amrex_5feb2_5fif_5fsphere_2eh',['AMReX_EB2_IF_Sphere.H',['../AMReX__EB2__IF__Sphere_8H.html',1,'']]],
@@ -606,6 +605,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
 ];
