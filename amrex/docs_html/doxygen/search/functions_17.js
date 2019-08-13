@@ -32,6 +32,7 @@ var searchData=
   ['writecoarsenedasciifile',['WriteCoarsenedAsciiFile',['../classamrex_1_1ParticleContainer.html#ad811292435541ceff38cb6f09cc9b6a2',1,'amrex::ParticleContainer']]],
   ['writecommstats',['WriteCommStats',['../classamrex_1_1BLProfiler.html#a586676adde2a557d8eab1e64948b3bb2',1,'amrex::BLProfiler']]],
   ['writedoubledata',['writeDoubleData',['../namespaceamrex.html#a583a444879c864fcc03845f637a122c9',1,'amrex']]],
+  ['writeebsurface',['WriteEBSurface',['../AMReX__WriteEBSurface_8cpp.html#acd368839aa513c9ef21a166ab4e08e32',1,'AMReX_WriteEBSurface.cpp']]],
   ['writeedisontopomf',['WriteEdisonTopoMF',['../classCommProfStats.html#a829919a6ccc9bb521cdf384ae48625f1',1,'CommProfStats']]],
   ['writefab',['WriteFab',['../classamrex_1_1DataServices.html#abfbb38923a2649adad7874840cf5fabc',1,'amrex::DataServices::WriteFab(const string &amp;fabfilename, const Box &amp;region, int lev, const string &amp;varname)'],['../classamrex_1_1DataServices.html#a68871125127d068a8cda75a85435eac5',1,'amrex::DataServices::WriteFab(const string &amp;fabfilename, const Box &amp;region, int lev)'],['../namespaceamrex.html#a6d17597e95ab560d6e8db9bd3bc5c3d5',1,'amrex::WriteFab()']]],
   ['writefabs',['writeFabs',['../namespaceamrex.html#a78ee47545ca66e809f4f680e7513cbd5',1,'amrex::writeFabs(const MultiFab &amp;mf, const std::string &amp;name)'],['../namespaceamrex.html#aa9f903b417da5fb1d02ea65d0bbf8934',1,'amrex::writeFabs(const MultiFab &amp;mf, int comp, int ncomp, const std::string &amp;name)']]],
