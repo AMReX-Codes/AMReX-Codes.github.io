@@ -12419,10 +12419,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="620" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="620" bodyend="666"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1adb6a25ecc3b0a78548904c23c20c52a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a5c058db000cb0e7b2eec3ae6f38aad93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref></type>
         <definition>iMultiFab amrex::makeFineMask</definition>
-        <argsstring>(const MultiFab &amp;cmf, const BoxArray &amp;fba, const IntVect &amp;ratio)</argsstring>
+        <argsstring>(const MultiFab &amp;cmf, const BoxArray &amp;fba, const IntVect &amp;ratio, int crse_value, int fine_value)</argsstring>
         <name>makeFineMask</name>
         <param>
           <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
@@ -12436,18 +12436,28 @@
           <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
+        <param>
+          <type>int</type>
+          <declname>crse_value</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fine_value</declname>
+          <defval>1</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Return an <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> that has the same <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> as the coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> cmf. Cells covered by the coarsened fine grids are set to one, whereas other cells are set to zero. </para>        </detaileddescription>
+<para>Return an <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> that has the same <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> as the coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> cmf. Cells covered by the coarsened fine grids are set to fine_value, whereas other cells are set to crse_value. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="668" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="668" bodyend="671"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="668" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="668" bodyend="672"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3b123b02ae07d8edcaaad7acdbfda099" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af97d55742a96cb9e934e06c45ec22f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref></type>
         <definition>iMultiFab amrex::makeFineMask</definition>
-        <argsstring>(const BoxArray &amp;cba, const DistributionMapping &amp;cdm, const BoxArray &amp;fba, const IntVect &amp;ratio)</argsstring>
+        <argsstring>(const BoxArray &amp;cba, const DistributionMapping &amp;cdm, const BoxArray &amp;fba, const IntVect &amp;ratio, int crse_value, int fine_value)</argsstring>
         <name>makeFineMask</name>
         <param>
           <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
@@ -12465,13 +12475,21 @@
           <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
           <declname>ratio</declname>
         </param>
+        <param>
+          <type>int</type>
+          <declname>crse_value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fine_value</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="673" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="673" bodyend="699"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="674" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="674" bodyend="710"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -12496,7 +12514,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="701" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="701" bodyend="721"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="712" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="712" bodyend="732"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1add6ef1af4714e90f5d0b5a098725612b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -12521,7 +12539,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="723" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="723" bodyend="744"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="734" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="734" bodyend="755"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a24aa5b51c299dd1337df192681f47e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -12546,7 +12564,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="154" bodyend="172"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="156" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="156" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aeadc3d45ec6aeb4163a09bee0954a3f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
