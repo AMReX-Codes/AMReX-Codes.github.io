@@ -386,6 +386,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae745531c931aadabc3620c50d91a7ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d8fc21b1d4817642c4364defa399310"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a7d8fc21b1d4817642c4364defa399310">NeighborProcs</a> () const </td></tr>
 <tr class="separator:a7d8fc21b1d4817642c4364defa399310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ccfb91513567f326eb6b4969b4ce60a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0ccfb91513567f326eb6b4969b4ce60a">OnSameGrids</a> (int level, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf) const </td></tr>
+<tr class="separator:a0ccfb91513567f326eb6b4969b4ce60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a225de1db7fe017ffc776d93c61e64efa"><td class="memTemplParams" colspan="2">template&lt;class RTYPE &gt; </td></tr>
 <tr class="memitem:a225de1db7fe017ffc776d93c61e64efa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a225de1db7fe017ffc776d93c61e64efa">ReadParticles</a> (int cnt, int grd, int lev, std::ifstream &amp;ifs, int finest_level_in_file)</td></tr>
 <tr class="separator:a225de1db7fe017ffc776d93c61e64efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -415,8 +417,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:abbf38c48b91649ffb5da36ca3e24a01c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#abbf38c48b91649ffb5da36ca3e24a01c">EnforcePeriodicWhere</a> (<a class="el" href="classamrex_1_1ParticleContainer.html#aec73ed00e2482cb245a8c6a2ac7bea8e">ParticleType</a> &amp;prt, <a class="el" href="structamrex_1_1ParticleLocData.html">ParticleLocData</a> &amp;pld, int lev_min=0, int lev_max=-1, int local_grid=-1) const </td></tr>
 <tr class="memdesc:abbf38c48b91649ffb5da36ca3e24a01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the particle has crossed a periodic boundary in such a way that it is on levels lev_min and higher.  <a href="#abbf38c48b91649ffb5da36ca3e24a01c">More...</a><br /></td></tr>
 <tr class="separator:abbf38c48b91649ffb5da36ca3e24a01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ccfb91513567f326eb6b4969b4ce60a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0ccfb91513567f326eb6b4969b4ce60a">OnSameGrids</a> (int level, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf) const </td></tr>
-<tr class="separator:a0ccfb91513567f326eb6b4969b4ce60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79e3b55b52a11a3d2d6c546be080fa94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a79e3b55b52a11a3d2d6c546be080fa94">WriteParticles</a> (int level, std::ofstream &amp;ofs, int fnum, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;which, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;count, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; long &gt; &amp;where, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp) const </td></tr>
 <tr class="memdesc:a79e3b55b52a11a3d2d6c546be080fa94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for <a class="el" href="classamrex_1_1ParticleContainer.html#a35914c8639272469d7423f7be9d96f57" title="Writes a particle checkpoint to file, suitable for restarting. ">Checkpoint()</a> and <a class="el" href="classamrex_1_1ParticleContainer.html#a1042daffa7e43cafbdfc0258fe0d22e7">WritePlotFile()</a>.  <a href="#a79e3b55b52a11a3d2d6c546be080fa94">More...</a><br /></td></tr>
 <tr class="separator:a79e3b55b52a11a3d2d6c546be080fa94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3210,7 +3210,7 @@ template&lt;int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayI
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
