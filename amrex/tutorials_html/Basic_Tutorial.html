@@ -92,6 +92,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/Basic</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#helloworld"><strong>HelloWorld</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#main"><strong>main</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-with-libamrex"><strong>Build_with_libamrex</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#heatequation"><strong>HeatEquation</strong></a></li>
 </ul>
 </li>
@@ -212,6 +213,15 @@ adds parameters to AMReX ParmParse database.</p>
 </li>
 </ol>
 </div></blockquote>
+</div>
+<div class="section" id="build-with-libamrex">
+<h2><strong>Build_with_libamrex</strong><a class="headerlink" href="#build-with-libamrex" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial builds on the main_C example and demonstrates how to build the executable when we
+want to link local files with the pre-built amrex library (libamrex.a) that has been installed elsewhere.
+We separate main.cpp from the main_C example into two separate files (main.cpp and
+test_parameters.cpp), replace MyAmr.H by MyParams.H and add a Fortran file my_func.f90.
+The GNUmakefile here assumes that you have already built the AMReX library; for instructions on how to do
+that see the  <a href="#id1"><span class="problematic" id="id2">Building_libamrex_</span></a> chapter.</p>
 </div>
 <div class="section" id="heatequation">
 <h2><strong>HeatEquation</strong><a class="headerlink" href="#heatequation" title="Permalink to this headline">¶</a></h2>
