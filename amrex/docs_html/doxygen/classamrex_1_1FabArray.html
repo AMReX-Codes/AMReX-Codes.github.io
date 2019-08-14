@@ -409,6 +409,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2eb7f1c8a1ad0b253f6b4dc3445b5ac6"><td class="memTemplParams" colspan="2">template&lt;class F  = FAB, class  = typename std::enable_if&lt;IsBaseFab&lt;F&gt;::value&gt;::type&gt; </td></tr>
 <tr class="memitem:a2eb7f1c8a1ad0b253f6b4dc3445b5ac6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a2eb7f1c8a1ad0b253f6b4dc3445b5ac6">FBEP_nowait</a> (int scomp, int ncomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period, bool cross, bool enforce_periodicity_only=false)</td></tr>
 <tr class="separator:a2eb7f1c8a1ad0b253f6b4dc3445b5ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbf15f2a4abd1397a6474713b122824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a5fbf15f2a4abd1397a6474713b122824">FB_local_copy_cpu</a> (const <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html">FB</a> &amp;TheFB, int scomp, int ncomp)</td></tr>
+<tr class="separator:a5fbf15f2a4abd1397a6474713b122824"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af001e3fed315af1165f42213a1042c09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#af001e3fed315af1165f42213a1042c09">PC_local_cpu</a> (const <a class="el" href="structamrex_1_1FabArrayBase_1_1CPC.html">CPC</a> &amp;thecpc, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp, <a class="el" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a> op)</td></tr>
+<tr class="separator:af001e3fed315af1165f42213a1042c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e0073142d1598838048317216fa6d12"><td class="memTemplParams" colspan="2">template&lt;class FOO , class BAR &gt; </td></tr>
 <tr class="memitem:a0e0073142d1598838048317216fa6d12"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabArray.html#a0e0073142d1598838048317216fa6d12">FBEP_nowait</a> (int scomp, int ncomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period, bool cross, bool enforce_periodicity_only)</td></tr>
 <tr class="separator:a0e0073142d1598838048317216fa6d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2149,6 +2153,40 @@ template&lt;class FAB&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a5fbf15f2a4abd1397a6474713b122824"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FAB&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void FabArray::FB_local_copy_cpu </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html">FB</a> &amp;&#160;</td>
+          <td class="paramname"><em>TheFB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a0e0073142d1598838048317216fa6d12"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3642,6 +3680,58 @@ template&lt;class FAB&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="af001e3fed315af1165f42213a1042c09"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FAB&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void FabArray::PC_local_cpu </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structamrex_1_1FabArrayBase_1_1CPC.html">CPC</a> &amp;&#160;</td>
+          <td class="paramname"><em>thecpc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff">CpOp</a>&#160;</td>
+          <td class="paramname"><em>op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a69e2f8d4b7a834951fe4428b89134455"></a>
 <div class="memitem">
 <div class="memproto">
@@ -4837,6 +4927,8 @@ template&lt;class FAB&gt; </div>
 <li>/home/travis/build/AMReX-Codes/amrex/Src/Base/<a class="el" href="AMReX__DistributionMapping_8H_source.html">AMReX_DistributionMapping.H</a></li>
 <li>/home/travis/build/AMReX-Codes/amrex/Src/Base/<a class="el" href="AMReX__FabArray_8H_source.html">AMReX_FabArray.H</a></li>
 <li>/home/travis/build/AMReX-Codes/amrex/Src/Base/<a class="el" href="AMReX__FabArrayCommI_8H_source.html">AMReX_FabArrayCommI.H</a></li>
+<li>/home/travis/build/AMReX-Codes/amrex/Src/Base/<a class="el" href="AMReX__FBI_8H_source.html">AMReX_FBI.H</a></li>
+<li>/home/travis/build/AMReX-Codes/amrex/Src/Base/<a class="el" href="AMReX__PCI_8H_source.html">AMReX_PCI.H</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

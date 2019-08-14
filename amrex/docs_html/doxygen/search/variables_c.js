@@ -355,6 +355,7 @@ var searchData=
   ['m_5fstore_5fin_5fcheckpoint',['m_store_in_checkpoint',['../classamrex_1_1StateDescriptor.html#a83266e34a32f66f82481390292960e28',1,'amrex::StateDescriptor']]],
   ['m_5fstrategy',['m_Strategy',['../classamrex_1_1DistributionMapping.html#a5aadb0f378774b462229052551cd2db8',1,'amrex::DistributionMapping']]],
   ['m_5fsupport',['m_support',['../classamrex_1_1EBDataCollection.html#a9d7fc23809662b01ce10290962d272e8',1,'amrex::EBDataCollection::m_support()'],['../classamrex_1_1EBFArrayBoxFactory.html#a0121434aeeb0ad87903dd1401803c1ba',1,'amrex::EBFArrayBoxFactory::m_support()']]],
+  ['m_5fsync',['m_sync',['../classamrex_1_1Gpu_1_1StreamIter.html#ac43afd05d7a1429cfc3457df64e89d23',1,'amrex::Gpu::StreamIter']]],
   ['m_5fsystem',['m_system',['../classamrex_1_1DArena.html#a1fe171de824be042a8b957b2fe35d7f3',1,'amrex::DArena']]],
   ['m_5ftable',['m_table',['../classamrex_1_1ParmParse.html#a2c878464639af635e4915b22aa627e9f',1,'amrex::ParmParse::m_table()'],['../structamrex_1_1ParmParse_1_1PP__entry.html#a697f0d85384abdd0b6a8bdecd8a3756a',1,'amrex::ParmParse::PP_entry::m_table()']]],
   ['m_5ftac_5fstats',['m_TAC_stats',['../classamrex_1_1FabArrayBase.html#a7ac2d31ebea84512f6379331df5c8d75',1,'amrex::FabArrayBase']]],

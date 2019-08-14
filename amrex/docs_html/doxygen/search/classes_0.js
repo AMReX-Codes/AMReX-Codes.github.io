@@ -72,6 +72,7 @@ var searchData=
   ['arenainfo',['ArenaInfo',['../structamrex_1_1ArenaInfo.html',1,'amrex']]],
   ['arkodebutchertablemem',['arkodebutchertablemem',['../structfarkode__mod_1_1arkodebutchertablemem.html',1,'farkode_mod']]],
   ['array4',['Array4',['../structamrex_1_1Array4.html',1,'amrex']]],
+  ['array4copytag',['Array4CopyTag',['../structArray4CopyTag.html',1,'']]],
   ['arrayofstructs',['ArrayOfStructs',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
   ['arrayofstructs_3c_20nstructreal_2c_20nstructint_20_3e',['ArrayOfStructs&lt; NStructReal, NStructInt &gt;',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
   ['assignop',['assignOp',['../structamrex_1_1InSituUtils_1_1assignOp.html',1,'amrex::InSituUtils']]],

@@ -77,7 +77,7 @@ var searchData=
   ['differenceif',['DifferenceIF',['../classamrex_1_1EB2_1_1DifferenceIF.html#ae287196d92d12f93665e324a9d0bdc43',1,'amrex::EB2::DifferenceIF::DifferenceIF(F &amp;&amp;a_f, G &amp;&amp;a_g)'],['../classamrex_1_1EB2_1_1DifferenceIF.html#aae9bcb91f13c4347a0b097eb7b09f3d7',1,'amrex::EB2::DifferenceIF::DifferenceIF(F const &amp;a_f, G const &amp;a_g)'],['../classamrex_1_1EB2_1_1DifferenceIF.html#aeffcadc6fa14d7acfdb3d46aaead9e0e',1,'amrex::EB2::DifferenceIF::DifferenceIF(const DifferenceIF &amp;rhs)=default'],['../classamrex_1_1EB2_1_1DifferenceIF.html#a93fcf2215b2786b50fd05f9a03325154',1,'amrex::EB2::DifferenceIF::DifferenceIF(DifferenceIF &amp;&amp;rhs)=default']]],
   ['dim3',['dim3',['../classamrex_1_1IntVect.html#ab58021983f7ea091fa42717851af0a3a',1,'amrex::IntVect']]],
   ['dirname',['DirName',['../classamrex_1_1VisMF.html#a87ed18b9e628d872b53b55a5b3fed710',1,'amrex::VisMF']]],
-  ['disabledevicesync',['DisableDeviceSync',['../structamrex_1_1MFItInfo.html#aacb603c75ce2df79804828a062a0a1c5',1,'amrex::MFItInfo']]],
+  ['disabledevicesync',['DisableDeviceSync',['../structamrex_1_1Gpu_1_1StreamItInfo.html#aed9ddfaaefcb489e81209d64b9f95cb4',1,'amrex::Gpu::StreamItInfo::DisableDeviceSync()'],['../structamrex_1_1MFItInfo.html#aacb603c75ce2df79804828a062a0a1c5',1,'amrex::MFItInfo::DisableDeviceSync()']]],
   ['dispatch',['Dispatch',['../classamrex_1_1DataServices.html#a3d198815ecb3b80907c97384e5752fa7',1,'amrex::DataServices']]],
   ['dist',['dist',['../classamrex_1_1SplineDistFcnElement2d.html#aabac101641af5d48dfee0c599f0b88c9',1,'amrex::SplineDistFcnElement2d']]],
   ['distfcnelement2d',['distFcnElement2d',['../classamrex_1_1distFcnElement2d.html#abb965acbf00e4afd961cb7821d064387',1,'amrex::distFcnElement2d']]],
