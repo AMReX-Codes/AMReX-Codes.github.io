@@ -128,7 +128,7 @@ var searchData=
   ['point',['Point',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430',1,'amrex::StateDescriptor']]],
   ['pointer',['pointer',['../classhacc_1_1AlignedAllocator.html#a8a10b255de4c608b3775a315e409ef8d',1,'hacc::AlignedAllocator']]],
   ['pointghosttypes',['PointGhostTypes',['../namespaceamrex_1_1InSituUtils.html#ad3ac3134f4a39a0f979b1e491849fa3a',1,'amrex::InSituUtils']]],
-  ['points',['points',['../namespaceeb__to__vtk.html#af4aa8a71e2a1ce390c6ff3f1d76196ad',1,'eb_to_vtk']]],
+  ['points',['points',['../namespaceamrex__eb__to__vtk.html#a1406d2428f61ac052598d75ad10c0186',1,'amrex_eb_to_vtk']]],
   ['pointvalue',['PointValue',['../classamrex_1_1DataServices.html#a2a424e52fa830e6ff025622886c97110',1,'amrex::DataServices']]],
   ['pointvaluerequest',['PointValueRequest',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9af2edde48d8bc88db394583d8e3a01588',1,'amrex::DataServices']]],
   ['poly_5fdiff',['poly_diff',['../namespacesdcquadrature__mod.html#ae2185088b6449f7811b072576236dabd',1,'sdcquadrature_mod']]],

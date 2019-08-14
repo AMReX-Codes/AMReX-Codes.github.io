@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['integrator_5fstats_5fmod',['integrator_stats_mod',['../namespaceintegrator__stats__mod.html',1,'']]]
+  ['sdcquadrature_5fmod',['sdcquadrature_mod',['../namespacesdcquadrature__mod.html',1,'']]],
+  ['sundials_5ffdlsmat',['sundials_fdlsmat',['../namespacesundials__fdlsmat.html',1,'']]]
 ];

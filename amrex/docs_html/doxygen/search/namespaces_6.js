@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hacc',['hacc',['../namespacehacc.html',1,'']]]
+  ['integrator_5fstats_5fmod',['integrator_stats_mod',['../namespaceintegrator__stats__mod.html',1,'']]]
 ];
