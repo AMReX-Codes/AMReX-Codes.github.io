@@ -11,6 +11,7 @@ var searchData=
   ['i_5fs_5fx_5fy2',['i_S_x_y2',['../namespaceamrex_1_1algoim.html#a59d00e52a1182ccb7556e0b34969d082',1,'amrex::algoim']]],
   ['i_5fs_5fx_5fz',['i_S_x_z',['../namespaceamrex_1_1algoim.html#a319d09e3fac406d5c7435495783c51da',1,'amrex::algoim']]],
   ['i_5fs_5fx_5fz2',['i_S_x_z2',['../namespaceamrex_1_1algoim.html#ad4374cfcd9fd0dcc582d0b7221c7d699',1,'amrex::algoim']]],
+  ['i_5fs_5fxyz',['i_S_xyz',['../namespaceamrex_1_1algoim.html#a5b751a5f2c300635c47ad31a24157604',1,'amrex::algoim']]],
   ['i_5fs_5fy',['i_S_y',['../namespaceamrex_1_1algoim.html#a26347d2ffb8ae0e55a261293b75aae80',1,'amrex::algoim']]],
   ['i_5fs_5fy2',['i_S_y2',['../namespaceamrex_1_1algoim.html#ae9b79e8e177e12c5d430231f4fa56cee',1,'amrex::algoim']]],
   ['i_5fs_5fy2_5fz',['i_S_y2_z',['../namespaceamrex_1_1algoim.html#a906f3ea1a1f5abffc2ce63a2f18c3097',1,'amrex::algoim']]],
