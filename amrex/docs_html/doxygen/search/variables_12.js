@@ -75,7 +75,7 @@ var searchData=
   ['srccomp',['srcComp',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a01917a2e8e16dff02f56a81a578687f1',1,'amrex::FabArrayBase::FabComTag::srcComp()'],['../structamrex_1_1FabCopyDescriptor.html#abf33adc9a73450887814df15429e64ac',1,'amrex::FabCopyDescriptor::srcComp()']]],
   ['srcindex',['srcIndex',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c',1,'amrex::FabArrayBase::CopyComTag']]],
   ['sros',['sros',['../classamrex_1_1StreamRetry.html#a3c6ead4d87a1a0d6a05e894e17f72104',1,'amrex::StreamRetry']]],
-  ['ss',['SS',['../classhacc_1_1Error.html#ae3184e7fc000b566c6058b4a56d44968',1,'hacc::Error::SS()'],['../classamrex_1_1Print.html#abfc9a46813216f47dd6fd4ef6fb90c36',1,'amrex::Print::ss()'],['../classamrex_1_1PrintToFile.html#ac4b44832e48e2668106dbfec83c8acca',1,'amrex::PrintToFile::ss()']]],
+  ['ss',['ss',['../classamrex_1_1Print.html#abfc9a46813216f47dd6fd4ef6fb90c36',1,'amrex::Print::ss()'],['../classamrex_1_1PrintToFile.html#ac4b44832e48e2668106dbfec83c8acca',1,'amrex::PrintToFile::ss()'],['../classhacc_1_1Error.html#ae3184e7fc000b566c6058b4a56d44968',1,'hacc::Error::SS()']]],
   ['sss_5fmax',['SSS_MAX',['../namespaceamrex.html#a9b7bd9bff131fc5a847e7465aeba15aa',1,'amrex']]],
   ['stackdepth',['stackDepth',['../structBLProfStats_1_1CallTreeNode.html#a07acaf5c443edd83d069c9056d2284e3',1,'BLProfStats::CallTreeNode']]],
   ['stacktime',['stackTime',['../structBLProfStats_1_1CallTreeNode.html#abbd67971ba1617870613e5a4a6bf3e48',1,'BLProfStats::CallTreeNode']]],
