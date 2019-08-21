@@ -441,6 +441,7 @@ var searchData=
   ['max_5fefficiency',['max_efficiency',['../namespaceamrex.html#a0dc972d04970bb21c8988fb02790526c',1,'amrex']]],
   ['max_5ferk_5fnum',['max_erk_num',['../namespacefarkode__mod.html#a81ef0b02a74deb089937a276fccb28a1',1,'farkode_mod']]],
   ['max_5ffmg_5fiters',['max_fmg_iters',['../classamrex_1_1MLMG.html#aefc9d57def6cdc2851da4d26e38e092f',1,'amrex::MLMG']]],
+  ['max_5fgpu_5fstreams',['max_gpu_streams',['../classamrex_1_1Gpu_1_1Device.html#ad39ec9fe7c3da14f7e340b9cd4b4cc5d',1,'amrex::Gpu::Device']]],
   ['max_5fgrid_5fsize',['max_grid_size',['../classamrex_1_1AmrMesh.html#a716b7e6169d4d0a537970445941e7391',1,'amrex::AmrMesh::max_grid_size()'],['../namespaceamrex_1_1EB2.html#a6a03e6a896276bd89190ad6eee9566e1',1,'amrex::EB2::max_grid_size()']]],
   ['max_5fiters',['max_iters',['../classamrex_1_1MLMG.html#ae4f94ee42b8da24efdafd34b023e2457',1,'amrex::MLMG']]],
   ['max_5flevel',['max_level',['../classamrex_1_1AmrMesh.html#ac488c17bc512ae46995817401dc7a8e7',1,'amrex::AmrMesh']]],
