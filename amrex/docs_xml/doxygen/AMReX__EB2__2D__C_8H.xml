@@ -76,9 +76,33 @@
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal">}}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_cuts<sp/>(Real<sp/>a,<sp/>Real<sp/>b)<sp/>noexcept<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(a<sp/>&gt;=<sp/>0.0<sp/>and<sp/>b<sp/>&lt;<sp/>0.0)<sp/>or<sp/>(b<sp/>&gt;=<sp/>0.0<sp/>and<sp/>a<sp/>&lt;<sp/>0.0);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="76" refid="namespaceamrex_1_1EB2_1a85eec83be0458816ee79b84c7b231894" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1a85eec83be0458816ee79b84c7b231894" kindref="member">check_mvmc</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>j<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncuts<sp/>=<sp/>num_cuts(fine(i<sp/><sp/>,j<sp/><sp/>,k),fine(i+1,j<sp/><sp/>,k))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i+1,j<sp/><sp/>,k),fine(i+2,j<sp/><sp/>,k))</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i<sp/><sp/>,j+2,k),fine(i+1,j+2,k))</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i+1,j+2,k),fine(i+2,j+2,k))</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i<sp/><sp/>,j<sp/><sp/>,k),fine(i<sp/><sp/>,j+1,k))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i<sp/><sp/>,j+1,k),fine(i<sp/><sp/>,j+2,k))</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i+2,j<sp/><sp/>,k),fine(i+2,j+1,k))</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_cuts(fine(i+2,j+1,k),fine(i+2,j+2,k));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(ncuts<sp/>!=<sp/>0<sp/>or<sp/>ncuts<sp/>!=<sp/>2);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_2D_C.H"/>
   </compounddef>
