@@ -9,8 +9,6 @@ var searchData=
   ['amrex_5facc_5fmodule',['amrex_acc_module',['../namespaceamrex__acc__module.html',1,'']]],
   ['amrex_5fbc_5ftypes_5fmodule',['amrex_bc_types_module',['../namespaceamrex__bc__types__module.html',1,'']]],
   ['amrex_5fconstants_5fmodule',['amrex_constants_module',['../namespaceamrex__constants__module.html',1,'']]],
-  ['amrex_5feb2_5f2d_5fmoudle',['amrex_eb2_2d_moudle',['../namespaceamrex__eb2__2d__moudle.html',1,'']]],
-  ['amrex_5feb2_5f3d_5fmodule',['amrex_eb2_3d_module',['../namespaceamrex__eb2__3d__module.html',1,'']]],
   ['amrex_5feb_5fbc_5ffill_5fmodule',['amrex_eb_bc_fill_module',['../namespaceamrex__eb__bc__fill__module.html',1,'']]],
   ['amrex_5feb_5fflux_5freg_5f1d_5fmodule',['amrex_eb_flux_reg_1d_module',['../namespaceamrex__eb__flux__reg__1d__module.html',1,'']]],
   ['amrex_5feb_5fflux_5freg_5f2d_5fmodule',['amrex_eb_flux_reg_2d_module',['../namespaceamrex__eb__flux__reg__2d__module.html',1,'']]],

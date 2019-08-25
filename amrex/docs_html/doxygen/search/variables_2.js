@@ -62,7 +62,7 @@ var searchData=
   ['cost',['cost',['../structamrex_1_1KDTree_1_1KDNode.html#adad170db2ef6d86fd4b273c7b770ea0e',1,'amrex::KDTree::KDNode']]],
   ['counter',['counter',['../classamrex_1_1InSituBridge.html#acba77d88ac888913a071c5a5ec180542',1,'amrex::InSituBridge']]],
   ['countprepost',['countPrePost',['../classamrex_1_1ParticleContainer.html#a20f76f3abbc086a48f21791a386aaf8a',1,'amrex::ParticleContainer']]],
-  ['covered',['covered',['../namespaceamrex__eb2__2d__moudle.html#a785195001f47b510759ddc0c97e458d5',1,'amrex_eb2_2d_moudle::covered()'],['../namespaceamrex__eb2__3d__module.html#a139e4ac8cb8cf3ad538f7415b347829d',1,'amrex_eb2_3d_module::covered()'],['../namespaceamrex_1_1EB2_1_1Type.html#a7b3494fbc6c0b07ed8a3f6d4255eead0',1,'amrex::EB2::Type::covered()'],['../namespaceamrex__ebcellflag__module.html#a60377c7710b1b811e651e3acc8ad6f66',1,'amrex_ebcellflag_module::covered()']]],
+  ['covered',['covered',['../namespaceamrex_1_1EB2_1_1Type.html#a7b3494fbc6c0b07ed8a3f6d4255eead0',1,'amrex::EB2::Type::covered()'],['../namespaceamrex__ebcellflag__module.html#a60377c7710b1b811e651e3acc8ad6f66',1,'amrex_ebcellflag_module::covered()']]],
   ['covered_5fbits',['covered_bits',['../classamrex_1_1EBCellFlag.html#ae215f9034bbe23e831586bc395de5477',1,'amrex::EBCellFlag']]],
   ['covered_5fvalue',['covered_value',['../classamrex_1_1EBCellFlag.html#a41bd6408895885d67358df6a58cdc867',1,'amrex::EBCellFlag']]],
   ['cpu',['cpu',['../unionamrex_1_1Particle_1_1im__t.html#a4ee19e3bb9c3213f096957fddf869ec6',1,'amrex::Particle::im_t']]],

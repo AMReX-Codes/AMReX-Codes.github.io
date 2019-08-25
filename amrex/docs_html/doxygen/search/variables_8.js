@@ -66,7 +66,7 @@ var searchData=
   ['iobuffer',['ioBuffer',['../structamrex_1_1VisMF_1_1PersistentIFStream.html#a1e023351bf031aee0da7cc17272716ae',1,'amrex::VisMF::PersistentIFStream']]],
   ['iobuffersize',['ioBufferSize',['../classamrex_1_1VisMF.html#a1f0258054469373b7cb7bc281f0654c5',1,'amrex::VisMF']]],
   ['ioprocessor',['ioProcessor',['../namespaceamrex_1_1ParallelDescriptor.html#a170c7ee692d457514ef07c0d6206f7e2',1,'amrex::ParallelDescriptor']]],
-  ['irregular',['irregular',['../namespaceamrex__eb2__2d__moudle.html#a18a38edaa3f70ab39583c90a9f2e0f38',1,'amrex_eb2_2d_moudle::irregular()'],['../namespaceamrex__eb2__3d__module.html#a604ae16b7c854152376676974481095a',1,'amrex_eb2_3d_module::irregular()'],['../namespaceamrex_1_1EB2_1_1Type.html#ad02e320d1e8e105e0f531f235bd8fce4',1,'amrex::EB2::Type::irregular()']]],
+  ['irregular',['irregular',['../namespaceamrex_1_1EB2_1_1Type.html#ad02e320d1e8e105e0f531f235bd8fce4',1,'amrex::EB2::Type']]],
   ['is_5fperiodic',['is_periodic',['../structamrex_1_1GeometryData.html#a1c153da19d61edca41192dd82233071b',1,'amrex::GeometryData::is_periodic()'],['../classamrex_1_1Geometry.html#a84b1ad3fef8594c10d9ff2000505b20a',1,'amrex::Geometry::is_periodic()']]],
   ['is_5frz',['is_rz',['../namespaceamrex__mlnodelap__2d__module.html#ace279c23e426c1503c8739bf105fbc2c',1,'amrex_mlnodelap_2d_module']]],
   ['isexpert',['isExpert',['../classamrex_1_1MCCGSolver.html#a67daa471cadd81cbb09965c635596445',1,'amrex::MCCGSolver']]],

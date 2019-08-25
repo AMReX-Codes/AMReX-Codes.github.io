@@ -21,7 +21,7 @@ var searchData=
   ['unit_5fskip',['unit_skip',['../namespaceamrex__io__module.html#abefa6fe1b18a0790254d5d8215bf590c',1,'amrex_io_module']]],
   ['unit_5fstdin',['unit_stdin',['../namespaceamrex__io__module.html#a656089521bc62d04b85ee2b856936426',1,'amrex_io_module']]],
   ['unit_5fstdout',['unit_stdout',['../namespaceamrex__io__module.html#ab13339615f0e6ce5f15ec24348980ad3',1,'amrex_io_module']]],
-  ['unknown',['unknown',['../namespaceamrex__eb2__2d__moudle.html#a2d75370da22b568f5949f494a03aaf80',1,'amrex_eb2_2d_moudle::unknown()'],['../namespaceamrex__eb2__3d__module.html#a3b404a78568dcaa7775bee49c5e8fe18',1,'amrex_eb2_3d_module::unknown()'],['../namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a',1,'amrex::EB2::Type::unknown()']]],
+  ['unknown',['unknown',['../namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a',1,'amrex::EB2::Type']]],
   ['unlinkfile',['UnlinkFile',['../namespaceamrex.html#a8cc0b90b2ed3e37910db70d81484fee8',1,'amrex']]],
   ['unmatchedcftype',['unmatchedCFType',['../structCommProfStats_1_1SendRecvPairUnpaired.html#af8626cf71af203407435c096f88c1c3c',1,'CommProfStats::SendRecvPairUnpaired']]],
   ['unnamed',['Unnamed',['../namespaceamrex_1_1ParallelDescriptor.html#ac6df74b4b37bb6ee58dffea68507d259',1,'amrex::ParallelDescriptor']]],

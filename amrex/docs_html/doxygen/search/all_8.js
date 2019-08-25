@@ -6,7 +6,6 @@ var searchData=
   ['half',['half',['../namespaceamrex__constants__module.html#a0054397f5649f24a3da0cb5933162018',1,'amrex_constants_module']]],
   ['handler',['handler',['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace']]],
   ['harmavg',['harmavg',['../classamrex_1_1LinOp.html#a6b431b3abaa1031a23c3d7972d7dab93',1,'amrex::LinOp::harmavg()'],['../classamrex_1_1MCLinOp.html#aff0b62ad254939c0a1a7f58ae21d90d4',1,'amrex::MCLinOp::harmavg()']]],
-  ['has_5fcut',['has_cut',['../AMReX__eb2__2d_8F90.html#a8a34d81e2cd1f968ed928adc58146d3d',1,'has_cut(a, b):&#160;AMReX_eb2_2d.F90'],['../AMReX__eb2__3d_8F90.html#a8a34d81e2cd1f968ed928adc58146d3d',1,'has_cut(a, b):&#160;AMReX_eb2_3d.F90']]],
   ['has_5fmetric_5fterm',['has_metric_term',['../structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b',1,'amrex::LPInfo']]],
   ['hasbndryfuncfab',['hasBndryFuncFab',['../classamrex_1_1StateDescriptor.html#ac2500f92c0477835a434a81535fc5960',1,'amrex::StateDescriptor']]],
   ['hasebfabfactory',['hasEBFabFactory',['../classamrex_1_1FabArray.html#ac696f139b6cf56e02828264b09a48636',1,'amrex::FabArray']]],
@@ -57,8 +56,8 @@ var searchData=
   ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html',1,'amrex']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html',1,'amrex']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
-  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html',1,'amrex']]],
+  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
   ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#a37afff718417564419d2804e054cdf85',1,'amrex::HypreNodeLap']]],
   ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]]
 ];

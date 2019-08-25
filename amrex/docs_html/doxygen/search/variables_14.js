@@ -2,7 +2,7 @@ var searchData=
 [
   ['undrrelxr',['undrrelxr',['../classamrex_1_1LinOp.html#a58088c44f9d858885f1125efb3b4222e',1,'amrex::LinOp::undrrelxr()'],['../classamrex_1_1MCLinOp.html#a2d966fe023cb3ad25504264597ce0899',1,'amrex::MCLinOp::undrrelxr()']]],
   ['unit',['Unit',['../classamrex_1_1IntVect.html#a93df7e94c6d2d07ea3eb7647500bf751',1,'amrex::IntVect::Unit()'],['../classamrex_1_1RealVect.html#a6745f136d89bdb15e57c3387ca01e973',1,'amrex::RealVect::Unit()']]],
-  ['unknown',['unknown',['../namespaceamrex__eb2__2d__moudle.html#a2d75370da22b568f5949f494a03aaf80',1,'amrex_eb2_2d_moudle::unknown()'],['../namespaceamrex__eb2__3d__module.html#a3b404a78568dcaa7775bee49c5e8fe18',1,'amrex_eb2_3d_module::unknown()'],['../namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a',1,'amrex::EB2::Type::unknown()']]],
+  ['unknown',['unknown',['../namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a',1,'amrex::EB2::Type']]],
   ['unmatchedcftype',['unmatchedCFType',['../structCommProfStats_1_1SendRecvPairUnpaired.html#af8626cf71af203407435c096f88c1c3c',1,'CommProfStats::SendRecvPairUnpaired']]],
   ['unreadmessages',['unreadMessages',['../classamrex_1_1NFilesIter.html#a8ac006de5caf3cfd0e6456dd6c3b3f2a',1,'amrex::NFilesIter']]],
   ['updatedq',['updatedQ',['../classamrex_1_1XYPlotDataList.html#a3d289d346e68eb126c040ca8a41a5c37',1,'amrex::XYPlotDataList']]],

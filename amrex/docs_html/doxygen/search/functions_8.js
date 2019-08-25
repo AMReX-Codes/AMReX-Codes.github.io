@@ -1,7 +1,6 @@
 var searchData=
 [
   ['handler',['handler',['../structamrex_1_1BLBackTrace.html#a24b1c852ff2149fe973fad9501e2b5ec',1,'amrex::BLBackTrace']]],
-  ['has_5fcut',['has_cut',['../AMReX__eb2__2d_8F90.html#a8a34d81e2cd1f968ed928adc58146d3d',1,'has_cut(a, b):&#160;AMReX_eb2_2d.F90'],['../AMReX__eb2__3d_8F90.html#a8a34d81e2cd1f968ed928adc58146d3d',1,'has_cut(a, b):&#160;AMReX_eb2_3d.F90']]],
   ['hasbndryfuncfab',['hasBndryFuncFab',['../classamrex_1_1StateDescriptor.html#ac2500f92c0477835a434a81535fc5960',1,'amrex::StateDescriptor']]],
   ['hasebfabfactory',['hasEBFabFactory',['../classamrex_1_1FabArray.html#ac696f139b6cf56e02828264b09a48636',1,'amrex::FabArray']]],
   ['hasfabversion',['hasFabVersion',['../classamrex_1_1StateDescriptor_1_1BndryFunc.html#ae32704c993027f681e1cbb14d5375ee4',1,'amrex::StateDescriptor::BndryFunc']]],
