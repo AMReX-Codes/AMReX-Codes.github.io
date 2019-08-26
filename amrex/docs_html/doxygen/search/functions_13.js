@@ -336,7 +336,7 @@ var searchData=
   ['solve_5fcabicgstab',['solve_cabicgstab',['../classamrex_1_1CGSolver.html#ad1f02a534abef5242b3368d1796fc457',1,'amrex::CGSolver']]],
   ['solve_5fcabicgstab_5fquad',['solve_cabicgstab_quad',['../classamrex_1_1CGSolver.html#ab208c424f69fec07ecfef3e903c8746d',1,'amrex::CGSolver']]],
   ['solve_5fcg',['solve_cg',['../classamrex_1_1CGSolver.html#a5e82c4f3f85cce31876ddfb44d15ab3b',1,'amrex::CGSolver::solve_cg()'],['../classamrex_1_1MLCGSolver.html#a8f5383cd09372e80bdf1b309546f8424',1,'amrex::MLCGSolver::solve_cg()']]],
-  ['solve_5fthomas',['solve_thomas',['../classamrex_1_1distFcnElement2d.html#aacd4e98c4afd778e94043c2f60418264',1,'amrex::distFcnElement2d']]],
+  ['solve_5fthomas',['solve_thomas',['../classamrex_1_1distFcnElement2d.html#a6c7044a38996975889c430f3c376718e',1,'amrex::distFcnElement2d']]],
   ['sort',['Sort',['../classamrex_1_1DistributionMapping.html#a65d02277c7532c3befd7d24aeda66a0d',1,'amrex::DistributionMapping']]],
   ['sortparticlesbybin',['SortParticlesByBin',['../classamrex_1_1ParticleContainer.html#adc72681be46a17adef32523024926177',1,'amrex::ParticleContainer']]],
   ['sortparticlesbycell',['SortParticlesByCell',['../classamrex_1_1ParticleContainer.html#a22e1d8ca180b542ad1610173f3a28d63',1,'amrex::ParticleContainer']]],
