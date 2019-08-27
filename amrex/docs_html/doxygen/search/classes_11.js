@@ -1,6 +1,7 @@
 var searchData=
 [
   ['scaleif',['ScaleIF',['../classamrex_1_1EB2_1_1ScaleIF.html',1,'amrex::EB2']]],
+  ['scopeddefaultstream',['ScopedDefaultStream',['../structamrex_1_1Gpu_1_1ScopedDefaultStream.html',1,'amrex::Gpu']]],
   ['sdcstruct',['SDCstruct',['../classSDCstruct.html',1,'']]],
   ['sendrecvpair',['SendRecvPair',['../structCommProfStats_1_1SendRecvPair.html',1,'CommProfStats']]],
   ['sendrecvpairunpaired',['SendRecvPairUnpaired',['../structCommProfStats_1_1SendRecvPairUnpaired.html',1,'CommProfStats']]],
