@@ -41,6 +41,7 @@ var searchData=
   ['updatestats',['UpdateStats',['../classamrex_1_1XYPlotDataList.html#a13965931a2c87a53677beb03c429a496',1,'amrex::XYPlotDataList']]],
   ['updatevelocity',['updateVelocity',['../classamrex_1_1MLNodeLaplacian.html#aec4af1f3dc974b684560e6483befdc60',1,'amrex::MLNodeLaplacian']]],
   ['upperindex',['UpperIndex',['../classamrex_1_1CoordSys.html#a74cecde9e2041a58b0d9b81b8ed00c22',1,'amrex::CoordSys']]],
+  ['usedefaultstream',['UseDefaultStream',['../structamrex_1_1MFItInfo.html#a86ecc5077df582ee99c76ad01a017bed',1,'amrex::MFItInfo']]],
   ['useeb2',['useEB2',['../namespaceamrex_1_1EB2.html#ad7f55d0b557cb48b84323df22a77d9d0',1,'amrex::EB2']]],
   ['usefixedcoarsegrids',['useFixedCoarseGrids',['../classamrex_1_1AmrMesh.html#aee758e772b5c854d121923686d1d3949',1,'amrex::AmrMesh']]],
   ['usefixeduptolevel',['useFixedUpToLevel',['../classamrex_1_1AmrMesh.html#a6ff4a09f169c29d17327aa37b49d3e5a',1,'amrex::AmrMesh']]],

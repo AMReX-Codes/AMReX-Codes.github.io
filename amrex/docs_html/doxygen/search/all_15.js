@@ -68,6 +68,7 @@ var searchData=
   ['use_5fslab_5fworkaround',['USE_SLAB_WORKAROUND',['../distribution_8c.html#acf625a919ad096563f5d50a5f2b0cf8b',1,'distribution.c']]],
   ['useaverage',['UseAverage',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872da7907e45520d436a47eb139e8c055c203',1,'amrex::ErrorRec']]],
   ['usecg',['usecg',['../classamrex_1_1MultiGrid.html#a1d9b619614c1e13214c307dc12acc684',1,'amrex::MultiGrid::usecg()'],['../classamrex_1_1MCMultiGrid.html#a1004cbb8ee4c21c77a2b39a3a0589ca5',1,'amrex::MCMultiGrid::usecg()']]],
+  ['usedefaultstream',['UseDefaultStream',['../structamrex_1_1MFItInfo.html#a86ecc5077df582ee99c76ad01a017bed',1,'amrex::MFItInfo']]],
   ['usedynamicsetselection',['useDynamicSetSelection',['../classamrex_1_1VisMF.html#a9149ec039a2136083c03aabdaa275672',1,'amrex::VisMF']]],
   ['useeb2',['useEB2',['../namespaceamrex_1_1EB2.html#ad7f55d0b557cb48b84323df22a77d9d0',1,'amrex::EB2']]],
   ['usefixedcoarsegrids',['useFixedCoarseGrids',['../classamrex_1_1AmrMesh.html#aee758e772b5c854d121923686d1d3949',1,'amrex::AmrMesh']]],
