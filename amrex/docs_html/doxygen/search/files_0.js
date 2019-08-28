@@ -214,10 +214,6 @@ var searchData=
   ['amrex_5febfluxregister_5f3d_2ef90',['AMReX_EBFluxRegister_3d.F90',['../AMReX__EBFluxRegister__3d_8F90.html',1,'']]],
   ['amrex_5febfluxregister_5ff_2eh',['AMReX_EBFluxRegister_F.H',['../AMReX__EBFluxRegister__F_8H.html',1,'']]],
   ['amrex_5febfluxregister_5fnd_2ef90',['AMReX_EBFluxRegister_nd.F90',['../AMReX__EBFluxRegister__nd_8F90.html',1,'']]],
-  ['amrex_5febinterp_5f1d_2ef90',['AMReX_ebinterp_1d.F90',['../AMReX__ebinterp__1d_8F90.html',1,'']]],
-  ['amrex_5febinterp_5f2d_2ef90',['AMReX_ebinterp_2d.F90',['../AMReX__ebinterp__2d_8F90.html',1,'']]],
-  ['amrex_5febinterp_5f3d_2ef90',['AMReX_ebinterp_3d.F90',['../AMReX__ebinterp__3d_8F90.html',1,'']]],
-  ['amrex_5febinterp_5ff_2eh',['AMReX_EBInterp_F.H',['../AMReX__EBInterp__F_8H.html',1,'']]],
   ['amrex_5febinterpolater_2ecpp',['AMReX_EBInterpolater.cpp',['../AMReX__EBInterpolater_8cpp.html',1,'']]],
   ['amrex_5febinterpolater_2eh',['AMReX_EBInterpolater.H',['../AMReX__EBInterpolater_8H.html',1,'']]],
   ['amrex_5febmultifabutil_2ecpp',['AMReX_EBMultiFabUtil.cpp',['../AMReX__EBMultiFabUtil_8cpp.html',1,'']]],
@@ -615,6 +611,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
 ];

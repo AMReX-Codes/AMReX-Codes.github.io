@@ -126,8 +126,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4816bc8d7767bf1c5e9f49496ef3949f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a31b5f5abb577a44f07659b13b885db"><td class="memItemLeft" align="right" valign="top">F &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a6a31b5f5abb577a44f07659b13b885db">GetImpFunc</a> ()&amp;&amp;</td></tr>
 <tr class="separator:a6a31b5f5abb577a44f07659b13b885db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e4f4a6084c791ad6aa95e9b838a8c34"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a3e4f4a6084c791ad6aa95e9b838a8c34">getBoxType</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom) const </td></tr>
-<tr class="separator:a3e4f4a6084c791ad6aa95e9b838a8c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6ffff3e66fb40390b651e9302c07819"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#ab6ffff3e66fb40390b651e9302c07819">getBoxType_Cpu</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom) const noexcept</td></tr>
+<tr class="separator:ab6ffff3e66fb40390b651e9302c07819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b21091f5de330829de133a7a13119f"><td class="memTemplParams" colspan="2">template&lt;class U  = F, typename std::enable_if&lt; IsGPUable&lt; U &gt;::value &gt;::type * FOO = nullptr&gt; </td></tr>
+<tr class="memitem:a24b21091f5de330829de133a7a13119f"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a24b21091f5de330829de133a7a13119f">getBoxType</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on) const noexcept</td></tr>
+<tr class="separator:a24b21091f5de330829de133a7a13119f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81f94fab8634f7b0111c9c5f2aa36f6"><td class="memTemplParams" colspan="2">template&lt;class U  = F, typename std::enable_if&lt;!IsGPUable&lt; U &gt;::value &gt;::type * BAR = nullptr&gt; </td></tr>
+<tr class="memitem:ac81f94fab8634f7b0111c9c5f2aa36f6"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#ac81f94fab8634f7b0111c9c5f2aa36f6">getBoxType</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>) const noexcept</td></tr>
+<tr class="separator:ac81f94fab8634f7b0111c9c5f2aa36f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b4f2d4390d61e927a7e5d9f7d42f940"><td class="memTemplParams" colspan="2">template&lt;class U  = F, typename std::enable_if&lt; IsGPUable&lt; U &gt;::value &gt;::type * FOO = nullptr&gt; </td></tr>
 <tr class="memitem:a5b4f2d4390d61e927a7e5d9f7d42f940"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a5b4f2d4390d61e927a7e5d9f7d42f940">fillFab</a> (<a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; Real &gt; &amp;levelset, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, <a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a> run_on) const noexcept</td></tr>
 <tr class="separator:a5b4f2d4390d61e927a7e5d9f7d42f940"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -404,11 +410,16 @@ template&lt;class U  = F, typename std::enable_if&lt;!IsGPUable&lt; U &gt;::valu
 
 </div>
 </div>
-<a class="anchor" id="a3e4f4a6084c791ad6aa95e9b838a8c34"></a>
+<a class="anchor" id="a24b21091f5de330829de133a7a13119f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class F &gt; </div>
+template&lt;class F&gt; </div>
+<div class="memtemplate">
+template&lt;class U  = F, typename std::enable_if&lt; IsGPUable&lt; U &gt;::value &gt;::type * FOO = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">int <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html">amrex::EB2::GeometryShop</a>&lt; F &gt;::getBoxType </td>
@@ -420,6 +431,92 @@ template&lt;class F &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>&#160;</td>
+          <td class="paramname"><em>run_on</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac81f94fab8634f7b0111c9c5f2aa36f6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F&gt; </div>
+<div class="memtemplate">
+template&lt;class U  = F, typename std::enable_if&lt;!IsGPUable&lt; U &gt;::value &gt;::type * BAR = nullptr&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html">amrex::EB2::GeometryShop</a>&lt; F &gt;::getBoxType </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2">RunOn</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab6ffff3e66fb40390b651e9302c07819"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html">amrex::EB2::GeometryShop</a>&lt; F &gt;::getBoxType_Cpu </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;&#160;</td>
           <td class="paramname"><em>geom</em>&#160;</td>
         </tr>
         <tr>
@@ -428,6 +525,11 @@ template&lt;class F &gt; </div>
           <td></td><td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

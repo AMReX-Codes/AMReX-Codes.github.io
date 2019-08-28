@@ -41,7 +41,6 @@ var searchData=
   ['communicate_5fint_5fcomp',['communicate_int_comp',['../classamrex_1_1ParticleContainer.html#a6b59c2f3c8342b421deeb74380a46175',1,'amrex::ParticleContainer']]],
   ['communicate_5freal_5fcomp',['communicate_real_comp',['../classamrex_1_1ParticleContainer.html#ab9f454ac348d292cb7834eb189d45f76',1,'amrex::ParticleContainer']]],
   ['comp_5fsplit',['comp_split',['../structamrex_1_1ForkJoin_1_1MFFork.html#a10f36654d975cbc986561d7c1931a02b',1,'amrex::ForkJoin::MFFork']]],
-  ['compare_5fwith_5fch_5feb',['compare_with_ch_eb',['../namespaceamrex_1_1EB2.html#af9f8eda7d77f8705392a61722d28737f',1,'amrex::EB2']]],
   ['compindextovismfcomponentmap',['compIndexToVisMFComponentMap',['../classamrex_1_1AmrData.html#a28bf0151eaaf2d32cb7b6e3f37e8d499',1,'amrex::AmrData']]],
   ['compindextovismfmap',['compIndexToVisMFMap',['../classamrex_1_1AmrData.html#ae0e599a7af6fc6308d0984560eba02df',1,'amrex::AmrData']]],
   ['compute_5fnew_5fdt_5fon_5fregrid',['compute_new_dt_on_regrid',['../namespaceamrex.html#a3effddc12a2d9eb3c02491feacfd59c4',1,'amrex']]],

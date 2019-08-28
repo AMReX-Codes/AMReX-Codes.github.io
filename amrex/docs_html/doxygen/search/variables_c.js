@@ -345,7 +345,6 @@ var searchData=
   ['m_5frdata',['m_rdata',['../structamrex_1_1Particle.html#a83a0b10e55acc252c8fa642aa4c240ba',1,'amrex::Particle::m_rdata()'],['../structamrex_1_1ParticleTileData.html#a8c05361d6232c7891cea61ee6bc4edb6',1,'amrex::ParticleTileData::m_rdata()'],['../structamrex_1_1ConstParticleTileData.html#a6ea5bd39953609e3d0dee4ef8369138f',1,'amrex::ConstParticleTileData::m_rdata()'],['../structamrex_1_1StructOfArrays.html#aafb423c704668ff475358d53fdcd0087',1,'amrex::StructOfArrays::m_rdata()']]],
   ['m_5fref',['m_ref',['../classamrex_1_1BoxArray.html#aaf44041b956612401793f474280e5e2f',1,'amrex::BoxArray::m_ref()'],['../classamrex_1_1DistributionMapping.html#a66d4a4d11b9ff6a159c90448e55b6885',1,'amrex::DistributionMapping::m_ref()']]],
   ['m_5fref_5fratio',['m_ref_ratio',['../classamrex_1_1PlotFileDataImpl.html#a5186d184c4ecd851f7a6859b09688aa1',1,'amrex::PlotFileDataImpl']]],
-  ['m_5fregion',['m_region',['../classamrex_1_1EBCellFlagFab.html#a222312e252e49902da8a4f7278557d26',1,'amrex::EBCellFlagFab']]],
   ['m_5fregion_5ftag',['m_region_tag',['../classamrex_1_1FabArrayBase.html#a4674b38da90801075df354a3491a8d17',1,'amrex::FabArrayBase']]],
   ['m_5freq',['m_req',['../classamrex_1_1ParallelDescriptor_1_1Message.html#a6dd614e3778be9c2c607de3c7fa4881d',1,'amrex::ParallelDescriptor::Message']]],
   ['m_5frhs',['m_rhs',['../classamrex_1_1MacProjector.html#a5687d73a10dab418a054993dd8c45ab7',1,'amrex::MacProjector']]],

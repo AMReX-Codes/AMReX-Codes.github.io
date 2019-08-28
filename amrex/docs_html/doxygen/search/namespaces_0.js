@@ -20,7 +20,6 @@ var searchData=
   ['amrex_5feb_5fto_5fvtk',['amrex_eb_to_vtk',['../namespaceamrex__eb__to__vtk.html',1,'']]],
   ['amrex_5feb_5futil_5fmodule',['amrex_eb_util_module',['../namespaceamrex__eb__util__module.html',1,'']]],
   ['amrex_5febcellflag_5fmodule',['amrex_ebcellflag_module',['../namespaceamrex__ebcellflag__module.html',1,'']]],
-  ['amrex_5febinterp_5fmodule',['amrex_ebinterp_module',['../namespaceamrex__ebinterp__module.html',1,'']]],
   ['amrex_5ferror_5fmodule',['amrex_error_module',['../namespaceamrex__error__module.html',1,'']]],
   ['amrex_5fextrapolater',['amrex_extrapolater',['../namespaceamrex__extrapolater.html',1,'']]],
   ['amrex_5ffilcc_5fmodule',['amrex_filcc_module',['../namespaceamrex__filcc__module.html',1,'']]],
