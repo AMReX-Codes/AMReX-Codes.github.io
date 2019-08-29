@@ -538,6 +538,7 @@ var searchData=
   ['amrex_5fparticlecontaineri_2eh',['AMReX_ParticleContainerI.H',['../AMReX__ParticleContainerI_8H.html',1,'']]],
   ['amrex_5fparticleinit_2eh',['AMReX_ParticleInit.H',['../AMReX__ParticleInit_8H.html',1,'']]],
   ['amrex_5fparticleio_2eh',['AMReX_ParticleIO.H',['../AMReX__ParticleIO_8H.html',1,'']]],
+  ['amrex_5fparticlelocator_2eh',['AMReX_ParticleLocator.H',['../AMReX__ParticleLocator_8H.html',1,'']]],
   ['amrex_5fparticlemesh_2eh',['AMReX_ParticleMesh.H',['../AMReX__ParticleMesh_8H.html',1,'']]],
   ['amrex_5fparticlempiutil_2ecpp',['AMReX_ParticleMPIUtil.cpp',['../AMReX__ParticleMPIUtil_8cpp.html',1,'']]],
   ['amrex_5fparticlempiutil_2eh',['AMReX_ParticleMPIUtil.H',['../AMReX__ParticleMPIUtil_8H.html',1,'']]],
@@ -610,6 +611,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
 ];

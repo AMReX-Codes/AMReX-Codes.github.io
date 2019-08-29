@@ -413,6 +413,7 @@ var searchData=
   ['assert',['Assert',['../namespaceamrex.html#ab6a2e5010fd3fcf597991b9d1a251c0d',1,'amrex']]],
   ['assigncelldensitysinglelevel',['AssignCellDensitySingleLevel',['../classamrex_1_1ParticleContainer.html#a514e65157e2dfd98361e399c934c4a2f',1,'amrex::ParticleContainer']]],
   ['assigndensity',['AssignDensity',['../classamrex_1_1ParticleContainer.html#ad8c4881ee78ae85368b508e5387e52d8',1,'amrex::ParticleContainer']]],
+  ['assigngrid',['assignGrid',['../structamrex_1_1assignGrid.html#aecc7b018416125a16f211fcd6ea4ffd7',1,'amrex::assignGrid']]],
   ['assignment',['assignment',['../structamrex__parmparse__module_1_1amrex__parmparse.html#a7d38178a2b0b5dbb4327d75133f7176b',1,'amrex_parmparse_module::amrex_parmparse']]],
   ['asyncarray',['AsyncArray',['../classamrex_1_1Gpu_1_1AsyncArray.html#af992105e648c21e706ce737fbcebcaea',1,'amrex::Gpu::AsyncArray::AsyncArray(T const *h_p, const std::size_t n)'],['../classamrex_1_1Gpu_1_1AsyncArray.html#a5b879dd18ab1df0506992cba46406a68',1,'amrex::Gpu::AsyncArray::AsyncArray(const std::size_t n)']]],
   ['at',['at',['../namespaceamrex_1_1Gpu_1_1range__detail.html#a6c51ddcccda8c06d0e39392634140817',1,'amrex::Gpu::range_detail::at(T const &amp;b, long offset) noexcept'],['../namespaceamrex_1_1Gpu_1_1range__detail.html#addaa193e2fa2a88e59af978c78229982',1,'amrex::Gpu::range_detail::at(Box const &amp;b, long offset) noexcept']]],

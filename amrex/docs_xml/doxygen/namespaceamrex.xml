@@ -24,6 +24,7 @@
     <innerclass refid="structamrex_1_1ArenaInfo" prot="public">amrex::ArenaInfo</innerclass>
     <innerclass refid="structamrex_1_1Array4" prot="public">amrex::Array4</innerclass>
     <innerclass refid="classamrex_1_1ArrayOfStructs" prot="public">amrex::ArrayOfStructs</innerclass>
+    <innerclass refid="structamrex_1_1assignGrid" prot="public">amrex::assignGrid</innerclass>
     <innerclass refid="classamrex_1_1BArena" prot="public">amrex::BArena</innerclass>
     <innerclass refid="classamrex_1_1BaseFab" prot="public">amrex::BaseFab</innerclass>
     <innerclass refid="classamrex_1_1BaseUmap" prot="public">amrex::BaseUmap</innerclass>
@@ -206,6 +207,7 @@
     <innerclass refid="structamrex_1_1ParticleCopyOp" prot="public">amrex::ParticleCopyOp</innerclass>
     <innerclass refid="structamrex_1_1ParticleCopyPlan" prot="public">amrex::ParticleCopyPlan</innerclass>
     <innerclass refid="structamrex_1_1ParticleInitType" prot="public">amrex::ParticleInitType</innerclass>
+    <innerclass refid="classamrex_1_1ParticleLocator" prot="public">amrex::ParticleLocator</innerclass>
     <innerclass refid="structamrex_1_1ParticleLocData" prot="public">amrex::ParticleLocData</innerclass>
     <innerclass refid="structamrex_1_1ParticleTile" prot="public">amrex::ParticleTile</innerclass>
     <innerclass refid="structamrex_1_1ParticleTileData" prot="public">amrex::ParticleTileData</innerclass>
@@ -24394,7 +24396,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="369" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.cpp" bodystart="245" bodyend="254"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="369" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.cpp" bodystart="278" bodyend="287"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae65aa0e5fb032ec461c63cf5bf490f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -25044,7 +25046,41 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="7" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="7" bodyend="52"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab572563109e982107addd781a257e674" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename P</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE IntVect amrex::getParticleCell</definition>
+        <argsstring>(P const &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Box &amp;domain) noexcept</argsstring>
+        <name>getParticleCell</name>
+        <param>
+          <type>P const &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">amrex::GpuArray</ref>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>plo</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">amrex::GpuArray</ref>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>dxi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="21" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="21" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename P</type>
@@ -25052,7 +25088,7 @@
         </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::getParticleGrid</definition>
-        <argsstring>(P const &amp;p, amrex::Array4&lt; int &gt; const &amp;mask, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Box &amp;domain)</argsstring>
+        <argsstring>(P const &amp;p, amrex::Array4&lt; int &gt; const &amp;mask, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const Box &amp;domain) noexcept</argsstring>
         <name>getParticleGrid</name>
         <param>
           <type>P const &amp;</type>
@@ -25080,7 +25116,41 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="21" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="21" bodyend="33"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="36" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a7e080a46fe9b809638863cceccfc7536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename P</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::enforcePeriodic</definition>
+        <argsstring>(P &amp;p, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;phi, amrex::GpuArray&lt; int, AMREX_SPACEDIM &gt; const &amp;is_per) noexcept</argsstring>
+        <name>enforcePeriodic</name>
+        <param>
+          <type>P &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">amrex::GpuArray</ref>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>plo</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">amrex::GpuArray</ref>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>phi</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">amrex::GpuArray</ref>&lt; int, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>is_per</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="48" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="48" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a895a00e9c8e43db54c9685fcea13bb8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -25106,7 +25176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="37" bodyend="40"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="66" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af0e8632d038fd94b693cd5acbe392433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -25140,7 +25210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="44" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="44" bodyend="91"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="73" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1cd9ca52018b671f2ce4b7c3bb8d8ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

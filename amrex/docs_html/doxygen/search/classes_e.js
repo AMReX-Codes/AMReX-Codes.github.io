@@ -17,6 +17,7 @@ var searchData=
   ['particlecopyop',['ParticleCopyOp',['../structamrex_1_1ParticleCopyOp.html',1,'amrex']]],
   ['particlecopyplan',['ParticleCopyPlan',['../structamrex_1_1ParticleCopyPlan.html',1,'amrex']]],
   ['particleinittype',['ParticleInitType',['../structamrex_1_1ParticleInitType.html',1,'amrex']]],
+  ['particlelocator',['ParticleLocator',['../classamrex_1_1ParticleLocator.html',1,'amrex']]],
   ['particlelocdata',['ParticleLocData',['../structamrex_1_1ParticleLocData.html',1,'amrex']]],
   ['particletile',['ParticleTile',['../structamrex_1_1ParticleTile.html',1,'amrex']]],
   ['particletiledata',['ParticleTileData',['../structamrex_1_1ParticleTileData.html',1,'amrex']]],
