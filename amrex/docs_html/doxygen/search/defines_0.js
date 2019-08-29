@@ -74,6 +74,7 @@ var searchData=
   ['amrex_5flaunch_5fdevice_5flambda_5fboxiv',['AMREX_LAUNCH_DEVICE_LAMBDA_BOXIV',['../AMReX__GpuLaunch_8H.html#ad6e15a8f0e982fa6bb46f1896c300fdc',1,'AMReX_GpuLaunch.H']]],
   ['amrex_5flaunch_5fhost_5fdevice_5flambda',['AMREX_LAUNCH_HOST_DEVICE_LAMBDA',['../AMReX__GpuLaunch_8H.html#a20fce791cf3cebcb24e689bb5da837c0',1,'AMReX_GpuLaunch.H']]],
   ['amrex_5flaunch_5fhost_5fdevice_5flambda_5fboxiv',['AMREX_LAUNCH_HOST_DEVICE_LAMBDA_BOXIV',['../AMReX__GpuLaunch_8H.html#ae1091e3fea3e380c2dd9279538aceae9',1,'AMReX_GpuLaunch.H']]],
+  ['amrex_5flaunch_5fhost_5fdevice_5flambda_5fflag',['AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG',['../AMReX__GpuLaunch_8H.html#a49f1ab65d0d139e9318376dd1f6e4dc7',1,'AMReX_GpuLaunch.H']]],
   ['amrex_5flo_5fbogus',['AMREX_LO_BOGUS',['../AMReX__LO__BCTYPES_8H.html#a969fe17351200623de86808d7d02de1a',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5fdirichlet',['AMREX_LO_DIRICHLET',['../AMReX__LO__BCTYPES_8H.html#a874725e18b8a17a13d2200cea4c11c47',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5finflow',['AMREX_LO_INFLOW',['../AMReX__LO__BCTYPES_8H.html#abb28e2063a5f29dd10f42d856e8c6af6',1,'AMReX_LO_BCTYPES.H']]],
