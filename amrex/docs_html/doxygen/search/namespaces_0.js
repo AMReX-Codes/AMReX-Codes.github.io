@@ -15,7 +15,6 @@ var searchData=
   ['amrex_5feb_5flevelset_5fmodule',['amrex_eb_levelset_module',['../namespaceamrex__eb__levelset__module.html',1,'']]],
   ['amrex_5feb_5ftagging_5fmodule',['amrex_eb_tagging_module',['../namespaceamrex__eb__tagging__module.html',1,'']]],
   ['amrex_5feb_5fto_5fvtk',['amrex_eb_to_vtk',['../namespaceamrex__eb__to__vtk.html',1,'']]],
-  ['amrex_5feb_5futil_5fmodule',['amrex_eb_util_module',['../namespaceamrex__eb__util__module.html',1,'']]],
   ['amrex_5febcellflag_5fmodule',['amrex_ebcellflag_module',['../namespaceamrex__ebcellflag__module.html',1,'']]],
   ['amrex_5ferror_5fmodule',['amrex_error_module',['../namespaceamrex__error__module.html',1,'']]],
   ['amrex_5fextrapolater',['amrex_extrapolater',['../namespaceamrex__extrapolater.html',1,'']]],
