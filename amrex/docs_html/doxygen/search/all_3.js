@@ -19,7 +19,7 @@ var searchData=
   ['calcrefratios',['calcRefRatios',['../classCommProfStats.html#a71a0a4c9fbfae52c4da448c6ac832319',1,'CommProfStats']]],
   ['calculateminmax',['CalculateMinMax',['../structamrex_1_1VisMF_1_1Header.html#a67ebe2f805154bc932ce0d58aebf9e62',1,'amrex::VisMF::Header']]],
   ['call_5faddr2line',['call_addr2line',['../namespaceamrex_1_1system.html#a1ed2a732c93fe26dfa4fbb63c2a698eb',1,'amrex::system']]],
-  ['call_5fdevice',['call_device',['../namespaceamrex.html#a8d531ed0aeef2766dfaf1086bba15da2',1,'amrex::call_device(L f0) noexcept'],['../namespaceamrex.html#af41625305a9964fe293563e25874277e',1,'amrex::call_device(L f0, Lambdas...fs) noexcept']]],
+  ['call_5fdevice',['call_device',['../namespaceamrex.html#ad89172e7973936686d13f4926bfac5aa',1,'amrex::call_device(L &amp;&amp;f0) noexcept'],['../namespaceamrex.html#acf64e53e385ffd142ac57af626fc2cbc',1,'amrex::call_device(L &amp;&amp;f0, Lambdas &amp;&amp;...fs) noexcept']]],
   ['calledfunctions',['calledFunctions',['../structBLProfStats_1_1CallTreeNode.html#a696987a2e37d477370485150489b48df',1,'BLProfStats::CallTreeNode']]],
   ['calltreenode',['CallTreeNode',['../structBLProfStats_1_1CallTreeNode.html',1,'BLProfStats']]],
   ['calltreenode',['CallTreeNode',['../structBLProfStats_1_1CallTreeNode.html#a58a170e22648cb330508a33ecd8396c5',1,'BLProfStats::CallTreeNode']]],

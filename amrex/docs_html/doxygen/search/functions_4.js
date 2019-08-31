@@ -37,6 +37,7 @@ var searchData=
   ['definegrids',['defineGrids',['../classamrex_1_1MLLinOp.html#a07740ce5e26ee8f463d6176b157fe06a',1,'amrex::MLLinOp']]],
   ['deletederiveplotvar',['deleteDerivePlotVar',['../classamrex_1_1Amr.html#a1eaf7d49c3fdfa17035d39cf047d5874',1,'amrex::Amr']]],
   ['deletederivesmallplotvar',['deleteDeriveSmallPlotVar',['../classamrex_1_1Amr.html#a9a6b2ab66182008060baa72d4702f321',1,'amrex::Amr']]],
+  ['deleter',['Deleter',['../structamrex_1_1Gpu_1_1Deleter.html#a14473dbba9ee1812b7e99149ab261b7e',1,'amrex::Gpu::Deleter']]],
   ['deletestateplotvar',['deleteStatePlotVar',['../classamrex_1_1Amr.html#ab72037810d96a60c15358d42c780d92e',1,'amrex::Amr']]],
   ['deletestream',['DeleteStream',['../classamrex_1_1VisMF.html#a6a1a78975e5decf1c7aae4555a240628',1,'amrex::VisMF']]],
   ['derfunc',['derFunc',['../classamrex_1_1DeriveRec.html#a4cc703ca266623995fc8245ddd618ce3',1,'amrex::DeriveRec']]],

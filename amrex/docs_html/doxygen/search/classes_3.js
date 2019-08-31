@@ -7,6 +7,7 @@ var searchData=
   ['datadeleter',['DataDeleter',['../structamrex_1_1DataDeleter.html',1,'amrex']]],
   ['dataservices',['DataServices',['../classamrex_1_1DataServices.html',1,'amrex']]],
   ['defaultfabfactory',['DefaultFabFactory',['../classamrex_1_1DefaultFabFactory.html',1,'amrex']]],
+  ['deleter',['Deleter',['../structamrex_1_1Gpu_1_1Deleter.html',1,'amrex::Gpu']]],
   ['derivelist',['DeriveList',['../classamrex_1_1DeriveList.html',1,'amrex']]],
   ['deriverec',['DeriveRec',['../classamrex_1_1DeriveRec.html',1,'amrex']]],
   ['descriptorlist',['DescriptorList',['../classamrex_1_1DescriptorList.html',1,'amrex']]],
