@@ -55,7 +55,7 @@ var searchData=
   ['_7edivvis',['~DivVis',['../classamrex_1_1DivVis.html#aa258ebaec92785420ce8048007a2c98f',1,'amrex::DivVis']]],
   ['_7eearena',['~EArena',['../classamrex_1_1EArena.html#aa7ffefaf198e2f27d6e28d6e92228a4a',1,'amrex::EArena']]],
   ['_7eebcellconservativelinear',['~EBCellConservativeLinear',['../classamrex_1_1EBCellConservativeLinear.html#a35b416bd79f57d83c7de458463e76c59',1,'amrex::EBCellConservativeLinear']]],
-  ['_7eebcellflagfab',['~EBCellFlagFab',['../classamrex_1_1EBCellFlagFab.html#a044956756fadec1ce341b7c6561f884d',1,'amrex::EBCellFlagFab']]],
+  ['_7eebcellflagfab',['~EBCellFlagFab',['../classamrex_1_1EBCellFlagFab.html#a91e0fa5e4fc71a2284f1cbacccc18845',1,'amrex::EBCellFlagFab']]],
   ['_7eebdatacollection',['~EBDataCollection',['../classamrex_1_1EBDataCollection.html#ac0a68c8f5a6914b596f4c47f43d2f6aa',1,'amrex::EBDataCollection']]],
   ['_7eebfarraybox',['~EBFArrayBox',['../classamrex_1_1EBFArrayBox.html#a4f50980c0b4e0c9445ff2497cb2fc573',1,'amrex::EBFArrayBox']]],
   ['_7eebfarrayboxfactory',['~EBFArrayBoxFactory',['../classamrex_1_1EBFArrayBoxFactory.html#ad501654118cdfebf0f2b0d68fb5a6cc1',1,'amrex::EBFArrayBoxFactory']]],

@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#hypre">HYPRE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-component-operators">Multi-Component Operators</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
@@ -400,6 +401,48 @@ example of using HYPRE, we refer the reader to
 <h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline">¶</a></h1>
 <p>AMReX support solving linear systems with embedded boundaries.  See
 chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details.</p>
+</div>
+<div class="section" id="multi-component-operators">
+<h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
+<p>This section discusses solving linear systems in which the solution variable <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> has multiple components.
+An example (implemented in the <code class="docutils literal notranslate"><span class="pre">MultiComponent</span></code> tutorial) might be:</p>
+<div class="math notranslate nohighlight">
+\[D(\mathbf{\phi})_i = \sum_{i=1}^N \alpha_{ij} \nabla^2 \phi_j\]</div>
+<p>(Note: only operators of the form <span class="math notranslate nohighlight">\(D:\mathbb{R}^n\to\mathbb{R}^n\)</span> are currently allowed.)</p>
+<ul>
+<li><p>To implement a multi-component <em>cell-based</em> operator, inherit from the <code class="docutils literal notranslate"><span class="pre">MLCellLinOp</span></code> class.
+Override the <code class="docutils literal notranslate"><span class="pre">getNComp</span></code> function to return the number of components (<code class="docutils literal notranslate"><span class="pre">N</span></code>)that the operator will use.
+The solution and rhs fabs must also have at least one ghost node.
+<code class="docutils literal notranslate"><span class="pre">Fapply</span></code>, <code class="docutils literal notranslate"><span class="pre">Fsmooth</span></code>, <code class="docutils literal notranslate"><span class="pre">Fflux</span></code> must be implemented such that the solution and rhs fabs all have <code class="docutils literal notranslate"><span class="pre">N</span></code> components.</p></li>
+<li><p>Implementing a multi-component <em>node-based</em> operator is slightly different.
+A MC nodal operator must specify that the reflux-free coarse/fine strategy is being used by the solver.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span><span class="p">.</span><span class="n">setCFStrategy</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">CFStrategy</span><span class="o">::</span><span class="n">ghostnodes</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The reflux-free method circumvents the need to implement a special <code class="docutils literal notranslate"><span class="pre">reflux</span></code> at the coarse-fine boundary.
+This is accomplished by using ghost nodes.
+Each AMR level must have 2 layers of ghost nodes.
+The second (outermost) layer of nodes is treated as constant by the relaxation, essentially acting as a Dirichlet boundary.
+The first layer of nodes is evolved using the relaxation, in the same manner as the rest of the solution.
+When the residual is restricted onto the coarse level (in <code class="docutils literal notranslate"><span class="pre">reflux</span></code>) this allows the residual at the coarse-fine boundary to be interpolated using the first layer of ghost nodes.
+<a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 9</span></a> illustrates the how the coarse-fine update takes place.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-refluxfreecoarsefine"></span><a class="reference internal image-reference" href="_images/refluxfreecoarsefine.png"><img alt="_images/refluxfreecoarsefine.png" src="_images/refluxfreecoarsefine.png" style="height: 2cm;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">: Reflux-free coarse-fine boundary update.
+Level 2 ghost nodes (small dark blue) are interpolated from coarse boundary.
+Level 1 ghost nodes are updated during the relaxation along with all the other interior fine nodes.
+Coarse nodes (large blue) on the coarse/fine boundary are updated by restricting with interior nodes
+and the first level of ghost nodes.
+Coarse nodes underneath level 2 ghost nodes are not updated.
+The remaining coarse nodes are updates by restriction.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The MC nodal operator can inherit from the <code class="docutils literal notranslate"><span class="pre">MCNodeLinOp</span></code> class.
+<code class="docutils literal notranslate"><span class="pre">Fapply</span></code>, <code class="docutils literal notranslate"><span class="pre">Fsmooth</span></code>, and <code class="docutils literal notranslate"><span class="pre">Fflux</span></code> must update level 1 ghost nodes that are inside the domain.
+<cite>interpolation</cite> and <cite>restriction</cite> can be implemented as usual.
+<cite>reflux</cite> is a straightforward restriction from fine to coarse, using level 1 ghost nodes for restriction as described above.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearOperator/MultiComponent</span></code> for a complete working example.</p>
+</li>
+</ul>
 </div>
 
 

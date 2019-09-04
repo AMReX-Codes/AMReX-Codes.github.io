@@ -212,10 +212,10 @@ block-structured, but the boundary of the irregular-shaped computational domain
 conceptually cuts through this mesh. Each cell in the mesh becomes labeled as
 regular, cut or covered, and the finite-volume based discretization methods
 traditionally used in AMReX applications can be modified to incorporate these
-cell shapes. See <a class="reference internal" href="#fig-ebexample"><span class="std std-numref">Fig. 12</span></a> for an illustration.</p>
+cell shapes. See <a class="reference internal" href="#fig-ebexample"><span class="std std-numref">Fig. 13</span></a> for an illustration.</p>
 <div class="figure align-default" id="id1">
 <span id="fig-ebexample"></span><a class="reference internal image-reference" href="_images/EB_example.png"><img alt="_images/EB_example.png" src="_images/EB_example.png" style="width: 50.0%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">: In the embedded boundary approach to discretizing PDEs, the (uniform)
 rectangular mesh is cut by the irregular shape of the computational domain.
 The cells in the mesh are label as regular, cut or covered.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
@@ -346,10 +346,10 @@ redistribution, <span class="math notranslate nohighlight">\(W\)</span>,</p>
   W_{\bf j}}{\sum_{{\bf k}\in N_{\bf i}} \kappa_{\bf k}W_{\bf k}}.\]</div>
 <p>Typically, the redistribution neighborhood for each cell is one that can be
 reached via a monotonic path in each coordinate direction of unit length (see,
-e.g., <a class="reference internal" href="#fig-redistribution"><span class="std std-numref">Fig. 13</span></a>)</p>
+e.g., <a class="reference internal" href="#fig-redistribution"><span class="std std-numref">Fig. 14</span></a>)</p>
 <div class="figure align-default" id="id3">
 <span id="fig-redistribution"></span><a class="reference internal image-reference" href="_images/redist.png"><img alt="_images/redist.png" src="_images/redist.png" style="width: 50.0%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">: Redistribution illustration. Excess mass due to using a hybrid divergence
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">: Redistribution illustration. Excess mass due to using a hybrid divergence
 <span class="math notranslate nohighlight">\(D^H\)</span> instead of the conservative divergence <span class="math notranslate nohighlight">\(D^C\)</span> is
 distributed to neighbor cells.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
@@ -705,11 +705,11 @@ level-set function as the point being “at least” <span class="math notransla
 the EB surface.</p>
 <div class="figure align-default" id="id4">
 <span id="fig-local-levelset"></span><a class="reference internal image-reference" href="_images/loc_ls_ex.png"><img alt="_images/loc_ls_ex.png" src="_images/loc_ls_ex.png" style="width: 50.0%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">: Example of a “local” level-set representing a cylinder. The level-set
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">: Example of a “local” level-set representing a cylinder. The level-set
 function is a (linear) signed distance function near the EB-surface, and it
 plateaus further away from it.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>Figure <a class="reference internal" href="#fig-local-levelset"><span class="std std-numref">Fig. 14</span></a> shows an example of such a local level-set
+<p>Figure <a class="reference internal" href="#fig-local-levelset"><span class="std std-numref">Fig. 15</span></a> shows an example of such a local level-set
 description for a cylinder. Only cells that are within
 <span class="math notranslate nohighlight">\(\pm(n_\mathrm{pad}+1)h\)</span> of the EB surface are filled with a level-set.
 The rest is filled with lower (upper) bound. If the goal is capture interactions
@@ -777,7 +777,7 @@ respectively.</p>
 within a tile (plus the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">eb_factory</span></span></code> ghost cells) are considered. Hence,
 chosing an appropriate <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ebt_size</span></span></code> can significantly increase performance.</p>
 <p>For example, the following fills a level-set with a cylinder EB (like that shown
-in Fig. <a class="reference internal" href="#fig-local-levelset"><span class="std std-numref">Fig. 14</span></a>).</p>
+in Fig. <a class="reference internal" href="#fig-local-levelset"><span class="std std-numref">Fig. 15</span></a>).</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Define nGrow of level-set and EB</span>
 <span class="kt">int</span> <span class="n">ls_pad</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">eb_pad</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
