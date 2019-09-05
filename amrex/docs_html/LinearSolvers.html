@@ -103,7 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#hypre">hypre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mac-projection">MAC Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-component-operators">Multi-Component Operators</a></li>
 </ul>
@@ -381,20 +381,20 @@ other ways, one can call <code class="code cpp c++ docutils literal notranslate"
 on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object passed to the constructor of linear
 operators.</p>
 </div>
-<div class="section" id="hypre">
-<h1>hypre<a class="headerlink" href="#hypre" title="Permalink to this headline">¶</a></h1>
-<p>AMReX can use hypre BoomerAMG as a bottom solver (currently for
-cell-centered problems only), as we have mentioned.  For challenging
-problems, our geometric multigrid solver may have difficulty solving,
-whereas an algebraic multigrid method might be more robust.  We note
-that by default our solver always tries to geometrically coarsen the
+<div class="section" id="external-solvers">
+<h1>External Solvers<a class="headerlink" href="#external-solvers" title="Permalink to this headline">¶</a></h1>
+<p>AMReX can use the hypre algebraic multigrid solver, BoomerAMG,
+as a bottom solver for both cell-centered and node-based problems.
+For challenging problems, our geometric multigrid solver may have difficulty solving,
+whereas an algebraic multigrid method might be more robust.
+We note that by default our solver always tries to geometrically coarsen the
 problem as much as possible.  However, as we have mentioned, we can
 call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMaxCoarseningLevel</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">)</span></span></code> on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object
 passed to the constructor of a linear operator to disable the
 coarsening completely.  In that case the bottom solver is solving the
-residual correction form of the original problem.  To use hypre, one
-must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system. For an
-example of using hypre, we refer the reader to
+residual correction form of the original problem.</p>
+<p>To use hypre, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system.
+For an example of using hypre, we refer the reader to
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
 </div>
 <div class="section" id="mac-projection">
