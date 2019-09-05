@@ -103,8 +103,8 @@
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#curvilinear-coordinates">Curvilinear Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#hypre">HYPRE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#embedded-boundaries">Embedded Boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#hypre">hypre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#mac-projection">MAC Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#multi-component-operators">Multi-Component Operators</a></li>
 </ul>
 </li>
@@ -184,6 +184,13 @@
             
   <div class="section" id="linear-solvers">
 <span id="chap-linearsolvers"></span><h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this headline">¶</a></h1>
+<p>AMReX supports both single-level solves and composite solves on multiple AMR levels,
+with the scalar solution to the linear system defined on either cell centers or nodes.
+AMReX also supports solution of linear systems with embedded boundaries.
+(See chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details on the embedded boundary representation of
+complex geometry.)</p>
+<p>The default solution technique is geometric multigrid, but AMReX includes native
+BiCGStab solvers for a single level as well as interfaces to the hypre library.</p>
 <p>In this Chapter we give an overview of the linear solvers in AMReX
 that solve linear systems in the canonical form</p>
 <div class="math notranslate nohighlight" id="equation-eqn-abeclap">
@@ -192,15 +199,20 @@ that solve linear systems in the canonical form</p>
 <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are scalar fields, <span class="math notranslate nohighlight">\(\phi\)</span> is the
 unknown, and <span class="math notranslate nohighlight">\(f\)</span> is the right-hand side of the equation.  Note
 that Poisson’s equation <span class="math notranslate nohighlight">\(\nabla^2 \phi = f\)</span> is a special case
-of the canonical form.  The sought solution <span class="math notranslate nohighlight">\(\phi\)</span> is at either
-cell centers or nodes.  For the cell-centered solver, <span class="math notranslate nohighlight">\(A\)</span>,
-<span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span> are represented by cell-centered MultiFabs,
+of the canonical form.  The solution <span class="math notranslate nohighlight">\(\phi\)</span> is at either
+cell centers or nodes.</p>
+<p>For the cell-centered solver, <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span>
+are represented by cell-centered MultiFabs,
 and <span class="math notranslate nohighlight">\(B\)</span> is represented by <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> face type
-MultiFabs.  That is there are 1, 2 and 3 MultiFabs representing
-<span class="math notranslate nohighlight">\(B\)</span> for 1, 2 and 3D, respectively.  For the nodal solver,
-<span class="math notranslate nohighlight">\(A\)</span> is assumed to be zero, <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span> are nodal,
-and <span class="math notranslate nohighlight">\(B\)</span> is cell-centered.  AMReX supports both single-level
-solve and composite solve on multiple AMR levels.</p>
+MultiFabs, i.e.  there are separate MultiFabs for the <span class="math notranslate nohighlight">\(B\)</span>
+coefficient in each coordinate direction.</p>
+<p>For the nodal solver, <span class="math notranslate nohighlight">\(A\)</span> is assumed to be zero, <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span> are nodal,
+and <span class="math notranslate nohighlight">\(B\)</span> is cell-centered.</p>
+<p>In addition to these solvers, AMReX has support for tensor solves used
+to calculate the viscous terms that appear in the compressible Navier-Stokes
+equations.  In these solves, all components of the velocity field are solved
+for simultaneously.  The tensor solve functionality is only available for
+cell-centered velocity.</p>
 <p>The tutorials in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/LinearSolvers/</span></code> show examples of
 using the solvers.  The tutorial
 <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX3_C</span></code> shows how to solve the
@@ -212,8 +224,8 @@ how to add linear solvers into the build system.</p>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#parameters">Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#curvilinear-coordinates">Curvilinear Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#hypre">HYPRE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#embedded-boundaries">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#hypre">hypre</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#mac-projection">MAC Projection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#multi-component-operators">Multi-Component Operators</a></li>
 </ul>
 </div>

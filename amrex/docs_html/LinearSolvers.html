@@ -103,8 +103,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#hypre">HYPRE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hypre">hypre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mac-projection">MAC Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-component-operators">Multi-Component Operators</a></li>
 </ul>
 </li>
@@ -367,7 +367,7 @@ stabilized method as the bottom solver.  <code class="code cpp c++ docutils lite
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">bicgstab</span></span></code>: The default.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cg</span></span></code>: The conjugate gradient method.  The
 matrix must be symmetric.</p></li>
-<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Hypre</span></span></code>: BoomerAMG in HYPRE.  Currently for
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Hypre</span></span></code>: BoomerAMG in hypre.  Currently for
 cell-centered only.</p></li>
 </ul>
 </div>
@@ -382,8 +382,8 @@ on the <code class="code cpp c++ docutils literal notranslate"><span class="name
 operators.</p>
 </div>
 <div class="section" id="hypre">
-<h1>HYPRE<a class="headerlink" href="#hypre" title="Permalink to this headline">¶</a></h1>
-<p>AMReX can use HYPRE BoomerAMG as a bottom solver (currently for
+<h1>hypre<a class="headerlink" href="#hypre" title="Permalink to this headline">¶</a></h1>
+<p>AMReX can use hypre BoomerAMG as a bottom solver (currently for
 cell-centered problems only), as we have mentioned.  For challenging
 problems, our geometric multigrid solver may have difficulty solving,
 whereas an algebraic multigrid method might be more robust.  We note
@@ -392,15 +392,23 @@ problem as much as possible.  However, as we have mentioned, we can
 call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMaxCoarseningLevel</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">)</span></span></code> on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object
 passed to the constructor of a linear operator to disable the
 coarsening completely.  In that case the bottom solver is solving the
-residual correction form of the original problem.  To use HYPRE, one
+residual correction form of the original problem.  To use hypre, one
 must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system. For an
-example of using HYPRE, we refer the reader to
+example of using hypre, we refer the reader to
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
 </div>
-<div class="section" id="embedded-boundaries">
-<h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline">¶</a></h1>
-<p>AMReX support solving linear systems with embedded boundaries.  See
-chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details.</p>
+<div class="section" id="mac-projection">
+<h1>MAC Projection<a class="headerlink" href="#mac-projection" title="Permalink to this headline">¶</a></h1>
+<p>Some codes define a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> on faces, i.e.
+<span class="math notranslate nohighlight">\(u\)</span> is defined on x-faces, <span class="math notranslate nohighlight">\(v\)</span> is defined on y-faces,
+and <span class="math notranslate nohighlight">\(w\)</span> is defined on z-faces.   We refer to the exact projection
+of this velocity field as a MAC projection, in which we solve</p>
+<div class="math notranslate nohighlight">
+\[D( B \nabla \phi) = D(U^*)\]</div>
+<p>then set</p>
+<div class="math notranslate nohighlight">
+\[U = U^* - B \nabla \phi\]</div>
+<p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to make divergence-free.</p>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
