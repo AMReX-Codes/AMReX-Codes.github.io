@@ -482,6 +482,18 @@ the MACProjector object and use it to perform a MAC projection.</p>
 </pre></div>
 </div>
 <p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/MAC_Projection_EB</span></code> for the complete working example.</p>
+<p>Note that in order to project the velocity onto a field with a specified divergence, <span class="math notranslate nohighlight">\(D(U)=RHS\)</span>,
+one simply has to pass in an additional array of MultiFabs into the MacProjector constructor,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MacProjector</span> <span class="nf">macproj</span><span class="p">({</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)},</span>       <span class="c1">// face-based velocity</span>
+                     <span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">beta</span><span class="p">)},</span> <span class="c1">// beta</span>
+                     <span class="p">{</span><span class="n">geom</span><span class="p">},</span>                           <span class="c1">// the geometry object</span>
+                     <span class="n">lp_info</span><span class="p">,</span>                  <span class="c1">// structure for passing info to the operator</span>
+                     <span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">RHS</span><span class="p">)});</span> <span class="c1">// defines the specified RHS divergence</span>
+</pre></div>
+</div>
+<p>This in turn solves <span class="math notranslate nohighlight">\(D( \beta \nabla \phi) = D(U^*) - RHS\)</span></p>
+<p>and then sets <span class="math notranslate nohighlight">\(U = U^* - \beta \nabla \phi\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(U\)</span> satisfies <span class="math notranslate nohighlight">\(D(U)=RHS\)</span>.</p>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
