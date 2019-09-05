@@ -410,7 +410,15 @@ of this velocity field as a MAC projection, in which we solve</p>
 \[U = U^* - B \nabla \phi\]</div>
 <p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to make divergence-free.</p>
 <p>The MACProjection class can be defined and used to perform the MAC projection with explcitly
-calling the solver directly.  The following code is taken from
+calling the solver directly.  In addition to solving the variable coefficient Poisson equation,
+the MacProjector first computes the divergence of the vector field ( :math:<a href="#id1"><span class="problematic" id="id2">`</span></a>D(U^*)
+to compute a right-hand-side, and after the solve, subtracts the weighted gradient term to
+make the vector field result divergence-free.  Note that in the simplest case,
+both the right-hand-side array and solution array are internal to the MacProjector object;
+the user does not allocate those arrays and does not have access to them.</p>
+<p>There is an alternative call – commented out below – in which a user does allocate
+the solution array and passes it in/out.</p>
+<p>The following code is taken from
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearOperator/MAC_Projection_EB/main.cpp</span></code> and demonstrates how to set up
 the MACProjector object and use it to perform a MAC projection.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// This object provides access to the EB database in the format of basic AMReX objects</span>
@@ -422,6 +430,9 @@ the MACProjector object and use it to perform a MAC projection.</p>
     <span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">define</span><span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span><span class="n">IntVect</span><span class="o">::</span><span class="n">TheDimensionVector</span><span class="p">(</span><span class="n">idim</span><span class="p">)),</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">);</span>
     <span class="n">beta</span><span class="p">[</span><span class="n">idim</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 <span class="p">}</span>
+
+<span class="c1">// If we want to use phi elsewhere, we must create an array in which to return the solution</span>
+<span class="c1">// phi_inout.define(grids, dmap, 1, 1, MFInfo(), factory);</span>
 
 <span class="c1">// set initial velocity to U=(1,0,0)</span>
 <span class="n">AMREX_D_TERM</span><span class="p">(</span><span class="n">vel</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);,</span>
@@ -443,7 +454,9 @@ the MACProjector object and use it to perform a MAC projection.</p>
 <span class="k">if</span> <span class="p">(</span><span class="n">use_hypre</span><span class="p">)</span>
    <span class="n">macproj</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span><span class="p">);</span>
 
-<span class="c1">// Hard-wire teh boundary conditions to be Neumann in x-direction and periodic in the other two directions</span>
+<span class="c1">// Hard-wire the boundary conditions to be Neumann on the low x-face, Dirichlet on the high x-face,</span>
+<span class="c1">//  and periodic in the other two directions</span>
+<span class="c1">//  (the first argument is for the low end, the second is for the high end)</span>
 <span class="n">macproj</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
                                   <span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
                                   <span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
@@ -457,8 +470,14 @@ the MACProjector object and use it to perform a MAC projection.</p>
 <span class="c1">// Define the relative tolerance</span>
 <span class="n">Real</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.e-8</span><span class="p">;</span>
 
-<span class="c1">// Solve for :math:`\phi` and subtract from the velocity to make it divergence-free</span>
-<span class="n">macproj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="n">reltol</span><span class="p">);</span>
+<span class="c1">// Define the absolute tolerance; note that this argument is optional</span>
+<span class="n">Real</span> <span class="n">abstol</span> <span class="o">=</span> <span class="mf">1.e-15</span><span class="p">;</span>
+
+<span class="c1">// Solve for phi and subtract from the velocity to make it divergence-free</span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">project</span><span class="p">(</span><span class="n">reltol</span><span class="p">,</span><span class="n">abstol</span><span class="p">);</span>
+
+<span class="c1">// If we want to use phi elsewhere, we can pass in an array in which to return the solution</span>
+<span class="c1">// macproj.project(phi_inout,reltol,abstol);</span>
 </pre></div>
 </div>
 <p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearOperator/MAC_Projection_EB</span></code> for the complete working example.</p>
@@ -487,7 +506,7 @@ The second (outermost) layer of nodes is treated as constant by the relaxation, 
 The first layer of nodes is evolved using the relaxation, in the same manner as the rest of the solution.
 When the residual is restricted onto the coarse level (in <code class="docutils literal notranslate"><span class="pre">reflux</span></code>) this allows the residual at the coarse-fine boundary to be interpolated using the first layer of ghost nodes.
 <a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 9</span></a> illustrates the how the coarse-fine update takes place.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id3">
 <span id="fig-refluxfreecoarsefine"></span><a class="reference internal image-reference" href="_images/refluxfreecoarsefine.png"><img alt="_images/refluxfreecoarsefine.png" src="_images/refluxfreecoarsefine.png" style="height: 2cm;" /></a>
 <p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">: Reflux-free coarse-fine boundary update.
 Level 2 ghost nodes (small dark blue) are interpolated from coarse boundary.
@@ -495,7 +514,7 @@ Level 1 ghost nodes are updated during the relaxation along with all the other i
 Coarse nodes (large blue) on the coarse/fine boundary are updated by restricting with interior nodes
 and the first level of ghost nodes.
 Coarse nodes underneath level 2 ghost nodes are not updated.
-The remaining coarse nodes are updates by restriction.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+The remaining coarse nodes are updates by restriction.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The MC nodal operator can inherit from the <code class="docutils literal notranslate"><span class="pre">MCNodeLinOp</span></code> class.
 <code class="docutils literal notranslate"><span class="pre">Fapply</span></code>, <code class="docutils literal notranslate"><span class="pre">Fsmooth</span></code>, and <code class="docutils literal notranslate"><span class="pre">Fflux</span></code> must update level 1 ghost nodes that are inside the domain.
