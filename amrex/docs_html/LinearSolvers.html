@@ -409,6 +409,65 @@ of this velocity field as a MAC projection, in which we solve</p>
 <div class="math notranslate nohighlight">
 \[U = U^* - B \nabla \phi\]</div>
 <p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to make divergence-free.</p>
+<p>The MACProjection class can be defined and used to perform the MAC projection with explcitly
+calling the solver directly.  The following code is taken from
+<code class="docutils literal notranslate"><span class="pre">Tutorials/LinearOperator/MAC_Projection_EB/main.cpp</span></code> and demonstrates how to set up
+the MACProjector object and use it to perform a MAC projection.</p>
+<dl>
+<dt>::</dt><dd><p>// This object provides access to the EB database in the format of basic AMReX objects
+// such as BaseFab, FArrayBox, FabArray, and MultiFab
+EBFArrayBoxFactory factory(eb_level, geom, grids, dmap, ng_ebs, ebs);</p>
+<dl class="simple">
+<dt>for (int idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</dt><dd><p>vel[idim].define (amrex::convert(grids,IntVect::TheDimensionVector(idim)), dmap, 1, 1, MFInfo(), factory);
+beta[idim].define(amrex::convert(grids,IntVect::TheDimensionVector(idim)), dmap, 1, 0, MFInfo(), factory);
+beta[idim].setVal(1.0);</p>
+</dd>
+</dl>
+<p>}</p>
+<p>// set initial velocity to U=(1,0,0)
+AMREX_D_TERM(vel[0].setVal(1.0);,</p>
+<blockquote>
+<div><p>vel[1].setVal(0.0);,
+vel[2].setVal(0.0););</p>
+</div></blockquote>
+<p>LPInfo lp_info;</p>
+<p>// If we want to use hypre to solve the full problem we do not need to coarsen the GMG stencils
+if (use_hypre)</p>
+<blockquote>
+<div><p>lp_info.setMaxCoarseningLevel(0);</p>
+</div></blockquote>
+<dl class="simple">
+<dt>MacProjector macproj({amrex::GetArrOfPtrs(vel)},       // face-based velocity</dt><dd><p>{amrex::GetArrOfConstPtrs(beta)}, // beta
+{geom},                           // the geometry object
+lp_info);                         // structure for passing info to the operator</p>
+</dd>
+</dl>
+<p>// Set bottom-solver to use hypre instead of native BiCGStab
+if (use_hypre)</p>
+<blockquote>
+<div><p>macproj.setBottomSolver(MLMG::BottomSolver::hypre);</p>
+</div></blockquote>
+<dl>
+<dt>macproj.setDomainBC({AMREX_D_DECL(LinOpBCType::Neumann,</dt><dd><blockquote>
+<div><p>LinOpBCType::Periodic,
+LinOpBCType::Periodic)},</p>
+</div></blockquote>
+<dl class="simple">
+<dt>{AMREX_D_DECL(LinOpBCType::Dirichlet,</dt><dd><p>LinOpBCType::Periodic,
+LinOpBCType::Periodic)});</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>macproj.setVerbose(mg_verbose);
+macproj.setCGVerbose(cg_verbose);</p>
+<p>// Define the relative tolerance
+Real reltol = 1.e-8;</p>
+<p>// Solve for <span class="math notranslate nohighlight">\(\phi\)</span> and subtract from the velocity to make it divergence-free
+macproj.project(reltol);</p>
+</dd>
+</dl>
+<p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearOperator/MAC_Projection_EB</span></code> for the complete working example.</p>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
