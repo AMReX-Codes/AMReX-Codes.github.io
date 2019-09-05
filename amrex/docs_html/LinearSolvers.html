@@ -226,9 +226,9 @@ with embedded boundaries (chapter <a class="reference internal" href="EB_Chapter
 conditions.  This will be discussed later in section
 <a class="reference internal" href="#sec-linearsolver-bc"><span class="std std-ref">Boundary Conditions</span></a>.</p>
 <p>For <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>, we next need to call member functions</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setScalars</span> <span class="p">(</span><span class="n">Real</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">Real</span> <span class="n">beta</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">setACoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">A</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">setBCoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">B</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setScalars</span> <span class="p">(</span><span class="n">Real</span> <span class="n">A</span><span class="p">,</span> <span class="n">Real</span> <span class="n">B</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setACoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">alpha</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">setBCoeffs</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">MultiFab</span> <span class="k">const</span><span class="o">*</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">beta</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>to set up the coefficients for equation <a class="reference internal" href="LinearSolvers_Chapter.html#equation-eqn-abeclap">(1)</a>. This is unecessary for
@@ -239,7 +239,7 @@ one needs to call the member function</p>
 </div>
 <p>The <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">amrlev</span></span></code> parameter should be zero for single-level
 solves.  For multi-level solves, each level needs to be provided with
-<code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, or <code class="docutils literal notranslate"><span class="pre">Sigma</span></code>.  For composite solves, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrlev</span></span></code> 0 will
+<code class="docutils literal notranslate"><span class="pre">alpha</span></code> and <code class="docutils literal notranslate"><span class="pre">beta</span></code>, or <code class="docutils literal notranslate"><span class="pre">Sigma</span></code>.  For composite solves, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrlev</span></span></code> 0 will
 mean the lowest level for the solver, which is not necessarily the lowest
 level in the AMR hierarchy. This is so solves can be done on different sections
 of the AMR hierarchy, e.g. on AMR levels 3 to 5.</p>
@@ -404,10 +404,10 @@ example of using hypre, we refer the reader to
 and <span class="math notranslate nohighlight">\(w\)</span> is defined on z-faces.   We refer to the exact projection
 of this velocity field as a MAC projection, in which we solve</p>
 <div class="math notranslate nohighlight">
-\[D( B \nabla \phi) = D(U^*)\]</div>
+\[D( \beta \nabla \phi) = D(U^*)\]</div>
 <p>then set</p>
 <div class="math notranslate nohighlight">
-\[U = U^* - B \nabla \phi\]</div>
+\[U = U^* - \beta \nabla \phi\]</div>
 <p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to make divergence-free.</p>
 <p>The MACProjection class can be defined and used to perform the MAC projection without explcitly
 calling the solver directly.  In addition to solving the variable coefficient Poisson equation,
@@ -421,9 +421,7 @@ the solution array and passes it in/out.</p>
 <p>The following code is taken from
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/MAC_Projection_EB/main.cpp</span></code> and demonstrates how to set up
 the MACProjector object and use it to perform a MAC projection.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// This object provides access to the EB database in the format of basic AMReX objects</span>
-<span class="c1">// such as BaseFab, FArrayBox, FabArray, and MultiFab</span>
-<span class="n">EBFArrayBoxFactory</span> <span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">ng_ebs</span><span class="p">,</span> <span class="n">ebs</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span> <span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">ng_ebs</span><span class="p">,</span> <span class="n">ebs</span><span class="p">);</span>
 
 <span class="c1">// allocate face-centered velocities and face-centered beta coefficient</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">idim</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idim</span> <span class="o">&lt;</span> <span class="n">AMREX_SPACEDIM</span><span class="p">;</span> <span class="o">++</span><span class="n">idim</span><span class="p">)</span> <span class="p">{</span>
