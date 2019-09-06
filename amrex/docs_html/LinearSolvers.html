@@ -404,21 +404,21 @@ For an example of using hypre, we refer the reader to
 and <span class="math notranslate nohighlight">\(w\)</span> is defined on z-faces.   We refer to the exact projection
 of this velocity field as a MAC projection, in which we solve</p>
 <div class="math notranslate nohighlight">
-\[D( \beta \nabla \phi) = D(U^*)\]</div>
+\[D( \beta \nabla \phi) = D(U^*) - S\]</div>
 <p>then set</p>
 <div class="math notranslate nohighlight">
 \[U = U^* - \beta \nabla \phi\]</div>
-<p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to make divergence-free.</p>
+<p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to satisfy
+<span class="math notranslate nohighlight">\(D(U) = S\)</span>.  For incompressible flow,  <span class="math notranslate nohighlight">\(S = 0\)</span>.</p>
 <p>The MACProjection class can be defined and used to perform the MAC projection without explcitly
 calling the solver directly.  In addition to solving the variable coefficient Poisson equation,
-the MacProjector first computes the divergence of the vector field <span class="math notranslate nohighlight">\(D(U^*)\)</span>
-to compute a right-hand-side, and after the solve, subtracts the weighted gradient term to
-make the vector field result divergence-free.  Note that in the simplest case,
-both the right-hand-side array and solution array are internal to the MacProjector object;
-the user does not allocate those arrays and does not have access to them.</p>
-<p>There is an alternative call – commented out below – in which a user does allocate
-the solution array and passes it in/out.</p>
-<p>The following code is taken from
+the MacProjector internally computes the divergence of the vector field <span class="math notranslate nohighlight">\(D(U^*)\)</span>
+to compute the right-hand-side, and after the solve, subtracts the weighted gradient term to
+make the vector field result satisfy the divergence constraint.</p>
+<p>In the simplest form of the call, <span class="math notranslate nohighlight">\(S\)</span> is assumed to be zero and does not need to be specified.
+Typically, the user does not allocate the solution array, but it is also possible to create and pass
+in the solution array and have <span class="math notranslate nohighlight">\(\phi\)</span> returned as well as <span class="math notranslate nohighlight">\(U\)</span>.</p>
+<p>The code below is taken from
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/MAC_Projection_EB/main.cpp</span></code> and demonstrates how to set up
 the MACProjector object and use it to perform a MAC projection.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">EBFArrayBoxFactory</span> <span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">ng_ebs</span><span class="p">,</span> <span class="n">ebs</span><span class="p">);</span>
@@ -435,6 +435,10 @@ the MACProjector object and use it to perform a MAC projection.</p>
 <span class="c1">// If we want to use phi elsewhere, we must create an array in which to return the solution</span>
 <span class="c1">// phi_inout.define(grids, dmap, 1, 1, MFInfo(), factory);</span>
 
+<span class="c1">// If we want to supply a non-zero S we must allocate and define it outside the solver</span>
+<span class="c1">// S.define(grids, dmap, 1, 0, MFInfo(), factory);</span>
+<span class="c1">// Define S here ...</span>
+
 <span class="c1">// set initial velocity to U=(1,0,0)</span>
 <span class="n">AMREX_D_TERM</span><span class="p">(</span><span class="n">vel</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);,</span>
              <span class="n">vel</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);,</span>
@@ -449,7 +453,14 @@ the MACProjector object and use it to perform a MAC projection.</p>
 <span class="n">MacProjector</span> <span class="nf">macproj</span><span class="p">({</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)},</span>       <span class="c1">// face-based velocity</span>
                      <span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">beta</span><span class="p">)},</span> <span class="c1">// beta</span>
                      <span class="p">{</span><span class="n">geom</span><span class="p">},</span>                           <span class="c1">// the geometry object</span>
-                     <span class="n">lp_info</span><span class="p">);</span>                    <span class="c1">// structure for passing info to the operator</span>
+                     <span class="n">lp_info</span><span class="p">);</span>                         <span class="c1">// structure for passing info to the operator</span>
+
+<span class="c1">// Here we specifiy the desired divergence S</span>
+<span class="c1">// MacProjector macproj({amrex::GetArrOfPtrs(vel)},       // face-based velocity</span>
+<span class="c1">//                      {amrex::GetArrOfConstPtrs(beta)}, // beta</span>
+<span class="c1">//                      {geom},                           // the geometry object</span>
+<span class="c1">//                      lp_info,                          // structure for passing info to the operator</span>
+<span class="c1">//                      {amrex::GetArrOfConstPtrs(S)});   // defines the specified RHS divergence</span>
 
 <span class="c1">// Set bottom-solver to use hypre instead of native BiCGStab</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">use_hypre</span><span class="p">)</span>
@@ -482,18 +493,6 @@ the MACProjector object and use it to perform a MAC projection.</p>
 </pre></div>
 </div>
 <p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/MAC_Projection_EB</span></code> for the complete working example.</p>
-<p>Note that in order to project the velocity onto a field with a specified divergence, <span class="math notranslate nohighlight">\(D(U)=RHS\)</span>,
-one simply has to pass in an additional array of MultiFabs into the MacProjector constructor,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MacProjector</span> <span class="nf">macproj</span><span class="p">({</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)},</span>       <span class="c1">// face-based velocity</span>
-                     <span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">beta</span><span class="p">)},</span> <span class="c1">// beta</span>
-                     <span class="p">{</span><span class="n">geom</span><span class="p">},</span>                           <span class="c1">// the geometry object</span>
-                     <span class="n">lp_info</span><span class="p">,</span>                  <span class="c1">// structure for passing info to the operator</span>
-                     <span class="p">{</span><span class="n">amrex</span><span class="o">::</span><span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">RHS</span><span class="p">)});</span> <span class="c1">// defines the specified RHS divergence</span>
-</pre></div>
-</div>
-<p>This in turn solves <span class="math notranslate nohighlight">\(D( \beta \nabla \phi) = D(U^*) - RHS\)</span></p>
-<p>and then sets <span class="math notranslate nohighlight">\(U = U^* - \beta \nabla \phi\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(U\)</span> satisfies <span class="math notranslate nohighlight">\(D(U)=RHS\)</span>.</p>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
