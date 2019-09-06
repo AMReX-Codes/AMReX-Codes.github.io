@@ -363,12 +363,16 @@ stabilized method as the bottom solver.  <code class="code cpp c++ docutils lite
 </div>
 <p>can be used to change the bottom solver.  Available choices are</p>
 <ul class="simple">
-<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">smoother</span></span></code>: Smoother such as Gauss-Seidel.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">bicgstab</span></span></code>: The default.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cg</span></span></code>: The conjugate gradient method.  The
 matrix must be symmetric.</p></li>
-<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Hypre</span></span></code>: BoomerAMG in hypre.  Currently for
-cell-centered only.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">smoother</span></span></code>: Smoother such as Gauss-Seidel.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">bicgcg</span></span></code>: Start with bicgstab. Switch to cg
+if bicgstab fails.  The matrix must be symmetric.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cgbicg</span></span></code>: Start with cg. Switch to bicgstab
+if cg fails.  The matrix must be symmetric.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">hypre</span></span></code>: BoomerAMG in hypre.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">petsc</span></span></code>: Currently for cell-centered only.</p></li>
 </ul>
 </div>
 <div class="section" id="curvilinear-coordinates">
@@ -383,7 +387,7 @@ operators.</p>
 </div>
 <div class="section" id="external-solvers">
 <h1>External Solvers<a class="headerlink" href="#external-solvers" title="Permalink to this headline">¶</a></h1>
-<p>AMReX can use the hypre algebraic multigrid solver, BoomerAMG,
+<p>AMReX can use the <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">hypre</a> algebraic multigrid solver, BoomerAMG,
 as a bottom solver for both cell-centered and node-based problems.
 For challenging problems, our geometric multigrid solver may have difficulty solving,
 whereas an algebraic multigrid method might be more robust.
@@ -396,6 +400,10 @@ residual correction form of the original problem.</p>
 <p>To use hypre, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system.
 For an example of using hypre, we refer the reader to
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
+<p>AMReX can also use <a class="reference external" href="https://www.mcs.anl.gov/petsc/">PETSc</a> as a bottom solver for cell-centered
+problems.  To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>
+in the build system.  For an example of using PETSc, we refer the
+reader to <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
 </div>
 <div class="section" id="mac-projection">
 <h1>MAC Projection<a class="headerlink" href="#mac-projection" title="Permalink to this headline">¶</a></h1>
