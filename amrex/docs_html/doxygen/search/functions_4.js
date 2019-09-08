@@ -56,6 +56,8 @@ var searchData=
   ['destroy',['destroy',['../classamrex_1_1FabFactory.html#a62e57972e3054a6f7ed1cdb9c0426c09',1,'amrex::FabFactory::destroy()'],['../classamrex_1_1DefaultFabFactory.html#a1d92b6711d7c4908085808da6ac00f0d',1,'amrex::DefaultFabFactory::destroy()'],['../classamrex_1_1EBFArrayBoxFactory.html#a25f6eca7dc8d4f2269fec54f5d20f079',1,'amrex::EBFArrayBoxFactory::destroy()'],['../classhacc_1_1AlignedAllocator.html#a5d7df6a37fdfcef93d371c3044f424d3',1,'hacc::AlignedAllocator::destroy()']]],
   ['determinesigns',['determineSigns',['../namespaceamrex_1_1algoim_1_1detail.html#a33dac9049a534e2243c78895a72992a9',1,'amrex::algoim::detail']]],
   ['deviceid',['deviceId',['../classamrex_1_1Gpu_1_1Device.html#aa5bf7f476f4a8c0ed917932d2cbdf9a4',1,'amrex::Gpu::Device']]],
+  ['devicereducelogicaland',['deviceReduceLogicalAnd',['../namespaceamrex_1_1Gpu.html#a3ce0db272209050a5bf6c593c2679607',1,'amrex::Gpu']]],
+  ['devicereducelogicalor',['deviceReduceLogicalOr',['../namespaceamrex_1_1Gpu.html#a6c3c7080ba11377ca7a9df8ef573e133',1,'amrex::Gpu']]],
   ['devicereducemax',['deviceReduceMax',['../namespaceamrex_1_1Gpu.html#a434d47b5660b0c082d361aa5994ee218',1,'amrex::Gpu']]],
   ['devicereducemin',['deviceReduceMin',['../namespaceamrex_1_1Gpu.html#a43c0464b84a84c9342e01a13f076e1c2',1,'amrex::Gpu']]],
   ['devicereducesum',['deviceReduceSum',['../namespaceamrex_1_1Gpu.html#ab50ab224d1a043d14eccc5019548c562',1,'amrex::Gpu']]],

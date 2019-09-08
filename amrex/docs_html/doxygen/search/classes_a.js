@@ -22,6 +22,8 @@ var searchData=
   ['linop',['LinOp',['../classamrex_1_1LinOp.html',1,'amrex']]],
   ['lipairgt',['LIpairGT',['../structamrex_1_1DistributionMapping_1_1LIpairGT.html',1,'amrex::DistributionMapping']]],
   ['lipairlt',['LIpairLT',['../structamrex_1_1DistributionMapping_1_1LIpairLT.html',1,'amrex::DistributionMapping']]],
+  ['logicaland',['LogicalAnd',['../structamrex_1_1LogicalAnd.html',1,'amrex']]],
+  ['logicalor',['LogicalOr',['../structamrex_1_1LogicalOr.html',1,'amrex']]],
   ['lpinfo',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
   ['lscore',['LSCore',['../classamrex_1_1LSCore.html',1,'amrex']]],
   ['lscorebase',['LSCoreBase',['../classamrex_1_1LSCoreBase.html',1,'amrex']]],

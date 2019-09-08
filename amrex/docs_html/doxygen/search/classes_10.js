@@ -8,6 +8,8 @@ var searchData=
   ['record',['Record',['../classamrex_1_1ParmParse_1_1Record.html',1,'amrex::ParmParse']]],
   ['redistributeunpackpolicy',['RedistributeUnpackPolicy',['../structamrex_1_1RedistributeUnpackPolicy.html',1,'amrex']]],
   ['reducedata',['ReduceData',['../classamrex_1_1ReduceData.html',1,'amrex']]],
+  ['reduceoplogicaland',['ReduceOpLogicalAnd',['../structamrex_1_1ReduceOpLogicalAnd.html',1,'amrex']]],
+  ['reduceoplogicalor',['ReduceOpLogicalOr',['../structamrex_1_1ReduceOpLogicalOr.html',1,'amrex']]],
   ['reduceopmax',['ReduceOpMax',['../structamrex_1_1ReduceOpMax.html',1,'amrex']]],
   ['reduceopmin',['ReduceOpMin',['../structamrex_1_1ReduceOpMin.html',1,'amrex']]],
   ['reduceops',['ReduceOps',['../classamrex_1_1ReduceOps.html',1,'amrex']]],

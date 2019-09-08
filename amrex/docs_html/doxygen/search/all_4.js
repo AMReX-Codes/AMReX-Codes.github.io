@@ -155,6 +155,8 @@ var searchData=
   ['device_5fuse_5fhostalloc',['device_use_hostalloc',['../structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81',1,'amrex::ArenaInfo']]],
   ['device_5fuse_5fmanaged_5fmemory',['device_use_managed_memory',['../structamrex_1_1ArenaInfo.html#a961c961eb343a2fa091082a6f1717b16',1,'amrex::ArenaInfo']]],
   ['deviceid',['deviceId',['../classamrex_1_1Gpu_1_1Device.html#aa5bf7f476f4a8c0ed917932d2cbdf9a4',1,'amrex::Gpu::Device']]],
+  ['devicereducelogicaland',['deviceReduceLogicalAnd',['../namespaceamrex_1_1Gpu.html#a3ce0db272209050a5bf6c593c2679607',1,'amrex::Gpu']]],
+  ['devicereducelogicalor',['deviceReduceLogicalOr',['../namespaceamrex_1_1Gpu.html#a6c3c7080ba11377ca7a9df8ef573e133',1,'amrex::Gpu']]],
   ['devicereducemax',['deviceReduceMax',['../namespaceamrex_1_1Gpu.html#a434d47b5660b0c082d361aa5994ee218',1,'amrex::Gpu']]],
   ['devicereducemin',['deviceReduceMin',['../namespaceamrex_1_1Gpu.html#a43c0464b84a84c9342e01a13f076e1c2',1,'amrex::Gpu']]],
   ['devicereducesum',['deviceReduceSum',['../namespaceamrex_1_1Gpu.html#ab50ab224d1a043d14eccc5019548c562',1,'amrex::Gpu']]],
