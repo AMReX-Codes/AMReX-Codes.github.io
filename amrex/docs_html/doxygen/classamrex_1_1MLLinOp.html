@@ -180,7 +180,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac161f1d53e925b82ba5defeb9b0efe70"><td class="mdescLeft">&#160;</td><td class="mdescRight">If needs coarse data for bc, this should be called. <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> crse does not need to have ghost cells. The data are at coarse resolution. If this is called, it <em>MUST</em> be called before <code>setLevelBC</code>. If crse is nullptr, then bc value is assumed to be zero.  <a href="#ac161f1d53e925b82ba5defeb9b0efe70">More...</a><br /></td></tr>
 <tr class="separator:ac161f1d53e925b82ba5defeb9b0efe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52d97117bad0d48c8e73546e7092e7dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a52d97117bad0d48c8e73546e7092e7dc">setLevelBC</a> (int amrlev, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *levelbcdata)=0</td></tr>
-<tr class="memdesc:a52d97117bad0d48c8e73546e7092e7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet bc at the physical domain. However, even if there is no Dirichlet bc, this funcion must still be called. In that case, argument <code>levelbcdata</code> will be ignored and thus could be nullptr. The supplied <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> must have one ghost cell. Only the data outside the physical domain at Dirichlet boundary will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0.  <a href="#a52d97117bad0d48c8e73546e7092e7dc">More...</a><br /></td></tr>
+<tr class="memdesc:a52d97117bad0d48c8e73546e7092e7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or inhomogeneous Neumann bc at the physical domain. However, even if there is no Dirichlet or inhomogeneous Neumann bc, this funcion must still be called. In that case, argument <code>levelbcdata</code> will be ignored and thus could be nullptr. The supplied <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> must have one ghost cell. Only the data outside the physical domain at Dirichlet or inhomogeneous Neumann boundary will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0.  <a href="#a52d97117bad0d48c8e73546e7092e7dc">More...</a><br /></td></tr>
 <tr class="separator:a52d97117bad0d48c8e73546e7092e7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d96a0475759eef80d096851fdedd411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a4d96a0475759eef80d096851fdedd411">setVerbose</a> (int v) noexcept</td></tr>
 <tr class="separator:a4d96a0475759eef80d096851fdedd411"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,6 +226,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3493bb63b041a05c4f4f6de28df1b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93fed17bd53a16d98faaa1c8a6a6e401"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a93fed17bd53a16d98faaa1c8a6a6e401">fillSolutionBC</a> (int amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *crse_bcdata=nullptr)=0</td></tr>
 <tr class="separator:a93fed17bd53a16d98faaa1c8a6a6e401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5c11afad1f7f1e086fcdfb0afbb3edc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ae5c11afad1f7f1e086fcdfb0afbb3edc">applyInhomogNeumannTerm</a> (int armlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const </td></tr>
+<tr class="separator:ae5c11afad1f7f1e086fcdfb0afbb3edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a431d85bffa7e9bbcd36a10ae82fe3683">prepareForSolve</a> ()=0</td></tr>
 <tr class="separator:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d6ef9e77180f9076ef5cb83f48bb50"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</a> (int amrlev) const =0</td></tr>
@@ -329,6 +331,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aac661e9e03991a16c7aca157ca2447b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a619323b7ef2de7c06f7c480c9bcdf3d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MLLinOp.html#ac2e55c34bf6b5c0ed53d0ef6a4625a3f">BCType</a>, AMREX_SPACEDIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a619323b7ef2de7c06f7c480c9bcdf3d2">m_hibc</a></td></tr>
 <tr class="separator:a619323b7ef2de7c06f7c480c9bcdf3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa91c1d6bf82658c8668b2ffcfa5ab4f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; int, AMREX_SPACEDIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa91c1d6bf82658c8668b2ffcfa5ab4f1">m_lo_inhomog_neumann</a></td></tr>
+<tr class="separator:aa91c1d6bf82658c8668b2ffcfa5ab4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885bd2d76204604e07a5ce06e92da271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; int, AMREX_SPACEDIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a885bd2d76204604e07a5ce06e92da271">m_hi_inhomog_neumann</a></td></tr>
+<tr class="separator:a885bd2d76204604e07a5ce06e92da271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fd156d093aacd959e78666105ed6328"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; Real, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a0fd156d093aacd959e78666105ed6328">m_domain_bloc_lo</a> {{<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(0.,0.,0.)}}</td></tr>
 <tr class="separator:a0fd156d093aacd959e78666105ed6328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700409c91ec909489e19c53e601de053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; Real, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a700409c91ec909489e19c53e601de053">m_domain_bloc_hi</a> {{<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(0.,0.,0.)}}</td></tr>
@@ -678,6 +684,42 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#a62ea55fae7824c00b3237cf57616dd1d">amrex::MLCellLinOp</a>, <a class="el" href="classamrex_1_1MLEBTensorOp.html#a41724f08da04298ded08c9e8d6e9bfc4">amrex::MLEBTensorOp</a>, <a class="el" href="classamrex_1_1MLTensorOp.html#aa7acec7ef41f148b92b54c9ee1c1faf0">amrex::MLTensorOp</a>, <a class="el" href="classamrex_1_1MLEBABecLap.html#a8e392e42b5c238124145af83776d575a">amrex::MLEBABecLap</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a668c3faa79d094f72e351a8ec1736fc2">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae5c11afad1f7f1e086fcdfb0afbb3edc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::applyInhomogNeumannTerm </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>armlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLinOp.html#a79b6bca7f31b09333bc7caae80d39136">amrex::MLNodeLinOp</a>, and <a class="el" href="classamrex_1_1MLCellABecLap.html#aa84934b73a868d01a1a8b7650b880efb">amrex::MLCellABecLap</a>.</p>
 
 </div>
 </div>
@@ -2550,7 +2592,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet bc at the physical domain. However, even if there is no Dirichlet bc, this funcion must still be called. In that case, argument <code>levelbcdata</code> will be ignored and thus could be nullptr. The supplied <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> must have one ghost cell. Only the data outside the physical domain at Dirichlet boundary will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. </p>
+<p>Must be called for each level. Argument <code>levelbcdata</code> is used to supply Dirichlet or inhomogeneous Neumann bc at the physical domain. However, even if there is no Dirichlet or inhomogeneous Neumann bc, this funcion must still be called. In that case, argument <code>levelbcdata</code> will be ignored and thus could be nullptr. The supplied <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> must have one ghost cell. Only the data outside the physical domain at Dirichlet or inhomogeneous Neumann boundary will be used. It is assumed that the data in those ghost cells outside the domain live exactly on the face of the physical domain. Argument <code>amrlev</code> is relative level such that the lowest to the solver is always 0. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">amrlev</td><td></td></tr>
@@ -3244,6 +3286,26 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a885bd2d76204604e07a5ce06e92da271"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;int, AMREX_SPACEDIM&gt; &gt; amrex::MLLinOp::m_hi_inhomog_neumann</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a619323b7ef2de7c06f7c480c9bcdf3d2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3273,6 +3335,26 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> amrex::MLLinOp::m_ixtype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa91c1d6bf82658c8668b2ffcfa5ab4f1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt;int, AMREX_SPACEDIM&gt; &gt; amrex::MLLinOp::m_lo_inhomog_neumann</td>
         </tr>
       </table>
   </td>

@@ -78,6 +78,7 @@ var searchData=
   ['amrex_5flo_5fbogus',['AMREX_LO_BOGUS',['../AMReX__LO__BCTYPES_8H.html#a969fe17351200623de86808d7d02de1a',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5fdirichlet',['AMREX_LO_DIRICHLET',['../AMReX__LO__BCTYPES_8H.html#a874725e18b8a17a13d2200cea4c11c47',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5finflow',['AMREX_LO_INFLOW',['../AMReX__LO__BCTYPES_8H.html#abb28e2063a5f29dd10f42d856e8c6af6',1,'AMReX_LO_BCTYPES.H']]],
+  ['amrex_5flo_5finhomog_5fneumann',['AMREX_LO_INHOMOG_NEUMANN',['../AMReX__LO__BCTYPES_8H.html#a873f2ffbe89507cff0a0c11b6f1a48ae',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5fmarshak',['AMREX_LO_MARSHAK',['../AMReX__LO__BCTYPES_8H.html#ac0d064dddf0a13f91f3ce99090e4bad4',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5fneumann',['AMREX_LO_NEUMANN',['../AMReX__LO__BCTYPES_8H.html#a0f804066c7b2b4d304482ea1751def60',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5fperiodic',['AMREX_LO_PERIODIC',['../AMReX__LO__BCTYPES_8H.html#a70e18776a02a5caf3faea16632d60a6c',1,'AMReX_LO_BCTYPES.H']]],
