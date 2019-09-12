@@ -426,6 +426,8 @@ make the vector field result satisfy the divergence constraint.</p>
 <p>In the simplest form of the call, <span class="math notranslate nohighlight">\(S\)</span> is assumed to be zero and does not need to be specified.
 Typically, the user does not allocate the solution array, but it is also possible to create and pass
 in the solution array and have <span class="math notranslate nohighlight">\(\phi\)</span> returned as well as <span class="math notranslate nohighlight">\(U\)</span>.</p>
+<p>Caveat:  Currently the MAC projection only works when the base level covers the full domain; it does
+not yet have the interface to pass boundary conditions for a fine level that come from coarser data.</p>
 <p>The code below is taken from
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/MAC_Projection_EB/main.cpp</span></code> and demonstrates how to set up
 the MACProjector object and use it to perform a MAC projection.</p>
