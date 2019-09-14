@@ -419,7 +419,7 @@ of this velocity field as a MAC projection, in which we solve</p>
 \[U = U^* - \beta \nabla \phi\]</div>
 <p>where <span class="math notranslate nohighlight">\(U^*\)</span> is a vector field (typically velocity) that we want to satisfy
 <span class="math notranslate nohighlight">\(D(U) = S\)</span>.  For incompressible flow,  <span class="math notranslate nohighlight">\(S = 0\)</span>.</p>
-<p>The MACProjection class can be defined and used to perform the MAC projection without explcitly
+<p>The MACProjection class can be defined and used to perform the MAC projection without explicitly
 calling the solver directly.  In addition to solving the variable coefficient Poisson equation,
 the MacProjector internally computes the divergence of the vector field, <span class="math notranslate nohighlight">\(D(U^*)\)</span>,
 to compute the right-hand-side, and after the solve, subtracts the weighted gradient term to
@@ -529,6 +529,161 @@ to compute the approximate projection.  This means we must compute the divergenc
 of the vector field,  <span class="math notranslate nohighlight">\(D(U^*)\)</span>  to compute the right-hand-side, solve the
 variable coefficient Poisson equation, then subtract the weighted gradient term to
 make the vector field result satisfy the divergence constraint.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
+<span class="c1">// Given a cell-centered velocity (vel) field and a cell-centered</span>
+<span class="c1">// scalar field (sigma) field, solve:</span>
+<span class="c1">//</span>
+<span class="c1">//   div( sigma * grad(phi) ) = div(vel)</span>
+<span class="c1">//</span>
+<span class="c1">// and then perform the projection:</span>
+<span class="c1">//</span>
+<span class="c1">//     vel = vel - sigma * grad(phi)</span>
+<span class="c1">//</span>
+<span class="c1">// NOTE: phi is node centered !!!</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Create the EB factory</span>
+<span class="c1">//</span>
+<span class="n">EBFArrayBoxFactory</span> <span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">ng_ebs</span><span class="p">,</span> <span class="n">ebs</span><span class="p">);</span>
+
+
+<span class="c1">//</span>
+<span class="c1">//  Create the CELL CENTERED velocity field we want to project</span>
+<span class="c1">//</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">vel</span><span class="p">;</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
+
+<span class="c1">// Set velocity field to (1,0,0) for this example</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Setup linear operator, AKA the nodal laplacian</span>
+<span class="c1">//</span>
+<span class="n">LPInfo</span>            <span class="n">info</span><span class="p">;</span>
+<span class="n">info</span><span class="p">.</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="n">nodal_mg_max_coarsening_level</span><span class="p">);</span> <span class="c1">// Max level of coarsening</span>
+
+<span class="n">MLNodeLaplacian</span>  <span class="nf">matrix</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">info</span><span class="p">,</span> <span class="n">amrex</span><span class="o">::</span><span class="n">GetVecOfConstPtrs</span><span class="p">({</span><span class="n">factory</span><span class="p">}));</span>
+
+
+<span class="c1">// Set boundary conditions.</span>
+<span class="c1">// Here we use Neumann on the low x-face, Dirichlet on the high x-face,</span>
+<span class="c1">// and periodic in the other two directions</span>
+<span class="c1">// (the first argument is for the low end, the second is for the high end)</span>
+<span class="c1">// Note that Dirichlet boundary conditions are assumed to be homogeneous (i.e. phi = 0)</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">setDomainBC</span><span class="p">({</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span>
+<span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)},</span>
+<span class="p">{</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span>
+<span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">,</span>
+<span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
+
+
+<span class="c1">// Set matrix attributes to be used by MLMG solver</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">setGaussSeidel</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">setHarmonicAverage</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Compute divergence of vel and store it in divu</span>
+<span class="c1">//</span>
+<span class="c1">// NOTE: it&#39;s up to the user to compute the RHS divergence, as opposed</span>
+<span class="c1">//       to the MAC projection case !!!</span>
+<span class="c1">//</span>
+<span class="c1">// NOTE: do this operation AFTER setting up the linear operator so</span>
+<span class="c1">//       that compDivergence method can be used</span>
+<span class="c1">//</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">divu</span><span class="p">;</span>
+<span class="n">divu</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">compDivergence</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">divu</span><span class="p">}),</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">vel</span><span class="p">}));</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Create the cell-centered sigma field and set it to 1 for this example</span>
+<span class="c1">//</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">sigma</span><span class="p">;</span>
+<span class="n">sigma</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
+<span class="n">sigma</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
+
+<span class="c1">// Set sigma</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">setSigma</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">sigma</span><span class="p">);</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Create node-centered phi</span>
+<span class="c1">//</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">phi</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="n">BoxArray</span> <span class="o">&amp;</span> <span class="n">nd_grids</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">});</span> <span class="c1">// nodal grids</span>
+<span class="n">phi</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
+<span class="n">phi</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Setup MGML solver</span>
+<span class="c1">//</span>
+<span class="n">MLMG</span> <span class="nf">nodal_solver</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
+
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setMaxIter</span><span class="p">(</span><span class="n">nodal_mg_maxiter</span><span class="p">);</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">nodal_mg_verbose</span><span class="p">);</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setCGVerbose</span><span class="p">(</span><span class="n">nodal_mg_cg_verbose</span><span class="p">);</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setCGMaxIter</span><span class="p">(</span><span class="n">nodal_mg_cg_maxiter</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Set bottom seolver</span>
+<span class="c1">//</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">nodal_bottom_solver_type</span> <span class="o">==</span> <span class="s">&quot;smoother&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">smoother</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nodal_bottom_solver_type</span> <span class="o">==</span> <span class="s">&quot;bicg&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgstab</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nodal_bottom_solver_type</span> <span class="o">==</span> <span class="s">&quot;cg&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">cg</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nodal_bottom_solver_type</span> <span class="o">==</span> <span class="s">&quot;bicgcg&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">bicgcg</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nodal_bottom_solver_type</span> <span class="o">==</span> <span class="s">&quot;cgbicg&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">cgbicg</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">nodal_bottom_solver_type</span> <span class="o">==</span> <span class="s">&quot;hypre&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomSolver</span><span class="p">(</span><span class="n">MLMG</span><span class="o">::</span><span class="n">BottomSolver</span><span class="o">::</span><span class="n">hypre</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Solve div( sigma * grad(phi) ) = div(vel)</span>
+<span class="c1">//</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">phi</span><span class="p">}),</span> <span class="n">GetVecOfConstPtrs</span><span class="p">({</span><span class="n">divu</span><span class="p">}),</span> <span class="n">rtol</span><span class="p">,</span> <span class="n">atol</span><span class="p">);</span>
+
+<span class="c1">//</span>
+<span class="c1">// Create cell-centered multifab to hold value of -sigma*grad(phi) at cell-centers</span>
+<span class="c1">//</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">fluxes</span><span class="p">;</span>
+<span class="n">fluxes</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">vel</span><span class="p">.</span><span class="n">boxArray</span><span class="p">(),</span> <span class="n">vel</span><span class="p">.</span><span class="n">DistributionMap</span><span class="p">(),</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">nComp</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span>
+<span class="n">factory</span> <span class="p">));</span>
+<span class="n">fluxes</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+
+<span class="c1">// Get fluxes from solver</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">getFluxes</span><span class="p">(</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">fluxes</span><span class="p">})</span> <span class="p">);</span>
+
+
+<span class="c1">//</span>
+<span class="c1">// Apply projection explicitly --  vel = vel - sigma * grad(phi)</span>
+<span class="c1">//</span>
+<span class="n">MultiFab</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span> <span class="n">vel</span><span class="p">,</span> <span class="n">fluxes</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
