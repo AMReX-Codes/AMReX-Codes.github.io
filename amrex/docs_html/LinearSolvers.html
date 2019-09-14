@@ -285,7 +285,7 @@ In the following, physical domain boundaries refer to the boundaries
 of the physical domain, whereas coarse/fine boundaries refer to the
 boundaries between AMR levels. The following steps must be
 followed in the exact order.</p>
-<p>First we need to set physical domain boundary types via <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member
+<p>1) First we need to set physical domain boundary types via <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member
 function</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setDomainBC</span> <span class="p">(</span><span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">BCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">lobc</span><span class="p">,</span>  <span class="c1">// for lower ends</span>
                   <span class="k">const</span> <span class="n">Array</span><span class="o">&lt;</span><span class="n">BCType</span><span class="p">,</span><span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&amp;</span> <span class="n">hibc</span><span class="p">);</span> <span class="c1">// for higher ends</span>
@@ -299,13 +299,12 @@ function</p>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LinOpBCType</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">inhomogNeumann</span></span></code> for inhomogeneous Neumann boundary condition.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LinOpBCType</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">reflect_odd</span></span></code> for reflection with sign changed.</p></li>
 </ul>
-<p>The second step is to set up coarse/fine Dirichlet boundary
-conditions.  This step is not always needed.  But when it is, it
-must be completed before step 3. This step is not needed when the
-coarsest level in the solver covers the whole computational domain
-(e.g., the coarsest level is AMR level 0).  Note that this step is
-still needed in the case that the solver is used to do a single-level
-solve on a fine AMR level not covering the whole domain.  The
+<p>2) If we want to do a MAC projection where the boundary conditions on the
+coarsest AMR level of the solve come from a coarser level (e.g. the
+base AMR level of the solve is &gt; 0 and does not cover the entire domain),
+we must explicitly provide the coarser data.  Boundary conditions from a
+coarser level are always Dirichlet.  Note that this step, if needed, must
+be performed before the step below.  Then
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member function for this step is</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setCoarseFineBC</span> <span class="p">(</span><span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">crse</span><span class="p">,</span> <span class="kt">int</span> <span class="n">crse_ratio</span><span class="p">);</span>
 </pre></div>
@@ -314,21 +313,33 @@ solve on a fine AMR level not covering the whole domain.  The
 values at the coarse resolution, and <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">crse_ratio</span></span></code> (e.g., 2)
 is the refinement ratio between the coarsest solver level and the AMR
 level below it.</p>
-<p>In the third step, for each level, we call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member
-function</p>
+<ol class="arabic simple" start="3">
+<li><p>Before the solve one must always call the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member function</p></li>
+</ol>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>to set up Dirichlet boundary values.  Here the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> must have
-one ghost cell.  Although <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> is used to pass the data, only
-the values in the ghost cells at Dirichlet boundaries are used.  If
-there are no Dirichlet boundaries, we still need to make this call,
-but we could call it with <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">nullptr</span></span></code>.  It should be emphasized
-that the data in <code class="docutils literal notranslate"><span class="pre">levelbcdata</span></code> for Dirichlet boundaries are assumed
-to be exactly on the face of the physical domain even though for
-cell-centered solvers the sought unknowns are at cell centers.  And
-for cell-centered solvers, the <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> argument must have the
-cell-centered type.</p>
+<p>If we want to supply any Dirichlet boundary conditions,
+or inhomogeneous Neumann boundary conditions, at the domain boundaries,
+we must supply those values in <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">levelbcdata</span></code>,
+which must have at least one ghost cell.</p>
+<p>If the boundary condition is inhomogeneous Dirichlet the ghost cells outside the
+domain boundary of <code class="docutils literal notranslate"><span class="pre">levelbcdata</span></code> must hold the value of the solution
+at the domain boundary;
+if the boundary condition is Neumann those ghost cells must hold
+the value of the gradient of the solution normal to the boundary
+(e.g. it would hold dphi/dx on both the low and high facees in the x-direction).</p>
+<p>If there are no Dirichlet or Neumann boundaries, or the
+Neumann boundaries are homogeneous, we can pass <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">nullptr</span></span></code>.
+instead of a MultiFab.</p>
+<p>We can use the solution array itself to hold these values;
+the values are copied to internal arrays and will not be over-written
+when the solution array itself is being updated by the solver.
+Note, however, that this call does not provide an initial guess for the solve.</p>
+<p>It should be emphasized that the data in <code class="docutils literal notranslate"><span class="pre">levelbcdata</span></code> for
+Dirichlet or Neumann boundaries are assumed to be exactly on the face
+of the physical domain; storing these values in the ghost cell of
+a cell-centered array is a convenience of implementation.</p>
 </div>
 <div class="section" id="parameters">
 <span id="sec-linearsolver-pars"></span><h1>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h1>
