@@ -543,15 +543,16 @@ of the gradient from the velocity, it is effectively an approximate projection.<
 <span class="math notranslate nohighlight">\(D(U) = S\)</span>.  For incompressible flow,  <span class="math notranslate nohighlight">\(S = 0\)</span>.</p>
 <p>Currently this nodal approximate projection does not exist in a separate
 operator like the MAC projection; instead we demonstrate below the steps needed
-to compute the approximate projection.  This means we must compute the divergence
-of the vector field,  <span class="math notranslate nohighlight">\(D(U^*)\)</span>  to compute the right-hand-side, solve the
-variable coefficient Poisson equation, then subtract the weighted gradient term to
-make the vector field result satisfy the divergence constraint.</p>
+to compute the approximate projection.  This means we must compute explicitly the
+right-hand-side , including the the divergence of the vector field, <span class="math notranslate nohighlight">\(D(U^*)\)</span>,
+solve the variable coefficient Poisson equation, then subtract the weighted
+gradient term to make the vector field result satisfy the divergence constraint.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//</span>
-<span class="c1">// Given a cell-centered velocity (vel) field and a cell-centered</span>
-<span class="c1">// scalar field (sigma) field, solve:</span>
+<span class="c1">// Given a cell-centered velocity (vel) field, a cell-centered</span>
+<span class="c1">// scalar field (sigma) field, and a source term S (either node-</span>
+<span class="c1">// or cell-centered )solve:</span>
 <span class="c1">//</span>
-<span class="c1">//   div( sigma * grad(phi) ) = div(vel)</span>
+<span class="c1">//   div( sigma * grad(phi) ) = div(vel) - S</span>
 <span class="c1">//</span>
 <span class="c1">// and then perform the projection:</span>
 <span class="c1">//</span>
@@ -608,33 +609,35 @@ make the vector field result satisfy the divergence constraint.</p>
 <span class="n">matrix</span><span class="p">.</span><span class="n">setHarmonicAverage</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
 
 <span class="c1">//</span>
-<span class="c1">// Compute divergence of vel and store it in divu</span>
+<span class="c1">// Compute RHS</span>
 <span class="c1">//</span>
-<span class="c1">// NOTE: it&#39;s up to the user to compute the RHS divergence, as opposed</span>
+<span class="c1">// NOTE: it&#39;s up to the user to compute the RHS. as opposed</span>
 <span class="c1">//       to the MAC projection case !!!</span>
 <span class="c1">//</span>
 <span class="c1">// NOTE: do this operation AFTER setting up the linear operator so</span>
-<span class="c1">//       that compDivergence method can be used</span>
-<span class="c1">//</span>
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">divu</span><span class="p">;</span>
-<span class="n">divu</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
-<span class="n">matrix</span><span class="p">.</span><span class="n">compDivergence</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">divu</span><span class="p">}),</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">vel</span><span class="p">}));</span>
-
-<span class="c1">//</span>
-<span class="c1">// Note that if we want to solve div( sigma * grad(phi) ) = div(vel) - S</span>
-<span class="c1">//   we must do the subtraction ourselves</span>
+<span class="c1">//       that compRHS method can be used</span>
 <span class="c1">//</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">rhs</span><span class="p">;</span>
-
+<span class="c1">// RHS is nodal</span>
 <span class="k">const</span> <span class="n">BoxArray</span> <span class="o">&amp;</span> <span class="n">nd_grids</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">});</span> <span class="c1">// nodal grids</span>
+
+<span class="c1">// Multifab to host RHS</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">rhs</span><span class="p">;</span>
 <span class="n">rhs</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
 
-<span class="c1">// here Fill rhs with the &quot;S&quot; on nodes</span>
-<span class="c1">// ...</span>
+<span class="c1">// Cell-centered contributions to RHS</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span>  <span class="n">S_cc</span><span class="p">;</span>  <span class="c1">// cell-centered source</span>
+<span class="n">S_cc</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
+<span class="n">S_cc</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span> <span class="c1">// Set it to zero for this example</span>
 
-<span class="c1">// Then define rhs = div(vel) - S</span>
-<span class="n">MultiFab</span><span class="o">::</span><span class="n">Subtract</span><span class="p">(</span><span class="o">*</span><span class="n">divu</span><span class="p">,</span> <span class="o">*</span><span class="n">rhs</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="c1">// Node-centered contributions to RHS</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span>  <span class="n">S_nd</span><span class="p">;</span>  <span class="c1">// node-centered source</span>
+<span class="n">S_nd</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
+<span class="n">S_nd</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span> <span class="c1">// Set it to zero for this example</span>
+
+<span class="c1">// Compute RHS -- vel must be cell-centered</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">compRHS</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">rhs</span><span class="p">}),</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">vel</span><span class="p">}),</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">S_nd</span><span class="p">}),</span>
+               <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">S_cc</span><span class="p">})</span> <span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Create the cell-centered sigma field and set it to 1 for this example</span>
@@ -650,9 +653,8 @@ make the vector field result satisfy the divergence constraint.</p>
 <span class="c1">// Create node-centered phi</span>
 <span class="c1">//</span>
 <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">phi</span><span class="p">;</span>
-
 <span class="n">phi</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
-<span class="n">phi</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">phi</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Setup MLMG solver</span>
@@ -676,9 +678,9 @@ make the vector field result satisfy the divergence constraint.</p>
 <span class="n">Real</span> <span class="n">abstol</span> <span class="o">=</span> <span class="mf">1.e-15</span><span class="p">;</span>
 
 <span class="c1">//</span>
-<span class="c1">// Solve div( sigma * grad(phi) ) = div(vel)</span>
+<span class="c1">// Solve div( sigma * grad(phi) ) = RHS</span>
 <span class="c1">//</span>
-<span class="n">nodal_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">phi</span><span class="p">}),</span> <span class="n">GetVecOfConstPtrs</span><span class="p">({</span><span class="n">divu</span><span class="p">}),</span> <span class="n">reltol</span><span class="p">,</span> <span class="n">abstol</span><span class="p">);</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">phi</span><span class="p">}),</span> <span class="n">GetVecOfConstPtrs</span><span class="p">({</span><span class="n">rhs</span><span class="p">}),</span> <span class="n">reltol</span><span class="p">,</span> <span class="n">abstol</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Create cell-centered multifab to hold value of -sigma*grad(phi) at cell-centers</span>
