@@ -195,14 +195,21 @@ single level of refinement.</p></li>
 and attributes.</p></li>
 </ul>
 <p>Many of our mature, public application codes contain derived classes that
-inherit directly from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrLevel</span></span></code>. These include our compressible
-astrophysics code, CASTRO, (available in the AMReX-Astro/Castro github
-repository) and our computational cosmology code, Nyx (available in the
-AMReX-Astro/Nyx github repository) .  Our incompressible Navier-Stokes code,
-IAMR (available in the AMReX-codes/IAMR github repository) has a pure virtual
+inherit directly from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrLevel</span></span></code>. These include:</p>
+<ul class="simple">
+<li><p>The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Castro</span></span></code> class in our compressible astrophysics code, CASTRO,
+(available in the AMReX-Astro/Castro github repository)</p></li>
+<li><p>The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Nyx</span></span></code> class in our computational cosmology code, Nyx
+(available in the AMReX-Astro/Nyx github repository).</p></li>
+<li><p>Our incompressible Navier-Stokes code, IAMR
+(available in the AMReX-codes/IAMR github repository) has a pure virtual
 class called <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NavierStokesBase</span></span></code> that inherits from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrLevel</span></span></code>, and an
-additional derived class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NavierStokes</span></span></code>.  Our low Mach number combustion
-code PeleLM (not yet public) also inherits from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NavierStokesBase</span></span></code>.</p>
+additional derived class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NavierStokes</span></span></code>.</p></li>
+<li><p>Our low Mach number combustion code PeleLM
+(available in the AMReX-Combustion/PeleLM github repository)
+contains a derived class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">PeleLM</span></span></code> that also inherits from
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NavierStokesBase</span></span></code> (but does not use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NavierStokes</span></span></code>).</p></li>
+</ul>
 <p>The tutorial code in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Amr/Advection_AmrLevel</span></code> gives a simple
 example of a class derived from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrLevel</span></span></code> that can be used to solve the
 advection equation on a subcycling-in-time AMR hierarchy. Note that example is
