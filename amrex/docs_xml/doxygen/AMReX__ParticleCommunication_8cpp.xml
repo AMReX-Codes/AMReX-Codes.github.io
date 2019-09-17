@@ -1225,11 +1225,11 @@
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>m_nrcvs<sp/>=<sp/>m_RcvProc.size();</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>m_stats.resize(0);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>m_stats.resize(m_nrcvs);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>m_build_stats.resize(0);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>m_build_stats.resize(m_nrcvs);</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>m_rreqs.resize(0);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>m_rreqs.resize(m_nrcvs);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>m_build_rreqs.resize(0);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>m_build_rreqs.resize(m_nrcvs);</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>m_rcv_data.resize(TotRcvBytes/</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/></highlight></codeline>
@@ -1243,7 +1243,7 @@
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(Cnt<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>());</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(Who<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>Who<sp/>&lt;<sp/>NProcs);</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rreqs[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1af5ed8a597f21464e9f2803f0e2afc0be" kindref="member">ParallelDescriptor::Arecv</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>(m_rcv_data.dataPtr()<sp/>+<sp/>offset),<sp/>Cnt,<sp/>Who,<sp/>SeqNum).<ref refid="classamrex_1_1ParallelDescriptor_1_1Message_1a57999afb8ef13d17fc24750bdae6cd00" kindref="member">req</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_build_rreqs[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1af5ed8a597f21464e9f2803f0e2afc0be" kindref="member">ParallelDescriptor::Arecv</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)<sp/>(m_rcv_data.dataPtr()<sp/>+<sp/>offset),<sp/>Cnt,<sp/>Who,<sp/>SeqNum).<ref refid="classamrex_1_1ParallelDescriptor_1_1Message_1a57999afb8ef13d17fc24750bdae6cd00" kindref="member">req</ref>();</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa191723b5d24ceaf64e9d49f542cfcc2" kindref="member">NProcs</ref>;<sp/>++i)</highlight></codeline>
@@ -1273,7 +1273,7 @@
 <codeline lineno="157"><highlight class="normal"></highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_nrcvs<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(m_rreqs,<sp/>m_stats);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(m_build_rreqs,<sp/>m_build_stats);</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>rcv_box_offsets;</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>rcv_box_counts;</highlight></codeline>
@@ -1402,7 +1402,7 @@
 <codeline lineno="286"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1ac2e31e632d2856477f32757e16ba053e" kindref="member">m_nrcvs</ref><sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aeed6a81e3a7628445aac218d45576bd0" kindref="member">m_rreqs</ref>,<sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1a1a340b9f7199d3e7e537b38d7c20f185" kindref="member">m_stats</ref>);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aa7dcdca22d276a177da66220283582c0" kindref="member">m_particle_rreqs</ref>,<sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aac55f2c595ea7f57832345df3d5fb78b" kindref="member">m_particle_stats</ref>);</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="291"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="292"><highlight class="normal">}</highlight></codeline>
