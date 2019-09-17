@@ -566,18 +566,16 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="c1">//</span>
 <span class="n">EBFArrayBoxFactory</span> <span class="nf">factory</span><span class="p">(</span><span class="n">eb_level</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">ng_ebs</span><span class="p">,</span> <span class="n">ebs</span><span class="p">);</span>
 
-
 <span class="c1">//</span>
 <span class="c1">//  Create the CELL CENTERED velocity field we want to project</span>
 <span class="c1">//</span>
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">vel</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">vel</span><span class="p">;</span>
 <span class="n">vel</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
 
 <span class="c1">// Set velocity field to (1,0,0) for this example</span>
-<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-
+<span class="n">vel</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Setup linear operator, AKA the nodal Laplacian</span>
@@ -622,18 +620,18 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="k">const</span> <span class="n">BoxArray</span> <span class="o">&amp;</span> <span class="n">nd_grids</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">});</span> <span class="c1">// nodal grids</span>
 
 <span class="c1">// Multifab to host RHS</span>
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">rhs</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">rhs</span><span class="p">;</span>
 <span class="n">rhs</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
 
 <span class="c1">// Cell-centered contributions to RHS</span>
 <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span>  <span class="n">S_cc</span><span class="p">;</span>  <span class="c1">// cell-centered source</span>
 <span class="n">S_cc</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
-<span class="n">S_cc</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span> <span class="c1">// Set it to zero for this example</span>
+<span class="n">S_cc</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span> <span class="c1">// Set it to zero for this example</span>
 
 <span class="c1">// Node-centered contributions to RHS</span>
 <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span>  <span class="n">S_nd</span><span class="p">;</span>  <span class="c1">// node-centered source</span>
 <span class="n">S_nd</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
-<span class="n">S_nd</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span> <span class="c1">// Set it to zero for this example</span>
+<span class="n">S_nd</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span> <span class="c1">// Set it to zero for this example</span>
 
 <span class="c1">// Compute RHS -- vel must be cell-centered</span>
 <span class="n">matrix</span><span class="p">.</span><span class="n">compRHS</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">rhs</span><span class="p">}),</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">vel</span><span class="p">}),</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">S_nd</span><span class="p">}),</span>
@@ -642,7 +640,7 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="c1">//</span>
 <span class="c1">// Create the cell-centered sigma field and set it to 1 for this example</span>
 <span class="c1">//</span>
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">sigma</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">sigma</span><span class="p">;</span>
 <span class="n">sigma</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
 <span class="n">sigma</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">);</span>
 
@@ -652,7 +650,7 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="c1">//</span>
 <span class="c1">// Create node-centered phi</span>
 <span class="c1">//</span>
-<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">phi</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">phi</span><span class="p">;</span>
 <span class="n">phi</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">));</span>
 <span class="n">phi</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
 
@@ -688,7 +686,7 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">MultiFab</span><span class="o">&gt;</span> <span class="n">fluxes</span><span class="p">;</span>
 <span class="n">fluxes</span><span class="p">.</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">vel</span><span class="p">.</span><span class="n">boxArray</span><span class="p">(),</span> <span class="n">vel</span><span class="p">.</span><span class="n">DistributionMap</span><span class="p">(),</span>
                           <span class="n">vel</span><span class="p">.</span><span class="n">nComp</span><span class="p">(),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span> <span class="p">));</span>
-<span class="n">fluxes</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">fluxes</span><span class="o">-&gt;</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
 
 <span class="c1">// Get fluxes from solver</span>
 <span class="n">nodal_solver</span><span class="p">.</span><span class="n">getFluxes</span><span class="p">(</span> <span class="n">GetVecOfPtrs</span><span class="p">({</span><span class="n">fluxes</span><span class="p">})</span> <span class="p">);</span>
@@ -696,9 +694,10 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="c1">//</span>
 <span class="c1">// Apply projection explicitly --  vel = vel - sigma * grad(phi)</span>
 <span class="c1">//</span>
-<span class="n">MultiFab</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span> <span class="n">vel</span><span class="p">,</span> <span class="n">fluxes</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">MultiFab</span><span class="o">::</span><span class="n">Add</span><span class="p">(</span> <span class="o">*</span><span class="n">vel</span><span class="p">,</span> <span class="o">*</span><span class="n">fluxes</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
+<p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/Nodal_Projection_EB</span></code> for the complete working example.</p>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>

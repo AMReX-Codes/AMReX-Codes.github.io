@@ -172,12 +172,15 @@
 This example shows how to use either hypre or PETSc as a bottom-solver (or to solve
 the equation at the finest level if you set the “max coarsening level” to 0.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ABecLaplacian_F</span></code> demonstrates how to solve with cell-centered data using the Fortran interfaces.</p>
-<p><code class="docutils literal notranslate"><span class="pre">NodalPoisson</span></code> demonstrates how to solve with nodal data using the C++ framework.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NodalPoisson</span></code> demonstrates how to set up and solve a variable coefficient Poisson equation
+with the rhs and solution data on nodes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MAC_Projection_EB</span></code> demonstrates how to set up and perform an EB-aware MAC projection
+of a specified velocity field on a staggered grid around nine cylindrical objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Nodal_Projection_EB</span></code> demonstrates how to set up and perform an EB-aware nodal projection
+of a specified cell-centered velocity field around nine cylindrical objects.</p>
 <p><code class="docutils literal notranslate"><span class="pre">MultiComponent</span></code> demonstrates how to solve using a multi-component operator with nodal data.
 The operator is of the form <span class="math notranslate nohighlight">\(D(\mathbf{\phi})_i = \alpha_{ij}\nabla^2\phi_j\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> is the multi-component solution variable and <span class="math notranslate nohighlight">\(\alpha_{ij}\)</span> is a matrix of coefficients.
 The operator (<code class="docutils literal notranslate"><span class="pre">MCNodalLinOp</span></code>) is implemented using the “reflux-free” method.</p>
-<p><code class="docutils literal notranslate"><span class="pre">MAC_Projection_EB</span></code> demonstrates the solution of a Poisson equation
-to compute a potential flow field around obstacles.</p>
 </div>
 
 
