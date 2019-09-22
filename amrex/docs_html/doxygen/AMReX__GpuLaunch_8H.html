@@ -171,6 +171,12 @@ Macros</h2></td></tr>
 <tr class="separator:af98b03b7b3a87691d2e944fcd96c5a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af44071ada5d6349748d7ee4bd8fcd8d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#af44071ada5d6349748d7ee4bd8fcd8d9">AMREX_HOST_DEVICE_FOR_4D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#adfadeed3fe453a800c07d10c37c9faa4">AMREX_GPU_HOST_DEVICE_FOR_4D</a>(__VA_ARGS__)</td></tr>
 <tr class="separator:af44071ada5d6349748d7ee4bd8fcd8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3611c23eea6919c2351f474c872c1038"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a3611c23eea6919c2351f474c872c1038">AMREX_HOST_DEVICE_PARALLEL_FOR_1D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a736db5da316526a65321a43b6c2f8638">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_1D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a3611c23eea6919c2351f474c872c1038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c5025bd1ba39794c9f3ce7212ed7ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a75c5025bd1ba39794c9f3ce7212ed7ae">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a952364a6054dcfacd3ef63bc24c8bfca">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_3D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a75c5025bd1ba39794c9f3ce7212ed7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd60f7bb161794f08fe97f8f36e1f52d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a54b13c49a62108209b5fb525fbc56d44">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_4D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:afd60f7bb161794f08fe97f8f36e1f52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9047fbbd8a940e4dfa1b36a4831ed9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#ac9047fbbd8a940e4dfa1b36a4831ed9a">AMREX_HOST_DEVICE_FOR_3D_FLAG</a>(flag,  box,  i,  j,  k,  block)</td></tr>
 <tr class="separator:ac9047fbbd8a940e4dfa1b36a4831ed9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae470f9bf57ebee907a63375f40b14702"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#ae470f9bf57ebee907a63375f40b14702">AMREX_HOST_DEVICE_FOR_4D_FLAG</a>(flag,  box,  nc,  i,  j,  k,  n,  block)</td></tr>
@@ -531,6 +537,54 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a>(box, <a class="code" href="namespaceamrex__eb__to__vtk.html#aa47673e8feae3e3e3527167ae6560d7d">nc</a>, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept \</div><div class="line">        block \</div><div class="line">    );</div><div class="ttc" id="namespaceamrex__eb__to__vtk_html_aa47673e8feae3e3e3527167ae6560d7d"><div class="ttname"><a href="namespaceamrex__eb__to__vtk.html#aa47673e8feae3e3e3527167ae6560d7d">amrex_eb_to_vtk::nc</a></div><div class="ttdeci">integer nc</div><div class="ttdef"><b>Definition:</b> AMReX_eb_to_pvd.F90:9</div></div>
 <div class="ttc" id="namespaceamrex_html_a9d2e38bd2809143536efe0db90492957"><div class="ttname"><a href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a></div><div class="ttdeci">void LoopOnCpu(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:118</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3611c23eea6919c2351f474c872c1038"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a736db5da316526a65321a43b6c2f8638">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_1D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a75c5025bd1ba39794c9f3ce7212ed7ae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_3D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a952364a6054dcfacd3ef63bc24c8bfca">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_3D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afd60f7bb161794f08fe97f8f36e1f52d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_4D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a54b13c49a62108209b5fb525fbc56d44">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_4D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="a224e4236496017e5f5cbcec29e94c379"></a>
