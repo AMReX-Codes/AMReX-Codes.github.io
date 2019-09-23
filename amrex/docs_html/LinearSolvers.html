@@ -106,6 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mac-projection">MAC Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nodal-projection">Nodal Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tensor-solve">Tensor Solve</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#multi-component-operators">Multi-Component Operators</a></li>
 </ul>
 </li>
@@ -688,6 +689,27 @@ gradient term to make the vector field result satisfy the divergence constraint.
 </pre></div>
 </div>
 <p>See <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/Nodal_Projection_EB</span></code> for the complete working example.</p>
+</div>
+<div class="section" id="tensor-solve">
+<h1>Tensor Solve<a class="headerlink" href="#tensor-solve" title="Permalink to this headline">¶</a></h1>
+<p>Application codes that solve the Navier-Stokes equations need to evaluate
+the viscous term;  solving for this term implicitly requires a multi-component
+solve with cross terms.  Because this is a commonly used motif, we provide
+a tensor solve for cell-centered velocity components.</p>
+<p>Consider a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> with all
+components co-located on cell centers.  The viscous term, expressed in
+three-dimensional Cartesian coordinates,  can be written as
+.. math:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z
+
+              (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z
+
+ (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z
+</pre></div>
+</div>
+<p>For constant $eta$ and $nabla cdot U = 0,$ this simplifies to</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\eta (u_xx + u_yy + u_zz)\\\eta (v_xx + v_yy + v_zz)\\\eta (w_xx + w_yy + w_zz)\end{aligned}\end{align} \]</div>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
