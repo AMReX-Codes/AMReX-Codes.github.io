@@ -490,7 +490,7 @@ var searchData=
   ['makeshop',['makeShop',['../namespaceamrex_1_1EB2.html#a23cfabfaa38e0f849adc5e41eaa0e32a',1,'amrex::EB2']]],
   ['makesolvable',['makeSolvable',['../classamrex_1_1MLMG.html#ae5f98b72769ed94a44f850aa8aa1e1ba',1,'amrex::MLMG::makeSolvable()'],['../classamrex_1_1MLMG.html#a818eb5c5d459af91e960acec44627869',1,'amrex::MLMG::makeSolvable(int amrlev, int mglev, MultiFab &amp;mf)']]],
   ['makesubcommunicator',['makeSubCommunicator',['../classamrex_1_1MLLinOp.html#a0aa88871d9875a2436ed23ff882516e4',1,'amrex::MLLinOp']]],
-  ['maketuple',['makeTuple',['../namespaceamrex.html#ae04bfb2a52fee4b6950211a7872b3256',1,'amrex']]],
+  ['maketuple',['makeTuple',['../namespaceamrex.html#a05a26868ecc4669b666448590e006195',1,'amrex']]],
   ['maketype',['MakeType',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6',1,'amrex']]],
   ['makeunion',['makeUnion',['../namespaceamrex_1_1EB2.html#ae1c1ff0fbaf7ff938aae5f3daf43d607',1,'amrex::EB2']]],
   ['makexdim3',['makeXDim3',['../namespaceamrex.html#a8338a320488a4b26607928529d25c1a5',1,'amrex']]],

@@ -698,18 +698,16 @@ solve with cross terms.  Because this is a commonly used motif, we provide
 a tensor solve for cell-centered velocity components.</p>
 <p>Consider a velocity field <span class="math notranslate nohighlight">\(U = (u,v,w)\)</span> with all
 components co-located on cell centers.  The viscous term, expressed in
-three-dimensional Cartesian coordinates,  can be written as
-.. math:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z
-
-              (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z
-
- (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z
-</pre></div>
-</div>
-<p>For constant $eta$ and $nabla cdot U = 0,$ this simplifies to</p>
+three-dimensional Cartesian coordinates,  can be written as</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\eta (u_xx + u_yy + u_zz)\\\eta (v_xx + v_yy + v_zz)\\\eta (w_xx + w_yy + w_zz)\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z\\              (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z\\ (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z\end{aligned}\end{align} \]</div>
+<p>Here <span class="math notranslate nohighlight">\(eta\)</span> is the dynamic viscosity and <span class="math notranslate nohighlight">\(\kappa\)</span> is the bulk viscosity.</p>
+<p>We evaluate the following terms using the <code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBABecLaplacian</span></code> operators;</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z\\              (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z\\ (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z\end{aligned}\end{align} \]</div>
+<p>the following cross-terms are evaluted separately using the <code class="docutils literal notranslate"><span class="pre">MLTensorOp</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBTensorOp</span></code> operators.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}(\frac{2}{3} \eta (\nabla \cdot U))_x - (\eta v_x)_y  - (\eta w_x)_z\\(\eta u_y)_x - (\frac{2}{3} \eta (\nabla \cdot U))_y  - (\eta w_y)_z\\(\eta u_z)_x - (\eta v_z)_y - (\frac{2}{3} \eta (\nabla \cdot U))_z\end{aligned}\end{align} \]</div>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>

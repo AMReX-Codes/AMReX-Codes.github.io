@@ -639,6 +639,7 @@ a tensor solve for cell-centered velocity components.
 Consider a velocity field :math:`U = (u,v,w)` with all
 components co-located on cell centers.  The viscous term, expressed in
 three-dimensional Cartesian coordinates,  can be written as
+
 .. math::
 
    ( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z 
@@ -647,16 +648,27 @@ three-dimensional Cartesian coordinates,  can be written as
 
     (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z 
 
+Here :math:`eta` is the dynamic viscosity and :math:`\kappa` is the bulk viscosity.  
 
-For constant $\eta$ and $\nabla \cdot U = 0,$ this simplifies to
+We evaluate the following terms using the ``MLABecLaplacian`` and ``MLEBABecLaplacian`` operators;
 
 .. math::
 
-   \eta (u_xx + u_yy + u_zz)
+   ( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z 
 
-   \eta (v_xx + v_yy + v_zz)
+                 (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z 
 
-   \eta (w_xx + w_yy + w_zz)
+    (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z 
+
+the following cross-terms are evaluted separately using the ``MLTensorOp`` and ``MLEBTensorOp`` operators.
+
+.. math::
+
+    (\frac{2}{3} \eta (\nabla \cdot U))_x - (\eta v_x)_y  - (\eta w_x)_z
+
+    (\eta u_y)_x - (\frac{2}{3} \eta (\nabla \cdot U))_y  - (\eta w_y)_z
+
+    (\eta u_z)_x - (\eta v_z)_y - (\frac{2}{3} \eta (\nabla \cdot U))_z
 
 Multi-Component Operators
 =========================
