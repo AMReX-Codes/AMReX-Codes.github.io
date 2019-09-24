@@ -710,6 +710,70 @@ components co-located on cell centers.  The viscous term can be written in vecto
 <p>the following cross-terms are evaluted separately using the <code class="docutils literal notranslate"><span class="pre">MLTensorOp</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBTensorOp</span></code> operators.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}( (\kappa - \frac{2}{3} \eta) (v_y + w_z) )_x + (\eta v_x)_y  + (\eta w_x)_z\\(\eta u_y)_x + ( (\kappa - \frac{2}{3} \eta) (u_x + w_z) )_y  + (\eta w_y)_z\\(\eta u_z)_x + (\eta v_z)_y - ( (\kappa - \frac{2}{3} \eta) (u_x + v_y) )_z\end{aligned}\end{align} \]</div>
+<p>To compute the full viscous term explicitly,</p>
+<p>The code below is an example of how to set up the solver to compute the
+viscous term <cite>divtau</cite> explicitly:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span> <span class="nf">domain</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">Domain</span><span class="p">());</span>
+
+<span class="c1">// Set BCs for Poisson solver in bc_lo, bc_hi</span>
+<span class="p">...</span>
+
+<span class="c1">//</span>
+<span class="c1">// First define the operator &quot;ebtensorop&quot;</span>
+<span class="c1">// Note we call LPInfo().setMaxCoarseningLevel(0) because we are only applying the operator,</span>
+<span class="c1">//      not doing an implicit solve</span>
+<span class="c1">//</span>
+<span class="c1">//       (alpha * a - beta * (del dot b grad)) sol</span>
+<span class="c1">//</span>
+<span class="c1">// LPInfo                       info;</span>
+<span class="n">MLEBTensorOp</span> <span class="n">ebtensorop</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">LPInfo</span><span class="p">().</span><span class="n">setMaxCoarseningLevel</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                        <span class="n">amrex</span><span class="o">::</span><span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">ebfactory</span><span class="p">));</span>
+
+<span class="c1">// It is essential that we set MaxOrder of the solver to 2</span>
+<span class="c1">// if we want to use the standard sol(i)-sol(i-1) approximation</span>
+<span class="c1">// for the gradient at Dirichlet boundaries.</span>
+<span class="c1">// The solver&#39;s default order is 3 and this uses three points for the</span>
+<span class="c1">// gradient at a Dirichlet boundary.</span>
+<span class="n">ebtensorop</span><span class="p">.</span><span class="n">setMaxOrder</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="c1">// LinOpBCType Definitions are in amrex/Src/Boundary/AMReX_LO_BCTYPES.H</span>
+<span class="n">ebtensorop</span><span class="p">.</span><span class="n">setDomainBC</span> <span class="p">(</span> <span class="p">{(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_lo</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_lo</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_lo</span><span class="p">[</span><span class="mi">2</span><span class="p">]},</span>
+                         <span class="p">{(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_hi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_hi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_hi</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span> <span class="p">);</span>
+
+<span class="c1">// Return div (eta grad)) phi</span>
+<span class="n">ebtensorop</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">);</span>
+
+<span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">b</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">max_level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// Compute the coefficients</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlev</span><span class="p">;</span> <span class="n">lev</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// We average eta onto faces</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">dir</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dir</span> <span class="o">&lt;</span> <span class="n">AMREX_SPACEDIM</span><span class="p">;</span> <span class="n">dir</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">BoxArray</span> <span class="n">edge_ba</span> <span class="o">=</span> <span class="n">grids</span><span class="p">[</span><span class="n">lev</span><span class="p">];</span>
+        <span class="n">edge_ba</span><span class="p">.</span><span class="n">surroundingNodes</span><span class="p">(</span><span class="n">dir</span><span class="p">);</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">lev</span><span class="p">][</span><span class="n">dir</span><span class="p">].</span><span class="n">reset</span><span class="p">(</span><span class="k">new</span> <span class="n">MultiFab</span><span class="p">(</span><span class="n">edge_ba</span><span class="p">,</span> <span class="n">dmap</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nghost</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="o">*</span><span class="n">ebfactory</span><span class="p">[</span><span class="n">lev</span><span class="p">]));</span>
+    <span class="p">}</span>
+
+    <span class="n">average_cellcenter_to_face</span><span class="p">(</span> <span class="n">GetArrOfPtrs</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">lev</span><span class="p">]),</span> <span class="o">*</span><span class="n">etan</span><span class="p">[</span><span class="n">lev</span><span class="p">],</span> <span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">]</span> <span class="p">);</span>
+
+    <span class="n">b</span><span class="p">[</span><span class="n">lev</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">periodicity</span><span class="p">());</span>
+    <span class="n">b</span><span class="p">[</span><span class="n">lev</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">periodicity</span><span class="p">());</span>
+    <span class="n">b</span><span class="p">[</span><span class="n">lev</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="n">FillBoundary</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="n">lev</span><span class="p">].</span><span class="n">periodicity</span><span class="p">());</span>
+
+    <span class="n">ebtensorop</span><span class="p">.</span><span class="n">setShearViscosity</span>  <span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">GetArrOfConstPtrs</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">lev</span><span class="p">]));</span>
+    <span class="n">ebtensorop</span><span class="p">.</span><span class="n">setEBShearViscosity</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">eta</span><span class="p">[</span><span class="n">lev</span><span class="p">]));</span>
+
+    <span class="n">ebtensorop</span><span class="p">.</span><span class="n">setLevelBC</span> <span class="p">(</span> <span class="n">lev</span><span class="p">,</span> <span class="n">GetVecOfConstPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">)[</span><span class="n">lev</span><span class="p">]</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">MLMG</span> <span class="n">solver</span><span class="p">(</span><span class="n">ebtensorop</span><span class="p">);</span>
+
+<span class="n">solver</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">divtau</span><span class="p">),</span> <span class="n">GetVecOfPtrs</span><span class="p">(</span><span class="n">vel</span><span class="p">));</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="multi-component-operators">
 <h1>Multi-Component Operators<a class="headerlink" href="#multi-component-operators" title="Permalink to this headline">¶</a></h1>
