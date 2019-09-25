@@ -710,7 +710,6 @@ components co-located on cell centers.  The viscous term can be written in vecto
 <p>the following cross-terms are evaluted separately using the <code class="docutils literal notranslate"><span class="pre">MLTensorOp</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBTensorOp</span></code> operators.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}( (\kappa - \frac{2}{3} \eta) (v_y + w_z) )_x + (\eta v_x)_y  + (\eta w_x)_z\\(\eta u_y)_x + ( (\kappa - \frac{2}{3} \eta) (u_x + w_z) )_y  + (\eta w_y)_z\\(\eta u_z)_x + (\eta v_z)_y - ( (\kappa - \frac{2}{3} \eta) (u_x + v_y) )_z\end{aligned}\end{align} \]</div>
-<p>To compute the full viscous term explicitly,</p>
 <p>The code below is an example of how to set up the solver to compute the
 viscous term <cite>divtau</cite> explicitly:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Box</span> <span class="nf">domain</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">Domain</span><span class="p">());</span>
