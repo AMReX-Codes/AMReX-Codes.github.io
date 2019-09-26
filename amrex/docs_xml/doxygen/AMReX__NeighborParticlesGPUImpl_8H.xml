@@ -208,169 +208,170 @@
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_copies;</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a998c5815369d23cd73eea1b09f43a966" kindref="member">Gpu::dtoh_memcpy</ref>(&amp;num_copies,<sp/>thrust::raw_pointer_cast(offsets.data())+np,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_op.resize(gid,<sp/>num_copies);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_op.resize(gid,<sp/>lev,<sp/>num_copies);</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_boxes<sp/>=<sp/>neighbor_copy_op.m_boxes[gid].dataPtr();</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_src_indices<sp/>=<sp/>neighbor_copy_op.m_src_indices[gid].dataPtr();</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_periodic_shift<sp/>=<sp/>neighbor_copy_op.m_periodic_shift[gid].dataPtr();</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a39a4c246c2c105435c9df228aa98c2a6" kindref="member">AMREX_FOR_1D</ref><sp/>(<sp/>np,<sp/>i,</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>iv<sp/>=<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(floor((p_ptr[i].pos(0)-plo[0])*dxi[0]),</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>floor((p_ptr[i].pos(1)-plo[1])*dxi[1]),</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>floor((p_ptr[i].pos(2)-plo[2])*dxi[2]))</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>+=<sp/>domain.smallEnd();</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>code<sp/>=<sp/>mask_arr(iv);</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(code<sp/>&gt;=<sp/>0)</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start<sp/>=<sp/>p_code_offsets[code];</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stop<sp/>=<sp/><sp/>p_code_offsets[code+1];</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>start;<sp/>j<sp/>&lt;<sp/>stop;<sp/>++j)</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>p_offsets[i]+k;</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_boxes[index]<sp/>=<sp/>p_code_array[j].grid_id;</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_periodic_shift[index]<sp/>=<sp/>p_code_array[j].periodic_shift;</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_src_indices[index]<sp/>=<sp/>i;</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++k;</highlight></codeline>
-<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>});<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"></highlight></codeline>
-<codeline lineno="236"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">fillNeighborsGPU</ref><sp/>()</highlight></codeline>
-<codeline lineno="240"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::fillNeighbors&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="242"><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_boxes<sp/>=<sp/>neighbor_copy_op.m_boxes[lev][gid].dataPtr();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_levs<sp/>=<sp/>neighbor_copy_op.m_levels[lev][gid].dataPtr();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_src_indices<sp/>=<sp/>neighbor_copy_op.m_src_indices[lev][gid].dataPtr();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_periodic_shift<sp/>=<sp/>neighbor_copy_op.m_periodic_shift[lev][gid].dataPtr();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a39a4c246c2c105435c9df228aa98c2a6" kindref="member">AMREX_FOR_1D</ref><sp/>(<sp/>np,<sp/>i,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/>iv<sp/>=<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(floor((p_ptr[i].pos(0)-plo[0])*dxi[0]),</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>floor((p_ptr[i].pos(1)-plo[1])*dxi[1]),</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>floor((p_ptr[i].pos(2)-plo[2])*dxi[2]))</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>+=<sp/>domain.smallEnd();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>code<sp/>=<sp/>mask_arr(iv);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(code<sp/>&gt;=<sp/>0)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>start<sp/>=<sp/>p_code_offsets[code];</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>stop<sp/>=<sp/><sp/>p_code_offsets[code+1];</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>start;<sp/>j<sp/>&lt;<sp/>stop;<sp/>++j)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>p_offsets[i]+k;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_boxes[index]<sp/>=<sp/>p_code_array[j].grid_id;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_levs[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_periodic_shift[index]<sp/>=<sp/>p_code_array[j].periodic_shift;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_src_indices[index]<sp/>=<sp/>i;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++k;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>});<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">fillNeighborsGPU</ref><sp/>()</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::fillNeighbors&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"></highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>buildNeighborMask();</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;defineBufferMap();</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"></highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_op.clear();</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_plan.clear();</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>buildNeighborCopyOp();</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;m_need_handshake<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_plan.build(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_op,<sp/>this-&gt;m_need_handshake);</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>updateNeighborsGPU();</highlight></codeline>
-<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"></highlight></codeline>
-<codeline lineno="256"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">updateNeighborsGPU</ref><sp/>()</highlight></codeline>
-<codeline lineno="260"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::updateNeighborsGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="262"><highlight class="normal"></highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"></highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>clearNeighbors();</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6e281f2798c1b095d3a6eb21b950e9ca" kindref="member">packBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_op,<sp/>neighbor_copy_plan,<sp/>snd_buffer);</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a3e62b2c32fa5036fc1bb1dff1d819de6" kindref="member">ParallelDescriptor::UseGpuAwareMpi</ref>())</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</highlight></codeline>
-<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90f29dc8a6306690b4ef2e53bea4c8b1" kindref="member">communicateParticlesStart</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>snd_buffer,<sp/>rcv_buffer);</highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca38419d632c8e6a48b25bc4643522b1" kindref="member">unpackBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>snd_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a814322d519ae32014737504164a0516b" kindref="member">communicateParticlesFinish</ref>(neighbor_copy_plan);</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae65aa0e5fb032ec461c63cf5bf490f0d" kindref="member">unpackRemotes</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>rcv_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pinned_snd_buffer.resize(snd_buffer.size());</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemcpyAsync(pinned_snd_buffer.dataPtr(),<sp/>snd_buffer.dataPtr(),<sp/>snd_buffer.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1NeighborParticleContainer_1ad77c3162bc7d451e1a31652dcab81057" kindref="member">SuperParticleType</ref>),<sp/>cudaMemcpyDeviceToHost);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90f29dc8a6306690b4ef2e53bea4c8b1" kindref="member">communicateParticlesStart</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>pinned_snd_buffer,<sp/>pinned_rcv_buffer);</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_buffer.resize(pinned_rcv_buffer.size());</highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca38419d632c8e6a48b25bc4643522b1" kindref="member">unpackBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>snd_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a814322d519ae32014737504164a0516b" kindref="member">communicateParticlesFinish</ref>(neighbor_copy_plan);</highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemcpyAsync(rcv_buffer.dataPtr(),<sp/>pinned_rcv_buffer.dataPtr(),<sp/>pinned_rcv_buffer.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1NeighborParticleContainer_1ad77c3162bc7d451e1a31652dcab81057" kindref="member">SuperParticleType</ref>),<sp/>cudaMemcpyHostToDevice);</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae65aa0e5fb032ec461c63cf5bf490f0d" kindref="member">unpackRemotes</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>rcv_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"></highlight></codeline>
-<codeline lineno="289"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">clearNeighborsGPU</ref>()</highlight></codeline>
-<codeline lineno="293"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::clearNeighborsGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"></highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"></highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_grid<sp/>=<sp/>mfi.index();</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_tile<sp/>=<sp/>mfi.LocalTileIndex();</highlight></codeline>
-<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(src_tile<sp/>==<sp/>0);</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(src_grid,<sp/>src_tile);</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ptile<sp/>=<sp/>this-&gt;GetParticles(lev)[index];</highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptile.setNumNeighbors(0);</highlight></codeline>
-<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="308"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"></highlight></codeline>
-<codeline lineno="310"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>CheckPair&gt;</highlight></codeline>
-<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="313"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">buildNeighborListGPU</ref>(CheckPair<sp/>check_pair)</highlight></codeline>
-<codeline lineno="315"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::buildNeighborListGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="317"><highlight class="normal"></highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"></highlight></codeline>
-<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom<sp/>=<sp/>this-&gt;Geom(lev);</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>plev<sp/><sp/>=<sp/>this-&gt;GetParticles(lev);</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"></highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
-<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/>mfi.LocalTileIndex();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(gid,<sp/>tid);</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"></highlight></codeline>
-<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ptile<sp/>=<sp/>plev[index];</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>aos<sp/><sp/><sp/>=<sp/>ptile.GetArrayOfStructs();</highlight></codeline>
-<codeline lineno="332"><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>bx<sp/>=<sp/>mfi.tilebox();</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1Box_1ab6232053a39e1b010d0d9a1b269f53ff" kindref="member">grow</ref>(m_num_neighbor_cells);</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"></highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_list[index].build(aos(),<sp/>bx,<sp/>geom,<sp/>check_pair);</highlight></codeline>
-<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="338"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="339"><highlight class="normal"></highlight></codeline>
-<codeline lineno="340"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
-<codeline lineno="341"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="342"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
-<codeline lineno="343"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">printNeighborListGPU</ref>()</highlight></codeline>
-<codeline lineno="344"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::printNeighborListGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"></highlight></codeline>
-<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
-<codeline lineno="348"><highlight class="normal"></highlight></codeline>
-<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom<sp/>=<sp/>this-&gt;Geom(lev);</highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>plev<sp/><sp/>=<sp/>this-&gt;GetParticles(lev);</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"></highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
-<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/>mfi.LocalTileIndex();</highlight></codeline>
-<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(gid,<sp/>tid);</highlight></codeline>
-<codeline lineno="358"><highlight class="normal"></highlight></codeline>
-<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_list[index].print();</highlight></codeline>
-<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="361"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="362"><highlight class="normal"></highlight></codeline>
-<codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>buildNeighborMask();</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;defineBufferMap();</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_op.clear();</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_plan.clear();</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>buildNeighborCopyOp();</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_plan.build(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_op);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>updateNeighborsGPU();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">updateNeighborsGPU</ref><sp/>()</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::updateNeighborsGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>clearNeighbors();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6e281f2798c1b095d3a6eb21b950e9ca" kindref="member">packBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_op,<sp/>neighbor_copy_plan,<sp/>snd_buffer);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a3e62b2c32fa5036fc1bb1dff1d819de6" kindref="member">ParallelDescriptor::UseGpuAwareMpi</ref>())</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90f29dc8a6306690b4ef2e53bea4c8b1" kindref="member">communicateParticlesStart</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>snd_buffer,<sp/>rcv_buffer);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca38419d632c8e6a48b25bc4643522b1" kindref="member">unpackBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>snd_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a814322d519ae32014737504164a0516b" kindref="member">communicateParticlesFinish</ref>(neighbor_copy_plan);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae65aa0e5fb032ec461c63cf5bf490f0d" kindref="member">unpackRemotes</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>rcv_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pinned_snd_buffer.resize(snd_buffer.size());</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemcpyAsync(pinned_snd_buffer.dataPtr(),<sp/>snd_buffer.dataPtr(),<sp/>snd_buffer.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1NeighborParticleContainer_1ad77c3162bc7d451e1a31652dcab81057" kindref="member">SuperParticleType</ref>),<sp/>cudaMemcpyDeviceToHost);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>neighbor_copy_plan.buildMPIFinish(this-&gt;BufferMap());</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a90f29dc8a6306690b4ef2e53bea4c8b1" kindref="member">communicateParticlesStart</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>pinned_snd_buffer,<sp/>pinned_rcv_buffer);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_buffer.resize(pinned_rcv_buffer.size());</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aca38419d632c8e6a48b25bc4643522b1" kindref="member">unpackBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>snd_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a814322d519ae32014737504164a0516b" kindref="member">communicateParticlesFinish</ref>(neighbor_copy_plan);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaMemcpyAsync(rcv_buffer.dataPtr(),<sp/>pinned_rcv_buffer.dataPtr(),<sp/>pinned_rcv_buffer.size()*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1NeighborParticleContainer_1ad77c3162bc7d451e1a31652dcab81057" kindref="member">SuperParticleType</ref>),<sp/>cudaMemcpyHostToDevice);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae65aa0e5fb032ec461c63cf5bf490f0d" kindref="member">unpackRemotes</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>neighbor_copy_plan,<sp/>rcv_buffer,<sp/><ref refid="structamrex_1_1NeighborUnpackPolicy" kindref="compound">NeighborUnpackPolicy</ref>());</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">clearNeighborsGPU</ref>()</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::clearNeighborsGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_grid<sp/>=<sp/>mfi.index();</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_tile<sp/>=<sp/>mfi.LocalTileIndex();</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(src_tile<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(src_grid,<sp/>src_tile);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ptile<sp/>=<sp/>this-&gt;GetParticles(lev)[index];</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptile.setNumNeighbors(0);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>CheckPair&gt;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">buildNeighborListGPU</ref>(CheckPair<sp/>check_pair)</highlight></codeline>
+<codeline lineno="316"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::buildNeighborListGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom<sp/>=<sp/>this-&gt;Geom(lev);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>plev<sp/><sp/>=<sp/>this-&gt;GetParticles(lev);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/>mfi.LocalTileIndex();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(gid,<sp/>tid);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ptile<sp/>=<sp/>plev[index];</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>aos<sp/><sp/><sp/>=<sp/>ptile.GetArrayOfStructs();</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>bx<sp/>=<sp/>mfi.tilebox();</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1Box_1ab6232053a39e1b010d0d9a1b269f53ff" kindref="member">grow</ref>(m_num_neighbor_cells);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_list[index].build(aos(),<sp/>bx,<sp/>geom,<sp/>check_pair);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructReal,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NStructInt&gt;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;::</ref></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer" kindref="compound">printNeighborListGPU</ref>()</highlight></codeline>
+<codeline lineno="345"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::printNeighborListGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom<sp/>=<sp/>this-&gt;Geom(lev);</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>plev<sp/><sp/>=<sp/>this-&gt;GetParticles(lev);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gid<sp/>=<sp/>mfi.index();</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/>mfi.LocalTileIndex();</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(gid,<sp/>tid);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_list[index].print();</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="362"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H"/>
   </compounddef>
