@@ -328,6 +328,7 @@ var searchData=
   ['amrex_5finsitubridge_2eh',['AMReX_InSituBridge.H',['../AMReX__InSituBridge_8H.html',1,'']]],
   ['amrex_5finsituutils_2ecpp',['AMReX_InSituUtils.cpp',['../AMReX__InSituUtils_8cpp.html',1,'']]],
   ['amrex_5finsituutils_2eh',['AMReX_InSituUtils.H',['../AMReX__InSituUtils_8H.html',1,'']]],
+  ['amrex_5fint_2eh',['AMReX_INT.H',['../AMReX__INT_8H.html',1,'']]],
   ['amrex_5fintconv_2ecpp',['AMReX_IntConv.cpp',['../AMReX__IntConv_8cpp.html',1,'']]],
   ['amrex_5fintconv_2eh',['AMReX_IntConv.H',['../AMReX__IntConv_8H.html',1,'']]],
   ['amrex_5finterp_5f1d_2ef90',['AMReX_INTERP_1D.F90',['../AMReX__INTERP__1D_8F90.html',1,'']]],
@@ -601,6 +602,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
 ];
