@@ -106,10 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05d19c7221c02cf3594535ff76c1ed0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4cc3fbe43671a4645c523c761b8539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a9f4cc3fbe43671a4645c523c761b8539">setDomainBC</a> (const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;lobc, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;hibc)</td></tr>
 <tr class="separator:a9f4cc3fbe43671a4645c523c761b8539"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a182106c512f6e703772e53d8ba7f79f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a182106c512f6e703772e53d8ba7f79f5">project</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;phi_in, Real reltol, Real atol=0.0)</td></tr>
-<tr class="separator:a182106c512f6e703772e53d8ba7f79f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40be11de707ada075a0353e612afc992"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a40be11de707ada075a0353e612afc992">project</a> (Real reltol, Real atol=0.0)</td></tr>
-<tr class="separator:a40be11de707ada075a0353e612afc992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35ad28c6352eca3d0822319cb6943f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#aa35ad28c6352eca3d0822319cb6943f5">project</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;phi_in, Real reltol, Real atol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">MLMG::Location</a>)</td></tr>
+<tr class="separator:aa35ad28c6352eca3d0822319cb6943f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d23d21f11ada29e6e51902dc25faae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a24d23d21f11ada29e6e51902dc25faae">project</a> (Real reltol, Real atol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">MLMG::Location</a>)</td></tr>
+<tr class="separator:a24d23d21f11ada29e6e51902dc25faae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99ff4480a6b0e8c0131bab59a1794d4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a99ff4480a6b0e8c0131bab59a1794d4b">setVerbose</a> (int v) noexcept</td></tr>
 <tr class="separator:a99ff4480a6b0e8c0131bab59a1794d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28c3636c49dbe98f8d198928968fbc21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a28c3636c49dbe98f8d198928968fbc21">setCGVerbose</a> (int v) noexcept</td></tr>
@@ -279,7 +279,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a182106c512f6e703772e53d8ba7f79f5"></a>
+<a class="anchor" id="aa35ad28c6352eca3d0822319cb6943f5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -299,7 +299,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>atol</em> = <code>0.0</code>&#160;</td>
+          <td class="paramname"><em>atol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">MLMG::Location</a>&#160;</td>
+          <td class="paramname"><em>loc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -311,7 +317,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a40be11de707ada075a0353e612afc992"></a>
+<a class="anchor" id="a24d23d21f11ada29e6e51902dc25faae"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -325,7 +331,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>atol</em> = <code>0.0</code>&#160;</td>
+          <td class="paramname"><em>atol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">MLMG::Location</a>&#160;</td>
+          <td class="paramname"><em>loc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

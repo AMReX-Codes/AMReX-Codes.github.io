@@ -1662,7 +1662,7 @@
 <codeline lineno="97"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><ref refid="classamrex_1_1MacProjector_1a182106c512f6e703772e53d8ba7f79f5" kindref="member">MacProjector::project</ref><sp/>(Real<sp/>reltol,<sp/>Real<sp/>atol<sp/>)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="classamrex_1_1MacProjector_1aa35ad28c6352eca3d0822319cb6943f5" kindref="member">MacProjector::project</ref><sp/>(Real<sp/>reltol,<sp/>Real<sp/>atol,<sp/><ref refid="classamrex_1_1MLMG_1a93725420770bf42d532f9ee7dea87c2f" kindref="member">MLMG::Location</ref><sp/>loc)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_mlmg<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -1691,83 +1691,87 @@
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_umac[ilev][idim]-&gt;FillBoundary(m_geom[ilev].periodicity());</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1fb6db0bb06fb9a3bed3a671501aca70" kindref="member">EB_computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev]);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kindref="member">computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev]);</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a5f37af40303a10e8d54e15c1931a5b8e" kindref="member">MultiFab::Subtract</ref>(m_rhs[ilev],<sp/>divu,<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;solve(<ref refid="namespaceamrex_1a4ad8b7a21907586ee3a86bda5163cd2d" kindref="member">amrex::GetVecOfPtrs</ref>(m_phi),<sp/><ref refid="namespaceamrex_1a2eb81423f83e826a61bafde352b67e98" kindref="member">amrex::GetVecOfConstPtrs</ref>(m_rhs),<sp/>reltol,<sp/>atol);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>already_on_centroid<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(loc<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3a91efbc33209256821c57a53ef9ddbc51" kindref="member">MLMG::Location::FaceCentroid</ref>)<sp/>already_on_centroid<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aac572002c16db8070f5ffaf6afaf1b87" kindref="member">EB_computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev],<sp/>already_on_centroid);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kindref="member">computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev]);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a5f37af40303a10e8d54e15c1931a5b8e" kindref="member">MultiFab::Subtract</ref>(m_rhs[ilev],<sp/>divu,<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3ad1a130e88790663b2124d7dbd3e9f81e" kindref="member">MLMG::Location::FaceCenter</ref>);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" kindref="member">MultiFab::Add</ref>(*m_umac[ilev][idim],<sp/>m_fluxes[ilev][idim],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a233a16599969d91372d51e1befabcbfc" kindref="member">EB_set_covered_faces</ref>(m_umac[ilev],<sp/>0.0);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><ref refid="classamrex_1_1MacProjector_1a182106c512f6e703772e53d8ba7f79f5" kindref="member">MacProjector::project</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;MultiFab*&gt;&amp;<sp/>phi_inout,<sp/>Real<sp/>reltol,<sp/>Real<sp/>atol<sp/>)</highlight></codeline>
-<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_mlmg<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MLMG(*m_linop));</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setVerbose(m_verbose);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setCGVerbose(m_cg_verbose);</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setMaxIter(m_maxiter);</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setCGMaxIter(m_cg_maxiter);</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;setBottomSolver(bottom_solver_type);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;solve(<ref refid="namespaceamrex_1a4ad8b7a21907586ee3a86bda5163cd2d" kindref="member">amrex::GetVecOfPtrs</ref>(m_phi),<sp/><ref refid="namespaceamrex_1a2eb81423f83e826a61bafde352b67e98" kindref="member">amrex::GetVecOfConstPtrs</ref>(m_rhs),<sp/>reltol,<sp/>atol);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3ad1a130e88790663b2124d7dbd3e9f81e" kindref="member">MLMG::Location::FaceCenter</ref>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" kindref="member">MultiFab::Add</ref>(*m_umac[ilev][idim],<sp/>m_fluxes[ilev][idim],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a233a16599969d91372d51e1befabcbfc" kindref="member">EB_set_covered_faces</ref>(m_umac[ilev],<sp/>0.0);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="classamrex_1_1MacProjector_1aa35ad28c6352eca3d0822319cb6943f5" kindref="member">MacProjector::project</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;MultiFab*&gt;&amp;<sp/>phi_inout,<sp/>Real<sp/>reltol,<sp/>Real<sp/>atol,<sp/><ref refid="classamrex_1_1MLMG_1a93725420770bf42d532f9ee7dea87c2f" kindref="member">MLMG::Location</ref><sp/>loc)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_mlmg<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MLMG(*m_linop));</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setVerbose(m_verbose);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setCGVerbose(m_cg_verbose);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setMaxIter(m_maxiter);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_mlmg-&gt;setCGMaxIter(m_cg_maxiter);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs<sp/>=<sp/>m_rhs.size();</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;setBottomSolver(bottom_solver_type);</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array&lt;MultiFab<sp/>const*,<sp/>AMREX_SPACEDIM&gt;<sp/>u;</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u[idim]<sp/>=<sp/>m_umac[ilev][idim];</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab<sp/>divu(m_rhs[ilev].boxArray(),<sp/>m_rhs[ilev].DistributionMap(),</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>MFInfo(),<sp/>m_rhs[ilev].Factory());</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_umac[ilev][idim]-&gt;FillBoundary(m_geom[ilev].periodicity());</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1fb6db0bb06fb9a3bed3a671501aca70" kindref="member">EB_computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev]);</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kindref="member">computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev]);</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a5f37af40303a10e8d54e15c1931a5b8e" kindref="member">MultiFab::Subtract</ref>(m_rhs[ilev],<sp/>divu,<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(m_phi[ilev],<sp/>*phi_inout[ilev],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;solve(<ref refid="namespaceamrex_1a4ad8b7a21907586ee3a86bda5163cd2d" kindref="member">amrex::GetVecOfPtrs</ref>(m_phi),<sp/><ref refid="namespaceamrex_1a2eb81423f83e826a61bafde352b67e98" kindref="member">amrex::GetVecOfConstPtrs</ref>(m_rhs),<sp/>reltol,<sp/>atol);</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3ad1a130e88790663b2124d7dbd3e9f81e" kindref="member">MLMG::Location::FaceCenter</ref>);</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" kindref="member">MultiFab::Add</ref>(*m_umac[ilev][idim],<sp/>m_fluxes[ilev][idim],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a233a16599969d91372d51e1befabcbfc" kindref="member">EB_set_covered_faces</ref>(m_umac[ilev],<sp/>0.0);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*phi_inout[ilev],<sp/>m_phi[ilev],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs<sp/>=<sp/>m_rhs.size();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array&lt;MultiFab<sp/>const*,<sp/>AMREX_SPACEDIM&gt;<sp/>u;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u[idim]<sp/>=<sp/>m_umac[ilev][idim];</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab<sp/>divu(m_rhs[ilev].boxArray(),<sp/>m_rhs[ilev].DistributionMap(),</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/>0,<sp/>MFInfo(),<sp/>m_rhs[ilev].Factory());</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_umac[ilev][idim]-&gt;FillBoundary(m_geom[ilev].periodicity());</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>already_on_centroid<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(loc<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3a91efbc33209256821c57a53ef9ddbc51" kindref="member">MLMG::Location::FaceCentroid</ref>)<sp/>already_on_centroid<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aac572002c16db8070f5ffaf6afaf1b87" kindref="member">EB_computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev],<sp/>already_on_centroid);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kindref="member">computeDivergence</ref>(divu,<sp/>u,<sp/>m_geom[ilev]);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a5f37af40303a10e8d54e15c1931a5b8e" kindref="member">MultiFab::Subtract</ref>(m_rhs[ilev],<sp/>divu,<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(m_phi[ilev],<sp/>*phi_inout[ilev],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;solve(<ref refid="namespaceamrex_1a4ad8b7a21907586ee3a86bda5163cd2d" kindref="member">amrex::GetVecOfPtrs</ref>(m_phi),<sp/><ref refid="namespaceamrex_1a2eb81423f83e826a61bafde352b67e98" kindref="member">amrex::GetVecOfConstPtrs</ref>(m_rhs),<sp/>reltol,<sp/>atol);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3ad1a130e88790663b2124d7dbd3e9f81e" kindref="member">MLMG::Location::FaceCenter</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" kindref="member">MultiFab::Add</ref>(*m_umac[ilev][idim],<sp/>m_fluxes[ilev][idim],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a233a16599969d91372d51e1befabcbfc" kindref="member">EB_set_covered_faces</ref>(m_umac[ilev],<sp/>0.0);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*phi_inout[ilev],<sp/>m_phi[ilev],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.cpp"/>
   </compounddef>
