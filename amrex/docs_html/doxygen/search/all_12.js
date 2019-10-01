@@ -1,9 +1,9 @@
 var searchData=
 [
   ['radsquared',['radSquared',['../classamrex_1_1RealVect.html#a4e7731342a5fe8b7d09af2db5c128a87',1,'amrex::RealVect']]],
-  ['random',['Random',['../namespaceamrex.html#af7e3ca9c2455e95a21d765123c8d287e',1,'amrex']]],
+  ['random',['Random',['../namespaceamrex.html#a9c2e0a4a094d4ec2c2142e17e19a0b80',1,'amrex']]],
   ['random_5fint',['Random_int',['../namespaceamrex.html#a885cac80a06efd4e947f55ef585c60fe',1,'amrex']]],
-  ['randomnormal',['RandomNormal',['../namespaceamrex.html#ac40f959448ebf03cd4801e88489c81fa',1,'amrex']]],
+  ['randomnormal',['RandomNormal',['../namespaceamrex.html#a7a3e7f3dbd08e24258d851e2c191d2e9',1,'amrex']]],
   ['range',['Range',['../namespaceamrex_1_1Gpu.html#a5a7e65f26ef2a8d356ebef518f007aaf',1,'amrex::Gpu']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html',1,'amrex::Gpu::range_detail']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#ad4f7d96980fc27cd61042157159e0b4a',1,'amrex::Gpu::range_detail::range_impl']]],
