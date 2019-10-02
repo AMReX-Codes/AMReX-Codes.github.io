@@ -105,7 +105,7 @@ var searchData=
   ['pinned',['Pinned',['../structamrex_1_1Gpu_1_1Pinned.html',1,'amrex::Gpu']]],
   ['pinneddevicevector',['PinnedDeviceVector',['../namespaceamrex_1_1Cuda.html#afd599901ad1e0e3c5103e1ba5a16b2c0',1,'amrex::Cuda']]],
   ['pinnedvector',['PinnedVector',['../namespaceamrex_1_1Cuda.html#ae341be00bd7624dcb1f380bdd74360cd',1,'amrex::Cuda']]],
-  ['placementnew',['placementNew',['../namespaceamrex.html#aa01774de05dd955d25a1e05206821ecd',1,'amrex::placementNew(T *const ptr, long n)'],['../namespaceamrex.html#a89cfab1d62613c97de6191541059ad8b',1,'amrex::placementNew(T *const ptr, long n)']]],
+  ['placementnew',['placementNew',['../namespaceamrex.html#a64d143642a9f0c8d752e9ddcbbc304f7',1,'amrex::placementNew(T *const ptr, long n)'],['../namespaceamrex.html#a91fb1c08bfc0956742d7ba7222d6d454',1,'amrex::placementNew(T *const ptr, long n)'],['../namespaceamrex.html#a89cfab1d62613c97de6191541059ad8b',1,'amrex::placementNew(T *const ptr, long n)']]],
   ['planeif',['PlaneIF',['../classamrex_1_1EB2_1_1PlaneIF.html#acd11423cba9d7c283e96167dedd124d5',1,'amrex::EB2::PlaneIF::PlaneIF(const RealArray &amp;a_point, const RealArray &amp;a_normal, bool a_inside=true)'],['../classamrex_1_1EB2_1_1PlaneIF.html#ae26e8d74379f167d515bb7af573941f0',1,'amrex::EB2::PlaneIF::PlaneIF(const PlaneIF &amp;rhs) noexcept=default'],['../classamrex_1_1EB2_1_1PlaneIF.html#a1714128d8d5122b4346d5d38128c523f',1,'amrex::EB2::PlaneIF::PlaneIF(PlaneIF &amp;&amp;rhs) noexcept=default']]],
   ['planeif',['PlaneIF',['../classamrex_1_1EB2_1_1PlaneIF.html',1,'amrex::EB2']]],
   ['plansmade',['PlansMade',['../classhacc_1_1Dfft.html#aeb8a724d27d545ef62b8a17cf721ff8d',1,'hacc::Dfft']]],

@@ -4553,14 +4553,14 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="102" bodyend="105"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa01774de05dd955d25a1e05206821ecd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a64d143642a9f0c8d752e9ddcbbc304f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
           </param>
         </templateparamlist>
-        <type>std::enable_if&lt; <ref refid="AMReX__TypeTraits_8H_1a0eff68a0533ea2aa13ab568ac932c60b" kindref="member">AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE</ref>(T)&gt;::type</type>
-        <definition>std::enable_if&lt; AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE(T)&gt;::type amrex::placementNew</definition>
+        <type>std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;std::is_arithmetic&lt;T&gt;::value&gt;::type amrex::placementNew</definition>
         <argsstring>(T *const ptr, long n)</argsstring>
         <name>placementNew</name>
         <param>
@@ -4577,7 +4577,33 @@
 <para><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> is a template class. Through use of the template, a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> may be based upon any class. So far at least, most applications have been based upon simple types like integers, real*4s, or real*8s. Most applications do not use BaseFabs directly, but utilize specialized classes derived from <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>.</para><para><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> objects depend on the dimensionality of space (indirectly through the DOMAIN <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> member). It is typical to define the macro SPACEDIM to be 1, 2, or 3 to indicate the dimension of space. See the discussion of class <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> for more information. A <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> contains a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> DOMAIN, which indicates the integer indexing space over which the array is defined. A <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> also has NVAR components. By components, we mean that for each point in the rectangular indexing space, there are NVAR values associated with that point. A Fortran array corresponding to a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> would have (SPACEDIM+1) dimensions.</para><para>By design, the array layout in a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> mirrors that of a Fortran array. The first index (x direction for example) varies most rapidly, the next index (y direction), if any, varies next fastest. The component index varies last, after all the spatial indices.</para><para>It is sometimes convenient to be able to treat a sub-array within an existing <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> as a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> in its own right. This is often referred to as aliasing the <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>. Note that when aliasing is used, the BaseFabs domain will not, in general, be the same as the parent BaseFabs domain, nor will the number of components. <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> is a dimension dependent class, so SPACEDIM must be defined as either 1, 2, or 3 when compiling.</para><para>This is NOT a polymorphic class.</para><para>It does NOT provide a copy constructor or assignment operator.</para><para>T MUST have a default constructor and an assignment operator. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="154" bodyend="159"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="154" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a91fb1c08bfc0956742d7ba7222d6d454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; <ref refid="AMReX__TypeTraits_8H_1a0eff68a0533ea2aa13ab568ac932c60b" kindref="member">AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE</ref>(T)&amp;&amp;!std::is_arithmetic&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt; AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE(T) &amp;&amp; !std::is_arithmetic&lt;T&gt;::value &gt;::type amrex::placementNew</definition>
+        <argsstring>(T *const ptr, long n)</argsstring>
+        <name>placementNew</name>
+        <param>
+          <type>T *const</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="159" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="159" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a89cfab1d62613c97de6191541059ad8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -4603,7 +4629,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="163" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="163" bodyend="169"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="168" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="168" bodyend="174"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4164e761a5d24f1fd26acd6f6aa1bc4d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -4644,7 +4670,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="1533" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="1533" bodyend="1553"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="1538" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="1538" bodyend="1558"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a89cd7448557b7e2c3b736add5178bb95" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -4685,7 +4711,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="1559" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="1559" bodyend="1581"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="1564" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="1564" bodyend="1586"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa7261f50da60e78a42e700384710cd47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
