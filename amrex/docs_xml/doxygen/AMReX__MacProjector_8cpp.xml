@@ -1702,7 +1702,7 @@
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;solve(<ref refid="namespaceamrex_1a4ad8b7a21907586ee3a86bda5163cd2d" kindref="member">amrex::GetVecOfPtrs</ref>(m_phi),<sp/><ref refid="namespaceamrex_1a2eb81423f83e826a61bafde352b67e98" kindref="member">amrex::GetVecOfConstPtrs</ref>(m_rhs),<sp/>reltol,<sp/>atol);</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3ad1a130e88790663b2124d7dbd3e9f81e" kindref="member">MLMG::Location::FaceCenter</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/>loc);</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
@@ -1755,23 +1755,24 @@
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;solve(<ref refid="namespaceamrex_1a4ad8b7a21907586ee3a86bda5163cd2d" kindref="member">amrex::GetVecOfPtrs</ref>(m_phi),<sp/><ref refid="namespaceamrex_1a2eb81423f83e826a61bafde352b67e98" kindref="member">amrex::GetVecOfConstPtrs</ref>(m_rhs),<sp/>reltol,<sp/>atol);</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/><ref refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3ad1a130e88790663b2124d7dbd3e9f81e" kindref="member">MLMG::Location::FaceCenter</ref>);</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" kindref="member">MultiFab::Add</ref>(*m_umac[ilev][idim],<sp/>m_fluxes[ilev][idim],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a233a16599969d91372d51e1befabcbfc" kindref="member">EB_set_covered_faces</ref>(m_umac[ilev],<sp/>0.0);</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*phi_inout[ilev],<sp/>m_phi[ilev],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>m_mlmg-&gt;getFluxes(amrex::GetVecOfArrOfPtrs(m_fluxes),<sp/>loc);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)<sp/>{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a4a819ab01c7558b8982acb35eaf0f861" kindref="member">MultiFab::Add</ref>(*m_umac[ilev][idim],<sp/>m_fluxes[ilev][idim],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a233a16599969d91372d51e1befabcbfc" kindref="member">EB_set_covered_faces</ref>(m_umac[ilev],<sp/>0.0);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ilev<sp/>=<sp/>0;<sp/>ilev<sp/>&lt;<sp/>nlevs;<sp/>++ilev)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*phi_inout[ilev],<sp/>m_phi[ilev],<sp/>0,<sp/>0,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MacProjector.cpp"/>
   </compounddef>
