@@ -11,7 +11,7 @@ var searchData=
   ['xint',['xint',['../structamrex_1_1algoim_1_1ImplicitIntegral.html#a34d771a65448161c411faaf972a6484f',1,'amrex::algoim::ImplicitIntegral']]],
   ['xlo',['xlo',['../classamrex_1_1RealBox.html#ae4725fce5cb9ab4e306e9cb7a9c37f3c',1,'amrex::RealBox']]],
   ['xlo_5fdir',['xlo_dir',['../namespaceamrex__mllinop__nd__module.html#aa8093488a6a576b9204a41a2c3b14612',1,'amrex_mllinop_nd_module']]],
-  ['xpay',['xpay',['../classamrex_1_1BaseFab.html#afd1a05b03c382d30efb2fc8ea0254eee',1,'amrex::BaseFab::xpay()'],['../classamrex_1_1MultiFab.html#aa06c264011c21bb5a97070ae7cf250d3',1,'amrex::MultiFab::Xpay()']]],
+  ['xpay',['Xpay',['../classamrex_1_1MultiFab.html#aa06c264011c21bb5a97070ae7cf250d3',1,'amrex::MultiFab::Xpay()'],['../classamrex_1_1BaseFab.html#afd1a05b03c382d30efb2fc8ea0254eee',1,'amrex::BaseFab::xpay()']]],
   ['xplane',['XPLANE',['../namespaceamrex_1_1Amrvis.html#add3703a58d6eb9d9c897e80f0bb3f8db',1,'amrex::Amrvis']]],
   ['xrange',['xrange',['../structamrex_1_1algoim_1_1ImplicitIntegral.html#aa572c858d18a32a5834232222e0de86c',1,'amrex::algoim::ImplicitIntegral']]],
   ['xval',['XVal',['../classamrex_1_1XYPlotDataList.html#aaffb528097b4e4d99500193127ea15af',1,'amrex::XYPlotDataList']]],

@@ -135,7 +135,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="26" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ParticleBufferMap_1a22ef66dc732fb28117376c5a3cf60c9a" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Cuda_1a7f12f082e7e48f63e8a21bcde83b9b06" kindref="member">Gpu::DeviceVector</ref>&lt; int &gt;</type>
+        <type><ref refid="namespaceamrex_1_1Cuda_1aa5712aaa078f919e8e87c103eaf52dfd" kindref="member">Gpu::DeviceVector</ref>&lt; int &gt;</type>
         <definition>Gpu::DeviceVector&lt;int&gt; amrex::ParticleBufferMap::d_lev_gid_to_bucket</definition>
         <argsstring></argsstring>
         <name>d_lev_gid_to_bucket</name>
@@ -148,7 +148,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="28" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ParticleBufferMap_1a4d6a055510febbd0115e3cc4fcb77e71" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Cuda_1a7f12f082e7e48f63e8a21bcde83b9b06" kindref="member">Gpu::DeviceVector</ref>&lt; int &gt;</type>
+        <type><ref refid="namespaceamrex_1_1Cuda_1aa5712aaa078f919e8e87c103eaf52dfd" kindref="member">Gpu::DeviceVector</ref>&lt; int &gt;</type>
         <definition>Gpu::DeviceVector&lt;int&gt; amrex::ParticleBufferMap::d_lev_offsets</definition>
         <argsstring></argsstring>
         <name>d_lev_offsets</name>
@@ -428,34 +428,38 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="5718">
+      <node id="5740">
         <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
       </node>
-      <node id="5713">
+      <node id="5735">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5714" relation="public-inheritance">
+        <childnode refid="5736" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5715">
+      <node id="5737">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5716" relation="public-inheritance">
+        <childnode refid="5738" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5717">
+      <node id="5739">
         <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5718" relation="public-inheritance">
+        <childnode refid="5740" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5712">
+      <node id="5732">
         <label>amrex::ParticleBufferMap</label>
         <link refid="classamrex_1_1ParticleBufferMap"/>
-        <childnode refid="5713" relation="usage">
+        <childnode refid="5733" relation="usage">
+          <edgelabel>d_lev_offsets</edgelabel>
+          <edgelabel>d_lev_gid_to_bucket</edgelabel>
+        </childnode>
+        <childnode refid="5735" relation="usage">
           <edgelabel>m_dm</edgelabel>
         </childnode>
-        <childnode refid="5715" relation="usage">
+        <childnode refid="5737" relation="usage">
           <edgelabel>m_lev_offsets</edgelabel>
           <edgelabel>m_proc_box_offsets</edgelabel>
           <edgelabel>m_bucket_to_pid</edgelabel>
@@ -464,15 +468,24 @@
           <edgelabel>m_lev_gid_to_bucket</edgelabel>
           <edgelabel>m_proc_box_counts</edgelabel>
         </childnode>
-        <childnode refid="5717" relation="usage">
+        <childnode refid="5739" relation="usage">
           <edgelabel>m_ba</edgelabel>
         </childnode>
       </node>
-      <node id="5714">
+      <node id="5736">
         <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
       </node>
-      <node id="5716">
+      <node id="5738">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="5733">
+        <label>amrex::PODVector&lt; int &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="5734" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5734">
+        <label>std::allocator&lt; int &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="12" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="12" bodyend="130"/>

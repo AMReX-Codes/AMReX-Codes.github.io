@@ -43,7 +43,7 @@ var searchData=
   ['homogeneous',['Homogeneous',['../classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884a548465e8241b26162c8e0a7b0cdfc5e7',1,'amrex::MLLinOp']]],
   ['homogeneous_5fbc',['Homogeneous_BC',['../classamrex_1_1LinOp.html#ad5f2fc8009714c47dc63ff6a7a73a5deae1724332b6960ec73ce5040947963f78',1,'amrex::LinOp']]],
   ['host',['Host',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2',1,'amrex']]],
-  ['hostvector',['HostVector',['../namespaceamrex_1_1Cuda.html#adcb14c2960a046890c80ce8039d80e59',1,'amrex::Cuda']]],
+  ['hostvector',['HostVector',['../namespaceamrex_1_1Cuda.html#add117efd9a112270c82c86e1c1311aef',1,'amrex::Cuda']]],
   ['how',['How',['../classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156',1,'amrex::VisMF']]],
   ['htod_5fmemcpy',['htod_memcpy',['../namespaceamrex.html#ae243b10c65516ed7dfeaf9aed7e75aa3',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#aa9df7c449e875ece24add0d826c4f133',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)'],['../namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4',1,'amrex::Gpu::htod_memcpy()']]],
   ['htod_5fmemcpy_5fasync',['htod_memcpy_async',['../namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b',1,'amrex::Gpu']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['allocator_5ftype',['allocator_type',['../classamrex_1_1PODVector.html#af2658f7c6d69faf4cd927d908802b41c',1,'amrex::PODVector']]],
   ['amrex_5flong',['amrex_long',['../AMReX__INT_8H.html#a73fc3407b746a794d8a1195df84ea266',1,'AMReX_INT.H']]],
   ['amrex_5fparticle_5freal',['amrex_particle_real',['../AMReX__REAL_8H.html#acb6d48305132f6aa2ad69f1aaa78e4c6',1,'AMReX_REAL.H']]],
   ['amrex_5freal',['amrex_real',['../AMReX__REAL_8H.html#a9c34e09baf6d4d1b12637402203f9e9e',1,'AMReX_REAL.H']]],

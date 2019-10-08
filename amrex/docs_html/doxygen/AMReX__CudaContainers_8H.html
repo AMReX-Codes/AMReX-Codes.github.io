@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__PODVector_8H_source.html">AMReX_PODVector.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__CudaAllocators_8H_source.html">AMReX_CudaAllocators.H</a>&gt;</code><br />
 </div>
 <p><a href="AMReX__CudaContainers_8H_source.html">Go to the source code of this file.</a></p>
@@ -108,28 +109,25 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7f12f082e7e48f63e8a21bcde83b9b06"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a7f12f082e7e48f63e8a21bcde83b9b06"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a7f12f082e7e48f63e8a21bcde83b9b06">amrex::Cuda::DeviceVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="memdesc:a7f12f082e7e48f63e8a21bcde83b9b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <a class="el" href="namespaceamrex_1_1Cuda.html">Cuda</a> is off, all these containers revert to <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">amrex::Vector</a>.  <a href="namespaceamrex_1_1Cuda.html#a7f12f082e7e48f63e8a21bcde83b9b06">More...</a><br /></td></tr>
-<tr class="separator:a7f12f082e7e48f63e8a21bcde83b9b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcb14c2960a046890c80ce8039d80e59"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:adcb14c2960a046890c80ce8039d80e59"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#adcb14c2960a046890c80ce8039d80e59">amrex::Cuda::HostVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="separator:adcb14c2960a046890c80ce8039d80e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5314068a19afe6abfe5c1ced153a374d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a5314068a19afe6abfe5c1ced153a374d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a5314068a19afe6abfe5c1ced153a374d">amrex::Cuda::ManagedVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="separator:a5314068a19afe6abfe5c1ced153a374d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae341be00bd7624dcb1f380bdd74360cd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ae341be00bd7624dcb1f380bdd74360cd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#ae341be00bd7624dcb1f380bdd74360cd">amrex::Cuda::PinnedVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="separator:ae341be00bd7624dcb1f380bdd74360cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e4bb643564213a315b372b600df7514"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a7e4bb643564213a315b372b600df7514"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a7e4bb643564213a315b372b600df7514">amrex::Cuda::ManagedDeviceVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="separator:a7e4bb643564213a315b372b600df7514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd599901ad1e0e3c5103e1ba5a16b2c0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:afd599901ad1e0e3c5103e1ba5a16b2c0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#afd599901ad1e0e3c5103e1ba5a16b2c0">amrex::Cuda::PinnedDeviceVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="separator:afd599901ad1e0e3c5103e1ba5a16b2c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ba96123e03ff5f8169a5a1b4d1116e3"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a9ba96123e03ff5f8169a5a1b4d1116e3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a9ba96123e03ff5f8169a5a1b4d1116e3">amrex::Cuda::PolymorphicDeviceVector</a> = Vector&lt; T &gt;</td></tr>
-<tr class="separator:a9ba96123e03ff5f8169a5a1b4d1116e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5712aaa078f919e8e87c103eaf52dfd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aa5712aaa078f919e8e87c103eaf52dfd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#aa5712aaa078f919e8e87c103eaf52dfd">amrex::Cuda::DeviceVector</a> = PODVector&lt; T &gt;</td></tr>
+<tr class="memdesc:aa5712aaa078f919e8e87c103eaf52dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">When <a class="el" href="namespaceamrex_1_1Cuda.html">Cuda</a> is off, all these containers revert to <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">amrex::Vector</a>.  <a href="namespaceamrex_1_1Cuda.html#aa5712aaa078f919e8e87c103eaf52dfd">More...</a><br /></td></tr>
+<tr class="separator:aa5712aaa078f919e8e87c103eaf52dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add117efd9a112270c82c86e1c1311aef"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:add117efd9a112270c82c86e1c1311aef"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#add117efd9a112270c82c86e1c1311aef">amrex::Cuda::HostVector</a> = PODVector&lt; T &gt;</td></tr>
+<tr class="separator:add117efd9a112270c82c86e1c1311aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874c975a77836139dea5f75c0497314f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a874c975a77836139dea5f75c0497314f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a874c975a77836139dea5f75c0497314f">amrex::Cuda::ManagedVector</a> = PODVector&lt; T &gt;</td></tr>
+<tr class="separator:a874c975a77836139dea5f75c0497314f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897b2b181edf87b86f91b08b8a0c8991"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a897b2b181edf87b86f91b08b8a0c8991"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a897b2b181edf87b86f91b08b8a0c8991">amrex::Cuda::ManagedDeviceVector</a> = PODVector&lt; T &gt;</td></tr>
+<tr class="separator:a897b2b181edf87b86f91b08b8a0c8991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ebc4b741b2fcfc39bcb1bb4c97b4e2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a48ebc4b741b2fcfc39bcb1bb4c97b4e2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a48ebc4b741b2fcfc39bcb1bb4c97b4e2">amrex::Cuda::PinnedDeviceVector</a> = PODVector&lt; T &gt;</td></tr>
+<tr class="separator:a48ebc4b741b2fcfc39bcb1bb4c97b4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88a8840f4a86a379c21df2da5b4e077d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a88a8840f4a86a379c21df2da5b4e077d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Cuda.html#a88a8840f4a86a379c21df2da5b4e077d">amrex::Cuda::PolymorphicDeviceVector</a> = PODVector&lt; T &gt;</td></tr>
+<tr class="separator:a88a8840f4a86a379c21df2da5b4e077d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

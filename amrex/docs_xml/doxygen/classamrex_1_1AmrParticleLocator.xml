@@ -18,7 +18,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="257" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="257" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1AmrParticleLocator_1a4eac22479584a60bf88e425de7243afb" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Cuda_1a7e4bb643564213a315b372b600df7514" kindref="member">Gpu::ManagedDeviceVector</ref>&lt; <ref refid="structamrex_1_1AssignGrid" kindref="compound">AssignGrid</ref> &gt;</type>
+        <type><ref refid="namespaceamrex_1_1Cuda_1a897b2b181edf87b86f91b08b8a0c8991" kindref="member">Gpu::ManagedDeviceVector</ref>&lt; <ref refid="structamrex_1_1AssignGrid" kindref="compound">AssignGrid</ref> &gt;</type>
         <definition>Gpu::ManagedDeviceVector&lt;AssignGrid&gt; amrex::AmrParticleLocator::m_grid_assignors</definition>
         <argsstring></argsstring>
         <name>m_grid_assignors</name>
@@ -205,20 +205,76 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="544">
-        <label>amrex::Vector&lt; amrex::ParticleLocator &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="545" relation="public-inheritance">
+      <node id="551">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="551" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="543">
-        <label>amrex::AmrParticleLocator</label>
-        <link refid="classamrex_1_1AmrParticleLocator"/>
-        <childnode refid="544" relation="usage">
-          <edgelabel>m_locators</edgelabel>
+      <node id="553">
+        <label>amrex::Vector&lt; amrex::ParticleLocator &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="554" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="546">
+        <label>amrex::PODVector&lt; amrex::AssignGrid &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="547" relation="public-inheritance">
+        </childnode>
+        <childnode refid="548" relation="usage">
+          <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
       <node id="545">
+        <label>amrex::AmrParticleLocator</label>
+        <link refid="classamrex_1_1AmrParticleLocator"/>
+        <childnode refid="546" relation="usage">
+          <edgelabel>m_grid_assignors</edgelabel>
+        </childnode>
+        <childnode refid="553" relation="usage">
+          <edgelabel>m_locators</edgelabel>
+        </childnode>
+      </node>
+      <node id="548">
+        <label>amrex::AssignGrid</label>
+        <link refid="structamrex_1_1AssignGrid"/>
+        <childnode refid="549" relation="usage">
+          <edgelabel>m_hi</edgelabel>
+          <edgelabel>m_bin_size</edgelabel>
+          <edgelabel>m_lo</edgelabel>
+          <edgelabel>m_num_bins</edgelabel>
+        </childnode>
+        <childnode refid="550" relation="usage">
+          <edgelabel>m_boxes_ptr</edgelabel>
+          <edgelabel>m_domain</edgelabel>
+        </childnode>
+      </node>
+      <node id="549">
+        <label>amrex::Dim3</label>
+        <link refid="structamrex_1_1Dim3"/>
+      </node>
+      <node id="547">
+        <label>std::allocator&lt; amrex::AssignGrid &gt;</label>
+      </node>
+      <node id="550">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="551" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="552" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="552">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="554">
         <label>std::vector&lt; amrex::ParticleLocator, std::allocator&lt; amrex::ParticleLocator &gt; &gt;</label>
       </node>
     </collaborationgraph>
