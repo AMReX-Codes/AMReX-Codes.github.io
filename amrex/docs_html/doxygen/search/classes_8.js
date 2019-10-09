@@ -23,6 +23,7 @@ var searchData=
   ['intvect',['IntVect',['../classamrex_1_1IntVect.html',1,'amrex']]],
   ['inversecopytag',['InverseCopyTag',['../structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html',1,'amrex::NeighborParticleContainer']]],
   ['invoke_5fresult',['invoke_result',['../structamrex_1_1detail_1_1invoke__result.html',1,'amrex::detail']]],
+  ['is_5fthrust_5fcomplex',['is_thrust_complex',['../structamrex_1_1detail_1_1is__thrust__complex.html',1,'amrex::detail']]],
   ['isbasefab',['IsBaseFab',['../structamrex_1_1IsBaseFab.html',1,'amrex']]],
   ['isbasefab_3c_20d_2c_20typename_20std_3a_3aenable_5fif_3c_20std_3a_3ais_5fbase_5fof_3c_20basefab_3c_20typename_20d_3a_3avalue_5ftype_20_3e_2c_20d_20_3e_3a_3avalue_20_3e_3a_3atype_20_3e',['IsBaseFab&lt; D, typename std::enable_if&lt; std::is_base_of&lt; BaseFab&lt; typename D::value_type &gt;, D &gt;::value &gt;::type &gt;',['../structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html',1,'amrex']]],
   ['isfabarray',['IsFabArray',['../structamrex_1_1IsFabArray.html',1,'amrex']]],
@@ -44,6 +45,6 @@ var searchData=
   ['isgpuable_3c_20unionif_3c_20tail_2e_2e_2e_20_3e_20_3e',['IsGPUable&lt; UnionIF&lt; Tail... &gt; &gt;',['../structamrex_1_1EB2_1_1IsGPUable.html',1,'amrex::EB2']]],
   ['isstoreatomic',['IsStoreAtomic',['../structamrex_1_1IsStoreAtomic.html',1,'amrex']]],
   ['isstoreatomic_3c_20ebcellflag_20_3e',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
-  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]],
-  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]]
+  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]],
+  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]]
 ];
