@@ -24,6 +24,7 @@ var searchData=
   ['amrex_5fbc_5fext_5fdir',['amrex_bc_ext_dir',['../namespaceamrex__bc__types__module.html#a07483ec0c0dfe550ae285951efd6e408',1,'amrex_bc_types_module']]],
   ['amrex_5fbc_5ffoextrap',['amrex_bc_foextrap',['../namespaceamrex__bc__types__module.html#a8bd6c0b90bfafbb918a126727059f29e',1,'amrex_bc_types_module']]],
   ['amrex_5fbc_5fhoextrap',['amrex_bc_hoextrap',['../namespaceamrex__bc__types__module.html#a23db950272f0f85aabf73bc7f1f94a29',1,'amrex_bc_types_module']]],
+  ['amrex_5fbc_5fhoextrapcc',['amrex_bc_hoextrapcc',['../namespaceamrex__bc__types__module.html#aee2a7cc451466fa5382312cbf6e1c04b',1,'amrex_bc_types_module']]],
   ['amrex_5fbc_5fint_5fdir',['amrex_bc_int_dir',['../namespaceamrex__bc__types__module.html#a70348aca0dbf822f95df30fdd5468f74',1,'amrex_bc_types_module']]],
   ['amrex_5fbc_5freflect_5feven',['amrex_bc_reflect_even',['../namespaceamrex__bc__types__module.html#ae3a46fb20c0cec23f4592ca246719707',1,'amrex_bc_types_module']]],
   ['amrex_5fbc_5freflect_5fodd',['amrex_bc_reflect_odd',['../namespaceamrex__bc__types__module.html#a69e53421456fb8b53c4ff4ec9173026b',1,'amrex_bc_types_module']]],
