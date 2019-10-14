@@ -242,6 +242,10 @@ list of important variables.</p>
 <td><p>TRUE or FALSE</p></td>
 <td><p>FALSE</p></td>
 </tr>
+<tr class="row-even"><td><p>USE_RPATH</p></td>
+<td><p>TRUE or FALSE</p></td>
+<td><p>FALSE</p></td>
+</tr>
 </tbody>
 </table>
 <p>At the beginning of <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/GNUmakefile</span></code>,
@@ -268,6 +272,11 @@ to TRUE, FALSE and FALSE, respectively.  The meaning of these variables should
 be obvious.  When <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, aggressive compiler optimization flags are
 turned off and assertions in  source code are turned on. For production runs,
 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> should be set to FALSE.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">USE_RPATH</span></code> controls the link mechanism to dependent libraries.
+If enabled, the library path at link time will be saved as a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Rpath">rpath hint</a> in created binaries.
+When disabled, library paths must be provided via <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH</span></code>
+hints at runtime.</p>
 <p>After defining these make variables, a number of files, <code class="docutils literal notranslate"><span class="pre">Make.defs,</span>
 <span class="pre">Make.package</span></code> and <code class="docutils literal notranslate"><span class="pre">Make.rules</span></code>, are included in the GNUmakefile. AMReX-based
 applications do not need to include all directories in AMReX; an application
