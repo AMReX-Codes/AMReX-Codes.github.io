@@ -21,6 +21,7 @@ var searchData=
   ['bcoefs',['bcoefs',['../classamrex_1_1Hypre.html#a097bf586d48d127374ec0d293dd3bd41',1,'amrex::Hypre::bcoefs()'],['../classamrex_1_1PETScABecLap.html#ac7dbd144ec1cfc9a3c7802f0d9a76a01',1,'amrex::PETScABecLap::bcoefs()'],['../classamrex_1_1ABecLaplacian.html#a93ec6b476893b72b004b55a9f36a0e4c',1,'amrex::ABecLaplacian::bcoefs()'],['../classamrex_1_1ABec4.html#ab93786ae188a018f70c924f64a934707',1,'amrex::ABec4::bcoefs()'],['../classamrex_1_1DivVis.html#a8587bfbe902aed914afad7248104c3d1',1,'amrex::DivVis::bcoefs()']]],
   ['bcond',['bcond',['../classamrex_1_1BndryData.html#a33b33d468118587f694c916018b3f3fb',1,'amrex::BndryData::bcond()'],['../classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a141ef07902ecbdd351bb14b58ce08901',1,'amrex::MLCellLinOp::BndryCondLoc::bcond()']]],
   ['bcr',['bcr',['../classamrex_1_1DeriveRec.html#a222aca825f0b80bc8de5522d155ba0e7',1,'amrex::DeriveRec']]],
+  ['bcr3d',['bcr3D',['../classamrex_1_1DeriveRec.html#a34c2f0068a7832ca670a0476cea011fc',1,'amrex::DeriveRec']]],
   ['bcs',['bcs',['../classamrex_1_1LSCoreBase.html#ae564241bee9d2cc16d8f812b7a78096c',1,'amrex::LSCoreBase']]],
   ['bctype',['bctype',['../classamrex_1_1BoundCond.html#ada76f23f789da2be981f0c3ec8784d34',1,'amrex::BoundCond']]],
   ['bdefaultinclude',['bDefaultInclude',['../classBLProfStats.html#a70374c3c2fee588ba0cdbcdcb80ad103',1,'BLProfStats']]],
