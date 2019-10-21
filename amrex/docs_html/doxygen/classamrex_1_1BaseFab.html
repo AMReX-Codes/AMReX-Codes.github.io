@@ -539,7 +539,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa81753624ac94b117b4c35466c76c1d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#aa81753624ac94b117b4c35466c76c1d7">linInterp</a> (const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;f1, int comp1, const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;f2, int comp2, Real t1, Real t2, Real t, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;b, int comp, int numcomp=1) noexcept</td></tr>
 <tr class="memdesc:aa81753624ac94b117b4c35466c76c1d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of <a class="el" href="classamrex_1_1BaseFab.html#a03077e916e82559193f9913bbd6ec52c" title="Linear interpolation / extrapolation. Result is (t2-t)/(t2-t1)*f1 + (t-t1)/(t2-t1)*f2 Data is taken f...">linInterp()</a> in which b, b1, &amp; b2 are the same.  <a href="#aa81753624ac94b117b4c35466c76c1d7">More...</a><br /></td></tr>
 <tr class="separator:aa81753624ac94b117b4c35466c76c1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d474bdc21db63d848b989cfdd3d1d22"><td class="memTemplParams" colspan="2">template&lt;RunOn run_on&gt; </td></tr>
+<tr class="memitem:a4d474bdc21db63d848b989cfdd3d1d22"><td class="memTemplParams" colspan="2">template&lt;RunOn run_on = RunOn::Cpu&gt; </td></tr>
 <tr class="memitem:a4d474bdc21db63d848b989cfdd3d1d22"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a4d474bdc21db63d848b989cfdd3d1d22">linComb</a> (const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;f1, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;b1, int comp1, const <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a>&lt; T &gt; &amp;f2, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;b2, int comp2, Real alpha, Real beta, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;b, int comp, int numcomp=1) noexcept</td></tr>
 <tr class="memdesc:a4d474bdc21db63d848b989cfdd3d1d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear combination. Result is alpha*f1 + beta*f2. Data is taken from b1 region of f1, b2 region of f2 and stored in b region of this FAB. Boxes b, b1 and b2 must be the same size. Data is taken from component comp1 of f1, comp2 of f2, and stored in component comp of this FAB. This FAB is returned as a reference for chaining.  <a href="#a4d474bdc21db63d848b989cfdd3d1d22">More...</a><br /></td></tr>
 <tr class="separator:a4d474bdc21db63d848b989cfdd3d1d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5681,7 +5681,7 @@ template&lt;class T&gt; </div>
 <div class="memtemplate">
 template&lt;class T&gt; </div>
 <div class="memtemplate">
-template&lt;RunOn run_on&gt; </div>
+template&lt;RunOn run_on = RunOn::Cpu&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
