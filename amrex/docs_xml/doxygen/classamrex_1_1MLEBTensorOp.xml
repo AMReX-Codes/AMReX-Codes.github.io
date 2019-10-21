@@ -487,10 +487,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.cpp" bodystart="163" bodyend="404"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLEBTensorOp_1a732136ddf1571783eb6b73aabd6a70ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1MLEBTensorOp_1a6d2f3fc91f97b79571cdc6826df99f8f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::MLEBTensorOp::applyBCTensor</definition>
-        <argsstring>(int amrlev, int mglev, MultiFab &amp;vel, BCMode bc_mode, const MLMGBndry *bndry) const </argsstring>
+        <argsstring>(int amrlev, int mglev, MultiFab &amp;vel, BCMode bc_mode, StateMode s_mode, const MLMGBndry *bndry) const </argsstring>
         <name>applyBCTensor</name>
         <param>
           <type>int</type>
@@ -509,6 +509,10 @@
           <declname>bc_mode</declname>
         </param>
         <param>
+          <type><ref refid="classamrex_1_1MLLinOp_1a1f2821b4a51da49d862dae1e757bb8c3" kindref="member">StateMode</ref></type>
+          <declname>s_mode</declname>
+        </param>
+        <param>
           <type>const <ref refid="classamrex_1_1MLMGBndry" kindref="compound">MLMGBndry</ref> *</type>
           <declname>bndry</declname>
         </param>
@@ -518,7 +522,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.cpp" bodystart="407" bodyend="516"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.cpp" bodystart="407" bodyend="507"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -1116,7 +1120,7 @@
       <member refid="classamrex_1_1MLLinOp_1ac80a224852d40e9dd01ef9e4d52cd1c9" prot="protected" virt="non-virtual"><scope>amrex::MLEBTensorOp</scope><name>AMRRefRatio</name></member>
       <member refid="classamrex_1_1MLEBTensorOp_1a41724f08da04298ded08c9e8d6e9bfc4" prot="public" virt="virtual"><scope>amrex::MLEBTensorOp</scope><name>apply</name></member>
       <member refid="classamrex_1_1MLEBABecLap_1a658470f55d4dd6f1ace94c05201074ed" prot="public" virt="virtual"><scope>amrex::MLEBTensorOp</scope><name>applyBC</name></member>
-      <member refid="classamrex_1_1MLEBTensorOp_1a732136ddf1571783eb6b73aabd6a70ad" prot="public" virt="non-virtual"><scope>amrex::MLEBTensorOp</scope><name>applyBCTensor</name></member>
+      <member refid="classamrex_1_1MLEBTensorOp_1a6d2f3fc91f97b79571cdc6826df99f8f" prot="public" virt="non-virtual"><scope>amrex::MLEBTensorOp</scope><name>applyBCTensor</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1aa84934b73a868d01a1a8b7650b880efb" prot="public" virt="virtual"><scope>amrex::MLEBTensorOp</scope><name>applyInhomogNeumannTerm</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1af750016d817d62fec79c71777ec48b36" prot="public" virt="virtual"><scope>amrex::MLEBTensorOp</scope><name>applyMetricTerm</name></member>
       <member refid="classamrex_1_1MLEBABecLap_1a55ed8c27b04966126b3bd76c92735dbf" prot="protected" virt="non-virtual"><scope>amrex::MLEBTensorOp</scope><name>averageDownCoeffs</name></member>
