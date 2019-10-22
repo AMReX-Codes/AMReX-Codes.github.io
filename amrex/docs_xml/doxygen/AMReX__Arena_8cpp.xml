@@ -1049,7 +1049,7 @@
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kindref="member">arena_info</ref>.<ref refid="structamrex_1_1ArenaInfo_1a18ad35d706eda3be6347c90f86d68e81" kindref="member">device_use_hostalloc</ref>)</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipHostAlloc(&amp;p,<sp/>nbytes,<sp/>hipHostMallocMapped));,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL<sp/>(hipHostMalloc(&amp;p,<sp/>nbytes,<sp/>hipHostMallocMapped));,</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaHostAlloc(&amp;p,<sp/>nbytes,<sp/>cudaHostAllocMapped)););</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
@@ -1100,7 +1100,7 @@
 <codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kindref="member">arena_info</ref>.<ref refid="structamrex_1_1ArenaInfo_1a18ad35d706eda3be6347c90f86d68e81" kindref="member">device_use_hostalloc</ref>)</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipFreeHost(p));,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipHostFree(p));,</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaFreeHost(p)););</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>

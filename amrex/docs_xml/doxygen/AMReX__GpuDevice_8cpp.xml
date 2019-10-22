@@ -885,7 +885,7 @@
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>graphExec<sp/>=<sp/>Gpu::Device::stopGraphRecording((n<sp/>==<sp/>(graph_size-1)));</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaGraphExecDestroy(graphExec));</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaGraphExecDestroy(graphExec));</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="73"><highlight class="normal">}</highlight></codeline>
@@ -1327,27 +1327,27 @@
 <codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
 <codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/>graph_stream<sp/>=<sp/>gpuStream();</highlight></codeline>
 <codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEvent_t<sp/>memcpy_event<sp/>=<sp/>{0};</highlight></codeline>
-<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(<sp/>cudaEventCreate(&amp;memcpy_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(<sp/>cudaEventCreate(&amp;memcpy_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
 <codeline lineno="513"><highlight class="normal"></highlight></codeline>
 <codeline lineno="514"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(__CUDACC_VER_MAJOR__<sp/>==<sp/>10)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MINOR__<sp/>==<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaStreamBeginCapture(graph_stream));</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaStreamBeginCapture(graph_stream));</highlight></codeline>
 <codeline lineno="516"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaStreamBeginCapture(graph_stream,<sp/>cudaStreamCaptureModeGlobal));</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaStreamBeginCapture(graph_stream,<sp/>cudaStreamCaptureModeGlobal));</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="519"><highlight class="normal"></highlight></codeline>
-<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaMemcpyAsync(d_ptr,<sp/>h_ptr,<sp/>sz,<sp/>cudaMemcpyHostToDevice,<sp/>graph_stream));</highlight></codeline>
-<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaEventRecord(memcpy_event,<sp/>graph_stream));</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(d_ptr,<sp/>h_ptr,<sp/>sz,<sp/>cudaMemcpyHostToDevice,<sp/>graph_stream));</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaEventRecord(memcpy_event,<sp/>graph_stream));</highlight></codeline>
 <codeline lineno="522"><highlight class="normal"></highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Main<sp/>graph<sp/>stream<sp/>fixed<sp/>at<sp/>0,<sp/>so<sp/>i<sp/>starts<sp/>at<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Will<sp/>need<sp/>more<sp/>complex<sp/>logic<sp/>if<sp/>this<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=1;<sp/>i&lt;<ref refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kindref="member">numGpuStreams</ref>();<sp/>++i)</highlight></codeline>
 <codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">setStreamIndex</ref>(i);</highlight></codeline>
-<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaStreamWaitEvent(gpuStream(),<sp/>memcpy_event,<sp/>0));</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaStreamWaitEvent(gpuStream(),<sp/>memcpy_event,<sp/>0));</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
 <codeline lineno="531"><highlight class="normal"></highlight></codeline>
-<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(<sp/>cudaEventDestroy(memcpy_event)<sp/>);</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(<sp/>cudaEventDestroy(memcpy_event)<sp/>);</highlight></codeline>
 <codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="534"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="535"><highlight class="normal"></highlight></codeline>
@@ -1362,7 +1362,7 @@
 <codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
 <codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaStream_t<sp/>graph_stream<sp/>=<sp/>gpuStream();</highlight></codeline>
 <codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaEvent_t<sp/>rejoin_event<sp/>=<sp/>{0};</highlight></codeline>
-<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(<sp/>cudaEventCreate(&amp;rejoin_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(<sp/>cudaEventCreate(&amp;rejoin_event,<sp/>cudaEventDisableTiming)<sp/>);</highlight></codeline>
 <codeline lineno="548"><highlight class="normal"></highlight></codeline>
 <codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note:<sp/>Main<sp/>graph<sp/>stream<sp/>fixed<sp/>at<sp/>0,<sp/>so<sp/>i<sp/>starts<sp/>at<sp/>1.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Will<sp/>need<sp/>more<sp/>complex<sp/>logic<sp/>if<sp/>this<sp/>changes.</highlight><highlight class="normal"></highlight></codeline>
@@ -1375,11 +1375,11 @@
 <codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">Gpu::Device::setStreamIndex</ref>(0);</highlight></codeline>
 <codeline lineno="558"><highlight class="normal"></highlight></codeline>
 <codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudaGraph_t<sp/>graph;</highlight></codeline>
-<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaStreamEndCapture(graph_stream,<sp/>&amp;graph));</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaStreamEndCapture(graph_stream,<sp/>&amp;graph));</highlight></codeline>
 <codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>graphExec<sp/>=<sp/>instantiateGraph(graph);</highlight></codeline>
 <codeline lineno="562"><highlight class="normal"></highlight></codeline>
-<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(<sp/>cudaGraphDestroy(graph);<sp/>);</highlight></codeline>
-<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(<sp/>cudaEventDestroy(rejoin_event)<sp/>);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(<sp/>cudaGraphDestroy(graph);<sp/>);</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(<sp/>cudaEventDestroy(rejoin_event)<sp/>);</highlight></codeline>
 <codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="566"><highlight class="normal"></highlight></codeline>
 <codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>graphExec;</highlight></codeline>
@@ -1406,7 +1406,7 @@
 <codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="589"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="590"><highlight class="normal"></highlight></codeline>
-<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaGraphInstantiate(&amp;graphExec,<sp/>graph,<sp/>NULL,<sp/>NULL,<sp/>0));<sp/></highlight></codeline>
+<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaGraphInstantiate(&amp;graphExec,<sp/>graph,<sp/>NULL,<sp/>NULL,<sp/>0));<sp/></highlight></codeline>
 <codeline lineno="592"><highlight class="normal"></highlight></codeline>
 <codeline lineno="593"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="594"><highlight class="normal"></highlight></codeline>
@@ -1420,7 +1420,7 @@
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">inLaunchRegion</ref>()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1a6be69064b9a7673aa066f42cac505f25" kindref="member">inGraphRegion</ref>())</highlight></codeline>
 <codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">setStreamIndex</ref>(0);</highlight></codeline>
-<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaGraphLaunch(graphExec,<sp/>cudaStream()));</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaGraphLaunch(graphExec,<sp/>cudaStream()));</highlight></codeline>
 <codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(synch)<sp/>{</highlight></codeline>
 <codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" kindref="member">synchronize</ref>();</highlight></codeline>
 <codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
