@@ -13,7 +13,7 @@ var searchData=
   ['scatter',['Scatter',['../namespaceamrex_1_1ParallelDescriptor.html#adb4c5fe012593a0ef38394db6c2643f2',1,'amrex::ParallelDescriptor']]],
   ['sdc_5fqmats',['sdc_qmats',['../namespacesdcquadrature__mod.html#af9d037887b4d9c8c4156bcab10d93e2a',1,'sdcquadrature_mod']]],
   ['sdc_5fqnodes',['sdc_qnodes',['../namespacesdcquadrature__mod.html#a45feaecc2f3ca60142ec3cbdcc49c288',1,'sdcquadrature_mod']]],
-  ['sdc_5fquadrature',['SDC_quadrature',['../AMReX__SDCstruct_8H.html#aa4537c0cb365dd94581644db2d20ed83',1,'SDC_quadrature():&#160;AMReX_SDCstruct.H'],['../namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837',1,'sdcquadrature_mod::sdc_quadrature()']]],
+  ['sdc_5fquadrature',['sdc_quadrature',['../namespacesdcquadrature__mod.html#a17b1ea9c614020de45d57d3014ce8837',1,'sdcquadrature_mod::sdc_quadrature()'],['../AMReX__SDCstruct_8H.html#aa4537c0cb365dd94581644db2d20ed83',1,'SDC_quadrature():&#160;AMReX_SDCstruct.H']]],
   ['sdc_5frhs_5fintegrals',['SDC_rhs_integrals',['../classSDCstruct.html#a85b426bfba4fc5ae0698de2cc5206b05',1,'SDCstruct']]],
   ['sdc_5frhs_5fk_5fplus_5fone',['SDC_rhs_k_plus_one',['../classSDCstruct.html#a6705d0badf89101fdee2d77ccdcc4e14',1,'SDCstruct']]],
   ['sdc_5frhs_5fmisdc',['SDC_rhs_misdc',['../classSDCstruct.html#aceb030f9a95f5f2a84b22ddea03b806b',1,'SDCstruct']]],

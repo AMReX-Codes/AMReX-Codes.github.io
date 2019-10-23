@@ -3675,7 +3675,8 @@
         <param><defname>j</defname></param>
         <param><defname>k</defname></param>
         <param><defname>block</defname></param>
-        <initializer><ref refid="namespaceamrex_1a9d2e38bd2809143536efe0db90492957" kindref="member">amrex::LoopOnCpu</ref>(box, [=] (int i, int j, int k) noexcept \
+        <initializer><ref refid="namespaceamrex_1a3f286b9916f92985abdf7743382f6307" kindref="member">amrex::ignore_unused</ref>(flag); \
+    <ref refid="namespaceamrex_1a9d2e38bd2809143536efe0db90492957" kindref="member">amrex::LoopOnCpu</ref>(box, [=] (int i, int j, int k) noexcept \
         block \
     );</initializer>
         <briefdescription>
@@ -3696,7 +3697,8 @@
         <param><defname>k</defname></param>
         <param><defname>n</defname></param>
         <param><defname>block</defname></param>
-        <initializer><ref refid="namespaceamrex_1a9d2e38bd2809143536efe0db90492957" kindref="member">amrex::LoopOnCpu</ref>(box, nc, [=] (int i, int j, int k, int n) noexcept \
+        <initializer><ref refid="namespaceamrex_1a3f286b9916f92985abdf7743382f6307" kindref="member">amrex::ignore_unused</ref>(flag); \
+    <ref refid="namespaceamrex_1a9d2e38bd2809143536efe0db90492957" kindref="member">amrex::LoopOnCpu</ref>(box, nc, [=] (int i, int j, int k, int n) noexcept \
         block \
     );</initializer>
         <briefdescription>
@@ -3705,7 +3707,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="244" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="244" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="245" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__GpuLaunch_8H_1a49f1ab65d0d139e9318376dd1f6e4dc7" prot="public" static="no">
         <name>AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG</name>
@@ -3713,7 +3715,8 @@
         <param><defname>box</defname></param>
         <param><defname>tbox</defname></param>
         <param><defname>block</defname></param>
-        <initializer>{ \
+        <initializer><ref refid="namespaceamrex_1a3f286b9916f92985abdf7743382f6307" kindref="member">amrex::ignore_unused</ref>(flag); \
+    { \
         auto tbox = box; \
         block; \
     }</initializer>
@@ -3723,7 +3726,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="249" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="249" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="251" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="251" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -3970,24 +3973,27 @@
 <codeline lineno="237"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="238"><highlight class="normal"></highlight></codeline>
 <codeline lineno="239" refid="AMReX__GpuLaunch_8H_1ac9047fbbd8a940e4dfa1b36a4831ed9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_3D_FLAG(flag,box,i,j,k,block)<sp/>\</highlight></codeline>
-<codeline lineno="240"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::LoopOnCpu(box,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k)<sp/>noexcept<sp/>\</highlight></codeline>
-<codeline lineno="241"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
-<codeline lineno="242"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"></highlight></codeline>
-<codeline lineno="244" refid="AMReX__GpuLaunch_8H_1ae470f9bf57ebee907a63375f40b14702" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_4D_FLAG(flag,box,nc,i,j,k,n,block)<sp/>\</highlight></codeline>
-<codeline lineno="245"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::LoopOnCpu(box,<sp/>nc,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>\</highlight></codeline>
-<codeline lineno="246"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
-<codeline lineno="247"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="248"><highlight class="normal"></highlight></codeline>
-<codeline lineno="249" refid="AMReX__GpuLaunch_8H_1a49f1ab65d0d139e9318376dd1f6e4dc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG(flag,box,tbox,block)<sp/>\</highlight></codeline>
-<codeline lineno="250"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="251"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>tbox<sp/>=<sp/>box;<sp/>\</highlight></codeline>
-<codeline lineno="252"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block;<sp/>\</highlight></codeline>
-<codeline lineno="253"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="254"><highlight class="normal"></highlight></codeline>
-<codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="256"><highlight class="normal"></highlight></codeline>
-<codeline lineno="257"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="240"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::ignore_unused(flag);<sp/>\</highlight></codeline>
+<codeline lineno="241"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::LoopOnCpu(box,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k)<sp/>noexcept<sp/>\</highlight></codeline>
+<codeline lineno="242"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
+<codeline lineno="243"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245" refid="AMReX__GpuLaunch_8H_1ae470f9bf57ebee907a63375f40b14702" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_4D_FLAG(flag,box,nc,i,j,k,n,block)<sp/>\</highlight></codeline>
+<codeline lineno="246"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::ignore_unused(flag);<sp/>\</highlight></codeline>
+<codeline lineno="247"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::LoopOnCpu(box,<sp/>nc,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>\</highlight></codeline>
+<codeline lineno="248"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
+<codeline lineno="249"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="AMReX__GpuLaunch_8H_1a49f1ab65d0d139e9318376dd1f6e4dc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_LAUNCH_HOST_DEVICE_LAMBDA_FLAG(flag,box,tbox,block)<sp/>\</highlight></codeline>
+<codeline lineno="252"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>amrex::ignore_unused(flag);<sp/>\</highlight></codeline>
+<codeline lineno="253"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="254"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>tbox<sp/>=<sp/>box;<sp/>\</highlight></codeline>
+<codeline lineno="255"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block;<sp/>\</highlight></codeline>
+<codeline lineno="256"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H"/>
   </compounddef>
