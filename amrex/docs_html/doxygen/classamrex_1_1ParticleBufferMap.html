@@ -132,6 +132,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9bf2cc9229d90a76220654b6ba4a5a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0557facd5969dc31dd841ff96ed9048e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleBufferMap.html#a0557facd5969dc31dd841ff96ed9048e">procID</a> (int gid, int lev) const </td></tr>
 <tr class="separator:a0557facd5969dc31dd841ff96ed9048e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db786f7b4e9c2639a9703b495f69621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a> const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleBufferMap.html#a1db786f7b4e9c2639a9703b495f69621">bucketToPIDPtr</a> () const </td></tr>
+<tr class="separator:a1db786f7b4e9c2639a9703b495f69621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -155,6 +157,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:abc5ce29ac4025b099cc18ee6308b4b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65d85d75d30b1f67500bfa62aff5b162"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleBufferMap.html#a65d85d75d30b1f67500bfa62aff5b162">m_proc_box_offsets</a></td></tr>
 <tr class="separator:a65d85d75d30b1f67500bfa62aff5b162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c6792f4a3209b8404f8ea41cd48a15"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Cuda.html#aa5712aaa078f919e8e87c103eaf52dfd">Gpu::DeviceVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15">d_bucket_to_pid</a></td></tr>
+<tr class="separator:aa7c6792f4a3209b8404f8ea41cd48a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ef66dc732fb28117376c5a3cf60c9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Cuda.html#aa5712aaa078f919e8e87c103eaf52dfd">Gpu::DeviceVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleBufferMap.html#a22ef66dc732fb28117376c5a3cf60c9a">d_lev_gid_to_bucket</a></td></tr>
 <tr class="separator:a22ef66dc732fb28117376c5a3cf60c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d6a055510febbd0115e3cc4fcb77e71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Cuda.html#aa5712aaa078f919e8e87c103eaf52dfd">Gpu::DeviceVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleBufferMap.html#a4d6a055510febbd0115e3cc4fcb77e71">d_lev_offsets</a></td></tr>
@@ -261,6 +265,29 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>bid</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1db786f7b4e9c2639a9703b495f69621"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a> const int* amrex::ParticleBufferMap::bucketToPIDPtr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -538,6 +565,26 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa7c6792f4a3209b8404f8ea41cd48a15"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Cuda.html#aa5712aaa078f919e8e87c103eaf52dfd">Gpu::DeviceVector</a>&lt;int&gt; amrex::ParticleBufferMap::d_bucket_to_pid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a22ef66dc732fb28117376c5a3cf60c9a"></a>
 <div class="memitem">
 <div class="memproto">
