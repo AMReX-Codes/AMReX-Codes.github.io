@@ -162,7 +162,7 @@ var searchData=
   ['setformat',['setFormat',['../classamrex_1_1FArrayBox.html#a6dd6c1696dd87f8345826bc2ca97cf56',1,'amrex::FArrayBox']]],
   ['setfrequency',['setFrequency',['../classamrex_1_1InSituBridge.html#ae5232eec8f5c7437d9bccac9ea52f912',1,'amrex::InSituBridge']]],
   ['setgaussseidel',['setGaussSeidel',['../classamrex_1_1MLNodeLaplacian.html#aaa74c5ed1094317d719bffbe89f016c9',1,'amrex::MLNodeLaplacian']]],
-  ['setgeometry',['SetGeometry',['../classamrex_1_1AmrMesh.html#aa755628d0ad98daf37de1670e57d2364',1,'amrex::AmrMesh::SetGeometry()'],['../classamrex_1_1ParticleLocator.html#acdce0b4024c23abb08b8a1407a3d6b79',1,'amrex::ParticleLocator::setGeometry()'],['../classamrex_1_1AmrParticleLocator.html#af2ca2190f808354cc31920a13eb3c6dc',1,'amrex::AmrParticleLocator::setGeometry()']]],
+  ['setgeometry',['setGeometry',['../classamrex_1_1ParticleLocator.html#acdce0b4024c23abb08b8a1407a3d6b79',1,'amrex::ParticleLocator::setGeometry()'],['../classamrex_1_1AmrParticleLocator.html#af2ca2190f808354cc31920a13eb3c6dc',1,'amrex::AmrParticleLocator::setGeometry()'],['../classamrex_1_1AmrMesh.html#aa755628d0ad98daf37de1670e57d2364',1,'amrex::AmrMesh::SetGeometry()']]],
   ['setgpercent',['SetGPercent',['../classBLProfStats.html#a2c9001171e52450c8d565a1f9106ef41',1,'BLProfStats']]],
   ['setgraphregion',['setGraphRegion',['../namespaceamrex_1_1Gpu.html#a5b1f57488f3261a149dbb59792c1592c',1,'amrex::Gpu']]],
   ['setgrideff',['SetGridEff',['../classamrex_1_1AmrMesh.html#a77c262385b1bd0bfc96fec96347c041a',1,'amrex::AmrMesh']]],
