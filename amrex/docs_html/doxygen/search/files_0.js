@@ -503,6 +503,8 @@ var searchData=
   ['amrex_5fneighborparticlesi_2eh',['AMReX_NeighborParticlesI.H',['../AMReX__NeighborParticlesI_8H.html',1,'']]],
   ['amrex_5fnfiles_2ecpp',['AMReX_NFiles.cpp',['../AMReX__NFiles_8cpp.html',1,'']]],
   ['amrex_5fnfiles_2eh',['AMReX_NFiles.H',['../AMReX__NFiles_8H.html',1,'']]],
+  ['amrex_5fnodalprojector_2ecpp',['AMReX_NodalProjector.cpp',['../AMReX__NodalProjector_8cpp.html',1,'']]],
+  ['amrex_5fnodalprojector_2eh',['AMReX_NodalProjector.H',['../AMReX__NodalProjector_8H.html',1,'']]],
   ['amrex_5fomp_5fmod_2ef90',['AMReX_omp_mod.F90',['../AMReX__omp__mod_8F90.html',1,'']]],
   ['amrex_5forientation_2ecpp',['AMReX_Orientation.cpp',['../AMReX__Orientation_8cpp.html',1,'']]],
   ['amrex_5forientation_2eh',['AMReX_Orientation.H',['../AMReX__Orientation_8H.html',1,'']]],
@@ -605,6 +607,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
 ];
