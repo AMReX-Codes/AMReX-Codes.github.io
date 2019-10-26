@@ -46,7 +46,7 @@ var searchData=
   ['neighbors',['Neighbors',['../structamrex_1_1Neighbors.html',1,'amrex']]],
   ['neighborunpackpolicy',['NeighborUnpackPolicy',['../structamrex_1_1NeighborUnpackPolicy.html',1,'amrex']]],
   ['nfilesiter',['NFilesIter',['../classamrex_1_1NFilesIter.html',1,'amrex']]],
-  ['nodalprojector',['NodalProjector',['../classNodalProjector.html',1,'']]],
+  ['nodalprojector',['NodalProjector',['../classamrex_1_1NodalProjector.html',1,'amrex']]],
   ['node',['Node',['../classamrex_1_1CArena_1_1Node.html',1,'amrex::CArena']]],
   ['node',['Node',['../structamrex_1_1EArena_1_1Node.html',1,'amrex::EArena']]],
   ['node',['Node',['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html',1,'amrex::algoim::QuadratureRule']]],

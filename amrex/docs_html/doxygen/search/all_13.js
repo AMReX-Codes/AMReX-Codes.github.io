@@ -299,7 +299,7 @@ var searchData=
   ['settaglevels',['SetTagLevels',['../classamrex_1_1LSCoreBase.html#a6fed6ab0db7c3ca0f8f1a3d077b4364a',1,'amrex::LSCoreBase']]],
   ['settimelevel',['setTimeLevel',['../classamrex_1_1AmrLevel.html#a5b311a4d4139cce9025d1c41d28586b1',1,'amrex::AmrLevel::setTimeLevel()'],['../classamrex_1_1StateData.html#aa828fea0bc5b7fe08079dada98fbef0b',1,'amrex::StateData::setTimeLevel()']]],
   ['settype',['setType',['../classamrex_1_1Box.html#a498ed0e94f9ce975f45018cdb770b5de',1,'amrex::Box::setType()'],['../classamrex_1_1IndexType.html#a362470f2222ce71d89ac7a42166e87ec',1,'amrex::IndexType::setType()'],['../classamrex_1_1EBCellFlagFab.html#a57d4f25c01e84b842b1456dee7985600',1,'amrex::EBCellFlagFab::setType()']]],
-  ['setup',['setup',['../classNodalProjector.html#a29e8b5ac0b7640840486c5b0a06b9a11',1,'NodalProjector::setup()'],['../classamrex_1_1Geometry.html#ae6556ff88fa1aea8c8793dbb25d97873',1,'amrex::Geometry::Setup()']]],
+  ['setup',['setup',['../classamrex_1_1NodalProjector.html#a0e8bac5ed9898402bd8af7190b5383d8',1,'amrex::NodalProjector::setup()'],['../classamrex_1_1Geometry.html#ae6556ff88fa1aea8c8793dbb25d97873',1,'amrex::Geometry::Setup()']]],
   ['setupmaps',['setUpMaps',['../classamrex_1_1StateDescriptor.html#af4b9e3df0cb65bc9425d8c88c4084073',1,'amrex::StateDescriptor']]],
   ['setusecg',['setUseCG',['../classamrex_1_1MultiGrid.html#a4162a92706ef60ccc3e9040d3f056754',1,'amrex::MultiGrid::setUseCG()'],['../classamrex_1_1MCMultiGrid.html#a50168c8c5c4c9da16cdcdc22b53c24c1',1,'amrex::MCMultiGrid::setUseCG()']]],
   ['setusedynamicsetselection',['SetUseDynamicSetSelection',['../classamrex_1_1VisMF.html#ae5edd64d22f48b760a17f2e1c7369df6',1,'amrex::VisMF']]],

@@ -1,0 +1,625 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1NodalProjector" kind="class" language="C++" prot="public">
+    <compoundname>amrex::NodalProjector</compoundname>
+    <includes refid="AMReX__NodalProjector_8H" local="no">AMReX_NodalProjector.H</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a4de350ac4761929f8d6eecfe5f742d33" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::NodalProjector::m_ok</definition>
+        <argsstring></argsstring>
+        <name>m_ok</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a661a067bd39807885fc3156d3bc615c7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::NodalProjector::m_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="74" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1ad4e9684e1ced8f95612ca9172c382ca5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::NodalProjector::m_mg_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_mg_verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1aac8705fdd5128b265f8007ca13075d9c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::NodalProjector::m_mg_cg_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_mg_cg_verbose</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="76" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a26e9beb1ce4225161dacd0f4cf9b9d42" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::NodalProjector::m_mg_maxiter</definition>
+        <argsstring></argsstring>
+        <name>m_mg_maxiter</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="79" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a3b7fad8a1986881bf43e2bbbfc1ba155" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::NodalProjector::m_mg_cg_maxiter</definition>
+        <argsstring></argsstring>
+        <name>m_mg_cg_maxiter</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="80" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a008846ebb3b51d7d1aecbf2251dca251" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::NodalProjector::m_mg_rtol</definition>
+        <argsstring></argsstring>
+        <name>m_mg_rtol</name>
+        <initializer>= 1.0e-11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1ab28cf24b21bcd049b224a54cb87400e3" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real amrex::NodalProjector::m_mg_atol</definition>
+        <argsstring></argsstring>
+        <name>m_mg_atol</name>
+        <initializer>= 1.0e-14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1adc93dce7d8934ea8fa93ad7188fd65a2" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::NodalProjector::m_bottom_solver_type</definition>
+        <argsstring></argsstring>
+        <name>m_bottom_solver_type</name>
+        <initializer>= &quot;bicgcg&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a2af0a96bde7b2a7c78211e2d84869575" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int amrex::NodalProjector::m_mg_max_coarsening_level</definition>
+        <argsstring></argsstring>
+        <name>m_mg_max_coarsening_level</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1abcc4dcca05854b3f4f292faaacf953fa" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt;</type>
+        <definition>Vector&lt;Geometry&gt; amrex::NodalProjector::m_geom</definition>
+        <argsstring></argsstring>
+        <name>m_geom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a8e597f480701ede1befff90a915e66a4" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt;</type>
+        <definition>Vector&lt;BoxArray&gt; amrex::NodalProjector::m_grids</definition>
+        <argsstring></argsstring>
+        <name>m_grids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a13357a20bc5fce87a43d02bd944b8c8f" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt;</type>
+        <definition>Vector&lt;DistributionMapping&gt; amrex::NodalProjector::m_dmap</definition>
+        <argsstring></argsstring>
+        <name>m_dmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a8841a3d92d33e963007ed24bc5310d92" prot="private" static="no" mutable="no">
+        <type>std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+        <definition>std::array&lt;LinOpBCType,AMREX_SPACEDIM&gt; amrex::NodalProjector::m_bc_lo</definition>
+        <argsstring></argsstring>
+        <name>m_bc_lo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a9629028ba382b2d9b32852f1ac88c982" prot="private" static="no" mutable="no">
+        <type>std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+        <definition>std::array&lt;LinOpBCType,AMREX_SPACEDIM&gt; amrex::NodalProjector::m_bc_hi</definition>
+        <argsstring></argsstring>
+        <name>m_bc_hi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="98" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a39eed78c45f84de5d683ef80c68a9616" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt;</type>
+        <definition>Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; amrex::NodalProjector::m_fluxes</definition>
+        <argsstring></argsstring>
+        <name>m_fluxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="101" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a6866f79b0878c4052a476b5a3658bfa5" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt;</type>
+        <definition>Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; amrex::NodalProjector::m_phi</definition>
+        <argsstring></argsstring>
+        <name>m_phi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="104" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a28ec8053f421512e31fdd2e18a6f91b2" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt;</type>
+        <definition>Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; amrex::NodalProjector::m_rhs</definition>
+        <argsstring></argsstring>
+        <name>m_rhs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="105" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a8569a7370d2045a394d3a084e502bd51" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLNodeLaplacian" kindref="compound">MLNodeLaplacian</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; MLNodeLaplacian &gt; amrex::NodalProjector::m_matrix</definition>
+        <argsstring></argsstring>
+        <name>m_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="108" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NodalProjector_1a494282b614cd2422de9bdb479bf40f88" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLMG" kindref="compound">MLMG</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; MLMG &gt; amrex::NodalProjector::m_solver</definition>
+        <argsstring></argsstring>
+        <name>m_solver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="111" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1ae6e76253c9361a7a29bf2875e37eaebe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::NodalProjector::NodalProjector</definition>
+        <argsstring>()</argsstring>
+        <name>NodalProjector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a6b8c8bf171b049b47e3bd63b0554d088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::NodalProjector::NodalProjector</definition>
+        <argsstring>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt; a_bc_lo, std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt; a_bc_hi)</argsstring>
+        <name>NodalProjector</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>a_grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>a_dmap</declname>
+        </param>
+        <param>
+          <type>std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+          <declname>a_bc_lo</declname>
+        </param>
+        <param>
+          <type>std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+          <declname>a_bc_hi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1afb8b7601f271f9294d55cff4389d0bdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::define</definition>
+        <argsstring>(const Vector&lt; Geometry &gt; &amp;a_geom, const Vector&lt; BoxArray &gt; &amp;a_grids, const Vector&lt; DistributionMapping &gt; &amp;a_dmap, std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt; a_bc_lo, std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt; a_bc_hi)</argsstring>
+        <name>define</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &gt; &amp;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <declname>a_grids</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &amp;</type>
+          <declname>a_dmap</declname>
+        </param>
+        <param>
+          <type>std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+          <declname>a_bc_lo</declname>
+        </param>
+        <param>
+          <type>std::array&lt; LinOpBCType, AMREX_SPACEDIM &gt;</type>
+          <declname>a_bc_hi</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="34" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="32" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a4505b059abcc3c9e1cdd6a32c12b2545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::project</definition>
+        <argsstring>(Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_vel, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_sigma, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_S_cc={}, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_S_nd={})</argsstring>
+        <name>project</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_vel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_sigma</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_S_cc</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_S_nd</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="51" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="141" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1af186eaff35c54d15094f688e85011b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::project2</definition>
+        <argsstring>(Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_vel, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_alpha, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_beta, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_rhs)</argsstring>
+        <name>project2</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_vel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_alpha</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_beta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="212" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1aec6781e79ae0cd7083834da01558c7d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt;</type>
+        <definition>Vector&lt; const MultiFab* &gt; amrex::NodalProjector::getPhi</definition>
+        <argsstring>() const </argsstring>
+        <name>getPhi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a6231be537c09b6babbe997e90e99f1bf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt;</type>
+        <definition>Vector&lt; const MultiFab* &gt; amrex::NodalProjector::getGradPhi</definition>
+        <argsstring>() const </argsstring>
+        <name>getGradPhi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a83aa19763d888fc5faccc366bb4ca072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::computeRHS</definition>
+        <argsstring>(Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_rhs, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_vel, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_S_cc={}, const Vector&lt; std::unique_ptr&lt; MultiFab &gt; &gt; &amp;a_S_nd={})</argsstring>
+        <name>computeRHS</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_rhs</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_vel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_S_cc</declname>
+          <defval>{}</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt; &gt; &amp;</type>
+          <declname>a_S_nd</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="371" bodyend="403"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a42c19270cc056e06a13c190bf01a00b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::readParameters</definition>
+        <argsstring>()</argsstring>
+        <name>readParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="277" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a09e3fe505727d0cec4c6e41648e39121" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::printInfo</definition>
+        <argsstring>()</argsstring>
+        <name>printInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="115" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="407" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NodalProjector_1a0e8bac5ed9898402bd8af7190b5383d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NodalProjector::setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="117" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp" bodystart="297" bodyend="364"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5619">
+        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
+      </node>
+      <node id="5615">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5616" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5612">
+        <label>amrex::NodalProjector</label>
+        <link refid="classamrex_1_1NodalProjector"/>
+        <childnode refid="5613" relation="usage">
+          <edgelabel>m_dmap</edgelabel>
+        </childnode>
+        <childnode refid="5615" relation="usage">
+          <edgelabel>m_rhs</edgelabel>
+          <edgelabel>m_phi</edgelabel>
+          <edgelabel>m_fluxes</edgelabel>
+        </childnode>
+        <childnode refid="5617" relation="usage">
+          <edgelabel>m_bottom_solver_type</edgelabel>
+        </childnode>
+        <childnode refid="5618" relation="usage">
+          <edgelabel>m_grids</edgelabel>
+        </childnode>
+        <childnode refid="5620" relation="usage">
+          <edgelabel>m_geom</edgelabel>
+        </childnode>
+        <childnode refid="5622" relation="usage">
+          <edgelabel>m_mg_rtol</edgelabel>
+          <edgelabel>m_mg_atol</edgelabel>
+        </childnode>
+      </node>
+      <node id="5622">
+        <label>Real</label>
+      </node>
+      <node id="5621">
+        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
+      </node>
+      <node id="5613">
+        <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5614" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5617">
+        <label>string</label>
+      </node>
+      <node id="5618">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5619" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5614">
+        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
+      </node>
+      <node id="5616">
+        <label>std::vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt;</label>
+      </node>
+      <node id="5620">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5621" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" line="13" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H" bodystart="12" bodyend="119"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1NodalProjector_1a83aa19763d888fc5faccc366bb4ca072" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>computeRHS</name></member>
+      <member refid="classamrex_1_1NodalProjector_1afb8b7601f271f9294d55cff4389d0bdd" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>define</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a6231be537c09b6babbe997e90e99f1bf" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>getGradPhi</name></member>
+      <member refid="classamrex_1_1NodalProjector_1aec6781e79ae0cd7083834da01558c7d8" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>getPhi</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a9629028ba382b2d9b32852f1ac88c982" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_bc_hi</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a8841a3d92d33e963007ed24bc5310d92" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_bc_lo</name></member>
+      <member refid="classamrex_1_1NodalProjector_1adc93dce7d8934ea8fa93ad7188fd65a2" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_bottom_solver_type</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a13357a20bc5fce87a43d02bd944b8c8f" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_dmap</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a39eed78c45f84de5d683ef80c68a9616" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_fluxes</name></member>
+      <member refid="classamrex_1_1NodalProjector_1abcc4dcca05854b3f4f292faaacf953fa" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_geom</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a8e597f480701ede1befff90a915e66a4" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_grids</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a8569a7370d2045a394d3a084e502bd51" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_matrix</name></member>
+      <member refid="classamrex_1_1NodalProjector_1ab28cf24b21bcd049b224a54cb87400e3" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_atol</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a3b7fad8a1986881bf43e2bbbfc1ba155" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_cg_maxiter</name></member>
+      <member refid="classamrex_1_1NodalProjector_1aac8705fdd5128b265f8007ca13075d9c" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_cg_verbose</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a2af0a96bde7b2a7c78211e2d84869575" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_max_coarsening_level</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a26e9beb1ce4225161dacd0f4cf9b9d42" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_maxiter</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a008846ebb3b51d7d1aecbf2251dca251" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_rtol</name></member>
+      <member refid="classamrex_1_1NodalProjector_1ad4e9684e1ced8f95612ca9172c382ca5" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_mg_verbose</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a4de350ac4761929f8d6eecfe5f742d33" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_ok</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a6866f79b0878c4052a476b5a3658bfa5" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_phi</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a28ec8053f421512e31fdd2e18a6f91b2" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_rhs</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a494282b614cd2422de9bdb479bf40f88" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_solver</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a661a067bd39807885fc3156d3bc615c7" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>m_verbose</name></member>
+      <member refid="classamrex_1_1NodalProjector_1ae6e76253c9361a7a29bf2875e37eaebe" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>NodalProjector</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a6b8c8bf171b049b47e3bd63b0554d088" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>NodalProjector</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a09e3fe505727d0cec4c6e41648e39121" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>printInfo</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a4505b059abcc3c9e1cdd6a32c12b2545" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>project</name></member>
+      <member refid="classamrex_1_1NodalProjector_1af186eaff35c54d15094f688e85011b62" prot="public" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>project2</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a42c19270cc056e06a13c190bf01a00b8" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>readParameters</name></member>
+      <member refid="classamrex_1_1NodalProjector_1a0e8bac5ed9898402bd8af7190b5383d8" prot="private" virt="non-virtual"><scope>amrex::NodalProjector</scope><name>setup</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

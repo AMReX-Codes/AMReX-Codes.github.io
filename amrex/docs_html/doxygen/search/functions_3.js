@@ -156,7 +156,7 @@ var searchData=
   ['computeresofcorrection',['computeResOfCorrection',['../classamrex_1_1MLMG.html#a725d6dc0cc3c20d8baa48b883805863c',1,'amrex::MLMG']]],
   ['computereswithcrsecorfinecor',['computeResWithCrseCorFineCor',['../classamrex_1_1MLMG.html#a97d673162294d25b9b325b636cb9183d',1,'amrex::MLMG']]],
   ['computereswithcrsesolfinecor',['computeResWithCrseSolFineCor',['../classamrex_1_1MLMG.html#aa802d8378f3912da5b884fcc07c2351b',1,'amrex::MLMG']]],
-  ['computerhs',['computeRHS',['../classNodalProjector.html#a73a62e41f06a187ede7f13ec88ace5dd',1,'NodalProjector']]],
+  ['computerhs',['computeRHS',['../classamrex_1_1NodalProjector.html#a83aa19763d888fc5faccc366bb4ca072',1,'amrex::NodalProjector']]],
   ['computevolinv',['computeVolInv',['../classamrex_1_1MLMG.html#a3cd643e6bf9f7e6d9d2b8cb7fa0b7c71',1,'amrex::MLMG']]],
   ['concatenate',['Concatenate',['../namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250',1,'amrex']]],
   ['const_5farray',['const_array',['../classamrex_1_1BaseFab.html#aeba81b8b4aa7054af02788dc42c797c3',1,'amrex::BaseFab::const_array()'],['../classamrex_1_1FabArray.html#a0af1d5ec31ed2b73f391952c5d45660a',1,'amrex::FabArray::const_array(const MFIter &amp;mfi) const noexcept'],['../classamrex_1_1FabArray.html#a69cbd579804bcf2d56900787806a3361',1,'amrex::FabArray::const_array(int K) const noexcept'],['../classamrex_1_1FabSet.html#ab233c9f3558e8a3e1375fca1b161e021',1,'amrex::FabSet::const_array(const MFIter &amp;mfi) const noexcept'],['../classamrex_1_1FabSet.html#add4a5c1c3336bd4f372356cc3459163e',1,'amrex::FabSet::const_array(int i) const noexcept'],['../classamrex_1_1MultiCutFab.html#a50cae7c9c3be8c1acf784e0b2aa823f8',1,'amrex::MultiCutFab::const_array()']]],
