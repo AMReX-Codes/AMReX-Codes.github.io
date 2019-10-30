@@ -6,6 +6,7 @@ var searchData=
   ['abort_5fon_5fstream_5fretry_5ffailure',['abort_on_stream_retry_failure',['../classamrex_1_1Amr.html#a98d00dad9a4ef2a681aaafdf2a59cb0b',1,'amrex::Amr']]],
   ['abort_5fon_5funused_5finputs',['abort_on_unused_inputs',['../namespaceamrex_1_1system.html#a8925c400a100a90a4e5affd59f97133c',1,'amrex::system']]],
   ['abortonretryfailure',['abortOnRetryFailure',['../classamrex_1_1StreamRetry.html#a9154d1ecaab301550b3114d253b7c0cf',1,'amrex::StreamRetry']]],
+  ['acc_5fstream',['acc_stream',['../namespaceamrex__acc__module.html#aafbf079c34c708eb6c38b72a05c77249',1,'amrex_acc_module']]],
   ['acoefs',['acoefs',['../classamrex_1_1Hypre.html#a1ab65d249a3254eb6540bedcc9ebf285',1,'amrex::Hypre::acoefs()'],['../classamrex_1_1PETScABecLap.html#a0bdac13a79f515cc266c9babc14a7cc8',1,'amrex::PETScABecLap::acoefs()'],['../classamrex_1_1ABecLaplacian.html#a05e6c5c60611486ebf78fc0438b96aa1',1,'amrex::ABecLaplacian::acoefs()'],['../classamrex_1_1ABec4.html#afa7ef4d698cd7e905212b18d2dbaf784',1,'amrex::ABec4::acoefs()'],['../classamrex_1_1DivVis.html#a5ac06b144dababf33acde384979ab6b5',1,'amrex::DivVis::acoefs()']]],
   ['afeps',['afEps',['../classamrex_1_1AmrData.html#a157a97d6fc15b68f5f18710113d3329a',1,'amrex::AmrData']]],
   ['agg_5fgrid_5fsize',['agg_grid_size',['../structamrex_1_1LPInfo.html#ac46e08d33dd242d0b6d79ae7db01b2c0',1,'amrex::LPInfo']]],
