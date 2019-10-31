@@ -251,6 +251,7 @@ var searchData=
   ['m_5flocal',['m_local',['../structamrex_1_1ParticleCopyPlan.html#a1d2885301b5e06ee60387143583aa6f6',1,'amrex::ParticleCopyPlan']]],
   ['m_5flocators',['m_locators',['../classamrex_1_1AmrParticleLocator.html#a0b98048385a7713dc757420899d73639',1,'amrex::AmrParticleLocator']]],
   ['m_5floctags',['m_LocTags',['../structamrex_1_1FabArrayBase_1_1FB.html#a3f5b0c61b1728075cc863da0b911a1c6',1,'amrex::FabArrayBase::FB::m_LocTags()'],['../structamrex_1_1FabArrayBase_1_1CPC.html#a81bf78da77ae53d44dd1a5bb8f05d999',1,'amrex::FabArrayBase::CPC::m_LocTags()']]],
+  ['m_5flpinfo',['m_lpinfo',['../classamrex_1_1NodalProjector.html#a26630d1eb1ed4c8375e6e598d36652f3',1,'amrex::NodalProjector']]],
   ['m_5fls_5fba',['m_ls_ba',['../classamrex_1_1GShopLSFactory.html#aa6a77272fefc3e522a9468e5a4be3c0c',1,'amrex::GShopLSFactory']]],
   ['m_5fls_5fdm',['m_ls_dm',['../classamrex_1_1GShopLSFactory.html#a7e9150a85f66cb66716281d26c402377',1,'amrex::GShopLSFactory']]],
   ['m_5fls_5fpad',['m_ls_pad',['../classamrex_1_1GShopLSFactory.html#a142c0de11037e1e7b81ef11414a6c043',1,'amrex::GShopLSFactory']]],
