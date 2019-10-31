@@ -277,7 +277,6 @@ var searchData=
   ['m_5fmg_5fatol',['m_mg_atol',['../classamrex_1_1NodalProjector.html#ab28cf24b21bcd049b224a54cb87400e3',1,'amrex::NodalProjector']]],
   ['m_5fmg_5fcg_5fmaxiter',['m_mg_cg_maxiter',['../classamrex_1_1NodalProjector.html#a3b7fad8a1986881bf43e2bbbfc1ba155',1,'amrex::NodalProjector']]],
   ['m_5fmg_5fcg_5fverbose',['m_mg_cg_verbose',['../classamrex_1_1NodalProjector.html#aac8705fdd5128b265f8007ca13075d9c',1,'amrex::NodalProjector']]],
-  ['m_5fmg_5fmax_5fcoarsening_5flevel',['m_mg_max_coarsening_level',['../classamrex_1_1NodalProjector.html#a2af0a96bde7b2a7c78211e2d84869575',1,'amrex::NodalProjector']]],
   ['m_5fmg_5fmaxiter',['m_mg_maxiter',['../classamrex_1_1NodalProjector.html#a26e9beb1ce4225161dacd0f4cf9b9d42',1,'amrex::NodalProjector']]],
   ['m_5fmg_5frtol',['m_mg_rtol',['../classamrex_1_1NodalProjector.html#a008846ebb3b51d7d1aecbf2251dca251',1,'amrex::NodalProjector']]],
   ['m_5fmg_5fverbose',['m_mg_verbose',['../classamrex_1_1NodalProjector.html#ad4e9684e1ced8f95612ca9172c382ca5',1,'amrex::NodalProjector']]],
