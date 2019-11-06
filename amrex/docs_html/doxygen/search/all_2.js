@@ -305,7 +305,7 @@ var searchData=
   ['buildfinemask',['buildFineMask',['../classamrex_1_1MLMG.html#aa2a89a45fc288f18494a1304ce6fe5e2',1,'amrex::MLMG']]],
   ['buildkdtree',['buildKDTree',['../classamrex_1_1KDTree.html#ac0248f61ac42e781dadd842da7776920',1,'amrex::KDTree']]],
   ['buildmask',['BuildMask',['../classamrex_1_1FabArray.html#a4f4a269de9e494ef89075265e5b8ecb2',1,'amrex::FabArray']]],
-  ['buildmasks',['buildMasks',['../classamrex_1_1MLNodeLaplacian.html#a3e4e47a49b8cf3c77996e16c7d46f308',1,'amrex::MLNodeLaplacian::buildMasks()'],['../classamrex_1_1NeighborParticleContainer.html#af79112d043b45868fb00cf720d61b0a5',1,'amrex::NeighborParticleContainer::BuildMasks()']]],
+  ['buildmasks',['buildMasks',['../classamrex_1_1MLNodeLinOp.html#aa43fb0696cb5782669c8ee368b743099',1,'amrex::MLNodeLinOp::buildMasks()'],['../classamrex_1_1NeighborParticleContainer.html#af79112d043b45868fb00cf720d61b0a5',1,'amrex::NeighborParticleContainer::BuildMasks()']]],
   ['buildmpifinish',['buildMPIFinish',['../structamrex_1_1ParticleCopyPlan.html#ab70e7cbaf0b6636a9be60729e0869495',1,'amrex::ParticleCopyPlan']]],
   ['buildmpistart',['buildMPIStart',['../structamrex_1_1ParticleCopyPlan.html#aba9539e9ac5bd7a8aba8278877d59d33',1,'amrex::ParticleCopyPlan']]],
   ['buildneighborcopyop',['buildNeighborCopyOp',['../classamrex_1_1NeighborParticleContainer.html#a9f9b59556eee3e510dfa52a90110fe78',1,'amrex::NeighborParticleContainer']]],

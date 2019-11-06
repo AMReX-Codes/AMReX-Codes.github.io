@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rap',['RAP',['../classamrex_1_1MLNodeLaplacian.html#a491bef687384c010d33dc15cff1b11b8abb0014f2e34a1a63c199eb717fe3accf',1,'amrex::MLNodeLaplacian']]],
+  ['rap',['RAP',['../classamrex_1_1MLNodeLinOp.html#a2ddc20eaca70aaa6da5935648ce06a82abb0014f2e34a1a63c199eb717fe3accf',1,'amrex::MLNodeLinOp']]],
   ['rastercontours',['RASTERCONTOURS',['../namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323ba0a6705b8c6cedf020a3122f7b169ed43',1,'amrex::Amrvis']]],
   ['rasteronly',['RASTERONLY',['../namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323ba22d64df7ed492afd73a91e643e515681',1,'amrex::Amrvis']]],
   ['redistribute_5f1_5fto_5f3',['REDISTRIBUTE_1_TO_3',['../distribution_8c.html#adc29c2ff13d900c2f185ee95427fb06cadb2db6e983734128c679d2d6f9660d0a',1,'distribution.c']]],

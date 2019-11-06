@@ -4,7 +4,34 @@
     <compoundname>amrex::MLNodeLinOp</compoundname>
     <basecompoundref refid="classamrex_1_1MLLinOp" prot="public" virt="non-virtual">amrex::MLLinOp</basecompoundref>
     <derivedcompoundref refid="classamrex_1_1MLNodeLaplacian" prot="public" virt="non-virtual">amrex::MLNodeLaplacian</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1MLNodeTensorLaplacian" prot="public" virt="non-virtual">amrex::MLNodeTensorLaplacian</derivedcompoundref>
     <includes refid="AMReX__MLNodeLinOp_8H" local="no">AMReX_MLNodeLinOp.H</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82" prot="public" static="no">
+        <name>CoarseningStrategy</name>
+        <enumvalue id="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82a827faff1bdcfe446237c4d6289abce66" prot="public">
+          <name>Sigma</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82abb0014f2e34a1a63c199eb717fe3accf" prot="public">
+          <name>RAP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="21" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="21" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="friend">
       <memberdef kind="friend" id="classamrex_1_1MLNodeLinOp_1a1b4821805159b0595b6b7b1e0135b54f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -17,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="14" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="14" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1MLNodeLinOp_1a7b344595276c27ed17dacb3ea1fb95aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -30,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="15" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="15" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="19" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="19" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -45,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="83" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="108" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1aaa52abefe4405ee59158a27c112ccfa9" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt; &gt; &gt;</type>
@@ -58,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="84" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="109" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a91c9e98ef8edd4106aace72a6c7a4294" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt; &gt;</type>
@@ -71,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="85" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="110" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a034b72948cecb00630515b6a2de77109" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> &gt; &gt;</type>
@@ -84,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="86" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="111" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a76a73246b9e7679b93591f2093a857c3" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; int &gt; &gt; &gt;</type>
@@ -97,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="87" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="87" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="112" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a4b398a735f5c05d0919bc24efc9a7025" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
@@ -110,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="88" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a117db04aae22221b83130cff6e6fdb52" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
@@ -123,7 +150,49 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="89" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="114" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1af4d1bfea4dae502fae40e6b71fd4deae" prot="protected" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82" kindref="member">CoarseningStrategy</ref></type>
+        <definition>CoarseningStrategy amrex::MLNodeLinOp::m_coarsening_strategy</definition>
+        <argsstring></argsstring>
+        <name>m_coarsening_strategy</name>
+        <initializer>= <ref refid="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82a827faff1bdcfe446237c4d6289abce66" kindref="member">CoarseningStrategy::Sigma</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="119" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::MLNodeLinOp::m_is_bottom_singular</definition>
+        <argsstring></argsstring>
+        <name>m_is_bottom_singular</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="122" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MLNodeLinOp_1a2bb5e031c87b6bdf67618f9c25dc6945" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::MLNodeLinOp::m_masks_built</definition>
+        <argsstring></argsstring>
+        <name>m_masks_built</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="123" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="123" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -138,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="12" bodyend="15"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="12" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a07faf757bcc476afe8bf3b88997d3039" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -151,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="17" bodyend="17"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="24" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="17" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a712873309064abf30aafcb2d277890fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -167,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="20" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="26" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a02892864c3a177a34cc38d3d55a972fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -183,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="21" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="27" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a1f11eab31e2487056a5befd79c8a22a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MLNodeLinOp" kindref="compound">MLNodeLinOp</ref> &amp;</type>
@@ -199,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="22" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="28" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a8dcf3f92d3ef1932e03ad470e29d1517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MLNodeLinOp" kindref="compound">MLNodeLinOp</ref> &amp;</type>
@@ -215,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="23" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="29" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1ab98fdadedd74d8601f0da56bde60b23b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -250,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="20" bodyend="58"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="20" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a15e11c647b57a19a393a2ca6a323a85a" prot="public" static="no" const="no" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
@@ -287,7 +356,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="31" bodyend="31"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="37" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a668c3faa79d094f72e351a8ec1736fc2" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -330,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="114" bodyend="119"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="39" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="114" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a049936d38ba7f07adcf9c435849bca64" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -365,7 +434,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="122" bodyend="129"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="42" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="122" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a9577a87ff76e6c9406e3cbe716d26746" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -400,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="39" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="76" bodyend="102"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="45" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="76" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a2018b943fdab7019461dc9580b04177c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -443,7 +512,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="41" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="105" bodyend="111"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="47" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="105" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1afe48a02e5be6dd3beac70271de7a02da" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
@@ -473,7 +542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="43" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="43" bodyend="46"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="49" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="49" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a264af834600d85a8773131c87ccfeb1b" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
@@ -503,7 +572,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="47" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="47" bodyend="50"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="53" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a7e5c287fd5bd6078ccc3afc7e18fd69a" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
@@ -529,7 +598,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="52" bodyend="52"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="58" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="58" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a700bdd6e43250739cc3f571b94b81688" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
@@ -555,7 +624,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="53" bodyend="53"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="59" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1af31692542848e1defea74b813d801a81" prot="public" static="no" const="no" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
@@ -582,7 +651,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="55" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="55" bodyend="57"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="61" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a79b6bca7f31b09333bc7caae80d39136" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -604,7 +673,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="152" bodyend="167"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="152" bodyend="167"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1ac604e9b47938e183cd38f8f9ad400668" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -612,6 +681,7 @@
         <argsstring>() override</argsstring>
         <name>prepareForSolve</name>
         <reimplements refid="classamrex_1_1MLLinOp_1a431d85bffa7e9bbcd36a10ae82fe3683">prepareForSolve</reimplements>
+        <reimplementedby refid="classamrex_1_1MLNodeTensorLaplacian_1a42f5be247a166cdcdaf734f91a51d822">prepareForSolve</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLNodeLaplacian_1ae2134173a1bd7b925000e8072a87082f">prepareForSolve</reimplementedby>
         <briefdescription>
         </briefdescription>
@@ -619,7 +689,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="61" bodyend="61"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a18804aba43a14c7ffea9b6bc3f3179ba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool amrex::MLNodeLinOp::isSingular</definition>
+        <argsstring>(int amrlev) const override</argsstring>
+        <name>isSingular</name>
+        <reimplements refid="classamrex_1_1MLLinOp_1aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</reimplements>
+        <param>
+          <type>int</type>
+          <declname>amrlev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="69" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a5ebdba6239eb393431835a2f2ad724df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool amrex::MLNodeLinOp::isBottomSingular</definition>
+        <argsstring>() const override</argsstring>
+        <name>isBottomSingular</name>
+        <reimplements refid="classamrex_1_1MLLinOp_1aa6ff4935f1246d7c94ac38dc65c25d7d">isBottomSingular</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="71" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1ab1e7a8ff6a4f712576a8eff0baef1772" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>Real</type>
@@ -653,14 +755,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="132" bodyend="149"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="132" bodyend="149"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1aa084c0272fc33cb2bfe13c4e700df73a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a0ab8d8d842032e19132903b007771953" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
-        <definition>virtual void amrex::MLNodeLinOp::applyBC</definition>
-        <argsstring>(int amrlev, int mglev, MultiFab &amp;phi, BCMode bc_mode, StateMode s_mode, bool skip_fillboundary=false) const =0</argsstring>
+        <definition>void amrex::MLNodeLinOp::applyBC</definition>
+        <argsstring>(int amrlev, int mglev, MultiFab &amp;phi, BCMode bc_mode, StateMode s_mode, bool skip_fillboundary=false) const </argsstring>
         <name>applyBC</name>
-        <reimplementedby refid="classamrex_1_1MLNodeLaplacian_1af211d8e359ae9392522fe60c5f253e3f">applyBC</reimplementedby>
         <param>
           <type>int</type>
           <declname>amrlev</declname>
@@ -692,13 +793,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="65" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="383" bodyend="408"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1afaae44c30405c4c8c2fdabede17a34ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void amrex::MLNodeLinOp::Fapply</definition>
         <argsstring>(int amrlev, int mglev, MultiFab &amp;out, const MultiFab &amp;in) const =0</argsstring>
         <name>Fapply</name>
+        <reimplementedby refid="classamrex_1_1MLNodeTensorLaplacian_1aeaa5f695a819025cd4eb5199b26403ad">Fapply</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLNodeLaplacian_1a94ccd77c0c9e232e20b5e68d785d2dee">Fapply</reimplementedby>
         <param>
           <type>int</type>
@@ -722,13 +824,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="67" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="78" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1ac856c51055f30434fd54c59eeeeb2f9b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void amrex::MLNodeLinOp::Fsmooth</definition>
         <argsstring>(int amrlev, int mglev, MultiFab &amp;sol, const MultiFab &amp;rsh) const =0</argsstring>
         <name>Fsmooth</name>
+        <reimplementedby refid="classamrex_1_1MLNodeTensorLaplacian_1ac0cd0973a29e3cdb8cbe3234fd2c9d50">Fsmooth</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLNodeLaplacian_1af52c5a037979e4b1a7da5201868af61a">Fsmooth</reimplementedby>
         <param>
           <type>int</type>
@@ -752,7 +855,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="68" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="79" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a0e91f952317f3b9bfb4c20bb68624e1b" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
@@ -778,7 +881,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="70" bodyend="73"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1a5fffb41bbd6d2ee5cf4454e0e3768898" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLLinOp" kindref="compound">MLLinOp</ref> &gt;</type>
@@ -796,7 +899,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="72" bodyend="75"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="83" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MLNodeLinOp_1aa43fb0696cb5782669c8ee368b743099" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MLNodeLinOp::buildMasks</definition>
+        <argsstring>()</argsstring>
+        <name>buildMasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="92" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="170" bodyend="380"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -823,7 +939,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="61" bodyend="67"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp" bodystart="61" bodyend="67"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -831,397 +947,405 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5092">
-        <label>amrex::MLNodeLinOp</label>
-        <link refid="classamrex_1_1MLNodeLinOp"/>
-        <childnode refid="5093" relation="public-inheritance">
+      <node id="5089">
+        <label>amrex::MLNodeTensorLaplacian</label>
+        <link refid="classamrex_1_1MLNodeTensorLaplacian"/>
+        <childnode refid="5086" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5093">
+      <node id="5086">
+        <label>amrex::MLNodeLinOp</label>
+        <link refid="classamrex_1_1MLNodeLinOp"/>
+        <childnode refid="5087" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5087">
         <label>amrex::MLLinOp</label>
         <link refid="classamrex_1_1MLLinOp"/>
       </node>
-      <node id="5094">
+      <node id="5088">
         <label>amrex::MLNodeLaplacian</label>
         <link refid="classamrex_1_1MLNodeLaplacian"/>
-        <childnode refid="5092" relation="public-inheritance">
+        <childnode refid="5086" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5127">
+      <node id="5122">
         <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
       </node>
-      <node id="5109">
+      <node id="5104">
         <label>amrex::FabArrayBase::CacheStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
-        <childnode refid="5110" relation="usage">
+        <childnode refid="5105" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="5112">
+      <node id="5107">
         <label>amrex::FabArrayBase::FabArrayStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
       </node>
-      <node id="5105">
+      <node id="5100">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="5105" relation="usage">
+        <childnode refid="5100" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="5102">
+      <node id="5097">
         <label>Real</label>
       </node>
-      <node id="5128">
-        <label>amrex::Vector&lt; MPI_Request &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5129" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5136">
-        <label>std::vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &gt;</label>
-      </node>
-      <node id="5122">
-        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
-      </node>
-      <node id="5103">
-        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5104" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5104">
-        <label>std::vector&lt; amrex::Vector&lt; amrex::BoxArray &gt;, std::allocator&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt; &gt;</label>
-      </node>
-      <node id="5113">
-        <label>amrex::Vector&lt; int &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5114" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5110">
-        <label>string</label>
-      </node>
-      <node id="5130">
-        <label>amrex::Periodicity</label>
-        <link refid="classamrex_1_1Periodicity"/>
-        <childnode refid="5105" relation="usage">
-          <edgelabel>period</edgelabel>
-        </childnode>
-      </node>
-      <node id="5124">
-        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
-      </node>
-      <node id="5095">
-        <label>amrex::MLNodeLinOp</label>
-        <link refid="classamrex_1_1MLNodeLinOp"/>
-        <childnode refid="5096" relation="public-inheritance">
-        </childnode>
-        <childnode refid="5106" relation="usage">
-          <edgelabel>m_bottom_dot_mask</edgelabel>
-          <edgelabel>m_coarse_dot_mask</edgelabel>
-        </childnode>
-        <childnode refid="5138" relation="usage">
-          <edgelabel>m_nd_fine_mask</edgelabel>
-          <edgelabel>m_cc_fine_mask</edgelabel>
-        </childnode>
-        <childnode refid="5140" relation="usage">
-          <edgelabel>m_owner_mask</edgelabel>
-          <edgelabel>m_dirichlet_mask</edgelabel>
-        </childnode>
-        <childnode refid="5142" relation="usage">
-          <edgelabel>m_has_fine_bndry</edgelabel>
-        </childnode>
-      </node>
-      <node id="5132">
-        <label>std::vector&lt; Array&lt; int, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt; &gt;</label>
-      </node>
       <node id="5123">
-        <label>amrex::Vector&lt; char * &gt;</label>
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="5124" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5097">
-        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt;</label>
+      <node id="5131">
+        <label>std::vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="5117">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="5098">
+        <label>amrex::Vector&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5098" relation="public-inheritance">
+        <childnode refid="5099" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5100">
-        <label>std::vector&lt; amrex::Vector&lt; amrex::Geometry &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt; &gt;</label>
+      <node id="5099">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::BoxArray &gt;, std::allocator&lt; amrex::Vector&lt; amrex::BoxArray &gt; &gt; &gt;</label>
+      </node>
+      <node id="5108">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5109" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5105">
+        <label>string</label>
       </node>
       <node id="5125">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="5100" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="5119">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="5090">
+        <label>amrex::MLNodeLinOp</label>
+        <link refid="classamrex_1_1MLNodeLinOp"/>
+        <childnode refid="5091" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5101" relation="usage">
+          <edgelabel>m_bottom_dot_mask</edgelabel>
+          <edgelabel>m_coarse_dot_mask</edgelabel>
+        </childnode>
+        <childnode refid="5133" relation="usage">
+          <edgelabel>m_nd_fine_mask</edgelabel>
+          <edgelabel>m_cc_fine_mask</edgelabel>
+        </childnode>
+        <childnode refid="5135" relation="usage">
+          <edgelabel>m_owner_mask</edgelabel>
+          <edgelabel>m_dirichlet_mask</edgelabel>
+        </childnode>
+        <childnode refid="5137" relation="usage">
+          <edgelabel>m_has_fine_bndry</edgelabel>
+        </childnode>
+      </node>
+      <node id="5127">
+        <label>std::vector&lt; Array&lt; int, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt; &gt;</label>
+      </node>
+      <node id="5118">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5092">
+        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5093" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5095">
+        <label>std::vector&lt; amrex::Vector&lt; amrex::Geometry &gt;, std::allocator&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt; &gt;</label>
+      </node>
+      <node id="5120">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
       </node>
-      <node id="5099">
+      <node id="5094">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::Geometry &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5100" relation="public-inheritance">
+        <childnode refid="5095" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5143">
+      <node id="5138">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::LayoutData&lt; int &gt; &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::LayoutData&lt; int &gt; &gt; &gt; &gt;</label>
       </node>
-      <node id="5101">
+      <node id="5096">
         <label>amrex::RealVect</label>
         <link refid="classamrex_1_1RealVect"/>
-        <childnode refid="5101" relation="usage">
+        <childnode refid="5096" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
-        <childnode refid="5102" relation="usage">
+        <childnode refid="5097" relation="usage">
           <edgelabel>vect</edgelabel>
         </childnode>
       </node>
-      <node id="5133">
+      <node id="5128">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5134" relation="public-inheritance">
+        <childnode refid="5129" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5129">
+      <node id="5124">
         <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
       </node>
-      <node id="5114">
+      <node id="5109">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="5119">
+      <node id="5114">
         <label>amrex::BoxArray</label>
         <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="5105" relation="usage">
+        <childnode refid="5100" relation="usage">
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
-        <childnode refid="5120" relation="usage">
+        <childnode refid="5115" relation="usage">
           <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="5096">
+      <node id="5091">
         <label>amrex::MLLinOp</label>
         <link refid="classamrex_1_1MLLinOp"/>
-        <childnode refid="5097" relation="usage">
+        <childnode refid="5092" relation="usage">
           <edgelabel>m_factory</edgelabel>
         </childnode>
-        <childnode refid="5099" relation="usage">
+        <childnode refid="5094" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
-        <childnode refid="5101" relation="usage">
+        <childnode refid="5096" relation="usage">
           <edgelabel>m_coarse_bc_loc</edgelabel>
         </childnode>
-        <childnode refid="5103" relation="usage">
+        <childnode refid="5098" relation="usage">
           <edgelabel>m_grids</edgelabel>
         </childnode>
-        <childnode refid="5105" relation="usage">
+        <childnode refid="5100" relation="usage">
           <edgelabel>m_ixtype</edgelabel>
         </childnode>
-        <childnode refid="5106" relation="usage">
+        <childnode refid="5101" relation="usage">
           <edgelabel>m_coarse_data_for_bc</edgelabel>
         </childnode>
-        <childnode refid="5113" relation="usage">
+        <childnode refid="5108" relation="usage">
           <edgelabel>m_domain_covered</edgelabel>
           <edgelabel>m_amr_ref_ratio</edgelabel>
           <edgelabel>m_num_mg_levels</edgelabel>
         </childnode>
-        <childnode refid="5131" relation="usage">
+        <childnode refid="5126" relation="usage">
           <edgelabel>m_hi_inhomog_neumann</edgelabel>
           <edgelabel>m_lo_inhomog_neumann</edgelabel>
         </childnode>
-        <childnode refid="5133" relation="usage">
+        <childnode refid="5128" relation="usage">
           <edgelabel>m_dmap</edgelabel>
         </childnode>
-        <childnode refid="5135" relation="usage">
+        <childnode refid="5130" relation="usage">
           <edgelabel>m_hibc</edgelabel>
           <edgelabel>m_lobc</edgelabel>
         </childnode>
-        <childnode refid="5096" relation="usage">
+        <childnode refid="5091" relation="usage">
           <edgelabel>m_parent</edgelabel>
         </childnode>
-        <childnode refid="5137" relation="usage">
+        <childnode refid="5132" relation="usage">
           <edgelabel>info</edgelabel>
         </childnode>
       </node>
-      <node id="5142">
+      <node id="5137">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::LayoutData&lt; int &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5143" relation="public-inheritance">
+        <childnode refid="5138" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5138">
+      <node id="5133">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5139" relation="public-inheritance">
+        <childnode refid="5134" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5135">
+      <node id="5130">
         <label>amrex::Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5136" relation="public-inheritance">
+        <childnode refid="5131" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5117">
+      <node id="5112">
         <label>amrex::DistributionMapping::RefID</label>
         <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
-        <childnode refid="5118" relation="usage">
+        <childnode refid="5113" relation="usage">
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="5126">
-        <label>amrex::Vector&lt; MPI_Status &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5127" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5137">
-        <label>amrex::LPInfo</label>
-        <link refid="structamrex_1_1LPInfo"/>
-      </node>
-      <node id="5120">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
-      </node>
-      <node id="5118">
-        <label>amrex::DistributionMapping::Ref</label>
-        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="5113" relation="usage">
-          <edgelabel>m_index_array</edgelabel>
-          <edgelabel>m_pmap</edgelabel>
-        </childnode>
-      </node>
       <node id="5121">
-        <label>amrex::Vector&lt; std::string &gt;</label>
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="5122" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5131">
-        <label>amrex::Vector&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5132" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5140">
-        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5141" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5111">
-        <label>amrex::DistributionMapping</label>
-        <link refid="classamrex_1_1DistributionMapping"/>
+      <node id="5132">
+        <label>amrex::LPInfo</label>
+        <link refid="structamrex_1_1LPInfo"/>
       </node>
       <node id="5115">
-        <label>amrex::FabArrayBase::BDKey</label>
-        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
-        <childnode refid="5116" relation="usage">
-          <edgelabel>m_ba_id</edgelabel>
-        </childnode>
-        <childnode refid="5117" relation="usage">
-          <edgelabel>m_dm_id</edgelabel>
-        </childnode>
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="5106">
-        <label>amrex::MultiFab</label>
-        <link refid="classamrex_1_1MultiFab"/>
-        <childnode refid="5107" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5139">
-        <label>std::vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
-      </node>
-      <node id="5107">
-        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
-        <link refid="classamrex_1_1FabArray"/>
-        <childnode refid="5108" relation="public-inheritance">
-        </childnode>
-        <childnode refid="5105" relation="usage">
-          <edgelabel>fb_nghost</edgelabel>
-        </childnode>
-        <childnode refid="5113" relation="usage">
-          <edgelabel>fb_recv_size</edgelabel>
-          <edgelabel>fb_recv_from</edgelabel>
-        </childnode>
-        <childnode refid="5121" relation="usage">
-          <edgelabel>m_tags</edgelabel>
-        </childnode>
-        <childnode refid="5123" relation="usage">
-          <edgelabel>fb_recv_data</edgelabel>
-          <edgelabel>fb_send_data</edgelabel>
-        </childnode>
-        <childnode refid="5125" relation="usage">
-          <edgelabel>shmem</edgelabel>
-        </childnode>
-        <childnode refid="5126" relation="usage">
-          <edgelabel>fb_recv_stat</edgelabel>
-        </childnode>
-        <childnode refid="5128" relation="usage">
-          <edgelabel>fb_send_reqs</edgelabel>
-          <edgelabel>fb_recv_reqs</edgelabel>
-        </childnode>
-        <childnode refid="5130" relation="usage">
-          <edgelabel>fb_period</edgelabel>
+      <node id="5113">
+        <label>amrex::DistributionMapping::Ref</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
+        <childnode refid="5108" relation="usage">
+          <edgelabel>m_index_array</edgelabel>
+          <edgelabel>m_pmap</edgelabel>
         </childnode>
       </node>
       <node id="5116">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5117" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5126">
+        <label>amrex::Vector&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5127" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5135">
+        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5136" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5106">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="5110">
+        <label>amrex::FabArrayBase::BDKey</label>
+        <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
+        <childnode refid="5111" relation="usage">
+          <edgelabel>m_ba_id</edgelabel>
+        </childnode>
+        <childnode refid="5112" relation="usage">
+          <edgelabel>m_dm_id</edgelabel>
+        </childnode>
+      </node>
+      <node id="5101">
+        <label>amrex::MultiFab</label>
+        <link refid="classamrex_1_1MultiFab"/>
+        <childnode refid="5102" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5134">
+        <label>std::vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
+      </node>
+      <node id="5102">
+        <label>amrex::FabArray&lt; FArrayBox &gt;</label>
+        <link refid="classamrex_1_1FabArray"/>
+        <childnode refid="5103" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5100" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="5108" relation="usage">
+          <edgelabel>fb_recv_size</edgelabel>
+          <edgelabel>fb_recv_from</edgelabel>
+        </childnode>
+        <childnode refid="5116" relation="usage">
+          <edgelabel>m_tags</edgelabel>
+        </childnode>
+        <childnode refid="5118" relation="usage">
+          <edgelabel>fb_recv_data</edgelabel>
+          <edgelabel>fb_send_data</edgelabel>
+        </childnode>
+        <childnode refid="5120" relation="usage">
+          <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="5121" relation="usage">
+          <edgelabel>fb_recv_stat</edgelabel>
+        </childnode>
+        <childnode refid="5123" relation="usage">
+          <edgelabel>fb_send_reqs</edgelabel>
+          <edgelabel>fb_recv_reqs</edgelabel>
+        </childnode>
+        <childnode refid="5125" relation="usage">
+          <edgelabel>fb_period</edgelabel>
+        </childnode>
+      </node>
+      <node id="5111">
         <label>amrex::BoxArray::RefID</label>
         <link refid="structamrex_1_1BoxArray_1_1RefID"/>
       </node>
-      <node id="5108">
+      <node id="5103">
         <label>amrex::FabArrayBase</label>
         <link refid="classamrex_1_1FabArrayBase"/>
-        <childnode refid="5109" relation="usage">
+        <childnode refid="5104" relation="usage">
           <edgelabel>m_FBC_stats</edgelabel>
           <edgelabel>m_FPinfo_stats</edgelabel>
           <edgelabel>m_CFinfo_stats</edgelabel>
           <edgelabel>m_TAC_stats</edgelabel>
           <edgelabel>m_CPC_stats</edgelabel>
         </childnode>
-        <childnode refid="5111" relation="usage">
+        <childnode refid="5106" relation="usage">
           <edgelabel>distributionMap</edgelabel>
         </childnode>
-        <childnode refid="5105" relation="usage">
+        <childnode refid="5100" relation="usage">
           <edgelabel>n_grow</edgelabel>
           <edgelabel>comm_tile_size</edgelabel>
           <edgelabel>mfiter_tile_size</edgelabel>
           <edgelabel>mfghostiter_tile_size</edgelabel>
         </childnode>
-        <childnode refid="5112" relation="usage">
+        <childnode refid="5107" relation="usage">
           <edgelabel>m_FA_stats</edgelabel>
         </childnode>
-        <childnode refid="5113" relation="usage">
+        <childnode refid="5108" relation="usage">
           <edgelabel>indexArray</edgelabel>
         </childnode>
-        <childnode refid="5115" relation="usage">
+        <childnode refid="5110" relation="usage">
           <edgelabel>m_bdkey</edgelabel>
         </childnode>
-        <childnode refid="5119" relation="usage">
+        <childnode refid="5114" relation="usage">
           <edgelabel>boxarray</edgelabel>
         </childnode>
       </node>
-      <node id="5141">
+      <node id="5136">
         <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt; &gt;</label>
       </node>
-      <node id="5134">
+      <node id="5129">
         <label>std::vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt;, std::allocator&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt; &gt;</label>
       </node>
-      <node id="5098">
+      <node id="5093">
         <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::FabFactory&lt; amrex::FArrayBox &gt; &gt; &gt; &gt; &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="11" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="9" bodyend="90"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" line="15" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H" bodystart="13" bodyend="124"/>
     <listofallmembers>
       <member refid="classamrex_1_1MLLinOp_1a8effbacb86233a5334789092372a9bde" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>AMRRefRatio</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac80a224852d40e9dd01ef9e4d52cd1c9" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>AMRRefRatio</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1a668c3faa79d094f72e351a8ec1736fc2" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>apply</name></member>
-      <member refid="classamrex_1_1MLNodeLinOp_1aa084c0272fc33cb2bfe13c4e700df73a" prot="public" virt="pure-virtual"><scope>amrex::MLNodeLinOp</scope><name>applyBC</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1a0ab8d8d842032e19132903b007771953" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>applyBC</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1a79b6bca7f31b09333bc7caae80d39136" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>applyInhomogNeumannTerm</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1a7e5c287fd5bd6078ccc3afc7e18fd69a" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>applyMetricTerm</name></member>
       <member refid="classamrex_1_1MLLinOp_1a49e8248c4a3a27e8bfc77227bdfb433a" prot="public" virt="pure-virtual"><scope>amrex::MLNodeLinOp</scope><name>averageDownSolutionRHS</name></member>
       <member refid="classamrex_1_1MLLinOp_1a5aa01a1ef6b0b3a471f02f65ae4b4884" prot="public" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>BCMode</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac2e55c34bf6b5c0ed53d0ef6a4625a3f" prot="public" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>BCType</name></member>
       <member refid="classamrex_1_1MLLinOp_1a77b33530b316399f5fb5314a846d9b7e" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>BottomCommunicator</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1aa43fb0696cb5782669c8ee368b743099" prot="public" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>buildMasks</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82" prot="public" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>CoarseningStrategy</name></member>
       <member refid="classamrex_1_1MLLinOp_1ae56dfc1030a8066132a2cb67334b1aaa" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>Communicator</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1afe48a02e5be6dd3beac70271de7a02da" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>compFlux</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1a264af834600d85a8773131c87ccfeb1b" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>compGrad</name></member>
@@ -1246,9 +1370,9 @@
       <member refid="classamrex_1_1MLLinOp_1a48b2fe73722eee0a1d50b6e0b9558174" prot="public" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>Initialize</name></member>
       <member refid="classamrex_1_1MLLinOp_1a55d585de64a0263a1b2308553cbaee13" prot="public" virt="pure-virtual"><scope>amrex::MLNodeLinOp</scope><name>interpolation</name></member>
       <member refid="classamrex_1_1MLLinOp_1aa1c6883eef4d4dc55d3a5fe5c921113a" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>isBottomActive</name></member>
-      <member refid="classamrex_1_1MLLinOp_1aa6ff4935f1246d7c94ac38dc65c25d7d" prot="public" virt="pure-virtual"><scope>amrex::MLNodeLinOp</scope><name>isBottomSingular</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1a5ebdba6239eb393431835a2f2ad724df" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>isBottomSingular</name></member>
       <member refid="classamrex_1_1MLLinOp_1aa42fd2dfa3b0133f2b20a99026549900" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>isCellCentered</name></member>
-      <member refid="classamrex_1_1MLLinOp_1aa8d6ef9e77180f9076ef5cb83f48bb50" prot="public" virt="pure-virtual"><scope>amrex::MLNodeLinOp</scope><name>isSingular</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1a18804aba43a14c7ffea9b6bc3f3179ba" prot="public" virt="virtual"><scope>amrex::MLNodeLinOp</scope><name>isSingular</name></member>
       <member refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3" prot="public" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>Location</name></member>
       <member refid="classamrex_1_1MLLinOp_1a42ca524eb4deca1132be683805d2d7ab" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_amr_ref_ratio</name></member>
       <member refid="classamrex_1_1MLLinOp_1a06ea1608702e52d38c0eceaa180bad7e" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_bottom_comm</name></member>
@@ -1258,6 +1382,7 @@
       <member refid="classamrex_1_1MLLinOp_1a1ca01453776c12e634debdc6d09206c3" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_coarse_data_crse_ratio</name></member>
       <member refid="classamrex_1_1MLLinOp_1ad1382ee007387f65075acda2f46866f2" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_coarse_data_for_bc</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1a117db04aae22221b83130cff6e6fdb52" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_coarse_dot_mask</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1af4d1bfea4dae502fae40e6b71fd4deae" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_coarsening_strategy</name></member>
       <member refid="classamrex_1_1MLLinOp_1addb42fac68158f49c2508cf47d3b8d9d" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_default_comm</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1aaa52abefe4405ee59158a27c112ccfa9" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_dirichlet_mask</name></member>
       <member refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_dmap</name></member>
@@ -1272,9 +1397,11 @@
       <member refid="classamrex_1_1MLNodeLinOp_1a76a73246b9e7679b93591f2093a857c3" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_has_fine_bndry</name></member>
       <member refid="classamrex_1_1MLLinOp_1a885bd2d76204604e07a5ce06e92da271" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_hi_inhomog_neumann</name></member>
       <member refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_hibc</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_is_bottom_singular</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1422f7b22ae204247f5cdf20ab70e741" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_ixtype</name></member>
       <member refid="classamrex_1_1MLLinOp_1aa91c1d6bf82658c8668b2ffcfa5ab4f1" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_lo_inhomog_neumann</name></member>
       <member refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_lobc</name></member>
+      <member refid="classamrex_1_1MLNodeLinOp_1a2bb5e031c87b6bdf67618f9c25dc6945" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_masks_built</name></member>
       <member refid="classamrex_1_1MLNodeLinOp_1a034b72948cecb00630515b6a2de77109" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_nd_fine_mask</name></member>
       <member refid="classamrex_1_1MLLinOp_1aa53a765aea0ed0c4e7410d147380079f" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_needs_coarse_data_for_bc</name></member>
       <member refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" prot="protected" virt="non-virtual"><scope>amrex::MLNodeLinOp</scope><name>m_num_amr_levels</name></member>

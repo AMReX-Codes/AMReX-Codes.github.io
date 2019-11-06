@@ -28,5 +28,5 @@ var searchData=
   ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html#ad89a45864775721cb3101273d111965f',1,'amrex::HypreABecLap']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#a37afff718417564419d2804e054cdf85',1,'amrex::HypreNodeLap']]]
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]]
 ];
