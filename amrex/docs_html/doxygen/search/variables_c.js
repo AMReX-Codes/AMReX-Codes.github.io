@@ -298,6 +298,7 @@ var searchData=
   ['m_5fnd_5ffine_5fmask',['m_nd_fine_mask',['../classamrex_1_1MLNodeLinOp.html#a034b72948cecb00630515b6a2de77109',1,'amrex::MLNodeLinOp']]],
   ['m_5fneed_5fto_5fclear_5fbd',['m_need_to_clear_bd',['../classamrex_1_1LayoutData.html#a442eca7b5bcd7984d38f7bd3ad9240b6',1,'amrex::LayoutData']]],
   ['m_5fneeds_5fcoarse_5fdata_5ffor_5fbc',['m_needs_coarse_data_for_bc',['../classamrex_1_1MLLinOp.html#aa53a765aea0ed0c4e7410d147380079f',1,'amrex::MLLinOp']]],
+  ['m_5fneeds_5fdomain_5fbcs',['m_needs_domain_bcs',['../classamrex_1_1MacProjector.html#a54112712441fa4a6dd9f2de78b744d0d',1,'amrex::MacProjector']]],
   ['m_5fneeds_5fupdate',['m_needs_update',['../classamrex_1_1MLABecLaplacian.html#abd0d6b7a15c37884721f1492fbfc11ed',1,'amrex::MLABecLaplacian::m_needs_update()'],['../classamrex_1_1MLEBABecLap.html#aadf975aed65ffe24b230421d1366de50',1,'amrex::MLEBABecLap::m_needs_update()'],['../classamrex_1_1MLEBTensorOp.html#a15abc2cecf258e0967f5803ef5c5729e',1,'amrex::MLEBTensorOp::m_needs_update()'],['../classamrex_1_1MLTensorOp.html#a15ebbe140a2faea1fccb3b4bb71ddb60',1,'amrex::MLTensorOp::m_needs_update()']]],
   ['m_5fneighbor_5fprocs',['m_neighbor_procs',['../structamrex_1_1ParticleCopyPlan.html#a1eeb92e8809fe6c87b84c777c42323e6',1,'amrex::ParticleCopyPlan']]],
   ['m_5fng',['m_ng',['../structamrex_1_1FabArrayBase_1_1CFinfo.html#a243abcb767a6293942dfe15a845d2faf',1,'amrex::FabArrayBase::CFinfo']]],

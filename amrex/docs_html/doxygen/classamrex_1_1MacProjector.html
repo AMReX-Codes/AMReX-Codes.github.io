@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05d19c7221c02cf3594535ff76c1ed0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4cc3fbe43671a4645c523c761b8539"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a9f4cc3fbe43671a4645c523c761b8539">setDomainBC</a> (const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;lobc, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; LinOpBCType, AMREX_SPACEDIM &gt; &amp;hibc)</td></tr>
 <tr class="separator:a9f4cc3fbe43671a4645c523c761b8539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba419c928377e65d1520d5c0fed1a59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a6ba419c928377e65d1520d5c0fed1a59">setLevelBC</a> (int amrlev, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *levelbcdata)</td></tr>
+<tr class="separator:a6ba419c928377e65d1520d5c0fed1a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12a33e4d2464113da92ba8208e1ed7be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a12a33e4d2464113da92ba8208e1ed7be">project</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;phi_in, Real reltol, Real atol)</td></tr>
 <tr class="separator:a12a33e4d2464113da92ba8208e1ed7be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff77bdcacb89380c3866da77e2e69ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#aff77bdcacb89380c3866da77e2e69ea8">project</a> (Real reltol, Real atol)</td></tr>
@@ -165,6 +167,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a9de0c8f9fdd877563dae993429e8cec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af99ea9a90a1794b4d7eda542b545f162"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#af99ea9a90a1794b4d7eda542b545f162">m_bottom_abstol</a> = -1.0</td></tr>
 <tr class="separator:af99ea9a90a1794b4d7eda542b545f162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54112712441fa4a6dd9f2de78b744d0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a54112712441fa4a6dd9f2de78b744d0d">m_needs_domain_bcs</a> = true</td></tr>
+<tr class="separator:a54112712441fa4a6dd9f2de78b744d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38aa95061e693248dfcf66b0bc95328f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">MLMG::BottomSolver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MacProjector.html#a38aa95061e693248dfcf66b0bc95328f">bottom_solver_type</a> = MLMG::BottomSolver::bicgstab</td></tr>
 <tr class="separator:a38aa95061e693248dfcf66b0bc95328f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -597,6 +601,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6ba419c928377e65d1520d5c0fed1a59"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MacProjector::setLevelBC </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *&#160;</td>
+          <td class="paramname"><em>levelbcdata</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3180b889de0ac9df9c1a9949eeb43105"></a>
 <div class="memitem">
 <div class="memproto">
@@ -875,6 +905,26 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::unique_ptr&lt;<a class="el" href="classamrex_1_1MLMG.html">MLMG</a>&gt; amrex::MacProjector::m_mlmg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a54112712441fa4a6dd9f2de78b744d0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MacProjector::m_needs_domain_bcs = true</td>
         </tr>
       </table>
   </td>
