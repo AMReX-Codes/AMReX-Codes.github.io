@@ -2,7 +2,7 @@ var searchData=
 [
   ['off',['OFF',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a414e7c26da0e02a38a2765ff8e4ffa34',1,'BLProfStats::OFF()'],['../AMReX__TagBox_8cpp.html#abc1eab952af4119e0dd12a9cd006daa3',1,'OFF():&#160;AMReX_TagBox.cpp'],['../AMReX__TagBox_8cpp.html#abc1eab952af4119e0dd12a9cd006daa3',1,'OFF():&#160;AMReX_TagBox.cpp']]],
   ['offset',['Offset',['../classamrex_1_1CoordSys.html#a9d3eb77447b9c748b7223e271f6c9bb1',1,'amrex::CoordSys::Offset() const noexcept'],['../classamrex_1_1CoordSys.html#aa67991fbbc479f95a966bcf04ae0e49a',1,'amrex::CoordSys::Offset(int dir) const noexcept'],['../classamrex_1_1CoordSys.html#a87497b1adb83ce034ea0ab943fffc08f',1,'amrex::CoordSys::offset()'],['../structFabCopyTag.html#a30af4dfb43cdc8e01b8bc8b19a2dd695',1,'FabCopyTag::offset()'],['../structArray4CopyTag.html#a081f3a45251152cad8157fe535297dc0',1,'Array4CopyTag::offset()']]],
-  ['offsetsptr',['offsetsPtr',['../classamrex_1_1DenseBins.html#a3448e9a533b211d486f42f06f9736218',1,'amrex::DenseBins']]],
+  ['offsetsptr',['offsetsPtr',['../classamrex_1_1DenseBins.html#a3448e9a533b211d486f42f06f9736218',1,'amrex::DenseBins::offsetsPtr() noexcept'],['../classamrex_1_1DenseBins.html#a594a9ba943cde14aeec576817d575b6a',1,'amrex::DenseBins::offsetsPtr() const noexcept']]],
   ['offsetx',['offsetX',['../classamrex_1_1XYPlotDataList.html#ad248848b7d8478ae8053b03fcbf8d962',1,'amrex::XYPlotDataList']]],
   ['ofs',['ofs',['../classamrex_1_1PrintToFile.html#a12f18b00f5a8136b2e884ab933249b63',1,'amrex::PrintToFile']]],
   ['ofsptrall',['OFSPtrAll',['../namespaceamrex_1_1ParallelContext.html#ac04bcd8b609bbf10cc25ef7d60f6a94c',1,'amrex::ParallelContext']]],
