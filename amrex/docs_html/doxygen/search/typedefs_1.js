@@ -5,6 +5,7 @@ var searchData=
   ['bctype',['BCType',['../classamrex_1_1MLLinOp.html#ac2e55c34bf6b5c0ed53d0ef6a4625a3f',1,'amrex::MLLinOp']]],
   ['bdinterpfunc',['BDInterpFunc',['../AMReX__MCINTERPBNDRYDATA__F_8H.html#aac34416fae2fc211f82c7e6f262b6fac',1,'AMReX_MCINTERPBNDRYDATA_F.H']]],
   ['bdphysderivative',['BDPhysDerivative',['../AMReX__MCINTERPBNDRYDATA__F_8H.html#a5ac96658cf4dcd448ee6f7d46e208264',1,'AMReX_MCINTERPBNDRYDATA_F.H']]],
+  ['bin_5ftype',['bin_type',['../classamrex_1_1DenseBins.html#a775125f1d1b82696b994f1f8f59309d4',1,'amrex::DenseBins']]],
   ['bndryfunc3ddefault',['BndryFunc3DDefault',['../namespaceamrex.html#ab0cdf132a72bb586fa96bbdc53a19149',1,'amrex']]],
   ['bndryfuncdefault',['BndryFuncDefault',['../namespaceamrex.html#a395b6c263aecc344bf7648fe2d8d75cf',1,'amrex']]],
   ['bndryfuncfabdefault',['BndryFuncFabDefault',['../namespaceamrex.html#a1a30e1b65c56dcadc792e4ecdbe258f8',1,'amrex']]],

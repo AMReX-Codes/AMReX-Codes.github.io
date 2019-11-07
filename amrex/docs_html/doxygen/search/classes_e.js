@@ -36,6 +36,7 @@ var searchData=
   ['podvector',['PODVector',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3aassigngrid_20_3e',['PODVector&lt; amrex::AssignGrid &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3abox_20_3e',['PODVector&lt; amrex::Box &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20index_5ftype_20_3e',['PODVector&lt; index_type &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20int_20_3e',['PODVector&lt; int &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20particletype_20_3e',['PODVector&lt; ParticleType &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20unsigned_20int_20_3e',['PODVector&lt; unsigned int &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
