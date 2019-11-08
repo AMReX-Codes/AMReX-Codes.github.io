@@ -1387,182 +1387,182 @@
 <para>This is a container for particles that undergo short-range interations. In addition to the normal <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> methods, each tile contains a &quot;neighbor
 buffer&quot; that is filled with data corresponding to the particles within 1 neighbor cell of the tile boundaries. This allows the N^2 search over each pair of particles to proceed locally, instead of over the entire domain.</para><para>Note that neighbor particles are different than &quot;ghost&quot; particles, which are used in AMR subcycling to keep track of coarse level particles that may move on to fine levels during a fine level time step. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="5606">
+      <node id="5615">
         <label>amrex::ParticleContainer&lt; NStructReal, NStructInt, 0, 0 &gt;</label>
         <link refid="classamrex_1_1ParticleContainer"/>
       </node>
-      <node id="5605">
+      <node id="5614">
         <label>amrex::NeighborParticleContainer&lt; NStructReal, NStructInt &gt;</label>
         <link refid="classamrex_1_1NeighborParticleContainer"/>
-        <childnode refid="5606" relation="public-inheritance">
+        <childnode refid="5615" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="5631">
+      <node id="5640">
         <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
       </node>
-      <node id="5648">
+      <node id="5657">
         <label>std::vector&lt; std::map&lt; PairIndex, int &gt;, std::allocator&lt; std::map&lt; PairIndex, int &gt; &gt; &gt;</label>
       </node>
-      <node id="5645">
+      <node id="5654">
         <label>amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCommTag &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5646" relation="public-inheritance">
+        <childnode refid="5655" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5626">
+      <node id="5635">
         <label>amrex::ParGDB</label>
         <link refid="classamrex_1_1ParGDB"/>
-        <childnode refid="5627" relation="public-inheritance">
+        <childnode refid="5636" relation="public-inheritance">
         </childnode>
-        <childnode refid="5628" relation="usage">
+        <childnode refid="5637" relation="usage">
           <edgelabel>m_dmap</edgelabel>
         </childnode>
-        <childnode refid="5616" relation="usage">
+        <childnode refid="5625" relation="usage">
           <edgelabel>m_rr</edgelabel>
         </childnode>
-        <childnode refid="5630" relation="usage">
+        <childnode refid="5639" relation="usage">
           <edgelabel>m_ba</edgelabel>
         </childnode>
-        <childnode refid="5632" relation="usage">
+        <childnode refid="5641" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
       </node>
-      <node id="5611">
+      <node id="5620">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="5611" relation="usage">
+        <childnode refid="5620" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="5612">
+      <node id="5621">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5613" relation="public-inheritance">
+        <childnode refid="5622" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5633">
+      <node id="5642">
         <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
       </node>
-      <node id="5650">
+      <node id="5659">
         <label>std::vector&lt; std::map&lt; PairIndex, IntVector &gt;, std::allocator&lt; std::map&lt; PairIndex, IntVector &gt; &gt; &gt;</label>
       </node>
-      <node id="5640">
+      <node id="5649">
         <label>std::vector&lt; std::map&lt; PairIndex, ParticleVector &gt;, std::allocator&lt; std::map&lt; PairIndex, ParticleVector &gt; &gt; &gt;</label>
       </node>
-      <node id="5615">
+      <node id="5624">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
       </node>
-      <node id="5624">
+      <node id="5633">
         <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5625" relation="public-inheritance">
+        <childnode refid="5634" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5628">
+      <node id="5637">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5629" relation="public-inheritance">
+        <childnode refid="5638" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5616">
+      <node id="5625">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5617" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5618">
-        <label>string</label>
-      </node>
-      <node id="5608">
-        <label>amrex::ParticleContainer&lt; NStructReal, NStructInt, 0, 0 &gt;</label>
-        <link refid="classamrex_1_1ParticleContainer"/>
-        <childnode refid="5609" relation="usage">
-          <edgelabel>nParticlesAtLevelPrePost</edgelabel>
-        </childnode>
-        <childnode refid="5611" relation="usage">
-          <edgelabel>tile_size</edgelabel>
-        </childnode>
-        <childnode refid="5612" relation="usage">
-          <edgelabel>m_dummy_mf</edgelabel>
-        </childnode>
-        <childnode refid="5614" relation="usage">
-          <edgelabel>filePrefixPrePost</edgelabel>
-        </childnode>
-        <childnode refid="5616" relation="usage">
-          <edgelabel>neighbor_procs</edgelabel>
-        </childnode>
-        <childnode refid="5618" relation="usage">
-          <edgelabel>HdrFileNamePrePost</edgelabel>
-        </childnode>
-        <childnode refid="5619" relation="usage">
-          <edgelabel>wherePrePost</edgelabel>
-        </childnode>
-        <childnode refid="5621" relation="usage">
-          <edgelabel>ParticleRealDescriptor</edgelabel>
-        </childnode>
-        <childnode refid="5622" relation="usage">
-          <edgelabel>m_particles</edgelabel>
-        </childnode>
-        <childnode refid="5624" relation="usage">
-          <edgelabel>whichPrePost</edgelabel>
-          <edgelabel>countPrePost</edgelabel>
-        </childnode>
-        <childnode refid="5626" relation="usage">
-          <edgelabel>m_gdb_object</edgelabel>
-        </childnode>
-        <childnode refid="5634" relation="usage">
-          <edgelabel>m_buffer_map</edgelabel>
-        </childnode>
-        <childnode refid="5627" relation="usage">
-          <edgelabel>m_gdb</edgelabel>
+        <childnode refid="5626" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5627">
+        <label>string</label>
+      </node>
+      <node id="5617">
+        <label>amrex::ParticleContainer&lt; NStructReal, NStructInt, 0, 0 &gt;</label>
+        <link refid="classamrex_1_1ParticleContainer"/>
+        <childnode refid="5618" relation="usage">
+          <edgelabel>nParticlesAtLevelPrePost</edgelabel>
+        </childnode>
+        <childnode refid="5620" relation="usage">
+          <edgelabel>tile_size</edgelabel>
+        </childnode>
+        <childnode refid="5621" relation="usage">
+          <edgelabel>m_dummy_mf</edgelabel>
+        </childnode>
+        <childnode refid="5623" relation="usage">
+          <edgelabel>filePrefixPrePost</edgelabel>
+        </childnode>
+        <childnode refid="5625" relation="usage">
+          <edgelabel>neighbor_procs</edgelabel>
+        </childnode>
+        <childnode refid="5627" relation="usage">
+          <edgelabel>HdrFileNamePrePost</edgelabel>
+        </childnode>
+        <childnode refid="5628" relation="usage">
+          <edgelabel>wherePrePost</edgelabel>
+        </childnode>
+        <childnode refid="5630" relation="usage">
+          <edgelabel>ParticleRealDescriptor</edgelabel>
+        </childnode>
+        <childnode refid="5631" relation="usage">
+          <edgelabel>m_particles</edgelabel>
+        </childnode>
+        <childnode refid="5633" relation="usage">
+          <edgelabel>whichPrePost</edgelabel>
+          <edgelabel>countPrePost</edgelabel>
+        </childnode>
+        <childnode refid="5635" relation="usage">
+          <edgelabel>m_gdb_object</edgelabel>
+        </childnode>
+        <childnode refid="5643" relation="usage">
+          <edgelabel>m_buffer_map</edgelabel>
+        </childnode>
+        <childnode refid="5636" relation="usage">
+          <edgelabel>m_gdb</edgelabel>
+        </childnode>
+      </node>
+      <node id="5636">
         <label>amrex::ParGDBBase</label>
         <link refid="classamrex_1_1ParGDBBase"/>
       </node>
-      <node id="5641">
+      <node id="5650">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5642" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5630">
-        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5631" relation="public-inheritance">
+        <childnode refid="5651" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5639">
-        <label>amrex::Vector&lt; std::map&lt; PairIndex, ParticleVector &gt; &gt;</label>
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="5640" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5642">
+      <node id="5648">
+        <label>amrex::Vector&lt; std::map&lt; PairIndex, ParticleVector &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5649" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5651">
         <label>std::vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt;, std::allocator&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt; &gt; &gt;</label>
       </node>
-      <node id="5620">
+      <node id="5629">
         <label>std::vector&lt; amrex::Vector&lt; long &gt;, std::allocator&lt; amrex::Vector&lt; long &gt; &gt; &gt;</label>
       </node>
-      <node id="5646">
+      <node id="5655">
         <label>std::vector&lt; amrex::NeighborParticleContainer::NeighborCommTag, std::allocator&lt; amrex::NeighborParticleContainer::NeighborCommTag &gt; &gt;</label>
       </node>
-      <node id="5634">
+      <node id="5643">
         <label>amrex::ParticleBufferMap</label>
         <link refid="classamrex_1_1ParticleBufferMap"/>
-        <childnode refid="5635" relation="usage">
+        <childnode refid="5644" relation="usage">
           <edgelabel>d_lev_offsets</edgelabel>
           <edgelabel>d_lev_gid_to_bucket</edgelabel>
           <edgelabel>d_bucket_to_pid</edgelabel>
         </childnode>
-        <childnode refid="5628" relation="usage">
+        <childnode refid="5637" relation="usage">
           <edgelabel>m_dm</edgelabel>
         </childnode>
-        <childnode refid="5616" relation="usage">
+        <childnode refid="5625" relation="usage">
           <edgelabel>m_lev_offsets</edgelabel>
           <edgelabel>m_proc_box_offsets</edgelabel>
           <edgelabel>m_bucket_to_pid</edgelabel>
@@ -1571,138 +1571,138 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>m_lev_gid_to_bucket</edgelabel>
           <edgelabel>m_proc_box_counts</edgelabel>
         </childnode>
-        <childnode refid="5630" relation="usage">
+        <childnode refid="5639" relation="usage">
           <edgelabel>m_ba</edgelabel>
         </childnode>
       </node>
-      <node id="5623">
+      <node id="5632">
         <label>std::vector&lt; ParticleLevel, std::allocator&lt; ParticleLevel &gt; &gt;</label>
       </node>
-      <node id="5637">
+      <node id="5646">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5638" relation="public-inheritance">
+        <childnode refid="5647" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5649">
+      <node id="5658">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, IntVector &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5650" relation="public-inheritance">
+        <childnode refid="5659" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5607">
+      <node id="5616">
         <label>amrex::NeighborParticleContainer&lt; NStructReal, NStructInt &gt;</label>
         <link refid="classamrex_1_1NeighborParticleContainer"/>
-        <childnode refid="5608" relation="public-inheritance">
+        <childnode refid="5617" relation="public-inheritance">
         </childnode>
-        <childnode refid="5637" relation="usage">
+        <childnode refid="5646" relation="usage">
           <edgelabel>inverse_tags</edgelabel>
         </childnode>
-        <childnode refid="5639" relation="usage">
+        <childnode refid="5648" relation="usage">
           <edgelabel>neighbors</edgelabel>
         </childnode>
-        <childnode refid="5641" relation="usage">
+        <childnode refid="5650" relation="usage">
           <edgelabel>buffer_tag_cache</edgelabel>
         </childnode>
-        <childnode refid="5609" relation="usage">
+        <childnode refid="5618" relation="usage">
           <edgelabel>rcvs</edgelabel>
         </childnode>
-        <childnode refid="5643" relation="usage">
+        <childnode refid="5652" relation="usage">
           <edgelabel>mask_ptr</edgelabel>
         </childnode>
-        <childnode refid="5616" relation="usage">
+        <childnode refid="5625" relation="usage">
           <edgelabel>neighbor_procs</edgelabel>
         </childnode>
-        <childnode refid="5645" relation="usage">
+        <childnode refid="5654" relation="usage">
           <edgelabel>local_neighbors</edgelabel>
         </childnode>
-        <childnode refid="5647" relation="usage">
+        <childnode refid="5656" relation="usage">
           <edgelabel>local_neighbor_sizes</edgelabel>
         </childnode>
-        <childnode refid="5649" relation="usage">
+        <childnode refid="5658" relation="usage">
           <edgelabel>neighbor_list</edgelabel>
         </childnode>
       </node>
-      <node id="5629">
+      <node id="5638">
         <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
       </node>
-      <node id="5613">
+      <node id="5622">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt;</label>
       </node>
-      <node id="5609">
+      <node id="5618">
         <label>amrex::Vector&lt; long &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5610" relation="public-inheritance">
+        <childnode refid="5619" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5617">
+      <node id="5626">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="5621">
+      <node id="5630">
         <label>amrex::RealDescriptor</label>
         <link refid="classamrex_1_1RealDescriptor"/>
-        <childnode refid="5609" relation="usage">
+        <childnode refid="5618" relation="usage">
           <edgelabel>fr</edgelabel>
         </childnode>
-        <childnode refid="5616" relation="usage">
+        <childnode refid="5625" relation="usage">
           <edgelabel>ord</edgelabel>
         </childnode>
       </node>
-      <node id="5643">
+      <node id="5652">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5644" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5635">
-        <label>amrex::PODVector&lt; int &gt;</label>
-        <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="5636" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5636">
-        <label>std::allocator&lt; int &gt;</label>
-      </node>
-      <node id="5614">
-        <label>amrex::Vector&lt; std::string &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5615" relation="public-inheritance">
+        <childnode refid="5653" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5644">
+        <label>amrex::PODVector&lt; int &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="5645" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5645">
+        <label>std::allocator&lt; int &gt;</label>
+      </node>
+      <node id="5623">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5624" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5653">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
       </node>
-      <node id="5622">
+      <node id="5631">
         <label>amrex::Vector&lt; ParticleLevel &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5623" relation="public-inheritance">
+        <childnode refid="5632" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="5638">
-        <label>std::vector&lt; std::map&lt; PairIndex, amrex::amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt;, std::allocator&lt; std::map&lt; PairIndex, amrex::amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt; &gt;</label>
-      </node>
-      <node id="5632">
-        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5633" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5610">
-        <label>std::vector&lt; long, std::allocator&lt; long &gt; &gt;</label>
-      </node>
-      <node id="5625">
-        <label>std::vector&lt; amrex::Vector&lt; int &gt;, std::allocator&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
       </node>
       <node id="5647">
-        <label>amrex::Vector&lt; std::map&lt; PairIndex, int &gt; &gt;</label>
+        <label>std::vector&lt; std::map&lt; PairIndex, amrex::amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt;, std::allocator&lt; std::map&lt; PairIndex, amrex::amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="5641">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5648" relation="public-inheritance">
+        <childnode refid="5642" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5619">
+        <label>std::vector&lt; long, std::allocator&lt; long &gt; &gt;</label>
+      </node>
+      <node id="5634">
+        <label>std::vector&lt; amrex::Vector&lt; int &gt;, std::allocator&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
+      </node>
+      <node id="5656">
+        <label>amrex::Vector&lt; std::map&lt; PairIndex, int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5657" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5628">
         <label>amrex::Vector&lt; amrex::Vector&lt; long &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="5620" relation="public-inheritance">
+        <childnode refid="5629" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

@@ -12,8 +12,8 @@ var searchData=
   ['insitubridge',['InSituBridge',['../classamrex_1_1InSituBridge.html',1,'amrex']]],
   ['intdescriptor',['IntDescriptor',['../classamrex_1_1IntDescriptor.html',1,'amrex']]],
   ['integrator_5fstats_5ft',['integrator_stats_t',['../structintegrator__stats__mod_1_1integrator__stats__t.html',1,'integrator_stats_mod']]],
-  ['internalstype',['InternalsType',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html',1,'amrex::AmrMeshDataAdaptor']]],
   ['internalstype',['InternalsType',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html',1,'amrex::AmrDataAdaptor']]],
+  ['internalstype',['InternalsType',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html',1,'amrex::AmrMeshDataAdaptor']]],
   ['interpbndrydata',['InterpBndryData',['../classamrex_1_1InterpBndryData.html',1,'amrex']]],
   ['interphook',['InterpHook',['../classamrex_1_1InterpHook.html',1,'amrex']]],
   ['interpolater',['Interpolater',['../classamrex_1_1Interpolater.html',1,'amrex']]],
@@ -45,6 +45,6 @@ var searchData=
   ['isgpuable_3c_20unionif_3c_20tail_2e_2e_2e_20_3e_20_3e',['IsGPUable&lt; UnionIF&lt; Tail... &gt; &gt;',['../structamrex_1_1EB2_1_1IsGPUable.html',1,'amrex::EB2']]],
   ['isstoreatomic',['IsStoreAtomic',['../structamrex_1_1IsStoreAtomic.html',1,'amrex']]],
   ['isstoreatomic_3c_20ebcellflag_20_3e',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
-  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]],
-  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]]
+  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]],
+  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]]
 ];
