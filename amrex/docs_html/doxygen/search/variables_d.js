@@ -10,7 +10,6 @@ var searchData=
   ['n_5fproper',['n_proper',['../classamrex_1_1AmrMesh.html#afe23a9a66345fa657da022fc5a3cb349',1,'amrex::AmrMesh']]],
   ['n_5frhs_5feval',['n_rhs_eval',['../structintegrator__stats__mod_1_1integrator__stats__t.html#af475cd49d4f67d1ddaee820b967a2e72',1,'integrator_stats_mod::integrator_stats_t']]],
   ['n_5fstate',['n_state',['../classamrex_1_1DeriveRec.html#a2cc67c5168b67d6772586e58d5e2c5a3',1,'amrex::DeriveRec']]],
-  ['n_5fsten',['n_sten',['../namespaceamrex__mlnodelap__3d__module.html#a652d1ff142419f4e5bef9ac44132e8e9',1,'amrex_mlnodelap_3d_module']]],
   ['n_5fsteps',['n_steps',['../structintegrator__stats__mod_1_1integrator__stats__t.html#ad65849a1f2e9c7e8c0d4ac26d0870c9c',1,'integrator_stats_mod::integrator_stats_t']]],
   ['n_5fvalues',['n_values',['../structamrex_1_1FabArray_1_1ShMem.html#a1b20d1ddaf4fe9e59a1066f1dc9af9ac',1,'amrex::FabArray::ShMem']]],
   ['n_5fvector_5fid',['n_vector_id',['../namespacefnvector__mod.html#a2c62d46a567b41c1a12adff72247f0bb',1,'fnvector_mod']]],

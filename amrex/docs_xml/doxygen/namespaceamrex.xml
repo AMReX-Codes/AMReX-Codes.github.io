@@ -25887,10 +25887,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="106" bodyend="108"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3f8569502500f638ba008fa5e232df5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1acd83c273ad0b5dff12281da484b822e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_mknewu</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;u, Array4&lt; Real const  &gt; const &amp;p, Array4&lt; Real const  &gt; const &amp;sig, Real dxi) noexcept</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;u, Array4&lt; Real const  &gt; const &amp;p, Array4&lt; Real const  &gt; const &amp;sig, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv) noexcept</argsstring>
         <name>mlndlap_mknewu</name>
         <param>
           <type>int</type>
@@ -25917,8 +25917,8 @@
           <declname>sig</declname>
         </param>
         <param>
-          <type>Real</type>
-          <declname>dxi</declname>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>dxinv</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -26543,10 +26543,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="634" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="634" bodyend="655"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae3c2c4a616f3a1ffb23b7ffcf8e26059" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a2a9ff05d56c51a78cda5c5067cebc6aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_mknewu</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;u, Array4&lt; Real const  &gt; const &amp;p, Array4&lt; Real const  &gt; const &amp;sig, Real dxi, Real dyi, bool is_rz) noexcept</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;u, Array4&lt; Real const  &gt; const &amp;p, Array4&lt; Real const  &gt; const &amp;sig, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, bool is_rz) noexcept</argsstring>
         <name>mlndlap_mknewu</name>
         <param>
           <type>int</type>
@@ -26573,12 +26573,8 @@
           <declname>sig</declname>
         </param>
         <param>
-          <type>Real</type>
-          <declname>dxi</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>dyi</declname>
+          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>dxinv</declname>
         </param>
         <param>
           <type>bool</type>
@@ -26590,7 +26586,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="669" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="669" bodyend="680"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="669" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="669" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab0c9865c5b1258a725682d371c19b80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -26854,55 +26850,6 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_3D_K.H" line="1218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_3D_K.H" bodystart="1218" bodyend="1268"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a950746f5e9577dd05c46cd9d58467193" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_mknewu</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;u, Array4&lt; Real const  &gt; const &amp;p, Array4&lt; Real const  &gt; const &amp;sig, Real dxi, Real dyi, Real dzi) noexcept</argsstring>
-        <name>mlndlap_mknewu</name>
-        <param>
-          <type>int</type>
-          <declname>i</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>j</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>k</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
-          <declname>u</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const  &gt; const &amp;</type>
-          <declname>p</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const  &gt; const &amp;</type>
-          <declname>sig</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>dxi</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>dyi</declname>
-        </param>
-        <param>
-          <type>Real</type>
-          <declname>dzi</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_3D_K.H" line="1314" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_3D_K.H" bodystart="1314" bodyend="1329"/>
-      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a817bfde833738231183f18ffec943edf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::mlndlap_impose_neumann_bc</definition>
@@ -26934,7 +26881,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="27" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="27" bodyend="51"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="28" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="28" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a81fc5de816fa76b8a4e3fea76fa0f71c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -26972,7 +26919,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="66" bodyend="77"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="67" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a288d6cf2da32fe9855a16bb618633bcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -27010,7 +26957,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="80" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="80" bodyend="97"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="81" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a88c04c478ef4e6e256017e3c6e7d9097" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -27043,7 +26990,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="100" bodyend="110"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="101" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="101" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a221670046f68535542a9177919a07da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -27080,7 +27027,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="113" bodyend="127"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" line="114" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_K.H" bodystart="114" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad8e5a403ba5188a18503a42a0d7bb2b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
