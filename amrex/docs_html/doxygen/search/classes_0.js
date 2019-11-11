@@ -77,6 +77,7 @@ var searchData=
   ['array2d',['Array2D',['../structamrex_1_1Array2D.html',1,'amrex']]],
   ['array3d',['Array3D',['../structamrex_1_1Array3D.html',1,'amrex']]],
   ['array4',['Array4',['../structamrex_1_1Array4.html',1,'amrex']]],
+  ['array4boxtag',['Array4BoxTag',['../structArray4BoxTag.html',1,'']]],
   ['array4copytag',['Array4CopyTag',['../structArray4CopyTag.html',1,'']]],
   ['arrayofstructs',['ArrayOfStructs',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
   ['arrayofstructs_3c_20nstructreal_2c_20nstructint_20_3e',['ArrayOfStructs&lt; NStructReal, NStructInt &gt;',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
