@@ -414,6 +414,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a69e98c5ae9055383e3b290b25b58dbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79ee48f306fd7ba69527b310f9d69aca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a79ee48f306fd7ba69527b310f9d69aca">OKGPU</a> (int lev_min=0, int lev_max=-1, int nGrow=0) const </td></tr>
 <tr class="separator:a79ee48f306fd7ba69527b310f9d69aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0b96584a33b6064f72ce04bc1d222d2"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ad0b96584a33b6064f72ce04bc1d222d2">superParticleSize</a> () const </td></tr>
+<tr class="separator:ad0b96584a33b6064f72ce04bc1d222d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93595817875a3846db6d2bcd42bfd48e"><td class="memTemplParams" colspan="2">template&lt;typename T , typename std::enable_if&lt; std::is_same&lt; T, bool &gt;::value, int &gt;::type  = 0&gt; </td></tr>
 <tr class="memitem:a93595817875a3846db6d2bcd42bfd48e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a93595817875a3846db6d2bcd42bfd48e">AddRealComp</a> (T communicate=true)</td></tr>
 <tr class="separator:a93595817875a3846db6d2bcd42bfd48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -434,11 +436,11 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3745cc53b964fc08052fe340d1fd42b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1RealDescriptor.html">RealDescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a3745cc53b964fc08052fe340d1fd42b2">ParticleRealDescriptor</a> = <a class="el" href="classamrex_1_1FPC.html#a3e122a19b07bc732bf83c360354ef2a4">FPC::Native64RealDescriptor</a>()</td></tr>
 <tr class="separator:a3745cc53b964fc08052fe340d1fd42b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f454ac348d292cb7834eb189d45f76"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ab9f454ac348d292cb7834eb189d45f76">communicate_real_comp</a></td></tr>
-<tr class="memdesc:ab9f454ac348d292cb7834eb189d45f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct-of-array stuff  <a href="#ab9f454ac348d292cb7834eb189d45f76">More...</a><br /></td></tr>
-<tr class="separator:ab9f454ac348d292cb7834eb189d45f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b59c2f3c8342b421deeb74380a46175"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a6b59c2f3c8342b421deeb74380a46175">communicate_int_comp</a></td></tr>
-<tr class="separator:a6b59c2f3c8342b421deeb74380a46175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79047ac813f680e1efbb661c27b5816c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Cuda.html#a874c975a77836139dea5f75c0497314f">Gpu::ManagedVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a79047ac813f680e1efbb661c27b5816c">communicate_real_comp</a></td></tr>
+<tr class="memdesc:a79047ac813f680e1efbb661c27b5816c"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct-of-array stuff  <a href="#a79047ac813f680e1efbb661c27b5816c">More...</a><br /></td></tr>
+<tr class="separator:a79047ac813f680e1efbb661c27b5816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed4e2752e740971882bef84501b5a84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Cuda.html#a874c975a77836139dea5f75c0497314f">Gpu::ManagedVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a4ed4e2752e740971882bef84501b5a84">communicate_int_comp</a></td></tr>
+<tr class="separator:a4ed4e2752e740971882bef84501b5a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -4635,6 +4637,31 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
 
 </div>
 </div>
+<a class="anchor" id="ad0b96584a33b6064f72ce04bc1d222d2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayInt = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::superParticleSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7a672776ab2c219caa7e2b3124596a41"></a>
 <div class="memitem">
 <div class="memproto">
@@ -5334,28 +5361,28 @@ template&lt;int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayI
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a6b59c2f3c8342b421deeb74380a46175"></a>
+<a class="anchor" id="a4ed4e2752e740971882bef84501b5a84"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayInt = 0&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;bool&gt; <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::communicate_int_comp</td>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Cuda.html#a874c975a77836139dea5f75c0497314f">Gpu::ManagedVector</a>&lt;int&gt; <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::communicate_int_comp</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ab9f454ac348d292cb7834eb189d45f76"></a>
+<a class="anchor" id="a79047ac813f680e1efbb661c27b5816c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayInt = 0&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;bool&gt; <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::communicate_real_comp</td>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Cuda.html#a874c975a77836139dea5f75c0497314f">Gpu::ManagedVector</a>&lt;int&gt; <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::communicate_real_comp</td>
         </tr>
       </table>
 </div><div class="memdoc">

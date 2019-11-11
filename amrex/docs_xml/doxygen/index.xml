@@ -2464,6 +2464,11 @@
     <member refid="structamrex_1_1ConstParticleTileData_1aab830600c526f495f787fe47f90797a0" kind="variable"><name>m_aos</name></member>
     <member refid="structamrex_1_1ConstParticleTileData_1a81b092f2251b51d63ee6d55e2f121b27" kind="variable"><name>m_rdata</name></member>
     <member refid="structamrex_1_1ConstParticleTileData_1a310a42bc686b6dc3fd6521b5c7c61723" kind="variable"><name>m_idata</name></member>
+    <member refid="structamrex_1_1ConstParticleTileData_1ac78654c0e3070bd4ff5681aa4aa8eb2f" kind="variable"><name>m_num_runtime_real</name></member>
+    <member refid="structamrex_1_1ConstParticleTileData_1a26d8a40385ef8b110de692309c25d42b" kind="variable"><name>m_num_runtime_int</name></member>
+    <member refid="structamrex_1_1ConstParticleTileData_1a4652dd67edc7c88a1f2e61fdec276f3d" kind="variable"><name>m_runtime_r_data</name></member>
+    <member refid="structamrex_1_1ConstParticleTileData_1a5ac264764456e378740b2b7dc181b04b" kind="variable"><name>m_runtime_i_data</name></member>
+    <member refid="structamrex_1_1ConstParticleTileData_1acd61847bffa8b7c0aa96e49699c1c2d2" kind="function"><name>packParticleData</name></member>
     <member refid="structamrex_1_1ConstParticleTileData_1a5135ad2287276642ea55b70883937c24" kind="function"><name>getSuperParticle</name></member>
   </compound>
   <compound refid="classamrex_1_1CoordSys" kind="class"><name>amrex::CoordSys</name>
@@ -5942,11 +5947,11 @@
   <compound refid="interfacefsunmatrix__mod_1_1FSUNMatScaleAdd" kind="interface"><name>fsunmatrix_mod::FSUNMatScaleAdd</name>
     <member refid="interfacefsunmatrix__mod_1_1FSUNMatScaleAdd_1a077f4a560afa6d5fa1ef6a00e14cc891" kind="function"><name>fsunmatscaleadd</name></member>
   </compound>
-  <compound refid="interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAdd__Dense" kind="interface"><name>fsunmatrix_dense_mod::FSUNMatScaleAdd_Dense</name>
-    <member refid="interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAdd__Dense_1a7e4bdd086a8d2ba708a18d8fc0142be8" kind="function"><name>fsunmatscaleadd_dense</name></member>
-  </compound>
   <compound refid="interfacefsunmat__dense__mod_1_1FSUNMatScaleAdd__Dense" kind="interface"><name>fsunmat_dense_mod::FSUNMatScaleAdd_Dense</name>
     <member refid="interfacefsunmat__dense__mod_1_1FSUNMatScaleAdd__Dense_1ab72b5d326a2459aac1812be60825c8be" kind="function"><name>fsunmatscaleadd_dense</name></member>
+  </compound>
+  <compound refid="interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAdd__Dense" kind="interface"><name>fsunmatrix_dense_mod::FSUNMatScaleAdd_Dense</name>
+    <member refid="interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAdd__Dense_1a7e4bdd086a8d2ba708a18d8fc0142be8" kind="function"><name>fsunmatscaleadd_dense</name></member>
   </compound>
   <compound refid="interfacefsunmatrix__mod_1_1FSUNMatScaleAddI" kind="interface"><name>fsunmatrix_mod::FSUNMatScaleAddI</name>
     <member refid="interfacefsunmatrix__mod_1_1FSUNMatScaleAddI_1aa2b3877d339e85bfb585000592877ee9" kind="function"><name>fsunmatscaleaddi</name></member>
@@ -5969,11 +5974,11 @@
   <compound refid="interfacefsunmatrix__mod_1_1FSUNMatZero" kind="interface"><name>fsunmatrix_mod::FSUNMatZero</name>
     <member refid="interfacefsunmatrix__mod_1_1FSUNMatZero_1a36ddb99d66300226111df5b2ff49ce70" kind="function"><name>fsunmatzero</name></member>
   </compound>
-  <compound refid="interfacefsunmatrix__dense__mod_1_1FSUNMatZero__Dense" kind="interface"><name>fsunmatrix_dense_mod::FSUNMatZero_Dense</name>
-    <member refid="interfacefsunmatrix__dense__mod_1_1FSUNMatZero__Dense_1a69d371b1d2355efa5755e797e1c1a7a1" kind="function"><name>fsunmatzero_dense</name></member>
-  </compound>
   <compound refid="interfacefsunmat__dense__mod_1_1FSUNMatZero__Dense" kind="interface"><name>fsunmat_dense_mod::FSUNMatZero_Dense</name>
     <member refid="interfacefsunmat__dense__mod_1_1FSUNMatZero__Dense_1a9bb7771e8df2429ca9f3d5720fc6a851" kind="function"><name>fsunmatzero_dense</name></member>
+  </compound>
+  <compound refid="interfacefsunmatrix__dense__mod_1_1FSUNMatZero__Dense" kind="interface"><name>fsunmatrix_dense_mod::FSUNMatZero_Dense</name>
+    <member refid="interfacefsunmatrix__dense__mod_1_1FSUNMatZero__Dense_1a69d371b1d2355efa5755e797e1c1a7a1" kind="function"><name>fsunmatzero_dense</name></member>
   </compound>
   <compound refid="structBLProfStats_1_1FuncStat" kind="struct"><name>BLProfStats::FuncStat</name>
     <member refid="structBLProfStats_1_1FuncStat_1ad1a3f8772ee33935e4bcb30cdd5581a4" kind="variable"><name>nCalls</name></member>
@@ -6495,13 +6500,6 @@
     <member refid="structintegrator__stats__mod_1_1integrator__stats__t_1aa47236a434286df8523309392d844cb4" kind="variable"><name>current_step_size</name></member>
     <member refid="structintegrator__stats__mod_1_1integrator__stats__t_1a07463edf85b6f6e1016468d59af562c9" kind="variable"><name>current_time</name></member>
   </compound>
-  <compound refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrDataAdaptor::InternalsType</name>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ae53eccbcdd637ad1dcbdc0be4e895dc8" kind="variable"><name>SimData</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a18e4c53a74f5623786c5dadbe087f209" kind="variable"><name>PinMesh</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ab54c62846a8614acc3d677a975186569" kind="variable"><name>SimMetadata</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kind="variable"><name>ManagedObjects</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a036873b2f2c1d06f877458c6e3369f13" kind="function"><name>InternalsType</name></member>
-  </compound>
   <compound refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrMeshDataAdaptor::InternalsType</name>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1a73392d6df8f6909a9faf79995eba567f" kind="variable"><name>Mesh</name></member>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1abe1c7c360d280567e6b307120f51a7ae" kind="variable"><name>PinMesh</name></member>
@@ -6509,6 +6507,13 @@
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1a786f177417b2aff2c65612249af325af" kind="variable"><name>StateMetadata</name></member>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1afe1955be77ad98e82b431d7b6eb5aeb8" kind="variable"><name>ManagedObjects</name></member>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1a93efc600bd13297ea7536362a1181858" kind="function"><name>InternalsType</name></member>
+  </compound>
+  <compound refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrDataAdaptor::InternalsType</name>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ae53eccbcdd637ad1dcbdc0be4e895dc8" kind="variable"><name>SimData</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a18e4c53a74f5623786c5dadbe087f209" kind="variable"><name>PinMesh</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ab54c62846a8614acc3d677a975186569" kind="variable"><name>SimMetadata</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kind="variable"><name>ManagedObjects</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a036873b2f2c1d06f877458c6e3369f13" kind="function"><name>InternalsType</name></member>
   </compound>
   <compound refid="classamrex_1_1InterpBndryData" kind="class"><name>amrex::InterpBndryData</name>
     <member refid="classamrex_1_1InterpBndryData_1a3c37f7ae3bebb39f7fac821540e10227" kind="variable"><name>IBD_max_order_DEF</name></member>
@@ -7329,13 +7334,13 @@
     <member refid="classamrex_1_1MCMultiGrid_1a7ba83b3751a2bc315319cf1fbba14fb0" kind="function"><name>MCMultiGrid</name></member>
     <member refid="classamrex_1_1MCMultiGrid_1a311c47ccb5df10c68c86fa9c2aac46e5" kind="function"><name>operator=</name></member>
   </compound>
-  <compound refid="structamrex_1_1MemProfiler_1_1MemInfo" kind="struct"><name>amrex::MemProfiler::MemInfo</name>
-    <member refid="structamrex_1_1MemProfiler_1_1MemInfo_1a334add2acca04ed49223180ab7991e19" kind="variable"><name>current_bytes</name></member>
-    <member refid="structamrex_1_1MemProfiler_1_1MemInfo_1a0986f22c847ee689a532d882351b7ee0" kind="variable"><name>hwm_bytes</name></member>
-  </compound>
   <compound refid="structamrex_1_1FabArrayBase_1_1meminfo" kind="struct"><name>amrex::FabArrayBase::meminfo</name>
     <member refid="structamrex_1_1FabArrayBase_1_1meminfo_1a1668be4dfe2249347358bd8b49741349" kind="variable"><name>nbytes</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1meminfo_1a0e8443110095e98946edaec490f65dfb" kind="variable"><name>nbytes_hwm</name></member>
+  </compound>
+  <compound refid="structamrex_1_1MemProfiler_1_1MemInfo" kind="struct"><name>amrex::MemProfiler::MemInfo</name>
+    <member refid="structamrex_1_1MemProfiler_1_1MemInfo_1a334add2acca04ed49223180ab7991e19" kind="variable"><name>current_bytes</name></member>
+    <member refid="structamrex_1_1MemProfiler_1_1MemInfo_1a0986f22c847ee689a532d882351b7ee0" kind="variable"><name>hwm_bytes</name></member>
   </compound>
   <compound refid="classamrex_1_1MemProfiler" kind="class"><name>amrex::MemProfiler</name>
     <member refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" kind="variable"><name>the_instance</name></member>
@@ -8809,18 +8814,18 @@
     <member refid="classamrex_1_1NodalProjector_1a09e3fe505727d0cec4c6e41648e39121" kind="function"><name>printInfo</name></member>
     <member refid="classamrex_1_1NodalProjector_1a0e8bac5ed9898402bd8af7190b5383d8" kind="function"><name>setup</name></member>
   </compound>
+  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
+  </compound>
   <compound refid="structamrex_1_1EArena_1_1Node" kind="struct"><name>amrex::EArena::Node</name>
     <member refid="structamrex_1_1EArena_1_1Node_1af098a20a26f8c6450ac2751d8f02a263" kind="variable"><name>m_block</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1a8f0286fae08719933cb4848f028ac40a" kind="variable"><name>m_owner</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1a89529f45bfc11373bc41d2da43c3a12f" kind="variable"><name>m_size</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1a288b2fef1ea5646d959ae154b8790ecb" kind="function"><name>Node</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1ab2e370518b6574a337ddd9fc4cefe3bf" kind="function"><name>Node</name></member>
-  </compound>
-  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
   </compound>
   <compound refid="classamrex_1_1CArena_1_1Node" kind="class"><name>amrex::CArena::Node</name>
     <member refid="classamrex_1_1CArena_1_1Node_1a999ce0f54f3eae13c2533caabe5acc89" kind="variable"><name>m_block</name></member>
@@ -9198,8 +9203,8 @@
     <member refid="classamrex_1_1ParticleContainer_1a2bafd5f149b05c71e77f8a76f265de46" kind="friend"><name>ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer_1aa4fc68de6148ace63b82ffc571e8a5d2" kind="friend"><name>ParIterBase&lt; false, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a3745cc53b964fc08052fe340d1fd42b2" kind="variable"><name>ParticleRealDescriptor</name></member>
-    <member refid="classamrex_1_1ParticleContainer_1ab9f454ac348d292cb7834eb189d45f76" kind="variable"><name>communicate_real_comp</name></member>
-    <member refid="classamrex_1_1ParticleContainer_1a6b59c2f3c8342b421deeb74380a46175" kind="variable"><name>communicate_int_comp</name></member>
+    <member refid="classamrex_1_1ParticleContainer_1a79047ac813f680e1efbb661c27b5816c" kind="variable"><name>communicate_real_comp</name></member>
+    <member refid="classamrex_1_1ParticleContainer_1a4ed4e2752e740971882bef84501b5a84" kind="variable"><name>communicate_int_comp</name></member>
     <member refid="classamrex_1_1ParticleContainer_1ad99c12c6f4382d0e38c1fd95625b518e" kind="variable"><name>do_tiling</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a433e6240ebcad3866f30555496ab418f" kind="variable"><name>tile_size</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a1c7e6f19b1640c0b4980d2d7fa3ad15e" kind="variable"><name>neighbor_procs</name></member>
@@ -9333,6 +9338,7 @@
     <member refid="classamrex_1_1ParticleContainer_1a405049a333766dd8d8e4a8e244d4b715" kind="function"><name>RedistributeGPU</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a69e98c5ae9055383e3b290b25b58dbe0" kind="function"><name>OKCPU</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a79ee48f306fd7ba69527b310f9d69aca" kind="function"><name>OKGPU</name></member>
+    <member refid="classamrex_1_1ParticleContainer_1ad0b96584a33b6064f72ce04bc1d222d2" kind="function"><name>superParticleSize</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a93595817875a3846db6d2bcd42bfd48e" kind="function"><name>AddRealComp</name></member>
     <member refid="classamrex_1_1ParticleContainer_1a74de4251bff552fcfe88a007bff4dc96" kind="function"><name>AddIntComp</name></member>
     <member refid="classamrex_1_1ParticleContainer_1ae745531c931aadabc3620c50d91a7ae7" kind="function"><name>BufferMap</name></member>
@@ -9444,6 +9450,10 @@
     <member refid="structamrex_1_1ParticleTile_1af7c73b9664c355ab9415113e1c032c88" kind="variable"><name>m_aos_tile</name></member>
     <member refid="structamrex_1_1ParticleTile_1a0be60c0c485396843c637a1022f5f260" kind="variable"><name>m_soa_tile</name></member>
     <member refid="structamrex_1_1ParticleTile_1afc18f10586bee426a6c8c17e87420e28" kind="variable"><name>m_defined</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a6cbfd503aa61d9bc5493e0463e6cbb48" kind="variable"><name>m_runtime_r_ptrs</name></member>
+    <member refid="structamrex_1_1ParticleTile_1aeee5929003d6233fd65632e93e197f00" kind="variable"><name>m_runtime_i_ptrs</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a311ebbe151be2428c73372672d0b1556" kind="variable"><name>m_runtime_r_cptrs</name></member>
+    <member refid="structamrex_1_1ParticleTile_1a75b7205cff94bd78c7b78fb45f77b433" kind="variable"><name>m_runtime_i_cptrs</name></member>
     <member refid="structamrex_1_1ParticleTile_1a69d090ad7b759b9e22d1a67259b2df56" kind="function"><name>ParticleTile</name></member>
     <member refid="structamrex_1_1ParticleTile_1aae530181f5744e4622012f6128c1c712" kind="function"><name>define</name></member>
     <member refid="structamrex_1_1ParticleTile_1ae7a25ea8a470f799053e431918ee6699" kind="function"><name>GetArrayOfStructs</name></member>
@@ -9478,6 +9488,12 @@
     <member refid="structamrex_1_1ParticleTileData_1a4af09b873adaeb3e6a2bddca92978050" kind="variable"><name>m_aos</name></member>
     <member refid="structamrex_1_1ParticleTileData_1a7b49b310531dd5a93a23647e19d5fc15" kind="variable"><name>m_rdata</name></member>
     <member refid="structamrex_1_1ParticleTileData_1a2f8c985859d1715c384d33429a4a7303" kind="variable"><name>m_idata</name></member>
+    <member refid="structamrex_1_1ParticleTileData_1a09f43ec095aad16149181ba257a7943c" kind="variable"><name>m_num_runtime_real</name></member>
+    <member refid="structamrex_1_1ParticleTileData_1a5a16b49d9ce2b40241aaf61f7ce785c4" kind="variable"><name>m_num_runtime_int</name></member>
+    <member refid="structamrex_1_1ParticleTileData_1a4c69c367f4f10143b6d966ecdf5e106e" kind="variable"><name>m_runtime_r_data</name></member>
+    <member refid="structamrex_1_1ParticleTileData_1a91b776451609ee6154ede852ac8b9c7a" kind="variable"><name>m_runtime_i_data</name></member>
+    <member refid="structamrex_1_1ParticleTileData_1a462ce28aeb444c870d89e6fac24d3945" kind="function"><name>packParticleData</name></member>
+    <member refid="structamrex_1_1ParticleTileData_1a8e38d5f46f9b8e96ed409d6976152488" kind="function"><name>unpackParticleData</name></member>
     <member refid="structamrex_1_1ParticleTileData_1a186fe1d86f4158298605a830561bb26a" kind="function"><name>getSuperParticle</name></member>
     <member refid="structamrex_1_1ParticleTileData_1af64a9eba3584a397982484a4db9cd203" kind="function"><name>setSuperParticle</name></member>
   </compound>
@@ -10048,15 +10064,6 @@
     <member refid="structamrex_1_1DistributionMapping_1_1Ref_1ae47a673a2d7c94e3483b90b58444be0c" kind="function"><name>Ref</name></member>
     <member refid="structamrex_1_1DistributionMapping_1_1Ref_1ad219785df46e98d5f667c7e98b878baa" kind="function"><name>clear</name></member>
   </compound>
-  <compound refid="structamrex_1_1BoxArray_1_1RefID" kind="struct"><name>amrex::BoxArray::RefID</name>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1ad5adc4256ccddb386c4d491ae958c5c6" kind="variable"><name>data</name></member>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1aec422cd271e716d05160dbadc7526394" kind="function"><name>RefID</name></member>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1a0adac980947d771e29e1420e5adc4e06" kind="function"><name>RefID</name></member>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1a6e0ad88f090537be644ffd04d1e729c8" kind="function"><name>operator&lt;</name></member>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1ac87a2a13371616bc353f2f0ab21a95d1" kind="function"><name>operator==</name></member>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1ab9afafb3f06bd646649bc865668e874a" kind="function"><name>operator!=</name></member>
-    <member refid="structamrex_1_1BoxArray_1_1RefID_1a27efe3d5f7340241a0b4d2e2df7814b1" kind="friend"><name>operator&lt;&lt;</name></member>
-  </compound>
   <compound refid="structamrex_1_1DistributionMapping_1_1RefID" kind="struct"><name>amrex::DistributionMapping::RefID</name>
     <member refid="structamrex_1_1DistributionMapping_1_1RefID_1a83d7d3288a3b51ffca12886346794042" kind="variable"><name>data</name></member>
     <member refid="structamrex_1_1DistributionMapping_1_1RefID_1a354390fe979bbccf718f8243e4bbfc75" kind="function"><name>RefID</name></member>
@@ -10067,6 +10074,15 @@
     <member refid="structamrex_1_1DistributionMapping_1_1RefID_1a8866859d71db556f069c2a15af15afa3" kind="function"><name>dataPtr</name></member>
     <member refid="structamrex_1_1DistributionMapping_1_1RefID_1abaacb906f16cc96b34ddcf2710942d9b" kind="function"><name>PrintPtr</name></member>
     <member refid="structamrex_1_1DistributionMapping_1_1RefID_1a27efe3d5f7340241a0b4d2e2df7814b1" kind="friend"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="structamrex_1_1BoxArray_1_1RefID" kind="struct"><name>amrex::BoxArray::RefID</name>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1ad5adc4256ccddb386c4d491ae958c5c6" kind="variable"><name>data</name></member>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1aec422cd271e716d05160dbadc7526394" kind="function"><name>RefID</name></member>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1a0adac980947d771e29e1420e5adc4e06" kind="function"><name>RefID</name></member>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1a6e0ad88f090537be644ffd04d1e729c8" kind="function"><name>operator&lt;</name></member>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1ac87a2a13371616bc353f2f0ab21a95d1" kind="function"><name>operator==</name></member>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1ab9afafb3f06bd646649bc865668e874a" kind="function"><name>operator!=</name></member>
+    <member refid="structamrex_1_1BoxArray_1_1RefID_1a27efe3d5f7340241a0b4d2e2df7814b1" kind="friend"><name>operator&lt;&lt;</name></member>
   </compound>
   <compound refid="classRegionsProfStats" kind="class"><name>RegionsProfStats</name>
     <member refid="classRegionsProfStats_1a02a1e086297bc655ab74cdcc561cc07c" kind="variable"><name>currentDataBlock</name></member>
