@@ -3,13 +3,25 @@
   <compounddef id="AMReX__ArrayOfStructs_8H" kind="file" language="C++">
     <compoundname>AMReX_ArrayOfStructs.H</compoundname>
     <includes refid="AMReX__Particle_8H" local="no">AMReX_Particle.H</includes>
-    <includes refid="AMReX__CudaContainers_8H" local="no">AMReX_CudaContainers.H</includes>
+    <includes refid="AMReX__GpuContainers_8H" local="no">AMReX_GpuContainers.H</includes>
     <includes refid="AMReX__Vector_8H" local="no">AMReX_Vector.H</includes>
     <includedby refid="AMReX__Particles_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particles.H</includedby>
     <includedby refid="AMReX__ParticleTile_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H</includedby>
     <incdepgraph>
       <node id="68786">
         <label>list</label>
+      </node>
+      <node id="68781">
+        <label>AMReX_GpuContainers.H</label>
+        <link refid="AMReX__GpuContainers_8H"/>
+        <childnode refid="68757" relation="include">
+        </childnode>
+        <childnode refid="68716" relation="include">
+        </childnode>
+        <childnode refid="68782" relation="include">
+        </childnode>
+        <childnode refid="68778" relation="include">
+        </childnode>
       </node>
       <node id="68749">
         <label>AMReX_ParallelContext.H</label>
@@ -74,18 +86,6 @@
         <childnode refid="68685" relation="include">
         </childnode>
         <childnode refid="68686" relation="include">
-        </childnode>
-      </node>
-      <node id="68781">
-        <label>AMReX_CudaContainers.H</label>
-        <link refid="AMReX__CudaContainers_8H"/>
-        <childnode refid="68757" relation="include">
-        </childnode>
-        <childnode refid="68716" relation="include">
-        </childnode>
-        <childnode refid="68782" relation="include">
-        </childnode>
-        <childnode refid="68778" relation="include">
         </childnode>
       </node>
       <node id="68690">
@@ -404,22 +404,6 @@
       <node id="68685">
         <label>string</label>
       </node>
-      <node id="68778">
-        <label>AMReX_CudaAllocators.H</label>
-        <link refid="AMReX__CudaAllocators_8H"/>
-        <childnode refid="68739" relation="include">
-        </childnode>
-        <childnode refid="68699" relation="include">
-        </childnode>
-        <childnode refid="68719" relation="include">
-        </childnode>
-        <childnode refid="68779" relation="include">
-        </childnode>
-        <childnode refid="68729" relation="include">
-        </childnode>
-        <childnode refid="68765" relation="include">
-        </childnode>
-      </node>
       <node id="68726">
         <label>AMReX_Loop.H</label>
         <link refid="AMReX__Loop_8H"/>
@@ -551,6 +535,22 @@
       <node id="68687">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="68778">
+        <label>AMReX_GpuAllocators.H</label>
+        <link refid="AMReX__GpuAllocators_8H"/>
+        <childnode refid="68739" relation="include">
+        </childnode>
+        <childnode refid="68699" relation="include">
+        </childnode>
+        <childnode refid="68719" relation="include">
+        </childnode>
+        <childnode refid="68779" relation="include">
+        </childnode>
+        <childnode refid="68729" relation="include">
+        </childnode>
+        <childnode refid="68765" relation="include">
+        </childnode>
       </node>
       <node id="68761">
         <label>AMReX_GpuLaunch.H</label>
@@ -1244,7 +1244,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ARRAYOFSTRUCTS_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Particle_8H" kindref="compound">AMReX_Particle.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__CudaContainers_8H" kindref="compound">AMReX_CudaContainers.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__GpuContainers_8H" kindref="compound">AMReX_GpuContainers.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Vector_8H" kindref="compound">AMReX_Vector.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>

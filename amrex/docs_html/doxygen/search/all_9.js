@@ -54,7 +54,7 @@ var searchData=
   ['includeall',['INCLUDEALL',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a54c51bf557fe09986321162dd762ddd1',1,'BLProfStats']]],
   ['includenone',['INCLUDENONE',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a4bc1d99bb527c9cfd1da7ed4e3b543a1',1,'BLProfStats']]],
   ['includeset',['includeSet',['../classBLProfStats.html#a2cf8abcd7afbb8e5e307c8420255c061',1,'BLProfStats']]],
-  ['inclusive_5fscan',['inclusive_scan',['../namespaceamrex_1_1Cuda.html#abf9c1cf54ddad8332323d71af52cf8d4',1,'amrex::Cuda']]],
+  ['inclusive_5fscan',['inclusive_scan',['../namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129',1,'amrex::Gpu']]],
   ['increment',['Increment',['../classamrex_1_1ParticleContainer.html#a5b610b558d1559e50c8edfaf7ed2ca27',1,'amrex::ParticleContainer']]],
   ['incrementnumberofusers',['IncrementNumberOfUsers',['../classamrex_1_1DataServices.html#a1e86b7049dda4298109713894149ff36',1,'amrex::DataServices']]],
   ['incrementwithtotal',['IncrementWithTotal',['../classamrex_1_1ParticleContainer.html#a23a7c76d6e8f0f1b030e8a224bf42c43',1,'amrex::ParticleContainer']]],

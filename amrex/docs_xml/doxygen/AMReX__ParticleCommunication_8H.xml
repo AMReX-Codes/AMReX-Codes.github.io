@@ -3,7 +3,7 @@
   <compounddef id="AMReX__ParticleCommunication_8H" kind="file" language="C++">
     <compoundname>AMReX_ParticleCommunication.H</compoundname>
     <includes refid="AMReX__Gpu_8H" local="no">AMReX_Gpu.H</includes>
-    <includes refid="AMReX__CudaContainers_8H" local="no">AMReX_CudaContainers.H</includes>
+    <includes refid="AMReX__GpuContainers_8H" local="no">AMReX_GpuContainers.H</includes>
     <includes refid="AMReX__IntVect_8H" local="no">AMReX_IntVect.H</includes>
     <includes refid="AMReX__ParticleBufferMap_8H" local="no">AMReX_ParticleBufferMap.H</includes>
     <includes refid="AMReX__MFIter_8H" local="no">AMReX_MFIter.H</includes>
@@ -11,6 +11,18 @@
     <includedby refid="AMReX__ParticleCommunication_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.cpp</includedby>
     <includedby refid="AMReX__Particles_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particles.H</includedby>
     <incdepgraph>
+      <node id="70597">
+        <label>AMReX_GpuContainers.H</label>
+        <link refid="AMReX__GpuContainers_8H"/>
+        <childnode refid="70575" relation="include">
+        </childnode>
+        <childnode refid="70546" relation="include">
+        </childnode>
+        <childnode refid="70598" relation="include">
+        </childnode>
+        <childnode refid="70594" relation="include">
+        </childnode>
+      </node>
       <node id="70566">
         <label>AMReX_ParallelContext.H</label>
         <link refid="AMReX__ParallelContext_8H"/>
@@ -74,18 +86,6 @@
         <childnode refid="70519" relation="include">
         </childnode>
         <childnode refid="70538" relation="include">
-        </childnode>
-      </node>
-      <node id="70597">
-        <label>AMReX_CudaContainers.H</label>
-        <link refid="AMReX__CudaContainers_8H"/>
-        <childnode refid="70575" relation="include">
-        </childnode>
-        <childnode refid="70546" relation="include">
-        </childnode>
-        <childnode refid="70598" relation="include">
-        </childnode>
-        <childnode refid="70594" relation="include">
         </childnode>
       </node>
       <node id="70548">
@@ -419,22 +419,6 @@
       <node id="70519">
         <label>string</label>
       </node>
-      <node id="70594">
-        <label>AMReX_CudaAllocators.H</label>
-        <link refid="AMReX__CudaAllocators_8H"/>
-        <childnode refid="70520" relation="include">
-        </childnode>
-        <childnode refid="70537" relation="include">
-        </childnode>
-        <childnode refid="70524" relation="include">
-        </childnode>
-        <childnode refid="70595" relation="include">
-        </childnode>
-        <childnode refid="70581" relation="include">
-        </childnode>
-        <childnode refid="70579" relation="include">
-        </childnode>
-      </node>
       <node id="70588">
         <label>AMReX_Loop.H</label>
         <link refid="AMReX__Loop_8H"/>
@@ -644,6 +628,22 @@
       <node id="70539">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="70594">
+        <label>AMReX_GpuAllocators.H</label>
+        <link refid="AMReX__GpuAllocators_8H"/>
+        <childnode refid="70520" relation="include">
+        </childnode>
+        <childnode refid="70537" relation="include">
+        </childnode>
+        <childnode refid="70524" relation="include">
+        </childnode>
+        <childnode refid="70595" relation="include">
+        </childnode>
+        <childnode refid="70581" relation="include">
+        </childnode>
+        <childnode refid="70579" relation="include">
+        </childnode>
       </node>
       <node id="70514">
         <label>AMReX_GpuLaunch.H</label>
@@ -1436,7 +1436,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_PARTICLECOMMUNICATION_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Gpu_8H" kindref="compound">AMReX_Gpu.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__CudaContainers_8H" kindref="compound">AMReX_CudaContainers.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__GpuContainers_8H" kindref="compound">AMReX_GpuContainers.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__IntVect_8H" kindref="compound">AMReX_IntVect.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParticleBufferMap_8H" kindref="compound">AMReX_ParticleBufferMap.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MFIter_8H" kindref="compound">AMReX_MFIter.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -1600,7 +1600,7 @@
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ad6e1b17bd58f41513b45874c3e016e41" kindref="member">amrex::Gpu::exclusive_scan</ref>(m_box_counts.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>()+1,<sp/>m_box_offsets.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>());</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">amrex::Gpu::exclusive_scan</ref>(m_box_counts.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>()+1,<sp/>m_box_offsets.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>());</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buildMPIStart(pc.BufferMap());</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

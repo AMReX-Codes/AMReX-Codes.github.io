@@ -7,6 +7,18 @@
     <includes refid="AMReX__BLProfiler_8H" local="no">AMReX_BLProfiler.H</includes>
     <includedby refid="AMReX__NeighborList_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H</includedby>
     <incdepgraph>
+      <node id="68893">
+        <label>AMReX_GpuContainers.H</label>
+        <link refid="AMReX__GpuContainers_8H"/>
+        <childnode refid="68871" relation="include">
+        </childnode>
+        <childnode refid="68842" relation="include">
+        </childnode>
+        <childnode refid="68894" relation="include">
+        </childnode>
+        <childnode refid="68890" relation="include">
+        </childnode>
+      </node>
       <node id="68862">
         <label>AMReX_ParallelContext.H</label>
         <link refid="AMReX__ParallelContext_8H"/>
@@ -54,18 +66,6 @@
         <childnode refid="68815" relation="include">
         </childnode>
         <childnode refid="68834" relation="include">
-        </childnode>
-      </node>
-      <node id="68893">
-        <label>AMReX_CudaContainers.H</label>
-        <link refid="AMReX__CudaContainers_8H"/>
-        <childnode refid="68871" relation="include">
-        </childnode>
-        <childnode refid="68842" relation="include">
-        </childnode>
-        <childnode refid="68894" relation="include">
-        </childnode>
-        <childnode refid="68890" relation="include">
         </childnode>
       </node>
       <node id="68844">
@@ -301,22 +301,6 @@
       <node id="68815">
         <label>string</label>
       </node>
-      <node id="68890">
-        <label>AMReX_CudaAllocators.H</label>
-        <link refid="AMReX__CudaAllocators_8H"/>
-        <childnode refid="68816" relation="include">
-        </childnode>
-        <childnode refid="68833" relation="include">
-        </childnode>
-        <childnode refid="68820" relation="include">
-        </childnode>
-        <childnode refid="68891" relation="include">
-        </childnode>
-        <childnode refid="68877" relation="include">
-        </childnode>
-        <childnode refid="68875" relation="include">
-        </childnode>
-      </node>
       <node id="68884">
         <label>AMReX_Loop.H</label>
         <link refid="AMReX__Loop_8H"/>
@@ -411,6 +395,22 @@
       <node id="68835">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="68890">
+        <label>AMReX_GpuAllocators.H</label>
+        <link refid="AMReX__GpuAllocators_8H"/>
+        <childnode refid="68816" relation="include">
+        </childnode>
+        <childnode refid="68833" relation="include">
+        </childnode>
+        <childnode refid="68820" relation="include">
+        </childnode>
+        <childnode refid="68891" relation="include">
+        </childnode>
+        <childnode refid="68877" relation="include">
+        </childnode>
+        <childnode refid="68875" relation="include">
+        </childnode>
       </node>
       <node id="68810">
         <label>AMReX_GpuLaunch.H</label>
@@ -945,9 +945,9 @@
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a8aa0aebdef6e669c20ff7e5585ea6f0d" kindref="member">Gpu::Atomic::Add</ref>(&amp;pcount[pcell[i]],<sp/><ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref>{<sp/>1<sp/>});</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ad6e1b17bd58f41513b45874c3e016e41" kindref="member">Gpu::exclusive_scan</ref>(<ref refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kindref="member">m_counts</ref>.begin(),<sp/><ref refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kindref="member">m_counts</ref>.end(),<sp/><ref refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kindref="member">m_offsets</ref>.begin());</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">Gpu::exclusive_scan</ref>(<ref refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kindref="member">m_counts</ref>.begin(),<sp/><ref refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kindref="member">m_counts</ref>.end(),<sp/><ref refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kindref="member">m_offsets</ref>.begin());</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ab4c79aa24eaa3c0661f182a819586f12" kindref="member">Gpu::thrust_copy</ref>(<ref refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kindref="member">m_offsets</ref>.begin(),<sp/><ref refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kindref="member">m_offsets</ref>.end(),<sp/><ref refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kindref="member">m_counts</ref>.begin());</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a4f9ee4e463bbfa3f7a314a3b139fb2bf" kindref="member">Gpu::thrust_copy</ref>(<ref refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kindref="member">m_offsets</ref>.begin(),<sp/><ref refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kindref="member">m_offsets</ref>.end(),<sp/><ref refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kindref="member">m_counts</ref>.begin());</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref>*<sp/>pperm<sp/>=<sp/><ref refid="classamrex_1_1DenseBins_1ad40e15a5e019a0a7afa527c6226e7675" kindref="member">m_perm</ref>.dataPtr();</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/><ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref><sp/>max_index<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;index_type&gt;::max</ref>();</highlight></codeline>

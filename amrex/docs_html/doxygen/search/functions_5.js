@@ -72,7 +72,7 @@ var searchData=
   ['evalintegrand',['evalIntegrand',['../structamrex_1_1algoim_1_1QuadratureRule.html#a93e5266e3de3f1d636f081e118526ea2',1,'amrex::algoim::QuadratureRule::evalIntegrand()'],['../structamrex_1_1algoim_1_1ImplicitIntegral.html#ab0b0d21b0436db3368df308ac574a8ec',1,'amrex::algoim::ImplicitIntegral::evalIntegrand()']]],
   ['evalreduction',['EvalReduction',['../namespaceamrex_1_1Lazy.html#a0a2dd2d6e19976b8eaebb9d81a65718a',1,'amrex::Lazy']]],
   ['exch',['Exch',['../namespaceamrex_1_1Gpu_1_1Atomic.html#a38a7c62318c47dbeae7bfbefd235510c',1,'amrex::Gpu::Atomic']]],
-  ['exclusive_5fscan',['exclusive_scan',['../namespaceamrex_1_1Cuda.html#ad6e1b17bd58f41513b45874c3e016e41',1,'amrex::Cuda']]],
+  ['exclusive_5fscan',['exclusive_scan',['../namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c',1,'amrex::Gpu']]],
   ['execonfinalize',['ExecOnFinalize',['../namespaceamrex.html#aec8ceac1148bd8331f3a51572068f8a0',1,'amrex']]],
   ['execoninitialize',['ExecOnInitialize',['../namespaceamrex.html#a6911748ceb0d88bf5b6bf7f3f0402e97',1,'amrex']]],
   ['exist',['Exist',['../classamrex_1_1VisMF.html#ab895515b73ef0cdc6d0e06c7590f3e76',1,'amrex::VisMF']]],

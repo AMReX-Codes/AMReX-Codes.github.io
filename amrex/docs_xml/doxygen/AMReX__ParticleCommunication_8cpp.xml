@@ -5,6 +5,18 @@
     <includes refid="AMReX__ParticleCommunication_8H" local="no">AMReX_ParticleCommunication.H</includes>
     <includes refid="AMReX__ParallelDescriptor_8H" local="no">AMReX_ParallelDescriptor.H</includes>
     <incdepgraph>
+      <node id="70475">
+        <label>AMReX_GpuContainers.H</label>
+        <link refid="AMReX__GpuContainers_8H"/>
+        <childnode refid="70453" relation="include">
+        </childnode>
+        <childnode refid="70424" relation="include">
+        </childnode>
+        <childnode refid="70476" relation="include">
+        </childnode>
+        <childnode refid="70472" relation="include">
+        </childnode>
+      </node>
       <node id="70444">
         <label>AMReX_ParallelContext.H</label>
         <link refid="AMReX__ParallelContext_8H"/>
@@ -68,18 +80,6 @@
         <childnode refid="70397" relation="include">
         </childnode>
         <childnode refid="70416" relation="include">
-        </childnode>
-      </node>
-      <node id="70475">
-        <label>AMReX_CudaContainers.H</label>
-        <link refid="AMReX__CudaContainers_8H"/>
-        <childnode refid="70453" relation="include">
-        </childnode>
-        <childnode refid="70424" relation="include">
-        </childnode>
-        <childnode refid="70476" relation="include">
-        </childnode>
-        <childnode refid="70472" relation="include">
         </childnode>
       </node>
       <node id="70426">
@@ -421,22 +421,6 @@
       <node id="70397">
         <label>string</label>
       </node>
-      <node id="70472">
-        <label>AMReX_CudaAllocators.H</label>
-        <link refid="AMReX__CudaAllocators_8H"/>
-        <childnode refid="70398" relation="include">
-        </childnode>
-        <childnode refid="70415" relation="include">
-        </childnode>
-        <childnode refid="70402" relation="include">
-        </childnode>
-        <childnode refid="70473" relation="include">
-        </childnode>
-        <childnode refid="70459" relation="include">
-        </childnode>
-        <childnode refid="70457" relation="include">
-        </childnode>
-      </node>
       <node id="70466">
         <label>AMReX_Loop.H</label>
         <link refid="AMReX__Loop_8H"/>
@@ -646,6 +630,22 @@
       <node id="70417">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="70472">
+        <label>AMReX_GpuAllocators.H</label>
+        <link refid="AMReX__GpuAllocators_8H"/>
+        <childnode refid="70398" relation="include">
+        </childnode>
+        <childnode refid="70415" relation="include">
+        </childnode>
+        <childnode refid="70402" relation="include">
+        </childnode>
+        <childnode refid="70473" relation="include">
+        </childnode>
+        <childnode refid="70459" relation="include">
+        </childnode>
+        <childnode refid="70457" relation="include">
+        </childnode>
       </node>
       <node id="70392">
         <label>AMReX_GpuLaunch.H</label>
@@ -1410,8 +1410,8 @@
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>m_rcv_num_particles.resize(0);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>m_rcv_num_particles.resize(NProcs,<sp/>0);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>box_counts(m_box_counts.size());</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ab4c79aa24eaa3c0661f182a819586f12" kindref="member">Gpu::thrust_copy</ref>(m_box_counts.begin(),<sp/>m_box_counts.end(),<sp/>box_counts.begin());</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>box_counts(m_box_counts.size());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a4f9ee4e463bbfa3f7a314a3b139fb2bf" kindref="member">Gpu::thrust_copy</ref>(m_box_counts.begin(),<sp/>m_box_counts.end(),<sp/>box_counts.begin());</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;int,<sp/>Vector&lt;int&gt;<sp/>&gt;<sp/>snd_data;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>m_NumSnds<sp/>=<sp/>0;</highlight></codeline>
@@ -1427,9 +1427,9 @@
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>npart<sp/>=<sp/>box_counts[bucket];</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(npart<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_snd_num_particles[i]<sp/>+=<sp/>npart;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snd_data[i].push_back(npart);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snd_data[i].push_back(dst);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snd_data[i].push_back(lev);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snd_data[i].<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(npart);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snd_data[i].<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(dst);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snd_data[i].<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(lev);</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nbytes<sp/>+=<sp/>3*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(int);</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>m_Snds[i]<sp/>=<sp/>nbytes;</highlight></codeline>
@@ -1526,32 +1526,32 @@
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(m_build_rreqs,<sp/>m_build_stats);</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>rcv_box_offsets;</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>rcv_box_counts;</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>rcv_box_ids;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::HostVector&lt;int&gt;<sp/>rcv_box_levs;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>rcv_box_offsets;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>rcv_box_counts;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>rcv_box_ids;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>rcv_box_levs;</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_offsets.push_back(0);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_offsets.<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(0);</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>m_rcv_data.size();<sp/>i+=3)</highlight></codeline>
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_counts.push_back(m_rcv_data[i]);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_counts.<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(m_rcv_data[i]);</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>==<sp/>map.<ref refid="classamrex_1_1ParticleBufferMap_1a0557facd5969dc31dd841ff96ed9048e" kindref="member">procID</ref>(m_rcv_data[i+1],<sp/>m_rcv_data[i+2]));</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_ids.push_back(m_rcv_data[i+1]);</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_levs.push_back(m_rcv_data[i+2]);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_offsets.push_back(rcv_box_offsets.back()<sp/>+<sp/>rcv_box_counts.back());</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_ids.<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(m_rcv_data[i+1]);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_levs.<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(m_rcv_data[i+2]);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_box_offsets.<ref refid="classamrex_1_1PODVector_1adb9df25b399f75fae646206ecd6706cc" kindref="member">push_back</ref>(rcv_box_offsets.<ref refid="classamrex_1_1PODVector_1a2f7b499a6deaa9062f42552e90766de6" kindref="member">back</ref>()<sp/>+<sp/>rcv_box_counts.<ref refid="classamrex_1_1PODVector_1a2f7b499a6deaa9062f42552e90766de6" kindref="member">back</ref>());</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_counts.resize(rcv_box_counts.size());</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ab4c79aa24eaa3c0661f182a819586f12" kindref="member">Gpu::thrust_copy</ref>(rcv_box_counts.begin(),<sp/>rcv_box_counts.end(),<sp/>m_rcv_box_counts.begin());</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_counts.resize(rcv_box_counts.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a4f9ee4e463bbfa3f7a314a3b139fb2bf" kindref="member">Gpu::thrust_copy</ref>(rcv_box_counts.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>rcv_box_counts.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>(),<sp/>m_rcv_box_counts.begin());</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_offsets.resize(rcv_box_offsets.size());</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ab4c79aa24eaa3c0661f182a819586f12" kindref="member">Gpu::thrust_copy</ref>(rcv_box_offsets.begin(),<sp/>rcv_box_offsets.end(),<sp/>m_rcv_box_offsets.begin());</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_offsets.resize(rcv_box_offsets.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a4f9ee4e463bbfa3f7a314a3b139fb2bf" kindref="member">Gpu::thrust_copy</ref>(rcv_box_offsets.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>rcv_box_offsets.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>(),<sp/>m_rcv_box_offsets.begin());</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_ids.resize(rcv_box_ids.size());</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ab4c79aa24eaa3c0661f182a819586f12" kindref="member">Gpu::thrust_copy</ref>(rcv_box_ids.begin(),<sp/>rcv_box_ids.end(),<sp/>m_rcv_box_ids.begin());</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_ids.resize(rcv_box_ids.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a4f9ee4e463bbfa3f7a314a3b139fb2bf" kindref="member">Gpu::thrust_copy</ref>(rcv_box_ids.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>rcv_box_ids.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>(),<sp/>m_rcv_box_ids.begin());</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"></highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_levs.resize(rcv_box_levs.size());</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Cuda_1ab4c79aa24eaa3c0661f182a819586f12" kindref="member">Gpu::thrust_copy</ref>(rcv_box_levs.begin(),<sp/>rcv_box_levs.end(),<sp/>m_rcv_box_levs.begin());</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_rcv_box_levs.resize(rcv_box_levs.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a4f9ee4e463bbfa3f7a314a3b139fb2bf" kindref="member">Gpu::thrust_copy</ref>(rcv_box_levs.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>rcv_box_levs.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>(),<sp/>m_rcv_box_levs.begin());</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>m_nrcvs;<sp/>++j)</highlight></codeline>
