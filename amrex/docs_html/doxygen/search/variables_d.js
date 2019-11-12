@@ -5,6 +5,7 @@ var searchData=
   ['n_5fcycle',['n_cycle',['../classamrex_1_1Amr.html#a091b2e0b9cd006fd375a407f8ed98f80',1,'amrex::Amr']]],
   ['n_5fderive',['n_derive',['../classamrex_1_1DeriveRec.html#a37c756f3c98d63ce682589e6abf3a6c4',1,'amrex::DeriveRec']]],
   ['n_5ferror_5fbuf',['n_error_buf',['../classamrex_1_1AmrMesh.html#acf34e7acc22898675cec3f3b8aa2346c',1,'amrex::AmrMesh']]],
+  ['n_5ffilled',['n_filled',['../classamrex_1_1FabArrayBase.html#acb3699bf4d436f320a73a9c5239b81cd',1,'amrex::FabArrayBase']]],
   ['n_5fgrow',['n_grow',['../classamrex_1_1FabArrayBase.html#aad48d978f6df9294ff3cbdb8978b8914',1,'amrex::FabArrayBase']]],
   ['n_5fpoints',['n_points',['../structamrex_1_1FabArray_1_1ShMem.html#a8f048ffabeb1572d6939ef0d72ad67ae',1,'amrex::FabArray::ShMem']]],
   ['n_5fproper',['n_proper',['../classamrex_1_1AmrMesh.html#afe23a9a66345fa657da022fc5a3cb349',1,'amrex::AmrMesh']]],
