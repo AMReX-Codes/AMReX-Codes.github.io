@@ -599,8 +599,8 @@ var searchData=
   ['fsunmatmatvec_5fdense',['FSUNMatMatvec_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatMatvec__Dense.html',1,'fsunmat_dense_mod']]],
   ['fsunmatmatvec_5fdense',['FSUNMatMatvec_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatMatvec__Dense.html',1,'fsunmatrix_dense_mod']]],
   ['fsunmatscaleadd',['FSUNMatScaleAdd',['../interfacefsunmatrix__mod_1_1FSUNMatScaleAdd.html',1,'fsunmatrix_mod']]],
-  ['fsunmatscaleadd_5fdense',['FSUNMatScaleAdd_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAdd__Dense.html',1,'fsunmatrix_dense_mod']]],
   ['fsunmatscaleadd_5fdense',['FSUNMatScaleAdd_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatScaleAdd__Dense.html',1,'fsunmat_dense_mod']]],
+  ['fsunmatscaleadd_5fdense',['FSUNMatScaleAdd_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAdd__Dense.html',1,'fsunmatrix_dense_mod']]],
   ['fsunmatscaleaddi',['FSUNMatScaleAddI',['../interfacefsunmatrix__mod_1_1FSUNMatScaleAddI.html',1,'fsunmatrix_mod']]],
   ['fsunmatscaleaddi_5fdense',['FSUNMatScaleAddI_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatScaleAddI__Dense.html',1,'fsunmat_dense_mod']]],
   ['fsunmatscaleaddi_5fdense',['FSUNMatScaleAddI_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatScaleAddI__Dense.html',1,'fsunmatrix_dense_mod']]],
@@ -608,7 +608,7 @@ var searchData=
   ['fsunmatspace_5fdense',['FSUNMatSpace_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatSpace__Dense.html',1,'fsunmatrix_dense_mod']]],
   ['fsunmatspace_5fdense',['FSUNMatSpace_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatSpace__Dense.html',1,'fsunmat_dense_mod']]],
   ['fsunmatzero',['FSUNMatZero',['../interfacefsunmatrix__mod_1_1FSUNMatZero.html',1,'fsunmatrix_mod']]],
-  ['fsunmatzero_5fdense',['FSUNMatZero_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatZero__Dense.html',1,'fsunmat_dense_mod']]],
   ['fsunmatzero_5fdense',['FSUNMatZero_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatZero__Dense.html',1,'fsunmatrix_dense_mod']]],
+  ['fsunmatzero_5fdense',['FSUNMatZero_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatZero__Dense.html',1,'fsunmat_dense_mod']]],
   ['funcstat',['FuncStat',['../structBLProfStats_1_1FuncStat.html',1,'BLProfStats']]]
 ];

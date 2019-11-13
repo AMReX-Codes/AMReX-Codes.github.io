@@ -358,7 +358,7 @@ var searchData=
   ['cssize',['csSize',['../classCommProfStats.html#af705693efa58487843e7624857f94399',1,'CommProfStats']]],
   ['csversion',['csVersion',['../classRegionsProfStats.html#ae262ff88e11aded2e904267db1e94a56',1,'RegionsProfStats']]],
   ['cumtime',['cumtime',['../classamrex_1_1Amr.html#a9b46db71980158bc8f12c2f7eebede4a',1,'amrex::Amr::cumtime()'],['../classamrex_1_1Amr.html#ae1a7de4bbf27289ccab4e3b8364a7c83',1,'amrex::Amr::cumTime() const noexcept']]],
-  ['curlevel',['curLevel',['../classamrex_1_1XYPlotDataList.html#a125f114aafc7c3b80d2a84a1cd77314d',1,'amrex::XYPlotDataList::curLevel()'],['../classamrex_1_1XYPlotDataList.html#a26924f6df717a52103c1670ad6cc01f3',1,'amrex::XYPlotDataList::CurLevel() const ']]],
+  ['curlevel',['CurLevel',['../classamrex_1_1XYPlotDataList.html#a26924f6df717a52103c1670ad6cc01f3',1,'amrex::XYPlotDataList::CurLevel() const '],['../classamrex_1_1XYPlotDataList.html#a125f114aafc7c3b80d2a84a1cd77314d',1,'amrex::XYPlotDataList::curLevel()']]],
   ['current_5fbuilds',['current_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#a1af174d3541b8cb0ffddf9902562db08',1,'amrex::MemProfiler::NBuildsInfo']]],
   ['current_5fbytes',['current_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a334add2acca04ed49223180ab7991e19',1,'amrex::MemProfiler::MemInfo']]],
   ['current_5forder',['current_order',['../structintegrator__stats__mod_1_1integrator__stats__t.html#a7fe8f0fa5ed93343d0cc875d579c5c65',1,'integrator_stats_mod::integrator_stats_t']]],
