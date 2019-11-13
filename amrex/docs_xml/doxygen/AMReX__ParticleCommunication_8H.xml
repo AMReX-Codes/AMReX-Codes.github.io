@@ -1567,7 +1567,7 @@
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(0);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(num_buckets,<sp/>0);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(num_buckets+1,<sp/>0);</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_box_offsets.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(num_buckets+1);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_dst_box_counts<sp/>=<sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>();</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_lev_offsets<sp/>=<sp/>pc.BufferMap().levelOffsetsPtr();</highlight></codeline>
@@ -1600,8 +1600,8 @@
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">amrex::Gpu::exclusive_scan</ref>(m_box_counts.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>()+1,<sp/>m_box_offsets.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>());</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">amrex::Gpu::exclusive_scan</ref>(m_box_counts.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>m_box_counts.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>(),<sp/>m_box_offsets.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>());</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buildMPIStart(pc.BufferMap());</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight></codeline>
