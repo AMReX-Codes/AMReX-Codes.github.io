@@ -27,6 +27,7 @@ var searchData=
   ['heun_5feuler_5f2_5f1_5f2',['heun_euler_2_1_2',['../namespacefarkode__mod.html#aa3dcfc88ac95abf37f3cc5582a24f33e',1,'farkode_mod']]],
   ['hgrid',['hgrid',['../classamrex_1_1HypreABecLap2.html#a0da4bed57db562ff033f2250ddca0a65',1,'amrex::HypreABecLap2']]],
   ['hi',['hi',['../structamrex_1_1ForkJoin_1_1ComponentSet.html#aa6ebc6ce0f58172561258c343c9b0921',1,'amrex::ForkJoin::ComponentSet::hi()'],['../classamrex_1_1BCRec.html#a102dea5bc859f0879efd400c515b2ebc',1,'amrex::BCRec::hi() const &amp;noexcept'],['../classamrex_1_1BCRec.html#a4a81a70cc95930ecdf555b8d887ca114',1,'amrex::BCRec::hi()&amp;&amp;=delete'],['../classamrex_1_1BCRec.html#aeb4617ca6fae4cb3d2840611d77f1f59',1,'amrex::BCRec::hi(int dir) const noexcept'],['../classamrex_1_1RealBox.html#a819f29403d4806d7b13baffe25b5ceb8',1,'amrex::RealBox::hi() const &amp;noexcept'],['../classamrex_1_1RealBox.html#a1524f482556a5a51c24672e857afe4a4',1,'amrex::RealBox::hi()&amp;&amp;=delete'],['../classamrex_1_1RealBox.html#a853070bf06ced25f07f7c02a5cd9293f',1,'amrex::RealBox::hi(int dir) const noexcept']]],
+  ['hibc',['HiBC',['../classamrex_1_1MLLinOp.html#ac313a2de49bd67c23fad23d5c4045e70',1,'amrex::MLLinOp']]],
   ['hiddencell',['HIDDENCELL',['../namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530a09da97af948ccd39faf2c0b3ed78185f',1,'amrex::InSituUtils']]],
   ['hiddenpoint',['HIDDENPOINT',['../namespaceamrex_1_1InSituUtils.html#ad3ac3134f4a39a0f979b1e491849fa3aa447a8b1040c94692e04c089e4634dac1',1,'amrex::InSituUtils']]],
   ['hiedge',['HiEdge',['../classamrex_1_1CoordSys.html#a9ec92efce51bbde30e91c69673b080cf',1,'amrex::CoordSys::HiEdge(int point, int dir) const noexcept'],['../classamrex_1_1CoordSys.html#a67a1ad822f7d6fac4907e3d37ab8953d',1,'amrex::CoordSys::HiEdge(const IntVect &amp;point, int dir) const noexcept']]],
@@ -44,8 +45,8 @@ var searchData=
   ['homogeneous',['Homogeneous',['../classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884a548465e8241b26162c8e0a7b0cdfc5e7',1,'amrex::MLLinOp']]],
   ['homogeneous_5fbc',['Homogeneous_BC',['../classamrex_1_1LinOp.html#ad5f2fc8009714c47dc63ff6a7a73a5deae1724332b6960ec73ce5040947963f78',1,'amrex::LinOp']]],
   ['host',['Host',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2',1,'amrex']]],
-  ['hosttodevice',['hostToDevice',['../namespaceamrex_1_1Gpu.html#a4bb7e2780d90c33c3116488d1004059e',1,'amrex::Gpu']]],
   ['hosttodevice',['HostToDevice',['../structamrex_1_1Gpu_1_1HostToDevice.html',1,'amrex::Gpu']]],
+  ['hosttodevice',['hostToDevice',['../namespaceamrex_1_1Gpu.html#a4bb7e2780d90c33c3116488d1004059e',1,'amrex::Gpu']]],
   ['hostvector',['HostVector',['../namespaceamrex_1_1Gpu.html#a3d871a58c724cf2f3a5fb0247d592beb',1,'amrex::Gpu']]],
   ['how',['How',['../classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156',1,'amrex::VisMF']]],
   ['htod_5fmemcpy',['htod_memcpy',['../namespaceamrex.html#ae243b10c65516ed7dfeaf9aed7e75aa3',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#aa9df7c449e875ece24add0d826c4f133',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)'],['../namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4',1,'amrex::Gpu::htod_memcpy()']]],
@@ -61,6 +62,6 @@ var searchData=
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html',1,'amrex']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html',1,'amrex']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]]
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]],
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]]
 ];
