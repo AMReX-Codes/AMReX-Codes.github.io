@@ -42,7 +42,6 @@ var searchData=
   ['theunitbox',['TheUnitBox',['../classamrex_1_1Box.html#a706adbfbd33e0269b3c2688ba5b36959',1,'amrex::Box']]],
   ['theunitvector',['TheUnitVector',['../classamrex_1_1IntVect.html#a89b6d1003a1ef2e6c9b79ff2a07241c3',1,'amrex::IntVect']]],
   ['thezerovector',['TheZeroVector',['../classamrex_1_1IntVect.html#a16fd2692186f9d2a1291058ac5ab0ca0',1,'amrex::IntVect']]],
-  ['thrust_5fcopy',['thrust_copy',['../namespaceamrex_1_1Gpu.html#a4f9ee4e463bbfa3f7a314a3b139fb2bf',1,'amrex::Gpu']]],
   ['tie',['Tie',['../namespaceamrex.html#a2b46f50ec085e4d83531caf667873214',1,'amrex']]],
   ['tilearray',['TileArray',['../structamrex_1_1FabArrayBase_1_1TileArray.html#a390a8c2b67ca14939fc0cc58ea72ece2',1,'amrex::FabArrayBase::TileArray']]],
   ['tilebox',['tilebox',['../classamrex_1_1MFIter.html#a4633394eac1ff3355fe082b815ed7413',1,'amrex::MFIter::tilebox() const noexcept'],['../classamrex_1_1MFIter.html#aade25ad6c9b6b92a5dbe2e022fc77912',1,'amrex::MFIter::tilebox(const IntVect &amp;nodal) const noexcept'],['../classamrex_1_1MFIter.html#a3563f863ba15b874a9abd0dc338c0c72',1,'amrex::MFIter::tilebox(const IntVect &amp;nodal, const IntVect &amp;ngrow) const noexcept']]],

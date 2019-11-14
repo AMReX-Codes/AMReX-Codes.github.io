@@ -597,8 +597,6 @@ return the raw data pointer which can be used to access the vector’s underlyin
 data on the GPU.</p>
 <p>It has proven useful to have a version of Thrust’s <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">device_vector</span></span></code>
 that uses CUDA managed memory. This is provided by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedDeviceVector</span></span></code>.</p>
-<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">thrust</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">copy</span></span></code> is also commonly used in AMReX applications. It can be
-implemented portably using <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">thrust_copy</span></span></code>.</p>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">DeviceVector</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedDeviceVector</span></span></code> are configured to
 use the memory Arenas provided by AMReX (see <a class="reference internal" href="#sec-gpu-memory"><span class="std std-ref">Memory Allocation</span></a>). This
 means that you can create temporary versions of these containers on-the-fly
@@ -1282,9 +1280,8 @@ the CPU and copies them over to the GPU in one batch per tile:</p>
     <span class="k">auto</span> <span class="n">new_size</span> <span class="o">=</span> <span class="n">old_size</span> <span class="o">+</span> <span class="n">host_particles</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
     <span class="n">particle_tile</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">new_size</span><span class="p">);</span>
 
-    <span class="n">Gpu</span><span class="o">::</span><span class="n">thrust_copy</span><span class="p">(</span><span class="n">host_particles</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span>
-                      <span class="n">host_particles</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
-                      <span class="n">particle_tile</span><span class="p">.</span><span class="n">GetArrayOfStructs</span><span class="p">().</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">old_size</span><span class="p">);</span>
+    <span class="n">Gpu</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span><span class="n">Gpu</span><span class="o">::</span><span class="n">hostToDevice</span><span class="p">,</span> <span class="n">host_particles</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">host_particles</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span>
+              <span class="n">particle_tile</span><span class="p">.</span><span class="n">GetArrayOfStructs</span><span class="p">().</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">old_size</span><span class="p">);</span>
  <span class="p">}</span>
 </pre></div>
 </div>

@@ -77,6 +77,8 @@ var searchData=
   ['device_5fsync',['device_sync',['../structamrex_1_1Gpu_1_1StreamItInfo.html#af984c422b61b1c2fa85896df7635e8e8',1,'amrex::Gpu::StreamItInfo::device_sync()'],['../structamrex_1_1MFItInfo.html#ab11997c86f3b753d6e0219696f17c2f7',1,'amrex::MFItInfo::device_sync()'],['../classamrex_1_1MFIter.html#a8cc2207634fdad4304d0a46c1e0ea433',1,'amrex::MFIter::device_sync()']]],
   ['device_5fuse_5fhostalloc',['device_use_hostalloc',['../structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81',1,'amrex::ArenaInfo']]],
   ['device_5fuse_5fmanaged_5fmemory',['device_use_managed_memory',['../structamrex_1_1ArenaInfo.html#a961c961eb343a2fa091082a6f1717b16',1,'amrex::ArenaInfo']]],
+  ['devicetodevice',['deviceToDevice',['../namespaceamrex_1_1Gpu.html#ae971b98930a2ee70e34eb866acf7edc0',1,'amrex::Gpu']]],
+  ['devicetohost',['deviceToHost',['../namespaceamrex_1_1Gpu.html#a2efba8d3a53211ca33b9f172185a81d3',1,'amrex::Gpu']]],
   ['dfab',['dfab',['../structArray4CopyTag.html#a899416f127f8f9e8dd14f3ac42634f5b',1,'Array4CopyTag::dfab()'],['../structArray4BoxTag.html#a5592c4d8acb7598662e58037846c899f',1,'Array4BoxTag::dfab()']]],
   ['diaginv',['diaginv',['../classamrex_1_1Hypre.html#a6eb22e62b62ea0d2bcfef92f18df5304',1,'amrex::Hypre::diaginv()'],['../classamrex_1_1PETScABecLap.html#a2a350b0e24a97da1c350b8116d0341ec',1,'amrex::PETScABecLap::diaginv()']]],
   ['dirichlet',['dirichlet',['../namespaceamrex__mlnodelap__2d__module.html#a5e01af4def51ce1a34d0f5cb21e2f0bb',1,'amrex_mlnodelap_2d_module::dirichlet()'],['../namespaceamrex__mlnodelap__3d__module.html#a8e47ea472f3816b13fb5be46d2c8fb88',1,'amrex_mlnodelap_3d_module::dirichlet()']]],
