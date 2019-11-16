@@ -108,6 +108,7 @@ var searchData=
   ['m_5fcurrent',['m_current',['../classamrex_1_1BoxIterator.html#a84175ad1f780ae9de83dc5f4c71b67e0',1,'amrex::BoxIterator']]],
   ['m_5fcut',['m_cut',['../AMReX__Cluster_8cpp.html#a702cf23ecfb91d369b2cbe6ef9998c57',1,'AMReX_Cluster.cpp']]],
   ['m_5fd',['m_d',['../classhacc_1_1Distribution.html#aa381914659691d811714d279f927972f',1,'hacc::Distribution']]],
+  ['m_5fdallocator',['m_dallocator',['../classamrex_1_1FabArray.html#a6a2a60d3af361dde9463f2d586d0e358',1,'amrex::FabArray']]],
   ['m_5fdata',['m_data',['../classamrex_1_1LayoutData.html#a3f97242387a9bccf0cb2aaeb5dbbfe5a',1,'amrex::LayoutData::m_data()'],['../classamrex_1_1PODVector.html#aa3653b70897299b34df8afff92bb2299',1,'amrex::PODVector::m_data()'],['../classamrex_1_1MultiCutFab.html#aa57d6c13b3ffbf9dcc2bf1d3c3496852',1,'amrex::MultiCutFab::m_data()'],['../classamrex_1_1ArrayOfStructs.html#acdf78353df38e822f55410ed8e3610d5',1,'amrex::ArrayOfStructs::m_data()'],['../structamrex_1_1ParticleCommData.html#a6567dd1e12cfdc62c93db6fe6e2bc0de',1,'amrex::ParticleCommData::m_data()']]],
   ['m_5fdebug',['m_debug',['../classhacc_1_1Distribution.html#a73a703d4fdc79e256d197275f2cd7695',1,'hacc::Distribution']]],
   ['m_5fdefault_5fcomm',['m_default_comm',['../classamrex_1_1MLLinOp.html#addb42fac68158f49c2508cf47d3b8d9d',1,'amrex::MLLinOp']]],
