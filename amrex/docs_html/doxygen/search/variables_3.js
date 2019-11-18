@@ -81,7 +81,6 @@ var searchData=
   ['devicetohost',['deviceToHost',['../namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548',1,'amrex::Gpu']]],
   ['dfab',['dfab',['../structArray4CopyTag.html#a899416f127f8f9e8dd14f3ac42634f5b',1,'Array4CopyTag::dfab()'],['../structArray4BoxTag.html#a5592c4d8acb7598662e58037846c899f',1,'Array4BoxTag::dfab()']]],
   ['diaginv',['diaginv',['../classamrex_1_1Hypre.html#a6eb22e62b62ea0d2bcfef92f18df5304',1,'amrex::Hypre::diaginv()'],['../classamrex_1_1PETScABecLap.html#a2a350b0e24a97da1c350b8116d0341ec',1,'amrex::PETScABecLap::diaginv()']]],
-  ['dirichlet',['dirichlet',['../namespaceamrex__mlnodelap__2d__module.html#a5e01af4def51ce1a34d0f5cb21e2f0bb',1,'amrex_mlnodelap_2d_module::dirichlet()'],['../namespaceamrex__mlnodelap__3d__module.html#a8e47ea472f3816b13fb5be46d2c8fb88',1,'amrex_mlnodelap_3d_module::dirichlet()']]],
   ['dirichlet_5fmask',['dirichlet_mask',['../classamrex_1_1HypreNodeLap.html#ae0af71a571c9aa2ae19cac29ee7deb4a',1,'amrex::HypreNodeLap']]],
   ['dirname',['dirName',['../classBLProfStats.html#a599d00f7afc5dc348ba84e2ad4ab3bb2',1,'BLProfStats']]],
   ['distributionmap',['distributionMap',['../classamrex_1_1FabArrayBase.html#adcb92e864340876da67df2fc64d8bdd7',1,'amrex::FabArrayBase']]],
