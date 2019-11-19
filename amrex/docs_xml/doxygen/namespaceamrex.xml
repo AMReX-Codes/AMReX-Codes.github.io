@@ -30283,6 +30283,163 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="29" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="29" bodyend="45"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aa8ab4c93999fda4a188134abc5d5bc74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PTile</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::copyParticles</definition>
+        <argsstring>(PTile &amp;dst, const PTile &amp;src) noexcept</argsstring>
+        <name>copyParticles</name>
+        <param>
+          <type>PTile &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const PTile &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Copy particles from src to dst. This version copies all the particles, writing them to the beginning of dst.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PTile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle tile type</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the function that will be applied to each particle </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ad30e808a1062741ef4d1947c00216bdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename PTile</type>
+          </param>
+          <param>
+            <type>typename IndexType</type>
+          </param>
+          <param>
+            <type>typename N</type>
+          </param>
+          <param>
+            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; IndexType &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::copyParticles</definition>
+        <argsstring>(PTile &amp;dst, const PTile &amp;src, IndexType src_start, IndexType dst_start, N n) noexcept</argsstring>
+        <name>copyParticles</name>
+        <param>
+          <type>PTile &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const PTile &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <declname>src_start</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></type>
+          <declname>dst_start</declname>
+        </param>
+        <param>
+          <type>N</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>/brief Copy particles from src to dst. This version copies n particles starting at index src_start, writing the result starting at dst_start.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PTile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle tile type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index type, e.g. unsigned int </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the size type, e.g. long</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the offset at which to start reading particles from src </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dst_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the offset at which to start writing particles to dst </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="81" bodyend="91"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a129cc768a96e7dfdafc35280bb7e52ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -30351,7 +30508,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="60" bodyend="64"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="106" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8929e3507a03ce6d760719aa58058617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30473,7 +30630,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="85" bodyend="95"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="131" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="131" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5049318f76dca44b3edd4577b74809fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30549,7 +30706,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="110" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="110" bodyend="132"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="156" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="156" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8a49d8e1d3b582340fef005e23f47888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30626,7 +30783,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="147" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="147" bodyend="163"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="193" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="193" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a54869a5d7a767654e8a4f89b3e3c0b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30723,7 +30880,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="181" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="181" bodyend="203"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="227" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="227" bodyend="249"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1adcb446e37abe412ae3f8844d4efc4c22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30821,7 +30978,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="221" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="221" bodyend="237"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="267" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="267" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae23b4762bfd7f9dba4b8a8f20ec38f84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30918,7 +31075,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="256" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="256" bodyend="265"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="302" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="302" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9be7afe51aafe03517b17145c84d953b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31015,7 +31172,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="284" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="284" bodyend="293"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="330" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="330" bodyend="339"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a680ccf73211338c29c896c0a5b4d18b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
