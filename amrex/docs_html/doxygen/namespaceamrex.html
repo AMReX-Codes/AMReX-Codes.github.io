@@ -2762,12 +2762,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy &gt; </td></tr>
 <tr class="memitem:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae65aa0e5fb032ec461c63cf5bf490f0d">unpackRemotes</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;rcv_buffer, const UnpackPolicy &amp;policy)</td></tr>
 <tr class="separator:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27ee655c50380f2c0b4ba9907a6d3a33"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F &gt; </td></tr>
-<tr class="memitem:a27ee655c50380f2c0b4ba9907a6d3a33"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a27ee655c50380f2c0b4ba9907a6d3a33">ParticleToMesh</a> (PC const &amp;pc, MF &amp;mf, int lev, F f)</td></tr>
-<tr class="separator:a27ee655c50380f2c0b4ba9907a6d3a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae007a2e5af87e5c9041a6f5850b9c1e3"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F &gt; </td></tr>
-<tr class="memitem:ae007a2e5af87e5c9041a6f5850b9c1e3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae007a2e5af87e5c9041a6f5850b9c1e3">MeshToParticle</a> (PC &amp;pc, MF const &amp;mf, int lev, F f)</td></tr>
-<tr class="separator:ae007a2e5af87e5c9041a6f5850b9c1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a926fde28af78ad9c323a24feb4430925"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F &gt; </td></tr>
+<tr class="memitem:a926fde28af78ad9c323a24feb4430925"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a926fde28af78ad9c323a24feb4430925">ParticleToMesh</a> (PC const &amp;pc, MF &amp;mf, int lev, F &amp;&amp;f)</td></tr>
+<tr class="separator:a926fde28af78ad9c323a24feb4430925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58a51c4b8f6499c752e8f3f27553e64"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F &gt; </td></tr>
+<tr class="memitem:ab58a51c4b8f6499c752e8f3f27553e64"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab58a51c4b8f6499c752e8f3f27553e64">MeshToParticle</a> (PC &amp;pc, MF const &amp;mf, int lev, F &amp;&amp;f)</td></tr>
+<tr class="separator:ab58a51c4b8f6499c752e8f3f27553e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb6ff5d283ec48f7761f93e96cc57c8a"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
 <tr class="memitem:afb6ff5d283ec48f7761f93e96cc57c8a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afb6ff5d283ec48f7761f93e96cc57c8a">ReduceSum</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
 <tr class="separator:afb6ff5d283ec48f7761f93e96cc57c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -19185,7 +19185,7 @@ template&lt;class T , class... Ts&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae007a2e5af87e5c9041a6f5850b9c1e3"></a>
+<a class="anchor" id="ab58a51c4b8f6499c752e8f3f27553e64"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -19212,7 +19212,7 @@ template&lt;class PC , class MF , class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">F&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -35797,7 +35797,7 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
 
 </div>
 </div>
-<a class="anchor" id="a27ee655c50380f2c0b4ba9907a6d3a33"></a>
+<a class="anchor" id="a926fde28af78ad9c323a24feb4430925"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -35824,7 +35824,7 @@ template&lt;class PC , class MF , class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">F&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
