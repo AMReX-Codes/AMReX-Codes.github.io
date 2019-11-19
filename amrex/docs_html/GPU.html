@@ -114,8 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#gpu-safe-classes-and-functions">GPU Safe Classes and Functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gpuarray">GpuArray</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#asyncarray">AsyncArray</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#managedvector">ManagedVector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cuda-s-thrust-vectors">CUDA’s Thrust Vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gpu-vectors">Gpu Vectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex-min-and-amrex-max">amrex::min and amrex::max</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#multifab-reductions">MultiFab Reductions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#box-intvect-and-indextype">Box, IntVect and IndexType</a></li>
@@ -250,8 +249,8 @@ to parallelize over a valid box at a time.  This is done by using a lot
 of CUDA threads that only work on a few cells each. This work
 distribution is illustrated in <a class="reference internal" href="#fig-gpu-threads"><span class="std std-numref">Table 11</span></a>.</p></li>
 </ul>
-<span id="fig-gpu-threads"></span><table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 11 </span><span class="caption-text">Comparison of OpenMP and CUDA work distribution. Pictures provided by Mike Zingale and the CASTRO team.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<span id="fig-gpu-threads"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Comparison of OpenMP and CUDA work distribution. Pictures provided by Mike Zingale and the CASTRO team.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -314,11 +313,11 @@ CPU reaches a synchronize in the MFIter’s destructor and waits for all GPU lau
 to complete before continuing.</p>
 </li>
 </ul>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id3">
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
 <p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
-ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+ran with three GPU streams.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="building-gpu-support">
@@ -434,8 +433,8 @@ AMReX provides a number of memory pools.  When compiled without
 CUDA, all <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s use standard <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">new</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">delete</span></span></code>
 operators. With CUDA, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s each allocate with a
 specific type of GPU memory:</p>
-<span id="tab-gpu-arena"></span><table class="docutils align-default" id="id3">
-<caption><span class="caption-number">Table 12 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<span id="tab-gpu-arena"></span><table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 54%" />
 <col style="width: 46%" />
@@ -562,17 +561,47 @@ object only stores and handles the CPU version of the data.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="managedvector">
-<h2>ManagedVector<a class="headerlink" href="#managedvector" title="Permalink to this headline">¶</a></h2>
-<p>AMReX also provides a dynamic memory allocation object for GPU managed memory:
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code>.  This class behaves identically to an
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Vector</span></span></code>, (see <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector and Array</span></a>), except the vector’s
-allocator has been changed to allocate and deallocate its data in CUDA
-managed memory whenever <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>.</p>
-<p>While the data is managed and available on GPUs, the member functions of
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code> are not. To use the data on the GPU, it is
-necessary to pass the underlying data pointer to the GPU. The managed data
-pointer can be accessed using the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">()</span></span></code> member function.</p>
+<div class="section" id="gpu-vectors">
+<h2>Gpu Vectors<a class="headerlink" href="#gpu-vectors" title="Permalink to this headline">¶</a></h2>
+<p>AMReX also provides a number of dynamic vectors for use with GPU kernels.
+These are configured to use the different AMReX memory Arenas, as
+summarized below. By using the memory Arenas, we can avoid expensive
+allocations and deallocations when (for example) resizing vectors.</p>
+<span id="id1"></span><table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vector</p></th>
+<th class="head"><p>Arena</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DeviceVector</p></td>
+<td><p>The_Arena()</p></td>
+</tr>
+<tr class="row-odd"><td><p>HostVector</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>ManagedVector</p></td>
+<td><p>The_Managed_Arena()</p></td>
+</tr>
+<tr class="row-odd"><td><p>PinnedVector</p></td>
+<td><p>The_Pinned_Arena()</p></td>
+</tr>
+</tbody>
+</table>
+<p>These classes behave identically to an
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Vector</span></span></code>, (see <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector and Array</span></a>), except that they
+can only hold “plain-old-data” objects (e.g. Reals, integers, amrex Particles,
+etc… ).</p>
+<p>Note that, even if the data in the vector is  managed and available on GPUs,
+the member functions of e.g. <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code> are not.
+To use the data on the GPU, it is necessary to pass the underlying data pointer
+in to the GPU kernels. The managed data pointer can be accessed using the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">()</span></span></code>
+member function.</p>
 <p>Be aware: resizing of dynamically allocated memory on the GPU is unsupported.
 All resizing of the vector should be done on the CPU, in a manner that avoids
 race conditions with concurrent GPU kernels.</p>
@@ -580,28 +609,6 @@ race conditions with concurrent GPU kernels.</p>
 constructed inside of an MFIter loop with GPU kernels and great care should
 be used when accessing <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code> data on GPUs to avoid race
 conditions.</p>
-</div>
-<div class="section" id="cuda-s-thrust-vectors">
-<h2>CUDA’s Thrust Vectors<a class="headerlink" href="#cuda-s-thrust-vectors" title="Permalink to this headline">¶</a></h2>
-<p>CUDA’s Thrust library can also be used to manage dynamically sized data sets.
-However, if Thrust is used directly in AMReX code, it will be unable to compile
-for cases when <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>.  To alleviate this issue,
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">thrust</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">host_vector</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">thrust</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">device_vector</span></span></code> have been wrapped
-into the AMReX classes <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">HostVector</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">DeviceVector</span></span></code>.
-When <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>, these classes revert to AMReX’s Vector class. When
-<code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, these classes become the corresponding Thrust vector.</p>
-<p>Just like with Thrust vectors, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">HostVector</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DeviceVector</span></span></code> cannot
-be directly used on the device. For convenience, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">dataPtr</span></span><span class="punctuation"><span class="pre">()</span></span></code> member
-function has been altered to implement <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">thrust</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">raw_pointer_cast</span></span></code> and
-return the raw data pointer which can be used to access the vector’s underlying
-data on the GPU.</p>
-<p>It has proven useful to have a version of Thrust’s <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">device_vector</span></span></code>
-that uses CUDA managed memory. This is provided by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedDeviceVector</span></span></code>.</p>
-<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">DeviceVector</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedDeviceVector</span></span></code> are configured to
-use the memory Arenas provided by AMReX (see <a class="reference internal" href="#sec-gpu-memory"><span class="std std-ref">Memory Allocation</span></a>). This
-means that you can create temporary versions of these containers on-the-fly
-without needing to performance expensive device memory allocate and free
-operations.</p>
 </div>
 <div class="section" id="amrex-min-and-amrex-max">
 <h2>amrex::min and amrex::max<a class="headerlink" href="#amrex-min-and-amrex-max" title="Permalink to this headline">¶</a></h2>

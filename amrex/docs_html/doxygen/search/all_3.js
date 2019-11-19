@@ -96,7 +96,7 @@ var searchData=
   ['cgbicg',['cgbicg',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb',1,'amrex']]],
   ['cgsolver',['CGSolver',['../classamrex_1_1CGSolver.html',1,'amrex']]],
   ['cgsolver',['CGSolver',['../classamrex_1_1CGSolver.html#ae8bd9022532e30643d758bdc1cdc134b',1,'amrex::CGSolver::CGSolver(LinOp &amp;_lp, bool _use_mg_precond=false, int _lev=0)'],['../classamrex_1_1CGSolver.html#aca325b5d06e29897bb9e4aec580abbf8',1,'amrex::CGSolver::CGSolver(const CGSolver &amp;)']]],
-  ['charvector',['CharVector',['../classamrex_1_1ParticleContainer.html#a3d8a82738e731377cd4c172b7aefac5f',1,'amrex::ParticleContainer']]],
+  ['charvector',['CharVector',['../classamrex_1_1ParticleContainer.html#af32caec1aedd49476c2d0d26c47ae196',1,'amrex::ParticleContainer']]],
   ['check',['Check',['../classamrex_1_1VisMF.html#ae12f838572701049902254dfb46eb650',1,'amrex::VisMF']]],
   ['check_5ffile_5froot',['check_file_root',['../classamrex_1_1Amr.html#a006c720b7d8ecf6e603785ab0b82bced',1,'amrex::Amr']]],
   ['check_5finput',['check_input',['../classamrex_1_1AmrMesh.html#a8d2f6e5a9f3f46c76d44215f83455475',1,'amrex::AmrMesh']]],
