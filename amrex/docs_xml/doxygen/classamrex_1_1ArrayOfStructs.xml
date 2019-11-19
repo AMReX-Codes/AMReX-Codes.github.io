@@ -30,7 +30,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="13" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="13" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classamrex_1_1ArrayOfStructs_1a6694efa287bd1d39554c85d773d1a894" prot="public" static="no">
-        <type>typename <ref refid="structamrex_1_1Particle_1a3404cd416ce19f9686f84a334da67ac8" kindref="member">ParticleType::RealType</ref></type>
+        <type>typename <ref refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kindref="member">ParticleType::RealType</ref></type>
         <definition>using amrex::ArrayOfStructs&lt; NReal, NInt &gt;::RealType =  typename ParticleType::RealType</definition>
         <argsstring></argsstring>
         <name>RealType</name>
@@ -596,21 +596,42 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="652">
+      <node id="639">
         <label>std::allocator&lt; ParticleType &gt;</label>
       </node>
-      <node id="650">
+      <node id="642">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;::rm_t</label>
+        <link refid="unionamrex_1_1Particle_1_1rm__t"/>
+      </node>
+      <node id="640">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
+        <link refid="structamrex_1_1Particle"/>
+        <childnode refid="641" relation="usage">
+          <edgelabel>m_idata</edgelabel>
+        </childnode>
+        <childnode refid="642" relation="usage">
+          <edgelabel>m_rdata</edgelabel>
+        </childnode>
+      </node>
+      <node id="637">
         <label>amrex::ArrayOfStructs&lt; NReal, NInt &gt;</label>
         <link refid="classamrex_1_1ArrayOfStructs"/>
-        <childnode refid="651" relation="usage">
+        <childnode refid="638" relation="usage">
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="651">
+      <node id="638">
         <label>amrex::PODVector&lt; ParticleType &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="652" relation="public-inheritance">
+        <childnode refid="639" relation="public-inheritance">
         </childnode>
+        <childnode refid="640" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="641">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;::im_t</label>
+        <link refid="unionamrex_1_1Particle_1_1im__t"/>
       </node>
     </collaborationgraph>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ArrayOfStructs.H" line="11" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ArrayOfStructs.H" bodystart="11" bodyend="109"/>
