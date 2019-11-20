@@ -341,7 +341,7 @@ var searchData=
   ['solve_5fcabicgstab',['solve_cabicgstab',['../classamrex_1_1CGSolver.html#ad1f02a534abef5242b3368d1796fc457',1,'amrex::CGSolver']]],
   ['solve_5fcabicgstab_5fquad',['solve_cabicgstab_quad',['../classamrex_1_1CGSolver.html#ab208c424f69fec07ecfef3e903c8746d',1,'amrex::CGSolver']]],
   ['solve_5fcg',['solve_cg',['../classamrex_1_1CGSolver.html#a5e82c4f3f85cce31876ddfb44d15ab3b',1,'amrex::CGSolver::solve_cg()'],['../classamrex_1_1MLCGSolver.html#a8f5383cd09372e80bdf1b309546f8424',1,'amrex::MLCGSolver::solve_cg()']]],
-  ['solve_5fthomas',['solve_thomas',['../classamrex_1_1distFcnElement2d.html#a6c7044a38996975889c430f3c376718e',1,'amrex::distFcnElement2d']]],
+  ['solve_5fthomas',['solve_thomas',['../classamrex_1_1distFcnElement2d.html#aa6d7d131a6331d5b0981f9a5462c2337',1,'amrex::distFcnElement2d']]],
   ['sort',['Sort',['../classamrex_1_1DistributionMapping.html#a65d02277c7532c3befd7d24aeda66a0d',1,'amrex::DistributionMapping']]],
   ['sortparticlesbycell',['SortParticlesByCell',['../classamrex_1_1ParticleContainer.html#a22e1d8ca180b542ad1610173f3a28d63',1,'amrex::ParticleContainer']]],
   ['spacedim',['spaceDim',['../classamrex_1_1PlotFileDataImpl.html#a98409ca4924677464a16e11b2eeb7928',1,'amrex::PlotFileDataImpl::spaceDim()'],['../classamrex_1_1PlotFileData.html#aa391b223b190969e506f7a1ca3995544',1,'amrex::PlotFileData::spaceDim()']]],

@@ -10,7 +10,7 @@ var searchData=
   ['cachestats',['CacheStats',['../structamrex_1_1FabArrayBase_1_1CacheStats.html',1,'amrex::FabArrayBase']]],
   ['cachestats',['CacheStats',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a133fda6931b3c51c21e4328a0f1580cf',1,'amrex::FabArrayBase::CacheStats']]],
   ['calc_5falpha',['calc_alpha',['../namespaceamrex__eb__to__vtk.html#ac4f8399ba9ea524a61cdcb4346cfae18',1,'amrex_eb_to_vtk']]],
-  ['calc_5fd',['calc_D',['../classamrex_1_1SplineDistFcnElement2d.html#ac73df4a77f94a240ac4f28b2e58b9ee2',1,'amrex::SplineDistFcnElement2d']]],
+  ['calc_5fd',['calc_D',['../classamrex_1_1SplineDistFcnElement2d.html#acfaa366856b5d181ef31e271d810a461',1,'amrex::SplineDistFcnElement2d']]],
   ['calc_5ffacet_5fedge',['calc_facet_edge',['../namespaceamrex__eb__geometry__module.html#ab12c44201cf38143f032d3793d8f038b',1,'amrex_eb_geometry_module']]],
   ['calc_5fhesse',['calc_hesse',['../namespaceamrex__eb__to__vtk.html#a613a580e6c2733dbbb21198b65ac4956',1,'amrex_eb_to_vtk']]],
   ['calc_5fintercects',['calc_intercects',['../namespaceamrex__eb__to__vtk.html#a3efff6dc5ebc613a7b4eb39c168239ae',1,'amrex_eb_to_vtk']]],
