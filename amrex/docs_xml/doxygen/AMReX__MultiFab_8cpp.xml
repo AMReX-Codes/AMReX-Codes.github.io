@@ -2558,104 +2558,119 @@
 <codeline lineno="1196"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>period.shiftIntVect();</highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1199"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1200"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1202"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a11fd6aa3197ac10c8fb27ee5a5c96d57" kindref="member">MFIter</ref><sp/>mfi(*p);<sp/>mfi.isValid();<sp/>++mfi)</highlight></codeline>
-<codeline lineno="1206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>(*p)[mfi].box();</highlight></codeline>
-<codeline lineno="1208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>arr<sp/>=<sp/>p-&gt;array(mfi);<sp/></highlight></codeline>
-<codeline lineno="1209"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref>(bx,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
-<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr(i,j,k)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="1214"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>iv<sp/>:<sp/>pshifts)</highlight></codeline>
-<codeline lineno="1216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.intersections(bx+iv,<sp/>isects);</highlight></codeline>
-<codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>is<sp/>:<sp/>isects)</highlight></codeline>
-<codeline lineno="1219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>ibx<sp/>=<sp/>is.second-iv;</highlight></codeline>
-<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref>(ibx,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
-<codeline lineno="1222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr(i,j,k)<sp/>+=<sp/>1.0;</highlight></codeline>
-<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
-<codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1228"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
-<codeline lineno="1231"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1232"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1233"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1234"><highlight class="normal">std::unique_ptr&lt;iMultiFab&gt;</highlight></codeline>
-<codeline lineno="1235"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1a2408f4add699045c65b4dbe0ff5390bc" kindref="member">MultiFab::OwnerMask</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1236"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a7999d4ed2bf68aba97d9772d888667d9" kindref="member">amrex::OwnerMask</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>period);</highlight></codeline>
-<codeline lineno="1238"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1239"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1240"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1241"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1a7e5a1ca37cf868e20311541187b08216" kindref="member">MultiFab::AverageSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1242"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MultiFab::AverageSync()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1244"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a682fdf86619f6028fea2805d9693ae22" kindref="member">ixType</ref>().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wgt<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1a810f7090a63aab0173b8cecbc53bb9e1" kindref="member">OverlapMask</ref>(period);</highlight></codeline>
-<codeline lineno="1247"><highlight class="normal"><sp/><sp/><sp/><sp/>wgt-&gt;invert(1.0,<sp/>0,<sp/>1);</highlight></codeline>
-<codeline lineno="1248"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1ad80a338735a5addaa47a0726cb24c8c5" kindref="member">WeightedSync</ref>(*wgt,<sp/>period);</highlight></codeline>
-<codeline lineno="1249"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1250"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1251"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1252"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1ad80a338735a5addaa47a0726cb24c8c5" kindref="member">MultiFab::WeightedSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MultiFab_1abcce72db937ae8e326d2cb14cb114e7d" kindref="member">MultiFab</ref>&amp;<sp/>wgt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1253"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MultiFab::WeightedSync()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1255"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a682fdf86619f6028fea2805d9693ae22" kindref="member">ixType</ref>().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>();</highlight></codeline>
-<codeline lineno="1259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comp<sp/>=<sp/>0;<sp/>comp<sp/>&lt;<sp/>ncomp;<sp/>++comp)</highlight></codeline>
-<codeline lineno="1260"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a62db3405e4e92a2a5bd5d3d9d19698ba" kindref="member">MultiFab::Multiply</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>wgt,<sp/>0,<sp/>comp,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="1262"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1264"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1abcce72db937ae8e326d2cb14cb114e7d" kindref="member">MultiFab</ref><sp/>tmpmf(<ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>(),<sp/><ref refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" kindref="member">DistributionMap</ref>(),<sp/>ncomp,<sp/>0,<sp/>MFInfo(),<sp/><ref refid="classamrex_1_1FabArray_1a362cb84f113b8019a6f8b03129d1cf48" kindref="member">Factory</ref>());</highlight></codeline>
-<codeline lineno="1265"><highlight class="normal"><sp/><sp/><sp/><sp/>tmpmf.setVal(0.0);</highlight></codeline>
-<codeline lineno="1266"><highlight class="normal"><sp/><sp/><sp/><sp/>tmpmf.ParallelCopy(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>period,<sp/><ref refid="classamrex_1_1FabArrayBase_1ac86e93bfc13df1bdcfb0ebbafb6a1cffa10289ce78187f199681fabf1c9956399" kindref="member">FabArrayBase::ADD</ref>);</highlight></codeline>
-<codeline lineno="1267"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1268"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>tmpmf,<sp/>0,<sp/>0,<sp/>ncomp,<sp/>0);</highlight></codeline>
-<codeline lineno="1269"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Array4BoxTag&lt;Real&gt;<sp/>&gt;<sp/>tags;</highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>run_on_gpu<sp/>=<sp/><ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">Gpu::inLaunchRegion</ref>();</highlight></codeline>
+<codeline lineno="1202"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1203"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(!run_on_gpu)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1204"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1205"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
+<codeline lineno="1207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a11fd6aa3197ac10c8fb27ee5a5c96d57" kindref="member">MFIter</ref><sp/>mfi(*p);<sp/>mfi.isValid();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="1209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>(*p)[mfi].box();</highlight></codeline>
+<codeline lineno="1211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>arr<sp/>=<sp/>p-&gt;array(mfi);</highlight></codeline>
+<codeline lineno="1212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref>(bx,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="1214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr(i,j,k)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="1216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="1217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>iv<sp/>:<sp/>pshifts)</highlight></codeline>
+<codeline lineno="1219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.intersections(bx+iv,<sp/>isects);</highlight></codeline>
+<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>is<sp/>:<sp/>isects)</highlight></codeline>
+<codeline lineno="1222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b<sp/>=<sp/>is.second-iv;</highlight></codeline>
+<codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(run_on_gpu)<sp/>{</highlight></codeline>
+<codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tags.push_back({arr,b});</highlight></codeline>
+<codeline lineno="1226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1abdd5d7a3b382bc1d21220946d7084839" kindref="member">amrex::LoopConcurrentOnCpu</ref>(b,<sp/>[=]<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr(i,j,k)<sp/>+=<sp/>1.0;</highlight></codeline>
+<codeline lineno="1230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="1231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1237"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a88491162751c848c2ada7d1c72c5a80d" kindref="member">amrex::ParallelFor</ref>(tags,<sp/>1,</highlight></codeline>
+<codeline lineno="1239"><highlight class="normal"><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a)<sp/>noexcept</highlight></codeline>
+<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/>p<sp/>=<sp/>a.ptr(i,j,k,n);</highlight></codeline>
+<codeline lineno="1242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a8aa0aebdef6e669c20ff7e5585ea6f0d" kindref="member">Gpu::Atomic::Add</ref>(p,<sp/>1.0);</highlight></codeline>
+<codeline lineno="1243"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="1244"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="1247"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1249"><highlight class="normal">std::unique_ptr&lt;iMultiFab&gt;</highlight></codeline>
+<codeline lineno="1250"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1a2408f4add699045c65b4dbe0ff5390bc" kindref="member">MultiFab::OwnerMask</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1251"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a7999d4ed2bf68aba97d9772d888667d9" kindref="member">amrex::OwnerMask</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>period);</highlight></codeline>
+<codeline lineno="1253"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1255"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1256"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1a7e5a1ca37cf868e20311541187b08216" kindref="member">MultiFab::AverageSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
+<codeline lineno="1257"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1258"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MultiFab::AverageSync()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a682fdf86619f6028fea2805d9693ae22" kindref="member">ixType</ref>().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>wgt<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1a810f7090a63aab0173b8cecbc53bb9e1" kindref="member">OverlapMask</ref>(period);</highlight></codeline>
+<codeline lineno="1262"><highlight class="normal"><sp/><sp/><sp/><sp/>wgt-&gt;invert(1.0,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline lineno="1263"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1ad80a338735a5addaa47a0726cb24c8c5" kindref="member">WeightedSync</ref>(*wgt,<sp/>period);</highlight></codeline>
+<codeline lineno="1264"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1266"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1267"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1ad80a338735a5addaa47a0726cb24c8c5" kindref="member">MultiFab::WeightedSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MultiFab_1abcce72db937ae8e326d2cb14cb114e7d" kindref="member">MultiFab</ref>&amp;<sp/>wgt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
+<codeline lineno="1268"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1269"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MultiFab::WeightedSync()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1270"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1271"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1272"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1273"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a682fdf86619f6028fea2805d9693ae22" kindref="member">ixType</ref>().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>msk<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1a2408f4add699045c65b4dbe0ff5390bc" kindref="member">OwnerMask</ref>(period);</highlight></codeline>
-<codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">OverrideSync</ref>(*msk,<sp/>period);</highlight></codeline>
-<codeline lineno="1277"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1278"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1279"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1280"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iMultiFab&amp;<sp/>msk,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1281"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1282"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" kindref="member">amrex::OverrideSync</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>msk,<sp/>period);</highlight></codeline>
-<codeline lineno="1283"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1284"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1285"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1286"><highlight class="normal"><ref refid="classamrex_1_1FabArray_1ae2a65f54013f600fa7dab70c171f098f" kindref="member">FillBoundary</ref><sp/>(Vector&lt;MultiFab*&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
-<codeline lineno="1287"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x<sp/>:<sp/>mf)<sp/>{</highlight></codeline>
-<codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x-&gt;FillBoundary(period);</highlight></codeline>
-<codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1291"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>is<sp/>actually<sp/>slower<sp/>on<sp/>summit</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1292"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>Vector&lt;FabArray&lt;FArrayBox&gt;*&gt;<sp/>fa{mf.begin(),mf.end()};</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1293"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>FillBoundary(fa,period);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1294"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1295"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1296"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a682fdf86619f6028fea2805d9693ae22" kindref="member">ixType</ref>().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>();</highlight></codeline>
+<codeline lineno="1274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>comp<sp/>=<sp/>0;<sp/>comp<sp/>&lt;<sp/>ncomp;<sp/>++comp)</highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1a62db3405e4e92a2a5bd5d3d9d19698ba" kindref="member">MultiFab::Multiply</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>wgt,<sp/>0,<sp/>comp,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="1277"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1abcce72db937ae8e326d2cb14cb114e7d" kindref="member">MultiFab</ref><sp/>tmpmf(<ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>(),<sp/><ref refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" kindref="member">DistributionMap</ref>(),<sp/>ncomp,<sp/>0,<sp/>MFInfo(),<sp/><ref refid="classamrex_1_1FabArray_1a362cb84f113b8019a6f8b03129d1cf48" kindref="member">Factory</ref>());</highlight></codeline>
+<codeline lineno="1280"><highlight class="normal"><sp/><sp/><sp/><sp/>tmpmf.setVal(0.0);</highlight></codeline>
+<codeline lineno="1281"><highlight class="normal"><sp/><sp/><sp/><sp/>tmpmf.ParallelCopy(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>period,<sp/><ref refid="classamrex_1_1FabArrayBase_1ac86e93bfc13df1bdcfb0ebbafb6a1cffa10289ce78187f199681fabf1c9956399" kindref="member">FabArrayBase::ADD</ref>);</highlight></codeline>
+<codeline lineno="1282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1283"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>tmpmf,<sp/>0,<sp/>0,<sp/>ncomp,<sp/>0);</highlight></codeline>
+<codeline lineno="1284"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1286"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1287"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
+<codeline lineno="1288"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1FabArrayBase_1a682fdf86619f6028fea2805d9693ae22" kindref="member">ixType</ref>().cellCentered())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>msk<sp/>=<sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1a2408f4add699045c65b4dbe0ff5390bc" kindref="member">OwnerMask</ref>(period);</highlight></codeline>
+<codeline lineno="1291"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">OverrideSync</ref>(*msk,<sp/>period);</highlight></codeline>
+<codeline lineno="1292"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1294"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1295"><highlight class="normal"><ref refid="classamrex_1_1MultiFab_1aec134620b7dfd17d0b8a540e9a96f41c" kindref="member">MultiFab::OverrideSync</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>iMultiFab&amp;<sp/>msk,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
+<codeline lineno="1296"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" kindref="member">amrex::OverrideSync</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>msk,<sp/>period);</highlight></codeline>
+<codeline lineno="1298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1300"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1301"><highlight class="normal"><ref refid="classamrex_1_1FabArray_1ae2a65f54013f600fa7dab70c171f098f" kindref="member">FillBoundary</ref><sp/>(Vector&lt;MultiFab*&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>period)</highlight></codeline>
+<codeline lineno="1302"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x<sp/>:<sp/>mf)<sp/>{</highlight></codeline>
+<codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x-&gt;FillBoundary(period);</highlight></codeline>
+<codeline lineno="1305"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1306"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>following<sp/>is<sp/>actually<sp/>slower<sp/>on<sp/>summit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1307"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>Vector&lt;FabArray&lt;FArrayBox&gt;*&gt;<sp/>fa{mf.begin(),mf.end()};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1308"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>FillBoundary(fa,period);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1309"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1311"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFab.cpp"/>
   </compounddef>

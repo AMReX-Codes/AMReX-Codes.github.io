@@ -2240,6 +2240,13 @@
     <member refid="structamrex_1_1MLLinOp_1_1CommContainer_1abd769793d1c4df11fa4dc6fa2e9e660f" kind="function"><name>operator=</name></member>
     <member refid="structamrex_1_1MLLinOp_1_1CommContainer_1a3cfdc93d63585946dd3a1aa9c1f47b1e" kind="function"><name>~CommContainer</name></member>
   </compound>
+  <compound refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kind="struct"><name>amrex::FabArrayBase::CommMetaData</name>
+    <member refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a0d33ba955e754e4749cbb8337082bb0d" kind="variable"><name>m_threadsafe_loc</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a45f8bde679589b1086b07cc3faba6740" kind="variable"><name>m_threadsafe_rcv</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1ac9cf38f68949932d8e7815a7caffc7c8" kind="variable"><name>m_LocTags</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a9faedeb4a7bf786a1143c2f4264369a0" kind="variable"><name>m_SndTags</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1CommMetaData_1a8a30e2336976ffe878c2c6558ecce70d" kind="variable"><name>m_RcvTags</name></member>
+  </compound>
   <compound refid="classCommProfStats" kind="class"><name>CommProfStats</name>
     <member refid="classCommProfStats_1adfeb787d05dd96d8297c678948d899fa" kind="variable"><name>currentDataBlock</name></member>
     <member refid="classCommProfStats_1aae44e713714a3c31191ab760bee0d4df" kind="variable"><name>tagMin</name></member>
@@ -2471,11 +2478,6 @@
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1ae5ff0f4d1aea7da43378472739eae7d2" kind="variable"><name>m_period</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a0731da1aa60b01a75a86c66a1e49a82c" kind="variable"><name>m_srcba</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a5f390136bc410e6524afb0c7605d01ae" kind="variable"><name>m_dstba</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1CPC_1addb3c2428b13f33918b669b3860b7bc5" kind="variable"><name>m_threadsafe_loc</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a91370002d428a48e7c6ed4b2e22cca60" kind="variable"><name>m_threadsafe_rcv</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a81bf78da77ae53d44dd1a5bb8f05d999" kind="variable"><name>m_LocTags</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a1cd653e9db338d0e4026d9a5ef523a13" kind="variable"><name>m_SndTags</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1CPC_1ae27301b017bbfff8f0bffb789d13259f" kind="variable"><name>m_RcvTags</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a29a5637a770e087c451a178c7af9c0f9" kind="variable"><name>m_nuse</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a40e6f166da5f2d045cdbe945f0b40878" kind="function"><name>CPC</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1CPC_1a354b679a17210c1815e5313618091e0e" kind="function"><name>CPC</name></member>
@@ -3486,6 +3488,7 @@
     <member refid="classamrex_1_1FabArray_1a2eb7f1c8a1ad0b253f6b4dc3445b5ac6" kind="function"><name>FBEP_nowait</name></member>
     <member refid="classamrex_1_1FabArray_1a5fbf15f2a4abd1397a6474713b122824" kind="function"><name>FB_local_copy_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1af001e3fed315af1165f42213a1042c09" kind="function"><name>PC_local_cpu</name></member>
+    <member refid="classamrex_1_1FabArray_1aaad9347944887bc14f15277d45585d84" kind="function"><name>setVal</name></member>
     <member refid="classamrex_1_1FabArray_1a0e0073142d1598838048317216fa6d12" kind="function"><name>FBEP_nowait</name></member>
     <member refid="classamrex_1_1FabArray_1a6ab6171d0c8b5e44260c328d0582621b" kind="function"><name>FillBoundary_finish</name></member>
     <member refid="classamrex_1_1FabArray_1a551575e2734ddbb455ce7d7ebd53cd9f" kind="function"><name>SharedMemory</name></member>
@@ -3521,14 +3524,6 @@
     <member refid="classamrex_1_1FabArrayBase_1a7bc1878e44728621bf3f21e2ad7d87b5" kind="variable"><name>m_CFinfo_stats</name></member>
     <member refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kind="variable"><name>m_mem_usage</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kind="variable"><name>m_region_tag</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1ae63b22ccabe6c5af01dd0779c60740c8" kind="variable"><name>boxarray</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1adcb92e864340876da67df2fc64d8bdd7" kind="variable"><name>distributionMap</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a15c2b54df8386a9d38216410edce884c" kind="variable"><name>indexArray</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1ab4d5df57a6eaa1d785d131b059b43e18" kind="variable"><name>ownership</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1aad48d978f6df9294ff3cbdb8978b8914" kind="variable"><name>n_grow</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a4ff6141edd1ba1d1940c45b98a619b04" kind="variable"><name>n_comp</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a2865ec7ad6d6f09cf1a3a891b603144c" kind="variable"><name>m_bdkey</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1acb3699bf4d436f320a73a9c5239b81cd" kind="variable"><name>n_filled</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a19a98e6afcf41af75c85278285c1e66b" kind="variable"><name>m_TheTileArrayCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a7ac2d31ebea84512f6379331df5c8d75" kind="variable"><name>m_TAC_stats</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a9d064b2059eb4cdd082f41be30e0d496" kind="variable"><name>m_TheFBCache</name></member>
@@ -3537,6 +3532,14 @@
     <member refid="classamrex_1_1FabArrayBase_1a7300ef91cdc58de4230d68dee3691006" kind="variable"><name>m_CPC_stats</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a8b7b09c9194e173ed0b7df6ec34847ad" kind="variable"><name>m_BD_count</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a2678095b2d8ac82dac74b035a15d30f9" kind="variable"><name>m_FA_stats</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1ae63b22ccabe6c5af01dd0779c60740c8" kind="variable"><name>boxarray</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1adcb92e864340876da67df2fc64d8bdd7" kind="variable"><name>distributionMap</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a15c2b54df8386a9d38216410edce884c" kind="variable"><name>indexArray</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1ab4d5df57a6eaa1d785d131b059b43e18" kind="variable"><name>ownership</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1aad48d978f6df9294ff3cbdb8978b8914" kind="variable"><name>n_grow</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a4ff6141edd1ba1d1940c45b98a619b04" kind="variable"><name>n_comp</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a2865ec7ad6d6f09cf1a3a891b603144c" kind="variable"><name>m_bdkey</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1acb3699bf4d436f320a73a9c5239b81cd" kind="variable"><name>n_filled</name></member>
     <member refid="classamrex_1_1FabArrayBase_1acc0d46f9c8551ec9c1c6d6658103db15" kind="function"><name>FabArrayBase</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a9d0b50241fbebae6e3d53e301cf2b23a" kind="function"><name>~FabArrayBase</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a474c8b827c1db51691c9e98263508d31" kind="function"><name>FabArrayBase</name></member>
@@ -3565,6 +3568,17 @@
     <member refid="classamrex_1_1FabArrayBase_1ae7aac9d7bfa41ac76f80543a6a8c1898" kind="function"><name>flushFPinfo</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a9d3dbb0a351f570080f23f75febd836d" kind="function"><name>flushCFinfo</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ab8548585b1a018f9d0a85cd43a719fe8" kind="function"><name>getTileArray</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a10399c20d1f9186d481354025e58f6dc" kind="function"><name>clear</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a8e414f069d04091245f3e9e94a3aa237" kind="function"><name>OwnerShip</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a6512ea611a6c04b5710334d9d9bfbb4e" kind="function"><name>isOwner</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a1abcd5df36dacaa8b31e6fcaaed30be3" kind="function"><name>buildTileArray</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1aa5c5f9aa77f5d7c4c73fafea2dc0116e" kind="function"><name>flushTileArray</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a5b4a0572662ad2d1a9cc30f3c6d8fd73" kind="function"><name>getFB</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a53cf0c60964630e381fd523a72fbf267" kind="function"><name>flushFB</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a887fcf01f365f0cd92d32fceeba8ee3a" kind="function"><name>getCPC</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a937cce5d85fb91c1bddad5f9f3c0adc4" kind="function"><name>flushCPC</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a8b95df9ab5980407e45865e8876791be" kind="function"><name>clearThisBD</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a294641949d2f4dd2161ba42a6b10d570" kind="function"><name>addThisBD</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a1f6dc68b468c213274abf8e9219b532a" kind="function"><name>bytesOfMapOfCopyComTagContainers</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a4581192d404c43071aaa653b2bbf28e3" kind="function"><name>Initialize</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ae281696e28cac4d5387cdb5660d9aa3d" kind="function"><name>Finalize</name></member>
@@ -3578,17 +3592,6 @@
     <member refid="classamrex_1_1FabArrayBase_1a18cdf2cc3d52d7d4d7dbf8c24ce614ee" kind="function"><name>pushRegionTag</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a8278b7adc57c727c9718330665bdeef7" kind="function"><name>pushRegionTag</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a2de51872d78b63b8c99c30eac65f3ee3" kind="function"><name>popRegionTag</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a10399c20d1f9186d481354025e58f6dc" kind="function"><name>clear</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a8e414f069d04091245f3e9e94a3aa237" kind="function"><name>OwnerShip</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a6512ea611a6c04b5710334d9d9bfbb4e" kind="function"><name>isOwner</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a1abcd5df36dacaa8b31e6fcaaed30be3" kind="function"><name>buildTileArray</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1aa5c5f9aa77f5d7c4c73fafea2dc0116e" kind="function"><name>flushTileArray</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a5b4a0572662ad2d1a9cc30f3c6d8fd73" kind="function"><name>getFB</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a53cf0c60964630e381fd523a72fbf267" kind="function"><name>flushFB</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a887fcf01f365f0cd92d32fceeba8ee3a" kind="function"><name>getCPC</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a937cce5d85fb91c1bddad5f9f3c0adc4" kind="function"><name>flushCPC</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a8b95df9ab5980407e45865e8876791be" kind="function"><name>clearThisBD</name></member>
-    <member refid="classamrex_1_1FabArrayBase_1a294641949d2f4dd2161ba42a6b10d570" kind="function"><name>addThisBD</name></member>
     <member refid="classamrex_1_1FabArrayBase_1ac5c3b09365bcaf3c92ec8d296da74ccc" kind="function"><name>flushTileArrayCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1afafdcf4e581478be608bb916274857d5" kind="function"><name>flushFBCache</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a3212be804b64d0f051f907c75fbad3d6" kind="function"><name>flushCPCache</name></member>
@@ -4507,11 +4510,6 @@
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1a5dabbd852ff0a3516c1d7b2b40496773" kind="variable"><name>m_cross</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1aa8992473f3d960f9f118c57122a349ea" kind="variable"><name>m_epo</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1a80294b3b23ece6729eca66ec2b75dcad" kind="variable"><name>m_period</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1FB_1a9d77e63093b304f72f307d292d987082" kind="variable"><name>m_threadsafe_loc</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1FB_1ac65b5fe126a75fe54dbfa45169f066f1" kind="variable"><name>m_threadsafe_rcv</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1FB_1a3f5b0c61b1728075cc863da0b911a1c6" kind="variable"><name>m_LocTags</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1FB_1aee0b169f73c1599212ba766b15d594a4" kind="variable"><name>m_SndTags</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1FB_1a1c2b1c9200ee79f522f7ed4428d1ece5" kind="variable"><name>m_RcvTags</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1aeed4c1b7fbff9ee8ce95e852e1ea4066" kind="variable"><name>m_nuse</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1a83c1bd14a26930c23280b11356906fbb" kind="function"><name>FB</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1FB_1a3a5bf414a1fa823843b3c35d2ee5bbc9" kind="function"><name>~FB</name></member>
@@ -5680,15 +5678,6 @@
   <compound refid="interfacefsunlinsol__mod_1_1FQRsol" kind="interface"><name>fsunlinsol_mod::FQRsol</name>
     <member refid="interfacefsunlinsol__mod_1_1FQRsol_1ad88cce0594294f72e36b98d6419d9e92" kind="function"><name>fqrsol</name></member>
   </compound>
-  <compound refid="classamrex_1_1ParmParse_1_1Frame" kind="class"><name>amrex::ParmParse::Frame</name>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1a08900c4a6b0bf1bd93ac69322ffebfdc" kind="variable"><name>m_pp</name></member>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1ac38675ae6a506924dba0181718e7c1da" kind="variable"><name>m_np</name></member>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1abbb46e1546bfb5c2ed1797335c02b7d3" kind="function"><name>Frame</name></member>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1a1b690adb2a1e120cb892c3314dd1b9df" kind="function"><name>~Frame</name></member>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1a2b5df366a9cc67f3ab6159ab5c924ec8" kind="function"><name>push</name></member>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1abae9fa2cf456b4c2074570274f252fe4" kind="function"><name>pop</name></member>
-    <member refid="classamrex_1_1ParmParse_1_1Frame_1a456c4ad6dcffaaba3ae63f9b297bff18" kind="function"><name>getPrefix</name></member>
-  </compound>
   <compound refid="classamrex_1_1ParallelContext_1_1Frame" kind="class"><name>amrex::ParallelContext::Frame</name>
     <member refid="classamrex_1_1ParallelContext_1_1Frame_1a00076c4be0a8a1fa1a56d8d9c3fdfa2f" kind="variable"><name>comm</name></member>
     <member refid="classamrex_1_1ParallelContext_1_1Frame_1a2cb41a80f7a3c545e1e537bf84acbbc9" kind="variable"><name>group</name></member>
@@ -5715,6 +5704,15 @@
     <member refid="classamrex_1_1ParallelContext_1_1Frame_1ac7e3ccd77b7a012c1c66b7c3bbdf6509" kind="function"><name>get_inc_mpi_tag</name></member>
     <member refid="classamrex_1_1ParallelContext_1_1Frame_1a1bc1579142503db5584556389166c169" kind="function"><name>set_ofs_name</name></member>
     <member refid="classamrex_1_1ParallelContext_1_1Frame_1abf278a69530b55db1c0156e40db89e0c" kind="function"><name>get_ofs_ptr</name></member>
+  </compound>
+  <compound refid="classamrex_1_1ParmParse_1_1Frame" kind="class"><name>amrex::ParmParse::Frame</name>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1a08900c4a6b0bf1bd93ac69322ffebfdc" kind="variable"><name>m_pp</name></member>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1ac38675ae6a506924dba0181718e7c1da" kind="variable"><name>m_np</name></member>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1abbb46e1546bfb5c2ed1797335c02b7d3" kind="function"><name>Frame</name></member>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1a1b690adb2a1e120cb892c3314dd1b9df" kind="function"><name>~Frame</name></member>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1a2b5df366a9cc67f3ab6159ab5c924ec8" kind="function"><name>push</name></member>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1abae9fa2cf456b4c2074570274f252fe4" kind="function"><name>pop</name></member>
+    <member refid="classamrex_1_1ParmParse_1_1Frame_1a456c4ad6dcffaaba3ae63f9b297bff18" kind="function"><name>getPrefix</name></member>
   </compound>
   <compound refid="interfacefsunlinsol__dense__mod_1_1FSUNDenseLinearSolver" kind="interface"><name>fsunlinsol_dense_mod::FSUNDenseLinearSolver</name>
     <member refid="interfacefsunlinsol__dense__mod_1_1FSUNDenseLinearSolver_1a3a395ff81cab4040e7dfef99cb8e4b02" kind="function"><name>fsundenselinearsolver</name></member>
@@ -5894,11 +5892,11 @@
   <compound refid="interfacefsunmatrix__mod_1_1FSUNMatSpace" kind="interface"><name>fsunmatrix_mod::FSUNMatSpace</name>
     <member refid="interfacefsunmatrix__mod_1_1FSUNMatSpace_1a512a5f1eb6fcd7c3a38a1d25cb680dc1" kind="function"><name>fsunmatspace</name></member>
   </compound>
-  <compound refid="interfacefsunmat__dense__mod_1_1FSUNMatSpace__Dense" kind="interface"><name>fsunmat_dense_mod::FSUNMatSpace_Dense</name>
-    <member refid="interfacefsunmat__dense__mod_1_1FSUNMatSpace__Dense_1a90feb0ffc35d22933089f2492268f22b" kind="function"><name>fsunmatspace_dense</name></member>
-  </compound>
   <compound refid="interfacefsunmatrix__dense__mod_1_1FSUNMatSpace__Dense" kind="interface"><name>fsunmatrix_dense_mod::FSUNMatSpace_Dense</name>
     <member refid="interfacefsunmatrix__dense__mod_1_1FSUNMatSpace__Dense_1a49c42b131df3c7bf6801256bf62baa56" kind="function"><name>fsunmatspace_dense</name></member>
+  </compound>
+  <compound refid="interfacefsunmat__dense__mod_1_1FSUNMatSpace__Dense" kind="interface"><name>fsunmat_dense_mod::FSUNMatSpace_Dense</name>
+    <member refid="interfacefsunmat__dense__mod_1_1FSUNMatSpace__Dense_1a90feb0ffc35d22933089f2492268f22b" kind="function"><name>fsunmatspace_dense</name></member>
   </compound>
   <compound refid="interfacefsunmatrix__mod_1_1FSUNMatZero" kind="interface"><name>fsunmatrix_mod::FSUNMatZero</name>
     <member refid="interfacefsunmatrix__mod_1_1FSUNMatZero_1a36ddb99d66300226111df5b2ff49ce70" kind="function"><name>fsunmatzero</name></member>
@@ -6431,13 +6429,6 @@
     <member refid="structintegrator__stats__mod_1_1integrator__stats__t_1aa47236a434286df8523309392d844cb4" kind="variable"><name>current_step_size</name></member>
     <member refid="structintegrator__stats__mod_1_1integrator__stats__t_1a07463edf85b6f6e1016468d59af562c9" kind="variable"><name>current_time</name></member>
   </compound>
-  <compound refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrDataAdaptor::InternalsType</name>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ae53eccbcdd637ad1dcbdc0be4e895dc8" kind="variable"><name>SimData</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a18e4c53a74f5623786c5dadbe087f209" kind="variable"><name>PinMesh</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ab54c62846a8614acc3d677a975186569" kind="variable"><name>SimMetadata</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kind="variable"><name>ManagedObjects</name></member>
-    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a036873b2f2c1d06f877458c6e3369f13" kind="function"><name>InternalsType</name></member>
-  </compound>
   <compound refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrMeshDataAdaptor::InternalsType</name>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1a73392d6df8f6909a9faf79995eba567f" kind="variable"><name>Mesh</name></member>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1abe1c7c360d280567e6b307120f51a7ae" kind="variable"><name>PinMesh</name></member>
@@ -6445,6 +6436,13 @@
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1a786f177417b2aff2c65612249af325af" kind="variable"><name>StateMetadata</name></member>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1afe1955be77ad98e82b431d7b6eb5aeb8" kind="variable"><name>ManagedObjects</name></member>
     <member refid="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType_1a93efc600bd13297ea7536362a1181858" kind="function"><name>InternalsType</name></member>
+  </compound>
+  <compound refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType" kind="struct"><name>amrex::AmrDataAdaptor::InternalsType</name>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ae53eccbcdd637ad1dcbdc0be4e895dc8" kind="variable"><name>SimData</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a18e4c53a74f5623786c5dadbe087f209" kind="variable"><name>PinMesh</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1ab54c62846a8614acc3d677a975186569" kind="variable"><name>SimMetadata</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a5e5e006af4417aa0d4384eedf95f77b6" kind="variable"><name>ManagedObjects</name></member>
+    <member refid="structamrex_1_1AmrDataAdaptor_1_1InternalsType_1a036873b2f2c1d06f877458c6e3369f13" kind="function"><name>InternalsType</name></member>
   </compound>
   <compound refid="classamrex_1_1InterpBndryData" kind="class"><name>amrex::InterpBndryData</name>
     <member refid="classamrex_1_1InterpBndryData_1a3c37f7ae3bebb39f7fac821540e10227" kind="variable"><name>IBD_max_order_DEF</name></member>
@@ -7265,13 +7263,13 @@
     <member refid="classamrex_1_1MCMultiGrid_1a7ba83b3751a2bc315319cf1fbba14fb0" kind="function"><name>MCMultiGrid</name></member>
     <member refid="classamrex_1_1MCMultiGrid_1a311c47ccb5df10c68c86fa9c2aac46e5" kind="function"><name>operator=</name></member>
   </compound>
-  <compound refid="structamrex_1_1FabArrayBase_1_1meminfo" kind="struct"><name>amrex::FabArrayBase::meminfo</name>
-    <member refid="structamrex_1_1FabArrayBase_1_1meminfo_1a1668be4dfe2249347358bd8b49741349" kind="variable"><name>nbytes</name></member>
-    <member refid="structamrex_1_1FabArrayBase_1_1meminfo_1a0e8443110095e98946edaec490f65dfb" kind="variable"><name>nbytes_hwm</name></member>
-  </compound>
   <compound refid="structamrex_1_1MemProfiler_1_1MemInfo" kind="struct"><name>amrex::MemProfiler::MemInfo</name>
     <member refid="structamrex_1_1MemProfiler_1_1MemInfo_1a334add2acca04ed49223180ab7991e19" kind="variable"><name>current_bytes</name></member>
     <member refid="structamrex_1_1MemProfiler_1_1MemInfo_1a0986f22c847ee689a532d882351b7ee0" kind="variable"><name>hwm_bytes</name></member>
+  </compound>
+  <compound refid="structamrex_1_1FabArrayBase_1_1meminfo" kind="struct"><name>amrex::FabArrayBase::meminfo</name>
+    <member refid="structamrex_1_1FabArrayBase_1_1meminfo_1a1668be4dfe2249347358bd8b49741349" kind="variable"><name>nbytes</name></member>
+    <member refid="structamrex_1_1FabArrayBase_1_1meminfo_1a0e8443110095e98946edaec490f65dfb" kind="variable"><name>nbytes_hwm</name></member>
   </compound>
   <compound refid="classamrex_1_1MemProfiler" kind="class"><name>amrex::MemProfiler</name>
     <member refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" kind="variable"><name>the_instance</name></member>
@@ -8747,18 +8745,18 @@
     <member refid="classamrex_1_1NodalProjector_1a09e3fe505727d0cec4c6e41648e39121" kind="function"><name>printInfo</name></member>
     <member refid="classamrex_1_1NodalProjector_1a0e8bac5ed9898402bd8af7190b5383d8" kind="function"><name>setup</name></member>
   </compound>
+  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
+  </compound>
   <compound refid="structamrex_1_1EArena_1_1Node" kind="struct"><name>amrex::EArena::Node</name>
     <member refid="structamrex_1_1EArena_1_1Node_1af098a20a26f8c6450ac2751d8f02a263" kind="variable"><name>m_block</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1a8f0286fae08719933cb4848f028ac40a" kind="variable"><name>m_owner</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1a89529f45bfc11373bc41d2da43c3a12f" kind="variable"><name>m_size</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1a288b2fef1ea5646d959ae154b8790ecb" kind="function"><name>Node</name></member>
     <member refid="structamrex_1_1EArena_1_1Node_1ab2e370518b6574a337ddd9fc4cefe3bf" kind="function"><name>Node</name></member>
-  </compound>
-  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
   </compound>
   <compound refid="classamrex_1_1CArena_1_1Node" kind="class"><name>amrex::CArena::Node</name>
     <member refid="classamrex_1_1CArena_1_1Node_1a999ce0f54f3eae13c2533caabe5acc89" kind="variable"><name>m_block</name></member>
@@ -11363,6 +11361,7 @@
     <member refid="namespaceamrex_1af97d55742a96cb9e934e06c45ec22f03" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a11ecd024350d560f6451b34efa853b15" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1abe90237191ad363f7f9dd34c2ac0ebcb" kind="function"><name>makeFineMask</name></member>
+    <member refid="namespaceamrex_1a079a6883a5aac14722d8dc342c22222a" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kind="function"><name>computeDivergence</name></member>
     <member refid="namespaceamrex_1add6ef1af4714e90f5d0b5a098725612b" kind="function"><name>computeGradient</name></member>
     <member refid="namespaceamrex_1a3c86d50daeca979098e4b1c7e34d0cf8" kind="function"><name>periodicShift</name></member>
@@ -13881,7 +13880,6 @@
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a289cd6699548aba71d287d94299ae098" kind="define"><name>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1ab8f5b7c92c1194b0f0482c84ce1fe5b3" kind="define"><name>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a1ab3fba7a2f040bdd4a40de04b22c828" kind="define"><name>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_BOX</name></member>
-    <member refid="AMReX__GpuLaunchMacrosG_8H_1a08cb2d3ad30327911553ea051dcd0a38" kind="define"><name>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_ASYNC</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1ae300fea905f74fff12ec2fcc4966335c" kind="define"><name>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_BOX</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a54ab53f6a8e04f6e15cd6ef6eb084e17" kind="define"><name>AMREX_GPU_LAUNCH_HOST_DEVICE_XYZ</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a5debd083a1702fe10d2cfc07f6c250c4" kind="define"><name>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_NOBOX</name></member>
@@ -13894,7 +13892,7 @@
     <member refid="AMReX__GpuLaunchMacrosG_8H_1aa12bff29d50b58116aebcfdf836b1554" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_3D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a756074cbdeac9c602bfcdf0f5b1ba731" kind="define"><name>AMREX_GPU_DEVICE_FOR_3D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1ad4db49719b03555018b9092c203eacfb" kind="define"><name>AMREX_GPU_DEVICE_PARALLEL_FOR_3D</name></member>
-    <member refid="AMReX__GpuLaunchMacrosG_8H_1adfadeed3fe453a800c07d10c37c9faa4" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_4D</name></member>
+    <member refid="AMReX__GpuLaunchMacrosG_8H_1a111936fe89c50b4c720ad71fb48f371a" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_4D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a0ad3f01c22891b27258c1e26c200baa0" kind="define"><name>AMREX_GPU_DEVICE_FOR_4D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a529852b4a0f4316f5c38bdc0033a5be0" kind="define"><name>AMREX_GPU_DEVICE_PARALLEL_FOR_4D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a736db5da316526a65321a43b6c2f8638" kind="define"><name>AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_1D</name></member>

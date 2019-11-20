@@ -14,6 +14,7 @@ var searchData=
   ['cluster',['Cluster',['../classamrex_1_1Cluster.html',1,'amrex']]],
   ['clusterlist',['ClusterList',['../classamrex_1_1ClusterList.html',1,'amrex']]],
   ['commcontainer',['CommContainer',['../structamrex_1_1MLLinOp_1_1CommContainer.html',1,'amrex::MLLinOp']]],
+  ['commmetadata',['CommMetaData',['../structamrex_1_1FabArrayBase_1_1CommMetaData.html',1,'amrex::FabArrayBase']]],
   ['commprofstats',['CommProfStats',['../classCommProfStats.html',1,'']]],
   ['compareaddr',['CompareAddr',['../structamrex_1_1EArena_1_1Node_1_1CompareAddr.html',1,'amrex::EArena::Node']]],
   ['comparesize',['CompareSize',['../structamrex_1_1EArena_1_1Node_1_1CompareSize.html',1,'amrex::EArena::Node']]],
