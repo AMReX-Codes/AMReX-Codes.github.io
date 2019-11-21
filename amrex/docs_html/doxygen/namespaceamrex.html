@@ -514,6 +514,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classamrex_1_1MCLinOp.html" title="A MCLinOp is a virtual base class for general linear operators capable of acting on multicomponent Mu...">MCLinOp</a> is a virtual base class for general linear operators capable of acting on multicomponent MultiFabs. Eventually, this should be merged back into <a class="el" href="classamrex_1_1LinOp.html" title="A LinOp is a virtual base class for general linear operators capable of acting on MultiFabs...">LinOp</a>. All implementation and access functions are designed to make a <a class="el" href="classamrex_1_1MCLinOp.html" title="A MCLinOp is a virtual base class for general linear operators capable of acting on multicomponent Mu...">MCLinOp</a> object useful for representing and solving a set of linear equations on a union of rectangles in 2D or 3D.  <a href="classamrex_1_1MCLinOp.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MCMultiGrid.html">MCMultiGrid</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classamrex_1_1MCMultiGrid.html" title="A MCMultiGrid solves the linear equation, L(phi)=rhs, for a MCLinOp L and MultiFabs rhs and phi using...">MCMultiGrid</a> solves the linear equation, L(phi)=rhs, for a <a class="el" href="classamrex_1_1MCLinOp.html" title="A MCLinOp is a virtual base class for general linear operators capable of acting on multicomponent Mu...">MCLinOp</a> L and MultiFabs rhs and phi using a V-type cycle of the <a class="el" href="classamrex_1_1MCMultiGrid.html" title="A MCMultiGrid solves the linear equation, L(phi)=rhs, for a MCLinOp L and MultiFabs rhs and phi using...">MCMultiGrid</a> algorithm.  <a href="classamrex_1_1MCMultiGrid.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MemProfiler.html">MemProfiler</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -634,6 +635,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleInitType.html">ParticleInitType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct used to pass initial data into the various Init methods. This struct is used to pass initial data into the various Init methods of the particle container. That data should be initialized in the order real struct data, int struct data, real array data, int array data. If fewer components are specified than the template parameters specify for, a given component, then the extra values will be set to zero. If more components are specified, it is a compile-time error.  <a href="structamrex_1_1ParticleInitType.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleLocator.html">ParticleLocator</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2819,36 +2821,47 @@ Functions</h2></td></tr>
 <tr class="separator:aab76e2079da33ed75df8ac544faea9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="memTemplParams" colspan="2">template&lt;int NSR, int NSI, int NAR, int NAI&gt; </td></tr>
 <tr class="memitem:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a14f61ebac9d7c0ea8b108bad4f0947c5">copyParticle</a> (const <a class="el" href="structamrex_1_1ParticleTileData.html">ParticleTileData</a>&lt; NSR, NSI, NAR, NAI &gt; &amp;dst, const <a class="el" href="structamrex_1_1ConstParticleTileData.html">ConstParticleTileData</a>&lt; NSR, NSI, NAR, NAI &gt; &amp;src, int src_i, int dst_i) noexcept</td></tr>
+<tr class="memdesc:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general single particle copying routine that can run on the GPU.  <a href="#a14f61ebac9d7c0ea8b108bad4f0947c5">More...</a><br /></td></tr>
 <tr class="separator:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8ab4c93999fda4a188134abc5d5bc74"><td class="memTemplParams" colspan="2">template&lt;typename PTile &gt; </td></tr>
 <tr class="memitem:aa8ab4c93999fda4a188134abc5d5bc74"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa8ab4c93999fda4a188134abc5d5bc74">copyParticles</a> (PTile &amp;dst, const PTile &amp;src) noexcept</td></tr>
+<tr class="memdesc:aa8ab4c93999fda4a188134abc5d5bc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from src to dst. This version copies all the particles, writing them to the beginning of dst.  <a href="#aa8ab4c93999fda4a188134abc5d5bc74">More...</a><br /></td></tr>
 <tr class="separator:aa8ab4c93999fda4a188134abc5d5bc74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad30e808a1062741ef4d1947c00216bdf"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename IndexType , typename N , amrex::EnableIf_t&lt; std::is_integral&lt; IndexType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:ad30e808a1062741ef4d1947c00216bdf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad30e808a1062741ef4d1947c00216bdf">copyParticles</a> (PTile &amp;dst, const PTile &amp;src, <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> src_start, <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> dst_start, N n) noexcept</td></tr>
+<tr class="memdesc:ad30e808a1062741ef4d1947c00216bdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from src to dst. This version copies n particles starting at index src_start, writing the result starting at dst_start.  <a href="#ad30e808a1062741ef4d1947c00216bdf">More...</a><br /></td></tr>
 <tr class="separator:ad30e808a1062741ef4d1947c00216bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a129cc768a96e7dfdafc35280bb7e52ec"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename F &gt; </td></tr>
 <tr class="memitem:a129cc768a96e7dfdafc35280bb7e52ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a129cc768a96e7dfdafc35280bb7e52ec">transformParticles</a> (PTile &amp;dst, const PTile &amp;src, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:a129cc768a96e7dfdafc35280bb7e52ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to all the particles in src, writing the result to dst. This version does all the particles in src.  <a href="#a129cc768a96e7dfdafc35280bb7e52ec">More...</a><br /></td></tr>
 <tr class="separator:a129cc768a96e7dfdafc35280bb7e52ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8929e3507a03ce6d760719aa58058617"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename IndexType , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; IndexType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a8929e3507a03ce6d760719aa58058617"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8929e3507a03ce6d760719aa58058617">transformParticles</a> (PTile &amp;dst, const PTile &amp;src, <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> src_start, <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> dst_start, N n, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:a8929e3507a03ce6d760719aa58058617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to particles in src, writing the result to dst. This version applies the function to n particles starting at index src_start, writing the result starting at dst_start.  <a href="#a8929e3507a03ce6d760719aa58058617">More...</a><br /></td></tr>
 <tr class="separator:a8929e3507a03ce6d760719aa58058617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5049318f76dca44b3edd4577b74809fc"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename IndexType , amrex::EnableIf_t&lt; std::is_integral&lt; IndexType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a5049318f76dca44b3edd4577b74809fc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IndexType.html">IndexType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5049318f76dca44b3edd4577b74809fc">filterParticles</a> (PTile &amp;dst, const PTile &amp;src, const <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> *mask) noexcept</td></tr>
+<tr class="memdesc:a5049318f76dca44b3edd4577b74809fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask.  <a href="#a5049318f76dca44b3edd4577b74809fc">More...</a><br /></td></tr>
 <tr class="separator:a5049318f76dca44b3edd4577b74809fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a49d8e1d3b582340fef005e23f47888"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename Pred &gt; </td></tr>
 <tr class="memitem:a8a49d8e1d3b582340fef005e23f47888"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8a49d8e1d3b582340fef005e23f47888">filterParticles</a> (PTile &amp;dst, const PTile &amp;src, Pred &amp;&amp;p) noexcept-&gt; decltype(p(typename PTile::ConstParticleTileDataType(), 0))</td></tr>
+<tr class="memdesc:a8a49d8e1d3b582340fef005e23f47888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate.  <a href="#a8a49d8e1d3b582340fef005e23f47888">More...</a><br /></td></tr>
 <tr class="separator:a8a49d8e1d3b582340fef005e23f47888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54869a5d7a767654e8a4f89b3e3c0b72"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename IndexType , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; IndexType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a54869a5d7a767654e8a4f89b3e3c0b72"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IndexType.html">IndexType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a54869a5d7a767654e8a4f89b3e3c0b72">filterAndTransformParticles</a> (PTile &amp;dst, const PTile &amp;src, <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> *mask, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:a54869a5d7a767654e8a4f89b3e3c0b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy.  <a href="#a54869a5d7a767654e8a4f89b3e3c0b72">More...</a><br /></td></tr>
 <tr class="separator:a54869a5d7a767654e8a4f89b3e3c0b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb446e37abe412ae3f8844d4efc4c22"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename Pred , typename F &gt; </td></tr>
 <tr class="memitem:adcb446e37abe412ae3f8844d4efc4c22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#adcb446e37abe412ae3f8844d4efc4c22">filterAndTransformParticles</a> (PTile &amp;dst, const PTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept-&gt; decltype(p(typename PTile::ConstParticleTileDataType(), 0))</td></tr>
+<tr class="memdesc:adcb446e37abe412ae3f8844d4efc4c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy.  <a href="#adcb446e37abe412ae3f8844d4efc4c22">More...</a><br /></td></tr>
 <tr class="separator:adcb446e37abe412ae3f8844d4efc4c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae23b4762bfd7f9dba4b8a8f20ec38f84"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename N , typename IndexType , amrex::EnableIf_t&lt; std::is_integral&lt; IndexType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:ae23b4762bfd7f9dba4b8a8f20ec38f84"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae23b4762bfd7f9dba4b8a8f20ec38f84">gatherParticles</a> (PTile &amp;dst, const PTile &amp;src, N np, const <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> *inds)</td></tr>
+<tr class="memdesc:ae23b4762bfd7f9dba4b8a8f20ec38f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather particles copies particles into contiguous order from an arbitrary order. Specifically, the particle at the index inds[i] in src will be copied to the index i in dst.  <a href="#ae23b4762bfd7f9dba4b8a8f20ec38f84">More...</a><br /></td></tr>
 <tr class="separator:ae23b4762bfd7f9dba4b8a8f20ec38f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9be7afe51aafe03517b17145c84d953b"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename N , typename IndexType , amrex::EnableIf_t&lt; std::is_integral&lt; IndexType &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a9be7afe51aafe03517b17145c84d953b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9be7afe51aafe03517b17145c84d953b">scatterParticles</a> (PTile &amp;dst, const PTile &amp;src, N np, const <a class="el" href="classamrex_1_1IndexType.html">IndexType</a> *inds)</td></tr>
+<tr class="memdesc:a9be7afe51aafe03517b17145c84d953b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scatter particles copies particles from contiguous order into an arbitrary order. Specifically, the particle at the index i in src will be copied to the index inds[i] in dst.  <a href="#a9be7afe51aafe03517b17145c84d953b">More...</a><br /></td></tr>
 <tr class="separator:a9be7afe51aafe03517b17145c84d953b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a680ccf73211338c29c896c0a5b4d18b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a680ccf73211338c29c896c0a5b4d18b7">getTileIndex</a> (const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;iv, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;box, const bool a_do_tiling, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;a_tile_size, <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;tbx)</td></tr>
 <tr class="separator:a680ccf73211338c29c896c0a5b4d18b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2858,9 +2871,11 @@ Functions</h2></td></tr>
 <tr class="separator:ac6d35da48f520c8ae3f429aee03601c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895a00e9c8e43db54c9685fcea13bb8d"><td class="memTemplParams" colspan="2">template&lt;class PC &gt; </td></tr>
 <tr class="memitem:a895a00e9c8e43db54c9685fcea13bb8d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a895a00e9c8e43db54c9685fcea13bb8d">numParticlesOutOfRange</a> (PC const &amp;pc, int nGrow)</td></tr>
+<tr class="memdesc:a895a00e9c8e43db54c9685fcea13bb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from their assigned box.  <a href="#a895a00e9c8e43db54c9685fcea13bb8d">More...</a><br /></td></tr>
 <tr class="separator:a895a00e9c8e43db54c9685fcea13bb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0e8632d038fd94b693cd5acbe392433"><td class="memTemplParams" colspan="2">template&lt;class PC &gt; </td></tr>
 <tr class="memitem:af0e8632d038fd94b693cd5acbe392433"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af0e8632d038fd94b693cd5acbe392433">numParticlesOutOfRange</a> (PC const &amp;pc, int lev_min, int lev_max, int nGrow)</td></tr>
+<tr class="memdesc:af0e8632d038fd94b693cd5acbe392433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from their assigned box.  <a href="#af0e8632d038fd94b693cd5acbe392433">More...</a><br /></td></tr>
 <tr class="separator:af0e8632d038fd94b693cd5acbe392433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e7a7d55a9760a9b62a5675badced0e1"><td class="memTemplParams" colspan="2">template&lt;typename P &gt; </td></tr>
 <tr class="memitem:a6e7a7d55a9760a9b62a5675badced0e1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="classamrex_1_1IntVect.html">IntVect</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6e7a7d55a9760a9b62a5675badced0e1">getParticleCell</a> (P const &amp;p, <a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">amrex::GpuArray</a>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;plo, <a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">amrex::GpuArray</a>&lt; amrex::Real, AMREX_SPACEDIM &gt; const &amp;dxi, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;domain) noexcept</td></tr>
@@ -9898,7 +9913,8 @@ template&lt;int NSR, int NSI, int NAR, int NAI&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief A general single particle copying routine that can run on the GPU.</p>
+
+<p>A general single particle copying routine that can run on the GPU. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">NSR</td><td>number of extra reals in the particle struct </td></tr>
@@ -9953,7 +9969,8 @@ template&lt;typename PTile &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Copy particles from src to dst. This version copies all the particles, writing them to the beginning of dst.</p>
+
+<p>Copy particles from src to dst. This version copies all the particles, writing them to the beginning of dst. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type</td></tr>
@@ -10022,7 +10039,8 @@ template&lt;typename PTile , typename IndexType , typename N , amrex::EnableIf_t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Copy particles from src to dst. This version copies n particles starting at index src_start, writing the result starting at dst_start.</p>
+
+<p>Copy particles from src to dst. This version copies n particles starting at index src_start, writing the result starting at dst_start. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -13797,7 +13815,8 @@ template&lt;typename PTile , typename IndexType , typename F , amrex::EnableIf_t
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy.</p>
+
+<p>Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -13864,7 +13883,8 @@ template&lt;typename PTile , typename Pred , typename F &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy.</p>
+
+<p>Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -13925,7 +13945,8 @@ template&lt;typename PTile , typename IndexType , amrex::EnableIf_t&lt; std::is_
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Conditionally copy particles from src to dst based on the value of mask.</p>
+
+<p>Conditionally copy particles from src to dst based on the value of mask. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -13984,7 +14005,8 @@ template&lt;typename PTile , typename Pred &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Conditionally copy particles from src to dst based on a predicate.</p>
+
+<p>Conditionally copy particles from src to dst based on a predicate. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -14948,7 +14970,8 @@ template&lt;typename PTile , typename N , typename IndexType , amrex::EnableIf_t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>/brief Gather particles copies particles into contiguous order from an arbitrary order. Specifically, the particle at the index inds[i] in src will be copied to the index i in dst.</p>
+
+<p>Gather particles copies particles into contiguous order from an arbitrary order. Specifically, the particle at the index inds[i] in src will be copied to the index i in dst. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -33404,7 +33427,8 @@ template&lt;class PC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>/brief Returns the number of particles that are more than nGrow cells from their assigned box.</p>
+
+<p>Returns the number of particles that are more than nGrow cells from their assigned box. </p>
 <p>This version tests over all levels.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -33459,7 +33483,8 @@ template&lt;class PC &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>/brief Returns the number of particles that are more than nGrow cells from their assigned box.</p>
+
+<p>Returns the number of particles that are more than nGrow cells from their assigned box. </p>
 <p>This version goes over only the specified levels</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -39353,7 +39378,8 @@ template&lt;typename PTile , typename N , typename IndexType , amrex::EnableIf_t
         </tr>
       </table>
 </div><div class="memdoc">
-<p>/brief Scatter particles copies particles from contiguous order into an arbitrary order. Specifically, the particle at the index i in src will be copied to the index inds[i] in dst.</p>
+
+<p>Scatter particles copies particles from contiguous order into an arbitrary order. Specifically, the particle at the index i in src will be copied to the index inds[i] in dst. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -40791,7 +40817,8 @@ template&lt;typename PTile , typename F &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Apply the function f to all the particles in src, writing the result to dst. This version does all the particles in src.</p>
+
+<p>Apply the function f to all the particles in src, writing the result to dst. This version does all the particles in src. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
@@ -40867,7 +40894,8 @@ template&lt;typename PTile , typename IndexType , typename N , typename F , amre
   </tr>
 </table>
 </div><div class="memdoc">
-<p>/brief Apply the function f to particles in src, writing the result to dst. This version applies the function to n particles starting at index src_start, writing the result starting at dst_start.</p>
+
+<p>Apply the function f to particles in src, writing the result to dst. This version applies the function to n particles starting at index src_start, writing the result starting at dst_start. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
