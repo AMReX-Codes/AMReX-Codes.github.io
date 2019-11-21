@@ -31248,39 +31248,6 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="330" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="330" bodyend="339"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a680ccf73211338c29c896c0a5b4d18b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
-        <definition>AMREX_GPU_HOST_DEVICE int amrex::getTileIndex</definition>
-        <argsstring>(const IntVect &amp;iv, const Box &amp;box, const bool a_do_tiling, const IntVect &amp;a_tile_size, Box &amp;tbx)</argsstring>
-        <name>getTileIndex</name>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>iv</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
-          <declname>box</declname>
-        </param>
-        <param>
-          <type>const bool</type>
-          <declname>a_do_tiling</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>a_tile_size</declname>
-        </param>
-        <param>
-          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
-          <declname>tbx</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="7" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="7" bodyend="52"/>
-      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad2e9cbb8f28bbbba7378ec7bf4654b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
         <definition>IntVect amrex::computeRefFac</definition>
@@ -31304,7 +31271,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="54" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="54" bodyend="68"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="6" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="6" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac6d35da48f520c8ae3f429aee03601c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
@@ -31325,16 +31292,77 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="70" bodyend="114"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" line="22" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.cpp" bodystart="22" bodyend="66"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a895a00e9c8e43db54c9685fcea13bb8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1acad483c5f0e30f9cd471ad05e1920320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Iterator</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; amrex::is_particle_iterator&lt; Iterator &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int amrex::numParticlesOutOfRange</definition>
+        <argsstring>(Iterator const &amp;pti, int nGrow)</argsstring>
+        <name>numParticlesOutOfRange</name>
+        <param>
+          <type>Iterator const &amp;</type>
+          <declname>pti</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nGrow</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of particles that are more than nGrow cells from the box correspond to the input iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> ParticleIterator</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>iterator pointing to the current grid/tile to test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nGrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of grow cells allowed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="30" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a9624cde7b9ad11a1692714a8a2cf4d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
+          <param>
+            <type>EnableIf_t&lt; amrex::is_particle_container&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
         </templateparamlist>
-        <type>bool</type>
-        <definition>bool amrex::numParticlesOutOfRange</definition>
+        <type>int</type>
+        <definition>int amrex::numParticlesOutOfRange</definition>
         <argsstring>(PC const &amp;pc, int nGrow)</argsstring>
         <name>numParticlesOutOfRange</name>
         <param>
@@ -31374,16 +31402,16 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="31" bodyend="34"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="81" bodyend="84"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af0e8632d038fd94b693cd5acbe392433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a0e9cb7ef08f2e5e0b6ff01e8126ca4cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
         </templateparamlist>
-        <type>bool</type>
-        <definition>bool amrex::numParticlesOutOfRange</definition>
+        <type>int</type>
+        <definition>int amrex::numParticlesOutOfRange</definition>
         <argsstring>(PC const &amp;pc, int lev_min, int lev_max, int nGrow)</argsstring>
         <name>numParticlesOutOfRange</name>
         <param>
@@ -31445,7 +31473,40 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="52" bodyend="100"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="102" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aede00a5fe66df6418eb44590a33296a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::getTileIndex</definition>
+        <argsstring>(const IntVect &amp;iv, const Box &amp;box, const bool a_do_tiling, const IntVect &amp;a_tile_size, Box &amp;tbx)</argsstring>
+        <name>getTileIndex</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>a_do_tiling</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>a_tile_size</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>tbx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="128" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="128" bodyend="173"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31479,7 +31540,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="108" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="108" bodyend="119"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="177" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="177" bodyend="188"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31517,7 +31578,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="123" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="123" bodyend="131"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="192" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="192" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7e080a46fe9b809638863cceccfc7536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31551,7 +31612,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="135" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="135" bodyend="164"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="204" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="204" bodyend="233"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abbcadddcd1b258140dc5cef24f7c7752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

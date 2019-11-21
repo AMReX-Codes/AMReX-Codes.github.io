@@ -159,6 +159,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9334823d12e8b8e103f1befc9cdae9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f4c8b38d96057b7c038e90b6d845364"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParIterBase.html#a4f4c8b38d96057b7c038e90b6d845364">GetPairIndex</a> () const </td></tr>
 <tr class="separator:a4f4c8b38d96057b7c038e90b6d845364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4894218f4ee16cdeb77d056f7f2cb20d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParIterBase.html#a4894218f4ee16cdeb77d056f7f2cb20d">Geom</a> (int lev) const </td></tr>
+<tr class="separator:a4894218f4ee16cdeb77d056f7f2cb20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fe48395194d81c991298f89c0e9d22c"><td class="memTemplParams" colspan="2">template&lt;typename Container &gt; </td></tr>
 <tr class="memitem:a1fe48395194d81c991298f89c0e9d22c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParIterBase.html#a1fe48395194d81c991298f89c0e9d22c">GetPosition</a> (<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(Container &amp;x, Container &amp;y, Container &amp;z)) const </td></tr>
 <tr class="separator:a1fe48395194d81c991298f89c0e9d22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -253,6 +255,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aa1142b78c93b74d5773d8633f240735b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77b396884132898232c52b1395b82c2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1ParIterBase.html#ab4bf6c76b36a955439dc6acd771345dd">ParticleTilePtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParIterBase.html#a77b396884132898232c52b1395b82c2d">m_particle_tiles</a></td></tr>
 <tr class="separator:a77b396884132898232c52b1395b82c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae104c0082d9a4bf779f21bd6852351bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1ParIterBase.html#a48ad92c3d3697df8b6849ee4f8b57e04">ContainerRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParIterBase.html#ae104c0082d9a4bf779f21bd6852351bc">m_pc</a></td></tr>
+<tr class="separator:ae104c0082d9a4bf779f21bd6852351bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1MFIter"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1MFIter')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1MFIter.html">amrex::MFIter</a></td></tr>
 <tr class="memitem:ab32b9180b7d33b0f9afdc25e9b14bd3e inherit pro_attribs_classamrex_1_1MFIter"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MFIter.html#ab32b9180b7d33b0f9afdc25e9b14bd3e">m_fa</a></td></tr>
 <tr class="memdesc:ab32b9180b7d33b0f9afdc25e9b14bd3e inherit pro_attribs_classamrex_1_1MFIter"><td class="mdescLeft">&#160;</td><td class="mdescRight">This must be the first memeber!  <a href="#ab32b9180b7d33b0f9afdc25e9b14bd3e">More...</a><br /></td></tr>
@@ -621,6 +625,32 @@ template&lt;bool is_const, int NStructReal, int NStructInt, int NArrayReal, int 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4894218f4ee16cdeb77d056f7f2cb20d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool is_const, int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayInt = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a>&amp; <a class="el" href="classamrex_1_1ParIterBase.html">amrex::ParIterBase</a>&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::Geom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aec75eb80427c830ca09374f2a14b0a67"></a>
 <div class="memitem">
 <div class="memproto">
@@ -892,6 +922,28 @@ template&lt;bool is_const, int NStructReal, int NStructInt = 0, int NArrayReal =
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1ParIterBase.html#ab4bf6c76b36a955439dc6acd771345dd">ParticleTilePtr</a>&gt; <a class="el" href="classamrex_1_1ParIterBase.html">amrex::ParIterBase</a>&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_particle_tiles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae104c0082d9a4bf779f21bd6852351bc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool is_const, int NStructReal, int NStructInt = 0, int NArrayReal = 0, int NArrayInt = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1ParIterBase.html#a48ad92c3d3697df8b6849ee4f8b57e04">ContainerRef</a> <a class="el" href="classamrex_1_1ParIterBase.html">amrex::ParIterBase</a>&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_pc</td>
         </tr>
       </table>
   </td>

@@ -337,6 +337,7 @@ var searchData=
   ['m_5fparticle_5fstats',['m_particle_stats',['../structamrex_1_1ParticleCopyPlan.html#aac55f2c595ea7f57832345df3d5fb78b',1,'amrex::ParticleCopyPlan']]],
   ['m_5fparticle_5ftiles',['m_particle_tiles',['../classamrex_1_1ParIterBase.html#a77b396884132898232c52b1395b82c2d',1,'amrex::ParIterBase']]],
   ['m_5fparticles',['m_particles',['../classamrex_1_1ParticleContainer.html#a01cc69064f2ecefc6095dcf3bb2a9e46',1,'amrex::ParticleContainer']]],
+  ['m_5fpc',['m_pc',['../classamrex_1_1ParIterBase.html#ae104c0082d9a4bf779f21bd6852351bc',1,'amrex::ParIterBase']]],
   ['m_5fperiod',['m_period',['../structamrex_1_1FabArrayBase_1_1FB.html#a80294b3b23ece6729eca66ec2b75dcad',1,'amrex::FabArrayBase::FB::m_period()'],['../structamrex_1_1FabArrayBase_1_1CPC.html#ae5ff0f4d1aea7da43378472739eae7d2',1,'amrex::FabArrayBase::CPC::m_period()']]],
   ['m_5fperiodic_5fshift',['m_periodic_shift',['../structamrex_1_1ParticleCopyOp.html#ad3072b183ebd047b964bd52243e1c83e',1,'amrex::ParticleCopyOp']]],
   ['m_5fperm',['m_perm',['../classamrex_1_1DenseBins.html#ad40e15a5e019a0a7afa527c6226e7675',1,'amrex::DenseBins']]],
