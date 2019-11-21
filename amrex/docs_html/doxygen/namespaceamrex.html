@@ -630,6 +630,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html">ParticleContainer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured AMR hierarachy.  <a href="classamrex_1_1ParticleContainer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainerBase.html">ParticleContainerBase</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyOp.html">ParticleCopyOp</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a></td></tr>
@@ -2754,71 +2756,71 @@ Functions</h2></td></tr>
 <tr class="memitem:ab612cdff7b506fd2884de82a842e95b8"><td class="memTemplParams" colspan="2">template&lt;int NReal, int NInt&gt; </td></tr>
 <tr class="memitem:ab612cdff7b506fd2884de82a842e95b8"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab612cdff7b506fd2884de82a842e95b8">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt; NReal, NInt &gt; &amp;p)</td></tr>
 <tr class="separator:ab612cdff7b506fd2884de82a842e95b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e281f2798c1b095d3a6eb21b950e9ca"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer &gt; </td></tr>
-<tr class="memitem:a6e281f2798c1b095d3a6eb21b950e9ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6e281f2798c1b095d3a6eb21b950e9ca">packBuffer</a> (const PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyOp.html">ParticleCopyOp</a> &amp;op, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;snd_buffer)</td></tr>
-<tr class="separator:a6e281f2798c1b095d3a6eb21b950e9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca38419d632c8e6a48b25bc4643522b1"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy &gt; </td></tr>
-<tr class="memitem:aca38419d632c8e6a48b25bc4643522b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aca38419d632c8e6a48b25bc4643522b1">unpackBuffer</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, const Buffer &amp;snd_buffer, const UnpackPolicy policy)</td></tr>
-<tr class="separator:aca38419d632c8e6a48b25bc4643522b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f29dc8a6306690b4ef2e53bea4c8b1"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer &gt; </td></tr>
-<tr class="memitem:a90f29dc8a6306690b4ef2e53bea4c8b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a90f29dc8a6306690b4ef2e53bea4c8b1">communicateParticlesStart</a> (const PC &amp;pc, <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, const Buffer &amp;snd_buffer, Buffer &amp;rcv_buffer)</td></tr>
-<tr class="separator:a90f29dc8a6306690b4ef2e53bea4c8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c">packBuffer</a> (const PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyOp.html">ParticleCopyOp</a> &amp;op, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;snd_buffer)</td></tr>
+<tr class="separator:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b67ab5f654b436110debd38f1b1d57"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:ae7b67ab5f654b436110debd38f1b1d57"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae7b67ab5f654b436110debd38f1b1d57">unpackBuffer</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, const Buffer &amp;snd_buffer, const UnpackPolicy policy)</td></tr>
+<tr class="separator:ae7b67ab5f654b436110debd38f1b1d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd4b7b3db27a6698403b2f272a378ea"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aecd4b7b3db27a6698403b2f272a378ea"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aecd4b7b3db27a6698403b2f272a378ea">communicateParticlesStart</a> (const PC &amp;pc, <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, const Buffer &amp;snd_buffer, Buffer &amp;rcv_buffer)</td></tr>
+<tr class="separator:aecd4b7b3db27a6698403b2f272a378ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814322d519ae32014737504164a0516b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">communicateParticlesFinish</a> (const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan)</td></tr>
 <tr class="separator:a814322d519ae32014737504164a0516b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy &gt; </td></tr>
-<tr class="memitem:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae65aa0e5fb032ec461c63cf5bf490f0d">unpackRemotes</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;rcv_buffer, const UnpackPolicy &amp;policy)</td></tr>
-<tr class="separator:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926fde28af78ad9c323a24feb4430925"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F &gt; </td></tr>
-<tr class="memitem:a926fde28af78ad9c323a24feb4430925"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a926fde28af78ad9c323a24feb4430925">ParticleToMesh</a> (PC const &amp;pc, MF &amp;mf, int lev, F &amp;&amp;f)</td></tr>
-<tr class="separator:a926fde28af78ad9c323a24feb4430925"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab58a51c4b8f6499c752e8f3f27553e64"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F &gt; </td></tr>
-<tr class="memitem:ab58a51c4b8f6499c752e8f3f27553e64"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab58a51c4b8f6499c752e8f3f27553e64">MeshToParticle</a> (PC &amp;pc, MF const &amp;mf, int lev, F &amp;&amp;f)</td></tr>
-<tr class="separator:ab58a51c4b8f6499c752e8f3f27553e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb6ff5d283ec48f7761f93e96cc57c8a"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:afb6ff5d283ec48f7761f93e96cc57c8a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afb6ff5d283ec48f7761f93e96cc57c8a">ReduceSum</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:afb6ff5d283ec48f7761f93e96cc57c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac235e1ac514ae7ce5cb52143bc5ee1b6"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:ac235e1ac514ae7ce5cb52143bc5ee1b6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac235e1ac514ae7ce5cb52143bc5ee1b6">ReduceSum</a> (PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:ac235e1ac514ae7ce5cb52143bc5ee1b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a01ac1ec0fde86a5ce3882899ebbc03"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a5a01ac1ec0fde86a5ce3882899ebbc03"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5a01ac1ec0fde86a5ce3882899ebbc03">ReduceSum</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:a5a01ac1ec0fde86a5ce3882899ebbc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91e760fc8ffaa4fbca6e6bc64bfdbd98"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a91e760fc8ffaa4fbca6e6bc64bfdbd98"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a91e760fc8ffaa4fbca6e6bc64bfdbd98">ReduceMax</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:a91e760fc8ffaa4fbca6e6bc64bfdbd98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0731e5a38252a72831f5f08dd86763e8"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a0731e5a38252a72831f5f08dd86763e8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0731e5a38252a72831f5f08dd86763e8">ReduceMax</a> (PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:a0731e5a38252a72831f5f08dd86763e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9badc1522ca0e068a073c93c0c578de1"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a9badc1522ca0e068a073c93c0c578de1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9badc1522ca0e068a073c93c0c578de1">ReduceMax</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:a9badc1522ca0e068a073c93c0c578de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71d7bc74076d6571075e33d965c2e809"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a71d7bc74076d6571075e33d965c2e809"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a71d7bc74076d6571075e33d965c2e809">ReduceMin</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:a71d7bc74076d6571075e33d965c2e809"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ffbd6329a946d2f0b927aae376c7e73"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a0ffbd6329a946d2f0b927aae376c7e73"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0ffbd6329a946d2f0b927aae376c7e73">ReduceMin</a> (PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:a0ffbd6329a946d2f0b927aae376c7e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ef6014de118f881053a96fd7843a7e"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:ae0ef6014de118f881053a96fd7843a7e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae0ef6014de118f881053a96fd7843a7e">ReduceMin</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
-<tr class="separator:ae0ef6014de118f881053a96fd7843a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae12d67cb5ac85dc3dbe7e2bbe0c013e5"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:ae12d67cb5ac85dc3dbe7e2bbe0c013e5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae12d67cb5ac85dc3dbe7e2bbe0c013e5">ReduceLogicalAnd</a> (PC const &amp;pc, F &amp;&amp;f)</td></tr>
-<tr class="separator:ae12d67cb5ac85dc3dbe7e2bbe0c013e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c88bc3b1f0c015745df7dd101df0c2b"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a4c88bc3b1f0c015745df7dd101df0c2b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4c88bc3b1f0c015745df7dd101df0c2b">ReduceLogicalAnd</a> (PC const &amp;pc, int lev, F &amp;&amp;f)</td></tr>
-<tr class="separator:a4c88bc3b1f0c015745df7dd101df0c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055e1d8113115e90163f7d0557ae72d4"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a055e1d8113115e90163f7d0557ae72d4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a055e1d8113115e90163f7d0557ae72d4">ReduceLogicalAnd</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f)</td></tr>
-<tr class="separator:a055e1d8113115e90163f7d0557ae72d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73c962f92071d8df270e0bbf2fa44862"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:a73c962f92071d8df270e0bbf2fa44862"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a73c962f92071d8df270e0bbf2fa44862">ReduceLogicalOr</a> (PC const &amp;pc, F &amp;&amp;f)</td></tr>
-<tr class="separator:a73c962f92071d8df270e0bbf2fa44862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac295e3267a59d320c77a269d97836f9b"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:ac295e3267a59d320c77a269d97836f9b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac295e3267a59d320c77a269d97836f9b">ReduceLogicalOr</a> (PC const &amp;pc, int lev, F &amp;&amp;f)</td></tr>
-<tr class="separator:ac295e3267a59d320c77a269d97836f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab76e2079da33ed75df8ac544faea9e1"><td class="memTemplParams" colspan="2">template&lt;class PC , class F &gt; </td></tr>
-<tr class="memitem:aab76e2079da33ed75df8ac544faea9e1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aab76e2079da33ed75df8ac544faea9e1">ReduceLogicalOr</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f)</td></tr>
-<tr class="separator:aab76e2079da33ed75df8ac544faea9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa336a10fb862ee79cd872847ef6efadd"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aa336a10fb862ee79cd872847ef6efadd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa336a10fb862ee79cd872847ef6efadd">unpackRemotes</a> (PC &amp;pc, const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan, Buffer &amp;rcv_buffer, const UnpackPolicy &amp;policy)</td></tr>
+<tr class="separator:aa336a10fb862ee79cd872847ef6efadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ca38bddc951482a20d3dd4dfa5e40e"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a41ca38bddc951482a20d3dd4dfa5e40e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a41ca38bddc951482a20d3dd4dfa5e40e">ParticleToMesh</a> (PC const &amp;pc, MF &amp;mf, int lev, F &amp;&amp;f)</td></tr>
+<tr class="separator:a41ca38bddc951482a20d3dd4dfa5e40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4263e1c84766d552c3e4dda3dadc9158"><td class="memTemplParams" colspan="2">template&lt;class PC , class MF , class F , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a4263e1c84766d552c3e4dda3dadc9158"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4263e1c84766d552c3e4dda3dadc9158">MeshToParticle</a> (PC &amp;pc, MF const &amp;mf, int lev, F &amp;&amp;f)</td></tr>
+<tr class="separator:a4263e1c84766d552c3e4dda3dadc9158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1971a46d37a951bb0ef8b189f8987f"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a8f1971a46d37a951bb0ef8b189f8987f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8f1971a46d37a951bb0ef8b189f8987f">ReduceSum</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:a8f1971a46d37a951bb0ef8b189f8987f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9600b570271756f90a1c8b3c7e05a9a1"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a9600b570271756f90a1c8b3c7e05a9a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9600b570271756f90a1c8b3c7e05a9a1">ReduceSum</a> (PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:a9600b570271756f90a1c8b3c7e05a9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234b29ca2ab42dc4b7d3713800d82a4e"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a234b29ca2ab42dc4b7d3713800d82a4e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a234b29ca2ab42dc4b7d3713800d82a4e">ReduceSum</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:a234b29ca2ab42dc4b7d3713800d82a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea00de6fd7be3ddb1b4f841295cac21"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a7ea00de6fd7be3ddb1b4f841295cac21"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7ea00de6fd7be3ddb1b4f841295cac21">ReduceMax</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:a7ea00de6fd7be3ddb1b4f841295cac21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55bd59d2c594a63ae6bb0136596fb9b"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af55bd59d2c594a63ae6bb0136596fb9b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af55bd59d2c594a63ae6bb0136596fb9b">ReduceMax</a> (PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:af55bd59d2c594a63ae6bb0136596fb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bf7aa5f979cd910b5b270070cac8b1"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aa9bf7aa5f979cd910b5b270070cac8b1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa9bf7aa5f979cd910b5b270070cac8b1">ReduceMax</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:aa9bf7aa5f979cd910b5b270070cac8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa271dcaabdcc69a172b422fdc60349"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a3aa271dcaabdcc69a172b422fdc60349"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3aa271dcaabdcc69a172b422fdc60349">ReduceMin</a> (PC const &amp;pc, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:a3aa271dcaabdcc69a172b422fdc60349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab38aa5f542e67c840d6e9c6d30d586a"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aab38aa5f542e67c840d6e9c6d30d586a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aab38aa5f542e67c840d6e9c6d30d586a">ReduceMin</a> (PC const &amp;pc, int lev, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:aab38aa5f542e67c840d6e9c6d30d586a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f47432b3e35fe46b1b89def917916e"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:ab8f47432b3e35fe46b1b89def917916e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab8f47432b3e35fe46b1b89def917916e">ReduceMin</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f) -&gt; decltype(f(typename PC::SuperParticleType()))</td></tr>
+<tr class="separator:ab8f47432b3e35fe46b1b89def917916e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa175f510a09bbc1252a4e1b8f3ac5250"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aa175f510a09bbc1252a4e1b8f3ac5250"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa175f510a09bbc1252a4e1b8f3ac5250">ReduceLogicalAnd</a> (PC const &amp;pc, F &amp;&amp;f)</td></tr>
+<tr class="separator:aa175f510a09bbc1252a4e1b8f3ac5250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e4d86e52a629511e02bff646ca60b59"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a2e4d86e52a629511e02bff646ca60b59"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2e4d86e52a629511e02bff646ca60b59">ReduceLogicalAnd</a> (PC const &amp;pc, int lev, F &amp;&amp;f)</td></tr>
+<tr class="separator:a2e4d86e52a629511e02bff646ca60b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14d08a69d1ad19e5499277055d469400"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a14d08a69d1ad19e5499277055d469400"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a14d08a69d1ad19e5499277055d469400">ReduceLogicalAnd</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f)</td></tr>
+<tr class="separator:a14d08a69d1ad19e5499277055d469400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f13583043013b5751afe1e193cc8b5"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a43f13583043013b5751afe1e193cc8b5"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a43f13583043013b5751afe1e193cc8b5">ReduceLogicalOr</a> (PC const &amp;pc, F &amp;&amp;f)</td></tr>
+<tr class="separator:a43f13583043013b5751afe1e193cc8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f76938d120a4d9891cc99e67cab771"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a18f76938d120a4d9891cc99e67cab771"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a18f76938d120a4d9891cc99e67cab771">ReduceLogicalOr</a> (PC const &amp;pc, int lev, F &amp;&amp;f)</td></tr>
+<tr class="separator:a18f76938d120a4d9891cc99e67cab771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4045ba476918bce64dc92d94e4cda26d"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a4045ba476918bce64dc92d94e4cda26d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4045ba476918bce64dc92d94e4cda26d">ReduceLogicalOr</a> (PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f)</td></tr>
+<tr class="separator:a4045ba476918bce64dc92d94e4cda26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="memTemplParams" colspan="2">template&lt;int NSR, int NSI, int NAR, int NAI&gt; </td></tr>
 <tr class="memitem:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a14f61ebac9d7c0ea8b108bad4f0947c5">copyParticle</a> (const <a class="el" href="structamrex_1_1ParticleTileData.html">ParticleTileData</a>&lt; NSR, NSI, NAR, NAI &gt; &amp;dst, const <a class="el" href="structamrex_1_1ConstParticleTileData.html">ConstParticleTileData</a>&lt; NSR, NSI, NAR, NAI &gt; &amp;src, int src_i, int dst_i) noexcept</td></tr>
 <tr class="memdesc:a14f61ebac9d7c0ea8b108bad4f0947c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A general single particle copying routine that can run on the GPU.  <a href="#a14f61ebac9d7c0ea8b108bad4f0947c5">More...</a><br /></td></tr>
@@ -2867,18 +2869,18 @@ Functions</h2></td></tr>
 <tr class="separator:ad2e9cbb8f28bbbba7378ec7bf4654b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6d35da48f520c8ae3f429aee03601c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ac6d35da48f520c8ae3f429aee03601c9">computeNeighborProcs</a> (const <a class="el" href="classamrex_1_1ParGDBBase.html">ParGDBBase</a> *a_gdb, int ngrow)</td></tr>
 <tr class="separator:ac6d35da48f520c8ae3f429aee03601c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acad483c5f0e30f9cd471ad05e1920320"><td class="memTemplParams" colspan="2">template&lt;class Iterator , EnableIf_t&lt; amrex::is_particle_iterator&lt; Iterator &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:acad483c5f0e30f9cd471ad05e1920320"><td class="memTemplParams" colspan="2">template&lt;class Iterator , EnableIf_t&lt; amrex::IsParticleIterator&lt; Iterator &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:acad483c5f0e30f9cd471ad05e1920320"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (Iterator const &amp;pti, int nGrow)</td></tr>
 <tr class="memdesc:acad483c5f0e30f9cd471ad05e1920320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from the box correspond to the input iterator.  <a href="#acad483c5f0e30f9cd471ad05e1920320">More...</a><br /></td></tr>
 <tr class="separator:acad483c5f0e30f9cd471ad05e1920320"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9624cde7b9ad11a1692714a8a2cf4d5c"><td class="memTemplParams" colspan="2">template&lt;class PC , EnableIf_t&lt; amrex::is_particle_container&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a9624cde7b9ad11a1692714a8a2cf4d5c"><td class="memTemplParams" colspan="2">template&lt;class PC , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a9624cde7b9ad11a1692714a8a2cf4d5c"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9624cde7b9ad11a1692714a8a2cf4d5c">numParticlesOutOfRange</a> (PC const &amp;pc, int nGrow)</td></tr>
 <tr class="memdesc:a9624cde7b9ad11a1692714a8a2cf4d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from their assigned box.  <a href="#a9624cde7b9ad11a1692714a8a2cf4d5c">More...</a><br /></td></tr>
 <tr class="separator:a9624cde7b9ad11a1692714a8a2cf4d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e9cb7ef08f2e5e0b6ff01e8126ca4cb"><td class="memTemplParams" colspan="2">template&lt;class PC &gt; </td></tr>
-<tr class="memitem:a0e9cb7ef08f2e5e0b6ff01e8126ca4cb"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0e9cb7ef08f2e5e0b6ff01e8126ca4cb">numParticlesOutOfRange</a> (PC const &amp;pc, int lev_min, int lev_max, int nGrow)</td></tr>
-<tr class="memdesc:a0e9cb7ef08f2e5e0b6ff01e8126ca4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from their assigned box.  <a href="#a0e9cb7ef08f2e5e0b6ff01e8126ca4cb">More...</a><br /></td></tr>
-<tr class="separator:a0e9cb7ef08f2e5e0b6ff01e8126ca4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af026262a284dc45b1a535e1d2c3da3d5"><td class="memTemplParams" colspan="2">template&lt;class PC , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af026262a284dc45b1a535e1d2c3da3d5"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af026262a284dc45b1a535e1d2c3da3d5">numParticlesOutOfRange</a> (PC const &amp;pc, int lev_min, int lev_max, int nGrow)</td></tr>
+<tr class="memdesc:af026262a284dc45b1a535e1d2c3da3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles that are more than nGrow cells from their assigned box.  <a href="#af026262a284dc45b1a535e1d2c3da3d5">More...</a><br /></td></tr>
+<tr class="separator:af026262a284dc45b1a535e1d2c3da3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede00a5fe66df6418eb44590a33296a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aede00a5fe66df6418eb44590a33296a2">getTileIndex</a> (const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;iv, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;box, const bool a_do_tiling, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;a_tile_size, <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;tbx)</td></tr>
 <tr class="separator:aede00a5fe66df6418eb44590a33296a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e7a7d55a9760a9b62a5675badced0e1"><td class="memTemplParams" colspan="2">template&lt;typename P &gt; </td></tr>
@@ -9362,11 +9364,11 @@ template&lt;typename P &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a90f29dc8a6306690b4ef2e53bea4c8b1"></a>
+<a class="anchor" id="aecd4b7b3db27a6698403b2f272a378ea"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class Buffer &gt; </div>
+template&lt;class PC , class Buffer , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::communicateParticlesStart </td>
@@ -19401,11 +19403,11 @@ template&lt;class T , class... Ts&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab58a51c4b8f6499c752e8f3f27553e64"></a>
+<a class="anchor" id="a4263e1c84766d552c3e4dda3dadc9158"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class MF , class F &gt; </div>
+template&lt;class PC , class MF , class F , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::MeshToParticle </td>
@@ -33410,7 +33412,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Iterator , EnableIf_t&lt; amrex::is_particle_iterator&lt; Iterator &gt;::value, int &gt; foo = 0&gt; </div>
+template&lt;class Iterator , EnableIf_t&lt; amrex::IsParticleIterator&lt; Iterator &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">int amrex::numParticlesOutOfRange </td>
@@ -33453,7 +33455,7 @@ template&lt;class Iterator , EnableIf_t&lt; amrex::is_particle_iterator&lt; Iter
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , EnableIf_t&lt; amrex::is_particle_container&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
+template&lt;class PC , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">int amrex::numParticlesOutOfRange </td>
@@ -33493,11 +33495,11 @@ template&lt;class PC , EnableIf_t&lt; amrex::is_particle_container&lt; PC &gt;::
 
 </div>
 </div>
-<a class="anchor" id="a0e9cb7ef08f2e5e0b6ff01e8126ca4cb"></a>
+<a class="anchor" id="af026262a284dc45b1a535e1d2c3da3d5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC &gt; </div>
+template&lt;class PC , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">int amrex::numParticlesOutOfRange </td>
@@ -35620,11 +35622,11 @@ template&lt;class FAB , class IFAB , class bar  = amrex::EnableIf_t&lt;IsBaseFab
 
 </div>
 </div>
-<a class="anchor" id="a6e281f2798c1b095d3a6eb21b950e9ca"></a>
+<a class="anchor" id="af4c8c19cb812cdbcc34bc408577bb25c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class Buffer &gt; </div>
+template&lt;class PC , class Buffer , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::packBuffer </td>
@@ -36142,11 +36144,11 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
 
 </div>
 </div>
-<a class="anchor" id="a926fde28af78ad9c323a24feb4430925"></a>
+<a class="anchor" id="a41ca38bddc951482a20d3dd4dfa5e40e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class MF , class F &gt; </div>
+template&lt;class PC , class MF , class F , EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::ParticleToMesh </td>
@@ -37512,11 +37514,11 @@ template&lt;typename To , typename From &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae12d67cb5ac85dc3dbe7e2bbe0c013e5"></a>
+<a class="anchor" id="aa175f510a09bbc1252a4e1b8f3ac5250"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::ReduceLogicalAnd </td>
@@ -37540,11 +37542,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4c88bc3b1f0c015745df7dd101df0c2b"></a>
+<a class="anchor" id="a2e4d86e52a629511e02bff646ca60b59"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::ReduceLogicalAnd </td>
@@ -37574,11 +37576,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a055e1d8113115e90163f7d0557ae72d4"></a>
+<a class="anchor" id="a14d08a69d1ad19e5499277055d469400"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::ReduceLogicalAnd </td>
@@ -37762,11 +37764,11 @@ template&lt;class FAB1 , class FAB2 , class F , class bar  = amrex::EnableIf_t&l
 
 </div>
 </div>
-<a class="anchor" id="a73c962f92071d8df270e0bbf2fa44862"></a>
+<a class="anchor" id="a43f13583043013b5751afe1e193cc8b5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::ReduceLogicalOr </td>
@@ -37790,11 +37792,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac295e3267a59d320c77a269d97836f9b"></a>
+<a class="anchor" id="a18f76938d120a4d9891cc99e67cab771"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::ReduceLogicalOr </td>
@@ -37824,11 +37826,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aab76e2079da33ed75df8ac544faea9e1"></a>
+<a class="anchor" id="a4045ba476918bce64dc92d94e4cda26d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::ReduceLogicalOr </td>
@@ -38012,11 +38014,11 @@ template&lt;class FAB1 , class FAB2 , class F , class bar  = amrex::EnableIf_t&l
 
 </div>
 </div>
-<a class="anchor" id="a91e760fc8ffaa4fbca6e6bc64bfdbd98"></a>
+<a class="anchor" id="a7ea00de6fd7be3ddb1b4f841295cac21"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceMax </td>
@@ -38041,11 +38043,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0731e5a38252a72831f5f08dd86763e8"></a>
+<a class="anchor" id="af55bd59d2c594a63ae6bb0136596fb9b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceMax </td>
@@ -38076,11 +38078,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9badc1522ca0e068a073c93c0c578de1"></a>
+<a class="anchor" id="aa9bf7aa5f979cd910b5b270070cac8b1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceMax </td>
@@ -38265,11 +38267,11 @@ template&lt;class FAB1 , class FAB2 , class F , class bar  = amrex::EnableIf_t&l
 
 </div>
 </div>
-<a class="anchor" id="a71d7bc74076d6571075e33d965c2e809"></a>
+<a class="anchor" id="a3aa271dcaabdcc69a172b422fdc60349"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceMin </td>
@@ -38294,11 +38296,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0ffbd6329a946d2f0b927aae376c7e73"></a>
+<a class="anchor" id="aab38aa5f542e67c840d6e9c6d30d586a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceMin </td>
@@ -38329,11 +38331,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae0ef6014de118f881053a96fd7843a7e"></a>
+<a class="anchor" id="ab8f47432b3e35fe46b1b89def917916e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceMin </td>
@@ -38518,11 +38520,11 @@ template&lt;class FAB1 , class FAB2 , class F , class bar  = amrex::EnableIf_t&l
 
 </div>
 </div>
-<a class="anchor" id="afb6ff5d283ec48f7761f93e96cc57c8a"></a>
+<a class="anchor" id="a8f1971a46d37a951bb0ef8b189f8987f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceSum </td>
@@ -38547,11 +38549,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ac235e1ac514ae7ce5cb52143bc5ee1b6"></a>
+<a class="anchor" id="a9600b570271756f90a1c8b3c7e05a9a1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceSum </td>
@@ -38582,11 +38584,11 @@ template&lt;class PC , class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5a01ac1ec0fde86a5ce3882899ebbc03"></a>
+<a class="anchor" id="a234b29ca2ab42dc4b7d3713800d82a4e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F &gt; </div>
+template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">auto amrex::ReduceSum </td>
@@ -41176,11 +41178,11 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aca38419d632c8e6a48b25bc4643522b1"></a>
+<a class="anchor" id="ae7b67ab5f654b436110debd38f1b1d57"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class Buffer , class UnpackPolicy &gt; </div>
+template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::unpackBuffer </td>
@@ -41216,11 +41218,11 @@ template&lt;class PC , class Buffer , class UnpackPolicy &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae65aa0e5fb032ec461c63cf5bf490f0d"></a>
+<a class="anchor" id="aa336a10fb862ee79cd872847ef6efadd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class Buffer , class UnpackPolicy &gt; </div>
+template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void amrex::unpackRemotes </td>

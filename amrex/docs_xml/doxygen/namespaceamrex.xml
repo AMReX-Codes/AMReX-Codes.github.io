@@ -213,6 +213,7 @@
     <innerclass refid="classamrex_1_1ParticleBufferMap" prot="public">amrex::ParticleBufferMap</innerclass>
     <innerclass refid="structamrex_1_1ParticleCommData" prot="public">amrex::ParticleCommData</innerclass>
     <innerclass refid="classamrex_1_1ParticleContainer" prot="public">amrex::ParticleContainer</innerclass>
+    <innerclass refid="classamrex_1_1ParticleContainerBase" prot="public">amrex::ParticleContainerBase</innerclass>
     <innerclass refid="structamrex_1_1ParticleCopyOp" prot="public">amrex::ParticleCopyOp</innerclass>
     <innerclass refid="structamrex_1_1ParticleCopyPlan" prot="public">amrex::ParticleCopyPlan</innerclass>
     <innerclass refid="structamrex_1_1ParticleInitType" prot="public">amrex::ParticleInitType</innerclass>
@@ -29502,13 +29503,19 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="672" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="673" bodyend="688"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a6e281f2798c1b095d3a6eb21b950e9ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af4c8c19cb812cdbcc34bc408577bb25c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class Buffer</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -29537,9 +29544,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="206" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="206" bodyend="277"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="207" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="207" bodyend="278"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aca38419d632c8e6a48b25bc4643522b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae7b67ab5f654b436110debd38f1b1d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -29549,6 +29556,12 @@
           </param>
           <param>
             <type>class UnpackPolicy</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -29577,15 +29590,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="280" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="280" bodyend="349"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="282" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="282" bodyend="351"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a90f29dc8a6306690b4ef2e53bea4c8b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aecd4b7b3db27a6698403b2f272a378ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class Buffer</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -29614,7 +29633,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="352" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="352" bodyend="419"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="355" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="355" bodyend="422"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a814322d519ae32014737504164a0516b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -29631,9 +29650,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="421" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.cpp" bodystart="313" bodyend="322"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="424" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.cpp" bodystart="313" bodyend="322"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae65aa0e5fb032ec461c63cf5bf490f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa336a10fb862ee79cd872847ef6efadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -29643,6 +29662,12 @@
           </param>
           <param>
             <type>class UnpackPolicy</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -29671,9 +29696,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="424" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="424" bodyend="490"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="428" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="428" bodyend="494"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a926fde28af78ad9c323a24feb4430925" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a41ca38bddc951482a20d3dd4dfa5e40e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -29683,6 +29708,12 @@
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -29711,9 +29742,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" line="9" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" bodystart="9" bodyend="80"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" line="13" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" bodystart="13" bodyend="84"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab58a51c4b8f6499c752e8f3f27553e64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a4263e1c84766d552c3e4dda3dadc9158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -29723,6 +29754,12 @@
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -29751,15 +29788,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" bodystart="84" bodyend="117"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleMesh.H" bodystart="89" bodyend="122"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1afb6ff5d283ec48f7761f93e96cc57c8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a8f1971a46d37a951bb0ef8b189f8987f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29780,15 +29823,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="17" bodyend="20"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="18" bodyend="21"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ac235e1ac514ae7ce5cb52143bc5ee1b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a9600b570271756f90a1c8b3c7e05a9a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29813,15 +29862,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="24" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="24" bodyend="27"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="25" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a5a01ac1ec0fde86a5ce3882899ebbc03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a234b29ca2ab42dc4b7d3713800d82a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29850,15 +29905,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="31" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="31" bodyend="79"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="32" bodyend="80"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a91e760fc8ffaa4fbca6e6bc64bfdbd98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a7ea00de6fd7be3ddb1b4f841295cac21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29879,15 +29940,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="83" bodyend="86"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="84" bodyend="87"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a0731e5a38252a72831f5f08dd86763e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af55bd59d2c594a63ae6bb0136596fb9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29912,15 +29979,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="90" bodyend="93"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="91" bodyend="94"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a9badc1522ca0e068a073c93c0c578de1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa9bf7aa5f979cd910b5b270070cac8b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29949,15 +30022,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="97" bodyend="146"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="98" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="98" bodyend="147"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a71d7bc74076d6571075e33d965c2e809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a3aa271dcaabdcc69a172b422fdc60349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -29978,15 +30057,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="150" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="150" bodyend="153"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="151" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="151" bodyend="154"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a0ffbd6329a946d2f0b927aae376c7e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aab38aa5f542e67c840d6e9c6d30d586a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -30011,15 +30096,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="157" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="157" bodyend="160"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="158" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="158" bodyend="161"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae0ef6014de118f881053a96fd7843a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ab8f47432b3e35fe46b1b89def917916e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>auto</type>
@@ -30048,15 +30139,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="164" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="164" bodyend="213"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="165" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="165" bodyend="214"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae12d67cb5ac85dc3dbe7e2bbe0c013e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa175f510a09bbc1252a4e1b8f3ac5250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -30077,15 +30174,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="217" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="217" bodyend="220"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="218" bodyend="221"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a4c88bc3b1f0c015745df7dd101df0c2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a2e4d86e52a629511e02bff646ca60b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -30110,15 +30213,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="224" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="224" bodyend="227"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="225" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="225" bodyend="228"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a055e1d8113115e90163f7d0557ae72d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a14d08a69d1ad19e5499277055d469400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -30147,15 +30256,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="231" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="231" bodyend="278"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="232" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="232" bodyend="279"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a73c962f92071d8df270e0bbf2fa44862" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a43f13583043013b5751afe1e193cc8b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -30176,15 +30291,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="282" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="282" bodyend="285"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="283" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="283" bodyend="286"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ac295e3267a59d320c77a269d97836f9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a18f76938d120a4d9891cc99e67cab771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -30209,15 +30330,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="289" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="289" bodyend="292"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="290" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="290" bodyend="293"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aab76e2079da33ed75df8ac544faea9e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a4045ba476918bce64dc92d94e4cda26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
           </param>
           <param>
             <type>class F</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -30246,7 +30373,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="296" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="296" bodyend="344"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="297" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="297" bodyend="345"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a14f61ebac9d7c0ea8b108bad4f0947c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31300,7 +31427,7 @@
             <type>class Iterator</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; amrex::is_particle_iterator&lt; Iterator &gt;::value, int &gt;</type>
+            <type>EnableIf_t&lt; amrex::IsParticleIterator&lt; Iterator &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -31355,7 +31482,7 @@
             <type>class PC</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; amrex::is_particle_container&lt; PC &gt;::value, int &gt;</type>
+            <type>EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -31404,10 +31531,16 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="81" bodyend="84"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a0e9cb7ef08f2e5e0b6ff01e8126ca4cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af026262a284dc45b1a535e1d2c3da3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; amrex::IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type>int</type>
