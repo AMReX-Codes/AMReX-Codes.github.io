@@ -227,8 +227,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3493bb63b041a05c4f4f6de28df1b37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93fed17bd53a16d98faaa1c8a6a6e401"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a93fed17bd53a16d98faaa1c8a6a6e401">fillSolutionBC</a> (int amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *crse_bcdata=nullptr)=0</td></tr>
 <tr class="separator:a93fed17bd53a16d98faaa1c8a6a6e401"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c11afad1f7f1e086fcdfb0afbb3edc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ae5c11afad1f7f1e086fcdfb0afbb3edc">applyInhomogNeumannTerm</a> (int armlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const </td></tr>
-<tr class="separator:ae5c11afad1f7f1e086fcdfb0afbb3edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab66507f9095fd460fec87c890e5a49c4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ab66507f9095fd460fec87c890e5a49c4">unimposeNeumannBC</a> (int amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const </td></tr>
+<tr class="separator:ab66507f9095fd460fec87c890e5a49c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5a30dbb954b14473f53bc9798d48033"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa5a30dbb954b14473f53bc9798d48033">applyInhomogNeumannTerm</a> (int amrlev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs) const </td></tr>
+<tr class="separator:aa5a30dbb954b14473f53bc9798d48033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a431d85bffa7e9bbcd36a10ae82fe3683">prepareForSolve</a> ()=0</td></tr>
 <tr class="separator:a431d85bffa7e9bbcd36a10ae82fe3683"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8d6ef9e77180f9076ef5cb83f48bb50"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</a> (int amrlev) const =0</td></tr>
@@ -692,7 +694,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae5c11afad1f7f1e086fcdfb0afbb3edc"></a>
+<a class="anchor" id="aa5a30dbb954b14473f53bc9798d48033"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -703,7 +705,7 @@ Friends</h2></td></tr>
           <td class="memname">virtual void amrex::MLLinOp::applyInhomogNeumannTerm </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>armlev</em>, </td>
+          <td class="paramname"><em>amrlev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2853,6 +2855,42 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="classamrex_1_1MLCellLinOp.html#ac54e10e50b8b0a19c1424d5a7c311003">amrex::MLCellLinOp</a>, and <a class="el" href="classamrex_1_1MLNodeLinOp.html#a700bdd6e43250739cc3f571b94b81688">amrex::MLNodeLinOp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab66507f9095fd460fec87c890e5a49c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::MLLinOp::unimposeNeumannBC </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a35200d609bde84407b7e54dfd8b53f92">amrex::MLNodeLaplacian</a>.</p>
 
 </div>
 </div>
