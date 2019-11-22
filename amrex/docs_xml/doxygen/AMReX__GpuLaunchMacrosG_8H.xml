@@ -571,10 +571,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="487" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="487" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1a0ad3f01c22891b27258c1e26c200baa0" prot="public" static="no">
+      <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1a2d61db5a48c71c8460df5ddc71d9b25a" prot="public" static="no">
         <name>AMREX_GPU_DEVICE_FOR_4D</name>
         <param><defname>box</defname></param>
-        <param><defname>ancomp</defname></param>
+        <param><defname>ncomp</defname></param>
         <param><defname>i</defname></param>
         <param><defname>j</defname></param>
         <param><defname>k</defname></param>
@@ -612,7 +612,7 @@
       <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1a529852b4a0f4316f5c38bdc0033a5be0" prot="public" static="no">
         <name>AMREX_GPU_DEVICE_PARALLEL_FOR_4D</name>
         <param><defname>...</defname></param>
-        <initializer><ref refid="AMReX__GpuLaunchMacrosG_8H_1a0ad3f01c22891b27258c1e26c200baa0" kindref="member">AMREX_GPU_DEVICE_FOR_4D</ref>(__VA_ARGS__)</initializer>
+        <initializer><ref refid="AMReX__GpuLaunchMacrosG_8H_1a2d61db5a48c71c8460df5ddc71d9b25a" kindref="member">AMREX_GPU_DEVICE_FOR_4D</ref>(__VA_ARGS__)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -1185,7 +1185,7 @@
 <codeline lineno="520"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}}}}<sp/>\</highlight></codeline>
 <codeline lineno="521"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="522"><highlight class="normal"></highlight></codeline>
-<codeline lineno="523" refid="AMReX__GpuLaunchMacrosG_8H_1a0ad3f01c22891b27258c1e26c200baa0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_DEVICE_FOR_4D(box,ancomp,i,j,k,n,block)<sp/>\</highlight></codeline>
+<codeline lineno="523" refid="AMReX__GpuLaunchMacrosG_8H_1a2d61db5a48c71c8460df5ddc71d9b25a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_DEVICE_FOR_4D(box,ncomp,i,j,k,n,block)<sp/>\</highlight></codeline>
 <codeline lineno="524"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_box<sp/>=<sp/>box;<sp/>auto<sp/>const&amp;<sp/>amrex_i_ncomp<sp/>=<sp/>ncomp;<sp/>\</highlight></codeline>
 <codeline lineno="525"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_box))<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="526"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int<sp/>amrex_i_ncells<sp/>=<sp/>amrex_i_box.numPts();<sp/>\</highlight></codeline>
