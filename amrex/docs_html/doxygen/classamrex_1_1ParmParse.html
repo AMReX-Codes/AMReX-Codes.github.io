@@ -389,8 +389,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9283fab7556352eeff908ca26cd440be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a9283fab7556352eeff908ca26cd440be">Finalize</a> ()</td></tr>
 <tr class="memdesc:a9283fab7556352eeff908ca26cd440be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destructor. The internal static table will only be deleted if there are no other <a class="el" href="classamrex_1_1ParmParse.html" title="Parse Parameters From Command Line and Input Files. ">ParmParse</a> objects in existence.  <a href="#a9283fab7556352eeff908ca26cd440be">More...</a><br /></td></tr>
 <tr class="separator:a9283fab7556352eeff908ca26cd440be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa21c32dd66b4ca6b695fd1ba4ca4bda7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aa21c32dd66b4ca6b695fd1ba4ca4bda7">AbortIfUnusedInputs</a> ()</td></tr>
-<tr class="separator:aa21c32dd66b4ca6b695fd1ba4ca4bda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a821d000e2b1d1aa6dc9e18d0b54e0df7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a821d000e2b1d1aa6dc9e18d0b54e0df7">QueryUnusedInputs</a> ()</td></tr>
+<tr class="separator:a821d000e2b1d1aa6dc9e18d0b54e0df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae5998fd0e44f742cf1154536dd56045"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aae5998fd0e44f742cf1154536dd56045">appendTable</a> (<a class="el" href="classamrex_1_1ParmParse.html#a328b966e328a476f04a86c758c9bc6c1">ParmParse::Table</a> &amp;tab)</td></tr>
 <tr class="separator:aae5998fd0e44f742cf1154536dd56045"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -532,29 +532,6 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa21c32dd66b4ca6b695fd1ba4ca4bda7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::ParmParse::AbortIfUnusedInputs </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a370bca8ac17e25198c845b9882d80e70"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3788,6 +3765,29 @@ template&lt;typename T , std::size_t N&gt; </div>
 </div><div class="memdoc">
 
 <p><a class="el" href="classamrex_1_1ParmParse.html#a303e1323d381365bc1cc2a01382edb23" title="queryktharr() is to querykth() as getktharr() is to getkth(). ">queryktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#a83eb7c07b692ef6123cc50ff0ffe33f0" title="Similar to getkth() but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&#39;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. ">querykth()</a> as <a class="el" href="classamrex_1_1ParmParse.html#a8f2356169ed148cb998651a15cdf65db" title="Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an int and stored in the std::vector&lt;int&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;int&gt;[0], std::vector&lt;int&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an int, an error message is reported and the program halts. ">getktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a821d000e2b1d1aa6dc9e18d0b54e0df7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::ParmParse::QueryUnusedInputs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
