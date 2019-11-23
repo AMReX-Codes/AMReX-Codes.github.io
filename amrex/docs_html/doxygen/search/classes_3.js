@@ -9,6 +9,7 @@ var searchData=
   ['defaultfabfactory',['DefaultFabFactory',['../classamrex_1_1DefaultFabFactory.html',1,'amrex']]],
   ['deleter',['Deleter',['../structamrex_1_1Gpu_1_1Deleter.html',1,'amrex::Gpu']]],
   ['densebins',['DenseBins',['../classamrex_1_1DenseBins.html',1,'amrex']]],
+  ['densebins_3c_20amrex_3a_3abox_20_3e',['DenseBins&lt; amrex::Box &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['densebins_3c_20amrex_3a_3aparticle_20_3e',['DenseBins&lt; amrex::Particle &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['densebins_3c_20particletype_20_3e',['DenseBins&lt; ParticleType &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['derivelist',['DeriveList',['../classamrex_1_1DeriveList.html',1,'amrex']]],
