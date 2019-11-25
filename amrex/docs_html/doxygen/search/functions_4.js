@@ -124,6 +124,7 @@ var searchData=
   ['doallreducereal',['DoAllReduceReal',['../namespaceamrex_1_1ParallelDescriptor_1_1util.html#a93975121c42d886897d842d99a24e407',1,'amrex::ParallelDescriptor::util::DoAllReduceReal(Real &amp;r, MPI_Op op)'],['../namespaceamrex_1_1ParallelDescriptor_1_1util.html#ac06558f498416901e4f62181c81ea296',1,'amrex::ParallelDescriptor::util::DoAllReduceReal(Real *r, MPI_Op op, int cnt)']]],
   ['doconsolidation',['doConsolidation',['../classamrex_1_1MLLinOp.html#a79f98e0cf06f695dbad6052c5d53e00b',1,'amrex::MLLinOp']]],
   ['dohandshake',['doHandShake',['../structamrex_1_1ParticleCopyPlan.html#a15f2e5ccca2fa7e537cf9ddfabaf7632',1,'amrex::ParticleCopyPlan']]],
+  ['dohandshakealltoall',['doHandShakeAllToAll',['../structamrex_1_1ParticleCopyPlan.html#adc9c41cf7b6b5ac599a9f888bec45caf',1,'amrex::ParticleCopyPlan']]],
   ['dohandshakeglobal',['doHandShakeGlobal',['../structamrex_1_1ParticleCopyPlan.html#a4dafe96e2229b04e9d0288f7d0d3ae9c',1,'amrex::ParticleCopyPlan']]],
   ['dohandshakelocal',['doHandShakeLocal',['../structamrex_1_1ParticleCopyPlan.html#a4e80fc792eb20404cbb7445677c29fba',1,'amrex::ParticleCopyPlan']]],
   ['doit',['doit',['../classamrex_1_1InterpolaterBoxCoarsener.html#a8a61390489a3aae5a763b531daa1cf5e',1,'amrex::InterpolaterBoxCoarsener::doit()'],['../classamrex_1_1BoxConverter.html#a43c58d145a800ea3c476b5ad319c158b',1,'amrex::BoxConverter::doit()']]],
