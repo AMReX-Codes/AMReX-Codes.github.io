@@ -1837,8 +1837,8 @@
 <codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt)</highlight></codeline>
 <codeline lineno="632"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;Particle&lt;NReal,<sp/>NInt&gt;::Interp()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(idx<sp/>!=<sp/>0);</highlight></codeline>
-<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(val<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(idx<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(val<sp/>!=<sp/>0);</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"></highlight></codeline>
 <codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>M<sp/><sp/><sp/>=<sp/>AMREX_D_TERM(2,+2,+4);</highlight></codeline>
 <codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/><sp/><sp/><sp/><sp/>plo<sp/>=<sp/>geom.<ref refid="classamrex_1_1Geometry_1a02ef0d522174b99ca75e569def4c091c" kindref="member">ProbLo</ref>();</highlight></codeline>
@@ -1853,7 +1853,7 @@
 <codeline lineno="647"><highlight class="normal"></highlight></codeline>
 <codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>cnt;<sp/>i++)</highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(idx[i]<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>idx[i]<sp/>&lt;<sp/>fab.<ref refid="classamrex_1_1BaseFab_1a7406ec91dc010602121f1492f2d3a748" kindref="member">nComp</ref>());</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(idx[i]<sp/>&gt;=<sp/>0<sp/>&amp;&amp;<sp/>idx[i]<sp/>&lt;<sp/>fab.<ref refid="classamrex_1_1BaseFab_1a7406ec91dc010602121f1492f2d3a748" kindref="member">nComp</ref>());</highlight></codeline>
 <codeline lineno="651"><highlight class="normal"></highlight></codeline>
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val[i]<sp/>=<sp/><ref refid="structamrex_1_1Particle_1a978fa793824d54757dac33400fb43e87" kindref="member">Particle&lt;NReal, NInt&gt;::InterpDoit</ref>(fab,fracs,cells,idx[i]);</highlight></codeline>
 <codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1867,7 +1867,7 @@
 <codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grav)</highlight></codeline>
 <codeline lineno="662"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;Particle&lt;NReal,<sp/>NInt&gt;::GetGravity()&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(grav<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(grav<sp/>!=<sp/>0);</highlight></codeline>
 <codeline lineno="665"><highlight class="normal"></highlight></codeline>
 <codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx[AMREX_SPACEDIM]<sp/>=<sp/>{<sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(0,1,2)<sp/>};</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"></highlight></codeline>
