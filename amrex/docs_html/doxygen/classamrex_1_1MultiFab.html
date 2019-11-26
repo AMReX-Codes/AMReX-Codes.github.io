@@ -668,6 +668,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ab70ce65ff46ae21b8cc4e0584fe26ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5fd05a65f284f6e96a1deba5ef423bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#af5fd05a65f284f6e96a1deba5ef423bb">Copy</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, int srccomp, int dstcomp, int numcomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost)</td></tr>
 <tr class="separator:af5fd05a65f284f6e96a1deba5ef423bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e29e28afce0aa520da5cd068cb5e96b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a2e29e28afce0aa520da5cd068cb5e96b">Swap</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</td></tr>
+<tr class="memdesc:a2e29e28afce0aa520da5cd068cb5e96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap from src to dst including nghost ghost cells. The two MultiFabs MUST have the same underlying <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a>. The swap is local.  <a href="#a2e29e28afce0aa520da5cd068cb5e96b">More...</a><br /></td></tr>
+<tr class="separator:a2e29e28afce0aa520da5cd068cb5e96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac259813cd54d52b5c20cad7c0f24c246"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#ac259813cd54d52b5c20cad7c0f24c246">Swap</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, int srccomp, int dstcomp, int numcomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost)</td></tr>
+<tr class="separator:ac259813cd54d52b5c20cad7c0f24c246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f37af40303a10e8d54e15c1931a5b8e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MultiFab.html#a5f37af40303a10e8d54e15c1931a5b8e">Subtract</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;dst, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;src, int srccomp, int dstcomp, int numcomp, int nghost)</td></tr>
 <tr class="memdesc:a5f37af40303a10e8d54e15c1931a5b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtract src from dst including nghost ghost cells. The two MultiFabs MUST have the same underlying <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a>.  <a href="#a5f37af40303a10e8d54e15c1931a5b8e">More...</a><br /></td></tr>
 <tr class="separator:a5f37af40303a10e8d54e15c1931a5b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4458,6 +4463,124 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sum values in overlapped cells. The destination is limited to valid + ngrow cells. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e29e28afce0aa520da5cd068cb5e96b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MultiFab::Swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>srccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dstcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Swap from src to dst including nghost ghost cells. The two MultiFabs MUST have the same underlying <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a>. The swap is local. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac259813cd54d52b5c20cad7c0f24c246"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MultiFab::Swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>srccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dstcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
