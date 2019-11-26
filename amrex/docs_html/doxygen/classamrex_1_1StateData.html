@@ -247,6 +247,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af9809e458fa0bd25965558bf3aa2c802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a988c7badd3941bfb25fc440039f970ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a988c7badd3941bfb25fc440039f970ee">getData</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;data, <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;datatime, Real time) const </td></tr>
 <tr class="separator:a988c7badd3941bfb25fc440039f970ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a593ba91494f1ec4754498a39a2ea91be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a593ba91494f1ec4754498a39a2ea91be">getArena</a> () const noexcept</td></tr>
+<tr class="memdesc:a593ba91494f1ec4754498a39a2ea91be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation. ...">Arena</a> used.  <a href="#a593ba91494f1ec4754498a39a2ea91be">More...</a><br /></td></tr>
+<tr class="separator:a593ba91494f1ec4754498a39a2ea91be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae83ccc99cebafd9a616419f206acfc72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#ae83ccc99cebafd9a616419f206acfc72">setArena</a> (<a class="el" href="classamrex_1_1Arena.html">Arena</a> *ar) noexcept</td></tr>
+<tr class="memdesc:ae83ccc99cebafd9a616419f206acfc72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation. ...">Arena</a> used.  <a href="#ae83ccc99cebafd9a616419f206acfc72">More...</a><br /></td></tr>
+<tr class="separator:ae83ccc99cebafd9a616419f206acfc72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -290,6 +296,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9702465fcc6db1bb193b1a82222b0e1c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a9702465fcc6db1bb193b1a82222b0e1c">old_data</a></td></tr>
 <tr class="memdesc:a9702465fcc6db1bb193b1a82222b0e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to previous time data.  <a href="#a9702465fcc6db1bb193b1a82222b0e1c">More...</a><br /></td></tr>
 <tr class="separator:a9702465fcc6db1bb193b1a82222b0e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79cbe7313de5292d236958355ff878dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1StateData.html#a79cbe7313de5292d236958355ff878dd">arena</a></td></tr>
+<tr class="memdesc:a79cbe7313de5292d236958355ff878dd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation. ...">Arena</a> we should use for allocating the data.  <a href="#a79cbe7313de5292d236958355ff878dd">More...</a><br /></td></tr>
+<tr class="separator:a79cbe7313de5292d236958355ff878dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -945,6 +954,31 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a593ba91494f1ec4754498a39a2ea91be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Arena.html">Arena</a>* amrex::StateData::getArena </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation. ...">Arena</a> used. </p>
 
 </div>
 </div>
@@ -1796,6 +1830,32 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae83ccc99cebafd9a616419f206acfc72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::StateData::setArena </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Arena.html">Arena</a> *&#160;</td>
+          <td class="paramname"><em>ar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation. ...">Arena</a> used. </p>
+
+</div>
+</div>
 <a class="anchor" id="a74036cca3383362145e0dd06a14a65ad"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2002,6 +2062,28 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a79cbe7313de5292d236958355ff878dd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Arena.html">Arena</a>* amrex::StateData::arena</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classamrex_1_1Arena.html" title="A virtual base class for objects that manage their own dynamic memory allocation. ...">Arena</a> we should use for allocating the data. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5201a1b8230055d506cef5f265a8b8e2"></a>
 <div class="memitem">
 <div class="memproto">

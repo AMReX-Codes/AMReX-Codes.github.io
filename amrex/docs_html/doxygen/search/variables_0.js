@@ -51,7 +51,7 @@ var searchData=
   ['amrex_5freal_5fsize',['amrex_real_size',['../namespaceamrex__fort__module.html#a3a784a0f6a33f782704766ad87d4b791',1,'amrex_fort_module']]],
   ['amrex_5fspacedim',['amrex_spacedim',['../namespaceamrex__fort__module.html#a3e14daae142c150a3590f4db1a67f004',1,'amrex_fort_module']]],
   ['amrlev',['amrlev',['../classamrex_1_1MLCGSolver.html#a05e4c1a43d63239106f5468b33caa6e7',1,'amrex::MLCGSolver']]],
-  ['arena',['arena',['../structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2',1,'amrex::MFInfo::arena()'],['../structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec',1,'amrex::FabInfo::arena()']]],
+  ['arena',['arena',['../classamrex_1_1StateData.html#a79cbe7313de5292d236958355ff878dd',1,'amrex::StateData::arena()'],['../structamrex_1_1MFInfo.html#a343c7c4fcab4a05e69b24156ea271ed2',1,'amrex::MFInfo::arena()'],['../structamrex_1_1FabInfo.html#afca3d5127ba5c2bb5cba6981a60a81ec',1,'amrex::FabInfo::arena()']]],
   ['arena_5finfo',['arena_info',['../classamrex_1_1Arena.html#aeb2158ba443c9b23ba0d12bcf38a66e1',1,'amrex::Arena']]],
   ['ark324l2sa_5fdirk_5f4_5f2_5f3',['ark324l2sa_dirk_4_2_3',['../namespacefarkode__mod.html#a7bca900224f46a9bb536f6ca25e7b267',1,'farkode_mod']]],
   ['ark324l2sa_5ferk_5f4_5f2_5f3',['ark324l2sa_erk_4_2_3',['../namespacefarkode__mod.html#a5d1a9585e47d8371c16c983baec9df6f',1,'farkode_mod']]],

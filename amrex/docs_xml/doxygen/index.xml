@@ -3392,7 +3392,7 @@
     <member refid="classamrex_1_1FabArray_1a4b2db0304bc84a002692917c83bc1626" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1FabArray_1ae978e4109861cb21bbb90d389fee4a01" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1FabArray_1a362cb84f113b8019a6f8b03129d1cf48" kind="function"><name>Factory</name></member>
-    <member refid="classamrex_1_1FabArray_1a5426360cd01f4bd896d7d20c5bf9d769" kind="function"><name>arena</name></member>
+    <member refid="classamrex_1_1FabArray_1acfab6e1a9aaaffd0c875021c5f10c0bb" kind="function"><name>arena</name></member>
     <member refid="classamrex_1_1FabArray_1ac696f139b6cf56e02828264b09a48636" kind="function"><name>hasEBFabFactory</name></member>
     <member refid="classamrex_1_1FabArray_1aa487ad1a422a80a53b13055e1781b1df" kind="function"><name>ok</name></member>
     <member refid="classamrex_1_1FabArray_1aea4482f17a37031cb4d666bb0d35bb75" kind="function"><name>operator[]</name></member>
@@ -3489,6 +3489,7 @@
     <member refid="classamrex_1_1FabArray_1a5fbf15f2a4abd1397a6474713b122824" kind="function"><name>FB_local_copy_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1af001e3fed315af1165f42213a1042c09" kind="function"><name>PC_local_cpu</name></member>
     <member refid="classamrex_1_1FabArray_1aaad9347944887bc14f15277d45585d84" kind="function"><name>setVal</name></member>
+    <member refid="classamrex_1_1FabArray_1a59639f9d47c654200ffccda96ff78ae5" kind="function"><name>RecvLayoutMask</name></member>
     <member refid="classamrex_1_1FabArray_1a0e0073142d1598838048317216fa6d12" kind="function"><name>FBEP_nowait</name></member>
     <member refid="classamrex_1_1FabArray_1a6ab6171d0c8b5e44260c328d0582621b" kind="function"><name>FillBoundary_finish</name></member>
     <member refid="classamrex_1_1FabArray_1a551575e2734ddbb455ce7d7ebd53cd9f" kind="function"><name>SharedMemory</name></member>
@@ -10241,6 +10242,7 @@
     <member refid="classamrex_1_1StateData_1a49bf88f51c149857686027e44513f4f8" kind="variable"><name>old_time</name></member>
     <member refid="classamrex_1_1StateData_1a08b05c680ad59e2ac04f8178d52cf3a0" kind="variable"><name>new_data</name></member>
     <member refid="classamrex_1_1StateData_1a9702465fcc6db1bb193b1a82222b0e1c" kind="variable"><name>old_data</name></member>
+    <member refid="classamrex_1_1StateData_1a79cbe7313de5292d236958355ff878dd" kind="variable"><name>arena</name></member>
     <member refid="classamrex_1_1StateData_1af35f43aa012590a264cbb08405ff5c1f" kind="variable"><name>fabArrayHeaderNames</name></member>
     <member refid="classamrex_1_1StateData_1a60cd1a78a793b7a4ce54e70da0f0dd55" kind="variable"><name>faHeaderMap</name></member>
     <member refid="classamrex_1_1StateData_1a947b62feb1753b7ebe6c604066b1d494" kind="function"><name>StateData</name></member>
@@ -10292,6 +10294,8 @@
     <member refid="classamrex_1_1StateData_1af94692a78b7f532f582acd48d9697443" kind="function"><name>hasOldData</name></member>
     <member refid="classamrex_1_1StateData_1af9809e458fa0bd25965558bf3aa2c802" kind="function"><name>hasNewData</name></member>
     <member refid="classamrex_1_1StateData_1a988c7badd3941bfb25fc440039f970ee" kind="function"><name>getData</name></member>
+    <member refid="classamrex_1_1StateData_1a593ba91494f1ec4754498a39a2ea91be" kind="function"><name>getArena</name></member>
+    <member refid="classamrex_1_1StateData_1ae83ccc99cebafd9a616419f206acfc72" kind="function"><name>setArena</name></member>
     <member refid="classamrex_1_1StateData_1a024ebcb9c74754c219b73d26d31683af" kind="function"><name>FabArrayHeaderNames</name></member>
     <member refid="classamrex_1_1StateData_1ad627f2819f507158b90f5f2570b1d182" kind="function"><name>ClearFabArrayHeaderNames</name></member>
     <member refid="classamrex_1_1StateData_1a0ae8938d03e0425949acee6bfdf003af" kind="function"><name>SetFAHeaderMapPtr</name></member>
@@ -11364,15 +11368,17 @@
     <member refid="namespaceamrex_1a6ca286511a003d2770dba9c37ab53c94" kind="function"><name>ToMultiFab</name></member>
     <member refid="namespaceamrex_1a4e1e9cb035ab3904dac7c511d1f63325" kind="function"><name>ToLongMultiFab</name></member>
     <member refid="namespaceamrex_1a3a431197f206b148529308a7796d5039" kind="function"><name>get_slice_data</name></member>
-    <member refid="namespaceamrex_1a5c058db000cb0e7b2eec3ae6f38aad93" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1af97d55742a96cb9e934e06c45ec22f03" kind="function"><name>makeFineMask</name></member>
-    <member refid="namespaceamrex_1a11ecd024350d560f6451b34efa853b15" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1abe90237191ad363f7f9dd34c2ac0ebcb" kind="function"><name>makeFineMask</name></member>
-    <member refid="namespaceamrex_1a079a6883a5aac14722d8dc342c22222a" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kind="function"><name>computeDivergence</name></member>
     <member refid="namespaceamrex_1add6ef1af4714e90f5d0b5a098725612b" kind="function"><name>computeGradient</name></member>
     <member refid="namespaceamrex_1a3c86d50daeca979098e4b1c7e34d0cf8" kind="function"><name>periodicShift</name></member>
+    <member refid="namespaceamrex_1a60886a6799fb7ae612bf30d74a493a26" kind="function"><name>makeFineMask</name></member>
+    <member refid="namespaceamrex_1a78142d53611f8627f6d68afd0779ef54" kind="function"><name>makeFineMask</name></member>
+    <member refid="namespaceamrex_1a478148eaeebd74ddc7956806c55fa2cb" kind="function"><name>makeFineMask</name></member>
+    <member refid="namespaceamrex_1af559f21584872566541db61cbacf7470" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a24aa5b51c299dd1337df192681f47e0e" kind="function"><name>cast</name></member>
+    <member refid="namespaceamrex_1a553a9a85d3f7836c9fe3ecf79a8b7b34" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1aeadc3d45ec6aeb4163a09bee0954a3f8" kind="function"><name>amrex_avg_nd_to_cc</name></member>
     <member refid="namespaceamrex_1ad6b7048ddd0b031ff09bf54f426dc052" kind="function"><name>amrex_avg_eg_to_cc</name></member>
     <member refid="namespaceamrex_1a87ad5b0a251a0164e0eb578a65a40218" kind="function"><name>amrex_avg_fc_to_cc</name></member>
@@ -11936,6 +11942,8 @@
   <compound refid="namespaceamrex_1_1_0D480" kind="namespace"><name>amrex::@480</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D481" kind="namespace"><name>amrex::@481</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D483" kind="namespace"><name>amrex::@483</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D486" kind="namespace"><name>amrex::@486</name>
   </compound>
