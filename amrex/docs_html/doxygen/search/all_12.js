@@ -269,7 +269,7 @@ var searchData=
   ['runlog',['runlog',['../classamrex_1_1Amr.html#abca666179e968bdbf467f8a903830bcd',1,'amrex::Amr']]],
   ['runlog_5fterse',['runlog_terse',['../classamrex_1_1Amr.html#a693fdb636ccbf5dde6fb220c835ee2a2',1,'amrex::Amr']]],
   ['runon',['RunOn',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2',1,'amrex']]],
-  ['runongpu',['RunOnGPU',['../classamrex_1_1StateDescriptor_1_1BndryFunc.html#a6cf8dd62b24e9bd99af570312314f42d',1,'amrex::StateDescriptor::BndryFunc::RunOnGPU()'],['../classamrex_1_1StateDescriptor.html#a45c110d37b26e0c322c1af1089ecbfea',1,'amrex::StateDescriptor::RunOnGPU()'],['../classamrex_1_1BndryFuncArray.html#add628eb12539396ff64eb4a535c99ac9',1,'amrex::BndryFuncArray::RunOnGPU()']]],
+  ['runongpu',['RunOnGPU',['../classamrex_1_1StateDescriptor_1_1BndryFunc.html#a299ae04cbe66fec47f604176ecb0936a',1,'amrex::StateDescriptor::BndryFunc::RunOnGPU()'],['../classamrex_1_1StateDescriptor.html#a45c110d37b26e0c322c1af1089ecbfea',1,'amrex::StateDescriptor::RunOnGPU()'],['../classamrex_1_1BndryFuncArray.html#add628eb12539396ff64eb4a535c99ac9',1,'amrex::BndryFuncArray::RunOnGPU()']]],
   ['runtimeerror',['RuntimeError',['../namespaceamrex.html#ac3aaf3d47b0fc6e69f9405fcebcdc4fe',1,'amrex']]],
   ['rz',['RZ',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaa090e74483c754250a5e0ee448bdfe8b3',1,'amrex::CoordSys']]]
 ];
