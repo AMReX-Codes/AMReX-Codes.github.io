@@ -7566,6 +7566,7 @@
     <member refid="classamrex_1_1MLCGSolver_1a2990c25f5d241b21ac50199c5d0e8fa7" kind="variable"><name>verbose</name></member>
     <member refid="classamrex_1_1MLCGSolver_1a7361747702a9b7661832c6bd26534a01" kind="variable"><name>maxiter</name></member>
     <member refid="classamrex_1_1MLCGSolver_1a34ae0aafa5090a14b99247b75d58878e" kind="variable"><name>nghost</name></member>
+    <member refid="classamrex_1_1MLCGSolver_1aaa6a7cb778d7033b2614ac0f6c6d079e" kind="variable"><name>iter</name></member>
     <member refid="classamrex_1_1MLCGSolver_1ab03782948a095d52c81071f4926c0fff" kind="function"><name>MLCGSolver</name></member>
     <member refid="classamrex_1_1MLCGSolver_1ac0e9733d5de10430137f949ba8438c9d" kind="function"><name>~MLCGSolver</name></member>
     <member refid="classamrex_1_1MLCGSolver_1af0e22ed0d89dcba1fbe10f3592166a85" kind="function"><name>MLCGSolver</name></member>
@@ -7582,6 +7583,7 @@
     <member refid="classamrex_1_1MLCGSolver_1a6c5043394d5c5290cb302d38c5d08226" kind="function"><name>norm_inf</name></member>
     <member refid="classamrex_1_1MLCGSolver_1aa40411197f3ef314c892e87e6275a351" kind="function"><name>solve_bicgstab</name></member>
     <member refid="classamrex_1_1MLCGSolver_1a8f5383cd09372e80bdf1b309546f8424" kind="function"><name>solve_cg</name></member>
+    <member refid="classamrex_1_1MLCGSolver_1a74ea79e0e5b7d2ffa17752188b1cf73e" kind="function"><name>getNumIters</name></member>
   </compound>
   <compound refid="classamrex_1_1MLEBABecLap" kind="class"><name>amrex::MLEBABecLap</name>
     <member refid="classamrex_1_1MLEBABecLap_1aadf975aed65ffe24b230421d1366de50" kind="variable"><name>m_needs_update</name></member>
@@ -7841,6 +7843,11 @@
     <member refid="classamrex_1_1MLMG_1acbd5fc7b1f0af79ee6eb5daa55b890fb" kind="variable"><name>volinv</name></member>
     <member refid="classamrex_1_1MLMG_1ab013a4dc85f37684f9e65f63b5318fc9" kind="variable"><name>scratch</name></member>
     <member refid="classamrex_1_1MLMG_1a60c47161b03df19f998710df25c494fd" kind="variable"><name>timer</name></member>
+    <member refid="classamrex_1_1MLMG_1a63559f1a5501e67e6c4d47e443470dc2" kind="variable"><name>m_rhsnorm0</name></member>
+    <member refid="classamrex_1_1MLMG_1a43af172c075ffa6011bfb2e6dc8493b7" kind="variable"><name>m_init_resnorm0</name></member>
+    <member refid="classamrex_1_1MLMG_1abacb248f6c07b07db294322fb7e1aea7" kind="variable"><name>m_final_resnorm0</name></member>
+    <member refid="classamrex_1_1MLMG_1a6eed69f8495e3c1f27296478ff7417e9" kind="variable"><name>m_niters_cg</name></member>
+    <member refid="classamrex_1_1MLMG_1a0bca266eed8ebba38073150d4a748c74" kind="variable"><name>m_iter_fine_resnorm0</name></member>
     <member refid="classamrex_1_1MLMG_1a4d80ba0f675a1b751f35d66d04253dd6" kind="function"><name>MLMG</name></member>
     <member refid="classamrex_1_1MLMG_1a12c3c0793a39356963dd1824588b7593" kind="function"><name>~MLMG</name></member>
     <member refid="classamrex_1_1MLMG_1a6060de4980b23d73b67610a39565af75" kind="function"><name>solve</name></member>
@@ -7903,6 +7910,12 @@
     <member refid="classamrex_1_1MLMG_1aaf664a17642380d701b1b7b08e10fa63" kind="function"><name>bottomSolveWithHypre</name></member>
     <member refid="classamrex_1_1MLMG_1a1d9aa957bda2ed06061254fb7e187c3f" kind="function"><name>bottomSolveWithPETSc</name></member>
     <member refid="classamrex_1_1MLMG_1a7449cb19c1e62e14a47d020cb696f0b5" kind="function"><name>bottomSolveWithCG</name></member>
+    <member refid="classamrex_1_1MLMG_1a44fe292771ffd1f946297f72295217c1" kind="function"><name>getInitRHS</name></member>
+    <member refid="classamrex_1_1MLMG_1a38246ba4d9cc99180d23f13eaee31858" kind="function"><name>getInitResidual</name></member>
+    <member refid="classamrex_1_1MLMG_1a3f7c16fa32591e6ca66a72d9b998f071" kind="function"><name>getFinalResidual</name></member>
+    <member refid="classamrex_1_1MLMG_1a8bdedc7ec262346ed0007f53c3a8d200" kind="function"><name>getResidualHistory</name></member>
+    <member refid="classamrex_1_1MLMG_1ab7d3085def0c04b487a8cabf898ce039" kind="function"><name>getNumIters</name></member>
+    <member refid="classamrex_1_1MLMG_1ac3822a91ae7b60ff1c4a691936cf527e" kind="function"><name>getNumCGIters</name></member>
     <member refid="classamrex_1_1MLMG_1a52cbdeb167834e42f778f74b3047938d" kind="function"><name>checkPoint</name></member>
   </compound>
   <compound refid="classamrex_1_1MLMGBndry" kind="class"><name>amrex::MLMGBndry</name>
