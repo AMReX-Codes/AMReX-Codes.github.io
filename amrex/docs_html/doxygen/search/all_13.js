@@ -24,7 +24,7 @@ var searchData=
   ['scaleif',['ScaleIF',['../classamrex_1_1EB2_1_1ScaleIF.html#a62762bd802e07b5d8aa07fc8bb7d831a',1,'amrex::EB2::ScaleIF::ScaleIF(F &amp;&amp;a_f, const RealArray &amp;a_scalefactor)'],['../classamrex_1_1EB2_1_1ScaleIF.html#ab200f0635a84f32061f5112da672ad74',1,'amrex::EB2::ScaleIF::ScaleIF(F const &amp;a_f, const RealArray &amp;a_scalefactor)'],['../classamrex_1_1EB2_1_1ScaleIF.html#a68771d5e32bbdac7a2a76e9c5fd5f468',1,'amrex::EB2::ScaleIF::ScaleIF(const ScaleIF &amp;rhs)=default'],['../classamrex_1_1EB2_1_1ScaleIF.html#ad8ccb09585cf3742c35ad7aca5dac6c5',1,'amrex::EB2::ScaleIF::ScaleIF(ScaleIF &amp;&amp;rhs)=default']]],
   ['scaleif',['ScaleIF',['../classamrex_1_1EB2_1_1ScaleIF.html',1,'amrex::EB2']]],
   ['scatter',['Scatter',['../namespaceamrex_1_1ParallelDescriptor.html#adb4c5fe012593a0ef38394db6c2643f2',1,'amrex::ParallelDescriptor']]],
-  ['scatterparticles',['scatterParticles',['../namespaceamrex.html#a9be7afe51aafe03517b17145c84d953b',1,'amrex']]],
+  ['scatterparticles',['scatterParticles',['../namespaceamrex.html#ae05ffbbcc005cc8c081b859226222c78',1,'amrex']]],
   ['scopeddefaultstream',['ScopedDefaultStream',['../structamrex_1_1Gpu_1_1ScopedDefaultStream.html',1,'amrex::Gpu']]],
   ['scratch',['scratch',['../classamrex_1_1MLMG.html#ab013a4dc85f37684f9e65f63b5318fc9',1,'amrex::MLMG']]],
   ['sdc_5fclenshaw_5fcurtis',['sdc_clenshaw_curtis',['../namespacesdcquadrature__mod.html#aca3c8a3144793139f180db29ce39153c',1,'sdcquadrature_mod']]],
