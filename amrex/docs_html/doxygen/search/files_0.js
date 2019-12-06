@@ -77,6 +77,8 @@ var searchData=
   ['amrex_5fblbacktrace_2ecpp',['AMReX_BLBackTrace.cpp',['../AMReX__BLBackTrace_8cpp.html',1,'']]],
   ['amrex_5fblbacktrace_2eh',['AMReX_BLBackTrace.H',['../AMReX__BLBackTrace_8H.html',1,'']]],
   ['amrex_5fblfort_2eh',['AMReX_BLFort.H',['../AMReX__BLFort_8H.html',1,'']]],
+  ['amrex_5fblockmutex_2ecpp',['AMReX_BlockMutex.cpp',['../AMReX__BlockMutex_8cpp.html',1,'']]],
+  ['amrex_5fblockmutex_2eh',['AMReX_BlockMutex.H',['../AMReX__BlockMutex_8H.html',1,'']]],
   ['amrex_5fblprofiler_2ecpp',['AMReX_BLProfiler.cpp',['../AMReX__BLProfiler_8cpp.html',1,'']]],
   ['amrex_5fblprofiler_2eh',['AMReX_BLProfiler.H',['../AMReX__BLProfiler_8H.html',1,'']]],
   ['amrex_5fblprofiler_5ff_2ef90',['AMReX_BLProfiler_F.F90',['../AMReX__BLProfiler__F_8F90.html',1,'']]],
@@ -611,6 +613,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
 ];
