@@ -1368,6 +1368,35 @@ the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INL
 <span class="p">}</span>
 </pre></div>
 </div>
+<ul>
+<li><p>Generally, AMReX users should not have to directly call <code class="docutils literal notranslate"><span class="pre">thrust</span></code>
+functions, as they are wrapped inside AMReX functions. However, if
+a <code class="docutils literal notranslate"><span class="pre">thrust</span></code> function does need to be directly called, it is
+important to include the appropriate parallel execution policy.
+Although <code class="docutils literal notranslate"><span class="pre">thrust</span></code> is capable of default location selection,
+AMReX’s use of non- <code class="docutils literal notranslate"><span class="pre">thrust</span></code> data structures can cause
+<code class="docutils literal notranslate"><span class="pre">thrust</span></code> to default to the host unexpectedly, which will either
+cause performance loss or runtime errors.</p>
+<p>Thrust comes with two built-in policies, <code class="docutils literal notranslate"><span class="pre">thrust::host</span></code> and
+<code class="docutils literal notranslate"><span class="pre">thrust::device</span></code>. AMReX also includes a <code class="docutils literal notranslate"><span class="pre">thrust::device</span></code>
+execution policy, <code class="docutils literal notranslate"><span class="pre">amrex::Gpu::The_ThrustCachedPolicy()</span></code>, that
+uses AMReX Arenas when allocating temporary memory space, which
+substantially reduces cudaMalloc time inside <code class="docutils literal notranslate"><span class="pre">thrust</span></code>
+functions. This is the recommended execution policy for optimal
+performance when calling thrust functions.</p>
+<p>The parallel execution policy is an optional first variable passed
+to most <code class="docutils literal notranslate"><span class="pre">thrust</span></code> functions. For example:</p>
+</li>
+</ul>
+<dl class="simple">
+<dt>::</dt><dd><dl class="simple">
+<dt>Real r = thrust::reduce(amrex::Gpu::The_ThrustCachedPolicy(),</dt><dd><p>vec.begin(), vec.end(), 0.0, thrust::plus&lt;Real&gt;());</p>
+</dd>
+<dt>Real r = thrust::reduce(thrust::host,</dt><dd><p>vec.begin(), vec.end(), 0.0, thrust::plus&lt;Real&gt;());</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </div>
 <div class="section" id="inputs-parameters">
 <h1>Inputs Parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline">¶</a></h1>
