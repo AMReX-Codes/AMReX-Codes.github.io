@@ -99,7 +99,7 @@ var searchData=
   ['define_5fepo',['define_epo',['../structamrex_1_1FabArrayBase_1_1FB.html#a53df06970b8cf1cb353ec184bb5422ef',1,'amrex::FabArrayBase::FB']]],
   ['define_5ffb',['define_fb',['../structamrex_1_1FabArrayBase_1_1FB.html#a782fbc8576a01acde04fd3e8c6686c4b',1,'amrex::FabArrayBase::FB']]],
   ['define_5ffunction_5fcalled',['define_function_called',['../classamrex_1_1FabArray.html#a8a547f660eb49f5b25df2a1eddcd7eef',1,'amrex::FabArray']]],
-  ['defineandreturnparticletile',['DefineAndReturnParticleTile',['../classamrex_1_1ParticleContainer.html#a26130c3db6994575b0230322cb726095',1,'amrex::ParticleContainer']]],
+  ['defineandreturnparticletile',['DefineAndReturnParticleTile',['../classamrex_1_1ParticleContainer.html#a26130c3db6994575b0230322cb726095',1,'amrex::ParticleContainer::DefineAndReturnParticleTile(int lev, int grid, int tile)'],['../classamrex_1_1ParticleContainer.html#a1f70f1c69a9b86c8454de86b6292142e',1,'amrex::ParticleContainer::DefineAndReturnParticleTile(int lev, const Iterator &amp;iter)']]],
   ['defineauxdata',['defineAuxData',['../classamrex_1_1MLCellLinOp.html#a971e6a729527288cdcb774d19799cf18',1,'amrex::MLCellLinOp::defineAuxData()'],['../classamrex_1_1MLLinOp.html#ae772fff45d8190c7c2c694931858b834',1,'amrex::MLLinOp::defineAuxData()']]],
   ['definebc',['defineBC',['../classamrex_1_1MLCellLinOp.html#a51a99982e299f90449ae12473a15c7d2',1,'amrex::MLCellLinOp::defineBC()'],['../classamrex_1_1MLLinOp.html#a9288d1d0123d4e3d8097fd568a706a15',1,'amrex::MLLinOp::defineBC()']]],
   ['definebuffermap',['defineBufferMap',['../classamrex_1_1ParticleContainer.html#ac0fd1a7e7bc38bd3aa5ff14a264e4f51',1,'amrex::ParticleContainer']]],

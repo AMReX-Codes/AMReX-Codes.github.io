@@ -2842,14 +2842,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a4866e2bfa6dd84f1367d144d67a5b45b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a4866e2bfa6dd84f1367d144d67a5b45b">copyParticles</a> (PTile &amp;dst, const PTile &amp;src, Index src_start, Index dst_start, N n) noexcept</td></tr>
 <tr class="memdesc:a4866e2bfa6dd84f1367d144d67a5b45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from src to dst. This version copies n particles starting at index src_start, writing the result starting at dst_start.  <a href="#a4866e2bfa6dd84f1367d144d67a5b45b">More...</a><br /></td></tr>
 <tr class="separator:a4866e2bfa6dd84f1367d144d67a5b45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a129cc768a96e7dfdafc35280bb7e52ec"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename F &gt; </td></tr>
-<tr class="memitem:a129cc768a96e7dfdafc35280bb7e52ec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a129cc768a96e7dfdafc35280bb7e52ec">transformParticles</a> (PTile &amp;dst, const PTile &amp;src, F &amp;&amp;f) noexcept</td></tr>
-<tr class="memdesc:a129cc768a96e7dfdafc35280bb7e52ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to all the particles in src, writing the result to dst. This version does all the particles in src.  <a href="#a129cc768a96e7dfdafc35280bb7e52ec">More...</a><br /></td></tr>
-<tr class="separator:a129cc768a96e7dfdafc35280bb7e52ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a973ec721d0aed1008d77da995a6e005e"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename Index , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
-<tr class="memitem:a973ec721d0aed1008d77da995a6e005e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a973ec721d0aed1008d77da995a6e005e">transformParticles</a> (PTile &amp;dst, const PTile &amp;src, Index src_start, Index dst_start, N n, F &amp;&amp;f) noexcept</td></tr>
-<tr class="memdesc:a973ec721d0aed1008d77da995a6e005e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to particles in src, writing the result to dst. This version applies the function to n particles starting at index src_start, writing the result starting at dst_start.  <a href="#a973ec721d0aed1008d77da995a6e005e">More...</a><br /></td></tr>
-<tr class="separator:a973ec721d0aed1008d77da995a6e005e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03ee3a195d7ee3ebcb19d20f9fdce73"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename F &gt; </td></tr>
+<tr class="memitem:ae03ee3a195d7ee3ebcb19d20f9fdce73"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae03ee3a195d7ee3ebcb19d20f9fdce73">transformParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:ae03ee3a195d7ee3ebcb19d20f9fdce73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to all the particles in src, writing the result to dst. This version does all the particles in src.  <a href="#ae03ee3a195d7ee3ebcb19d20f9fdce73">More...</a><br /></td></tr>
+<tr class="separator:ae03ee3a195d7ee3ebcb19d20f9fdce73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa97130d61a81b34078846228e608f149"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Index , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aa97130d61a81b34078846228e608f149"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa97130d61a81b34078846228e608f149">transformParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Index src_start, Index dst_start, N n, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:aa97130d61a81b34078846228e608f149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to particles in src, writing the result to dst. This version applies the function to n particles starting at index src_start, writing the result starting at dst_start.  <a href="#aa97130d61a81b34078846228e608f149">More...</a><br /></td></tr>
+<tr class="separator:aa97130d61a81b34078846228e608f149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5926a5d20c4f511675c02ec18cc7c87a"><td class="memTemplParams" colspan="2">template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename F &gt; </td></tr>
+<tr class="memitem:a5926a5d20c4f511675c02ec18cc7c87a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5926a5d20c4f511675c02ec18cc7c87a">transformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:a5926a5d20c4f511675c02ec18cc7c87a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to all the particles in src, writing the results to dst1 and dst2. This version does all the particles in src.  <a href="#a5926a5d20c4f511675c02ec18cc7c87a">More...</a><br /></td></tr>
+<tr class="separator:a5926a5d20c4f511675c02ec18cc7c87a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a36a54f57606736a70a2ca6ce223ede"><td class="memTemplParams" colspan="2">template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Index , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a2a36a54f57606736a70a2ca6ce223ede"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2a36a54f57606736a70a2ca6ce223ede">transformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Index src_start, Index dst1_start, Index dst2_start, N n, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:a2a36a54f57606736a70a2ca6ce223ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the function f to particles in src, writing the results to dst1 and dst2. This version applies the function to n particles starting at index src_start, writing the result starting at dst1_start and dst2_start.  <a href="#a2a36a54f57606736a70a2ca6ce223ede">More...</a><br /></td></tr>
+<tr class="separator:a2a36a54f57606736a70a2ca6ce223ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc67d96b5c2d4aed00a1f5f676f7a568"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename Index , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:afc67d96b5c2d4aed00a1f5f676f7a568"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afc67d96b5c2d4aed00a1f5f676f7a568">filterParticles</a> (PTile &amp;dst, const PTile &amp;src, const Index *mask) noexcept</td></tr>
 <tr class="memdesc:afc67d96b5c2d4aed00a1f5f676f7a568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask.  <a href="#afc67d96b5c2d4aed00a1f5f676f7a568">More...</a><br /></td></tr>
@@ -2858,14 +2866,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a8a49d8e1d3b582340fef005e23f47888"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8a49d8e1d3b582340fef005e23f47888">filterParticles</a> (PTile &amp;dst, const PTile &amp;src, Pred &amp;&amp;p) noexcept-&gt; decltype(p(typename PTile::ConstParticleTileDataType(), 0))</td></tr>
 <tr class="memdesc:a8a49d8e1d3b582340fef005e23f47888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate.  <a href="#a8a49d8e1d3b582340fef005e23f47888">More...</a><br /></td></tr>
 <tr class="separator:a8a49d8e1d3b582340fef005e23f47888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1b4b0c5880aceea94cc1cfc70a8e817"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename Index , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
-<tr class="memitem:af1b4b0c5880aceea94cc1cfc70a8e817"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af1b4b0c5880aceea94cc1cfc70a8e817">filterAndTransformParticles</a> (PTile &amp;dst, const PTile &amp;src, Index *mask, F &amp;&amp;f) noexcept</td></tr>
-<tr class="memdesc:af1b4b0c5880aceea94cc1cfc70a8e817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy.  <a href="#af1b4b0c5880aceea94cc1cfc70a8e817">More...</a><br /></td></tr>
-<tr class="separator:af1b4b0c5880aceea94cc1cfc70a8e817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcb446e37abe412ae3f8844d4efc4c22"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename Pred , typename F &gt; </td></tr>
-<tr class="memitem:adcb446e37abe412ae3f8844d4efc4c22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#adcb446e37abe412ae3f8844d4efc4c22">filterAndTransformParticles</a> (PTile &amp;dst, const PTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept-&gt; decltype(p(typename PTile::ConstParticleTileDataType(), 0))</td></tr>
-<tr class="memdesc:adcb446e37abe412ae3f8844d4efc4c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy.  <a href="#adcb446e37abe412ae3f8844d4efc4c22">More...</a><br /></td></tr>
-<tr class="separator:adcb446e37abe412ae3f8844d4efc4c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ec82174b9e85180e43d20c64b52b26"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Index , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af6ec82174b9e85180e43d20c64b52b26"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af6ec82174b9e85180e43d20c64b52b26">filterAndTransformParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Index *mask, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:af6ec82174b9e85180e43d20c64b52b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy.  <a href="#af6ec82174b9e85180e43d20c64b52b26">More...</a><br /></td></tr>
+<tr class="separator:af6ec82174b9e85180e43d20c64b52b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9077c8d454492a06a8731ac163bf420b"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Pred , typename F &gt; </td></tr>
+<tr class="memitem:a9077c8d454492a06a8731ac163bf420b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9077c8d454492a06a8731ac163bf420b">filterAndTransformParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept-&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</td></tr>
+<tr class="memdesc:a9077c8d454492a06a8731ac163bf420b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy.  <a href="#a9077c8d454492a06a8731ac163bf420b">More...</a><br /></td></tr>
+<tr class="separator:a9077c8d454492a06a8731ac163bf420b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a326a3d72298cd5b976db9b5f3d92fba5"><td class="memTemplParams" colspan="2">template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Index , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a326a3d72298cd5b976db9b5f3d92fba5"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a326a3d72298cd5b976db9b5f3d92fba5">filterAndTransformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Index *mask, F &amp;&amp;f) noexcept</td></tr>
+<tr class="memdesc:a326a3d72298cd5b976db9b5f3d92fba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst1 and dst2 based on the value of mask. A transformation will also be applied to the particles on copy.  <a href="#a326a3d72298cd5b976db9b5f3d92fba5">More...</a><br /></td></tr>
+<tr class="separator:a326a3d72298cd5b976db9b5f3d92fba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a8a2f7e4873cb7ffb345759651297a"><td class="memTemplParams" colspan="2">template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Pred , typename F &gt; </td></tr>
+<tr class="memitem:a48a8a2f7e4873cb7ffb345759651297a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a48a8a2f7e4873cb7ffb345759651297a">filterAndTransformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept-&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</td></tr>
+<tr class="memdesc:a48a8a2f7e4873cb7ffb345759651297a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst1 and dst2 based on a predicate. A transformation will also be applied to the particles on copy.  <a href="#a48a8a2f7e4873cb7ffb345759651297a">More...</a><br /></td></tr>
+<tr class="separator:a48a8a2f7e4873cb7ffb345759651297a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab75c7a4946d605a7072d64407df6a6d8"><td class="memTemplParams" colspan="2">template&lt;typename PTile , typename N , typename Index , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:ab75c7a4946d605a7072d64407df6a6d8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab75c7a4946d605a7072d64407df6a6d8">gatherParticles</a> (PTile &amp;dst, const PTile &amp;src, N np, const Index *inds)</td></tr>
 <tr class="memdesc:ab75c7a4946d605a7072d64407df6a6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather particles copies particles into contiguous order from an arbitrary order. Specifically, the particle at the index inds[i] in src will be copied to the index i in dst.  <a href="#ab75c7a4946d605a7072d64407df6a6d8">More...</a><br /></td></tr>
@@ -13809,11 +13825,11 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af1b4b0c5880aceea94cc1cfc70a8e817"></a>
+<a class="anchor" id="af6ec82174b9e85180e43d20c64b52b26"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PTile , typename Index , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </div>
+template&lt;typename DstTile , typename SrcTile , typename Index , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -13821,13 +13837,13 @@ template&lt;typename PTile , typename Index , typename F , amrex::EnableIf_t&lt;
         <tr>
           <td class="memname">Index amrex::filterAndTransformParticles </td>
           <td>(</td>
-          <td class="paramtype">PTile &amp;&#160;</td>
+          <td class="paramtype">DstTile &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const PTile &amp;&#160;</td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
@@ -13858,7 +13874,8 @@ template&lt;typename PTile , typename Index , typename F , amrex::EnableIf_t&lt;
 <p>Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
+    <tr><td class="paramname">DstTile</td><td>the dst particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
     <tr><td class="paramname">Index</td><td>the index type, e.g. unsigned int </td></tr>
     <tr><td class="paramname">F</td><td>the transform function type</td></tr>
   </table>
@@ -13876,11 +13893,11 @@ template&lt;typename PTile , typename Index , typename F , amrex::EnableIf_t&lt;
 
 </div>
 </div>
-<a class="anchor" id="adcb446e37abe412ae3f8844d4efc4c22"></a>
+<a class="anchor" id="a9077c8d454492a06a8731ac163bf420b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PTile , typename Pred , typename F &gt; </div>
+template&lt;typename DstTile , typename SrcTile , typename Pred , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -13888,13 +13905,13 @@ template&lt;typename PTile , typename Pred , typename F &gt; </div>
         <tr>
           <td class="memname">auto amrex::filterAndTransformParticles </td>
           <td>(</td>
-          <td class="paramtype">PTile &amp;&#160;</td>
+          <td class="paramtype">DstTile &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const PTile &amp;&#160;</td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
@@ -13912,7 +13929,7 @@ template&lt;typename PTile , typename Pred , typename F &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(p(typename PTile::ConstParticleTileDataType(), 0))
+          <td></td><td> -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))
 </td>
         </tr>
       </table>
@@ -13926,7 +13943,8 @@ template&lt;typename PTile , typename Pred , typename F &gt; </div>
 <p>Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
+    <tr><td class="paramname">DstTile</td><td>the dst particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
     <tr><td class="paramname">Index</td><td>the index type, e.g. unsigned int </td></tr>
     <tr><td class="paramname">Pred</td><td>a function object </td></tr>
     <tr><td class="paramname">F</td><td>the transform function type</td></tr>
@@ -13936,6 +13954,160 @@ template&lt;typename PTile , typename Pred , typename F &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dst</td><td>the destination tile </td></tr>
+    <tr><td class="paramname">src</td><td>the source tile </td></tr>
+    <tr><td class="paramname">p</td><td>predicate function - particles will be copied if p returns true </td></tr>
+    <tr><td class="paramname">f</td><td>defines the transformation that will be applied to the particles on copy </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a326a3d72298cd5b976db9b5f3d92fba5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Index , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Index amrex::filterAndTransformParticles </td>
+          <td>(</td>
+          <td class="paramtype">DstTile1 &amp;&#160;</td>
+          <td class="paramname"><em>dst1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DstTile2 &amp;&#160;</td>
+          <td class="paramname"><em>dst2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index *&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Conditionally copy particles from src to dst1 and dst2 based on the value of mask. A transformation will also be applied to the particles on copy. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DstTile1</td><td>the dst1 particle tile type </td></tr>
+    <tr><td class="paramname">DstTile2</td><td>the dst2 particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
+    <tr><td class="paramname">Index</td><td>the index type, e.g. unsigned int </td></tr>
+    <tr><td class="paramname">F</td><td>the transform function type</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst1</td><td>the first destination tile </td></tr>
+    <tr><td class="paramname">dst2</td><td>the second destination tile </td></tr>
+    <tr><td class="paramname">src</td><td>the source tile </td></tr>
+    <tr><td class="paramname">mask</td><td>pointer to the mask - 1 means copy, 0 means don't copy </td></tr>
+    <tr><td class="paramname">f</td><td>defines the transformation that will be applied to the particles on copy </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a48a8a2f7e4873cb7ffb345759651297a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Pred , typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto amrex::filterAndTransformParticles </td>
+          <td>(</td>
+          <td class="paramtype">DstTile1 &amp;&#160;</td>
+          <td class="paramname"><em>dst1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DstTile2 &amp;&#160;</td>
+          <td class="paramname"><em>dst2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Pred &amp;&amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))
+</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Conditionally copy particles from src to dst1 and dst2 based on a predicate. A transformation will also be applied to the particles on copy. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DstTile1</td><td>the dst1 particle tile type </td></tr>
+    <tr><td class="paramname">DstTile2</td><td>the dst2 particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
+    <tr><td class="paramname">Index</td><td>the index type, e.g. unsigned int </td></tr>
+    <tr><td class="paramname">Pred</td><td>a function object </td></tr>
+    <tr><td class="paramname">F</td><td>the transform function type</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst1</td><td>the first destination tile </td></tr>
+    <tr><td class="paramname">dst2</td><td>the second destination tile </td></tr>
     <tr><td class="paramname">src</td><td>the source tile </td></tr>
     <tr><td class="paramname">p</td><td>predicate function - particles will be copied if p returns true </td></tr>
     <tr><td class="paramname">f</td><td>defines the transformation that will be applied to the particles on copy </td></tr>
@@ -32593,130 +32765,6 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="acc8db936023bb83534878c495096ff64"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::mltensor_fill_corners </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>icorner</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>vbox</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>vel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mxlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mylo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mxhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>myhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalxlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalylo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalxhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalyhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">GpuArray</a>&lt; <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a>, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bct</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">GpuArray</a>&lt; Real, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>inhomog</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>maxorder</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">GpuArray</a>&lt; Real, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>dxinv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>domain</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="af2737c6423869da235a5c576d435784c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -32813,6 +32861,130 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
           <td class="paramname"><em>bcvalzhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">GpuArray</a>&lt; <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a>, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">GpuArray</a>&lt; Real, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>inhomog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxorder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a317082290117984ef29e149750e2c7a8">GpuArray</a>&lt; Real, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dxinv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acc8db936023bb83534878c495096ff64"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::mltensor_fill_corners </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>icorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>vbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mxlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mylo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mxhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; int const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>myhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalxlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalylo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalxhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalyhi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -34939,7 +35111,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae9a6e7245f5df7f22c353eede65db960"></a>
+<a class="anchor" id="abe14b67eeec40f7b21d1743472bbb09a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -34952,7 +35124,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MCLinOp.html">MCLinOp</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1LinOp.html">LinOp</a> &amp;&#160;</td>
           <td class="paramname"><em>lp</em>&#160;</td>
         </tr>
         <tr>
@@ -34972,7 +35144,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="abe14b67eeec40f7b21d1743472bbb09a"></a>
+<a class="anchor" id="ae9a6e7245f5df7f22c353eede65db960"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -34985,7 +35157,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1LinOp.html">LinOp</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MCLinOp.html">MCLinOp</a> &amp;&#160;</td>
           <td class="paramname"><em>lp</em>&#160;</td>
         </tr>
         <tr>
@@ -41066,11 +41238,11 @@ template&lt;class Tto , class Tfrom &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a129cc768a96e7dfdafc35280bb7e52ec"></a>
+<a class="anchor" id="ae03ee3a195d7ee3ebcb19d20f9fdce73"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PTile , typename F &gt; </div>
+template&lt;typename DstTile , typename SrcTile , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -41078,13 +41250,13 @@ template&lt;typename PTile , typename F &gt; </div>
         <tr>
           <td class="memname">void amrex::transformParticles </td>
           <td>(</td>
-          <td class="paramtype">PTile &amp;&#160;</td>
+          <td class="paramtype">DstTile &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const PTile &amp;&#160;</td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
@@ -41109,7 +41281,8 @@ template&lt;typename PTile , typename F &gt; </div>
 <p>Apply the function f to all the particles in src, writing the result to dst. This version does all the particles in src. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
+    <tr><td class="paramname">DstTile</td><td>the dst particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
     <tr><td class="paramname">F</td><td>a function object</td></tr>
   </table>
   </dd>
@@ -41125,11 +41298,11 @@ template&lt;typename PTile , typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a973ec721d0aed1008d77da995a6e005e"></a>
+<a class="anchor" id="aa97130d61a81b34078846228e608f149"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename PTile , typename Index , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </div>
+template&lt;typename DstTile , typename SrcTile , typename Index , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -41137,13 +41310,13 @@ template&lt;typename PTile , typename Index , typename N , typename F , amrex::E
         <tr>
           <td class="memname">void amrex::transformParticles </td>
           <td>(</td>
-          <td class="paramtype">PTile &amp;&#160;</td>
+          <td class="paramtype">DstTile &amp;&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const PTile &amp;&#160;</td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
@@ -41186,7 +41359,8 @@ template&lt;typename PTile , typename Index , typename N , typename F , amrex::E
 <p>Apply the function f to particles in src, writing the result to dst. This version applies the function to n particles starting at index src_start, writing the result starting at dst_start. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PTile</td><td>the particle tile type </td></tr>
+    <tr><td class="paramname">DstTile</td><td>the dst particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
     <tr><td class="paramname">Index</td><td>the index type, e.g. unsigned int </td></tr>
     <tr><td class="paramname">N</td><td>the size type, e.g. long </td></tr>
     <tr><td class="paramname">F</td><td>a function object</td></tr>
@@ -41199,6 +41373,171 @@ template&lt;typename PTile , typename Index , typename N , typename F , amrex::E
     <tr><td class="paramname">src</td><td>the source tile </td></tr>
     <tr><td class="paramname">src_start</td><td>the offset at which to start reading particles from src </td></tr>
     <tr><td class="paramname">dst_start</td><td>the offset at which to start writing particles to dst </td></tr>
+    <tr><td class="paramname">f</td><td>the function that will be applied to each particle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5926a5d20c4f511675c02ec18cc7c87a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::transformParticles </td>
+          <td>(</td>
+          <td class="paramtype">DstTile1 &amp;&#160;</td>
+          <td class="paramname"><em>dst1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DstTile2 &amp;&#160;</td>
+          <td class="paramname"><em>dst2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the function f to all the particles in src, writing the results to dst1 and dst2. This version does all the particles in src. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DstTile1</td><td>the dst1 particle tile type </td></tr>
+    <tr><td class="paramname">DstTile2</td><td>the dst2 particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
+    <tr><td class="paramname">F</td><td>a function object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst1</td><td>the first destination tile </td></tr>
+    <tr><td class="paramname">dst2</td><td>the second destination tile </td></tr>
+    <tr><td class="paramname">src</td><td>the source tile </td></tr>
+    <tr><td class="paramname">f</td><td>the function that will be applied to each particle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2a36a54f57606736a70a2ca6ce223ede"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Index , typename N , typename F , amrex::EnableIf_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::transformParticles </td>
+          <td>(</td>
+          <td class="paramtype">DstTile1 &amp;&#160;</td>
+          <td class="paramname"><em>dst1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DstTile2 &amp;&#160;</td>
+          <td class="paramname"><em>dst2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SrcTile &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>src_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>dst1_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Index&#160;</td>
+          <td class="paramname"><em>dst2_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">N&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the function f to particles in src, writing the results to dst1 and dst2. This version applies the function to n particles starting at index src_start, writing the result starting at dst1_start and dst2_start. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DstTile1</td><td>the dst1 particle tile type </td></tr>
+    <tr><td class="paramname">DstTile2</td><td>the dst2 particle tile type </td></tr>
+    <tr><td class="paramname">SrcTile</td><td>the src particle tile type </td></tr>
+    <tr><td class="paramname">Index</td><td>the index type, e.g. unsigned int </td></tr>
+    <tr><td class="paramname">N</td><td>the size type, e.g. long </td></tr>
+    <tr><td class="paramname">F</td><td>a function object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst1</td><td>the first destination tile </td></tr>
+    <tr><td class="paramname">dst2</td><td>the second destination tile </td></tr>
+    <tr><td class="paramname">src</td><td>the source tile </td></tr>
+    <tr><td class="paramname">src_start</td><td>the offset at which to start reading particles from src </td></tr>
+    <tr><td class="paramname">dst1_start</td><td>the offset at which to start writing particles to dst1 </td></tr>
+    <tr><td class="paramname">dst2_start</td><td>the offset at which to start writing particles to dst2 </td></tr>
     <tr><td class="paramname">f</td><td>the function that will be applied to each particle </td></tr>
   </table>
   </dd>
@@ -43295,7 +43634,7 @@ template&lt;typename To , typename From &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad2b58521ecabaa0bce47bcd9df9d6231"></a>
+<a class="anchor" id="a41c341d824d3b744b83029ac76a91301"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -43335,6 +43674,12 @@ template&lt;typename To , typename From &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dtdx</em>, </td>
         </tr>
@@ -43343,6 +43688,12 @@ template&lt;typename To , typename From &gt; </div>
           <td></td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dtdy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dtdz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -43423,7 +43774,7 @@ template&lt;typename To , typename From &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a41c341d824d3b744b83029ac76a91301"></a>
+<a class="anchor" id="ad2b58521ecabaa0bce47bcd9df9d6231"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -43463,12 +43814,6 @@ template&lt;typename To , typename From &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const  &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>fz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dtdx</em>, </td>
         </tr>
@@ -43477,12 +43822,6 @@ template&lt;typename To , typename From &gt; </div>
           <td></td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dtdy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>dtdz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
