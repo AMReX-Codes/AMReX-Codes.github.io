@@ -520,7 +520,7 @@ var searchData=
   ['amrex_5fparalleldescriptor_5ff_2ef90',['AMReX_ParallelDescriptor_F.F90',['../AMReX__ParallelDescriptor__F_8F90.html',1,'']]],
   ['amrex_5fparallelreduce_2eh',['AMReX_ParallelReduce.H',['../AMReX__ParallelReduce_8H.html',1,'']]],
   ['amrex_5fpargdb_2eh',['AMReX_ParGDB.H',['../AMReX__ParGDB_8H.html',1,'']]],
-  ['amrex_5fpariteri_2eh',['AMReX_ParIterI.H',['../AMReX__ParIterI_8H.html',1,'']]],
+  ['amrex_5fpariter_2eh',['AMReX_ParIter.H',['../AMReX__ParIter_8H.html',1,'']]],
   ['amrex_5fparmparse_2ecpp',['AMReX_ParmParse.cpp',['../AMReX__ParmParse_8cpp.html',1,'']]],
   ['amrex_5fparmparse_2eh',['AMReX_ParmParse.H',['../AMReX__ParmParse_8H.html',1,'']]],
   ['amrex_5fparmparse_5ffi_2ecpp',['AMReX_parmparse_fi.cpp',['../AMReX__parmparse__fi_8cpp.html',1,'']]],
