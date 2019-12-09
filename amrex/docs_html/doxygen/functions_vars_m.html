@@ -187,6 +187,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="structamrex_1_1Gpu_1_1Deleter.html#ae9df9a5aa76b646a0d8fb039033289f0">amrex::Gpu::Deleter</a>
 , <a class="el" href="classamrex_1_1Gpu_1_1Elixir.html#ab65cbf8729c0a623e2d80caba9df2c5a">amrex::Gpu::Elixir</a>
 </li>
+<li>m_atol
+: <a class="el" href="classamrex_1_1NodalProjector.html#a6fe677862e3491b4b83efcac8a3a78eb">amrex::NodalProjector</a>
+</li>
 <li>m_b
 : <a class="el" href="structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#a292b7313c477c14ba179443ce2d24112">amrex::Gpu::range_detail::range_impl&lt; T &gt;</a>
 </li>
@@ -282,8 +285,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#a863477aadc907e1abeb83c666168ccc4">amrex::EB2::Level</a>
 , <a class="el" href="classamrex_1_1EBDataCollection.html#a586018b239d0fd75d2a920b4e7d8fa40">amrex::EBDataCollection</a>
 </li>
-<li>m_bottom_abstol
-: <a class="el" href="classamrex_1_1MacProjector.html#af99ea9a90a1794b4d7eda542b545f162">amrex::MacProjector</a>
+<li>m_bottom_atol
+: <a class="el" href="classamrex_1_1MacProjector.html#a32745d43b613ee9f09343b53c1f47dec">amrex::MacProjector</a>
+, <a class="el" href="classamrex_1_1NodalProjector.html#a8cd6549c3987cff4c59fe8cd919a0363">amrex::NodalProjector</a>
 </li>
 <li>m_bottom_comm
 : <a class="el" href="classamrex_1_1MLLinOp.html#a06ea1608702e52d38c0eceaa180bad7e">amrex::MLLinOp</a>
@@ -291,11 +295,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>m_bottom_dot_mask
 : <a class="el" href="classamrex_1_1MLNodeLinOp.html#a4b398a735f5c05d0919bc24efc9a7025">amrex::MLNodeLinOp</a>
 </li>
-<li>m_bottom_reltol
-: <a class="el" href="classamrex_1_1MacProjector.html#a9de0c8f9fdd877563dae993429e8cec5">amrex::MacProjector</a>
+<li>m_bottom_maxiter
+: <a class="el" href="classamrex_1_1MacProjector.html#ad61e6f909d38e625c18868ef12f16a4d">amrex::MacProjector</a>
+, <a class="el" href="classamrex_1_1NodalProjector.html#a4540d8d83391a5475050e0ba65613ff2">amrex::NodalProjector</a>
 </li>
-<li>m_bottom_solver_type
-: <a class="el" href="classamrex_1_1NodalProjector.html#adc93dce7d8934ea8fa93ad7188fd65a2">amrex::NodalProjector</a>
+<li>m_bottom_rtol
+: <a class="el" href="classamrex_1_1MacProjector.html#aadd4fa82ab353b8274a9c811c7bec736">amrex::MacProjector</a>
+, <a class="el" href="classamrex_1_1NodalProjector.html#aa79c547ac22751782fe0537306dfad56">amrex::NodalProjector</a>
+</li>
+<li>m_bottom_solver
+: <a class="el" href="classamrex_1_1MacProjector.html#a547db5cb05826120d4ad717bc8092b65">amrex::MacProjector</a>
+, <a class="el" href="classamrex_1_1NodalProjector.html#a2ed6a8a90ac6e8540641fa5b42f9d59d">amrex::NodalProjector</a>
+</li>
+<li>m_bottom_verbose
+: <a class="el" href="classamrex_1_1MacProjector.html#a5ee2dcfde7629908dbbb2be87d18c696">amrex::MacProjector</a>
+, <a class="el" href="classamrex_1_1NodalProjector.html#a4507bd63adcaaafc274f0950d8469e7a">amrex::NodalProjector</a>
 </li>
 <li>m_box_counts
 : <a class="el" href="structamrex_1_1ParticleCopyPlan.html#aad1fe47746ed3121abf47f2fa24945cd">amrex::ParticleCopyPlan</a>
@@ -406,12 +420,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_cfpatch
 : <a class="el" href="classamrex_1_1YAFluxRegister.html#a3f868dbecc624c8d0735356953e6911a">amrex::YAFluxRegister</a>
-</li>
-<li>m_cg_maxiter
-: <a class="el" href="classamrex_1_1MacProjector.html#aa72fccd433288c1c3d6c83bfb8264e54">amrex::MacProjector</a>
-</li>
-<li>m_cg_verbose
-: <a class="el" href="classamrex_1_1MacProjector.html#ab96a1c2aef1838197721ffa39692d29d">amrex::MacProjector</a>
 </li>
 <li>m_coarse_bc_loc
 : <a class="el" href="classamrex_1_1MLLinOp.html#abc7e6e6252f9ecc63c86dcbd99250e10">amrex::MLLinOp</a>
@@ -1046,6 +1054,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_maxiter
 : <a class="el" href="classamrex_1_1MacProjector.html#a9e671381548fd460f694ee063176efb8">amrex::MacProjector</a>
+, <a class="el" href="classamrex_1_1NodalProjector.html#a2d7dce6e33d913c30c535c2492267a56">amrex::NodalProjector</a>
 </li>
 <li>m_maxorder
 : <a class="el" href="classamrex_1_1Hypre.html#a7b04bbe6b54d748e48516df1695bc139">amrex::Hypre</a>
@@ -1068,24 +1077,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_mfid
 : <a class="el" href="classamrex_1_1FillPatchIteratorHelper.html#adaa101ebcbc10df6a2a761ea3fb3e78b">amrex::FillPatchIteratorHelper</a>
-</li>
-<li>m_mg_atol
-: <a class="el" href="classamrex_1_1NodalProjector.html#ab28cf24b21bcd049b224a54cb87400e3">amrex::NodalProjector</a>
-</li>
-<li>m_mg_cg_maxiter
-: <a class="el" href="classamrex_1_1NodalProjector.html#a3b7fad8a1986881bf43e2bbbfc1ba155">amrex::NodalProjector</a>
-</li>
-<li>m_mg_cg_verbose
-: <a class="el" href="classamrex_1_1NodalProjector.html#aac8705fdd5128b265f8007ca13075d9c">amrex::NodalProjector</a>
-</li>
-<li>m_mg_maxiter
-: <a class="el" href="classamrex_1_1NodalProjector.html#a26e9beb1ce4225161dacd0f4cf9b9d42">amrex::NodalProjector</a>
-</li>
-<li>m_mg_rtol
-: <a class="el" href="classamrex_1_1NodalProjector.html#a008846ebb3b51d7d1aecbf2251dca251">amrex::NodalProjector</a>
-</li>
-<li>m_mg_verbose
-: <a class="el" href="classamrex_1_1NodalProjector.html#ad4e9684e1ced8f95612ca9172c382ca5">amrex::NodalProjector</a>
 </li>
 <li>m_mgf
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#a1313168a355b46b2d03060c450036477">amrex::EB2::Level</a>
@@ -1464,6 +1455,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>m_rr
 : <a class="el" href="classamrex_1_1ParGDB.html#ac13e30c176a803952665498b071f6de5">amrex::ParGDB</a>
+</li>
+<li>m_rtol
+: <a class="el" href="classamrex_1_1NodalProjector.html#ae2ce4370dc66b447e5fa1d6c513c0d83">amrex::NodalProjector</a>
 </li>
 <li>m_run_on_gpu
 : <a class="el" href="classamrex_1_1BndryFuncArray.html#a631e5f4032aecbfad4c4acf5f35a7490">amrex::BndryFuncArray</a>
