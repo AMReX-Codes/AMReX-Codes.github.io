@@ -187,6 +187,7 @@ var searchData=
   ['getmeshname',['GetMeshName',['../classamrex_1_1AmrDataAdaptor.html#a56b023f943976c8cbc6868bc307d0e22',1,'amrex::AmrDataAdaptor::GetMeshName()'],['../classamrex_1_1AmrMeshDataAdaptor.html#aed8264f802b43842e82fbe41a3ecb283',1,'amrex::AmrMeshDataAdaptor::GetMeshName()']]],
   ['getmffileinstreams',['GetMFFileInStreams',['../classamrex_1_1VisMF.html#a738d789073dd1072ac3a0c640429574c',1,'amrex::VisMF']]],
   ['getmindigits',['GetMinDigits',['../classamrex_1_1NFilesIter.html#a3d957684f758d55f7060078a5f49b08f',1,'amrex::NFilesIter']]],
+  ['getmlmg',['getMLMG',['../classamrex_1_1MacProjector.html#a2cefa0fe04a61276974e2059e72e865a',1,'amrex::MacProjector']]],
   ['getmultiebcellflagfab',['getMultiEBCellFlagFab',['../classamrex_1_1EBDataCollection.html#a76fef0286bf4b518c4e0a03723b182ac',1,'amrex::EBDataCollection::getMultiEBCellFlagFab()'],['../classamrex_1_1EBFArrayBoxFactory.html#a9d7547c89b9cee01aec4519d7729aa11',1,'amrex::EBFArrayBoxFactory::getMultiEBCellFlagFab()']]],
   ['getname',['GetName',['../classamrex_1_1InSituUtils_1_1StateMap.html#a270b8055caab171c50e38d12eb8003c2',1,'amrex::InSituUtils::StateMap']]],
   ['getncomp',['getNComp',['../classamrex_1_1MLEBTensorOp.html#ad0816a3544ac9068766ffa765185c96a',1,'amrex::MLEBTensorOp::getNComp()'],['../classamrex_1_1MLLinOp.html#acd287b03ea1a73f47ba1f08bb10a484d',1,'amrex::MLLinOp::getNComp()'],['../classamrex_1_1MLTensorOp.html#ad8e26be957c9fcae944341aeac82ed44',1,'amrex::MLTensorOp::getNComp()']]],
