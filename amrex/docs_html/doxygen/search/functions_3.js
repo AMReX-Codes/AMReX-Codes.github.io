@@ -126,7 +126,7 @@ var searchData=
   ['commprofstats',['CommProfStats',['../classCommProfStats.html#a6fa096e58f6defb29bb83ac4e68643b8',1,'CommProfStats']]],
   ['communicateparticlesfinish',['communicateParticlesFinish',['../namespaceamrex.html#a814322d519ae32014737504164a0516b',1,'amrex']]],
   ['communicateparticlesstart',['communicateParticlesStart',['../namespaceamrex.html#aecd4b7b3db27a6698403b2f272a378ea',1,'amrex']]],
-  ['communicator',['Communicator',['../classamrex_1_1MLLinOp.html#ae56dfc1030a8066132a2cb67334b1aaa',1,'amrex::MLLinOp::Communicator()'],['../namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44',1,'amrex::ParallelDescriptor::Communicator()']]],
+  ['communicator',['Communicator',['../classamrex_1_1MLLinOp.html#a941ddfa6ec11cbd0a1c835007494b057',1,'amrex::MLLinOp::Communicator()'],['../namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44',1,'amrex::ParallelDescriptor::Communicator()']]],
   ['communicatorall',['CommunicatorAll',['../namespaceamrex_1_1ParallelContext.html#ae11490aa2420222dcbb8b57cf115bb1b',1,'amrex::ParallelContext']]],
   ['communicatorsub',['CommunicatorSub',['../namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8',1,'amrex::ParallelContext']]],
   ['compdivergence',['compDivergence',['../classamrex_1_1MLNodeLaplacian.html#adb3e623e86459b1e9a9c14492961d759',1,'amrex::MLNodeLaplacian']]],
