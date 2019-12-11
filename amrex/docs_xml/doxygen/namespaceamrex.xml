@@ -14743,22 +14743,39 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="131" bodyend="161"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a885cac80a06efd4e947f55ef585c60fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1af7feff7858c7b1d3557509d883c46674" kindref="member">AMREX_GPU_HOST</ref> unsigned long</type>
-        <definition>AMREX_GPU_HOST unsigned long amrex::Random_int</definition>
-        <argsstring>(unsigned long n)</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1ae6d24c34f5165da0e406a9cbf67468ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> unsigned int</type>
+        <definition>AMREX_GPU_HOST_DEVICE unsigned int amrex::Random_int</definition>
+        <argsstring>(unsigned int n)</argsstring>
         <name>Random_int</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Generates one pseudorandom unsigned integer which is uniformly distributed on [0,n-1]-interval for each call. </para>        </briefdescription>
+        <detaileddescription>
+<para>The CPU version of this function uses C++11&apos;s mt19937. The GPU version uses CURAND&apos;s XORWOW generator. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="43" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="164" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2a7207d6ff497c0e70b0cb11e24ba1dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1af7feff7858c7b1d3557509d883c46674" kindref="member">AMREX_GPU_HOST</ref> unsigned long</type>
+        <definition>AMREX_GPU_HOST unsigned long amrex::Random_long</definition>
+        <argsstring>(unsigned long n)</argsstring>
+        <name>Random_long</name>
         <param>
           <type>unsigned long</type>
           <declname>n</declname>
         </param>
         <briefdescription>
-<para>Generates one pseudorandom unsigned long integer which is uniformly distributed on [0,n-1]-interval for each call. </para>        </briefdescription>
+<para>Generates one pseudorandom unsigned long which is uniformly distributed on [0,n-1]-interval for each call. </para>        </briefdescription>
         <detaileddescription>
-<para>The CPU version of this function uses C++11&apos;s mt19937. The GPU version uses CURAND&apos;s XORWOW generator. </para>        </detaileddescription>
+<para>The CPU version of this function uses C++11&apos;s mt19937. There is no GPU version. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="48" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="190" bodyend="199"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="199" bodyend="208"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a063e0c5d4ce2c053f2ed607639481832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14780,7 +14797,7 @@
 <para>There is also an entry point for Fortran callable as:</para><para>INTEGER seed call blutilinitrand(seed)</para><para>or</para><para>INTEGER seed call blinitrand(seed) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="42" bodyend="67"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="42" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a404b0ad92acc3684ad1e12ef7746d0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14797,7 +14814,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="68" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="261" bodyend="321"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="268" bodyend="328"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a916b42a59d03ab2bbefddf68e90be0e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14814,7 +14831,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="255" bodyend="258"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="262" bodyend="265"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4125d429c379e2c09dd742aa6acc1e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14831,7 +14848,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="77" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="80" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad1b283df95b292f478597bc503170459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14848,7 +14865,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="204" bodyend="209"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="211" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14873,7 +14890,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="212" bodyend="229"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="219" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14903,7 +14920,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="96" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="232" bodyend="253"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="239" bodyend="260"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aaf97cdbc0db387b57d9641d57cce591e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14924,7 +14941,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="352" bodyend="375"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="359" bodyend="382"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14937,7 +14954,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="324" bodyend="347"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="116" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="331" bodyend="354"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1e3af8577a1ee3509e9bd184d2ab575a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
