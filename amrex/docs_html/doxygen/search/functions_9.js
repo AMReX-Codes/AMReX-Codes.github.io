@@ -121,7 +121,7 @@ var searchData=
   ['is_5fsingle_5fvalued_5fcell',['is_single_valued_cell',['../namespaceamrex__ebcellflag__module.html#a4734800da1613de79878005a47689862',1,'amrex_ebcellflag_module']]],
   ['isallocated',['isAllocated',['../classamrex_1_1BaseFab.html#a8d6db68c9ef28ef91234e66512faceb8',1,'amrex::BaseFab']]],
   ['isallperiodic',['isAllPeriodic',['../classamrex_1_1Geometry.html#aecbdf44d0934d9245886228cdffb8f37',1,'amrex::Geometry::isAllPeriodic()'],['../classamrex_1_1Periodicity.html#a0c514a0dab32786f1285b20cdfd327a7',1,'amrex::Periodicity::isAllPeriodic()']]],
-  ['isallregular',['isAllRegular',['../classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066',1,'amrex::EB2::Level::isAllRegular()'],['../classamrex_1_1EBFArrayBoxFactory.html#a5e556ff4f588a983a2992c01629e961f',1,'amrex::EBFArrayBoxFactory::isAllRegular()']]],
+  ['isallregular',['isAllRegular',['../classamrex_1_1FabArray.html#acf745741e899a140f64afeefbb903f5c',1,'amrex::FabArray::isAllRegular()'],['../classamrex_1_1EB2_1_1Level.html#aa6d87378cd84dcd63696879f1a006066',1,'amrex::EB2::Level::isAllRegular()'],['../classamrex_1_1EBFArrayBoxFactory.html#a5e556ff4f588a983a2992c01629e961f',1,'amrex::EBFArrayBoxFactory::isAllRegular()']]],
   ['isanyperiodic',['isAnyPeriodic',['../classamrex_1_1Geometry.html#a40882432c46bfa9ae6a7316a0889dc35',1,'amrex::Geometry::isAnyPeriodic()'],['../classamrex_1_1Periodicity.html#a6f3139a13faee557751404e44ab09042',1,'amrex::Periodicity::isAnyPeriodic()']]],
   ['isblockingrecv',['IsBlockingRecv',['../classCommProfStats.html#ab0655c04de1ca1a5f803f6bae67dec18',1,'CommProfStats']]],
   ['isbottomactive',['isBottomActive',['../classamrex_1_1MLLinOp.html#aa1c6883eef4d4dc55d3a5fe5c921113a',1,'amrex::MLLinOp']]],
