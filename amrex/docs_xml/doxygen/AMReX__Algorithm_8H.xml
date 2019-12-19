@@ -7,6 +7,7 @@
     <includes refid="AMReX__Extension_8H" local="no">AMReX_Extension.H</includes>
     <includes refid="AMReX__Dim3_8H" local="no">AMReX_Dim3.H</includes>
     <includedby refid="AMReX__Box_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Box.H</includedby>
+    <includedby refid="AMReX__Partition_8H" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Partition.H</includedby>
     <incdepgraph>
       <node id="5490">
         <label>functional</label>
@@ -2755,6 +2756,8 @@
         <link refid="AMReX_Algorithm.H"/>
         <childnode refid="5496" relation="include">
         </childnode>
+        <childnode refid="5818" relation="include">
+        </childnode>
       </node>
       <node id="5719">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_NFiles.cpp</label>
@@ -3989,9 +3992,18 @@
 <codeline lineno="46" refid="namespaceamrex_1a7ea6d598d2e565c7e9009d9cbd000503" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/><ref refid="namespaceamrex_1a7ea6d598d2e565c7e9009d9cbd000503" kindref="member">elemwiseMax</ref><sp/>(<ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a,<sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b)<sp/>noexcept<sp/>{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>{<ref refid="namespaceamrex_1aaadb66ad08e0a33ec413e2ce8b687414" kindref="member">amrex::max</ref>(a.x,b.x),<ref refid="namespaceamrex_1aaadb66ad08e0a33ec413e2ce8b687414" kindref="member">amrex::max</ref>(a.y,b.y),<ref refid="namespaceamrex_1aaadb66ad08e0a33ec413e2ce8b687414" kindref="member">amrex::max</ref>(a.z,b.z)};</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="52" refid="namespaceamrex_1a5311a5775a3f24d73376bdc6268b7a3d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5311a5775a3f24d73376bdc6268b7a3d" kindref="member">Swap</ref><sp/>(T&amp;<sp/>t1,<sp/>T&amp;<sp/>t2)<sp/>noexcept</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>temp<sp/>=<sp/>std::move(t1);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t1<sp/>=<sp/>std::move(t2);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>t2<sp/>=<sp/>std::move(temp);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Algorithm.H"/>
   </compounddef>
