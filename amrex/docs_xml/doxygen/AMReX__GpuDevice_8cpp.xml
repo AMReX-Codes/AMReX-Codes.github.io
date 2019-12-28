@@ -1638,117 +1638,127 @@
 <codeline lineno="815"><highlight class="normal"></highlight></codeline>
 <codeline lineno="816"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_SMs<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="817"><highlight class="normal"></highlight></codeline>
-<codeline lineno="818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>SM_mult_factor;</highlight></codeline>
-<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>num_SMs;</highlight></codeline>
-<codeline lineno="821"><highlight class="normal"></highlight></codeline>
-<codeline lineno="822"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="823"><highlight class="normal"></highlight></codeline>
-<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arbitrarily<sp/>set<sp/>this<sp/>to<sp/>a<sp/>somewhat<sp/>large<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="825"><highlight class="normal"></highlight></codeline>
-<codeline lineno="826"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1000;</highlight></codeline>
-<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="829"><highlight class="normal"></highlight></codeline>
-<codeline lineno="830"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="818"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>num_SMs<sp/>*<sp/>SM_mult_factor;</highlight></codeline>
+<codeline lineno="820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="821"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="822"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="823"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>SM_mult_factor<sp/>*<sp/>num_SMs;</highlight></codeline>
+<codeline lineno="825"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="826"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="828"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>SM_mult_factor;</highlight></codeline>
+<codeline lineno="829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>num_SMs;</highlight></codeline>
+<codeline lineno="830"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="831"><highlight class="normal"></highlight></codeline>
-<codeline lineno="832"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="832"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="833"><highlight class="normal"></highlight></codeline>
-<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(device_prop.maxThreadsDim[0],<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>);</highlight></codeline>
-<codeline lineno="835"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreads.x,<sp/>numThreadsMin.x);</highlight></codeline>
-<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="838"><highlight class="normal"></highlight></codeline>
-<codeline lineno="839"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limit<sp/>the<sp/>number<sp/>of<sp/>threads<sp/>per<sp/>block<sp/>to<sp/>be<sp/>no<sp/>larger<sp/>in<sp/>each<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>sizes<sp/>of<sp/>the<sp/>box<sp/>in<sp/>the<sp/>corresponding<sp/>dimension.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="841"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.x,<sp/>static_cast&lt;unsigned&gt;(bx.length(0)));</highlight></codeline>
-<codeline lineno="842"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="843"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="844"><highlight class="normal"></highlight></codeline>
-<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[0]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>numThreadsMin.y);</highlight></codeline>
-<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[1]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
-<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="850"><highlight class="normal"></highlight></codeline>
-<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limit<sp/>the<sp/>number<sp/>of<sp/>threads<sp/>per<sp/>block<sp/>to<sp/>be<sp/>no<sp/>larger<sp/>in<sp/>each<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>sizes<sp/>of<sp/>the<sp/>box<sp/>in<sp/>the<sp/>corresponding<sp/>dimension.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="853"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.x,<sp/>static_cast&lt;unsigned&gt;(bx.length(0)));</highlight></codeline>
-<codeline lineno="854"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.y,<sp/>static_cast&lt;unsigned&gt;(bx.length(1)));</highlight></codeline>
-<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="856"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="857"><highlight class="normal"></highlight></codeline>
-<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[0]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>(numThreadsMin.y<sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
-<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[1]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
-<codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[2]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreads.y<sp/><sp/><sp/>));</highlight></codeline>
-<codeline lineno="861"><highlight class="normal"></highlight></codeline>
-<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
-<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
-<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.z,<sp/>numThreads.z);</highlight></codeline>
-<codeline lineno="865"><highlight class="normal"></highlight></codeline>
-<codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limit<sp/>the<sp/>number<sp/>of<sp/>threads<sp/>per<sp/>block<sp/>to<sp/>be<sp/>no<sp/>larger<sp/>in<sp/>each<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="867"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>sizes<sp/>of<sp/>the<sp/>box<sp/>in<sp/>the<sp/>corresponding<sp/>dimension.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.x,<sp/>static_cast&lt;unsigned&gt;(bx.length(0)));</highlight></codeline>
-<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.y,<sp/>static_cast&lt;unsigned&gt;(bx.length(1)));</highlight></codeline>
-<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.z,<sp/>static_cast&lt;unsigned&gt;(bx.length(2)));</highlight></codeline>
-<codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="872"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="873"><highlight class="normal"></highlight></codeline>
-<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>the<sp/>user<sp/>to<sp/>override<sp/>these<sp/>at<sp/>runtime.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="834"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Arbitrarily<sp/>set<sp/>this<sp/>to<sp/>a<sp/>somewhat<sp/>large<sp/>number.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="835"><highlight class="normal"></highlight></codeline>
+<codeline lineno="836"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="837"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="838"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="839"><highlight class="normal"></highlight></codeline>
+<codeline lineno="840"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="841"><highlight class="normal"></highlight></codeline>
+<codeline lineno="842"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="843"><highlight class="normal"></highlight></codeline>
+<codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(device_prop.maxThreadsDim[0],<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>);</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreads.x,<sp/>numThreadsMin.x);</highlight></codeline>
+<codeline lineno="846"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"></highlight></codeline>
+<codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limit<sp/>the<sp/>number<sp/>of<sp/>threads<sp/>per<sp/>block<sp/>to<sp/>be<sp/>no<sp/>larger<sp/>in<sp/>each<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>sizes<sp/>of<sp/>the<sp/>box<sp/>in<sp/>the<sp/>corresponding<sp/>dimension.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.x,<sp/>static_cast&lt;unsigned&gt;(bx.length(0)));</highlight></codeline>
+<codeline lineno="852"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="853"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="854"><highlight class="normal"></highlight></codeline>
+<codeline lineno="855"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[0]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>numThreadsMin.y);</highlight></codeline>
+<codeline lineno="856"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[1]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="857"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
+<codeline lineno="859"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="860"><highlight class="normal"></highlight></codeline>
+<codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limit<sp/>the<sp/>number<sp/>of<sp/>threads<sp/>per<sp/>block<sp/>to<sp/>be<sp/>no<sp/>larger<sp/>in<sp/>each<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>sizes<sp/>of<sp/>the<sp/>box<sp/>in<sp/>the<sp/>corresponding<sp/>dimension.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.x,<sp/>static_cast&lt;unsigned&gt;(bx.length(0)));</highlight></codeline>
+<codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.y,<sp/>static_cast&lt;unsigned&gt;(bx.length(1)));</highlight></codeline>
+<codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="866"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="867"><highlight class="normal"></highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[0]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>(numThreadsMin.y<sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
+<codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[1]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreadsMin.z));</highlight></codeline>
+<codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(static_cast&lt;unsigned&gt;(device_prop.maxThreadsDim[2]),<sp/><ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref><sp/>/<sp/>(numThreads.x<sp/><sp/><sp/><sp/>*<sp/>numThreads.y<sp/><sp/><sp/>));</highlight></codeline>
+<codeline lineno="871"><highlight class="normal"></highlight></codeline>
+<codeline lineno="872"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.x,<sp/>numThreads.x);</highlight></codeline>
+<codeline lineno="873"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.y,<sp/>numThreads.y);</highlight></codeline>
+<codeline lineno="874"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(numThreadsMin.z,<sp/>numThreads.z);</highlight></codeline>
 <codeline lineno="875"><highlight class="normal"></highlight></codeline>
-<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>numBlocksOverride.x;</highlight></codeline>
-<codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>numBlocksOverride.y;</highlight></codeline>
-<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>numBlocksOverride.z;</highlight></codeline>
-<codeline lineno="882"><highlight class="normal"></highlight></codeline>
-<codeline lineno="883"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>numThreadsOverride.x;</highlight></codeline>
-<codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>numThreadsOverride.y;</highlight></codeline>
-<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>numThreadsOverride.z;</highlight></codeline>
-<codeline lineno="889"><highlight class="normal"></highlight></codeline>
-<codeline lineno="890"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="891"><highlight class="normal"></highlight></codeline>
-<codeline lineno="892"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="893"><highlight class="normal"></highlight></codeline>
-<codeline lineno="894"><highlight class="normal">std::size_t</highlight></codeline>
-<codeline lineno="895"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a92efa21af9b7ae2cb3ee5710922c8bac" kindref="member">Device::freeMemAvailable</ref><sp/>()</highlight></codeline>
-<codeline lineno="896"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="897"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>f,<sp/>t;</highlight></codeline>
-<codeline lineno="899"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(<sp/>AMREX_HIP_SAFE_CALL(hipMemGetInfo(&amp;f,&amp;t));,</highlight></codeline>
-<codeline lineno="900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemGetInfo(&amp;f,&amp;t));<sp/>)</highlight></codeline>
-<codeline lineno="901"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f;</highlight></codeline>
-<codeline lineno="902"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="903"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="904"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="905"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="906"><highlight class="normal"></highlight></codeline>
+<codeline lineno="876"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Limit<sp/>the<sp/>number<sp/>of<sp/>threads<sp/>per<sp/>block<sp/>to<sp/>be<sp/>no<sp/>larger<sp/>in<sp/>each<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="877"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>than<sp/>the<sp/>sizes<sp/>of<sp/>the<sp/>box<sp/>in<sp/>the<sp/>corresponding<sp/>dimension.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="878"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.x,<sp/>static_cast&lt;unsigned&gt;(bx.length(0)));</highlight></codeline>
+<codeline lineno="879"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.y,<sp/>static_cast&lt;unsigned&gt;(bx.length(1)));</highlight></codeline>
+<codeline lineno="880"><highlight class="normal"><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(numThreads.z,<sp/>static_cast&lt;unsigned&gt;(bx.length(2)));</highlight></codeline>
+<codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="882"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="883"><highlight class="normal"></highlight></codeline>
+<codeline lineno="884"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allow<sp/>the<sp/>user<sp/>to<sp/>override<sp/>these<sp/>at<sp/>runtime.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="885"><highlight class="normal"></highlight></codeline>
+<codeline lineno="886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="887"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.x<sp/>=<sp/>numBlocksOverride.x;</highlight></codeline>
+<codeline lineno="888"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="889"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.y<sp/>=<sp/>numBlocksOverride.y;</highlight></codeline>
+<codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numBlocksOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numBlocks.z<sp/>=<sp/>numBlocksOverride.z;</highlight></codeline>
+<codeline lineno="892"><highlight class="normal"></highlight></codeline>
+<codeline lineno="893"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.x<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="894"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.x<sp/>=<sp/>numThreadsOverride.x;</highlight></codeline>
+<codeline lineno="895"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.y<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.y<sp/>=<sp/>numThreadsOverride.y;</highlight></codeline>
+<codeline lineno="897"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(numThreadsOverride.z<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numThreads.z<sp/>=<sp/>numThreadsOverride.z;</highlight></codeline>
+<codeline lineno="899"><highlight class="normal"></highlight></codeline>
+<codeline lineno="900"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="901"><highlight class="normal"></highlight></codeline>
+<codeline lineno="902"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="903"><highlight class="normal"></highlight></codeline>
+<codeline lineno="904"><highlight class="normal">std::size_t</highlight></codeline>
+<codeline lineno="905"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a92efa21af9b7ae2cb3ee5710922c8bac" kindref="member">Device::freeMemAvailable</ref><sp/>()</highlight></codeline>
+<codeline lineno="906"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="907"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="908"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncallbacks<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="910"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="911"><highlight class="normal"></highlight></codeline>
-<codeline lineno="912"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>callbackAdded<sp/>()</highlight></codeline>
-<codeline lineno="913"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="914"><highlight class="normal"><sp/><sp/><sp/><sp/>++ncallbacks;</highlight></codeline>
+<codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>f,<sp/>t;</highlight></codeline>
+<codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(<sp/>AMREX_HIP_SAFE_CALL(hipMemGetInfo(&amp;f,&amp;t));,</highlight></codeline>
+<codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemGetInfo(&amp;f,&amp;t));<sp/>)</highlight></codeline>
+<codeline lineno="911"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>f;</highlight></codeline>
+<codeline lineno="912"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="913"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="914"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="915"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="916"><highlight class="normal"></highlight></codeline>
-<codeline lineno="917"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetNumCallbacks<sp/>()</highlight></codeline>
-<codeline lineno="918"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/>ncallbacks<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="917"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="918"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="919"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncallbacks<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="920"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="921"><highlight class="normal"></highlight></codeline>
-<codeline lineno="922"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getNumCallbacks<sp/>()</highlight></codeline>
+<codeline lineno="922"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>callbackAdded<sp/>()</highlight></codeline>
 <codeline lineno="923"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ncallbacks;</highlight></codeline>
+<codeline lineno="924"><highlight class="normal"><sp/><sp/><sp/><sp/>++ncallbacks;</highlight></codeline>
 <codeline lineno="925"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="926"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="927"><highlight class="normal"></highlight></codeline>
-<codeline lineno="928"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="926"><highlight class="normal"></highlight></codeline>
+<codeline lineno="927"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetNumCallbacks<sp/>()</highlight></codeline>
+<codeline lineno="928"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="929"><highlight class="normal"><sp/><sp/><sp/><sp/>ncallbacks<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="930"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="931"><highlight class="normal"></highlight></codeline>
+<codeline lineno="932"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getNumCallbacks<sp/>()</highlight></codeline>
+<codeline lineno="933"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ncallbacks;</highlight></codeline>
+<codeline lineno="935"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="936"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="937"><highlight class="normal"></highlight></codeline>
+<codeline lineno="938"><highlight class="normal">}}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.cpp"/>
   </compounddef>
