@@ -3429,7 +3429,7 @@
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>__syncthreads();</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lane<sp/>==<sp/>0)<sp/>shared[wid]<sp/>=<sp/>x;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>__syncthreads();</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>(threadIdx.x<sp/>&lt;<sp/>blockDim.x<sp/>/<sp/>warpSize);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>b<sp/>=<sp/>(threadIdx.x<sp/>==<sp/>0)<sp/>or<sp/>(threadIdx.x<sp/>&lt;<sp/>blockDim.x<sp/>/<sp/>warpSize);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/><sp/>b<sp/>?<sp/>shared[lane]<sp/>:<sp/>x0;</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(wid<sp/>==<sp/>0)<sp/>x<sp/>=<sp/>warp_reduce(x);</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
