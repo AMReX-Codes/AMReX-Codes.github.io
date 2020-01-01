@@ -75,6 +75,7 @@ var searchData=
   ['advectwithumac',['AdvectWithUmac',['../classamrex_1_1TracerParticleContainer.html#aeb2b5968ca674ddbf8ffa162622a3bf1',1,'amrex::TracerParticleContainer']]],
   ['afterbarrier',['AfterBarrier',['../classCommProfStats.html#af04068edae93669e158694c835b0ec0c',1,'CommProfStats']]],
   ['align',['align',['../classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e',1,'amrex::Arena']]],
+  ['aligned_5fsize',['aligned_size',['../namespaceamrex.html#ad67a8a03bbc2b472ade7e3d2a4866fa1',1,'amrex']]],
   ['alignedallocator',['AlignedAllocator',['../classhacc_1_1AlignedAllocator.html#a761f44c4b8f456d6d016c21afb436091',1,'hacc::AlignedAllocator::AlignedAllocator()'],['../classhacc_1_1AlignedAllocator.html#a004c400f85ee6563f3c4178d4ee62f77',1,'hacc::AlignedAllocator::AlignedAllocator(const AlignedAllocator &amp;)'],['../classhacc_1_1AlignedAllocator.html#aa80f9621109e48a22cbd1561d2024677',1,'hacc::AlignedAllocator::AlignedAllocator(const AlignedAllocator&lt; U, M &gt; &amp;)']]],
   ['allbucketsonproc',['allBucketsOnProc',['../classamrex_1_1ParticleBufferMap.html#a9bf2cc9229d90a76220654b6ba4a5a50',1,'amrex::ParticleBufferMap']]],
   ['allcalltimesfab',['AllCallTimesFAB',['../classRegionsProfStats.html#a409ca89dc56939d0cbc9155ef274d8dc',1,'RegionsProfStats']]],

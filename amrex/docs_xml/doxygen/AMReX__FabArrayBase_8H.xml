@@ -697,6 +697,8 @@
         </childnode>
         <childnode refid="17434" relation="include">
         </childnode>
+        <childnode refid="17384" relation="include">
+        </childnode>
       </node>
       <node id="17424">
         <label>AMReX_Arena.H</label>
@@ -3258,19 +3260,22 @@
 <codeline lineno="608"><highlight class="normal"></highlight></codeline>
 <codeline lineno="609"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>CheckRcvStats(<ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;MPI_Status&gt;</ref>&amp;<sp/>recv_stats,</highlight></codeline>
-<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref>&amp;<sp/>recv_size,</highlight></codeline>
-<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>datatype,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag);</highlight></codeline>
-<codeline lineno="613"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="614"><highlight class="normal"></highlight></codeline>
-<codeline lineno="615"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="616"><highlight class="normal"></highlight></codeline>
-<codeline lineno="617"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceamrex_1ab1b1f90152c1c5636d634b475056389e" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1FabArrayBase_1_1BDKey" kindref="compound">FabArrayBase::BDKey</ref>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="618"><highlight class="normal"></highlight></codeline>
-<codeline lineno="619"><highlight class="normal"><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref>*<sp/><ref refid="namespaceamrex_1ac0bc81ab4fe0135fc65a2b5154ff25ab" kindref="member">The_FA_Arena</ref><sp/>();</highlight></codeline>
-<codeline lineno="620"><highlight class="normal"></highlight></codeline>
-<codeline lineno="621"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="622"><highlight class="normal"></highlight></codeline>
-<codeline lineno="623"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;std::size_t&gt;</ref>&amp;<sp/>recv_size,</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag);</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"></highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>select_comm_data_type<sp/>(std::size_t<sp/>nbytes);</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::size_t<sp/>alignof_comm_data<sp/>(std::size_t<sp/>nbytes);</highlight></codeline>
+<codeline lineno="616"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="617"><highlight class="normal"></highlight></codeline>
+<codeline lineno="618"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"></highlight></codeline>
+<codeline lineno="620"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceamrex_1ab1b1f90152c1c5636d634b475056389e" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1FabArrayBase_1_1BDKey" kindref="compound">FabArrayBase::BDKey</ref>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"></highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref>*<sp/><ref refid="namespaceamrex_1ac0bc81ab4fe0135fc65a2b5154ff25ab" kindref="member">The_FA_Arena</ref><sp/>();</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"></highlight></codeline>
+<codeline lineno="624"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"></highlight></codeline>
+<codeline lineno="626"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H"/>
   </compounddef>
