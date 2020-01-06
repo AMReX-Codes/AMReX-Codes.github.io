@@ -30541,12 +30541,42 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates over all particles on all levels. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Sum&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="18" bodyend="21"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="36" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9600b570271756f90a1c8b3c7e05a9a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30580,12 +30610,49 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates only on the specified level. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Sum&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="25" bodyend="28"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="62" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a234b29ca2ab42dc4b7d3713800d82a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30623,12 +30690,56 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Sum&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="32" bodyend="80"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="89" bodyend="137"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7ea00de6fd7be3ddb1b4f841295cac21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30658,12 +30769,42 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates over all particles on all levels. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Max&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="84" bodyend="87"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="159" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="159" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af55bd59d2c594a63ae6bb0136596fb9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30697,12 +30838,49 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates only on the specified level. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Mas&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="91" bodyend="94"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="185" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="185" bodyend="188"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa9bf7aa5f979cd910b5b270070cac8b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30740,12 +30918,56 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Max&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="98" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="98" bodyend="147"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="212" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="212" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3aa271dcaabdcc69a172b422fdc60349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30775,12 +30997,42 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates over all particles on all levels. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Min&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="151" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="151" bodyend="154"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="283" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="283" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aab38aa5f542e67c840d6e9c6d30d586a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30814,12 +31066,49 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates only on the specified level. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Min&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="158" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="158" bodyend="161"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="309" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="309" bodyend="312"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab8f47432b3e35fe46b1b89def917916e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30857,12 +31146,56 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;Min&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="165" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="165" bodyend="214"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="336" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="336" bodyend="385"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa175f510a09bbc1252a4e1b8f3ac5250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30892,12 +31225,42 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates over all particles on all levels. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;LogicalAnd&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="218" bodyend="221"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="407" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="407" bodyend="410"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2e4d86e52a629511e02bff646ca60b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30931,12 +31294,49 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates only on the specified level. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;LogicalAnd&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="225" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="225" bodyend="228"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="433" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="433" bodyend="436"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a14d08a69d1ad19e5499277055d469400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -30974,12 +31374,56 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;LogicalAnd&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="232" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="232" bodyend="279"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="460" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="460" bodyend="507"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a43f13583043013b5751afe1e193cc8b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31009,12 +31453,42 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates over all particles on all levels. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;LogicalOr&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="283" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="283" bodyend="286"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="529" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="529" bodyend="532"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a18f76938d120a4d9891cc99e67cab771" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31048,12 +31522,49 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates only on the specified level. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;LogicalOr&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="290" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="290" bodyend="293"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="555" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="555" bodyend="558"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4045ba476918bce64dc92d94e4cda26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -31091,12 +31602,56 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This version uses &quot;LogicalOr&quot; as the reduction operation. The quantity reduced over is an arbitrary function of a &quot;superparticle&quot;, which contains all the data in the particle type, whether it is stored in AoS or SoA form.</para><para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to include </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns the value to be reduced over all particles. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="297" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="297" bodyend="345"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" line="582" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="582" bodyend="630"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a14f61ebac9d7c0ea8b108bad4f0947c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
