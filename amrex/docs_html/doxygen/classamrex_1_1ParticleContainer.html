@@ -320,6 +320,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a04202c0398fb9dde3867ffaa49f9c724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58b92af437a359f18810fb9f18b6683c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a58b92af437a359f18810fb9f18b6683c">CheckpointPost</a> ()</td></tr>
 <tr class="separator:a58b92af437a359f18810fb9f18b6683c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af076fdbb3a8e3aaa514534a8695e2048"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#af076fdbb3a8e3aaa514534a8695e2048">CheckpointHDF5</a> (const std::string &amp;dir, const std::string &amp;name) const </td></tr>
+<tr class="memdesc:af076fdbb3a8e3aaa514534a8695e2048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a particle checkpoint to HDF5 file, suitable for restarting.  <a href="#af076fdbb3a8e3aaa514534a8695e2048">More...</a><br /></td></tr>
+<tr class="separator:af076fdbb3a8e3aaa514534a8695e2048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade2c216b5bce7231f92bca2b00c231f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ade2c216b5bce7231f92bca2b00c231f4">CheckpointHDF5</a> (const std::string &amp;dir, const std::string &amp;name, bool is_checkpoint, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;(), const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names=<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt;()) const </td></tr>
+<tr class="memdesc:ade2c216b5bce7231f92bca2b00c231f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a particle checkpoint to HDF5 file, suitable for restarting.  <a href="#ade2c216b5bce7231f92bca2b00c231f4">More...</a><br /></td></tr>
+<tr class="separator:ade2c216b5bce7231f92bca2b00c231f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cafd336000b9c276a50050d3bb1c68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#aa8cafd336000b9c276a50050d3bb1c68">WriteHDF5ParticleData</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names) const </td></tr>
+<tr class="memdesc:aa8cafd336000b9c276a50050d3bb1c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes particle data to disk in the <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> native format.  <a href="#aa8cafd336000b9c276a50050d3bb1c68">More...</a><br /></td></tr>
+<tr class="separator:aa8cafd336000b9c276a50050d3bb1c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ddf26f00578c5221138fa5e44c04460"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a2ddf26f00578c5221138fa5e44c04460">Restart</a> (const std::string &amp;dir, const std::string &amp;file)</td></tr>
 <tr class="memdesc:a2ddf26f00578c5221138fa5e44c04460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restart from checkpoint.  <a href="#a2ddf26f00578c5221138fa5e44c04460">More...</a><br /></td></tr>
 <tr class="separator:a2ddf26f00578c5221138fa5e44c04460"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1548,6 +1557,91 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
 </div><div class="memdoc">
 
 <p>Writes a particle checkpoint to file, suitable for restarting. </p>
+
+</div>
+</div>
+<a class="anchor" id="af076fdbb3a8e3aaa514534a8695e2048"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt &gt;::CheckpointHDF5 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a particle checkpoint to HDF5 file, suitable for restarting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>The base directory into which to write (i.e. "plt00000") </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the sub-directory for this particle type (i.e. "Tracer") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ade2c216b5bce7231f92bca2b00c231f4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt &gt;::CheckpointHDF5 </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_checkpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>real_comp_names</em> = <code><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;&#160;std::string&#160;&gt;()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>int_comp_names</em> = <code><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;&#160;std::string&#160;&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a particle checkpoint to HDF5 file, suitable for restarting. </p>
 
 </div>
 </div>
@@ -4921,6 +5015,71 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa8cafd336000b9c276a50050d3bb1c68"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T_NArrayInt = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt &gt;::WriteHDF5ParticleData </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>write_real_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>write_int_comp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>real_comp_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>int_comp_names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes particle data to disk in the <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> native format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>The base directory into which to write (i.e. "plt00000") </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the sub-directory for this particle type (i.e. "Tracer") </td></tr>
+    <tr><td class="paramname">write_real_comp</td><td>for each real component, whether or not we include that component in the file </td></tr>
+    <tr><td class="paramname">write_int_comp</td><td>for each integer component, whether or not we include that component in the file </td></tr>
+    <tr><td class="paramname">real_comp_names</td><td>for each real component, a name to label the data with </td></tr>
+    <tr><td class="paramname">int_comp_names</td><td>for each integer component, a name to label the data with </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
