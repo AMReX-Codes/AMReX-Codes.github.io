@@ -99,7 +99,7 @@ var searchData=
   ['phys_5fbc_5fhi',['phys_bc_hi',['../classamrex_1_1MacBndry.html#a2e1c27be0a1e95c36acda58c970775dc',1,'amrex::MacBndry']]],
   ['phys_5fbc_5flo',['phys_bc_lo',['../classamrex_1_1MacBndry.html#ae0994a20e5bd402ffafb58b9f2d2317b',1,'amrex::MacBndry']]],
   ['physbc',['PhysBC',['../classamrex_1_1MacBndry.html#a7a1de984132f94266ef9ca891e4e6d24',1,'amrex::MacBndry']]],
-  ['physbcfunct',['PhysBCFunct',['../classamrex_1_1PhysBCFunct.html#ae66bdbaeca3f3c882678007689ca195c',1,'amrex::PhysBCFunct::PhysBCFunct()'],['../classamrex_1_1PhysBCFunct.html#a39b89bb30f1abba7495122150108a927',1,'amrex::PhysBCFunct::PhysBCFunct(const Geometry &amp;geom, const Vector&lt; BCRec &gt; &amp;bcr, F const &amp;f)']]],
+  ['physbcfunct',['PhysBCFunct',['../classamrex_1_1PhysBCFunct.html#ae66bdbaeca3f3c882678007689ca195c',1,'amrex::PhysBCFunct::PhysBCFunct()'],['../classamrex_1_1PhysBCFunct.html#a39b89bb30f1abba7495122150108a927',1,'amrex::PhysBCFunct::PhysBCFunct(const Geometry &amp;geom, const Vector&lt; BCRec &gt; &amp;bcr, F const &amp;f)'],['../classamrex_1_1PhysBCFunct.html#a754509e10fc630761839c420246a3ebe',1,'amrex::PhysBCFunct::PhysBCFunct(const Geometry &amp;geom, const Vector&lt; BCRec &gt; &amp;bcr, F &amp;&amp;f)']]],
   ['physbcfunct',['PhysBCFunct',['../classamrex_1_1PhysBCFunct.html',1,'amrex']]],
   ['physbcfunctbase',['PhysBCFunctBase',['../classamrex_1_1PhysBCFunctBase.html',1,'amrex']]],
   ['physbcfunctnoop',['PhysBCFunctNoOp',['../classamrex_1_1PhysBCFunctNoOp.html',1,'amrex']]],

@@ -307,7 +307,7 @@ var searchData=
   ['gpu_5ftuple_5fimpl_3c_20i_2c_20head_2c_20tail_2e_2e_2e_20_3e',['gpu_tuple_impl&lt; I, Head, Tail... &gt;',['../structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html',1,'amrex::detail']]],
   ['gpuable',['GPUable',['../structamrex_1_1GPUable.html',1,'amrex']]],
   ['gpuarray',['GpuArray',['../namespaceamrex.html#a317082290117984ef29e149750e2c7a8',1,'amrex']]],
-  ['gpubndryfuncfab',['GpuBndryFuncFab',['../classamrex_1_1GpuBndryFuncFab.html#a62075f3a31adb0b72fa9c09d17ee7e5a',1,'amrex::GpuBndryFuncFab::GpuBndryFuncFab()=default'],['../classamrex_1_1GpuBndryFuncFab.html#aea0999bc3f58f248b8ebab6da8148478',1,'amrex::GpuBndryFuncFab::GpuBndryFuncFab(F a_f)']]],
+  ['gpubndryfuncfab',['GpuBndryFuncFab',['../classamrex_1_1GpuBndryFuncFab.html#a62075f3a31adb0b72fa9c09d17ee7e5a',1,'amrex::GpuBndryFuncFab::GpuBndryFuncFab()=default'],['../classamrex_1_1GpuBndryFuncFab.html#a08f3457a00409172a47577db0b968d15',1,'amrex::GpuBndryFuncFab::GpuBndryFuncFab(F const &amp;a_f)'],['../classamrex_1_1GpuBndryFuncFab.html#a498e33d9a56fd836b14c1937c671ff4a',1,'amrex::GpuBndryFuncFab::GpuBndryFuncFab(F &amp;&amp;a_f)']]],
   ['gpubndryfuncfab',['GpuBndryFuncFab',['../classamrex_1_1GpuBndryFuncFab.html',1,'amrex']]],
   ['gputuple',['GpuTuple',['../classamrex_1_1GpuTuple.html',1,'amrex']]],
   ['gputuple',['GpuTuple',['../classamrex_1_1GpuTuple.html#a9b4a022c99f88d3df5c4c68ab494b9ab',1,'amrex::GpuTuple::GpuTuple()=default'],['../classamrex_1_1GpuTuple.html#a6dd107089d642373514ca69d47ff50b3',1,'amrex::GpuTuple::GpuTuple(Ts const &amp;...args)'],['../classamrex_1_1GpuTuple.html#a9887e4773244355e5671d3be9f9c5095',1,'amrex::GpuTuple::GpuTuple(Us &amp;&amp;...args)']]],
