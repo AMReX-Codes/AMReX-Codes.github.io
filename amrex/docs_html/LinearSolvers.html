@@ -314,7 +314,7 @@ The <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 <p>Here <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">const</span></span> <span class="name"><span class="pre">MultiFab</span></span><span class="operator"><span class="pre">*</span></span> <span class="name"><span class="pre">crse</span></span></code> contains the Dirichlet boundary
 values at the coarse resolution, and <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">crse_ratio</span></span></code> (e.g., 2)
 is the refinement ratio between the coarsest solver level and the AMR
-level below it.  The MultiFb crse does not need to have ghost cells itself.
+level below it.  The MultiFab crse does not need to have ghost cells itself.
 If the coarse grid bc’s for the solve are identically zero, <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">nullptr</span></span></code>
 can be passed instead of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">crse</span></span></code>.</p>
 <p>3) Cell-centered solvers only:
@@ -333,7 +333,7 @@ domain boundary of <code class="docutils literal notranslate"><span class="pre">
 at the domain boundary;
 if the boundary condition is Neumann those ghost cells must hold
 the value of the gradient of the solution normal to the boundary
-(e.g. it would hold dphi/dx on both the low and high facees in the x-direction).</p>
+(e.g. it would hold dphi/dx on both the low and high faces in the x-direction).</p>
 <p>If the boundary conditions contain no inhomogeneous Dirichlet or Neumann boundaries,
 we can pass <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">nullptr</span></span></code> instead of a MultiFab.</p>
 <p>We can use the solution array itself to hold these values;
@@ -485,7 +485,7 @@ the MACProjector object and use it to perform a MAC projection.</p>
                      <span class="p">{</span><span class="n">geom</span><span class="p">},</span>                           <span class="c1">// the geometry object</span>
                      <span class="n">lp_info</span><span class="p">);</span>                         <span class="c1">// structure for passing info to the operator</span>
 
-<span class="c1">// Here we specifiy the desired divergence S</span>
+<span class="c1">// Here we specify the desired divergence S</span>
 <span class="c1">// MacProjector macproj({amrex::GetArrOfPtrs(vel)},       // face-based velocity</span>
 <span class="c1">//                      {amrex::GetArrOfConstPtrs(beta)}, // beta</span>
 <span class="c1">//                      {geom},                           // the geometry object</span>
@@ -617,7 +617,7 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="c1">// RHS is nodal</span>
 <span class="k">const</span> <span class="n">BoxArray</span> <span class="o">&amp;</span> <span class="n">nd_grids</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">convert</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">IntVect</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">});</span> <span class="c1">// nodal grids</span>
 
-<span class="c1">// Multifab to host RHS</span>
+<span class="c1">// MultiFab to host RHS</span>
 <span class="n">MultiFab</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">nd_grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">);</span>
 
 <span class="c1">// Cell-centered contributions to RHS</span>
@@ -675,7 +675,7 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="n">nodal_solver</span><span class="p">.</span><span class="n">solve</span><span class="p">(</span> <span class="p">{</span><span class="o">&amp;</span><span class="n">phi</span><span class="p">},</span> <span class="p">{</span><span class="o">&amp;</span><span class="n">rhs</span><span class="p">},</span> <span class="n">reltol</span><span class="p">,</span> <span class="n">abstol</span><span class="p">);</span>
 
 <span class="c1">//</span>
-<span class="c1">// Create cell-centered multifab to hold value of -sigma*grad(phi) at cell-centers</span>
+<span class="c1">// Create cell-centered MultiFab to hold value of -sigma*grad(phi) at cell-centers</span>
 <span class="c1">//</span>
 <span class="c1">//</span>
 <span class="n">MultiFab</span> <span class="nf">fluxes</span><span class="p">(</span><span class="n">grids</span><span class="p">,</span> <span class="n">dmap</span><span class="p">,</span> <span class="n">AMREX_SPACEDIM</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MFInfo</span><span class="p">(),</span> <span class="n">factory</span><span class="p">);</span>
@@ -709,7 +709,7 @@ components co-located on cell centers.  The viscous term can be written in vecto
 <p>We evaluate the following terms from the above using the <code class="docutils literal notranslate"><span class="pre">MLABecLaplacian</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBABecLaplacian</span></code> operators;</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z\\              (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z\\ (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z\end{aligned}\end{align} \]</div>
-<p>the following cross-terms are evaluted separately using the <code class="docutils literal notranslate"><span class="pre">MLTensorOp</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBTensorOp</span></code> operators.</p>
+<p>the following cross-terms are evaluated separately using the <code class="docutils literal notranslate"><span class="pre">MLTensorOp</span></code> and <code class="docutils literal notranslate"><span class="pre">MLEBTensorOp</span></code> operators.</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}( (\kappa - \frac{2}{3} \eta) (v_y + w_z) )_x + (\eta v_x)_y  + (\eta w_x)_z\\(\eta u_y)_x + ( (\kappa - \frac{2}{3} \eta) (u_x + w_z) )_y  + (\eta w_y)_z\\(\eta u_z)_x + (\eta v_z)_y - ( (\kappa - \frac{2}{3} \eta) (u_x + v_y) )_z\end{aligned}\end{align} \]</div>
 <p>The code below is an example of how to set up the solver to compute the
