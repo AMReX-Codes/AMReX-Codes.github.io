@@ -66,7 +66,7 @@
 <para>The copy constructor. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="629" bodyend="632"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="626" bodyend="629"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1ae2fd3bdec2802aef034cc7cfb36bf14a" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
@@ -102,10 +102,27 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="49" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1ab8b1e03b4163212adc7c31974bd44c6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1ab63ebe6eea7f82438e1f0db0b4bffd09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE Real &amp; amrex::RealVect::operator[]</definition>
-        <argsstring>(int i) noexcept</argsstring>
+        <definition>AMREX_GPU_HOST_DEVICE Real&amp; amrex::RealVect::operator[]</definition>
+        <argsstring>(int i)&amp;&amp;=delete</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Prevent rvalue assignment to the <emphasis>i</emphasis>&apos;th coordinate of the <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1RealVect_1ab17771f42cf9642cd5899d8bbe77f5f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE Real&amp; amrex::RealVect::operator[]</definition>
+        <argsstring>(int i)&amp;noexcept</argsstring>
         <name>operator[]</name>
         <param>
           <type>int</type>
@@ -117,12 +134,12 @@
 <para>Returns a modifiable lvalue reference to the <emphasis>i</emphasis>&apos;th coordinate of the <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="92" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="591" bodyend="595"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="101" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="101" bodyend="102"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1RealVect_1afb75acc42850b4ab14ca07bfc8e3e754" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1RealVect_1ae1d5a95100e25091c6cb29a50e0c2be7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE const Real &amp; amrex::RealVect::operator[]</definition>
-        <argsstring>(int i) const noexcept</argsstring>
+        <definition>AMREX_GPU_HOST_DEVICE const Real&amp; amrex::RealVect::operator[]</definition>
+        <argsstring>(int i) const &amp;noexcept</argsstring>
         <name>operator[]</name>
         <param>
           <type>int</type>
@@ -134,7 +151,7 @@
 <para>Returns the <emphasis>i</emphasis>&apos;th coordinate of the <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="598" bodyend="602"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="110" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="110" bodyend="111"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -150,7 +167,7 @@
 <para>Return pointer to the first component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="115" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="605" bodyend="608"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="126" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="602" bodyend="605"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a7e963cd7644ef143049f9603ba4cb128" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
@@ -163,7 +180,7 @@
 <para>Return pointer to the first component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="123" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="611" bodyend="614"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="134" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="608" bodyend="611"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a151c9dc624996c3f5c1ca1c9ece88223" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real *</type>
@@ -176,7 +193,7 @@
 <para>Return pointer to the one past last component </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="131" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="617" bodyend="620"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="142" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="614" bodyend="617"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a84e6aa568672e2830742376875f3e81c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> const Real *</type>
@@ -189,7 +206,7 @@
 <para>Return pointer to the one past last component </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="139" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="623" bodyend="626"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="150" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="620" bodyend="623"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -209,7 +226,7 @@
 <para>Returns true if this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> is equivalent to argument <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. All comparisons between analogous components must be satisfied. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="76" bodyend="79"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="165" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="76" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a0fdb785f0952ba5c6672a90a0a9120d0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
@@ -226,7 +243,7 @@
 <para>Returns true if this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> is different from argument <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. All comparisons between analogous components must be satisfied. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="162" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="83" bodyend="86"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a5df564194fcc375edcc202ed6bae4aea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
@@ -243,7 +260,7 @@
 <para>Returns true if this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> is less than argument <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. All comparisons between analogous components must be satisfied. Note that, since the comparison is component-wise, it is possible for an <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> to be neither greater than, less than, nor equal to another. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="731" bodyend="734"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="184" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="728" bodyend="731"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a6c435556885b7c563cc6c0c02c107c69" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
@@ -260,7 +277,7 @@
 <para>Returns true if this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> is less than or equal to argument <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. All comparisons between analogous components must be satisfied. Note that, since the comparison is component-wise, it is possible for an <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> to be neither greater than or equal to, less than or equal to, nor equal to another. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="184" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="739" bodyend="742"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="195" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="736" bodyend="739"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1af98b10ea8dcc7c6b0a87218452b39448" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
@@ -277,7 +294,7 @@
 <para>Returns true if this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> is greater than argument <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. All comparisons between analogous components must be satisfied. Note that, since the comparison is component-wise, it is possible for an <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> to be neither greater than, less than, nor equal to another. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="195" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="747" bodyend="750"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="206" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="744" bodyend="747"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1aede3778179f57e5b9c02a7ed7cbfa04d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> bool</type>
@@ -294,7 +311,7 @@
 <para>Returns true if this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> is greater than or equal to argument <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. All comparisons between analogous components must be satisfied. Note that, since the comparison is component-wise, it is possible for an <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> to be neither greater than or equal to, less than or equal to, nor equal to another. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="207" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="755" bodyend="758"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="752" bodyend="755"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -314,7 +331,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by addition of a scalar to each component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="221" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="90" bodyend="94"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="232" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="90" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a4abec8704c5d7117457d1c6b8edc1cb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -331,7 +348,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> with a scalar s added to each component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="229" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="138" bodyend="142"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="240" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="138" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a0e5740b532214831cf6cf56dec666098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -348,7 +365,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by component-wise addition by argument. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="236" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="98" bodyend="102"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="247" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="98" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a4d98c8467cecdb5b939ba120d29fbc9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -365,7 +382,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by subtraction of a scalar from each component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="244" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="637" bodyend="641"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="255" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="634" bodyend="638"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a3a078245dfc6d742afcaf41f8fe8c0da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -382,7 +399,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by component-wise subtraction by argument. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="251" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="646" bodyend="651"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="262" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="643" bodyend="648"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a6f5adf2159116692f8f67cb96cb0e351" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -399,7 +416,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> with a scalar s subtracted from each component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="259" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="130" bodyend="134"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="270" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="130" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1aa0f24542a6d07e02073616961cd2b285" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -416,7 +433,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by multiplying each component by a scalar. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="266" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="106" bodyend="110"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="277" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="106" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a661d136b50fe686020f621f5528de4d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
@@ -433,7 +450,7 @@
 <para>Returns the result of the scalar product with another <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="273" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="56" bodyend="61"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="284" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="56" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a2662b0dc461f4bb3f54cfa456dd2dcd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -450,7 +467,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by component-wise multiplication by argument. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="289" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="114" bodyend="118"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="300" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="114" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a94e4700dcfa50729e8a0fcd7d2e82fb6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -467,7 +484,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> with each component multiplied by a scalar. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="303" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="122" bodyend="126"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="314" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="122" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a36fb56305984eee6881717a5ae1f65e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -484,7 +501,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by dividing each component by a scalar. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="310" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="146" bodyend="150"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="321" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="146" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a00e94bec2f221dd7f96873a3fd0a181b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -501,7 +518,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by component-wise division by argument. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="317" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="154" bodyend="158"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="328" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="154" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1aa976869120ccbfd2660d36c18013a66c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -518,7 +535,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> with each component divided by a scalar. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="331" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="162" bodyend="166"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="342" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="162" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1addcc9764c758d18f28fb58fd3c5b3a8b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -535,7 +552,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by multiplying each component by a scalar. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="338" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="672" bodyend="676"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="349" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="669" bodyend="673"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -555,7 +572,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by taking component-wise min with <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> argument. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="353" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="763" bodyend="769"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="364" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="760" bodyend="766"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a30944a8839e0dc2a873dc3fbef6b2c41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> &amp;</type>
@@ -572,7 +589,7 @@
 <para>Modifies this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by taking component-wise max with <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> argument. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="369" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="774" bodyend="780"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="380" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="771" bodyend="777"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a0450ba685d7fa9c493158ec2a005f792" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -593,7 +610,7 @@
 <para>Returns the <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is the component-wise minimum of two argument RealVects. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="361" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="785" bodyend="790"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="372" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="782" bodyend="787"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a2c15c7a018202ae522e0777c120fa109" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -614,7 +631,7 @@
 <para>Returns the <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is the component-wise maximum of two argument RealVects. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="377" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="795" bodyend="800"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="388" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="792" bodyend="797"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -630,7 +647,7 @@
 <para>Unary plus <ndash/> for completeness. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="391" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="656" bodyend="659"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="402" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="653" bodyend="656"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1ac49e1cd3af85aa3a6cf106f8064fb3d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -643,7 +660,7 @@
 <para>Unary minus <ndash/> negates all components of this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="398" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="664" bodyend="667"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="409" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="661" bodyend="664"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a74051dce8bdf28e977934f2dedf0c993" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
@@ -656,7 +673,7 @@
 <para>Sum of all components of this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="405" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="681" bodyend="684"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="416" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="678" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a5cb72900ed102d11d069c1e157364f59" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
@@ -669,7 +686,7 @@
 <para>sqrt(sum squares) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="412" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="689" bodyend="695"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="423" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="686" bodyend="692"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1ab83bde52e73520cc1375d513030374df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
@@ -682,7 +699,7 @@
 <para>sum squares<ndash/>no square root </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="419" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="700" bodyend="709"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="430" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="697" bodyend="706"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a29bd7850951ae800d2bfd13ec8a3d593" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
@@ -695,7 +712,7 @@
 <para>Product of all components of this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="426" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="714" bodyend="717"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="437" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="711" bodyend="714"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1ad6ae47a8656e02c4d566cdf251d5e532" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
@@ -712,7 +729,7 @@
 <para>Component with the minimum value of this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> (returns 0 if they are all the same). a_doAbs : if true then take the absolute value before comparing </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="434" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="170" bodyend="191"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="445" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="170" bodyend="191"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a2d79ca79da983c3064622c628ecc8d93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
@@ -729,7 +746,7 @@
 <para>Component with the maximum value of this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> (returns 0 if they are all the same). a_doAbs : if true then take the absolute value before comparing </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="442" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="195" bodyend="216"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="453" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="195" bodyend="216"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -745,7 +762,7 @@
 <para>Only for sending stuff to Fortran </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="456" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="18" bodyend="21"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="467" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="18" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1RealVect_1a3f2fc38ae03dae942ecfbd3c6c2b8999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real *</type>
@@ -758,7 +775,7 @@
 <para>Only for sending stuff to Fortran </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="463" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="25" bodyend="28"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="474" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="25" bodyend="28"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -774,7 +791,7 @@
 <para>This is a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> all of whose components are equal to zero. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="491" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="491" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="502" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="502" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1RealVect_1a6745f136d89bdb15e57c3387ca01e973" prot="public" static="yes" mutable="no">
         <type>const <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -787,7 +804,7 @@
 <para>This is a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> all of whose components are equal to one. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="497" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="497" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="508" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="508" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -809,7 +826,7 @@
  Note that the coordinate directions are based at zero. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="485" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="220" bodyend="226"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="496" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="220" bodyend="226"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -833,7 +850,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> <emphasis>p</emphasis> with a scalar <emphasis>s</emphasis> added to each component. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="512" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="238" bodyend="242"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="523" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="238" bodyend="242"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a3f84cf28a3eb1f690b08ac9486c7dcf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -854,7 +871,7 @@
 <para>Returns <emphasis>s - p</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="519" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="246" bodyend="250"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="530" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="246" bodyend="250"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a51443bb99fc505d285d7fe70a60ddb3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -875,7 +892,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> <emphasis>p</emphasis> with each component multiplied by a scalar <emphasis>s</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="527" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="254" bodyend="258"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="538" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="254" bodyend="258"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a1fca01b7216175d3cd1f366840f46373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -896,7 +913,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> that is a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> <emphasis>p</emphasis> with each component divided by a scalar <emphasis>s</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="534" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="230" bodyend="234"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="545" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="230" bodyend="234"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1ab33793196d0917f9e4b69d8e84412430" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -917,7 +934,7 @@
 <para>Returns component-wise sum of RealVects <emphasis>s</emphasis> and <emphasis>p</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="541" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="270" bodyend="274"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="552" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="270" bodyend="274"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a394035414055d9cfe78d10bb63d4f169" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -938,7 +955,7 @@
 <para>Returns <emphasis>s - p</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="548" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="278" bodyend="282"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="559" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="278" bodyend="282"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a3ca85db4b44ceb45ad915a815e79578a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -959,7 +976,7 @@
 <para>Returns component-wise product of <emphasis>s</emphasis> and <emphasis>p</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="555" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="286" bodyend="290"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="566" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="286" bodyend="290"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1ac0469b60807117dc2419785ce1168b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -980,7 +997,7 @@
 <para>Returns component-wise quotient <emphasis>p / s</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="561" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="262" bodyend="266"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="572" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="262" bodyend="266"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1aced393e91058fd9dcf46321c5f8f1eef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>friend <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
@@ -1001,7 +1018,7 @@
 <para>Returns a <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> obtained by multiplying each of the components of the given <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref> by a scalar. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="569" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="722" bodyend="726"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="580" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="719" bodyend="723"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -1016,7 +1033,7 @@
 <para>The individual components of this <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="586" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="586" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="597" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="597" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -1039,7 +1056,7 @@
 <para><ref refid="classamrex_1_1Print" kindref="compound">Print</ref> to the given output stream in ASCII. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="577" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="293" bodyend="297"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="588" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="293" bodyend="297"/>
       </memberdef>
       <memberdef kind="friend" id="classamrex_1_1RealVect_1a12a8ba870c44c0b8df87fbf476ba0240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend std::istream &amp;</type>
@@ -1060,7 +1077,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="579" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="300" bodyend="323"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="590" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.cpp" bodystart="300" bodyend="323"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1083,7 +1100,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="29" bodyend="588"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_RealVect.H" bodystart="29" bodyend="599"/>
     <listofallmembers>
       <member refid="classamrex_1_1RealVect_1a4d734f607d5639afba8bf2e56c4c66ac" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>BASISREALV</name></member>
       <member refid="classamrex_1_1RealVect_1a9acf1b8ad548c92198ba61270f60bd16" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>begin</name></member>
@@ -1130,8 +1147,9 @@
       <member refid="classamrex_1_1RealVect_1af98b10ea8dcc7c6b0a87218452b39448" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;</name></member>
       <member refid="classamrex_1_1RealVect_1aede3778179f57e5b9c02a7ed7cbfa04d" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;=</name></member>
       <member refid="classamrex_1_1RealVect_1a12a8ba870c44c0b8df87fbf476ba0240" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator&gt;&gt;</name></member>
-      <member refid="classamrex_1_1RealVect_1ab8b1e03b4163212adc7c31974bd44c6f" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
-      <member refid="classamrex_1_1RealVect_1afb75acc42850b4ab14ca07bfc8e3e754" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1RealVect_1ab63ebe6eea7f82438e1f0db0b4bffd09" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1RealVect_1ab17771f42cf9642cd5899d8bbe77f5f0" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
+      <member refid="classamrex_1_1RealVect_1ae1d5a95100e25091c6cb29a50e0c2be7" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>operator[]</name></member>
       <member refid="classamrex_1_1RealVect_1a29bd7850951ae800d2bfd13ec8a3d593" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>product</name></member>
       <member refid="classamrex_1_1RealVect_1ab83bde52e73520cc1375d513030374df" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>radSquared</name></member>
       <member refid="classamrex_1_1RealVect_1a576278946020b0d18647e1d9af8bc173" prot="public" virt="non-virtual"><scope>amrex::RealVect</scope><name>RealVect</name></member>
