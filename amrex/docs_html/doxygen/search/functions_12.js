@@ -174,5 +174,5 @@ var searchData=
   ['rrsfcdoit',['RRSFCDoIt',['../classamrex_1_1DistributionMapping.html#a2a57f52831edc3b6ebf3facf3a065933',1,'amrex::DistributionMapping']]],
   ['rrsfcprocessormap',['RRSFCProcessorMap',['../classamrex_1_1DistributionMapping.html#a0e9524ab8bf5f4d8165c501ecc5cc5bb',1,'amrex::DistributionMapping']]],
   ['runongpu',['RunOnGPU',['../classamrex_1_1StateDescriptor_1_1BndryFunc.html#a299ae04cbe66fec47f604176ecb0936a',1,'amrex::StateDescriptor::BndryFunc::RunOnGPU()'],['../classamrex_1_1StateDescriptor.html#a45c110d37b26e0c322c1af1089ecbfea',1,'amrex::StateDescriptor::RunOnGPU()'],['../classamrex_1_1BndryFuncArray.html#add628eb12539396ff64eb4a535c99ac9',1,'amrex::BndryFuncArray::RunOnGPU()']]],
-  ['rvec',['rvec',['../structamrex_1_1Particle.html#a176518bfdc8f41f36485b2992ce44dfd',1,'amrex::Particle::rvec(AMREX_D_DECL(int indx, int indy, int indz)) const &amp;'],['../structamrex_1_1Particle.html#ae3e9ecf438c6f1676598b3ef1377de7c',1,'amrex::Particle::rvec(IntVect &amp;indexes) const &amp;']]]
+  ['rvec',['rvec',['../structamrex_1_1Particle.html#a176518bfdc8f41f36485b2992ce44dfd',1,'amrex::Particle::rvec(AMREX_D_DECL(int indx, int indy, int indz)) const &amp;'],['../structamrex_1_1Particle.html#a3d2379f6d04f774637e66797cd58a8d1',1,'amrex::Particle::rvec(const IntVect &amp;indexes) const &amp;']]]
 ];
