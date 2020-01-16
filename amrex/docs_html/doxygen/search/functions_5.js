@@ -76,6 +76,7 @@ var searchData=
   ['execonfinalize',['ExecOnFinalize',['../namespaceamrex.html#aec8ceac1148bd8331f3a51572068f8a0',1,'amrex']]],
   ['execoninitialize',['ExecOnInitialize',['../namespaceamrex.html#a6911748ceb0d88bf5b6bf7f3f0402e97',1,'amrex']]],
   ['exist',['Exist',['../classamrex_1_1VisMF.html#ab895515b73ef0cdc6d0e06c7590f3e76',1,'amrex::VisMF']]],
+  ['exp',['exp',['../namespaceamrex.html#ad7188a3015dcffc0938b6cb74def1c7f',1,'amrex']]],
   ['expect',['expect',['../classamrex_1_1expect.html#a2136ece586212ef73074aaab29247505',1,'amrex::expect::expect(const std::string &amp;str_)'],['../classamrex_1_1expect.html#a29077faf3a3650e3eeb67285023d7e5e',1,'amrex::expect::expect(const char *istr_)'],['../classamrex_1_1expect.html#a76c80085267c42ef73ed0e63c65af898',1,'amrex::expect::expect(char c)']]],
   ['extent',['extent',['../structamrex_1_1algoim_1_1BoundingBox.html#af29ddffe552640cdadd8dec27b352074',1,'amrex::algoim::BoundingBox']]],
   ['extrap',['extrap',['../classamrex_1_1StateDescriptor.html#a831ab234733f1a75b0d42fffa6a3db0a',1,'amrex::StateDescriptor']]],

@@ -96,9 +96,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__PODVector_8H_source.html">AMReX_PODVector.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuAllocators_8H_source.html">AMReX_GpuAllocators.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Scan_8H_source.html">AMReX_Scan.H</a>&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="AMReX__GpuContainers_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -166,12 +169,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a3da569ab08ec568b8e512d91d6259b53"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a3da569ab08ec568b8e512d91d6259b53">amrex::Gpu::copyAsync</a> (DeviceToDevice, InIter begin, InIter end, OutIter result) noexcept</td></tr>
 <tr class="memdesc:a3da569ab08ec568b8e512d91d6259b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">A device-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <a class="el" href="namespaceamrex_1_1Gpu.html#a3d871a58c724cf2f3a5fb0247d592beb">Gpu::HostVector</a>, <a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e" title="When Cuda is off, all these containers revert to amrex::Vector. ">Gpu::DeviceVector</a>, etc. meet this requirement.  <a href="namespaceamrex_1_1Gpu.html#a3da569ab08ec568b8e512d91d6259b53">More...</a><br /></td></tr>
 <tr class="separator:a3da569ab08ec568b8e512d91d6259b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4e0fa80e6873e53208d917854f37129"><td class="memTemplParams" colspan="2">template&lt;class InIter , class OutIter &gt; </td></tr>
-<tr class="memitem:ab4e0fa80e6873e53208d917854f37129"><td class="memTemplItemLeft" align="right" valign="top">OutIter&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129">amrex::Gpu::inclusive_scan</a> (InIter begin, InIter end, OutIter result)</td></tr>
-<tr class="separator:ab4e0fa80e6873e53208d917854f37129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f116832e254a3422729b3455b22f18c"><td class="memTemplParams" colspan="2">template&lt;class InIter , class OutIter &gt; </td></tr>
-<tr class="memitem:a3f116832e254a3422729b3455b22f18c"><td class="memTemplItemLeft" align="right" valign="top">OutIter&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">amrex::Gpu::exclusive_scan</a> (InIter begin, InIter end, OutIter result)</td></tr>
-<tr class="separator:a3f116832e254a3422729b3455b22f18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>

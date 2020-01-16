@@ -59,6 +59,7 @@ var searchData=
   ['locateparticle',['locateParticle',['../classamrex_1_1ParticleContainer.html#aab7b351a2366e658e9be84c5a0393c3c',1,'amrex::ParticleContainer']]],
   ['loedge',['LoEdge',['../classamrex_1_1CoordSys.html#aad8c159e97f7422f2bf45b92bf3a3002',1,'amrex::CoordSys::LoEdge(int point, int dir) const noexcept'],['../classamrex_1_1CoordSys.html#a6f6cad7c903feeb070e26cea3df1af5c',1,'amrex::CoordSys::LoEdge(const IntVect &amp;point, int dir) const noexcept']]],
   ['loface',['LoFace',['../classamrex_1_1CoordSys.html#abbaf6097689bdafcce5853d0a74c8a73',1,'amrex::CoordSys::LoFace(const IntVect &amp;point, int dir, Vector&lt; Real &gt; &amp;loc) const noexcept'],['../classamrex_1_1CoordSys.html#ae177792027908beb20976fbd0628d754',1,'amrex::CoordSys::LoFace(const IntVect &amp;point, int dir, Real *loc) const noexcept']]],
+  ['log',['log',['../namespaceamrex.html#a377e86dc25bb181be031ad2f80cb2984',1,'amrex']]],
   ['logicaland',['LogicalAnd',['../namespaceamrex_1_1Gpu_1_1Atomic.html#ac8c7ffecc3c4bd29795ebc7904b623fc',1,'amrex::Gpu::Atomic']]],
   ['logicalor',['LogicalOr',['../namespaceamrex_1_1Gpu_1_1Atomic.html#abd9e96fd4e52ae3194e294e283b2bad9',1,'amrex::Gpu::Atomic']]],
   ['longside',['longside',['../classamrex_1_1Box.html#ae6e14e48e772090cdeabaf106a537c86',1,'amrex::Box::longside(int &amp;dir) const noexcept'],['../classamrex_1_1Box.html#a7b71510567ba3f78fa38bc7035f81151',1,'amrex::Box::longside() const noexcept']]],
