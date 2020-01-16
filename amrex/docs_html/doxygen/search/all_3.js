@@ -53,6 +53,7 @@ var searchData=
   ['cc_5fba',['cc_ba',['../classamrex_1_1LSFactory.html#aaad4bde7983e413f2e82d677fb2b3774',1,'amrex::LSFactory']]],
   ['ccinterp_5fcompute_5fvoff',['ccinterp_compute_voff',['../namespaceamrex.html#a370603c76b9575c74c3663cb77943166',1,'amrex']]],
   ['cdata_5fsize',['cdata_size',['../classamrex_1_1NeighborParticleContainer.html#a1e5039db78995c9f1e60c816780c91ab',1,'amrex::NeighborParticleContainer']]],
+  ['ceil',['ceil',['../classamrex_1_1RealVect.html#a792ecde737e120649cc137385297100c',1,'amrex::RealVect']]],
   ['cell',['Cell',['../structamrex_1_1EB2_1_1Cell.html',1,'amrex::EB2']]],
   ['cell',['CELL',['../classamrex_1_1IndexType.html#a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1',1,'amrex::IndexType']]],
   ['cell_5fbilinear_5finterp',['cell_bilinear_interp',['../namespaceamrex.html#a5fa0044ab8f93865e1fc48bb78a6e5e8',1,'amrex']]],
@@ -462,7 +463,7 @@ var searchData=
   ['cvspils_5fsunls_5fnull',['cvspils_sunls_null',['../namespacefcvode__mod.html#aea7da74c42b41c1ce3bdedc3b0c6ad0e',1,'fcvode_mod']]],
   ['cx',['CX',['../AMReX__MCINTERPBNDRYDATA__3D_8F.html#a0b4c12a5dc8490a3cff8385334db2d13',1,'AMReX_MCINTERPBNDRYDATA_3D.F']]],
   ['cy',['CY',['../AMReX__MCINTERPBNDRYDATA__3D_8F.html#ac5bc792e372b15e7a1d3efe6daac9aec',1,'AMReX_MCINTERPBNDRYDATA_3D.F']]],
-  ['cylinderif',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html',1,'amrex::EB2']]],
   ['cylinderif',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html#a7f70d143e2569bc9112f4c5f1efcd83d',1,'amrex::EB2::CylinderIF::CylinderIF(Real a_radius, int a_direction, const RealArray &amp;a_center, bool a_inside)'],['../classamrex_1_1EB2_1_1CylinderIF.html#a65cc987a90a62e4c8e29302895bab48c',1,'amrex::EB2::CylinderIF::CylinderIF(Real a_radius, Real a_height, int a_direction, const RealArray &amp;a_center, bool a_inside)'],['../classamrex_1_1EB2_1_1CylinderIF.html#ac95d0145e3b32c4416b51918700ebe7b',1,'amrex::EB2::CylinderIF::CylinderIF(const CylinderIF &amp;rhs) noexcept=default'],['../classamrex_1_1EB2_1_1CylinderIF.html#a2c89f29c0c46c2871e4a619b859e8882',1,'amrex::EB2::CylinderIF::CylinderIF(CylinderIF &amp;&amp;rhs) noexcept=default']]],
+  ['cylinderif',['CylinderIF',['../classamrex_1_1EB2_1_1CylinderIF.html',1,'amrex::EB2']]],
   ['cz',['CZ',['../AMReX__MCINTERPBNDRYDATA__3D_8F.html#addbd2f751d6f06eaa9eac7526839a4c9',1,'AMReX_MCINTERPBNDRYDATA_3D.F']]]
 ];

@@ -449,6 +449,7 @@ var searchData=
   ['fixupphyscorners',['FixUpPhysCorners',['../namespaceamrex.html#adf9b8a2c079e01271e32cb7cba3057de',1,'amrex']]],
   ['fixupresidualmask',['fixUpResidualMask',['../classamrex_1_1MLLinOp.html#a5137ff000c6f8940f4b07a28f3bf9375',1,'amrex::MLLinOp::fixUpResidualMask()'],['../classamrex_1_1MLNodeLaplacian.html#a1156c6a363950889ca5e456aed6187b7',1,'amrex::MLNodeLaplacian::fixUpResidualMask()'],['../classamrex_1_1MLNodeTensorLaplacian.html#ade87cc6018f34e0ca8138a6e6aca1655',1,'amrex::MLNodeTensorLaplacian::fixUpResidualMask()']]],
   ['flip',['flip',['../classamrex_1_1IndexType.html#ade7967059ecbfe9a07f8784f6138c919',1,'amrex::IndexType::flip()'],['../classamrex_1_1Orientation.html#a2b165e7e8b05111ce8c93285bc85f081',1,'amrex::Orientation::flip()']]],
+  ['floor',['floor',['../classamrex_1_1RealVect.html#ad83cc01ed7402d9d384b73c046a96b87',1,'amrex::RealVect']]],
   ['flushcfinfo',['flushCFinfo',['../classamrex_1_1FabArrayBase.html#a9d3dbb0a351f570080f23f75febd836d',1,'amrex::FabArrayBase']]],
   ['flushcpc',['flushCPC',['../classamrex_1_1FabArrayBase.html#a937cce5d85fb91c1bddad5f9f3c0adc4',1,'amrex::FabArrayBase']]],
   ['flushcpcache',['flushCPCache',['../classamrex_1_1FabArrayBase.html#a3212be804b64d0f051f907c75fbad3d6',1,'amrex::FabArrayBase']]],
