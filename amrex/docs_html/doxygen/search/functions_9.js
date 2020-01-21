@@ -43,6 +43,7 @@ var searchData=
   ['initfromasciifile',['InitFromAsciiFile',['../classamrex_1_1ParticleContainer.html#adee34fabfe6ba6542fad9607e2843ff7',1,'amrex::ParticleContainer']]],
   ['initfrombinaryfile',['InitFromBinaryFile',['../classamrex_1_1ParticleContainer.html#ac108830360927c2b81f70f79273f5c30',1,'amrex::ParticleContainer']]],
   ['initfrombinarymetafile',['InitFromBinaryMetaFile',['../classamrex_1_1ParticleContainer.html#aa38b6a6a9072401b044d1a1998531bfb',1,'amrex::ParticleContainer']]],
+  ['initfromlistimpl',['initFromListImpl',['../namespaceamrex_1_1detail.html#a0a1833caa214a1cb642c80afe8c49bc7',1,'amrex::detail::initFromListImpl(U *data, std::initializer_list&lt; U &gt; list)'],['../namespaceamrex_1_1detail.html#a2eed1c648c543a4917823d6a12dc9135',1,'amrex::detail::initFromListImpl(U *data, std::initializer_list&lt; U &gt; list)']]],
   ['initfromscratch',['InitFromScratch',['../classamrex_1_1AmrCore.html#a309a4bad63faba98cfc57641e274413d',1,'amrex::AmrCore']]],
   ['initialba',['initialBa',['../classamrex_1_1Amr.html#acadd647c5f887a16b8c6d1fd09b2f41f',1,'amrex::Amr']]],
   ['initialbalevels',['initialBaLevels',['../classamrex_1_1Amr.html#aa0fd6eea096c16f444db7d0f93b1cbb5',1,'amrex::Amr']]],

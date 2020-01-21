@@ -87,13 +87,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">AMReX_PODVector.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="AMReX__TypeTraits_8H_source.html">AMReX_TypeTraits.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Gpu_8H_source.html">AMReX_Gpu.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuAllocators_8H_source.html">AMReX_GpuAllocators.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuContainers_8H_source.html">AMReX_GpuContainers.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuDevice_8H_source.html">AMReX_GpuDevice.H</a>&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
@@ -110,6 +114,35 @@ Classes</h2></td></tr>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceamrex"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html">amrex</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceamrex_1_1detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html">amrex::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5bcec00259aa287e4fa1c57ed626d4e7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename Size , typename Value &gt; </td></tr>
+<tr class="memitem:a5bcec00259aa287e4fa1c57ed626d4e7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a5bcec00259aa287e4fa1c57ed626d4e7">amrex::detail::uninitializedFillNImpl</a> (U *data, Size count, const Value &amp;value)</td></tr>
+<tr class="separator:a5bcec00259aa287e4fa1c57ed626d4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc955e71a20bceeaed3cc8333eb0398"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename Size , typename Value &gt; </td></tr>
+<tr class="memitem:a2bc955e71a20bceeaed3cc8333eb0398"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a2bc955e71a20bceeaed3cc8333eb0398">amrex::detail::uninitializedFillNImpl</a> (U *data, Size count, const Value &amp;value)</td></tr>
+<tr class="separator:a2bc955e71a20bceeaed3cc8333eb0398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59349c2dc230fb4a0c79fd80154b201"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa59349c2dc230fb4a0c79fd80154b201"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aa59349c2dc230fb4a0c79fd80154b201">amrex::detail::memCopyImpl</a> (void *dst, const void *src, std::size_t count)</td></tr>
+<tr class="separator:aa59349c2dc230fb4a0c79fd80154b201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eae9e79bcaf47cc572db8a613117788"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5eae9e79bcaf47cc572db8a613117788"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a5eae9e79bcaf47cc572db8a613117788">amrex::detail::memCopyImpl</a> (void *dst, const void *src, std::size_t count)</td></tr>
+<tr class="separator:a5eae9e79bcaf47cc572db8a613117788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad48aa99f6648fea787451a974dda26"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4ad48aa99f6648fea787451a974dda26"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a4ad48aa99f6648fea787451a974dda26">amrex::detail::memMoveImpl</a> (void *dst, const void *src, std::size_t count, T &amp;allocator)</td></tr>
+<tr class="separator:a4ad48aa99f6648fea787451a974dda26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a658b84a19ed9885975fe71a6c341a2e4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a658b84a19ed9885975fe71a6c341a2e4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a658b84a19ed9885975fe71a6c341a2e4">amrex::detail::memMoveImpl</a> (void *dst, const void *src, std::size_t count, T &amp;allocator)</td></tr>
+<tr class="separator:a658b84a19ed9885975fe71a6c341a2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1833caa214a1cb642c80afe8c49bc7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a0a1833caa214a1cb642c80afe8c49bc7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a0a1833caa214a1cb642c80afe8c49bc7">amrex::detail::initFromListImpl</a> (U *data, std::initializer_list&lt; U &gt; list)</td></tr>
+<tr class="separator:a0a1833caa214a1cb642c80afe8c49bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eed1c648c543a4917823d6a12dc9135"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a2eed1c648c543a4917823d6a12dc9135"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!RunOnGpu&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a2eed1c648c543a4917823d6a12dc9135">amrex::detail::initFromListImpl</a> (U *data, std::initializer_list&lt; U &gt; list)</td></tr>
+<tr class="separator:a2eed1c648c543a4917823d6a12dc9135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
