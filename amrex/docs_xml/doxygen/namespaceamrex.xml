@@ -312,7 +312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="84" bodyend="84"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" line="111" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" bodystart="111" bodyend="111"/>
       </memberdef>
       <memberdef kind="enum" id="namespaceamrex_1abd2e3d292645433cefc947725585f87a" prot="public" static="no">
         <name>FabType</name>
@@ -2511,6 +2511,107 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="52" bodyend="148"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1abdab0f71f2de817c3bd6f6944912dea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::FillPatchTwoLevels</definition>
+        <argsstring>(MultiFab &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MultiFab * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MultiFab * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, PhysBCFunctBase &amp;cbc, int cbccomp, PhysBCFunctBase &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interpolater *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const InterpHook &amp;pre_interp, const InterpHook &amp;post_interp)</argsstring>
+        <name>FillPatchTwoLevels</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
+          <declname>cmf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>ct</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
+          <declname>fmf</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>ft</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>cgeom</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
+          <declname>fgeom</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref> &amp;</type>
+          <declname>cbc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cbccomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1PhysBCFunctBase" kindref="compound">PhysBCFunctBase</ref> &amp;</type>
+          <declname>fbc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fbccomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ratio</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref> *</type>
+          <declname>mapper</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> &gt; &amp;</type>
+          <declname>bcs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bcscomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref> &amp;</type>
+          <declname>pre_interp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1InterpHook" kindref="compound">InterpHook</ref> &amp;</type>
+          <declname>post_interp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="237" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="237" bodyend="259"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8b250e0f2c6f2f0537764b81e8a0a148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::FillPatchTwoLevels</definition>
@@ -2606,7 +2707,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="238" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="238" bodyend="260"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="261" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="261" bodyend="284"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a69d6f6444b4d19e5e0bb84a8aafcce02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2691,7 +2792,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="283" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="283" bodyend="372"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="328" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="328" bodyend="417"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a331b0725efb68a4f9224f12e6d6df4dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2728,7 +2829,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="375" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="375" bodyend="385"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="420" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="420" bodyend="430"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad4b250931d7e5f375e7da2ebc1ea0ac0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -2765,7 +2866,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="387" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="387" bodyend="501"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" line="432" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_FillPatchUtil.cpp" bodystart="432" bodyend="546"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a004a956bb3ca7d6cd8bf1778304e6f6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
