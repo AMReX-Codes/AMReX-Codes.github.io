@@ -7,6 +7,8 @@ var searchData=
   ['sendrecvpairunpaired',['SendRecvPairUnpaired',['../structCommProfStats_1_1SendRecvPairUnpaired.html',1,'CommProfStats']]],
   ['shift_5fhasher',['shift_hasher',['../classamrex_1_1IntVect_1_1shift__hasher.html',1,'amrex::IntVect']]],
   ['shmem',['ShMem',['../structamrex_1_1FabArray_1_1ShMem.html',1,'amrex::FabArray']]],
+  ['sparsebiniteratorfactory',['SparseBinIteratorFactory',['../structamrex_1_1SparseBinIteratorFactory.html',1,'amrex']]],
+  ['sparsebins',['SparseBins',['../classamrex_1_1SparseBins.html',1,'amrex']]],
   ['sphereif',['SphereIF',['../classamrex_1_1EB2_1_1SphereIF.html',1,'amrex::EB2']]],
   ['splinedistfcnelement2d',['SplineDistFcnElement2d',['../classamrex_1_1SplineDistFcnElement2d.html',1,'amrex']]],
   ['splineif',['SplineIF',['../classamrex_1_1EB2_1_1SplineIF.html',1,'amrex::EB2']]],

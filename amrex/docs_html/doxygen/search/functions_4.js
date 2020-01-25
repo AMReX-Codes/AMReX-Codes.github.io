@@ -40,6 +40,7 @@ var searchData=
   ['deleter',['Deleter',['../structamrex_1_1Gpu_1_1Deleter.html#a14473dbba9ee1812b7e99149ab261b7e',1,'amrex::Gpu::Deleter']]],
   ['deletestateplotvar',['deleteStatePlotVar',['../classamrex_1_1Amr.html#ab72037810d96a60c15358d42c780d92e',1,'amrex::Amr']]],
   ['deletestream',['DeleteStream',['../classamrex_1_1VisMF.html#a6a1a78975e5decf1c7aae4555a240628',1,'amrex::VisMF']]],
+  ['densebiniteratorfactory',['DenseBinIteratorFactory',['../structamrex_1_1DenseBinIteratorFactory.html#a02de02765bed7f5fbd756501ce1f9625',1,'amrex::DenseBinIteratorFactory']]],
   ['derfunc',['derFunc',['../classamrex_1_1DeriveRec.html#a4cc703ca266623995fc8245ddd618ce3',1,'amrex::DeriveRec']]],
   ['derfunc3d',['derFunc3D',['../classamrex_1_1DeriveRec.html#a186034c4106bb55fd756738441b7837d',1,'amrex::DeriveRec']]],
   ['derfuncfab',['derFuncFab',['../classamrex_1_1DeriveRec.html#afa3147e8805d601735e2dead142e4a2f',1,'amrex::DeriveRec']]],

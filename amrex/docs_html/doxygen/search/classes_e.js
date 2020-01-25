@@ -36,7 +36,7 @@ var searchData=
   ['plotfiledataimpl',['PlotFileDataImpl',['../classamrex_1_1PlotFileDataImpl.html',1,'amrex']]],
   ['plus',['Plus',['../structamrex_1_1Plus.html',1,'amrex']]],
   ['podvector',['PODVector',['../classamrex_1_1PODVector.html',1,'amrex']]],
-  ['podvector_3c_20amrex_3a_3aassigngrid_20_3e',['PODVector&lt; amrex::AssignGrid &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20amrex_3a_3aassigngrid_3c_20biniteratorfactory_20_3e_20_3e',['PODVector&lt; amrex::AssignGrid&lt; BinIteratorFactory &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3abox_20_3e',['PODVector&lt; amrex::Box &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20const_20int_20_2a_20_3e',['PODVector&lt; const int * &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20const_20particlereal_20_2a_20_3e',['PODVector&lt; const ParticleReal * &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],

@@ -3,10 +3,15 @@
   <compounddef id="structamrex_1_1AmrAssignGrid" kind="struct" language="C++" prot="public">
     <compoundname>amrex::AmrAssignGrid</compoundname>
     <includes refid="AMReX__ParticleLocator_8H" local="no">AMReX_ParticleLocator.H</includes>
+    <templateparamlist>
+      <param>
+        <type>class BinIteratorFactory</type>
+      </param>
+    </templateparamlist>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1AmrAssignGrid_1a6362cb23f4e5f78579ec8ff9eca0d552" prot="public" static="no" mutable="no">
-        <type>const <ref refid="structamrex_1_1AssignGrid" kindref="compound">AssignGrid</ref> *</type>
-        <definition>const AssignGrid* amrex::AmrAssignGrid::m_funcs</definition>
+      <memberdef kind="variable" id="structamrex_1_1AmrAssignGrid_1a89b80b8bcfbde11575362e5c6f6ea420" prot="public" static="no" mutable="no">
+        <type>const <ref refid="structamrex_1_1AssignGrid" kindref="compound">AssignGrid</ref>&lt; BinIteratorFactory &gt; *</type>
+        <definition>const AssignGrid&lt;BinIteratorFactory&gt;* amrex::AmrAssignGrid&lt; BinIteratorFactory &gt;::m_funcs</definition>
         <argsstring></argsstring>
         <name>m_funcs</name>
         <briefdescription>
@@ -17,9 +22,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="188" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="188" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1AmrAssignGrid_1aed9ee3845c9ab6b27eb9d9f1b0e57e69" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1AmrAssignGrid_1a34d743ea0713f912d08dec0a20cdaa38" prot="public" static="no" mutable="no">
         <type>std::size_t</type>
-        <definition>std::size_t amrex::AmrAssignGrid::m_size</definition>
+        <definition>std::size_t amrex::AmrAssignGrid&lt; BinIteratorFactory &gt;::m_size</definition>
         <argsstring></argsstring>
         <name>m_size</name>
         <briefdescription>
@@ -32,13 +37,13 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1AmrAssignGrid_1a18b5c1ffd032ea648d23693d1a75e457" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1AmrAssignGrid_1a3c5745e3fb6016f3be7777b00c7a458f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::AmrAssignGrid::AmrAssignGrid</definition>
-        <argsstring>(const AssignGrid *a_funcs, std::size_t a_size)</argsstring>
+        <definition>amrex::AmrAssignGrid&lt; BinIteratorFactory &gt;::AmrAssignGrid</definition>
+        <argsstring>(const AssignGrid&lt; BinIteratorFactory &gt; *a_funcs, std::size_t a_size)</argsstring>
         <name>AmrAssignGrid</name>
         <param>
-          <type>const <ref refid="structamrex_1_1AssignGrid" kindref="compound">AssignGrid</ref> *</type>
+          <type>const <ref refid="structamrex_1_1AssignGrid" kindref="compound">AssignGrid</ref>&lt; BinIteratorFactory &gt; *</type>
           <declname>a_funcs</declname>
         </param>
         <param>
@@ -53,14 +58,14 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="191" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="191" bodyend="193"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1AmrAssignGrid_1a2a9d5d4611f806a4acc6aeb9918896bb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1AmrAssignGrid_1a752ad4eedde2c231b98cf4d236c55b02" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename P</type>
           </param>
         </templateparamlist>
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref>&lt; int, int &gt;</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GpuTuple&lt;int, int&gt; amrex::AmrAssignGrid::operator()</definition>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GpuTuple&lt;int, int&gt; amrex::AmrAssignGrid&lt; BinIteratorFactory &gt;::operator()</definition>
         <argsstring>(const P &amp;p) const noexcept</argsstring>
         <name>operator()</name>
         <param>
@@ -80,62 +85,12 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <collaborationgraph>
-      <node id="251">
-        <label>amrex::IntVect</label>
-        <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="251" relation="usage">
-          <edgelabel>Unit</edgelabel>
-          <edgelabel>Zero</edgelabel>
-        </childnode>
-      </node>
-      <node id="247">
-        <label>amrex::AmrAssignGrid</label>
-        <link refid="structamrex_1_1AmrAssignGrid"/>
-        <childnode refid="248" relation="usage">
-          <edgelabel>m_funcs</edgelabel>
-        </childnode>
-      </node>
-      <node id="248">
-        <label>amrex::AssignGrid</label>
-        <link refid="structamrex_1_1AssignGrid"/>
-        <childnode refid="249" relation="usage">
-          <edgelabel>m_hi</edgelabel>
-          <edgelabel>m_bin_size</edgelabel>
-          <edgelabel>m_lo</edgelabel>
-          <edgelabel>m_num_bins</edgelabel>
-        </childnode>
-        <childnode refid="250" relation="usage">
-          <edgelabel>m_boxes_ptr</edgelabel>
-          <edgelabel>m_domain</edgelabel>
-        </childnode>
-      </node>
-      <node id="249">
-        <label>amrex::Dim3</label>
-        <link refid="structamrex_1_1Dim3"/>
-      </node>
-      <node id="250">
-        <label>amrex::Box</label>
-        <link refid="classamrex_1_1Box"/>
-        <childnode refid="251" relation="usage">
-          <edgelabel>bigend</edgelabel>
-          <edgelabel>smallend</edgelabel>
-        </childnode>
-        <childnode refid="252" relation="usage">
-          <edgelabel>btype</edgelabel>
-        </childnode>
-      </node>
-      <node id="252">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
-      </node>
-    </collaborationgraph>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="187" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="186" bodyend="206"/>
     <listofallmembers>
-      <member refid="structamrex_1_1AmrAssignGrid_1a18b5c1ffd032ea648d23693d1a75e457" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>AmrAssignGrid</name></member>
-      <member refid="structamrex_1_1AmrAssignGrid_1a6362cb23f4e5f78579ec8ff9eca0d552" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>m_funcs</name></member>
-      <member refid="structamrex_1_1AmrAssignGrid_1aed9ee3845c9ab6b27eb9d9f1b0e57e69" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>m_size</name></member>
-      <member refid="structamrex_1_1AmrAssignGrid_1a2a9d5d4611f806a4acc6aeb9918896bb" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1AmrAssignGrid_1a3c5745e3fb6016f3be7777b00c7a458f" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>AmrAssignGrid</name></member>
+      <member refid="structamrex_1_1AmrAssignGrid_1a89b80b8bcfbde11575362e5c6f6ea420" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>m_funcs</name></member>
+      <member refid="structamrex_1_1AmrAssignGrid_1a34d743ea0713f912d08dec0a20cdaa38" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>m_size</name></member>
+      <member refid="structamrex_1_1AmrAssignGrid_1a752ad4eedde2c231b98cf4d236c55b02" prot="public" virt="non-virtual"><scope>amrex::AmrAssignGrid</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
