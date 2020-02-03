@@ -962,7 +962,7 @@ var searchData=
   ['finalsmooth',['finalSmooth',['../classamrex_1_1MultiGrid.html#ab37ffdfe9c9bcf28f6ab84ab7065c6bc',1,'amrex::MultiGrid::finalSmooth()'],['../classamrex_1_1MCMultiGrid.html#a81b09bdd26d62a23f217b2dd159d5ddc',1,'amrex::MCMultiGrid::finalSmooth()']]],
   ['find_5fbest_5fnbh',['find_best_nbh',['../namespaceamrex_1_1machine.html#afa7cf247ac1fb3972693835d136c00f1',1,'amrex::machine']]],
   ['findcut',['FindCut',['../namespaceamrex.html#ad22b2b776284a051ecd35e8dfa6e54d9',1,'amrex']]],
-  ['findoffsets',['FindOffsets',['../classamrex_1_1VisMF.html#a1a13f502a7ae61af0ef1bc5bff7ee768',1,'amrex::VisMF']]],
+  ['findoffsets',['FindOffsets',['../classamrex_1_1VisMF.html#a3f74b018e90a133b54a5d1cde07580c7',1,'amrex::VisMF']]],
   ['findtimerange',['FindTimeRange',['../classCommProfStats.html#af024320c638e753af5a20def51afcde5',1,'CommProfStats']]],
   ['fine_5fcell',['fine_cell',['../classamrex_1_1YAFluxRegister.html#a793217326d57a18d473ad802963c1a39af227036442400df4bcf1b730c2eb4774',1,'amrex::YAFluxRegister::fine_cell()'],['../namespaceamrex__eb__flux__reg__nd__module.html#aa221a3ae37a8e49741bf7503ddfbf026',1,'amrex_eb_flux_reg_nd_module::fine_cell()']]],
   ['fine_5fgrid_5fidx',['fine_grid_idx',['../structamrex_1_1FabArrayBase_1_1CFinfo.html#aca354eb516dc263308380e26666bb0b7',1,'amrex::FabArrayBase::CFinfo']]],
