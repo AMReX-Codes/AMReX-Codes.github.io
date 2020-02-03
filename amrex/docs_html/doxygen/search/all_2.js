@@ -198,7 +198,7 @@ var searchData=
   ['blbacktrace',['BLBackTrace',['../structamrex_1_1BLBackTrace.html',1,'amrex']]],
   ['bldfinelevels',['bldFineLevels',['../classamrex_1_1Amr.html#a12a8a852d0fe80b6a15cd05d0e96d2fd',1,'amrex::Amr']]],
   ['block',['block',['../classamrex_1_1CArena_1_1Node.html#a20a366d961aa30bc166cfc7e5ec9a185',1,'amrex::CArena::Node::block() const noexcept'],['../classamrex_1_1CArena_1_1Node.html#a644086075ae8e03798c85ae56205c953',1,'amrex::CArena::Node::block(void *blk) noexcept']]],
-  ['blocking_5ffactor',['blocking_factor',['../classamrex_1_1AmrMesh.html#acdbddd33ae38b3d038fcaa14ce05e039',1,'amrex::AmrMesh']]],
+  ['blocking_5ffactor',['blocking_factor',['../structamrex_1_1AmrInfo.html#aec9f071fb0930efe09a4efe35edc4a2f',1,'amrex::AmrInfo']]],
   ['blockingfactor',['blockingFactor',['../classamrex_1_1AmrMesh.html#af4a41ee86449b2afa949b6d68f6faf6f',1,'amrex::AmrMesh']]],
   ['blpdatablock',['BLPDataBlock',['../structBLProfStats_1_1BLPDataBlock.html',1,'BLProfStats']]],
   ['blpdatablock',['BLPDataBlock',['../structBLProfStats_1_1BLPDataBlock.html#a5e9006da23c471e5e375d6995d7ad30c',1,'BLProfStats::BLPDataBlock::BLPDataBlock()'],['../structBLProfStats_1_1BLPDataBlock.html#afd73e4277d05cc2d0b08c1a49a7b3dfa',1,'BLProfStats::BLPDataBlock::BLPDataBlock(int p, const std::string &amp;fn, long sp, int si)']]],

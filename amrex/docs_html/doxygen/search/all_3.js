@@ -100,7 +100,7 @@ var searchData=
   ['charvector',['CharVector',['../classamrex_1_1ParticleContainer.html#a5a16b0552ef6daa9f2c4902e11e57128',1,'amrex::ParticleContainer']]],
   ['check',['Check',['../classamrex_1_1VisMF.html#ae12f838572701049902254dfb46eb650',1,'amrex::VisMF']]],
   ['check_5ffile_5froot',['check_file_root',['../classamrex_1_1Amr.html#a006c720b7d8ecf6e603785ab0b82bced',1,'amrex::Amr']]],
-  ['check_5finput',['check_input',['../classamrex_1_1AmrMesh.html#a8d2f6e5a9f3f46c76d44215f83455475',1,'amrex::AmrMesh']]],
+  ['check_5finput',['check_input',['../structamrex_1_1AmrInfo.html#aa5055bd91d26288e720771986e3ae06f',1,'amrex::AmrInfo']]],
   ['check_5fint',['check_int',['../classamrex_1_1Amr.html#aabf4b679fb946c492eecfe38be051333',1,'amrex::Amr']]],
   ['check_5fmvmc',['check_mvmc',['../namespaceamrex_1_1EB2.html#ab8eba97cf6f081ddd33a6eda4ca325f4',1,'amrex::EB2']]],
   ['check_5fper',['check_per',['../classamrex_1_1Amr.html#a9daa98984b300c7a3080d0752f233a0b',1,'amrex::Amr']]],

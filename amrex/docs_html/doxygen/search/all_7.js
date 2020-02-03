@@ -331,7 +331,7 @@ var searchData=
   ['graphtoppct',['GraphTopPct',['../namespaceamrex.html#a171596246077e8bb3d38d0e3a513c481',1,'amrex']]],
   ['greater',['Greater',['../structamrex_1_1Greater.html',1,'amrex']]],
   ['grid',['grid',['../classamrex_1_1HypreABecLap.html#a306b19b425bf46d46607c66da53fb3f6',1,'amrex::HypreABecLap::grid()'],['../structamrex_1_1NeighborParticleContainer_1_1MaskComps.html#ab5d5285dfb6f9c5b20319fc49de0507eadaf17b37e09243ab39ac18d2058d0882',1,'amrex::NeighborParticleContainer::MaskComps::grid()'],['../structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#a73846134b4864b4c40efeb9298005a59',1,'amrex::NeighborParticleContainer::NeighborCopyTag::grid()']]],
-  ['grid_5feff',['grid_eff',['../classamrex_1_1AmrMesh.html#ae75a2551575e5fd697ab4dc8754541ad',1,'amrex::AmrMesh']]],
+  ['grid_5feff',['grid_eff',['../structamrex_1_1AmrInfo.html#a8932f2846ed22b769126d4783f76107a',1,'amrex::AmrInfo']]],
   ['grid_5fid',['grid_id',['../structamrex_1_1NeighborCode.html#aee2840e31f2d1ffeecfa91964072553e',1,'amrex::NeighborCode::grid_id()'],['../structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag.html#a87981192c823ead441020cad8d6a6c08',1,'amrex::NeighborParticleContainer::NeighborCommTag::grid_id()']]],
   ['grid_5fplaces',['grid_places',['../classamrex_1_1Amr.html#a90155667257e3c51890f716ade65c5e7',1,'amrex::Amr']]],
   ['gridandlevtobucket',['gridAndLevToBucket',['../classamrex_1_1ParticleBufferMap.html#a15b5ba876fb8015ff4a1811b5f6ea5f0',1,'amrex::ParticleBufferMap']]],

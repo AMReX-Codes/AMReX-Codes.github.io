@@ -40,7 +40,7 @@ var searchData=
   ['bits',['bits',['../structamrex_1_1algoim_1_1PsiCode.html#a80ddd826639ec72c71ba72a3c6dfc09a',1,'amrex::algoim::PsiCode']]],
   ['bitsmax',['BitsMax',['../namespaceamrex.html#abd60428797a6f8b12bc87f94351665c2',1,'amrex']]],
   ['bl_5fspacedim',['bl_spacedim',['../namespaceamrex__fort__module.html#a75dc0439ac63ce7bbde93929ee9c173c',1,'amrex_fort_module']]],
-  ['blocking_5ffactor',['blocking_factor',['../classamrex_1_1AmrMesh.html#acdbddd33ae38b3d038fcaa14ce05e039',1,'amrex::AmrMesh']]],
+  ['blocking_5ffactor',['blocking_factor',['../structamrex_1_1AmrInfo.html#aec9f071fb0930efe09a4efe35edc4a2f',1,'amrex::AmrInfo']]],
   ['blpdatablocks',['blpDataBlocks',['../classBLProfStats.html#abb120e148e578dea3b6f1a997d54c079',1,'BLProfStats']]],
   ['blpdatafilenames',['blpDataFileNames',['../classBLProfStats.html#a78868d7cea3662827ca187695cb06bf7',1,'BLProfStats']]],
   ['blpdatastreams',['blpDataStreams',['../classBLProfStats.html#a0eabcbf58e2437da683f110ef496c902',1,'BLProfStats']]],

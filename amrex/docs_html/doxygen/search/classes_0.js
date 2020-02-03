@@ -59,6 +59,7 @@ var searchData=
   ['amrex_5freal_5farray_5finit',['amrex_real_array_init',['../interfaceamrex__mempool__module_1_1amrex__real__array__init.html',1,'amrex_mempool_module']]],
   ['amrex_5fstring',['amrex_string',['../structamrex__string__module_1_1amrex__string.html',1,'amrex_string_module']]],
   ['amrex_5ftt',['amrex_tt',['../structamrex_1_1InSituUtils_1_1amrex__tt.html',1,'amrex::InSituUtils']]],
+  ['amrinfo',['AmrInfo',['../structamrex_1_1AmrInfo.html',1,'amrex']]],
   ['amrinsitubridge',['AmrInSituBridge',['../classamrex_1_1AmrInSituBridge.html',1,'amrex']]],
   ['amrlevel',['AmrLevel',['../classamrex_1_1AmrLevel.html',1,'amrex']]],
   ['amrmesh',['AmrMesh',['../classamrex_1_1AmrMesh.html',1,'amrex']]],
