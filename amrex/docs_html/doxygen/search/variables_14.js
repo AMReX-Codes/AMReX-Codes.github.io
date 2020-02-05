@@ -7,6 +7,7 @@ var searchData=
   ['unreadmessages',['unreadMessages',['../classamrex_1_1NFilesIter.html#a8ac006de5caf3cfd0e6456dd6c3b3f2a',1,'amrex::NFilesIter']]],
   ['updatedq',['updatedQ',['../classamrex_1_1XYPlotDataList.html#a3d289d346e68eb126c040ca8a41a5c37',1,'amrex::XYPlotDataList']]],
   ['use_5fanorm_5ffor_5fconvergence',['use_Anorm_for_convergence',['../classamrex_1_1MultiGrid.html#a9f157ec77a3370b2565f0f96b5f1bae8',1,'amrex::MultiGrid']]],
+  ['use_5fcpu_5fmemory',['use_cpu_memory',['../structamrex_1_1ArenaInfo.html#ab026f86170fec3dd5d7c54050ef32dc0',1,'amrex::ArenaInfo']]],
   ['use_5fefficient_5fregrid',['use_efficient_regrid',['../namespaceamrex.html#af1ff4a567f8d0cdc485062507aac9742',1,'amrex']]],
   ['use_5ffixed_5fcoarse_5fgrids',['use_fixed_coarse_grids',['../structamrex_1_1AmrInfo.html#a6a665ee4c81c3b28e36775d7e94ab261',1,'amrex::AmrInfo']]],
   ['use_5ffixed_5fupto_5flevel',['use_fixed_upto_level',['../structamrex_1_1AmrInfo.html#ad9000321def17faf06f9fef5ea304163',1,'amrex::AmrInfo']]],

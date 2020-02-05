@@ -104,7 +104,7 @@ var searchData=
   ['err_5ftype',['err_type',['../classamrex_1_1ErrorRec.html#abc0afb5043187b59f1a7219c50a62cec',1,'amrex::ErrorRec']]],
   ['errfunc',['errFunc',['../classamrex_1_1ErrorRec.html#ac3494812ae400116323aca002a45bc96',1,'amrex::ErrorRec']]],
   ['errfunc2',['errFunc2',['../classamrex_1_1ErrorRec.html#a4431602f7e46b84a8b77f6120675190c',1,'amrex::ErrorRec']]],
-  ['error',['Error',['../classhacc_1_1Error.html#ad1154a83c8009b45e609ece0f5c7b69f',1,'hacc::Error::Error()'],['../namespaceamrex.html#ac0e2e23df625040ded95611ceae98352',1,'amrex::Error(const char *msg=0)'],['../namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4',1,'amrex::Error(const std::string &amp;msg)']]],
+  ['error',['Error',['../classhacc_1_1Error.html#ad1154a83c8009b45e609ece0f5c7b69f',1,'hacc::Error::Error()'],['../namespaceamrex.html#a8dac6076f6d76fedd5506f4a525f2526',1,'amrex::Error(const char *msg=0)'],['../namespaceamrex.html#aaa5d048f7bf7386b6976b10001a5f8b4',1,'amrex::Error(const std::string &amp;msg)']]],
   ['error',['Error',['../classhacc_1_1Error.html',1,'hacc']]],
   ['error_2eh',['Error.h',['../Error_8h.html',1,'']]],
   ['error_5fhandler',['error_handler',['../namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b',1,'amrex::system']]],
