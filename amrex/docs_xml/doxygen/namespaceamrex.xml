@@ -16349,10 +16349,27 @@ Returns the index of the first element for which f is 0. </para>        </detail
         <briefdescription>
 <para>Generate a psuedo-random double using C++11&apos;s mt19937. </para>        </briefdescription>
         <detaileddescription>
-<para>Generates one pseudorandom real number (double) which is uniformly distributed on [0,1)-interval for each call. </para>        </detaileddescription>
+<para>Generates one pseudorandom real number (double) from a normal distribution with mean &apos;mean&apos; and standard deviation &apos;stddev&apos;. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="141" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1afc7b3277bb228fecbca9de6c2857a142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> unsigned int</type>
+        <definition>AMREX_GPU_HOST_DEVICE unsigned int amrex::RandomPoisson</definition>
+        <argsstring>(Real lambda)</argsstring>
+        <name>RandomPoisson</name>
+        <param>
+          <type>Real</type>
+          <declname>lambda</declname>
+        </param>
+        <briefdescription>
+<para>Generate a psuedo-random integer from a Poisson distribution. </para>        </briefdescription>
+        <detaileddescription>
+<para>Generates one pseudorandom positive integer number (double) extracted from a Poisson distribution, given the Real parameter lambda. The CPU version of this function relies on the standard Template Library The GPU version of this function relies on the cuRAND library </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="36" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae6d24c34f5165da0e406a9cbf67468ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> unsigned int</type>
@@ -16369,7 +16386,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>The CPU version of this function uses C++11&apos;s mt19937. The GPU version uses CURAND&apos;s XORWOW generator. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="43" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="179" bodyend="212"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="54" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="213" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2a7207d6ff497c0e70b0cb11e24ba1dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1af7feff7858c7b1d3557509d883c46674" kindref="member">AMREX_GPU_HOST</ref> unsigned long</type>
@@ -16386,7 +16403,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>The CPU version of this function uses C++11&apos;s mt19937. There is no GPU version. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="215" bodyend="224"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="249" bodyend="258"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a063e0c5d4ce2c053f2ed607639481832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16408,7 +16425,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>There is also an entry point for Fortran callable as:</para><para>INTEGER seed call blutilinitrand(seed)</para><para>or</para><para>INTEGER seed call blinitrand(seed) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="51" bodyend="75"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="51" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a404b0ad92acc3684ad1e12ef7746d0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16425,7 +16442,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="284" bodyend="346"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="318" bodyend="380"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a916b42a59d03ab2bbefddf68e90be0e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16442,7 +16459,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="278" bodyend="281"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="312" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4125d429c379e2c09dd742aa6acc1e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16459,7 +16476,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="80" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="91" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad1b283df95b292f478597bc503170459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16476,7 +16493,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="227" bodyend="232"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="261" bodyend="266"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16501,7 +16518,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="235" bodyend="252"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="269" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16531,7 +16548,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="255" bodyend="276"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="110" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="289" bodyend="310"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aaf97cdbc0db387b57d9641d57cce591e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16552,7 +16569,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="375" bodyend="398"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="117" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="409" bodyend="432"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16565,7 +16582,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="116" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="349" bodyend="372"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="127" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="383" bodyend="406"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1e3af8577a1ee3509e9bd184d2ab575a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>

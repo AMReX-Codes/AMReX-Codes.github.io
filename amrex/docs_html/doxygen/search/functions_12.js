@@ -5,6 +5,7 @@ var searchData=
   ['random_5fint',['Random_int',['../namespaceamrex.html#ae6d24c34f5165da0e406a9cbf67468ff',1,'amrex']]],
   ['random_5flong',['Random_long',['../namespaceamrex.html#a2a7207d6ff497c0e70b0cb11e24ba1dd',1,'amrex']]],
   ['randomnormal',['RandomNormal',['../namespaceamrex.html#a7a3e7f3dbd08e24258d851e2c191d2e9',1,'amrex']]],
+  ['randompoisson',['RandomPoisson',['../namespaceamrex.html#afc7b3277bb228fecbca9de6c2857a142',1,'amrex']]],
   ['range',['Range',['../namespaceamrex_1_1Gpu.html#a5a7e65f26ef2a8d356ebef518f007aaf',1,'amrex::Gpu']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#ad4f7d96980fc27cd61042157159e0b4a',1,'amrex::Gpu::range_detail::range_impl']]],
   ['rangeintersection',['RangeIntersection',['../classBLProfStats.html#a286eebba7a2e37000c01614ea347b24c',1,'BLProfStats']]],
