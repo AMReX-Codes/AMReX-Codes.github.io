@@ -256,6 +256,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5830766b42f260b125443b90f40b0a96"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a5830766b42f260b125443b90f40b0a96">ManualTagsPlacement</a> (int lev, <a class="el" href="classamrex_1_1TagBoxArray.html">TagBoxArray</a> &amp;tags, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &gt; &amp;bf_lev)</td></tr>
 <tr class="memdesc:a5830766b42f260b125443b90f40b0a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually tag. Note that tags is built on level lev grids coarsened by bf_lev[lev].  <a href="#a5830766b42f260b125443b90f40b0a96">More...</a><br /></td></tr>
 <tr class="separator:a5830766b42f260b125443b90f40b0a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbaae898cb81337d8f8c84780f36db3e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#abbaae898cb81337d8f8c84780f36db3e">PostProcessBaseGrids</a> (<a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;box_array) const </td></tr>
+<tr class="separator:abbaae898cb81337d8f8c84780f36db3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9650ac46b08412a6d487deee85930294"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#a9650ac46b08412a6d487deee85930294">GetAreaNotToTag</a> (int lev)</td></tr>
 <tr class="separator:a9650ac46b08412a6d487deee85930294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab386f620b52b8c696aeafbfb86a18cc7"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1AmrMesh.html#ab386f620b52b8c696aeafbfb86a18cc7">CountCells</a> (int lev) noexcept</td></tr>
@@ -1598,6 +1600,33 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abbaae898cb81337d8f8c84780f36db3e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void amrex::AmrMesh::PostProcessBaseGrids </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1BoxArray.html">BoxArray</a> &amp;&#160;</td>
+          <td class="paramname"><em>box_array</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Apply some user-defined changes the to base grids.</p>
+<p>This function is only called by MakeNewGrids after computing a box array for the coarsest level and before calling MakeNewLevelFromScratch.</p>
+<p>For example, use this function if you want to remove covered grids on the coarsest refinement level. </p>
 
 </div>
 </div>

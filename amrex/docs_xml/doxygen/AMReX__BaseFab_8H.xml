@@ -4532,7 +4532,7 @@
 <codeline lineno="1526"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="1527" refid="classamrex_1_1BaseFab_1a87880711ecbed852b69d6a91e4eef3d4" refkind="member"><highlight class="normal"><ref refid="classamrex_1_1BaseFab_1a87880711ecbed852b69d6a91e4eef3d4" kindref="member">BaseFab&lt;T&gt;::~BaseFab</ref><sp/>()<sp/>noexcept</highlight></codeline>
 <codeline lineno="1528"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1529"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1529"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__CUDA_ARCH__)<sp/>&amp;&amp;<sp/>!defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1530"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BaseFab_1ae428e6a2645141dd817c288331575f26" kindref="member">clear</ref>();</highlight></codeline>
 <codeline lineno="1531"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1532"><highlight class="normal">}</highlight></codeline>
@@ -5521,7 +5521,7 @@
 <codeline lineno="2515"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1afee333c49bcfdf12a3ccc051cd2f7406" kindref="member">amrex::Loop</ref>(destbox,<sp/>numcomp,<sp/>[=]<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/><ref refid="AMReX__Extension_8H_1abe8397e5c6100f07a88e17e044c46438" kindref="member">AMREX_NOEXCEPT</ref><sp/></highlight></codeline>
 <codeline lineno="2516"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T*<sp/>p<sp/>=<sp/>d.<ref refid="structamrex_1_1Array4_1a0951dd1a1e6d5b4f5a41c4cae335f6f1" kindref="member">ptr</ref>(i,j,k,n+destcomp);</highlight></codeline>
-<codeline lineno="2518"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2518"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__CUDA_ARCH__)<sp/>&amp;&amp;<sp/>!defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2519"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2520"><highlight class="normal">_Pragma(</highlight><highlight class="stringliteral">&quot;omp<sp/>atomic<sp/>update&quot;</highlight><highlight class="normal">)</highlight></codeline>
 <codeline lineno="2521"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>

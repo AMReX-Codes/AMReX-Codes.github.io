@@ -1271,7 +1271,7 @@
 <codeline lineno="26"><highlight class="normal">Real</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><ref refid="namespaceamrex_1_1EB2_1a26665fe0c584ed57e499dbbcd2ace388" kindref="member">IF_f</ref><sp/>(F<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>f,<sp/><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray&lt;Real,AMREX_SPACEDIM&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>p)<sp/>noexcept</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)<sp/>||<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8dac6076f6d76fedd5506f4a525f2526" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;EB2::GeometryShop:<sp/>how<sp/>did<sp/>this<sp/>happen?&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>

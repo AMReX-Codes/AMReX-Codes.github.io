@@ -1718,7 +1718,7 @@
 <codeline lineno="158"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><ref refid="namespaceamrex_1a8dac6076f6d76fedd5506f4a525f2526" kindref="member">amrex::Error</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg)</highlight></codeline>
 <codeline lineno="160"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)<sp/>||<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__APPLE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg)<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>msg);</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HIP<sp/>FIX<sp/>HERE<sp/>-<sp/>assert</highlight><highlight class="normal"></highlight></codeline>
@@ -1749,7 +1749,7 @@
 <codeline lineno="189"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><ref refid="namespaceamrex_1ae4469c03083f24bdf09917671afc28e2" kindref="member">amrex::Abort</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg)</highlight></codeline>
 <codeline lineno="191"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)<sp/>||<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__APPLE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg)<sp/>printf(</highlight><highlight class="stringliteral">&quot;Abort<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>msg);</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HIP<sp/>FIX<sp/>HERE<sp/>-<sp/>assert</highlight><highlight class="normal"></highlight></codeline>
@@ -1783,7 +1783,7 @@
 <codeline lineno="223"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><ref refid="namespaceamrex_1af4b0e1bbc308372c87c69b0dfb2b4e2c" kindref="member">amrex::Warning</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg)</highlight></codeline>
 <codeline lineno="225"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)<sp/>||<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(__APPLE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg)<sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>msg);</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
@@ -1808,7 +1808,7 @@
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>line,</highlight></codeline>
 <codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg)</highlight></codeline>
 <codeline lineno="250"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_DEVICE_COMPILE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__CUDA_ARCH__)<sp/>||<sp/>defined(__HIP_DEVICE_COMPILE__)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">//<sp/>HIP<sp/>FIX<sp/>HERE<sp/>-<sp/>printf<sp/>&amp;<sp/>assert</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
 <codeline lineno="254"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
