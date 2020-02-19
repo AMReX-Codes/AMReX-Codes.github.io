@@ -3592,6 +3592,9 @@
     <member refid="classamrex_1_1FabArrayBase_1a7a4ed8b70e3aa4c3ddd3a24fb1c0f3a0" kind="function"><name>IndexArray</name></member>
     <member refid="classamrex_1_1FabArrayBase_1aa848db21ec5426fab2c86d441cd0a314" kind="function"><name>localindex</name></member>
     <member refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" kind="function"><name>DistributionMap</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a641ffe22574cc57f3544687b3e23d174" kind="function"><name>is_nodal</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a90447f2e6d22e5e0e06a538fd37063d5" kind="function"><name>is_nodal</name></member>
+    <member refid="classamrex_1_1FabArrayBase_1a60aa58517fd2a7d6976e114df171df25" kind="function"><name>is_cell_centered</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a76a6089045a5d690f809bd0d2e7c51ab" kind="function"><name>nGrowFilled</name></member>
     <member refid="classamrex_1_1FabArrayBase_1a2ad51584223d99ae31e86bf9a21c10b7" kind="function"><name>setNGrowFilled</name></member>
     <member refid="classamrex_1_1FabArrayBase_1aa0cb5039380dc0545d40ac5ac6589943" kind="function"><name>getBDKey</name></member>
@@ -8057,6 +8060,7 @@
     <member refid="classamrex_1_1MLNodeLinOp_1af4d1bfea4dae502fae40e6b71fd4deae" kind="variable"><name>m_coarsening_strategy</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" kind="variable"><name>m_is_bottom_singular</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a2bb5e031c87b6bdf67618f9c25dc6945" kind="variable"><name>m_masks_built</name></member>
+    <member refid="classamrex_1_1MLNodeLinOp_1a7c0bb3eeb87e33f76c055d78e1e68df2" kind="variable"><name>m_overset_dirichlet_mask</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1aaf264472c0b70b5588a04b930fbcd8ff" kind="function"><name>MLNodeLinOp</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a07faf757bcc476afe8bf3b88997d3039" kind="function"><name>~MLNodeLinOp</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a712873309064abf30aafcb2d277890fb" kind="function"><name>MLNodeLinOp</name></member>
@@ -8085,6 +8089,7 @@
     <member refid="classamrex_1_1MLNodeLinOp_1a0e91f952317f3b9bfb4c20bb68624e1b" kind="function"><name>nodalSync</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a5fffb41bbd6d2ee5cf4454e0e3768898" kind="function"><name>makeNLinOp</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1aa43fb0696cb5782669c8ee368b743099" kind="function"><name>buildMasks</name></member>
+    <member refid="classamrex_1_1MLNodeLinOp_1ac1af7651e37b6f38c778ad960b422fb7" kind="function"><name>setDirichletMask</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1ae050e4fda0843b175da8fbcfb8462392" kind="function"><name>makeOwnerMask</name></member>
   </compound>
   <compound refid="classamrex_1_1MLNodeTensorLaplacian" kind="class"><name>amrex::MLNodeTensorLaplacian</name>
@@ -8255,9 +8260,6 @@
     <member refid="classamrex_1_1MultiFab_1a402bc5b94a219d842b9a08e65d4ce09b" kind="function"><name>contains_inf</name></member>
     <member refid="classamrex_1_1MultiFab_1af5abd5e4577108a653e637dac02f308b" kind="function"><name>contains_inf</name></member>
     <member refid="classamrex_1_1MultiFab_1a26a9ffa47061807fedcbaf1e4dc0d435" kind="function"><name>contains_inf</name></member>
-    <member refid="classamrex_1_1MultiFab_1a29d34be8f1e6913c84851d9ecd1f9309" kind="function"><name>is_nodal</name></member>
-    <member refid="classamrex_1_1MultiFab_1ac6e567ab1a1bfe316a09b5ee330f1006" kind="function"><name>is_nodal</name></member>
-    <member refid="classamrex_1_1MultiFab_1a3cb26050723d9be7257b33a5a3aef0c6" kind="function"><name>is_cell_centered</name></member>
     <member refid="classamrex_1_1MultiFab_1ab3b15c5f85845b1b7dafcd6def6855a1" kind="function"><name>SumBoundary</name></member>
     <member refid="classamrex_1_1MultiFab_1a95b52956ecdc023461c8b7314a19b6e2" kind="function"><name>SumBoundary</name></member>
     <member refid="classamrex_1_1MultiFab_1a3d63da87774cb41734a069e5aa693bd3" kind="function"><name>SumBoundary</name></member>
@@ -11537,7 +11539,6 @@
     <member refid="namespaceamrex_1a84e55e433b2972354d98a0684f7f1394" kind="function"><name>average_down_edges</name></member>
     <member refid="namespaceamrex_1a3d6739058267b9ba2aed9936247f49fe" kind="function"><name>average_down_edges</name></member>
     <member refid="namespaceamrex_1ab744a797b85135257add34a49c96c734" kind="function"><name>average_down_edges</name></member>
-    <member refid="namespaceamrex_1a3795638a61ae48497973d403094799b4" kind="function"><name>average_down_nodal</name></member>
     <member refid="namespaceamrex_1af9853b376b9431740468fdf9e549553d" kind="function"><name>print_state</name></member>
     <member refid="namespaceamrex_1a78ee47545ca66e809f4f680e7513cbd5" kind="function"><name>writeFabs</name></member>
     <member refid="namespaceamrex_1aa9f903b417da5fb1d02ea65d0bbf8934" kind="function"><name>writeFabs</name></member>
@@ -11549,6 +11550,7 @@
     <member refid="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" kind="function"><name>computeDivergence</name></member>
     <member refid="namespaceamrex_1add6ef1af4714e90f5d0b5a098725612b" kind="function"><name>computeGradient</name></member>
     <member refid="namespaceamrex_1a3c86d50daeca979098e4b1c7e34d0cf8" kind="function"><name>periodicShift</name></member>
+    <member refid="namespaceamrex_1a317539bf02f01cd6f5c4a89d1943c9d6" kind="function"><name>average_down_nodal</name></member>
     <member refid="namespaceamrex_1a60886a6799fb7ae612bf30d74a493a26" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a78142d53611f8627f6d68afd0779ef54" kind="function"><name>makeFineMask</name></member>
     <member refid="namespaceamrex_1a478148eaeebd74ddc7956806c55fa2cb" kind="function"><name>makeFineMask</name></member>
@@ -11563,7 +11565,7 @@
     <member refid="namespaceamrex_1a109c46b5483580c36d8bbe38bfe0c490" kind="function"><name>amrex_avgdown_edges</name></member>
     <member refid="namespaceamrex_1aca2c9cfd2ca7c95d209412f983352224" kind="function"><name>amrex_avgdown</name></member>
     <member refid="namespaceamrex_1a7aa8ba815d817fa8e642d1461beec20a" kind="function"><name>amrex_avgdown_with_vol</name></member>
-    <member refid="namespaceamrex_1ac3b0fae1ef1ed011ef5e8affdba23107" kind="function"><name>amrex_avgdown_nodes</name></member>
+    <member refid="namespaceamrex_1ac8d460b921f64cdb2166fd5a8661da93" kind="function"><name>amrex_avgdown_nodes</name></member>
     <member refid="namespaceamrex_1af5b13841203afb3484b9ecb2781d2dd0" kind="function"><name>amrex_compute_divergence</name></member>
     <member refid="namespaceamrex_1a1b541d0199de0ac38907fc7440534b48" kind="function"><name>amrex_compute_gradient</name></member>
     <member refid="namespaceamrex_1ab1aad7e5994e7eb252c551aa1fb87905" kind="function"><name>amrex_avg_eg_to_cc</name></member>

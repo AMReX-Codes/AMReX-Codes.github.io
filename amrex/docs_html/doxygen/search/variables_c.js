@@ -325,6 +325,7 @@ var searchData=
   ['m_5fok',['m_ok',['../classamrex_1_1EB2_1_1Level.html#acdef1c2b11c62f8e02b1a4806de74376',1,'amrex::EB2::Level']]],
   ['m_5fout',['m_out',['../classamrex_1_1ParallelContext_1_1Frame.html#a9137c45cc574cabfd0194ab8ed082116',1,'amrex::ParallelContext::Frame']]],
   ['m_5fout_5ffilename',['m_out_filename',['../classamrex_1_1ParallelContext_1_1Frame.html#a3ae9cdc97369e2f1381f095af24e497e',1,'amrex::ParallelContext::Frame']]],
+  ['m_5foverset_5fdirichlet_5fmask',['m_overset_dirichlet_mask',['../classamrex_1_1MLNodeLinOp.html#a7c0bb3eeb87e33f76c055d78e1e68df2',1,'amrex::MLNodeLinOp']]],
   ['m_5fowner',['m_owner',['../classamrex_1_1CArena_1_1Node.html#a8d1a994928ff734df597327f22db12dd',1,'amrex::CArena::Node::m_owner()'],['../structamrex_1_1EArena_1_1Node.html#a8f0286fae08719933cb4848f028ac40a',1,'amrex::EArena::Node::m_owner()']]],
   ['m_5fowner_5fmask',['m_owner_mask',['../classamrex_1_1MLNodeLinOp.html#a192598f12e56d51e8f952913e8fdf72c',1,'amrex::MLNodeLinOp']]],
   ['m_5fownership',['m_ownership',['../structamrex_1_1DistributionMapping_1_1Ref.html#a2f337d4047cb7af6c2c86b6a56ff0523',1,'amrex::DistributionMapping::Ref']]],
