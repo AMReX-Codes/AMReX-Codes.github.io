@@ -133,7 +133,7 @@ var searchData=
   ['getdx',['getDx',['../classamrex_1_1LinOp.html#a61745f14570d6a595ab67ec1bf283c18',1,'amrex::LinOp']]],
   ['getdynamic',['GetDynamic',['../classamrex_1_1NFilesIter.html#a3d067784807ec260a253c8b4339fbab4',1,'amrex::NFilesIter']]],
   ['getebcellflagfab',['getEBCellFlagFab',['../classamrex_1_1EBFArrayBox.html#a0ccb2fd85a79dd142b6f80c1b105a916',1,'amrex::EBFArrayBox::getEBCellFlagFab()'],['../namespaceamrex.html#aa4a3bfe1c0cd2c7c8632d1f0ee21b2ec',1,'amrex::getEBCellFlagFab()']]],
-  ['getebfluxes',['getEBFluxes',['../classamrex_1_1MLEBABecLap.html#a8fa379b3806777ae16b27b2e085b2900',1,'amrex::MLEBABecLap']]],
+  ['getebfluxes',['getEBFluxes',['../classamrex_1_1MLEBABecLap.html#a5bc7b648df895d5ff5402e2ddcf9605c',1,'amrex::MLEBABecLap']]],
   ['getebindexspace',['getEBIndexSpace',['../classamrex_1_1EB2_1_1Level.html#a1c5bf0b16ab52e799b8830fd149c0f62',1,'amrex::EB2::Level::getEBIndexSpace()'],['../classamrex_1_1EBFArrayBoxFactory.html#a563d6e997d0a0bae411fe8bbcd9306bf',1,'amrex::EBFArrayBoxFactory::getEBIndexSpace()']]],
   ['geteblevel',['getEBLevel',['../classamrex_1_1EBFArrayBoxFactory.html#a706b6b91efaa582b01395c767d7e791c',1,'amrex::EBFArrayBoxFactory']]],
   ['getedgeboxarray',['getEdgeBoxArray',['../classamrex_1_1AmrLevel.html#ad3cf13198c2fc19f4d692b5282b1ddc5',1,'amrex::AmrLevel']]],
