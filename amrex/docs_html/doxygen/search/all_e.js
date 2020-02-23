@@ -348,6 +348,6 @@ var searchData=
   ['numthreads',['numThreads',['../structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017',1,'amrex::Gpu::GridSize']]],
   ['numthreadsperblockparallelfor',['numThreadsPerBlockParallelFor',['../namespaceamrex_1_1Gpu.html#a9ac3f1c6e71f0842b8f152fce7e4a7fb',1,'amrex::Gpu']]],
   ['numtotalparticles',['numTotalParticles',['../classamrex_1_1ArrayOfStructs.html#affe81ab7ae3f756aadc5a8b7ae68039b',1,'amrex::ArrayOfStructs::numTotalParticles()'],['../structamrex_1_1ParticleTile.html#a4b41c54867f5d9ebac044ed58d21410f',1,'amrex::ParticleTile::numTotalParticles()'],['../structamrex_1_1StructOfArrays.html#a40f73f88c20b82b96dfba7fcce975759',1,'amrex::StructOfArrays::numTotalParticles()']]],
-  ['nuse',['nuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#ab1660586b93a1c418a659ac9d836e833',1,'amrex::FabArrayBase::CacheStats::nuse()'],['../structamrex_1_1FabArrayBase_1_1TileArray.html#a0a2af2655e0205f6bf46bf2876d4f229',1,'amrex::FabArrayBase::TileArray::nuse()']]],
+  ['nuse',['nuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#ab1660586b93a1c418a659ac9d836e833',1,'amrex::FabArrayBase::CacheStats::nuse()'],['../structamrex_1_1FabArrayBase_1_1TileArray.html#a0826ccae72dc72a249ad36475ca86bdb',1,'amrex::FabArrayBase::TileArray::nuse()']]],
   ['nvar',['nvar',['../classamrex_1_1BaseFab.html#a99b1638f6702821a6b6e63cb860d938f',1,'amrex::BaseFab::nvar()'],['../classamrex_1_1BaseUmap.html#afff9dd7123b0033209dc8e53723c9ce6',1,'amrex::BaseUmap::nvar()']]]
 ];

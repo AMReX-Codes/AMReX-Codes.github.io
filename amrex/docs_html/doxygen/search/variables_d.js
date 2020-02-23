@@ -130,6 +130,6 @@ var searchData=
   ['numpoints',['numPoints',['../classamrex_1_1XYPlotDataList.html#af4eefbcd2078aa5c3e7a3ddfb678fb78',1,'amrex::XYPlotDataList']]],
   ['numpts',['numpts',['../classamrex_1_1BaseUmap.html#a5420c2fdbb1aafae7a455ce7b5cb8267',1,'amrex::BaseUmap']]],
   ['numthreads',['numThreads',['../structamrex_1_1Gpu_1_1GridSize.html#af91022d872655d7aad5ba0d072db7017',1,'amrex::Gpu::GridSize']]],
-  ['nuse',['nuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#ab1660586b93a1c418a659ac9d836e833',1,'amrex::FabArrayBase::CacheStats::nuse()'],['../structamrex_1_1FabArrayBase_1_1TileArray.html#a0a2af2655e0205f6bf46bf2876d4f229',1,'amrex::FabArrayBase::TileArray::nuse()']]],
+  ['nuse',['nuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#ab1660586b93a1c418a659ac9d836e833',1,'amrex::FabArrayBase::CacheStats::nuse()'],['../structamrex_1_1FabArrayBase_1_1TileArray.html#a0826ccae72dc72a249ad36475ca86bdb',1,'amrex::FabArrayBase::TileArray::nuse()']]],
   ['nvar',['nvar',['../classamrex_1_1BaseFab.html#a99b1638f6702821a6b6e63cb860d938f',1,'amrex::BaseFab::nvar()'],['../classamrex_1_1BaseUmap.html#afff9dd7123b0033209dc8e53723c9ce6',1,'amrex::BaseUmap::nvar()']]]
 ];
