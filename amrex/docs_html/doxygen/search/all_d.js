@@ -605,7 +605,7 @@ var searchData=
   ['maxtag',['MaxTag',['../namespaceamrex_1_1ParallelDescriptor.html#ab1375009d4e5cd0730cada71e3f18c33',1,'amrex::ParallelDescriptor']]],
   ['maxtopnodenum',['maxTopNodeNum',['../AMReX__CommProfStats_8cpp.html#a5499430eba2a089dfb688e261d488394',1,'AMReX_CommProfStats.cpp']]],
   ['maxtries',['maxTries',['../classamrex_1_1StreamRetry.html#a19edc2eb7f1dc9251a5de7ff754e12d0',1,'amrex::StreamRetry']]],
-  ['maxuse',['maxuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a12603fe9f0ebd8dadb43060b0a189f60',1,'amrex::FabArrayBase::CacheStats']]],
+  ['maxuse',['maxuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a6608f4c6b8079f3ce5741e2815cda0bb',1,'amrex::FabArrayBase::CacheStats']]],
   ['mcbc_5fmode',['MCBC_Mode',['../namespaceamrex.html#ac6a345f3c5f30b5d97087d43bbf1c7ae',1,'amrex']]],
   ['mccgsolver',['MCCGSolver',['../classamrex_1_1MCCGSolver.html',1,'amrex']]],
   ['mccgsolver',['MCCGSolver',['../classamrex_1_1MCCGSolver.html#ab55bf033f00e65a388658d9956f666c4',1,'amrex::MCCGSolver::MCCGSolver(MCLinOp &amp;_lp, bool _use_mg_precond=false, int _lev=0)'],['../classamrex_1_1MCCGSolver.html#af7ee3ecbb71ab8437ffddd5e8ca3870d',1,'amrex::MCCGSolver::MCCGSolver(const MCCGSolver &amp;)']]],

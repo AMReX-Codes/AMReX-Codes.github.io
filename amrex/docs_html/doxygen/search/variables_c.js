@@ -515,7 +515,7 @@ var searchData=
   ['maxrnumber',['maxRNumber',['../classBLProfStats.html#a0a0a7ce2c13259d6280d6f82cb4971f7',1,'BLProfStats']]],
   ['maxsize',['maxsize',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a3ecc000d62df91bdbdd6ee43745cb2d0',1,'amrex::FabArrayBase::CacheStats']]],
   ['maxtries',['maxTries',['../classamrex_1_1StreamRetry.html#a19edc2eb7f1dc9251a5de7ff754e12d0',1,'amrex::StreamRetry']]],
-  ['maxuse',['maxuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a12603fe9f0ebd8dadb43060b0a189f60',1,'amrex::FabArrayBase::CacheStats']]],
+  ['maxuse',['maxuse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a6608f4c6b8079f3ce5741e2815cda0bb',1,'amrex::FabArrayBase::CacheStats']]],
   ['mesh',['Mesh',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a73392d6df8f6909a9faf79995eba567f',1,'amrex::AmrMeshDataAdaptor::InternalsType']]],
   ['message_5fint',['message_int',['../classamrex_1_1Amr.html#a37d45dad31dd3b070c0a14578937365b',1,'amrex::Amr']]],
   ['mffile_5fnstreams',['mffile_nstreams',['../namespaceamrex.html#a5b71dcdf9f42d1ea8bf9c95f24d150b4',1,'amrex']]],

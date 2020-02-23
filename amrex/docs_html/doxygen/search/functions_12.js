@@ -54,7 +54,7 @@ var searchData=
   ['record',['Record',['../classamrex_1_1ParmParse_1_1Record.html#a1abd8a0d1f3c8c3d601de87326b0e66c',1,'amrex::ParmParse::Record']]],
   ['recordbuild',['recordBuild',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a83dcba41161d5a1672578ee871232dfa',1,'amrex::FabArrayBase::CacheStats::recordBuild()'],['../structamrex_1_1FabArrayBase_1_1FabArrayStats.html#ae05279827e8393a4494478d1885e2c2b',1,'amrex::FabArrayBase::FabArrayStats::recordBuild()']]],
   ['recorddelete',['recordDelete',['../structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a117c2d4187d31c7a6e0c6da477e381d0',1,'amrex::FabArrayBase::FabArrayStats']]],
-  ['recorderase',['recordErase',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#ad5b0a149bdeafb7efdf4d377e1b4e7f7',1,'amrex::FabArrayBase::CacheStats']]],
+  ['recorderase',['recordErase',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a2ef1975b0896c4ac1ea709c3006bb5c9',1,'amrex::FabArrayBase::CacheStats']]],
   ['recordmaxnumbause',['recordMaxNumBAUse',['../structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a6fc4a42952792e21c6af56f1b7d38799',1,'amrex::FabArrayBase::FabArrayStats']]],
   ['recordmaxnumboxarrays',['recordMaxNumBoxArrays',['../structamrex_1_1FabArrayBase_1_1FabArrayStats.html#a79668291012755d981986b35942faa12',1,'amrex::FabArrayBase::FabArrayStats']]],
   ['recorduse',['recordUse',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a07a1075ba91654c00909193f65076bc1',1,'amrex::FabArrayBase::CacheStats']]],
