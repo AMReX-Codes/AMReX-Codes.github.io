@@ -22,9 +22,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" line="216" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="216" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1NeighborList_1a2ea62ded4992735d023acf06f5f8da56" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1ad6c6e91c90e801f44c429c7b32abd257" kindref="member">Gpu::ManagedVector</ref>&lt; unsigned int &gt;</type>
-        <definition>Gpu::ManagedVector&lt;unsigned int&gt; amrex::NeighborList&lt; ParticleType &gt;::m_nbor_offsets</definition>
+      <memberdef kind="variable" id="classamrex_1_1NeighborList_1aa4802374875adf70531e733654308316" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned int &gt;</type>
+        <definition>Gpu::DeviceVector&lt;unsigned int&gt; amrex::NeighborList&lt; ParticleType &gt;::m_nbor_offsets</definition>
         <argsstring></argsstring>
         <name>m_nbor_offsets</name>
         <briefdescription>
@@ -35,9 +35,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" line="219" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="219" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1NeighborList_1aabd022de84840bc3d87fbbe84065bb4e" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1ad6c6e91c90e801f44c429c7b32abd257" kindref="member">Gpu::ManagedVector</ref>&lt; unsigned int &gt;</type>
-        <definition>Gpu::ManagedVector&lt;unsigned int&gt; amrex::NeighborList&lt; ParticleType &gt;::m_nbor_list</definition>
+      <memberdef kind="variable" id="classamrex_1_1NeighborList_1a8df0b0f7eda2e96fc9eb3a1fa768597a" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned int &gt;</type>
+        <definition>Gpu::DeviceVector&lt;unsigned int&gt; amrex::NeighborList&lt; ParticleType &gt;::m_nbor_list</definition>
         <argsstring></argsstring>
         <name>m_nbor_list</name>
         <briefdescription>
@@ -48,9 +48,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" line="220" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="220" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1NeighborList_1a99cd5d3c552e194ff7e6041b812ca6f5" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1ad6c6e91c90e801f44c429c7b32abd257" kindref="member">Gpu::ManagedVector</ref>&lt; unsigned int &gt;</type>
-        <definition>Gpu::ManagedVector&lt;unsigned int&gt; amrex::NeighborList&lt; ParticleType &gt;::m_nbor_counts</definition>
+      <memberdef kind="variable" id="classamrex_1_1NeighborList_1a1de2b2bb7b0bb67975ada3971cbdeb5c" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt; unsigned int &gt;</type>
+        <definition>Gpu::DeviceVector&lt;unsigned int&gt; amrex::NeighborList&lt; ParticleType &gt;::m_nbor_counts</definition>
         <argsstring></argsstring>
         <name>m_nbor_counts</name>
         <briefdescription>
@@ -76,7 +76,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1NeighborList_1af97a040e35ff81dd27121cc4187b93db" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborList_1ac81ea8ed885c56c0d5907eeacd31f850" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class CheckPair</type>
@@ -84,10 +84,10 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::NeighborList&lt; ParticleType &gt;::build</definition>
-        <argsstring>(const Gpu::ManagedVector&lt; ParticleType &gt; &amp;vec, const amrex::Box &amp;bx, const amrex::Geometry &amp;geom, CheckPair check_pair)</argsstring>
+        <argsstring>(const Gpu::DeviceVector&lt; ParticleType &gt; &amp;vec, const amrex::Box &amp;bx, const amrex::Geometry &amp;geom, CheckPair check_pair)</argsstring>
         <name>build</name>
         <param>
-          <type>const <ref refid="namespaceamrex_1_1Gpu_1ad6c6e91c90e801f44c429c7b32abd257" kindref="member">Gpu::ManagedVector</ref>&lt; ParticleType &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt; ParticleType &gt; &amp;</type>
           <declname>vec</declname>
         </param>
         <param>
@@ -198,12 +198,12 @@
     </collaborationgraph>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H" bodystart="87" bodyend="224"/>
     <listofallmembers>
-      <member refid="classamrex_1_1NeighborList_1af97a040e35ff81dd27121cc4187b93db" prot="public" virt="non-virtual"><scope>amrex::NeighborList</scope><name>build</name></member>
+      <member refid="classamrex_1_1NeighborList_1ac81ea8ed885c56c0d5907eeacd31f850" prot="public" virt="non-virtual"><scope>amrex::NeighborList</scope><name>build</name></member>
       <member refid="classamrex_1_1NeighborList_1aad9ab69804553dea8362074835debb75" prot="public" virt="non-virtual"><scope>amrex::NeighborList</scope><name>data</name></member>
       <member refid="classamrex_1_1NeighborList_1ae69ba0154224a168b3b74ad03d50baca" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_bins</name></member>
-      <member refid="classamrex_1_1NeighborList_1a99cd5d3c552e194ff7e6041b812ca6f5" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_nbor_counts</name></member>
-      <member refid="classamrex_1_1NeighborList_1aabd022de84840bc3d87fbbe84065bb4e" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_nbor_list</name></member>
-      <member refid="classamrex_1_1NeighborList_1a2ea62ded4992735d023acf06f5f8da56" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_nbor_offsets</name></member>
+      <member refid="classamrex_1_1NeighborList_1a1de2b2bb7b0bb67975ada3971cbdeb5c" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_nbor_counts</name></member>
+      <member refid="classamrex_1_1NeighborList_1a8df0b0f7eda2e96fc9eb3a1fa768597a" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_nbor_list</name></member>
+      <member refid="classamrex_1_1NeighborList_1aa4802374875adf70531e733654308316" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_nbor_offsets</name></member>
       <member refid="classamrex_1_1NeighborList_1ae9d0c47876a86a0fe9832e56d7158e4c" prot="protected" virt="non-virtual"><scope>amrex::NeighborList</scope><name>m_pstruct</name></member>
       <member refid="classamrex_1_1NeighborList_1a1296a26e437d87f824ecd249accf3a30" prot="public" virt="non-virtual"><scope>amrex::NeighborList</scope><name>numParticles</name></member>
       <member refid="classamrex_1_1NeighborList_1a72ed92cf7d71611d2e9086dd7e603792" prot="public" virt="non-virtual"><scope>amrex::NeighborList</scope><name>print</name></member>
