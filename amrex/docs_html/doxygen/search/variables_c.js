@@ -365,7 +365,6 @@ var searchData=
   ['m_5fproc_5fbox_5foffsets',['m_proc_box_offsets',['../classamrex_1_1ParticleBufferMap.html#a65d85d75d30b1f67500bfa62aff5b162',1,'amrex::ParticleBufferMap']]],
   ['m_5fpstack',['m_pstack',['../classamrex_1_1ParmParse.html#a51bb715c245488837311920be49f0050',1,'amrex::ParmParse']]],
   ['m_5fpstruct',['m_pstruct',['../structamrex_1_1Neighbors_1_1iterator.html#a51ec60ecc69cfd9febd0f9fe434f4ee0',1,'amrex::Neighbors::iterator::m_pstruct()'],['../structamrex_1_1Neighbors.html#a6f7e54c7e968bcc19a372d5458158763',1,'amrex::Neighbors::m_pstruct()'],['../structamrex_1_1NeighborData.html#a376a41a1f6c7090a3455c93ae3d32e5b',1,'amrex::NeighborData::m_pstruct()'],['../classamrex_1_1NeighborList.html#ae9d0c47876a86a0fe9832e56d7158e4c',1,'amrex::NeighborList::m_pstruct()']]],
-  ['m_5fptile_5fr',['m_ptile_r',['../classamrex_1_1ParticleContainer.html#ad9f793fc554ecf058a592ae7736a11f8',1,'amrex::ParticleContainer']]],
   ['m_5fqueried',['m_queried',['../structamrex_1_1ParmParse_1_1PP__entry.html#a4bb1d8e308635fc45190ed25bf7983ee',1,'amrex::ParmParse::PP_entry']]],
   ['m_5fradii',['m_radii',['../classamrex_1_1EB2_1_1EllipsoidIF.html#a1ba71f374b287b623a388dd3c3080135',1,'amrex::EB2::EllipsoidIF']]],
   ['m_5fradius',['m_radius',['../classamrex_1_1EB2_1_1CylinderIF.html#a7c5b05498e0dbdf86a65e6fc719e12ad',1,'amrex::EB2::CylinderIF::m_radius()'],['../classamrex_1_1EB2_1_1SphereIF.html#a3de3a558f56392c6c36976d0a8f21813',1,'amrex::EB2::SphereIF::m_radius()']]],
