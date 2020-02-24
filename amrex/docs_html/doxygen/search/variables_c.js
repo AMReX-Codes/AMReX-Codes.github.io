@@ -226,7 +226,6 @@ var searchData=
   ['m_5findex',['m_index',['../classamrex_1_1FillPatchIteratorHelper.html#aa73689929eae42431f0f210d8bb28fee',1,'amrex::FillPatchIteratorHelper::m_index()'],['../structamrex_1_1BinIterator_1_1iterator.html#afba47c1927bd537e97033eb5f5a6bdab',1,'amrex::BinIterator::iterator::m_index()'],['../structamrex_1_1Neighbors_1_1iterator.html#ab3d7b85eaaaa3603c37bcbdff9b9790a',1,'amrex::Neighbors::iterator::m_index()']]],
   ['m_5findex_5farray',['m_index_array',['../structamrex_1_1DistributionMapping_1_1Ref.html#a89d87a77852f51756c34d02d92cf8656',1,'amrex::DistributionMapping::Ref']]],
   ['m_5finit_5fresnorm0',['m_init_resnorm0',['../classamrex_1_1MLMG.html#a43af172c075ffa6011bfb2e6dc8493b7',1,'amrex::MLMG']]],
-  ['m_5finit_5fval',['m_init_val',['../classamrex_1_1ReduceData.html#aa368ba240dc01245648666561490409b',1,'amrex::ReduceData']]],
   ['m_5finside',['m_inside',['../classamrex_1_1EB2_1_1PolynomialIF.html#adb20f13a740421e91b3b1eb3e95672b1',1,'amrex::EB2::PolynomialIF']]],
   ['m_5finstance',['m_instance',['../classamrex_1_1AMReX.html#ad7909bf4e2448edc26489e346cb367ac',1,'amrex::AMReX::m_instance()'],['../classamrex_1_1EB2_1_1IndexSpace.html#a8d0ae0b87400d58e5fe0e17e947b8f9f',1,'amrex::EB2::IndexSpace::m_instance()']]],
   ['m_5fio_5frank',['m_io_rank',['../classamrex_1_1ParallelContext_1_1Frame.html#a2b4c46fb1ac3129d8c997f52241de7a1',1,'amrex::ParallelContext::Frame']]],
