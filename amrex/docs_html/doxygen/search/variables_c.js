@@ -4,6 +4,7 @@ var searchData=
   ['m_5fa_5fcoeffs',['m_a_coeffs',['../classamrex_1_1MLABecLaplacian.html#a4f2dd2fecc4cbd8df8cdf264330b6cee',1,'amrex::MLABecLaplacian::m_a_coeffs()'],['../classamrex_1_1MLALaplacian.html#aee58cd65c0b079063c4eb55bfd14637a',1,'amrex::MLALaplacian::m_a_coeffs()'],['../classamrex_1_1MLEBABecLap.html#a48c0efb6e525e5c901c1ee34fa5119ca',1,'amrex::MLEBABecLap::m_a_coeffs()']]],
   ['m_5fa_5fscalar',['m_a_scalar',['../classamrex_1_1MLABecLaplacian.html#a56c309c11b2dfa0ae7b4153cbf352329',1,'amrex::MLABecLaplacian::m_a_scalar()'],['../classamrex_1_1MLALaplacian.html#a9f52dcdbaab0fbc216169c6fb4405110',1,'amrex::MLALaplacian::m_a_scalar()'],['../classamrex_1_1MLEBABecLap.html#ac43a9c8728bb7861415d80283d41e064',1,'amrex::MLEBABecLap::m_a_scalar()']]],
   ['m_5fabeclap',['m_abeclap',['../classamrex_1_1MacProjector.html#a6bbf0668ee0f491ae7917f308d2b393a',1,'amrex::MacProjector']]],
+  ['m_5factually_5fused',['m_actually_used',['../classamrex_1_1CArena.html#af3edc78581fb20c7273fbf74494e0c48',1,'amrex::CArena']]],
   ['m_5falloc',['m_alloc',['../classamrex_1_1CArena.html#ad1b240a0437cfcaee6788096d93a1674',1,'amrex::CArena::m_alloc()'],['../classamrex_1_1EArena.html#a3b05dd7697d03b2752d96117fe50bf03',1,'amrex::EArena::m_alloc()']]],
   ['m_5fallregular',['m_allregular',['../classamrex_1_1EB2_1_1Level.html#a16651c9d026bf4c7876a890be6e85253',1,'amrex::EB2::Level']]],
   ['m_5falpha',['m_alpha',['../classamrex_1_1NodalProjector.html#a846ef1b0aef929394274abd16e58914f',1,'amrex::NodalProjector']]],
