@@ -350,7 +350,7 @@ var searchData=
   ['amrex_5fdeposit_5fparticle_5fdx_5fcic',['amrex_deposit_particle_dx_cic',['../AMReX__Particle__mod__K_8H.html#af0c5db284713a5cca84b2bb7cf203097',1,'AMReX_Particle_mod_K.H']]],
   ['amrex_5fderive_2ecpp',['AMReX_Derive.cpp',['../AMReX__Derive_8cpp.html',1,'']]],
   ['amrex_5fderive_2eh',['AMReX_Derive.H',['../AMReX__Derive_8H.html',1,'']]],
-  ['amrex_5fdevice_5fcompile',['AMREX_DEVICE_COMPILE',['../AMReX__GpuQualifiers_8H.html#af3fd70946c7e6a68297e9bc384818a3e',1,'AMReX_GpuQualifiers.H']]],
+  ['amrex_5fdevice_5fcompile',['AMREX_DEVICE_COMPILE',['../AMReX__GpuQualifiers_8H.html#a57609a8d4ed3ca830395e1198e3730af',1,'AMReX_GpuQualifiers.H']]],
   ['amrex_5fdevice_5flaunch',['AMREX_DEVICE_LAUNCH',['../AMReX__BLFort_8H.html#a6b5509459bf56719ba68a6055511fd62',1,'AMReX_BLFort.H']]],
   ['amrex_5fdevice_5flaunchable',['AMREX_DEVICE_LAUNCHABLE',['../AMReX__BLFort_8H.html#ab9b27d9b7f572d06d445893e88fa42d3',1,'AMReX_BLFort.H']]],
   ['amrex_5fdevice_5flaunchable_5fstrided',['AMREX_DEVICE_LAUNCHABLE_STRIDED',['../AMReX__BLFort_8H.html#a084ade7de3577dda5d361184403fa036',1,'AMReX_BLFort.H']]],
