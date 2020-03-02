@@ -34427,6 +34427,224 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="29" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="29" bodyend="45"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1abd6c152a85d947aaf35c1a11e5963f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>NSR</declname>
+            <defname>NSR</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>NSI</declname>
+            <defname>NSI</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>NAR</declname>
+            <defname>NAR</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>NAI</declname>
+            <defname>NAI</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1aeb09e10bb31cfaa6b8928520c9041df9" kindref="member">AMREX_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_INLINE void amrex::copyParticle</definition>
+        <argsstring>(const ParticleTileData&lt; NSR, NSI, NAR, NAI &gt; &amp;dst, const ParticleTileData&lt; NSR, NSI, NAR, NAI &gt; &amp;src, int src_i, int dst_i) noexcept</argsstring>
+        <name>copyParticle</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref>&lt; NSR, NSI, NAR, NAI &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref>&lt; NSR, NSI, NAR, NAI &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>src_i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dst_i</declname>
+        </param>
+        <briefdescription>
+<para>A general single particle copying routine that can run on the GPU. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>NSR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of extra reals in the particle struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NSI</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of extra ints in the particle struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NAR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of reals in the struct-of-arrays </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NAI</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ints in the struct-of-arrays</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index in the source to read from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dst_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index in the destination to write to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="63" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a5e761a0c1a6d048bd220a97be10b2f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>NSR</declname>
+            <defname>NSR</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>NSI</declname>
+            <defname>NSI</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>NAR</declname>
+            <defname>NAR</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>NAI</declname>
+            <defname>NAI</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1aeb09e10bb31cfaa6b8928520c9041df9" kindref="member">AMREX_INLINE</ref> void</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_INLINE void amrex::swapParticle</definition>
+        <argsstring>(const ParticleTileData&lt; NSR, NSI, NAR, NAI &gt; &amp;dst, const ParticleTileData&lt; NSR, NSI, NAR, NAI &gt; &amp;src, int src_i, int dst_i) noexcept</argsstring>
+        <name>swapParticle</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref>&lt; NSR, NSI, NAR, NAI &gt; &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1ParticleTileData" kindref="compound">ParticleTileData</ref>&lt; NSR, NSI, NAR, NAI &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>src_i</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dst_i</declname>
+        </param>
+        <briefdescription>
+<para>A general single particle swapping routine that can run on the GPU. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>NSR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of extra reals in the particle struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NSI</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of extra ints in the particle struct </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NAR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of reals in the struct-of-arrays </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NAI</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>number of ints in the struct-of-arrays</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the destination tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the source tile </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index in the source to read from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dst_i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the index in the destination to write to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="97" bodyend="113"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa8ab4c93999fda4a188134abc5d5bc74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -34481,7 +34699,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="59" bodyend="63"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="127" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="127" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4866e2bfa6dd84f1367d144d67a5b45b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -34582,7 +34800,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="81" bodyend="91"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="149" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="149" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae03ee3a195d7ee3ebcb19d20f9fdce73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -34662,7 +34880,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="107" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="107" bodyend="111"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="175" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="175" bodyend="179"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa97130d61a81b34078846228e608f149" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -34794,7 +35012,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="133" bodyend="143"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="201" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="201" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5926a5d20c4f511675c02ec18cc7c87a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -34895,7 +35113,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="161" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="161" bodyend="165"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="229" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="229" bodyend="233"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2a36a54f57606736a70a2ca6ce223ede" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35059,7 +35277,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="191" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="191" bodyend="202"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="259" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="259" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afc67d96b5c2d4aed00a1f5f676f7a568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35135,7 +35353,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="217" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="217" bodyend="239"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="285" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="285" bodyend="307"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8a49d8e1d3b582340fef005e23f47888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35205,7 +35423,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="253" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="253" bodyend="269"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="321" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="321" bodyend="337"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af6ec82174b9e85180e43d20c64b52b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35312,7 +35530,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="288" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="288" bodyend="310"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="356" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="356" bodyend="378"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9077c8d454492a06a8731ac163bf420b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35413,7 +35631,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="328" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="328" bodyend="344"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="396" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="396" bodyend="412"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a326a3d72298cd5b976db9b5f3d92fba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35541,7 +35759,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="365" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="365" bodyend="389"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="433" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="433" bodyend="457"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a48a8a2f7e4873cb7ffb345759651297a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35670,7 +35888,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="410" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="410" bodyend="427"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="478" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="478" bodyend="495"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab75c7a4946d605a7072d64407df6a6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35767,7 +35985,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="446" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="446" bodyend="455"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="514" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="514" bodyend="523"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae05ffbbcc005cc8c081b859226222c78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -35864,7 +36082,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="474" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="474" bodyend="483"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="542" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="542" bodyend="551"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad2e9cbb8f28bbbba7378ec7bf4654b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
@@ -35965,7 +36183,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="30" bodyend="65"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="32" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="32" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9624cde7b9ad11a1692714a8a2cf4d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36020,7 +36238,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="81" bodyend="84"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="83" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="83" bodyend="86"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af026262a284dc45b1a535e1d2c3da3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36097,7 +36315,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="102" bodyend="121"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="104" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="104" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aede00a5fe66df6418eb44590a33296a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
@@ -36130,7 +36348,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="124" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="124" bodyend="169"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="126" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="126" bodyend="171"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36164,7 +36382,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="173" bodyend="184"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="175" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="175" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36202,7 +36420,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="188" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="188" bodyend="196"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="190" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="190" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7e080a46fe9b809638863cceccfc7536" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -36236,7 +36454,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="200" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="200" bodyend="229"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" line="202" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="202" bodyend="231"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abbcadddcd1b258140dc5cef24f7c7752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
