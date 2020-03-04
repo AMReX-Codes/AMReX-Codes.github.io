@@ -29473,10 +29473,10 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="133" bodyend="136"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a6f517482623b0a9fd0599d43e838fe54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aef1aaa229a2666fd2fe4f94fc816e1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_divu_cf_contrib</definition>
-        <argsstring>(int i, int j, int, Array4&lt; Real &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;fc, Array4&lt; Real const  &gt; const &amp;rhcc, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;lobc, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;hibc) noexcept</argsstring>
+        <argsstring>(int i, int j, int, Array4&lt; Real &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;fc, Array4&lt; Real const  &gt; const &amp;rhcc, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;lobc, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;hibc, bool neumann_doubling) noexcept</argsstring>
         <name>mlndlap_divu_cf_contrib</name>
         <param>
           <type>int</type>
@@ -29534,18 +29534,22 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>hibc</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>neumann_doubling</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="139" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="139" bodyend="146"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="139" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="139" bodyend="147"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a99b1a4d174c080978e7d9a8f9530002d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa48ede068db0c44bb68aba062e95abd5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_crse_resid</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;resid, Array4&lt; Real const  &gt; const &amp;rhs, Array4&lt; int const  &gt; const &amp;msk, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bclo, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bchi) noexcept</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;resid, Array4&lt; Real const  &gt; const &amp;rhs, Array4&lt; int const  &gt; const &amp;msk, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bclo, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bchi, bool neumann_doubling) noexcept</argsstring>
         <name>mlndlap_crse_resid</name>
         <param>
           <type>int</type>
@@ -29583,13 +29587,17 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>bchi</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>neumann_doubling</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="149" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="149" bodyend="153"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="150" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="150" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1acd68feb089bcea67533b0d52a04e5787" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29634,7 +29642,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="156" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="156" bodyend="159"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="158" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="158" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a88a76075add5a80e4086cc4d09b42f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29671,12 +29679,12 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="162" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="162" bodyend="164"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="164" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="164" bodyend="166"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aff0de1db511cb0c3743f6237044c870d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae5fe326c4fa935ebc0a46ef7a6532022" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_res_cf_contrib</definition>
-        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;res, Array4&lt; Real const  &gt; const &amp;phi, Array4&lt; Real const  &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;sig, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, Array4&lt; Real const  &gt; const &amp;fc, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;lobc, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;hibc) noexcept</argsstring>
+        <argsstring>(int i, int j, int k, Array4&lt; Real &gt; const &amp;res, Array4&lt; Real const  &gt; const &amp;phi, Array4&lt; Real const  &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;sig, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, Array4&lt; Real const  &gt; const &amp;fc, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;lobc, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;hibc, bool neumann_doubling) noexcept</argsstring>
         <name>mlndlap_res_cf_contrib</name>
         <param>
           <type>int</type>
@@ -29738,13 +29746,17 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>hibc</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>neumann_doubling</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="167" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="167" bodyend="175"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="169" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="169" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a72ad586c412c2219117fd29065170d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29773,7 +29785,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="178" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="178" bodyend="181"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="181" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="181" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad9c7885c3b7f8beee62e4eed4cacd41d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29802,7 +29814,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="184" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="184" bodyend="185"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="187" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="187" bodyend="188"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa2bfa213f68b94ec6d52e950ef69f93a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29835,7 +29847,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="188" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="188" bodyend="190"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="191" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="191" bodyend="193"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7eb671692a2fd767d3240209ced7c1fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29876,7 +29888,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="193" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="193" bodyend="195"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="196" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="196" bodyend="198"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6d04cb3307d9e49d73cad41a0babb1d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29909,7 +29921,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="198" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="198" bodyend="202"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="201" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="201" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2cd8fb7ff6df6149564638f7a59de049" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29950,7 +29962,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="205" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="205" bodyend="208"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="208" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="208" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a14040c9d7bf4b72046855671121b0389" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -29991,7 +30003,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="211" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="211" bodyend="214"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" line="214" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_1D_K.H" bodystart="214" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa410a164562ee9e9aeac00d30d1c7f7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -30474,10 +30486,10 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="691" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="691" bodyend="710"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a524afefcbccacc0d148ea1e49ca9b7d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a57522147bec9e1e67c192c6f01d47494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_divu_cf_contrib</definition>
-        <argsstring>(int i, int j, int, Array4&lt; Real &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;fc, Array4&lt; Real const  &gt; const &amp;rhcc, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, bool is_rz, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bclo, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bchi) noexcept</argsstring>
+        <argsstring>(int i, int j, int, Array4&lt; Real &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;fc, Array4&lt; Real const  &gt; const &amp;rhcc, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, bool is_rz, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bclo, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bchi, bool neumann_doubling) noexcept</argsstring>
         <name>mlndlap_divu_cf_contrib</name>
         <param>
           <type>int</type>
@@ -30538,13 +30550,17 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>bchi</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>neumann_doubling</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="755" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="755" bodyend="806"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="755" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="755" bodyend="809"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5b33e0f7659fb5f376ea1b40186ad6b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -30592,12 +30608,12 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="857" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="857" bodyend="886"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="862" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="862" bodyend="891"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a96ac1e6c1c1337b3fe457d312dd249cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a3bdc76175ec7ee97d8429f1e7bf3acf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlndlap_res_cf_contrib</definition>
-        <argsstring>(int i, int j, int, Array4&lt; Real &gt; const &amp;res, Array4&lt; Real const  &gt; const &amp;phi, Array4&lt; Real const  &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;sig, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, Array4&lt; Real const  &gt; const &amp;fc, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, bool is_rz, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bclo, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bchi) noexcept</argsstring>
+        <argsstring>(int i, int j, int, Array4&lt; Real &gt; const &amp;res, Array4&lt; Real const  &gt; const &amp;phi, Array4&lt; Real const  &gt; const &amp;rhs, Array4&lt; Real const  &gt; const &amp;sig, Array4&lt; int const  &gt; const &amp;dmsk, Array4&lt; int const  &gt; const &amp;ndmsk, Array4&lt; int const  &gt; const &amp;ccmsk, Array4&lt; Real const  &gt; const &amp;fc, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, Box const &amp;nddom, bool is_rz, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bclo, GpuArray&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;bchi, bool neumann_doubling) noexcept</argsstring>
         <name>mlndlap_res_cf_contrib</name>
         <param>
           <type>int</type>
@@ -30662,13 +30678,17 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; LinOpBCType, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>bchi</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>neumann_doubling</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="908" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="908" bodyend="988"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" line="913" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLap_2D_K.H" bodystart="913" bodyend="996"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab0c9865c5b1258a725682d371c19b80c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
