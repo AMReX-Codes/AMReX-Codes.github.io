@@ -8,7 +8,6 @@ var searchData=
   ['last_5fstep_5fsize',['last_step_size',['../structintegrator__stats__mod_1_1integrator__stats__t.html#a967486a03d35e4f3f96f060be2c89fb4',1,'integrator_stats_mod::integrator_stats_t']]],
   ['ldata',['ldata',['../structsundials__fdlsmat_1_1sundlsmat.html#ad7402694c01cb316aaef13ea18a15116',1,'sundials_fdlsmat::sundlsmat']]],
   ['ldim',['ldim',['../structsundials__fdlsmat_1_1sundlsmat.html#a209b4ae0913e005f2db2a57ef5cea3b4',1,'sundials_fdlsmat::sundlsmat']]],
-  ['left',['left',['../structamrex_1_1KDTree_1_1KDNode.html#a685e13621ebc51f210594a4f96e13140',1,'amrex::KDTree::KDNode']]],
   ['lev',['lev',['../classamrex_1_1CGSolver.html#ae4774aae0b5bef8521ae5f3da0177645',1,'amrex::CGSolver::lev()'],['../classamrex_1_1MCCGSolver.html#aed9b8949788d702a4f659f9edb7215a4',1,'amrex::MCCGSolver::lev()']]],
   ['level',['level',['../classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4',1,'amrex::AmrLevel::level()'],['../structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#a5032d82349c94d0cb1b2949734076a6e',1,'amrex::NeighborParticleContainer::NeighborCopyTag::level()']]],
   ['level_5fcount',['level_count',['../classamrex_1_1Amr.html#a1a1d9a33774055f267ad5297b2846ecc',1,'amrex::Amr']]],

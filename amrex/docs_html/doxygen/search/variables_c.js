@@ -532,7 +532,6 @@ var searchData=
   ['mi_5fb',['mi_b',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a82d4fcf773cefe563a8c7e2ede1ffc27',1,'amrex::Gpu::range_detail::range_impl::iterator']]],
   ['mi_5fi',['mi_i',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#a0e0a281b61e84ce7bed8cff30940b56e',1,'amrex::Gpu::range_detail::range_impl::iterator']]],
   ['mi_5fs',['mi_s',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#af13cf6026e4c914bddbeef8fb7b736de',1,'amrex::Gpu::range_detail::range_impl::iterator']]],
-  ['min_5fbox_5fsize',['min_box_size',['../classamrex_1_1KDTree.html#ab761c95f018a28172421047bf7ca3ca1',1,'amrex::KDTree']]],
   ['min_5fdirk_5fnum',['min_dirk_num',['../namespacefarkode__mod.html#ad13b1e3edbdb364d2145ee8b3e331cbf',1,'farkode_mod']]],
   ['min_5ferk_5fnum',['min_erk_num',['../namespacefarkode__mod.html#af1b3e92d5eb1eadbf6abe46abc2eac8f',1,'farkode_mod']]],
   ['min_5fmap_5fend_5fcomp',['min_map_end_comp',['../classamrex_1_1StateDescriptor.html#aa9eb9d029833fd52f74bcb305d5e00bd',1,'amrex::StateDescriptor']]],

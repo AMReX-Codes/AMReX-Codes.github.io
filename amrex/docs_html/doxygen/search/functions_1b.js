@@ -95,7 +95,6 @@ var searchData=
   ['_7einterphook',['~InterpHook',['../classamrex_1_1InterpHook.html#a1e26496056b32e6492b27c2b91e8d7e7',1,'amrex::InterpHook']]],
   ['_7einterpolater',['~Interpolater',['../classamrex_1_1Interpolater.html#ad53e63eaa9b2b9b140c98f73969f2164',1,'amrex::Interpolater']]],
   ['_7eintersectionif',['~IntersectionIF',['../classamrex_1_1EB2_1_1IntersectionIF.html#aad5e9377f613e713facf475878534a94',1,'amrex::EB2::IntersectionIF']]],
-  ['_7ekdtree',['~KDTree',['../classamrex_1_1KDTree.html#a5bb93334bcc1793b744e78ffc674ff57',1,'amrex::KDTree']]],
   ['_7elaplacian',['~Laplacian',['../classamrex_1_1Laplacian.html#ac629c94ee798d889413ccee727515f34',1,'amrex::Laplacian']]],
   ['_7elatheif',['~LatheIF',['../classamrex_1_1EB2_1_1LatheIF.html#ad6ff8a0ff53f64ca7051a5a9391632c7',1,'amrex::EB2::LatheIF']]],
   ['_7elayoutdata',['~LayoutData',['../classamrex_1_1LayoutData.html#a9214bb32356bf3443aa0383b54bbb195',1,'amrex::LayoutData']]],

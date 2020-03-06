@@ -53,7 +53,6 @@ var searchData=
   ['iif_5fdetail',['IIF_detail',['../namespaceamrex_1_1EB2_1_1IIF__detail.html',1,'amrex::EB2']]],
   ['insituutils',['InSituUtils',['../namespaceamrex_1_1InSituUtils.html',1,'amrex']]],
   ['lazy',['Lazy',['../namespaceamrex_1_1Lazy.html',1,'amrex']]],
-  ['loadbalancekd',['loadBalanceKD',['../namespaceamrex_1_1loadBalanceKD.html',1,'amrex']]],
   ['machine',['machine',['../namespaceamrex_1_1machine.html',1,'amrex']]],
   ['math',['Math',['../namespaceamrex_1_1Math.html',1,'amrex']]],
   ['mfutil',['MFUtil',['../namespaceamrex_1_1MFUtil.html',1,'amrex']]],

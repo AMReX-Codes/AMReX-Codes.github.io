@@ -58,7 +58,6 @@ var searchData=
   ['copyfromproc',['copyFromProc',['../structamrex_1_1FabCopyDescriptor.html#aee8abd3f91100c694b40a498142c1891',1,'amrex::FabCopyDescriptor']]],
   ['cor',['cor',['../classamrex_1_1MultiGrid.html#a6c8266858a017b9d3fc44a1043d0c8bb',1,'amrex::MultiGrid::cor()'],['../classamrex_1_1MCMultiGrid.html#a4f414b6a014ed477cd2a3203d4c807f6',1,'amrex::MCMultiGrid::cor()'],['../classamrex_1_1MLMG.html#aee464af91d358583757fd104da92b407',1,'amrex::MLMG::cor()']]],
   ['cor_5fhold',['cor_hold',['../classamrex_1_1MLMG.html#ad74a7a55ad770900e7028fbfea7119ee',1,'amrex::MLMG']]],
-  ['cost',['cost',['../structamrex_1_1KDTree_1_1KDNode.html#adad170db2ef6d86fd4b273c7b770ea0e',1,'amrex::KDTree::KDNode']]],
   ['counter',['counter',['../classamrex_1_1InSituBridge.html#acba77d88ac888913a071c5a5ec180542',1,'amrex::InSituBridge']]],
   ['countprepost',['countPrePost',['../classamrex_1_1ParticleContainer.html#a5465400ed793453ee62b628d80264a29',1,'amrex::ParticleContainer']]],
   ['covered',['covered',['../namespaceamrex_1_1EB2_1_1Type.html#a7b3494fbc6c0b07ed8a3f6d4255eead0',1,'amrex::EB2::Type::covered()'],['../namespaceamrex__ebcellflag__module.html#a60377c7710b1b811e651e3acc8ad6f66',1,'amrex_ebcellflag_module::covered()']]],

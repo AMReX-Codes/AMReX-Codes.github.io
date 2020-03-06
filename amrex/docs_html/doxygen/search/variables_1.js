@@ -55,7 +55,7 @@ var searchData=
   ['bottom_5fsolver',['bottom_solver',['../classamrex_1_1MLMG.html#a1a607f195669be23b48131ae81e35b25',1,'amrex::MLMG']]],
   ['bottom_5fverbose',['bottom_verbose',['../classamrex_1_1MLMG.html#ae2f4cd61322f224e598377431f47dde5',1,'amrex::MLMG']]],
   ['boundarywidth',['boundaryWidth',['../classamrex_1_1AmrData.html#afe8bc6f5489bcdb1c869821656362357',1,'amrex::AmrData']]],
-  ['box',['box',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a88162269ca5cd1c4e7ffe7259f526b92',1,'amrex::FabArrayBase::FabComTag::box()'],['../structamrex_1_1Gpu_1_1ComponentBox.html#a7f54503bdcb3580672d1f0adc860b3ac',1,'amrex::Gpu::ComponentBox::box()'],['../structamrex_1_1VisMF_1_1FabReadLink.html#ad40376645132122ecd967a0473681454',1,'amrex::VisMF::FabReadLink::box()'],['../structamrex_1_1KDTree_1_1KDNode.html#accd7f64d8ab0dcf20dd6085f8ccb402a',1,'amrex::KDTree::KDNode::box()']]],
+  ['box',['box',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a88162269ca5cd1c4e7ffe7259f526b92',1,'amrex::FabArrayBase::FabComTag::box()'],['../structamrex_1_1Gpu_1_1ComponentBox.html#a7f54503bdcb3580672d1f0adc860b3ac',1,'amrex::Gpu::ComponentBox::box()'],['../structamrex_1_1VisMF_1_1FabReadLink.html#ad40376645132122ecd967a0473681454',1,'amrex::VisMF::FabReadLink::box()']]],
   ['boxarray',['boxarray',['../classamrex_1_1FabArrayBase.html#ae63b22ccabe6c5af01dd0779c60740c8',1,'amrex::FabArrayBase']]],
   ['bproxmapok',['bProxMapOK',['../classCommProfStats.html#a75483e35d9c71b281451d66142e996b9',1,'CommProfStats']]],
   ['bshowbody',['bShowBody',['../classamrex_1_1AmrData.html#ac7742574ff1d7b24879cbac34c7382b6',1,'amrex::AmrData']]],

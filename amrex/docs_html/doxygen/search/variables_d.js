@@ -109,7 +109,6 @@ var searchData=
   ['num_5fint_5fcomm_5fcomps',['num_int_comm_comps',['../classamrex_1_1ParticleContainer.html#a467b9baa24079e72fb9e17178ac3c1e1',1,'amrex::ParticleContainer']]],
   ['num_5flocal_5ftiles',['num_local_tiles',['../classamrex_1_1MFIter.html#a967c3c48ccb4f316911d06fcaccb29fa',1,'amrex::MFIter']]],
   ['num_5fmask_5fcomps',['num_mask_comps',['../classamrex_1_1NeighborParticleContainer.html#a436bb8b4cab5f2079831c68f4d3341ad',1,'amrex::NeighborParticleContainer']]],
-  ['num_5fprocs_5fleft',['num_procs_left',['../structamrex_1_1KDTree_1_1KDNode.html#aa9e6b06a7c3c6359933108939e4e799c',1,'amrex::KDTree::KDNode']]],
   ['num_5freal_5fcomm_5fcomps',['num_real_comm_comps',['../classamrex_1_1ParticleContainer.html#aefbb9c642e9dda5a4b604998e5d65466',1,'amrex::ParticleContainer']]],
   ['num_5fsetdm',['num_setdm',['../classamrex_1_1AmrMesh.html#a2ddfbb3a69cf479f1d28f704d19e4f96',1,'amrex::AmrMesh']]],
   ['num_5fsnds',['num_snds',['../classamrex_1_1NeighborParticleContainer.html#a0223bc2e3edebb49c92f6565ba28dd4e',1,'amrex::NeighborParticleContainer']]],
