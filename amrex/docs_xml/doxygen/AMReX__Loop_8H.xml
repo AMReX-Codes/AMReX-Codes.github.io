@@ -3129,6 +3129,59 @@
       </node>
     </invincdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" prot="public" static="no">
+        <name>AMREX_LOOP_3D</name>
+        <param><defname>bx</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>j</defname></param>
+        <param><defname>k</defname></param>
+        <param><defname>block</defname></param>
+        <initializer>{ \
+    const auto amrex_i_lo = <ref refid="namespaceamrex_1a71600c8a528e0f1863154e4cf0183cbc" kindref="member">amrex::lbound</ref>(bx); \
+    const auto amrex_i_hi = <ref refid="namespaceamrex_1a6ce6b4176121c2c23327903a8139af0c" kindref="member">amrex::ubound</ref>(bx); \
+    for (int k = amrex_i_lo.z; k &lt;= amrex_i_hi.z; ++k) { \
+    for (int j = amrex_i_lo.y; j &lt;= amrex_i_hi.y; ++j) { \
+    for (int i = amrex_i_lo.x; i &lt;= amrex_i_hi.x; ++i) { \
+        block \
+    }}} \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Loop.H" line="213" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Loop.H" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__Loop_8H_1a17fd46bf5cf689e1b3eb8b6f202c065c" prot="public" static="no">
+        <name>AMREX_LOOP_4D</name>
+        <param><defname>bx</defname></param>
+        <param><defname>ncomp</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>j</defname></param>
+        <param><defname>k</defname></param>
+        <param><defname>n</defname></param>
+        <param><defname>block</defname></param>
+        <initializer>{ \
+    const auto amrex_i_lo = <ref refid="namespaceamrex_1a71600c8a528e0f1863154e4cf0183cbc" kindref="member">amrex::lbound</ref>(bx); \
+    const auto amrex_i_hi = <ref refid="namespaceamrex_1a6ce6b4176121c2c23327903a8139af0c" kindref="member">amrex::ubound</ref>(bx); \
+    for (int n = 0; n &lt; ncomp; ++n) { \
+    for (int k = amrex_i_lo.z; k &lt;= amrex_i_hi.z; ++k) { \
+    for (int j = amrex_i_lo.y; j &lt;= amrex_i_hi.y; ++j) { \
+    for (int i = amrex_i_lo.x; i &lt;= amrex_i_hi.x; ++i) { \
+        block \
+    }}}} \
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Loop.H" line="224" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Loop.H" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -3346,9 +3399,32 @@
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}}</highlight></codeline>
 <codeline lineno="211"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"></highlight></codeline>
-<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"></highlight></codeline>
-<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="213" refid="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_LOOP_3D(bx,<sp/>i,<sp/>j,<sp/>k,<sp/>block)<sp/>\</highlight></codeline>
+<codeline lineno="214"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="215"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>amrex_i_lo<sp/>=<sp/>amrex::lbound(bx);<sp/>\</highlight></codeline>
+<codeline lineno="216"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>amrex_i_hi<sp/>=<sp/>amrex::ubound(bx);<sp/>\</highlight></codeline>
+<codeline lineno="217"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>k<sp/>=<sp/>amrex_i_lo.z;<sp/>k<sp/>&lt;=<sp/>amrex_i_hi.z;<sp/>++k)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="218"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>j<sp/>=<sp/>amrex_i_lo.y;<sp/>j<sp/>&lt;=<sp/>amrex_i_hi.y;<sp/>++j)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="219"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>amrex_i_lo.x;<sp/>i<sp/>&lt;=<sp/>amrex_i_hi.x;<sp/>++i)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="220"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
+<codeline lineno="221"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}<sp/>\</highlight></codeline>
+<codeline lineno="222"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="AMReX__Loop_8H_1a17fd46bf5cf689e1b3eb8b6f202c065c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_LOOP_4D(bx,<sp/>ncomp,<sp/>i,<sp/>j,<sp/>k,<sp/>n,<sp/>block)<sp/>\</highlight></codeline>
+<codeline lineno="225"><highlight class="preprocessor">{<sp/>\</highlight></codeline>
+<codeline lineno="226"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>amrex_i_lo<sp/>=<sp/>amrex::lbound(bx);<sp/>\</highlight></codeline>
+<codeline lineno="227"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>const<sp/>auto<sp/>amrex_i_hi<sp/>=<sp/>amrex::ubound(bx);<sp/>\</highlight></codeline>
+<codeline lineno="228"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/>ncomp;<sp/>++n)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="229"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>k<sp/>=<sp/>amrex_i_lo.z;<sp/>k<sp/>&lt;=<sp/>amrex_i_hi.z;<sp/>++k)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="230"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>j<sp/>=<sp/>amrex_i_lo.y;<sp/>j<sp/>&lt;=<sp/>amrex_i_hi.y;<sp/>++j)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="231"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>amrex_i_lo.x;<sp/>i<sp/>&lt;=<sp/>amrex_i_hi.x;<sp/>++i)<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="232"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
+<codeline lineno="233"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}}<sp/>\</highlight></codeline>
+<codeline lineno="234"><highlight class="preprocessor">}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Loop.H"/>
   </compounddef>

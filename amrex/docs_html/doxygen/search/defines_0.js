@@ -82,6 +82,8 @@ var searchData=
   ['amrex_5flo_5fperiodic',['AMREX_LO_PERIODIC',['../AMReX__LO__BCTYPES_8H.html#a70e18776a02a5caf3faea16632d60a6c',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5freflect_5fodd',['AMREX_LO_REFLECT_ODD',['../AMReX__LO__BCTYPES_8H.html#a911e22551a8578fcc62588ad4232a1b1',1,'AMReX_LO_BCTYPES.H']]],
   ['amrex_5flo_5fsanchez_5fpomraning',['AMREX_LO_SANCHEZ_POMRANING',['../AMReX__LO__BCTYPES_8H.html#acb24c91365aea47c8c5e66ef6a3d32be',1,'AMReX_LO_BCTYPES.H']]],
+  ['amrex_5floop_5f3d',['AMREX_LOOP_3D',['../AMReX__Loop_8H.html#a03b436b41a98f86757c053a372a7947f',1,'AMReX_Loop.H']]],
+  ['amrex_5floop_5f4d',['AMREX_LOOP_4D',['../AMReX__Loop_8H.html#a17fd46bf5cf689e1b3eb8b6f202c065c',1,'AMReX_Loop.H']]],
   ['amrex_5fmfiter_5freduce_5fmax',['AMREX_MFITER_REDUCE_MAX',['../AMReX__BLFort_8H.html#a802870939f4eef1cb74ec4e5804db0a5',1,'AMReX_BLFort.H']]],
   ['amrex_5fmfiter_5freduce_5fmin',['AMREX_MFITER_REDUCE_MIN',['../AMReX__BLFort_8H.html#a4a91fa218319313c2d881b8331162792',1,'AMReX_BLFort.H']]],
   ['amrex_5fmfiter_5freduce_5fsum',['AMREX_MFITER_REDUCE_SUM',['../AMReX__BLFort_8H.html#abd353d48d8f6a098cf31f224ed2826f8',1,'AMReX_BLFort.H']]],
