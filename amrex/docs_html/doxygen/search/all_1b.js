@@ -92,7 +92,6 @@ var searchData=
   ['_7eindexspaceimp',['~IndexSpaceImp',['../classamrex_1_1EB2_1_1IndexSpaceImp.html#af85151aa9d48dd55db4e270b56d87ccd',1,'amrex::EB2::IndexSpaceImp']]],
   ['_7einsitubridge',['~InSituBridge',['../classamrex_1_1InSituBridge.html#a826dc660a178377d78530da110fb8eed',1,'amrex::InSituBridge']]],
   ['_7einterpbndrydata',['~InterpBndryData',['../classamrex_1_1InterpBndryData.html#aba3d2785516360221c4a05c8fa56cc68',1,'amrex::InterpBndryData']]],
-  ['_7einterphook',['~InterpHook',['../classamrex_1_1InterpHook.html#a1e26496056b32e6492b27c2b91e8d7e7',1,'amrex::InterpHook']]],
   ['_7einterpolater',['~Interpolater',['../classamrex_1_1Interpolater.html#ad53e63eaa9b2b9b140c98f73969f2164',1,'amrex::Interpolater']]],
   ['_7eintersectionif',['~IntersectionIF',['../classamrex_1_1EB2_1_1IntersectionIF.html#aad5e9377f613e713facf475878534a94',1,'amrex::EB2::IntersectionIF']]],
   ['_7elaplacian',['~Laplacian',['../classamrex_1_1Laplacian.html#ac629c94ee798d889413ccee727515f34',1,'amrex::Laplacian']]],
