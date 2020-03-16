@@ -173,6 +173,14 @@ Macros</h2></td></tr>
 <tr class="separator:a75c5025bd1ba39794c9f3ce7212ed7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd60f7bb161794f08fe97f8f36e1f52d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a54b13c49a62108209b5fb525fbc56d44">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_4D</a>(__VA_ARGS__)</td></tr>
 <tr class="separator:afd60f7bb161794f08fe97f8f36e1f52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8984e0dd94c074fe6565a67234ac97"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#ace8984e0dd94c074fe6565a67234ac97">AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG</a>(flag,  n,  i,  block)</td></tr>
+<tr class="separator:ace8984e0dd94c074fe6565a67234ac97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fc2fded9dacd2357d093c1a541d6e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#aa3fc2fded9dacd2357d093c1a541d6e5">AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FLAG</a>(flag,  box,  i,  j,  k,  block)</td></tr>
+<tr class="separator:aa3fc2fded9dacd2357d093c1a541d6e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22cc6ea5e8c4040da2b69f6e4dd8088e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a22cc6ea5e8c4040da2b69f6e4dd8088e">AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG</a>(flag,  box,  nc,  i,  j,  k,  n,  block)</td></tr>
+<tr class="separator:a22cc6ea5e8c4040da2b69f6e4dd8088e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd39bbabaf4fd025782adb780d664b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a9cd39bbabaf4fd025782adb780d664b3">AMREX_HOST_DEVICE_FOR_1D_FLAG</a>(flag,  n,  i,  block)</td></tr>
+<tr class="separator:a9cd39bbabaf4fd025782adb780d664b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9047fbbd8a940e4dfa1b36a4831ed9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#ac9047fbbd8a940e4dfa1b36a4831ed9a">AMREX_HOST_DEVICE_FOR_3D_FLAG</a>(flag,  box,  i,  j,  k,  block)</td></tr>
 <tr class="separator:ac9047fbbd8a940e4dfa1b36a4831ed9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae470f9bf57ebee907a63375f40b14702"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#ae470f9bf57ebee907a63375f40b14702">AMREX_HOST_DEVICE_FOR_4D_FLAG</a>(flag,  box,  nc,  i,  j,  k,  n,  block)</td></tr>
@@ -376,6 +384,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9cd39bbabaf4fd025782adb780d664b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_FOR_1D_FLAG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">flag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">block&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{  <span class="keyword">using</span> amrex_i_inttype = <span class="keyword">typename</span> std::remove_const&lt;decltype(n)&gt;::type; <a class="code" href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">    amrex::ignore_unused</a>(flag); \</div><div class="line">    for (amrex_i_inttype i = 0; i &lt; n; ++i) { \</div><div class="line">        block \</div><div class="line">    }}</div><div class="ttc" id="namespaceamrex_html_abb2465f750e37a7665fbb84045f06f68"><div class="ttname"><a href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">Useful C++ Utility Functions. </div><div class="ttdef"><b>Definition:</b> AMReX_Utility.H:38</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="af98b03b7b3a87691d2e944fcd96c5a84"></a>
 <div class="memitem">
 <div class="memproto">
@@ -541,6 +588,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ace8984e0dd94c074fe6565a67234ac97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">flag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">block&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{  <span class="keyword">using</span> amrex_i_inttype = <span class="keyword">typename</span> std::remove_const&lt;decltype(n)&gt;::type; <a class="code" href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">    amrex::ignore_unused</a>(flag); \</div><div class="line">    AMREX_PRAGMA_SIMD \</div><div class="line">    for (amrex_i_inttype i = 0; i &lt; n; ++i) { \</div><div class="line">        block \</div><div class="line">    }}</div><div class="ttc" id="namespaceamrex_html_abb2465f750e37a7665fbb84045f06f68"><div class="ttname"><a href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">Useful C++ Utility Functions. </div><div class="ttdef"><b>Definition:</b> AMReX_Utility.H:38</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a75c5025bd1ba39794c9f3ce7212ed7ae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -557,6 +643,58 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa3fc2fded9dacd2357d093c1a541d6e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FLAG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">flag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">box, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">j, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">k, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">block&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">amrex::ignore_unused</a>(flag); <a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">    amrex::LoopConcurrentOnCpu</a>(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept \</div><div class="line">        block \</div><div class="line">    );</div><div class="ttc" id="namespaceamrex_html_abdd5d7a3b382bc1d21220946d7084839"><div class="ttname"><a href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">amrex::LoopConcurrentOnCpu</a></div><div class="ttdeci">void LoopConcurrentOnCpu(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:139</div></div>
+<div class="ttc" id="namespaceamrex_html_abb2465f750e37a7665fbb84045f06f68"><div class="ttname"><a href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">Useful C++ Utility Functions. </div><div class="ttdef"><b>Definition:</b> AMReX_Utility.H:38</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="afd60f7bb161794f08fe97f8f36e1f52d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -571,6 +709,71 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a class="anchor" id="a22cc6ea5e8c4040da2b69f6e4dd8088e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">flag, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">box, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nc, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">j, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">k, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">block&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">amrex::ignore_unused</a>(flag); <a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">    amrex::LoopConcurrentOnCpu</a>(box, <a class="code" href="namespaceamrex__eb__to__vtk.html#aa47673e8feae3e3e3527167ae6560d7d">nc</a>, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept \</div><div class="line">        block \</div><div class="line">    );</div><div class="ttc" id="namespaceamrex_html_abdd5d7a3b382bc1d21220946d7084839"><div class="ttname"><a href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">amrex::LoopConcurrentOnCpu</a></div><div class="ttdeci">void LoopConcurrentOnCpu(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:139</div></div>
+<div class="ttc" id="namespaceamrex__eb__to__vtk_html_aa47673e8feae3e3e3527167ae6560d7d"><div class="ttname"><a href="namespaceamrex__eb__to__vtk.html#aa47673e8feae3e3e3527167ae6560d7d">amrex_eb_to_vtk::nc</a></div><div class="ttdeci">integer nc</div><div class="ttdef"><b>Definition:</b> AMReX_eb_to_pvd.F90:9</div></div>
+<div class="ttc" id="namespaceamrex_html_abb2465f750e37a7665fbb84045f06f68"><div class="ttname"><a href="namespaceamrex.html#abb2465f750e37a7665fbb84045f06f68">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">Useful C++ Utility Functions. </div><div class="ttdef"><b>Definition:</b> AMReX_Utility.H:38</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a224e4236496017e5f5cbcec29e94c379"></a>

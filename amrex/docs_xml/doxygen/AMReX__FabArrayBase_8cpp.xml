@@ -1683,12 +1683,12 @@
 <codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{</highlight></codeline>
 <codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.resize(bx_dst);</highlight></codeline>
-<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.setVal(0);</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(0);</highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.resize(bx_dst);</highlight></codeline>
-<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.setVal(0);</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(0);</highlight></codeline>
 <codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::vector&lt;IntVect&gt;::const_iterator<sp/>pit=pshifts.begin();<sp/>pit!=pshifts.end();<sp/>++pit)</highlight></codeline>
@@ -1710,12 +1710,12 @@
 <codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_LocTags-&gt;push_back(CopyComTag(*it_tile,<sp/>(*it_tile)+(*pit),<sp/>k_dst,<sp/>k_src));</highlight></codeline>
 <codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{</highlight></codeline>
-<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.plus(1,<sp/>bx);</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(1,<sp/>bx);</highlight></codeline>
 <codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MyProc<sp/>==<sp/>dm_dst[k_dst])<sp/>{</highlight></codeline>
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_tags[src_owner].push_back(CopyComTag(bx,<sp/>bx+(*pit),<sp/>k_dst,<sp/>k_src));</highlight></codeline>
 <codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
-<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.plus(1,<sp/>bx);</highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(1,<sp/>bx);</highlight></codeline>
 <codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1724,11 +1724,11 @@
 <codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{<sp/><sp/></highlight></codeline>
 <codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>safe<sp/>if<sp/>a<sp/>cell<sp/>is<sp/>touched<sp/>no<sp/>more<sp/>than<sp/>once<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>keep<sp/>checking<sp/>thread<sp/>safety<sp/>if<sp/>it<sp/>is<sp/>safe<sp/>so<sp/>far</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/>m_threadsafe_loc<sp/>=<sp/>localtouch.max()<sp/>&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/>m_threadsafe_loc<sp/>=<sp/>localtouch.max&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;()<sp/>&lt;=<sp/>1;</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
-<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/>m_threadsafe_rcv<sp/>=<sp/>remotetouch.max()<sp/>&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/>m_threadsafe_rcv<sp/>=<sp/>remotetouch.max&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;()<sp/>&lt;=<sp/>1;</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -1999,12 +1999,12 @@
 <codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{</highlight></codeline>
 <codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.resize(bxrcv);</highlight></codeline>
-<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.setVal(0);</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(0);</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
 <codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.resize(bxrcv);</highlight></codeline>
-<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.setVal(0);</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(0);</highlight></codeline>
 <codeline lineno="726"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="727"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pit=pshifts.cbegin();<sp/>pit!=pshifts.cend();<sp/>++pit)</highlight></codeline>
@@ -2031,12 +2031,12 @@
 <codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_LocTags-&gt;push_back(CopyComTag(*it_tile,<sp/>(*it_tile)+(*pit),<sp/>krcv,<sp/>ksnd));</highlight></codeline>
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{</highlight></codeline>
-<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.plus(1,<sp/>blbx);</highlight></codeline>
+<codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(1,<sp/>blbx);</highlight></codeline>
 <codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="754"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MyProc<sp/>==<sp/>dm[krcv])<sp/>{</highlight></codeline>
 <codeline lineno="755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_tags[src_owner].push_back(CopyComTag(blbx,<sp/>blbx+(*pit),<sp/>krcv,<sp/>ksnd));</highlight></codeline>
 <codeline lineno="756"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
-<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.plus(1,<sp/>blbx);</highlight></codeline>
+<codeline lineno="757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(1,<sp/>blbx);</highlight></codeline>
 <codeline lineno="758"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2046,11 +2046,11 @@
 <codeline lineno="764"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{<sp/><sp/></highlight></codeline>
 <codeline lineno="765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>safe<sp/>if<sp/>a<sp/>cell<sp/>is<sp/>touched<sp/>no<sp/>more<sp/>than<sp/>once<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>keep<sp/>checking<sp/>thread<sp/>safety<sp/>if<sp/>it<sp/>is<sp/>safe<sp/>so<sp/>far</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/>m_threadsafe_loc<sp/>=<sp/>localtouch.max()<sp/>&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/>m_threadsafe_loc<sp/>=<sp/>localtouch.max&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;()<sp/>&lt;=<sp/>1;</highlight></codeline>
 <codeline lineno="768"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="769"><highlight class="normal"></highlight></codeline>
 <codeline lineno="770"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
-<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/>m_threadsafe_rcv<sp/>=<sp/>remotetouch.max()<sp/>&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/>m_threadsafe_rcv<sp/>=<sp/>remotetouch.max&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;()<sp/>&lt;=<sp/>1;</highlight></codeline>
 <codeline lineno="772"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="773"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="774"><highlight class="normal"></highlight></codeline>
@@ -2211,12 +2211,12 @@
 <codeline lineno="929"><highlight class="normal"></highlight></codeline>
 <codeline lineno="930"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{</highlight></codeline>
 <codeline lineno="931"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.resize(bxrcv);</highlight></codeline>
-<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.setVal(0);</highlight></codeline>
+<codeline lineno="932"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(0);</highlight></codeline>
 <codeline lineno="933"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="934"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="935"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
 <codeline lineno="936"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.resize(bxrcv);</highlight></codeline>
-<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.setVal(0);</highlight></codeline>
+<codeline lineno="937"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(0);</highlight></codeline>
 <codeline lineno="938"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="939"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::vector&lt;IntVect&gt;::const_iterator<sp/>pit=pshifts.begin();<sp/>pit!=pshifts.end();<sp/>++pit)</highlight></codeline>
@@ -2249,12 +2249,12 @@
 <codeline lineno="967"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_LocTags-&gt;push_back(CopyComTag(*it_tile,<sp/>(*it_tile)+(*pit),<sp/>krcv,<sp/>ksnd));</highlight></codeline>
 <codeline lineno="968"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="969"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{</highlight></codeline>
-<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.plus(1,<sp/>dbx);</highlight></codeline>
+<codeline lineno="970"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>localtouch.plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(1,<sp/>dbx);</highlight></codeline>
 <codeline lineno="971"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="972"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(MyProc<sp/>==<sp/>dm[krcv])<sp/>{</highlight></codeline>
 <codeline lineno="973"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_tags[src_owner].push_back(CopyComTag(dbx,<sp/>sbx,<sp/>krcv,<sp/>ksnd));</highlight></codeline>
 <codeline lineno="974"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
-<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.plus(1,<sp/>dbx);</highlight></codeline>
+<codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remotetouch.plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(1,<sp/>dbx);</highlight></codeline>
 <codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2266,11 +2266,11 @@
 <codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_local)<sp/>{<sp/><sp/></highlight></codeline>
 <codeline lineno="985"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>safe<sp/>if<sp/>a<sp/>cell<sp/>is<sp/>touched<sp/>no<sp/>more<sp/>than<sp/>once<sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="986"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>keep<sp/>checking<sp/>thread<sp/>safety<sp/>if<sp/>it<sp/>is<sp/>safe<sp/>so<sp/>far</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/>m_threadsafe_loc<sp/>=<sp/>localtouch.max()<sp/>&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="987"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/>m_threadsafe_loc<sp/>=<sp/>localtouch.max&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;()<sp/>&lt;=<sp/>1;</highlight></codeline>
 <codeline lineno="988"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="989"><highlight class="normal"></highlight></codeline>
 <codeline lineno="990"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(check_remote)<sp/>{</highlight></codeline>
-<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/>m_threadsafe_rcv<sp/>=<sp/>remotetouch.max()<sp/>&lt;=<sp/>1;</highlight></codeline>
+<codeline lineno="991"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/>m_threadsafe_rcv<sp/>=<sp/>remotetouch.max&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;()<sp/>&lt;=<sp/>1;</highlight></codeline>
 <codeline lineno="992"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="993"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="994"><highlight class="normal"></highlight></codeline>

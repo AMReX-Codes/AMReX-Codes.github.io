@@ -1749,7 +1749,7 @@
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(_b.box().contains((<ref refid="classamrex_1_1ABec4_1ab93786ae188a018f70c924f64a934707" kindref="member">bcoefs</ref>[0][dir])-&gt;<ref refid="classamrex_1_1ABec4_1a3f788634a59b47732b149cdb4084fabb" kindref="member">boxArray</ref>()[gridno]));</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(_b.nComp()<sp/>==<sp/>1);</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ABec4_1ab26af2267abaaff2d227dc5ebf99a831" kindref="member">invalidate_b_to_level</ref>(0);</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>(*<ref refid="classamrex_1_1ABec4_1ab93786ae188a018f70c924f64a934707" kindref="member">bcoefs</ref>[0][dir])[gridno].<ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">copy</ref>(_b,0,0,1);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>(*<ref refid="classamrex_1_1ABec4_1ab93786ae188a018f70c924f64a934707" kindref="member">bcoefs</ref>[0][dir])[gridno].copy&lt;RunOn::Host&gt;(_b,0,0,1);</highlight></codeline>
 <codeline lineno="244"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="245"><highlight class="normal"></highlight></codeline>
 <codeline lineno="246"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;</highlight></codeline>

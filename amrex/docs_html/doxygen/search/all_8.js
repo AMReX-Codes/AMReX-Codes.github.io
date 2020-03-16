@@ -38,7 +38,7 @@ var searchData=
   ['hinode',['HiNode',['../classamrex_1_1CoordSys.html#a6900764dc4dfae368296b0caf5548999',1,'amrex::CoordSys::HiNode(const IntVect &amp;point, Vector&lt; Real &gt; &amp;loc) const noexcept'],['../classamrex_1_1CoordSys.html#a450803429d6c54bdfaeacaadeace5cb3',1,'amrex::CoordSys::HiNode(const IntVect &amp;point, Real *loc) const noexcept']]],
   ['hinodeloc',['HiNodeLoc',['../classamrex_1_1AmrData.html#a8f8d63456eef4bb86f41f06552fea94d',1,'amrex::AmrData']]],
   ['hiv',['hiV',['../classamrex_1_1Hypre.html#aac6b099395a000804880b97e43407c5b',1,'amrex::Hypre']]],
-  ['hivect',['hiVect',['../classamrex_1_1BaseFab.html#ae6cabd78f18cfc8f0d9544ef683cd640',1,'amrex::BaseFab::hiVect()'],['../classamrex_1_1Box.html#a8d84792ed854e04c97770960290f6f5c',1,'amrex::Box::hiVect() const &amp;noexcept'],['../classamrex_1_1Box.html#a61a33b8b8393690b194bc060b9c89823',1,'amrex::Box::hiVect()&amp;&amp;=delete']]],
+  ['hivect',['hiVect',['../classamrex_1_1BaseFab.html#ac527239df242562c1cd6d05106299041',1,'amrex::BaseFab::hiVect()'],['../classamrex_1_1Box.html#a8d84792ed854e04c97770960290f6f5c',1,'amrex::Box::hiVect() const &amp;noexcept'],['../classamrex_1_1Box.html#a61a33b8b8393690b194bc060b9c89823',1,'amrex::Box::hiVect()&amp;&amp;=delete']]],
   ['hivect3d',['hiVect3d',['../classamrex_1_1Box.html#a969a6f205285e27a5145abdd4d7d0f95',1,'amrex::Box']]],
   ['hoextrap',['HOEXTRAP',['../AMReX__BC__TYPES_8H.html#ab3f2cb808193937a3651291078955292',1,'AMReX_BC_TYPES.H']]],
   ['hoextrapcc',['HOEXTRAPCC',['../AMReX__BC__TYPES_8H.html#a64b07b4a69819f26234681bd3d948681',1,'AMReX_BC_TYPES.H']]],

@@ -1736,7 +1736,7 @@
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_StructVectorGetBoxValues(x,<sp/>reglo.data(),<sp/>reghi.data(),<sp/>xfab-&gt;dataPtr());</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(soln.nGrow()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soln[mfi].copy(*xfab,<sp/>0,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soln[mfi].copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(*xfab,<sp/>0,<sp/>0,<sp/>1);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="125"><highlight class="normal">}</highlight></codeline>
@@ -1894,8 +1894,8 @@
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_StructVectorSetBoxValues(x,<sp/>reglo.data(),<sp/>reghi.data(),<sp/>soln[mfi].dataPtr());</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.resize(reg);</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.copy(rhs[mfi],reg);</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.mult(<ref refid="classamrex_1_1Hypre_1a6eb22e62b62ea0d2bcfef92f18df5304" kindref="member">diaginv</ref>[mfi]);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(rhs[mfi],reg);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.mult&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(<ref refid="classamrex_1_1Hypre_1a6eb22e62b62ea0d2bcfef92f18df5304" kindref="member">diaginv</ref>[mfi]);</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HYPRE_StructVectorSetBoxValues(b,<sp/>reglo.data(),<sp/>reghi.data(),<sp/>rhsfab.dataPtr());</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

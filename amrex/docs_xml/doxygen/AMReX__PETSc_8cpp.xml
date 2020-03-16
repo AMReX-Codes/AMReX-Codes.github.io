@@ -1724,7 +1724,7 @@
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>mfi.validbox();</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BaseFab&lt;PetscInt&gt;&amp;<sp/>cid_fab<sp/>=<sp/>cell_id[mfi];</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cid_fab.setVal(std::numeric_limits&lt;PetscInt&gt;::lowest());</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cid_fab.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(std::numeric_limits&lt;PetscInt&gt;::lowest());</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>fabtyp<sp/>=<sp/>(flags)<sp/>?<sp/>(*flags)[mfi].getType(bx)<sp/>:<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">FabType::regular</ref>;</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fabtyp<sp/>==<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaa72ed46ebb1280e51746ce28ded53942" kindref="member">FabType::covered</ref>)</highlight></codeline>
@@ -1751,7 +1751,7 @@
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>npts;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*p++<sp/>=<sp/>i;</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cid_fab.copy(ifab,bx);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cid_fab.copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(ifab,bx);</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1784,7 +1784,7 @@
 <codeline lineno="258"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(cell_id,</highlight><highlight class="keyword">true</highlight><highlight class="normal">);<sp/>mfi.isValid();<sp/>++mfi)</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cell_id[mfi].plus(offset[mfi],<sp/>mfi.tilebox());</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cell_id[mfi].plus&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(offset[mfi],<sp/>mfi.tilebox());</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>cell_id.FillBoundary(<ref refid="classamrex_1_1HypreNodeLap_1a3ec12508ffa505780af64ebc27188233" kindref="member">geom</ref>.<ref refid="classamrex_1_1Geometry_1a7b365b1560bb9a31cf49cd55668085cf" kindref="member">periodicity</ref>());</highlight></codeline>
@@ -1945,8 +1945,8 @@
 <codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>soln<sp/>has<sp/>been<sp/>set<sp/>to<sp/>zero.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VecSetValues(<ref refid="classamrex_1_1HypreNodeLap_1af32f270916e5ac3077cad9d15792033e" kindref="member">x</ref>,<sp/>nrows,<sp/>cell_id_vec[mfi].data(),<sp/>soln[mfi].dataPtr(),<sp/>INSERT_VALUES);<sp/></highlight></codeline>
 <codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.resize(bx);</highlight></codeline>
-<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.copy(rhs[mfi],bx);</highlight></codeline>
-<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.mult(diaginv[mfi]);</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(rhs[mfi],bx);</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rhsfab.mult&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(diaginv[mfi]);</highlight></codeline>
 <codeline lineno="424"><highlight class="normal"></highlight></codeline>
 <codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FArrayBox*<sp/>bfab;</highlight></codeline>
 <codeline lineno="426"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
@@ -2011,7 +2011,7 @@
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VecGetValues(<ref refid="classamrex_1_1HypreNodeLap_1af32f270916e5ac3077cad9d15792033e" kindref="member">x</ref>,<sp/>nrows,<sp/>cell_id_vec[mfi].data(),<sp/>xfab-&gt;dataPtr());<sp/></highlight></codeline>
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fabtyp<sp/>==<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">FabType::regular</ref><sp/>&amp;&amp;<sp/>soln.nGrow()<sp/>!=<sp/>0)</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soln[mfi].copy(*xfab,bx);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soln[mfi].copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(*xfab,bx);</highlight></codeline>
 <codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="490"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fabtyp<sp/>!=<sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">FabType::regular</ref>)</highlight></codeline>

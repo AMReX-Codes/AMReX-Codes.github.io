@@ -1500,13 +1500,13 @@
 <codeline lineno="20"><highlight class="normal"><ref refid="classamrex_1_1TagBox_1adda034b74e7dc88d8cd42301b61b8285" kindref="member">TagBox::TagBox</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/>Arena*<sp/>ar)</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="classamrex_1_1BaseFab_1a7e470d7e72db0c3169e83e34ce4f657b" kindref="member">BaseFab</ref>&lt;<ref refid="classamrex_1_1TagBox_1adda034b74e7dc88d8cd42301b61b8285" kindref="member">TagBox</ref>::<ref refid="classamrex_1_1TagBox_1aa3eab6b001470948ab883ec074459049" kindref="member">TagType</ref>&gt;(bx,n,ar)</highlight></codeline>
 <codeline lineno="22"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>setVal(<ref refid="classamrex_1_1TagBox_1ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814" kindref="member">TagBox::CLEAR</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>setVal&lt;RunOn::Host&gt;(<ref refid="classamrex_1_1TagBox_1ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814" kindref="member">TagBox::CLEAR</ref>);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><ref refid="classamrex_1_1TagBox_1adda034b74e7dc88d8cd42301b61b8285" kindref="member">TagBox::TagBox</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>alloc,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>shared,<sp/>Arena*<sp/>ar)</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>BaseFab&lt;TagBox::TagType&gt;(bx,n,alloc,shared,ar)</highlight></codeline>
 <codeline lineno="28"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(alloc)<sp/>setVal(<ref refid="classamrex_1_1TagBox_1ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814" kindref="member">TagBox::CLEAR</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(alloc)<sp/>setVal&lt;RunOn::Host&gt;(<ref refid="classamrex_1_1TagBox_1ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814" kindref="member">TagBox::CLEAR</ref>);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><ref refid="classamrex_1_1TagBox_1adda034b74e7dc88d8cd42301b61b8285" kindref="member">TagBox::TagBox</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TagBox&amp;<sp/>rhs,<sp/><ref refid="namespaceamrex_1a0a36c65d0681a832330b2812f16786a6" kindref="member">MakeType</ref><sp/>make_type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp)</highlight></codeline>
@@ -1712,7 +1712,7 @@
 <codeline lineno="232"><highlight class="normal"><ref refid="classamrex_1_1TagBox_1a55e1676f90f87c700cdba6ea5490f988" kindref="member">TagBox::numTags</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
 <codeline lineno="233"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/>TagBox<sp/>tempTagBox(b,1);</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/>tempTagBox.copy(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/>tempTagBox.copy&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(*this);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tempTagBox.numTags();</highlight></codeline>
 <codeline lineno="237"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"></highlight></codeline>
@@ -2133,7 +2133,7 @@
 <codeline lineno="653"><highlight class="normal"></highlight></codeline>
 <codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>isects.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
 <codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tags.setVal(val,isects[i].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>,0);</highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tags.setVal&lt;<ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2" kindref="member">RunOn::Host</ref>&gt;(val,isects[i].second,0);</highlight></codeline>
 <codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="659"><highlight class="normal">}</highlight></codeline>

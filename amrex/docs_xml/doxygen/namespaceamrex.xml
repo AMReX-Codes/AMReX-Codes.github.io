@@ -1347,7 +1347,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="425" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="425" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="461" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="461" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1ad9f3a92c061d8ad8de35370ed5ce28b8" prot="public" static="no">
         <type>typename <ref refid="structamrex_1_1makeIndexSequenceHelper" kindref="compound">makeIndexSequenceHelper</ref>&lt; N &gt;::type</type>
@@ -4975,10 +4975,10 @@
         <briefdescription>
 <para>A Fortran Array-like Object <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> emulates the Fortran array concept. Useful operations can be performed upon BaseFabs in C++, and they provide a convenient interface to Fortran when it is necessary to retreat into that language. </para>        </briefdescription>
         <detaileddescription>
-<para><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> is a template class. Through use of the template, a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> may be based upon any class. So far at least, most applications have been based upon simple types like integers, real*4s, or real*8s. Most applications do not use BaseFabs directly, but utilize specialized classes derived from <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>.</para><para><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> objects depend on the dimensionality of space (indirectly through the DOMAIN <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> member). It is typical to define the macro SPACEDIM to be 1, 2, or 3 to indicate the dimension of space. See the discussion of class <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> for more information. A <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> contains a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> DOMAIN, which indicates the integer indexing space over which the array is defined. A <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> also has NVAR components. By components, we mean that for each point in the rectangular indexing space, there are NVAR values associated with that point. A Fortran array corresponding to a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> would have (SPACEDIM+1) dimensions.</para><para>By design, the array layout in a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> mirrors that of a Fortran array. The first index (x direction for example) varies most rapidly, the next index (y direction), if any, varies next fastest. The component index varies last, after all the spatial indices.</para><para>It is sometimes convenient to be able to treat a sub-array within an existing <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> as a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> in its own right. This is often referred to as aliasing the <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>. Note that when aliasing is used, the BaseFabs domain will not, in general, be the same as the parent BaseFabs domain, nor will the number of components. <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> is a dimension dependent class, so SPACEDIM must be defined as either 1, 2, or 3 when compiling.</para><para>This is NOT a polymorphic class.</para><para>It does NOT provide a copy constructor or assignment operator.</para><para>T MUST have a default constructor and an assignment operator. </para>        </detaileddescription>
+<para><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> is a template class. Through use of the template, a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> may be based upon any class. So far at least, most applications have been based upon simple types like integers, real*4s, or real*8s. Most applications do not use BaseFabs directly, but utilize specialized classes derived from <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>.</para><para>Classes derived from <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> include <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>, <ref refid="classamrex_1_1IArrayBox" kindref="compound">IArrayBox</ref>, <ref refid="classamrex_1_1TagBox" kindref="compound">TagBox</ref>, <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref>, <ref refid="classamrex_1_1EBFArrayBox" kindref="compound">EBFArrayBox</ref>, <ref refid="classamrex_1_1EBCellFlag" kindref="compound">EBCellFlag</ref> and <ref refid="classamrex_1_1CutFab" kindref="compound">CutFab</ref>.</para><para><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> objects depend on the dimensionality of space (indirectly through the DOMAIN <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> member). It is typical to define the macro SPACEDIM to be 1, 2, or 3 to indicate the dimension of space. See the discussion of class <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> for more information. A <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> contains a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> DOMAIN, which indicates the integer indexing space over which the array is defined. A <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> also has NVAR components. By components, we mean that for each point in the rectangular indexing space, there are NVAR values associated with that point. A Fortran array corresponding to a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> would have (SPACEDIM+1) dimensions.</para><para>By design, the array layout in a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> mirrors that of a Fortran array. The first index (x direction for example) varies most rapidly, the next index (y direction), if any, varies next fastest. The component index varies last, after all the spatial indices.</para><para>It is sometimes convenient to be able to treat a sub-array within an existing <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> as a <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> in its own right. This is often referred to as aliasing the <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>. Note that when aliasing is used, the BaseFabs domain will not, in general, be the same as the parent BaseFabs domain, nor will the number of components. <ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref> is a dimension dependent class, so SPACEDIM must be defined as either 1, 2, or 3 when compiling.</para><para>This is NOT a polymorphic class.</para><para>It does NOT provide a copy constructor or assignment operator.</para><para>T MUST have a default constructor and an assignment operator. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="137" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="137" bodyend="138"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="140" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="140" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a91fb1c08bfc0956742d7ba7222d6d454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5004,7 +5004,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="142" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="142" bodyend="147"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="145" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="145" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a89cfab1d62613c97de6191541059ad8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -5030,7 +5030,59 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="151" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="151" bodyend="157"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="154" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a85fe77d03bf4e689ee113aefe055f009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt; std::is_trivially_destructible&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;std::is_trivially_destructible&lt;T&gt;::value&gt;::type amrex::placementDelete</definition>
+        <argsstring>(T *const ptr, long n)</argsstring>
+        <name>placementDelete</name>
+        <param>
+          <type>T *const</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="164" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="164" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a0849289e599638f2ea383e36a347c72d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if&lt;!std::is_trivially_destructible&lt; T &gt;::value &gt;::type</type>
+        <definition>std::enable_if&lt;!std::is_trivially_destructible&lt;T&gt;::value&gt;::type amrex::placementDelete</definition>
+        <argsstring>(T *const ptr, long n)</argsstring>
+        <name>placementDelete</name>
+        <param>
+          <type>T *const</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" line="169" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BaseFab.H" bodystart="169" bodyend="175"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a77b14491d58406bdb284885a796fa8b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7261,7 +7313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="136" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="136" bodyend="138"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="14" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="14" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5e32d93cb04b6557dcf30553793aeb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7298,7 +7350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="226" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="226" bodyend="229"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="105" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="105" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4252562789c375cc55a545cd278cf212" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7342,7 +7394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="235" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="235" bodyend="238"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="114" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="114" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a580c267bdc2ecf41ead1889d77b287c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7386,7 +7438,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="332" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="332" bodyend="336"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="213" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="213" bodyend="217"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a41a3ccdb479b7b99b07b29315b85d602" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7437,7 +7489,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="342" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="342" bodyend="346"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="223" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="223" bodyend="227"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a643762b10ddb6c66e880320c6df34809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7488,7 +7540,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="441" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="441" bodyend="445"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="325" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="325" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a94a27ca9a492d6d0f17996924e1b1745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7525,7 +7577,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="451" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="451" bodyend="454"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="335" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="335" bodyend="338"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0b14cf8ae0f4d40d865377df85ff8301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7562,7 +7614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="543" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="543" bodyend="546"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="428" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="428" bodyend="431"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab427586186a5143d74279bb26107044a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7606,7 +7658,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="552" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="552" bodyend="555"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="437" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="437" bodyend="440"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7385647d73fd0e4b29617d87309f3c78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7650,7 +7702,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="651" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="651" bodyend="655"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="538" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="538" bodyend="542"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1adbeb820864e599e86ce8f5f30773beac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7701,7 +7753,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="661" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="661" bodyend="665"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="548" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="548" bodyend="552"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a98b8b6dfe17e7e9225a567793e47f606" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7752,7 +7804,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="762" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="762" bodyend="766"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="652" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="652" bodyend="656"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a157fdc4ac63d7f4d21a5df4b4151eb28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7789,7 +7841,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="772" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="772" bodyend="775"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="662" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="662" bodyend="665"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aced90eccf9c8aa5de4fa7fddacbab125" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7826,7 +7878,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="865" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="865" bodyend="868"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="756" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="756" bodyend="759"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac8df373fd6d52b64c70d0e2c218f7b56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7870,7 +7922,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="874" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="874" bodyend="877"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="765" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="765" bodyend="768"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0f27335e5238a53e12af0ad6dc8e04a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7914,7 +7966,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="973" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="973" bodyend="977"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="866" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="866" bodyend="870"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a07315aba6826805030c5f6fd847fc370" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -7965,7 +8017,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="983" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="983" bodyend="987"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="876" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="876" bodyend="880"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a210e45f0c136c51a835032cc34cfb0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8016,7 +8068,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1084" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1084" bodyend="1088"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="980" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="980" bodyend="984"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3866c459fc8c798d5a19fa747a3500b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8053,7 +8105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1094" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1094" bodyend="1097"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="990" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="990" bodyend="993"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1add25d5d5612fe7f7e697f9eff76568ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8090,7 +8142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1184" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1184" bodyend="1187"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1081" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1081" bodyend="1084"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aff9cc4b21a84dbb1def69e24fa575064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8134,7 +8186,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1193" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1193" bodyend="1197"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1090" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1090" bodyend="1094"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab19f7ad2a54b1e324d431adfe05978aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8178,7 +8230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1290" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1290" bodyend="1294"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1189" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1189" bodyend="1193"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a86ff43c965c29ca6c76704135c773345" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8215,7 +8267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1300" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1300" bodyend="1303"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1199" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1199" bodyend="1202"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afbf67596dd1ba6faf566beabcbab7776" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8252,7 +8304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1390" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1390" bodyend="1393"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1290" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1290" bodyend="1293"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aeddb35f2f67fa5f607d190b5d5306c9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8296,7 +8348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1399" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1399" bodyend="1403"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1299" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1299" bodyend="1303"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a93ead4b7e5a5b99b0a88040076d7fd21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8340,7 +8392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1495" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1495" bodyend="1499"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1397" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1397" bodyend="1401"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a376ff66b5e6a76d195cace00df41d05e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8380,7 +8432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1504" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1504" bodyend="1528"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1406" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1406" bodyend="1430"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab72e53672887ede3d7ddc5f65002700e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8426,7 +8478,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1534" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1534" bodyend="1537"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1436" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1436" bodyend="1439"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae53cc004fbab26533ec33294445a4d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8472,7 +8524,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1542" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1542" bodyend="1560"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1444" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1444" bodyend="1462"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1036d99710a96586826f090a3266f5da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8518,7 +8570,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1566" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1566" bodyend="1569"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1468" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1468" bodyend="1471"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abe39b5ec64aab9ed8e59747f0983d848" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8564,7 +8616,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1574" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1574" bodyend="1592"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1476" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1476" bodyend="1494"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a54b8b46deca518b441b849bbd1ceda02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8610,7 +8662,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1598" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1598" bodyend="1601"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1500" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1500" bodyend="1503"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1afeebec2f58b85bfde5b88b30810cd82d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8656,7 +8708,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1606" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1606" bodyend="1624"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1508" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1508" bodyend="1526"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aec148f53c2d7fcc3b00c9e91999d4058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8702,7 +8754,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1630" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1630" bodyend="1633"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1532" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1532" bodyend="1535"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a71808e748d2cf6ea301231f278269b70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8748,7 +8800,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1638" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1638" bodyend="1656"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1540" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1540" bodyend="1558"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa9f3bb9afb6e1fdfc272654ee6923492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8794,7 +8846,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1662" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1662" bodyend="1665"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1564" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1564" bodyend="1567"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a98b5b165f2a8926b40da786a678ed7af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8840,7 +8892,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1670" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1670" bodyend="1688"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1572" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1572" bodyend="1590"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5a67d468c456558249ade6f9b145d719" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8886,7 +8938,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1693" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1693" bodyend="1696"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1595" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1595" bodyend="1598"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a19b3cf73acf195779e25b011bf419818" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8932,7 +8984,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1701" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1701" bodyend="1719"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1603" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1603" bodyend="1621"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ab02b05e2eb3282f8df33e5cbc655b2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8963,7 +9015,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1723" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1723" bodyend="1730"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1625" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1625" bodyend="1632"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4db8bcd1f50c790aba6b81860143cc96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -8994,7 +9046,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1734" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1734" bodyend="1741"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1636" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1636" bodyend="1643"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5821b989454c54f92dd1f2312e95b5b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -9031,7 +9083,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1746" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1746" bodyend="1774"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1648" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1648" bodyend="1676"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a998c5815369d23cd73eea1b09f43a966" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -9073,7 +9125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1778" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1778" bodyend="1792"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1680" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1680" bodyend="1694"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8531953b8fba66482d81cad6c5dc3e73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -9103,7 +9155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1796" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1796" bodyend="1799"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1698" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1698" bodyend="1701"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae243b10c65516ed7dfeaf9aed7e75aa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -9145,7 +9197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1803" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1803" bodyend="1817"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1705" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1705" bodyend="1719"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa9df7c449e875ece24add0d826c4f133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -9175,7 +9227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1821" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1821" bodyend="1824"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" line="1723" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayUtility.H" bodystart="1723" bodyend="1726"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac185c39750011cc24fb8c1a0b872a34d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -9670,7 +9722,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" line="961" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="962" bodyend="968"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" line="964" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="965" bodyend="971"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9ff574ad6dd00e11abbe7b34c9233e0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
@@ -9691,7 +9743,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" line="971" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="971" bodyend="978"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" line="974" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="974" bodyend="981"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad8c115eece56974a8721687093855c85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> void</type>
@@ -12435,7 +12487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_iMultiFab.cpp" line="589" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_iMultiFab.cpp" bodystart="589" bodyend="660"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_iMultiFab.cpp" line="596" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_iMultiFab.cpp" bodystart="596" bodyend="667"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a73fb53c873d555a7a3cc7b33e88a5f33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -13679,7 +13731,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MFCopyDescriptor.cpp" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MFCopyDescriptor.cpp" bodystart="75" bodyend="121"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MFCopyDescriptor.cpp" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MFCopyDescriptor.cpp" bodystart="75" bodyend="122"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a89faf58cc9f92b14a4c334bcb8390966" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -13747,7 +13799,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFab.cpp" line="1334" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1334" bodyend="1342"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFab.cpp" line="1390" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFab.cpp" bodystart="1390" bodyend="1398"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad60aac176908ba51373d63ca49bef063" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -14563,7 +14615,7 @@
 <para>Extract a slice from the given cell-centered <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> at coordinate &quot;coord&quot; along direction &quot;dir&quot;. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="583" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="583" bodyend="629"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="583" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="583" bodyend="626"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af97d55742a96cb9e934e06c45ec22f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref></type>
@@ -14600,7 +14652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="631" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="631" bodyend="637"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="628" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="628" bodyend="634"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a549567bbb4fc6d2e53d5a0c03fe62a81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14642,7 +14694,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="640" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="640" bodyend="690"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="637" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="637" bodyend="687"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abe90237191ad363f7f9dd34c2ac0ebcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref></type>
@@ -14687,7 +14739,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="692" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="692" bodyend="699"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="689" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="689" bodyend="696"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac54193c21e9f609ad488d3cb074dfeef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
@@ -14724,7 +14776,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="701" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="701" bodyend="708"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="698" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="698" bodyend="705"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7b179e68f86c4a06d176f587ec95148c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14749,7 +14801,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="710" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="710" bodyend="760"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="707" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="707" bodyend="757"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1add6ef1af4714e90f5d0b5a098725612b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -14774,7 +14826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="762" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="762" bodyend="809"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="759" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="759" bodyend="806"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3c86d50daeca979098e4b1c7e34d0cf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref></type>
@@ -14799,7 +14851,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="811" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="811" bodyend="833"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="808" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="808" bodyend="830"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a317539bf02f01cd6f5c4a89d1943c9d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
