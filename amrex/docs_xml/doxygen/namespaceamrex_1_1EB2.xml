@@ -146,10 +146,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2.cpp" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2.cpp" bodystart="59" bodyend="64"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a6d2f867ae0ec004f8b26fb0346086b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1aeeef7d74ebd0fb0d36133366a68e4126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::Build</definition>
-        <argsstring>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow)</argsstring>
+        <argsstring>(const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow, bool build_coarse_level_by_coarsening)</argsstring>
         <name>Build</name>
         <param>
           <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
@@ -166,6 +166,10 @@
         <param>
           <type>int</type>
           <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>build_coarse_level_by_coarsening</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -242,7 +246,7 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2.H" bodystart="53" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a8530ce06d34d311dcf665910e91189bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1aa31a7409b5cb220ae0b1b3232c9e1947" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename G</type>
@@ -250,7 +254,7 @@
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::EB2::Build</definition>
-        <argsstring>(const G &amp;gshop, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4)</argsstring>
+        <argsstring>(const G &amp;gshop, const Geometry &amp;geom, int required_coarsening_level, int max_coarsening_level, int ngrow=4, bool build_coarse_level_by_coarsening=true)</argsstring>
         <name>Build</name>
         <param>
           <type>const G &amp;</type>
@@ -272,6 +276,11 @@
           <type>int</type>
           <declname>ngrow</declname>
           <defval>4</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>build_coarse_level_by_coarsening</declname>
+          <defval>true</defval>
         </param>
         <briefdescription>
         </briefdescription>
