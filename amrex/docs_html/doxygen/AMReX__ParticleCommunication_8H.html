@@ -94,10 +94,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="AMReX__Gpu_8H_source.html">AMReX_Gpu.H</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="AMReX__CudaContainers_8H_source.html">AMReX_CudaContainers.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuContainers_8H_source.html">AMReX_GpuContainers.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__IntVect_8H_source.html">AMReX_IntVect.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__ParticleBufferMap_8H_source.html">AMReX_ParticleBufferMap.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__MFIter_8H_source.html">AMReX_MFIter.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__TypeTraits_8H_source.html">AMReX_TypeTraits.H</a>&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 </div>
 <p><a href="AMReX__ParticleCommunication_8H_source.html">Go to the source code of this file.</a></p>
@@ -120,20 +121,20 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6e281f2798c1b095d3a6eb21b950e9ca"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer &gt; </td></tr>
-<tr class="memitem:a6e281f2798c1b095d3a6eb21b950e9ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6e281f2798c1b095d3a6eb21b950e9ca">amrex::packBuffer</a> (const PC &amp;pc, const ParticleCopyOp &amp;op, const ParticleCopyPlan &amp;plan, Buffer &amp;snd_buffer)</td></tr>
-<tr class="separator:a6e281f2798c1b095d3a6eb21b950e9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca38419d632c8e6a48b25bc4643522b1"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy &gt; </td></tr>
-<tr class="memitem:aca38419d632c8e6a48b25bc4643522b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aca38419d632c8e6a48b25bc4643522b1">amrex::unpackBuffer</a> (PC &amp;pc, const ParticleCopyPlan &amp;plan, const Buffer &amp;snd_buffer, const UnpackPolicy policy)</td></tr>
-<tr class="separator:aca38419d632c8e6a48b25bc4643522b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f29dc8a6306690b4ef2e53bea4c8b1"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer &gt; </td></tr>
-<tr class="memitem:a90f29dc8a6306690b4ef2e53bea4c8b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a90f29dc8a6306690b4ef2e53bea4c8b1">amrex::communicateParticlesStart</a> (const PC &amp;pc, ParticleCopyPlan &amp;plan, const Buffer &amp;snd_buffer, Buffer &amp;rcv_buffer)</td></tr>
-<tr class="separator:a90f29dc8a6306690b4ef2e53bea4c8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af4c8c19cb812cdbcc34bc408577bb25c">amrex::packBuffer</a> (const PC &amp;pc, const ParticleCopyOp &amp;op, const ParticleCopyPlan &amp;plan, Buffer &amp;snd_buffer)</td></tr>
+<tr class="separator:af4c8c19cb812cdbcc34bc408577bb25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b67ab5f654b436110debd38f1b1d57"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:ae7b67ab5f654b436110debd38f1b1d57"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae7b67ab5f654b436110debd38f1b1d57">amrex::unpackBuffer</a> (PC &amp;pc, const ParticleCopyPlan &amp;plan, const Buffer &amp;snd_buffer, const UnpackPolicy policy)</td></tr>
+<tr class="separator:ae7b67ab5f654b436110debd38f1b1d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd4b7b3db27a6698403b2f272a378ea"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aecd4b7b3db27a6698403b2f272a378ea"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aecd4b7b3db27a6698403b2f272a378ea">amrex::communicateParticlesStart</a> (const PC &amp;pc, ParticleCopyPlan &amp;plan, const Buffer &amp;snd_buffer, Buffer &amp;rcv_buffer)</td></tr>
+<tr class="separator:aecd4b7b3db27a6698403b2f272a378ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814322d519ae32014737504164a0516b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a814322d519ae32014737504164a0516b">amrex::communicateParticlesFinish</a> (const <a class="el" href="structamrex_1_1ParticleCopyPlan.html">ParticleCopyPlan</a> &amp;plan)</td></tr>
 <tr class="separator:a814322d519ae32014737504164a0516b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy &gt; </td></tr>
-<tr class="memitem:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae65aa0e5fb032ec461c63cf5bf490f0d">amrex::unpackRemotes</a> (PC &amp;pc, const ParticleCopyPlan &amp;plan, Buffer &amp;rcv_buffer, const UnpackPolicy &amp;policy)</td></tr>
-<tr class="separator:ae65aa0e5fb032ec461c63cf5bf490f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa336a10fb862ee79cd872847ef6efadd"><td class="memTemplParams" colspan="2">template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:aa336a10fb862ee79cd872847ef6efadd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa336a10fb862ee79cd872847ef6efadd">amrex::unpackRemotes</a> (PC &amp;pc, const ParticleCopyPlan &amp;plan, Buffer &amp;rcv_buffer, const UnpackPolicy &amp;policy)</td></tr>
+<tr class="separator:aa336a10fb862ee79cd872847ef6efadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

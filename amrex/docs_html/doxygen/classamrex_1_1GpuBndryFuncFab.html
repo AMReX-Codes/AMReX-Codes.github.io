@@ -102,8 +102,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62075f3a31adb0b72fa9c09d17ee7e5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html#a62075f3a31adb0b72fa9c09d17ee7e5a">GpuBndryFuncFab</a> ()=default</td></tr>
 <tr class="separator:a62075f3a31adb0b72fa9c09d17ee7e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0999bc3f58f248b8ebab6da8148478"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html#aea0999bc3f58f248b8ebab6da8148478">GpuBndryFuncFab</a> (F a_f)</td></tr>
-<tr class="separator:aea0999bc3f58f248b8ebab6da8148478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f3457a00409172a47577db0b968d15"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html#a08f3457a00409172a47577db0b968d15">GpuBndryFuncFab</a> (F const &amp;a_f)</td></tr>
+<tr class="separator:a08f3457a00409172a47577db0b968d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a498e33d9a56fd836b14c1937c671ff4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html#a498e33d9a56fd836b14c1937c671ff4a">GpuBndryFuncFab</a> (F &amp;&amp;a_f)</td></tr>
+<tr class="separator:a498e33d9a56fd836b14c1937c671ff4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe943cada3860558a330d325367e3e66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html#abe943cada3860558a330d325367e3e66">operator()</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;bx, <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;dest, const int dcomp, const int numcomp, <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> const &amp;geom, const Real time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcr, const int bcomp, const int orig_comp)</td></tr>
 <tr class="separator:abe943cada3860558a330d325367e3e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -116,7 +118,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;class F&gt;<br />
 class amrex::GpuBndryFuncFab&lt; F &gt;</h3>
 
-<p>In this gpu version, F is provided by the user. It needs to have a <b>device</b> operator() that can work on a cell for boundaries not handled by amrex_fab_filcc. </p>
+<p>In this gpu version, F is provided by the user. It needs to have a <b>device</b> operator() that can work on a cell for boundaries not handled by <a class="el" href="namespaceamrex.html#ac5fc12f0b599e4eeae9cd237e2551915">amrex::fab_filcc</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a62075f3a31adb0b72fa9c09d17ee7e5a"></a>
 <div class="memitem">
@@ -143,7 +145,7 @@ template&lt;class F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aea0999bc3f58f248b8ebab6da8148478"></a>
+<a class="anchor" id="a08f3457a00409172a47577db0b968d15"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -155,7 +157,33 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html">amrex::GpuBndryFuncFab</a>&lt; F &gt;::<a class="el" href="classamrex_1_1GpuBndryFuncFab.html">GpuBndryFuncFab</a> </td>
           <td>(</td>
-          <td class="paramtype">F&#160;</td>
+          <td class="paramtype">F const &amp;&#160;</td>
+          <td class="paramname"><em>a_f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a498e33d9a56fd836b14c1937c671ff4a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1GpuBndryFuncFab.html">amrex::GpuBndryFuncFab</a>&lt; F &gt;::<a class="el" href="classamrex_1_1GpuBndryFuncFab.html">GpuBndryFuncFab</a> </td>
+          <td>(</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>a_f</em></td><td>)</td>
           <td></td>
         </tr>

@@ -2,15 +2,16 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="namespaceamrex_1_1Gpu_1_1Atomic" kind="namespace" language="C++">
     <compoundname>amrex::Gpu::Atomic</compoundname>
+    <innernamespace refid="namespaceamrex_1_1Gpu_1_1Atomic_1_1detail">amrex::Gpu::Atomic::detail</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a8aa0aebdef6e669c20ff7e5585ea6f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a428330a4e7622c16d943003ad97e54a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Add</definition>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T amrex::Gpu::Atomic::Add</definition>
         <argsstring>(T *sum, T value) noexcept</argsstring>
         <name>Add</name>
         <param>
@@ -27,37 +28,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="177" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="177" bodyend="184"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="117" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="117" bodyend="126"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a1c65832246abbfd04586cc4b2b2193ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Add</definition>
-        <argsstring>(long *sum, long value) noexcept</argsstring>
-        <name>Add</name>
-        <param>
-          <type>long *</type>
-          <declname>sum</declname>
-        </param>
-        <param>
-          <type>long</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="187" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="187" bodyend="194"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a9df4c5c58b507b5ed7984956c742b32e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a65a6ccaf19da430e224cf30207060d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Min</definition>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T amrex::Gpu::Atomic::Min</definition>
         <argsstring>(T *m, T value) noexcept</argsstring>
         <name>Min</name>
         <param>
@@ -74,79 +54,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="198" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="198" bodyend="205"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="176" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="176" bodyend="185"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a9df77e95c08d12561d413e6b5f241773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Min</definition>
-        <argsstring>(int *m, int value) noexcept</argsstring>
-        <name>Min</name>
-        <param>
-          <type>int *</type>
-          <declname>m</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="208" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="208" bodyend="215"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a1551208166ff18ecfc81a1fed8c0562e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Min</definition>
-        <argsstring>(unsigned int *m, unsigned int value) noexcept</argsstring>
-        <name>Min</name>
-        <param>
-          <type>unsigned int *</type>
-          <declname>m</declname>
-        </param>
-        <param>
-          <type>unsigned int</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="218" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="218" bodyend="225"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a41a6cf8272563ec338f28c257ca6af09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Min</definition>
-        <argsstring>(unsigned long long int *m, unsigned long long int value) noexcept</argsstring>
-        <name>Min</name>
-        <param>
-          <type>unsigned long long int *</type>
-          <declname>m</declname>
-        </param>
-        <param>
-          <type>unsigned long long int</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="228" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="228" bodyend="235"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a1e509eabebf6e4bde0d304011e4aac5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a8043bb4fd6e11c5d01f9d35fa1b14ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class T</type>
           </param>
         </templateparamlist>
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Max</definition>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T amrex::Gpu::Atomic::Max</definition>
         <argsstring>(T *m, T value) noexcept</argsstring>
         <name>Max</name>
         <param>
@@ -163,74 +80,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="239" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="239" bodyend="246"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="235" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="235" bodyend="244"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a59ba07b527dbd2ea1d29984a39cadb37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Max</definition>
-        <argsstring>(int *m, int value) noexcept</argsstring>
-        <name>Max</name>
-        <param>
-          <type>int *</type>
-          <declname>m</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="249" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="249" bodyend="256"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1ab5db81238d20f260453f58413f63b9f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Max</definition>
-        <argsstring>(unsigned int *m, unsigned int value) noexcept</argsstring>
-        <name>Max</name>
-        <param>
-          <type>unsigned int *</type>
-          <declname>m</declname>
-        </param>
-        <param>
-          <type>unsigned int</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="259" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="259" bodyend="266"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1ad8c9b2b2a63a3d4191c632712a5b1dae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::Max</definition>
-        <argsstring>(unsigned long long int *m, unsigned long long int value) noexcept</argsstring>
-        <name>Max</name>
-        <param>
-          <type>unsigned long long int *</type>
-          <declname>m</declname>
-        </param>
-        <param>
-          <type>unsigned long long int</type>
-          <declname>value</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="269" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="269" bodyend="276"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1abd9e96fd4e52ae3194e294e283b2bad9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::LogicalOr</definition>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a6edfeacb84ea3ace119bb05228f44018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::Gpu::Atomic::LogicalOr</definition>
         <argsstring>(int *m, int value) noexcept</argsstring>
         <name>LogicalOr</name>
         <param>
@@ -247,11 +101,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="279" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="279" bodyend="286"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="251" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="251" bodyend="265"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1ac8c7ffecc3c4bd29795ebc7904b623fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::Gpu::Atomic::LogicalAnd</definition>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a274e7a071d4000f862394dd9b98beea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::Gpu::Atomic::LogicalAnd</definition>
         <argsstring>(int *m, int value) noexcept</argsstring>
         <name>LogicalAnd</name>
         <param>
@@ -268,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="289" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="289" bodyend="296"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="272" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="272" bodyend="286"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a9022f7f32e44bc84adc3f4f1e3fa0a93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned int</type>
@@ -289,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="299" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="299" bodyend="306"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="293" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="293" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1acf672781c4679985d7bbd8e335318fed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned int</type>
@@ -310,19 +164,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="309" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="309" bodyend="316"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="318" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="318" bodyend="336"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a38a7c62318c47dbeae7bfbefd235510c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::Gpu::Atomic::Exch</definition>
-        <argsstring>(int *address, int val) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a170f55f8b9bd412d07a2ab2e825a4ee8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T amrex::Gpu::Atomic::Exch</definition>
+        <argsstring>(T *address, T val) noexcept</argsstring>
         <name>Exch</name>
         <param>
-          <type>int *</type>
+          <type>T *</type>
           <declname>address</declname>
         </param>
         <param>
-          <type>int</type>
+          <type>T</type>
           <declname>val</declname>
         </param>
         <briefdescription>
@@ -331,23 +190,28 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="319" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="319" bodyend="327"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="344" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="344" bodyend="358"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1ae51173f72e8aea917b2a1d25a75956d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::Gpu::Atomic::CAS</definition>
-        <argsstring>(int *address, int compare, int val) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1add2fe38b8010f51d0d06b1608a01816c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T amrex::Gpu::Atomic::CAS</definition>
+        <argsstring>(T *address, T compare, T val) noexcept</argsstring>
         <name>CAS</name>
         <param>
-          <type>int *</type>
+          <type>T *</type>
           <declname>address</declname>
         </param>
         <param>
-          <type>int</type>
+          <type>T</type>
           <declname>compare</declname>
         </param>
         <param>
-          <type>int</type>
+          <type>T</type>
           <declname>val</declname>
         </param>
         <briefdescription>
@@ -356,63 +220,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="330" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="330" bodyend="339"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a2d9177858c2cd819753d54f0b6ec1741" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned int</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE unsigned int amrex::Gpu::Atomic::CAS</definition>
-        <argsstring>(unsigned int *address, unsigned int compare, unsigned int val) noexcept</argsstring>
-        <name>CAS</name>
-        <param>
-          <type>unsigned int *</type>
-          <declname>address</declname>
-        </param>
-        <param>
-          <type>unsigned int</type>
-          <declname>compare</declname>
-        </param>
-        <param>
-          <type>unsigned int</type>
-          <declname>val</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="342" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="342" bodyend="353"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1_1Atomic_1a9fd06a5f2230d1349c5576a7051c3027" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned long long int</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE unsigned long long int amrex::Gpu::Atomic::CAS</definition>
-        <argsstring>(unsigned long long int *address, unsigned long long int compare, unsigned long long int val) noexcept</argsstring>
-        <name>CAS</name>
-        <param>
-          <type>unsigned long long int *</type>
-          <declname>address</declname>
-        </param>
-        <param>
-          <type>unsigned long long int</type>
-          <declname>compare</declname>
-        </param>
-        <param>
-          <type>unsigned long long int</type>
-          <declname>val</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="356" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="356" bodyend="367"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="366" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" bodystart="366" bodyend="381"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="114" column="1"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAtomic.H" line="9" column="1"/>
   </compounddef>
 </doxygen>

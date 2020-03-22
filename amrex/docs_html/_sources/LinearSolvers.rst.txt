@@ -148,7 +148,7 @@ of the physical domain, whereas coarse/fine boundaries refer to the
 boundaries between AMR levels. The following steps must be
 followed in the exact order.
 
-1) First we need to set physical domain boundary types via the :cpp:`MLLinOp` member
+1) For any type of solver, we first need to set physical domain boundary types via the :cpp:`MLLinOp` member
 function
 
 .. highlight:: c++
@@ -170,12 +170,15 @@ The supported BC types at the physical domain boundaries are
 
 - :cpp:`LinOpBCType::reflect_odd` for reflection with sign changed.
 
-2) If we want to do a MAC projection where the boundary conditions on the 
+2) Cell-centered solvers only: 
+if we want to do a linear solve where the boundary conditions on the 
 coarsest AMR level of the solve come from a coarser level (e.g. the
 base AMR level of the solve is > 0 and does not cover the entire domain), 
 we must explicitly provide the coarser data.  Boundary conditions from a 
-coarser level are always Dirichlet.  Note that this step, if needed, must
-be performed before the step below.  The :cpp:`MLLinOp` member function for this step is
+coarser level are always Dirichlet.  
+
+Note that this step, if needed, must be performed before the step below.  
+The :cpp:`MLLinOp` member function for this step is
 
 .. highlight:: c++
 
@@ -186,9 +189,12 @@ be performed before the step below.  The :cpp:`MLLinOp` member function for this
 Here :cpp:`const MultiFab* crse` contains the Dirichlet boundary
 values at the coarse resolution, and :cpp:`int crse_ratio` (e.g., 2)
 is the refinement ratio between the coarsest solver level and the AMR
-level below it.
+level below it.  The MultiFab crse does not need to have ghost cells itself. 
+If the coarse grid bc's for the solve are identically zero, :cpp:`nullptr` 
+can be passed instead of :cpp:`crse`.
 
-3) Before the solve one must always call the :cpp:`MLLinOp` member function 
+3) Cell-centered solvers only: 
+before the solve one must always call the :cpp:`MLLinOp` member function 
 
 .. highlight:: c++
 
@@ -196,19 +202,21 @@ level below it.
 
     virtual void setLevelBC (int amrlev, const MultiFab* levelbcdata) = 0;
 
-If we want to supply any inhomogeneous 
-Dirichlet or Neumann boundary conditions at the domain boundaries, 
-we must supply those values in ``MultiFab* levelbcdata``, 
-which must have at least one ghost cell. 
+If we want to supply any inhomogeneous Dirichlet or Neumann boundary 
+conditions at the domain boundaries, we must supply those values 
+in ``MultiFab* levelbcdata``, which must have at least one ghost cell. 
+Note that the argument :cpp:`amrlev` is relative to the solve, not
+necessarily the full AMR hierarchy; amrlev = 0 refers to the coarsest
+level of the solve.
 
 If the boundary condition is Dirichlet the ghost cells outside the
 domain boundary of ``levelbcdata`` must hold the value of the solution
 at the domain boundary; 
 if the boundary condition is Neumann those ghost cells must hold
 the value of the gradient of the solution normal to the boundary
-(e.g. it would hold dphi/dx on both the low and high facees in the x-direction).
+(e.g. it would hold dphi/dx on both the low and high faces in the x-direction).
 
-If there are no inhomogeneous Dirichlet or Neumann boundaries
+If the boundary conditions contain no inhomogeneous Dirichlet or Neumann boundaries,
 we can pass :cpp:`nullptr` instead of a MultiFab.
 
 We can use the solution array itself to hold these values;
@@ -402,7 +410,7 @@ the MACProjector object and use it to perform a MAC projection.
                          {geom},                           // the geometry object
                          lp_info);                         // structure for passing info to the operator
 
-    // Here we specifiy the desired divergence S
+    // Here we specify the desired divergence S
     // MacProjector macproj({amrex::GetArrOfPtrs(vel)},       // face-based velocity
     //                      {amrex::GetArrOfConstPtrs(beta)}, // beta
     //                      {geom},                           // the geometry object
@@ -435,11 +443,12 @@ the MACProjector object and use it to perform a MAC projection.
     Real abstol = 1.e-15;
 
     // Solve for phi and subtract from the velocity to make it divergence-free
-    macproj.project(reltol,abstol);
+    // Note that when we build with USE_EB = TRUE, we must specify whether the velocities live
+    //  at face centers (MLMG::Location::FaceCenter) or face centroids (MLMG::Location::FaceCentroid)
+    macproj.project(reltol,abstol,MLMG::Location::FaceCenter);
 
     // If we want to use phi elsewhere, we can pass in an array in which to return the solution 
-    // macproj.project({&phi_inout},reltol,abstol);
-
+    // macproj.project({&phi_inout},reltol,abstol,MLMG::Location::FaceCenter);
 
 See ``Tutorials/LinearSolvers/MAC_Projection_EB`` for the complete working example.
 
@@ -470,58 +479,52 @@ where :math:`U^*` is a vector field defined on cell centers and we want to satis
 
 Currently this nodal approximate projection does not exist in a separate
 operator like the MAC projection; instead we demonstrate below the steps needed
-to compute the approximate projection.  This means we must compute the divergence
-of the vector field,  :math:`D(U^*)`  to compute the right-hand-side, solve the
-variable coefficient Poisson equation, then subtract the weighted gradient term to
-make the vector field result satisfy the divergence constraint.
+to compute the approximate projection.  This means we must compute explicitly the
+right-hand-side , including the the divergence of the vector field, :math:`D(U^*)`,
+solve the variable coefficient Poisson equation, then subtract the weighted
+gradient term to make the vector field result satisfy the divergence constraint.
 
 .. highlight:: c++
 
 ::
                   
    //
-   // Given a cell-centered velocity (vel) field and a cell-centered
-   // scalar field (sigma) field, solve:
+   // Given a cell-centered velocity (vel) field, a cell-centered
+   // scalar field (sigma) field, and a source term S (either node-
+   // or cell-centered )solve:
    //
-   //   div( sigma * grad(phi) ) = div(vel)
+   //   div( sigma * grad(phi) ) = div(vel) - S
    //
    // and then perform the projection:
    //
    //     vel = vel - sigma * grad(phi)
    // 
-   // NOTE: phi is node centered !!!
-
 
    //
    // Create the EB factory
    // 
    EBFArrayBoxFactory factory(eb_level, geom, grids, dmap, ng_ebs, ebs);
 
-
    //
-   //  Create the CELL CENTERED velocity field we want to project  
+   //  Create the cell-centered velocity field we want to project  
    //
-   std::unique_ptr<MultiFab> > vel;
-   vel.reset(new MultiFab(grids, dmap, 3, nghost, MFInfo(), factory));
+   MultiFab vel(grids, dmap, AMREX_SPACEDIM, 1, MFInfo(), factory);
 
-   // Set velocity field to (1,0,0) for this example
-   vel.setVal(1.0, 0, 1);
-   vel.setVal(0.0, 1, 1);
-   vel.setVal(0.0, 2, 1);
-
+   // Set velocity field to (1,0,0) including ghost cells for this example
+   vel.setVal(1.0, 0, 1, 1);
+   vel.setVal(0.0, 1, AMREX_SPACEDIM-1, 1);
 
    //
    // Setup linear operator, AKA the nodal Laplacian
    // 
    LPInfo lp_info;
-   lp_info.setMaxCoarseningLevel(nodal_mg_max_coarsening_level); // Max level of coarsening
 
    // If we want to use hypre to solve the full problem we do not need to coarsen the GMG stencils
-   if (use_hypre_as_full_solver)
-       lp_info.setMaxCoarseningLevel(0);
+   // if (use_hypre_as_full_solver)
+   //     lp_info.setMaxCoarseningLevel(0);
 
-   MLNodeLaplacian matrix(geom, grids, dmap, lp_info, amrex::GetVecOfConstPtrs({factory}));
-
+   MLNodeLaplacian matrix({geom}, {grids}, {dmap}, lp_info,
+                          Vector<EBFArrayBoxFactory const*>{&factory});
 
    // Set boundary conditions.
    // Here we use Neumann on the low x-face, Dirichlet on the high x-face,
@@ -540,66 +543,63 @@ make the vector field result satisfy the divergence constraint.
    matrix.setHarmonicAverage(false);
 
    //
-   // Compute divergence of vel and store it in divu
+   // Compute RHS 
    //
-   // NOTE: it's up to the user to compute the RHS divergence, as opposed
+   // NOTE: it's up to the user to compute the RHS. as opposed
    //       to the MAC projection case !!!
    //
    // NOTE: do this operation AFTER setting up the linear operator so
-   //       that compDivergence method can be used
+   //       that compRHS method can be used
    // 
-   std::unique_ptr<MultiFab> > divu;
-   divu.reset(new MultiFab(grids, dmap, 1, 1, MFInfo(), factory));
-   matrix.compDivergence(GetVecOfPtrs({divu}), GetVecOfPtrs({vel}));
 
-   //
-   // Note that if we want to solve div( sigma * grad(phi) ) = div(vel) - S
-   //   we must do the subtraction ourselves
-   //
-
-   std::unique_ptr<MultiFab> > rhs;
-
+   // RHS is nodal
    const BoxArray & nd_grids = amrex::convert(grids, IntVect{1,1,1}); // nodal grids
-   rhs.reset(new MultiFab(nd_grids, dmap, 1, 1, MFInfo(), factory));
 
-   // here Fill rhs with the "S" on nodes
-   // ...
+   // MultiFab to host RHS
+   MultiFab rhs(nd_grids, dmap, 1, 1, MFInfo(), factory);
 
-   // Then define rhs = div(vel) - S
-   MultiFab::Subtract(*divu, *rhs, 0, 0, 1, 0);
+   // Cell-centered contributions to RHS
+   MultiFab S_cc(grids, dmap, 1, 1, MFInfo(), factory);
+   S_cc.setVal(0.0); // Set it to zero for this example
+
+   // Node-centered contributions to RHS
+   MultiFab S_nd(nd_grids, dmap, 1, 1, MFInfo(), factory);
+   S_nd.setVal(0.0); // Set it to zero for this example
+
+   // Compute RHS -- vel must be cell-centered
+   matrix.compRHS({&rhs}, {&vel}, {&S_nd}, {&S_cc});
 
    //
    // Create the cell-centered sigma field and set it to 1 for this example
    //
-   std::unique_ptr<MultiFab> > sigma;
-   sigma.reset(new MultiFab(grids, dmap, 1, nghost, MFInfo(), factory));
-   sigma->setVal(1.0);
+   MultiFab sigma(grids, dmap, 1, 1, MFInfo(), factory);
+   sigma.setVal(1.0);
 
-   // Set sigma 
-   matrix.setSigma(0, *sigma);
+   // Set sigma
+   matrix.setSigma(0, sigma);
 
    //
    // Create node-centered phi
    //
-   std::unique_ptr<MultiFab> > phi;
-
-   phi.reset(new MultiFab(nd_grids, dmap, 1, nghost, MFInfo(), factory));
-   phi->setVal(0.0);
+   MultiFab phi(nd_grids, dmap, 1, 1, MFInfo(), factory);
+   phi.setVal(0.0);
 
    //
    // Setup MLMG solver
    //
    MLMG nodal_solver(matrix);
 
-   nodal_solver.setMaxIter(nodal_mg_maxiter);
-   nodal_solver.setVerbose(nodal_mg_verbose);
-   nodal_solver.setCGVerbose(nodal_mg_cg_verbose);
-   nodal_solver.setCGMaxIter(nodal_mg_cg_maxiter);
+   // We can specify the maximum number of iterations
+   nodal_solver.setMaxIter(mg_maxiter);
+   nodal_solver.setCGMaxIter(mg_cg_maxiter);
+
+   nodal_solver.setVerbose(mg_verbose);
+   nodal_solver.setCGVerbose(mg_cg_verbose);
 
    // Set bottom-solver to use hypre instead of native BiCGStab 
    //   ( we could also have set this to cg, bicgcg, cgbicg)
-   if (use_hypre_as_full_solver || use_hypre_as_bottom_solver) 
-       nodal_solver.setBottomSolver(MLMG::BottomSolver::hypre);
+   // if (use_hypre_as_full_solver || use_hypre_as_bottom_solver) 
+   //     nodal_solver.setBottomSolver(MLMG::BottomSolver::hypre);
 
    // Define the relative tolerance
    Real reltol = 1.e-8;
@@ -608,26 +608,141 @@ make the vector field result satisfy the divergence constraint.
    Real abstol = 1.e-15;
 
    //
-   // Solve div( sigma * grad(phi) ) = div(vel)
+   // Solve div( sigma * grad(phi) ) = RHS
    //
-   nodal_solver.solve( GetVecOfPtrs({phi}), GetVecOfConstPtrs({divu}), reltol, abstol);
+   nodal_solver.solve( {&phi}, {&rhs}, reltol, abstol);
 
    //
-   // Create cell-centered multifab to hold value of -sigma*grad(phi) at cell-centers
+   // Create cell-centered MultiFab to hold value of -sigma*grad(phi) at cell-centers
    // 
-   std::unique_ptr<MultiFab> fluxes;
-   fluxes.reset(new MultiFab(vel.boxArray(), vel.DistributionMap(),
-                             vel.nComp(), 1, MFInfo(), factory ));
+   //
+   MultiFab fluxes(grids, dmap, AMREX_SPACEDIM, 1, MFInfo(), factory);
    fluxes.setVal(0.0);
 
    // Get fluxes from solver
-   nodal_solver.getFluxes( GetVecOfPtrs({fluxes}) );
+   nodal_solver.getFluxes( {&fluxes} );
 
    //
    // Apply projection explicitly --  vel = vel - sigma * grad(phi)  
    // 
-   MultiFab::Add( vel, fluxes, 0, 0, 3, 0);
+   MultiFab::Add( *vel, *fluxes, 0, 0, AMREX_SPACEDIM, 0);
 
+See ``Tutorials/LinearSolvers/Nodal_Projection_EB`` for the complete working example.
+
+Tensor Solve
+============
+
+Application codes that solve the Navier-Stokes equations need to evaluate
+the viscous term;  solving for this term implicitly requires a multi-component
+solve with cross terms.  Because this is a commonly used motif, we provide
+a tensor solve for cell-centered velocity components.
+
+Consider a velocity field :math:`U = (u,v,w)` with all
+components co-located on cell centers.  The viscous term can be written in vector form as
+
+.. math::
+
+ \nabla \cdot (\eta \nabla U) + \nabla \cdot (\eta (\nabla U)^T ) + \nabla \cdot ( (\kappa - \frac{2}{3} \eta) (\nabla \cdot U) )
+
+and in 3-d Cartesian component form as
+
+.. math::
+
+ ( (\eta u_x)_x + (\eta u_y)_y + (\eta u_z)_z ) + ( (\eta u_x)_x + (\eta v_x)_y + (\eta w_x)_z ) +  ( (\kappa - \frac{2}{3} \eta) (u_x+v_y+w_z) )_x
+
+ ( (\eta v_x)_x + (\eta v_y)_y + (\eta v_z)_z ) + ( (\eta u_y)_x + (\eta v_y)_y + (\eta w_y)_z ) +  ( (\kappa - \frac{2}{3} \eta) (u_x+v_y+w_z) )_y
+
+ ( (\eta w_x)_x + (\eta w_y)_y + (\eta w_z)_z ) + ( (\eta u_z)_x + (\eta v_z)_y + (\eta w_z)_z ) +  ( (\kappa - \frac{2}{3} \eta) (u_x+v_y+w_z) )_z
+
+
+Here :math:`\eta` is the dynamic viscosity and :math:`\kappa` is the bulk viscosity.  
+
+We evaluate the following terms from the above using the ``MLABecLaplacian`` and ``MLEBABecLaplacian`` operators;
+
+.. math::
+
+   ( (\frac{4}{3} \eta + \kappa) u_x)_x + (              \eta           u_y)_y + (\eta u_z)_z 
+
+                 (\eta           v_x)_x + ( (\frac{4}{3} \eta + \kappa) v_y)_y + (\eta v_z)_z 
+
+    (\eta w_x)_x                        + (              \eta           w_y)_y + ( (\frac{4}{3} \eta + \kappa) w_z)_z 
+
+the following cross-terms are evaluated separately using the ``MLTensorOp`` and ``MLEBTensorOp`` operators.
+
+.. math::
+
+    ( (\kappa - \frac{2}{3} \eta) (v_y + w_z) )_x + (\eta v_x)_y  + (\eta w_x)_z
+
+    (\eta u_y)_x + ( (\kappa - \frac{2}{3} \eta) (u_x + w_z) )_y  + (\eta w_y)_z
+
+    (\eta u_z)_x + (\eta v_z)_y - ( (\kappa - \frac{2}{3} \eta) (u_x + v_y) )_z
+
+The code below is an example of how to set up the solver to compute the
+viscous term `divtau` explicitly:
+
+.. highlight:: c++
+
+::
+
+   Box domain(geom[0].Domain());
+
+   // Set BCs for Poisson solver in bc_lo, bc_hi
+   ...
+
+   //
+   // First define the operator "ebtensorop"
+   // Note we call LPInfo().setMaxCoarseningLevel(0) because we are only applying the operator,
+   //      not doing an implicit solve
+   //
+   //       (alpha * a - beta * (del dot b grad)) sol
+   //
+   // LPInfo                       info;
+   MLEBTensorOp ebtensorop(geom, grids, dmap, LPInfo().setMaxCoarseningLevel(0),
+                           amrex::GetVecOfConstPtrs(ebfactory));
+
+   // It is essential that we set MaxOrder of the solver to 2
+   // if we want to use the standard sol(i)-sol(i-1) approximation
+   // for the gradient at Dirichlet boundaries.
+   // The solver's default order is 3 and this uses three points for the
+   // gradient at a Dirichlet boundary.
+   ebtensorop.setMaxOrder(2);
+
+   // LinOpBCType Definitions are in amrex/Src/Boundary/AMReX_LO_BCTYPES.H
+   ebtensorop.setDomainBC ( {(LinOpBCType)bc_lo[0], (LinOpBCType)bc_lo[1], (LinOpBCType)bc_lo[2]},
+                            {(LinOpBCType)bc_hi[0], (LinOpBCType)bc_hi[1], (LinOpBCType)bc_hi[2]} );
+
+   // Return div (eta grad)) phi
+   ebtensorop.setScalars(0.0, -1.0);
+
+   amrex::Vector<amrex::Array<std::unique_ptr<amrex::MultiFab>, AMREX_SPACEDIM>> b;
+   b.resize(max_level + 1);
+
+   // Compute the coefficients
+   for (int lev = 0; lev < nlev; lev++)
+   {
+       // We average eta onto faces
+       for(int dir = 0; dir < AMREX_SPACEDIM; dir++)
+       {
+           BoxArray edge_ba = grids[lev];
+           edge_ba.surroundingNodes(dir);
+           b[lev][dir].reset(new MultiFab(edge_ba, dmap[lev], 1, nghost, MFInfo(), *ebfactory[lev]));
+       }
+
+       average_cellcenter_to_face( GetArrOfPtrs(b[lev]), *etan[lev], geom[lev] );
+
+       b[lev][0] -> FillBoundary(geom[lev].periodicity());
+       b[lev][1] -> FillBoundary(geom[lev].periodicity());
+       b[lev][2] -> FillBoundary(geom[lev].periodicity());
+
+       ebtensorop.setShearViscosity  (lev, GetArrOfConstPtrs(b[lev]));
+       ebtensorop.setEBShearViscosity(lev, (*eta[lev]));
+
+       ebtensorop.setLevelBC ( lev, GetVecOfConstPtrs(vel)[lev] );
+   }
+
+   MLMG solver(ebtensorop);
+
+   solver.apply(GetVecOfPtrs(divtau), GetVecOfPtrs(vel));
 
 
 Multi-Component Operators

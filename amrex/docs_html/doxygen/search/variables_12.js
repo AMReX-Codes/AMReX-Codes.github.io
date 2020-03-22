@@ -74,7 +74,7 @@ var searchData=
   ['srccomp',['srcComp',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a01917a2e8e16dff02f56a81a578687f1',1,'amrex::FabArrayBase::FabComTag::srcComp()'],['../structamrex_1_1FabCopyDescriptor.html#abf33adc9a73450887814df15429e64ac',1,'amrex::FabCopyDescriptor::srcComp()']]],
   ['srcindex',['srcIndex',['../structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c',1,'amrex::FabArrayBase::CopyComTag']]],
   ['sros',['sros',['../classamrex_1_1StreamRetry.html#a3c6ead4d87a1a0d6a05e894e17f72104',1,'amrex::StreamRetry']]],
-  ['ss',['SS',['../classhacc_1_1Error.html#ae3184e7fc000b566c6058b4a56d44968',1,'hacc::Error::SS()'],['../classamrex_1_1Print.html#abfc9a46813216f47dd6fd4ef6fb90c36',1,'amrex::Print::ss()'],['../classamrex_1_1PrintToFile.html#ac4b44832e48e2668106dbfec83c8acca',1,'amrex::PrintToFile::ss()']]],
+  ['ss',['ss',['../classamrex_1_1Print.html#abfc9a46813216f47dd6fd4ef6fb90c36',1,'amrex::Print::ss()'],['../classamrex_1_1PrintToFile.html#ac4b44832e48e2668106dbfec83c8acca',1,'amrex::PrintToFile::ss()'],['../classhacc_1_1Error.html#ae3184e7fc000b566c6058b4a56d44968',1,'hacc::Error::SS()']]],
   ['sss_5fmax',['SSS_MAX',['../namespaceamrex.html#a9b7bd9bff131fc5a847e7465aeba15aa',1,'amrex']]],
   ['stackdepth',['stackDepth',['../structBLProfStats_1_1CallTreeNode.html#a07acaf5c443edd83d069c9056d2284e3',1,'BLProfStats::CallTreeNode']]],
   ['stacktime',['stackTime',['../structBLProfStats_1_1CallTreeNode.html#abbd67971ba1617870613e5a4a6bf3e48',1,'BLProfStats::CallTreeNode']]],
@@ -129,7 +129,7 @@ var searchData=
   ['sunls_5fvectorop_5ferr',['sunls_vectorop_err',['../namespacefsunlinsol__mod.html#a65d288a8f90bd511278641c9ab9bad03',1,'fsunlinsol_mod']]],
   ['sunmatrix_5fid',['sunmatrix_id',['../namespacefsunmatrix__mod.html#a2c1c239a3a00595d98a247059e1f7024',1,'fsunmatrix_mod']]],
   ['suntrue',['suntrue',['../namespacefsundials__types__mod.html#aa8d20513ce2d78ba022726da9a121f33',1,'fsundials_types_mod']]],
-  ['superparticle_5fsize',['superparticle_size',['../classamrex_1_1ParticleContainer.html#a09a8f0a93ae94e2c92927635258b0ee5',1,'amrex::ParticleContainer']]],
+  ['superparticle_5fsize',['superparticle_size',['../classamrex_1_1ParticleContainer.html#a84eea816c950428178d12cedf0780c1a',1,'amrex::ParticleContainer']]],
   ['sys_5fname',['sys_name',['../namespaceamrex.html#abac42537a3d9d5a2f6c6fac15f99f66c',1,'amrex']]],
   ['syserror',['SysError',['../classhacc_1_1Error.html#a4a9d9e1dee3986d055bf6c64729b3dee',1,'hacc::Error']]],
   ['szi',['szi',['../namespaceamrex__mempool__module.html#ac54b332ae65afbcd1863fa9ae4174cc2',1,'amrex_mempool_module']]]

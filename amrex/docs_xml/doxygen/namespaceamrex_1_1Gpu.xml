@@ -7,9 +7,12 @@
     <innerclass refid="structamrex_1_1Gpu_1_1Deleter" prot="public">amrex::Gpu::Deleter</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1Device" prot="public">amrex::Gpu::Device</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1DeviceScalar" prot="public">amrex::Gpu::DeviceScalar</innerclass>
+    <innerclass refid="structamrex_1_1Gpu_1_1DeviceToDevice" prot="public">amrex::Gpu::DeviceToDevice</innerclass>
+    <innerclass refid="structamrex_1_1Gpu_1_1DeviceToHost" prot="public">amrex::Gpu::DeviceToHost</innerclass>
     <innerclass refid="classamrex_1_1Gpu_1_1Elixir" prot="public">amrex::Gpu::Elixir</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1GraphSafeGuard" prot="public">amrex::Gpu::GraphSafeGuard</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1GridSize" prot="public">amrex::Gpu::GridSize</innerclass>
+    <innerclass refid="structamrex_1_1Gpu_1_1HostToDevice" prot="public">amrex::Gpu::HostToDevice</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1LaunchSafeGuard" prot="public">amrex::Gpu::LaunchSafeGuard</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1Managed" prot="public">amrex::Gpu::Managed</innerclass>
     <innerclass refid="structamrex_1_1Gpu_1_1Pinned" prot="public">amrex::Gpu::Pinned</innerclass>
@@ -18,7 +21,611 @@
     <innerclass refid="structamrex_1_1Gpu_1_1StreamItInfo" prot="public">amrex::Gpu::StreamItInfo</innerclass>
     <innernamespace refid="namespaceamrex_1_1Gpu_1_1Atomic">amrex::Gpu::Atomic</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Gpu_1_1range__detail">amrex::Gpu::range_detail</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::DeviceVector = typedef PODVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>DeviceVector</name>
+        <briefdescription>
+<para>When Cuda is off, all these containers revert to <ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::HostVector = typedef PODVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>HostVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1Gpu_1ad6c6e91c90e801f44c429c7b32abd257" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::ManagedVector = typedef PODVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>ManagedVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="76" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1Gpu_1abe2cd73b65ff4d9eb3c2672e1425212b" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::ManagedDeviceVector = typedef PODVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>ManagedDeviceVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="79" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1Gpu_1af9749d46a7d1bfabf6c7430c0e4a777b" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::PinnedVector = typedef PODVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>PinnedVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1Gpu_1aa06084d673c5ad11d0431208239fe562" prot="public" static="no">
+        <type><ref refid="classamrex_1_1PODVector" kindref="compound">PODVector</ref>&lt; T &gt;</type>
+        <definition>using amrex::Gpu::PolymorphicVector = typedef PODVector&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>PolymorphicVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" prot="public" static="yes" mutable="no">
+        <type>constexpr <ref refid="structamrex_1_1Gpu_1_1HostToDevice" kindref="compound">HostToDevice</ref></type>
+        <definition>constexpr HostToDevice amrex::Gpu::hostToDevice</definition>
+        <argsstring></argsstring>
+        <name>hostToDevice</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" prot="public" static="yes" mutable="no">
+        <type>constexpr <ref refid="structamrex_1_1Gpu_1_1DeviceToHost" kindref="compound">DeviceToHost</ref></type>
+        <definition>constexpr DeviceToHost amrex::Gpu::deviceToHost</definition>
+        <argsstring></argsstring>
+        <name>deviceToHost</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="92" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" prot="public" static="yes" mutable="no">
+        <type>constexpr <ref refid="structamrex_1_1Gpu_1_1DeviceToDevice" kindref="compound">DeviceToDevice</ref></type>
+        <definition>constexpr DeviceToDevice amrex::Gpu::deviceToDevice</definition>
+        <argsstring></argsstring>
+        <name>deviceToDevice</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::copy</definition>
+        <argsstring>(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</argsstring>
+        <name>copy</name>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1HostToDevice" kindref="compound">HostToDevice</ref></type>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <ref refid="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" kindref="member">Gpu::HostVector</ref>, <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>, etc. meet this requirement. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version is blocking - CPU execution will halt until the copy is finished.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input iterator type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output iterator type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structamrex_1_1Gpu_1_1HostToDevice" kindref="compound">HostToDevice</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag indicating that the copy is from the host to the device </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to start reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to stop reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the output to start writing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage:</para><para><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">a.begin()</ref>, <ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">a.end()</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">b.begin()</ref>); </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="114" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="114" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1abea324bd9a4533e4f54614f6a7d410d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::copy</definition>
+        <argsstring>(DeviceToHost, InIter begin, InIter end, OutIter result) noexcept</argsstring>
+        <name>copy</name>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1DeviceToHost" kindref="compound">DeviceToHost</ref></type>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>A device-to-host copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <ref refid="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" kindref="member">Gpu::HostVector</ref>, <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>, etc. meet this requirement. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version is blocking - CPU execution will halt until the copy is finished.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input iterator type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output iterator type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structamrex_1_1Gpu_1_1DeviceToHost" kindref="compound">DeviceToHost</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag indicating that the copy is from the device to the host </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to start reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to stop reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the output to start writing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage:</para><para><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">a.begin()</ref>, <ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">a.end()</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">b.begin()</ref>); </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="146" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="146" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1afb3bc7b25afb38fc8f371f3bc4966483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::copy</definition>
+        <argsstring>(DeviceToDevice, InIter begin, InIter end, OutIter result) noexcept</argsstring>
+        <name>copy</name>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1DeviceToDevice" kindref="compound">DeviceToDevice</ref></type>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>A device-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <ref refid="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" kindref="member">Gpu::HostVector</ref>, <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>, etc. meet this requirement. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version is blocking - CPU execution will halt until the copy is finished.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input iterator type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output iterator type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structamrex_1_1Gpu_1_1DeviceToDevice" kindref="compound">DeviceToDevice</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag indicating that the copy is from the device to the device </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to start reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to stop reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the output to start writing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage:</para><para><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" kindref="member">Gpu::deviceToDevice</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">a.begin()</ref>, <ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">a.end()</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">b.begin()</ref>); </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="178" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="178" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::copyAsync</definition>
+        <argsstring>(HostToDevice, InIter begin, InIter end, OutIter result) noexcept</argsstring>
+        <name>copyAsync</name>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1HostToDevice" kindref="compound">HostToDevice</ref></type>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>A host-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <ref refid="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" kindref="member">Gpu::HostVector</ref>, <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>, etc. meet this requirement. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version is asynchronous - CPU execution will continue, whether or not the copy is finished.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input iterator type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output iterator type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structamrex_1_1Gpu_1_1HostToDevice" kindref="compound">HostToDevice</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag indicating that the copy is from the host to the device </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to start reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to stop reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the output to start writing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage:</para><para><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4ffc2b3090d34803c0b78ee6f53d22a9" kindref="member">Gpu::hostToDevice</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">a.begin()</ref>, <ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">a.end()</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">b.begin()</ref>); </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="211" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="211" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a15d5aa9cbac1f2a0ef1f042530760b88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::copyAsync</definition>
+        <argsstring>(DeviceToHost, InIter begin, InIter end, OutIter result) noexcept</argsstring>
+        <name>copyAsync</name>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1DeviceToHost" kindref="compound">DeviceToHost</ref></type>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>A device-to-host copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <ref refid="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" kindref="member">Gpu::HostVector</ref>, <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>, etc. meet this requirement. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version is asynchronous - CPU execution will continue, whether or not the copy is finished.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input iterator type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output iterator type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structamrex_1_1Gpu_1_1DeviceToHost" kindref="compound">DeviceToHost</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag indicating that the copy is from the device to the host </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to start reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to stop reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the output to start writing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage:</para><para><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">a.begin()</ref>, <ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">a.end()</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">b.begin()</ref>); </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="244" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="244" bodyend="255"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a3da569ab08ec568b8e512d91d6259b53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::copyAsync</definition>
+        <argsstring>(DeviceToDevice, InIter begin, InIter end, OutIter result) noexcept</argsstring>
+        <name>copyAsync</name>
+        <param>
+          <type><ref refid="structamrex_1_1Gpu_1_1DeviceToDevice" kindref="compound">DeviceToDevice</ref></type>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>A device-to-device copy routine. Note this is just a wrapper around memcpy, so it assumes contiguous storage. The amrex-provided containers like <ref refid="namespaceamrex_1_1Gpu_1a3d871a58c724cf2f3a5fb0247d592beb" kindref="member">Gpu::HostVector</ref>, <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>, etc. meet this requirement. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version is asynchronous - CPU execution will continue, whether or not the copy is finished.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>InIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input iterator type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutIter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output iterator type </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="structamrex_1_1Gpu_1_1DeviceToDevice" kindref="compound">DeviceToDevice</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tag indicating that the copy is from the device to the device </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>begin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to start reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the input to stop reading </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Where in the output to start writing</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage:</para><para><ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">Gpu::copy</ref>(<ref refid="namespaceamrex_1_1Gpu_1a45b5d93b9e83ebcd8fb2f1e90aced0c7" kindref="member">Gpu::deviceToDevice</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">a.begin()</ref>, <ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">a.end()</ref>, <ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">b.begin()</ref>); </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" line="277" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuContainers.H" bodystart="277" bodyend="288"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
         <definition>static constexpr bool amrex::Gpu::inLaunchRegion</definition>
@@ -30,7 +637,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="84" bodyend="84"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="96" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="96" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a84b4e8c1e004493e6e16003405cec793" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -43,7 +650,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="85" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="85" bodyend="85"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="97" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a395b909fb359f806a5a94b78a94855d8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -59,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="86" bodyend="86"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="98" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="98" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a6be69064b9a7673aa066f42cac505f25" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -72,7 +679,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="88" bodyend="88"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="100" bodyend="100"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a75f138b5ae000637503fb21570285378" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -85,7 +692,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="89" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="89" bodyend="89"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="101" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="101" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a5b1f57488f3261a149dbb59792c1592c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>constexpr bool</type>
@@ -101,7 +708,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="90" bodyend="90"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuControl.H" bodystart="102" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a920dd19f186b2276d9bbdb14d117565c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -114,7 +721,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="178" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="178" bodyend="181"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="177" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="177" bodyend="180"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -127,7 +734,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="184" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="184" bodyend="188"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="183" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="183" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -140,7 +747,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="191" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="191" bodyend="194"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="189" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="189" bodyend="192"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aa720ba8e7b622f0897659c64d23d5db4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -165,7 +772,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="197" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="197" bodyend="202"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="203" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="203" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aa443a27f05e81db793b131d3fc0b101c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -190,7 +797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="205" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="205" bodyend="210"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="222" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="222" bodyend="238"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ab695bddeb3cc727225d95a1826472ae4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -215,7 +822,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="213" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="213" bodyend="218"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="241" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="241" bodyend="257"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -240,7 +847,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="221" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="221" bodyend="226"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="260" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="260" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -265,7 +872,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="229" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="229" bodyend="234"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="273" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="273" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a00026ef5f8505586ed52acbbc11fdf91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -290,7 +897,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="237" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="237" bodyend="242"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" line="286" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="286" bodyend="296"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a9ac3f1c6e71f0842b8f152fce7e4a7fb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>constexpr std::size_t</type>
@@ -303,7 +910,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="70" bodyend="70"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="80" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="80" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a8116e775f35d977f35ff6a522db709d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -332,7 +939,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="89" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="99" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a487b4842b7ddc2b14afd7eb184f89818" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
@@ -353,7 +960,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="93" bodyend="108"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="103" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -375,7 +982,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuRange.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuRange.H" bodystart="99" bodyend="99"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuRange.H" line="123" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuRange.H" bodystart="123" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ab50ab224d1a043d14eccc5019548c562" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -401,7 +1008,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="93" bodyend="99"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="142" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="142" bodyend="148"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a43c0464b84a84c9342e01a13f076e1c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -427,7 +1034,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="103" bodyend="109"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="152" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="152" bodyend="158"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a434d47b5660b0c082d361aa5994ee218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -453,7 +1060,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="113" bodyend="119"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="162" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="162" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a3ce0db272209050a5bf6c593c2679607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -474,7 +1081,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="122" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="122" bodyend="128"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="171" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="171" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a6c3c7080ba11377ca7a9df8ef573e133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -495,7 +1102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="131" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="131" bodyend="137"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" line="180" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuReduce.H" bodystart="180" bodyend="186"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a568da598ec8829dff901c81d530db976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -529,7 +1136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="23" bodyend="29"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="36" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ae595b27ab79b81cdbddf1a1e0fef31ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -567,7 +1174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="33" bodyend="39"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="46" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="46" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a15625bddaff1aaca4d04b13492962b92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -584,7 +1191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="41" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="41" bodyend="51"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="54" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="54" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1af5ad0c7753b11912c68338e7f33fde0f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -601,7 +1208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="53" bodyend="68"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="71" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a93299a5692a098ffa6f10f6cce78fd17" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -618,7 +1225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="70" bodyend="85"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="91" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a5ee8881eb9dcf74360bb8981d1478a17" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -635,7 +1242,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="87" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="87" bodyend="112"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="111" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="111" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ae593bd821798e21aa2e404559d59ae2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -657,7 +1264,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="372" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="372" bodyend="379"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="143" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="143" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a0b47b234df50714368217dfb8703aaab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -679,13 +1286,79 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="383" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="383" bodyend="390"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuUtility.H" bodystart="154" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1ab4e0fa80e6873e53208d917854f37129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>OutIter</type>
+        <definition>OutIter amrex::Gpu::inclusive_scan</definition>
+        <argsstring>(InIter begin, InIter end, OutIter result)</argsstring>
+        <name>inclusive_scan</name>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Scan.H" line="377" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Scan.H" bodystart="377" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InIter</type>
+          </param>
+          <param>
+            <type>class OutIter</type>
+          </param>
+        </templateparamlist>
+        <type>OutIter</type>
+        <definition>OutIter amrex::Gpu::exclusive_scan</definition>
+        <argsstring>(InIter begin, InIter end, OutIter result)</argsstring>
+        <name>exclusive_scan</name>
+        <param>
+          <type>InIter</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>InIter</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>OutIter</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Scan.H" line="391" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Scan.H" bodystart="391" bodyend="411"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Gpu.H" line="29" column="1"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Gpu.H" line="33" column="1"/>
   </compounddef>
 </doxygen>

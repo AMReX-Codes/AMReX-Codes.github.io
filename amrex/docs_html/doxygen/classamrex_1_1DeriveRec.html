@@ -157,6 +157,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acabaee4740a8465dc4362f4374f0e244"><td class="memItemLeft" align="right" valign="top">const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#acabaee4740a8465dc4362f4374f0e244">getBC</a> () const noexcept</td></tr>
 <tr class="memdesc:acabaee4740a8465dc4362f4374f0e244"><td class="mdescLeft">&#160;</td><td class="mdescRight">The boundary conditions.  <a href="#acabaee4740a8465dc4362f4374f0e244">More...</a><br /></td></tr>
 <tr class="separator:acabaee4740a8465dc4362f4374f0e244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7a159ef9c9f44bea0e5ed912473b69"><td class="memItemLeft" align="right" valign="top">const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#a4a7a159ef9c9f44bea0e5ed912473b69">getBC3D</a> () const noexcept</td></tr>
+<tr class="separator:a4a7a159ef9c9f44bea0e5ed912473b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ae60d6f0febb9e07b0e68c2b68ebba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#ab4ae60d6f0febb9e07b0e68c2b68ebba">getRange</a> (int k, int &amp;state_indx, int &amp;src_comp, int &amp;num_comp) const </td></tr>
 <tr class="memdesc:ab4ae60d6f0febb9e07b0e68c2b68ebba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets state_indx, src_comp and num_comp for the kth range (or chunk) of state data components needed to calculate the derived quantity.  <a href="#ab4ae60d6f0febb9e07b0e68c2b68ebba">More...</a><br /></td></tr>
 <tr class="separator:ab4ae60d6f0febb9e07b0e68c2b68ebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +193,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a609c0ed6af2fb9c008782ee94de65db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b07b7cec32b864ae58f09942234421e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#a3b07b7cec32b864ae58f09942234421e">buildBC</a> (const <a class="el" href="classamrex_1_1DescriptorList.html">DescriptorList</a> &amp;d_list)</td></tr>
 <tr class="separator:a3b07b7cec32b864ae58f09942234421e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66abf3e0352de5d8f79dbdde22ef22c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#af66abf3e0352de5d8f79dbdde22ef22c">buildBC3D</a> (const <a class="el" href="classamrex_1_1DescriptorList.html">DescriptorList</a> &amp;d_list)</td></tr>
+<tr class="separator:af66abf3e0352de5d8f79dbdde22ef22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -231,6 +235,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a222aca825f0b80bc8de5522d155ba0e7"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#a222aca825f0b80bc8de5522d155ba0e7">bcr</a> = nullptr</td></tr>
 <tr class="memdesc:a222aca825f0b80bc8de5522d155ba0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of bndry types.  <a href="#a222aca825f0b80bc8de5522d155ba0e7">More...</a><br /></td></tr>
 <tr class="separator:a222aca825f0b80bc8de5522d155ba0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c2f0068a7832ca670a0476cea011fc"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DeriveRec.html#a34c2f0068a7832ca670a0476cea011fc">bcr3D</a> = nullptr</td></tr>
+<tr class="separator:a34c2f0068a7832ca670a0476cea011fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -820,6 +826,30 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af66abf3e0352de5d8f79dbdde22ef22c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::DeriveRec::buildBC3D </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1DescriptorList.html">DescriptorList</a> &amp;&#160;</td>
+          <td class="paramname"><em>d_list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4cc703ca266623995fc8245ddd618ce3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -938,6 +968,29 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The boundary conditions. </p>
+
+</div>
+</div>
+<a class="anchor" id="a4a7a159ef9c9f44bea0e5ed912473b69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int * amrex::DeriveRec::getBC3D </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1236,6 +1289,26 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Array of bndry types. </p>
+
+</div>
+</div>
+<a class="anchor" id="a34c2f0068a7832ca670a0476cea011fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* amrex::DeriveRec::bcr3D = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

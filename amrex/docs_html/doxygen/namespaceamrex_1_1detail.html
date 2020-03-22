@@ -94,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">amrex::detail Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Prints assertion failed messages to cerr and exits via abort(). Intended for use by the <a class="el" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT()</a> macro in &lt;<a class="el" href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a>&gt;.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -143,6 +146,17 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a402a6a9d24743015b260470bcf304ca0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a402a6a9d24743015b260470bcf304ca0">Error_host_doit</a> (const char *msg)</td></tr>
+<tr class="separator:a402a6a9d24743015b260470bcf304ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8190b9969633be3ced51ccbb47730ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a8190b9969633be3ced51ccbb47730ff5">Warning_host_doit</a> (const char *msg)</td></tr>
+<tr class="separator:a8190b9969633be3ced51ccbb47730ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e253016a53ec38e0bcce2c29b6153a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a11e253016a53ec38e0bcce2c29b6153a">Abort_host_doit</a> (const char *msg)</td></tr>
+<tr class="separator:a11e253016a53ec38e0bcce2c29b6153a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90fbd039ec7dc4f7ed4a926c3dda6344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a90fbd039ec7dc4f7ed4a926c3dda6344">Assert_host_doit</a> (const char *EX, const char *file, int line, const char *msg)</td></tr>
+<tr class="separator:a90fbd039ec7dc4f7ed4a926c3dda6344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10e8c484da7d2f2f5bbd223b6b92dc87"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a10e8c484da7d2f2f5bbd223b6b92dc87"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a10e8c484da7d2f2f5bbd223b6b92dc87">complex_pow_unsigned</a> (<a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt; a_z, unsigned a_n)</td></tr>
+<tr class="separator:a10e8c484da7d2f2f5bbd223b6b92dc87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa76ff8b15b334e3ab6e259815eefd491"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa76ff8b15b334e3ab6e259815eefd491"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aa76ff8b15b334e3ab6e259815eefd491">Reduce</a> (<a class="el" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569d">ReduceOp</a> op, T *v, int cnt, int root, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
 <tr class="separator:aa76ff8b15b334e3ab6e259815eefd491"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +172,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a6592c6bfeeb6d586632ccd7ac8fbb584"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a6592c6bfeeb6d586632ccd7ac8fbb584"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a6592c6bfeeb6d586632ccd7ac8fbb584">Gather</a> (const T &amp;v, T *vs, int root, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm)</td></tr>
 <tr class="separator:a6592c6bfeeb6d586632ccd7ac8fbb584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bcec00259aa287e4fa1c57ed626d4e7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename Size , typename Value &gt; </td></tr>
+<tr class="memitem:a5bcec00259aa287e4fa1c57ed626d4e7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a5bcec00259aa287e4fa1c57ed626d4e7">uninitializedFillNImpl</a> (U *data, Size count, const Value &amp;value)</td></tr>
+<tr class="separator:a5bcec00259aa287e4fa1c57ed626d4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc955e71a20bceeaed3cc8333eb0398"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U , typename Size , typename Value &gt; </td></tr>
+<tr class="memitem:a2bc955e71a20bceeaed3cc8333eb0398"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a2bc955e71a20bceeaed3cc8333eb0398">uninitializedFillNImpl</a> (U *data, Size count, const Value &amp;value)</td></tr>
+<tr class="separator:a2bc955e71a20bceeaed3cc8333eb0398"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59349c2dc230fb4a0c79fd80154b201"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa59349c2dc230fb4a0c79fd80154b201"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aa59349c2dc230fb4a0c79fd80154b201">memCopyImpl</a> (void *dst, const void *src, std::size_t count)</td></tr>
+<tr class="separator:aa59349c2dc230fb4a0c79fd80154b201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eae9e79bcaf47cc572db8a613117788"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5eae9e79bcaf47cc572db8a613117788"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a5eae9e79bcaf47cc572db8a613117788">memCopyImpl</a> (void *dst, const void *src, std::size_t count)</td></tr>
+<tr class="separator:a5eae9e79bcaf47cc572db8a613117788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad48aa99f6648fea787451a974dda26"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4ad48aa99f6648fea787451a974dda26"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a4ad48aa99f6648fea787451a974dda26">memMoveImpl</a> (void *dst, const void *src, std::size_t count, T &amp;allocator)</td></tr>
+<tr class="separator:a4ad48aa99f6648fea787451a974dda26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a658b84a19ed9885975fe71a6c341a2e4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a658b84a19ed9885975fe71a6c341a2e4"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a658b84a19ed9885975fe71a6c341a2e4">memMoveImpl</a> (void *dst, const void *src, std::size_t count, T &amp;allocator)</td></tr>
+<tr class="separator:a658b84a19ed9885975fe71a6c341a2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1833caa214a1cb642c80afe8c49bc7"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a0a1833caa214a1cb642c80afe8c49bc7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a0a1833caa214a1cb642c80afe8c49bc7">initFromListImpl</a> (U *data, std::initializer_list&lt; U &gt; list)</td></tr>
+<tr class="separator:a0a1833caa214a1cb642c80afe8c49bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eed1c648c543a4917823d6a12dc9135"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a2eed1c648c543a4917823d6a12dc9135"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a2eed1c648c543a4917823d6a12dc9135">initFromListImpl</a> (U *data, std::initializer_list&lt; U &gt; list)</td></tr>
+<tr class="separator:a2eed1c648c543a4917823d6a12dc9135"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62a2b2ccd165d829b36206f3cffb70f5"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
 <tr class="memitem:a62a2b2ccd165d829b36206f3cffb70f5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a62a2b2ccd165d829b36206f3cffb70f5">get_impl</a> (<a class="el" href="structamrex_1_1detail_1_1gpu__tuple__element.html">detail::gpu_tuple_element</a>&lt; I, typename <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &gt; &amp;te) noexcept</td></tr>
 <tr class="separator:a62a2b2ccd165d829b36206f3cffb70f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,8 +223,13 @@ Functions</h2></td></tr>
 <tr class="memitem:aed784fe338e0774a2e9f19671bfd9530"><td class="memTemplParams" colspan="2">template&lt;typename F , typename TP , std::size_t... N&gt; </td></tr>
 <tr class="memitem:aed784fe338e0774a2e9f19671bfd9530"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#aed784fe338e0774a2e9f19671bfd9530">apply_impl</a> (F &amp;&amp;f, TP &amp;&amp;t, <a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N... &gt; is) -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt; F, <a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">detail::tuple_decay_t</a>&lt; TP &gt; &gt;::type</td></tr>
 <tr class="separator:aed784fe338e0774a2e9f19671bfd9530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9c414dd7bc47e48d6fe4e6361b1b723"><td class="memTemplParams" colspan="2">template&lt;class T , class H &gt; </td></tr>
+<tr class="memitem:ae9c414dd7bc47e48d6fe4e6361b1b723"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ae9c414dd7bc47e48d6fe4e6361b1b723">removeDupDoit</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; &amp;vec, std::size_t start, std::size_t stop)</td></tr>
+<tr class="separator:ae9c414dd7bc47e48d6fe4e6361b1b723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Prints assertion failed messages to cerr and exits via abort(). Intended for use by the <a class="el" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT()</a> macro in &lt;<a class="el" href="AMReX__BLassert_8H.html">AMReX_BLassert.H</a>&gt;. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="a4dabd168440a362478e0d2887dfdfe23"></a>
 <div class="memitem">
 <div class="memproto">
@@ -227,6 +270,22 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a11e253016a53ec38e0bcce2c29b6153a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::detail::Abort_host_doit </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aed784fe338e0774a2e9f19671bfd9530"></a>
 <div class="memitem">
 <div class="memproto">
@@ -256,6 +315,88 @@ template&lt;typename F , typename TP , std::size_t... N&gt; </div>
           <td>)</td>
           <td></td><td> -&gt; typename <a class="el" href="structamrex_1_1detail_1_1apply__result.html">detail::apply_result</a>&lt;F,<a class="el" href="namespaceamrex_1_1detail.html#a4dabd168440a362478e0d2887dfdfe23">detail::tuple_decay_t</a>&lt;TP&gt; &gt;::type
     </td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a90fbd039ec7dc4f7ed4a926c3dda6344"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::detail::Assert_host_doit </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>EX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a10e8c484da7d2f2f5bbd223b6b92dc87"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt;T&gt; amrex::detail::complex_pow_unsigned </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1GpuComplex.html">GpuComplex</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>a_z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>a_n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a402a6a9d24743015b260470bcf304ca0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::detail::Error_host_doit </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -426,6 +567,62 @@ template&lt;std::size_t I, typename... Ts&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a0a1833caa214a1cb642c80afe8c49bc7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl </td>
+          <td>(</td>
+          <td class="paramtype">U *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; U &gt;&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2eed1c648c543a4917823d6a12dc9135"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::initFromListImpl </td>
+          <td>(</td>
+          <td class="paramtype">U *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::initializer_list&lt; U &gt;&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab031249fcd8f37d1e12510ca65d852e3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -500,6 +697,154 @@ template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::s
           <td></td>
           <td class="paramtype"><a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N2... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>n2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa59349c2dc230fb4a0c79fd80154b201"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5eae9e79bcaf47cc572db8a613117788"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::memCopyImpl </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4ad48aa99f6648fea787451a974dda26"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a658b84a19ed9885975fe71a6c341a2e4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::memMoveImpl </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>dst</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>allocator</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -637,6 +982,40 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ae9c414dd7bc47e48d6fe4e6361b1b723"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class H &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t amrex::detail::removeDupDoit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>stop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="acf5761b3201f222f4415dec1b481ccbf"></a>
 <div class="memitem">
 <div class="memproto">
@@ -687,6 +1066,90 @@ template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </div
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5bcec00259aa287e4fa1c57ed626d4e7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U , typename Size , typename Value &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl </td>
+          <td>(</td>
+          <td class="paramtype">U *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Size&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Value &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2bc955e71a20bceeaed3cc8333eb0398"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U , typename Size , typename Value &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;!<a class="el" href="structamrex_1_1RunOnGpu.html">RunOnGpu</a>&lt;T&gt;::value&gt;::type amrex::detail::uninitializedFillNImpl </td>
+          <td>(</td>
+          <td class="paramtype">U *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Size&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Value &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8190b9969633be3ced51ccbb47730ff5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::detail::Warning_host_doit </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

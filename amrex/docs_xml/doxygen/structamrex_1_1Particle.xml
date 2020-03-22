@@ -8,20 +8,20 @@
     <templateparamlist>
       <param>
         <type>int</type>
-        <declname>NReal</declname>
-        <defname>NReal</defname>
+        <declname>T_NReal</declname>
+        <defname>T_NReal</defname>
       </param>
       <param>
         <type>int</type>
-        <declname>NInt</declname>
-        <defname>NInt</defname>
+        <declname>T_NInt</declname>
+        <defname>T_NInt</defname>
         <defval>0</defval>
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
-      <memberdef kind="typedef" id="structamrex_1_1Particle_1a57e2e923cf77341e715f8cf41b15fcac" prot="public" static="no">
-        <type>double</type>
-        <definition>typedef double amrex::Particle&lt; NReal, NInt &gt;::RealType</definition>
+      <memberdef kind="typedef" id="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" prot="public" static="no">
+        <type>ParticleReal</type>
+        <definition>using amrex::Particle&lt; T_NReal, T_NInt &gt;::RealType =  ParticleReal</definition>
         <argsstring></argsstring>
         <name>RealType</name>
         <briefdescription>
@@ -30,38 +30,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="36" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1Particle_1a83a0b10e55acc252c8fa642aa4c240ba" prot="public" static="no" mutable="no">
-        <type><ref refid="unionamrex_1_1Particle_1_1rm__t" kindref="compound">rm_t</ref></type>
-        <definition>rm_t amrex::Particle&lt; NReal, NInt &gt;::m_rdata</definition>
-        <argsstring></argsstring>
-        <name>m_rdata</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="59" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1Particle_1aac22bc4db0fe2a8316c05447255c7329" prot="public" static="no" mutable="no">
-        <type><ref refid="unionamrex_1_1Particle_1_1im__t" kindref="compound">im_t</ref></type>
-        <definition>im_t amrex::Particle&lt; NReal, NInt &gt;::m_idata</definition>
-        <argsstring></argsstring>
-        <name>m_idata</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="60" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="42" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" prot="public" static="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int amrex::Particle&lt; T_NReal, T_NInt &gt;::NReal</definition>
+        <argsstring></argsstring>
+        <name>NReal</name>
+        <initializer>= T_NReal</initializer>
+        <briefdescription>
+<para>number of extra Real components in the particle struct </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" prot="public" static="yes" mutable="no">
+        <type>constexpr int</type>
+        <definition>constexpr int amrex::Particle&lt; T_NReal, T_NInt &gt;::NInt</definition>
+        <argsstring></argsstring>
+        <name>NInt</name>
+        <initializer>= T_NInt</initializer>
+        <briefdescription>
+<para>number of extra integer components in the particle struct </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="38" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="38" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="structamrex_1_1Particle_1ae909feb048707e5f29a42c253dc32f21" prot="public" static="yes" mutable="no">
         <type>int</type>
         <definition>int amrex::Particle&lt; NReal, NInt &gt;::the_next_id</definition>
@@ -74,71 +74,43 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="62" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structamrex_1_1Particle_1ac5df75e0acd69776cfc8a2fd902a59ee" prot="public" static="no" mutable="no">
+        <type><ref refid="unionamrex_1_1Particle_1_1rm__t" kindref="compound">rm_t</ref></type>
+        <definition>rm_t amrex::Particle&lt; T_NReal, T_NInt &gt;::m_rdata</definition>
+        <argsstring></argsstring>
+        <name>m_rdata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1Particle_1ae43a9eaf69f792a5cb81eecddc6faedf" prot="public" static="no" mutable="no">
+        <type><ref refid="unionamrex_1_1Particle_1_1im__t" kindref="compound">im_t</ref></type>
+        <definition>im_t amrex::Particle&lt; T_NReal, T_NInt &gt;::m_idata</definition>
+        <argsstring></argsstring>
+        <name>m_idata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="65" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1Particle_1ae812a19384a39a315a1f241f934855fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Particle_1a7409824029ffe386d984ff2949d78a97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE int&amp; amrex::Particle&lt; NReal, NInt &gt;::id</definition>
+        <definition>AMREX_GPU_HOST_DEVICE int&amp; amrex::Particle&lt; T_NReal, T_NInt &gt;::id</definition>
         <argsstring>()&amp;</argsstring>
         <name>id</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="64" bodyend="64"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1a3bce26c8a6245bbf4cd9438bcee681e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
-        <definition>AMREX_GPU_HOST_DEVICE int amrex::Particle&lt; NReal, NInt &gt;::id</definition>
-        <argsstring>() const &amp;</argsstring>
-        <name>id</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="65" bodyend="65"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1a0d22671c3a926cc8eae70a386d0f8019" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE int&amp; amrex::Particle&lt; NReal, NInt &gt;::cpu</definition>
-        <argsstring>()&amp;</argsstring>
-        <name>cpu</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="66" bodyend="66"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1aa96d91cb099ee0ffdfd8a4551c348e32" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
-        <definition>AMREX_GPU_HOST_DEVICE int amrex::Particle&lt; NReal, NInt &gt;::cpu</definition>
-        <argsstring>() const &amp;</argsstring>
-        <name>cpu</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="67" bodyend="67"/>
-      </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1a248ad4f26b1a8ce67a032a7697b75e6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a57e2e923cf77341e715f8cf41b15fcac" kindref="member">RealType</ref> &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE RealType&amp; amrex::Particle&lt; NReal, NInt &gt;::pos</definition>
-        <argsstring>(int index)&amp;</argsstring>
-        <name>pos</name>
-        <param>
-          <type>int</type>
-          <declname>index</declname>
-        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -147,9 +119,78 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="69" bodyend="69"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1add5fb9dcdce32134be68b0d57392b2d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a57e2e923cf77341e715f8cf41b15fcac" kindref="member">RealType</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE RealType amrex::Particle&lt; NReal, NInt &gt;::pos</definition>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a39c879d4fb0615a57eea63fc84104d60" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::Particle&lt; T_NReal, T_NInt &gt;::id</definition>
+        <argsstring>() const &amp;</argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a52e7db7e9e2ea4cbe6d99c1530e89f41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE int&amp; amrex::Particle&lt; T_NReal, T_NInt &gt;::cpu</definition>
+        <argsstring>()&amp;</argsstring>
+        <name>cpu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1af29ce6374696734e6176cc1e9c887611" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::Particle&lt; T_NReal, T_NInt &gt;::cpu</definition>
+        <argsstring>() const &amp;</argsstring>
+        <name>cpu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1aa2de40d8448837bccd5c66e977d70f90" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::Particle&lt; T_NReal, T_NInt &gt;::pos</definition>
+        <argsstring>() const &amp;</argsstring>
+        <name>pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="74" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="74" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1abbddb607bca2c456fec6f6f31c187ad6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kindref="member">RealType</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE RealType&amp; amrex::Particle&lt; T_NReal, T_NInt &gt;::pos</definition>
+        <argsstring>(int index)&amp;</argsstring>
+        <name>pos</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a5c243ae5f4f28ab97bfe9e14dfe2b9cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kindref="member">RealType</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE RealType amrex::Particle&lt; T_NReal, T_NInt &gt;::pos</definition>
         <argsstring>(int index) const &amp;</argsstring>
         <name>pos</name>
         <param>
@@ -162,11 +203,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="70" bodyend="70"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="82" bodyend="86"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1a64b72580a1ef8c39822e731181e1c913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a57e2e923cf77341e715f8cf41b15fcac" kindref="member">RealType</ref> &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE RealType&amp; amrex::Particle&lt; NReal, NInt &gt;::rdata</definition>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a1de65cca249568b0da2aa111dd1256b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kindref="member">RealType</ref> &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE RealType&amp; amrex::Particle&lt; T_NReal, T_NInt &gt;::rdata</definition>
         <argsstring>(int index)&amp;</argsstring>
         <name>rdata</name>
         <param>
@@ -179,11 +220,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="72" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="72" bodyend="72"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="88" bodyend="92"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1a4230e74dede00461e09091236c29c47f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a57e2e923cf77341e715f8cf41b15fcac" kindref="member">RealType</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE RealType amrex::Particle&lt; NReal, NInt &gt;::rdata</definition>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a2bdfc51a6c6d451f62bffc405d070699" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" kindref="member">RealType</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE RealType amrex::Particle&lt; T_NReal, T_NInt &gt;::rdata</definition>
         <argsstring>(int index) const &amp;</argsstring>
         <name>rdata</name>
         <param>
@@ -196,11 +237,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="73" bodyend="73"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="93" bodyend="97"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1a2ea331478f44220b7b07882fdda9a6ff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Particle_1a176518bfdc8f41f36485b2992ce44dfd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::Particle&lt; T_NReal, T_NInt &gt;::rvec</definition>
+        <argsstring>(AMREX_D_DECL(int indx, int indy, int indz)) const &amp;</argsstring>
+        <name>rvec</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(int indx, int indy, int indz)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="98" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="98" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a3d2379f6d04f774637e66797cd58a8d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="classamrex_1_1RealVect" kindref="compound">RealVect</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE RealVect amrex::Particle&lt; T_NReal, T_NInt &gt;::rvec</definition>
+        <argsstring>(const IntVect &amp;indexes) const &amp;</argsstring>
+        <name>rvec</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>indexes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="105" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="105" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Particle_1a99e3116a5831755b629d5e470a720759" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int &amp;</type>
-        <definition>AMREX_GPU_HOST_DEVICE int&amp; amrex::Particle&lt; NReal, NInt &gt;::idata</definition>
+        <definition>AMREX_GPU_HOST_DEVICE int&amp; amrex::Particle&lt; T_NReal, T_NInt &gt;::idata</definition>
         <argsstring>(int index)&amp;</argsstring>
         <name>idata</name>
         <param>
@@ -213,11 +287,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="75" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="75" bodyend="75"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="113" bodyend="117"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Particle_1ade6594e266ec10cb641e83cce81a6293" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Particle_1a100ced9760702ef6682ddea3d0b80df4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> int</type>
-        <definition>AMREX_GPU_HOST_DEVICE int amrex::Particle&lt; NReal, NInt &gt;::idata</definition>
+        <definition>AMREX_GPU_HOST_DEVICE int amrex::Particle&lt; T_NReal, T_NInt &gt;::idata</definition>
         <argsstring>(int index) const &amp;</argsstring>
         <name>idata</name>
         <param>
@@ -230,7 +304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="76" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="76" bodyend="76"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="118" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="118" bodyend="122"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -261,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="78" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="578" bodyend="594"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="124" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="624" bodyend="640"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a9f0503bbdca2d87308b8eb9a5d002ca3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -290,7 +364,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="80" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="557" bodyend="574"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="126" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="603" bodyend="620"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a40e74ab5b2a9313b1ec1b2f30230f879" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -298,7 +372,7 @@
         <argsstring>(const Particle&lt; NReal, NInt &gt; &amp;prt, const Geometry &amp;geom, const FArrayBox &amp;fab, const int *idx, Real *val, int cnt)</argsstring>
         <name>Interp</name>
         <param>
-          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NReal, NInt &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; <ref refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" kindref="member">NReal</ref>, <ref refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" kindref="member">NInt</ref> &gt; &amp;</type>
           <declname>prt</declname>
         </param>
         <param>
@@ -327,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="82" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="598" bodyend="626"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="128" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="644" bodyend="672"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1abe858dc473078ebe14aaad1231e671a2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const std::string &amp;</type>
@@ -340,7 +414,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="503" bodyend="516"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="130" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="549" bodyend="562"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1afe760b4bd9a5592257a33394fe9f3fa2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const std::string &amp;</type>
@@ -353,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="491" bodyend="499"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="132" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="537" bodyend="545"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a92d50a0cfc06c857c16d7d072bf77e95" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -369,7 +443,7 @@
           <declname>geom</declname>
         </param>
         <param>
-          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NReal, NInt &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; <ref refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" kindref="member">NReal</ref>, <ref refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" kindref="member">NInt</ref> &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -382,7 +456,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="630" bodyend="641"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="134" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="676" bodyend="687"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1aad16dc8f295a9f057509d7c72b5e33c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -395,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="430" bodyend="455"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="136" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="476" bodyend="501"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1ac4dced848c643cb539768dc506a80e8b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>long</type>
@@ -408,7 +482,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="92" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="459" bodyend="487"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="138" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="505" bodyend="533"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a3a8d988966904ac3cfc8be4c71b950af" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -421,7 +495,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="520" bodyend="536"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="149" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="566" bodyend="582"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a008787d04da5113188a90a704f8f066a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -434,7 +508,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="109" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="540" bodyend="546"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="155" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="586" bodyend="592"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a4b87ccd982d25100ecae8f60f8f290f8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -459,7 +533,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="117" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="550" bodyend="553"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="163" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="596" bodyend="599"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a85c36134c6d1455fd5d4c2ff8be5c696" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -480,7 +554,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="119" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="177" bodyend="232"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="165" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="223" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1aa60b356e158e411342c612691f687692" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -501,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
 <para>&quot;cells&quot; should be dimensioned: <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> cells[AMREX_D_TERM(2,+2,+4)] </para>        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="121" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="237" bodyend="304"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="167" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="283" bodyend="350"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1ac9042a452011340705ddd5e55c986cc6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -509,7 +583,7 @@
         <argsstring>(const Particle&lt; NReal, NInt &gt; &amp;p, const Real *plo, const Real *dx, Real *fracs, IntVect *cells)</argsstring>
         <name>CIC_Cells_Fracs_Basic</name>
         <param>
-          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NReal, NInt &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; <ref refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" kindref="member">NReal</ref>, <ref refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" kindref="member">NInt</ref> &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -570,7 +644,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="133" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="320" bodyend="342"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="179" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="366" bodyend="388"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a7b8ffd010e11d3cc3920c4ea19dd7a0a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -578,7 +652,7 @@
         <argsstring>(const Particle&lt; NReal, NInt &gt; &amp;p, const Real *plo, const Real *dx, Vector&lt; Real &gt; &amp;fracs, Vector&lt; IntVect &gt; &amp;cells)</argsstring>
         <name>CIC_Cells_Fracs</name>
         <param>
-          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NReal, NInt &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; <ref refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" kindref="member">NReal</ref>, <ref refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" kindref="member">NInt</ref> &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -639,7 +713,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="149" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="309" bodyend="316"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="195" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="355" bodyend="362"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Particle_1a45ed240539a5cfa83c7142a882ebb3f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -647,7 +721,7 @@
         <argsstring>(const Particle&lt; NReal, NInt &gt; &amp;p, const Real *plo, const Real *dx_geom, const Real *dx_part, Vector&lt; Real &gt; &amp;fracs, Vector&lt; IntVect &gt; &amp;cells)</argsstring>
         <name>CIC_Cells_Fracs</name>
         <param>
-          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NReal, NInt &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; <ref refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" kindref="member">NReal</ref>, <ref refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" kindref="member">NInt</ref> &gt; &amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -719,62 +793,82 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>This portion might be slightly inefficient. Feel free to redo it if need be. </para>        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="165" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="346" bodyend="426"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="211" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="392" bodyend="472"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The struct used to store particles. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T_NReal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of extra Real components </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T_NInt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of extra integer components </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
     <collaborationgraph>
-      <node id="5708">
-        <label>amrex::Particle&lt; NReal, NInt &gt;::rm_t</label>
+      <node id="6142">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;::rm_t</label>
         <link refid="unionamrex_1_1Particle_1_1rm__t"/>
       </node>
-      <node id="5707">
-        <label>amrex::Particle&lt; NReal, NInt &gt;::im_t</label>
-        <link refid="unionamrex_1_1Particle_1_1im__t"/>
-      </node>
-      <node id="5706">
-        <label>amrex::Particle&lt; NReal, NInt &gt;</label>
+      <node id="6140">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
         <link refid="structamrex_1_1Particle"/>
-        <childnode refid="5707" relation="usage">
+        <childnode refid="6141" relation="usage">
           <edgelabel>m_idata</edgelabel>
         </childnode>
-        <childnode refid="5708" relation="usage">
+        <childnode refid="6142" relation="usage">
           <edgelabel>m_rdata</edgelabel>
         </childnode>
       </node>
+      <node id="6141">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;::im_t</label>
+        <link refid="unionamrex_1_1Particle_1_1im__t"/>
+      </node>
     </collaborationgraph>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="29" bodyend="171"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" line="34" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle.H" bodystart="33" bodyend="217"/>
     <listofallmembers>
       <member refid="structamrex_1_1Particle_1aa60b356e158e411342c612691f687692" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>CIC_Cells</name></member>
       <member refid="structamrex_1_1Particle_1a7b8ffd010e11d3cc3920c4ea19dd7a0a" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>CIC_Cells_Fracs</name></member>
       <member refid="structamrex_1_1Particle_1a45ed240539a5cfa83c7142a882ebb3f9" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>CIC_Cells_Fracs</name></member>
       <member refid="structamrex_1_1Particle_1ac9042a452011340705ddd5e55c986cc6" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>CIC_Cells_Fracs_Basic</name></member>
       <member refid="structamrex_1_1Particle_1a85c36134c6d1455fd5d4c2ff8be5c696" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>CIC_Fracs</name></member>
-      <member refid="structamrex_1_1Particle_1a0d22671c3a926cc8eae70a386d0f8019" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>cpu</name></member>
-      <member refid="structamrex_1_1Particle_1aa96d91cb099ee0ffdfd8a4551c348e32" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>cpu</name></member>
+      <member refid="structamrex_1_1Particle_1a52e7db7e9e2ea4cbe6d99c1530e89f41" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>cpu</name></member>
+      <member refid="structamrex_1_1Particle_1af29ce6374696734e6176cc1e9c887611" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>cpu</name></member>
       <member refid="structamrex_1_1Particle_1afe760b4bd9a5592257a33394fe9f3fa2" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>DataPrefix</name></member>
       <member refid="structamrex_1_1Particle_1a92d50a0cfc06c857c16d7d072bf77e95" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>GetGravity</name></member>
-      <member refid="structamrex_1_1Particle_1ae812a19384a39a315a1f241f934855fb" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>id</name></member>
-      <member refid="structamrex_1_1Particle_1a3bce26c8a6245bbf4cd9438bcee681e5" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>id</name></member>
-      <member refid="structamrex_1_1Particle_1a2ea331478f44220b7b07882fdda9a6ff" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>idata</name></member>
-      <member refid="structamrex_1_1Particle_1ade6594e266ec10cb641e83cce81a6293" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>idata</name></member>
+      <member refid="structamrex_1_1Particle_1a7409824029ffe386d984ff2949d78a97" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>id</name></member>
+      <member refid="structamrex_1_1Particle_1a39c879d4fb0615a57eea63fc84104d60" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>id</name></member>
+      <member refid="structamrex_1_1Particle_1a99e3116a5831755b629d5e470a720759" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>idata</name></member>
+      <member refid="structamrex_1_1Particle_1a100ced9760702ef6682ddea3d0b80df4" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>idata</name></member>
       <member refid="structamrex_1_1Particle_1a40e74ab5b2a9313b1ec1b2f30230f879" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>Interp</name></member>
       <member refid="structamrex_1_1Particle_1a978fa793824d54757dac33400fb43e87" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>InterpDoit</name></member>
       <member refid="structamrex_1_1Particle_1a9f0503bbdca2d87308b8eb9a5d002ca3" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>InterpDoit</name></member>
-      <member refid="structamrex_1_1Particle_1aac22bc4db0fe2a8316c05447255c7329" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>m_idata</name></member>
-      <member refid="structamrex_1_1Particle_1a83a0b10e55acc252c8fa642aa4c240ba" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>m_rdata</name></member>
+      <member refid="structamrex_1_1Particle_1ae43a9eaf69f792a5cb81eecddc6faedf" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>m_idata</name></member>
+      <member refid="structamrex_1_1Particle_1ac5df75e0acd69776cfc8a2fd902a59ee" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>m_rdata</name></member>
       <member refid="structamrex_1_1Particle_1ac4dced848c643cb539768dc506a80e8b" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>MaxParticlesPerRead</name></member>
       <member refid="structamrex_1_1Particle_1aad16dc8f295a9f057509d7c72b5e33c0" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>MaxReaders</name></member>
       <member refid="structamrex_1_1Particle_1a3a8d988966904ac3cfc8be4c71b950af" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>NextID</name></member>
       <member refid="structamrex_1_1Particle_1a4b87ccd982d25100ecae8f60f8f290f8" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>NextID</name></member>
-      <member refid="structamrex_1_1Particle_1a248ad4f26b1a8ce67a032a7697b75e6a" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>pos</name></member>
-      <member refid="structamrex_1_1Particle_1add5fb9dcdce32134be68b0d57392b2d8" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>pos</name></member>
-      <member refid="structamrex_1_1Particle_1a64b72580a1ef8c39822e731181e1c913" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>rdata</name></member>
-      <member refid="structamrex_1_1Particle_1a4230e74dede00461e09091236c29c47f" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>rdata</name></member>
-      <member refid="structamrex_1_1Particle_1a57e2e923cf77341e715f8cf41b15fcac" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>RealType</name></member>
+      <member refid="structamrex_1_1Particle_1ad437c33b5c87125048830cee2775b50c" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>NInt</name></member>
+      <member refid="structamrex_1_1Particle_1aae7d12b94a847462c64456654db316e7" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>NReal</name></member>
+      <member refid="structamrex_1_1Particle_1aa2de40d8448837bccd5c66e977d70f90" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>pos</name></member>
+      <member refid="structamrex_1_1Particle_1abbddb607bca2c456fec6f6f31c187ad6" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>pos</name></member>
+      <member refid="structamrex_1_1Particle_1a5c243ae5f4f28ab97bfe9e14dfe2b9cb" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>pos</name></member>
+      <member refid="structamrex_1_1Particle_1a1de65cca249568b0da2aa111dd1256b2" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>rdata</name></member>
+      <member refid="structamrex_1_1Particle_1a2bdfc51a6c6d451f62bffc405d070699" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>rdata</name></member>
+      <member refid="structamrex_1_1Particle_1a1741c5c21aaba8fd767c2f86e911ad26" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>RealType</name></member>
+      <member refid="structamrex_1_1Particle_1a176518bfdc8f41f36485b2992ce44dfd" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>rvec</name></member>
+      <member refid="structamrex_1_1Particle_1a3d2379f6d04f774637e66797cd58a8d1" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>rvec</name></member>
       <member refid="structamrex_1_1Particle_1ae909feb048707e5f29a42c253dc32f21" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>the_next_id</name></member>
       <member refid="structamrex_1_1Particle_1a008787d04da5113188a90a704f8f066a" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>UnprotectedNextID</name></member>
       <member refid="structamrex_1_1Particle_1abe858dc473078ebe14aaad1231e671a2" prot="public" virt="non-virtual"><scope>amrex::Particle</scope><name>Version</name></member>

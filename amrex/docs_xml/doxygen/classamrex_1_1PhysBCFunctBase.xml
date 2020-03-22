@@ -7,14 +7,14 @@
     <derivedcompoundref refid="classamrex_1_1StateDataPhysBCFunct" prot="public" virt="non-virtual">amrex::StateDataPhysBCFunct</derivedcompoundref>
     <includes refid="AMReX__PhysBCFunct_8H" local="no">AMReX_PhysBCFunct.H</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1PhysBCFunctBase_1a4b8653ca33cbe6bbe803ece73d5d6162" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classamrex_1_1PhysBCFunctBase_1a2321b27c8057a33eeecc51019eff00e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void amrex::PhysBCFunctBase::FillBoundary</definition>
-        <argsstring>(MultiFab &amp;mf, int dcomp, int ncomp, Real time, int bccomp)=0</argsstring>
+        <argsstring>(MultiFab &amp;mf, int dcomp, int ncomp, IntVect const &amp;nghost, Real time, int bccomp)=0</argsstring>
         <name>FillBoundary</name>
-        <reimplementedby refid="classamrex_1_1PhysBCFunctNoOp_1a47581ab13f20593d8c9dfe984cbb8bff">FillBoundary</reimplementedby>
-        <reimplementedby refid="classamrex_1_1PhysBCFunct_1ab0a5d612dc153f7eec7924c768bcc0fe">FillBoundary</reimplementedby>
-        <reimplementedby refid="classamrex_1_1StateDataPhysBCFunct_1aca4cbee3f5794dbe83c39dfe4c6b1900">FillBoundary</reimplementedby>
+        <reimplementedby refid="classamrex_1_1PhysBCFunctNoOp_1a6884f520cd3172577b52c19308574f8c">FillBoundary</reimplementedby>
+        <reimplementedby refid="classamrex_1_1PhysBCFunct_1a9258f1164f161f34b45d9ab480f66f9d">FillBoundary</reimplementedby>
+        <reimplementedby refid="classamrex_1_1StateDataPhysBCFunct_1aa7bb3886b291166cafd32a3b6f9d5bf3">FillBoundary</reimplementedby>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
           <declname>mf</declname>
@@ -26,6 +26,10 @@
         <param>
           <type>int</type>
           <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
         </param>
         <param>
           <type>Real</type>
@@ -41,7 +45,7 @@
 <para>note this is pure virtual and must be implemented in a derived class (see <ref refid="classamrex_1_1PhysBCFunct" kindref="compound">PhysBCFunct</ref> below for an example) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" line="97" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" line="100" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1PhysBCFunctBase_1a54055fe52e2bf47cb3e148ce4d644523" prot="public" static="no" const="no" explicit="no" inline="yes" virt="pure-virtual">
         <type></type>
@@ -54,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" line="98" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="101" bodyend="101"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="105" bodyend="105"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -62,32 +66,32 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="5863">
+      <node id="6350">
         <label>amrex::PhysBCFunctBase</label>
         <link refid="classamrex_1_1PhysBCFunctBase"/>
       </node>
-      <node id="5865">
+      <node id="6352">
         <label>amrex::PhysBCFunctNoOp</label>
         <link refid="classamrex_1_1PhysBCFunctNoOp"/>
-        <childnode refid="5863" relation="public-inheritance">
+        <childnode refid="6350" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5866">
+      <node id="6353">
         <label>amrex::StateDataPhysBCFunct</label>
         <link refid="classamrex_1_1StateDataPhysBCFunct"/>
-        <childnode refid="5863" relation="public-inheritance">
+        <childnode refid="6350" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5864">
+      <node id="6351">
         <label>amrex::PhysBCFunct&lt; F &gt;</label>
         <link refid="classamrex_1_1PhysBCFunct"/>
-        <childnode refid="5863" relation="public-inheritance">
+        <childnode refid="6350" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" line="92" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="92" bodyend="99"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" line="95" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="95" bodyend="103"/>
     <listofallmembers>
-      <member refid="classamrex_1_1PhysBCFunctBase_1a4b8653ca33cbe6bbe803ece73d5d6162" prot="public" virt="pure-virtual"><scope>amrex::PhysBCFunctBase</scope><name>FillBoundary</name></member>
+      <member refid="classamrex_1_1PhysBCFunctBase_1a2321b27c8057a33eeecc51019eff00e2" prot="public" virt="pure-virtual"><scope>amrex::PhysBCFunctBase</scope><name>FillBoundary</name></member>
       <member refid="classamrex_1_1PhysBCFunctBase_1a54055fe52e2bf47cb3e148ce4d644523" prot="public" virt="pure-virtual"><scope>amrex::PhysBCFunctBase</scope><name>~PhysBCFunctBase</name></member>
     </listofallmembers>
   </compounddef>

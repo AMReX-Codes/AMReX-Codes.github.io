@@ -125,6 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3116ec053a7957bb79f63b84867401da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4895e37eae210a93ca7d2b0493a250e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#af4895e37eae210a93ca7d2b0493a250e">create</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;box, int ncomps, const <a class="el" href="structamrex_1_1FabInfo.html">FabInfo</a> &amp;info, int box_index) const final</td></tr>
 <tr class="separator:af4895e37eae210a93ca7d2b0493a250e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99374626e050249afcdc541cf12aa53a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a99374626e050249afcdc541cf12aa53a">create_alias</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> const &amp;rhs, int scomp, int ncomp) const final</td></tr>
+<tr class="separator:a99374626e050249afcdc541cf12aa53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f6eca7dc8d4f2269fec54f5d20f079"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a25f6eca7dc8d4f2269fec54f5d20f079">destroy</a> (<a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> *fab) const final</td></tr>
 <tr class="separator:a25f6eca7dc8d4f2269fec54f5d20f079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d942d0e7c5fa2e3dc6c4ef56d52f53d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a2d942d0e7c5fa2e3dc6c4ef56d52f53d">clone</a> () const final</td></tr>
@@ -145,6 +147,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a74e0bbe82132ef0fecbe0dffda94cf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08787037eac1cfa94bc3c220dbcff764"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; const <a class="el" href="classamrex_1_1MultiCutFab.html">MultiCutFab</a> *, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a08787037eac1cfa94bc3c220dbcff764">getFaceCent</a> () const noexcept</td></tr>
 <tr class="separator:a08787037eac1cfa94bc3c220dbcff764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e556ff4f588a983a2992c01629e961f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a5e556ff4f588a983a2992c01629e961f">isAllRegular</a> () const noexcept</td></tr>
+<tr class="separator:a5e556ff4f588a983a2992c01629e961f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a706b6b91efaa582b01395c767d7e791c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EB2_1_1Level.html">EB2::Level</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a706b6b91efaa582b01395c767d7e791c">getEBLevel</a> () const noexcept</td></tr>
 <tr class="separator:a706b6b91efaa582b01395c767d7e791c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a563d6e997d0a0bae411fe8bbcd9306bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1EB2_1_1IndexSpace.html">EB2::IndexSpace</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1EBFArrayBoxFactory.html#a563d6e997d0a0bae411fe8bbcd9306bf">getEBIndexSpace</a> () const noexcept</td></tr>
@@ -409,6 +413,48 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="classamrex_1_1FabFactory.html#aa4b55a312064a0753e8dc73e8ea28d7f">amrex::FabFactory&lt; FArrayBox &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99374626e050249afcdc541cf12aa53a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> * amrex::EBFArrayBoxFactory::create_alias </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> const &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1FabFactory.html#add8f631fb79bf1618691821c190296f5">amrex::FabFactory&lt; FArrayBox &gt;</a>.</p>
 
 </div>
 </div>
@@ -685,6 +731,29 @@ Private Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5e556ff4f588a983a2992c01629e961f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::EBFArrayBoxFactory::isAllRegular </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

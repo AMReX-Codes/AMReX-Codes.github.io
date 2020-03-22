@@ -10,6 +10,7 @@ var searchData=
   ['baseumap',['BaseUmap',['../classamrex_1_1BaseUmap.html',1,'amrex']]],
   ['bcrec',['BCRec',['../classamrex_1_1BCRec.html',1,'amrex']]],
   ['bdkey',['BDKey',['../structamrex_1_1FabArrayBase_1_1BDKey.html',1,'amrex::FabArrayBase']]],
+  ['biniterator',['BinIterator',['../structamrex_1_1BinIterator.html',1,'amrex']]],
   ['bl_5fallocate',['bl_allocate',['../interfaceamrex__mempool__module_1_1bl__allocate.html',1,'amrex_mempool_module']]],
   ['bl_5fdeallocate',['bl_deallocate',['../interfaceamrex__mempool__module_1_1bl__deallocate.html',1,'amrex_mempool_module']]],
   ['blbacktrace',['BLBackTrace',['../structamrex_1_1BLBackTrace.html',1,'amrex']]],

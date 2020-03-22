@@ -15,6 +15,7 @@ var searchData=
   ['gpu_5ftuple_5fimpl_3c_20i_2c_20head_2c_20tail_2e_2e_2e_20_3e',['gpu_tuple_impl&lt; I, Head, Tail... &gt;',['../structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4.html',1,'amrex::detail']]],
   ['gpuable',['GPUable',['../structamrex_1_1GPUable.html',1,'amrex']]],
   ['gpubndryfuncfab',['GpuBndryFuncFab',['../classamrex_1_1GpuBndryFuncFab.html',1,'amrex']]],
+  ['gpucomplex',['GpuComplex',['../structamrex_1_1GpuComplex.html',1,'amrex']]],
   ['gputuple',['GpuTuple',['../classamrex_1_1GpuTuple.html',1,'amrex']]],
   ['gputuple_3c_20fs_2e_2e_2e_20_3e',['GpuTuple&lt; Fs... &gt;',['../classamrex_1_1GpuTuple.html',1,'amrex']]],
   ['gputuple_3c_20ts_2e_2e_2e_20_3e',['GpuTuple&lt; Ts... &gt;',['../classamrex_1_1GpuTuple.html',1,'amrex']]],

@@ -6,75 +6,94 @@
     <includes refid="AMReX_8H" local="no">AMReX.H</includes>
     <includes local="no">iostream</includes>
     <incdepgraph>
-      <node id="41404">
+      <node id="48677">
         <label>functional</label>
       </node>
-      <node id="41398">
+      <node id="48667">
         <label>AMReX.H</label>
         <link refid="AMReX_8H"/>
-        <childnode refid="41399" relation="include">
+        <childnode refid="48668" relation="include">
         </childnode>
-        <childnode refid="41400" relation="include">
+        <childnode refid="48669" relation="include">
         </childnode>
-        <childnode refid="41401" relation="include">
+        <childnode refid="48671" relation="include">
         </childnode>
-        <childnode refid="41403" relation="include">
+        <childnode refid="48673" relation="include">
         </childnode>
-        <childnode refid="41404" relation="include">
+        <childnode refid="48674" relation="include">
         </childnode>
-        <childnode refid="41405" relation="include">
+        <childnode refid="48676" relation="include">
         </childnode>
-        <childnode refid="41406" relation="include">
+        <childnode refid="48677" relation="include">
         </childnode>
-        <childnode refid="41407" relation="include">
+        <childnode refid="48678" relation="include">
         </childnode>
-        <childnode refid="41408" relation="include">
+        <childnode refid="48670" relation="include">
+        </childnode>
+        <childnode refid="48679" relation="include">
+        </childnode>
+        <childnode refid="48680" relation="include">
         </childnode>
       </node>
-      <node id="41402">
+      <node id="48669">
+        <label>AMReX_GpuPrint.H</label>
+        <link refid="AMReX__GpuPrint_8H"/>
+        <childnode refid="48670" relation="include">
+        </childnode>
+      </node>
+      <node id="48672">
+        <label>cassert</label>
+      </node>
+      <node id="48675">
         <label>stdexcept</label>
       </node>
-      <node id="41405">
+      <node id="48678">
         <label>string</label>
       </node>
-      <node id="41396">
+      <node id="48665">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_LO_BCTYPES.cpp</label>
         <link refid="AMReX_LO_BCTYPES.cpp"/>
-        <childnode refid="41397" relation="include">
+        <childnode refid="48666" relation="include">
         </childnode>
-        <childnode refid="41398" relation="include">
+        <childnode refid="48667" relation="include">
         </childnode>
-        <childnode refid="41403" relation="include">
+        <childnode refid="48676" relation="include">
         </childnode>
       </node>
-      <node id="41406">
+      <node id="48670">
         <label>cstdio</label>
       </node>
-      <node id="41407">
+      <node id="48679">
         <label>vector</label>
       </node>
-      <node id="41399">
+      <node id="48668">
         <label>AMReX_GpuQualifiers.H</label>
         <link refid="AMReX__GpuQualifiers_8H"/>
       </node>
-      <node id="41401">
+      <node id="48674">
         <label>AMReX_Exception.H</label>
         <link refid="AMReX__Exception_8H"/>
-        <childnode refid="41402" relation="include">
+        <childnode refid="48675" relation="include">
         </childnode>
       </node>
-      <node id="41403">
+      <node id="48676">
         <label>iostream</label>
       </node>
-      <node id="41400">
+      <node id="48673">
         <label>AMReX_ccse-mpi.H</label>
         <link refid="AMReX__ccse-mpi_8H"/>
       </node>
-      <node id="41397">
+      <node id="48671">
+        <label>AMReX_GpuAssert.H</label>
+        <link refid="AMReX__GpuAssert_8H"/>
+        <childnode refid="48672" relation="include">
+        </childnode>
+      </node>
+      <node id="48666">
         <label>AMReX_LO_BCTYPES.H</label>
         <link refid="AMReX__LO__BCTYPES_8H"/>
       </node>
-      <node id="41408">
+      <node id="48680">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -90,7 +109,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceamrex_1ab1b1f90152c1c5636d634b475056389e" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LinOpBCType&amp;<sp/>t)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LinOpBCType&amp;<sp/>t)</highlight></codeline>
 <codeline lineno="8"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(t)<sp/>{</highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Extrapolater_1aebff89225c72118eaf711ad96da1217a" kindref="member">LinOpBCType::interior</ref>:</highlight></codeline>
@@ -128,20 +147,25 @@
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;inflow&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>LinOpBCType::Periodic:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>LinOpBCType::inhomogNeumann:</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Periodic&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;inhomogeneous<sp/>Neumann&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>LinOpBCType::Periodic:</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;bogus&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Periodic&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;bogus&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Boundary/AMReX_LO_BCTYPES.cpp"/>
   </compounddef>
