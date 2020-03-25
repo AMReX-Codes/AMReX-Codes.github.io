@@ -32,7 +32,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParGDB.H" line="86" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParGDB.H" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ParGDB_1af00ec28e28d685f8cef31dfb1a82d805" prot="protected" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt;</type>
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; BoxArray &gt;</type>
         <definition>Vector&lt;BoxArray&gt; amrex::ParGDB::m_ba</definition>
         <argsstring></argsstring>
         <name>m_ba</name>
@@ -99,7 +99,7 @@
           <declname>dmap</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <briefdescription>
@@ -124,7 +124,7 @@
           <declname>dmap</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; BoxArray &gt; &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -207,7 +207,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParGDB.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParGDB.H" bodystart="141" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ParGDB_1ae9eaeeb29ca270f3addf0b1adc90a21d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
-        <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+        <type>const BoxArray &amp;</type>
         <definition>const BoxArray &amp; amrex::ParGDB::ParticleBoxArray</definition>
         <argsstring>(int level) const override</argsstring>
         <name>ParticleBoxArray</name>
@@ -225,7 +225,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParGDB.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParGDB.H" bodystart="148" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ParGDB_1a439e82c074f1fb9121e6bd2bfbfc2502" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
-        <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+        <type>const BoxArray &amp;</type>
         <definition>const BoxArray &amp; amrex::ParGDB::boxArray</definition>
         <argsstring>(int level) const override</argsstring>
         <name>boxArray</name>
@@ -253,7 +253,7 @@
           <declname>level</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>new_ba</declname>
         </param>
         <briefdescription>
@@ -410,74 +410,74 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="6075">
+      <node id="5899">
         <label>amrex::ParGDB</label>
         <link refid="classamrex_1_1ParGDB"/>
-        <childnode refid="6076" relation="public-inheritance">
+        <childnode refid="5900" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6076">
+      <node id="5900">
         <label>amrex::ParGDBBase</label>
         <link refid="classamrex_1_1ParGDBBase"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6084">
-        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
-      </node>
-      <node id="6077">
+      <node id="5901">
         <label>amrex::ParGDB</label>
         <link refid="classamrex_1_1ParGDB"/>
-        <childnode refid="6078" relation="public-inheritance">
+        <childnode refid="5902" relation="public-inheritance">
         </childnode>
-        <childnode refid="6079" relation="usage">
-          <edgelabel>m_dmap</edgelabel>
-        </childnode>
-        <childnode refid="6081" relation="usage">
-          <edgelabel>m_rr</edgelabel>
-        </childnode>
-        <childnode refid="6083" relation="usage">
+        <childnode refid="5903" relation="usage">
           <edgelabel>m_ba</edgelabel>
         </childnode>
-        <childnode refid="6085" relation="usage">
+        <childnode refid="5905" relation="usage">
+          <edgelabel>m_dmap</edgelabel>
+        </childnode>
+        <childnode refid="5907" relation="usage">
+          <edgelabel>m_rr</edgelabel>
+        </childnode>
+        <childnode refid="5909" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
       </node>
-      <node id="6086">
+      <node id="5910">
         <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
       </node>
-      <node id="6079">
+      <node id="5905">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6080" relation="public-inheritance">
+        <childnode refid="5906" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6081">
+      <node id="5907">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6082" relation="public-inheritance">
+        <childnode refid="5908" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6078">
+      <node id="5902">
         <label>amrex::ParGDBBase</label>
         <link refid="classamrex_1_1ParGDBBase"/>
       </node>
-      <node id="6083">
-        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6084" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="6080">
+      <node id="5906">
         <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
       </node>
-      <node id="6082">
+      <node id="5908">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="6085">
+      <node id="5903">
+        <label>amrex::Vector&lt; BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5904" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5904">
+        <label>std::vector&lt; BoxArray, std::allocator&lt; BoxArray &gt; &gt;</label>
+      </node>
+      <node id="5909">
         <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6086" relation="public-inheritance">
+        <childnode refid="5910" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

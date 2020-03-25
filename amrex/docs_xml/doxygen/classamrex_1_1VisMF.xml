@@ -391,7 +391,7 @@
         <argsstring>() const </argsstring>
         <name>size</name>
         <briefdescription>
-<para><heading level="1">of FABs in the <ref refid="classamrex_1_1VisMF" kindref="compound">VisMF</ref>. Equal to # of Boxes in the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>.</heading>
+<para><heading level="1">of FABs in the <ref refid="classamrex_1_1VisMF" kindref="compound">VisMF</ref>. Equal to # of Boxes in the BoxArray.</heading>
 </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -400,12 +400,12 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_VisMF.H" line="162" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_VisMF.cpp" bodystart="455" bodyend="458"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1VisMF_1a3a35f387db57fae60e7261b295566c80" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+        <type>const BoxArray &amp;</type>
         <definition>const BoxArray &amp; amrex::VisMF::boxArray</definition>
         <argsstring>() const </argsstring>
         <name>boxArray</name>
         <briefdescription>
-<para>The <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> of the on-disk <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>. </para>        </briefdescription>
+<para>The BoxArray of the on-disk <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -761,7 +761,7 @@
           <defval><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1" kindref="member">NFiles</ref></defval>
         </param>
         <briefdescription>
-<para>Write only the header-file corresponding to <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> to disk without the corresponding FAB data. This writes <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> information (which might still be needed by data post-processing tools such as yt) when the FAB data is not needed. Returns the total number of bytes written on this processor. </para>        </briefdescription>
+<para>Write only the header-file corresponding to <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> to disk without the corresponding FAB data. This writes BoxArray information (which might still be needed by data post-processing tools such as yt) when the FAB data is not needed. Returns the total number of bytes written on this processor. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -819,7 +819,7 @@
           <defval>0</defval>
         </param>
         <briefdescription>
-<para>Read a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> from disk written using <ref refid="classamrex_1_1VisMF_1a865aac1ae0e0fde40a0470d75eb44935" kindref="member">VisMF::Write()</ref>. If the <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> fafab has been fully defined, the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on the disk must match the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> in fafab. If it is constructed with the default constructor, the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> on the disk will be used and a new <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> will be made. A pre-read <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> header can be passed in to avoid a read and broadcast. </para>        </briefdescription>
+<para>Read a <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> from disk written using <ref refid="classamrex_1_1VisMF_1a865aac1ae0e0fde40a0470d75eb44935" kindref="member">VisMF::Write()</ref>. If the <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> fafab has been fully defined, the BoxArray on the disk must match the BoxArray in fafab. If it is constructed with the default constructor, the BoxArray on the disk will be used and a new <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> will be made. A pre-read <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> header can be passed in to avoid a read and broadcast. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -1578,130 +1578,113 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6805">
+      <node id="6615">
         <label>amrex::VisMF</label>
         <link refid="classamrex_1_1VisMF"/>
-        <childnode refid="6806" relation="usage">
+        <childnode refid="6616" relation="usage">
           <edgelabel>m_pa</edgelabel>
         </childnode>
-        <childnode refid="6808" relation="usage">
+        <childnode refid="6618" relation="usage">
           <edgelabel>m_fafabname</edgelabel>
         </childnode>
-        <childnode refid="6809" relation="usage">
+        <childnode refid="6619" relation="usage">
           <edgelabel>m_hdr</edgelabel>
         </childnode>
       </node>
-      <node id="6812">
+      <node id="6622">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="6812" relation="usage">
+        <childnode refid="6622" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="6820">
+      <node id="6630">
         <label>amrex::Vector&lt; amrex::VisMF::FabOnDisk &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6821" relation="public-inheritance">
+        <childnode refid="6631" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6821">
+      <node id="6631">
         <label>std::vector&lt; amrex::VisMF::FabOnDisk, std::allocator&lt; amrex::VisMF::FabOnDisk &gt; &gt;</label>
       </node>
-      <node id="6816">
+      <node id="6626">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6817" relation="public-inheritance">
+        <childnode refid="6627" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6808">
+      <node id="6618">
         <label>string</label>
       </node>
-      <node id="6811">
+      <node id="6621">
         <label>std::vector&lt; Real, std::allocator&lt; Real &gt; &gt;</label>
       </node>
-      <node id="6806">
+      <node id="6616">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox * &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6807" relation="public-inheritance">
+        <childnode refid="6617" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6807">
+      <node id="6617">
         <label>std::vector&lt; amrex::Vector&lt; amrex::FArrayBox * &gt;, std::allocator&lt; amrex::Vector&lt; amrex::FArrayBox * &gt; &gt; &gt;</label>
       </node>
-      <node id="6819">
+      <node id="6629">
         <label>std::vector&lt; amrex::Vector&lt; Real &gt;, std::allocator&lt; amrex::Vector&lt; Real &gt; &gt; &gt;</label>
       </node>
-      <node id="6814">
+      <node id="6624">
         <label>amrex::Vector&lt; long &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6815" relation="public-inheritance">
+        <childnode refid="6625" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6817">
+      <node id="6627">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="6822">
-        <label>amrex::BoxArray</label>
-        <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="6812" relation="usage">
-          <edgelabel>m_crse_ratio</edgelabel>
-        </childnode>
-        <childnode refid="6823" relation="usage">
-          <edgelabel>m_typ</edgelabel>
-        </childnode>
-      </node>
-      <node id="6813">
+      <node id="6623">
         <label>amrex::RealDescriptor</label>
         <link refid="classamrex_1_1RealDescriptor"/>
-        <childnode refid="6814" relation="usage">
+        <childnode refid="6624" relation="usage">
           <edgelabel>fr</edgelabel>
         </childnode>
-        <childnode refid="6816" relation="usage">
+        <childnode refid="6626" relation="usage">
           <edgelabel>ord</edgelabel>
         </childnode>
       </node>
-      <node id="6823">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
-      </node>
-      <node id="6810">
+      <node id="6620">
         <label>amrex::Vector&lt; Real &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6811" relation="public-inheritance">
+        <childnode refid="6621" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6809">
+      <node id="6619">
         <label>amrex::VisMF::Header</label>
         <link refid="structamrex_1_1VisMF_1_1Header"/>
-        <childnode refid="6810" relation="usage">
+        <childnode refid="6620" relation="usage">
           <edgelabel>m_famin</edgelabel>
           <edgelabel>m_famax</edgelabel>
         </childnode>
-        <childnode refid="6812" relation="usage">
+        <childnode refid="6622" relation="usage">
           <edgelabel>m_ngrow</edgelabel>
         </childnode>
-        <childnode refid="6813" relation="usage">
+        <childnode refid="6623" relation="usage">
           <edgelabel>m_writtenRD</edgelabel>
         </childnode>
-        <childnode refid="6818" relation="usage">
+        <childnode refid="6628" relation="usage">
           <edgelabel>m_min</edgelabel>
           <edgelabel>m_max</edgelabel>
         </childnode>
-        <childnode refid="6820" relation="usage">
+        <childnode refid="6630" relation="usage">
           <edgelabel>m_fod</edgelabel>
         </childnode>
-        <childnode refid="6822" relation="usage">
-          <edgelabel>m_ba</edgelabel>
-        </childnode>
       </node>
-      <node id="6815">
+      <node id="6625">
         <label>std::vector&lt; long, std::allocator&lt; long &gt; &gt;</label>
       </node>
-      <node id="6818">
+      <node id="6628">
         <label>amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6819" relation="public-inheritance">
+        <childnode refid="6629" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

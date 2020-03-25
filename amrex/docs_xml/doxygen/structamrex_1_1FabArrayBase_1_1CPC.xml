@@ -71,7 +71,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H" line="563" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="563" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1FabArrayBase_1_1CPC_1a0731da1aa60b01a75a86c66a1e49a82c" prot="public" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
+        <type>BoxArray</type>
         <definition>BoxArray amrex::FabArrayBase::CPC::m_srcba</definition>
         <argsstring></argsstring>
         <name>m_srcba</name>
@@ -84,7 +84,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H" line="564" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="564" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1FabArrayBase_1_1CPC_1a5f390136bc410e6524afb0c7605d01ae" prot="public" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
+        <type>BoxArray</type>
         <definition>BoxArray amrex::FabArrayBase::CPC::m_dstba</definition>
         <argsstring></argsstring>
         <name>m_dstba</name>
@@ -150,7 +150,7 @@
         <argsstring>(const BoxArray &amp;dstba, const DistributionMapping &amp;dstdm, const Vector&lt; int &gt; &amp;dstidx, const IntVect &amp;dstng, const BoxArray &amp;srcba, const DistributionMapping &amp;srcdm, const Vector&lt; int &gt; &amp;srcidx, const IntVect &amp;srcng, const Periodicity &amp;period, int myproc)</argsstring>
         <name>CPC</name>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>dstba</declname>
         </param>
         <param>
@@ -166,7 +166,7 @@
           <declname>dstng</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>srcba</declname>
         </param>
         <param>
@@ -203,7 +203,7 @@
         <argsstring>(const BoxArray &amp;ba, const IntVect &amp;ng, const DistributionMapping &amp;dstdm, const DistributionMapping &amp;srcdm)</argsstring>
         <name>CPC</name>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -260,7 +260,7 @@
         <argsstring>(const BoxArray &amp;ba_dst, const DistributionMapping &amp;dm_dst, const Vector&lt; int &gt; &amp;imap_dst, const BoxArray &amp;ba_src, const DistributionMapping &amp;dm_src, const Vector&lt; int &gt; &amp;imap_src, int MyProc=ParallelDescriptor::MyProc())</argsstring>
         <name>define</name>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba_dst</declname>
         </param>
         <param>
@@ -272,7 +272,7 @@
           <declname>imap_dst</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba_src</declname>
         </param>
         <param>
@@ -302,109 +302,84 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1094">
+      <node id="1067">
         <label>amrex::FabArrayBase::CommMetaData</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CommMetaData"/>
       </node>
-      <node id="1093">
+      <node id="1066">
         <label>amrex::FabArrayBase::CPC</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CPC"/>
-        <childnode refid="1094" relation="public-inheritance">
+        <childnode refid="1067" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1097">
+      <node id="1070">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="1097" relation="usage">
+        <childnode refid="1070" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="1096">
+      <node id="1069">
         <label>amrex::FabArrayBase::CommMetaData</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CommMetaData"/>
       </node>
-      <node id="1102">
+      <node id="1074">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1103" relation="public-inheritance">
+        <childnode refid="1075" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1106">
+      <node id="1076">
         <label>amrex::Periodicity</label>
         <link refid="classamrex_1_1Periodicity"/>
-        <childnode refid="1097" relation="usage">
+        <childnode refid="1070" relation="usage">
           <edgelabel>period</edgelabel>
         </childnode>
       </node>
-      <node id="1095">
+      <node id="1068">
         <label>amrex::FabArrayBase::CPC</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CPC"/>
-        <childnode refid="1096" relation="public-inheritance">
+        <childnode refid="1069" relation="public-inheritance">
         </childnode>
-        <childnode refid="1097" relation="usage">
+        <childnode refid="1070" relation="usage">
           <edgelabel>m_srcng</edgelabel>
           <edgelabel>m_dstng</edgelabel>
         </childnode>
-        <childnode refid="1098" relation="usage">
+        <childnode refid="1071" relation="usage">
           <edgelabel>m_dstbdk</edgelabel>
           <edgelabel>m_srcbdk</edgelabel>
         </childnode>
-        <childnode refid="1104" relation="usage">
-          <edgelabel>m_srcba</edgelabel>
-          <edgelabel>m_dstba</edgelabel>
-        </childnode>
-        <childnode refid="1106" relation="usage">
+        <childnode refid="1076" relation="usage">
           <edgelabel>m_period</edgelabel>
         </childnode>
       </node>
-      <node id="1103">
+      <node id="1075">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="1104">
-        <label>amrex::BoxArray</label>
-        <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="1097" relation="usage">
-          <edgelabel>m_crse_ratio</edgelabel>
-        </childnode>
-        <childnode refid="1105" relation="usage">
-          <edgelabel>m_typ</edgelabel>
-        </childnode>
-      </node>
-      <node id="1100">
+      <node id="1072">
         <label>amrex::DistributionMapping::RefID</label>
         <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
-        <childnode refid="1101" relation="usage">
+        <childnode refid="1073" relation="usage">
           <edgelabel>data</edgelabel>
         </childnode>
       </node>
-      <node id="1105">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
-      </node>
-      <node id="1101">
+      <node id="1073">
         <label>amrex::DistributionMapping::Ref</label>
         <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="1102" relation="usage">
+        <childnode refid="1074" relation="usage">
           <edgelabel>m_index_array</edgelabel>
           <edgelabel>m_pmap</edgelabel>
         </childnode>
       </node>
-      <node id="1098">
+      <node id="1071">
         <label>amrex::FabArrayBase::BDKey</label>
         <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
-        <childnode refid="1099" relation="usage">
-          <edgelabel>m_ba_id</edgelabel>
-        </childnode>
-        <childnode refid="1100" relation="usage">
+        <childnode refid="1072" relation="usage">
           <edgelabel>m_dm_id</edgelabel>
         </childnode>
-      </node>
-      <node id="1099">
-        <label>amrex::BoxArray::RefID</label>
-        <link refid="structamrex_1_1BoxArray_1_1RefID"/>
       </node>
     </collaborationgraph>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H" line="544" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="542" bodyend="575"/>

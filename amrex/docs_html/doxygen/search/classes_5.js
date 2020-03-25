@@ -546,8 +546,8 @@ var searchData=
   ['fpinfo',['FPinfo',['../structamrex_1_1FabArrayBase_1_1FPinfo.html',1,'amrex::FabArrayBase']]],
   ['fqrfact',['FQRfact',['../interfacefsunlinsol__mod_1_1FQRfact.html',1,'fsunlinsol_mod']]],
   ['fqrsol',['FQRsol',['../interfacefsunlinsol__mod_1_1FQRsol.html',1,'fsunlinsol_mod']]],
-  ['frame',['Frame',['../classamrex_1_1ParallelContext_1_1Frame.html',1,'amrex::ParallelContext']]],
   ['frame',['Frame',['../classamrex_1_1ParmParse_1_1Frame.html',1,'amrex::ParmParse']]],
+  ['frame',['Frame',['../classamrex_1_1ParallelContext_1_1Frame.html',1,'amrex::ParallelContext']]],
   ['fsundenselinearsolver',['FSUNDenseLinearSolver',['../interfacefsunlinsol__dense__mod_1_1FSUNDenseLinearSolver.html',1,'fsunlinsol_dense_mod']]],
   ['fsundensematrix',['FSUNDenseMatrix',['../interfacefsunmatrix__dense__mod_1_1FSUNDenseMatrix.html',1,'fsunmatrix_dense_mod']]],
   ['fsundensematrix',['FSUNDenseMatrix',['../interfacefsunmat__dense__mod_1_1FSUNDenseMatrix.html',1,'fsunmat_dense_mod']]],
@@ -608,7 +608,7 @@ var searchData=
   ['fsunmatspace_5fdense',['FSUNMatSpace_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatSpace__Dense.html',1,'fsunmatrix_dense_mod']]],
   ['fsunmatspace_5fdense',['FSUNMatSpace_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatSpace__Dense.html',1,'fsunmat_dense_mod']]],
   ['fsunmatzero',['FSUNMatZero',['../interfacefsunmatrix__mod_1_1FSUNMatZero.html',1,'fsunmatrix_mod']]],
-  ['fsunmatzero_5fdense',['FSUNMatZero_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatZero__Dense.html',1,'fsunmat_dense_mod']]],
   ['fsunmatzero_5fdense',['FSUNMatZero_Dense',['../interfacefsunmatrix__dense__mod_1_1FSUNMatZero__Dense.html',1,'fsunmatrix_dense_mod']]],
+  ['fsunmatzero_5fdense',['FSUNMatZero_Dense',['../interfacefsunmat__dense__mod_1_1FSUNMatZero__Dense.html',1,'fsunmat_dense_mod']]],
   ['funcstat',['FuncStat',['../structBLProfStats_1_1FuncStat.html',1,'BLProfStats']]]
 ];

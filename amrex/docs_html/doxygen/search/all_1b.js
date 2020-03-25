@@ -25,7 +25,6 @@ var searchData=
   ['_7ebndrydata',['~BndryData',['../classamrex_1_1BndryData.html#ad6ebc5a788a82c41a8b1bffc8e589440',1,'amrex::BndryData']]],
   ['_7ebndryfunc',['~BndryFunc',['../classamrex_1_1StateDescriptor_1_1BndryFunc.html#ac734cc2b9fe8ae9330f8a4d389eea388',1,'amrex::StateDescriptor::BndryFunc']]],
   ['_7ebndryregister',['~BndryRegister',['../classamrex_1_1BndryRegister.html#a3607c6a07e3dd764daaf2cb5301f1a59',1,'amrex::BndryRegister']]],
-  ['_7eboxarray',['~BoxArray',['../classamrex_1_1BoxArray.html#ac969ef57c4c67c6dd624e9f261f2afb4',1,'amrex::BoxArray']]],
   ['_7eboxconverter',['~BoxConverter',['../classamrex_1_1BoxConverter.html#ac8cf3b117a120af92b38b5e9d25fcf23',1,'amrex::BoxConverter']]],
   ['_7eboxiterator',['~BoxIterator',['../classamrex_1_1BoxIterator.html#aad3066fecf437d5d90a950b9302beeba',1,'amrex::BoxIterator']]],
   ['_7ecarena',['~CArena',['../classamrex_1_1CArena.html#abca549bb11a9efb8b05dca10c32aab81',1,'amrex::CArena']]],

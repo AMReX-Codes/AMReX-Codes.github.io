@@ -13,7 +13,6 @@ var searchData=
   ['union',['Union',['../classamrex_1_1LSFactory.html#a7d434880721e515d6458e198ba579219',1,'amrex::LSFactory::Union(const EBFArrayBoxFactory &amp;eb_factory, const MultiFab &amp;mf_impfunc)'],['../classamrex_1_1LSFactory.html#a350082120b504041512983b0960bcb8b',1,'amrex::LSFactory::Union(const EBFArrayBoxFactory &amp;eb_factory, const MultiFab &amp;mf_impfunc, int ebt_size)'],['../classamrex_1_1LSFactory.html#a37f562a76e4efdb4a4eab2495910fd1f',1,'amrex::LSFactory::Union(const EBFArrayBoxFactory &amp;eb_factory, const MultiFab &amp;mf_impfunc, const IntVect &amp;ebt_size)'],['../classamrex_1_1LSFactory.html#aacb082130197d26c131f91f9c12e281d',1,'amrex::LSFactory::Union(const MultiFab &amp;mf_impfunc, bool apply_threshold=false)']]],
   ['union_5fdata',['union_data',['../classamrex_1_1LSFactory.html#a1520aa876881287222f18ada1f73f826',1,'amrex::LSFactory']]],
   ['unionif',['UnionIF',['../classamrex_1_1EB2_1_1UnionIF.html',1,'amrex::EB2']]],
-  ['uniqify',['uniqify',['../classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c',1,'amrex::BoxArray']]],
   ['uniquerandomsubset',['UniqueRandomSubset',['../namespaceamrex.html#aa2c1209819cd8dd79499c2b9f088120e',1,'amrex']]],
   ['uniquestring',['UniqueString',['../namespaceamrex.html#aebee05e08302fb03e29f4270e933239c',1,'amrex']]],
   ['unit',['Unit',['../classamrex_1_1IntVect.html#a93df7e94c6d2d07ea3eb7647500bf751',1,'amrex::IntVect::Unit()'],['../classamrex_1_1RealVect.html#a6745f136d89bdb15e57c3387ca01e973',1,'amrex::RealVect::Unit()']]],

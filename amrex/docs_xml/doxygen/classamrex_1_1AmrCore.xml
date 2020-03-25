@@ -209,7 +209,7 @@
           <declname>time</declname>
         </param>
         <briefdescription>
-<para>Initialize <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and data from scratch. Calling this function requires the derive class implement its own MakeNewLevelFromScratch to allocate and intialize data. Also note usually one needs to average the fine data down to coarse level after this. </para>        </briefdescription>
+<para>Initialize BoxArray, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and data from scratch. Calling this function requires the derive class implement its own MakeNewLevelFromScratch to allocate and intialize data. Also note usually one needs to average the fine data down to coarse level after this. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -320,7 +320,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -330,7 +330,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Make a new level from scratch using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. Only used during initialization. </para>        </detaileddescription>
+<para>Make a new level from scratch using provided BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. Only used during initialization. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_AmrCore.H" line="74" column="1"/>
@@ -351,7 +351,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -359,7 +359,7 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
-<para>Make a new level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with interpolated coarse level data. </para>        </briefdescription>
+<para>Make a new level using provided BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with interpolated coarse level data. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -382,7 +382,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -390,7 +390,7 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
-<para>Remake an existing level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with existing fine and coarse data. </para>        </briefdescription>
+<para>Remake an existing level using provided BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with existing fine and coarse data. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -438,11 +438,47 @@
     <detaileddescription>
 <para>Because it does not own any floating point data, <ref refid="classamrex_1_1AmrCore" kindref="compound">AmrCore</ref> used virtual functions to allocate, initialize and delete data. It also requires the derived class to tag cells for refinement. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="254">
+      <node id="248">
         <label>amrex::LSCoreBase</label>
         <link refid="classamrex_1_1LSCoreBase"/>
-        <childnode refid="250" relation="public-inheritance">
+        <childnode refid="244" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="244">
+        <label>amrex::AmrCore</label>
+        <link refid="classamrex_1_1AmrCore"/>
+        <childnode refid="245" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="247">
+        <label>amrex::Amr</label>
+        <link refid="classamrex_1_1Amr"/>
+        <childnode refid="244" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="246">
+        <label>amrex::AmrInfo</label>
+        <link refid="structamrex_1_1AmrInfo"/>
+      </node>
+      <node id="245">
+        <label>amrex::AmrMesh</label>
+        <link refid="classamrex_1_1AmrMesh"/>
+        <childnode refid="246" relation="protected-inheritance">
+        </childnode>
+      </node>
+      <node id="249">
+        <label>amrex::LSCore&lt; F &gt;</label>
+        <link refid="classamrex_1_1LSCore"/>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="255">
+        <label>Real</label>
+      </node>
+      <node id="261">
+        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
       </node>
       <node id="250">
         <label>amrex::AmrCore</label>
@@ -450,100 +486,64 @@
         <childnode refid="251" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="258">
+        <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="259" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="259">
+        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
+      </node>
       <node id="253">
-        <label>amrex::Amr</label>
-        <link refid="classamrex_1_1Amr"/>
-        <childnode refid="250" relation="public-inheritance">
+        <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="254" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="256">
+        <label>amrex::Vector&lt; BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="257" relation="public-inheritance">
         </childnode>
       </node>
       <node id="252">
         <label>amrex::AmrInfo</label>
         <link refid="structamrex_1_1AmrInfo"/>
+        <childnode refid="253" relation="usage">
+          <edgelabel>blocking_factor</edgelabel>
+          <edgelabel>n_error_buf</edgelabel>
+          <edgelabel>max_grid_size</edgelabel>
+          <edgelabel>ref_ratio</edgelabel>
+        </childnode>
+        <childnode refid="255" relation="usage">
+          <edgelabel>grid_eff</edgelabel>
+        </childnode>
+      </node>
+      <node id="257">
+        <label>std::vector&lt; BoxArray, std::allocator&lt; BoxArray &gt; &gt;</label>
+      </node>
+      <node id="254">
+        <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
+      </node>
+      <node id="260">
+        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="261" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="251">
         <label>amrex::AmrMesh</label>
         <link refid="classamrex_1_1AmrMesh"/>
         <childnode refid="252" relation="protected-inheritance">
         </childnode>
-      </node>
-      <node id="255">
-        <label>amrex::LSCore&lt; F &gt;</label>
-        <link refid="classamrex_1_1LSCore"/>
-        <childnode refid="254" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="265">
-        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
-      </node>
-      <node id="261">
-        <label>Real</label>
-      </node>
-      <node id="267">
-        <label>std::vector&lt; amrex::Geometry, std::allocator&lt; amrex::Geometry &gt; &gt;</label>
-      </node>
-      <node id="256">
-        <label>amrex::AmrCore</label>
-        <link refid="classamrex_1_1AmrCore"/>
-        <childnode refid="257" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="262">
-        <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="263" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="264">
-        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="265" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="263">
-        <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
-      </node>
-      <node id="259">
-        <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="260" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="258">
-        <label>amrex::AmrInfo</label>
-        <link refid="structamrex_1_1AmrInfo"/>
-        <childnode refid="259" relation="usage">
-          <edgelabel>blocking_factor</edgelabel>
-          <edgelabel>n_error_buf</edgelabel>
-          <edgelabel>max_grid_size</edgelabel>
-          <edgelabel>ref_ratio</edgelabel>
-        </childnode>
-        <childnode refid="261" relation="usage">
-          <edgelabel>grid_eff</edgelabel>
-        </childnode>
-      </node>
-      <node id="260">
-        <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
-      </node>
-      <node id="266">
-        <label>amrex::Vector&lt; amrex::Geometry &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="267" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="257">
-        <label>amrex::AmrMesh</label>
-        <link refid="classamrex_1_1AmrMesh"/>
-        <childnode refid="258" relation="protected-inheritance">
-        </childnode>
-        <childnode refid="262" relation="usage">
-          <edgelabel>dmap</edgelabel>
-        </childnode>
-        <childnode refid="264" relation="usage">
+        <childnode refid="256" relation="usage">
           <edgelabel>grids</edgelabel>
         </childnode>
-        <childnode refid="266" relation="usage">
+        <childnode refid="258" relation="usage">
+          <edgelabel>dmap</edgelabel>
+        </childnode>
+        <childnode refid="260" relation="usage">
           <edgelabel>geom</edgelabel>
         </childnode>
       </node>

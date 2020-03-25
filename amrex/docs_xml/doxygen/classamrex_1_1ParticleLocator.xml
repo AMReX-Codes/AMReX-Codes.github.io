@@ -38,7 +38,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="169" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="169" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ParticleLocator_1a398bff4255e23b17afdbb21529343b0f" prot="protected" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
+        <type>BoxArray</type>
         <definition>BoxArray amrex::ParticleLocator&lt; Bins &gt;::m_ba</definition>
         <argsstring></argsstring>
         <name>m_ba</name>
@@ -175,7 +175,7 @@
         <argsstring>(const BoxArray &amp;ba, const Geometry &amp;geom)</argsstring>
         <name>build</name>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -226,7 +226,7 @@
         <argsstring>(const BoxArray &amp;ba) const noexcept</argsstring>
         <name>isValid</name>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <briefdescription>
@@ -243,101 +243,88 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6232">
+      <node id="6052">
         <label>amrex::PODVector&lt; amrex::Box &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="6233" relation="public-inheritance">
+        <childnode refid="6053" relation="public-inheritance">
         </childnode>
-        <childnode refid="6234" relation="usage">
+        <childnode refid="6054" relation="usage">
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="6235">
+      <node id="6055">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="6235" relation="usage">
+        <childnode refid="6055" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="6239">
+      <node id="6059">
         <label>Real</label>
       </node>
-      <node id="6241">
-        <label>amrex::BoxArray</label>
-        <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="6235" relation="usage">
-          <edgelabel>m_crse_ratio</edgelabel>
-        </childnode>
-        <childnode refid="6236" relation="usage">
-          <edgelabel>m_typ</edgelabel>
-        </childnode>
-      </node>
-      <node id="6240">
+      <node id="6060">
         <label>amrex::RealBox</label>
         <link refid="classamrex_1_1RealBox"/>
-        <childnode refid="6239" relation="usage">
+        <childnode refid="6059" relation="usage">
           <edgelabel>xhi</edgelabel>
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="6234">
+      <node id="6054">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="6235" relation="usage">
+        <childnode refid="6055" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="6236" relation="usage">
+        <childnode refid="6056" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="6238">
+      <node id="6058">
         <label>amrex::CoordSys</label>
         <link refid="classamrex_1_1CoordSys"/>
-        <childnode refid="6239" relation="usage">
+        <childnode refid="6059" relation="usage">
           <edgelabel>inv_dx</edgelabel>
           <edgelabel>offset</edgelabel>
           <edgelabel>dx</edgelabel>
         </childnode>
       </node>
-      <node id="6236">
+      <node id="6056">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="6237">
+      <node id="6057">
         <label>amrex::Geometry</label>
         <link refid="classamrex_1_1Geometry"/>
-        <childnode refid="6238" relation="public-inheritance">
+        <childnode refid="6058" relation="public-inheritance">
         </childnode>
-        <childnode refid="6240" relation="usage">
+        <childnode refid="6060" relation="usage">
           <edgelabel>prob_domain</edgelabel>
         </childnode>
-        <childnode refid="6234" relation="usage">
+        <childnode refid="6054" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
-      <node id="6231">
+      <node id="6051">
         <label>amrex::ParticleLocator&lt; Bins &gt;</label>
         <link refid="classamrex_1_1ParticleLocator"/>
-        <childnode refid="6232" relation="usage">
+        <childnode refid="6052" relation="usage">
           <edgelabel>m_host_boxes</edgelabel>
           <edgelabel>m_device_boxes</edgelabel>
         </childnode>
-        <childnode refid="6237" relation="usage">
+        <childnode refid="6057" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
-        <childnode refid="6235" relation="usage">
+        <childnode refid="6055" relation="usage">
           <edgelabel>m_bins_hi</edgelabel>
           <edgelabel>m_bin_size</edgelabel>
           <edgelabel>m_num_bins</edgelabel>
           <edgelabel>m_bins_lo</edgelabel>
         </childnode>
-        <childnode refid="6241" relation="usage">
-          <edgelabel>m_ba</edgelabel>
-        </childnode>
       </node>
-      <node id="6233">
+      <node id="6053">
         <label>std::allocator&lt;amrex::Box &gt;</label>
       </node>
     </collaborationgraph>

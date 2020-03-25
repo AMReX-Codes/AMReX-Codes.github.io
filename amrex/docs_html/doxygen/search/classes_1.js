@@ -25,7 +25,6 @@ var searchData=
   ['boundcond',['BoundCond',['../classamrex_1_1BoundCond.html',1,'amrex']]],
   ['boundingbox',['BoundingBox',['../structamrex_1_1algoim_1_1BoundingBox.html',1,'amrex::algoim']]],
   ['box',['Box',['../classamrex_1_1Box.html',1,'amrex']]],
-  ['boxarray',['BoxArray',['../classamrex_1_1BoxArray.html',1,'amrex']]],
   ['boxcommhelper',['BoxCommHelper',['../classamrex_1_1BoxCommHelper.html',1,'amrex']]],
   ['boxconverter',['BoxConverter',['../classamrex_1_1BoxConverter.html',1,'amrex']]],
   ['boxdomain',['BoxDomain',['../classamrex_1_1BoxDomain.html',1,'amrex']]],

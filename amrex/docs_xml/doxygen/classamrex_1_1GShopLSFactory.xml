@@ -36,7 +36,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="346" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="346" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1GShopLSFactory_1aa6a77272fefc3e522a9468e5a4be3c0c" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
+        <type>BoxArray</type>
         <definition>BoxArray amrex::GShopLSFactory&lt; F &gt;::m_ls_ba</definition>
         <argsstring></argsstring>
         <name>m_ls_ba</name>
@@ -111,7 +111,7 @@
           <declname>geom</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -144,7 +144,7 @@
           <declname>geom_crse</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>ba_crse</declname>
         </param>
         <param>
@@ -175,7 +175,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Fill <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> (with the same CellSize, <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>, and number of ghost cells as the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref>) with the implicit function values. The filled <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> is returned as a std::unique_ptr&lt;MultiFab&gt;. </para>        </detaileddescription>
+<para>Fill <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> (with the same CellSize, BoxArray, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>, and number of ghost cells as the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref>) with the implicit function values. The filled <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> is returned as a std::unique_ptr&lt;MultiFab&gt;. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" line="391" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_levelset.H" bodystart="391" bodyend="404"/>
@@ -184,88 +184,75 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>Template class that handles filling implicit functions from GeometryShop. The implicit function is filled into a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with the same CellSize, <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>, and number of ghost cells as the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref>. </para>    </detaileddescription>
+<para>Template class that handles filling implicit functions from GeometryShop. The implicit function is filled into a <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> with the same CellSize, BoxArray, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>, and number of ghost cells as the <ref refid="classamrex_1_1LSFactory" kindref="compound">LSFactory</ref>. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="3242">
+      <node id="3179">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="3242" relation="usage">
+        <childnode refid="3179" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="3239">
+      <node id="3176">
         <label>Real</label>
       </node>
-      <node id="3245">
-        <label>amrex::BoxArray</label>
-        <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="3242" relation="usage">
-          <edgelabel>m_crse_ratio</edgelabel>
-        </childnode>
-        <childnode refid="3243" relation="usage">
-          <edgelabel>m_typ</edgelabel>
-        </childnode>
-      </node>
-      <node id="3240">
+      <node id="3177">
         <label>amrex::RealBox</label>
         <link refid="classamrex_1_1RealBox"/>
-        <childnode refid="3239" relation="usage">
+        <childnode refid="3176" relation="usage">
           <edgelabel>xhi</edgelabel>
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="3241">
+      <node id="3178">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="3242" relation="usage">
+        <childnode refid="3179" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="3243" relation="usage">
+        <childnode refid="3180" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="3238">
+      <node id="3175">
         <label>amrex::CoordSys</label>
         <link refid="classamrex_1_1CoordSys"/>
-        <childnode refid="3239" relation="usage">
+        <childnode refid="3176" relation="usage">
           <edgelabel>inv_dx</edgelabel>
           <edgelabel>offset</edgelabel>
           <edgelabel>dx</edgelabel>
         </childnode>
       </node>
-      <node id="3243">
+      <node id="3180">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="3244">
+      <node id="3181">
         <label>amrex::DistributionMapping</label>
         <link refid="classamrex_1_1DistributionMapping"/>
       </node>
-      <node id="3237">
+      <node id="3174">
         <label>amrex::Geometry</label>
         <link refid="classamrex_1_1Geometry"/>
-        <childnode refid="3238" relation="public-inheritance">
+        <childnode refid="3175" relation="public-inheritance">
         </childnode>
-        <childnode refid="3240" relation="usage">
+        <childnode refid="3177" relation="usage">
           <edgelabel>prob_domain</edgelabel>
         </childnode>
-        <childnode refid="3241" relation="usage">
+        <childnode refid="3178" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
-      <node id="3236">
+      <node id="3173">
         <label>amrex::GShopLSFactory&lt; F &gt;</label>
         <link refid="classamrex_1_1GShopLSFactory"/>
-        <childnode refid="3237" relation="usage">
+        <childnode refid="3174" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
-        <childnode refid="3244" relation="usage">
+        <childnode refid="3181" relation="usage">
           <edgelabel>m_ls_dm</edgelabel>
-        </childnode>
-        <childnode refid="3245" relation="usage">
-          <edgelabel>m_ls_ba</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

@@ -60,7 +60,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="424" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="424" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1StateData_1af7a3b275665dcd4803b3780a02e36b48" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
+        <type>BoxArray</type>
         <definition>BoxArray amrex::StateData::grids</definition>
         <argsstring></argsstring>
         <name>grids</name>
@@ -203,7 +203,7 @@
           <declname>p_domain</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>grds</declname>
         </param>
         <param>
@@ -375,7 +375,7 @@
           <declname>p_domain</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>grds</declname>
         </param>
         <param>
@@ -1126,7 +1126,7 @@
           <declname>p_domain</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+          <type>const BoxArray &amp;</type>
           <declname>grds</declname>
         </param>
         <param>
@@ -1266,12 +1266,12 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="294" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="294" bodyend="294"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1StateData_1a805fefd43e63ca5b6b0b3ddd26f8b04c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
+        <type>const BoxArray &amp;</type>
         <definition>const BoxArray&amp; amrex::StateData::boxArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>boxArray</name>
         <briefdescription>
-<para>Returns the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>        </briefdescription>
+<para>Returns the BoxArray. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -1673,166 +1673,153 @@
     <detaileddescription>
 <para><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> holds state data on a level for the current and previous time step. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="6579">
+      <node id="6394">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt; &gt;</label>
       </node>
-      <node id="6576">
+      <node id="6391">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="6578">
+      <node id="6393">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6579" relation="public-inheritance">
+        <childnode refid="6394" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6591">
+      <node id="6406">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="6591" relation="usage">
+        <childnode refid="6406" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="6589">
+      <node id="6404">
         <label>Real</label>
       </node>
-      <node id="6577">
+      <node id="6392">
         <label>amrex::StateDescriptor</label>
         <link refid="classamrex_1_1StateDescriptor"/>
-        <childnode refid="6578" relation="usage">
+        <childnode refid="6393" relation="usage">
           <edgelabel>bc_func</edgelabel>
         </childnode>
-        <childnode refid="6580" relation="usage">
+        <childnode refid="6395" relation="usage">
           <edgelabel>bc</edgelabel>
         </childnode>
-        <childnode refid="6582" relation="usage">
+        <childnode refid="6397" relation="usage">
           <edgelabel>max_map_start_comp</edgelabel>
           <edgelabel>m_master</edgelabel>
           <edgelabel>min_map_end_comp</edgelabel>
           <edgelabel>m_groupsize</edgelabel>
         </childnode>
-        <childnode refid="6573" relation="usage">
+        <childnode refid="6388" relation="usage">
           <edgelabel>names</edgelabel>
         </childnode>
-        <childnode refid="6584" relation="usage">
+        <childnode refid="6399" relation="usage">
           <edgelabel>mapper</edgelabel>
         </childnode>
-        <childnode refid="6585" relation="usage">
+        <childnode refid="6400" relation="usage">
           <edgelabel>mapper_comp</edgelabel>
         </childnode>
-        <childnode refid="6587" relation="usage">
+        <childnode refid="6402" relation="usage">
           <edgelabel>type</edgelabel>
         </childnode>
       </node>
-      <node id="6574">
+      <node id="6389">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
       </node>
-      <node id="6575">
+      <node id="6390">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="6576" relation="usage">
+        <childnode refid="6391" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="6582">
+      <node id="6397">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6583" relation="public-inheritance">
+        <childnode refid="6398" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6581">
+      <node id="6396">
         <label>std::vector&lt; amrex::BCRec, std::allocator&lt; amrex::BCRec &gt; &gt;</label>
       </node>
-      <node id="6584">
+      <node id="6399">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
       </node>
-      <node id="6580">
+      <node id="6395">
         <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6581" relation="public-inheritance">
+        <childnode refid="6396" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6583">
+      <node id="6398">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="6592">
-        <label>amrex::BoxArray</label>
-        <link refid="classamrex_1_1BoxArray"/>
-        <childnode refid="6591" relation="usage">
-          <edgelabel>m_crse_ratio</edgelabel>
-        </childnode>
-        <childnode refid="6587" relation="usage">
-          <edgelabel>m_typ</edgelabel>
-        </childnode>
-      </node>
-      <node id="6588">
+      <node id="6403">
         <label>amrex::StateData::TimeInterval</label>
         <link refid="structamrex_1_1StateData_1_1TimeInterval"/>
-        <childnode refid="6589" relation="usage">
+        <childnode refid="6404" relation="usage">
           <edgelabel>stop</edgelabel>
           <edgelabel>start</edgelabel>
         </childnode>
       </node>
-      <node id="6590">
+      <node id="6405">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="6591" relation="usage">
+        <childnode refid="6406" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="6587" relation="usage">
+        <childnode refid="6402" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="6586">
+      <node id="6401">
         <label>std::vector&lt; amrex::Interpolater *, std::allocator&lt; amrex::Interpolater * &gt; &gt;</label>
       </node>
-      <node id="6585">
+      <node id="6400">
         <label>amrex::Vector&lt; amrex::Interpolater * &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6586" relation="public-inheritance">
+        <childnode refid="6401" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6587">
+      <node id="6402">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="6573">
+      <node id="6388">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6574" relation="public-inheritance">
+        <childnode refid="6389" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6572">
+      <node id="6387">
         <label>amrex::DistributionMapping</label>
         <link refid="classamrex_1_1DistributionMapping"/>
       </node>
-      <node id="6571">
+      <node id="6386">
         <label>amrex::StateData</label>
         <link refid="classamrex_1_1StateData"/>
-        <childnode refid="6572" relation="usage">
+        <childnode refid="6387" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="6573" relation="usage">
+        <childnode refid="6388" relation="usage">
           <edgelabel>fabArrayHeaderNames</edgelabel>
         </childnode>
-        <childnode refid="6575" relation="usage">
+        <childnode refid="6390" relation="usage">
           <edgelabel>arena</edgelabel>
         </childnode>
-        <childnode refid="6577" relation="usage">
+        <childnode refid="6392" relation="usage">
           <edgelabel>desc</edgelabel>
         </childnode>
-        <childnode refid="6588" relation="usage">
+        <childnode refid="6403" relation="usage">
           <edgelabel>new_time</edgelabel>
           <edgelabel>old_time</edgelabel>
         </childnode>
-        <childnode refid="6590" relation="usage">
+        <childnode refid="6405" relation="usage">
           <edgelabel>domain</edgelabel>
-        </childnode>
-        <childnode refid="6592" relation="usage">
-          <edgelabel>grids</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

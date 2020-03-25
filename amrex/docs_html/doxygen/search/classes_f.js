@@ -16,7 +16,6 @@ var searchData=
   ['reduceopsum',['ReduceOpSum',['../structamrex_1_1ReduceOpSum.html',1,'amrex']]],
   ['reductionentry',['ReductionEntry',['../structCommProfStats_1_1ReductionEntry.html',1,'CommProfStats']]],
   ['ref',['Ref',['../structamrex_1_1DistributionMapping_1_1Ref.html',1,'amrex::DistributionMapping']]],
-  ['refid',['RefID',['../structamrex_1_1BoxArray_1_1RefID.html',1,'amrex::BoxArray']]],
   ['refid',['RefID',['../structamrex_1_1DistributionMapping_1_1RefID.html',1,'amrex::DistributionMapping']]],
   ['regionsprofstats',['RegionsProfStats',['../classRegionsProfStats.html',1,'']]],
   ['regiontag',['RegionTag',['../structamrex_1_1FabArrayBase_1_1RegionTag.html',1,'amrex::FabArrayBase']]],
