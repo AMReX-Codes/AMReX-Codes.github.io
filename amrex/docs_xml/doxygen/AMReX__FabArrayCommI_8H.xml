@@ -2688,7 +2688,7 @@
 <codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>destbox<sp/>=<sp/>bx<sp/>&amp;<sp/>subbox;</highlight></codeline>
 <codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(destbox.<ref refid="classamrex_1_1Box_1a615de7e44f8ba7f007be244af31b5a97" kindref="member">ok</ref>())</highlight></codeline>
 <codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dest.template<sp/>copy&lt;RunOn::Device&gt;(</highlight><highlight class="keyword">get</highlight><highlight class="normal">(j),destbox,scomp,destbox,dcomp,ncomp);</highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dest.template<sp/>copy&lt;RunOn::Host&gt;(</highlight><highlight class="keyword">get</highlight><highlight class="normal">(j),destbox,scomp,destbox,dcomp,ncomp);</highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="651"><highlight class="normal"></highlight></codeline>
@@ -2721,7 +2721,7 @@
 <codeline lineno="678"><highlight class="normal"></highlight></codeline>
 <codeline lineno="679"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>()<sp/>==<sp/>distributionMap[k])</highlight></codeline>
 <codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ovlp.template<sp/>copy&lt;RunOn::Device&gt;(</highlight><highlight class="keyword">get</highlight><highlight class="normal">(k),bx,scomp,bx,0,ncomp);</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ovlp.template<sp/>copy&lt;RunOn::Host&gt;(</highlight><highlight class="keyword">get</highlight><highlight class="normal">(k),bx,scomp,bx,0,ncomp);</highlight></codeline>
 <codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="683"><highlight class="normal"></highlight></codeline>
 <codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>bx.<ref refid="classamrex_1_1Box_1a3d8fc04f3fa3fb6bb0721aea64cbb373" kindref="member">numPts</ref>()*ncomp;</highlight></codeline>
@@ -2730,7 +2730,7 @@
 <codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa0f73d99c17e1ccedb7f2e66a660f274" kindref="member">ParallelContext::global_to_local_rank</ref>(distributionMap[k]),</highlight></codeline>
 <codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>());</highlight></codeline>
 <codeline lineno="689"><highlight class="normal"></highlight></codeline>
-<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/>dest.template<sp/>copy&lt;RunOn::Device&gt;(ovlp,bx,0,bx,dcomp,ncomp);</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/>dest.template<sp/>copy&lt;RunOn::Host&gt;(ovlp,bx,0,bx,dcomp,ncomp);</highlight></codeline>
 <codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="692"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="693"><highlight class="normal"></highlight></codeline>
