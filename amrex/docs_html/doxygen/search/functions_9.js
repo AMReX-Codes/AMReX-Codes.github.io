@@ -115,7 +115,7 @@ var searchData=
   ['is_5fcell_5fcentered',['is_cell_centered',['../classamrex_1_1FabArrayBase.html#a60aa58517fd2a7d6976e114df171df25',1,'amrex::FabArrayBase']]],
   ['is_5fcovered_5fcell',['is_covered_cell',['../namespaceamrex__ebcellflag__module.html#aa1f07716bba711910bffed1b9d861155',1,'amrex_ebcellflag_module']]],
   ['is_5finteger',['is_integer',['../namespaceamrex.html#a107cab62d5043f039671cf5b68068ddc',1,'amrex']]],
-  ['is_5fit',['is_it',['../namespaceamrex.html#a5d64ce961cc190a21d99afb216b879d8',1,'amrex::is_it()'],['../AMReX__Utility_8H.html#ab240b6bf96809ed711e3c4a78d43cadd',1,'is_it():&#160;AMReX_Utility.H']]],
+  ['is_5fit',['is_it',['../namespaceamrex.html#a5d64ce961cc190a21d99afb216b879d8',1,'amrex']]],
   ['is_5fmulti_5fvalued_5fcell',['is_multi_valued_cell',['../namespaceamrex__ebcellflag__module.html#ac1b245f048fe2b31717a124049739d02',1,'amrex_ebcellflag_module']]],
   ['is_5fneighbor',['is_neighbor',['../namespaceamrex__ebcellflag__module.html#a94fd726efde06cd88152ae586400d5ec',1,'amrex_ebcellflag_module']]],
   ['is_5fnodal',['is_nodal',['../classamrex_1_1FabArrayBase.html#a641ffe22574cc57f3544687b3e23d174',1,'amrex::FabArrayBase::is_nodal() const noexcept'],['../classamrex_1_1FabArrayBase.html#a90447f2e6d22e5e0e06a538fd37063d5',1,'amrex::FabArrayBase::is_nodal(int dir) const noexcept']]],
