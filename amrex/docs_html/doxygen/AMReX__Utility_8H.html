@@ -98,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstdlib&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
@@ -152,6 +153,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a107cab62d5043f039671cf5b68068ddc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a107cab62d5043f039671cf5b68068ddc">amrex::is_integer</a> (const char *str)</td></tr>
 <tr class="memdesc:a107cab62d5043f039671cf5b68068ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if argument is a non-zero length string of digits.  <a href="namespaceamrex.html#a107cab62d5043f039671cf5b68068ddc">More...</a><br /></td></tr>
 <tr class="separator:a107cab62d5043f039671cf5b68068ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d64ce961cc190a21d99afb216b879d8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5d64ce961cc190a21d99afb216b879d8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5d64ce961cc190a21d99afb216b879d8">amrex::is_it</a> (std::string const &amp;s, T &amp;v)</td></tr>
+<tr class="memdesc:a5d64ce961cc190a21d99afb216b879d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true and store value in v if string s is type T.  <a href="namespaceamrex.html#a5d64ce961cc190a21d99afb216b879d8">More...</a><br /></td></tr>
+<tr class="separator:a5d64ce961cc190a21d99afb216b879d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba24cf7211301279ca446ff282a0f8a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6ba24cf7211301279ca446ff282a0f8a">amrex::Tokenize</a> (const std::string &amp;instr, const std::string &amp;separators)</td></tr>
 <tr class="memdesc:a6ba24cf7211301279ca446ff282a0f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits "instr" into separate pieces based on "separators".  <a href="namespaceamrex.html#a6ba24cf7211301279ca446ff282a0f8a">More...</a><br /></td></tr>
 <tr class="separator:a6ba24cf7211301279ca446ff282a0f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +165,9 @@ Functions</h2></td></tr>
 <tr class="separator:a67bf98d88c814ab458018afd16e64aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb53573f5330e4753ad1b562e5dd95ce"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#afb53573f5330e4753ad1b562e5dd95ce">amrex::toUpper</a> (std::string s)</td></tr>
 <tr class="separator:afb53573f5330e4753ad1b562e5dd95ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a8cddb9effe92e67b1ad49de145e901"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a1a8cddb9effe92e67b1ad49de145e901">amrex::trim</a> (std::string s, std::string const &amp;space=&quot; \t&quot;)</td></tr>
+<tr class="memdesc:a1a8cddb9effe92e67b1ad49de145e901"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim leading and trailing white space.  <a href="namespaceamrex.html#a1a8cddb9effe92e67b1ad49de145e901">More...</a><br /></td></tr>
+<tr class="separator:a1a8cddb9effe92e67b1ad49de145e901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e3a82e54e91d8c7543596b2c2476250"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250">amrex::Concatenate</a> (const std::string &amp;root, int num, int mindigits=5)</td></tr>
 <tr class="memdesc:a6e3a82e54e91d8c7543596b2c2476250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns rootNNNN where NNNN == num.  <a href="namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250">More...</a><br /></td></tr>
 <tr class="separator:a6e3a82e54e91d8c7543596b2c2476250"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,6 +241,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memTemplItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a72ebcf044c2dabd659e4ed5831cadc5e">amrex::hash_vector</a> (const Vector&lt; T &gt; &amp;vec, uint64_t seed=0xDEADBEEFDEADBEEF) noexcept</td></tr>
 <tr class="separator:a72ebcf044c2dabd659e4ed5831cadc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab240b6bf96809ed711e3c4a78d43cadd"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab240b6bf96809ed711e3c4a78d43cadd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__Utility_8H.html#ab240b6bf96809ed711e3c4a78d43cadd">is_it</a> (std::string const &amp;s, T &amp;v)</td></tr>
+<tr class="memdesc:ab240b6bf96809ed711e3c4a78d43cadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true and store value in v if string s is type T.  <a href="#ab240b6bf96809ed711e3c4a78d43cadd">More...</a><br /></td></tr>
+<tr class="separator:ab240b6bf96809ed711e3c4a78d43cadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6136b169776e667910d5505dca32259"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Utility_8H.html#ab6136b169776e667910d5505dca32259">amrex_malloc</a> (std::size_t size)</td></tr>
 <tr class="separator:ab6136b169776e667910d5505dca32259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2341d68b47f82cd117da58195ac02101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__Utility_8H.html#a2341d68b47f82cd117da58195ac02101">amrex_free</a> (void *p)</td></tr>
@@ -286,6 +298,36 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab240b6bf96809ed711e3c4a78d43cadd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_it </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return true and store value in v if string s is type T. </p>
 
 </div>
 </div>
