@@ -1807,7 +1807,7 @@
 <codeline lineno="1043"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1044"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1af353083e449d736188c80257c096f518" kindref="member">amrex::USleep</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>sleepsec)<sp/>{</highlight></codeline>
 <codeline lineno="1045"><highlight class="normal"><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>msps<sp/>=<sp/>1000000;</highlight></codeline>
-<codeline lineno="1046"><highlight class="normal"><sp/><sp/>usleep(sleepsec<sp/>*<sp/>msps);</highlight></codeline>
+<codeline lineno="1046"><highlight class="normal"><sp/><sp/>usleep(static_cast&lt;useconds_t&gt;(sleepsec<sp/>*<sp/>msps));</highlight></codeline>
 <codeline lineno="1047"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1048"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1049"><highlight class="normal"></highlight></codeline>
