@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ubound',['ubound',['../classamrex_1_1Box.html#a031934b6cad9ff387f032bffd6b0dfbb',1,'amrex::Box::ubound()'],['../namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c',1,'amrex::ubound(Array4&lt; T &gt; const &amp;a) noexcept'],['../namespaceamrex.html#aee1c8ddea8a977a982dbe39c4a9884a9',1,'amrex::ubound(Box const &amp;box) noexcept']]],
+  ['ucupti',['uCUPTI',['../classamrex_1_1TinyProfiler.html#a2d71911d753130ad6223f9c82ec5c1fe',1,'amrex::TinyProfiler']]],
   ['unapplymetricterm',['unapplyMetricTerm',['../classamrex_1_1MLCellLinOp.html#ac54e10e50b8b0a19c1424d5a7c311003',1,'amrex::MLCellLinOp::unapplyMetricTerm()'],['../classamrex_1_1MLLinOp.html#a3493bb63b041a05c4f4f6de28df1b37e',1,'amrex::MLLinOp::unapplyMetricTerm()'],['../classamrex_1_1MLNodeLinOp.html#a700bdd6e43250739cc3f571b94b81688',1,'amrex::MLNodeLinOp::unapplyMetricTerm()']]],
   ['undef',['undef',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaa2debcd8f37986ae0e3c488f583234ccc',1,'amrex::CoordSys']]],
   ['undefined',['UNDEFINED',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6ad808286f21d2e4851a30703a30d063',1,'amrex::DistributionMapping::UNDEFINED()'],['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4ab3c2b60395f5d29de06295804afd6e42',1,'BLProfStats::UNDEFINED()'],['../namespaceamrex.html#abd2e3d292645433cefc947725585f87aa5e543256c480ac577d30f76f9120eb74',1,'amrex::undefined()']]],
@@ -81,6 +82,7 @@ var searchData=
   ['useprepost',['usePrePost',['../classamrex_1_1ParticleContainer.html#a8bbd5c1953c2de901dadb2f54fdb3983',1,'amrex::ParticleContainer']]],
   ['userfillbox',['UserFillBox',['../namespaceamrex.html#ac0684d4e484a2094882fcb104257c6c2',1,'amrex']]],
   ['userminmax',['USERMINMAX',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98ea42576cdc8bdd08f00ae67a899a9d1550',1,'amrex::Amrvis']]],
+  ['usescupti',['usesCUPTI',['../structamrex_1_1TinyProfiler_1_1Stats.html#a4a677c6dd0af7d407604a642c4371c5c',1,'amrex::TinyProfiler::Stats::usesCUPTI()'],['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a5ae2fb0d7dc957422344b2f12f35e43c',1,'amrex::TinyProfiler::ProcStats::usesCUPTI()']]],
   ['usesingleread',['useSingleRead',['../classamrex_1_1VisMF.html#a7127d8495966b5d5506d3cff6c536a12',1,'amrex::VisMF']]],
   ['usesinglewrite',['useSingleWrite',['../classamrex_1_1VisMF.html#a0706ea7e89d0d5b2d9a60acacc8f38f0',1,'amrex::VisMF']]],
   ['usesparsefpp',['useSparseFPP',['../classamrex_1_1NFilesIter.html#a97ff46c50d110eeeacfcb90f5c001bd0',1,'amrex::NFilesIter']]],

@@ -9796,6 +9796,7 @@
     <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1a01cbf389132c01e2971cb1723fa846cd" kind="variable"><name>dtexmin</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1a23387ec0b0dd45815da72c13541e68de" kind="variable"><name>dtexavg</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1a65dee4854dfd2baf26af6b16812090e3" kind="variable"><name>dtexmax</name></member>
+    <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1a5ae2fb0d7dc957422344b2f12f35e43c" kind="variable"><name>usesCUPTI</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1a38621bfbdcc37e8e877df3a96bf3c5e3" kind="variable"><name>fname</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1aedc188bc05126bc46593e11478c19f66" kind="function"><name>ProcStats</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1ProcStats_1ae641e60af08fa4f6e33d79a5f03db53a" kind="function"><name>compex</name></member>
@@ -10408,6 +10409,8 @@
     <member refid="structamrex_1_1TinyProfiler_1_1Stats_1ab67204f6e74cb814f1ec8c7c2def6448" kind="variable"><name>n</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1Stats_1abc66c2425cf9bbd67c89d82f69597d2c" kind="variable"><name>dtin</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1Stats_1aeb3a3eb0ea9abaf2f440c82e8e9a486d" kind="variable"><name>dtex</name></member>
+    <member refid="structamrex_1_1TinyProfiler_1_1Stats_1a4a677c6dd0af7d407604a642c4371c5c" kind="variable"><name>usesCUPTI</name></member>
+    <member refid="structamrex_1_1TinyProfiler_1_1Stats_1a1eb970b322a3310374700736086d2f59" kind="variable"><name>nk</name></member>
     <member refid="structamrex_1_1TinyProfiler_1_1Stats_1a1985c5975c675b3fb1d9746ee5f016c7" kind="function"><name>Stats</name></member>
   </compound>
   <compound refid="classamrex_1_1Gpu_1_1StreamIter" kind="class"><name>amrex::Gpu::StreamIter</name>
@@ -10572,6 +10575,7 @@
     <member refid="structBLProfStats_1_1TimeRangeCompare_1adf8282ae74c7c3a5ebe1b67a117c21b6" kind="function"><name>operator()</name></member>
   </compound>
   <compound refid="classamrex_1_1TinyProfiler" kind="class"><name>amrex::TinyProfiler</name>
+    <member refid="classamrex_1_1TinyProfiler_1a2d71911d753130ad6223f9c82ec5c1fe" kind="variable"><name>uCUPTI</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a8691b33b40a313ca7ffe01a287f57dff" kind="variable"><name>fname</name></member>
     <member refid="classamrex_1_1TinyProfiler_1ae7befef46d2ca9e3de4299f950647451" kind="variable"><name>global_depth</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a5205c680d2a8d3fd69195aab83ce3b7a" kind="variable"><name>stats</name></member>
@@ -10580,9 +10584,9 @@
     <member refid="classamrex_1_1TinyProfiler_1ac803023249064c812474a5aa120ef397" kind="variable"><name>statsmap</name></member>
     <member refid="classamrex_1_1TinyProfiler_1abcb523d4f35aced1936bf2f559577201" kind="variable"><name>t_init</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a8e1cc274bc1e92cc8466ea9b44911c33" kind="function"><name>TinyProfiler</name></member>
-    <member refid="classamrex_1_1TinyProfiler_1a238dc16dd99da96e07b526f5cd90f4fa" kind="function"><name>TinyProfiler</name></member>
+    <member refid="classamrex_1_1TinyProfiler_1a819886aa4cc0f3a883d6ab4c565609a1" kind="function"><name>TinyProfiler</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a0969b8312bde020f9c99c051dc51eeb5" kind="function"><name>TinyProfiler</name></member>
-    <member refid="classamrex_1_1TinyProfiler_1a5689250282f22646ec14959dc491f748" kind="function"><name>TinyProfiler</name></member>
+    <member refid="classamrex_1_1TinyProfiler_1a83e63db1d35e00d968d6db1c0691f190" kind="function"><name>TinyProfiler</name></member>
     <member refid="classamrex_1_1TinyProfiler_1ac86f51f4e2e72d2b045260f22d50475d" kind="function"><name>~TinyProfiler</name></member>
     <member refid="classamrex_1_1TinyProfiler_1aa79d79de0a3a1e592808ea80448e1637" kind="function"><name>start</name></member>
     <member refid="classamrex_1_1TinyProfiler_1a84199c5f792b3e60b33f6e7ea0fc5568" kind="function"><name>stop</name></member>
@@ -10895,25 +10899,25 @@
     <member refid="classamrex_1_1YAFluxRegister_1af466fe21e95a36341e6a099dcf9c5a97" kind="function"><name>CrseHasWork</name></member>
     <member refid="classamrex_1_1YAFluxRegister_1aac0df8bf308e353e01a5477f2c3fe458" kind="function"><name>FineHasWork</name></member>
   </compound>
-  <compound refid="namespace_0D100" kind="namespace"><name>@100</name>
+  <compound refid="namespace_0D102" kind="namespace"><name>@102</name>
   </compound>
-  <compound refid="namespace_0D125" kind="namespace"><name>@125</name>
+  <compound refid="namespace_0D127" kind="namespace"><name>@127</name>
   </compound>
-  <compound refid="namespace_0D177" kind="namespace"><name>@177</name>
+  <compound refid="namespace_0D179" kind="namespace"><name>@179</name>
   </compound>
-  <compound refid="namespace_0D181" kind="namespace"><name>@181</name>
+  <compound refid="namespace_0D183" kind="namespace"><name>@183</name>
   </compound>
-  <compound refid="namespace_0D191" kind="namespace"><name>@191</name>
+  <compound refid="namespace_0D193" kind="namespace"><name>@193</name>
   </compound>
-  <compound refid="namespace_0D227" kind="namespace"><name>@227</name>
+  <compound refid="namespace_0D229" kind="namespace"><name>@229</name>
   </compound>
-  <compound refid="namespace_0D242" kind="namespace"><name>@242</name>
+  <compound refid="namespace_0D244" kind="namespace"><name>@244</name>
   </compound>
-  <compound refid="namespace_0D276" kind="namespace"><name>@276</name>
+  <compound refid="namespace_0D278" kind="namespace"><name>@278</name>
   </compound>
-  <compound refid="namespace_0D381" kind="namespace"><name>@381</name>
+  <compound refid="namespace_0D383" kind="namespace"><name>@383</name>
   </compound>
-  <compound refid="namespace_0D388" kind="namespace"><name>@388</name>
+  <compound refid="namespace_0D390" kind="namespace"><name>@390</name>
   </compound>
   <compound refid="namespace_0D48" kind="namespace"><name>@48</name>
   </compound>
@@ -11989,38 +11993,38 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D1" kind="namespace"><name>amrex::@1</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D100" kind="namespace"><name>amrex::@100</name>
+  <compound refid="namespaceamrex_1_1_0D102" kind="namespace"><name>amrex::@102</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D108" kind="namespace"><name>amrex::@108</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D161" kind="namespace"><name>amrex::@161</name>
+  <compound refid="namespaceamrex_1_1_0D110" kind="namespace"><name>amrex::@110</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D163" kind="namespace"><name>amrex::@163</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D189" kind="namespace"><name>amrex::@189</name>
+  <compound refid="namespaceamrex_1_1_0D165" kind="namespace"><name>amrex::@165</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D210" kind="namespace"><name>amrex::@210</name>
-    <member refid="AMReX__ParmParse_8cpp_1a8ace0590b751666aea44a46d1675d229" kind="enum"><name>PType</name></member>
-    <member refid="AMReX__ParmParse_8cpp_1a7fae5eefdf50dfff1ce1cc106f8d8787" kind="enum"><name>lexState</name></member>
+  <compound refid="namespaceamrex_1_1_0D191" kind="namespace"><name>amrex::@191</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D221" kind="namespace"><name>amrex::@221</name>
+  <compound refid="namespaceamrex_1_1_0D212" kind="namespace"><name>amrex::@212</name>
+    <member refid="AMReX__ParmParse_8cpp_1aac7200d6d6ec3512858d92e910af8b89" kind="enum"><name>PType</name></member>
+    <member refid="AMReX__ParmParse_8cpp_1ac329e0f9583d5a15c6902c94aed295a0" kind="enum"><name>lexState</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D238" kind="namespace"><name>amrex::@238</name>
+  <compound refid="namespaceamrex_1_1_0D223" kind="namespace"><name>amrex::@223</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D24" kind="namespace"><name>amrex::@24</name>
     <member refid="AMReX__Cluster_8cpp_1ab097eab7e3fccc8b0d3b24d44adcb0a2" kind="enum"><name>CutStatus</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D247" kind="namespace"><name>amrex::@247</name>
+  <compound refid="namespaceamrex_1_1_0D240" kind="namespace"><name>amrex::@240</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D251" kind="namespace"><name>amrex::@251</name>
+  <compound refid="namespaceamrex_1_1_0D249" kind="namespace"><name>amrex::@249</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D253" kind="namespace"><name>amrex::@253</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D31" kind="namespace"><name>amrex::@31</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D338" kind="namespace"><name>amrex::@338</name>
+  <compound refid="namespaceamrex_1_1_0D340" kind="namespace"><name>amrex::@340</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D339" kind="namespace"><name>amrex::@339</name>
+  <compound refid="namespaceamrex_1_1_0D341" kind="namespace"><name>amrex::@341</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D354" kind="namespace"><name>amrex::@354</name>
+  <compound refid="namespaceamrex_1_1_0D356" kind="namespace"><name>amrex::@356</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D39" kind="namespace"><name>amrex::@39</name>
   </compound>
@@ -12028,51 +12032,51 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D41" kind="namespace"><name>amrex::@41</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D417" kind="namespace"><name>amrex::@417</name>
+  <compound refid="namespaceamrex_1_1_0D419" kind="namespace"><name>amrex::@419</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D421" kind="namespace"><name>amrex::@421</name>
+  <compound refid="namespaceamrex_1_1_0D423" kind="namespace"><name>amrex::@423</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D426" kind="namespace"><name>amrex::@426</name>
+  <compound refid="namespaceamrex_1_1_0D428" kind="namespace"><name>amrex::@428</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D437" kind="namespace"><name>amrex::@437</name>
+  <compound refid="namespaceamrex_1_1_0D439" kind="namespace"><name>amrex::@439</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D442" kind="namespace"><name>amrex::@442</name>
+  <compound refid="namespaceamrex_1_1_0D444" kind="namespace"><name>amrex::@444</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D445" kind="namespace"><name>amrex::@445</name>
+  <compound refid="namespaceamrex_1_1_0D447" kind="namespace"><name>amrex::@447</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D463" kind="namespace"><name>amrex::@463</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D469" kind="namespace"><name>amrex::@469</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D470" kind="namespace"><name>amrex::@470</name>
+  <compound refid="namespaceamrex_1_1_0D465" kind="namespace"><name>amrex::@465</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D471" kind="namespace"><name>amrex::@471</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D472" kind="namespace"><name>amrex::@472</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D473" kind="namespace"><name>amrex::@473</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D475" kind="namespace"><name>amrex::@475</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D479" kind="namespace"><name>amrex::@479</name>
+  <compound refid="namespaceamrex_1_1_0D477" kind="namespace"><name>amrex::@477</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D488" kind="namespace"><name>amrex::@488</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D489" kind="namespace"><name>amrex::@489</name>
+  <compound refid="namespaceamrex_1_1_0D481" kind="namespace"><name>amrex::@481</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D490" kind="namespace"><name>amrex::@490</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D493" kind="namespace"><name>amrex::@493</name>
+  <compound refid="namespaceamrex_1_1_0D491" kind="namespace"><name>amrex::@491</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D496" kind="namespace"><name>amrex::@496</name>
+  <compound refid="namespaceamrex_1_1_0D492" kind="namespace"><name>amrex::@492</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D497" kind="namespace"><name>amrex::@497</name>
+  <compound refid="namespaceamrex_1_1_0D495" kind="namespace"><name>amrex::@495</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D498" kind="namespace"><name>amrex::@498</name>
   </compound>
+  <compound refid="namespaceamrex_1_1_0D499" kind="namespace"><name>amrex::@499</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D500" kind="namespace"><name>amrex::@500</name>
+  </compound>
   <compound refid="namespaceamrex_1_1_0D51" kind="namespace"><name>amrex::@51</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D511" kind="namespace"><name>amrex::@511</name>
+  <compound refid="namespaceamrex_1_1_0D513" kind="namespace"><name>amrex::@513</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D527" kind="namespace"><name>amrex::@527</name>
+  <compound refid="namespaceamrex_1_1_0D529" kind="namespace"><name>amrex::@529</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D58" kind="namespace"><name>amrex::@58</name>
   </compound>
@@ -12082,7 +12086,7 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D84" kind="namespace"><name>amrex::@84</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D97" kind="namespace"><name>amrex::@97</name>
+  <compound refid="namespaceamrex_1_1_0D99" kind="namespace"><name>amrex::@99</name>
   </compound>
   <compound refid="namespaceamrex_1_1algoim" kind="namespace"><name>amrex::algoim</name>
     <member refid="namespaceamrex_1_1algoim_1a83f836cfcb795ee2e7cf5f031f4e33a5" kind="variable"><name>i_S_x</name></member>
@@ -12242,17 +12246,17 @@
     <member refid="namespaceamrex_1_1EB2_1a1d98d3722935491fe83fe526ec9d5760" kind="function"><name>translate</name></member>
     <member refid="namespaceamrex_1_1EB2_1ae1c1ff0fbaf7ff938aae5f3daf43d607" kind="function"><name>makeUnion</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1EB2_1_1_0D282" kind="namespace"><name>amrex::EB2::@282</name>
-  </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1_0D284" kind="namespace"><name>amrex::EB2::@284</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1EB2_1_1_0D285" kind="namespace"><name>amrex::EB2::@285</name>
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1_0D286" kind="namespace"><name>amrex::EB2::@286</name>
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1_0D287" kind="namespace"><name>amrex::EB2::@287</name>
   </compound>
-  <compound refid="namespaceamrex_1_1EB2_1_1_0D312" kind="namespace"><name>amrex::EB2::@312</name>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0D288" kind="namespace"><name>amrex::EB2::@288</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0D289" kind="namespace"><name>amrex::EB2::@289</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0D314" kind="namespace"><name>amrex::EB2::@314</name>
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1IIF__detail" kind="namespace"><name>amrex::EB2::IIF_detail</name>
     <member refid="namespaceamrex_1_1EB2_1_1IIF__detail_1ab29fda705d6e62fff3c0966fc83c76ff" kind="function"><name>do_min</name></member>
@@ -12345,7 +12349,7 @@
     <member refid="namespaceamrex_1_1Gpu_1ab4e0fa80e6873e53208d917854f37129" kind="function"><name>inclusive_scan</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kind="function"><name>exclusive_scan</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1Gpu_1_1_0D144" kind="namespace"><name>amrex::Gpu::@144</name>
+  <compound refid="namespaceamrex_1_1Gpu_1_1_0D146" kind="namespace"><name>amrex::Gpu::@146</name>
   </compound>
   <compound refid="namespaceamrex_1_1Gpu_1_1Atomic" kind="namespace"><name>amrex::Gpu::Atomic</name>
     <member refid="namespaceamrex_1_1Gpu_1_1Atomic_1a428330a4e7622c16d943003ad97e54a0" kind="function"><name>Add</name></member>
@@ -13810,6 +13814,10 @@
   <compound refid="AMReX__COORDSYS__C_8H" kind="file"><name>AMReX_COORDSYS_C.H</name>
   </compound>
   <compound refid="AMReX__CudaGraph_8H" kind="file"><name>AMReX_CudaGraph.H</name>
+  </compound>
+  <compound refid="AMReX__CuptiTrace_8cpp" kind="file"><name>AMReX_CuptiTrace.cpp</name>
+  </compound>
+  <compound refid="AMReX__CuptiTrace_8H" kind="file"><name>AMReX_CuptiTrace.H</name>
   </compound>
   <compound refid="AMReX__DArena_8cpp" kind="file"><name>AMReX_DArena.cpp</name>
   </compound>

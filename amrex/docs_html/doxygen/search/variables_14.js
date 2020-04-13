@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['ucupti',['uCUPTI',['../classamrex_1_1TinyProfiler.html#a2d71911d753130ad6223f9c82ec5c1fe',1,'amrex::TinyProfiler']]],
   ['undrrelxr',['undrrelxr',['../classamrex_1_1LinOp.html#a58088c44f9d858885f1125efb3b4222e',1,'amrex::LinOp::undrrelxr()'],['../classamrex_1_1MCLinOp.html#a2d966fe023cb3ad25504264597ce0899',1,'amrex::MCLinOp::undrrelxr()']]],
   ['unit',['Unit',['../classamrex_1_1IntVect.html#a93df7e94c6d2d07ea3eb7647500bf751',1,'amrex::IntVect::Unit()'],['../classamrex_1_1RealVect.html#a6745f136d89bdb15e57c3387ca01e973',1,'amrex::RealVect::Unit()']]],
   ['unknown',['unknown',['../namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a',1,'amrex::EB2::Type']]],
@@ -22,6 +23,7 @@ var searchData=
   ['usedynamicsetselection',['useDynamicSetSelection',['../classamrex_1_1VisMF.html#a9149ec039a2136083c03aabdaa275672',1,'amrex::VisMF']]],
   ['usepersistentifstreams',['usePersistentIFStreams',['../classamrex_1_1VisMF.html#a806512ed6337ff31d9eb6f63f94ce792',1,'amrex::VisMF']]],
   ['useprepost',['usePrePost',['../classamrex_1_1ParticleContainer.html#a8bbd5c1953c2de901dadb2f54fdb3983',1,'amrex::ParticleContainer']]],
+  ['usescupti',['usesCUPTI',['../structamrex_1_1TinyProfiler_1_1Stats.html#a4a677c6dd0af7d407604a642c4371c5c',1,'amrex::TinyProfiler::Stats::usesCUPTI()'],['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a5ae2fb0d7dc957422344b2f12f35e43c',1,'amrex::TinyProfiler::ProcStats::usesCUPTI()']]],
   ['usesingleread',['useSingleRead',['../classamrex_1_1VisMF.html#a7127d8495966b5d5506d3cff6c536a12',1,'amrex::VisMF']]],
   ['usesinglewrite',['useSingleWrite',['../classamrex_1_1VisMF.html#a0706ea7e89d0d5b2d9a60acacc8f38f0',1,'amrex::VisMF']]],
   ['usesparsefpp',['useSparseFPP',['../classamrex_1_1NFilesIter.html#a97ff46c50d110eeeacfcb90f5c001bd0',1,'amrex::NFilesIter']]],

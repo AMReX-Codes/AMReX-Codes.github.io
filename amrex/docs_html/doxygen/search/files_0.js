@@ -127,6 +127,8 @@ var searchData=
   ['amrex_5fcoordsys_5f3d_5fc_2eh',['AMReX_COORDSYS_3D_C.H',['../AMReX__COORDSYS__3D__C_8H.html',1,'']]],
   ['amrex_5fcoordsys_5fc_2eh',['AMReX_COORDSYS_C.H',['../AMReX__COORDSYS__C_8H.html',1,'']]],
   ['amrex_5fcudagraph_2eh',['AMReX_CudaGraph.H',['../AMReX__CudaGraph_8H.html',1,'']]],
+  ['amrex_5fcuptitrace_2ecpp',['AMReX_CuptiTrace.cpp',['../AMReX__CuptiTrace_8cpp.html',1,'']]],
+  ['amrex_5fcuptitrace_2eh',['AMReX_CuptiTrace.H',['../AMReX__CuptiTrace_8H.html',1,'']]],
   ['amrex_5fdarena_2ecpp',['AMReX_DArena.cpp',['../AMReX__DArena_8cpp.html',1,'']]],
   ['amrex_5fdarena_2eh',['AMReX_DArena.H',['../AMReX__DArena_8H.html',1,'']]],
   ['amrex_5fdataservices_2ecpp',['AMReX_DataServices.cpp',['../AMReX__DataServices_8cpp.html',1,'']]],
@@ -616,6 +618,6 @@ var searchData=
   ['amrex_5fyafluxregister_5f2d_5fk_2eh',['AMReX_YAFluxRegister_2D_K.H',['../AMReX__YAFluxRegister__2D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5f3d_5fk_2eh',['AMReX_YAFluxRegister_3D_K.H',['../AMReX__YAFluxRegister__3D__K_8H.html',1,'']]],
   ['amrex_5fyafluxregister_5fk_2eh',['AMReX_YAFluxRegister_K.H',['../AMReX__YAFluxRegister__K_8H.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]],
-  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]]
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS3_2arkode__interface_8f90.html',1,'']]],
+  ['arkode_5finterface_2ef90',['arkode_interface.f90',['../SUNDIALS4_2arkode__interface_8f90.html',1,'']]]
 ];
