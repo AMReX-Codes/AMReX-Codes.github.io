@@ -603,7 +603,7 @@
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;One<sp/>of<sp/>BL_FORT_USE_{UPPERCASE,LOWERCASE,UNDERSCORE}<sp/>must<sp/>be<sp/>defined&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)<sp/>&amp;&amp;<sp/>!defined(BL_NO_FORT)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_FORT_PROC_DECL(A,B)<sp/>extern<sp/>&quot;C&quot;<sp/>void<sp/>AMREX_FORT_NAME(A,B)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24" refid="AMReX__BLFort_8H_1ae11862b257a5c5221e5bdad7f9caeca8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_FORT_PROC_DECL(A,B)<sp/>void<sp/>AMREX_FORT_NAME(A,B)</highlight><highlight class="normal"></highlight></codeline>
