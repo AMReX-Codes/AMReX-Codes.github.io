@@ -290,7 +290,7 @@ not expand, so <code class="docutils literal notranslate"><span class="pre">AMRE
 supported compilers includes gnu, cray, ibm, intel, llvm, and pgi.</p>
 <p>One could set the <code class="docutils literal notranslate"><span class="pre">DIM</span></code> variable to either 1, 2, or 3, depending on
 the dimensionality of the problem.  The default dimensionality is 3.
-AMReX used double precision by default.  One can change to single
+AMReX uses double precision by default.  One can change to single
 precision by setting <code class="docutils literal notranslate"><span class="pre">PRECISION=FLOAT</span></code>.</p>
 <p>Variables <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_OMP</span></code> are optional with default set
 to FALSE.  The meaning of these variables should
@@ -759,7 +759,7 @@ If <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FL
 they will be initialized with the value of the environmental variables <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/
 <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code>. If neither <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> nor <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>
 are defined, AMReX default flags are used.</p>
-<p>For a detailed explanation of CUDA support in AMReX CMake, refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a>.</p>
+<p>For a detailed explanation of GPU support in AMReX CMake, refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a>.</p>
 </div>
 <div class="section" id="cmake-and-macos">
 <h2>CMake and macOS<a class="headerlink" href="#cmake-and-macos" title="Permalink to this headline">¶</a></h2>
@@ -943,7 +943,7 @@ Some of the POSIX handling is platform-dependent, and Windows does seem to have 
 <p>(3) Memory profiling:  This is an optional feature in AMReX that is not enabled by default.
 It reads memory system information from the OS to give us a summary of our memory usage.</p>
 <p>One other caveat is regarding the size of <code class="docutils literal notranslate"><span class="pre">long</span></code>, which is 4 on Windows and 8 on other 64-bit systems.
-This might cause integer overflow for really big runs (unlikely on Windows desktops as opposd to clusters).
+This might cause integer overflow for really big runs (unlikely on Windows desktops as opposed to clusters).
 If this becomes an issue, please let us know and we could define amrex::Long that would be guaranteed to be 64 bits.</p>
 </div>
 
