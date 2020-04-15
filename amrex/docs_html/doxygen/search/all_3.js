@@ -240,7 +240,7 @@ var searchData=
   ['computerhs',['computeRHS',['../classamrex_1_1NodalProjector.html#aaf0ee20d8f578821d845bb6c7e3b476c',1,'amrex::NodalProjector']]],
   ['computesyncresidual',['computeSyncResidual',['../classamrex_1_1NodalProjector.html#a23ce7fe70a5802e864f014d41e749c88',1,'amrex::NodalProjector']]],
   ['computevolinv',['computeVolInv',['../classamrex_1_1MLMG.html#a3cd643e6bf9f7e6d9d2b8cb7fa0b7c71',1,'amrex::MLMG']]],
-  ['compvelgrad',['compVelGrad',['../classamrex_1_1MLTensorOp.html#a7636859e8349eada08c3ee46a07901c8',1,'amrex::MLTensorOp']]],
+  ['compvelgrad',['compVelGrad',['../classamrex_1_1MLEBTensorOp.html#ac889d56720eb02c4fe2feac08e677fbb',1,'amrex::MLEBTensorOp::compVelGrad()'],['../classamrex_1_1MLTensorOp.html#a7636859e8349eada08c3ee46a07901c8',1,'amrex::MLTensorOp::compVelGrad()']]],
   ['con_5fgrid_5fsize',['con_grid_size',['../structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5',1,'amrex::LPInfo']]],
   ['concatenate',['Concatenate',['../namespaceamrex.html#a6e3a82e54e91d8c7543596b2c2476250',1,'amrex']]],
   ['config',['config',['../classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2',1,'amrex::InSituBridge']]],

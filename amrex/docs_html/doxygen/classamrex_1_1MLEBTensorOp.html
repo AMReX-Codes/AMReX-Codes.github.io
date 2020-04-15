@@ -165,6 +165,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a41724f08da04298ded08c9e8d6e9bfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a739281050ab5aebe8d61a56992049a58"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a739281050ab5aebe8d61a56992049a58">compFlux</a> (int amrlev, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;fluxes, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> loc) const override</td></tr>
 <tr class="separator:a739281050ab5aebe8d61a56992049a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac889d56720eb02c4fe2feac08e677fbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#ac889d56720eb02c4fe2feac08e677fbb">compVelGrad</a> (int amrlev, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;fluxes, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;sol, <a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> loc) const </td></tr>
+<tr class="separator:ac889d56720eb02c4fe2feac08e677fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2f3fc91f97b79571cdc6826df99f8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a6d2f3fc91f97b79571cdc6826df99f8f">applyBCTensor</a> (int amrlev, int mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;vel, <a class="el" href="classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884">BCMode</a> bc_mode, <a class="el" href="classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3">StateMode</a> s_mode, const <a class="el" href="classamrex_1_1MLMGBndry.html">MLMGBndry</a> *bndry) const </td></tr>
 <tr class="separator:a6d2f3fc91f97b79571cdc6826df99f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dbccf225414f8b9fe8d9eecc8dbdfca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBTensorOp.html#a7dbccf225414f8b9fe8d9eecc8dbdfca">compCrossTerms</a> (int amrlev, int mglev, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;mf) const </td></tr>
@@ -877,6 +879,44 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classamrex_1_1MLCellLinOp.html#acd6c78c0e6307234b1539ba81caadb9c">amrex::MLCellLinOp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac889d56720eb02c4fe2feac08e677fbb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLEBTensorOp::compVelGrad </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>amrlev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> *, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fluxes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
+          <td class="paramname"><em>sol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td>
+          <td class="paramname"><em>loc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
