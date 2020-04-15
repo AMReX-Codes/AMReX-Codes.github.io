@@ -96,6 +96,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#tweaking-the-make-system">Tweaking the Make System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#specifying-your-own-compiler">Specifying your own compiler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gcc-on-macos">GCC on macOS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fortran">Fortran</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ccache">ccache</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#building-libamrex">Building libamrex</a></li>
@@ -233,17 +235,33 @@ at least <code class="docutils literal notranslate"><span class="pre">c++11</spa
 </tr>
 <tr class="row-odd"><td><p>DEBUG</p></td>
 <td><p>TRUE or FALSE</p></td>
-<td><p>TRUE</p></td>
+<td><p>FALSE</p></td>
 </tr>
 <tr class="row-even"><td><p>DIM</p></td>
 <td><p>1 or 2 or 3</p></td>
-<td><p>none</p></td>
+<td><p>3</p></td>
 </tr>
-<tr class="row-odd"><td><p>USE_MPI</p></td>
+<tr class="row-odd"><td><p>PRECISION</p></td>
+<td><p>DOUBLE or FLOAT</p></td>
+<td><p>DOUBLE</p></td>
+</tr>
+<tr class="row-even"><td><p>USE_MPI</p></td>
 <td><p>TRUE or FALSE</p></td>
 <td><p>FALSE</p></td>
 </tr>
-<tr class="row-even"><td><p>USE_OMP</p></td>
+<tr class="row-odd"><td><p>USE_OMP</p></td>
+<td><p>TRUE or FALSE</p></td>
+<td><p>FALSE</p></td>
+</tr>
+<tr class="row-even"><td><p>USE_CUDA</p></td>
+<td><p>TRUE or FALSE</p></td>
+<td><p>FALSE</p></td>
+</tr>
+<tr class="row-odd"><td><p>USE_HIP</p></td>
+<td><p>TRUE or FALSE</p></td>
+<td><p>FALSE</p></td>
+</tr>
+<tr class="row-even"><td><p>USE_DPC++</p></td>
 <td><p>TRUE or FALSE</p></td>
 <td><p>FALSE</p></td>
 </tr>
@@ -269,18 +287,23 @@ example in bash, one can set</p>
 <p>Note: when setting <code class="docutils literal notranslate"><span class="pre">AMREX_HOME</span></code> in the <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>, be aware that <code class="docutils literal notranslate"><span class="pre">~</span></code> does
 not expand, so <code class="docutils literal notranslate"><span class="pre">AMREX_HOME=~/amrex/</span></code> will yield an error.</p>
 <p>One must set the <code class="docutils literal notranslate"><span class="pre">COMP</span></code> variable to choose a compiler. Currently the list of
-supported compilers includes gnu, cray, ibm, intel, llvm, and pgi. One must
-also set the <code class="docutils literal notranslate"><span class="pre">DIM</span></code> variable to either 1, 2, or 3, depending on the dimensionality
-of the problem.</p>
+supported compilers includes gnu, cray, ibm, intel, llvm, and pgi.</p>
+<p>One could set the <code class="docutils literal notranslate"><span class="pre">DIM</span></code> variable to either 1, 2, or 3, depending on
+the dimensionality of the problem.  The default dimensionality is 3.
+AMReX used double precision by default.  One can change to single
+precision by setting <code class="docutils literal notranslate"><span class="pre">PRECISION=FLOAT</span></code>.</p>
 <p>Variables <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_OMP</span></code> are optional with default set
-to TRUE, FALSE and FALSE, respectively.  The meaning of these variables should
-be obvious.  When <code class="docutils literal notranslate"><span class="pre">DEBUG</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>, aggressive compiler optimization flags are
+to FALSE.  The meaning of these variables should
+be obvious.  When <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code>, aggressive compiler optimization flags are
 turned off and assertions in  source code are turned on. For production runs,
 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> should be set to FALSE.</p>
+<p>Variables <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_DPCPP</span></code> are used for
+targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of
+the three can be TRUE.</p>
 <p>The variable <code class="docutils literal notranslate"><span class="pre">USE_RPATH</span></code> controls the link mechanism to dependent libraries.
 If enabled, the library path at link time will be saved as a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Rpath">rpath hint</a> in created binaries.
-When disabled, library paths must be provided via <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH</span></code>
+When disabled, dynamic library paths could be provided via <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">LD_LIBRARY_PATH</span></code>
 hints at runtime.</p>
 <p>After defining these make variables, a number of files, <code class="docutils literal notranslate"><span class="pre">Make.defs,</span>
 <span class="pre">Make.package</span></code> and <code class="docutils literal notranslate"><span class="pre">Make.rules</span></code>, are included in the GNUmakefile. AMReX-based
@@ -296,7 +319,7 @@ source files are shown below.</p>
 <dt>CEXE_sources</dt><dd><p>C++ source files. Note that C++ source files are assumed to have a .cpp
 extension.</p>
 </dd>
-<dt>CEXE_headers</dt><dd><p>C++ headers with .h or .H extension.</p>
+<dt>CEXE_headers</dt><dd><p>C++ headers with .h, .hpp, or .H extension.</p>
 </dd>
 <dt>cEXE_sources</dt><dd><p>C source files with .c extension.</p>
 </dd>
@@ -342,8 +365,10 @@ and tweaking the make system.</p>
 </dl>
 </div></blockquote>
 <p>Compiler flags are set in <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/comps/</span></code>. Note that variables
-like <code class="docutils literal notranslate"><span class="pre">CC</span></code> and <code class="docutils literal notranslate"><span class="pre">CFLAGS</span></code> are reset in that directory and their values in
-environment variables are disregarded.  Site-specific setups (e.g., the MPI
+like <code class="docutils literal notranslate"><span class="pre">CXX</span></code> and <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> are reset in that directory and their values in
+environment variables are disregarded.  However, one could override them
+with make command line arguments (e.g., <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">CXX=/path/to/my/mpicxx</span></code>).
+Site-specific setups (e.g., the MPI
 installation) are in <code class="docutils literal notranslate"><span class="pre">amrex/Tools/GNUMake/sites/</span></code>, which includes a generic
 setup in <code class="docutils literal notranslate"><span class="pre">Make.unknown</span></code>. You can override the setup by having your own
 <code class="docutils literal notranslate"><span class="pre">sites/Make.$(host_name)</span></code> file, where variable <code class="docutils literal notranslate"><span class="pre">host_name</span></code> is your host
@@ -414,9 +439,18 @@ using <code class="docutils literal notranslate"><span class="pre">gcc-8</span><
 </div>
 <p>The additional <code class="docutils literal notranslate"><span class="pre">INCLUDE_LOCATIONS</span></code> are installed using homebrew also. Note
 that if you are building AMReX using homebrew’s gcc, it is recommended that you
-use homebrew’s mpich. Normally is it fine to simply install its binaries:
+use homebrew’s mpich. Normally it is fine to simply install its binaries:
 <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">mpich</span></code>. But if you are experiencing problems, we suggest
 building mpich using homebrew’s gcc: <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">mpich</span> <span class="pre">--cc=gcc-8</span></code>.</p>
+</div>
+<div class="section" id="fortran">
+<h2>Fortran<a class="headerlink" href="#fortran" title="Permalink to this headline">¶</a></h2>
+<p>If your code does not use Fortran, you can add <code class="docutils literal notranslate"><span class="pre">BL_NO_FORT=TRUE</span></code> to
+your makefile to disable Fortran.</p>
+</div>
+<div class="section" id="ccache">
+<h2>ccache<a class="headerlink" href="#ccache" title="Permalink to this headline">¶</a></h2>
+<p>If you use ccache, you can add <code class="docutils literal notranslate"><span class="pre">USE_CCACHE=TRUE</span></code> to your makefile.</p>
 </div>
 </div>
 <div class="section" id="building-libamrex">
