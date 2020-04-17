@@ -5,6 +5,7 @@ var searchData=
   ['geometryshop',['GeometryShop',['../classamrex_1_1EB2_1_1GeometryShop.html',1,'amrex::EB2']]],
   ['get_5fintegrator_5fstats',['get_integrator_stats',['../interfaceintegrator__stats__mod_1_1get__integrator__stats.html',1,'integrator_stats_mod']]],
   ['get_5fneighbor_5fcells',['get_neighbor_cells',['../interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html',1,'amrex_ebcellflag_module']]],
+  ['getsendbufferoffset',['GetSendBufferOffset',['../structamrex_1_1GetSendBufferOffset.html',1,'amrex']]],
   ['gfab',['GFab',['../classamrex_1_1EB2_1_1GFab.html',1,'amrex::EB2']]],
   ['gpu_5ftuple_5felement',['gpu_tuple_element',['../structamrex_1_1detail_1_1gpu__tuple__element.html',1,'amrex::detail']]],
   ['gpu_5ftuple_5felement_3c_20i_2c_20head_20_3e',['gpu_tuple_element&lt; I, Head &gt;',['../structamrex_1_1detail_1_1gpu__tuple__element.html',1,'amrex::detail']]],

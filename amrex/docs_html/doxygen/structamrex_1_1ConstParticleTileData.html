@@ -109,8 +109,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8402e413f7866b5fc46013610291c9d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ConstParticleTileData.html#a8402e413f7866b5fc46013610291c9d8">packParticleData</a> (char *buffer, int src_index, int dst_index, const int *comm_real, const int *comm_int, Long psize) const noexcept</td></tr>
-<tr class="separator:a8402e413f7866b5fc46013610291c9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7421cde793e7b4d119422a9599a85965"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ConstParticleTileData.html#a7421cde793e7b4d119422a9599a85965">packParticleData</a> (char *buffer, int src_index, long dst_offset, const int *comm_real, const int *comm_int) const noexcept</td></tr>
+<tr class="separator:a7421cde793e7b4d119422a9599a85965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5135ad2287276642ea55b70883937c24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1ConstParticleTileData.html#a70755c3b7c6fbda42560f9723895fcec">SuperParticleType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ConstParticleTileData.html#a5135ad2287276642ea55b70883937c24">getSuperParticle</a> (int index) const </td></tr>
 <tr class="separator:a5135ad2287276642ea55b70883937c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -196,7 +196,7 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
 
 </div>
 </div>
-<a class="anchor" id="a8402e413f7866b5fc46013610291c9d8"></a>
+<a class="anchor" id="a7421cde793e7b4d119422a9599a85965"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -220,8 +220,8 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>dst_index</em>, </td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>dst_offset</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -233,13 +233,7 @@ template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; <
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int *&#160;</td>
-          <td class="paramname"><em>comm_int</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Long&#160;</td>
-          <td class="paramname"><em>psize</em>&#160;</td>
+          <td class="paramname"><em>comm_int</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
