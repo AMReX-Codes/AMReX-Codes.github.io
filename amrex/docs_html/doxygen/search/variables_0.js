@@ -39,6 +39,7 @@ var searchData=
   ['amrex_5flo_5fperiodic',['amrex_lo_periodic',['../namespaceamrex__lo__bctypes__module.html#a4784276d4f8804fc020fa185cb8f3e8c',1,'amrex_lo_bctypes_module']]],
   ['amrex_5flo_5freflect_5fodd',['amrex_lo_reflect_odd',['../namespaceamrex__lo__bctypes__module.html#af64f16e71c4cbd71d10e5e0f1c231247',1,'amrex_lo_bctypes_module']]],
   ['amrex_5flo_5fsanchez_5fpomraning',['amrex_lo_sanchez_pomraning',['../namespaceamrex__lo__bctypes__module.html#aace6b018ab12cf7950ce9fa43315264f',1,'amrex_lo_bctypes_module']]],
+  ['amrex_5flong',['amrex_long',['../namespaceamrex__fort__module.html#a00a44d310e3117e581d8587e17ade07c',1,'amrex_fort_module']]],
   ['amrex_5fnamelist',['amrex_namelist',['../namespaceamrex__parmparse__module.html#a9e52abadec8dd79a05ddec212b4c41a1',1,'amrex_parmparse_module']]],
   ['amrex_5fparticle_5freal',['amrex_particle_real',['../namespaceamrex__fort__module.html#ab189c105508b7e268b363777b3ed9520',1,'amrex_fort_module']]],
   ['amrex_5fpbc_5finflow',['amrex_pbc_inflow',['../namespaceamrex__bc__types__module.html#ade989dc9f20d0b81c97c5187ed29b33e',1,'amrex_bc_types_module']]],

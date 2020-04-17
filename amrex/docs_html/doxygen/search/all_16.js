@@ -65,8 +65,8 @@ var searchData=
   ['vector_3c_20amrex_3a_3avector_3c_20bctuple_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; BCTuple &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20boxarray_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; BoxArray &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20hypre_5fint_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20amrex_3a_3avector_3c_20int_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; Int &gt; &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;']]],
-  ['vector_3c_20amrex_3a_3avector_3c_20long_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; long &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
+  ['vector_3c_20amrex_3a_3avector_3c_20int_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; Int &gt; &gt;']]],
+  ['vector_3c_20amrex_3a_3avector_3c_20long_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Long &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20petscint_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; PetscInt &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20real_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Real &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20realtuple_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; RealTuple &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
@@ -98,7 +98,7 @@ var searchData=
   ['vector_3c_20hypre_5fint_20_3e',['Vector&lt; HYPRE_Int &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20int_20_3e',['Vector&lt; int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;']]],
   ['vector_3c_20list_3c_20amrex_3a_3axyplotdatalistlink_20_2a_20_3e_20_3e',['Vector&lt; list&lt; amrex::XYPlotDataListLink * &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20long_20_3e',['Vector&lt; long &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
+  ['vector_3c_20long_20_3e',['Vector&lt; long &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; long &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Long &gt;']]],
   ['vector_3c_20mpi_5frequest_20_3e',['Vector&lt; MPI_Request &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20mpi_5fstatus_20_3e',['Vector&lt; MPI_Status &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20multifab_20_3e',['Vector&lt; MultiFab &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
@@ -156,6 +156,6 @@ var searchData=
   ['vismfwriteheader',['VisMFWriteHeader',['../namespaceamrex.html#a0009871904f8601dbda21f3654b7bb33',1,'amrex']]],
   ['voidcopytag',['VoidCopyTag',['../structVoidCopyTag.html',1,'']]],
   ['volinv',['volinv',['../classamrex_1_1MLMG.html#acbd5fc7b1f0af79ee6eb5daa55b890fb',1,'amrex::MLMG']]],
-  ['volume',['volume',['../classamrex_1_1Box.html#a7c74889ea67b29832b91f9fd5fc05758',1,'amrex::Box::volume()'],['../classamrex_1_1RealBox.html#a098e1f2357e21072c37d33fff98d9cb7',1,'amrex::RealBox::volume()'],['../classamrex_1_1CoordSys.html#aad6b67f8c4aa070b4099d77aa0155368',1,'amrex::CoordSys::Volume(const IntVect &amp;point) const '],['../classamrex_1_1CoordSys.html#aeb0f186559f5184778243d196fb71541',1,'amrex::CoordSys::Volume(const Real xlo[AMREX_SPACEDIM], const Real xhi[AMREX_SPACEDIM]) const '],['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c',1,'amrex::volume()']]],
+  ['volume',['volume',['../classamrex_1_1Box.html#a6dfb8f30676adeb11d4e87d22e209047',1,'amrex::Box::volume()'],['../classamrex_1_1RealBox.html#a098e1f2357e21072c37d33fff98d9cb7',1,'amrex::RealBox::volume()'],['../classamrex_1_1CoordSys.html#aad6b67f8c4aa070b4099d77aa0155368',1,'amrex::CoordSys::Volume(const IntVect &amp;point) const '],['../classamrex_1_1CoordSys.html#aeb0f186559f5184778243d196fb71541',1,'amrex::CoordSys::Volume(const Real xlo[AMREX_SPACEDIM], const Real xhi[AMREX_SPACEDIM]) const '],['../namespaceamrex.html#a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c',1,'amrex::volume()']]],
   ['vshowval',['VSHOWVAL',['../AMReX__AmrData_8cpp.html#a527b668d58b090a517777607a82fa5b6',1,'AMReX_AmrData.cpp']]]
 ];

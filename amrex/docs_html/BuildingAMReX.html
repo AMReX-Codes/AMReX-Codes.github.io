@@ -942,9 +942,6 @@ This capability allows us to print a backtrace of what leads to the error and is
 Some of the POSIX handling is platform-dependent, and Windows does seem to have this capability.  If you need it, it should not be hard for you to make it work on Windows.</p>
 <p>(3) Memory profiling:  This is an optional feature in AMReX that is not enabled by default.
 It reads memory system information from the OS to give us a summary of our memory usage.</p>
-<p>One other caveat is regarding the size of <code class="docutils literal notranslate"><span class="pre">long</span></code>, which is 4 on Windows and 8 on other 64-bit systems.
-This might cause integer overflow for really big runs (unlikely on Windows desktops as opposed to clusters).
-If this becomes an issue, please let us know and we could define amrex::Long that would be guaranteed to be 64 bits.</p>
 </div>
 
 

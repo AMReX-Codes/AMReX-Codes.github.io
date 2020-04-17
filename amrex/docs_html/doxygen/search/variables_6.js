@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gbox',['gbox',['../classamrex_1_1LinOp.html#aaacb98abdbfa3d9377c369fe5cc79b68',1,'amrex::LinOp::gbox()'],['../classamrex_1_1MCLinOp.html#aab84b6e210e057fe8f2b32033a9a715a',1,'amrex::MCLinOp::gbox()']]],
-  ['gcc_5fmap_5fnode_5fextra_5fbytes',['gcc_map_node_extra_bytes',['../namespaceamrex.html#a7f37efe5218c4a111e61fa4605f40595',1,'amrex']]],
+  ['gcc_5fmap_5fnode_5fextra_5fbytes',['gcc_map_node_extra_bytes',['../namespaceamrex.html#ae9f4a54b51971f15803c95c7f677c1b8',1,'amrex']]],
   ['geom',['geom',['../classamrex_1_1AmrLevel.html#a571b97b176d8618fba71f56c8b44a7c8',1,'amrex::AmrLevel::geom()'],['../classamrex_1_1StateDataPhysBCFunct.html#a9ed7dada88b807adcc2d46ccbe6cbe53',1,'amrex::StateDataPhysBCFunct::geom()'],['../classamrex_1_1AmrMesh.html#a239ef06043779ea301395ae14876d6cb',1,'amrex::AmrMesh::geom()'],['../classamrex_1_1BndryData.html#a2aee61504e5cdef7ac8af1986bff5c6c',1,'amrex::BndryData::geom()'],['../classamrex_1_1Hypre.html#a97c4612c2a7f58b47c36ec710cb1b0f6',1,'amrex::Hypre::geom()'],['../classamrex_1_1HypreNodeLap.html#a3ec12508ffa505780af64ebc27188233',1,'amrex::HypreNodeLap::geom()'],['../classamrex_1_1PETScABecLap.html#afca4d4cd5e3361c1d6fd1c64eff38141',1,'amrex::PETScABecLap::geom()']]],
   ['geom_5feb',['geom_eb',['../classamrex_1_1LSFactory.html#a0509b5a4b9f43e4bbd27447f90904db2',1,'amrex::LSFactory']]],
   ['geom_5fls',['geom_ls',['../classamrex_1_1LSFactory.html#abaf73ecda23b186c3a73278fa316c8d3',1,'amrex::LSFactory']]],

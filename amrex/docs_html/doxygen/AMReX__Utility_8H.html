@@ -111,6 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;sys/wait.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__BLassert_8H_source.html">AMReX_BLassert.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__REAL_8H_source.html">AMReX_REAL.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__INT_8H_source.html">AMReX_INT.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Array_8H_source.html">AMReX_Array.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Vector_8H_source.html">AMReX_Vector.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Box_8H_source.html">AMReX_Box.H</a>&gt;</code><br />
@@ -216,12 +217,12 @@ Functions</h2></td></tr>
 <tr class="separator:a23045f55caabc0bec388518c4c4adecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09ef310468cc24552cfc73abfc282b72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a09ef310468cc24552cfc73abfc282b72">amrex::SyncStrings</a> (const Vector&lt; std::string &gt; &amp;localStrings, Vector&lt; std::string &gt; &amp;syncedStrings, bool &amp;alreadySynced)</td></tr>
 <tr class="separator:a09ef310468cc24552cfc73abfc282b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a003d372afe53e36bd0cc6c549c0d1e9b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a003d372afe53e36bd0cc6c549c0d1e9b"><td class="memTemplItemLeft" align="right" valign="top">long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a003d372afe53e36bd0cc6c549c0d1e9b">amrex::bytesOf</a> (const std::vector&lt; T &gt; &amp;v)</td></tr>
-<tr class="separator:a003d372afe53e36bd0cc6c549c0d1e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab32cba3a0d91d29340ba231066f019ee"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , class Compare &gt; </td></tr>
-<tr class="memitem:ab32cba3a0d91d29340ba231066f019ee"><td class="memTemplItemLeft" align="right" valign="top">long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab32cba3a0d91d29340ba231066f019ee">amrex::bytesOf</a> (const std::map&lt; Key, T, Compare &gt; &amp;m)</td></tr>
-<tr class="separator:ab32cba3a0d91d29340ba231066f019ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eba5dd365d87751a963b6bd078673c4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7eba5dd365d87751a963b6bd078673c4"><td class="memTemplItemLeft" align="right" valign="top">Long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7eba5dd365d87751a963b6bd078673c4">amrex::bytesOf</a> (const std::vector&lt; T &gt; &amp;v)</td></tr>
+<tr class="separator:a7eba5dd365d87751a963b6bd078673c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b15ece376f09dacd5bb7e8f266a6bd"><td class="memTemplParams" colspan="2">template&lt;typename Key , typename T , class Compare &gt; </td></tr>
+<tr class="memitem:a87b15ece376f09dacd5bb7e8f266a6bd"><td class="memTemplItemLeft" align="right" valign="top">Long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a87b15ece376f09dacd5bb7e8f266a6bd">amrex::bytesOf</a> (const std::map&lt; Key, T, Compare &gt; &amp;m)</td></tr>
+<tr class="separator:a87b15ece376f09dacd5bb7e8f266a6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0fd43716fb89a13154ed4c037ebe6e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af0fd43716fb89a13154ed4c037ebe6e6">amrex::BroadcastBool</a> (bool &amp;bBool, int myLocalId, int rootId, const <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> &amp;localComm)</td></tr>
 <tr class="separator:af0fd43716fb89a13154ed4c037ebe6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa60205e03d594df934b5b3afd723c764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa60205e03d594df934b5b3afd723c764">amrex::BroadcastString</a> (std::string &amp;bStr, int myLocalId, int rootId, const <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> &amp;localComm)</td></tr>
@@ -248,8 +249,8 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f37efe5218c4a111e61fa4605f40595"><td class="memItemLeft" align="right" valign="top">static const long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7f37efe5218c4a111e61fa4605f40595">amrex::gcc_map_node_extra_bytes</a> = 32L</td></tr>
-<tr class="separator:a7f37efe5218c4a111e61fa4605f40595"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9f4a54b51971f15803c95c7f677c1b8"><td class="memItemLeft" align="right" valign="top">static const Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae9f4a54b51971f15803c95c7f677c1b8">amrex::gcc_map_node_extra_bytes</a> = 32L</td></tr>
+<tr class="separator:ae9f4a54b51971f15803c95c7f677c1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a93b4a56e5a8af340d43839230b94843c"></a>

@@ -189,6 +189,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab9256ecb0746632cb441a2124c582737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ab9256ecb0746632cb441a2124c582737">add</a> (const char *name, const long val)</td></tr>
 <tr class="memdesc:ab9256ecb0746632cb441a2124c582737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a key 'name'with value 'ref' to the end of the PP table.  <a href="#ab9256ecb0746632cb441a2124c582737">More...</a><br /></td></tr>
 <tr class="separator:ab9256ecb0746632cb441a2124c582737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2169bc57d5e960c1b8d77ba292b98da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a2169bc57d5e960c1b8d77ba292b98da6">getkth</a> (const char *name, int k, long long &amp;ref, int ival=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const </td></tr>
+<tr class="memdesc:a2169bc57d5e960c1b8d77ba292b98da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ival'th value of kth occurrence of the requested name. If successful, the value is converted to an int and stored in reference ref. If the kth occurrence does not exist or ival'th value does not exist, or if the printed representation of the value cannot be converted to an int, an error message is output and the program halts. Note that ival == 0 is the first value in the list.  <a href="#a2169bc57d5e960c1b8d77ba292b98da6">More...</a><br /></td></tr>
+<tr class="separator:a2169bc57d5e960c1b8d77ba292b98da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85698224e480c0f096eff3ea13bfffd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a85698224e480c0f096eff3ea13bfffd7">get</a> (const char *name, long long &amp;ref, int ival=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const </td></tr>
+<tr class="memdesc:a85698224e480c0f096eff3ea13bfffd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a> but searches for the last occurrence of name.  <a href="#a85698224e480c0f096eff3ea13bfffd7">More...</a><br /></td></tr>
+<tr class="separator:a85698224e480c0f096eff3ea13bfffd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35a2f43a5dc293c0f9297eba65ca4bd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ab35a2f43a5dc293c0f9297eba65ca4bd">querykth</a> (const char *name, int k, long long &amp;ref, int ival=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const </td></tr>
+<tr class="memdesc:ab35a2f43a5dc293c0f9297eba65ca4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar to <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival'th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts.  <a href="#ab35a2f43a5dc293c0f9297eba65ca4bd">More...</a><br /></td></tr>
+<tr class="separator:ab35a2f43a5dc293c0f9297eba65ca4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c09a66f18c92fedb0bdf0b0a505df69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a3c09a66f18c92fedb0bdf0b0a505df69">query</a> (const char *name, long long &amp;ref, int ival=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const </td></tr>
+<tr class="memdesc:a3c09a66f18c92fedb0bdf0b0a505df69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classamrex_1_1ParmParse.html#a83eb7c07b692ef6123cc50ff0ffe33f0" title="Similar to getkth() but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&#39;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. ">querykth()</a> but searches for the last occurrence of name.  <a href="#a3c09a66f18c92fedb0bdf0b0a505df69">More...</a><br /></td></tr>
+<tr class="separator:a3c09a66f18c92fedb0bdf0b0a505df69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3ce2bb1afcf5b903ec946c7433f586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a2f3ce2bb1afcf5b903ec946c7433f586">add</a> (const char *name, const long long val)</td></tr>
+<tr class="memdesc:a2f3ce2bb1afcf5b903ec946c7433f586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a key 'name'with value 'ref' to the end of the PP table.  <a href="#a2f3ce2bb1afcf5b903ec946c7433f586">More...</a><br /></td></tr>
+<tr class="separator:a2f3ce2bb1afcf5b903ec946c7433f586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a644d434b2fbd8435244c5f913961e3e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a644d434b2fbd8435244c5f913961e3e9">getkth</a> (const char *name, int k, float &amp;ref, int ival=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>) const </td></tr>
 <tr class="memdesc:a644d434b2fbd8435244c5f913961e3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ival'th value of kth occurrence of the requested name. If successful, the value is converted to a float and stored in reference ref. If the kth occurrence does not exist or ival'th value does not exist, or if the printed representation of the value cannot be converted to a float, an error message is output and the program halts. Note that ival == 0 is the first value in the list.  <a href="#a644d434b2fbd8435244c5f913961e3e9">More...</a><br /></td></tr>
 <tr class="separator:a644d434b2fbd8435244c5f913961e3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,6 +309,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b745935001c13d4031ecf26512c97c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a0b745935001c13d4031ecf26512c97c7">addarr</a> (const char *name, const std::vector&lt; long &gt; &amp;ptr)</td></tr>
 <tr class="memdesc:a0b745935001c13d4031ecf26512c97c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a key 'name' with vector of values 'ptr' to the end of the PP table.  <a href="#a0b745935001c13d4031ecf26512c97c7">More...</a><br /></td></tr>
 <tr class="separator:a0b745935001c13d4031ecf26512c97c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac91ba342d38bd361f1519c6d8855135e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ac91ba342d38bd361f1519c6d8855135e">getktharr</a> (const char *name, int k, std::vector&lt; long long &gt; &amp;ref, int start_ix=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>, int num_val=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a>) const </td></tr>
+<tr class="memdesc:ac91ba342d38bd361f1519c6d8855135e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an std::vector&lt;long long&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a long long and stored in the std::vector&lt;long long&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;long long&gt;[0], std::vector&lt;long long&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a long long, an error message is reported and the program halts.  <a href="#ac91ba342d38bd361f1519c6d8855135e">More...</a><br /></td></tr>
+<tr class="separator:ac91ba342d38bd361f1519c6d8855135e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20055f7d82adbe502a72acd77072db4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a20055f7d82adbe502a72acd77072db4a">getarr</a> (const char *name, std::vector&lt; long long &gt; &amp;ref, int start_ix=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>, int num_val=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a>) const </td></tr>
+<tr class="memdesc:a20055f7d82adbe502a72acd77072db4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classamrex_1_1ParmParse.html#a8f2356169ed148cb998651a15cdf65db" title="Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an int and stored in the std::vector&lt;int&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;int&gt;[0], std::vector&lt;int&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an int, an error message is reported and the program halts. ">getktharr()</a> but searches for last occurrence of name.  <a href="#a20055f7d82adbe502a72acd77072db4a">More...</a><br /></td></tr>
+<tr class="separator:a20055f7d82adbe502a72acd77072db4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16011def529dbda696919a2cdffe6656"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a16011def529dbda696919a2cdffe6656">queryktharr</a> (const char *name, int k, std::vector&lt; long long &gt; &amp;ref, int start_ix=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>, int num_val=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a>) const </td></tr>
+<tr class="memdesc:a16011def529dbda696919a2cdffe6656"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classamrex_1_1ParmParse.html#a303e1323d381365bc1cc2a01382edb23" title="queryktharr() is to querykth() as getktharr() is to getkth(). ">queryktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#a83eb7c07b692ef6123cc50ff0ffe33f0" title="Similar to getkth() but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&#39;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. ">querykth()</a> as <a class="el" href="classamrex_1_1ParmParse.html#a8f2356169ed148cb998651a15cdf65db" title="Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an int and stored in the std::vector&lt;int&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;int&gt;[0], std::vector&lt;int&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an int, an error message is reported and the program halts. ">getktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a>.  <a href="#a16011def529dbda696919a2cdffe6656">More...</a><br /></td></tr>
+<tr class="separator:a16011def529dbda696919a2cdffe6656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351a11cc4ddc67892997ac68820ff2fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#a351a11cc4ddc67892997ac68820ff2fe">queryarr</a> (const char *name, std::vector&lt; long long &gt; &amp;ref, int start_ix=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>, int num_val=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a>) const </td></tr>
+<tr class="memdesc:a351a11cc4ddc67892997ac68820ff2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as <a class="el" href="classamrex_1_1ParmParse.html#a303e1323d381365bc1cc2a01382edb23" title="queryktharr() is to querykth() as getktharr() is to getkth(). ">queryktharr()</a> but searches for last occurrence of name.  <a href="#a351a11cc4ddc67892997ac68820ff2fe">More...</a><br /></td></tr>
+<tr class="separator:a351a11cc4ddc67892997ac68820ff2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab6ec96cf5d0038bdbd09e4b480c7965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#aab6ec96cf5d0038bdbd09e4b480c7965">addarr</a> (const char *name, const std::vector&lt; long long &gt; &amp;ptr)</td></tr>
+<tr class="memdesc:aab6ec96cf5d0038bdbd09e4b480c7965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a key 'name' with vector of values 'ptr' to the end of the PP table.  <a href="#aab6ec96cf5d0038bdbd09e4b480c7965">More...</a><br /></td></tr>
+<tr class="separator:aab6ec96cf5d0038bdbd09e4b480c7965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab045acf4e16867aac480bedf757ef73e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParmParse.html#ab045acf4e16867aac480bedf757ef73e">getktharr</a> (const char *name, int k, std::vector&lt; float &gt; &amp;ref, int start_ix=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a>, int num_val=<a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a>) const </td></tr>
 <tr class="memdesc:ab045acf4e16867aac480bedf757ef73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an std::vector&lt;float&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a float and stored in the std::vector&lt;float&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;float&gt;[0], std::vector&lt;float&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a float, an error message is reported and the program halts.  <a href="#ab045acf4e16867aac480bedf757ef73e">More...</a><br /></td></tr>
 <tr class="separator:ab045acf4e16867aac480bedf757ef73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -616,6 +646,34 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a2f3ce2bb1afcf5b903ec946c7433f586"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::add </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const long long&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a key 'name'with value 'ref' to the end of the PP table. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8d848df041aef2781e7c11a0dc1ff53c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -798,6 +856,34 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a key 'name' with vector of values 'ptr' to the end of the PP table. </p>
+
+</div>
+</div>
+<a class="anchor" id="aab6ec96cf5d0038bdbd09e4b480c7965"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::addarr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; long long &gt; &amp;&#160;</td>
           <td class="paramname"><em>ptr</em>&#160;</td>
         </tr>
         <tr>
@@ -1221,6 +1307,40 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a85698224e480c0f096eff3ea13bfffd7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::get </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ival</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a> but searches for the last occurrence of name. </p>
+
+</div>
+</div>
 <a class="anchor" id="a5cd987462a8a8fd83c0591b8b9ebb1a1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1481,6 +1601,46 @@ template&lt;typename T , std::size_t N&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_ix</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_val</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classamrex_1_1ParmParse.html#a8f2356169ed148cb998651a15cdf65db" title="Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an int and stored in the std::vector&lt;int&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;int&gt;[0], std::vector&lt;int&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an int, an error message is reported and the program halts. ">getktharr()</a> but searches for last occurrence of name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a20055f7d82adbe502a72acd77072db4a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::getarr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; long long &gt; &amp;&#160;</td>
           <td class="paramname"><em>ref</em>, </td>
         </tr>
         <tr>
@@ -1827,6 +1987,46 @@ template&lt;typename T , std::size_t N&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a2169bc57d5e960c1b8d77ba292b98da6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::getkth </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ival</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the ival'th value of kth occurrence of the requested name. If successful, the value is converted to an int and stored in reference ref. If the kth occurrence does not exist or ival'th value does not exist, or if the printed representation of the value cannot be converted to an int, an error message is output and the program halts. Note that ival == 0 is the first value in the list. </p>
+
+</div>
+</div>
 <a class="anchor" id="a644d434b2fbd8435244c5f913961e3e9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2116,6 +2316,52 @@ template&lt;typename T , std::size_t N&gt; </div>
 </div><div class="memdoc">
 
 <p>Gets an std::vector&lt;long&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a long and stored in the std::vector&lt;long&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;long&gt;[0], std::vector&lt;long&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a long, an error message is reported and the program halts. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac91ba342d38bd361f1519c6d8855135e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::ParmParse::getktharr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; long long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_ix</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_val</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets an std::vector&lt;long long&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to a long long and stored in the std::vector&lt;long long&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;long long&gt;[0], std::vector&lt;long long&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to a long long, an error message is reported and the program halts. </p>
 
 </div>
 </div>
@@ -2641,6 +2887,40 @@ template&lt;typename T , std::size_t N&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a3c09a66f18c92fedb0bdf0b0a505df69"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::ParmParse::query </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ival</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classamrex_1_1ParmParse.html#a83eb7c07b692ef6123cc50ff0ffe33f0" title="Similar to getkth() but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&#39;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. ">querykth()</a> but searches for the last occurrence of name. </p>
+
+</div>
+</div>
 <a class="anchor" id="aadf0b602f4aacd6888c62b5e41a43801"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2901,6 +3181,46 @@ template&lt;typename T , std::size_t N&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_ix</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_val</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Same as <a class="el" href="classamrex_1_1ParmParse.html#a303e1323d381365bc1cc2a01382edb23" title="queryktharr() is to querykth() as getktharr() is to getkth(). ">queryktharr()</a> but searches for last occurrence of name. </p>
+
+</div>
+</div>
+<a class="anchor" id="a351a11cc4ddc67892997ac68820ff2fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::ParmParse::queryarr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; long long &gt; &amp;&#160;</td>
           <td class="paramname"><em>ref</em>, </td>
         </tr>
         <tr>
@@ -3246,6 +3566,46 @@ template&lt;typename T , std::size_t N&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ab35a2f43a5dc293c0f9297eba65ca4bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::ParmParse::querykth </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ival</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Similar to <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a> but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival'th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. </p>
+
+</div>
+</div>
 <a class="anchor" id="aef86c6c60b29981cf1891399120b0792"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3512,6 +3872,52 @@ template&lt;typename T , std::size_t N&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_ix</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1a0f0d0333ed203bc31cd4c28900c2d77c">FIRST</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num_val</em> = <code><a class="el" href="classamrex_1_1ParmParse.html#af264556e7f32f43af09421204a6e63c1aa7f34dde2e3de7cf5daa245b61e9b329">ALL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classamrex_1_1ParmParse.html#a303e1323d381365bc1cc2a01382edb23" title="queryktharr() is to querykth() as getktharr() is to getkth(). ">queryktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#a83eb7c07b692ef6123cc50ff0ffe33f0" title="Similar to getkth() but returns 0 if there is no kth occurrence of name. If successful, it returns 1 and stores the value in ref. If the kth occurrence exists, but ival&#39;th value of that occurrence does not, or if there is a type mismatch, then the program signals an error and halts. ">querykth()</a> as <a class="el" href="classamrex_1_1ParmParse.html#a8f2356169ed148cb998651a15cdf65db" title="Gets an std::vector&lt;int&gt; of num_val values from kth occurrence of given name. If successful, the values are converted to an int and stored in the std::vector&lt;int&gt; object ref. ref is resized (if necessary) to hold num_val values. The value in the list indexed by start_ix is copied into std::vector&lt;int&gt;[0], std::vector&lt;int&gt;[1] holds start_ix+1, etc. If the kth occurrence does not exist or there are fewer than start_ix + num_val values associated with the kth occurrence, or if some of the values cannot be converted to an int, an error message is reported and the program halts. ">getktharr()</a> is to <a class="el" href="classamrex_1_1ParmParse.html#af5d6f81ef2fe67ff7f2c100fac390276" title="Get the ival&#39;th value of kth occurrence of the requested name. If successful, the value is converted ...">getkth()</a>. </p>
+
+</div>
+</div>
+<a class="anchor" id="a16011def529dbda696919a2cdffe6656"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::ParmParse::queryktharr </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; long long &gt; &amp;&#160;</td>
           <td class="paramname"><em>ref</em>, </td>
         </tr>
         <tr>

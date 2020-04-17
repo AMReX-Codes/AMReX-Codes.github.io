@@ -66,6 +66,6 @@ var searchData=
   ['bufsize',['BUFSIZE',['../namespaceamrex_1_1Amrvis.html#a8303de7f87d7f9247ba6399dcf4d2493',1,'amrex::Amrvis']]],
   ['buserstoprequest',['bUserStopRequest',['../classamrex_1_1Amr.html#a0275a70b67bcded29bdf03229bea8edb',1,'amrex::Amr']]],
   ['bx_5fmap',['bx_map',['../classamrex_1_1DeriveRec.html#adbe5143a11f68ea45e237f5d650ba69f',1,'amrex::DeriveRec']]],
-  ['bytes',['bytes',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#ac3e292406516e42938e9542b7605eea6',1,'amrex::FabArrayBase::CacheStats']]],
-  ['bytes_5fhwm',['bytes_hwm',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a980e78201fb5e2da49f3f92b87bda68f',1,'amrex::FabArrayBase::CacheStats']]]
+  ['bytes',['bytes',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a32e4b2ea70635b8caa88bb5a43e2d5b0',1,'amrex::FabArrayBase::CacheStats']]],
+  ['bytes_5fhwm',['bytes_hwm',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a9c99b077a5aac77d3677eadc8caf0f14',1,'amrex::FabArrayBase::CacheStats']]]
 ];

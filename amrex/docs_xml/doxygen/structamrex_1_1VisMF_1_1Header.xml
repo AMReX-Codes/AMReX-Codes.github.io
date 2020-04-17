@@ -18,9 +18,9 @@
           <name>Version_v1</name>
           <initializer>= 1</initializer>
           <briefdescription>
-<para>-<mdash/> min and max values for each fab in the header </para>          </briefdescription>
+          </briefdescription>
           <detaileddescription>
-<para>-<mdash/> auto converting version with headers -<mdash/> for each fab in the data files and </para>          </detaileddescription>
+<para>-<mdash/> auto converting version with headers -<mdash/> for each fab in the data files and -<mdash/> min and max values for each fab in the header </para>          </detaileddescription>
         </enumvalue>
         <enumvalue id="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54da10ec66a6475783b69e6c646e53a89cc5" prot="public">
           <name>NoFabHeader_v1</name>
@@ -34,17 +34,17 @@
           <name>NoFabHeaderMinMax_v1</name>
           <initializer>= 3</initializer>
           <briefdescription>
-<para>-<mdash/> min and max values for each fab in the header </para>          </briefdescription>
+          </briefdescription>
           <detaileddescription>
-<para>-<mdash/> no fab headers, </para>          </detaileddescription>
+<para>-<mdash/> no fab headers, -<mdash/> min and max values for each fab in the header </para>          </detaileddescription>
         </enumvalue>
         <enumvalue id="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54daea230534883ebe9d77fc2c31aeab4589" prot="public">
           <name>NoFabHeaderFAMinMax_v1</name>
           <initializer>= 4</initializer>
           <briefdescription>
-<para>-<mdash/> min and max values for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> in the header </para>          </briefdescription>
+          </briefdescription>
           <detaileddescription>
-<para>-<mdash/> no fab headers, no fab mins or maxes, </para>          </detaileddescription>
+<para>-<mdash/> no fab headers, no fab mins or maxes, -<mdash/> min and max values for each <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> in the header </para>          </detaileddescription>
         </enumvalue>
         <briefdescription>
 <para>The versions of the <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref> <ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref> code. </para>        </briefdescription>
@@ -300,6 +300,9 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
+      <node id="3195">
+        <label>std::vector&lt; Long, std::allocator&lt; Long &gt; &gt;</label>
+      </node>
       <node id="3190">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
@@ -317,10 +320,10 @@
       <node id="3199">
         <label>std::vector&lt; amrex::VisMF::FabOnDisk, std::allocator&lt; amrex::VisMF::FabOnDisk &gt; &gt;</label>
       </node>
-      <node id="3194">
+      <node id="3192">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="3195" relation="public-inheritance">
+        <childnode refid="3193" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3189">
@@ -329,23 +332,23 @@
       <node id="3197">
         <label>std::vector&lt; amrex::Vector&lt; Real &gt;, std::allocator&lt; amrex::Vector&lt; Real &gt; &gt; &gt;</label>
       </node>
-      <node id="3192">
-        <label>amrex::Vector&lt; long &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="3193" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3195">
+      <node id="3193">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
       <node id="3191">
         <label>amrex::RealDescriptor</label>
         <link refid="classamrex_1_1RealDescriptor"/>
         <childnode refid="3192" relation="usage">
-          <edgelabel>fr</edgelabel>
+          <edgelabel>ord</edgelabel>
         </childnode>
         <childnode refid="3194" relation="usage">
-          <edgelabel>ord</edgelabel>
+          <edgelabel>fr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3194">
+        <label>amrex::Vector&lt; Long &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3195" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3188">
@@ -374,9 +377,6 @@
         <childnode refid="3198" relation="usage">
           <edgelabel>m_fod</edgelabel>
         </childnode>
-      </node>
-      <node id="3193">
-        <label>std::vector&lt; long, std::allocator&lt; long &gt; &gt;</label>
       </node>
       <node id="3196">
         <label>amrex::Vector&lt; amrex::Vector&lt; Real &gt; &gt;</label>

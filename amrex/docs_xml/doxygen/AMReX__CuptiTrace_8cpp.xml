@@ -4,13 +4,13 @@
     <compoundname>AMReX_CuptiTrace.cpp</compoundname>
     <includes refid="AMReX__CuptiTrace_8H" local="no">AMReX_CuptiTrace.H</includes>
     <incdepgraph>
-      <node id="15419">
+      <node id="15439">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_CuptiTrace.cpp</label>
         <link refid="AMReX_CuptiTrace.cpp"/>
-        <childnode refid="15420" relation="include">
+        <childnode refid="15440" relation="include">
         </childnode>
       </node>
-      <node id="15420">
+      <node id="15440">
         <label>AMReX_CuptiTrace.H</label>
         <link refid="AMReX__CuptiTrace_8H"/>
       </node>
@@ -58,7 +58,7 @@
 <codeline lineno="36"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUPTIAPI</highlight></codeline>
-<codeline lineno="39"><highlight class="normal">bfrRequestCallback<sp/>(uint8_t*<sp/>*bfr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1ac0bbdd3b8f64770191201e431e16c723" kindref="member">size</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>maxNumRecords)<sp/>noexcept</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">bfrRequestCallback<sp/>(uint8_t*<sp/>*bfr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>maxNumRecords)<sp/>noexcept</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allocate<sp/>a<sp/>buffer<sp/>for<sp/>use<sp/>by<sp/>CUPTI;<sp/>activity<sp/>records<sp/>are<sp/>stored<sp/>in<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/>buffer<sp/>=<sp/>(uint8_t*)<sp/>std::malloc(BFR_SIZE<sp/>+<sp/>ALIGNMENT);</highlight></codeline>
@@ -68,7 +68,7 @@
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>buffer<sp/>and<sp/>buffer<sp/>size</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>*bfr<sp/>=<sp/>ALIGN_BFR(buffer,<sp/>ALIGNMENT);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1ac0bbdd3b8f64770191201e431e16c723" kindref="member">size</ref><sp/>=<sp/>BFR_SIZE;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref><sp/>=<sp/>BFR_SIZE;</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Controls<sp/>maximum<sp/>number<sp/>of<sp/>records<sp/>to<sp/>be<sp/>placed<sp/>in<sp/>buffer;<sp/>setting<sp/>to<sp/>zero</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fills<sp/>the<sp/>buffer<sp/>with<sp/>as<sp/>many<sp/>records<sp/>as<sp/>possible,<sp/>setting<sp/>to<sp/>n<sp/>&gt;<sp/>0<sp/>fills</highlight><highlight class="normal"></highlight></codeline>
@@ -78,7 +78,7 @@
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUPTIAPI</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">bfrCompleteCallback<sp/>(CUcontext<sp/>ctx,<sp/>uint32_t<sp/>streamId,<sp/>uint8_t*<sp/>bfr,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1ac0bbdd3b8f64770191201e431e16c723" kindref="member">size</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>validSize)<sp/>noexcept</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>validSize)<sp/>noexcept</highlight></codeline>
 <codeline lineno="60"><highlight class="normal">{<sp/></highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>CUptiResult<sp/>status;</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>CUpti_Activity*<sp/>record<sp/>=<sp/>NULL;</highlight></codeline>

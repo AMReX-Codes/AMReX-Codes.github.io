@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jstride',['jstride',['../structamrex_1_1Array4.html#a158521972068c0c4346305005e44fdb4',1,'amrex::Array4']]]
+  ['jstride',['jstride',['../structamrex_1_1Array4.html#ac5874d9946c7fab10b8baccf17852150',1,'amrex::Array4']]]
 ];

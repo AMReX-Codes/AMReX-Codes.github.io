@@ -53,7 +53,7 @@ var searchData=
   ['htod_5fmemcpy',['htod_memcpy',['../namespaceamrex.html#ae243b10c65516ed7dfeaf9aed7e75aa3',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#aa9df7c449e875ece24add0d826c4f133',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)'],['../namespaceamrex_1_1Gpu.html#aa720ba8e7b622f0897659c64d23d5db4',1,'amrex::Gpu::htod_memcpy()']]],
   ['htod_5fmemcpy_5fasync',['htod_memcpy_async',['../namespaceamrex_1_1Gpu.html#aacefe17a39734cb2475a36199ab1370b',1,'amrex::Gpu']]],
   ['hwm_5fbuilds',['hwm_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5',1,'amrex::MemProfiler::NBuildsInfo']]],
-  ['hwm_5fbytes',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a0986f22c847ee689a532d882351b7ee0',1,'amrex::MemProfiler::MemInfo']]],
+  ['hwm_5fbytes',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]],
   ['hypre',['Hypre',['../classamrex_1_1Hypre.html#afd2d6c32022a99d96f73485d03272ec9',1,'amrex::Hypre::Hypre()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex::hypre()']]],
   ['hypre',['Hypre',['../classamrex_1_1Hypre.html',1,'amrex']]],
   ['hypre_5fint',['hypre_int',['../namespaceamrex__hypre__fort__module.html#a37cff87c6ce6d7a323cb5165758c7623',1,'amrex_hypre_fort_module']]],
