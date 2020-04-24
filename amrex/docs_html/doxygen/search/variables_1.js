@@ -62,7 +62,7 @@ var searchData=
   ['bterrain',['bTerrain',['../classamrex_1_1AmrData.html#afabb8e1c24620e4fa9cba00f9e4a386d',1,'amrex::AmrData']]],
   ['btimerangeinitialized',['bTimeRangeInitialized',['../classBLProfStats.html#a6d09cb193d457f12d89dad062aaf37bc',1,'BLProfStats']]],
   ['btype',['btype',['../classamrex_1_1Box.html#a30cb1cd364f96e320bb711365df849e1',1,'amrex::Box::btype()'],['../classamrex_1_1BoxList.html#a70df1b0aadeb1c7f0360299f0e2b2fc4',1,'amrex::BoxList::btype()']]],
-  ['buffer_5ftag_5fcache',['buffer_tag_cache',['../classamrex_1_1NeighborParticleContainer.html#aa6468cef6d3d4ebb86442a87c15a680c',1,'amrex::NeighborParticleContainer']]],
+  ['buffer_5ftag_5fcache',['buffer_tag_cache',['../classamrex_1_1NeighborParticleContainer.html#a850509e24e6a8560ae8a73f36e4df525',1,'amrex::NeighborParticleContainer']]],
   ['bufsize',['BUFSIZE',['../namespaceamrex_1_1Amrvis.html#a8303de7f87d7f9247ba6399dcf4d2493',1,'amrex::Amrvis']]],
   ['buserstoprequest',['bUserStopRequest',['../classamrex_1_1Amr.html#a0275a70b67bcded29bdf03229bea8edb',1,'amrex::Amr']]],
   ['bx_5fmap',['bx_map',['../classamrex_1_1DeriveRec.html#adbe5143a11f68ea45e237f5d650ba69f',1,'amrex::DeriveRec']]],
