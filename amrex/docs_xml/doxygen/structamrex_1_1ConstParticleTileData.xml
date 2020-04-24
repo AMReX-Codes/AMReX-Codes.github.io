@@ -111,7 +111,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="154" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ConstParticleTileData_1a81b092f2251b51d63ee6d55e2f121b27" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; const ParticleReal *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref>, NArrayReal &gt;</type>
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; const ParticleReal *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref>, NArrayReal &gt;</type>
         <definition>GpuArray&lt;const ParticleReal* AMREX_RESTRICT, NArrayReal&gt; amrex::ConstParticleTileData&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_rdata</definition>
         <argsstring></argsstring>
         <name>m_rdata</name>
@@ -124,7 +124,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H" line="155" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="155" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1ConstParticleTileData_1a310a42bc686b6dc3fd6521b5c7c61723" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; const int *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref>, NArrayInt &gt;</type>
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; const int *<ref refid="AMReX__Extension_8H_1a97eafbdde3320b2e8981a1d1d3936f58" kindref="member">AMREX_RESTRICT</ref>, NArrayInt &gt;</type>
         <definition>GpuArray&lt;const int* AMREX_RESTRICT, NArrayInt &gt; amrex::ConstParticleTileData&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_idata</definition>
         <argsstring></argsstring>
         <name>m_idata</name>
@@ -246,28 +246,42 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1056">
+      <node id="1057">
+        <label>amrex::GpuArray&lt; const int *AMREX_RESTRICT, NArrayInt &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+      </node>
+      <node id="1060">
         <label>amrex::Particle&lt; T_NReal, T_NInt &gt;::rm_t</label>
         <link refid="unionamrex_1_1Particle_1_1rm__t"/>
       </node>
-      <node id="1054">
+      <node id="1058">
         <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
         <link refid="structamrex_1_1Particle"/>
-        <childnode refid="1055" relation="usage">
+        <childnode refid="1059" relation="usage">
           <edgelabel>m_idata</edgelabel>
         </childnode>
-        <childnode refid="1056" relation="usage">
+        <childnode refid="1060" relation="usage">
           <edgelabel>m_rdata</edgelabel>
         </childnode>
       </node>
-      <node id="1053">
+      <node id="1055">
         <label>amrex::ConstParticleTileData&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
         <link refid="structamrex_1_1ConstParticleTileData"/>
-        <childnode refid="1054" relation="usage">
+        <childnode refid="1056" relation="usage">
+          <edgelabel>m_rdata</edgelabel>
+        </childnode>
+        <childnode refid="1057" relation="usage">
+          <edgelabel>m_idata</edgelabel>
+        </childnode>
+        <childnode refid="1058" relation="usage">
           <edgelabel>m_aos</edgelabel>
         </childnode>
       </node>
-      <node id="1055">
+      <node id="1056">
+        <label>amrex::GpuArray&lt; const ParticleReal *AMREX_RESTRICT, NArrayReal &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+      </node>
+      <node id="1059">
         <label>amrex::Particle&lt; T_NReal, T_NInt &gt;::im_t</label>
         <link refid="unionamrex_1_1Particle_1_1im__t"/>
       </node>

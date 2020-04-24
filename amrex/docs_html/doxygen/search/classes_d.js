@@ -56,5 +56,6 @@ var searchData=
   ['process_5ftopology_5ft',['process_topology_t',['../structprocess__topology__t.html',1,'']]],
   ['processteam',['ProcessTeam',['../structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html',1,'amrex::ParallelDescriptor']]],
   ['procstats',['ProcStats',['../structamrex_1_1TinyProfiler_1_1ProcStats.html',1,'amrex::TinyProfiler']]],
-  ['psicode',['PsiCode',['../structamrex_1_1algoim_1_1PsiCode.html',1,'amrex::algoim']]]
+  ['psicode',['PsiCode',['../structamrex_1_1algoim_1_1PsiCode.html',1,'amrex::algoim']]],
+  ['psicode_3c_20n_20_3e_2c_201_3c_3c_20_28n_2d1_29_3e',['PsiCode&lt; N &gt;, 1&lt;&lt; (N-1)&gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]]
 ];

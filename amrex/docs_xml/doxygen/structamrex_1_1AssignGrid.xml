@@ -90,7 +90,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="21" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1AssignGrid_1acb8a58c814cd584552c2534852e7228b" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
         <definition>GpuArray&lt;Real, AMREX_SPACEDIM&gt; amrex::AssignGrid&lt; BinIteratorFactory &gt;::m_plo</definition>
         <argsstring></argsstring>
         <name>m_plo</name>
@@ -103,7 +103,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" line="22" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1AssignGrid_1aa2da3c10930c77c48d235ae5324a5bdd" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
         <definition>GpuArray&lt;Real, AMREX_SPACEDIM&gt; amrex::AssignGrid&lt; BinIteratorFactory &gt;::m_dxi</definition>
         <argsstring></argsstring>
         <name>m_dxi</name>
@@ -212,10 +212,10 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="663">
+      <node id="665">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="663" relation="usage">
+        <childnode refid="665" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
@@ -230,25 +230,39 @@
           <edgelabel>m_num_bins</edgelabel>
         </childnode>
         <childnode refid="662" relation="usage">
+          <edgelabel>m_plo</edgelabel>
+          <edgelabel>m_dxi</edgelabel>
+        </childnode>
+        <childnode refid="664" relation="usage">
           <edgelabel>m_domain</edgelabel>
         </childnode>
+      </node>
+      <node id="663">
+        <label>Real</label>
       </node>
       <node id="661">
         <label>amrex::Dim3</label>
         <link refid="structamrex_1_1Dim3"/>
       </node>
-      <node id="662">
+      <node id="664">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="663" relation="usage">
+        <childnode refid="665" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="664" relation="usage">
+        <childnode refid="666" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="664">
+      <node id="662">
+        <label>amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+        <childnode refid="663" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
+      </node>
+      <node id="666">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>

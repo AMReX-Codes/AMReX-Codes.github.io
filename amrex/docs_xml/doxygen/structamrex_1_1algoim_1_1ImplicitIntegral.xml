@@ -49,7 +49,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" line="244" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" bodystart="244" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1algoim_1_1ImplicitIntegral_1aff95bdf7c30770f6021900c9eedaad6b" prot="public" static="no" mutable="no">
-        <type>const <ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; bool, N &gt;</type>
+        <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; bool, N &gt;</type>
         <definition>const GpuArray&lt;bool,N&gt; amrex::algoim::ImplicitIntegral&lt; M, N, Phi, F &gt;::free</definition>
         <argsstring></argsstring>
         <name>free</name>
@@ -62,7 +62,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" line="245" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" bodystart="245" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1algoim_1_1ImplicitIntegral_1ac3aa0501b0844da98bbe89d033795500" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; <ref refid="structamrex_1_1algoim_1_1PsiCode" kindref="compound">PsiCode</ref>&lt; N &gt;, 1&lt;&lt; (N-1)&gt;</type>
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1algoim_1_1PsiCode" kindref="compound">PsiCode</ref>&lt; N &gt;, 1&lt;&lt; (N-1)&gt;</type>
         <definition>GpuArray&lt;PsiCode&lt;N&gt;,1 &lt;&lt; (N - 1)&gt; amrex::algoim::ImplicitIntegral&lt; M, N, Phi, F &gt;::psi</definition>
         <argsstring></argsstring>
         <name>psi</name>
@@ -114,7 +114,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" line="249" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" bodystart="249" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1algoim_1_1ImplicitIntegral_1a34d771a65448161c411faaf972a6484f" prot="public" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; <ref refid="structamrex_1_1algoim_1_1Interval" kindref="compound">Interval</ref>, N &gt;</type>
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1algoim_1_1Interval" kindref="compound">Interval</ref>, N &gt;</type>
         <definition>GpuArray&lt;Interval,N&gt; amrex::algoim::ImplicitIntegral&lt; M, N, Phi, F &gt;::xint</definition>
         <argsstring></argsstring>
         <name>xint</name>
@@ -176,7 +176,7 @@
         <argsstring>(GpuArray&lt; Real, N &gt; x, Real w) const noexcept</argsstring>
         <name>evalIntegrand</name>
         <param>
-          <type><ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; Real, N &gt;</type>
+          <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, N &gt;</type>
           <declname>x</declname>
         </param>
         <param>
@@ -205,7 +205,7 @@
           <declname>f_</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1a317082290117984ef29e149750e2c7a8" kindref="member">GpuArray</ref>&lt; bool, N &gt; &amp;</type>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; bool, N &gt; &amp;</type>
           <declname>free_</declname>
         </param>
         <briefdescription>
@@ -221,6 +221,46 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="3507">
+        <label>Real</label>
+      </node>
+      <node id="3505">
+        <label>amrex::GpuArray&lt; amrex::algoim::Interval, N &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+        <childnode refid="3506" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
+      </node>
+      <node id="3503">
+        <label>amrex::PsiCode&lt; N &gt;, 1&lt;&lt; (N-1)&gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+      </node>
+      <node id="3506">
+        <label>amrex::algoim::Interval</label>
+        <link refid="structamrex_1_1algoim_1_1Interval"/>
+        <childnode refid="3507" relation="usage">
+          <edgelabel>alpha</edgelabel>
+        </childnode>
+      </node>
+      <node id="3502">
+        <label>amrex::algoim::ImplicitIntegral&lt; M, N, Phi, F &gt;</label>
+        <link refid="structamrex_1_1algoim_1_1ImplicitIntegral"/>
+        <childnode refid="3503" relation="usage">
+          <edgelabel>psi</edgelabel>
+        </childnode>
+        <childnode refid="3504" relation="usage">
+          <edgelabel>free</edgelabel>
+        </childnode>
+        <childnode refid="3505" relation="usage">
+          <edgelabel>xint</edgelabel>
+        </childnode>
+      </node>
+      <node id="3504">
+        <label>amrex::GpuArray&lt; bool, N &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+      </node>
+    </collaborationgraph>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" line="242" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_algoim_K.H" bodystart="241" bodyend="526"/>
     <listofallmembers>
       <member refid="structamrex_1_1algoim_1_1ImplicitIntegral_1a34411c4dfd852959acaf447507c352ed" prot="public" virt="non-virtual"><scope>amrex::algoim::ImplicitIntegral</scope><name>e0</name></member>
