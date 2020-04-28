@@ -143,6 +143,7 @@ var searchData=
   ['compsyncresidualcoarse',['compSyncResidualCoarse',['../classamrex_1_1MLNodeLaplacian.html#afc701712c658d0f67bef6a07bbf323b9',1,'amrex::MLNodeLaplacian']]],
   ['compsyncresidualfine',['compSyncResidualFine',['../classamrex_1_1MLNodeLaplacian.html#a44e85cef12a5b759e5a52e64cc9f2c3d',1,'amrex::MLNodeLaplacian']]],
   ['compute_5fintegrals',['compute_integrals',['../namespaceamrex_1_1algoim.html#a6784c63be461e49a81c5c587605674e4',1,'amrex::algoim::compute_integrals(MultiFab &amp;intg, int nghost)'],['../namespaceamrex_1_1algoim.html#a3ccdff6c18c04f2fb7aa460f885333ba',1,'amrex::algoim::compute_integrals(MultiFab &amp;intgmf, IntVect nghost)']]],
+  ['computedistributionmappingefficiency',['ComputeDistributionMappingEfficiency',['../classamrex_1_1DistributionMapping.html#aa54a3f9e80ba4f24e8b3663f2634bf4d',1,'amrex::DistributionMapping']]],
   ['computedivergence',['computeDivergence',['../namespaceamrex.html#a7b179e68f86c4a06d176f587ec95148c',1,'amrex']]],
   ['computegradient',['computeGradient',['../namespaceamrex.html#add6ef1af4714e90f5d0b5a098725612b',1,'amrex']]],
   ['computeinitialdt',['computeInitialDt',['../classamrex_1_1AmrLevel.html#a252f7123d2f0a98351bc7b39c32b3152',1,'amrex::AmrLevel']]],
