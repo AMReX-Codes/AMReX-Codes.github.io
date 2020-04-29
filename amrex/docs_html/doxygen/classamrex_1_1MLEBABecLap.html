@@ -129,6 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaa0d12f5f57ddf587493f2c93f516dd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b6b22d7fff8c3ba94d4468f0394db3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a1b6b22d7fff8c3ba94d4468f0394db3a">define</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &amp;a_geom, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; BoxArray &gt; &amp;a_grids, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &gt; &amp;a_dmap, const <a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> &amp;a_info, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">EBFArrayBoxFactory</a> const * &gt; &amp;a_factory)</td></tr>
 <tr class="separator:a1b6b22d7fff8c3ba94d4468f0394db3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b6b64134bb5a73a43da2d2aaefbbf53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a1b6b64134bb5a73a43da2d2aaefbbf53">setPhiOnCentroid</a> ()</td></tr>
+<tr class="separator:a1b6b64134bb5a73a43da2d2aaefbbf53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3027675177497cdb23a984a50ebcb12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#ad3027675177497cdb23a984a50ebcb12">setScalars</a> (Real a, Real b)</td></tr>
 <tr class="separator:ad3027675177497cdb23a984a50ebcb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3897cf202c96a14a8d9733f25c5e750f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a3897cf202c96a14a8d9733f25c5e750f">setACoeffs</a> (int amrlev, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;alpha)</td></tr>
@@ -364,6 +366,10 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aadf975aed65ffe24b230421d1366de50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#aadf975aed65ffe24b230421d1366de50">m_needs_update</a> = true</td></tr>
 <tr class="separator:aadf975aed65ffe24b230421d1366de50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc12bcb23ed82f37ceae7da2d6f44eea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#afc12bcb23ed82f37ceae7da2d6f44eea">m_beta_loc</a></td></tr>
+<tr class="separator:afc12bcb23ed82f37ceae7da2d6f44eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0ea21faa4cc1aeadf8641b37d8cf59f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#ae0ea21faa4cc1aeadf8641b37d8cf59f">m_phi_loc</a></td></tr>
+<tr class="separator:ae0ea21faa4cc1aeadf8641b37d8cf59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac43a9c8728bb7861415d80283d41e064"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#ac43a9c8728bb7861415d80283d41e064">m_a_scalar</a> = std::numeric_limits&lt;Real&gt;::quiet_NaN()</td></tr>
 <tr class="separator:ac43a9c8728bb7861415d80283d41e064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fb977f5a6b0c8682e5f658a4dc9db0c"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLEBABecLap.html#a1fb977f5a6b0c8682e5f658a4dc9db0c">m_b_scalar</a> = std::numeric_limits&lt;Real&gt;::quiet_NaN()</td></tr>
@@ -385,10 +391,6 @@ Protected Attributes</h2></td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1MLCellLinOp"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1MLCellLinOp')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1MLCellLinOp.html">amrex::MLCellLinOp</a></td></tr>
 <tr class="memitem:a9d6cdade5abfabf340b180cba282c3c1 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp.html#a9d6cdade5abfabf340b180cba282c3c1">m_has_metric_term</a> = false</td></tr>
 <tr class="separator:a9d6cdade5abfabf340b180cba282c3c1 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78edaf74ce778507e616e7812c53a9e5 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp.html#a78edaf74ce778507e616e7812c53a9e5">m_beta_loc</a></td></tr>
-<tr class="separator:a78edaf74ce778507e616e7812c53a9e5 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e10b2363f823a620b2d32c6140acccd inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp.html#a6e10b2363f823a620b2d32c6140acccd">m_phi_loc</a></td></tr>
-<tr class="separator:a6e10b2363f823a620b2d32c6140acccd inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8f93178ea3f02ba63da966de7796970 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLMGBndry.html">MLMGBndry</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp.html#ab8f93178ea3f02ba63da966de7796970">m_bndry_sol</a></td></tr>
 <tr class="separator:ab8f93178ea3f02ba63da966de7796970 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae58b75937a141dc599d98b034be7f3c inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1BndryRegister.html">BndryRegister</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp.html#aae58b75937a141dc599d98b034be7f3c">m_crse_sol_br</a></td></tr>
@@ -2077,6 +2079,21 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1b6b64134bb5a73a43da2d2aaefbbf53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLEBABecLap::setPhiOnCentroid </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ad3027675177497cdb23a984a50ebcb12"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2211,6 +2228,26 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="afc12bcb23ed82f37ceae7da2d6f44eea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> amrex::MLEBABecLap::m_beta_loc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a820de6c415b8f6911cf96c94788cb102"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2320,6 +2357,26 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::MLEBABecLap::m_needs_update = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae0ea21faa4cc1aeadf8641b37d8cf59f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3">Location</a> amrex::MLEBABecLap::m_phi_loc</td>
         </tr>
       </table>
   </td>
