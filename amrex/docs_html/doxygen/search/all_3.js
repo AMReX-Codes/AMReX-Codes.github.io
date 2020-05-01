@@ -362,6 +362,7 @@ var searchData=
   ['curlevel',['curLevel',['../classamrex_1_1XYPlotDataList.html#a125f114aafc7c3b80d2a84a1cd77314d',1,'amrex::XYPlotDataList::curLevel()'],['../classamrex_1_1XYPlotDataList.html#a26924f6df717a52103c1670ad6cc01f3',1,'amrex::XYPlotDataList::CurLevel() const ']]],
   ['current_5fbuilds',['current_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#a1af174d3541b8cb0ffddf9902562db08',1,'amrex::MemProfiler::NBuildsInfo']]],
   ['current_5fbytes',['current_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a821bd45f3af572df6c5dad7f24de66fc',1,'amrex::MemProfiler::MemInfo']]],
+  ['current_5fcomm',['current_comm',['../classamrex_1_1VisMF.html#a1b6dd0de445fcd0617eb9388bcf04f98',1,'amrex::VisMF']]],
   ['current_5forder',['current_order',['../structintegrator__stats__mod_1_1integrator__stats__t.html#a7fe8f0fa5ed93343d0cc875d579c5c65',1,'integrator_stats_mod::integrator_stats_t']]],
   ['current_5fstep_5fsize',['current_step_size',['../structintegrator__stats__mod_1_1integrator__stats__t.html#aa47236a434286df8523309392d844cb4',1,'integrator_stats_mod::integrator_stats_t']]],
   ['current_5ftime',['current_time',['../structintegrator__stats__mod_1_1integrator__stats__t.html#a07463edf85b6f6e1016468d59af562c9',1,'integrator_stats_mod::integrator_stats_t']]],

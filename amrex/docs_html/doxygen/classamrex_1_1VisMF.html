@@ -109,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1VisMF_1_1aligner.html">aligner</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1VisMF_1_1FabOnDisk.html">FabOnDisk</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure containing info regarding an on-disk FAB.  <a href="structamrex_1_1VisMF_1_1FabOnDisk.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -209,8 +211,23 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a527bd21764fd10a8fb440b897e30c12a"><td class="memItemLeft" align="right" valign="top">static Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a527bd21764fd10a8fb440b897e30c12a">Write</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;fafab, const std::string &amp;name, <a class="el" href="classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156">VisMF::How</a> how=<a class="el" href="classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1">NFiles</a>, bool set_ghost=false)</td></tr>
 <tr class="memdesc:a527bd21764fd10a8fb440b897e30c12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;FArrayBox&gt;</a> to disk in a "smart" way. Returns the total number of bytes written on this processor. If set_ghost is true, sets the ghost cells in the <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;FArrayBox&gt;</a> to one-half the average of the min and max over the valid region of each contained FAB.  <a href="#a527bd21764fd10a8fb440b897e30c12a">More...</a><br /></td></tr>
 <tr class="separator:a527bd21764fd10a8fb440b897e30c12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80b5053b87b159190b6664cf4fc1020b"><td class="memItemLeft" align="right" valign="top">static std::future&lt; <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a80b5053b87b159190b6664cf4fc1020b">WriteAsync</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;fafab, const std::string &amp;name)</td></tr>
-<tr class="separator:a80b5053b87b159190b6664cf4fc1020b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fa1165af6c17714836f4e08c465b3f"><td class="memItemLeft" align="right" valign="top">static std::array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a23fa1165af6c17714836f4e08c465b3f">StaticWriteInfo</a> (const int &amp;rank)</td></tr>
+<tr class="separator:a23fa1165af6c17714836f4e08c465b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f8e05ec247898262d7f45b38dca16d0"><td class="memItemLeft" align="right" valign="top">static std::future&lt; <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a7f8e05ec247898262d7f45b38dca16d0">WriteAsync</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;mf, const std::string &amp;mf_name)</td></tr>
+<tr class="separator:a7f8e05ec247898262d7f45b38dca16d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af82fb230fcdc9e837c260802a2d8ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a7af82fb230fcdc9e837c260802a2d8ba">WriteAsyncMultiFab</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;mf, const std::string &amp;mf_name)</td></tr>
+<tr class="separator:a7af82fb230fcdc9e837c260802a2d8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a452f96de7229a9fbdecff805a86df7b5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a452f96de7229a9fbdecff805a86df7b5">WriteAsyncPlotfile</a> (const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;mf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;mf_names, int nlevels, bool strip_ghost_cells, int hdr_proc)</td></tr>
+<tr class="separator:a452f96de7229a9fbdecff805a86df7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f41ccae821e24e006e28f55d1ea8dd"><td class="memTemplParams" colspan="2">template&lt;typename Func , typename... Params&gt; </td></tr>
+<tr class="memitem:a18f41ccae821e24e006e28f55d1ea8dd"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a18f41ccae821e24e006e28f55d1ea8dd">asyncAddWrite</a> (Func &amp;&amp;f, Params &amp;&amp;...args)</td></tr>
+<tr class="separator:a18f41ccae821e24e006e28f55d1ea8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b05d379ce6f96729eabd61d33d85a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a80b05d379ce6f96729eabd61d33d85a4">asyncWaitOne</a> ()</td></tr>
+<tr class="separator:a80b05d379ce6f96729eabd61d33d85a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43866f0e887315ffbeb06e8ccc2e3843"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a43866f0e887315ffbeb06e8ccc2e3843">asyncWaitAll</a> ()</td></tr>
+<tr class="separator:a43866f0e887315ffbeb06e8ccc2e3843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057e823f401a3c3c20722f9967bb8ce7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a057e823f401a3c3c20722f9967bb8ce7">asyncWaitUntilFree</a> ()</td></tr>
+<tr class="separator:a057e823f401a3c3c20722f9967bb8ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8807abfd4ec1e3790a765096f2d6b724"><td class="memItemLeft" align="right" valign="top">static Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a8807abfd4ec1e3790a765096f2d6b724">WriteOnlyHeader</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;mf, const std::string &amp;mf_name, <a class="el" href="classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156">VisMF::How</a> how=<a class="el" href="classamrex_1_1VisMF.html#aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1">NFiles</a>)</td></tr>
 <tr class="memdesc:a8807abfd4ec1e3790a765096f2d6b724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write only the header-file corresponding to <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;FArrayBox&gt;</a> to disk without the corresponding FAB data. This writes BoxArray information (which might still be needed by data post-processing tools such as yt) when the FAB data is not needed. Returns the total number of bytes written on this processor.  <a href="#a8807abfd4ec1e3790a765096f2d6b724">More...</a><br /></td></tr>
 <tr class="separator:a8807abfd4ec1e3790a765096f2d6b724"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,8 +251,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a1b41ff82637f2e2f4dd33f27a0d62ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73b516dcb8729a411f75eaa5d7fc1b54"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a73b516dcb8729a411f75eaa5d7fc1b54">GetNOutFiles</a> ()</td></tr>
 <tr class="separator:a73b516dcb8729a411f75eaa5d7fc1b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f990c53f9abf19fdd7c10f14eae38b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a12f990c53f9abf19fdd7c10f14eae38b">SetNOutFiles</a> (int noutfiles, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm=<a class="el" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>())</td></tr>
-<tr class="separator:a12f990c53f9abf19fdd7c10f14eae38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea445c6cb42961bb091d40ee7545607"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#aeea445c6cb42961bb091d40ee7545607">SetNOutFiles</a> (int newoutfiles, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm=<a class="el" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>())</td></tr>
+<tr class="separator:aeea445c6cb42961bb091d40ee7545607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a738d789073dd1072ac3a0c640429574c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a738d789073dd1072ac3a0c640429574c">GetMFFileInStreams</a> ()</td></tr>
 <tr class="separator:a738d789073dd1072ac3a0c640429574c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abda03b733e4f5e0b9f005f764f1a5b65"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#abda03b733e4f5e0b9f005f764f1a5b65">SetMFFileInStreams</a> (int nstreams, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm=<a class="el" href="namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44">ParallelDescriptor::Communicator</a>())</td></tr>
@@ -340,6 +357,10 @@ Static Private Attributes</h2></td></tr>
 <tr class="separator:ade6a45cdc3be4fb324ccd3a863788aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfbb2ed9c1aa1c00786e7ae2218f0b0f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#abfbb2ed9c1aa1c00786e7ae2218f0b0f">nMFFileInStreams</a></td></tr>
 <tr class="separator:abfbb2ed9c1aa1c00786e7ae2218f0b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c10ec9a471ea24a3208e1798cb7bec"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a84c10ec9a471ea24a3208e1798cb7bec">nAsyncWrites</a></td></tr>
+<tr class="separator:a84c10ec9a471ea24a3208e1798cb7bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335f428493f0a627d25a05bb44f9fda4"><td class="memItemLeft" align="right" valign="top">static std::queue&lt; std::future&lt; <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a335f428493f0a627d25a05bb44f9fda4">future_list</a></td></tr>
+<tr class="separator:a335f428493f0a627d25a05bb44f9fda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee12165f32372e900a0f0967a344708"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a4ee12165f32372e900a0f0967a344708">verbose</a></td></tr>
 <tr class="separator:a4ee12165f32372e900a0f0967a344708"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f4058d4117af92e70d889263657e9f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structamrex_1_1VisMF_1_1Header.html#aa4469030a55d4e3be552189f7d06b54d">VisMF::Header::Version</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a7f4058d4117af92e70d889263657e9f8">currentVersion</a></td></tr>
@@ -365,6 +386,12 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a1f60977c11c2c87df32b47debd813b9e"><td class="memItemLeft" align="right" valign="top">static Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a1f60977c11c2c87df32b47debd813b9e">ioBufferSize</a></td></tr>
 <tr class="memdesc:a1f60977c11c2c87df32b47debd813b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">-&mdash; the settable buffer size  <a href="#a1f60977c11c2c87df32b47debd813b9e">More...</a><br /></td></tr>
 <tr class="separator:a1f60977c11c2c87df32b47debd813b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6677c063597457901ddf807b87d57bd4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a6677c063597457901ddf807b87d57bd4">asyncTag</a></td></tr>
+<tr class="separator:a6677c063597457901ddf807b87d57bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b6dd0de445fcd0617eb9388bcf04f98"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a1b6dd0de445fcd0617eb9388bcf04f98">current_comm</a></td></tr>
+<tr class="separator:a1b6dd0de445fcd0617eb9388bcf04f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4febd1c34e12759d7acb412d1cf62495"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1VisMF.html#a4febd1c34e12759d7acb412d1cf62495">async_comm</a></td></tr>
+<tr class="separator:a4febd1c34e12759d7acb412d1cf62495"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>File I/O for <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;FArrayBox&gt;</a>. Wrapper class for reading/writing <a class="el" href="classamrex_1_1FabArray.html">FabArray&lt;FArrayBox&gt;</a> objects to disk in various "smart" ways. </p>
@@ -503,6 +530,111 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a18f41ccae821e24e006e28f55d1ea8dd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Func , typename... Params&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::VisMF::asyncAddWrite </td>
+          <td>(</td>
+          <td class="paramtype">Func &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Params &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a43866f0e887315ffbeb06e8ccc2e3843"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> amrex::VisMF::asyncWaitAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a80b05d379ce6f96729eabd61d33d85a4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> amrex::VisMF::asyncWaitOne </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a057e823f401a3c3c20722f9967bb8ce7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> amrex::VisMF::asyncWaitUntilFree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="acdc54dfd982d910dafbe21e9c0459bf1"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1846,7 +1978,7 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a12f990c53f9abf19fdd7c10f14eae38b"></a>
+<a class="anchor" id="aeea445c6cb42961bb091d40ee7545607"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1857,7 +1989,7 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">void amrex::VisMF::SetNOutFiles </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>noutfiles</em>, </td>
+          <td class="paramname"><em>newoutfiles</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2066,6 +2198,30 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a23fa1165af6c17714836f4e08c465b3f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; int, 3 &gt; amrex::VisMF::StaticWriteInfo </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>rank</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a527bd21764fd10a8fb440b897e30c12a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2160,7 +2316,7 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a80b5053b87b159190b6664cf4fc1020b"></a>
+<a class="anchor" id="a7f8e05ec247898262d7f45b38dca16d0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2171,13 +2327,99 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">std::future&lt; <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> &gt; amrex::VisMF::WriteAsync </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>fafab</em>, </td>
+          <td class="paramname"><em>mf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>&#160;</td>
+          <td class="paramname"><em>mf_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7af82fb230fcdc9e837c260802a2d8ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::VisMF::WriteAsyncMultiFab </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>mf_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a452f96de7229a9fbdecff805a86df7b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::VisMF::WriteAsyncPlotfile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf_names</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nlevels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>strip_ghost_cells</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>hdr_proc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2337,6 +2579,46 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4febd1c34e12759d7acb412d1cf62495"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> &gt; amrex::VisMF::async_comm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6677c063597457901ddf807b87d57bd4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::VisMF::asyncTag</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a174cc2335d85746e4c0c05c71c0a816b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2357,6 +2639,26 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1b6dd0de445fcd0617eb9388bcf04f98"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::VisMF::current_comm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7f4058d4117af92e70d889263657e9f8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2366,6 +2668,26 @@ Static Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structamrex_1_1VisMF_1_1Header.html#aa4469030a55d4e3be552189f7d06b54d">VisMF::Header::Version</a> amrex::VisMF::currentVersion</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a335f428493f0a627d25a05bb44f9fda4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt; std::future&lt; <a class="el" href="structamrex_1_1WriteAsyncStatus.html">WriteAsyncStatus</a> &gt; &gt; amrex::VisMF::future_list</td>
         </tr>
       </table>
   </td>
@@ -2482,6 +2804,26 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>We manage the FABs individually. </p>
+
+</div>
+</div>
+<a class="anchor" id="a84c10ec9a471ea24a3208e1798cb7bec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int amrex::VisMF::nAsyncWrites</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
