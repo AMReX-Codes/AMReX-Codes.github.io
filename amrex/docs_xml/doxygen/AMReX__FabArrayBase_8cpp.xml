@@ -2995,113 +2995,115 @@
 <codeline lineno="1699"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">ParallelDescriptor::Mpi_typemap&lt;ParallelDescriptor::lull_t&gt;::type</ref>(),</highlight></codeline>
 <codeline lineno="1700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;tmp_count);</highlight></codeline>
 <codeline lineno="1701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(ParallelDescriptor::lull_t)<sp/>*<sp/>tmp_count;</highlight></codeline>
-<codeline lineno="1702"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1703"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count<sp/>!=<sp/>recv_size[i])<sp/>{</highlight></codeline>
-<codeline lineno="1705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="1706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>Proc.<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1_1ParallelContext_1a5f6737315bff6905419103b17acf3d06" kindref="member">ParallelContext::MyProcSub</ref>()</highlight></codeline>
-<codeline lineno="1707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>received<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>count<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes<sp/>of<sp/>data<sp/>from<sp/>Proc.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>recv_stats[i].MPI_SOURCE</highlight></codeline>
-<codeline lineno="1709"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>with<sp/>tag<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>recv_stats[i].MPI_TAG</highlight></codeline>
-<codeline lineno="1710"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>error<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>recv_stats[i].MPI_ERROR</highlight></codeline>
-<codeline lineno="1711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>but<sp/>the<sp/>expected<sp/>size<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>recv_size[i]</highlight></codeline>
-<codeline lineno="1712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>with<sp/>tag<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tag<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1716"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1717"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1719"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1720"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1721"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1702"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1703"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;TODO:<sp/>message<sp/>size<sp/>is<sp/>too<sp/>big&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1704"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1705"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count<sp/>!=<sp/>recv_size[i])<sp/>{</highlight></codeline>
+<codeline lineno="1707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="1708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ERROR:<sp/>Proc.<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1_1ParallelContext_1a5f6737315bff6905419103b17acf3d06" kindref="member">ParallelContext::MyProcSub</ref>()</highlight></codeline>
+<codeline lineno="1709"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>received<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>count<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>bytes<sp/>of<sp/>data<sp/>from<sp/>Proc.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1710"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>recv_stats[i].MPI_SOURCE</highlight></codeline>
+<codeline lineno="1711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>with<sp/>tag<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>recv_stats[i].MPI_TAG</highlight></codeline>
+<codeline lineno="1712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>error<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>recv_stats[i].MPI_ERROR</highlight></codeline>
+<codeline lineno="1713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>but<sp/>the<sp/>expected<sp/>size<sp/>is<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>recv_size[i]</highlight></codeline>
+<codeline lineno="1714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>with<sp/>tag<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>tag<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1717"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1719"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1720"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1721"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1722"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1723"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1724"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArrayBase::BDKey&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="1725"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.m_ba_id<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.m_dm_id<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1728"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1729"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1730"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1731"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a815ff49750eb0fb4236b03cd02afd5a1" kindref="member">FabArrayBase::updateMemUsage</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tag,<sp/>Long<sp/>nbytes,<sp/>Arena<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/></highlight><highlight class="comment">/*ar*/</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="1732"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1733"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>mi<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>[tag];</highlight></codeline>
-<codeline lineno="1734"><highlight class="normal"><sp/><sp/><sp/><sp/>mi.nbytes<sp/>+=<sp/>nbytes;</highlight></codeline>
-<codeline lineno="1735"><highlight class="normal"><sp/><sp/><sp/><sp/>mi.nbytes_hwm<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(mi.nbytes,<sp/>mi.nbytes_hwm);</highlight></codeline>
-<codeline lineno="1736"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1737"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1738"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1739"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a56e425df3c8bb2e6aea3510d19646ceb" kindref="member">FabArrayBase::printMemUsage</ref><sp/>()</highlight></codeline>
-<codeline lineno="1740"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1741"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelContext_1af766eba670e3bba30b2b8db7f20e8885" kindref="member">ParallelContext::IOProcessorSub</ref>())</highlight></codeline>
-<codeline lineno="1742"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;MultiFab<sp/>Tag,<sp/>current<sp/>usage<sp/>and<sp/>hwm<sp/>in<sp/>bytes\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1744"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>kv<sp/>:<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>kv.first<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>kv.second.nbytes<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>kv.second.nbytes_hwm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1748"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1749"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1750"><highlight class="normal">Long</highlight></codeline>
-<codeline lineno="1751"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1ab2839fcfcf819b736095a4fd1926eaa8" kindref="member">FabArrayBase::queryMemUsage</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>t)</highlight></codeline>
-<codeline lineno="1752"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1753"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.find(t);</highlight></codeline>
-<codeline lineno="1754"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r-&gt;second.nbytes;</highlight></codeline>
-<codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1759"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1760"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1761"><highlight class="normal">Long</highlight></codeline>
-<codeline lineno="1762"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a6a5a86a2751fe1c8927821fe6864a482" kindref="member">FabArrayBase::queryMemUsageHWM</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>t)</highlight></codeline>
-<codeline lineno="1763"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1764"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.find(t);</highlight></codeline>
-<codeline lineno="1765"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.end())<sp/>{</highlight></codeline>
-<codeline lineno="1766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r-&gt;second.nbytes_hwm;</highlight></codeline>
-<codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1770"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1771"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1773"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a18cdf2cc3d52d7d4d7dbf8c24ce614ee" kindref="member">FabArrayBase::pushRegionTag</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>t)</highlight></codeline>
-<codeline lineno="1774"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kindref="member">m_region_tag</ref>.emplace_back(t);</highlight></codeline>
-<codeline lineno="1776"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1777"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1778"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1779"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a18cdf2cc3d52d7d4d7dbf8c24ce614ee" kindref="member">FabArrayBase::pushRegionTag</ref><sp/>(std::string<sp/>t)</highlight></codeline>
-<codeline lineno="1780"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1781"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kindref="member">m_region_tag</ref>.emplace_back(std::move(t));</highlight></codeline>
-<codeline lineno="1782"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1783"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1784"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1785"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a2de51872d78b63b8c99c30eac65f3ee3" kindref="member">FabArrayBase::popRegionTag</ref><sp/>()</highlight></codeline>
-<codeline lineno="1786"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1787"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kindref="member">m_region_tag</ref>.pop_back();</highlight></codeline>
-<codeline lineno="1788"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1789"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1790"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1791"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a641ffe22574cc57f3544687b3e23d174" kindref="member">FabArrayBase::is_nodal</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
-<codeline lineno="1792"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1793"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>().ixType().nodeCentered();</highlight></codeline>
-<codeline lineno="1794"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1795"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1796"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1797"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a641ffe22574cc57f3544687b3e23d174" kindref="member">FabArrayBase::is_nodal</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
-<codeline lineno="1798"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1799"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>().ixType().nodeCentered(dir);</highlight></codeline>
-<codeline lineno="1800"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1801"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1802"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1803"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a60aa58517fd2a7d6976e114df171df25" kindref="member">FabArrayBase::is_cell_centered</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
-<codeline lineno="1804"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1805"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>().ixType().cellCentered();</highlight></codeline>
-<codeline lineno="1806"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1807"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1723"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1724"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1725"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1726"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArrayBase::BDKey&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1727"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1728"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.m_ba_id<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.m_dm_id<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1729"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1730"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1731"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1732"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1733"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a815ff49750eb0fb4236b03cd02afd5a1" kindref="member">FabArrayBase::updateMemUsage</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>tag,<sp/>Long<sp/>nbytes,<sp/>Arena<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/></highlight><highlight class="comment">/*ar*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1734"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1735"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>mi<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>[tag];</highlight></codeline>
+<codeline lineno="1736"><highlight class="normal"><sp/><sp/><sp/><sp/>mi.nbytes<sp/>+=<sp/>nbytes;</highlight></codeline>
+<codeline lineno="1737"><highlight class="normal"><sp/><sp/><sp/><sp/>mi.nbytes_hwm<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(mi.nbytes,<sp/>mi.nbytes_hwm);</highlight></codeline>
+<codeline lineno="1738"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1739"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1740"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1741"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a56e425df3c8bb2e6aea3510d19646ceb" kindref="member">FabArrayBase::printMemUsage</ref><sp/>()</highlight></codeline>
+<codeline lineno="1742"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1743"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelContext_1af766eba670e3bba30b2b8db7f20e8885" kindref="member">ParallelContext::IOProcessorSub</ref>())</highlight></codeline>
+<codeline lineno="1744"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;MultiFab<sp/>Tag,<sp/>current<sp/>usage<sp/>and<sp/>hwm<sp/>in<sp/>bytes\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>kv<sp/>:<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>kv.first<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>kv.second.nbytes<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>kv.second.nbytes_hwm<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1750"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1751"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1752"><highlight class="normal">Long</highlight></codeline>
+<codeline lineno="1753"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1ab2839fcfcf819b736095a4fd1926eaa8" kindref="member">FabArrayBase::queryMemUsage</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>t)</highlight></codeline>
+<codeline lineno="1754"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.find(t);</highlight></codeline>
+<codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="1757"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r-&gt;second.nbytes;</highlight></codeline>
+<codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1761"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1762"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1763"><highlight class="normal">Long</highlight></codeline>
+<codeline lineno="1764"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a6a5a86a2751fe1c8927821fe6864a482" kindref="member">FabArrayBase::queryMemUsageHWM</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>t)</highlight></codeline>
+<codeline lineno="1765"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1766"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>r<sp/>=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.find(t);</highlight></codeline>
+<codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>!=<sp/><ref refid="classamrex_1_1FabArrayBase_1aa70ee9b229ec1e56083fd9519a92a000" kindref="member">m_mem_usage</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r-&gt;second.nbytes_hwm;</highlight></codeline>
+<codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1773"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1774"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1775"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a18cdf2cc3d52d7d4d7dbf8c24ce614ee" kindref="member">FabArrayBase::pushRegionTag</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>t)</highlight></codeline>
+<codeline lineno="1776"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1777"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kindref="member">m_region_tag</ref>.emplace_back(t);</highlight></codeline>
+<codeline lineno="1778"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1779"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1780"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1781"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a18cdf2cc3d52d7d4d7dbf8c24ce614ee" kindref="member">FabArrayBase::pushRegionTag</ref><sp/>(std::string<sp/>t)</highlight></codeline>
+<codeline lineno="1782"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1783"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kindref="member">m_region_tag</ref>.emplace_back(std::move(t));</highlight></codeline>
+<codeline lineno="1784"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1785"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1786"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1787"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a2de51872d78b63b8c99c30eac65f3ee3" kindref="member">FabArrayBase::popRegionTag</ref><sp/>()</highlight></codeline>
+<codeline lineno="1788"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1789"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FabArrayBase_1a4674b38da90801075df354a3491a8d17" kindref="member">m_region_tag</ref>.pop_back();</highlight></codeline>
+<codeline lineno="1790"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1791"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1792"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1793"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a641ffe22574cc57f3544687b3e23d174" kindref="member">FabArrayBase::is_nodal</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
+<codeline lineno="1794"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1795"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>().ixType().nodeCentered();</highlight></codeline>
+<codeline lineno="1796"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1797"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1798"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1799"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a641ffe22574cc57f3544687b3e23d174" kindref="member">FabArrayBase::is_nodal</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>noexcept</highlight></codeline>
+<codeline lineno="1800"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1801"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>().ixType().nodeCentered(dir);</highlight></codeline>
+<codeline lineno="1802"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1803"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1804"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1805"><highlight class="normal"><ref refid="classamrex_1_1FabArrayBase_1a60aa58517fd2a7d6976e114df171df25" kindref="member">FabArrayBase::is_cell_centered</ref><sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
+<codeline lineno="1806"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1807"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>().ixType().cellCentered();</highlight></codeline>
 <codeline lineno="1808"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1809"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1810"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FabArrayBase.cpp"/>
   </compounddef>
