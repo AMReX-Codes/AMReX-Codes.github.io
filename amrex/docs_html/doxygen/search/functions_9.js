@@ -40,7 +40,7 @@ var searchData=
   ['initdblocks',['InitDBlocks',['../classBLProfStats.html#a732df0e14a0331aa8257e7f499c27d77',1,'BLProfStats::InitDBlocks()'],['../classCommProfStats.html#a50da2373879ad991a77418e0a6210a99',1,'CommProfStats::InitDBlocks()'],['../classRegionsProfStats.html#a70340c01d73cca503ce225c95d9609c4',1,'RegionsProfStats::InitDBlocks()']]],
   ['initedisontopomf',['InitEdisonTopoMF',['../classCommProfStats.html#a62079444f690e518e8797d23b16defde',1,'CommProfStats']]],
   ['initfiltertimeranges',['InitFilterTimeRanges',['../classBLProfStats.html#a07e2bf128ca1e78559870ef621c6738c',1,'BLProfStats']]],
-  ['initfromasciifile',['InitFromAsciiFile',['../classamrex_1_1ParticleContainer.html#adee34fabfe6ba6542fad9607e2843ff7',1,'amrex::ParticleContainer']]],
+  ['initfromasciifile',['InitFromAsciiFile',['../classamrex_1_1ParticleContainer.html#a126705141e84d4b2303cca9d1647cb1d',1,'amrex::ParticleContainer']]],
   ['initfrombinaryfile',['InitFromBinaryFile',['../classamrex_1_1ParticleContainer.html#ac108830360927c2b81f70f79273f5c30',1,'amrex::ParticleContainer']]],
   ['initfrombinarymetafile',['InitFromBinaryMetaFile',['../classamrex_1_1ParticleContainer.html#aa38b6a6a9072401b044d1a1998531bfb',1,'amrex::ParticleContainer']]],
   ['initfromlistimpl',['initFromListImpl',['../namespaceamrex_1_1detail.html#a0a1833caa214a1cb642c80afe8c49bc7',1,'amrex::detail::initFromListImpl(U *data, std::initializer_list&lt; U &gt; list)'],['../namespaceamrex_1_1detail.html#a2eed1c648c543a4917823d6a12dc9135',1,'amrex::detail::initFromListImpl(U *data, std::initializer_list&lt; U &gt; list)']]],
