@@ -110,6 +110,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#initializing-particle-data">Initializing Particle Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-particle-components-at-runtime">Adding particle components at runtime</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#iterating-over-particles">Iterating over Particles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#passing-particle-data-into-fortran-routines">Passing particle data into Fortran routines</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#interacting-with-mesh-data">Interacting with Mesh Data</a></li>
@@ -414,6 +415,46 @@ In general, however, users may need to call <code class="code cpp c++ docutils l
 particles, if the processes generate particles they don’t own (for example, if
 the particle positions are perturbed from the cell centers and thus end up
 outside their parent grid).</p>
+</div>
+<div class="section" id="adding-particle-components-at-runtime">
+<span id="sec-particles-runtime"></span><h1>Adding particle components at runtime<a class="headerlink" href="#adding-particle-components-at-runtime" title="Permalink to this headline">¶</a></h1>
+<p>In addition to the components specified as template parameters, you can also
+add additional <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Real</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span></code> components at runtime. These components
+will be stored in Struct-of-Array style. To add a runtime component, use the
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AddRealComp</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AddIntComp</span></span></code> methods of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code>, like so:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">bool</span> <span class="n">communicate_this_comp</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_runtime_real</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">AddRealComp</span><span class="p">(</span><span class="n">communicate_this_comp</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num_runtime_int</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">AddIntComp</span><span class="p">(</span><span class="n">communicate_this_comp</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Runtime-added components can be accessed like regular Struct-of-Array data.
+The new components will be added at the end of the compile-time defined ones.</p>
+<p>When you are using runtime components, it is crucial that when you are adding
+particles to the container, you call the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DefineAndReturnParticleTile</span></span></code> method
+for each tile prior to adding any particles. This will make sure the space
+for the new components has been allocated. For example, in the above section
+on <a class="reference internal" href="#sec-particles-initializing"><span class="std std-ref">initializing particle data</span></a>, we accessed
+the particle tile data using the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GetParticles</span></span></code> method. If we runtime components
+are used, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">DefineAndReturnParticleTile</span></span></code> should be used instead:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span> <span class="o">=</span> <span class="n">MakeMFIter</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// instead of this...</span>
+    <span class="c1">// auto&amp; particles = GetParticles(lev)[std::make_pair(mfi.index(),</span>
+    <span class="c1">//                                     mfi.LocalTileIndex())];</span>
+
+    <span class="c1">// we do this...</span>
+    <span class="k">auto</span><span class="o">&amp;</span> <span class="n">particle_tile</span> <span class="o">=</span> <span class="n">DefineAndReturnParticleTile</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">mfi</span><span class="p">);</span>
+
+    <span class="c1">// add particles to particle_tile as above...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="iterating-over-particles">
 <span id="sec-particles-iterating"></span><h1>Iterating over Particles<a class="headerlink" href="#iterating-over-particles" title="Permalink to this headline">¶</a></h1>
