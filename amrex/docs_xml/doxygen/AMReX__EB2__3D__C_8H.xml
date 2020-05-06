@@ -461,233 +461,248 @@
 <codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,0)<sp/>=<sp/>nx*nfac;</highlight></codeline>
 <codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,1)<sp/>=<sp/>ny*nfac;</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,2)<sp/>=<sp/>nz*nfac;</highlight></codeline>
-<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>(nx<sp/>==<sp/>0.0<sp/>and<sp/>ny<sp/>==<sp/>0.0<sp/>and<sp/>nz<sp/>==<sp/>0.0);</highlight></codeline>
-<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
-<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cvol(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccent(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccent(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccent(i,j,k,2)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cba(i,j,k)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(i,j,k,0)<sp/>=<sp/>-1.0;</highlight></codeline>
-<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(i,j,k,1)<sp/>=<sp/>-1.0;</highlight></codeline>
-<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(i,j,k,2)<sp/>=<sp/>-1.0;</highlight></codeline>
-<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,2)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"></highlight></codeline>
-<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>(nx<sp/>==<sp/>0.0<sp/>and<sp/>ny<sp/>==<sp/>0.0<sp/>and<sp/>nz<sp/>==<sp/>0.0)</highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>we<sp/>must<sp/>check<sp/>the<sp/>enclosing<sp/>surface<sp/>to<sp/>make<sp/>sure<sp/>the<sp/>coarse<sp/>cell<sp/>does<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fully<sp/>contains<sp/>the<sp/>geometry<sp/>object.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>(<sp/>fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)==1.0<sp/>and<sp/>fapx(ii+2,jj<sp/><sp/>,kk<sp/><sp/>)==1.0</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapx(ii,jj+1,kk<sp/><sp/>)==1.0<sp/>and<sp/>fapx(ii+2,jj+1,kk<sp/><sp/>)==1.0</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapx(ii,jj<sp/><sp/>,kk+1)==1.0<sp/>and<sp/>fapx(ii+2,jj<sp/><sp/>,kk+1)==1.0</highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapx(ii,jj+1,kk+1)==1.0<sp/>and<sp/>fapx(ii+2,jj+1,kk+1)==1.0</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapy(ii,jj<sp/><sp/>,kk<sp/><sp/>)==1.0<sp/>and<sp/>fapy(ii+1,jj<sp/><sp/>,kk<sp/><sp/>)==1.0</highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapy(ii,jj+2,kk<sp/><sp/>)==1.0<sp/>and<sp/>fapy(ii+1,jj+2,kk<sp/><sp/>)==1.0</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapy(ii,jj<sp/><sp/>,kk+1)==1.0<sp/>and<sp/>fapy(ii+1,jj<sp/><sp/>,kk+1)==1.0</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapy(ii,jj+2,kk+1)==1.0<sp/>and<sp/>fapy(ii+1,jj+2,kk+1)==1.0</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapz(ii,jj<sp/><sp/>,kk<sp/><sp/>)==1.0<sp/>and<sp/>fapz(ii+1,jj<sp/><sp/>,kk<sp/><sp/>)==1.0</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapz(ii,jj+1,kk<sp/><sp/>)==1.0<sp/>and<sp/>fapz(ii+1,jj+1,kk<sp/><sp/>)==1.0</highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapz(ii,jj<sp/><sp/>,kk+2)==1.0<sp/>and<sp/>fapz(ii+1,jj<sp/><sp/>,kk+2)==1.0</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>fapz(ii,jj+1,kk+2)==1.0<sp/>and<sp/>fapz(ii+1,jj+1,kk+2)==1.0);</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"></highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capx(i,j,k)<sp/>=<sp/>0.25*(fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)<sp/>+<sp/>fapx(ii,jj+1,kk<sp/><sp/>)<sp/>+</highlight></codeline>
-<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj<sp/><sp/>,kk+1)<sp/>+<sp/>fapx(ii,jj+1,kk+1));</highlight></codeline>
-<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capx(i,j,k)<sp/>!=<sp/>0.0)<sp/>{</highlight></codeline>
-<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>apinv<sp/>=<sp/>1.0<sp/>/<sp/>capx(i,j,k);</highlight></codeline>
-<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,0)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
-<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)*(0.5*ffcx(ii,jj<sp/><sp/>,kk<sp/><sp/>,0)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk<sp/><sp/>)*(0.5*ffcx(ii,jj+1,kk<sp/><sp/>,0)+0.25)<sp/>+</highlight></codeline>
-<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj<sp/><sp/>,kk+1)*(0.5*ffcx(ii,jj<sp/><sp/>,kk+1,0)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk+1)*(0.5*ffcx(ii,jj+1,kk+1,0)+0.25)<sp/>);</highlight></codeline>
-<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,1)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)*(0.5*ffcx(ii,jj<sp/><sp/>,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk<sp/><sp/>)*(0.5*ffcx(ii,jj+1,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj<sp/><sp/>,kk+1)*(0.5*ffcx(ii,jj<sp/><sp/>,kk+1,1)+0.25)<sp/>+</highlight></codeline>
-<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk+1)*(0.5*ffcx(ii,jj+1,kk+1,1)+0.25)<sp/>);</highlight></codeline>
-<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xgbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
-<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capx(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="498"><highlight class="normal"></highlight></codeline>
-<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ybx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
-<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capy(i,j,k)<sp/>=<sp/>0.25*(fapy(ii<sp/><sp/>,jj,kk<sp/><sp/>)<sp/>+<sp/>fapy(ii+1,jj,kk<sp/><sp/>)<sp/>+</highlight></codeline>
-<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii<sp/><sp/>,jj,kk+1)<sp/>+<sp/>fapy(ii+1,jj,kk+1));</highlight></codeline>
-<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capy(i,j,k)<sp/>!=<sp/>0.0)<sp/>{</highlight></codeline>
-<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>apinv<sp/>=<sp/>1.0<sp/>/<sp/>capy(i,j,k);</highlight></codeline>
-<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,0)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
-<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapy(ii<sp/><sp/>,jj,kk<sp/><sp/>)*(0.5*ffcy(ii<sp/><sp/>,jj,kk<sp/><sp/>,0)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk<sp/><sp/>)*(0.5*ffcy(ii+1,jj,kk<sp/><sp/>,0)+0.25)<sp/>+</highlight></codeline>
-<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii<sp/><sp/>,jj,kk+1)*(0.5*ffcy(ii<sp/><sp/>,jj,kk+1,0)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk+1)*(0.5*ffcy(ii+1,jj,kk+1,0)+0.25)<sp/>);</highlight></codeline>
-<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,1)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
-<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapy(ii<sp/><sp/>,jj,kk<sp/><sp/>)*(0.5*ffcy(ii<sp/><sp/>,jj,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk<sp/><sp/>)*(0.5*ffcy(ii+1,jj,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii<sp/><sp/>,jj,kk+1)*(0.5*ffcy(ii<sp/><sp/>,jj,kk+1,1)+0.25)<sp/>+</highlight></codeline>
-<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk+1)*(0.5*ffcy(ii+1,jj,kk+1,1)+0.25)<sp/>);</highlight></codeline>
-<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ygbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
-<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capy(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="526"><highlight class="normal"></highlight></codeline>
-<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(zbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
-<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capz(i,j,k)<sp/>=<sp/>0.25<sp/>*<sp/>(fapz(ii<sp/><sp/>,jj<sp/><sp/>,kk)<sp/>+<sp/>fapz(ii+1,jj<sp/><sp/>,kk)<sp/>+</highlight></codeline>
-<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii<sp/><sp/>,jj+1,kk)<sp/>+<sp/>fapz(ii+1,jj+1,kk));</highlight></codeline>
-<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capz(i,j,k)<sp/>!=<sp/>0.0)<sp/>{</highlight></codeline>
-<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>apinv<sp/>=<sp/>1.0<sp/>/<sp/>capz(i,j,k);</highlight></codeline>
-<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,0)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
-<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapz(ii<sp/><sp/>,jj<sp/><sp/>,kk)*(0.5*ffcz(ii<sp/><sp/>,jj<sp/><sp/>,kk,0)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj<sp/><sp/>,kk)*(0.5*ffcz(ii+1,jj<sp/><sp/>,kk,0)+0.25)<sp/>+</highlight></codeline>
-<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii<sp/><sp/>,jj+1,kk)*(0.5*ffcz(ii<sp/><sp/>,jj+1,kk,0)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj+1,kk)*(0.5*ffcz(ii+1,jj+1,kk,0)+0.25)<sp/>);</highlight></codeline>
-<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,1)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
-<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapz(ii<sp/><sp/>,jj<sp/><sp/>,kk)*(0.5*ffcz(ii<sp/><sp/>,jj<sp/><sp/>,kk,1)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj<sp/><sp/>,kk)*(0.5*ffcz(ii+1,jj<sp/><sp/>,kk,1)-0.25)<sp/>+</highlight></codeline>
-<codeline lineno="541"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii<sp/><sp/>,jj+1,kk)*(0.5*ffcz(ii<sp/><sp/>,jj+1,kk,1)+0.25)<sp/>+</highlight></codeline>
-<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj+1,kk)*(0.5*ffcz(ii+1,jj+1,kk,1)+0.25)<sp/>);</highlight></codeline>
-<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(zgbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
-<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capz(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
-<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="554"><highlight class="normal"></highlight></codeline>
-<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ierr;</highlight></codeline>
-<codeline lineno="556"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="557"><highlight class="normal"></highlight></codeline>
-<codeline lineno="558"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="559" refid="namespaceamrex_1_1EB2_1a16445cdf8881e7e6df8b6802f53f1dfd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1aceffdabd1ca1cf1f245b580f2fe43eaf" kindref="member">build_cellflag_from_ap</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;EBCellFlag&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cflag,</highlight></codeline>
-<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apx,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apy,</highlight></codeline>
-<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apz)</highlight></codeline>
-<codeline lineno="562"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>flg<sp/>=<sp/>cflag(i,j,k);</highlight></codeline>
-<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/>flg.setDisconnected();</highlight></codeline>
-<codeline lineno="565"><highlight class="normal"></highlight></codeline>
-<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!flg.isCovered())</highlight></codeline>
-<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,0,0);</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cvol(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccent(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccent(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ccent(i,j,k,2)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cba(i,j,k)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(i,j,k,0)<sp/>=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(i,j,k,1)<sp/>=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbc(i,j,k,2)<sp/>=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbn(i,j,k,2)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capx(i,j,k)<sp/>=<sp/>0.25*(fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)<sp/>+<sp/>fapx(ii,jj+1,kk<sp/><sp/>)<sp/>+</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj<sp/><sp/>,kk+1)<sp/>+<sp/>fapx(ii,jj+1,kk+1));</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capx(i,j,k)<sp/>!=<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>apinv<sp/>=<sp/>1.0<sp/>/<sp/>capx(i,j,k);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,0)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)*(0.5*ffcx(ii,jj<sp/><sp/>,kk<sp/><sp/>,0)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk<sp/><sp/>)*(0.5*ffcx(ii,jj+1,kk<sp/><sp/>,0)+0.25)<sp/>+</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj<sp/><sp/>,kk+1)*(0.5*ffcx(ii,jj<sp/><sp/>,kk+1,0)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk+1)*(0.5*ffcx(ii,jj+1,kk+1,0)+0.25)<sp/>);</highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,1)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapx(ii,jj<sp/><sp/>,kk<sp/><sp/>)*(0.5*ffcx(ii,jj<sp/><sp/>,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk<sp/><sp/>)*(0.5*ffcx(ii,jj+1,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj<sp/><sp/>,kk+1)*(0.5*ffcx(ii,jj<sp/><sp/>,kk+1,1)+0.25)<sp/>+</highlight></codeline>
+<codeline lineno="501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapx(ii,jj+1,kk+1)*(0.5*ffcx(ii,jj+1,kk+1,1)+0.25)<sp/>);</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xgbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capx(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcx(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ybx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capy(i,j,k)<sp/>=<sp/>0.25*(fapy(ii<sp/><sp/>,jj,kk<sp/><sp/>)<sp/>+<sp/>fapy(ii+1,jj,kk<sp/><sp/>)<sp/>+</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii<sp/><sp/>,jj,kk+1)<sp/>+<sp/>fapy(ii+1,jj,kk+1));</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capy(i,j,k)<sp/>!=<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>apinv<sp/>=<sp/>1.0<sp/>/<sp/>capy(i,j,k);</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,0)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapy(ii<sp/><sp/>,jj,kk<sp/><sp/>)*(0.5*ffcy(ii<sp/><sp/>,jj,kk<sp/><sp/>,0)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk<sp/><sp/>)*(0.5*ffcy(ii+1,jj,kk<sp/><sp/>,0)+0.25)<sp/>+</highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii<sp/><sp/>,jj,kk+1)*(0.5*ffcy(ii<sp/><sp/>,jj,kk+1,0)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk+1)*(0.5*ffcy(ii+1,jj,kk+1,0)+0.25)<sp/>);</highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,1)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapy(ii<sp/><sp/>,jj,kk<sp/><sp/>)*(0.5*ffcy(ii<sp/><sp/>,jj,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk<sp/><sp/>)*(0.5*ffcy(ii+1,jj,kk<sp/><sp/>,1)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii<sp/><sp/>,jj,kk+1)*(0.5*ffcy(ii<sp/><sp/>,jj,kk+1,1)+0.25)<sp/>+</highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapy(ii+1,jj,kk+1)*(0.5*ffcy(ii+1,jj,kk+1,1)+0.25)<sp/>);</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ygbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capy(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="539"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcy(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="541"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(zbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capz(i,j,k)<sp/>=<sp/>0.25<sp/>*<sp/>(fapz(ii<sp/><sp/>,jj<sp/><sp/>,kk)<sp/>+<sp/>fapz(ii+1,jj<sp/><sp/>,kk)<sp/>+</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii<sp/><sp/>,jj+1,kk)<sp/>+<sp/>fapz(ii+1,jj+1,kk));</highlight></codeline>
+<codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(capz(i,j,k)<sp/>!=<sp/>0.0)<sp/>{</highlight></codeline>
+<codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>apinv<sp/>=<sp/>1.0<sp/>/<sp/>capz(i,j,k);</highlight></codeline>
+<codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,0)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
+<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapz(ii<sp/><sp/>,jj<sp/><sp/>,kk)*(0.5*ffcz(ii<sp/><sp/>,jj<sp/><sp/>,kk,0)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj<sp/><sp/>,kk)*(0.5*ffcz(ii+1,jj<sp/><sp/>,kk,0)+0.25)<sp/>+</highlight></codeline>
+<codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii<sp/><sp/>,jj+1,kk)*(0.5*ffcz(ii<sp/><sp/>,jj+1,kk,0)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj+1,kk)*(0.5*ffcz(ii+1,jj+1,kk,0)+0.25)<sp/>);</highlight></codeline>
+<codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,1)<sp/>=<sp/>0.25<sp/>*<sp/>apinv<sp/>*</highlight></codeline>
+<codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(fapz(ii<sp/><sp/>,jj<sp/><sp/>,kk)*(0.5*ffcz(ii<sp/><sp/>,jj<sp/><sp/>,kk,1)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj<sp/><sp/>,kk)*(0.5*ffcz(ii+1,jj<sp/><sp/>,kk,1)-0.25)<sp/>+</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii<sp/><sp/>,jj+1,kk)*(0.5*ffcz(ii<sp/><sp/>,jj+1,kk,1)+0.25)<sp/>+</highlight></codeline>
+<codeline lineno="557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fapz(ii+1,jj+1,kk)*(0.5*ffcz(ii+1,jj+1,kk,1)+0.25)<sp/>);</highlight></codeline>
+<codeline lineno="558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(zgbx.<ref refid="classamrex_1_1Box_1a0b71343932dcc55cb16d1b2b95973114" kindref="member">contains</ref>(iv))</highlight></codeline>
+<codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>capz(i,j,k)<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,0)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cfcz(i,j,k,1)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="569"><highlight class="normal"></highlight></codeline>
-<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/><sp/>0,<sp/><sp/>0);</highlight></codeline>
-<codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,<sp/><sp/>0,<sp/><sp/>0);</highlight></codeline>
-<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i,j<sp/><sp/>,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/>-1,<sp/><sp/>0);</highlight></codeline>
-<codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i,j+1,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/><sp/>1,<sp/><sp/>0);</highlight></codeline>
-<codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i,j,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/><sp/>0,<sp/>-1);</highlight></codeline>
-<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i,j,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/><sp/>0,<sp/><sp/>1);</highlight></codeline>
-<codeline lineno="576"><highlight class="normal"></highlight></codeline>
-<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i-1,j,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i,j-1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>-1,<sp/>0);</highlight></codeline>
-<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j-1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,-1);</highlight></codeline>
-<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,<sp/>1);</highlight></codeline>
-<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ierr;</highlight></codeline>
+<codeline lineno="571"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"></highlight></codeline>
+<codeline lineno="573"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="574" refid="namespaceamrex_1_1EB2_1a16445cdf8881e7e6df8b6802f53f1dfd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1EB2_1aceffdabd1ca1cf1f245b580f2fe43eaf" kindref="member">build_cellflag_from_ap</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;EBCellFlag&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cflag,</highlight></codeline>
+<codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apx,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apy,</highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>apz)</highlight></codeline>
+<codeline lineno="577"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>flg<sp/>=<sp/>cflag(i,j,k);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"><sp/><sp/><sp/><sp/>flg.setDisconnected();</highlight></codeline>
+<codeline lineno="580"><highlight class="normal"></highlight></codeline>
+<codeline lineno="581"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!flg.isCovered())</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="583"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,0,0);</highlight></codeline>
 <codeline lineno="584"><highlight class="normal"></highlight></codeline>
-<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i+1,j<sp/><sp/>,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i<sp/><sp/>,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j-1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>-1,<sp/>0);</highlight></codeline>
-<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j-1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,-1);</highlight></codeline>
-<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,<sp/>1);</highlight></codeline>
-<codeline lineno="591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="592"><highlight class="normal"></highlight></codeline>
-<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j<sp/><sp/>,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i-1,j+1,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i,j+1,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i<sp/><sp/>,j+1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,-1);</highlight></codeline>
-<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="600"><highlight class="normal"></highlight></codeline>
-<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j<sp/><sp/>,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i+1,j+1,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i<sp/><sp/>,j+1,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j+1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,-1);</highlight></codeline>
-<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="607"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="608"><highlight class="normal"></highlight></codeline>
-<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i-1,j,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i<sp/><sp/>,j,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>0,<sp/>-1);</highlight></codeline>
-<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j<sp/><sp/>,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,-1);</highlight></codeline>
-<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,-1);</highlight></codeline>
-<codeline lineno="615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="616"><highlight class="normal"></highlight></codeline>
-<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i+1,j,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i<sp/><sp/>,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>0,<sp/>-1);</highlight></codeline>
-<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j<sp/><sp/>,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,-1);</highlight></codeline>
-<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,-1);</highlight></codeline>
-<codeline lineno="623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="624"><highlight class="normal"></highlight></codeline>
-<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i-1,j,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i<sp/><sp/>,j,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>0,<sp/>1);</highlight></codeline>
-<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,<sp/>1);</highlight></codeline>
-<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="632"><highlight class="normal"></highlight></codeline>
-<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i+1,j,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i<sp/><sp/>,j,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>0,<sp/>1);</highlight></codeline>
-<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,<sp/>1);</highlight></codeline>
-<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="640"><highlight class="normal"></highlight></codeline>
-<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j-1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j<sp/><sp/>,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>-1,<sp/>-1);</highlight></codeline>
-<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j-1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,-1);</highlight></codeline>
-<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j-1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,-1,-1);</highlight></codeline>
-<codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="648"><highlight class="normal"></highlight></codeline>
-<codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j+1,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j<sp/><sp/>,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>1,<sp/>-1);</highlight></codeline>
-<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,-1);</highlight></codeline>
-<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,<sp/>1,-1);</highlight></codeline>
-<codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="656"><highlight class="normal"></highlight></codeline>
-<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>-1,<sp/>1);</highlight></codeline>
-<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,<sp/>1);</highlight></codeline>
-<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,-1,<sp/>1);</highlight></codeline>
-<codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="664"><highlight class="normal"></highlight></codeline>
-<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
-<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
-<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,<sp/>1,<sp/>1);</highlight></codeline>
-<codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="673"><highlight class="normal"></highlight></codeline>
-<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/>cflag(i,j,k)<sp/>=<sp/>flg;</highlight></codeline>
-<codeline lineno="675"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="676"><highlight class="normal"></highlight></codeline>
-<codeline lineno="677"><highlight class="normal">}}</highlight></codeline>
-<codeline lineno="678"><highlight class="normal"></highlight></codeline>
-<codeline lineno="679"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/><sp/>0,<sp/><sp/>0);</highlight></codeline>
+<codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,<sp/><sp/>0,<sp/><sp/>0);</highlight></codeline>
+<codeline lineno="587"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i,j<sp/><sp/>,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/>-1,<sp/><sp/>0);</highlight></codeline>
+<codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i,j+1,k)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/><sp/>1,<sp/><sp/>0);</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i,j,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/><sp/>0,<sp/>-1);</highlight></codeline>
+<codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i,j,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>0,<sp/><sp/>0,<sp/><sp/>1);</highlight></codeline>
+<codeline lineno="591"><highlight class="normal"></highlight></codeline>
+<codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i-1,j,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i,j-1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="594"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="595"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>-1,<sp/>0);</highlight></codeline>
+<codeline lineno="596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j-1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,-1);</highlight></codeline>
+<codeline lineno="597"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,<sp/>1);</highlight></codeline>
+<codeline lineno="598"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="599"><highlight class="normal"></highlight></codeline>
+<codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i+1,j<sp/><sp/>,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i<sp/><sp/>,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j-1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>-1,<sp/>0);</highlight></codeline>
+<codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j-1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,-1);</highlight></codeline>
+<codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,<sp/>1);</highlight></codeline>
+<codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="607"><highlight class="normal"></highlight></codeline>
+<codeline lineno="608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j<sp/><sp/>,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i-1,j+1,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="609"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i,j+1,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i<sp/><sp/>,j+1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="611"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="612"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,-1);</highlight></codeline>
+<codeline lineno="613"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i-1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="614"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="615"><highlight class="normal"></highlight></codeline>
+<codeline lineno="616"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j<sp/><sp/>,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i+1,j+1,k)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apy(i<sp/><sp/>,j+1,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j+1,k)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="618"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,-1);</highlight></codeline>
+<codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apz(i+1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="623"><highlight class="normal"></highlight></codeline>
+<codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i-1,j,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i<sp/><sp/>,j,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>0,<sp/>-1);</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j<sp/><sp/>,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,-1);</highlight></codeline>
+<codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,-1);</highlight></codeline>
+<codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i+1,j,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="633"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i<sp/><sp/>,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>0,<sp/>-1);</highlight></codeline>
+<codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j<sp/><sp/>,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,-1);</highlight></codeline>
+<codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,-1);</highlight></codeline>
+<codeline lineno="638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="639"><highlight class="normal"></highlight></codeline>
+<codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i,j,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i-1,j,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i<sp/><sp/>,j,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="642"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(-1,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,<sp/>1);</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i-1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="647"><highlight class="normal"></highlight></codeline>
+<codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apx(i+1,j,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i+1,j,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i<sp/><sp/>,j,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apx(i+1,j,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="650"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(1,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,-1,<sp/>1);</highlight></codeline>
+<codeline lineno="653"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apy(i+1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="654"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="655"><highlight class="normal"></highlight></codeline>
+<codeline lineno="656"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j-1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j<sp/><sp/>,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="659"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>-1,<sp/>-1);</highlight></codeline>
+<codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j-1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,-1);</highlight></codeline>
+<codeline lineno="661"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j-1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,-1,-1);</highlight></codeline>
+<codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"></highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j+1,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j<sp/><sp/>,k)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>1,<sp/>-1);</highlight></codeline>
+<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,-1);</highlight></codeline>
+<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j+1,k-1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,<sp/>1,-1);</highlight></codeline>
+<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="671"><highlight class="normal"></highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>-1,<sp/>1);</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,-1,<sp/>1);</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j-1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,-1,<sp/>1);</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="679"><highlight class="normal"></highlight></codeline>
+<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(apy(i,j+1,k<sp/><sp/>)<sp/>!=<sp/>0.0<sp/>and<sp/>apz(i,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>or</highlight></codeline>
+<codeline lineno="681"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(apz(i,j<sp/><sp/>,k+1)<sp/>!=<sp/>0.0<sp/>and<sp/>apy(i,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>)</highlight></codeline>
+<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flg.setConnected(0,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i<sp/><sp/>,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(-1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(apx(i+1,j+1,k+1)<sp/>!=<sp/>0.0)<sp/>flg.setConnected(<sp/>1,<sp/>1,<sp/>1);</highlight></codeline>
+<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="688"><highlight class="normal"></highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/>cflag(i,j,k)<sp/>=<sp/>flg;</highlight></codeline>
+<codeline lineno="690"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="691"><highlight class="normal"></highlight></codeline>
+<codeline lineno="692"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"></highlight></codeline>
+<codeline lineno="694"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB2_3D_C.H"/>
   </compounddef>
