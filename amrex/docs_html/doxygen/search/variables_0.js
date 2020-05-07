@@ -140,5 +140,9 @@ var searchData=
   ['async_5fcomm',['async_comm',['../classamrex_1_1VisMF.html#a4febd1c34e12759d7acb412d1cf62495',1,'amrex::VisMF']]],
   ['asynctag',['asyncTag',['../classamrex_1_1VisMF.html#a6677c063597457901ddf807b87d57bd4',1,'amrex::VisMF']]],
   ['atol_5fb',['atol_b',['../classamrex_1_1MultiGrid.html#a5938df551d0709c0f778e7856b90f9e8',1,'amrex::MultiGrid::atol_b()'],['../classamrex_1_1MCMultiGrid.html#a08cc4bc4061439c49157cb1e09f88b1c',1,'amrex::MCMultiGrid::atol_b()']]],
+  ['atomic_5ftotal_5fbytes_5fallocated_5fin_5ffabs',['atomic_total_bytes_allocated_in_fabs',['../namespaceamrex.html#a9a502210430a0780c1ee189758385a60',1,'amrex']]],
+  ['atomic_5ftotal_5fbytes_5fallocated_5fin_5ffabs_5fhwm',['atomic_total_bytes_allocated_in_fabs_hwm',['../namespaceamrex.html#a05893af4b8f7c472a5f0d5afe9fddcde',1,'amrex']]],
+  ['atomic_5ftotal_5fcells_5fallocated_5fin_5ffabs',['atomic_total_cells_allocated_in_fabs',['../namespaceamrex.html#aaff9d22bb4535133682d1608e85655e0',1,'amrex']]],
+  ['atomic_5ftotal_5fcells_5fallocated_5fin_5ffabs_5fhwm',['atomic_total_cells_allocated_in_fabs_hwm',['../namespaceamrex.html#adc54dbf8448fdb9207beb1761e07b80d',1,'amrex']]],
   ['availabledeciders',['availableDeciders',['../classamrex_1_1NFilesIter.html#a9ef9f0f0fd1029ffd3024da64c841c9a',1,'amrex::NFilesIter']]]
 ];

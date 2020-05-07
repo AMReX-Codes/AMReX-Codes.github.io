@@ -99,6 +99,7 @@ var searchData=
   ['norminf',['norminf',['../classamrex_1_1MultiFab.html#a629b37414ebf8f0a78a80f3c31a5e9ef',1,'amrex::MultiFab::norminf(int comp=0, int nghost=0, bool local=false, bool ignore_covered=false) const '],['../classamrex_1_1MultiFab.html#aaf256949949ca02a6696d44695742e06',1,'amrex::MultiFab::norminf(const iMultiFab &amp;mask, int comp=0, int nghost=0, bool local=false) const '],['../classamrex_1_1MultiFab.html#a4af58d8586a9b35a53c0e0749eb99e0b',1,'amrex::MultiFab::norminf(const Vector&lt; int &gt; &amp;comps, int nghost=0, bool local=false, bool ignore_covered=false) const ']]],
   ['norminfmask',['norminfmask',['../classamrex_1_1BaseFab.html#a0cfed6fcd597be27e9d069f9e7a3d18b',1,'amrex::BaseFab']]],
   ['not_5fproper',['not_proper',['../namespacesdcquadrature__mod.html#a36963c5b419723010d58909d4528c0dc',1,'sdcquadrature_mod']]],
+  ['notify',['Notify',['../namespaceamrex_1_1AsyncOut.html#a9b651e401d0a75620501243cc1171a63',1,'amrex::AsyncOut']]],
   ['notingraphregion',['notInGraphRegion',['../namespaceamrex_1_1Gpu.html#a75f138b5ae000637503fb21570285378',1,'amrex::Gpu']]],
   ['notinlaunchregion',['notInLaunchRegion',['../namespaceamrex_1_1Gpu.html#a84b4e8c1e004493e6e16003405cec793',1,'amrex::Gpu']]],
   ['nproc',['nproc',['../classhacc_1_1Distribution.html#a876e1b3b2bddf5d06e56a1b267ce18c6',1,'hacc::Distribution']]],
