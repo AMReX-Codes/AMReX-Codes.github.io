@@ -112,7 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#gpu-namespace-and-macros">Gpu Namespace and Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#memory-allocation">Memory Allocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gpu-safe-classes-and-functions">GPU Safe Classes and Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gpuarray">GpuArray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gpuarray-array1d-array2d-and-array3d">GpuArray, Array1D, Array2D, and Array3D</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#asyncarray">AsyncArray</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gpu-vectors">Gpu Vectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#amrex-min-and-amrex-max">amrex::min and amrex::max</a></li>
@@ -493,17 +493,15 @@ CPU will launch GPU kernels if AMReX is compiled with GPU support.</p>
 version and/or device access.</p>
 <p>In this section, we discuss some examples of AMReX device classes and functions
 that are important for programming GPUs.</p>
-<div class="section" id="gpuarray">
-<h2>GpuArray<a class="headerlink" href="#gpuarray" title="Permalink to this headline">¶</a></h2>
-<p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code> is used throughout AMReX, however its functions are not defined
-in device code. <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> is AMReX’s built-in alternative. It is a POD (plain old
-data structure) that can be passed to the device by value and has device functions
-for the <code class="code cpp c++ docutils literal notranslate"><span class="punctuation"><span class="pre">[]</span></span></code> operator, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">size</span></span><span class="punctuation"><span class="pre">()</span></span></code> and a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">data</span></span><span class="punctuation"><span class="pre">()</span></span></code> function that returns a
-pointer to the underlying data. <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> can be used whenever a fixed size array
-needs to be passed to the GPU.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> is also portable; when compiled without
-CUDA, it is simply aliased to a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code>.</p>
-<p>A variety of functions have been created to return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> instead of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code>,
-and allow direct access to GPU-ready data structures from common AMReX classes. For example,
+<div class="section" id="gpuarray-array1d-array2d-and-array3d">
+<h2>GpuArray, Array1D, Array2D, and Array3D<a class="headerlink" href="#gpuarray-array1d-array2d-and-array3d" title="Permalink to this headline">¶</a></h2>
+<p>As we have mentioned in <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">std</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">array</span></span></code>
+cannot be used in device code, whereas <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array1D</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array2D</span></span></code>, and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array3D</span></span></code> are trivial types
+that work on both host and device. They can be used whenever a fixed size array
+needs to be passed to the GPU or created on GPU.  A variety of
+functions in AMReX return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code> and they can be
+lambda-captured to GPU code. For example,
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">CellSizeArray</span></span><span class="punctuation"><span class="pre">()</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GeometryData</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">InvCellSizeArray</span></span><span class="punctuation"><span class="pre">()</span></span></code>
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">length3d</span></span><span class="punctuation"><span class="pre">()</span></span></code> all return <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">GpuArray</span></span></code>s.</p>
 </div>
@@ -594,7 +592,7 @@ allocations and deallocations when (for example) resizing vectors.</p>
 </tbody>
 </table>
 <p>These classes behave identically to an
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Vector</span></span></code>, (see <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector and Array</span></a>), except that they
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Vector</span></span></code>, (see <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>), except that they
 can only hold “plain-old-data” objects (e.g. Reals, integers, amrex Particles,
 etc… ).</p>
 <p>Note that, even if the data in the vector is  managed and available on GPUs,
