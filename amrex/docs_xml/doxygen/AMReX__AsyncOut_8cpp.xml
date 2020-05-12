@@ -571,7 +571,7 @@
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(s_asyncout<sp/>and<sp/>s_noutfiles<sp/>&lt;<sp/>nprocs)</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MPI_MULTIPLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MPI_THREAD_MULTIPLE</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s_info<sp/>=<sp/><ref refid="namespaceamrex_1_1AsyncOut_1a2a9d5d76aba34e026f1d33404c6bfe00" kindref="member">GetWriteInfo</ref>(myproc);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Comm_split(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),<sp/>s_info.ifile,<sp/>myproc,<sp/>&amp;s_comm);</highlight></codeline>
