@@ -137,8 +137,6 @@ var searchData=
   ['arkspils_5fsuccess',['arkspils_success',['../namespacefarkode__mod.html#a8de3c5fa1c1ba00f57a985b94e4acf54',1,'farkode_mod']]],
   ['arkspils_5fsunls_5fnull',['arkspils_sunls_null',['../namespacefarkode__mod.html#a5409cb7f7fbc510c7756a9c363247ced',1,'farkode_mod']]],
   ['arr',['arr',['../structamrex_1_1GpuArray.html#ade2f9ef8ef324a426120bcf807aae040',1,'amrex::GpuArray::arr()'],['../structamrex_1_1Array1D.html#a3fbb7068c4f65f7830c903a57e3df5a7',1,'amrex::Array1D::arr()'],['../structamrex_1_1Array2D.html#abce236484655c8532397f3c4e36d7df6',1,'amrex::Array2D::arr()'],['../structamrex_1_1Array3D.html#a905335e707b316225c65374c1f21d9a8',1,'amrex::Array3D::arr()'],['../unionamrex_1_1Particle_1_1rm__t.html#a841cc6613ce8b2c8bc5ae64a11a1893d',1,'amrex::Particle::rm_t::arr()'],['../unionamrex_1_1Particle_1_1im__t.html#aa31b2672eedce164ebd1521f9ac6056a',1,'amrex::Particle::im_t::arr()']]],
-  ['async_5fcomm',['async_comm',['../classamrex_1_1VisMF.html#a4febd1c34e12759d7acb412d1cf62495',1,'amrex::VisMF']]],
-  ['asynctag',['asyncTag',['../classamrex_1_1VisMF.html#a6677c063597457901ddf807b87d57bd4',1,'amrex::VisMF']]],
   ['atol_5fb',['atol_b',['../classamrex_1_1MultiGrid.html#a5938df551d0709c0f778e7856b90f9e8',1,'amrex::MultiGrid::atol_b()'],['../classamrex_1_1MCMultiGrid.html#a08cc4bc4061439c49157cb1e09f88b1c',1,'amrex::MCMultiGrid::atol_b()']]],
   ['atomic_5ftotal_5fbytes_5fallocated_5fin_5ffabs',['atomic_total_bytes_allocated_in_fabs',['../namespaceamrex.html#a9a502210430a0780c1ee189758385a60',1,'amrex']]],
   ['atomic_5ftotal_5fbytes_5fallocated_5fin_5ffabs_5fhwm',['atomic_total_bytes_allocated_in_fabs_hwm',['../namespaceamrex.html#a05893af4b8f7c472a5f0d5afe9fddcde',1,'amrex']]],

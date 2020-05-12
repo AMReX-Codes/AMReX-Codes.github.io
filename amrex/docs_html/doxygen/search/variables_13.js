@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['t_5fheader',['t_header',['../structamrex_1_1WriteAsyncStatus.html#a7cd9ff4fe0b1b5c878dc6d289cfa903a',1,'amrex::WriteAsyncStatus']]],
   ['t_5finit',['t_init',['../classamrex_1_1TinyProfiler.html#abcb523d4f35aced1936bf2f559577201',1,'amrex::TinyProfiler']]],
-  ['t_5fsend',['t_send',['../structamrex_1_1WriteAsyncStatus.html#a4acde48691218e68eff9528d2c0aa830',1,'amrex::WriteAsyncStatus']]],
-  ['t_5fspin',['t_spin',['../structamrex_1_1WriteAsyncStatus.html#ae7815afd4d261b9d5cb4899635adfcab',1,'amrex::WriteAsyncStatus']]],
-  ['t_5ftotal',['t_total',['../structamrex_1_1WriteAsyncStatus.html#aead9e7d1d5fbbefa740d49e51a3a750d',1,'amrex::WriteAsyncStatus']]],
   ['t_5ftype',['t_type',['../classamrex_1_1StateDescriptor.html#a75ba4e192cc92deb94fa756eadba363f',1,'amrex::StateDescriptor']]],
-  ['t_5fwrite',['t_write',['../structamrex_1_1WriteAsyncStatus.html#a980cebf636caacdae86912875b8aa0a3',1,'amrex::WriteAsyncStatus']]],
   ['tag',['tag',['../structCommProfStats_1_1SendRecvPair.html#a9181e7c0f1db606e69bad91e0e720010',1,'CommProfStats::SendRecvPair']]],
   ['tagmax',['tagMax',['../classCommProfStats.html#ad3ce9b9573e0f43ea2f7cc97c9709110',1,'CommProfStats']]],
   ['tagmin',['tagMin',['../classCommProfStats.html#aae44e713714a3c31191ab760bee0d4df',1,'CommProfStats']]],

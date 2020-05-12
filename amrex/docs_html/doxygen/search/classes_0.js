@@ -4,7 +4,6 @@ var searchData=
   ['abec4',['ABec4',['../classamrex_1_1ABec4.html',1,'amrex']]],
   ['abeclaplacian',['ABecLaplacian',['../classamrex_1_1ABecLaplacian.html',1,'amrex']]],
   ['alignedallocator',['AlignedAllocator',['../classhacc_1_1AlignedAllocator.html',1,'hacc']]],
-  ['aligner',['aligner',['../structamrex_1_1VisMF_1_1aligner.html',1,'amrex::VisMF']]],
   ['allprint',['AllPrint',['../classamrex_1_1AllPrint.html',1,'amrex']]],
   ['allprinttofile',['AllPrintToFile',['../classamrex_1_1AllPrintToFile.html',1,'amrex']]],
   ['allregularif',['AllRegularIF',['../classamrex_1_1EB2_1_1AllRegularIF.html',1,'amrex::EB2']]],
