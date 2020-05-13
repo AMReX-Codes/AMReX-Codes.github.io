@@ -2,7 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="classamrex_1_1StateDataPhysBCFunct" kind="class" language="C++" prot="public">
     <compoundname>amrex::StateDataPhysBCFunct</compoundname>
-    <basecompoundref refid="classamrex_1_1PhysBCFunctBase" prot="public" virt="non-virtual">amrex::PhysBCFunctBase</basecompoundref>
     <includes refid="AMReX__StateData_8H" local="no">AMReX_StateData.H</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classamrex_1_1StateDataPhysBCFunct_1a555d0d4c4ae81f45d2cd854bc9d64ead" prot="private" static="no" mutable="no">
@@ -16,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="468" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="468" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="472" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="472" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1StateDataPhysBCFunct_1a9bdf3dc879b2ee93a3dd1b84ffdf294b" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -29,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="469" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="469" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="473" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="473" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1StateDataPhysBCFunct_1a9ed7dada88b807adcc2d46ccbe6cbe53" prot="private" static="no" mutable="no">
         <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
@@ -42,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="470" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="470" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="474" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="474" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -69,14 +68,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="463" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="857" bodyend="861"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="462" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="857" bodyend="861"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1StateDataPhysBCFunct_1aa7bb3886b291166cafd32a3b6f9d5bf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1StateDataPhysBCFunct_1ae69e2d6a2f6e5d200d68e403000fd9de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::StateDataPhysBCFunct::FillBoundary</definition>
-        <argsstring>(MultiFab &amp;mf, int dcomp, int ncomp, IntVect const &amp;nghost, Real time, int bccomp) override</argsstring>
-        <name>FillBoundary</name>
-        <reimplements refid="classamrex_1_1PhysBCFunctBase_1a2321b27c8057a33eeecc51019eff00e2">FillBoundary</reimplements>
+        <definition>void amrex::StateDataPhysBCFunct::operator()</definition>
+        <argsstring>(MultiFab &amp;mf, int dcomp, int ncomp, IntVect const &amp;nghost, Real time, int bccomp)</argsstring>
+        <name>operator()</name>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
           <declname>mf</declname>
@@ -104,233 +102,251 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>note this is pure virtual and must be implemented in a derived class (see <ref refid="classamrex_1_1PhysBCFunct" kindref="compound">PhysBCFunct</ref> below for an example) </para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="465" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="864" bodyend="1073"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="464" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="864" bodyend="1073"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateDataPhysBCFunct_1a909b73b161e0c5d205738fdb8e082941" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateDataPhysBCFunct::FillBoundary</definition>
+        <argsstring>(MultiFab &amp;mf, int dcomp, int ncomp, IntVect const &amp;nghost, Real time, int bccomp)</argsstring>
+        <name>FillBoundary</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dcomp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <declname>nghost</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bccomp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="467" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="467" bodyend="470"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <inheritancegraph>
-      <node id="6433">
-        <label>amrex::PhysBCFunctBase</label>
-        <link refid="classamrex_1_1PhysBCFunctBase"/>
-      </node>
-      <node id="6432">
-        <label>amrex::StateDataPhysBCFunct</label>
-        <link refid="classamrex_1_1StateDataPhysBCFunct"/>
-        <childnode refid="6433" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
     <collaborationgraph>
-      <node id="6451">
+      <node id="6440">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt; &gt;</label>
       </node>
-      <node id="6448">
+      <node id="6437">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="6450">
+      <node id="6439">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6451" relation="public-inheritance">
+        <childnode refid="6440" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6441">
+      <node id="6430">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="6441" relation="usage">
+        <childnode refid="6430" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="6435">
-        <label>amrex::PhysBCFunctBase</label>
-        <link refid="classamrex_1_1PhysBCFunctBase"/>
-      </node>
-      <node id="6438">
+      <node id="6427">
         <label>Real</label>
       </node>
-      <node id="6449">
+      <node id="6438">
         <label>amrex::StateDescriptor</label>
         <link refid="classamrex_1_1StateDescriptor"/>
-        <childnode refid="6450" relation="usage">
+        <childnode refid="6439" relation="usage">
           <edgelabel>bc_func</edgelabel>
         </childnode>
-        <childnode refid="6452" relation="usage">
+        <childnode refid="6441" relation="usage">
           <edgelabel>bc</edgelabel>
         </childnode>
-        <childnode refid="6454" relation="usage">
+        <childnode refid="6443" relation="usage">
           <edgelabel>max_map_start_comp</edgelabel>
           <edgelabel>m_master</edgelabel>
           <edgelabel>min_map_end_comp</edgelabel>
           <edgelabel>m_groupsize</edgelabel>
         </childnode>
-        <childnode refid="6445" relation="usage">
+        <childnode refid="6434" relation="usage">
           <edgelabel>names</edgelabel>
         </childnode>
-        <childnode refid="6456" relation="usage">
+        <childnode refid="6445" relation="usage">
           <edgelabel>mapper</edgelabel>
         </childnode>
-        <childnode refid="6457" relation="usage">
+        <childnode refid="6446" relation="usage">
           <edgelabel>mapper_comp</edgelabel>
         </childnode>
-        <childnode refid="6442" relation="usage">
+        <childnode refid="6431" relation="usage">
           <edgelabel>type</edgelabel>
         </childnode>
       </node>
-      <node id="6446">
+      <node id="6435">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
       </node>
-      <node id="6447">
+      <node id="6436">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="6448" relation="usage">
+        <childnode refid="6437" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="6454">
+      <node id="6443">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6455" relation="public-inheritance">
+        <childnode refid="6444" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6453">
+      <node id="6442">
         <label>std::vector&lt; amrex::BCRec, std::allocator&lt; amrex::BCRec &gt; &gt;</label>
       </node>
-      <node id="6434">
+      <node id="6424">
         <label>amrex::StateDataPhysBCFunct</label>
         <link refid="classamrex_1_1StateDataPhysBCFunct"/>
-        <childnode refid="6435" relation="public-inheritance">
-        </childnode>
-        <childnode refid="6436" relation="usage">
+        <childnode refid="6425" relation="usage">
           <edgelabel>geom</edgelabel>
         </childnode>
-        <childnode refid="6443" relation="usage">
+        <childnode refid="6432" relation="usage">
           <edgelabel>statedata</edgelabel>
         </childnode>
       </node>
-      <node id="6456">
+      <node id="6445">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
       </node>
-      <node id="6452">
+      <node id="6441">
         <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6453" relation="public-inheritance">
+        <childnode refid="6442" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6455">
+      <node id="6444">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="6439">
+      <node id="6428">
         <label>amrex::RealBox</label>
         <link refid="classamrex_1_1RealBox"/>
-        <childnode refid="6438" relation="usage">
+        <childnode refid="6427" relation="usage">
           <edgelabel>xhi</edgelabel>
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="6459">
+      <node id="6448">
         <label>amrex::StateData::TimeInterval</label>
         <link refid="structamrex_1_1StateData_1_1TimeInterval"/>
-        <childnode refid="6438" relation="usage">
+        <childnode refid="6427" relation="usage">
           <edgelabel>stop</edgelabel>
           <edgelabel>start</edgelabel>
         </childnode>
       </node>
-      <node id="6440">
+      <node id="6429">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="6441" relation="usage">
+        <childnode refid="6430" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="6442" relation="usage">
+        <childnode refid="6431" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="6458">
+      <node id="6447">
         <label>std::vector&lt; amrex::Interpolater *, std::allocator&lt; amrex::Interpolater * &gt; &gt;</label>
       </node>
-      <node id="6437">
+      <node id="6426">
         <label>amrex::CoordSys</label>
         <link refid="classamrex_1_1CoordSys"/>
-        <childnode refid="6438" relation="usage">
+        <childnode refid="6427" relation="usage">
           <edgelabel>inv_dx</edgelabel>
           <edgelabel>offset</edgelabel>
           <edgelabel>dx</edgelabel>
         </childnode>
       </node>
-      <node id="6457">
+      <node id="6446">
         <label>amrex::Vector&lt; amrex::Interpolater * &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6458" relation="public-inheritance">
+        <childnode refid="6447" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6442">
+      <node id="6431">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="6445">
+      <node id="6434">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="6446" relation="public-inheritance">
+        <childnode refid="6435" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6444">
+      <node id="6433">
         <label>amrex::DistributionMapping</label>
         <link refid="classamrex_1_1DistributionMapping"/>
       </node>
-      <node id="6443">
+      <node id="6432">
         <label>amrex::StateData</label>
         <link refid="classamrex_1_1StateData"/>
-        <childnode refid="6444" relation="usage">
+        <childnode refid="6433" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="6445" relation="usage">
+        <childnode refid="6434" relation="usage">
           <edgelabel>fabArrayHeaderNames</edgelabel>
         </childnode>
-        <childnode refid="6447" relation="usage">
+        <childnode refid="6436" relation="usage">
           <edgelabel>arena</edgelabel>
         </childnode>
-        <childnode refid="6449" relation="usage">
+        <childnode refid="6438" relation="usage">
           <edgelabel>desc</edgelabel>
         </childnode>
-        <childnode refid="6459" relation="usage">
+        <childnode refid="6448" relation="usage">
           <edgelabel>new_time</edgelabel>
           <edgelabel>old_time</edgelabel>
         </childnode>
-        <childnode refid="6440" relation="usage">
+        <childnode refid="6429" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
-      <node id="6436">
+      <node id="6425">
         <label>amrex::Geometry</label>
         <link refid="classamrex_1_1Geometry"/>
-        <childnode refid="6437" relation="public-inheritance">
+        <childnode refid="6426" relation="public-inheritance">
         </childnode>
-        <childnode refid="6439" relation="usage">
+        <childnode refid="6428" relation="usage">
           <edgelabel>prob_domain</edgelabel>
         </childnode>
-        <childnode refid="6440" relation="usage">
+        <childnode refid="6429" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="460" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="458" bodyend="472"/>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" line="459" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateData.H" bodystart="458" bodyend="476"/>
     <listofallmembers>
-      <member refid="classamrex_1_1StateDataPhysBCFunct_1aa7bb3886b291166cafd32a3b6f9d5bf3" prot="public" virt="virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>FillBoundary</name></member>
+      <member refid="classamrex_1_1StateDataPhysBCFunct_1a909b73b161e0c5d205738fdb8e082941" prot="public" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>FillBoundary</name></member>
       <member refid="classamrex_1_1StateDataPhysBCFunct_1a9ed7dada88b807adcc2d46ccbe6cbe53" prot="private" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>geom</name></member>
-      <member refid="classamrex_1_1PhysBCFunctBase_1a2646c92e619e73770ffa15f1b0ddda5e" prot="public" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>operator()</name></member>
+      <member refid="classamrex_1_1StateDataPhysBCFunct_1ae69e2d6a2f6e5d200d68e403000fd9de" prot="public" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>operator()</name></member>
       <member refid="classamrex_1_1StateDataPhysBCFunct_1a9bdf3dc879b2ee93a3dd1b84ffdf294b" prot="private" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>src_comp</name></member>
       <member refid="classamrex_1_1StateDataPhysBCFunct_1a555d0d4c4ae81f45d2cd854bc9d64ead" prot="private" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>statedata</name></member>
       <member refid="classamrex_1_1StateDataPhysBCFunct_1ad8a15ee0d450436bc276a071e993e529" prot="public" virt="non-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>StateDataPhysBCFunct</name></member>
-      <member refid="classamrex_1_1PhysBCFunctBase_1a54055fe52e2bf47cb3e148ce4d644523" prot="public" virt="pure-virtual"><scope>amrex::StateDataPhysBCFunct</scope><name>~PhysBCFunctBase</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

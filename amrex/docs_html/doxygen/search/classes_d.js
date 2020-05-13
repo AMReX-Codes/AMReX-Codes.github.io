@@ -28,7 +28,6 @@ var searchData=
   ['persistentifstream',['PersistentIFStream',['../structamrex_1_1VisMF_1_1PersistentIFStream.html',1,'amrex::VisMF']]],
   ['petscabeclap',['PETScABecLap',['../classamrex_1_1PETScABecLap.html',1,'amrex']]],
   ['physbcfunct',['PhysBCFunct',['../classamrex_1_1PhysBCFunct.html',1,'amrex']]],
-  ['physbcfunctbase',['PhysBCFunctBase',['../classamrex_1_1PhysBCFunctBase.html',1,'amrex']]],
   ['physbcfunctnoop',['PhysBCFunctNoOp',['../classamrex_1_1PhysBCFunctNoOp.html',1,'amrex']]],
   ['pinned',['Pinned',['../structamrex_1_1Gpu_1_1Pinned.html',1,'amrex::Gpu']]],
   ['planeif',['PlaneIF',['../classamrex_1_1EB2_1_1PlaneIF.html',1,'amrex::EB2']]],
