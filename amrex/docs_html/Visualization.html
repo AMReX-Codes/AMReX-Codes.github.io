@@ -111,9 +111,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#visit">VisIt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#paraview">ParaView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#yt">yt</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-on-a-local-workstation">Using  on a local workstation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-yt-at-nersc-under-development">Using yt at NERSC (<em>under development</em>)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#interactive-yt-with-jupyter-notebooks">Interactive yt with Jupyter notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-on-a-local-workstation">Using on a local workstation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-yt-at-nersc-under-development">Using yt at NERSC (<em>under development</em>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interactive-yt-with-jupyter-notebooks">Interactive yt with Jupyter notebooks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#parallel">Parallel</a></li>
 </ul>
 </li>
@@ -232,10 +232,10 @@ in an executable that looks like amrvis2d…ex.</p>
 </pre></div>
 </div>
 <p>Then cd into volpack/ and type <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
-<p>Note: Amrvis requires the OSF/Motif libraries and headers. If you don’t have
+<p>Note: Amrvis requires the OSF/Motif libraries and headers. If you don’t have
 these you will need to install the development version of motif through your
 package manager.  <code class="docutils literal notranslate"><span class="pre">lesstif</span></code> gives some functionality and will allow you to
-build the amrvis executable, but Amrvis may exhibit subtle anomalies.</p>
+build the amrvis executable, but Amrvis may exhibit subtle anomalies.</p>
 <p>On most Linux distributions, the motif library is provided by the
 <code class="docutils literal notranslate"><span class="pre">openmotif</span></code> package, and its header files (like Xm.h) are provided by
 <code class="docutils literal notranslate"><span class="pre">openmotif-devel</span></code>. If those packages are not installed, then use the
@@ -267,7 +267,7 @@ pictures in several different formats under “File/Export”.  In 2D you can
 right and center click to get line-out plots.  In 3D you can right and
 center click to change the planes, and the hold shift+(right or center)
 click to get line-out plots.</p>
-<p>We have created a number of routines to convert AMReX plotfile data other
+<p>We have created a number of routines to convert AMReX plotfile data other
 formats (such as matlab), but in order to properly interpret the
 hierarchical AMR data, each tends to have its own idiosyncrasies. If you
 would like to display the data in another format, please contact Marc Day
@@ -303,7 +303,7 @@ dependencies are installed in the locations that Homebrew uses. Namely the
 </div>
 <div class="section" id="visit">
 <span id="sec-visit"></span><h1>VisIt<a class="headerlink" href="#visit" title="Permalink to this headline">¶</a></h1>
-<p>AMReX data can also be visualized by VisIt, an open source visualization and
+<p>AMReX data can also be visualized by VisIt, an open source visualization and
 analysis software. To follow along with this example, first build and run the
 first heat equation tutorial code (see the section on <a class="reference internal" href="GettingStarted.html#sec-heat-equation"><span class="std std-ref">Example: Heat Equation Solver</span></a>).</p>
 <p>Next, download and install VisIt from
@@ -358,9 +358,9 @@ done using the command:</p>
 <span class="go">plt10000/Header</span>
 </pre></div>
 </div>
-<p>The next step is to run VisIt, select “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open file
-…”, then select movie.visit. Create an image to your liking and press the
-“play” button on the VCR-like control panel to preview all the frames. To save
+<p>The next step is to run VisIt, select “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open file…”,
+then select movie.visit. Create an image to your liking and press the
+“play”  button on the VCR-like control panel to preview all the frames. To save
 the movie, choose “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Save movie …”, and follow the
 on-screen instructions.</p>
 <p>Caveat:</p>
@@ -375,13 +375,13 @@ and print the value for “Cycle”.  (It will still read and display the data i
 </div>
 <div class="section" id="paraview">
 <span id="section-1"></span><h1>ParaView<a class="headerlink" href="#paraview" title="Permalink to this headline">¶</a></h1>
-<p>The open source visualization package ParaView v5.7 and later can be used to view 2D and 3D
+<p>The open source visualization package ParaView v5.7 and later can be used to view 2D and 3D
 plotfiles, as well as particles data. Download the package at
 <a class="reference external" href="https://www.paraview.org/">https://www.paraview.org/</a>.</p>
 <p>To open a plotfile (for example, you could run the
 <code class="docutils literal notranslate"><span class="pre">HeatEquation_EX1_C</span></code> in 3D):</p>
 <ol class="arabic simple">
-<li><p>Run ParaView v5.7, then select “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open”.</p></li>
+<li><p>Run ParaView v5.7, then select “File” <span class="math notranslate nohighlight">\(\rightarrow\)</span> “Open”.</p></li>
 <li><p>Navigate to your run directory, and select the fluid or particle plotfile.
 Note that you can either open single/multiple plotfile(s) at once by selecting
 them one by one or select an ensemble of file, labelled as <code class="docutils literal notranslate"><span class="pre">plt..</span></code> and indicated
@@ -446,17 +446,17 @@ with the VCR-like controls at the top, as shown in
 <span id="section-2"></span><h1>yt<a class="headerlink" href="#yt" title="Permalink to this headline">¶</a></h1>
 <p>yt, an open source Python package available at <a class="reference external" href="http://yt-project.org/">http://yt-project.org/</a>, can be
 used for analyzing and visualizing mesh and particle data generated by
-AMReX codes. Some of the AMReX developers are also yt project members.  Below
-we describe how to use  on both a local workstation, as well as at the NERSC
+AMReX codes. Some of the AMReX developers are also yt project members.  Below
+we describe how to use on both a local workstation, as well as at the NERSC
 HPC facility for high-throughput visualization of large data sets.</p>
 <p>Note - AMReX datasets require yt version 3.4 or greater.</p>
 <div class="section" id="using-on-a-local-workstation">
-<h2>Using  on a local workstation<a class="headerlink" href="#using-on-a-local-workstation" title="Permalink to this headline">¶</a></h2>
-<p>Running yt on a local system generally provides good interactivity, but limited
+<h2>Using on a local workstation<a class="headerlink" href="#using-on-a-local-workstation" title="Permalink to this headline">¶</a></h2>
+<p>Running yt on a local system generally provides good interactivity, but limited
 performance. Consequently, this configuration is best when doing exploratory
 visualization (e.g., experimenting with camera angles, lighting, and color
 schemes) of small data sets.</p>
-<p>To use yt on an AMReX plot file, first start a Jupyter notebook or an IPython
+<p>To use yt on an AMReX plot file, first start a Jupyter notebook or an IPython
 kernel, and import the <code class="docutils literal notranslate"><span class="pre">yt</span></code> module:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">yt</span>
 
@@ -557,29 +557,29 @@ to the same plot file used to generate the slice plot in
 </div>
 </div>
 <div class="section" id="using-yt-at-nersc-under-development">
-<h2>Using yt at NERSC (<em>under development</em>)<a class="headerlink" href="#using-yt-at-nersc-under-development" title="Permalink to this headline">¶</a></h2>
-<p>Because yt is Python-based, it is portable and can be used in many software
+<h2>Using yt at NERSC (<em>under development</em>)<a class="headerlink" href="#using-yt-at-nersc-under-development" title="Permalink to this headline">¶</a></h2>
+<p>Because yt is Python-based, it is portable and can be used in many software
 environments. Here we focus on yt’s capabilities at NERSC, which provides
 resources for performing both interactive and batch queue-based visualization
-and analysis of AMReX data. Coupled with yt’s MPI and OpenMP parallelization
+and analysis of AMReX data. Coupled with yt’s MPI and OpenMP parallelization
 capabilities, this can enable high-throughput visualization and analysis
 workflows.</p>
 <div class="section" id="interactive-yt-with-jupyter-notebooks">
-<h3>Interactive yt with Jupyter notebooks<a class="headerlink" href="#interactive-yt-with-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
-<p>Unlike VisIt (see the section on <a class="reference internal" href="#sec-visit"><span class="std std-ref">VisIt</span></a>), yt has no client-server
+<h3>Interactive yt with Jupyter notebooks<a class="headerlink" href="#interactive-yt-with-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+<p>Unlike VisIt (see the section on <a class="reference internal" href="#sec-visit"><span class="std std-ref">VisIt</span></a>), yt has no client-server
 interface. Such an interface is often crucial when one has large data sets
 generated on a remote system, but wishes to visualize the data on a local
 workstation. Both copying the data between the two systems, as well as
 visualizing the data itself on a workstation, can be prohibitively slow.</p>
 <p>Fortunately, NERSC has implemented several resources which allow one to
-interact with yt remotely, emulating a client-server model. In particular,
+interact with yt remotely, emulating a client-server model. In particular,
 NERSC now hosts Jupyter notebooks which run IPython kernels on the Cori system;
 this provides users access to the <code class="docutils literal notranslate"><span class="pre">$HOME</span></code>, <code class="docutils literal notranslate"><span class="pre">/project</span></code>, and <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>
 file systems from a web browser-based Jupyter notebook.  <strong>*Please note that
 Jupyter hosting at NERSC is still under development, and the environment may
 change without notice.*</strong></p>
 <p>NERSC also provides Anaconda Python, which allows users to create their own
-customizable Python environments. It is recommended to install yt in such an
+customizable Python environments. It is recommended to install yt in such an
 environment. One can do so with the following example:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">user@cori10:~&gt; module load python/3.5-anaconda</span>
 <span class="go">user@cori10:~&gt; conda create -p $HOME/yt-conda numpy</span>
@@ -599,24 +599,24 @@ instructions at this URL under the “Custom Kernels” heading:
 <a class="reference external" href="http://www.nersc.gov/users/data-analytics/data-analytics/web-applications-for-data-analytics">http://www.nersc.gov/users/data-analytics/data-analytics/web-applications-for-data-analytics</a>.
 After writing the appropriate <code class="docutils literal notranslate"><span class="pre">kernel.json</span></code> file, the custom kernel will
 appear as an available Jupyter notebook. Then one can interactively visualize
-AMReX plot files in the web browser. <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+AMReX plot files in the web browser. <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
 </div>
 <div class="section" id="parallel">
 <h3>Parallel<a class="headerlink" href="#parallel" title="Permalink to this headline">¶</a></h3>
 <p>Besides the benefit of no longer needing to move data back and forth between
 NERSC and one’s local workstation to do visualization and analysis, an
-additional feature of yt which takes advantage of the computational resources
-at NERSC is its parallelization capabilities. yt supports both MPI- and
+additional feature of yt which takes advantage of the computational resources
+at NERSC is its parallelization capabilities. yt supports both MPI- and
 OpenMP-based parallelization of various tasks, which are discussed here:
 <a class="reference external" href="http://yt-project.org/doc/analyzing/parallel_computation.html">http://yt-project.org/doc/analyzing/parallel_computation.html</a>.</p>
-<p>Configuring yt for MPI parallelization at NERSC is a more complex task than
-discussed in the official yt documentation; the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mpi4py</span></code>
+<p>Configuring yt for MPI parallelization at NERSC is a more complex task than
+discussed in the official yt documentation; the command <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mpi4py</span></code>
 is not sufficient. Rather, one must compile <code class="docutils literal notranslate"><span class="pre">mpi4py</span></code> from source using the
 Cray compiler wrappers <code class="docutils literal notranslate"><span class="pre">cc</span></code>, <code class="docutils literal notranslate"><span class="pre">CC</span></code>, and <code class="docutils literal notranslate"><span class="pre">ftn</span></code> on Cori. Instructions for
 compiling <code class="docutils literal notranslate"><span class="pre">mpi4py</span></code> at NERSC are provided here:
 <a class="reference external" href="http://www.nersc.gov/users/data-analytics/data-analytics/python/anaconda-python/#toc-anchor-3">http://www.nersc.gov/users/data-analytics/data-analytics/python/anaconda-python/#toc-anchor-3</a>.
 After <code class="docutils literal notranslate"><span class="pre">mpi4py</span></code> has been compiled, one can use the regular Python interpreter
-in the Anaconda environment as normal; when executing yt operations which
+in the Anaconda environment as normal; when executing yt operations which
 support MPI parallelization, the multiple MPI processes will spawn
 automatically.</p>
 <p>Although several components of yt support MPI parallelization, a few are
@@ -624,14 +624,14 @@ particularly useful:</p>
 <ul>
 <li><p><strong>Time series analysis.</strong> Often one runs a simulation for many time steps
 and periodically writes plot files to disk for visualization and
-post-processing. yt supports parallelization over time series data via the
-<code class="docutils literal notranslate"><span class="pre">DatasetSeries</span></code> object. yt can iterate over a <code class="docutils literal notranslate"><span class="pre">DatasetSeries</span></code> in
+post-processing. yt supports parallelization over time series data via the
+<code class="docutils literal notranslate"><span class="pre">DatasetSeries</span></code> object. yt can iterate over a <code class="docutils literal notranslate"><span class="pre">DatasetSeries</span></code> in
 parallel, with different MPI processes operating on different elements of the
 series. This page provides more documentation:
 <a class="reference external" href="http://yt-project.org/doc/analyzing/time_series_analysis.html#time-series-analysis">http://yt-project.org/doc/analyzing/time_series_analysis.html#time-series-analysis</a>.</p></li>
-<li><p><strong>Volume rendering</strong>. yt implements spatial decomposition among MPI
+<li><p><strong>Volume rendering</strong>. yt implements spatial decomposition among MPI
 processes for volume rendering procedures, which can be computationally
-expensive. Note that yt also implements OpenMP parallelization in volume
+expensive. Note that yt also implements OpenMP parallelization in volume
 rendering, and so one can execute volume rendering with a hybrid MPI+OpenMP
 approach. See this URL for more detail:
 <a class="reference external" href="http://yt-project.org/doc/visualizing/volume_rendering.html?highlight=openmp#openmp-parallelization">http://yt-project.org/doc/visualizing/volume_rendering.html?highlight=openmp#openmp-parallelization</a>.</p></li>
@@ -640,11 +640,11 @@ loop over a series which is not a <code class="docutils literal notranslate"><sp
 translational or rotational operations on a camera to make a volume rendering
 in which the field of view moves through the simulation. In this case, one is
 applying a set of operations on a single object (a single plot file), rather
-than over a time series of data. For this workflow, yt provides the
+than over a time series of data. For this workflow, yt provides the
 <code class="docutils literal notranslate"><span class="pre">parallel_objects()</span></code> function. See this URL for more details:
 <a class="reference external" href="http://yt-project.org/doc/analyzing/parallel_computation.html#parallelizing-over-multiple-objects">http://yt-project.org/doc/analyzing/parallel_computation.html#parallelizing-over-multiple-objects</a>.</p>
 <blockquote>
-<div><p>An example of MPI parallelization in yt is shown below, where one animates a
+<div><p>An example of MPI parallelization in yt is shown below, where one animates a
 time series of plot files from an IAMR simulation while revolving the camera
 such that it completes two full revolutions over the span of the animation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yt</span>

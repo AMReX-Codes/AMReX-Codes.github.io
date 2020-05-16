@@ -249,8 +249,8 @@ to parallelize over a valid box at a time.  This is done by using a lot
 of CUDA threads that only work on a few cells each. This work
 distribution is illustrated in <a class="reference internal" href="#fig-gpu-threads"><span class="std std-numref">Table 11</span></a>.</p></li>
 </ul>
-<span id="fig-gpu-threads"></span><table class="docutils align-default" id="id2">
-<caption><span class="caption-number">Table 11 </span><span class="caption-text">Comparison of OpenMP and CUDA work distribution. Pictures provided by Mike Zingale and the CASTRO team.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<span id="fig-gpu-threads"></span><table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 11 </span><span class="caption-text">Comparison of OpenMP and CUDA work distribution. Pictures provided by Mike Zingale and the CASTRO team.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -313,11 +313,11 @@ CPU reaches a synchronize in the MFIter’s destructor and waits for all GPU lau
 to complete before continuing.</p>
 </li>
 </ul>
-<div class="figure align-default" id="id3">
+<div class="figure align-default" id="id2">
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
 <p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
-ran with three GPU streams.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="building-gpu-support">
@@ -433,8 +433,8 @@ AMReX provides a number of memory pools.  When compiled without
 CUDA, all <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s use standard <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">new</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">delete</span></span></code>
 operators. With CUDA, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s each allocate with a
 specific type of GPU memory:</p>
-<span id="tab-gpu-arena"></span><table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 12 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<span id="tab-gpu-arena"></span><table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 54%" />
 <col style="width: 46%" />
@@ -565,8 +565,8 @@ object only stores and handles the CPU version of the data.</p>
 These are configured to use the different AMReX memory Arenas, as
 summarized below. By using the memory Arenas, we can avoid expensive
 allocations and deallocations when (for example) resizing vectors.</p>
-<span id="id1"></span><table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 13 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<span id="tab-gpu-gpuvectors"></span><table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">Memory Arenas Associated with each Gpu Vector</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 42%" />
 <col style="width: 58%" />

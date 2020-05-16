@@ -295,7 +295,7 @@ precision by setting <code class="docutils literal notranslate"><span class="pre
 <p>Variables <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_OMP</span></code> are optional with default set
 to FALSE.  The meaning of these variables should
 be obvious.  When <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code>, aggressive compiler optimization flags are
-turned off and assertions in  source code are turned on. For production runs,
+turned off and assertions in source code are turned on. For production runs,
 <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> should be set to FALSE.</p>
 <p>Variables <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_DPCPP</span></code> are used for
 targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of
@@ -465,7 +465,7 @@ the configure script. In particular, one can specify the installation path for t
 </pre></div>
 </div>
 <p>This approach is built on the AMReX GNU Make system. Thus
-the section on <a class="reference internal" href="#sec-build-make"><span class="std std-ref">Building with GNU Make</span></a> is recommended if any fine tuning is
+the section on <a class="reference internal" href="#sec-build-make"><span class="std std-ref">Building with GNU Make</span></a> is recommended if any fine tuning is
 needed.  The result of <code class="docutils literal notranslate"><span class="pre">./configure</span></code> is <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> in the AMReX
 top directory.  One can modify the make file for fine tuning.</p>
 <p>To compile an application code against the external AMReX library, it
@@ -496,8 +496,8 @@ all:
 </div>
 <div class="section" id="building-with-cmake">
 <span id="sec-build-cmake"></span><h1>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline">¶</a></h1>
-<p>An alternative to the approach described in the section on <a class="reference internal" href="#sec-build-lib"><span class="std std-ref">Building libamrex</span></a>
-is to install AMReX as an external library by using the CMake build system.  A
+<p>An alternative to the approach described in the section on <a class="reference internal" href="#sec-build-lib"><span class="std std-ref">Building libamrex</span></a>
+is to install AMReX as an external library by using the CMake build system.  A
 CMake build is a two-step process. First <code class="docutils literal notranslate"><span class="pre">cmake</span></code> is invoked to create
 configuration files and makefiles in a chosen directory (<code class="docutils literal notranslate"><span class="pre">builddir</span></code>).  This
 is roughly equivalent to running <code class="docutils literal notranslate"><span class="pre">./configure</span></code> (see the section on
@@ -513,9 +513,9 @@ The CMake build process is summarized as follows:</p>
 </pre></div>
 </div>
 <p>In the above snippet, <code class="docutils literal notranslate"><span class="pre">[options]</span></code> indicates one or more options for the
-customization of the build, as described in the subsection on
+customization of the build, as described in the subsection on
 <a class="reference internal" href="#sec-build-cmake-options"><span class="std std-ref">Customization options</span></a>. If the option <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> is omitted,
-<code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE=Release</span></code> is assumed. Although the AMReX source could be used as
+<code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE=Release</span></code> is assumed. Although the AMReX source could be used as
 build directory, we advise against doing so.  After the installation is
 complete, <code class="docutils literal notranslate"><span class="pre">builddir</span></code> can be removed.</p>
 <div class="section" id="customization-options">
@@ -532,7 +532,7 @@ Configuration variables requiring a boolen value are evaluated to true if they
 are assigned a value of <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">ON</span></code>, <code class="docutils literal notranslate"><span class="pre">YES</span></code>, <code class="docutils literal notranslate"><span class="pre">TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>. Conversely they are evaluated to false
 if they are assigned a value of <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">OFF</span></code>, <code class="docutils literal notranslate"><span class="pre">NO</span></code>, <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code>.
 Boolean configuration variables are case-insensitive.
-The list of available options is reported in the table on <a class="reference internal" href="#tab-cmakevar"><span class="std std-ref">AMReX build options</span></a>
+The list of available options is reported in the table on <a class="reference internal" href="#tab-cmakevar"><span class="std std-ref">AMReX build options</span></a>
 below.</p>
 <span id="tab-cmakevar"></span><table class="docutils align-default" id="id2">
 <caption><span class="caption-number">Table 2 </span><span class="caption-text">AMReX build options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>

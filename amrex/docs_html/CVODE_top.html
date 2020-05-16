@@ -109,10 +109,10 @@
 <li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">CVODE</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="CVODE.html">Compiling AMReX with CVODE (Cray or Sundials version 2.7)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="CVODE.html#cvode-tutorials">CVODE Tutorials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SUNDIALS3.html">Compiling AMReX with Sundials version 3.X or later</a></li>
-<li class="toctree-l3"><a class="reference internal" href="SUNDIALS3.html#sundials-3-x-tutorials">SUNDIALS 3.X Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CVODE.html">Compiling AMReX with CVODE (Cray or Sundials version 2.7)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CVODE.html#cvode-tutorials">CVODE Tutorials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SUNDIALS3.html">Compiling AMReX with Sundials version 3.X or later</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SUNDIALS3.html#sundials-3-x-tutorials">SUNDIALS 3.X Tutorials</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="SWFFT.html">SWFFT</a></li>
@@ -187,29 +187,29 @@
             
   <div class="section" id="cvode">
 <span id="chap-cvode"></span><h1>CVODE<a class="headerlink" href="#cvode" title="Permalink to this headline">¶</a></h1>
-<p>AMReX supports local ODE integration using the CVODE solver, <a class="footnote-reference brackets" href="#id4" id="id1">1</a> which is part
-of the SUNDIALS framework. <a class="footnote-reference brackets" href="#id5" id="id2">2</a> CVODE contains solvers for stiff and non-stiff
+<p>AMReX supports local ODE integration using the CVODE solver, <a class="footnote-reference brackets" href="#id4" id="id1">1</a> which is part
+of the SUNDIALS framework. <a class="footnote-reference brackets" href="#id5" id="id2">2</a> CVODE contains solvers for stiff and non-stiff
 ODEs, and as such is well suited for solving e.g., the complex chemistry
 networks in combustion simulations, or the nuclear reaction networks in
 astrophysical simulations.</p>
-<p>Most of CVODE is written in C, but many functions also come with two distinct
+<p>Most of CVODE is written in C, but many functions also come with two distinct
 Fortran interfaces.  One interface is FCVODE, which is bundled with the stable
-release of CVODE.  Its usage is described in the CVODE documentation. <a class="footnote-reference brackets" href="#id6" id="id3">3</a>
-However, the use of FCVODE is discouraged in AMReX due to its incompatibility
+release of CVODE.  Its usage is described in the CVODE documentation. <a class="footnote-reference brackets" href="#id6" id="id3">3</a>
+However, the use of FCVODE is discouraged in AMReX due to its incompatibility
 with being used inside OpenMP parallel regions (which is the primary use case
-in AMReX applications).</p>
-<p>The alternative, and recommended, Fortran interface to  uses the
+in AMReX applications).</p>
+<p>The alternative, and recommended, Fortran interface to uses the
 <code class="docutils literal notranslate"><span class="pre">iso_c_binding</span></code> feature of the Fortran 2003 standard to implement a direct
 interface to the C functions in CVODE.  When compiling CVODE, one need not
-build the CVODE library with the FCVODE interface enabled at all.  Rather, the
-Fortran 2003 interface to CVODE is provided within AMReX itself.  The
-CVODE tutorials provided in AMReX use this new interface.</p>
+build the CVODE library with the FCVODE interface enabled at all.  Rather, the
+Fortran 2003 interface to CVODE is provided within AMReX itself.  The
+CVODE tutorials provided in AMReX use this new interface.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="CVODE.html">Compiling AMReX with CVODE (Cray or Sundials version 2.7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CVODE.html#cvode-tutorials">CVODE Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SUNDIALS3.html">Compiling AMReX with Sundials version 3.X or later</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SUNDIALS3.html#sundials-3-x-tutorials">SUNDIALS 3.X Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVODE.html">Compiling AMReX with CVODE (Cray or Sundials version 2.7)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVODE.html#cvode-tutorials">CVODE Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS3.html">Compiling AMReX with Sundials version 3.X or later</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUNDIALS3.html#sundials-3-x-tutorials">SUNDIALS 3.X Tutorials</a></li>
 </ul>
 </div>
 <dl class="footnote brackets">
