@@ -391,7 +391,7 @@ var searchData=
   ['single_5fspline_5fcpdist',['single_spline_cpdist',['../classamrex_1_1SplineDistFcnElement2d.html#acf31e283cdbb4c8500f26e0c82eb31d6',1,'amrex::SplineDistFcnElement2d']]],
   ['single_5ftask',['single_task',['../namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae',1,'amrex']]],
   ['single_5fvalued',['single_valued',['../namespaceamrex__ebcellflag__module.html#a34d542ffa101be3b08b45ad08a1aa41e',1,'amrex_ebcellflag_module']]],
-  ['single_5fvauled_5fbits',['single_vauled_bits',['../classamrex_1_1EBCellFlag.html#a54cf88910c4f2884f367348b554c6d92',1,'amrex::EBCellFlag']]],
+  ['single_5fvalued_5fbits',['single_valued_bits',['../classamrex_1_1EBCellFlag.html#acc96dac6bf3def385c6a9bd418b71b6e',1,'amrex::EBCellFlag']]],
   ['single_5fvof_5fbits',['single_vof_bits',['../classamrex_1_1EBCellFlag.html#a7ee55a07343cf958411c2400a2925a9a',1,'amrex::EBCellFlag']]],
   ['singleleveltoblueprint',['SingleLevelToBlueprint',['../namespaceamrex.html#aede6d4189f1d218b26880a44405df55e',1,'amrex::SingleLevelToBlueprint(const MultiFab &amp;mf, const Vector&lt; std::string &gt; &amp;varnames, const Geometry &amp;geom, Real time_value, int level_step, Node &amp;res)'],['../namespaceamrex.html#aecc3c40b87ae2ae19e6aac69ff910cf8',1,'amrex::SingleLevelToBlueprint(const MultiFab &amp;mf, const Vector&lt; std::string &gt; &amp;varnames, const Geometry &amp;geom, Real time_value, int level_step, conduit::Node &amp;bp_mesh)']]],
   ['singlevalued',['singlevalued',['../namespaceamrex.html#abd2e3d292645433cefc947725585f87aa928c4a180152a4857751871f38d5f9ef',1,'amrex']]],

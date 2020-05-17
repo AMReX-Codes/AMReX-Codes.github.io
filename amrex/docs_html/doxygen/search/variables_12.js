@@ -44,7 +44,7 @@ var searchData=
   ['simdata',['SimData',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#ae53eccbcdd637ad1dcbdc0be4e895dc8',1,'amrex::AmrDataAdaptor::InternalsType']]],
   ['simmetadata',['SimMetadata',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#ab54c62846a8614acc3d677a975186569',1,'amrex::AmrDataAdaptor::InternalsType']]],
   ['single_5fvalued',['single_valued',['../namespaceamrex__ebcellflag__module.html#a34d542ffa101be3b08b45ad08a1aa41e',1,'amrex_ebcellflag_module']]],
-  ['single_5fvauled_5fbits',['single_vauled_bits',['../classamrex_1_1EBCellFlag.html#a54cf88910c4f2884f367348b554c6d92',1,'amrex::EBCellFlag']]],
+  ['single_5fvalued_5fbits',['single_valued_bits',['../classamrex_1_1EBCellFlag.html#acc96dac6bf3def385c6a9bd418b71b6e',1,'amrex::EBCellFlag']]],
   ['single_5fvof_5fbits',['single_vof_bits',['../classamrex_1_1EBCellFlag.html#a7ee55a07343cf958411c2400a2925a9a',1,'amrex::EBCellFlag']]],
   ['six',['six',['../namespaceamrex__constants__module.html#a82956dfe228acd8237172da6676e9e6c',1,'amrex_constants_module']]],
   ['sixteen',['sixteen',['../namespaceamrex__constants__module.html#aeb6d1230cd2bb69d1e8a79f646808baa',1,'amrex_constants_module']]],
