@@ -637,7 +637,7 @@
 <codeline lineno="615"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="616"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a2c1bf28f2552627e93d1587e977dd22a" kindref="member">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;</ref></highlight></codeline>
 <codeline lineno="617"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a2c1bf28f2552627e93d1587e977dd22a" kindref="member">::fillNeighbors</ref><sp/>()<sp/>{</highlight></codeline>
-<codeline lineno="618"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="618"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="619"><highlight class="normal"><sp/><sp/><sp/><sp/>fillNeighborsGPU();</highlight></codeline>
 <codeline lineno="620"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NeighborParticleContainer_1aa67093443956c508eba7928ca9c43789" kindref="member">fillNeighborsCPU</ref>();</highlight></codeline>
@@ -650,7 +650,7 @@
 <codeline lineno="628"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a881b90e85491b4c0a7bb25425cc38641" kindref="member">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;</ref></highlight></codeline>
 <codeline lineno="629"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a881b90e85491b4c0a7bb25425cc38641" kindref="member">::sumNeighbors</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>real_start_comp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>real_num_comp,</highlight></codeline>
 <codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>int_start_comp,<sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>int_num_comp)<sp/>{</highlight></codeline>
-<codeline lineno="631"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="632"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;Not<sp/>implemented.&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="633"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="634"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NeighborParticleContainer_1ab231fe12c26f5349f8c4005c8b85a170" kindref="member">sumNeighborsCPU</ref>(real_start_comp,<sp/>real_num_comp,<sp/>int_start_comp,<sp/>int_num_comp);</highlight></codeline>
@@ -665,7 +665,7 @@
 <codeline lineno="643"><highlight class="normal"></highlight></codeline>
 <codeline lineno="644"><highlight class="normal"><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="classamrex_1_1NeighborParticleContainer_1ae1b82ffadf5cb1ad88f73ea30f998a00" kindref="member">hasNeighbors</ref>());</highlight></codeline>
 <codeline lineno="645"><highlight class="normal"></highlight></codeline>
-<codeline lineno="646"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="646"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/>updateNeighborsGPU();</highlight></codeline>
 <codeline lineno="648"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="649"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NeighborParticleContainer_1a82b7b32706c360ef9da4f2501f0d2ef7" kindref="member">updateNeighborsCPU</ref>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
@@ -678,7 +678,7 @@
 <codeline lineno="656"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a287e510b67bfbb6bd4d500e5281e3329" kindref="member">NeighborParticleContainer&lt;NStructReal, NStructInt&gt;</ref></highlight></codeline>
 <codeline lineno="657"><highlight class="normal"><ref refid="classamrex_1_1NeighborParticleContainer_1a287e510b67bfbb6bd4d500e5281e3329" kindref="member">::clearNeighbors</ref><sp/>()</highlight></codeline>
 <codeline lineno="658"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="659"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="659"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="660"><highlight class="normal"><sp/><sp/><sp/><sp/>clearNeighborsGPU();</highlight></codeline>
 <codeline lineno="661"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="662"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NeighborParticleContainer_1ab52778d0154284955fa59e2e6bc36482" kindref="member">clearNeighborsCPU</ref>();</highlight></codeline>
