@@ -103,6 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mac-projection">MAC Projection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#nodal-projection">Nodal Projection</a></li>
@@ -400,6 +401,54 @@ solver to include the metric terms because they have been handled in
 other ways, one can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMetricTerm</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code> with <code class="code cpp c++ docutils literal notranslate"><span class="name builtin"><span class="pre">false</span></span></code>
 on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object passed to the constructor of linear
 operators.</p>
+</div>
+<div class="section" id="embedded-boundaries">
+<h1>Embedded Boundaries<a class="headerlink" href="#embedded-boundaries" title="Permalink to this headline">¶</a></h1>
+<p>AMReX supports multi-level solvers for use with embedded boundaries.
+These include
+1) cell-centered solvers with homogeneous Neumann, homogeneous Dirichlet,
+or inhomogeneous Dirichlet boundary conditions on the EB faces, and
+2) nodal solvers with homogeneous Neumann boundary conditions on the EB faces.</p>
+<p>To use a cell-centered solver with EB, one builds a linear operator
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLEBABecLap</span></span></code> with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EBFArrayBoxFactory</span></span></code> (instead of a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>)</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MLEBABecLap</span> <span class="p">(</span><span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">Geometry</span><span class="o">&gt;&amp;</span> <span class="n">a_geom</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">BoxArray</span><span class="o">&gt;&amp;</span> <span class="n">a_grids</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">DistributionMapping</span><span class="o">&gt;&amp;</span> <span class="n">a_dmap</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">LPInfo</span><span class="o">&amp;</span> <span class="n">a_info</span><span class="p">,</span>
+             <span class="k">const</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">EBFArrayBoxFactory</span> <span class="k">const</span><span class="o">*&gt;&amp;</span> <span class="n">a_factory</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The usage of this EB-specific class is essentially the same as
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLABecLaplacian</span></span></code>.</p>
+<p>The default boundary condition on EB faces is homogeneous Neumann.</p>
+<p>To set homogeneous Dirichlet boundary conditions, call</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBHomogDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">coeff</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>where coeff can be a real number (i.e. the value is the same at every cell)
+or is the MultiFab holding the coefficient of the gradient at each cell with an EB face.</p>
+<p>To set inhomogeneous Dirichlet boundary conditions, call</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setEBDirichlet</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">phi_on_eb</span><span class="p">,</span> <span class="n">coeff</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>where phi_on_eb is the MultiFab holding the Dirichlet values in every cut cell,
+and coeff again is a real number (i.e. the value is the same at every cell)
+or a MultiFab holding the coefficient of the gradient at each cell with an EB face.</p>
+<p>Currently there are options to define the face-based coefficients on
+face centers vs face centroids, and to interpret the solution variable
+as being defined on cell centers vs cell centroids.</p>
+<p>The default is for the solution variable to be defined at cell centers;
+to tell the solver to interpret the solution variable as living
+at cell centroids, you must set</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setPhiOnCentroid</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>The default is for the face-based coefficients to be defined at face centers;
+to tell the that the face-based coefficients should be interpreted
+as living at face centroids, modify the setBCoeffs command to be</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">ml_ebabeclap</span><span class="o">-&gt;</span><span class="n">setBCoeffs</span><span class="p">(</span><span class="n">lev</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">MLMG</span><span class="o">::</span><span class="n">Location</span><span class="o">::</span><span class="n">FaceCentroid</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="external-solvers">
 <h1>External Solvers<a class="headerlink" href="#external-solvers" title="Permalink to this headline">¶</a></h1>
