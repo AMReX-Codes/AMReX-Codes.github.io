@@ -58,6 +58,7 @@ var searchData=
   ['machine',['machine',['../namespaceamrex_1_1machine.html',1,'amrex']]],
   ['math',['Math',['../namespaceamrex_1_1Math.html',1,'amrex']]],
   ['mfutil',['MFUtil',['../namespaceamrex_1_1MFUtil.html',1,'amrex']]],
+  ['order',['Order',['../namespaceamrex_1_1Order.html',1,'amrex']]],
   ['parallelallgather',['ParallelAllGather',['../namespaceamrex_1_1ParallelAllGather.html',1,'amrex']]],
   ['parallelallreduce',['ParallelAllReduce',['../namespaceamrex_1_1ParallelAllReduce.html',1,'amrex']]],
   ['parallelcontext',['ParallelContext',['../namespaceamrex_1_1ParallelContext.html',1,'amrex']]],
