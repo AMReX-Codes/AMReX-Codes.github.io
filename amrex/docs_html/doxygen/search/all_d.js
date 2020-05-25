@@ -566,7 +566,7 @@ var searchData=
   ['maskgt',['maskGT',['../classamrex_1_1BaseFab.html#ae1a6b0d582503d0257d5927534619526',1,'amrex::BaseFab']]],
   ['maskle',['maskLE',['../classamrex_1_1BaseFab.html#a51c1b72c4a3a04fe392247242467d27f',1,'amrex::BaseFab']]],
   ['masklt',['maskLT',['../classamrex_1_1BaseFab.html#a2daea766f3544b7e920b9ca9b3cb870e',1,'amrex::BaseFab']]],
-  ['masks',['masks',['../classamrex_1_1BndryData.html#af590a7b776cc9ccee49e607a3e84671d',1,'amrex::BndryData']]],
+  ['masks',['Masks',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac',1,'amrex::AmrDataAdaptor::InternalsType::Masks()'],['../classamrex_1_1BndryData.html#af590a7b776cc9ccee49e607a3e84671d',1,'amrex::BndryData::masks()']]],
   ['maskval',['MaskVal',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9',1,'amrex::BndryData']]],
   ['maskvals',['maskvals',['../classamrex_1_1LinOp.html#af9de09651d7047e04a70de03facb5398',1,'amrex::LinOp::maskvals()'],['../classamrex_1_1MCLinOp.html#aab82caa1ac6f5e02d87dbe75c3025855',1,'amrex::MCLinOp::maskvals()']]],
   ['master',['master',['../classamrex_1_1StateDescriptor.html#af78792d12c06a47e5cfc822921e1d5cd',1,'amrex::StateDescriptor']]],
