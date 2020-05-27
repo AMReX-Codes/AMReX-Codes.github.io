@@ -46,7 +46,7 @@ var searchData=
   ['deallocaterandomseeddevarray',['DeallocateRandomSeedDevArray',['../namespaceamrex.html#abce0125a244f443854b1c4a2709c5990',1,'amrex']]],
   ['debug',['debug',['../structdistribution__t.html#a8bdbbba2982ae871ad4c0f389ca78959',1,'distribution_t::debug()'],['../namespaceamrex_1_1system.html#aeb34e12844e5d37ee8582e569d702c95',1,'amrex::system::Debug()']]],
   ['debug_5fcondition',['DEBUG_CONDITION',['../distribution_8c.html#a4b0f3914f3a5d4e3126ae2331c245c69',1,'distribution.c']]],
-  ['dec',['Dec',['../namespaceamrex_1_1Gpu_1_1Atomic.html#acf672781c4679985d7bbd8e335318fed',1,'amrex::Gpu::Atomic']]],
+  ['dec',['Dec',['../namespaceamrex_1_1Gpu_1_1Atomic.html#af95f0a9b1d17eef9d886163f84bb20cd',1,'amrex::Gpu::Atomic']]],
   ['deciderproc',['deciderProc',['../classamrex_1_1NFilesIter.html#a64d2a6da3e2847bc9601352409d79ceb',1,'amrex::NFilesIter']]],
   ['decidertag',['deciderTag',['../classamrex_1_1NFilesIter.html#a5ee82bc72ab839617286472e64131009',1,'amrex::NFilesIter']]],
   ['decrementnumberofusers',['DecrementNumberOfUsers',['../classamrex_1_1DataServices.html#a85a4eb7cb438f3c75d8de3ecd71a70f7',1,'amrex::DataServices']]],
