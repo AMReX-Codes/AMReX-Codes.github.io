@@ -4,51 +4,53 @@
     <compoundname>AMReX_ParticleContainerI.H</compoundname>
     <includedby refid="AMReX__Particles_8H" local="yes">/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particles.H</includedby>
     <invincdepgraph>
-      <node id="77918">
+      <node id="77917">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H</label>
         <link refid="AMReX__TracerParticle__mod__K_8H"/>
-        <childnode refid="77919" relation="include">
+        <childnode refid="77918" relation="include">
         </childnode>
       </node>
-      <node id="77915">
+      <node id="77914">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborParticles.H</label>
         <link refid="AMReX__NeighborParticles_8H"/>
       </node>
-      <node id="77913">
+      <node id="77912">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/AmrCore/AMReX_AmrParticles.H</label>
         <link refid="AMReX__AmrParticles_8H"/>
       </node>
-      <node id="77914">
+      <node id="77913">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborList.H</label>
         <link refid="AMReX__NeighborList_8H"/>
-        <childnode refid="77915" relation="include">
+        <childnode refid="77914" relation="include">
         </childnode>
       </node>
-      <node id="77911">
+      <node id="77910">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleContainerI.H</label>
         <link refid="AMReX_ParticleContainerI.H"/>
-        <childnode refid="77912" relation="include">
+        <childnode refid="77911" relation="include">
+        </childnode>
+      </node>
+      <node id="77915">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle_mod_K.H</label>
+        <link refid="AMReX__Particle__mod__K_8H"/>
+        <childnode refid="77911" relation="include">
         </childnode>
       </node>
       <node id="77916">
-        <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particle_mod_K.H</label>
-        <link refid="AMReX__Particle__mod__K_8H"/>
-        <childnode refid="77912" relation="include">
-        </childnode>
-      </node>
-      <node id="77917">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_TracerParticles.H</label>
         <link refid="AMReX__TracerParticles_8H"/>
-        <childnode refid="77913" relation="include">
+        <childnode refid="77912" relation="include">
+        </childnode>
+        <childnode refid="77917" relation="include">
         </childnode>
         <childnode refid="77918" relation="include">
         </childnode>
-        <childnode refid="77919" relation="include">
-        </childnode>
       </node>
-      <node id="77912">
+      <node id="77911">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_Particles.H</label>
         <link refid="AMReX__Particles_8H"/>
+        <childnode refid="77912" relation="include">
+        </childnode>
         <childnode refid="77913" relation="include">
         </childnode>
         <childnode refid="77914" relation="include">
@@ -57,10 +59,8 @@
         </childnode>
         <childnode refid="77916" relation="include">
         </childnode>
-        <childnode refid="77917" relation="include">
-        </childnode>
       </node>
-      <node id="77919">
+      <node id="77918">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_TracerParticles.cpp</label>
         <link refid="AMReX__TracerParticles_8cpp"/>
       </node>
@@ -1257,14 +1257,14 @@
 <codeline lineno="1185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::PinnedVector&lt;char&gt;</ref><sp/>pinned_snd_buffer;</highlight></codeline>
 <codeline lineno="1186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::PinnedVector&lt;char&gt;</ref><sp/>pinned_rcv_buffer;</highlight></codeline>
 <codeline lineno="1187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pinned_snd_buffer.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(snd_buffer.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
-<codeline lineno="1188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" kindref="member">Gpu::dtoh_memcpy_async</ref>(pinned_snd_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>snd_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>snd_buffer.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="1188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::dtoh_memcpy_async(pinned_snd_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>snd_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>snd_buffer.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
 <codeline lineno="1189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1ab70e7cbaf0b6636a9be60729e0869495" kindref="member">buildMPIFinish</ref>(BufferMap());</highlight></codeline>
 <codeline lineno="1190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kindref="member">Gpu::Device::synchronize</ref>();</highlight></codeline>
 <codeline lineno="1191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aecd4b7b3db27a6698403b2f272a378ea" kindref="member">communicateParticlesStart</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>plan,<sp/>pinned_snd_buffer,<sp/>pinned_rcv_buffer);</highlight></codeline>
 <codeline lineno="1192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rcv_buffer.<ref refid="classamrex_1_1PODVector_1ac7b03a34c6a6ff4d2962494280652506" kindref="member">resize</ref>(pinned_rcv_buffer.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());<sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="1193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae7b67ab5f654b436110debd38f1b1d57" kindref="member">unpackBuffer</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>plan,<sp/>snd_buffer,<sp/><ref refid="structamrex_1_1RedistributeUnpackPolicy" kindref="compound">RedistributeUnpackPolicy</ref>());</highlight></codeline>
 <codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a814322d519ae32014737504164a0516b" kindref="member">communicateParticlesFinish</ref>(plan);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kindref="member">Gpu::htod_memcpy_async</ref>(rcv_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>pinned_rcv_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>pinned_rcv_buffer.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
+<codeline lineno="1195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::htod_memcpy_async(rcv_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>pinned_rcv_buffer.<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>(),<sp/>pinned_rcv_buffer.<ref refid="classamrex_1_1PODVector_1a1cdc3c767875be38aa4e622280597347" kindref="member">size</ref>());</highlight></codeline>
 <codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa336a10fb862ee79cd872847ef6efadd" kindref="member">unpackRemotes</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>plan,<sp/>rcv_buffer,<sp/><ref refid="structamrex_1_1RedistributeUnpackPolicy" kindref="compound">RedistributeUnpackPolicy</ref>());</highlight></codeline>
 <codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"></highlight></codeline>

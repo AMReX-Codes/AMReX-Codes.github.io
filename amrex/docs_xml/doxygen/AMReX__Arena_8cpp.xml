@@ -1204,7 +1204,7 @@
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a90c94dfad5d935d839bfd6fbe1ee3013" kindref="member">AMREX_HIP_OR_CUDA_OR_DPCPP</ref></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL(hipMalloc(&amp;p,<sp/>nbytes));,</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMallocManaged(&amp;p,<sp/>nbytes));,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>sycl::malloc_shared(nbytes,<sp/>Gpu::Device::syclDevice(),<sp/>Gpu::Device::syclContext()););</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>sycl::malloc_shared(nbytes,<sp/>Gpu::Device::syclDevice(),<sp/>Gpu::Device::syclContext()));</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kindref="member">arena_info</ref>.<ref refid="structamrex_1_1ArenaInfo_1a106f4ef6d447922447c63d296583e917" kindref="member">device_set_readonly</ref>)</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aa2984b48d13a570d6987968741a04741" kindref="member">Gpu::Device::mem_advise_set_readonly</ref>(p,<sp/>nbytes);</highlight></codeline>
@@ -1220,7 +1220,7 @@
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a90c94dfad5d935d839bfd6fbe1ee3013" kindref="member">AMREX_HIP_OR_CUDA_OR_DPCPP</ref></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipMalloc(&amp;p,<sp/>nbytes));,</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMalloc(&amp;p,<sp/>nbytes));,</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>sycl::malloc_device(nbytes,<sp/>Gpu::Device::syclDevice(),<sp/>Gpu::Device::syclContext()););</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p<sp/>=<sp/>sycl::malloc_device(nbytes,<sp/>Gpu::Device::syclDevice(),<sp/>Gpu::Device::syclContext()));</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
@@ -1252,7 +1252,7 @@
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a90c94dfad5d935d839bfd6fbe1ee3013" kindref="member">AMREX_HIP_OR_CUDA_OR_DPCPP</ref></highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipFree(p));,</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaFree(p));,</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sycl::free(p,Gpu::Device::syclContext()););</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sycl::free(p,Gpu::Device::syclContext()));</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" kindref="member">arena_info</ref>.<ref refid="structamrex_1_1ArenaInfo_1a18ad35d706eda3be6347c90f86d68e81" kindref="member">device_use_hostalloc</ref>)<sp/>munlock(p,<sp/>nbytes);</highlight></codeline>
