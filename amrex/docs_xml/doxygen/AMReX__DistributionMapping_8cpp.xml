@@ -3452,7 +3452,7 @@
 <codeline lineno="1818"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1819"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="1820"><highlight class="normal">std::vector&lt;std::vector&lt;int&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="1821"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1aa07e2c79e1100575a40bdb8c2b3efe03" kindref="member">DistributionMapping::makeSFC</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use_box_vol)</highlight></codeline>
+<codeline lineno="1821"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1aa07e2c79e1100575a40bdb8c2b3efe03" kindref="member">DistributionMapping::makeSFC</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>use_box_vol,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs)</highlight></codeline>
 <codeline lineno="1822"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1823"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;makeSFC&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1824"><highlight class="normal"></highlight></codeline>
@@ -3491,115 +3491,114 @@
 <codeline lineno="1857"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1858"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(tokens.begin(),<sp/>tokens.end(),<sp/>SFCToken::Compare());</highlight></codeline>
 <codeline lineno="1859"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1860"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
-<codeline lineno="1861"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>volper;</highlight></codeline>
-<codeline lineno="1862"><highlight class="normal"><sp/><sp/><sp/><sp/>volper<sp/>=<sp/>vol_sum<sp/>/<sp/>nprocs;</highlight></codeline>
-<codeline lineno="1863"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1864"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::vector&lt;int&gt;<sp/>&gt;<sp/>r(nprocs);</highlight></codeline>
-<codeline lineno="1865"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7b11db86486b941e833b78ea24165c01" kindref="member">Distribute</ref>(tokens,<sp/>nprocs,<sp/>volper,<sp/>r);</highlight></codeline>
-<codeline lineno="1866"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1867"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1868"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1869"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1870"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref>&amp;</highlight></codeline>
-<codeline lineno="1871"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1aa680d94d22fd2dc0e9e6ab1c224113ff" kindref="member">DistributionMapping::getIndexArray</ref><sp/>()</highlight></codeline>
-<codeline lineno="1872"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1873"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array.empty())</highlight></codeline>
-<codeline lineno="1874"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
-<codeline lineno="1876"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap[i];</highlight></codeline>
-<codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0653e205c26f3961aa756292d5f8dbc4" kindref="member">ParallelDescriptor::sameTeam</ref>(rank))<sp/>{</highlight></codeline>
-<codeline lineno="1880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array.push_back(i);</highlight></codeline>
-<codeline lineno="1882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
-<codeline lineno="1883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1885"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1886"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array;</highlight></codeline>
-<codeline lineno="1887"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1888"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1889"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;bool&gt;&amp;</highlight></codeline>
-<codeline lineno="1890"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1a8eb230cc640400a27702a048a611b0af" kindref="member">DistributionMapping::getOwnerShip</ref><sp/>()</highlight></codeline>
-<codeline lineno="1891"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1892"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership.empty())</highlight></codeline>
-<codeline lineno="1893"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1894"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
-<codeline lineno="1895"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap[i];</highlight></codeline>
-<codeline lineno="1898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0653e205c26f3961aa756292d5f8dbc4" kindref="member">ParallelDescriptor::sameTeam</ref>(rank))<sp/>{</highlight></codeline>
-<codeline lineno="1899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array.push_back(i);</highlight></codeline>
-<codeline lineno="1901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
-<codeline lineno="1902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1903"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1904"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1905"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership;</highlight></codeline>
-<codeline lineno="1906"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1907"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1908"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1909"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="1910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>&amp;<sp/>pmap)</highlight></codeline>
-<codeline lineno="1911"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1912"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(DistributionMapping&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1913"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1914"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>pmap.<ref refid="classamrex_1_1DistributionMapping_1ac1cd8ab03f5ec883f167f4e1148d29ee" kindref="member">ProcessorMap</ref>().<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>();<sp/>++i)</highlight></codeline>
-<codeline lineno="1915"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;m_pmap[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pmap.<ref refid="classamrex_1_1DistributionMapping_1ac1cd8ab03f5ec883f167f4e1148d29ee" kindref="member">ProcessorMap</ref>()[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1917"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1918"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1919"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1920"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1921"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())</highlight></codeline>
-<codeline lineno="1922"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream<sp/>&amp;,<sp/>DistributionMapping<sp/>&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1923"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1924"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1925"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1926"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1927"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1928"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DistributionMapping_1_1RefID" kindref="compound">DistributionMapping::RefID</ref>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="1929"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1930"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.data;</highlight></codeline>
-<codeline lineno="1931"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1932"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1933"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1934"><highlight class="normal">std::istream&amp;</highlight></codeline>
-<codeline lineno="1935"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1af4cb165d9e60aff6ad22b20d44ec22dd" kindref="member">DistributionMapping::readFrom</ref><sp/>(std::istream&amp;<sp/>is)</highlight></codeline>
-<codeline lineno="1936"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1937"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="classamrex_1_1DistributionMapping_1a0eebc2b29efd96d23accd706ab5f6930" kindref="member">size</ref>()<sp/>==<sp/>0);</highlight></codeline>
-<codeline lineno="1938"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;clear();</highlight></codeline>
-<codeline lineno="1939"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap;</highlight></codeline>
-<codeline lineno="1940"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1941"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
-<codeline lineno="1942"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>n;</highlight></codeline>
-<codeline lineno="1943"><highlight class="normal"><sp/><sp/><sp/><sp/>pmap.resize(n);</highlight></codeline>
-<codeline lineno="1944"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/>pmap)<sp/>{</highlight></codeline>
-<codeline lineno="1945"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>x;</highlight></codeline>
-<codeline lineno="1946"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1947"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1948"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="1949"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::readFrom(istream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1950"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1951"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
-<codeline lineno="1952"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1953"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1954"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1955"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1a6ced4b68fb0842c66984c45d46b6ac73" kindref="member">DistributionMapping::writeOn</ref><sp/>(std::ostream&amp;<sp/>os)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1956"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1957"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1DistributionMapping_1a0eebc2b29efd96d23accd706ab5f6930" kindref="member">size</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1958"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1DistributionMapping_1a0eebc2b29efd96d23accd706ab5f6930" kindref="member">size</ref>();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1959"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>(*this)[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1960"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1961"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1962"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
-<codeline lineno="1963"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::writeOn(ostream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1964"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1965"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1966"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1967"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1968"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1860"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>volper;</highlight></codeline>
+<codeline lineno="1861"><highlight class="normal"><sp/><sp/><sp/><sp/>volper<sp/>=<sp/>vol_sum<sp/>/<sp/>nprocs;</highlight></codeline>
+<codeline lineno="1862"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1863"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::vector&lt;int&gt;<sp/>&gt;<sp/>r(nprocs);</highlight></codeline>
+<codeline lineno="1864"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7b11db86486b941e833b78ea24165c01" kindref="member">Distribute</ref>(tokens,<sp/>nprocs,<sp/>volper,<sp/>r);</highlight></codeline>
+<codeline lineno="1865"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1866"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1867"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1868"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1869"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;int&gt;</ref>&amp;</highlight></codeline>
+<codeline lineno="1870"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1aa680d94d22fd2dc0e9e6ab1c224113ff" kindref="member">DistributionMapping::getIndexArray</ref><sp/>()</highlight></codeline>
+<codeline lineno="1871"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1872"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array.empty())</highlight></codeline>
+<codeline lineno="1873"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1874"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
+<codeline lineno="1875"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap[i];</highlight></codeline>
+<codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0653e205c26f3961aa756292d5f8dbc4" kindref="member">ParallelDescriptor::sameTeam</ref>(rank))<sp/>{</highlight></codeline>
+<codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array.push_back(i);</highlight></codeline>
+<codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
+<codeline lineno="1882"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1883"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1884"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array;</highlight></codeline>
+<codeline lineno="1886"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1887"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1888"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;bool&gt;&amp;</highlight></codeline>
+<codeline lineno="1889"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1a8eb230cc640400a27702a048a611b0af" kindref="member">DistributionMapping::getOwnerShip</ref><sp/>()</highlight></codeline>
+<codeline lineno="1890"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1891"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership.empty())</highlight></codeline>
+<codeline lineno="1892"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1893"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myProc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
+<codeline lineno="1894"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1895"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1896"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap[i];</highlight></codeline>
+<codeline lineno="1897"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0653e205c26f3961aa756292d5f8dbc4" kindref="member">ParallelDescriptor::sameTeam</ref>(rank))<sp/>{</highlight></codeline>
+<codeline lineno="1898"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>Team<sp/>is<sp/>not<sp/>used<sp/>(i.e.,<sp/>team<sp/>size<sp/>==<sp/>1),<sp/>distributionMap[i]<sp/>==<sp/>myProc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1899"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_index_array.push_back(i);</highlight></codeline>
+<codeline lineno="1900"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership.push_back(myProc<sp/>==<sp/>rank);</highlight></codeline>
+<codeline lineno="1901"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1902"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1903"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1904"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_ownership;</highlight></codeline>
+<codeline lineno="1905"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1906"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1907"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1908"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="1909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>&amp;<sp/>pmap)</highlight></codeline>
+<codeline lineno="1910"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1911"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(DistributionMapping&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1912"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1913"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>pmap.<ref refid="classamrex_1_1DistributionMapping_1ac1cd8ab03f5ec883f167f4e1148d29ee" kindref="member">ProcessorMap</ref>().<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>();<sp/>++i)</highlight></codeline>
+<codeline lineno="1914"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1915"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;m_pmap[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>i<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pmap.<ref refid="classamrex_1_1DistributionMapping_1ac1cd8ab03f5ec883f167f4e1148d29ee" kindref="member">ProcessorMap</ref>()[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1916"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1917"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1918"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1919"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1920"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())</highlight></codeline>
+<codeline lineno="1921"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream<sp/>&amp;,<sp/>DistributionMapping<sp/>&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1922"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1923"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1924"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1925"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1926"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1927"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DistributionMapping_1_1RefID" kindref="compound">DistributionMapping::RefID</ref>&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1928"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1929"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.data;</highlight></codeline>
+<codeline lineno="1930"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1931"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1932"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1933"><highlight class="normal">std::istream&amp;</highlight></codeline>
+<codeline lineno="1934"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1af4cb165d9e60aff6ad22b20d44ec22dd" kindref="member">DistributionMapping::readFrom</ref><sp/>(std::istream&amp;<sp/>is)</highlight></codeline>
+<codeline lineno="1935"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1936"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="classamrex_1_1DistributionMapping_1a0eebc2b29efd96d23accd706ab5f6930" kindref="member">size</ref>()<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="1937"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;clear();</highlight></codeline>
+<codeline lineno="1938"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/><ref refid="classamrex_1_1DistributionMapping_1a66d4a4d11b9ff6a159c90448e55b6885" kindref="member">m_ref</ref>-&gt;m_pmap;</highlight></codeline>
+<codeline lineno="1939"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1940"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n;</highlight></codeline>
+<codeline lineno="1941"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>n;</highlight></codeline>
+<codeline lineno="1942"><highlight class="normal"><sp/><sp/><sp/><sp/>pmap.resize(n);</highlight></codeline>
+<codeline lineno="1943"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/>pmap)<sp/>{</highlight></codeline>
+<codeline lineno="1944"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>x;</highlight></codeline>
+<codeline lineno="1945"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1946"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(100000,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1947"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="1948"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::readFrom(istream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1949"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1950"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
+<codeline lineno="1951"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1952"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1953"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1954"><highlight class="normal"><ref refid="classamrex_1_1DistributionMapping_1a6ced4b68fb0842c66984c45d46b6ac73" kindref="member">DistributionMapping::writeOn</ref><sp/>(std::ostream&amp;<sp/>os)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1955"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1956"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classamrex_1_1DistributionMapping_1a0eebc2b29efd96d23accd706ab5f6930" kindref="member">size</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1957"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1DistributionMapping_1a0eebc2b29efd96d23accd706ab5f6930" kindref="member">size</ref>();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1958"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>(*this)[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1959"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1960"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1961"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())<sp/>{</highlight></codeline>
+<codeline lineno="1962"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;DistributionMapping::writeOn(ostream&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1963"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1964"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1965"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1966"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1967"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp"/>
   </compounddef>

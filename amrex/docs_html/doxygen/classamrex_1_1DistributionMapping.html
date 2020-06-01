@@ -256,8 +256,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3691234f6667de564cebb4e990a4b143"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a3691234f6667de564cebb4e990a4b143">makeSFC</a> (const <a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; Real &gt; &amp;rcost_local, Real &amp;currentEfficiency, Real &amp;proposedEfficiency, bool broadcastToAll=true, int root=<a class="el" href="namespaceamrex_1_1ParallelDescriptor.html#ab734a5d614e753d28d03865ee6e4039a">ParallelDescriptor::IOProcessorNumber</a>())</td></tr>
 <tr class="memdesc:a3691234f6667de564cebb4e990a4b143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes a new distribution mapping by distributing input costs according to a <code>space filling curve</code> (SFC) algorithm.  <a href="#a3691234f6667de564cebb4e990a4b143">More...</a><br /></td></tr>
 <tr class="separator:a3691234f6667de564cebb4e990a4b143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bb54d936d3034fd9524e2065a1ab6cd"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a4bb54d936d3034fd9524e2065a1ab6cd">makeSFC</a> (const BoxArray &amp;ba, bool use_box_vol=true)</td></tr>
-<tr class="separator:a4bb54d936d3034fd9524e2065a1ab6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519e5ab2bd07785885734c5bf5149b6c"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#a519e5ab2bd07785885734c5bf5149b6c">makeSFC</a> (const BoxArray &amp;ba, bool use_box_vol=true, const int nprocs=<a class="el" href="namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843">ParallelContext::NProcsSub</a>())</td></tr>
+<tr class="separator:a519e5ab2bd07785885734c5bf5149b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54a3f9e80ba4f24e8b3663f2634bf4d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DistributionMapping.html#aa54a3f9e80ba4f24e8b3663f2634bf4d">ComputeDistributionMappingEfficiency</a> (const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dm, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;cost, Real *efficiency)</td></tr>
 <tr class="memdesc:aa54a3f9e80ba4f24e8b3663f2634bf4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average cost per MPI rank given a distribution mapping global cost vector.  <a href="#aa54a3f9e80ba4f24e8b3663f2634bf4d">More...</a><br /></td></tr>
 <tr class="separator:aa54a3f9e80ba4f24e8b3663f2634bf4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1624,7 +1624,7 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4bb54d936d3034fd9524e2065a1ab6cd"></a>
+<a class="anchor" id="a519e5ab2bd07785885734c5bf5149b6c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1641,7 +1641,13 @@ Friends</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>use_box_vol</em> = <code>true</code>&#160;</td>
+          <td class="paramname"><em>use_box_vol</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>nprocs</em> = <code><a class="el" href="namespaceamrex_1_1ParallelContext.html#aa7f481a6be5e8f2eefbe9448135a3843">ParallelContext::NProcsSub</a>()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
