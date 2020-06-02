@@ -1,0 +1,753 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__FileSystem_8cpp" kind="file" language="C++">
+    <compoundname>AMReX_FileSystem.cpp</compoundname>
+    <includes refid="AMReX__FileSystem_8H" local="no">AMReX_FileSystem.H</includes>
+    <includes refid="AMReX__Print_8H" local="no">AMReX_Print.H</includes>
+    <includes refid="AMReX__Vector_8H" local="no">AMReX_Vector.H</includes>
+    <includes refid="AMReX_8H" local="no">AMReX.H</includes>
+    <includes local="no">cstdio</includes>
+    <includes local="no">cstddef</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">unistd.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">sys/wait.h</includes>
+    <incdepgraph>
+      <node id="21427">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="21394">
+        <label>AMReX_ParallelContext.H</label>
+        <link refid="AMReX__ParallelContext_8H"/>
+        <childnode refid="21393" relation="include">
+        </childnode>
+        <childnode refid="21372" relation="include">
+        </childnode>
+        <childnode refid="21395" relation="include">
+        </childnode>
+        <childnode refid="21381" relation="include">
+        </childnode>
+      </node>
+      <node id="21391">
+        <label>functional</label>
+      </node>
+      <node id="21373">
+        <label>iomanip</label>
+      </node>
+      <node id="21416">
+        <label>limits</label>
+      </node>
+      <node id="21401">
+        <label>AMReX_BLProfiler.H</label>
+        <link refid="AMReX__BLProfiler_8H"/>
+        <childnode refid="21368" relation="include">
+        </childnode>
+        <childnode refid="21402" relation="include">
+        </childnode>
+      </node>
+      <node id="21412">
+        <label>AMReX_Box.H</label>
+        <link refid="AMReX__Box_8H"/>
+        <childnode refid="21413" relation="include">
+        </childnode>
+        <childnode refid="21410" relation="include">
+        </childnode>
+        <childnode refid="21414" relation="include">
+        </childnode>
+        <childnode refid="21381" relation="include">
+        </childnode>
+        <childnode refid="21415" relation="include">
+        </childnode>
+        <childnode refid="21418" relation="include">
+        </childnode>
+        <childnode refid="21419" relation="include">
+        </childnode>
+        <childnode refid="21409" relation="include">
+        </childnode>
+        <childnode refid="21404" relation="include">
+        </childnode>
+        <childnode refid="21420" relation="include">
+        </childnode>
+        <childnode refid="21395" relation="include">
+        </childnode>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21407" relation="include">
+        </childnode>
+      </node>
+      <node id="21403">
+        <label>float.h</label>
+      </node>
+      <node id="21415">
+        <label>AMReX_IntVect.H</label>
+        <link refid="AMReX__IntVect_8H"/>
+        <childnode refid="21384" relation="include">
+        </childnode>
+        <childnode refid="21381" relation="include">
+        </childnode>
+        <childnode refid="21409" relation="include">
+        </childnode>
+        <childnode refid="21404" relation="include">
+        </childnode>
+        <childnode refid="21395" relation="include">
+        </childnode>
+        <childnode refid="21411" relation="include">
+        </childnode>
+        <childnode refid="21397" relation="include">
+        </childnode>
+        <childnode refid="21387" relation="include">
+        </childnode>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21386" relation="include">
+        </childnode>
+        <childnode refid="21413" relation="include">
+        </childnode>
+        <childnode refid="21389" relation="include">
+        </childnode>
+        <childnode refid="21388" relation="include">
+        </childnode>
+        <childnode refid="21416" relation="include">
+        </childnode>
+        <childnode refid="21417" relation="include">
+        </childnode>
+        <childnode refid="21396" relation="include">
+        </childnode>
+      </node>
+      <node id="21375">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21377" relation="include">
+        </childnode>
+        <childnode refid="21379" relation="include">
+        </childnode>
+        <childnode refid="21381" relation="include">
+        </childnode>
+        <childnode refid="21382" relation="include">
+        </childnode>
+        <childnode refid="21384" relation="include">
+        </childnode>
+        <childnode refid="21386" relation="include">
+        </childnode>
+        <childnode refid="21390" relation="include">
+        </childnode>
+        <childnode refid="21391" relation="include">
+        </childnode>
+        <childnode refid="21368" relation="include">
+        </childnode>
+        <childnode refid="21378" relation="include">
+        </childnode>
+        <childnode refid="21392" relation="include">
+        </childnode>
+        <childnode refid="21393" relation="include">
+        </childnode>
+      </node>
+      <node id="21377">
+        <label>AMReX_GpuPrint.H</label>
+        <link refid="AMReX__GpuPrint_8H"/>
+        <childnode refid="21378" relation="include">
+        </childnode>
+      </node>
+      <node id="21395">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="21396" relation="include">
+        </childnode>
+        <childnode refid="21392" relation="include">
+        </childnode>
+        <childnode refid="21393" relation="include">
+        </childnode>
+        <childnode refid="21397" relation="include">
+        </childnode>
+        <childnode refid="21384" relation="include">
+        </childnode>
+      </node>
+      <node id="21370">
+        <label>AMReX_Print.H</label>
+        <link refid="AMReX__Print_8H"/>
+        <childnode refid="21371" relation="include">
+        </childnode>
+        <childnode refid="21372" relation="include">
+        </childnode>
+        <childnode refid="21373" relation="include">
+        </childnode>
+        <childnode refid="21374" relation="include">
+        </childnode>
+        <childnode refid="21375" relation="include">
+        </childnode>
+        <childnode refid="21394" relation="include">
+        </childnode>
+        <childnode refid="21398" relation="include">
+        </childnode>
+      </node>
+      <node id="21388">
+        <label>cmath</label>
+      </node>
+      <node id="21380">
+        <label>cassert</label>
+      </node>
+      <node id="21383">
+        <label>stdexcept</label>
+      </node>
+      <node id="21422">
+        <label>numeric</label>
+      </node>
+      <node id="21368">
+        <label>string</label>
+      </node>
+      <node id="21372">
+        <label>fstream</label>
+      </node>
+      <node id="21414">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="21402" relation="include">
+        </childnode>
+      </node>
+      <node id="21404">
+        <label>AMReX_Array.H</label>
+        <link refid="AMReX__Array_8H"/>
+        <childnode refid="21405" relation="include">
+        </childnode>
+        <childnode refid="21393" relation="include">
+        </childnode>
+        <childnode refid="21374" relation="include">
+        </childnode>
+        <childnode refid="21368" relation="include">
+        </childnode>
+        <childnode refid="21390" relation="include">
+        </childnode>
+        <childnode refid="21371" relation="include">
+        </childnode>
+        <childnode refid="21378" relation="include">
+        </childnode>
+        <childnode refid="21406" relation="include">
+        </childnode>
+        <childnode refid="21375" relation="include">
+        </childnode>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21407" relation="include">
+        </childnode>
+        <childnode refid="21397" relation="include">
+        </childnode>
+        <childnode refid="21409" relation="include">
+        </childnode>
+        <childnode refid="21402" relation="include">
+        </childnode>
+        <childnode refid="21410" relation="include">
+        </childnode>
+        <childnode refid="21411" relation="include">
+        </childnode>
+      </node>
+      <node id="21409">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+      </node>
+      <node id="21408">
+        <label>AMReX_GpuTypes.H</label>
+        <link refid="AMReX__GpuTypes_8H"/>
+      </node>
+      <node id="21387">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+      </node>
+      <node id="21369">
+        <label>sys/types.h</label>
+      </node>
+      <node id="21421">
+        <label>typeinfo</label>
+      </node>
+      <node id="21378">
+        <label>cstdio</label>
+      </node>
+      <node id="21407">
+        <label>AMReX_GpuControl.H</label>
+        <link refid="AMReX__GpuControl_8H"/>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21408" relation="include">
+        </childnode>
+      </node>
+      <node id="21399">
+        <label>AMReX_BLBackTrace.H</label>
+        <link refid="AMReX__BLBackTrace_8H"/>
+        <childnode refid="21400" relation="include">
+        </childnode>
+        <childnode refid="21368" relation="include">
+        </childnode>
+        <childnode refid="21374" relation="include">
+        </childnode>
+        <childnode refid="21371" relation="include">
+        </childnode>
+        <childnode refid="21378" relation="include">
+        </childnode>
+        <childnode refid="21389" relation="include">
+        </childnode>
+      </node>
+      <node id="21367">
+        <label>AMReX_FileSystem.H</label>
+        <link refid="AMReX__FileSystem_8H"/>
+        <childnode refid="21368" relation="include">
+        </childnode>
+        <childnode refid="21369" relation="include">
+        </childnode>
+      </node>
+      <node id="21426">
+        <label>unistd.h</label>
+      </node>
+      <node id="21400">
+        <label>stack</label>
+      </node>
+      <node id="21392">
+        <label>vector</label>
+      </node>
+      <node id="21397">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="21375" relation="include">
+        </childnode>
+      </node>
+      <node id="21386">
+        <label>AMReX_Math.H</label>
+        <link refid="AMReX__Math_8H"/>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21387" relation="include">
+        </childnode>
+        <childnode refid="21388" relation="include">
+        </childnode>
+        <childnode refid="21389" relation="include">
+        </childnode>
+      </node>
+      <node id="21376">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+      </node>
+      <node id="21374">
+        <label>utility</label>
+      </node>
+      <node id="21405">
+        <label>array</label>
+      </node>
+      <node id="21371">
+        <label>sstream</label>
+      </node>
+      <node id="21382">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="21383" relation="include">
+        </childnode>
+      </node>
+      <node id="21410">
+        <label>AMReX_Algorithm.H</label>
+        <link refid="AMReX__Algorithm_8H"/>
+        <childnode refid="21396" relation="include">
+        </childnode>
+        <childnode refid="21376" relation="include">
+        </childnode>
+        <childnode refid="21387" relation="include">
+        </childnode>
+        <childnode refid="21411" relation="include">
+        </childnode>
+      </node>
+      <node id="21384">
+        <label>AMReX_INT.H</label>
+        <link refid="AMReX__INT_8H"/>
+        <childnode refid="21385" relation="include">
+        </childnode>
+      </node>
+      <node id="21398">
+        <label>AMReX_ParallelDescriptor.H</label>
+        <link refid="AMReX__ParallelDescriptor_8H"/>
+        <childnode refid="21381" relation="include">
+        </childnode>
+        <childnode refid="21394" relation="include">
+        </childnode>
+        <childnode refid="21399" relation="include">
+        </childnode>
+        <childnode refid="21401" relation="include">
+        </childnode>
+        <childnode refid="21397" relation="include">
+        </childnode>
+        <childnode refid="21384" relation="include">
+        </childnode>
+        <childnode refid="21402" relation="include">
+        </childnode>
+        <childnode refid="21404" relation="include">
+        </childnode>
+        <childnode refid="21395" relation="include">
+        </childnode>
+        <childnode refid="21412" relation="include">
+        </childnode>
+        <childnode refid="21390" relation="include">
+        </childnode>
+        <childnode refid="21392" relation="include">
+        </childnode>
+        <childnode refid="21368" relation="include">
+        </childnode>
+        <childnode refid="21421" relation="include">
+        </childnode>
+        <childnode refid="21396" relation="include">
+        </childnode>
+        <childnode refid="21391" relation="include">
+        </childnode>
+        <childnode refid="21416" relation="include">
+        </childnode>
+        <childnode refid="21422" relation="include">
+        </childnode>
+        <childnode refid="21423" relation="include">
+        </childnode>
+      </node>
+      <node id="21419">
+        <label>AMReX_Orientation.H</label>
+        <link refid="AMReX__Orientation_8H"/>
+        <childnode refid="21413" relation="include">
+        </childnode>
+        <childnode refid="21397" relation="include">
+        </childnode>
+        <childnode refid="21409" relation="include">
+        </childnode>
+        <childnode refid="21376" relation="include">
+        </childnode>
+      </node>
+      <node id="21411">
+        <label>AMReX_Dim3.H</label>
+        <link refid="AMReX__Dim3_8H"/>
+        <childnode refid="21390" relation="include">
+        </childnode>
+        <childnode refid="21402" relation="include">
+        </childnode>
+        <childnode refid="21376" relation="include">
+        </childnode>
+      </node>
+      <node id="21428">
+        <label>sys/wait.h</label>
+      </node>
+      <node id="21413">
+        <label>iosfwd</label>
+      </node>
+      <node id="21389">
+        <label>cstdlib</label>
+      </node>
+      <node id="21390">
+        <label>iostream</label>
+      </node>
+      <node id="21418">
+        <label>AMReX_IndexType.H</label>
+        <link refid="AMReX__IndexType_8H"/>
+        <childnode refid="21413" relation="include">
+        </childnode>
+        <childnode refid="21381" relation="include">
+        </childnode>
+        <childnode refid="21415" relation="include">
+        </childnode>
+        <childnode refid="21409" relation="include">
+        </childnode>
+      </node>
+      <node id="21420">
+        <label>AMReX_Array4.H</label>
+        <link refid="AMReX__Array4_8H"/>
+        <childnode refid="21415" relation="include">
+        </childnode>
+        <childnode refid="21377" relation="include">
+        </childnode>
+      </node>
+      <node id="21424">
+        <label>cstddef</label>
+      </node>
+      <node id="21417">
+        <label>climits</label>
+      </node>
+      <node id="21366">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FileSystem.cpp</label>
+        <link refid="AMReX_FileSystem.cpp"/>
+        <childnode refid="21367" relation="include">
+        </childnode>
+        <childnode refid="21370" relation="include">
+        </childnode>
+        <childnode refid="21395" relation="include">
+        </childnode>
+        <childnode refid="21375" relation="include">
+        </childnode>
+        <childnode refid="21378" relation="include">
+        </childnode>
+        <childnode refid="21424" relation="include">
+        </childnode>
+        <childnode refid="21425" relation="include">
+        </childnode>
+        <childnode refid="21426" relation="include">
+        </childnode>
+        <childnode refid="21427" relation="include">
+        </childnode>
+        <childnode refid="21369" relation="include">
+        </childnode>
+        <childnode refid="21428" relation="include">
+        </childnode>
+      </node>
+      <node id="21423">
+        <label>csignal</label>
+      </node>
+      <node id="21406">
+        <label>type_traits</label>
+      </node>
+      <node id="21381">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+      </node>
+      <node id="21396">
+        <label>algorithm</label>
+      </node>
+      <node id="21379">
+        <label>AMReX_GpuAssert.H</label>
+        <link refid="AMReX__GpuAssert_8H"/>
+        <childnode refid="21380" relation="include">
+        </childnode>
+      </node>
+      <node id="21425">
+        <label>cstring</label>
+      </node>
+      <node id="21393">
+        <label>memory</label>
+      </node>
+      <node id="21385">
+        <label>inttypes.h</label>
+      </node>
+      <node id="21402">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="21387" relation="include">
+        </childnode>
+        <childnode refid="21403" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <innernamespace refid="namespaceamrex_1_1FileSystem">amrex::FileSystem</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__FileSystem_8H" kindref="compound">AMReX_FileSystem.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Print_8H" kindref="compound">AMReX_Print.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Vector_8H" kindref="compound">AMReX_Vector.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX_8H" kindref="compound">AMReX.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)<sp/>//<sp/>||<sp/>__cplusplus<sp/>&gt;=<sp/>201703L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;system_error&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">FileSystem<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1a7c995a447e27d5ea33bd54090d867373" kindref="member">CreateDirectories</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>p,<sp/>mode_t<sp/></highlight><highlight class="comment">/*mode*/</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1adf03962600e13b4ecd73531bd77d0cf5" kindref="member">verbose</ref>)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/>ec;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::create_directories(std::filesystem::path{p},<sp/>ec);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ec<sp/>and<sp/>verbose)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;amrex::UtilCreateDirectory<sp/>failed<sp/>to<sp/>create<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>p<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>ec.message()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!ec;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1afee9c962b3446b2d10724c21add85f8c" kindref="member">Exists</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>filename)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/>ec;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::filesystem::exists(std::filesystem::path{filename},<sp/>ec);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ec<sp/>and<sp/><ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;amrex::FileSystem::Exists<sp/>failed.<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>ec.message()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">std::string</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1aabdade8ca72598b4b02073e1d72c8afe" kindref="member">CurrentPath</ref><sp/>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/>ec;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>path<sp/>=<sp/>std::filesystem::current_path(ec);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ec<sp/>and<sp/><ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;amrex::FileSystem::CurrentPath<sp/>failed.<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>ec.message()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>path.string();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1a1887698566ebd58596be3b1a96ad2e9a" kindref="member">Remove</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>filename)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/>ec;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>std::filesystem::remove(std::filesystem::path{filename},ec);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!ec;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1a53bbe4a421536a453fcb97d3c8219a55" kindref="member">RemoveAll</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::error_code<sp/>ec;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::filesystem::remove_all(std::filesystem::path{p},ec);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!ec;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdio&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/wait.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="77" refid="namespaceamrex_1_1FileSystem" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">FileSystem<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1a7c995a447e27d5ea33bd54090d867373" kindref="member">CreateDirectories</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>path,<sp/>mode_t<sp/>mode,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>verbose)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>retVal(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;std::pair&lt;std::string, int&gt;</ref><sp/>&gt;<sp/>pathError;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>path_sep_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(path.length()<sp/>==<sp/>0<sp/>||<sp/>path<sp/>==<sp/>path_sep_str)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>errno<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(std::strchr(path.c_str(),<sp/>*path_sep_str)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>slashes<sp/>in<sp/>the<sp/>path.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errno<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mkdir(path.c_str(),<sp/>mode)<sp/>&lt;<sp/>0<sp/>&amp;&amp;<sp/>errno<sp/>!=<sp/>EEXIST)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pathError.push_back(std::make_pair(path,<sp/>errno));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>copy<sp/>of<sp/>the<sp/>directory<sp/>pathname<sp/>so<sp/>we<sp/>can<sp/>write<sp/>to<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*dir<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[path.length()<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)<sp/>strcpy(dir,<sp/>path.c_str());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*slash<sp/>=<sp/>std::strchr(dir,<sp/>*path_sep_str);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dir[0]<sp/>==<sp/>*path_sep_str)<sp/>{<sp/><sp/></highlight><highlight class="comment">//<sp/>full<sp/>pathname.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(*(slash+1)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((slash<sp/>=<sp/>std::strchr(slash+1,<sp/>*path_sep_str))<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*slash<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errno<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mkdir(dir,<sp/>mode)<sp/>&lt;<sp/>0<sp/>&amp;&amp;<sp/>errno<sp/>!=<sp/>EEXIST)<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pathError.push_back(std::make_pair(dir,<sp/>errno));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(slash)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*slash<sp/>=<sp/>*path_sep_str;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(slash);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/><sp/></highlight><highlight class="comment">//<sp/>relative<sp/>pathname.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*slash<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errno<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mkdir(dir,<sp/>mode)<sp/>&lt;<sp/>0<sp/>&amp;&amp;<sp/>errno<sp/>!=<sp/>EEXIST)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pathError.push_back(std::make_pair(dir,<sp/>errno));</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*slash<sp/>=<sp/>*path_sep_str;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((slash<sp/>=<sp/>std::strchr(slash+1,<sp/>*path_sep_str))<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>errno<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(mkdir(dir,<sp/>mode)<sp/>&lt;<sp/>0<sp/>&amp;&amp;<sp/>errno<sp/>!=<sp/>EEXIST)<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pathError.push_back(std::make_pair(dir,<sp/>errno));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>dir;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(retVal<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/><sp/>||<sp/>verbose<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>pathError.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1AllPrint" kindref="compound">amrex::AllPrint</ref>()&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;amrex::UtilCreateDirectory::<sp/>path<sp/>errno:<sp/><sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>pathError[i].first<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>::<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>strerror(pathError[i].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>retVal;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1afee9c962b3446b2d10724c21add85f8c" kindref="member">Exists</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>filename)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">stat<sp/>statbuff;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lstat(filename.c_str(),<sp/>&amp;statbuff)<sp/>!=<sp/>-1);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">std::string</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1aabdade8ca72598b4b02073e1d72c8afe" kindref="member">CurrentPath</ref><sp/>()</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bufSize<sp/>=<sp/>1024;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>temp[bufSize];</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*rCheck<sp/>=<sp/>getcwd(temp,<sp/>bufSize);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rCheck<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;****<sp/>Error:<sp/><sp/>getcwd<sp/>buffer<sp/>too<sp/>small.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(rCheck);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1a1887698566ebd58596be3b1a96ad2e9a" kindref="member">Remove</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>filename)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>unlink(filename.c_str());</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><ref refid="namespaceamrex_1_1FileSystem_1a53bbe4a421536a453fcb97d3c8219a55" kindref="member">RemoveAll</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p.size()<sp/>&gt;=<sp/>1990)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;FileSystem::RemoveAll:<sp/>Path<sp/>name<sp/>too<sp/>long&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>command[2000];</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>std::snprintf(command,<sp/>2000,<sp/></highlight><highlight class="stringliteral">&quot;\\rm<sp/>-rf<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>p.c_str());;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>retVal<sp/>=<sp/>std::system(command);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(retVal<sp/>==<sp/>-1<sp/>||<sp/>WEXITSTATUS(retVal)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;Removing<sp/>old<sp/>directory<sp/>failed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FileSystem.cpp"/>
+  </compounddef>
+</doxygen>

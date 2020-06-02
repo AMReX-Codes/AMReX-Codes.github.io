@@ -160,7 +160,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a48099208f15f741c739316388f61737a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#a48099208f15f741c739316388f61737a">resize</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;b, int N=1)</td></tr>
 <tr class="memdesc:a48099208f15f741c739316388f61737a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function resizes a <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a> so it covers the <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice. ">Box</a> b with N components.  <a href="#a48099208f15f741c739316388f61737a">More...</a><br /></td></tr>
 <tr class="separator:a48099208f15f741c739316388f61737a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5a36d719054f74a00bfc52e10ec9918"><td class="memTemplParams" colspan="2">template&lt;class U  = T, class  = typename std::enable_if&lt;std::is_trivially_destructible&lt;U&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:ac5a36d719054f74a00bfc52e10ec9918"><td class="memTemplParams" colspan="2">template&lt;class U  = T, typename std::enable_if&lt; std::is_trivially_destructible&lt; U &gt;::value, int &gt;::type  = 0&gt; </td></tr>
 <tr class="memitem:ac5a36d719054f74a00bfc52e10ec9918"><td class="memTemplItemLeft" align="right" valign="top">Elixir&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ac5a36d719054f74a00bfc52e10ec9918">elixir</a> () noexcept</td></tr>
 <tr class="separator:ac5a36d719054f74a00bfc52e10ec9918"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae428e6a2645141dd817c288331575f26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1BaseFab.html#ae428e6a2645141dd817c288331575f26">clear</a> () noexcept</td></tr>
@@ -3274,7 +3274,7 @@ template&lt;RunOn run_on&gt; </div>
 <div class="memtemplate">
 template&lt;class T &gt; </div>
 <div class="memtemplate">
-template&lt;class , class &gt; </div>
+template&lt;class U , typename std::enable_if&lt; std::is_trivially_destructible&lt; U &gt;::value, int &gt;::type &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

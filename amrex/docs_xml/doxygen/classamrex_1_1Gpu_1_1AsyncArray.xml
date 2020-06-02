@@ -8,14 +8,14 @@
         <type>typename T</type>
       </param>
       <param>
-        <type>typename</type>
-        <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;<ref refid="AMReX__TypeTraits_8H_1adc50ea9983407ec975c6c594c92bae5d" kindref="member">AMREX_IS_TRIVIALLY_COPYABLE</ref>(T)&gt;</defval>
+        <type>typename std::enable_if&lt; <ref refid="AMReX__TypeTraits_8H_1adc50ea9983407ec975c6c594c92bae5d" kindref="member">AMREX_IS_TRIVIALLY_COPYABLE</ref>(T), int &gt;::type</type>
+        <defval>0</defval>
       </param>
     </templateparamlist>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1AsyncArray_1a4107f1e184ea871b40debea7a493a9bc" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" prot="private" static="no" mutable="no">
         <type>T *</type>
-        <definition>T* amrex::Gpu::AsyncArray&lt; T, typename &gt;::d_data</definition>
+        <definition>T* amrex::Gpu::AsyncArray&lt; T, type &gt;::d_data</definition>
         <argsstring></argsstring>
         <name>d_data</name>
         <initializer>= nullptr</initializer>
@@ -27,9 +27,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="125" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="125" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1AsyncArray_1afc278f204484e2c64c41bc199669dd76" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" prot="private" static="no" mutable="no">
         <type>T *</type>
-        <definition>T* amrex::Gpu::AsyncArray&lt; T, typename &gt;::h_data</definition>
+        <definition>T* amrex::Gpu::AsyncArray&lt; T, type &gt;::h_data</definition>
         <argsstring></argsstring>
         <name>h_data</name>
         <initializer>= nullptr</initializer>
@@ -43,9 +43,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1af992105e648c21e706ce737fbcebcaea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a5132aad64609e805be6bd7fe440396f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::AsyncArray&lt; T, typename &gt;::AsyncArray</definition>
+        <definition>amrex::Gpu::AsyncArray&lt; T, type &gt;::AsyncArray</definition>
         <argsstring>(T const *h_p, const std::size_t n)</argsstring>
         <name>AsyncArray</name>
         <param>
@@ -64,19 +64,19 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="37" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a5b879dd18ab1df0506992cba46406a68" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a293682071d4e5741d0229e7b75f8a8e2" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename U</type>
             <defval>T</defval>
           </param>
           <param>
-            <type>typename</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_pod&lt;U&gt;::value&gt;</defval>
+            <type>typename std::enable_if&lt; std::is_pod&lt; U &gt;::value, int &gt;::type</type>
+            <defval>0</defval>
           </param>
         </templateparamlist>
         <type></type>
-        <definition>amrex::Gpu::AsyncArray&lt; T, typename &gt;::AsyncArray</definition>
+        <definition>amrex::Gpu::AsyncArray&lt; T, type &gt;::AsyncArray</definition>
         <argsstring>(const std::size_t n)</argsstring>
         <name>AsyncArray</name>
         <param>
@@ -91,9 +91,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="52" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="52" bodyend="65"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a5294524b031f7407ffe97a93ef04c730" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a2b729323da571ece4ca18364dcd2d8d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::AsyncArray&lt; T, typename &gt;::~AsyncArray</definition>
+        <definition>amrex::Gpu::AsyncArray&lt; T, type &gt;::~AsyncArray</definition>
         <argsstring>()</argsstring>
         <name>~AsyncArray</name>
         <briefdescription>
@@ -104,9 +104,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="67" bodyend="67"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1add4b96cf54d84689ea0f0a9539b63e01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a3c0649a02bc8985508034155a8fabee5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T const *</type>
-        <definition>T const* amrex::Gpu::AsyncArray&lt; T, typename &gt;::data</definition>
+        <definition>T const* amrex::Gpu::AsyncArray&lt; T, type &gt;::data</definition>
         <argsstring>() const noexcept</argsstring>
         <name>data</name>
         <briefdescription>
@@ -117,9 +117,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="69" bodyend="69"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a8769544fbf3fa22412ee4af7c5a93da5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a6003edef5bf56afdbc973c6cffd03569" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>T *</type>
-        <definition>T* amrex::Gpu::AsyncArray&lt; T, typename &gt;::data</definition>
+        <definition>T* amrex::Gpu::AsyncArray&lt; T, type &gt;::data</definition>
         <argsstring>() noexcept</argsstring>
         <name>data</name>
         <briefdescription>
@@ -130,9 +130,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="70" bodyend="70"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1af0ffc1d41f0fbaaa23cbc250a57bdd2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1ae4a6ff36b2cd3780d311a02bb7126e30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::Gpu::AsyncArray&lt; T, typename &gt;::clear</definition>
+        <definition>void amrex::Gpu::AsyncArray&lt; T, type &gt;::clear</definition>
         <argsstring>()</argsstring>
         <name>clear</name>
         <briefdescription>
@@ -143,9 +143,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="71" bodyend="107"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1a5158e423f21bf3e7ad1c75b44f51b3a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1AsyncArray_1ab74fa0189049d4d2118e070af36ab175" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::Gpu::AsyncArray&lt; T, typename &gt;::copyToHost</definition>
+        <definition>void amrex::Gpu::AsyncArray&lt; T, type &gt;::copyToHost</definition>
         <argsstring>(T *h_p, std::size_t n) const </argsstring>
         <name>copyToHost</name>
         <param>
@@ -171,15 +171,15 @@
     </detaileddescription>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="34" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAsyncArray.H" bodystart="33" bodyend="127"/>
     <listofallmembers>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1af992105e648c21e706ce737fbcebcaea" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>AsyncArray</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a5b879dd18ab1df0506992cba46406a68" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>AsyncArray</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1af0ffc1d41f0fbaaa23cbc250a57bdd2e" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>clear</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a5158e423f21bf3e7ad1c75b44f51b3a2" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>copyToHost</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a4107f1e184ea871b40debea7a493a9bc" prot="private" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>d_data</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1add4b96cf54d84689ea0f0a9539b63e01" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>data</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a8769544fbf3fa22412ee4af7c5a93da5" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>data</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1afc278f204484e2c64c41bc199669dd76" prot="private" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>h_data</name></member>
-      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a5294524b031f7407ffe97a93ef04c730" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>~AsyncArray</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a5132aad64609e805be6bd7fe440396f6" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>AsyncArray</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a293682071d4e5741d0229e7b75f8a8e2" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>AsyncArray</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1ae4a6ff36b2cd3780d311a02bb7126e30" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>clear</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1ab74fa0189049d4d2118e070af36ab175" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>copyToHost</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" prot="private" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>d_data</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a3c0649a02bc8985508034155a8fabee5" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>data</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a6003edef5bf56afdbc973c6cffd03569" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>data</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" prot="private" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>h_data</name></member>
+      <member refid="classamrex_1_1Gpu_1_1AsyncArray_1a2b729323da571ece4ca18364dcd2d8d8" prot="public" virt="non-virtual"><scope>amrex::Gpu::AsyncArray</scope><name>~AsyncArray</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
