@@ -407,8 +407,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0cfa715f33235a017da433fb9df6a2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a514e65157e2dfd98361e399c934c4a2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a514e65157e2dfd98361e399c934c4a2f">AssignCellDensitySingleLevel</a> (int rho_index, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;mf, int level, int ncomp=1, int particle_lvl_offset=0) const </td></tr>
 <tr class="separator:a514e65157e2dfd98361e399c934c4a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65a31505d0970f0f972d5653fdd8cf12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a65a31505d0970f0f972d5653fdd8cf12">moveKick</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;acceleration, int level, Real timestep, Real a_new=1.0, Real a_half=1.0, int start_comp_for_accel=-1)</td></tr>
-<tr class="separator:a65a31505d0970f0f972d5653fdd8cf12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97712d72564dbda7ac5b6b6ededf04a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a97712d72564dbda7ac5b6b6ededf04a0">Index</a> (const <a class="el" href="structamrex_1_1Particle.html">Particle</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer.html#a74cc708fff367f884397efee0404d26e">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer.html#a8efc7329c2a8acf91fb7fb2533584ad2">NStructInt</a> &gt; &amp;p, int lev) const </td></tr>
 <tr class="separator:a97712d72564dbda7ac5b6b6ededf04a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fa8583debe79010d5754a968b7a2552"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1ParticleLocData.html">ParticleLocData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a8fa8583debe79010d5754a968b7a2552">Reset</a> (<a class="el" href="classamrex_1_1ParticleContainer.html#a820cf0ea51b535a1835f4f3f99b3c75d">ParticleType</a> &amp;prt, bool update, bool <a class="el" href="namespaceamrex.html#adf03962600e13b4ecd73531bd77d0cf5">verbose</a>=true, <a class="el" href="structamrex_1_1ParticleLocData.html">ParticleLocData</a> pld=<a class="el" href="structamrex_1_1ParticleLocData.html">ParticleLocData</a>()) const </td></tr>
@@ -3030,58 +3028,6 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
 </div><div class="memdoc">
 
 <p>the finest allowed level in the <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>, whether it is defined or not. </p>
-
-</div>
-</div>
-<a class="anchor" id="a65a31505d0970f0f972d5653fdd8cf12"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;int NStructReal, int NStructInt, int NArrayReal, int NArrayInt&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classamrex_1_1ParticleContainer.html">amrex::ParticleContainer</a>&lt; <a class="el" href="classamrex_1_1ParticleContainer.html#a74cc708fff367f884397efee0404d26e">NStructReal</a>, <a class="el" href="classamrex_1_1ParticleContainer.html#a8efc7329c2a8acf91fb7fb2533584ad2">NStructInt</a>, <a class="el" href="classamrex_1_1ParticleContainer.html#ad530af2a690b1f9beadee6ebae62dc7c">NArrayReal</a>, <a class="el" href="classamrex_1_1ParticleContainer.html#ab91e06fbdab528acbe8ede3d625e893e">NArrayInt</a> &gt;::moveKick </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;&#160;</td>
-          <td class="paramname"><em>acceleration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>timestep</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>a_new</em> = <code>1.0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>a_half</em> = <code>1.0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>start_comp_for_accel</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
