@@ -87,7 +87,7 @@ var searchData=
   ['other',['other',['../structhacc_1_1AlignedAllocator_1_1rebind.html#a96ecc5d534254a7cab53bdfa4d78db8e',1,'hacc::AlignedAllocator::rebind']]],
   ['out',['out',['../classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466ac68271a63ddbc431c307beb7d2918275',1,'amrex::ForkJoin']]],
   ['outflow',['Outflow',['../AMReX__BC__TYPES_8H.html#a074cf210a9dd1472db2a2811976abb88',1,'AMReX_BC_TYPES.H']]],
-  ['outofmemory',['OutOfMemory',['../namespaceamrex.html#a60941081c34a5d500140c8577e11625a',1,'amrex::OutOfMemory(const char *file, int line)'],['../namespaceamrex.html#afe890be0bd82650235456eabcf50e309',1,'amrex::OutOfMemory()']]],
+  ['outofmemory',['OutOfMemory',['../namespaceamrex.html#afe890be0bd82650235456eabcf50e309',1,'amrex']]],
   ['outside_5fdomain',['outside_domain',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9aa3c78d810a253d1eace3c04595537ff1',1,'amrex::BndryData']]],
   ['outstream',['OutStream',['../namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df',1,'amrex']]],
   ['overlapmask',['OverlapMask',['../classamrex_1_1MultiFab.html#a810f7090a63aab0173b8cecbc53bb9e1',1,'amrex::MultiFab']]],
