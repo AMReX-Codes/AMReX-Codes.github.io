@@ -844,216 +844,216 @@
     <detaileddescription>
 <para>A <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> is an array of pointers to FABs. The standard FAB operators, however, have been modified to be more useful for maintaining boundary conditions for partial differential equations discretized on boxes. Under normal circumstances, a FAB will be created for each face of a box. For a group of boxes, a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> will be the group of FABs at a particular orientation (ie. the lo-i side of each grid in a list).</para><para>Since a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> FAB will likely be used to bound a grid box, <ref refid="classamrex_1_1FArrayBox_1ae5a4b9b9a64a4c1cfd534bb6eefc6b30" kindref="member">FArrayBox::resize()</ref> operations are disallowed. Also, to preserve flexibility in applicable boundary scenarios, intersecting FABs in the <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> are not guaranteed to contain identical data<ndash/>thus copy operations from a <ref refid="classamrex_1_1FabSet" kindref="compound">FabSet</ref> to any FAB-like structure may be order-dependent.</para><para>FabSets are used primarily as a data storage mechanism, and are manipulated by more sophisticated control classes. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="1663">
+      <node id="1665">
         <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
       </node>
-      <node id="1642">
+      <node id="1644">
         <label>amrex::FabArrayBase::CacheStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1CacheStats"/>
-        <childnode refid="1643" relation="usage">
+        <childnode refid="1645" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="1646">
+      <node id="1648">
         <label>amrex::FabArrayBase::FabArrayStats</label>
         <link refid="structamrex_1_1FabArrayBase_1_1FabArrayStats"/>
       </node>
-      <node id="1656">
+      <node id="1658">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="1645">
+      <node id="1647">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="1645" relation="usage">
+        <childnode refid="1647" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="1664">
+      <node id="1666">
         <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1667" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1656">
+        <label>amrex::DataAllocator</label>
+        <link refid="structamrex_1_1DataAllocator"/>
+        <childnode refid="1657" relation="usage">
+          <edgelabel>m_arena</edgelabel>
+        </childnode>
+      </node>
+      <node id="1660">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="1657">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="1658" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="1649">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1650" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1645">
+        <label>string</label>
+      </node>
+      <node id="1668">
+        <label>amrex::Periodicity</label>
+        <link refid="classamrex_1_1Periodicity"/>
+        <childnode refid="1647" relation="usage">
+          <edgelabel>period</edgelabel>
+        </childnode>
+      </node>
+      <node id="1662">
+        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
+      </node>
+      <node id="1661">
+        <label>amrex::Vector&lt; char * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="1662" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1663">
+        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
+        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="1667">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="1650">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="1652">
+        <label>amrex::DistributionMapping::RefID</label>
+        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
+        <childnode refid="1653" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+      </node>
+      <node id="1664">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="1665" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1654">
-        <label>amrex::DataAllocator</label>
-        <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="1655" relation="usage">
-          <edgelabel>m_arena</edgelabel>
-        </childnode>
-      </node>
-      <node id="1658">
-        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
-      </node>
-      <node id="1655">
-        <label>amrex::Arena</label>
-        <link refid="classamrex_1_1Arena"/>
-        <childnode refid="1656" relation="usage">
-          <edgelabel>arena_info</edgelabel>
-        </childnode>
-      </node>
-      <node id="1647">
-        <label>amrex::Vector&lt; int &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1648" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1643">
-        <label>string</label>
-      </node>
-      <node id="1666">
-        <label>amrex::Periodicity</label>
-        <link refid="classamrex_1_1Periodicity"/>
-        <childnode refid="1645" relation="usage">
-          <edgelabel>period</edgelabel>
-        </childnode>
-      </node>
-      <node id="1660">
-        <label>std::vector&lt; char *, std::allocator&lt; char * &gt; &gt;</label>
-      </node>
-      <node id="1659">
-        <label>amrex::Vector&lt; char * &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1660" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1661">
-        <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
-        <link refid="structamrex_1_1FabArray_1_1ShMem"/>
-      </node>
-      <node id="1665">
-        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
-      </node>
-      <node id="1648">
-        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
-      </node>
-      <node id="1650">
-        <label>amrex::DistributionMapping::RefID</label>
-        <link refid="structamrex_1_1DistributionMapping_1_1RefID"/>
-        <childnode refid="1651" relation="usage">
-          <edgelabel>data</edgelabel>
-        </childnode>
-      </node>
-      <node id="1662">
-        <label>amrex::Vector&lt; MPI_Status &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1663" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1651">
+      <node id="1653">
         <label>amrex::DistributionMapping::Ref</label>
         <link refid="structamrex_1_1DistributionMapping_1_1Ref"/>
-        <childnode refid="1647" relation="usage">
+        <childnode refid="1649" relation="usage">
           <edgelabel>m_index_array</edgelabel>
           <edgelabel>m_pmap</edgelabel>
         </childnode>
       </node>
-      <node id="1638">
+      <node id="1640">
         <label>amrex::FabSet</label>
         <link refid="classamrex_1_1FabSet"/>
-        <childnode refid="1639" relation="usage">
+        <childnode refid="1641" relation="usage">
           <edgelabel>m_mf</edgelabel>
         </childnode>
       </node>
-      <node id="1657">
+      <node id="1659">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1658" relation="public-inheritance">
+        <childnode refid="1660" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1644">
+      <node id="1646">
         <label>amrex::DistributionMapping</label>
         <link refid="classamrex_1_1DistributionMapping"/>
       </node>
-      <node id="1649">
+      <node id="1651">
         <label>amrex::FabArrayBase::BDKey</label>
         <link refid="structamrex_1_1FabArrayBase_1_1BDKey"/>
-        <childnode refid="1650" relation="usage">
+        <childnode refid="1652" relation="usage">
           <edgelabel>m_dm_id</edgelabel>
         </childnode>
       </node>
-      <node id="1639">
+      <node id="1641">
         <label>amrex::MultiFab</label>
         <link refid="classamrex_1_1MultiFab"/>
-        <childnode refid="1640" relation="public-inheritance">
+        <childnode refid="1642" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1640">
+      <node id="1642">
         <label>amrex::FabArray&lt; FArrayBox &gt;</label>
         <link refid="classamrex_1_1FabArray"/>
-        <childnode refid="1641" relation="public-inheritance">
-        </childnode>
-        <childnode refid="1652" relation="usage">
-          <edgelabel>fb_recv_size</edgelabel>
-        </childnode>
-        <childnode refid="1645" relation="usage">
-          <edgelabel>fb_nghost</edgelabel>
+        <childnode refid="1643" relation="public-inheritance">
         </childnode>
         <childnode refid="1654" relation="usage">
-          <edgelabel>m_dallocator</edgelabel>
+          <edgelabel>fb_recv_size</edgelabel>
         </childnode>
         <childnode refid="1647" relation="usage">
+          <edgelabel>fb_nghost</edgelabel>
+        </childnode>
+        <childnode refid="1656" relation="usage">
+          <edgelabel>m_dallocator</edgelabel>
+        </childnode>
+        <childnode refid="1649" relation="usage">
           <edgelabel>fb_recv_from</edgelabel>
         </childnode>
-        <childnode refid="1657" relation="usage">
+        <childnode refid="1659" relation="usage">
           <edgelabel>m_tags</edgelabel>
         </childnode>
-        <childnode refid="1659" relation="usage">
+        <childnode refid="1661" relation="usage">
           <edgelabel>fb_recv_data</edgelabel>
           <edgelabel>fb_send_data</edgelabel>
         </childnode>
-        <childnode refid="1661" relation="usage">
+        <childnode refid="1663" relation="usage">
           <edgelabel>shmem</edgelabel>
         </childnode>
-        <childnode refid="1662" relation="usage">
+        <childnode refid="1664" relation="usage">
           <edgelabel>fb_recv_stat</edgelabel>
         </childnode>
-        <childnode refid="1664" relation="usage">
+        <childnode refid="1666" relation="usage">
           <edgelabel>fb_send_reqs</edgelabel>
           <edgelabel>fb_recv_reqs</edgelabel>
         </childnode>
-        <childnode refid="1666" relation="usage">
+        <childnode refid="1668" relation="usage">
           <edgelabel>fb_period</edgelabel>
         </childnode>
       </node>
-      <node id="1652">
+      <node id="1654">
         <label>amrex::Vector&lt; std::size_t &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1653" relation="public-inheritance">
+        <childnode refid="1655" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1641">
+      <node id="1643">
         <label>amrex::FabArrayBase</label>
         <link refid="classamrex_1_1FabArrayBase"/>
-        <childnode refid="1642" relation="usage">
+        <childnode refid="1644" relation="usage">
           <edgelabel>m_FBC_stats</edgelabel>
           <edgelabel>m_FPinfo_stats</edgelabel>
           <edgelabel>m_CFinfo_stats</edgelabel>
           <edgelabel>m_TAC_stats</edgelabel>
           <edgelabel>m_CPC_stats</edgelabel>
         </childnode>
-        <childnode refid="1644" relation="usage">
+        <childnode refid="1646" relation="usage">
           <edgelabel>distributionMap</edgelabel>
         </childnode>
-        <childnode refid="1645" relation="usage">
+        <childnode refid="1647" relation="usage">
           <edgelabel>n_filled</edgelabel>
           <edgelabel>n_grow</edgelabel>
           <edgelabel>comm_tile_size</edgelabel>
           <edgelabel>mfiter_tile_size</edgelabel>
           <edgelabel>mfghostiter_tile_size</edgelabel>
         </childnode>
-        <childnode refid="1646" relation="usage">
+        <childnode refid="1648" relation="usage">
           <edgelabel>m_FA_stats</edgelabel>
         </childnode>
-        <childnode refid="1647" relation="usage">
+        <childnode refid="1649" relation="usage">
           <edgelabel>indexArray</edgelabel>
         </childnode>
-        <childnode refid="1649" relation="usage">
+        <childnode refid="1651" relation="usage">
           <edgelabel>m_bdkey</edgelabel>
         </childnode>
       </node>
-      <node id="1653">
+      <node id="1655">
         <label>std::vector&lt; std::size_t, std::allocator&lt; std::size_t &gt; &gt;</label>
       </node>
     </collaborationgraph>
