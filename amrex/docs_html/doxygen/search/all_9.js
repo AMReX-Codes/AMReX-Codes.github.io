@@ -63,7 +63,7 @@ var searchData=
   ['index_5fmap',['index_map',['../classamrex_1_1MFIter.html#ac482cbbf5ecee6f2593a3e4437623082',1,'amrex::MFIter']]],
   ['index_5ftype',['index_type',['../structamrex_1_1BinIterator.html#a9e55017514e250d49f7eccb1d03caca4',1,'amrex::BinIterator::index_type()'],['../structamrex_1_1DenseBinIteratorFactory.html#aee679b2caba1e5933d98f87d51ee2dbe',1,'amrex::DenseBinIteratorFactory::index_type()'],['../classamrex_1_1DenseBins.html#ace91724777a08f267ca7515117ebe620',1,'amrex::DenseBins::index_type()'],['../structamrex_1_1SparseBinIteratorFactory.html#af3b2075ffb37148df43247481a6acf79',1,'amrex::SparseBinIteratorFactory::index_type()'],['../classamrex_1_1SparseBins.html#acd6d4073c186417cb25f04de695363d0',1,'amrex::SparseBins::index_type()']]],
   ['indexarray',['indexArray',['../classamrex_1_1FabArrayBase.html#a15c2b54df8386a9d38216410edce884c',1,'amrex::FabArrayBase::indexArray()'],['../classamrex_1_1FabArrayBase.html#a7a4ed8b70e3aa4c3ddd3a24fb1c0f3a0',1,'amrex::FabArrayBase::IndexArray() const noexcept']]],
-  ['indexfromvalue',['indexFromValue',['../classamrex_1_1BaseFab.html#a4d9eb1a365feee57e8b622f92f42a676',1,'amrex::BaseFab']]],
+  ['indexfromvalue',['indexFromValue',['../classamrex_1_1BaseFab.html#a4d9eb1a365feee57e8b622f92f42a676',1,'amrex::BaseFab::indexFromValue()'],['../namespaceamrex.html#af1fe8dd7d2e436cf2e4e696b9b5ae006',1,'amrex::indexFromValue()']]],
   ['indexmap',['indexMap',['../structamrex_1_1FabArrayBase_1_1TileArray.html#a37311b356baf90979545e588fa7f6b6f',1,'amrex::FabArrayBase::TileArray']]],
   ['indexsequence',['IndexSequence',['../structamrex_1_1IndexSequence.html',1,'amrex']]],
   ['indexspace',['IndexSpace',['../classamrex_1_1EB2_1_1IndexSpace.html',1,'amrex::EB2']]],

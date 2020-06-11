@@ -5,10 +5,14 @@
     <includes refid="AMReX__GpuAsyncArray_8H" local="no">AMReX_GpuAsyncArray.H</includes>
     <templateparamlist>
       <param>
-        <type>typename T</type>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
       </param>
       <param>
-        <type>typename std::enable_if&lt; <ref refid="AMReX__TypeTraits_8H_1adc50ea9983407ec975c6c594c92bae5d" kindref="member">AMREX_IS_TRIVIALLY_COPYABLE</ref>(T), int &gt;::type</type>
+        <type>typename</type>
+        <declname>std::enable_if< AMREX_IS_TRIVIALLY_COPYABLE(T), int >::type</declname>
+        <defname>std::enable_if< AMREX_IS_TRIVIALLY_COPYABLE(T), int >::type</defname>
         <defval>0</defval>
       </param>
     </templateparamlist>
