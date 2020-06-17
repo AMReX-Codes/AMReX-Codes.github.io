@@ -24,6 +24,7 @@
     <innerclass refid="classamrex_1_1AmrParticleLocator" prot="public">amrex::AmrParticleLocator</innerclass>
     <innerclass refid="classamrex_1_1AmrTracerParticleContainer" prot="public">amrex::AmrTracerParticleContainer</innerclass>
     <innerclass refid="classamrex_1_1Arena" prot="public">amrex::Arena</innerclass>
+    <innerclass refid="classamrex_1_1ArenaAllocator" prot="public">amrex::ArenaAllocator</innerclass>
     <innerclass refid="structamrex_1_1ArenaInfo" prot="public">amrex::ArenaInfo</innerclass>
     <innerclass refid="structamrex_1_1Array1D" prot="public">amrex::Array1D</innerclass>
     <innerclass refid="structamrex_1_1Array2D" prot="public">amrex::Array2D</innerclass>
@@ -72,6 +73,7 @@
     <innerclass refid="classamrex_1_1DeriveRec" prot="public">amrex::DeriveRec</innerclass>
     <innerclass refid="classamrex_1_1DescriptorList" prot="public">amrex::DescriptorList</innerclass>
     <innerclass refid="structamrex_1_1DestComp" prot="public">amrex::DestComp</innerclass>
+    <innerclass refid="classamrex_1_1DeviceArenaAllocator" prot="public">amrex::DeviceArenaAllocator</innerclass>
     <innerclass refid="structamrex_1_1Dim3" prot="public">amrex::Dim3</innerclass>
     <innerclass refid="classamrex_1_1distFcnElement2d" prot="public">amrex::distFcnElement2d</innerclass>
     <innerclass refid="classamrex_1_1DistributionMapping" prot="public">amrex::DistributionMapping</innerclass>
@@ -160,6 +162,7 @@
     <innerclass refid="classamrex_1_1MacProjector" prot="public">amrex::MacProjector</innerclass>
     <innerclass refid="structamrex_1_1makeIndexSequenceHelper" prot="public">amrex::makeIndexSequenceHelper</innerclass>
     <innerclass refid="structamrex_1_1makeIndexSequenceHelper_3_010_00_01ISs_8_8_8_01_4" prot="public">amrex::makeIndexSequenceHelper&lt; 0, ISs... &gt;</innerclass>
+    <innerclass refid="classamrex_1_1ManagedArenaAllocator" prot="public">amrex::ManagedArenaAllocator</innerclass>
     <innerclass refid="classamrex_1_1Mask" prot="public">amrex::Mask</innerclass>
     <innerclass refid="classamrex_1_1MCCGSolver" prot="public">amrex::MCCGSolver</innerclass>
     <innerclass refid="classamrex_1_1MCInterpBndryData" prot="public">amrex::MCInterpBndryData</innerclass>
@@ -229,10 +232,12 @@
     <innerclass refid="classamrex_1_1PETScABecLap" prot="public">amrex::PETScABecLap</innerclass>
     <innerclass refid="classamrex_1_1PhysBCFunct" prot="public">amrex::PhysBCFunct</innerclass>
     <innerclass refid="classamrex_1_1PhysBCFunctNoOp" prot="public">amrex::PhysBCFunctNoOp</innerclass>
+    <innerclass refid="classamrex_1_1PinnedArenaAllocator" prot="public">amrex::PinnedArenaAllocator</innerclass>
     <innerclass refid="classamrex_1_1PlotFileData" prot="public">amrex::PlotFileData</innerclass>
     <innerclass refid="classamrex_1_1PlotFileDataImpl" prot="public">amrex::PlotFileDataImpl</innerclass>
     <innerclass refid="structamrex_1_1Plus" prot="public">amrex::Plus</innerclass>
     <innerclass refid="classamrex_1_1PODVector" prot="public">amrex::PODVector</innerclass>
+    <innerclass refid="classamrex_1_1PolymorphicAllocator" prot="public">amrex::PolymorphicAllocator</innerclass>
     <innerclass refid="classamrex_1_1Print" prot="public">amrex::Print</innerclass>
     <innerclass refid="classamrex_1_1PrintToFile" prot="public">amrex::PrintToFile</innerclass>
     <innerclass refid="classamrex_1_1RealBox" prot="public">amrex::RealBox</innerclass>
@@ -1338,6 +1343,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" line="495" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_FArrayBox.H" bodystart="495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1aa2b9c07eea8f0178a1973357cf04ea62" prot="public" static="no">
+        <type>std::allocator&lt; T &gt;</type>
+        <definition>using amrex::DefaultAllocator = typedef std::allocator&lt;T&gt;</definition>
+        <argsstring></argsstring>
+        <name>DefaultAllocator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAllocators.H" line="172" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAllocators.H" bodystart="172" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1ad9f3a92c061d8ad8de35370ed5ce28b8" prot="public" static="no">
         <type>typename <ref refid="structamrex_1_1makeIndexSequenceHelper" kindref="compound">makeIndexSequenceHelper</ref>&lt; N &gt;::type</type>
@@ -10062,6 +10080,72 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Geometry.H" line="320" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Geometry.H" bodystart="320" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a8bebcbb041f7015f56c24018b884e2fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>Allocator</declname>
+            <defname>Allocator</defname>
+          </param>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool amrex::operator==</definition>
+        <argsstring>(Allocator&lt; T &gt; const &amp;, Allocator&lt; U &gt; const &amp;) noexcept</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>Allocator&lt; T &gt; const &amp;</type>
+        </param>
+        <param>
+          <type>Allocator&lt; U &gt; const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAllocators.H" line="140" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAllocators.H" bodystart="140" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a478645d9715fc70b1d97ab5e56cf2b47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>template&lt; typename &gt; class</type>
+            <declname>Allocator</declname>
+            <defname>Allocator</defname>
+          </param>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool amrex::operator!=</definition>
+        <argsstring>(Allocator&lt; T &gt; const &amp;x, Allocator&lt; U &gt; const &amp;y) noexcept</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>Allocator&lt; T &gt; const &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>Allocator&lt; U &gt; const &amp;</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAllocators.H" line="147" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuAllocators.H" bodystart="147" bodyend="150"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9a4cb25adc75b070b5ab1cb6c24b4023" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

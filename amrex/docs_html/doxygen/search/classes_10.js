@@ -23,7 +23,7 @@ var searchData=
   ['streamitinfo',['StreamItInfo',['../structamrex_1_1Gpu_1_1StreamItInfo.html',1,'amrex::Gpu']]],
   ['streamretry',['StreamRetry',['../classamrex_1_1StreamRetry.html',1,'amrex']]],
   ['structofarrays',['StructOfArrays',['../structamrex_1_1StructOfArrays.html',1,'amrex']]],
-  ['structofarrays_3c_20narrayreal_2c_20narrayint_20_3e',['StructOfArrays&lt; NArrayReal, NArrayInt &gt;',['../structamrex_1_1StructOfArrays.html',1,'amrex']]],
+  ['structofarrays_3c_20narrayreal_2c_20narrayint_2c_20allocator_20_3e',['StructOfArrays&lt; NArrayReal, NArrayInt, Allocator &gt;',['../structamrex_1_1StructOfArrays.html',1,'amrex']]],
   ['sundlsmat',['sundlsmat',['../structsundials__fdlsmat_1_1sundlsmat.html',1,'sundials_fdlsmat']]],
   ['symmetricghost',['SymmetricGhost',['../structamrex_1_1MFUtil_1_1SymmetricGhost.html',1,'amrex::MFUtil']]]
 ];

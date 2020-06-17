@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['defaultallocator',['DefaultAllocator',['../namespaceamrex.html#aa2b9c07eea8f0178a1973357cf04ea62',1,'amrex']]],
   ['deriveboxmap',['DeriveBoxMap',['../classamrex_1_1DeriveRec.html#af6e83ba233e4a7212086037a7b7203e4',1,'amrex::DeriveRec']]],
   ['derivefunc',['DeriveFunc',['../namespaceamrex.html#a046a83e139b61c9ec447bd89eed50967',1,'amrex']]],
   ['derivefunc3d',['DeriveFunc3D',['../namespaceamrex.html#abf838b25d605cefbf6150bc883f4741d',1,'amrex']]],

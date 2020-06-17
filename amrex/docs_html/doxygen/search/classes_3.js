@@ -18,6 +18,7 @@ var searchData=
   ['descriptormap',['DescriptorMap',['../classamrex_1_1InSituUtils_1_1DescriptorMap.html',1,'amrex::InSituUtils']]],
   ['destcomp',['DestComp',['../structamrex_1_1DestComp.html',1,'amrex']]],
   ['device',['Device',['../classamrex_1_1Gpu_1_1Device.html',1,'amrex::Gpu']]],
+  ['devicearenaallocator',['DeviceArenaAllocator',['../classamrex_1_1DeviceArenaAllocator.html',1,'amrex']]],
   ['devicescalar',['DeviceScalar',['../structamrex_1_1Gpu_1_1DeviceScalar.html',1,'amrex::Gpu']]],
   ['devicetodevice',['DeviceToDevice',['../structamrex_1_1Gpu_1_1DeviceToDevice.html',1,'amrex::Gpu']]],
   ['devicetohost',['DeviceToHost',['../structamrex_1_1Gpu_1_1DeviceToHost.html',1,'amrex::Gpu']]],
