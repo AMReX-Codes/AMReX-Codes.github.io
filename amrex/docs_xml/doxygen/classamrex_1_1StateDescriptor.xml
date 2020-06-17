@@ -190,13 +190,13 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateDescriptor.H" line="414" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateDescriptor.H" bodystart="414" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1StateDescriptor_1ab7c4f39eea44face124f2207317dd632" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1StateDescriptor_1a7e0f7bd48cf94860e432afd6adbc3747" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; int &gt;</type>
-        <definition>Vector&lt;int&gt; amrex::StateDescriptor::m_master</definition>
+        <definition>Vector&lt;int&gt; amrex::StateDescriptor::m_primary</definition>
         <argsstring></argsstring>
-        <name>m_master</name>
+        <name>m_primary</name>
         <briefdescription>
-<para>Are we a master or slave? (true or false) </para>        </briefdescription>
+<para>Are we a primary or secondary? (true or false) </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -209,7 +209,7 @@
         <argsstring></argsstring>
         <name>m_groupsize</name>
         <briefdescription>
-<para>Groupsize if we&apos;re a master. </para>        </briefdescription>
+<para>Groupsize if we&apos;re a primary. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -601,10 +601,10 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateDescriptor.H" line="206" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateDescriptor.cpp" bodystart="346" bodyend="375"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1StateDescriptor_1a66448aa7e0e8407be30956d134bb3832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1StateDescriptor_1aa1ef33ce9e770a81b5892469acbd98ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::StateDescriptor::setComponent</definition>
-        <argsstring>(int comp, const std::string &amp;nm, const BCRec &amp;bc, const BndryFunc &amp;func, Interpolater *interp, bool master_or_slave, int groupsize)</argsstring>
+        <argsstring>(int comp, const std::string &amp;nm, const BCRec &amp;bc, const BndryFunc &amp;func, Interpolater *interp, bool primary_or_secondary, int groupsize)</argsstring>
         <name>setComponent</name>
         <param>
           <type>int</type>
@@ -628,7 +628,7 @@
         </param>
         <param>
           <type>bool</type>
-          <declname>master_or_slave</declname>
+          <declname>primary_or_secondary</declname>
         </param>
         <param>
           <type>int</type>
@@ -674,7 +674,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>master_or_slave</parametername>
+<parametername>primary_or_secondary</parametername>
 </parameternamelist>
 <parameterdescription>
 <para></para></parameterdescription>
@@ -1276,11 +1276,11 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateDescriptor.H" line="381" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_StateDescriptor.cpp" bodystart="296" bodyend="299"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1StateDescriptor_1af78792d12c06a47e5cfc822921e1d5cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1StateDescriptor_1a31a66854b5336c0a76e23a9457877713" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool amrex::StateDescriptor::master</definition>
+        <definition>bool amrex::StateDescriptor::primary</definition>
         <argsstring>(int i) const noexcept</argsstring>
-        <name>master</name>
+        <name>primary</name>
         <param>
           <type>int</type>
           <declname>i</declname>
@@ -1420,9 +1420,9 @@
         </childnode>
         <childnode refid="6461" relation="usage">
           <edgelabel>max_map_start_comp</edgelabel>
-          <edgelabel>m_master</edgelabel>
           <edgelabel>min_map_end_comp</edgelabel>
           <edgelabel>m_groupsize</edgelabel>
+          <edgelabel>m_primary</edgelabel>
         </childnode>
         <childnode refid="6463" relation="usage">
           <edgelabel>names</edgelabel>
@@ -1507,11 +1507,10 @@
       <member refid="classamrex_1_1StateDescriptor_1a8e14d2e57bdb2fbd440c8c26c8b99434a0135564ab7966e377f4b9fff395b6eb6" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>Interval</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a4316157b8036d764b2c4eab037fc03f3" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>m_extrap</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a507dc54afbf20a888ba1dab3cd62c040" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>m_groupsize</name></member>
-      <member refid="classamrex_1_1StateDescriptor_1ab7c4f39eea44face124f2207317dd632" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>m_master</name></member>
+      <member refid="classamrex_1_1StateDescriptor_1a7e0f7bd48cf94860e432afd6adbc3747" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>m_primary</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a83266e34a32f66f82481390292960e28" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>m_store_in_checkpoint</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a36411db85a2bf5585c3841b8e029e218" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>mapper</name></member>
       <member refid="classamrex_1_1StateDescriptor_1aad110a44abcfb927e71f7ec75dae6ae9" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>mapper_comp</name></member>
-      <member refid="classamrex_1_1StateDescriptor_1af78792d12c06a47e5cfc822921e1d5cd" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>master</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a8cfce27efc0fb16d60e975f0f55b39f5" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>max_map_start_comp</name></member>
       <member refid="classamrex_1_1StateDescriptor_1aa9eb9d029833fd52f74bcb305d5e00bd" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>min_map_end_comp</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a1c3308f0a08a991d3b3d2576e9d1e149" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>name</name></member>
@@ -1521,12 +1520,13 @@
       <member refid="classamrex_1_1StateDescriptor_1ae8e2531823af7371e1df8e414a8c6fd9" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>nExtra</name></member>
       <member refid="classamrex_1_1StateDescriptor_1ae0e3631c9cd4872714c6d926073d1a51" prot="private" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>ngrow</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>Point</name></member>
+      <member refid="classamrex_1_1StateDescriptor_1a31a66854b5336c0a76e23a9457877713" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>primary</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a5ac46df4129e909631702c6cf11c0df7" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>resetComponentBCs</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a45c110d37b26e0c322c1af1089ecbfea" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>RunOnGPU</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a9f8e2d7908f1b2357c50d858e3cd9eb4" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>sameInterps</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a5dde8b1156c069f9ec776cb778b2b1c8" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>setBndryFuncThreadSafety</name></member>
       <member refid="classamrex_1_1StateDescriptor_1a88777467836766d7d41af2d9510c78c3" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>setComponent</name></member>
-      <member refid="classamrex_1_1StateDescriptor_1a66448aa7e0e8407be30956d134bb3832" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>setComponent</name></member>
+      <member refid="classamrex_1_1StateDescriptor_1aa1ef33ce9e770a81b5892469acbd98ae" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>setComponent</name></member>
       <member refid="classamrex_1_1StateDescriptor_1af4b9e3df0cb65bc9425d8c88c4084073" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>setUpMaps</name></member>
       <member refid="classamrex_1_1StateDescriptor_1ad0751c6380b8996cb85c91ff4dc9f7ea" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>StateDescriptor</name></member>
       <member refid="classamrex_1_1StateDescriptor_1aee5960315ddcf5bf0d75be892ba0afdf" prot="public" virt="non-virtual"><scope>amrex::StateDescriptor</scope><name>StateDescriptor</name></member>

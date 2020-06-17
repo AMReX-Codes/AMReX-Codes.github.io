@@ -161,7 +161,7 @@ var searchData=
   ['regdatafilenames',['regDataFileNames',['../classRegionsProfStats.html#aa4660af1eb41eb5b3afd6ef9187900f3',1,'RegionsProfStats']]],
   ['regdatastreams',['regDataStreams',['../classRegionsProfStats.html#a9b1f5e4b1d725777df4ea900e398f0d5',1,'RegionsProfStats']]],
   ['regheaderfilenames',['regHeaderFileNames',['../classRegionsProfStats.html#a448bbf6cfc7ccb16b54f9655c943e9dc',1,'RegionsProfStats']]],
-  ['regionnames',['regionNames',['../classBLProfStats.html#adda95346678c97eebb0541c0caaaed6e',1,'BLProfStats::regionNames()'],['../classBLProfStats.html#a47d3628566997998b287f1b5326298e2',1,'BLProfStats::RegionNames()']]],
+  ['regionnames',['RegionNames',['../classBLProfStats.html#a47d3628566997998b287f1b5326298e2',1,'BLProfStats::RegionNames()'],['../classBLProfStats.html#adda95346678c97eebb0541c0caaaed6e',1,'BLProfStats::regionNames()']]],
   ['regionnumbers',['regionNumbers',['../classBLProfStats.html#a11d15fe366d7be8b419cb63bbaa58443',1,'BLProfStats::regionNumbers()'],['../classBLProfStats.html#a7a6bbe3f88daa4764423d252659dbfb1',1,'BLProfStats::RegionNumbers()']]],
   ['regions',['regions',['../classamrex_1_1AmrData.html#a2e14123fa9e7caeae727ac2c307e8956',1,'amrex::AmrData']]],
   ['regionsprofstats',['RegionsProfStats',['../classRegionsProfStats.html',1,'RegionsProfStats'],['../classRegionsProfStats.html#a395ae220780e06011681a86a4bd08d98',1,'RegionsProfStats::RegionsProfStats()']]],
