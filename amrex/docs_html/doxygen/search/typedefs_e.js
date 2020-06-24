@@ -16,6 +16,9 @@ var searchData=
   ['pinnedvector',['PinnedVector',['../namespaceamrex_1_1Gpu.html#af9749d46a7d1bfabf6c7430c0e4a777b',1,'amrex::Gpu']]],
   ['pointer',['pointer',['../classamrex_1_1PODVector.html#ac45bc075fc9a1f60362dea58a71bf4c0',1,'amrex::PODVector::pointer()'],['../classhacc_1_1AlignedAllocator.html#a8a10b255de4c608b3775a315e409ef8d',1,'hacc::AlignedAllocator::pointer()']]],
   ['polymorphicvector',['PolymorphicVector',['../namespaceamrex_1_1Gpu.html#aa06084d673c5ad11d0431208239fe562',1,'amrex::Gpu']]],
+  ['propagate_5fon_5fcontainer_5fcopy_5fassignment',['propagate_on_container_copy_assignment',['../structamrex_1_1ArenaAllocatorTraits.html#a877662d4bb47c6680edf92709420599b',1,'amrex::ArenaAllocatorTraits']]],
+  ['propagate_5fon_5fcontainer_5fmove_5fassignment',['propagate_on_container_move_assignment',['../structamrex_1_1ArenaAllocatorTraits.html#a7c21ffe5ae786795e9792884b68c3c3d',1,'amrex::ArenaAllocatorTraits']]],
+  ['propagate_5fon_5fcontainer_5fswap',['propagate_on_container_swap',['../structamrex_1_1ArenaAllocatorTraits.html#a9a6140da2b4714f332dd0f10d74e3ac0',1,'amrex::ArenaAllocatorTraits']]],
   ['ptr_5fto_5fvoid_5ffunc',['PTR_TO_VOID_FUNC',['../namespaceamrex.html#a436b95e95cc4994a7c179e3cebe42ea6',1,'amrex']]],
   ['pvmf',['PVMF',['../classamrex_1_1DistributionMapping.html#a55afc17fcc72abd4f0f9bf4bd305ce4b',1,'amrex::DistributionMapping']]]
 ];

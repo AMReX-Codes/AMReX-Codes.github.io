@@ -474,6 +474,7 @@ var searchData=
   ['m_5fumac_5floc',['m_umac_loc',['../classamrex_1_1MacProjector.html#a8fd1a5dce97adbdca72260a029ea88ce',1,'amrex::MacProjector']]],
   ['m_5fundrrelxr',['m_undrrelxr',['../classamrex_1_1MLCellLinOp.html#a2ffd8d47358983d3c013b8012eeb1b8e',1,'amrex::MLCellLinOp']]],
   ['m_5fuse_5fgauss_5fseidel',['m_use_gauss_seidel',['../classamrex_1_1MLNodeLaplacian.html#a1dd0f2250ddf96f66c4163f0f99e1f1d',1,'amrex::MLNodeLaplacian']]],
+  ['m_5fuse_5fgpu_5faware_5fmpi',['m_use_gpu_aware_mpi',['../classamrex_1_1PolymorphicAllocator.html#a17194831c5f2740968428a41f16a41fc',1,'amrex::PolymorphicAllocator']]],
   ['m_5fuse_5fharmonic_5faverage',['m_use_harmonic_average',['../classamrex_1_1MLNodeLaplacian.html#ac1b3d5d3a2cde86e476ffb95f17b0fef',1,'amrex::MLNodeLaplacian']]],
   ['m_5fused',['m_used',['../classamrex_1_1CArena.html#a7ec2fcdaa0d06d1fceb739d0e1661751',1,'amrex::CArena::m_used()'],['../classamrex_1_1DArena.html#aa9274b236cdc85ff9d33d35f2d8027d3',1,'amrex::DArena::m_used()']]],
   ['m_5fused_5fsize',['m_used_size',['../classamrex_1_1EArena.html#a9286ee7b29d7014dcdb72b9302bc4f50',1,'amrex::EArena']]],
