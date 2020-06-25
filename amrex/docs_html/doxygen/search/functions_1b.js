@@ -21,6 +21,7 @@ var searchData=
   ['_7easyncarray',['~AsyncArray',['../classamrex_1_1Gpu_1_1AsyncArray.html#a2b729323da571ece4ca18364dcd2d8d8',1,'amrex::Gpu::AsyncArray']]],
   ['_7ebasefab',['~BaseFab',['../classamrex_1_1BaseFab.html#acf7c1ac49465810a70b9ae1757263f30',1,'amrex::BaseFab']]],
   ['_7ebaseumap',['~BaseUmap',['../classamrex_1_1BaseUmap.html#a66dce96b470d563ad6f46b9054733106',1,'amrex::BaseUmap']]],
+  ['_7eblbter',['~BLBTer',['../classamrex_1_1BLBTer.html#a40f6ea2be2071a89f148f4ca939077d7',1,'amrex::BLBTer']]],
   ['_7eblprofstats',['~BLProfStats',['../classBLProfStats.html#a78a439d9e62c00492ada16e9466c068d',1,'BLProfStats']]],
   ['_7ebndrydata',['~BndryData',['../classamrex_1_1BndryData.html#ad6ebc5a788a82c41a8b1bffc8e589440',1,'amrex::BndryData']]],
   ['_7ebndryfunc',['~BndryFunc',['../classamrex_1_1StateDescriptor_1_1BndryFunc.html#ac734cc2b9fe8ae9330f8a4d389eea388',1,'amrex::StateDescriptor::BndryFunc']]],

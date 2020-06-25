@@ -63,6 +63,7 @@ var searchData=
   ['bl_5fproffortfuncstop_5fint',['bl_proffortfuncstop_int',['../AMReX__BLProfiler__F_8F90.html#a9b08ec5d3dcd26fa2d237a921bc84df8',1,'AMReX_BLProfiler_F.F90']]],
   ['bl_5fstr2int',['bl_str2int',['../AMReX__BLutil__F_8F90.html#a98b9d6b75a6d264b95da602f2d79e7ea',1,'AMReX_BLutil_F.F90']]],
   ['bl_5fwarning',['bl_warning',['../AMReX__error__mod_8F90.html#ad1569e0309e0571bc7ecc27482d9a6b2',1,'AMReX_error_mod.F90']]],
+  ['blbter',['BLBTer',['../classamrex_1_1BLBTer.html#acbd71a84437f500f76af1f585386c007',1,'amrex::BLBTer']]],
   ['bldfinelevels',['bldFineLevels',['../classamrex_1_1Amr.html#a12a8a852d0fe80b6a15cd05d0e96d2fd',1,'amrex::Amr']]],
   ['block',['block',['../classamrex_1_1CArena_1_1Node.html#a20a366d961aa30bc166cfc7e5ec9a185',1,'amrex::CArena::Node::block() const noexcept'],['../classamrex_1_1CArena_1_1Node.html#a644086075ae8e03798c85ae56205c953',1,'amrex::CArena::Node::block(void *blk) noexcept']]],
   ['blockingfactor',['blockingFactor',['../classamrex_1_1AmrMesh.html#af4a41ee86449b2afa949b6d68f6faf6f',1,'amrex::AmrMesh']]],

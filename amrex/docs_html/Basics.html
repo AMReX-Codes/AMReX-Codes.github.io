@@ -2204,13 +2204,46 @@ want AMReX to handle this, <code class="docutils literal notranslate"><span clas
 <h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
 <p>Debugging is an art.  Everyone has their own favorite method.  Here we
 offer a few tips we have found to be useful.</p>
-<p>Compiling in debug mode (e.g., <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DEBUG=TRUE</span></code>) and running with
-<code class="docutils literal notranslate"><span class="pre">ParmParse</span></code> parameter <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid=1</span></code> can be helpful.
-In debug mode, many compiler debugging flags are turned on and all
-<code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> data are initialized to signaling NaNs.  The
-<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> parameter will result in backtrace files
-when floating point exception occurs.  One can then examine those
-files to track down the origin of the issue.</p>
+<p>To help debugging, AMReX handles various signals in the C standard
+library raised in the runs.  This gives us a chance to print out more
+information using Linux/Unix backtrace capability.  The signals
+include seg fault, interruption by the user (control-c), assertion
+errors, and floating point exceptions (NaNs, divided by zero and
+overflow).  The handling of seg fault, assertion errors and
+interruption by control-C are enabled by default.  Note that
+<code class="docutils literal notranslate"><span class="pre">AMREX_ASSERT()</span></code> is only on when compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> or
+<code class="docutils literal notranslate"><span class="pre">USE_ASSERTION=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or
+<code class="docutils literal notranslate"><span class="pre">-DENABLE_ASSERTIONS=YES</span></code> in CMake.  The trapping of floating point exceptions is not
+enabled by default unless the code is compiled with <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with
+<code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> or <code class="docutils literal notranslate"><span class="pre">-DENABLE_FPE=YES</span></code> in CMake to turn on compiler flags
+if supported.  Alternatively, one can always use runtime parameters to control the
+handling of floating point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
+NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code> for division by zero and
+<code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow.  To more effectively trap the
+use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox``s</span> <span class="pre">in</span>
+<span class="pre">``MulitFab``s</span> <span class="pre">and</span> <span class="pre">arrays</span> <span class="pre">allocated</span> <span class="pre">by</span> <span class="pre">``bl_allocate</span></code> to signaling NaNs when it is compiled
+with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
+One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.</p>
+<p>One can get more information than the backtrace of the call stack by
+instrumenting the code.  Here is an example.
+You know the line <code class="docutils literal notranslate"><span class="pre">Real</span> <span class="pre">rho</span> <span class="pre">=</span> <span class="pre">state(cell,0);</span></code> is causing a segfault.  You
+could add a print statement before that.  But it might print out
+thousands (or even millions) of line before it hits the segfault.  What
+you could do is the following,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX_BLBackTrace.H&gt;</span><span class="cp"></span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">ss</span><span class="p">;</span>
+<span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;state.box() = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">state</span><span class="p">.</span><span class="n">box</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; cell = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">cell</span><span class="p">;</span>
+<span class="n">BL_BACKTRACE_PUSH</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span> <span class="c1">// PUSH takes std::string</span>
+
+<span class="n">Real</span> <span class="n">rho</span> <span class="o">=</span> <span class="n">state</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// state is a Fab, and cell is an IntVect.</span>
+
+<span class="n">BL_BACKTRACE_POP</span><span class="p">();</span> <span class="c1">// One can omit this line.  In that case,</span>
+                    <span class="c1">// there is an implicit POP when &quot;PUSH&quot; is</span>
+                    <span class="c1">// out of scope.</span>
+</pre></div>
+</div>
+<p>When it hits the segfault, you will only see the last pint out.</p>
 <p>Writing a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> to disk with</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">VisMF</span><span class="o">::</span><span class="n">Write</span><span class="p">(</span><span class="k">const</span> <span class="n">FabArray</span><span class="o">&lt;</span><span class="n">FArrayBox</span><span class="o">&gt;&amp;</span> <span class="n">mf</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>

@@ -3568,31 +3568,58 @@
       </node>
     </invincdepgraph>
     <innerclass refid="structamrex_1_1BLBackTrace" prot="public">amrex::BLBackTrace</innerclass>
+    <innerclass refid="classamrex_1_1BLBTer" prot="public">amrex::BLBTer</innerclass>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
       <sectiondef kind="define">
+      <memberdef kind="define" id="AMReX__BLBackTrace_8H_1a3b9208ebf15bcb1ade93d1fc382983a3" prot="public" static="no">
+        <name>BL_PASTE2</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <initializer>x##y</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" line="15" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__BLBackTrace_8H_1a3b98ab097aeeadbf65d2ae8471652e63" prot="public" static="no">
+        <name>BL_PASTE</name>
+        <param><defname>x</defname></param>
+        <param><defname>y</defname></param>
+        <initializer><ref refid="AMReX__BLBackTrace_8H_1a3b9208ebf15bcb1ade93d1fc382983a3" kindref="member">BL_PASTE2</ref>(x, y)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" line="16" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" bodystart="16" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="define" id="AMReX__BLBackTrace_8H_1a1a1b4b23ab602059668c8fdb8b2bf4d2" prot="public" static="no">
         <name>BL_BACKTRACE_PUSH</name>
         <param><defname>S</defname></param>
-        <initializer>((void)0)</initializer>
+        <initializer><ref refid="classamrex_1_1BLBTer" kindref="compound">amrex::BLBTer</ref> <ref refid="AMReX__BLBackTrace_8H_1a3b98ab097aeeadbf65d2ae8471652e63" kindref="member">BL_PASTE</ref>( bl_bter, __COUNTER__ )( S, __FILE__, __LINE__ )</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" line="21" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" bodystart="21" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" line="17" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" bodystart="17" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="AMReX__BLBackTrace_8H_1a0f148ece9be32544154e65e5007d7358" prot="public" static="no">
+      <memberdef kind="define" id="AMReX__BLBackTrace_8H_1a9536ecae3663317e5c97f45b837cdb65" prot="public" static="no">
         <name>BL_BACKTRACE_POP</name>
-        <param><defname>S</defname></param>
-        <initializer>((void)0)</initializer>
+        <param></param>
+        <initializer>amrex::BLBackTrace::bt_stack.pop()</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" line="22" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" bodystart="22" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" line="18" column="9" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -3614,48 +3641,39 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_BACKTRACING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PASTE2(x,<sp/>y)<sp/>x##y</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PASTE(x,<sp/>y)<sp/>BL_PASTE2(x,<sp/>y)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_BACKTRACE_PUSH(<sp/>S<sp/>)<sp/><sp/>amrex::BLBTer<sp/>BL_PASTE(<sp/>bl_bter,<sp/>__COUNTER__<sp/>)(<sp/>S,<sp/>__FILE__,<sp/>__LINE__<sp/>)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_BACKTRACE_POP()<sp/><sp/><sp/>amrex::BLBackTrace::bt_stack.pop()</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21" refid="AMReX__BLBackTrace_8H_1a1a1b4b23ab602059668c8fdb8b2bf4d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_BACKTRACE_PUSH(S)<sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="AMReX__BLBackTrace_8H_1a0f148ece9be32544154e65e5007d7358" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_BACKTRACE_POP(S)<sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27" refid="structamrex_1_1BLBackTrace" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1BLBackTrace" kindref="compound">BLBackTrace</ref></highlight></codeline>
-<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BLBackTrace_1a24b1c852ff2149fe973fad9501e2b5ec" kindref="member">handler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BLBackTrace_1a33950310b32a51c70dd6f6960d83e2db" kindref="member">print_backtrace_info</ref><sp/>(FILE*<sp/>f);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BLBackTrace_1a33950310b32a51c70dd6f6960d83e2db" kindref="member">print_backtrace_info</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_BACKTRACING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::stack&lt;std::pair&lt;std::string,<sp/>std::string&gt;<sp/>&gt;<sp/>bt_stack;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>threadprivate<sp/>here<sp/>doesn&apos;t<sp/>work<sp/>with<sp/>Cray<sp/>and<sp/>Intel</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>!defined(_CRAYC)<sp/>&amp;&amp;<sp/>!defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>threadprivate(bt_stack)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>AMREX_BACKTRACING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_BACKTRACING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">BLBTer</highlight></codeline>
-<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>BLBTer(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>~BLBTer();</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>line_file;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pop_bt_stack();</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>AMREX_BACKTRACING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="15" refid="AMReX__BLBackTrace_8H_1a3b9208ebf15bcb1ade93d1fc382983a3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PASTE2(x,<sp/>y)<sp/>x##y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="AMReX__BLBackTrace_8H_1a3b98ab097aeeadbf65d2ae8471652e63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_PASTE(x,<sp/>y)<sp/>BL_PASTE2(x,<sp/>y)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="AMReX__BLBackTrace_8H_1a1a1b4b23ab602059668c8fdb8b2bf4d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_BACKTRACE_PUSH(<sp/>S<sp/>)<sp/><sp/>amrex::BLBTer<sp/>BL_PASTE(<sp/>bl_bter,<sp/>__COUNTER__<sp/>)(<sp/>S,<sp/>__FILE__,<sp/>__LINE__<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="AMReX__BLBackTrace_8H_1a9536ecae3663317e5c97f45b837cdb65" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_BACKTRACE_POP()<sp/><sp/><sp/>amrex::BLBackTrace::bt_stack.pop()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="structamrex_1_1BLBackTrace" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1BLBackTrace" kindref="compound">BLBackTrace</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BLBackTrace_1a24b1c852ff2149fe973fad9501e2b5ec" kindref="member">handler</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BLBackTrace_1a33950310b32a51c70dd6f6960d83e2db" kindref="member">print_backtrace_info</ref><sp/>(FILE*<sp/>f);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1BLBackTrace_1a33950310b32a51c70dd6f6960d83e2db" kindref="member">print_backtrace_info</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structamrex_1_1BLBackTrace_1aaf1d60939d82c0f1d794feed9222e8a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::stack&lt;std::pair&lt;std::string,<sp/>std::string&gt;<sp/>&gt;<sp/><ref refid="structamrex_1_1BLBackTrace_1aaf1d60939d82c0f1d794feed9222e8a0" kindref="member">bt_stack</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>threadprivate<sp/>here<sp/>doesn&apos;t<sp/>work<sp/>with<sp/>Cray<sp/>and<sp/>Intel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>!defined(_CRAYC)<sp/>&amp;&amp;<sp/>!defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>threadprivate(bt_stack)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classamrex_1_1BLBTer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BLBTer" kindref="compound">BLBTer</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BLBTer" kindref="compound">BLBTer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="classamrex_1_1BLBTer" kindref="compound">BLBTer</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43" refid="classamrex_1_1BLBTer_1a2067033e63c674e9b203917835595bdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classamrex_1_1BLBTer_1a2067033e63c674e9b203917835595bdb" kindref="member">line_file</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>pop_bt_stack();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BLBackTrace.H"/>
   </compounddef>

@@ -14,6 +14,7 @@ var searchData=
   ['bl_5fallocate',['bl_allocate',['../interfaceamrex__mempool__module_1_1bl__allocate.html',1,'amrex_mempool_module']]],
   ['bl_5fdeallocate',['bl_deallocate',['../interfaceamrex__mempool__module_1_1bl__deallocate.html',1,'amrex_mempool_module']]],
   ['blbacktrace',['BLBackTrace',['../structamrex_1_1BLBackTrace.html',1,'amrex']]],
+  ['blbter',['BLBTer',['../classamrex_1_1BLBTer.html',1,'amrex']]],
   ['blpdatablock',['BLPDataBlock',['../structBLProfStats_1_1BLPDataBlock.html',1,'BLProfStats']]],
   ['blprofiler',['BLProfiler',['../classamrex_1_1BLProfiler.html',1,'amrex']]],
   ['blprofstats',['BLProfStats',['../classBLProfStats.html',1,'']]],
