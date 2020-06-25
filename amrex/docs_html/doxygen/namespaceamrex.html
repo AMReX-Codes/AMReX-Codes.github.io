@@ -2663,6 +2663,8 @@ Functions</h2></td></tr>
 <tr class="separator:a39109bb21761f9999a91aba81f033cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7264613b707b22141772f8dc1ebf855"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad7264613b707b22141772f8dc1ebf855">WriteEBSurface</a> (const amrex::BoxArray &amp;ba, const <a class="el" href="classamrex_1_1DistributionMapping.html">amrex::DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">amrex::Geometry</a> &amp;geom, const <a class="el" href="classamrex_1_1EBFArrayBoxFactory.html">amrex::EBFArrayBoxFactory</a> *ebf)</td></tr>
 <tr class="separator:ad7264613b707b22141772f8dc1ebf855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade93dfd6bf280f23f7f7baa47404e80b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ade93dfd6bf280f23f7f7baa47404e80b">Nestsets</a> (const int level, const int n_levels, const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;fab, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const BoxArray * &gt; box_arrays, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &gt; &amp;ref_ratio, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;domain_offsets, conduit::Node &amp;nestset)</td></tr>
+<tr class="separator:ade93dfd6bf280f23f7f7baa47404e80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a807d001969408582d355a731cedac987"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a807d001969408582d355a731cedac987">FabToBlueprintTopology</a> (const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom, const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;fab, Node &amp;res)</td></tr>
 <tr class="separator:a807d001969408582d355a731cedac987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af70ff73cf1857e1a859a1fbac9ef10b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af70ff73cf1857e1a859a1fbac9ef10b0">AddFabGhostIndicatorField</a> (const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;fab, int ngrow, Node &amp;res)</td></tr>
@@ -39411,6 +39413,62 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ade93dfd6bf280f23f7f7baa47404e80b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Nestsets </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n_levels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1FArrayBox.html">FArrayBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>fab</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; const BoxArray * &gt;&#160;</td>
+          <td class="paramname"><em>box_arrays</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref_ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>domain_offsets</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">conduit::Node &amp;&#160;</td>
+          <td class="paramname"><em>nestset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ace32984e953e92b236d8e765dd2baaf6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -41543,7 +41601,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="abe14b67eeec40f7b21d1743472bbb09a"></a>
+<a class="anchor" id="ae9a6e7245f5df7f22c353eede65db960"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -41556,7 +41614,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1LinOp.html">LinOp</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MCLinOp.html">MCLinOp</a> &amp;&#160;</td>
           <td class="paramname"><em>lp</em>&#160;</td>
         </tr>
         <tr>
@@ -41576,7 +41634,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae9a6e7245f5df7f22c353eede65db960"></a>
+<a class="anchor" id="abe14b67eeec40f7b21d1743472bbb09a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -41589,7 +41647,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1MCLinOp.html">MCLinOp</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1LinOp.html">LinOp</a> &amp;&#160;</td>
           <td class="paramname"><em>lp</em>&#160;</td>
         </tr>
         <tr>
@@ -41956,32 +42014,6 @@ template&lt;int NReal, int NInt&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae3b2b2af01369829d3b37006cd625fe2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::istream&amp; amrex::operator&gt;&gt; </td>
-          <td>(</td>
-          <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
-          <td class="paramname"><em>iv</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ab982b91919e6fa7eed439d20fc794c41"></a>
 <div class="memitem">
 <div class="memproto">
@@ -42007,6 +42039,32 @@ template&lt;int NReal, int NInt&gt; </div>
 </div><div class="memdoc">
 
 <p>Read an <a class="el" href="classamrex_1_1IndexType.html" title="Cell-Based or Node-Based Indices. ">IndexType</a> from an istream. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae3b2b2af01369829d3b37006cd625fe2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; amrex::operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>is</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>iv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

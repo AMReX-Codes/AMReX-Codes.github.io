@@ -62,6 +62,7 @@ var searchData=
   ['neighbour_5fis_5fvalid',['neighbour_is_valid',['../namespaceamrex__eb__levelset__module.html#a1021e10493eae99fca20410e905f769d',1,'amrex_eb_levelset_module']]],
   ['nerrorbuf',['nErrorBuf',['../classamrex_1_1AmrMesh.html#ad5199bceb8775542859c6b51d0a2100c',1,'amrex::AmrMesh']]],
   ['nerrorbufvect',['nErrorBufVect',['../classamrex_1_1AmrMesh.html#a071011d3702ecfc14ebc0f61a30a50ed',1,'amrex::AmrMesh']]],
+  ['nestsets',['Nestsets',['../namespaceamrex.html#ade93dfd6bf280f23f7f7baa47404e80b',1,'amrex']]],
   ['new',['New',['../classamrex_1_1AmrDataAdaptor.html#a41f3c8b6a7d66e0b17a4e9869c8c9b40',1,'amrex::AmrDataAdaptor::New()'],['../classamrex_1_1AmrMeshDataAdaptor.html#a85eaea376d002e3fdfaa2082cd2a30cf',1,'amrex::AmrMeshDataAdaptor::New()']]],
   ['new_5fchop',['new_chop',['../classamrex_1_1Cluster.html#a334eb4810f3a2efcf713b44eee9d4d7b',1,'amrex::Cluster::new_chop()'],['../classamrex_1_1ClusterList.html#aa556ac17a14c8ed6b6280bae1ab48be5',1,'amrex::ClusterList::new_chop()']]],
   ['newdata',['newData',['../classamrex_1_1StateData.html#a2351d4871d6a5f299b26c1d6150690a7',1,'amrex::StateData::newData() noexcept'],['../classamrex_1_1StateData.html#a5a81beda34e62a92aadd7941bcc5157e',1,'amrex::StateData::newData() const noexcept']]],
