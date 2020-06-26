@@ -1096,23 +1096,20 @@ as:</p>
 </div>
 <p>Users that choose to implement the macro launches should be aware of the limitations
 of C++ preprocessing macros to ensure GPU offloading is done properly.</p>
-<p>Finally, AMReX’s expected OpenMP strategy for GPUs is to utilize OpenMP
-in CPU regions to maintain multi-threaded parallelism on work that cannot be
-offloaded efficiently, while using CUDA independently in GPU regions.
-This means OpenMP pragmas need to be maintained when <code class="docutils literal notranslate"><span class="pre">USE_CUDA=FALSE</span></code>
-and turned off in locations CUDA is implemented when <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>.</p>
-<p>This can currently be implemented in preparation for an OpenMP strategy and
-users are highly encouraged to do so now.  This prevents having to track
-down and label the appropriate OpenMP regions in the future and
-clearly labels for readers that OpenMP and GPUs are not being used at the
-same time.  OpenMP pragmas can be turned off using the conditional pragma
-and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">notInLaunchRegion</span></span><span class="punctuation"><span class="pre">()</span></span></code>, as shown below:</p>
+<p>Finally, AMReX’s most common CPU threading strategy for GPU/CPU systems is to utilize
+OpenMP threads to maintain multi-threaded parallelism on work chosen to run on the host.
+This means OpenMP pragmas should be maintained where CPU work is performed and usually
+turned off where work is offloaded onto the GPU.  OpenMP pragmas can be turned
+off using the conditional pragma and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">notInLaunchRegion</span></span><span class="punctuation"><span class="pre">()</span></span></code>, as shown below:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef _OPENMP</span>
 <span class="cp">#pragma omp parallel if (Gpu::notInLaunchRegion())</span>
 <span class="cp">#endif</span>
 </pre></div>
 </div>
-<p>This should be added only to MFIter loops that contain GPU work.</p>
+<p>It is generally expected that simply using OpenMP threads to launch GPU work quicker
+will show little improvement or even perform worse. So, this conditional statement
+should be added to MFIter loops that contain GPU work, unless users specifically test
+the performance or are designing more complex workflows that require OpenMP.</p>
 </div>
 </div>
 <div class="section" id="an-example-of-migrating-to-gpu">
