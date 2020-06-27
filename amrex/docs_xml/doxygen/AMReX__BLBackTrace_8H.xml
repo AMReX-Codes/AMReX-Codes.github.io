@@ -3656,7 +3656,7 @@
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30" refid="structamrex_1_1BLBackTrace_1aaf1d60939d82c0f1d794feed9222e8a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::stack&lt;std::pair&lt;std::string,<sp/>std::string&gt;<sp/>&gt;<sp/><ref refid="structamrex_1_1BLBackTrace_1aaf1d60939d82c0f1d794feed9222e8a0" kindref="member">bt_stack</ref>;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>threadprivate<sp/>here<sp/>doesn&apos;t<sp/>work<sp/>with<sp/>Cray<sp/>and<sp/>Intel</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>!defined(_CRAYC)<sp/>&amp;&amp;<sp/>!defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>!defined(_CRAYC)<sp/>&amp;&amp;<sp/>!defined(__INTEL_COMPILER)<sp/>&amp;&amp;<sp/>!defined(__PGI)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>threadprivate(bt_stack)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal">};</highlight></codeline>
