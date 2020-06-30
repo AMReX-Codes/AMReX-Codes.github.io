@@ -464,12 +464,30 @@ problem as much as possible.  However, as we have mentioned, we can
 call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMaxCoarseningLevel</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">)</span></span></code> on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object
 passed to the constructor of a linear operator to disable the
 coarsening completely.  In that case the bottom solver is solving the
-residual correction form of the original problem.</p>
+residual correction form of the original problem. To build Hypre, follow the next steps:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="o">-</span> <span class="n">git</span> <span class="n">clone</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/hypre-space/hypre.git</span>
+<span class="mf">2.</span><span class="o">-</span> <span class="n">cd</span> <span class="n">hypre</span><span class="o">/</span><span class="n">src</span>
+<span class="mf">3.</span><span class="o">-</span> <span class="p">.</span><span class="o">/</span><span class="n">configure</span>
+    <span class="p">(</span><span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">build</span> <span class="n">hypre</span> <span class="n">with</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span><span class="p">,</span> <span class="k">do</span> <span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">bigint</span> <span class="p">)</span>
+<span class="mf">4.</span><span class="o">-</span> <span class="n">make</span> <span class="n">install</span>
+<span class="mf">5.</span><span class="o">-</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">with</span> <span class="n">the</span> <span class="n">HYPRE</span> <span class="n">directory</span> <span class="o">--</span>
+    <span class="n">HYPRE_DIR</span><span class="o">=/</span><span class="n">hypre_path</span><span class="o">/</span><span class="n">hypre</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">hypre</span>
+</pre></div>
+</div>
 <p>To use hypre, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/HYPRE</span></code> in the build system.
 For an example of using hypre, we refer the reader to
 <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
 <p>AMReX can also use <a class="reference external" href="https://www.mcs.anl.gov/petsc/">PETSc</a> as a bottom solver for cell-centered
-problems.  To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>
+problems. To build PETSc, follow the next steps:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span><span class="o">-</span> <span class="n">git</span> <span class="n">clone</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//github.com/petsc/petsc.git</span>
+<span class="mf">2.</span><span class="o">-</span> <span class="n">cd</span> <span class="n">petsc</span>
+<span class="mf">3.</span><span class="o">-</span> <span class="p">.</span><span class="o">/</span><span class="n">configure</span> <span class="o">--</span><span class="n">download</span><span class="o">-</span><span class="n">hypre</span><span class="o">=</span><span class="n">yes</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="n">build_dir</span>
+<span class="mf">4.</span><span class="o">-</span> <span class="n">Follow</span> <span class="n">the</span> <span class="n">steps</span> <span class="n">given</span> <span class="n">by</span> <span class="n">petsc</span>
+<span class="mf">5.</span><span class="o">-</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">environment</span> <span class="n">variable</span> <span class="n">with</span> <span class="n">the</span> <span class="n">PETSC</span> <span class="n">directory</span> <span class="o">--</span>
+    <span class="n">PETSC_DIR</span><span class="o">=/</span><span class="n">petsc_path</span><span class="o">/</span><span class="n">petsc</span><span class="o">/</span><span class="n">build_dir</span>
+</pre></div>
+</div>
+<p>To use PETSc, one must include <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/PETSc</span></code>
 in the build system.  For an example of using PETSc, we refer the
 reader to <code class="docutils literal notranslate"><span class="pre">Tutorials/LinearSolvers/ABecLaplacian_C</span></code>.</p>
 </div>
