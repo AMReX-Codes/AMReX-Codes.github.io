@@ -439,8 +439,8 @@ specific type of GPU memory:</p>
 <span id="tab-gpu-arena"></span><table class="docutils align-default" id="id3">
 <caption><span class="caption-number">Table 12 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 54%" />
-<col style="width: 46%" />
+<col style="width: 43%" />
+<col style="width: 57%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Arena</p></th>
@@ -449,13 +449,13 @@ specific type of GPU memory:</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>The_Arena()</p></td>
-<td><p>unified memory</p></td>
+<td><p>managed or device memory</p></td>
 </tr>
 <tr class="row-odd"><td><p>The_Device_Arena()</p></td>
 <td><p>device memory</p></td>
 </tr>
 <tr class="row-even"><td><p>The_Managed_Arena()</p></td>
-<td><p>unified memory</p></td>
+<td><p>managed memory</p></td>
 </tr>
 <tr class="row-odd"><td><p>The_Pinned_Arena()</p></td>
 <td><p>pinned memory</p></td>
@@ -469,11 +469,13 @@ to two functions:</p>
 </pre></div>
 </div>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> is used for memory allocation of data in
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span></code>.  Therefore the data in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> is placed in
-unified memory and is accessible from both CPU host and GPU device.
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span></code>.  By default, it allocates managed memory.  This can be changed with
+a boolean runtime parameter <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed</span></code>.
+Therefore the data in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> is placed in
+managed memory by default and is accessible from both CPU host and GPU device.
 This allows application codes to develop their GPU capability
 gradually.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Managed_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> is a separate pool of
-unified memory, that is distinguished from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> for
+managed memory, that is distinguished from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> for
 performance reasons.  If you want to print out the current memory usage
 of the Arenas, you can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Arena</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">PrintUsage</span></span><span class="punctuation"><span class="pre">()</span></span></code>.</p>
 </div>
