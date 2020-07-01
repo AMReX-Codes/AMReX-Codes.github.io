@@ -16,7 +16,6 @@ var searchData=
   ['level_5fset_5fvalid',['level_set_valid',['../classamrex_1_1LSCoreBase.html#ae753489d344207e275cb87c774c9a167',1,'amrex::LSCoreBase']]],
   ['level_5fsteps',['level_steps',['../classamrex_1_1Amr.html#a38fbd17db8a050b5bf3302427b9285ea',1,'amrex::Amr']]],
   ['levelbld',['levelbld',['../classamrex_1_1Amr.html#a99ffc00c495183894b2ee7e11a79685e',1,'amrex::Amr']]],
-  ['leveldirectoriescreated',['levelDirectoriesCreated',['../classamrex_1_1ParticleContainer.html#a86f015f9137536c34fbd5832f53dcf16',1,'amrex::ParticleContainer']]],
   ['leveldirectorycreated',['levelDirectoryCreated',['../classamrex_1_1AmrLevel.html#a7a90e201ef6ef11f2c42fc9a0de76939',1,'amrex::AmrLevel']]],
   ['levelsteps',['levelSteps',['../classamrex_1_1AmrData.html#a9a873156471b39d52631b3e56b8218a5',1,'amrex::AmrData']]],
   ['lincc_5finterp',['lincc_interp',['../namespaceamrex.html#acdf3882926f66513ad7885b4cd468233',1,'amrex']]],
