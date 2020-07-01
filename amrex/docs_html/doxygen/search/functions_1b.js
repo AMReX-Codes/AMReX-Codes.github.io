@@ -19,6 +19,7 @@ var searchData=
   ['_7eamrtracerparticlecontainer',['~AmrTracerParticleContainer',['../classamrex_1_1AmrTracerParticleContainer.html#a949e9845cea415781da33b68212f9709',1,'amrex::AmrTracerParticleContainer']]],
   ['_7earena',['~Arena',['../classamrex_1_1Arena.html#a515142557e6b630fbad746e3c33776e5',1,'amrex::Arena']]],
   ['_7easyncarray',['~AsyncArray',['../classamrex_1_1Gpu_1_1AsyncArray.html#a2b729323da571ece4ca18364dcd2d8d8',1,'amrex::Gpu::AsyncArray']]],
+  ['_7ebackgroundthread',['~BackgroundThread',['../classamrex_1_1BackgroundThread.html#ab5ad8734e492ca7784f7fa8af2d4c29e',1,'amrex::BackgroundThread']]],
   ['_7ebasefab',['~BaseFab',['../classamrex_1_1BaseFab.html#acf7c1ac49465810a70b9ae1757263f30',1,'amrex::BaseFab']]],
   ['_7ebaseumap',['~BaseUmap',['../classamrex_1_1BaseUmap.html#a66dce96b470d563ad6f46b9054733106',1,'amrex::BaseUmap']]],
   ['_7eblbter',['~BLBTer',['../classamrex_1_1BLBTer.html#a40f6ea2be2071a89f148f4ca939077d7',1,'amrex::BLBTer']]],
