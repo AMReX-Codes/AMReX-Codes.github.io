@@ -290,6 +290,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a355691d7877fb9a9aabc65db76d0f2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79f98e0cf06f695dbad6052c5d53e00b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a79f98e0cf06f695dbad6052c5d53e00b">doConsolidation</a> () const noexcept</td></tr>
 <tr class="separator:a79f98e0cf06f695dbad6052c5d53e00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae920d0e3602dd26d57876b6d6a6843e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ae920d0e3602dd26d57876b6d6a6843e4">doSemicoarsening</a> () const noexcept</td></tr>
+<tr class="separator:ae920d0e3602dd26d57876b6d6a6843e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa42fd2dfa3b0133f2b20a99026549900"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aa42fd2dfa3b0133f2b20a99026549900">isCellCentered</a> () const noexcept</td></tr>
 <tr class="separator:aa42fd2dfa3b0133f2b20a99026549900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6249249666804079176507b88626a72c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a6249249666804079176507b88626a72c">make</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &gt; &gt; &amp;mf, int nc, int ng) const </td></tr>
@@ -319,6 +321,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a19bf5f2d76877e5f5777e5c44d290648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a488b6dd5c1bfecef948b543bfa7e5154"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a488b6dd5c1bfecef948b543bfa7e5154">m_do_consolidation</a> = false</td></tr>
 <tr class="separator:a488b6dd5c1bfecef948b543bfa7e5154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5eeb189073e311245243a3292b8377d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac5eeb189073e311245243a3292b8377d">m_do_semicoarsening</a> = false</td></tr>
+<tr class="separator:ac5eeb189073e311245243a3292b8377d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2023b3b3881d5aff49c7a3b995a03993"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a2023b3b3881d5aff49c7a3b995a03993">mg_coarsen_ratio_vec</a></td></tr>
+<tr class="separator:a2023b3b3881d5aff49c7a3b995a03993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab16551403ee1629e20ed6e6d9d4f680c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ab16551403ee1629e20ed6e6d9d4f680c">m_geom</a></td></tr>
 <tr class="memdesc:ab16551403ee1629e20ed6e6d9d4f680c"><td class="mdescLeft">&#160;</td><td class="mdescRight">first <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a> is for amr level and second is mg level  <a href="#ab16551403ee1629e20ed6e6d9d4f680c">More...</a><br /></td></tr>
 <tr class="separator:ab16551403ee1629e20ed6e6d9d4f680c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1272,6 +1278,29 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::MLLinOp::doConsolidation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae920d0e3602dd26d57876b6d6a6843e4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLLinOp::doSemicoarsening </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -3288,6 +3317,26 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac5eeb189073e311245243a3292b8377d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLLinOp::m_do_semicoarsening = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a700409c91ec909489e19c53e601de053"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3664,6 +3713,26 @@ Friends</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2023b3b3881d5aff49c7a3b995a03993"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1IntVect.html">IntVect</a>&gt; amrex::MLLinOp::mg_coarsen_ratio_vec</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
