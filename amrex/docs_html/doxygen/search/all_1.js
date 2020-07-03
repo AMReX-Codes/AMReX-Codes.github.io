@@ -62,7 +62,7 @@ var searchData=
   ['addmaxlevel',['AddMaxLevel',['../classBLProfStats.html#ac7a1c8cdbc47801e26193114491ce613',1,'BLProfStats::AddMaxLevel()'],['../classCommProfStats.html#a7f6258720b8313b40605eccd777c4aa9',1,'CommProfStats::AddMaxLevel()']]],
   ['addnametag',['AddNameTag',['../classBLProfStats.html#a1ae1b4d9feec6c7e49adb46133f0118c',1,'BLProfStats::AddNameTag()'],['../classCommProfStats.html#aae68d250eab5fe4721274037a223ea4d',1,'CommProfStats::AddNameTag()']]],
   ['addnametagname',['AddNameTagName',['../classBLProfStats.html#a7e0528cb3bef388531f15cc67ee90f80',1,'BLProfStats::AddNameTagName()'],['../classCommProfStats.html#a8f4075ef4f0bf6ad7016f6b6c8ad85a8',1,'CommProfStats::AddNameTagName()']]],
-  ['addparticles',['addParticles',['../classamrex_1_1ParticleContainer.html#a5e2e20340bf613d45dffb1ce3177c5e2',1,'amrex::ParticleContainer']]],
+  ['addparticles',['addParticles',['../classamrex_1_1ParticleContainer.html#a5e2e20340bf613d45dffb1ce3177c5e2',1,'amrex::ParticleContainer::addParticles(const ParticleContainerType &amp;other, bool local=false)'],['../classamrex_1_1ParticleContainer.html#a9f1768a21e01986dcb18758ec150bbaf',1,'amrex::ParticleContainer::addParticles(const ParticleContainerType &amp;other, F &amp;&amp;f, bool local=false)']]],
   ['addparticlesatlevel',['AddParticlesAtLevel',['../classamrex_1_1ParticleContainer.html#ae81d42996a0794aaca5e198f7b1179f6',1,'amrex::ParticleContainer']]],
   ['addpiece',['AddPiece',['../classBLProfStats.html#aad8d3f466a14930a16c027402790d39e',1,'BLProfStats']]],
   ['addprobdomain',['AddProbDomain',['../classBLProfStats.html#a71a674cf8cc0fe681d5d5a8b2c78ac46',1,'BLProfStats::AddProbDomain()'],['../classCommProfStats.html#a2c70598493fad7c2700a509ddaf65584',1,'CommProfStats::AddProbDomain()']]],
