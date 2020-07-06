@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="AMReX__Habec__K_8H" kind="file" language="C++">
+    <compoundname>AMReX_Habec_K.H</compoundname>
+    <includedby refid="AMReX__HypreABecLap_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp</includedby>
+    <includedby refid="AMReX__HypreABecLap2_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap2.cpp</includedby>
+    <includedby refid="AMReX__HypreABecLap3_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap3.cpp</includedby>
+    <includedby refid="AMReX__PETSc_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Extern/PETSc/AMReX_PETSc.cpp</includedby>
+    <invincdepgraph>
+      <node id="61662">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Extern/PETSc/AMReX_PETSc.cpp</label>
+        <link refid="AMReX__PETSc_8cpp"/>
+      </node>
+      <node id="61659">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp</label>
+        <link refid="AMReX__HypreABecLap_8cpp"/>
+      </node>
+      <node id="61661">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap3.cpp</label>
+        <link refid="AMReX__HypreABecLap3_8cpp"/>
+      </node>
+      <node id="61660">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap2.cpp</label>
+        <link refid="AMReX__HypreABecLap2_8cpp"/>
+      </node>
+      <node id="61658">
+        <label>/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Habec_K.H</label>
+        <link refid="AMReX_Habec_K.H"/>
+        <childnode refid="61659" relation="include">
+        </childnode>
+        <childnode refid="61660" relation="include">
+        </childnode>
+        <childnode refid="61661" relation="include">
+        </childnode>
+        <childnode refid="61662" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AMREX_Habec_K_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_Habec_K_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Habec__2D__K_8H" kindref="compound">AMReX_Habec_2D_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Habec__3D__K_8H" kindref="compound">AMReX_Habec_3D_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="13" refid="namespaceamrex_1a5affd47d5e3fce8c27339e8d92d20c39" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a5affd47d5e3fce8c27339e8d92d20c39" kindref="member">amrex_hpacoef</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt;<ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;Real,2*AMREX_SPACEDIM + 1&gt;</ref>&gt;&amp;<sp/>mat,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>a,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real&amp;<sp/>sa)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;GpuArray&lt;Real,2*AMREX_SPACEDIM + 1&gt;</ref>&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mat_arr<sp/>=<sp/>mat.array();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_arr<sp/>=<sp/>a.<ref refid="classamrex_1_1BaseFab_1a25ed9ead805e064c8f9dbe34ebbf3a95" kindref="member">const_array</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sa<sp/>==<sp/>0.0){</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(box,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_arr(i,j,k)[0]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(box,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_arr(i,j,k)[0]<sp/>=<sp/>sa<sp/>*<sp/>a_arr(i,j,k);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="34" refid="namespaceamrex_1a918411cd3ec8d7928b47409b557ff3cc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a918411cd3ec8d7928b47409b557ff3cc" kindref="member">amrex_hpdiag</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab</ref>&lt;<ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;Real,2*AMREX_SPACEDIM + 1&gt;</ref>&gt;&amp;<sp/>mat,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>diag)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;GpuArray&lt;Real,2*AMREX_SPACEDIM + 1&gt;</ref>&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mat_arr<sp/>=<sp/>mat.array();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>diag_arr<sp/>=<sp/>diag.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(box,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diag_arr(i,j,k)<sp/>=<sp/>1.0/mat_arr(i,j,k)[0];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii=0;<sp/>ii&lt;2*AMREX_SPACEDIM<sp/>+<sp/>1;<sp/>ii++){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mat_arr(i,j,k)[ii]<sp/>=<sp/>mat_arr(i,j,k)[ii]*diag_arr(i,j,k);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;<sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_hpeb_fill_cellid<sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T&amp;<sp/>nrows,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BaseFab" kindref="compound">BaseFab&lt;T&gt;</ref>&amp;<sp/>cell_id,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>&amp;<sp/>flag)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;T&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell_id_arr<sp/>=<sp/>cell_id.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;const EBCellFlag&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>flag_arr<sp/>=<sp/>flag.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>nrows<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Gpu_1_1DeviceScalar" kindref="compound">Gpu::DeviceScalar&lt;int&gt;</ref><sp/>nrows_gpu(nrows);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>nrowsg<sp/>=<sp/>nrows_gpu.<ref refid="structamrex_1_1Gpu_1_1DeviceScalar_1a91b5b8012de7320f5b6af0684caffab9" kindref="member">dataPtr</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(box,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!flag_arr(i,j,k).isCovered()){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cell_id_arr(i,j,k)<sp/>=<sp/>*nrowsg;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a381dae009311cca3b100d29d0417f83e" kindref="member">Gpu::Atomic::Add</ref>(nrowsg,<sp/>1);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>nrows<sp/>=<sp/>nrows_gpu.<ref refid="structamrex_1_1Gpu_1_1DeviceScalar_1a1c3133f40c522c9ed708bdac13eb0658" kindref="member">dataValue</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_hpeb_copy_from_vec<sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>a,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/>v,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>&amp;<sp/>flag)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_arr<sp/>=<sp/>a.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;const EBCellFlag&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>flag_arr<sp/>=<sp/>flag.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrows<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Gpu_1_1DeviceScalar" kindref="compound">Gpu::DeviceScalar&lt;int&gt;</ref><sp/>nrows_gpu(nrows);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>nrowsg<sp/>=<sp/>nrows_gpu.<ref refid="structamrex_1_1Gpu_1_1DeviceScalar_1a91b5b8012de7320f5b6af0684caffab9" kindref="member">dataPtr</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(box,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!flag_arr(i,j,k).isCovered()){</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a_arr(i,j,k)<sp/>=<sp/>v[*nrowsg];</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a381dae009311cca3b100d29d0417f83e" kindref="member">Gpu::Atomic::Add</ref>(nrowsg,<sp/>1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_hpeb_copy_to_vec<sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>box,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>a,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real*<sp/>v,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1EBCellFlagFab" kindref="compound">EBCellFlagFab</ref>&amp;<sp/>flag)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_arr<sp/>=<sp/>a.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;const EBCellFlag&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>flag_arr<sp/>=<sp/>flag.<ref refid="classamrex_1_1BaseFab_1a757e00b16f837e3d092aeb625a9dfa6a" kindref="member">array</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nrows<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Gpu_1_1DeviceScalar" kindref="compound">Gpu::DeviceScalar&lt;int&gt;</ref><sp/>nrows_gpu(nrows);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>nrowsg<sp/>=<sp/>nrows_gpu.<ref refid="structamrex_1_1Gpu_1_1DeviceScalar_1a91b5b8012de7320f5b6af0684caffab9" kindref="member">dataPtr</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(box,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!flag_arr(i,j,k).isCovered()){</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>v[*nrowsg]<sp/>=<sp/>a_arr(i,j,k);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1_1Atomic_1a381dae009311cca3b100d29d0417f83e" kindref="member">Gpu::Atomic::Add</ref>(nrowsg,<sp/>1);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_Habec_K.H"/>
+  </compounddef>
+</doxygen>

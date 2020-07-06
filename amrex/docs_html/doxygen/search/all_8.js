@@ -55,15 +55,14 @@ var searchData=
   ['htod_5fmemcpy',['htod_memcpy',['../namespaceamrex.html#ae243b10c65516ed7dfeaf9aed7e75aa3',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#aa9df7c449e875ece24add0d826c4f133',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)']]],
   ['hwm_5fbuilds',['hwm_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5',1,'amrex::MemProfiler::NBuildsInfo']]],
   ['hwm_5fbytes',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]],
-  ['hypre',['Hypre',['../classamrex_1_1Hypre.html',1,'amrex']]],
   ['hypre',['Hypre',['../classamrex_1_1Hypre.html#afd2d6c32022a99d96f73485d03272ec9',1,'amrex::Hypre::Hypre()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex::hypre()']]],
-  ['hypre_5fint',['hypre_int',['../namespaceamrex__hypre__fort__module.html#a37cff87c6ce6d7a323cb5165758c7623',1,'amrex_hypre_fort_module']]],
+  ['hypre',['Hypre',['../classamrex_1_1Hypre.html',1,'amrex']]],
   ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html#ad89a45864775721cb3101273d111965f',1,'amrex::HypreABecLap']]],
   ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html',1,'amrex']]],
-  ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html',1,'amrex']]],
-  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html',1,'amrex']]],
+  ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]]
+  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html',1,'amrex']]],
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]],
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]]
 ];

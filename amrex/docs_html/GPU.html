@@ -1317,6 +1317,32 @@ the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INL
 <span class="p">}</span>
 </pre></div>
 </div>
+<ul>
+<li><p>Pay attention to what GPUs your job scheduler is assigning to each MPI
+rank. In most cases you’ll achieve the best performance when a single
+MPI rank is assigned to each GPU, and has boxes large enough to saturate
+that GPU’s compute capacity. While there are some cases where multiple
+MPI ranks per GPU can make sense (typically this would be when you have
+some portion of your code that is not GPU accelerated and want to have
+many MPI ranks to make that part faster), this is probably the minority
+of cases. For example, on OLCF Summit you would want to ensure that your
+resource sets contain one MPI rank and GPU each, using <cite>jsrun -n N -a 1 -c 7 -g 1</cite>,
+where <cite>N</cite> is the total number of MPI ranks/GPUs you want to use. (See the OLCF
+[job step viewer](<a class="reference external" href="https://jobstepviewer.olcf.ornl.gov/">https://jobstepviewer.olcf.ornl.gov/</a>) for more information.)</p>
+<p>Conversely, if you choose to have multiple GPUs visible to each MPI rank,
+AMReX will attempt to do the best job it can assigning MPI ranks to GPUs by
+doing round robin assignment. This may be suboptimal because this assignment
+scheme would not be aware of locality benefits that come from having an MPI
+rank be on the same socket as the GPU it is managing. If you know the hardware
+layout of the system you’re running on, specifically the number of GPUs per
+socket (<cite>M</cite>) and number of GPUs per node (<cite>N</cite>), you can set the preprocessor
+defines <cite>-DAMREX_GPUS_PER_SOCKET=M</cite> and <cite>-DAMREX_GPUS_PER_NODE=N</cite>, which are
+exposed in the GNU Make system through the variables <cite>GPUS_PER_SOCKET</cite> and
+<cite>GPUS_PER_NODE</cite> respectively (see an example in <cite>Tools/GNUMake/sites/Make.olcf</cite>).
+Then AMReX can ensure that each MPI rank selects a GPU on the same socket as
+that rank (assuming your MPI implementation supports MPI 3.)</p>
+</li>
+</ul>
 </div>
 <div class="section" id="inputs-parameters">
 <h1>Inputs Parameters<a class="headerlink" href="#inputs-parameters" title="Permalink to this headline">¶</a></h1>
