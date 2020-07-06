@@ -191,8 +191,26 @@ assigned to each grid.  (The exception to this is the KD-tree approach in which 
 grid creation process is governed by trying to balance the work in each grid.)</p>
 <p>Single-level load balancing algorithms are sequentially applied to each AMR level independently,
 and the resulting distributions are mapped onto the ranks taking into account the weights
-already assigned to them (assign heaviest set of grids to the least loaded rank)</p>
-<p>Options supported by AMReX include the following; the default is SFC:</p>
+already assigned to them (assign heaviest set of grids to the least loaded rank).  Note that the
+load of each process is measured by how much memory has already been allocated, not how much memory
+will be allocated.  Therefore the following code is not recommended because it tends to generate
+non-optimal distributions.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlevels</span><span class="p">;</span> <span class="o">++</span><span class="n">lev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// build DistributionMapping for Level lev</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlevels</span><span class="p">;</span> <span class="o">++</span><span class="n">lev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// build MultiFabs for Level lev</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Instead, one should do,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">lev</span> <span class="o">&lt;</span> <span class="n">nlevels</span><span class="p">;</span> <span class="o">++</span><span class="n">lev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// build DistributionMapping for Level lev</span>
+    <span class="c1">// build MultiFabs for Level lev</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Distribution options supported by AMReX include the following; the default is SFC:</p>
 <ul class="simple">
 <li><p>Knapsack: the default weight of a grid in the knapsack algorithm is the number of grid cells,
 but AMReX supports the option to pass an array of weights – one per grid – or alternatively
