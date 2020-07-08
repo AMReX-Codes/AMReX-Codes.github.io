@@ -5530,6 +5530,16 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="126" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="126" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" prot="public" static="no">
+        <name>AMREX_NO_INLINE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="133" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="133" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="define" id="AMReX__Extension_8H_1aca0e371f8327722548a19e84acabea8e" prot="public" static="no">
         <name>AMREX_ATTRIBUTE_WEAK</name>
         <initializer>__attribute__((weak))</initializer>
@@ -5539,7 +5549,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="137" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="137" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="143" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="143" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -5675,24 +5685,30 @@
 <codeline lineno="126" refid="AMReX__Extension_8H_1aeb09e10bb31cfaa6b8928520c9041df9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_INLINE<sp/>inline</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="comment">//<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_TYPECHECK)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="137" refid="AMReX__Extension_8H_1aca0e371f8327722548a19e84acabea8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)<sp/>&amp;&amp;<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iso646.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">//<sp/>no<sp/>inline</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE<sp/>__attribute__((noinline))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_TYPECHECK)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="AMReX__Extension_8H_1aca0e371f8327722548a19e84acabea8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)<sp/>&amp;&amp;<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iso646.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H"/>
   </compounddef>
