@@ -101,6 +101,7 @@ var searchData=
   ['stream_5fmax_5ftries',['stream_max_tries',['../classamrex_1_1Amr.html#a21bfe4d69a3d61259e419781fac7e519',1,'amrex::Amr']]],
   ['streamindex',['streamIndex',['../structBLProfStats_1_1BLPDataBlock.html#a5c894f80bcd597d413fb19d8d9d3637a',1,'BLProfStats::BLPDataBlock::streamIndex()'],['../structCommProfStats_1_1DataBlock.html#a13d897811c92d1e7088cb5d11623f636',1,'CommProfStats::DataBlock::streamIndex()'],['../structRegionsProfStats_1_1DataBlock.html#abb82343828610d370167b0392caea97e',1,'RegionsProfStats::DataBlock::streamIndex()']]],
   ['streams',['streams',['../classamrex_1_1MFIter.html#a6387ff79e8fcfbfdcfbc7dd8d8e78621',1,'amrex::MFIter']]],
+  ['strong_5fthreshold',['strong_threshold',['../classamrex_1_1Hypre.html#acbc3e949322292ed5e578e8a2bd87bb3',1,'amrex::Hypre']]],
   ['stwritetag',['stWriteTag',['../classamrex_1_1NFilesIter.html#ae9224fba010f5b9f9b337f1e1ebdbbec',1,'amrex::NFilesIter']]],
   ['sub_5fcycle',['sub_cycle',['../classamrex_1_1Amr.html#a1fa04ad61e5931bab05e515255c447d1',1,'amrex::Amr']]],
   ['subbox',['subBox',['../structamrex_1_1FabCopyDescriptor.html#a799a901c3f374cb4499799fce9b67d2e',1,'amrex::FabCopyDescriptor']]],

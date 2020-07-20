@@ -5,6 +5,7 @@ var searchData=
   ['ofs',['ofs',['../classamrex_1_1PrintToFile.html#a12f18b00f5a8136b2e884ab933249b63',1,'amrex::PrintToFile']]],
   ['ok',['ok',['../classamrex_1_1CoordSys.html#abee8e858b3ca22a33388275e0a2cfcbf',1,'amrex::CoordSys']]],
   ['old_5fdata',['old_data',['../classamrex_1_1StateData.html#a9702465fcc6db1bb193b1a82222b0e1c',1,'amrex::StateData']]],
+  ['old_5fdefault',['old_default',['../classamrex_1_1Hypre.html#af13e0db2e188907cf98e9b933a919cd0',1,'amrex::Hypre']]],
   ['old_5ftime',['old_time',['../classamrex_1_1StateData.html#a49bf88f51c149857686027e44513f4f8',1,'amrex::StateData']]],
   ['on_5fboundary',['on_boundary',['../classamrex_1_1EB2_1_1GeometryShop.html#abe16618c667f86c9cd4fa0a4c23b512a',1,'amrex::EB2::GeometryShop']]],
   ['one',['one',['../namespaceamrex__constants__module.html#ac1e62f94cf48ab5f9c7203871884b89d',1,'amrex_constants_module']]],
