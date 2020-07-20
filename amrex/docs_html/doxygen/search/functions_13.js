@@ -228,7 +228,7 @@ var searchData=
   ['setperiodicity',['setPeriodicity',['../classamrex_1_1Geometry.html#a07025080452434734ae74c23e9f97224',1,'amrex::Geometry']]],
   ['setphioncentroid',['setPhiOnCentroid',['../classamrex_1_1MLEBABecLap.html#a1b6b64134bb5a73a43da2d2aaefbbf53',1,'amrex::MLEBABecLap']]],
   ['setphysboundaryvalues',['setPhysBoundaryValues',['../classamrex_1_1AmrLevel.html#a2f324e3977de1beef5d204c04be51f4a',1,'amrex::AmrLevel']]],
-  ['setpinmesh',['setPinMesh',['../classamrex_1_1InSituBridge.html#add236657ccdc541799595a04e5b7c80f',1,'amrex::InSituBridge::setPinMesh()'],['../classamrex_1_1AmrDataAdaptor.html#aeb2aa16f7cb72eebdd278083cc8616ef',1,'amrex::AmrDataAdaptor::SetPinMesh()'],['../classamrex_1_1AmrMeshDataAdaptor.html#af95203532e6b05769deed97d8015911b',1,'amrex::AmrMeshDataAdaptor::SetPinMesh()']]],
+  ['setpinmesh',['SetPinMesh',['../classamrex_1_1AmrDataAdaptor.html#aeb2aa16f7cb72eebdd278083cc8616ef',1,'amrex::AmrDataAdaptor::SetPinMesh()'],['../classamrex_1_1AmrMeshDataAdaptor.html#af95203532e6b05769deed97d8015911b',1,'amrex::AmrMeshDataAdaptor::SetPinMesh()'],['../classamrex_1_1InSituBridge.html#add236657ccdc541799595a04e5b7c80f',1,'amrex::InSituBridge::setPinMesh()']]],
   ['setplotvariables',['setPlotVariables',['../classamrex_1_1AmrLevel.html#a8023d9fbf7106fe39977f43d1b07460e',1,'amrex::AmrLevel']]],
   ['setposition',['SetPosition',['../classamrex_1_1ParIter.html#aa1b4629055d537bf1ae602d684bc38d4',1,'amrex::ParIter']]],
   ['setpostsmooth',['setPostSmooth',['../classamrex_1_1MLMG.html#a9308e7b4f15a296fd96f1a0c7459216f',1,'amrex::MLMG']]],
