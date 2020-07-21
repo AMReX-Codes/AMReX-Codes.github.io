@@ -101,5 +101,5 @@ var searchData=
   ['owner_5fmask',['owner_mask',['../classamrex_1_1HypreNodeLap.html#ac8924539f89bd4ae28eb0df416235f4e',1,'amrex::HypreNodeLap']]],
   ['owner_5ftask',['owner_task',['../structamrex_1_1ForkJoin_1_1MFFork.html#aab173e1a49428a72e1099f8925dfeb56',1,'amrex::ForkJoin::MFFork']]],
   ['ownermask',['OwnerMask',['../classamrex_1_1MultiFab.html#a2408f4add699045c65b4dbe0ff5390bc',1,'amrex::MultiFab::OwnerMask()'],['../namespaceamrex.html#a7999d4ed2bf68aba97d9772d888667d9',1,'amrex::OwnerMask()']]],
-  ['ownership',['ownership',['../classamrex_1_1FabArrayBase.html#ab4d5df57a6eaa1d785d131b059b43e18',1,'amrex::FabArrayBase::ownership()'],['../classamrex_1_1FabArrayBase.html#a8e414f069d04091245f3e9e94a3aa237',1,'amrex::FabArrayBase::OwnerShip() const noexcept']]]
+  ['ownership',['OwnerShip',['../classamrex_1_1FabArrayBase.html#a8e414f069d04091245f3e9e94a3aa237',1,'amrex::FabArrayBase::OwnerShip() const noexcept'],['../classamrex_1_1FabArrayBase.html#ab4d5df57a6eaa1d785d131b059b43e18',1,'amrex::FabArrayBase::ownership()']]]
 ];
