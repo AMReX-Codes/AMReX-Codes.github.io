@@ -3160,7 +3160,7 @@
 <codeline lineno="1528"><highlight class="normal">gather_weights<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>weight)</highlight></codeline>
 <codeline lineno="1529"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1530"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1531"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData&lt;Real&gt;</ref><sp/>costld;</highlight></codeline>
+<codeline lineno="1531"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData&lt;Real&gt;</ref><sp/>costld(weight.<ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>(),weight.<ref refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" kindref="member">DistributionMap</ref>());</highlight></codeline>
 <codeline lineno="1532"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1533"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1534"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
