@@ -517,7 +517,7 @@
         <argsstring>(int amrlev) const override</argsstring>
         <name>isSingular</name>
         <reimplements refid="classamrex_1_1MLLinOp_1aa8d6ef9e77180f9076ef5cb83f48bb50">isSingular</reimplements>
-        <reimplementedby refid="classamrex_1_1MLTensorOp_1aaccfcd45ed23a3c9dc414d032b91e797">isSingular</reimplementedby>
+        <reimplementedby refid="classamrex_1_1MLTensorOp_1a5a564d66f2e708dd2cbb76da6ab595a1">isSingular</reimplementedby>
         <param>
           <type>int</type>
           <declname>amrlev</declname>
@@ -652,7 +652,7 @@
         <definition>void amrex::MLABecLaplacian::normalize</definition>
         <argsstring>(int amrlev, int mglev, MultiFab &amp;mf) const finaloverride</argsstring>
         <name>normalize</name>
-        <reimplements refid="classamrex_1_1MLLinOp_1a3e0f34318790ba3e087ecf8b870dd12f">normalize</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOp_1aec69a7e2e969117694d99b03b73c3df4">normalize</reimplements>
         <param>
           <type>int</type>
           <declname>amrlev</declname>
@@ -745,15 +745,14 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H" bodystart="77" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1afdfa7bc321be610fd40835e6fdf9531f" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MLABecLaplacian_1a330567b4fadc2fdbd3cfef100cdbed32" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MLLinOp" kindref="compound">MLLinOp</ref> &gt;</type>
         <definition>virtual std::unique_ptr&lt;MLLinOp&gt; amrex::MLABecLaplacian::makeNLinOp</definition>
-        <argsstring>(int grid_size) const finaloverride</argsstring>
+        <argsstring>(int) const finaloverride</argsstring>
         <name>makeNLinOp</name>
         <reimplements refid="classamrex_1_1MLLinOp_1af7992c664d65948c99e3661e6d23a646">makeNLinOp</reimplements>
         <param>
           <type>int</type>
-          <declname>grid_size</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -768,7 +767,7 @@
         <definition>void amrex::MLABecLaplacian::applyOverset</definition>
         <argsstring>(int amlev, MultiFab &amp;rhs) const override</argsstring>
         <name>applyOverset</name>
-        <reimplements refid="classamrex_1_1MLLinOp_1abfc2da3f4cb1f716723d1cf322e27d6a">applyOverset</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOp_1a503e190ff1d3b6770ce0b99c92667662">applyOverset</reimplements>
         <param>
           <type>int</type>
           <declname>amlev</declname>
@@ -1439,7 +1438,7 @@
       <member refid="classamrex_1_1MLABecLaplacian_1a6af504f34d971e15df085a16446327d0" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>FFlux</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1af360736b1a452aa605ea48a8b2489615" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>fillSolutionBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1ad00407760d4927438c355ba115aaad4e" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Finalize</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a5137ff000c6f8940f4b07a28f3bf9375" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>fixUpResidualMask</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac94ee917e5350722a537af7e127984d3" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>fixUpResidualMask</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1aaf1b0779083ae48e7c28cd72e81d092b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>Fsmooth</name></member>
       <member refid="classamrex_1_1MLLinOp_1a7b1da16499dc7b95e807a28757e0c094" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>Geom</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1a4b9b75ed0ddc0a3ecdf84e8e63154ada" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getACoeffs</name></member>
@@ -1448,7 +1447,7 @@
       <member refid="classamrex_1_1MLABecLaplacian_1a6e100349c3387d415f75281d10bfa0d9" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getBScalar</name></member>
       <member refid="classamrex_1_1MLLinOp_1a7c1c62615a265e25a92ce37b3b287933" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getDefaultBottomSolver</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1a913212b62872ccbdfaf19880d8114073" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getFluxes</name></member>
-      <member refid="classamrex_1_1MLCellABecLap_1afbbb26f3be00d1c3cc7f04e657b356e4" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getFluxes</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1a3bf71e62666ba891774aef6cafa6833c" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getFluxes</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1189e4016e7757083343a93649f102aa" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>getMaxOrder</name></member>
       <member refid="classamrex_1_1MLLinOp_1acd287b03ea1a73f47ba1f08bb10a484d" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getNComp</name></member>
       <member refid="classamrex_1_1MLLinOp_1a10e3ecd56636236ea6c1c219630bf79b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>getNGrow</name></member>
@@ -1507,9 +1506,9 @@
       <member refid="classamrex_1_1MLLinOp_1a2faeb23bc1e93e2b0cd693cb94a18d08" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_raii_comm</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a2ffd8d47358983d3c013b8012eeb1b8e" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>m_undrrelxr</name></member>
       <member refid="classamrex_1_1MLLinOp_1a6249249666804079176507b88626a72c" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>make</name></member>
-      <member refid="classamrex_1_1MLLinOp_1af58f71c827253ca415f218f6cf77f1fb" prot="protected" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>makeFactory</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aecb68fd31e63903ef6938af4c8efd088" prot="protected" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>makeFactory</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1acb33b0d3e94547e5e0529af6c1cb3d68" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>makeNGrids</name></member>
-      <member refid="classamrex_1_1MLABecLaplacian_1afdfa7bc321be610fd40835e6fdf9531f" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>makeNLinOp</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a330567b4fadc2fdbd3cfef100cdbed32" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>makeNLinOp</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>maxorder</name></member>
       <member refid="classamrex_1_1MLLinOp_1ae871a991ef83c33044a22db383c76dcd" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>mg_box_min_width</name></member>
       <member refid="classamrex_1_1MLLinOp_1aaa5616982aef27c68c5ae5544092c7db" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>mg_coarsen_ratio</name></member>
@@ -1534,7 +1533,7 @@
       <member refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>needsCoarseDataForBC</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1acf27ddd13356c7c675ec2527d8e80223" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>needsUpdate</name></member>
       <member refid="classamrex_1_1MLLinOp_1a257d196611ba0ab9d861dc5e0dc23502" prot="protected" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>NMGLevels</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a92b49ce3cd6f8877018a284c9a05663b" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>nodalSync</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a4fa1d2402d1ae234aceb3ae220147eac" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>nodalSync</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1ad06bbe924dd6379bb53f3da68c8e28d6" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>normalize</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1a79b784fd330fd2b4d0c60b7494800802" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1acfd96476126334e014e13143f1289cf7" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>operator=</name></member>
@@ -1566,7 +1565,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1ab18841d6aec78590a56eeaed61fe4345" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>solutionResidual</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1f2821b4a51da49d862dae1e757bb8c3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>StateMode</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1ac54e10e50b8b0a19c1424d5a7c311003" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>unapplyMetricTerm</name></member>
-      <member refid="classamrex_1_1MLLinOp_1ab66507f9095fd460fec87c890e5a49c4" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>unimposeNeumannBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a9beb2c2fec5ee4aa0c8c36fb6faaa3bd" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>unimposeNeumannBC</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1a7e612906bd561e6b5db7ce47ea0e7d14" prot="public" virt="virtual"><scope>amrex::MLABecLaplacian</scope><name>update</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a7a111e0594b82aca829a78f2bb4ccc0c" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>updateCorBC</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1aa3f690703577da48606105e0a58838f3" prot="public" virt="non-virtual"><scope>amrex::MLABecLaplacian</scope><name>updateSolBC</name></member>

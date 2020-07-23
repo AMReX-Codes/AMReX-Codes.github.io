@@ -1,7 +1,6 @@
 var searchData=
 [
   ['default',['Default',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67',1,'amrex']]],
-  ['defaulthunksize',['DefaultHunkSize',['../classamrex_1_1CArena.html#a10adc62608b67926d034077109597b14a73f4c71472036baf157528f4435be5d2',1,'amrex::CArena::DefaultHunkSize()'],['../classamrex_1_1EArena.html#a1b22e6b83f6b933e0b46d6866bd457d0afe2474a51d981bd38fcc0bab1928f23e',1,'amrex::EArena::DefaultHunkSize()']]],
   ['deleterequest',['DeleteRequest',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9ab51d46fff163f6f4e6fbf895518da383',1,'amrex::DataServices']]],
   ['device',['Device',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ae0ac20adce6ffee48c7151b070aa5737',1,'amrex']]],
   ['dumpsliceboxallvars',['DumpSliceBoxAllVars',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9afe2794e70b17fe16bcb75ba47e1256ec',1,'amrex::DataServices']]],

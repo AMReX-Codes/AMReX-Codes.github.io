@@ -223,7 +223,7 @@
         <definition>void amrex::MLCellABecLap::getFluxes</definition>
         <argsstring>(const Vector&lt; Array&lt; MultiFab *, AMREX_SPACEDIM &gt; &gt; &amp;a_flux, const Vector&lt; MultiFab * &gt; &amp;a_sol, Location a_loc) const finaloverride</argsstring>
         <name>getFluxes</name>
-        <reimplements refid="classamrex_1_1MLLinOp_1ae6a653e83929e0f2c41482551c10b4e8">getFluxes</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOp_1a86fab368911c1a98bbc6c0c84cc81486">getFluxes</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *, AMREX_SPACEDIM &gt; &gt; &amp;</type>
           <declname>a_flux</declname>
@@ -244,19 +244,17 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap.H" line="37" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap.cpp" bodystart="41" bodyend="58"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLCellABecLap_1afbbb26f3be00d1c3cc7f04e657b356e4" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MLCellABecLap_1a3bf71e62666ba891774aef6cafa6833c" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
         <type>void</type>
         <definition>virtual void amrex::MLCellABecLap::getFluxes</definition>
-        <argsstring>(const Vector&lt; MultiFab * &gt; &amp;a_flux, const Vector&lt; MultiFab * &gt; &amp;a_sol) const finaloverride</argsstring>
+        <argsstring>(const Vector&lt; MultiFab * &gt; &amp;, const Vector&lt; MultiFab * &gt; &amp;) const finaloverride</argsstring>
         <name>getFluxes</name>
-        <reimplements refid="classamrex_1_1MLLinOp_1ad2419e6b4d384edbd5695daca078e310">getFluxes</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOp_1ac0529c018cfb0f9d8590ba6447222a7a">getFluxes</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
-          <declname>a_flux</declname>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
-          <declname>a_sol</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -305,7 +303,7 @@
         <definition>virtual MultiFab const* amrex::MLCellABecLap::getACoeffs</definition>
         <argsstring>(int amrlev, int mglev) const =0</argsstring>
         <name>getACoeffs</name>
-        <reimplementedby refid="classamrex_1_1MLPoisson_1ad96d519fbf995da0e1fcd313b9ae6611">getACoeffs</reimplementedby>
+        <reimplementedby refid="classamrex_1_1MLPoisson_1ad2a534d9c1362450c700a649fe460fab">getACoeffs</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLALaplacian_1a4bcf2d55af62463c21db00d74e9b8d18">getACoeffs</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLABecLaplacian_1a4b9b75ed0ddc0a3ecdf84e8e63154ada">getACoeffs</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLEBABecLap_1aaeda180448796f412b16283ed8aabf19">getACoeffs</reimplementedby>
@@ -330,8 +328,8 @@
         <definition>virtual Array&lt;MultiFab const*,AMREX_SPACEDIM&gt; amrex::MLCellABecLap::getBCoeffs</definition>
         <argsstring>(int amrlev, int mglev) const =0</argsstring>
         <name>getBCoeffs</name>
-        <reimplementedby refid="classamrex_1_1MLPoisson_1a28c556ae5ffef498213e0b49a24d2b9f">getBCoeffs</reimplementedby>
-        <reimplementedby refid="classamrex_1_1MLALaplacian_1a6b2808e6540be827ff660180c0be8d68">getBCoeffs</reimplementedby>
+        <reimplementedby refid="classamrex_1_1MLPoisson_1a4a57807bc0219ab0bd6c9d73cf6c2345">getBCoeffs</reimplementedby>
+        <reimplementedby refid="classamrex_1_1MLALaplacian_1aff3ce3e2c23778e6a1d99ad80dee4c50">getBCoeffs</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLABecLaplacian_1a231b5a037694a8fa75aff6e5ee526f8c">getBCoeffs</reimplementedby>
         <reimplementedby refid="classamrex_1_1MLEBABecLap_1a51e08a16e2bcf0fcfafd15b6ca8f8526">getBCoeffs</reimplementedby>
         <param>
@@ -355,7 +353,7 @@
         <definition>void amrex::MLCellABecLap::applyInhomogNeumannTerm</definition>
         <argsstring>(int amrlev, MultiFab &amp;rhs) const finaloverride</argsstring>
         <name>applyInhomogNeumannTerm</name>
-        <reimplements refid="classamrex_1_1MLLinOp_1aa5a30dbb954b14473f53bc9798d48033">applyInhomogNeumannTerm</reimplements>
+        <reimplements refid="classamrex_1_1MLLinOp_1a6ad04b34adeed823d353815429fe2e2e">applyInhomogNeumannTerm</reimplements>
         <param>
           <type>int</type>
           <declname>amrlev</declname>
@@ -860,7 +858,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1a90ee76f9285ff47a5a5130447134b3bf" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>applyBC</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1aa84934b73a868d01a1a8b7650b880efb" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>applyInhomogNeumannTerm</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1af750016d817d62fec79c71777ec48b36" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>applyMetricTerm</name></member>
-      <member refid="classamrex_1_1MLLinOp_1abfc2da3f4cb1f716723d1cf322e27d6a" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>applyOverset</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a503e190ff1d3b6770ce0b99c92667662" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>applyOverset</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1adfefa1b34d6988c4bf97957616b61c8f" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>averageDownSolutionRHS</name></member>
       <member refid="classamrex_1_1MLLinOp_1a5aa01a1ef6b0b3a471f02f65ae4b4884" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>BCMode</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a622b7c2ecc46a6b476aba4fb470f3dcf" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>BCTuple</name></member>
@@ -880,7 +878,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1a984719ccb019be3050750f57138557b0" prot="public" virt="pure-virtual"><scope>amrex::MLCellABecLap</scope><name>FFlux</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1af360736b1a452aa605ea48a8b2489615" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>fillSolutionBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1ad00407760d4927438c355ba115aaad4e" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>Finalize</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a5137ff000c6f8940f4b07a28f3bf9375" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>fixUpResidualMask</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac94ee917e5350722a537af7e127984d3" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>fixUpResidualMask</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a6f2e4279fbe6ebbea1e903fb0aafc745" prot="public" virt="pure-virtual"><scope>amrex::MLCellABecLap</scope><name>Fsmooth</name></member>
       <member refid="classamrex_1_1MLLinOp_1a7b1da16499dc7b95e807a28757e0c094" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>Geom</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1a066785981b2814b49cd7ccc98ff01831" prot="public" virt="pure-virtual"><scope>amrex::MLCellABecLap</scope><name>getACoeffs</name></member>
@@ -889,7 +887,7 @@
       <member refid="classamrex_1_1MLCellABecLap_1a0e67dc87e4b048beb5f44d38b3ccebfe" prot="public" virt="pure-virtual"><scope>amrex::MLCellABecLap</scope><name>getBScalar</name></member>
       <member refid="classamrex_1_1MLLinOp_1a7c1c62615a265e25a92ce37b3b287933" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>getDefaultBottomSolver</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1a913212b62872ccbdfaf19880d8114073" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>getFluxes</name></member>
-      <member refid="classamrex_1_1MLCellABecLap_1afbbb26f3be00d1c3cc7f04e657b356e4" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>getFluxes</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1a3bf71e62666ba891774aef6cafa6833c" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>getFluxes</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1189e4016e7757083343a93649f102aa" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>getMaxOrder</name></member>
       <member refid="classamrex_1_1MLLinOp_1acd287b03ea1a73f47ba1f08bb10a484d" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>getNComp</name></member>
       <member refid="classamrex_1_1MLLinOp_1a10e3ecd56636236ea6c1c219630bf79b" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>getNGrow</name></member>
@@ -941,7 +939,7 @@
       <member refid="classamrex_1_1MLLinOp_1a2faeb23bc1e93e2b0cd693cb94a18d08" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>m_raii_comm</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a2ffd8d47358983d3c013b8012eeb1b8e" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>m_undrrelxr</name></member>
       <member refid="classamrex_1_1MLLinOp_1a6249249666804079176507b88626a72c" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>make</name></member>
-      <member refid="classamrex_1_1MLLinOp_1af58f71c827253ca415f218f6cf77f1fb" prot="protected" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>makeFactory</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aecb68fd31e63903ef6938af4c8efd088" prot="protected" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>makeFactory</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1acb33b0d3e94547e5e0529af6c1cb3d68" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>makeNGrids</name></member>
       <member refid="classamrex_1_1MLLinOp_1af7992c664d65948c99e3661e6d23a646" prot="public" virt="pure-virtual"><scope>amrex::MLCellABecLap</scope><name>makeNLinOp</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>maxorder</name></member>
@@ -965,8 +963,8 @@
       <member refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>needsCoarseDataForBC</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1adb891ed98442838db52ab71e703ff752" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>needsUpdate</name></member>
       <member refid="classamrex_1_1MLLinOp_1a257d196611ba0ab9d861dc5e0dc23502" prot="protected" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>NMGLevels</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a92b49ce3cd6f8877018a284c9a05663b" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>nodalSync</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a3e0f34318790ba3e087ecf8b870dd12f" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>normalize</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a4fa1d2402d1ae234aceb3ae220147eac" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>nodalSync</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aec69a7e2e969117694d99b03b73c3df4" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>normalize</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1a7fd4867774038467f97cfac185e235ac" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>operator=</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1ac72a224155e09fd10918b66384ccdb81" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>operator=</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a87fd042ed7a3004a39f75564f24264ca" prot="public" virt="non-virtual" ambiguityscope="amrex::MLCellLinOp::"><scope>amrex::MLCellABecLap</scope><name>operator=</name></member>
@@ -989,7 +987,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1ab18841d6aec78590a56eeaed61fe4345" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>solutionResidual</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1f2821b4a51da49d862dae1e757bb8c3" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>StateMode</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1ac54e10e50b8b0a19c1424d5a7c311003" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>unapplyMetricTerm</name></member>
-      <member refid="classamrex_1_1MLLinOp_1ab66507f9095fd460fec87c890e5a49c4" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>unimposeNeumannBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a9beb2c2fec5ee4aa0c8c36fb6faaa3bd" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>unimposeNeumannBC</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1aa107a7270bd64cf582e25812c5e5cbab" prot="public" virt="virtual"><scope>amrex::MLCellABecLap</scope><name>update</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a7a111e0594b82aca829a78f2bb4ccc0c" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>updateCorBC</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1aa3f690703577da48606105e0a58838f3" prot="public" virt="non-virtual"><scope>amrex::MLCellABecLap</scope><name>updateSolBC</name></member>

@@ -14,6 +14,6 @@ var searchData=
   ['invalidminmax',['INVALIDMINMAX',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98eac6c6458c687d1b60adee77a09a91bef5',1,'amrex::Amrvis']]],
   ['invalidrequesttype',['InvalidRequestType',['../classamrex_1_1DataServices.html#a2ac83614f269c777434721474d55ffe9a98b03a82942b04872302d539974d8300',1,'amrex::DataServices']]],
   ['invalidtype',['INVALIDTYPE',['../namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfaae70cfa6a2edfb9a277c9ee45f063e83',1,'amrex::Amrvis']]],
-  ['io_5fbuffer_5fsize',['IO_Buffer_Size',['../classamrex_1_1VisMF.html#a257a59151037552c3e665c3ea3a5786fac67ac04832d2bbe370aa12c6ca513e85',1,'amrex::VisMF']]],
+  ['io_5fbuffer_5fsize',['IO_Buffer_Size',['../classamrex_1_1VisMF.html#a8d42e2d701538071d3522ce0272e5795ac67ac04832d2bbe370aa12c6ca513e85',1,'amrex::VisMF']]],
   ['iter_5ftime',['iter_time',['../classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001af8c1043cde20f8e1d9d022abb2c9ffad',1,'amrex::MLMG']]]
 ];

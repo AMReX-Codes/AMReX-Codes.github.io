@@ -61,6 +61,7 @@ var searchData=
   ['default_5ferk_5f8',['default_erk_8',['../namespacefarkode__arkstep__mod.html#ad7a80203cdd89e76aff6a3e158ce8d0e',1,'farkode_arkstep_mod']]],
   ['default_5fvalue',['default_value',['../classamrex_1_1EBCellFlag.html#a92f709a077a386fa2d23fb8b3639fe06',1,'amrex::EBCellFlag']]],
   ['defaultfiletype',['defaultFileType',['../classamrex_1_1AmrData.html#a85ba54b8833cffb9983c02e13c3536a4',1,'amrex::AmrData']]],
+  ['defaulthunksize',['DefaultHunkSize',['../classamrex_1_1CArena.html#a3025f965a6401b591a232fe52fe2c878',1,'amrex::CArena::DefaultHunkSize()'],['../classamrex_1_1EArena.html#a073384cb9f5fd01012df9425e163803d',1,'amrex::EArena::DefaultHunkSize()']]],
   ['define_5ffunction_5fcalled',['define_function_called',['../classamrex_1_1FabArray.html#a8a547f660eb49f5b25df2a1eddcd7eef',1,'amrex::FabArray']]],
   ['depth',['depth',['../structamrex_1_1TinyProfiler_1_1Stats.html#a9fc076452eebe7a8e37d2820b05f2dad',1,'amrex::TinyProfiler::Stats']]],
   ['der_5ftype',['der_type',['../classamrex_1_1DeriveRec.html#a9d57d46fa6d94f5e72b31c5a00cc92bd',1,'amrex::DeriveRec']]],
