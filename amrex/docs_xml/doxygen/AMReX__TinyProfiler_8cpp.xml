@@ -785,7 +785,7 @@
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TinyProfiler_1ae7befef46d2ca9e3de4299f950647451" kindref="member">global_depth</ref><sp/>=<sp/><ref refid="classamrex_1_1TinyProfiler_1a55b136d8859480b76a1311cff89009a0" kindref="member">ttstack</ref>.size();</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>nvtx_id<sp/>=<sp/>nvtxRangeStartA(<ref refid="classamrex_1_1TinyProfiler_1a8691b33b40a313ca7ffe01a287f57dff" kindref="member">fname</ref>.c_str());</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>nvtxRangePush(<ref refid="classamrex_1_1TinyProfiler_1a8691b33b40a313ca7ffe01a287f57dff" kindref="member">fname</ref>.c_str());</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>region<sp/>:<sp/><ref refid="classamrex_1_1TinyProfiler_1a03febcd85f7ea80790cac0181b9c2b1b" kindref="member">regionstack</ref>)</highlight></codeline>
@@ -860,7 +860,7 @@
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
 <codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvtxRangeEnd(nvtx_id);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvtxRangePop();</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>improperly_nested_timers.insert(<ref refid="classamrex_1_1TinyProfiler_1a8691b33b40a313ca7ffe01a287f57dff" kindref="member">fname</ref>);</highlight></codeline>
@@ -928,7 +928,7 @@
 <codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"></highlight></codeline>
 <codeline lineno="233"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvtxRangeEnd(nvtx_id);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nvtxRangePop();</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
