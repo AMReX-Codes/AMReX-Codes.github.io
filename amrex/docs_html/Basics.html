@@ -2220,8 +2220,8 @@ if supported.  Alternatively, one can always use runtime parameters to control t
 handling of floating point exceptions: <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_invalid</span></code> for
 NaNs, <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_zero</span></code> for division by zero and
 <code class="docutils literal notranslate"><span class="pre">amrex.fpe_trap_overflow</span></code> for overflow.  To more effectively trap the
-use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox``s</span> <span class="pre">in</span>
-<span class="pre">``MulitFab``s</span> <span class="pre">and</span> <span class="pre">arrays</span> <span class="pre">allocated</span> <span class="pre">by</span> <span class="pre">``bl_allocate</span></code> to signaling NaNs when it is compiled
+use of uninitialized values, AMReX also initializes <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code>s in
+<code class="docutils literal notranslate"><span class="pre">MulitFab</span></code>s and arrays allocated by <code class="docutils literal notranslate"><span class="pre">bl_allocate</span></code> to signaling NaNs when it is compiled
 with <code class="docutils literal notranslate"><span class="pre">TEST=TRUE</span></code> or <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code> in GNU make, or with <code class="docutils literal notranslate"><span class="pre">-DCMAKE_BUILD_TYPE=Debug</span></code> in CMake.
 One can also control the setting for <code class="docutils literal notranslate"><span class="pre">FArrayBox</span></code> using the runtime parameter, <code class="docutils literal notranslate"><span class="pre">fab.init_snan</span></code>.</p>
 <p>One can get more information than the backtrace of the call stack by
