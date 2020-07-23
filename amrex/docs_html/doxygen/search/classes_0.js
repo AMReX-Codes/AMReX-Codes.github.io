@@ -12,6 +12,8 @@ var searchData=
   ['amrcore',['AmrCore',['../classamrex_1_1AmrCore.html',1,'amrex']]],
   ['amrdata',['AmrData',['../classamrex_1_1AmrData.html',1,'amrex']]],
   ['amrdataadaptor',['AmrDataAdaptor',['../classamrex_1_1AmrDataAdaptor.html',1,'amrex']]],
+  ['amrerrortag',['AMRErrorTag',['../classamrex_1_1AMRErrorTag.html',1,'amrex']]],
+  ['amrerrortaginfo',['AMRErrorTagInfo',['../structamrex_1_1AMRErrorTagInfo.html',1,'amrex']]],
   ['amrex',['AMReX',['../classamrex_1_1AMReX.html',1,'amrex']]],
   ['amrex_5fallocate',['amrex_allocate',['../interfaceamrex__mempool__module_1_1amrex__allocate.html',1,'amrex_mempool_module']]],
   ['amrex_5fdeallocate',['amrex_deallocate',['../interfaceamrex__mempool__module_1_1amrex__deallocate.html',1,'amrex_mempool_module']]],

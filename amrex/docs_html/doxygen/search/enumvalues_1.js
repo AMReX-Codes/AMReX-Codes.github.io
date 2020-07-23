@@ -7,6 +7,7 @@ var searchData=
   ['binvalidminmax',['BINVALIDMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a970c9283c08d1ad380beb8cb5fbcfcb0',1,'amrex::Amrvis']]],
   ['bnumberofminmax',['BNUMBEROFMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9ae30e7b84e8b143de05b852dde1174bb3',1,'amrex::Amrvis']]],
   ['bottom_5ftime',['bottom_time',['../classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001accea4ad3befe3a4c0c996cacbc4b1fb3',1,'amrex::MLMG']]],
+  ['box',['BOX',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5adfb583e59961c24f25757b0750fb66f9',1,'amrex::AMRErrorTag']]],
   ['bsubregionminmax',['BSUBREGIONMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a95964ed9144e700e0653441316633db6',1,'amrex::Amrvis']]],
   ['buf',['BUF',['../classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa5c2d81c416e8ee0e1bd9d475e73d31cf',1,'amrex::TagBox']]],
   ['buserminmax',['BUSERMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9ad1deacdbc35862f4535786f40e328d12',1,'amrex::Amrvis']]],
