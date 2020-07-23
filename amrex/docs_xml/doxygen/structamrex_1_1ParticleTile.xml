@@ -45,9 +45,9 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H" line="238" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTile.H" bodystart="238" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1ae829df86518f3b61bd0c66650b9727fb" prot="public" static="no">
-        <type><ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NStructReal+NArrayReal, NStructInt+NArrayReal &gt;</type>
-        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::SuperParticleType =  Particle&lt;NStructReal + NArrayReal, NStructInt + NArrayReal&gt;</definition>
+      <memberdef kind="typedef" id="structamrex_1_1ParticleTile_1a85053ba927a183f72d714140f906614e" prot="public" static="no">
+        <type><ref refid="structamrex_1_1Particle" kindref="compound">Particle</ref>&lt; NStructReal+NArrayReal, NStructInt+NArrayInt &gt;</type>
+        <definition>using amrex::ParticleTile&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;::SuperParticleType =  Particle&lt;NStructReal + NArrayReal, NStructInt + NArrayInt&gt;</definition>
         <argsstring></argsstring>
         <name>SuperParticleType</name>
         <briefdescription>
@@ -517,7 +517,9 @@
             <defval>NArrayInt</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; NR!=0 or NI!=0 &gt;::type</type>
+            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; NR!=0 or NI!=0, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -526,7 +528,7 @@
         <argsstring>(const SuperParticleType &amp;sp)</argsstring>
         <name>push_back</name>
         <param>
-          <type>const <ref refid="structamrex_1_1ParticleTile_1ae829df86518f3b61bd0c66650b9727fb" kindref="member">SuperParticleType</ref> &amp;</type>
+          <type>const <ref refid="structamrex_1_1ParticleTile_1a85053ba927a183f72d714140f906614e" kindref="member">SuperParticleType</ref> &amp;</type>
           <declname>sp</declname>
         </param>
         <briefdescription>
@@ -992,7 +994,7 @@
       <member refid="structamrex_1_1ParticleTile_1a45869795e913fccf95c5e2e4dd7bdb38" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>shrink_to_fit</name></member>
       <member refid="structamrex_1_1ParticleTile_1a9d7d81a6eb29bfb6f7a4d7a26cc89af0" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>size</name></member>
       <member refid="structamrex_1_1ParticleTile_1ade1b30ff7538bb2df769629138cad8b9" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SoA</name></member>
-      <member refid="structamrex_1_1ParticleTile_1ae829df86518f3b61bd0c66650b9727fb" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SuperParticleType</name></member>
+      <member refid="structamrex_1_1ParticleTile_1a85053ba927a183f72d714140f906614e" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>SuperParticleType</name></member>
       <member refid="structamrex_1_1ParticleTile_1aeee13b50dd607e21f796914d331234fb" prot="public" virt="non-virtual"><scope>amrex::ParticleTile</scope><name>swap</name></member>
     </listofallmembers>
   </compounddef>
