@@ -22,7 +22,7 @@ var searchData=
   ['i_5fs_5fz2',['i_S_z2',['../namespaceamrex_1_1algoim.html#ad07a32fe98faf4bf2b079e31d5a63fc2',1,'amrex::algoim']]],
   ['ibd_5fmax_5forder_5fdef',['IBD_max_order_DEF',['../classamrex_1_1InterpBndryData.html#a3c37f7ae3bebb39f7fac821540e10227',1,'amrex::InterpBndryData']]],
   ['ic',['ic',['../structamrex_1_1Gpu_1_1ComponentBox.html#a99986b3406a40b454717360c972a5725',1,'amrex::Gpu::ComponentBox::ic()'],['../classamrex_1_1NeighborParticleContainer.html#aeaa3b1bb8b6e40c8899b06779754db1d',1,'amrex::NeighborParticleContainer::ic()']]],
-  ['id',['id',['../classamrex_1_1StateDescriptor.html#aaa15aa2f29efcb1129570ab6ba798db4',1,'amrex::StateDescriptor::id()'],['../unionamrex_1_1Particle_1_1im__t.html#aaa13a84fa8998688c55ade4b5b267acb',1,'amrex::Particle::im_t::id()']]],
+  ['id',['id',['../classamrex_1_1StateDescriptor.html#aaa15aa2f29efcb1129570ab6ba798db4',1,'amrex::StateDescriptor']]],
   ['idir',['iDir',['../classamrex_1_1OrderedBoxes.html#a86a670ba1e5f59b903e5cbb047509177',1,'amrex::OrderedBoxes']]],
   ['ieee_5fdouble',['ieee_double',['../classamrex_1_1FPC.html#abdb4c6267365b40cf9675d3180b50634',1,'amrex::FPC']]],
   ['ieee_5ffloat',['ieee_float',['../classamrex_1_1FPC.html#afac92c1763e3625fb356c57f027faf34',1,'amrex::FPC']]],

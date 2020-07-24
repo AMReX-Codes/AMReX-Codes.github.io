@@ -63,7 +63,6 @@ var searchData=
   ['covered',['covered',['../namespaceamrex_1_1EB2_1_1Type.html#a7b3494fbc6c0b07ed8a3f6d4255eead0',1,'amrex::EB2::Type::covered()'],['../namespaceamrex__ebcellflag__module.html#a60377c7710b1b811e651e3acc8ad6f66',1,'amrex_ebcellflag_module::covered()']]],
   ['covered_5fbits',['covered_bits',['../classamrex_1_1EBCellFlag.html#ae215f9034bbe23e831586bc395de5477',1,'amrex::EBCellFlag']]],
   ['covered_5fvalue',['covered_value',['../classamrex_1_1EBCellFlag.html#a41bd6408895885d67358df6a58cdc867',1,'amrex::EBCellFlag']]],
-  ['cpu',['cpu',['../unionamrex_1_1Particle_1_1im__t.html#af23d74b6031941f873928d29798ab721',1,'amrex::Particle::im_t']]],
   ['cpversion',['cpVersion',['../classCommProfStats.html#a59273fedbb862c290ba63a251a024ed3',1,'CommProfStats']]],
   ['crse_5fcell',['crse_cell',['../namespaceamrex__fluxreg__nd__module.html#a9d51ef3b777f09bfcc512afe228e9a49',1,'amrex_fluxreg_nd_module::crse_cell()'],['../namespaceamrex__eb__flux__reg__nd__module.html#a533c926df2a1660325d87978063391ad',1,'amrex_eb_flux_reg_nd_module::crse_cell()']]],
   ['crse_5ffine_5fboundary_5fcell',['crse_fine_boundary_cell',['../namespaceamrex__eb__flux__reg__nd__module.html#a248ca933a7707ac5dfe93b484be5c2cc',1,'amrex_eb_flux_reg_nd_module']]],

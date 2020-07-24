@@ -1,7 +1,6 @@
 var searchData=
 [
   ['iarraybox',['IArrayBox',['../classamrex_1_1IArrayBox.html',1,'amrex']]],
-  ['im_5ft',['im_t',['../unionamrex_1_1Particle_1_1im__t.html',1,'amrex::Particle']]],
   ['implicitintegral',['ImplicitIntegral',['../structamrex_1_1algoim_1_1ImplicitIntegral.html',1,'amrex::algoim']]],
   ['implicitintegral_3c_200_2c_20n_2c_20phi_2c_20f_20_3e',['ImplicitIntegral&lt; 0, N, Phi, F &gt;',['../structamrex_1_1algoim_1_1ImplicitIntegral_3_010_00_01N_00_01Phi_00_01F_01_4.html',1,'amrex::algoim']]],
   ['imultifab',['iMultiFab',['../classamrex_1_1iMultiFab.html',1,'amrex']]],
@@ -43,7 +42,7 @@ var searchData=
   ['isgpuable_3c_20unionif_3c_20tail_2e_2e_2e_20_3e_20_3e',['IsGPUable&lt; UnionIF&lt; Tail... &gt; &gt;',['../structamrex_1_1EB2_1_1IsGPUable.html',1,'amrex::EB2']]],
   ['isstoreatomic',['IsStoreAtomic',['../structamrex_1_1IsStoreAtomic.html',1,'amrex']]],
   ['isstoreatomic_3c_20ebcellflag_20_3e',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
-  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]],
+  ['iterator',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator']]],
   ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]],
-  ['iterator',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator']]]
+  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]]
 ];
