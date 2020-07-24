@@ -521,7 +521,7 @@ var searchData=
   ['make_5fdeep_5fcopy',['make_deep_copy',['../namespaceamrex.html#a0a36c65d0681a832330b2812f16786a6a0a2bb4bcb2051ae3a06f94b5c1768e90',1,'amrex']]],
   ['make_5feb_5fgeometry',['make_eb_geometry',['../classamrex_1_1LSUtility.html#a7b0810e6f378fd2da9e5502c523ffe3e',1,'amrex::LSUtility']]],
   ['make_5fls_5fgeometry',['make_ls_geometry',['../classamrex_1_1LSUtility.html#abf52a50c13a4213202a1254029359f8c',1,'amrex::LSUtility']]],
-  ['make_5ftuple',['make_tuple',['../namespaceamrex_1_1detail.html#ac08b8c5a81b22b77f167cc69d61056eb',1,'amrex::detail']]],
+  ['make_5ftuple',['make_tuple',['../namespaceamrex_1_1detail.html#a334a20ac09edf93e77327f031f9c13c0',1,'amrex::detail']]],
   ['makeagglomerateddmap',['makeAgglomeratedDMap',['../classamrex_1_1MLLinOp.html#a8aebe104ce2f4892f32350c742d0ba36',1,'amrex::MLLinOp']]],
   ['makearray4',['makeArray4',['../namespaceamrex.html#a23fa77892c9168a73ef0d653ddd550a0',1,'amrex']]],
   ['makebasegrids',['MakeBaseGrids',['../classamrex_1_1AmrMesh.html#a962d1689c8b7444f4b2c8a077d3f4766',1,'amrex::AmrMesh']]],
