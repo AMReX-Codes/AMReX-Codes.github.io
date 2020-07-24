@@ -5601,6 +5601,17 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="143" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="143" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="AMReX__Extension_8H_1a8c2a4f7808c3093eb46278654b309fe3" prot="public" static="no">
+        <name>AMREX_FALLTHROUGH</name>
+        <initializer>((void)0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="155" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="155" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -5756,9 +5767,18 @@
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iso646.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(__cplusplus<sp/>&gt;=<sp/>201703L)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[gnu::fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="AMReX__Extension_8H_1a8c2a4f7808c3093eb46278654b309fe3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H"/>
   </compounddef>

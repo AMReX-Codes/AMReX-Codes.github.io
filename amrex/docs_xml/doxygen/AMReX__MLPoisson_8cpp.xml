@@ -1857,7 +1857,7 @@
 <codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><ref refid="classamrex_1_1MLPoisson_1aa31608deee2579be5cb3e852b7923c6c" kindref="member">MLPoisson::normalize</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mglev,<sp/>MultiFab&amp;<sp/>mf)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="114"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1abb2465f750e37a7665fbb84045f06f68" kindref="member">amrex::ignore_unused</ref>(amrlev,mglev,mf);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(amrlev,mglev,mf);</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>!=<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MLPoisson::normalize()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"></highlight></codeline>
@@ -2214,46 +2214,49 @@
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;MLLinOp&gt;<sp/>r{</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MLALaplacian({geom},<sp/>{ba},<sp/>{dm},<sp/>minfo)};</highlight></codeline>
 <codeline lineno="470"><highlight class="normal"></highlight></codeline>
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/>MLALaplacian*<sp/>nop<sp/>=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">MLALaplacian*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(r.get());</highlight></codeline>
-<codeline lineno="472"><highlight class="normal"></highlight></codeline>
-<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;m_parent<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="474"><highlight class="normal"></highlight></codeline>
-<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setMaxOrder(<ref refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" kindref="member">maxorder</ref>);</highlight></codeline>
-<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setVerbose(<ref refid="classamrex_1_1MLLinOp_1a0815357130e78962e01abdaba2b09c21" kindref="member">verbose</ref>);</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!nop)<sp/>{</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;MLLinOp&gt;{};</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;m_parent<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="477"><highlight class="normal"></highlight></codeline>
-<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setDomainBC(<ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>,<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>);</highlight></codeline>
-<codeline lineno="479"><highlight class="normal"></highlight></codeline>
-<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" kindref="member">needsCoarseDataForBC</ref>())</highlight></codeline>
-<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>dx0<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[0][0].CellSize();</highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>fac<sp/>=<sp/>0.5*<ref refid="classamrex_1_1MLLinOp_1a1ca01453776c12e634debdc6d09206c3" kindref="member">m_coarse_data_crse_ratio</ref>;</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RealVect<sp/>cbloc<sp/>{<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(dx0[0]*fac,<sp/>dx0[1]*fac,<sp/>dx0[2]*fac)};</highlight></codeline>
-<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nop-&gt;setCoarseFineBCLocation(cbloc);</highlight></codeline>
-<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="487"><highlight class="normal"></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setScalars(1.0,<sp/>-1.0);</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"></highlight></codeline>
-<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>dxinv<sp/>=<sp/>geom.InvCellSize();</highlight></codeline>
-<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>dxscale<sp/>=<sp/>dxinv[0];</highlight></codeline>
-<codeline lineno="492"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>dxscale<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(dxscale,dxinv[1]);</highlight></codeline>
-<codeline lineno="494"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="495"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/>dxscale<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(dxscale,dxinv[2]);</highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setMaxOrder(<ref refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" kindref="member">maxorder</ref>);</highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setVerbose(<ref refid="classamrex_1_1MLLinOp_1a0815357130e78962e01abdaba2b09c21" kindref="member">verbose</ref>);</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setDomainBC(<ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>,<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>);</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" kindref="member">needsCoarseDataForBC</ref>())</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>dx0<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[0][0].CellSize();</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>fac<sp/>=<sp/>0.5*<ref refid="classamrex_1_1MLLinOp_1a1ca01453776c12e634debdc6d09206c3" kindref="member">m_coarse_data_crse_ratio</ref>;</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RealVect<sp/>cbloc<sp/>{<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(dx0[0]*fac,<sp/>dx0[1]*fac,<sp/>dx0[2]*fac)};</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nop-&gt;setCoarseFineBCLocation(cbloc);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setScalars(1.0,<sp/>-1.0);</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real*<sp/>dxinv<sp/>=<sp/>geom.InvCellSize();</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>dxscale<sp/>=<sp/>dxinv[0];</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>&gt;=<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/>dxscale<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(dxscale,dxinv[1]);</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="498"><highlight class="normal"></highlight></codeline>
-<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>alpha(ba,<sp/>dm,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/>alpha.setVal(1.e30*dxscale*dxscale);</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/>dxscale<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(dxscale,dxinv[2]);</highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight></codeline>
-<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>foo(<ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[0].back(),<sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[0].back(),<sp/>1,<sp/>0,<sp/>MFInfo().SetAlloc(</highlight><highlight class="keyword">false</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArrayBase::CPC&amp;<sp/>cpc<sp/>=<sp/>alpha.getCPC(IntVect(0),foo,IntVect(0),<ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>());</highlight></codeline>
-<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/>alpha.setVal(0.0,<sp/>cpc,<sp/>0,<sp/>1);</highlight></codeline>
-<codeline lineno="505"><highlight class="normal"></highlight></codeline>
-<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setACoeffs(0,<sp/>alpha);</highlight></codeline>
-<codeline lineno="507"><highlight class="normal"></highlight></codeline>
-<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="509"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>alpha(ba,<sp/>dm,<sp/>1,<sp/>0);</highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>alpha.setVal(1.e30*dxscale*dxscale);</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>foo(<ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[0].back(),<sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[0].back(),<sp/>1,<sp/>0,<sp/>MFInfo().SetAlloc(</highlight><highlight class="keyword">false</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabArrayBase::CPC&amp;<sp/>cpc<sp/>=<sp/>alpha.getCPC(IntVect(0),foo,IntVect(0),<ref refid="classamrex_1_1Periodicity_1a194e779bf59d1700830a35cecb5271a5" kindref="member">Periodicity::NonPeriodic</ref>());</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/>alpha.setVal(0.0,<sp/>cpc,<sp/>0,<sp/>1);</highlight></codeline>
+<codeline lineno="508"><highlight class="normal"></highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setACoeffs(0,<sp/>alpha);</highlight></codeline>
 <codeline lineno="510"><highlight class="normal"></highlight></codeline>
-<codeline lineno="511"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="512"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson.cpp"/>
   </compounddef>

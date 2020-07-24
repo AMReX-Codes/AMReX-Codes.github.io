@@ -60,9 +60,9 @@ var searchData=
   ['writeplotnow',['writePlotNow',['../classamrex_1_1Amr.html#ac56504a819c5f48033a0c10f94dc64ce',1,'amrex::Amr::writePlotNow()'],['../classamrex_1_1AmrLevel.html#a1de622e094b4e64e2491a82a3acefc1d',1,'amrex::AmrLevel::writePlotNow()']]],
   ['writerealdata',['writeRealData',['../namespaceamrex.html#af9790d1f61a6d21ce4e9f92c58ac0600',1,'amrex']]],
   ['writesinglelevelplotfile',['WriteSingleLevelPlotfile',['../namespaceamrex.html#aa5343920d9b5ee1307ca697274eca84a',1,'amrex']]],
-  ['writesmallplotfile',['writeSmallPlotFile',['../classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8',1,'amrex::Amr::writeSmallPlotFile()'],['../classamrex_1_1AmrLevel.html#a07867b18a6a1ad47aabf71d2de09f57c',1,'amrex::AmrLevel::writeSmallPlotFile()']]],
+  ['writesmallplotfile',['writeSmallPlotFile',['../classamrex_1_1Amr.html#a01705c5091524e41df7d4d5b4fc27de8',1,'amrex::Amr::writeSmallPlotFile()'],['../classamrex_1_1AmrLevel.html#a82a5b2421ec382b24be0a33a27d82f59',1,'amrex::AmrLevel::writeSmallPlotFile()']]],
   ['writesmallplotnow',['writeSmallPlotNow',['../classamrex_1_1Amr.html#a79963ad1530c1e895fed27bfd77f2131',1,'amrex::Amr::writeSmallPlotNow()'],['../classamrex_1_1AmrLevel.html#a2972b42fa723220283b8275fcd7a8be8',1,'amrex::AmrLevel::writeSmallPlotNow()']]],
-  ['writestats',['WriteStats',['../classamrex_1_1BLProfiler.html#a73cd7f3354878236049c534eaae748f2',1,'amrex::BLProfiler']]],
+  ['writestats',['WriteStats',['../classamrex_1_1BLProfiler.html#ae9c6593367e7cd7ad938ad27bfa3cfd7',1,'amrex::BLProfiler']]],
   ['writesummary',['WriteSummary',['../classBLProfStats.html#a122f7a15129ff8ed33a877f5115d083f',1,'BLProfStats::WriteSummary()'],['../classRegionsProfStats.html#ad8e5ab01ec36f0207ed5e6efaee602c8',1,'RegionsProfStats::WriteSummary()']]],
   ['writetexttrace',['WriteTextTrace',['../classRegionsProfStats.html#ada5474a33c2271c7ad139ccff508399a',1,'RegionsProfStats']]],
   ['writetopofab',['WriteTopoFab',['../classCommProfStats.html#ab1e0fdef8849f319d13a3a68234dc68b',1,'CommProfStats']]]

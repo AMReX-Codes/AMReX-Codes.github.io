@@ -213,7 +213,7 @@ var searchData=
   ['blpdatafilenames',['blpDataFileNames',['../classBLProfStats.html#a78868d7cea3662827ca187695cb06bf7',1,'BLProfStats']]],
   ['blpdatastreams',['blpDataStreams',['../classBLProfStats.html#a0eabcbf58e2437da683f110ef496c902',1,'BLProfStats']]],
   ['blpfnames',['blpFNames',['../classBLProfStats.html#a8d64f39f91d28ff7c34e8a5337f71b27',1,'BLProfStats::blpFNames()'],['../classBLProfStats.html#ae4254a166bcebf1c002d16e350167508',1,'BLProfStats::BLPFNames()']]],
-  ['blprofiler',['BLProfiler',['../classamrex_1_1BLProfiler.html#adccdd25dfe7c54eaaa7679f5c1b90a4a',1,'amrex::BLProfiler']]],
+  ['blprofiler',['BLProfiler',['../classamrex_1_1BLProfiler.html#a039dcb384283c3461091792da9c959e5',1,'amrex::BLProfiler']]],
   ['blprofiler',['BLProfiler',['../classamrex_1_1BLProfiler.html',1,'amrex']]],
   ['blprofstats',['BLProfStats',['../classBLProfStats.html',1,'BLProfStats'],['../classBLProfStats.html#ae3e98ce74ad3d01e423149655526d44c',1,'BLProfStats::BLProfStats()']]],
   ['blprofversion',['blProfVersion',['../classBLProfStats.html#aff3df1b96b0cf4e527d31f366b51649e',1,'BLProfStats']]],

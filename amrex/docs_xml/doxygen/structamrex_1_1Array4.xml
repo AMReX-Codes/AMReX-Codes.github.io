@@ -29,6 +29,7 @@
         <definition>Long amrex::Array4&lt; T &gt;::jstride</definition>
         <argsstring></argsstring>
         <name>jstride</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -42,6 +43,7 @@
         <definition>Long amrex::Array4&lt; T &gt;::kstride</definition>
         <argsstring></argsstring>
         <name>kstride</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -55,6 +57,7 @@
         <definition>Long amrex::Array4&lt; T &gt;::nstride</definition>
         <argsstring></argsstring>
         <name>nstride</name>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -68,6 +71,7 @@
         <definition>Dim3 amrex::Array4&lt; T &gt;::begin</definition>
         <argsstring></argsstring>
         <name>begin</name>
+        <initializer>{1,1,1}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -81,6 +85,7 @@
         <definition>Dim3 amrex::Array4&lt; T &gt;::end</definition>
         <argsstring></argsstring>
         <name>end</name>
+        <initializer>{0,0,0}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -90,10 +95,11 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Array4.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Array4.H" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structamrex_1_1Array4_1a58a49cd7aec26094f9a5dda9ee795cca" prot="public" static="no" mutable="no">
-        <type>int</type>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>int amrex::Array4&lt; T &gt;::ncomp</definition>
         <argsstring></argsstring>
         <name>ncomp</name>
+        <initializer>=0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -124,7 +130,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_const&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt; std::is_const&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -162,7 +168,7 @@
           <declname>a_end</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>a_ncomp</declname>
         </param>
         <briefdescription>
@@ -179,7 +185,7 @@
             <type>class U</type>
           </param>
           <param>
-            <type>typename std::enable_if&lt; std::is_same&lt; typename std::remove_const&lt; T &gt;::type, typename std::remove_const&lt; U &gt;::type &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt; std::is_same&lt; typename std::remove_const&lt; T &gt;::type, typename std::remove_const&lt; U &gt;::type &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -192,7 +198,7 @@
           <declname>rhs</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>start_comp</declname>
         </param>
         <briefdescription>
@@ -223,7 +229,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -232,15 +238,15 @@
         <argsstring>(int i, int j, int k) const noexcept</argsstring>
         <name>operator()</name>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>j</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>k</declname>
         </param>
         <briefdescription>
@@ -258,7 +264,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -267,19 +273,19 @@
         <argsstring>(int i, int j, int k, int n) const noexcept</argsstring>
         <name>operator()</name>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>j</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>k</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -297,7 +303,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -306,15 +312,15 @@
         <argsstring>(int i, int j, int k) const noexcept</argsstring>
         <name>ptr</name>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>j</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>k</declname>
         </param>
         <briefdescription>
@@ -332,7 +338,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -341,19 +347,19 @@
         <argsstring>(int i, int j, int k, int n) const noexcept</argsstring>
         <name>ptr</name>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>j</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>k</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -371,7 +377,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -398,7 +404,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -411,7 +417,7 @@
           <declname>iv</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -429,7 +435,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -456,7 +462,7 @@
             <defval>T</defval>
           </param>
           <param>
-            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, int &gt;::type</type>
+            <type>typename std::enable_if&lt;!std::is_void&lt; U &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
             <defval>0</defval>
           </param>
         </templateparamlist>
@@ -469,7 +475,7 @@
           <declname>iv</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -507,7 +513,7 @@
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Array4.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Array4.H" bodystart="154" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="structamrex_1_1Array4_1a7c005d65913452a3aa2b0e2e4d6ffd22" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> int</type>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int amrex::Array4&lt; T &gt;::nComp</definition>
         <argsstring>() const noexcept</argsstring>
         <name>nComp</name>
@@ -525,15 +531,15 @@
         <argsstring>(int i, int j, int k) const noexcept</argsstring>
         <name>contains</name>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>i</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>j</declname>
         </param>
         <param>
-          <type>int</type>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>k</declname>
         </param>
         <briefdescription>

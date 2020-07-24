@@ -538,65 +538,67 @@
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>global[i]<sp/>=<sp/>local[i];</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>global[i]<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ab51f20c0cdf0ceeef52a84d239329d12" kindref="member">Frame::global_to_local_rank</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grank)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="82"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ab51f20c0cdf0ceeef52a84d239329d12" kindref="member">global_to_local_rank</ref>(&amp;r,<sp/>&amp;grank,<sp/>1);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ab51f20c0cdf0ceeef52a84d239329d12" kindref="member">Frame::global_to_local_rank</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>local,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>global,<sp/>std::size_t<sp/>n)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="90"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(frames.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>()<sp/>&gt;<sp/>1)</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Group_translate_ranks(<ref refid="namespaceamrex_1_1ParallelContext_1a2ac214c9799843152abe583b8c714501" kindref="member">GroupAll</ref>(),<sp/>n,<sp/>const_cast&lt;int*&gt;(global),<sp/><ref refid="namespaceamrex_1_1ParallelContext_1ab19f592bc08ecbeb28c478752d6602fd" kindref="member">GroupSub</ref>(),<sp/>local);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>local[i]<sp/>=<sp/>global[i];</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>local[i]<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ac7e3ccd77b7a012c1c66b7c3bbdf6509" kindref="member">Frame::get_inc_mpi_tag</ref><sp/>()</highlight></codeline>
-<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cur_tag<sp/>=<sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref>;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref><sp/>=<sp/>(<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref><sp/>&lt;<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab1375009d4e5cd0730cada71e3f18c33" kindref="member">ParallelDescriptor::MaxTag</ref>())<sp/>?</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref><sp/>+<sp/>1<sp/>:<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a705e1be005fbada39a2ca69f6dae9b88" kindref="member">ParallelDescriptor::MinTag</ref>();</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cur_tag;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a1bc1579142503db5584556389166c169" kindref="member">Frame::set_ofs_name</ref><sp/>(std::string<sp/>filename)</highlight></codeline>
-<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>.reset();<sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>changing<sp/>name,<sp/>close<sp/>previous<sp/>file</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a3ae9cdc97369e2f1381f095af24e497e" kindref="member">m_out_filename</ref><sp/>=<sp/>std::move(filename);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal">std::ofstream<sp/>*</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1abf278a69530b55db1c0156e40db89e0c" kindref="member">Frame::get_ofs_ptr</ref><sp/>()</highlight></codeline>
-<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a3ae9cdc97369e2f1381f095af24e497e" kindref="member">m_out_filename</ref>.empty())<sp/>{</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::ofstream(<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a3ae9cdc97369e2f1381f095af24e497e" kindref="member">m_out_filename</ref>,<sp/>std::ios_base::app));</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>.get();</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="134"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(local);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>global[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ab51f20c0cdf0ceeef52a84d239329d12" kindref="member">Frame::global_to_local_rank</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grank)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="83"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ab51f20c0cdf0ceeef52a84d239329d12" kindref="member">global_to_local_rank</ref>(&amp;r,<sp/>&amp;grank,<sp/>1);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ab51f20c0cdf0ceeef52a84d239329d12" kindref="member">Frame::global_to_local_rank</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>local,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>global,<sp/>std::size_t<sp/>n)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="91"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(frames.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>()<sp/>&gt;<sp/>1)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Group_translate_ranks(<ref refid="namespaceamrex_1_1ParallelContext_1a2ac214c9799843152abe583b8c714501" kindref="member">GroupAll</ref>(),<sp/>n,<sp/>const_cast&lt;int*&gt;(global),<sp/><ref refid="namespaceamrex_1_1ParallelContext_1ab19f592bc08ecbeb28c478752d6602fd" kindref="member">GroupSub</ref>(),<sp/>local);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>local[i]<sp/>=<sp/>global[i];</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(global);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>local[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1ac7e3ccd77b7a012c1c66b7c3bbdf6509" kindref="member">Frame::get_inc_mpi_tag</ref><sp/>()</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cur_tag<sp/>=<sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref><sp/>=<sp/>(<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref><sp/>&lt;<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab1375009d4e5cd0730cada71e3f18c33" kindref="member">ParallelDescriptor::MaxTag</ref>())<sp/>?</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a0c03450ec8650e511181fb540b42e880" kindref="member">m_mpi_tag</ref><sp/>+<sp/>1<sp/>:<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a705e1be005fbada39a2ca69f6dae9b88" kindref="member">ParallelDescriptor::MinTag</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cur_tag;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a1bc1579142503db5584556389166c169" kindref="member">Frame::set_ofs_name</ref><sp/>(std::string<sp/>filename)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>.reset();<sp/></highlight><highlight class="comment">//<sp/>in<sp/>case<sp/>changing<sp/>name,<sp/>close<sp/>previous<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a3ae9cdc97369e2f1381f095af24e497e" kindref="member">m_out_filename</ref><sp/>=<sp/>std::move(filename);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">std::ofstream<sp/>*</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><ref refid="classamrex_1_1ParallelContext_1_1Frame_1abf278a69530b55db1c0156e40db89e0c" kindref="member">Frame::get_ofs_ptr</ref><sp/>()</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a3ae9cdc97369e2f1381f095af24e497e" kindref="member">m_out_filename</ref>.empty())<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::ofstream(<ref refid="classamrex_1_1ParallelContext_1_1Frame_1a3ae9cdc97369e2f1381f095af24e497e" kindref="member">m_out_filename</ref>,<sp/>std::ios_base::app));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1ParallelContext_1_1Frame_1a9137c45cc574cabfd0194ab8ed082116" kindref="member">m_out</ref>.get();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_ParallelContext.cpp"/>
   </compounddef>
