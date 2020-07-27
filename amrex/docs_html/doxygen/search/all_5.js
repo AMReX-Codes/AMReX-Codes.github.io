@@ -123,10 +123,10 @@ var searchData=
   ['errorfunc3ddefault',['ErrorFunc3DDefault',['../namespaceamrex.html#a198cab9c3268f289bedd23e83dd7e95d',1,'amrex']]],
   ['errorfuncdefault',['ErrorFuncDefault',['../namespaceamrex.html#accd616989af467165f35b0b213ee2e1a',1,'amrex']]],
   ['errorhandler',['ErrorHandler',['../namespaceamrex.html#aa944154cc363fe5103f6638e3726d2ca',1,'amrex']]],
-  ['errorlist',['ErrorList',['../classamrex_1_1ErrorList.html#ae90f96fd0ed842150682d7c8226675a0',1,'amrex::ErrorList']]],
   ['errorlist',['ErrorList',['../classamrex_1_1ErrorList.html',1,'amrex']]],
-  ['errorrec',['ErrorRec',['../classamrex_1_1ErrorRec.html#a23c1a082f625f261a869fca2fbcbd16b',1,'amrex::ErrorRec::ErrorRec(const std::string &amp;nm, int ng, ErrorType etyp, const ErrorRec::ErrorFunc2 &amp;f2)'],['../classamrex_1_1ErrorRec.html#a103642c3a3fe6d0f549a70ca1379bc10',1,'amrex::ErrorRec::ErrorRec(const std::string &amp;nm, int ng, ErrorType etyp, const ErrorRec::ErrorFunc &amp;f)']]],
+  ['errorlist',['ErrorList',['../classamrex_1_1ErrorList.html#ae90f96fd0ed842150682d7c8226675a0',1,'amrex::ErrorList']]],
   ['errorrec',['ErrorRec',['../classamrex_1_1ErrorRec.html',1,'amrex']]],
+  ['errorrec',['ErrorRec',['../classamrex_1_1ErrorRec.html#a23c1a082f625f261a869fca2fbcbd16b',1,'amrex::ErrorRec::ErrorRec(const std::string &amp;nm, int ng, ErrorType etyp, const ErrorRec::ErrorFunc2 &amp;f2)'],['../classamrex_1_1ErrorRec.html#a103642c3a3fe6d0f549a70ca1379bc10',1,'amrex::ErrorRec::ErrorRec(const std::string &amp;nm, int ng, ErrorType etyp, const ErrorRec::ErrorFunc &amp;f)']]],
   ['errorstream',['ErrorStream',['../namespaceamrex.html#a1e213ab52cdac41e691ab49370b30a34',1,'amrex']]],
   ['errorstring',['ErrorString',['../namespaceamrex_1_1ParallelDescriptor.html#a568bbd4bb8f719b9c0ba1950c10678ef',1,'amrex::ParallelDescriptor']]],
   ['errortype',['ErrorType',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872d',1,'amrex::ErrorRec']]],
@@ -148,10 +148,12 @@ var searchData=
   ['expect',['expect',['../classamrex_1_1expect.html#a2136ece586212ef73074aaab29247505',1,'amrex::expect::expect(const std::string &amp;str_)'],['../classamrex_1_1expect.html#a29077faf3a3650e3eeb67285023d7e5e',1,'amrex::expect::expect(const char *istr_)'],['../classamrex_1_1expect.html#a76c80085267c42ef73ed0e63c65af898',1,'amrex::expect::expect(char c)']]],
   ['expect',['expect',['../classamrex_1_1expect.html',1,'amrex']]],
   ['ext_5fdir',['EXT_DIR',['../AMReX__BC__TYPES_8H.html#aab37e552c88a7ebe4df8c39cbd04b8f7',1,'AMReX_BC_TYPES.H']]],
+  ['extend_5fdomain_5fface',['extend_domain_face',['../namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715',1,'amrex::EB2']]],
+  ['extenddomainface',['ExtendDomainFace',['../namespaceamrex_1_1EB2.html#a2258b3042676370ae01a2968e6962765',1,'amrex::EB2']]],
   ['extent',['extent',['../structamrex_1_1algoim_1_1BoundingBox.html#af29ddffe552640cdadd8dec27b352074',1,'amrex::algoim::BoundingBox']]],
   ['exteriorcell',['EXTERIORCELL',['../namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530a73c2a5939fde880dfb3256a3ea552d0f',1,'amrex::InSituUtils']]],
   ['extrap',['extrap',['../classamrex_1_1StateDescriptor.html#a831ab234733f1a75b0d42fffa6a3db0a',1,'amrex::StateDescriptor']]],
   ['extrude',['extrude',['../namespaceamrex_1_1EB2.html#a465223723f892e3c4bdcf8e6239d9f55',1,'amrex::EB2']]],
-  ['extrusionif',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html',1,'amrex::EB2']]],
-  ['extrusionif',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html#aa230623413b7fc4ff5e42479ca962a51',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(F &amp;&amp;a_f, int direction)'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#afde14763bb9fd21e0e03cbcaa27ae053',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(F const &amp;a_f, int direction)'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#a652bae528078d2236e2644f54630974a',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(const ExtrusionIF &amp;rhs)=default'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#a49964e862f3d060b0558c400898ff6d8',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(ExtrusionIF &amp;&amp;rhs)=default']]]
+  ['extrusionif',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html#aa230623413b7fc4ff5e42479ca962a51',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(F &amp;&amp;a_f, int direction)'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#afde14763bb9fd21e0e03cbcaa27ae053',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(F const &amp;a_f, int direction)'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#a652bae528078d2236e2644f54630974a',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(const ExtrusionIF &amp;rhs)=default'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#a49964e862f3d060b0558c400898ff6d8',1,'amrex::EB2::ExtrusionIF::ExtrusionIF(ExtrusionIF &amp;&amp;rhs)=default']]],
+  ['extrusionif',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html',1,'amrex::EB2']]]
 ];

@@ -32,5 +32,6 @@ var searchData=
   ['err_5ftype',['err_type',['../classamrex_1_1ErrorRec.html#abc0afb5043187b59f1a7219c50a62cec',1,'amrex::ErrorRec']]],
   ['error_5fhandler',['error_handler',['../namespaceamrex_1_1system.html#a9f39fba69f46fa4e82418736d4fbdd9b',1,'amrex::system']]],
   ['excludeset',['excludeSet',['../classBLProfStats.html#ae52d1496a02ab9f40df9ae0ece20fc51',1,'BLProfStats']]],
-  ['exename',['exename',['../namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17',1,'amrex::system']]]
+  ['exename',['exename',['../namespaceamrex_1_1system.html#ad7a31ac8f94796a39eaf2dc8c12c8e17',1,'amrex::system']]],
+  ['extend_5fdomain_5fface',['extend_domain_face',['../namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715',1,'amrex::EB2']]]
 ];
