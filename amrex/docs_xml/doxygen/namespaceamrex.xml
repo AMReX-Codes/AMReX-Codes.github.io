@@ -30622,10 +30622,10 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_K.H" line="187" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap_K.H" bodystart="187" bodyend="264"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a059a494810a9ddc7aa57ab5b501a6025" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa88d0f0b507ee8fe354c9bd2ed9fc532" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlebtensor_cross_terms_fx</definition>
-        <argsstring>(Box const &amp;box, Array4&lt; Real &gt; const &amp;fx, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;etax, Array4&lt; Real const  &gt; const &amp;kapx, Array4&lt; Real const  &gt; const &amp;apx, Array4&lt; EBCellFlag const  &gt; const &amp;flag, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv) noexcept</argsstring>
+        <argsstring>(Box const &amp;box, Array4&lt; Real &gt; const &amp;fx, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;etax, Array4&lt; Real const  &gt; const &amp;kapx, Array4&lt; Real const  &gt; const &amp;apx, Array4&lt; EBCellFlag const  &gt; const &amp;flag, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, const Dim3 &amp;dlo, const Dim3 &amp;dhi, Array2D&lt; BoundCond, 0, 2 *AMREX_SPACEDIM-1, 0, AMREX_SPACEDIM-1 &gt; const &amp;bct) noexcept</argsstring>
         <name>mlebtensor_cross_terms_fx</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -30659,18 +30659,30 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>dxinv</declname>
         </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>dlo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>dhi</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array2D" kindref="compound">Array2D</ref>&lt; <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref>, 0, 2 *AMREX_SPACEDIM-1, 0, AMREX_SPACEDIM-1 &gt; const &amp;</type>
+          <declname>bct</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="16" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="16" bodyend="58"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="16" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="16" bodyend="78"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a1913138abf02461d6489df16bc3347ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a5dfcfb38ac291e069f9973352c0bf1fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlebtensor_cross_terms_fy</definition>
-        <argsstring>(Box const &amp;box, Array4&lt; Real &gt; const &amp;fy, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;etay, Array4&lt; Real const  &gt; const &amp;kapy, Array4&lt; Real const  &gt; const &amp;apy, Array4&lt; EBCellFlag const  &gt; const &amp;flag, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv) noexcept</argsstring>
+        <argsstring>(Box const &amp;box, Array4&lt; Real &gt; const &amp;fy, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;etay, Array4&lt; Real const  &gt; const &amp;kapy, Array4&lt; Real const  &gt; const &amp;apy, Array4&lt; EBCellFlag const  &gt; const &amp;flag, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, const Dim3 &amp;dlo, const Dim3 &amp;dhi, Array2D&lt; BoundCond, 0, 2 *AMREX_SPACEDIM-1, 0, AMREX_SPACEDIM-1 &gt; const &amp;bct) noexcept</argsstring>
         <name>mlebtensor_cross_terms_fy</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -30704,13 +30716,25 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>dxinv</declname>
         </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>dlo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>dhi</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array2D" kindref="compound">Array2D</ref>&lt; <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref>, 0, 2 *AMREX_SPACEDIM-1, 0, AMREX_SPACEDIM-1 &gt; const &amp;</type>
+          <declname>bct</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="61" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="61" bodyend="104"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="81" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac61b7cbdcf9c0ee4f5a88686c8dece64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -30791,7 +30815,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="107" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="107" bodyend="254"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="146" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="146" bodyend="293"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a77f03519172d1d7e4fa612d7d622b68d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -30824,7 +30848,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="258" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="258" bodyend="278"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="297" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="297" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9130680fcb99caafd72b4d9ae3e9eb9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -30873,7 +30897,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="282" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="282" bodyend="312"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="321" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="321" bodyend="351"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a365a24c5c08a65e176a7ecbc30fcdf02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -30922,12 +30946,12 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="315" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="315" bodyend="345"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" line="354" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_2D_K.H" bodystart="354" bodyend="384"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad46645c4dbacf8e91ba0da6669b6a517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a06f0df3b3d590e16899c186919e9cf4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
         <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::mlebtensor_cross_terms_fz</definition>
-        <argsstring>(Box const &amp;box, Array4&lt; Real &gt; const &amp;fz, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;etaz, Array4&lt; Real const  &gt; const &amp;kapz, Array4&lt; Real const  &gt; const &amp;apz, Array4&lt; EBCellFlag const  &gt; const &amp;flag, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv) noexcept</argsstring>
+        <argsstring>(Box const &amp;box, Array4&lt; Real &gt; const &amp;fz, Array4&lt; Real const  &gt; const &amp;vel, Array4&lt; Real const  &gt; const &amp;etaz, Array4&lt; Real const  &gt; const &amp;kapz, Array4&lt; Real const  &gt; const &amp;apz, Array4&lt; EBCellFlag const  &gt; const &amp;flag, GpuArray&lt; Real, AMREX_SPACEDIM &gt; const &amp;dxinv, const Dim3 &amp;dlo, const Dim3 &amp;dhi, Array2D&lt; BoundCond, 0, 2 *AMREX_SPACEDIM-1, 0, AMREX_SPACEDIM-1 &gt; const &amp;bct) noexcept</argsstring>
         <name>mlebtensor_cross_terms_fz</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -30961,13 +30985,25 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt; const &amp;</type>
           <declname>dxinv</declname>
         </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>dlo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <declname>dhi</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1Array2D" kindref="compound">Array2D</ref>&lt; <ref refid="classamrex_1_1BoundCond" kindref="compound">BoundCond</ref>, 0, 2 *AMREX_SPACEDIM-1, 0, AMREX_SPACEDIM-1 &gt; const &amp;</type>
+          <declname>bct</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" line="140" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" bodystart="140" bodyend="201"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" line="209" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" bodystart="209" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9d3004a7e26fecbbba061aaaa86b0289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -31060,7 +31096,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" line="204" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" bodystart="204" bodyend="506"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" line="306" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" bodystart="306" bodyend="608"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a89d786ec5288aa690f96d476bac72a36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -31109,7 +31145,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" line="626" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" bodystart="626" bodyend="670"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" line="728" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensor_3D_K.H" bodystart="728" bodyend="772"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a882954a845b7502d0d977d66cef0c433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
