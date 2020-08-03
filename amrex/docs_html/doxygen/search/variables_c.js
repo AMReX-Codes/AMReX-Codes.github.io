@@ -295,6 +295,7 @@ var searchData=
   ['m_5fmintag',['m_MinTag',['../namespaceamrex_1_1ParallelDescriptor.html#a715b18055542b3909b818a2eb81ff469',1,'amrex::ParallelDescriptor']]],
   ['m_5fmlmg',['m_mlmg',['../classamrex_1_1MacProjector.html#a03008c95ba7a99dcccdde517843078b2',1,'amrex::MacProjector::m_mlmg()'],['../classamrex_1_1NodalProjector.html#adde550b593c215c62b83b2d24888e67d',1,'amrex::NodalProjector::m_mlmg()']]],
   ['m_5fmpi_5ftag',['m_mpi_tag',['../classamrex_1_1ParallelContext_1_1Frame.html#a0c03450ec8650e511181fb540b42e880',1,'amrex::ParallelContext::Frame']]],
+  ['m_5fmulti_5fghost',['m_multi_ghost',['../classamrex_1_1FabArrayBase.html#ac8c10e1b5a28a55c6dc388f7df101a97',1,'amrex::FabArrayBase::m_multi_ghost()'],['../structamrex_1_1FabArrayBase_1_1FB.html#a042c8672d37a4a51f885ab940987ed71',1,'amrex::FabArrayBase::FB::m_multi_ghost()']]],
   ['m_5fmutex',['m_mutex',['../classamrex_1_1DArena.html#a3118de6f458432e9ebc3529e0101c87f',1,'amrex::DArena']]],
   ['m_5fmutx',['m_mutx',['../classamrex_1_1BackgroundThread.html#a9f33f06880c6b03a62b70fd559ab53df',1,'amrex::BackgroundThread']]],
   ['m_5fn',['m_n',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#ad477a99f0707aee61523131329f2ad34',1,'amrex::Gpu::range_detail::range_impl::m_n()'],['../classamrex_1_1Gpu_1_1StreamIter.html#a52a24ab365296e0cb90e053580751fb1',1,'amrex::Gpu::StreamIter::m_n()']]],

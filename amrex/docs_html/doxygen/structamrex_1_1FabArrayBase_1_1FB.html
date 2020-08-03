@@ -113,8 +113,8 @@ Inheritance diagram for amrex::FabArrayBase::FB:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a83c1bd14a26930c23280b11356906fbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a83c1bd14a26930c23280b11356906fbb">FB</a> (const <a class="el" href="classamrex_1_1FabArrayBase.html">FabArrayBase</a> &amp;fa, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost, bool cross, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period, bool enforce_periodicity_only)</td></tr>
-<tr class="separator:a83c1bd14a26930c23280b11356906fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e6815433ad5db1d020151544628a0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#ab1e6815433ad5db1d020151544628a0d">FB</a> (const <a class="el" href="classamrex_1_1FabArrayBase.html">FabArrayBase</a> &amp;fa, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nghost, bool cross, const <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> &amp;period, bool enforce_periodicity_only, bool multi_ghost=false)</td></tr>
+<tr class="separator:ab1e6815433ad5db1d020151544628a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a5bf414a1fa823843b3c35d2ee5bbc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a3a5bf414a1fa823843b3c35d2ee5bbc9">~FB</a> ()</td></tr>
 <tr class="separator:a3a5bf414a1fa823843b3c35d2ee5bbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc76171aa5aaf10ac7dc8affe43087e"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#afdc76171aa5aaf10ac7dc8affe43087e">bytes</a> () const </td></tr>
@@ -137,6 +137,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a80294b3b23ece6729eca66ec2b75dcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a00f73f9c7b0a2817b46ea1044e17ff"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a0a00f73f9c7b0a2817b46ea1044e17ff">m_nuse</a></td></tr>
 <tr class="separator:a0a00f73f9c7b0a2817b46ea1044e17ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042c8672d37a4a51f885ab940987ed71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a042c8672d37a4a51f885ab940987ed71">m_multi_ghost</a> = false</td></tr>
+<tr class="separator:a042c8672d37a4a51f885ab940987ed71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_structamrex_1_1FabArrayBase_1_1CommMetaData"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structamrex_1_1FabArrayBase_1_1CommMetaData')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html">amrex::FabArrayBase::CommMetaData</a></td></tr>
 <tr class="memitem:a0d33ba955e754e4749cbb8337082bb0d inherit pub_attribs_structamrex_1_1FabArrayBase_1_1CommMetaData"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#a0d33ba955e754e4749cbb8337082bb0d">m_threadsafe_loc</a> = false</td></tr>
 <tr class="separator:a0d33ba955e754e4749cbb8337082bb0d inherit pub_attribs_structamrex_1_1FabArrayBase_1_1CommMetaData"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,7 +161,7 @@ Private Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>FillBoundary. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a83c1bd14a26930c23280b11356906fbb"></a>
+<a class="anchor" id="ab1e6815433ad5db1d020151544628a0d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -191,7 +193,13 @@ Private Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>enforce_periodicity_only</em>&#160;</td>
+          <td class="paramname"><em>enforce_periodicity_only</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>multi_ghost</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -315,6 +323,18 @@ Private Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool amrex::FabArrayBase::FB::m_epo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a042c8672d37a4a51f885ab940987ed71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::FabArrayBase::FB::m_multi_ghost = false</td>
         </tr>
       </table>
 </div><div class="memdoc">
