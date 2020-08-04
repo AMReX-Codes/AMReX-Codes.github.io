@@ -965,78 +965,78 @@
     <detaileddescription>
 <para>A <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> is a derived Fab class whose elements maintain a logical &quot;TRUE&quot; or &quot;FALSE&quot; state. A <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> can perform several elementary logical operations on its data members.</para><para>Implement a logical class <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> to maintain the TRUE or FALSE state of elements in a box. A <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> can perform element-wise logical operations, but is otherwise very similar to an <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> object. A <ref refid="classamrex_1_1Mask" kindref="compound">Mask</ref> object can set its components based on comparing (a subregion of a) real-valued <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> element magnitudes to a scalar value, or by &quot;and&quot;, &quot;or&quot; operations with (the a subregion of) other Masks.</para><para>This class does NOT provide a copy constructor or assignment operator. </para>    </detaileddescription>
     <inheritancegraph>
+      <node id="4222">
+        <label>amrex::BaseFab&lt; int &gt;</label>
+        <link refid="classamrex_1_1BaseFab"/>
+        <childnode refid="4223" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4223">
+        <label>amrex::DataAllocator</label>
+        <link refid="structamrex_1_1DataAllocator"/>
+      </node>
+      <node id="4221">
+        <label>amrex::Mask</label>
+        <link refid="classamrex_1_1Mask"/>
+        <childnode refid="4222" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="4225">
         <label>amrex::BaseFab&lt; int &gt;</label>
         <link refid="classamrex_1_1BaseFab"/>
         <childnode refid="4226" relation="public-inheritance">
         </childnode>
+        <childnode refid="4229" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+      </node>
+      <node id="4228">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="4230">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="4230" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
       </node>
       <node id="4226">
         <label>amrex::DataAllocator</label>
         <link refid="structamrex_1_1DataAllocator"/>
+        <childnode refid="4227" relation="usage">
+          <edgelabel>m_arena</edgelabel>
+        </childnode>
+      </node>
+      <node id="4227">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="4228" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="4229">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="4230" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="4231" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="4231">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
       </node>
       <node id="4224">
         <label>amrex::Mask</label>
         <link refid="classamrex_1_1Mask"/>
         <childnode refid="4225" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="4228">
-        <label>amrex::BaseFab&lt; int &gt;</label>
-        <link refid="classamrex_1_1BaseFab"/>
-        <childnode refid="4229" relation="public-inheritance">
-        </childnode>
-        <childnode refid="4232" relation="usage">
-          <edgelabel>domain</edgelabel>
-        </childnode>
-      </node>
-      <node id="4231">
-        <label>amrex::ArenaInfo</label>
-        <link refid="structamrex_1_1ArenaInfo"/>
-      </node>
-      <node id="4233">
-        <label>amrex::IntVect</label>
-        <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="4233" relation="usage">
-          <edgelabel>Unit</edgelabel>
-          <edgelabel>Zero</edgelabel>
-        </childnode>
-      </node>
-      <node id="4229">
-        <label>amrex::DataAllocator</label>
-        <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="4230" relation="usage">
-          <edgelabel>m_arena</edgelabel>
-        </childnode>
-      </node>
-      <node id="4230">
-        <label>amrex::Arena</label>
-        <link refid="classamrex_1_1Arena"/>
-        <childnode refid="4231" relation="usage">
-          <edgelabel>arena_info</edgelabel>
-        </childnode>
-      </node>
-      <node id="4232">
-        <label>amrex::Box</label>
-        <link refid="classamrex_1_1Box"/>
-        <childnode refid="4233" relation="usage">
-          <edgelabel>bigend</edgelabel>
-          <edgelabel>smallend</edgelabel>
-        </childnode>
-        <childnode refid="4234" relation="usage">
-          <edgelabel>btype</edgelabel>
-        </childnode>
-      </node>
-      <node id="4234">
-        <label>amrex::IndexType</label>
-        <link refid="classamrex_1_1IndexType"/>
-      </node>
-      <node id="4227">
-        <label>amrex::Mask</label>
-        <link refid="classamrex_1_1Mask"/>
-        <childnode refid="4228" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

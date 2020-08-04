@@ -2584,8 +2584,8 @@
 <codeline lineno="1275"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.set(bx.ixType());</highlight></codeline>
 <codeline lineno="1276"><highlight class="normal"><sp/><sp/><sp/><sp/>bl.push_back(bx);</highlight></codeline>
 <codeline lineno="1277"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!empty())<sp/></highlight></codeline>
-<codeline lineno="1279"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1278"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(empty())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1279"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1280"><highlight class="normal"><sp/><sp/><sp/><sp/>BARef::HashType&amp;<sp/>BoxHashMap<sp/>=<sp/>getHashMap();</highlight></codeline>
 <codeline lineno="1281"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1282"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(bx.ixType()<sp/>==<sp/>ixType());</highlight></codeline>
@@ -2598,561 +2598,552 @@
 <codeline lineno="1289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>doihi<sp/>=<sp/>getDoiHi();</highlight></codeline>
 <codeline lineno="1290"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1291"><highlight class="normal"><sp/><sp/><sp/><sp/>gbx.setSmall(glo<sp/>-<sp/>doihi).setBig(ghi<sp/>+<sp/>doilo);</highlight></codeline>
-<codeline lineno="1292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gbx.refine(crseRatio()).coarsen(m_ref-&gt;crsn);</highlight></codeline>
-<codeline lineno="1293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>sm<sp/>=<sp/><ref refid="namespaceamrex_1a918b31ea2f518389047986cb72a8b546" kindref="member">amrex::max</ref>(gbx.smallEnd()-1,<sp/>m_ref-&gt;bbox.smallEnd());</highlight></codeline>
-<codeline lineno="1295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>bg<sp/>=<sp/><ref refid="namespaceamrex_1a9f149fc5da0cd0b68a9f7fddc8a7461d" kindref="member">amrex::min</ref>(gbx.bigEnd(),<sp/><sp/><sp/><sp/><sp/>m_ref-&gt;bbox.bigEnd());</highlight></codeline>
+<codeline lineno="1292"><highlight class="normal"><sp/><sp/><sp/><sp/>gbx.refine(crseRatio()).coarsen(m_ref-&gt;crsn);</highlight></codeline>
+<codeline lineno="1293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>sm<sp/>=<sp/><ref refid="namespaceamrex_1a918b31ea2f518389047986cb72a8b546" kindref="member">amrex::max</ref>(gbx.smallEnd()-1,<sp/>m_ref-&gt;bbox.smallEnd());</highlight></codeline>
+<codeline lineno="1295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>bg<sp/>=<sp/><ref refid="namespaceamrex_1a9f149fc5da0cd0b68a9f7fddc8a7461d" kindref="member">amrex::min</ref>(gbx.bigEnd(),<sp/><sp/><sp/><sp/><sp/>m_ref-&gt;bbox.bigEnd());</highlight></codeline>
 <codeline lineno="1296"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>cbx(sm,bg);</highlight></codeline>
-<codeline lineno="1298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbx.normalize();</highlight></codeline>
+<codeline lineno="1297"><highlight class="normal"><sp/><sp/><sp/><sp/>Box<sp/>cbx(sm,bg);</highlight></codeline>
+<codeline lineno="1298"><highlight class="normal"><sp/><sp/><sp/><sp/>cbx.normalize();</highlight></codeline>
 <codeline lineno="1299"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!cbx.intersects(m_ref-&gt;bbox))<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1301"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>TheEnd<sp/>=<sp/>BoxHashMap.cend();</highlight></codeline>
 <codeline lineno="1303"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxList<sp/>newbl(bl.ixType());</highlight></codeline>
-<codeline lineno="1305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.reserve(bl.capacity());</highlight></codeline>
-<codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxList<sp/>newdiff(bl.ixType());</highlight></codeline>
-<codeline lineno="1307"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>abox<sp/>=<sp/>m_ref-&gt;m_abox;</highlight></codeline>
-<codeline lineno="1309"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(IntVect<sp/>iv<sp/>=<sp/>cbx.smallEnd(),<sp/>End<sp/>=<sp/>cbx.bigEnd();<sp/></highlight></codeline>
-<codeline lineno="1311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iv<sp/>&lt;=<sp/>End<sp/>&amp;&amp;<sp/>bl.isNotEmpty();<sp/></highlight></codeline>
-<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cbx.next(iv))</highlight></codeline>
-<codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>BoxHashMap.find(iv);</highlight></codeline>
-<codeline lineno="1315"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>TheEnd)</highlight></codeline>
-<codeline lineno="1317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bat.is_null())<sp/>{</highlight></codeline>
-<codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)</highlight></codeline>
-<codeline lineno="1320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/>abox[index];</highlight></codeline>
-<codeline lineno="1322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/>ibox;</highlight></codeline>
-<codeline lineno="1323"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
-<codeline lineno="1325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.clear();</highlight></codeline>
-<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b<sp/>:<sp/>bl)<sp/>{</highlight></codeline>
-<codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(newdiff,<sp/>b,<sp/>isect);</highlight></codeline>
-<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newdiff);</highlight></codeline>
-<codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.swap(newbl);</highlight></codeline>
-<codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bat.is_simple())<sp/>{</highlight></codeline>
-<codeline lineno="1335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/>t<sp/>=<sp/>ixType();</highlight></codeline>
-<codeline lineno="1336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>cr<sp/>=<sp/>crseRatio();</highlight></codeline>
-<codeline lineno="1337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)</highlight></codeline>
-<codeline lineno="1338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(<ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(abox[index],cr),t);</highlight></codeline>
-<codeline lineno="1340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/>ibox;</highlight></codeline>
-<codeline lineno="1341"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
-<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.clear();</highlight></codeline>
-<codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b<sp/>:<sp/>bl)<sp/>{</highlight></codeline>
-<codeline lineno="1346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(newdiff,<sp/>b,<sp/>isect);</highlight></codeline>
-<codeline lineno="1347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newdiff);</highlight></codeline>
-<codeline lineno="1348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.swap(newbl);</highlight></codeline>
-<codeline lineno="1350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)</highlight></codeline>
-<codeline lineno="1354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/>m_bat.m_op.m_bndryReg(abox[index]);</highlight></codeline>
-<codeline lineno="1356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>isect<sp/>=<sp/>bx<sp/>&amp;<sp/>ibox;</highlight></codeline>
-<codeline lineno="1357"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isect.ok())</highlight></codeline>
-<codeline lineno="1359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.clear();</highlight></codeline>
-<codeline lineno="1361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b<sp/>:<sp/>bl)<sp/>{</highlight></codeline>
-<codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(newdiff,<sp/>b,<sp/>isect);</highlight></codeline>
-<codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newdiff);</highlight></codeline>
-<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.swap(newbl);</highlight></codeline>
-<codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1371"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1372"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1373"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1374"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1375"><highlight class="normal">BoxArray::clear_hash_bin<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1376"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_ref-&gt;hash.empty())</highlight></codeline>
-<codeline lineno="1378"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1379"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1380"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_hash(-1);</highlight></codeline>
-<codeline lineno="1381"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;hash.clear();</highlight></codeline>
-<codeline lineno="1383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;has_hashmap<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1384"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1385"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1386"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1387"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1388"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Currently<sp/>this<sp/>assumes<sp/>your<sp/>Boxes<sp/>are<sp/>cell-centered.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1389"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1390"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1391"><highlight class="normal"><ref refid="namespaceamrex_1af71361ab9190f8aeb8f70488669095c2" kindref="member">BoxArray::removeOverlap</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>simplify)</highlight></codeline>
-<codeline lineno="1392"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1393"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>ixType().cellCentered())<sp/>{</highlight></codeline>
-<codeline lineno="1394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;BoxArray::removeOverlap()<sp/>supports<sp/>cell-centered<sp/>only&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1395"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1396"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(crseRatio()<sp/>!=<sp/><ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="1398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;BoxArray::removeOverlap()<sp/>must<sp/>have<sp/>m_crse_ratio<sp/>==<sp/>1&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1399"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1400"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1401"><highlight class="normal"><sp/><sp/><sp/><sp/>uniqify();</highlight></codeline>
-<codeline lineno="1402"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1403"><highlight class="normal"><sp/><sp/><sp/><sp/>BARef::HashType&amp;<sp/>BoxHashMap<sp/>=<sp/>m_ref-&gt;hash;</highlight></codeline>
-<codeline lineno="1404"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1405"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box<sp/>EmptyBox;</highlight></codeline>
-<codeline lineno="1406"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1407"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1408"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>&quot;size()&quot;<sp/>can<sp/>increase<sp/>in<sp/>this<sp/>loop!!!</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1411"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1412"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_box(-1);</highlight></codeline>
-<codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_hash(-1);</highlight></codeline>
-<codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>total_hash_bytes_save<sp/>=<sp/>m_ref-&gt;total_hash_bytes;</highlight></codeline>
-<codeline lineno="1415"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1416"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1417"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_diff;</highlight></codeline>
-<codeline lineno="1418"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1419"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();<sp/>i++)</highlight></codeline>
-<codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;m_abox[i].ok())</highlight></codeline>
-<codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersections(m_ref-&gt;m_abox[i],isects);</highlight></codeline>
-<codeline lineno="1424"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>isects.size();<sp/>j<sp/>&lt;<sp/>N;<sp/>j++)</highlight></codeline>
-<codeline lineno="1426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects[j].first<sp/>==<sp/>i)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1428"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box&amp;<sp/>bx<sp/>=<sp/>m_ref-&gt;m_abox[isects[j].first];</highlight></codeline>
-<codeline lineno="1430"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/>bx,<sp/>isects[j].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>);</highlight></codeline>
-<codeline lineno="1432"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/>EmptyBox;</highlight></codeline>
-<codeline lineno="1434"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1435"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b<sp/>:<sp/>bl_diff)</highlight></codeline>
-<codeline lineno="1436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox.push_back(b);</highlight></codeline>
-<codeline lineno="1438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxHashMap[<ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(b.smallEnd(),m_ref-&gt;crsn)].push_back(<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>()-1);</highlight></codeline>
-<codeline lineno="1439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1442"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1443"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1444"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_box(1);</highlight></codeline>
-<codeline lineno="1445"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>now<sp/>have<sp/>&quot;holes&quot;<sp/>in<sp/>our<sp/>BoxArray.<sp/>Make<sp/>us<sp/>good.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1448"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1449"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl(ixType());</highlight></codeline>
-<codeline lineno="1450"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>b<sp/>:<sp/>m_ref-&gt;m_abox)<sp/>{</highlight></codeline>
-<codeline lineno="1451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b.ok())<sp/>{</highlight></codeline>
-<codeline lineno="1452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.push_back(b);</highlight></codeline>
-<codeline lineno="1453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1454"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1455"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="1456"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simplify)<sp/>{</highlight></codeline>
-<codeline lineno="1457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.simplify();</highlight></codeline>
-<codeline lineno="1458"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1459"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1460"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>nba(std::move(bl));</highlight></codeline>
+<codeline lineno="1304"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>intersect_boxes;</highlight></codeline>
+<codeline lineno="1305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>abox<sp/>=<sp/>m_ref-&gt;m_abox;</highlight></codeline>
+<codeline lineno="1306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bat.is_null())<sp/>{</highlight></codeline>
+<codeline lineno="1307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" kindref="member">AMREX_LOOP_3D</ref>(cbx,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="1308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(j,k);</highlight></codeline>
+<codeline lineno="1310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>BoxHashMap.find(IntVect(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(i,j,k)));</highlight></codeline>
+<codeline lineno="1311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>TheEnd)<sp/>{</highlight></codeline>
+<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)<sp/>{</highlight></codeline>
+<codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/>abox[index];</highlight></codeline>
+<codeline lineno="1314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.intersects(ibox))<sp/>{</highlight></codeline>
+<codeline lineno="1315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersect_boxes.push_back(ibox);</highlight></codeline>
+<codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="1320"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_bat.is_simple())<sp/>{</highlight></codeline>
+<codeline lineno="1321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType<sp/>t<sp/>=<sp/>ixType();</highlight></codeline>
+<codeline lineno="1322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>cr<sp/>=<sp/>crseRatio();</highlight></codeline>
+<codeline lineno="1323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" kindref="member">AMREX_LOOP_3D</ref>(cbx,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="1324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(j,k);</highlight></codeline>
+<codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>BoxHashMap.find(IntVect(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(i,j,k)));</highlight></codeline>
+<codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>TheEnd)<sp/>{</highlight></codeline>
+<codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)<sp/>{</highlight></codeline>
+<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(<ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(abox[index],cr),t);</highlight></codeline>
+<codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.intersects(ibox))<sp/>{</highlight></codeline>
+<codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersect_boxes.push_back(ibox);</highlight></codeline>
+<codeline lineno="1332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="1336"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" kindref="member">AMREX_LOOP_3D</ref>(cbx,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
+<codeline lineno="1338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(j,k);</highlight></codeline>
+<codeline lineno="1340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>BoxHashMap.find(IntVect(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(i,j,k)));</highlight></codeline>
+<codeline lineno="1341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>TheEnd)<sp/>{</highlight></codeline>
+<codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>:<sp/>it-&gt;second)<sp/>{</highlight></codeline>
+<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>ibox<sp/>=<sp/>m_bat.m_op.m_bndryReg(abox[index]);</highlight></codeline>
+<codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bx.intersects(ibox))<sp/>{</highlight></codeline>
+<codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersect_boxes.push_back(ibox);</highlight></codeline>
+<codeline lineno="1346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="1350"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newbl(bl.ixType());</highlight></codeline>
+<codeline lineno="1353"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newdiff(bl.ixType());</highlight></codeline>
+<codeline lineno="1354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ibox<sp/>:<sp/>intersect_boxes)<sp/>{</highlight></codeline>
+<codeline lineno="1355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.clear();</highlight></codeline>
+<codeline lineno="1356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b<sp/>:<sp/>bl)<sp/>{</highlight></codeline>
+<codeline lineno="1357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(newdiff,<sp/>b,<sp/>ibox);</highlight></codeline>
+<codeline lineno="1358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newdiff);</highlight></codeline>
+<codeline lineno="1359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.swap(newbl);</highlight></codeline>
+<codeline lineno="1361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bl.isEmpty())<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1363"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1365"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1366"><highlight class="normal">BoxArray::clear_hash_bin<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1367"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_ref-&gt;hash.empty())</highlight></codeline>
+<codeline lineno="1369"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1370"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1371"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_hash(-1);</highlight></codeline>
+<codeline lineno="1372"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;hash.clear();</highlight></codeline>
+<codeline lineno="1374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;has_hashmap<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1375"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1376"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1378"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1379"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Currently<sp/>this<sp/>assumes<sp/>your<sp/>Boxes<sp/>are<sp/>cell-centered.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1380"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1381"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1382"><highlight class="normal"><ref refid="namespaceamrex_1af71361ab9190f8aeb8f70488669095c2" kindref="member">BoxArray::removeOverlap</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>simplify)</highlight></codeline>
+<codeline lineno="1383"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<sp/>ixType().cellCentered())<sp/>{</highlight></codeline>
+<codeline lineno="1385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;BoxArray::removeOverlap()<sp/>supports<sp/>cell-centered<sp/>only&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(crseRatio()<sp/>!=<sp/><ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="1389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;BoxArray::removeOverlap()<sp/>must<sp/>have<sp/>m_crse_ratio<sp/>==<sp/>1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1390"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1392"><highlight class="normal"><sp/><sp/><sp/><sp/>uniqify();</highlight></codeline>
+<codeline lineno="1393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1394"><highlight class="normal"><sp/><sp/><sp/><sp/>BARef::HashType&amp;<sp/>BoxHashMap<sp/>=<sp/>m_ref-&gt;hash;</highlight></codeline>
+<codeline lineno="1395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box<sp/>EmptyBox;</highlight></codeline>
+<codeline lineno="1397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1398"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
+<codeline lineno="1399"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>&quot;size()&quot;<sp/>can<sp/>increase<sp/>in<sp/>this<sp/>loop!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1401"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1402"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1403"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_box(-1);</highlight></codeline>
+<codeline lineno="1404"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_hash(-1);</highlight></codeline>
+<codeline lineno="1405"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>total_hash_bytes_save<sp/>=<sp/>m_ref-&gt;total_hash_bytes;</highlight></codeline>
+<codeline lineno="1406"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1407"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1408"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_diff;</highlight></codeline>
+<codeline lineno="1409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();<sp/>i++)</highlight></codeline>
+<codeline lineno="1411"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;m_abox[i].ok())</highlight></codeline>
+<codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersections(m_ref-&gt;m_abox[i],isects);</highlight></codeline>
+<codeline lineno="1415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>isects.size();<sp/>j<sp/>&lt;<sp/>N;<sp/>j++)</highlight></codeline>
+<codeline lineno="1417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects[j].first<sp/>==<sp/>i)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1419"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box&amp;<sp/>bx<sp/>=<sp/>m_ref-&gt;m_abox[isects[j].first];</highlight></codeline>
+<codeline lineno="1421"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/>bx,<sp/>isects[j].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>);</highlight></codeline>
+<codeline lineno="1423"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/>EmptyBox;</highlight></codeline>
+<codeline lineno="1425"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b<sp/>:<sp/>bl_diff)</highlight></codeline>
+<codeline lineno="1427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox.push_back(b);</highlight></codeline>
+<codeline lineno="1429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxHashMap[<ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(b.smallEnd(),m_ref-&gt;crsn)].push_back(<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>()-1);</highlight></codeline>
+<codeline lineno="1430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1433"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1434"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1435"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_box(1);</highlight></codeline>
+<codeline lineno="1436"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1437"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1438"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>now<sp/>have<sp/>&quot;holes&quot;<sp/>in<sp/>our<sp/>BoxArray.<sp/>Make<sp/>us<sp/>good.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1439"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1440"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl(ixType());</highlight></codeline>
+<codeline lineno="1441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>b<sp/>:<sp/>m_ref-&gt;m_abox)<sp/>{</highlight></codeline>
+<codeline lineno="1442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b.ok())<sp/>{</highlight></codeline>
+<codeline lineno="1443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.push_back(b);</highlight></codeline>
+<codeline lineno="1444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1445"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1446"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simplify)<sp/>{</highlight></codeline>
+<codeline lineno="1448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.simplify();</highlight></codeline>
+<codeline lineno="1449"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1450"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1451"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>nba(std::move(bl));</highlight></codeline>
+<codeline lineno="1452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1453"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>nba;</highlight></codeline>
+<codeline lineno="1454"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1455"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1456"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;total_hash_bytes<sp/>=<sp/>total_hash_bytes_save;</highlight></codeline>
+<codeline lineno="1457"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1458"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1459"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(isDisjoint());</highlight></codeline>
+<codeline lineno="1460"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1461"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1462"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>=<sp/>nba;</highlight></codeline>
-<codeline lineno="1463"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1464"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1465"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ref-&gt;total_hash_bytes<sp/>=<sp/>total_hash_bytes_save;</highlight></codeline>
-<codeline lineno="1466"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1467"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1468"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(isDisjoint());</highlight></codeline>
-<codeline lineno="1469"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1470"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1471"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1472"><highlight class="normal">BoxArray::type_update<sp/>()</highlight></codeline>
-<codeline lineno="1473"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1474"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!empty())</highlight></codeline>
-<codeline lineno="1475"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(not<sp/>ixType().cellCentered())</highlight></codeline>
-<codeline lineno="1477"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/>m_ref-&gt;m_abox)<sp/>{</highlight></codeline>
-<codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.enclosedCells();</highlight></codeline>
-<codeline lineno="1480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1481"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1482"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1483"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1484"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1485"><highlight class="normal">IntVect</highlight></codeline>
-<codeline lineno="1486"><highlight class="normal">BoxArray::getDoiLo<sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
-<codeline lineno="1487"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1488"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bat.doiLo();</highlight></codeline>
-<codeline lineno="1489"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1490"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1491"><highlight class="normal">IntVect</highlight></codeline>
-<codeline lineno="1492"><highlight class="normal">BoxArray::getDoiHi<sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
-<codeline lineno="1493"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1494"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bat.doiHi();</highlight></codeline>
-<codeline lineno="1495"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1496"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1497"><highlight class="normal">BARef::HashType&amp;</highlight></codeline>
-<codeline lineno="1498"><highlight class="normal">BoxArray::getHashMap<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1499"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1500"><highlight class="normal"><sp/><sp/><sp/><sp/>BARef::HashType&amp;<sp/>BoxHashMap<sp/>=<sp/>m_ref-&gt;hash;</highlight></codeline>
-<codeline lineno="1501"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;HasHashMap())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxHashMap;</highlight></codeline>
-<codeline lineno="1503"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1504"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1505"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical(intersections_lock)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1506"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1507"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(BoxHashMap.empty()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>()<sp/>&gt;<sp/>0)</highlight></codeline>
-<codeline lineno="1509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>bounding<sp/>box<sp/>&amp;<sp/>maximum<sp/>extent<sp/>of<sp/>the<sp/>boxes.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>maxext<sp/>=<sp/><ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>();</highlight></codeline>
-<codeline lineno="1514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>boundingbox<sp/>=<sp/>m_ref-&gt;m_abox[0];</highlight></codeline>
+<codeline lineno="1462"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1463"><highlight class="normal">BoxArray::type_update<sp/>()</highlight></codeline>
+<codeline lineno="1464"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1465"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!empty())</highlight></codeline>
+<codeline lineno="1466"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(not<sp/>ixType().cellCentered())</highlight></codeline>
+<codeline lineno="1468"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bx<sp/>:<sp/>m_ref-&gt;m_abox)<sp/>{</highlight></codeline>
+<codeline lineno="1470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.enclosedCells();</highlight></codeline>
+<codeline lineno="1471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1472"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1473"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1474"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1475"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1476"><highlight class="normal">IntVect</highlight></codeline>
+<codeline lineno="1477"><highlight class="normal">BoxArray::getDoiLo<sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
+<codeline lineno="1478"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bat.doiLo();</highlight></codeline>
+<codeline lineno="1480"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1481"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1482"><highlight class="normal">IntVect</highlight></codeline>
+<codeline lineno="1483"><highlight class="normal">BoxArray::getDoiHi<sp/>()<sp/>const<sp/>noexcept</highlight></codeline>
+<codeline lineno="1484"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1485"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_bat.doiHi();</highlight></codeline>
+<codeline lineno="1486"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1487"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1488"><highlight class="normal">BARef::HashType&amp;</highlight></codeline>
+<codeline lineno="1489"><highlight class="normal">BoxArray::getHashMap<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1490"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1491"><highlight class="normal"><sp/><sp/><sp/><sp/>BARef::HashType&amp;<sp/>BoxHashMap<sp/>=<sp/>m_ref-&gt;hash;</highlight></codeline>
+<codeline lineno="1492"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1493"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref-&gt;HasHashMap())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxHashMap;</highlight></codeline>
+<codeline lineno="1494"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1495"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1496"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical(intersections_lock)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1497"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1498"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(BoxHashMap.empty()<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>()<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="1500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculate<sp/>the<sp/>bounding<sp/>box<sp/>&amp;<sp/>maximum<sp/>extent<sp/>of<sp/>the<sp/>boxes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>maxext<sp/>=<sp/><ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>();</highlight></codeline>
+<codeline lineno="1505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>boundingbox<sp/>=<sp/>m_ref-&gt;m_abox[0];</highlight></codeline>
+<codeline lineno="1506"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();</highlight></codeline>
+<codeline lineno="1508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
+<codeline lineno="1509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bx<sp/>=<sp/>m_ref-&gt;m_abox[i];</highlight></codeline>
+<codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.normalize();</highlight></codeline>
+<codeline lineno="1512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxext<sp/>=<sp/><ref refid="namespaceamrex_1a918b31ea2f518389047986cb72a8b546" kindref="member">amrex::max</ref>(maxext,<sp/>bx.size());</highlight></codeline>
+<codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundingbox.minBox(bx);</highlight></codeline>
+<codeline lineno="1514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1515"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/><ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();</highlight></codeline>
-<codeline lineno="1517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
-<codeline lineno="1518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bx<sp/>=<sp/>m_ref-&gt;m_abox[i];</highlight></codeline>
-<codeline lineno="1520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.normalize();</highlight></codeline>
-<codeline lineno="1521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maxext<sp/>=<sp/><ref refid="namespaceamrex_1a918b31ea2f518389047986cb72a8b546" kindref="member">amrex::max</ref>(maxext,<sp/>bx.size());</highlight></codeline>
-<codeline lineno="1522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundingbox.minBox(bx);</highlight></codeline>
-<codeline lineno="1523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1524"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
-<codeline lineno="1526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>crsnsmlend<sp/></highlight></codeline>
-<codeline lineno="1528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(m_ref-&gt;m_abox[i].smallEnd(),maxext);</highlight></codeline>
-<codeline lineno="1529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxHashMap[crsnsmlend].push_back(i);</highlight></codeline>
-<codeline lineno="1530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1531"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;crsn<sp/>=<sp/>maxext;</highlight></codeline>
-<codeline lineno="1533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;bbox<sp/>=<sp/>boundingbox.<ref refid="classamrex_1_1Box_1a897f7f0ada1479ce3786259b6db62e9c" kindref="member">coarsen</ref>(maxext);</highlight></codeline>
-<codeline lineno="1534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;bbox.<ref refid="classamrex_1_1Box_1a3a0dbad72cb07371f6600d70ffb6d4cf" kindref="member">normalize</ref>();</highlight></codeline>
-<codeline lineno="1535"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1536"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_hash(1);</highlight></codeline>
-<codeline lineno="1538"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1539"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1540"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1541"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>flush</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1542"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>atomic<sp/>write</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1543"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;has_hashmap<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1546"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1547"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxHashMap;</highlight></codeline>
-<codeline lineno="1549"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1550"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1551"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1552"><highlight class="normal">BoxArray::uniqify<sp/>()</highlight></codeline>
-<codeline lineno="1553"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1554"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref.use_count()<sp/>==<sp/>1)<sp/>{</highlight></codeline>
-<codeline lineno="1555"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear_hash_bin();</highlight></codeline>
-<codeline lineno="1556"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1557"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>std::make_shared&lt;BARef&gt;(*m_ref);</highlight></codeline>
-<codeline lineno="1558"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(m_ref,p);</highlight></codeline>
-<codeline lineno="1559"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1560"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>cr<sp/>=<sp/>crseRatio();</highlight></codeline>
-<codeline lineno="1561"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cr<sp/>!=<sp/><ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="1562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>m_ref-&gt;m_abox.size();</highlight></codeline>
-<codeline lineno="1563"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1564"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1565"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)<sp/>{</highlight></codeline>
-<codeline lineno="1567"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].coarsen(cr);</highlight></codeline>
-<codeline lineno="1568"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bat.set_coarsen_ratio(<ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>());</highlight></codeline>
-<codeline lineno="1570"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1571"><highlight class="normal"><sp/><sp/><sp/><sp/>m_simplified_list.reset();</highlight></codeline>
-<codeline lineno="1572"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1573"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1574"><highlight class="normal">BoxList<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;</highlight></codeline>
-<codeline lineno="1575"><highlight class="normal">BoxArray::simplified_list<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1576"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1577"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_simplified_list)<sp/>{</highlight></codeline>
-<codeline lineno="1578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxList<sp/>bl<sp/>=<sp/>boxList();</highlight></codeline>
-<codeline lineno="1579"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.ordered_simplify();</highlight></codeline>
-<codeline lineno="1580"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_simplified_list<sp/>=<sp/>std::make_shared&lt;BoxList&gt;(std::move(bl));</highlight></codeline>
-<codeline lineno="1581"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1582"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*m_simplified_list;</highlight></codeline>
-<codeline lineno="1583"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1584"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1585"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1586"><highlight class="normal">BoxArray::simplified<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="1587"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray(simplified_list()).convert(ixType());</highlight></codeline>
-<codeline lineno="1589"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1590"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1591"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1592"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/>os,</highlight></codeline>
-<codeline lineno="1593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba)</highlight></codeline>
-<codeline lineno="1594"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1595"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1596"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>--<sp/>completely<sp/>remove<sp/>the<sp/>fiction<sp/>of<sp/>a<sp/>hash<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1597"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1598"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(BoxArray<sp/>maxbox(&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1599"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>ba.size()</highlight></codeline>
-<codeline lineno="1600"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)\n<sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_hash_sig(&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>0</highlight></codeline>
-<codeline lineno="1602"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)\n<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1603"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1604"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>ba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
-<codeline lineno="1605"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>ba[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1606"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1607"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1608"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1609"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())</highlight></codeline>
-<codeline lineno="1610"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream&amp;<sp/>os,const<sp/>BoxArray&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1611"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1612"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1613"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1614"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1615"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1616"><highlight class="normal"><ref refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kindref="member">boxComplement</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b1in,</highlight></codeline>
-<codeline lineno="1617"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b2)</highlight></codeline>
-<codeline lineno="1618"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1619"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray(<ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(b1in,<sp/>b2));</highlight></codeline>
-<codeline lineno="1620"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1621"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1622"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1623"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">complementIn</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/>b,</highlight></codeline>
-<codeline lineno="1624"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba)</highlight></codeline>
-<codeline lineno="1625"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1626"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray<sp/>{<sp/>ba.complementIn(b)<sp/>};</highlight></codeline>
-<codeline lineno="1627"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
+<codeline lineno="1517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>crsnsmlend<sp/></highlight></codeline>
+<codeline lineno="1519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(m_ref-&gt;m_abox[i].smallEnd(),maxext);</highlight></codeline>
+<codeline lineno="1520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxHashMap[crsnsmlend].push_back(i);</highlight></codeline>
+<codeline lineno="1521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1522"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;crsn<sp/>=<sp/>maxext;</highlight></codeline>
+<codeline lineno="1524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;bbox<sp/>=<sp/>boundingbox.<ref refid="classamrex_1_1Box_1a897f7f0ada1479ce3786259b6db62e9c" kindref="member">coarsen</ref>(maxext);</highlight></codeline>
+<codeline lineno="1525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;bbox.<ref refid="classamrex_1_1Box_1a3a0dbad72cb07371f6600d70ffb6d4cf" kindref="member">normalize</ref>();</highlight></codeline>
+<codeline lineno="1526"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1527"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;updateMemoryUsage_hash(1);</highlight></codeline>
+<codeline lineno="1529"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1530"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1531"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1532"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>flush</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1533"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>atomic<sp/>write</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1534"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;has_hashmap<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1537"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1538"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1539"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxHashMap;</highlight></codeline>
+<codeline lineno="1540"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1541"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1542"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1543"><highlight class="normal">BoxArray::uniqify<sp/>()</highlight></codeline>
+<codeline lineno="1544"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1545"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_ref.use_count()<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="1546"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear_hash_bin();</highlight></codeline>
+<codeline lineno="1547"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>std::make_shared&lt;BARef&gt;(*m_ref);</highlight></codeline>
+<codeline lineno="1549"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(m_ref,p);</highlight></codeline>
+<codeline lineno="1550"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1551"><highlight class="normal"><sp/><sp/><sp/><sp/>IntVect<sp/>cr<sp/>=<sp/>crseRatio();</highlight></codeline>
+<codeline lineno="1552"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cr<sp/>!=<sp/><ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="1553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>m_ref-&gt;m_abox.size();</highlight></codeline>
+<codeline lineno="1554"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1555"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1556"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1557"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="1558"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_abox[i].coarsen(cr);</highlight></codeline>
+<codeline lineno="1559"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1560"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_bat.set_coarsen_ratio(<ref refid="classamrex_1_1IntVect_1a89b6d1003a1ef2e6c9b79ff2a07241c3" kindref="member">IntVect::TheUnitVector</ref>());</highlight></codeline>
+<codeline lineno="1561"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1562"><highlight class="normal"><sp/><sp/><sp/><sp/>m_simplified_list.reset();</highlight></codeline>
+<codeline lineno="1563"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1564"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1565"><highlight class="normal">BoxList<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;</highlight></codeline>
+<codeline lineno="1566"><highlight class="normal">BoxArray::simplified_list<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1567"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_simplified_list)<sp/>{</highlight></codeline>
+<codeline lineno="1569"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxList<sp/>bl<sp/>=<sp/>boxList();</highlight></codeline>
+<codeline lineno="1570"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.ordered_simplify();</highlight></codeline>
+<codeline lineno="1571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_simplified_list<sp/>=<sp/>std::make_shared&lt;BoxList&gt;(std::move(bl));</highlight></codeline>
+<codeline lineno="1572"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1573"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*m_simplified_list;</highlight></codeline>
+<codeline lineno="1574"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1575"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1576"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1577"><highlight class="normal">BoxArray::simplified<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="1578"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1579"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray(simplified_list()).convert(ixType());</highlight></codeline>
+<codeline lineno="1580"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1581"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1582"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1583"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="1584"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba)</highlight></codeline>
+<codeline lineno="1585"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1586"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1587"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>--<sp/>completely<sp/>remove<sp/>the<sp/>fiction<sp/>of<sp/>a<sp/>hash<sp/>value.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1588"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1589"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(BoxArray<sp/>maxbox(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1590"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>ba.size()</highlight></codeline>
+<codeline lineno="1591"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)\n<sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ref-&gt;m_hash_sig(&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1592"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>0</highlight></codeline>
+<codeline lineno="1593"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)\n<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1594"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1595"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>ba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
+<codeline lineno="1596"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>ba[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1597"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1598"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1599"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1600"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(os.fail())</highlight></codeline>
+<codeline lineno="1601"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;operator&lt;&lt;(ostream&amp;<sp/>os,const<sp/>BoxArray&amp;)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1603"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1604"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1605"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1606"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1607"><highlight class="normal"><ref refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kindref="member">boxComplement</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b1in,</highlight></codeline>
+<codeline lineno="1608"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>b2)</highlight></codeline>
+<codeline lineno="1609"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1610"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray(<ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(b1in,<sp/>b2));</highlight></codeline>
+<codeline lineno="1611"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1612"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1613"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1614"><highlight class="normal"><ref refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kindref="member">complementIn</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/>b,</highlight></codeline>
+<codeline lineno="1615"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba)</highlight></codeline>
+<codeline lineno="1616"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1617"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray<sp/>{<sp/>ba.complementIn(b)<sp/>};</highlight></codeline>
+<codeline lineno="1618"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1619"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1620"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1621"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,</highlight></codeline>
+<codeline lineno="1622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/>b,</highlight></codeline>
+<codeline lineno="1623"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>ng)</highlight></codeline>
+<codeline lineno="1624"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1625"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
+<codeline lineno="1626"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1627"><highlight class="normal"><sp/><sp/><sp/><sp/>ba.intersections(b,isects,</highlight><highlight class="keyword">false</highlight><highlight class="normal">,IntVect(ng));</highlight></codeline>
 <codeline lineno="1628"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1629"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1630"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,</highlight></codeline>
-<codeline lineno="1631"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/>b,</highlight></codeline>
-<codeline lineno="1632"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>ng)</highlight></codeline>
-<codeline lineno="1633"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1634"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1635"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1636"><highlight class="normal"><sp/><sp/><sp/><sp/>ba.intersections(b,isects,</highlight><highlight class="keyword">false</highlight><highlight class="normal">,IntVect(ng));</highlight></codeline>
-<codeline lineno="1637"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1638"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>isects.size();</highlight></codeline>
-<codeline lineno="1639"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1640"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>r(N);</highlight></codeline>
-<codeline lineno="1641"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1642"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1643"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1644"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1645"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1646"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
-<codeline lineno="1647"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.set(i,<sp/>isects[i].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>);</highlight></codeline>
-<codeline lineno="1649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1650"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1651"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1652"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1653"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1629"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>isects.size();</highlight></codeline>
+<codeline lineno="1630"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1631"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>r(N);</highlight></codeline>
+<codeline lineno="1632"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1633"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1634"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1635"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1636"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
+<codeline lineno="1638"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1639"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.set(i,<sp/>isects[i].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>);</highlight></codeline>
+<codeline lineno="1640"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1641"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1642"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1643"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1644"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1645"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1646"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1647"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,</highlight></codeline>
+<codeline lineno="1648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/>b,</highlight></codeline>
+<codeline lineno="1649"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/><sp/>ng)</highlight></codeline>
+<codeline lineno="1650"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1651"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
+<codeline lineno="1652"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1653"><highlight class="normal"><sp/><sp/><sp/><sp/>ba.intersections(b,isects,</highlight><highlight class="keyword">false</highlight><highlight class="normal">,ng);</highlight></codeline>
 <codeline lineno="1654"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1655"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1656"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,</highlight></codeline>
-<codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/><sp/><sp/><sp/><sp/><sp/>b,</highlight></codeline>
-<codeline lineno="1658"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/><sp/>ng)</highlight></codeline>
-<codeline lineno="1659"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1660"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1661"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1662"><highlight class="normal"><sp/><sp/><sp/><sp/>ba.intersections(b,isects,</highlight><highlight class="keyword">false</highlight><highlight class="normal">,ng);</highlight></codeline>
-<codeline lineno="1663"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1664"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>isects.size();</highlight></codeline>
-<codeline lineno="1665"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1666"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>r(N);</highlight></codeline>
-<codeline lineno="1667"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1668"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="1669"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1670"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1671"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
-<codeline lineno="1673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.set(i,<sp/>isects[i].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>);</highlight></codeline>
-<codeline lineno="1675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1676"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1677"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1678"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
-<codeline lineno="1679"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1680"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1681"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1682"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>rhs)</highlight></codeline>
-<codeline lineno="1683"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1684"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lhs.size()<sp/>==<sp/>0<sp/>||<sp/>rhs.size()<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray();</highlight></codeline>
-<codeline lineno="1685"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl(lhs[0].ixType());</highlight></codeline>
-<codeline lineno="1686"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>Nl<sp/>=<sp/>lhs.size();<sp/>i<sp/>&lt;<sp/>Nl;<sp/>++i)</highlight></codeline>
-<codeline lineno="1687"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba<sp/>=<sp/><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">amrex::intersect</ref>(rhs,<sp/>lhs[i]);</highlight></codeline>
-<codeline lineno="1689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.join(ba.boxList());</highlight></codeline>
-<codeline lineno="1690"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1691"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray(bl);</highlight></codeline>
-<codeline lineno="1692"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1693"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1694"><highlight class="normal">BoxList</highlight></codeline>
-<codeline lineno="1695"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>bl)</highlight></codeline>
-<codeline lineno="1696"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1697"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newbl(bl.ixType());</highlight></codeline>
-<codeline lineno="1698"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>:<sp/>bl)</highlight></codeline>
-<codeline lineno="1699"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1700"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>newba<sp/>=<sp/><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">amrex::intersect</ref>(ba,<sp/>bx);</highlight></codeline>
-<codeline lineno="1701"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newba.boxList());</highlight></codeline>
-<codeline lineno="1702"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1703"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newbl;</highlight></codeline>
-<codeline lineno="1704"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1705"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1706"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1707"><highlight class="normal"><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">convert</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/>IndexType<sp/>typ)</highlight></codeline>
-<codeline lineno="1708"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1709"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
-<codeline lineno="1710"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a5499f2bb3ff92ef3951332fa6b390b73" kindref="member">convert</ref>(typ);</highlight></codeline>
-<codeline lineno="1711"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
-<codeline lineno="1712"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1713"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1714"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1715"><highlight class="normal"><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">convert</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>typ)</highlight></codeline>
-<codeline lineno="1716"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1717"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
-<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a5499f2bb3ff92ef3951332fa6b390b73" kindref="member">convert</ref>(IndexType(typ));</highlight></codeline>
-<codeline lineno="1719"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
-<codeline lineno="1720"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1721"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1722"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1723"><highlight class="normal"><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">coarsen</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio)</highlight></codeline>
-<codeline lineno="1724"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1725"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
-<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a897f7f0ada1479ce3786259b6db62e9c" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
-<codeline lineno="1727"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
-<codeline lineno="1728"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1729"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1730"><highlight class="normal">BoxArray</highlight></codeline>
-<codeline lineno="1731"><highlight class="normal"><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">coarsen</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio)</highlight></codeline>
+<codeline lineno="1655"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>isects.size();</highlight></codeline>
+<codeline lineno="1656"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1657"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>r(N);</highlight></codeline>
+<codeline lineno="1658"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1659"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="1660"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1661"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1662"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1663"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>i++)</highlight></codeline>
+<codeline lineno="1664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.set(i,<sp/>isects[i].<ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">second</ref>);</highlight></codeline>
+<codeline lineno="1666"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1667"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1668"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1669"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="1670"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1671"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1672"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1673"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>rhs)</highlight></codeline>
+<codeline lineno="1674"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1675"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lhs.size()<sp/>==<sp/>0<sp/>||<sp/>rhs.size()<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray();</highlight></codeline>
+<codeline lineno="1676"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl(lhs[0].ixType());</highlight></codeline>
+<codeline lineno="1677"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>Nl<sp/>=<sp/>lhs.size();<sp/>i<sp/>&lt;<sp/>Nl;<sp/>++i)</highlight></codeline>
+<codeline lineno="1678"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1679"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba<sp/>=<sp/><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">amrex::intersect</ref>(rhs,<sp/>lhs[i]);</highlight></codeline>
+<codeline lineno="1680"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.join(ba.boxList());</highlight></codeline>
+<codeline lineno="1681"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1682"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>BoxArray(bl);</highlight></codeline>
+<codeline lineno="1683"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1684"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1685"><highlight class="normal">BoxList</highlight></codeline>
+<codeline lineno="1686"><highlight class="normal"><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">intersect</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxList&amp;<sp/>bl)</highlight></codeline>
+<codeline lineno="1687"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1688"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>newbl(bl.ixType());</highlight></codeline>
+<codeline lineno="1689"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>:<sp/>bl)</highlight></codeline>
+<codeline lineno="1690"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>newba<sp/>=<sp/><ref refid="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" kindref="member">amrex::intersect</ref>(ba,<sp/>bx);</highlight></codeline>
+<codeline lineno="1692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newbl.join(newba.boxList());</highlight></codeline>
+<codeline lineno="1693"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1694"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>newbl;</highlight></codeline>
+<codeline lineno="1695"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1696"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1697"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1698"><highlight class="normal"><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">convert</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/>IndexType<sp/>typ)</highlight></codeline>
+<codeline lineno="1699"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1700"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
+<codeline lineno="1701"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a5499f2bb3ff92ef3951332fa6b390b73" kindref="member">convert</ref>(typ);</highlight></codeline>
+<codeline lineno="1702"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
+<codeline lineno="1703"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1704"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1705"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1706"><highlight class="normal"><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">convert</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>typ)</highlight></codeline>
+<codeline lineno="1707"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1708"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
+<codeline lineno="1709"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a5499f2bb3ff92ef3951332fa6b390b73" kindref="member">convert</ref>(IndexType(typ));</highlight></codeline>
+<codeline lineno="1710"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
+<codeline lineno="1711"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1712"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1713"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1714"><highlight class="normal"><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">coarsen</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio)</highlight></codeline>
+<codeline lineno="1715"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1716"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
+<codeline lineno="1717"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a897f7f0ada1479ce3786259b6db62e9c" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
+<codeline lineno="1718"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
+<codeline lineno="1719"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1720"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1721"><highlight class="normal">BoxArray</highlight></codeline>
+<codeline lineno="1722"><highlight class="normal"><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">coarsen</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>ratio)</highlight></codeline>
+<codeline lineno="1723"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1724"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
+<codeline lineno="1725"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a897f7f0ada1479ce3786259b6db62e9c" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
+<codeline lineno="1726"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
+<codeline lineno="1727"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1728"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1729"><highlight class="normal">BoxList</highlight></codeline>
+<codeline lineno="1730"><highlight class="normal"><ref refid="namespaceamrex_1a719e505b04b336141e1a9a6ab52ecbcd" kindref="member">GetBndryCells</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,</highlight></codeline>
+<codeline lineno="1731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ngrow)</highlight></codeline>
 <codeline lineno="1732"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1733"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>ba2<sp/>=<sp/>ba;</highlight></codeline>
-<codeline lineno="1734"><highlight class="normal"><sp/><sp/><sp/><sp/>ba2.<ref refid="classamrex_1_1Box_1a897f7f0ada1479ce3786259b6db62e9c" kindref="member">coarsen</ref>(ratio);</highlight></codeline>
-<codeline lineno="1735"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ba2;</highlight></codeline>
-<codeline lineno="1736"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1737"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1738"><highlight class="normal">BoxList</highlight></codeline>
-<codeline lineno="1739"><highlight class="normal"><ref refid="namespaceamrex_1a719e505b04b336141e1a9a6ab52ecbcd" kindref="member">GetBndryCells</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,</highlight></codeline>
-<codeline lineno="1740"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ngrow)</highlight></codeline>
-<codeline lineno="1741"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1742"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.ok());</highlight></codeline>
-<codeline lineno="1743"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.size()<sp/>&gt;<sp/>0);</highlight></codeline>
-<codeline lineno="1744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First<sp/>get<sp/>list<sp/>of<sp/>all<sp/>ghost<sp/>cells.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IndexType<sp/>btype<sp/>=<sp/>ba.ixType();</highlight></codeline>
-<codeline lineno="1748"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bcells<sp/>=<sp/>ba.boxList();</highlight></codeline>
-<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/>bcells.simplify();</highlight></codeline>
-<codeline lineno="1751"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1752"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>tba(bcells);</highlight></codeline>
-<codeline lineno="1753"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1754"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>gcells(btype);</highlight></codeline>
-<codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_diff(btype);</highlight></codeline>
-<codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>tba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
-<codeline lineno="1757"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>tba[i];</highlight></codeline>
-<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(bx,ngrow),<sp/>bx);</highlight></codeline>
-<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gcells.join(bl_diff);</highlight></codeline>
-<codeline lineno="1761"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1762"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1763"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>strip<sp/>out<sp/>intersections<sp/>with<sp/>original<sp/>BoxArray.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1764"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1765"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
-<codeline lineno="1766"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/>bcells.clear();</highlight></codeline>
-<codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>pieces(btype);</highlight></codeline>
-<codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_tmp(btype);</highlight></codeline>
-<codeline lineno="1770"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>gbx<sp/>:<sp/>gcells)</highlight></codeline>
-<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tba.intersections(gbx,<sp/>isects);</highlight></codeline>
-<codeline lineno="1774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects.empty())</highlight></codeline>
-<codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcells.push_back(gbx);</highlight></codeline>
+<codeline lineno="1733"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.ok());</highlight></codeline>
+<codeline lineno="1734"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.size()<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="1735"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1736"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First<sp/>get<sp/>list<sp/>of<sp/>all<sp/>ghost<sp/>cells.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1737"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1738"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IndexType<sp/>btype<sp/>=<sp/>ba.ixType();</highlight></codeline>
+<codeline lineno="1739"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1740"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bcells<sp/>=<sp/>ba.boxList();</highlight></codeline>
+<codeline lineno="1741"><highlight class="normal"><sp/><sp/><sp/><sp/>bcells.simplify();</highlight></codeline>
+<codeline lineno="1742"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1743"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxArray<sp/>tba(bcells);</highlight></codeline>
+<codeline lineno="1744"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1745"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>gcells(btype);</highlight></codeline>
+<codeline lineno="1746"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_diff(btype);</highlight></codeline>
+<codeline lineno="1747"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>tba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
+<codeline lineno="1748"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1749"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>tba[i];</highlight></codeline>
+<codeline lineno="1750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a7cb1edb123daa9e2146ae0db8e2ed910" kindref="member">amrex::boxDiff</ref>(bl_diff,<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(bx,ngrow),<sp/>bx);</highlight></codeline>
+<codeline lineno="1751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gcells.join(bl_diff);</highlight></codeline>
+<codeline lineno="1752"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1753"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1754"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now<sp/>strip<sp/>out<sp/>intersections<sp/>with<sp/>original<sp/>BoxArray.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1755"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1756"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;<sp/>std::pair&lt;int,Box&gt;<sp/>&gt;<sp/>isects;</highlight></codeline>
+<codeline lineno="1757"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1758"><highlight class="normal"><sp/><sp/><sp/><sp/>bcells.clear();</highlight></codeline>
+<codeline lineno="1759"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>pieces(btype);</highlight></codeline>
+<codeline lineno="1760"><highlight class="normal"><sp/><sp/><sp/><sp/>BoxList<sp/>bl_tmp(btype);</highlight></codeline>
+<codeline lineno="1761"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1762"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>gbx<sp/>:<sp/>gcells)</highlight></codeline>
+<codeline lineno="1763"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1764"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tba.intersections(gbx,<sp/>isects);</highlight></codeline>
+<codeline lineno="1765"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isects.empty())</highlight></codeline>
+<codeline lineno="1766"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1767"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcells.push_back(gbx);</highlight></codeline>
+<codeline lineno="1768"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1769"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1770"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1771"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pieces.clear();</highlight></codeline>
+<codeline lineno="1772"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>isec<sp/>:<sp/>isects)<sp/>{</highlight></codeline>
+<codeline lineno="1773"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pieces.push_back(isec.second);</highlight></codeline>
+<codeline lineno="1774"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1775"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl_tmp.complementIn(gbx,pieces);</highlight></codeline>
+<codeline lineno="1776"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcells.join(bl_tmp);</highlight></codeline>
 <codeline lineno="1777"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1778"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1779"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1780"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pieces.clear();</highlight></codeline>
-<codeline lineno="1781"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>isec<sp/>:<sp/>isects)<sp/>{</highlight></codeline>
-<codeline lineno="1782"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pieces.push_back(isec.second);</highlight></codeline>
-<codeline lineno="1783"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1784"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl_tmp.complementIn(gbx,pieces);</highlight></codeline>
-<codeline lineno="1785"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcells.join(bl_tmp);</highlight></codeline>
-<codeline lineno="1786"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1787"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1788"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1789"><highlight class="normal"><sp/><sp/><sp/><sp/>gcells<sp/>=<sp/><ref refid="namespaceamrex_1af71361ab9190f8aeb8f70488669095c2" kindref="member">amrex::removeOverlap</ref>(bcells);</highlight></codeline>
-<codeline lineno="1790"><highlight class="normal"><sp/><sp/><sp/><sp/>gcells.simplify();</highlight></codeline>
-<codeline lineno="1791"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1792"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gcells;</highlight></codeline>
-<codeline lineno="1793"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1794"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1795"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1796"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1797"><highlight class="normal"><ref refid="namespaceamrex_1ab69e582cef17dfd91d829e59457a28fd" kindref="member">readBoxArray</ref><sp/>(BoxArray&amp;<sp/><sp/><sp/><sp/><sp/>ba,</highlight></codeline>
-<codeline lineno="1798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::istream&amp;<sp/>is,</highlight></codeline>
-<codeline lineno="1799"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bReadSpecial)</highlight></codeline>
-<codeline lineno="1800"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1801"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bReadSpecial<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="1802"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.readFrom(is);</highlight></codeline>
-<codeline lineno="1804"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1805"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1806"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.size()<sp/>==<sp/>0);</highlight></codeline>
-<codeline lineno="1808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxbox;</highlight></codeline>
-<codeline lineno="1809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>in_hash;<sp/></highlight><highlight class="comment">//<sp/>will<sp/>be<sp/>ignored</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="1810"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(bl_ignore_max,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>maxbox<sp/>&gt;&gt;<sp/>in_hash;</highlight></codeline>
-<codeline lineno="1811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.resize(maxbox);</highlight></codeline>
-<codeline lineno="1812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>maxbox;<sp/>i++)</highlight></codeline>
-<codeline lineno="1813"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1814"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>b;</highlight></codeline>
-<codeline lineno="1815"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>b;</highlight></codeline>
-<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.set(i,<sp/>b);</highlight></codeline>
-<codeline lineno="1817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(bl_ignore_max,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1819"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
-<codeline lineno="1821"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;readBoxArray(BoxArray&amp;,istream&amp;,int)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="1822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1823"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1824"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1825"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1826"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a89eb9459b4109c4f9a9b3225abae29f8" kindref="member">match</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>y)</highlight></codeline>
-<codeline lineno="1827"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1828"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y)<sp/>{</highlight></codeline>
-<codeline lineno="1829"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="1830"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1831"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>(x.size()<sp/>==<sp/>y.size())<sp/>&amp;&amp;<sp/>(x.ixType()<sp/>==<sp/>y.ixType());</highlight></codeline>
-<codeline lineno="1832"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>x.size();<sp/>i<sp/>&lt;<sp/>N<sp/>&amp;&amp;<sp/>m;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1833"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>x[i]<sp/>==<sp/>y[i];</highlight></codeline>
-<codeline lineno="1834"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1835"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m;</highlight></codeline>
-<codeline lineno="1836"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1778"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1779"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1780"><highlight class="normal"><sp/><sp/><sp/><sp/>gcells<sp/>=<sp/><ref refid="namespaceamrex_1af71361ab9190f8aeb8f70488669095c2" kindref="member">amrex::removeOverlap</ref>(bcells);</highlight></codeline>
+<codeline lineno="1781"><highlight class="normal"><sp/><sp/><sp/><sp/>gcells.simplify();</highlight></codeline>
+<codeline lineno="1782"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1783"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gcells;</highlight></codeline>
+<codeline lineno="1784"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1785"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1786"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1787"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1788"><highlight class="normal"><ref refid="namespaceamrex_1ab69e582cef17dfd91d829e59457a28fd" kindref="member">readBoxArray</ref><sp/>(BoxArray&amp;<sp/><sp/><sp/><sp/><sp/>ba,</highlight></codeline>
+<codeline lineno="1789"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::istream&amp;<sp/>is,</highlight></codeline>
+<codeline lineno="1790"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bReadSpecial)</highlight></codeline>
+<codeline lineno="1791"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1792"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bReadSpecial<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1793"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1794"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.readFrom(is);</highlight></codeline>
+<codeline lineno="1795"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1796"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1797"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.size()<sp/>==<sp/>0);</highlight></codeline>
+<codeline lineno="1799"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxbox;</highlight></codeline>
+<codeline lineno="1800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ULong<sp/>in_hash;<sp/></highlight><highlight class="comment">//<sp/>will<sp/>be<sp/>ignored</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1801"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(bl_ignore_max,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>maxbox<sp/>&gt;&gt;<sp/>in_hash;</highlight></codeline>
+<codeline lineno="1802"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.resize(maxbox);</highlight></codeline>
+<codeline lineno="1803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>maxbox;<sp/>i++)</highlight></codeline>
+<codeline lineno="1804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="1805"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>b;</highlight></codeline>
+<codeline lineno="1806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>b;</highlight></codeline>
+<codeline lineno="1807"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ba.set(i,<sp/>b);</highlight></codeline>
+<codeline lineno="1808"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1809"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(bl_ignore_max,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1810"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1811"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is.fail())<sp/>{</highlight></codeline>
+<codeline lineno="1812"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;readBoxArray(BoxArray&amp;,istream&amp;,int)<sp/>failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1813"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1814"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1815"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1816"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1817"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a89eb9459b4109c4f9a9b3225abae29f8" kindref="member">match</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>x,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>y)</highlight></codeline>
+<codeline lineno="1818"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1819"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(x<sp/>==<sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="1820"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="1821"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1822"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m<sp/>=<sp/>(x.size()<sp/>==<sp/>y.size())<sp/>&amp;&amp;<sp/>(x.ixType()<sp/>==<sp/>y.ixType());</highlight></codeline>
+<codeline lineno="1823"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>x.size();<sp/>i<sp/>&lt;<sp/>N<sp/>&amp;&amp;<sp/>m;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1824"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>x[i]<sp/>==<sp/>y[i];</highlight></codeline>
+<codeline lineno="1825"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1826"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m;</highlight></codeline>
+<codeline lineno="1827"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1828"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1829"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1830"><highlight class="normal">std::ostream&amp;</highlight></codeline>
+<codeline lineno="1831"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray::RefID&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="1832"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1833"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.data;</highlight></codeline>
+<codeline lineno="1834"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
+<codeline lineno="1835"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1836"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1837"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1838"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1839"><highlight class="normal">std::ostream&amp;</highlight></codeline>
-<codeline lineno="1840"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray::RefID&amp;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="1841"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="1842"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">.data;</highlight></codeline>
-<codeline lineno="1843"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>os;</highlight></codeline>
-<codeline lineno="1844"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="1845"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1846"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BoxArray.cpp"/>
   </compounddef>

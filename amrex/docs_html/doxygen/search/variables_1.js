@@ -5,6 +5,7 @@ var searchData=
   ['b_5fvalid',['b_valid',['../classamrex_1_1ABecLaplacian.html#a692fad575b36e46d29d38061473702b5',1,'amrex::ABecLaplacian::b_valid()'],['../classamrex_1_1ABec4.html#af240e7d9ef36a76be5a3f6311da23412',1,'amrex::ABec4::b_valid()'],['../classamrex_1_1DivVis.html#a43c0c842916d35d4c8e75be763b082c6',1,'amrex::DivVis::b_valid()']]],
   ['ba_5fcfb',['ba_cfb',['../structamrex_1_1FabArrayBase_1_1CFinfo.html#ac07051a2c7c91144216d0a333e2b9bce',1,'amrex::FabArrayBase::CFinfo']]],
   ['ba_5fcrse_5fpatch',['ba_crse_patch',['../structamrex_1_1FabArrayBase_1_1FPinfo.html#a6b1f18981c96f45dcf49c05987770548',1,'amrex::FabArrayBase::FPinfo']]],
+  ['ba_5ffine_5fpatch',['ba_fine_patch',['../structamrex_1_1FabArrayBase_1_1FPinfo.html#af6fcea43716595c028ab06b5ca6e57c0',1,'amrex::FabArrayBase::FPinfo']]],
   ['balwaysfixdenormals',['bAlwaysFixDenormals',['../classamrex_1_1RealDescriptor.html#aaa3172ecb27298323dd87d8c72204eb2',1,'amrex::RealDescriptor']]],
   ['bamrdataok',['bAmrDataOk',['../classamrex_1_1DataServices.html#a9bee43add415cee502f4398657b80485',1,'amrex::DataServices']]],
   ['barriernames',['barrierNames',['../classCommProfStats.html#ae8a2403290796125e47b6b85b70a0d69',1,'CommProfStats']]],

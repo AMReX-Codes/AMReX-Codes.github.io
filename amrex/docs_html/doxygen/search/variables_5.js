@@ -16,6 +16,7 @@ var searchData=
   ['face',['face',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a736f4b09115efedb46eb2ddcb802417f',1,'amrex::FabArrayBase::FabComTag::face()'],['../classamrex_1_1OrientationIter.html#a4a1d69b82d46e482d19ca15a5bb8a711',1,'amrex::OrientationIter::face()']]],
   ['face_5flinear_5finterp',['face_linear_interp',['../namespaceamrex.html#af6271bbc97d9b2c15eb418a6e4024c76',1,'amrex']]],
   ['fact_5fcrse_5fpatch',['fact_crse_patch',['../structamrex_1_1FabArrayBase_1_1FPinfo.html#a09b8fcc80fd25192f68c5ee368097317',1,'amrex::FabArrayBase::FPinfo']]],
+  ['fact_5ffine_5fpatch',['fact_fine_patch',['../structamrex_1_1FabArrayBase_1_1FPinfo.html#a8754fd4dda86c92795899a42b97f547c',1,'amrex::FabArrayBase::FPinfo']]],
   ['factory',['factory',['../classamrex_1_1HypreNodeLap.html#a380f7d1b289a6802248ece2786b86565',1,'amrex::HypreNodeLap']]],
   ['faheadermap',['faHeaderMap',['../classamrex_1_1StateData.html#a60cd1a78a793b7a4ce54e70da0f0dd55',1,'amrex::StateData']]],
   ['faindex',['faIndex',['../structamrex_1_1VisMF_1_1FabReadLink.html#afdb4b80e717d79ddc293c138b190fb51',1,'amrex::VisMF::FabReadLink']]],

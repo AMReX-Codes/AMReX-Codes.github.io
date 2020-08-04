@@ -614,24 +614,24 @@
 <codeline lineno="104"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><ref refid="namespaceamrex_1ad871bc2fa6939b610a2ad14b3055627f" kindref="member">AllGatherBoxes</ref><sp/>(Vector&lt;Box&gt;&amp;<sp/>bxs)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="namespaceamrex_1ad433171e426d58e2414c5394bfe0303c" kindref="member">AllGatherBoxes</ref><sp/>(Vector&lt;Box&gt;&amp;<sp/>bxs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n_extra_reserve)</highlight></codeline>
 <codeline lineno="108"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>bxs.size();</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>countvec<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a5e16712b9f4c3f14537cd0b561758aa5" kindref="member">ParallelDescriptor::Gather</ref>(count,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>count_tot<sp/>=<sp/>0L;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>offset(countvec.size(),0);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>=<sp/>countvec[0];</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/>offset.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>+=<sp/>countvec[i];</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a20157f27c3bf88a426b0f44bd6bbf135" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;count_tot,<sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>principle,<sp/>MPI_Allgather/MPI_Allgatherv<sp/>should<sp/>not<sp/>be<sp/>slower<sp/>than</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>MPI_Gather/MPI_Gatherv<sp/>followed<sp/>by<sp/>MPI_Bcast.<sp/><sp/>But<sp/>that&apos;s<sp/>not<sp/>true<sp/>on<sp/>Summit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>bxs.size();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>countvec(<ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>());</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgather(&amp;count,<sp/>1,<sp/>MPI_INT,<sp/>countvec.data(),<sp/>1,<sp/>MPI_INT,<sp/>comm);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>offset(countvec.size(),0);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>count_tot<sp/>=<sp/>countvec[0];</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/>offset.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>+=<sp/>countvec[i];</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count_tot<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
@@ -639,19 +639,59 @@
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;AllGatherBoxes:<sp/>not<sp/>many<sp/>boxes&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>recv_buffer(count_tot);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a211110d15cfcd5d09168c6d415476ce6" kindref="member">ParallelDescriptor::Gatherv</ref>(bxs.data(),<sp/>count,<sp/>recv_buffer.data(),<sp/>countvec,<sp/>offset,</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a20157f27c3bf88a426b0f44bd6bbf135" kindref="member">ParallelDescriptor::Bcast</ref>(recv_buffer.data(),<sp/>count_tot,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>bxs<sp/>=<sp/>std::move(recv_buffer);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(bxs);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>recv_buffer;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.reserve(count_tot+n_extra_reserve);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.resize(count_tot);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Allgatherv(bxs.data(),<sp/>count,<sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_buffer.data(),<sp/>countvec.data(),<sp/>offset.data(),</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),<sp/>comm);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(bxs,recv_buffer);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1a3735bb2b55dab8f232227611c6d25bb8" kindref="member">ParallelContext::CommunicatorSub</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>root<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1ab3843bd69bcb263dfdebb3d668dea1ba" kindref="member">ParallelContext::IOProcessorNumberSub</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1a5f6737315bff6905419103b17acf3d06" kindref="member">ParallelContext::MyProcSub</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nprocs<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelContext_1aa7f481a6be5e8f2eefbe9448135a3843" kindref="member">ParallelContext::NProcsSub</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>bxs.size();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>countvec(nprocs);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Gather(&amp;count,<sp/>1,<sp/>MPI_INT,<sp/>countvec.data(),<sp/>1,<sp/>MPI_INT,<sp/>root,<sp/>comm);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>count_tot<sp/>=<sp/>0L;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>offset(countvec.size(),0);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myproc<sp/>==<sp/>root)<sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>=<sp/>countvec[0];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1,<sp/>N<sp/>=<sp/>offset.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>countvec[i-1];</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count_tot<sp/>+=<sp/>countvec[i];</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Bcast(&amp;count_tot,<sp/>1,<sp/>MPI_INT,<sp/>root,<sp/>comm);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count_tot<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count_tot<sp/>&gt;<sp/>static_cast&lt;Long&gt;(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>()))<sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;AllGatherBoxes:<sp/>not<sp/>many<sp/>boxes&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Box&gt;<sp/>recv_buffer;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.reserve(count_tot+n_extra_reserve);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>recv_buffer.resize(count_tot);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Gatherv(bxs.data(),<sp/>count,<sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_buffer.data(),<sp/>countvec.data(),<sp/>offset.data(),</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),<sp/>root,<sp/>comm);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Bcast(recv_buffer.data(),<sp/>count_tot,<sp/>ParallelDescriptor::Mpi_typemap&lt;Box&gt;::type(),</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>root,<sp/>comm);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1_1detail_1a71b582d94d1c5cd614711ec7b7853192" kindref="member">std::swap</ref>(bxs,recv_buffer);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(bxs,n_extra_reserve);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Box.cpp"/>
   </compounddef>
