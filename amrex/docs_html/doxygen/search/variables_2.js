@@ -68,7 +68,6 @@ var searchData=
   ['crse_5ffine_5fboundary_5fcell',['crse_fine_boundary_cell',['../namespaceamrex__eb__flux__reg__nd__module.html#a248ca933a7707ac5dfe93b484be5c2cc',1,'amrex_eb_flux_reg_nd_module']]],
   ['crse_5fratio',['crse_ratio',['../classamrex_1_1AmrLevel.html#a7fc1ed7f6a21702c3af072650ed4de4a',1,'amrex::AmrLevel']]],
   ['crsebnd',['crsebnd',['../namespaceamrex_1_1Extrapolater.html#a75142b5cf7161587ede4a7a67f308579',1,'amrex::Extrapolater']]],
-  ['crsecell',['crsecell',['../namespaceamrex__extrapolater.html#ae66876c1b838f7ae7d151441730fc229',1,'amrex_extrapolater']]],
   ['cssize',['csSize',['../classCommProfStats.html#af705693efa58487843e7624857f94399',1,'CommProfStats']]],
   ['csversion',['csVersion',['../classRegionsProfStats.html#ae262ff88e11aded2e904267db1e94a56',1,'RegionsProfStats']]],
   ['cumtime',['cumtime',['../classamrex_1_1Amr.html#a9b46db71980158bc8f12c2f7eebede4a',1,'amrex::Amr']]],

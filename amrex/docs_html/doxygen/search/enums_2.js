@@ -8,5 +8,5 @@ var searchData=
   ['contourtype',['ContourType',['../namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323b',1,'amrex::Amrvis']]],
   ['coordtype',['CoordType',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806eba',1,'amrex::CoordSys']]],
   ['cpop',['CpOp',['../classamrex_1_1FabArrayBase.html#ac86e93bfc13df1bdcfb0ebbafb6a1cff',1,'amrex::FabArrayBase']]],
-  ['cutstatus',['CutStatus',['../AMReX__Cluster_8cpp.html#ab097eab7e3fccc8b0d3b24d44adcb0a2',1,'amrex::@24']]]
+  ['cutstatus',['CutStatus',['../AMReX__Cluster_8cpp.html#a4b873b40b4e08abcd5fb8b8a25dc5f85',1,'amrex::@28']]]
 ];

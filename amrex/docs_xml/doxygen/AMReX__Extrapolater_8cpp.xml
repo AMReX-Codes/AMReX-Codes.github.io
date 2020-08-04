@@ -3,8 +3,21 @@
   <compounddef id="AMReX__Extrapolater_8cpp" kind="file" language="C++">
     <compoundname>AMReX_Extrapolater.cpp</compoundname>
     <includes refid="AMReX__Extrapolater_8H" local="no">AMReX_Extrapolater.H</includes>
+    <includes refid="AMReX__extrapolater__K_8H" local="no">AMReX_extrapolater_K.H</includes>
     <includes refid="AMReX__iMultiFab_8H" local="no">AMReX_iMultiFab.H</includes>
     <incdepgraph>
+      <node id="1381">
+        <label>AMReX_extrapolater_K.H</label>
+        <link refid="AMReX__extrapolater__K_8H"/>
+        <childnode refid="1269" relation="include">
+        </childnode>
+        <childnode refid="1280" relation="include">
+        </childnode>
+        <childnode refid="1335" relation="include">
+        </childnode>
+        <childnode refid="1382" relation="include">
+        </childnode>
+      </node>
       <node id="1303">
         <label>atomic</label>
       </node>
@@ -648,13 +661,15 @@
         </childnode>
         <childnode refid="1381" relation="include">
         </childnode>
+        <childnode refid="1383" relation="include">
+        </childnode>
       </node>
-      <node id="1381">
+      <node id="1383">
         <label>AMReX_iMultiFab.H</label>
         <link refid="AMReX__iMultiFab_8H"/>
         <childnode refid="1257" relation="include">
         </childnode>
-        <childnode refid="1382" relation="include">
+        <childnode refid="1384" relation="include">
         </childnode>
         <childnode refid="1366" relation="include">
         </childnode>
@@ -1118,6 +1133,10 @@
         <childnode refid="1332" relation="include">
         </childnode>
       </node>
+      <node id="1382">
+        <label>AMReX_extrapolater_3D_K.H</label>
+        <link refid="AMReX__extrapolater__3D__K_8H"/>
+      </node>
       <node id="1307">
         <label>AMReX_Arena.H</label>
         <link refid="AMReX__Arena_8H"/>
@@ -1266,7 +1285,7 @@
       <node id="1298">
         <label>climits</label>
       </node>
-      <node id="1382">
+      <node id="1384">
         <label>AMReX_IArrayBox.H</label>
         <link refid="AMReX__IArrayBox_8H"/>
         <childnode refid="1281" relation="include">
@@ -1502,65 +1521,6 @@
     </incdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Extrapolater">amrex::Extrapolater</innernamespace>
-      <sectiondef kind="func">
-      <memberdef kind="function" id="AMReX__Extrapolater_8cpp_1aa9bb79863e796e5e7d35aab89d76bc08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex_first_order_extrap</definition>
-        <argsstring>(amrex::Real *u, const int *ulo, const int *uhi, const int &amp;nu, const int *msk, const int *mlo, const int *mhi, const int *lo, const int *hi, const int &amp;scomp, const int &amp;ncomp)</argsstring>
-        <name>amrex_first_order_extrap</name>
-        <param>
-          <type>amrex::Real *</type>
-          <declname>u</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>ulo</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>uhi</declname>
-        </param>
-        <param>
-          <type>const int &amp;</type>
-          <declname>nu</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>msk</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>mlo</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>mhi</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>lo</declname>
-        </param>
-        <param>
-          <type>const int *</type>
-          <declname>hi</declname>
-        </param>
-        <param>
-          <type>const int &amp;</type>
-          <declname>scomp</declname>
-        </param>
-        <param>
-          <type>const int &amp;</type>
-          <declname>ncomp</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_Extrapolater.cpp" line="11" column="1"/>
-      </memberdef>
-      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -1568,58 +1528,56 @@
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Extrapolater_8H" kindref="compound">AMReX_Extrapolater.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__iMultiFab_8H" kindref="compound">AMReX_iMultiFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__Extrapolater_8cpp_1aa9bb79863e796e5e7d35aab89d76bc08" kindref="member">amrex_first_order_extrap</ref>(amrex::Real*<sp/>u,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ulo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>uhi,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>nu,</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>msk,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>mlo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>mhi,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi,<sp/></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>scomp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>ncomp);</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="namespaceamrex_1_1Extrapolater" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Extrapolater</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Extrapolater_1ad0a63d588f868c546dfbbc818dec9273" kindref="member">FirstOrderExtrap</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp)</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Gpu_1_1LaunchSafeGuard" kindref="compound">Gpu::LaunchSafeGuard</ref><sp/>lsg(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>xxxxx<sp/>TODO<sp/>gpu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__extrapolater__K_8H" kindref="compound">AMReX_extrapolater_K.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__iMultiFab_8H" kindref="compound">AMReX_iMultiFab.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="namespaceamrex_1_1Extrapolater" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Extrapolater</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Extrapolater_1ad0a63d588f868c546dfbbc818dec9273" kindref="member">FirstOrderExtrap</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>scomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(mf.<ref refid="classamrex_1_1FabArrayBase_1a92cef599b0ae34401a5463ec6fddc606" kindref="member">nGrow</ref>()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(scomp<sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>((scomp+ncomp)<sp/>&lt;=<sp/>mf.<ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>());</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref><sp/>mask(mf.<ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>(),<sp/>mf.<ref refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" kindref="member">DistributionMap</ref>(),<sp/>1,<sp/>1,<sp/><ref refid="structamrex_1_1MFInfo" kindref="compound">MFInfo</ref>(),</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DefaultFabFactory" kindref="compound">DefaultFabFactory&lt;IArrayBox&gt;</ref>());</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mask.BuildMask(geom.<ref refid="classamrex_1_1Geometry_1a94f4ddb683e381201694d644be7566f1" kindref="member">Domain</ref>(),<sp/>geom.<ref refid="classamrex_1_1Geometry_1a7b365b1560bb9a31cf49cd55668085cf" kindref="member">periodicity</ref>(),</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Extrapolater_1a84bd1ce2743440bc77f2be80eea8bee4" kindref="member">finebnd</ref>,<sp/><ref refid="namespaceamrex_1_1Extrapolater_1a75142b5cf7161587ede4a7a67f308579" kindref="member">crsebnd</ref>,<sp/><ref refid="namespaceamrex_1_1Extrapolater_1a38f2083124f56b276e74ec1112306ed1" kindref="member">physbnd</ref>,<sp/><ref refid="namespaceamrex_1_1Extrapolater_1aebff89225c72118eaf711ad96da1217a" kindref="member">interior</ref>);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(mf.<ref refid="classamrex_1_1FabArrayBase_1a92cef599b0ae34401a5463ec6fddc606" kindref="member">nGrow</ref>()<sp/>==<sp/>1);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(scomp<sp/>&gt;=<sp/>0);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ncomp<sp/>&lt;=<sp/>mf.<ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>());</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref><sp/>mask(mf.<ref refid="classamrex_1_1FabArrayBase_1a4bb7e999eee8c04f07573269b54e39d0" kindref="member">boxArray</ref>(),<sp/>mf.<ref refid="classamrex_1_1FabArrayBase_1abd59469241abaab18e1c2db8b7ceb4ed" kindref="member">DistributionMap</ref>(),<sp/>1,<sp/>1,<sp/><ref refid="structamrex_1_1MFInfo" kindref="compound">MFInfo</ref>(),</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1DefaultFabFactory" kindref="compound">DefaultFabFactory&lt;IArrayBox&gt;</ref>());</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>mask.BuildMask(geom.<ref refid="classamrex_1_1Geometry_1a94f4ddb683e381201694d644be7566f1" kindref="member">Domain</ref>(),<sp/>geom.<ref refid="classamrex_1_1Geometry_1a7b365b1560bb9a31cf49cd55668085cf" kindref="member">periodicity</ref>(),</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Extrapolater_1a84bd1ce2743440bc77f2be80eea8bee4" kindref="member">finebnd</ref>,<sp/><ref refid="namespaceamrex_1_1Extrapolater_1a75142b5cf7161587ede4a7a67f308579" kindref="member">crsebnd</ref>,<sp/><ref refid="namespaceamrex_1_1Extrapolater_1a38f2083124f56b276e74ec1112306ed1" kindref="member">physbnd</ref>,<sp/><ref refid="namespaceamrex_1_1Extrapolater_1aebff89225c72118eaf711ad96da1217a" kindref="member">interior</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi(mf);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>bx<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>mfi.validbox();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mask_arr<sp/>=<sp/>mask.const_array(mfi);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>data_arr<sp/>=<sp/>mf.<ref refid="classamrex_1_1FabArray_1a6484b86e240ddcddbe0d68e9408e1d94" kindref="member">array</ref>(mfi,scomp);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>mf.<ref refid="classamrex_1_1FabArrayBase_1aec6647af0d0a9f2d760d502a8975d6f1" kindref="member">nComp</ref>();</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi(mf);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>bx<sp/>=<sp/>mfi.validbox();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IArrayBox" kindref="compound">IArrayBox</ref>&amp;<sp/>maskfab<sp/>=<sp/>mask[mfi];</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>maskbox<sp/>=<sp/>maskfab.<ref refid="classamrex_1_1BaseFab_1aa288a917ca5613e3e984c58a7975a89d" kindref="member">box</ref>();</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/>datafab<sp/>=<sp/>mf[mfi];</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref>&amp;<sp/>databox<sp/>=<sp/>datafab.<ref refid="classamrex_1_1BaseFab_1aa288a917ca5613e3e984c58a7975a89d" kindref="member">box</ref>();</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Extrapolater_8cpp_1aa9bb79863e796e5e7d35aab89d76bc08" kindref="member">amrex_first_order_extrap</ref>(datafab.<ref refid="classamrex_1_1BaseFab_1a5c99c1592a80ba46ab6faf9929773f8d" kindref="member">dataPtr</ref>(),<sp/>databox.<ref refid="classamrex_1_1Box_1a8a029c1d95918fd6e6fe0afb141ed415" kindref="member">loVect</ref>(),<sp/>databox.<ref refid="classamrex_1_1Box_1a8d84792ed854e04c97770960290f6f5c" kindref="member">hiVect</ref>(),<sp/>N,<sp/></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maskfab.<ref refid="classamrex_1_1BaseFab_1a5c99c1592a80ba46ab6faf9929773f8d" kindref="member">dataPtr</ref>(),<sp/>maskbox.<ref refid="classamrex_1_1Box_1a8a029c1d95918fd6e6fe0afb141ed415" kindref="member">loVect</ref>(),<sp/>maskbox.<ref refid="classamrex_1_1Box_1a8d84792ed854e04c97770960290f6f5c" kindref="member">hiVect</ref>(),</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.<ref refid="classamrex_1_1Box_1a8a029c1d95918fd6e6fe0afb141ed415" kindref="member">loVect</ref>(),<sp/>bx.<ref refid="classamrex_1_1Box_1a8d84792ed854e04c97770960290f6f5c" kindref="member">hiVect</ref>(),<sp/>scomp,<sp/>ncomp);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">Gpu::inLaunchRegion</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6d387a74be2cf34825f4df1714211d53" kindref="member">ParallelFor</ref>(<ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(bx,1),<sp/>ncomp,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/>noexcept</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mask_arr(i,j,k)<sp/>==<sp/>crsebnd)<sp/>data_arr(i,j,k,n)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6d387a74be2cf34825f4df1714211d53" kindref="member">ParallelFor</ref>(<ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(bx,1),<sp/>ncomp,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/>noexcept</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a9570ea1b5e3ab8070aee754ccbcf28a2" kindref="member">amrex_first_order_extrap_gpu</ref>(i,<sp/>j,<sp/>k,<sp/>n,<sp/>bx,<sp/>mask_arr,<sp/>data_arr);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ae764daf3d8010df29bc0fb4b6833f0c8" kindref="member">amrex_first_order_extrap_cpu</ref>(bx,<sp/>ncomp,<sp/>mask_arr,<sp/>data_arr);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Amr/AMReX_Extrapolater.cpp"/>
   </compounddef>

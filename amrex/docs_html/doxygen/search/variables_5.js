@@ -62,7 +62,6 @@ var searchData=
   ['fine_5fontop',['fine_ontop',['../namespaceamrex__fluxreg__nd__module.html#ae7abaa109fd5f8d10c4f7e3922379e8b',1,'amrex_fluxreg_nd_module']]],
   ['fine_5fratio',['fine_ratio',['../classamrex_1_1AmrLevel.html#a109f988dd098fdb2a6b854a742015397',1,'amrex::AmrLevel']]],
   ['finebnd',['finebnd',['../namespaceamrex_1_1Extrapolater.html#a84bd1ce2743440bc77f2be80eea8bee4',1,'amrex::Extrapolater']]],
-  ['finecell',['finecell',['../namespaceamrex__extrapolater.html#a220d4e9cb9d54790340878e154c06575',1,'amrex_extrapolater']]],
   ['fineindex',['fineIndex',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#aea1dff058968ff389de6b6f7535de577',1,'amrex::FabArrayBase::FabComTag']]],
   ['finest_5famr_5flev',['finest_amr_lev',['../classamrex_1_1MLMG.html#aa10d7e4fe3c243857a5493ca548b0f55',1,'amrex::MLMG']]],
   ['finest_5flevel',['finest_level',['../classamrex_1_1AmrMesh.html#a7a466d1cfea1c18c35128fb5a7c5793f',1,'amrex::AmrMesh']]],
