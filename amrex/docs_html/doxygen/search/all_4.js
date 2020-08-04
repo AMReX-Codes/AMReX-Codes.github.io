@@ -213,7 +213,7 @@ var searchData=
   ['dist',['dist',['../classamrex_1_1SplineDistFcnElement2d.html#aabac101641af5d48dfee0c599f0b88c9',1,'amrex::SplineDistFcnElement2d']]],
   ['distfcnelement2d',['distFcnElement2d',['../classamrex_1_1distFcnElement2d.html#abb965acbf00e4afd961cb7821d064387',1,'amrex::distFcnElement2d']]],
   ['distfcnelement2d',['distFcnElement2d',['../classamrex_1_1distFcnElement2d.html',1,'amrex']]],
-  ['distribute',['distribute',['../classamrex_1_1Cluster.html#aa47a0fcba1b6084cfc319bf1e64267bb',1,'amrex::Cluster::distribute()'],['../namespaceamrex.html#a7b11db86486b941e833b78ea24165c01',1,'amrex::Distribute()']]],
+  ['distribute',['distribute',['../classamrex_1_1Cluster.html#aa47a0fcba1b6084cfc319bf1e64267bb',1,'amrex::Cluster::distribute()'],['../namespaceamrex.html#ac6467048b1487ee7b78edf0bbcbfd2bb',1,'amrex::Distribute()']]],
   ['distribution',['Distribution',['../classhacc_1_1Distribution.html#a2ecffa7567ac7fd381a9516c660f1c46',1,'hacc::Distribution::Distribution(MPI_Comm comm, int const n[], bool debug=false)'],['../classhacc_1_1Distribution.html#a851685f4fd98680160a52b05b0254874',1,'hacc::Distribution::Distribution(MPI_Comm comm, int ng, bool debug=false)'],['../classhacc_1_1Distribution.html#a8f4f9713f602b41d9bf405c0d0743d9f',1,'hacc::Distribution::Distribution(MPI_Comm comm, int const n[], int const Ndims[], int *rmap, bool debug=false)'],['../classhacc_1_1Distribution.html#aafa1cb9e62443ac3329d94a82309f9c1',1,'hacc::Distribution::Distribution(MPI_Comm comm, int ng, int const Ndims[], int *rmap, bool debug=false)']]],
   ['distribution',['Distribution',['../classhacc_1_1Distribution.html',1,'hacc']]],
   ['distribution_2ec',['distribution.c',['../distribution_8c.html',1,'']]],

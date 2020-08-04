@@ -7651,14 +7651,18 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="559" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="559" bodyend="698"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a7b11db86486b941e833b78ea24165c01" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ac6467048b1487ee7b78edf0bbcbfd2bb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>static void amrex::Distribute</definition>
-        <argsstring>(const std::vector&lt; SFCToken &gt; &amp;tokens, int nprocs, Real volpercpu, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;v)</argsstring>
+        <argsstring>(const std::vector&lt; SFCToken &gt; &amp;tokens, const std::vector&lt; Long &gt; &amp;wgts, int nprocs, Real volpercpu, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;v)</argsstring>
         <name>Distribute</name>
         <param>
           <type>const std::vector&lt; SFCToken &gt; &amp;</type>
           <declname>tokens</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; Long &gt; &amp;</type>
+          <declname>wgts</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -7678,7 +7682,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="935" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="935" bodyend="1016"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1040" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1040" bodyend="1120"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6e9865ac3868b0b19a46f021f2db2421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -7699,7 +7703,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1816" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1817" bodyend="1833"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1867" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1868" bodyend="1884"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2a1640fc2ba97306ea4b3546daa1e6b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -7720,7 +7724,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1835" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1836" bodyend="1840"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" line="1886" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_DistributionMapping.cpp" bodystart="1887" bodyend="1891"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a68d95d50ed271feafbd28018aa0e8d96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -18901,6 +18905,32 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PlotFileUtil.cpp" line="342" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_PlotFileUtil.cpp" bodystart="342" bodyend="357"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a6acf31bfdb80131caf08849fe42df37a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, Array&lt; T, AMREX_SPACEDIM &gt; const &amp;a)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; T, AMREX_SPACEDIM &gt; const &amp;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" line="16" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" bodystart="16" bodyend="22"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abc89efc14a5c343a7ec2f619713676b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -18928,7 +18958,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" line="16" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" bodystart="16" bodyend="20"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" bodystart="25" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a35c0a4ac17c807639d76eea620e948df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a0f98b338ae374935436589280ddeddd4" kindref="member">AMREX_GPU_EXTERNAL</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
