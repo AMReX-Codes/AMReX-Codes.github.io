@@ -5025,12 +5025,12 @@
   <compound refid="interfacecvode__interface_1_1FCVodeSetMaxNumSteps" kind="interface"><name>cvode_interface::FCVodeSetMaxNumSteps</name>
     <member refid="interfacecvode__interface_1_1FCVodeSetMaxNumSteps_1a121ab813125d8b68370bb3fb5a2baa36" kind="function"><name>fcvodesetmaxnumsteps</name></member>
   </compound>
+  <compound refid="interfacecvode__interface_1_1FCVodeSetMaxOrd" kind="interface"><name>cvode_interface::FCVodeSetMaxOrd</name>
+    <member refid="interfacecvode__interface_1_1FCVodeSetMaxOrd_1ae6c8c97135544f5f0c408e281870b635" kind="function"><name>fcvodesetmaxord</name></member>
+  </compound>
   <compound refid="interfacefcvode__mod_1_1FCVodeSetMaxOrd" kind="interface"><name>fcvode_mod::FCVodeSetMaxOrd</name>
     <member refid="interfacefcvode__mod_1_1FCVodeSetMaxOrd_1aff5eb16e8093ba1ac2733bcc3a1575bc" kind="function"><name>fcvodesetmaxord</name></member>
     <member refid="interfacefcvode__mod_1_1FCVodeSetMaxOrd_1aff5eb16e8093ba1ac2733bcc3a1575bc" kind="function"><name>fcvodesetmaxord</name></member>
-  </compound>
-  <compound refid="interfacecvode__interface_1_1FCVodeSetMaxOrd" kind="interface"><name>cvode_interface::FCVodeSetMaxOrd</name>
-    <member refid="interfacecvode__interface_1_1FCVodeSetMaxOrd_1ae6c8c97135544f5f0c408e281870b635" kind="function"><name>fcvodesetmaxord</name></member>
   </compound>
   <compound refid="interfacefcvode__mod_1_1FCVodeSetMaxStep" kind="interface"><name>fcvode_mod::FCVodeSetMaxStep</name>
     <member refid="interfacefcvode__mod_1_1FCVodeSetMaxStep_1a20d70cf3f96d1cfb5286a4fbb937731a" kind="function"><name>fcvodesetmaxstep</name></member>
@@ -6070,12 +6070,24 @@
     <member refid="interfaceamrex__ebcellflag__module_1_1get__neighbor__cells_1a11c655436ceff8d225a22cd6d9f5546f" kind="function"><name>get_neighbor_cells_int</name></member>
     <member refid="interfaceamrex__ebcellflag__module_1_1get__neighbor__cells_1a1c04556647e125e698c2fd2724430f38" kind="function"><name>get_neighbor_cells_real</name></member>
   </compound>
+  <compound refid="structamrex_1_1GetBucket" kind="struct"><name>amrex::GetBucket</name>
+    <member refid="structamrex_1_1GetBucket_1aaa894d51240ca3994d613ac9819b94cf" kind="variable"><name>m_lev_gid_to_bucket</name></member>
+    <member refid="structamrex_1_1GetBucket_1a470e41f4257b381e33ce814969d74a49" kind="variable"><name>m_lev_offsets</name></member>
+    <member refid="structamrex_1_1GetBucket_1abcbeeafe88c66d539a5264e67ff6679d" kind="function"><name>GetBucket</name></member>
+    <member refid="structamrex_1_1GetBucket_1ad2772cab77f44e3555523f450c60a270" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="structamrex_1_1GetPID" kind="struct"><name>amrex::GetPID</name>
+    <member refid="structamrex_1_1GetPID_1a12b53b1f0f8833c2701601cf404e74ad" kind="variable"><name>m_bucket_to_pid</name></member>
+    <member refid="structamrex_1_1GetPID_1ac4fa128b9d676ec237a9a1b6f931fba8" kind="variable"><name>m_lev_gid_to_bucket</name></member>
+    <member refid="structamrex_1_1GetPID_1a9be86ae5c5e3f798194611a3798ea8c6" kind="variable"><name>m_lev_offsets</name></member>
+    <member refid="structamrex_1_1GetPID_1aa3aa125952410bb95dc36e7472a9c7bf" kind="function"><name>GetPID</name></member>
+    <member refid="structamrex_1_1GetPID_1ac9216dea392b3432ba44c349cc05dc87" kind="function"><name>operator()</name></member>
+  </compound>
   <compound refid="structamrex_1_1GetSendBufferOffset" kind="struct"><name>amrex::GetSendBufferOffset</name>
     <member refid="structamrex_1_1GetSendBufferOffset_1a0ed01f542a7575b5a8d300c751d962b2" kind="variable"><name>m_box_offsets</name></member>
     <member refid="structamrex_1_1GetSendBufferOffset_1a81bc5519ac623a1d14e612f8fe202742" kind="variable"><name>m_pad_correction</name></member>
-    <member refid="structamrex_1_1GetSendBufferOffset_1acd053d17981a9e3d6672157bb4723638" kind="variable"><name>m_lev_offsets</name></member>
-    <member refid="structamrex_1_1GetSendBufferOffset_1aa3563815e600357e5b0754b8a674b93c" kind="variable"><name>m_box_perm</name></member>
-    <member refid="structamrex_1_1GetSendBufferOffset_1a8fc79c4268634341e36b2c5d89a24987" kind="variable"><name>m_buck_to_pid</name></member>
+    <member refid="structamrex_1_1GetSendBufferOffset_1a6a63716df57946f90594a5a756582a77" kind="variable"><name>m_get_pid</name></member>
+    <member refid="structamrex_1_1GetSendBufferOffset_1a7fed473672f976de3014a8116df479f4" kind="variable"><name>m_get_bucket</name></member>
     <member refid="structamrex_1_1GetSendBufferOffset_1ae0bd21edb636525d7e8011db403b9fca" kind="function"><name>GetSendBufferOffset</name></member>
     <member refid="structamrex_1_1GetSendBufferOffset_1aff82a09f8083216881f94a0361a81a78" kind="function"><name>operator()</name></member>
   </compound>
@@ -6722,15 +6734,6 @@
     <member refid="structamrex_1_1Neighbors_1_1iterator_1a95832202a9e3eb4e35f9c02c9f81c1fa" kind="function"><name>operator!=</name></member>
     <member refid="structamrex_1_1Neighbors_1_1iterator_1a2741d9796ca4ed1076efdc389feaedd3" kind="function"><name>operator*</name></member>
   </compound>
-  <compound refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator" kind="struct"><name>amrex::Gpu::range_detail::range_impl::iterator</name>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a82d4fcf773cefe563a8c7e2ede1ffc27" kind="variable"><name>mi_b</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a50a86c9754189bac7fe0cc64355a3108" kind="variable"><name>mi_i</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1ae307cb5aa95e90cc014fdaab70c82873" kind="variable"><name>mi_s</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a7986f1b8dd09b767356976ae7bfa0d17" kind="function"><name>iterator</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a2e2e9f92ab70561863bc24cc7453a46f" kind="function"><name>operator++</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a8aabc0941165754bb046bcde35674e46" kind="function"><name>operator!=</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a4fbe5d48fc816218c5458a3ca0bbce81" kind="function"><name>operator*</name></member>
-  </compound>
   <compound refid="structamrex_1_1BinIterator_1_1iterator" kind="struct"><name>amrex::BinIterator::iterator</name>
     <member refid="structamrex_1_1BinIterator_1_1iterator_1ac1bd0df198e2b1ee7b65324c70b7d7f3" kind="variable"><name>m_items</name></member>
     <member refid="structamrex_1_1BinIterator_1_1iterator_1aabe787e78944c662b6e4288f23c5eafb" kind="variable"><name>m_perm</name></member>
@@ -6740,6 +6743,15 @@
     <member refid="structamrex_1_1BinIterator_1_1iterator_1a4dacf767fe235d9ee43292d67bec16c3" kind="function"><name>operator++</name></member>
     <member refid="structamrex_1_1BinIterator_1_1iterator_1a848164a1fe74c4cd7bb3d774c2ceb728" kind="function"><name>operator!=</name></member>
     <member refid="structamrex_1_1BinIterator_1_1iterator_1a718412f14e43a88558d557df52f5ed99" kind="function"><name>operator*</name></member>
+  </compound>
+  <compound refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator" kind="struct"><name>amrex::Gpu::range_detail::range_impl::iterator</name>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a82d4fcf773cefe563a8c7e2ede1ffc27" kind="variable"><name>mi_b</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a50a86c9754189bac7fe0cc64355a3108" kind="variable"><name>mi_i</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1ae307cb5aa95e90cc014fdaab70c82873" kind="variable"><name>mi_s</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a7986f1b8dd09b767356976ae7bfa0d17" kind="function"><name>iterator</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a2e2e9f92ab70561863bc24cc7453a46f" kind="function"><name>operator++</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a8aabc0941165754bb046bcde35674e46" kind="function"><name>operator!=</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a4fbe5d48fc816218c5458a3ca0bbce81" kind="function"><name>operator*</name></member>
   </compound>
   <compound refid="structKeepValidFilter" kind="struct"><name>KeepValidFilter</name>
     <member refid="structKeepValidFilter_1af4bf053d8e8024c447f42ee722e08eb5" kind="function"><name>operator()</name></member>
@@ -9264,19 +9276,18 @@
     <member refid="classamrex_1_1ParticleBufferMap_1a5ff68878498c3720aa87dec033ffc9b4" kind="function"><name>ParticleBufferMap</name></member>
     <member refid="classamrex_1_1ParticleBufferMap_1afefd85941605fff4b4d91bae8a97efa7" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1ParticleBufferMap_1afc29d2d41eaf1e7bf95fa07e08b29b30" kind="function"><name>isValid</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a5aba606d6e533076388b647a47dce925" kind="function"><name>numLevels</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a23b178c4f7074c3c2f793e6b1ab391d5" kind="function"><name>numBuckets</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a19a6f5acd4ac256b1ebf9408ea69dadf" kind="function"><name>bucketToGrid</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a366180cb6fc5c36691959b9f89cde25a" kind="function"><name>bucketToLevel</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a585331e685f0e3893aca74b122d28c58" kind="function"><name>bucketToProc</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a15b5ba876fb8015ff4a1811b5f6ea5f0" kind="function"><name>gridAndLevToBucket</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1ade32dc461203fdb4bd2c96a728bcea50" kind="function"><name>levGridToBucketPtr</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1af3a015ab8b486f5de5a299af17e6ec7e" kind="function"><name>levelOffsetsPtr</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a6195f603db29c6617a9371c27be7e846" kind="function"><name>firstBucketOnProc</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a465a621784a3a566144b2ae7db96b8b6" kind="function"><name>numBoxesOnProc</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a9bf2cc9229d90a76220654b6ba4a5a50" kind="function"><name>allBucketsOnProc</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a0557facd5969dc31dd841ff96ed9048e" kind="function"><name>procID</name></member>
-    <member refid="classamrex_1_1ParticleBufferMap_1a1db786f7b4e9c2639a9703b495f69621" kind="function"><name>bucketToPIDPtr</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1aacf8bbd49a11a1ecbae9f6f6e9ada561" kind="function"><name>numLevels</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1aa6fff5cbbf7f30571fa9e3647abe265c" kind="function"><name>numBuckets</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1ae80d749f62a3c7d951406d05cd5a6096" kind="function"><name>bucketToGrid</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1a6501558fd20b0272d2c601df97a4bc04" kind="function"><name>bucketToLevel</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1afcafbe099dd2b79497a2283a6cb2e2b8" kind="function"><name>bucketToProc</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1a3b3f402a612daed52b4c45a7c9464e87" kind="function"><name>gridAndLevToBucket</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1a41fb0bc258654e03a79e0921c2a0a342" kind="function"><name>firstBucketOnProc</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1aaa617d60bb211e97b2a8c0d1777a0c97" kind="function"><name>numBoxesOnProc</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1ad5bf4d78d001d907181350a4d8c27b70" kind="function"><name>allBucketsOnProc</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1a98dfc3b5249d922a7abad76a07ec9911" kind="function"><name>procID</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1a30c143c9bfbc1260a3a2bab45e30465a" kind="function"><name>getPIDFunctor</name></member>
+    <member refid="classamrex_1_1ParticleBufferMap_1acbab95785a1dc1149ece86210d59e858" kind="function"><name>getBucketFunctor</name></member>
   </compound>
   <compound refid="structamrex_1_1ParticleCommData" kind="struct"><name>amrex::ParticleCommData</name>
     <member refid="structamrex_1_1ParticleCommData_1abbdc95b6c7ad4a5990ee08971e53b0d1" kind="typedef"><name>RealType</name></member>
