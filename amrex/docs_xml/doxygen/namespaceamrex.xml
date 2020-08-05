@@ -37053,7 +37053,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="246" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" bodystart="246" bodyend="317"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae7b67ab5f654b436110debd38f1b1d57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a088b41cb8cc59ea2e3235669ca30b9b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -37073,7 +37073,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::unpackBuffer</definition>
-        <argsstring>(PC &amp;pc, const ParticleCopyPlan &amp;plan, const Buffer &amp;snd_buffer, const UnpackPolicy policy)</argsstring>
+        <argsstring>(PC &amp;pc, const ParticleCopyPlan &amp;plan, const Buffer &amp;snd_buffer, const UnpackPolicy &amp;&amp;policy)</argsstring>
         <name>unpackBuffer</name>
         <param>
           <type>PC &amp;</type>
@@ -37088,7 +37088,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>snd_buffer</declname>
         </param>
         <param>
-          <type>const UnpackPolicy</type>
+          <type>const UnpackPolicy &amp;&amp;</type>
           <declname>policy</declname>
         </param>
         <briefdescription>
@@ -37159,7 +37159,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.H" line="501" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleCommunication.cpp" bodystart="383" bodyend="394"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa336a10fb862ee79cd872847ef6efadd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a1dd1ea6c385ce3a863e1818566937e24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class PC</type>
@@ -37179,7 +37179,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::unpackRemotes</definition>
-        <argsstring>(PC &amp;pc, const ParticleCopyPlan &amp;plan, Buffer &amp;rcv_buffer, const UnpackPolicy &amp;policy)</argsstring>
+        <argsstring>(PC &amp;pc, const ParticleCopyPlan &amp;plan, Buffer &amp;rcv_buffer, UnpackPolicy &amp;&amp;policy)</argsstring>
         <name>unpackRemotes</name>
         <param>
           <type>PC &amp;</type>
@@ -37194,7 +37194,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>rcv_buffer</declname>
         </param>
         <param>
-          <type>const UnpackPolicy &amp;</type>
+          <type>UnpackPolicy &amp;&amp;</type>
           <declname>policy</declname>
         </param>
         <briefdescription>
