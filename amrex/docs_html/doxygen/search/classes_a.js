@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['laplacian',['Laplacian',['../classamrex_1_1Laplacian.html',1,'amrex']]],
   ['latheif',['LatheIF',['../classamrex_1_1EB2_1_1LatheIF.html',1,'amrex::EB2']]],
   ['launchsafeguard',['LaunchSafeGuard',['../structamrex_1_1Gpu_1_1LaunchSafeGuard.html',1,'amrex::Gpu']]],
   ['layoutdata',['LayoutData',['../classamrex_1_1LayoutData.html',1,'amrex']]],
@@ -19,7 +18,6 @@ var searchData=
   ['level',['Level',['../classamrex_1_1EB2_1_1Level.html',1,'amrex::EB2']]],
   ['levelbld',['LevelBld',['../classamrex_1_1LevelBld.html',1,'amrex']]],
   ['linedistfcnelement2d',['LineDistFcnElement2d',['../classamrex_1_1LineDistFcnElement2d.html',1,'amrex']]],
-  ['linop',['LinOp',['../classamrex_1_1LinOp.html',1,'amrex']]],
   ['lipairgt',['LIpairGT',['../structamrex_1_1DistributionMapping_1_1LIpairGT.html',1,'amrex::DistributionMapping']]],
   ['lipairlt',['LIpairLT',['../structamrex_1_1DistributionMapping_1_1LIpairLT.html',1,'amrex::DistributionMapping']]],
   ['logicaland',['LogicalAnd',['../structamrex_1_1LogicalAnd.html',1,'amrex']]],

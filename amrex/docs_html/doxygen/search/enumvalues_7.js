@@ -5,7 +5,6 @@ var searchData=
   ['high',['high',['../classamrex_1_1Orientation.html#a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8',1,'amrex::Orientation']]],
   ['highconnectivitycell',['HIGHCONNECTIVITYCELL',['../namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530a3e1bde285ee10aa4deb44c451f20edd6',1,'amrex::InSituUtils']]],
   ['homogeneous',['Homogeneous',['../classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884a548465e8241b26162c8e0a7b0cdfc5e7',1,'amrex::MLLinOp']]],
-  ['homogeneous_5fbc',['Homogeneous_BC',['../classamrex_1_1LinOp.html#ad5f2fc8009714c47dc63ff6a7a73a5deae1724332b6960ec73ce5040947963f78',1,'amrex::LinOp']]],
   ['host',['Host',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2',1,'amrex']]],
   ['hypre',['hypre',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex']]]
 ];

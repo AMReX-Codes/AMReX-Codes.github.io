@@ -6,7 +6,6 @@ var searchData=
   ['tagmax',['tagMax',['../classCommProfStats.html#ad3ce9b9573e0f43ea2f7cc97c9709110',1,'CommProfStats']]],
   ['tagmin',['tagMin',['../classCommProfStats.html#aae44e713714a3c31191ab760bee0d4df',1,'CommProfStats']]],
   ['tags',['tags',['../structamrex_1_1MFInfo.html#ad0f86517b8114fbc3cfd3c5ef532a592',1,'amrex::MFInfo']]],
-  ['tangderiv',['tangderiv',['../classamrex_1_1MCLinOp.html#a97da587d448611c195048182744c553d',1,'amrex::MCLinOp']]],
   ['task_5fme',['task_me',['../classamrex_1_1ForkJoin.html#ac7e00cc0d9436d4445b3e338b46dd003',1,'amrex::ForkJoin']]],
   ['task_5foutput_5fdir',['task_output_dir',['../classamrex_1_1ForkJoin.html#ac17370c5ba5f31bf037c5ca3992c3f66',1,'amrex::ForkJoin']]],
   ['ten',['ten',['../namespaceamrex__constants__module.html#a629e9df315fc853fd9996d553493c395',1,'amrex_constants_module']]],

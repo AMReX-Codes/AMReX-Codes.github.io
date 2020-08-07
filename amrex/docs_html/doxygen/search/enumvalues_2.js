@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['cabicgstab',['CABiCGStab',['../classamrex_1_1CGSolver.html#a0c6d6797999b216f26492f170891497ba0a1416b72079c6153fef58b96b62ca4b',1,'amrex::CGSolver']]],
-  ['cabicgstabquad',['CABiCGStabQuad',['../classamrex_1_1CGSolver.html#a0c6d6797999b216f26492f170891497ba67402ec39dd3d352b4ad7f49a86a5765',1,'amrex::CGSolver']]],
   ['cartesian',['cartesian',['../classamrex_1_1CoordSys.html#afb633344fd17c5565ce2fff188806ebaa773443060faab3679fd6637fbb386086',1,'amrex::CoordSys']]],
   ['cell',['CELL',['../classamrex_1_1IndexType.html#a4bbe4fdc07aa019c3a4a6839cdafcccea287ace89f7ffd266daab1798b3d48aa1',1,'amrex::IndexType']]],
   ['cellcenter',['CellCenter',['../classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3af5c101b5f19e97166e7531ffa1c706c4',1,'amrex::MLLinOp']]],
   ['cellcentroid',['CellCentroid',['../classamrex_1_1MLLinOp.html#a07cd0a7c45d6542e33a5d97aefe5bab3a7dfdce1e88bc91f46ae0d30f856f7ca9',1,'amrex::MLLinOp']]],
-  ['cg',['CG',['../classamrex_1_1CGSolver.html#a0c6d6797999b216f26492f170891497ba43998d5e117bedcd91f4c6045307cba7',1,'amrex::CGSolver::CG()'],['../classamrex_1_1MLCGSolver.html#ac7b947856c5f3a21769938261be5d521a5202c6586cac8bee468e86d1ff854231',1,'amrex::MLCGSolver::CG()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a6e9cf3eef65da697796cf33f27eb0f57',1,'amrex::cg()']]],
+  ['cg',['CG',['../classamrex_1_1MLCGSolver.html#ac7b947856c5f3a21769938261be5d521a5202c6586cac8bee468e86d1ff854231',1,'amrex::MLCGSolver::CG()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a6e9cf3eef65da697796cf33f27eb0f57',1,'amrex::cg()']]],
   ['cgbicg',['cgbicg',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a8d94447f423b03d332649d28ef49bfdb',1,'amrex']]],
   ['clear',['CLEAR',['../classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814',1,'amrex::TagBox']]],
   ['colorcontours',['COLORCONTOURS',['../namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323ba934948a3b1e3ecc0aed7fd86b0695094',1,'amrex::Amrvis']]],

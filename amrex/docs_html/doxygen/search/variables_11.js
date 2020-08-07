@@ -46,9 +46,8 @@ var searchData=
   ['relax_5ftype',['relax_type',['../classamrex_1_1Hypre.html#aa9e67a6e299266afaff8157d33dcfbec',1,'amrex::Hypre']]],
   ['remainingwriters',['remainingWriters',['../classamrex_1_1NFilesIter.html#ae13a47d2ead798be8070c16227694412',1,'amrex::NFilesIter']]],
   ['reredistribution_5fthreshold',['reredistribution_threshold',['../namespaceamrex__eb__flux__reg__nd__module.html#a0688dcea64b51e2f058407b826f95045',1,'amrex_eb_flux_reg_nd_module']]],
-  ['res',['res',['../classamrex_1_1MultiGrid.html#acf014a8a48990bed91dd6365cb9e9dee',1,'amrex::MultiGrid::res()'],['../classamrex_1_1MCMultiGrid.html#a9560d41448c4b3f3fcacddf3ac79790b',1,'amrex::MCMultiGrid::res()'],['../classamrex_1_1MLMG.html#a86dd40d4379f5831102e595cecfad692',1,'amrex::MLMG::res()'],['../classSDCstruct.html#ac94a3d8239b399889c28d0e5b65376b7',1,'SDCstruct::res()']]],
+  ['res',['res',['../classamrex_1_1MLMG.html#a86dd40d4379f5831102e595cecfad692',1,'amrex::MLMG::res()'],['../classSDCstruct.html#ac94a3d8239b399889c28d0e5b65376b7',1,'SDCstruct::res()']]],
   ['rescor',['rescor',['../classamrex_1_1MLMG.html#a265ef6b4e1fa8487d48ee612843c3cd4',1,'amrex::MLMG']]],
-  ['resl',['resL',['../classamrex_1_1ABec4.html#a49ff7d2a8cc866928d9b43a6bb248bde',1,'amrex::ABec4']]],
   ['restart_5fchkfile',['restart_chkfile',['../classamrex_1_1Amr.html#ac00b1478382804abeb82dd75b4ab5194',1,'amrex::Amr::restart_chkfile()'],['../classamrex_1_1LSCoreBase.html#aa206bdb1903bb394742e18267dcbfc11',1,'amrex::LSCoreBase::restart_chkfile()']]],
   ['restart_5fpltfile',['restart_pltfile',['../classamrex_1_1Amr.html#a295b3f0ab02158ef294ed68349f41dae',1,'amrex::Amr']]],
   ['reverse_5fdouble_5forder',['reverse_double_order',['../classamrex_1_1FPC.html#a8b52b326d6af9d2935f378f82ab6d6ed',1,'amrex::FPC']]],
@@ -56,10 +55,9 @@ var searchData=
   ['reverse_5ffloat_5forder',['reverse_float_order',['../classamrex_1_1FPC.html#ad8695587637ebea6ad37b278fb7e677d',1,'amrex::FPC']]],
   ['reverse_5ffloat_5forder_5f2',['reverse_float_order_2',['../classamrex_1_1FPC.html#a71ce71bf65be5235d8e74ee6921cfea7',1,'amrex::FPC']]],
   ['reverse_5forder',['REVERSE_ORDER',['../namespaceamrex.html#a4f06187236b4b28934f47fc5bffad56d',1,'amrex']]],
-  ['rhs',['rhs',['../classamrex_1_1MultiGrid.html#aaaac54ecad3ef76b3c962ce3d4cbd0bc',1,'amrex::MultiGrid::rhs()'],['../classamrex_1_1MCMultiGrid.html#aeafb609cea4c36b26bb6a031df8111e4',1,'amrex::MCMultiGrid::rhs()'],['../classamrex_1_1MLMG.html#abc8a02638fb38ec33c9567569a501317',1,'amrex::MLMG::rhs()']]],
+  ['rhs',['rhs',['../classamrex_1_1MLMG.html#abc8a02638fb38ec33c9567569a501317',1,'amrex::MLMG']]],
   ['rng',['rng',['../classamrex_1_1DeriveRec.html#aef8dca7a34e2c3e59d330ad5de2c35dc',1,'amrex::DeriveRec']]],
   ['rstartstop',['rStartStop',['../structRegionsProfStats_1_1DataBlock.html#a71050a34ed68d57b9659601e7c9ee9da',1,'RegionsProfStats::DataBlock']]],
-  ['rtol_5fb',['rtol_b',['../classamrex_1_1MultiGrid.html#af8649fba137ec74d87a8e05b7fee76d8',1,'amrex::MultiGrid::rtol_b()'],['../classamrex_1_1MCMultiGrid.html#aede7bcce9b3bf7b817cad39acba08689',1,'amrex::MCMultiGrid::rtol_b()']]],
   ['runlog',['runlog',['../classamrex_1_1Amr.html#abca666179e968bdbf467f8a903830bcd',1,'amrex::Amr']]],
   ['runlog_5fterse',['runlog_terse',['../classamrex_1_1Amr.html#a693fdb636ccbf5dde6fb220c835ee2a2',1,'amrex::Amr']]]
 ];

@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['abec2',['ABec2',['../classamrex_1_1ABec2.html',1,'amrex']]],
-  ['abec4',['ABec4',['../classamrex_1_1ABec4.html',1,'amrex']]],
-  ['abeclaplacian',['ABecLaplacian',['../classamrex_1_1ABecLaplacian.html',1,'amrex']]],
   ['alignedallocator',['AlignedAllocator',['../classhacc_1_1AlignedAllocator.html',1,'hacc']]],
   ['allprint',['AllPrint',['../classamrex_1_1AllPrint.html',1,'amrex']]],
   ['allprinttofile',['AllPrintToFile',['../classamrex_1_1AllPrintToFile.html',1,'amrex']]],

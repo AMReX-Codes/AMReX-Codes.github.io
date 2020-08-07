@@ -12,7 +12,6 @@ var searchData=
   ['zero_5fylo_5fmask',['zero_ylo_mask',['../structamrex_1_1EB2_1_1Neighbor.html#ac4a51294df158aec56678a1a577d99b3',1,'amrex::EB2::Neighbor']]],
   ['zero_5fzhi_5fmask',['zero_zhi_mask',['../structamrex_1_1EB2_1_1Neighbor.html#a4133ce39a287fff20e97b3af469995c8',1,'amrex::EB2::Neighbor']]],
   ['zero_5fzlo_5fmask',['zero_zlo_mask',['../structamrex_1_1EB2_1_1Neighbor.html#ae99270d7b970d6f6e2f52dbc2c4921a5',1,'amrex::EB2::Neighbor']]],
-  ['zeroacoefficients',['ZeroACoefficients',['../classamrex_1_1ABecLaplacian.html#addaa48eb431ffae86789d0fab6346379',1,'amrex::ABecLaplacian::ZeroACoefficients()'],['../classamrex_1_1ABec4.html#a0c9f833c150951d8a88fd711f57a5dfd',1,'amrex::ABec4::ZeroACoefficients()'],['../classamrex_1_1DivVis.html#a5879034a967c02fe15f42b921464c095',1,'amrex::DivVis::ZeroACoefficients()']]],
   ['zhi_5fdir',['zhi_dir',['../namespaceamrex__mllinop__nd__module.html#a2db4a18b206ec1c24ba128ae22ab279c',1,'amrex_mllinop_nd_module']]],
   ['zlo_5fdir',['zlo_dir',['../namespaceamrex__mllinop__nd__module.html#a5690dc95a320456e2f6709f67cca7d17',1,'amrex_mllinop_nd_module']]],
   ['zonneveld_5f5_5f3_5f4',['zonneveld_5_3_4',['../namespacefarkode__mod.html#a560ee99920e7d59dbcacef19240339db',1,'farkode_mod']]],

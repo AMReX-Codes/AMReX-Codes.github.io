@@ -8,12 +8,8 @@ var searchData=
   ['managedarenaallocator',['ManagedArenaAllocator',['../classamrex_1_1ManagedArenaAllocator.html',1,'amrex']]],
   ['mask',['Mask',['../classamrex_1_1Mask.html',1,'amrex']]],
   ['maskcomps',['MaskComps',['../structamrex_1_1NeighborParticleContainer_1_1MaskComps.html',1,'amrex::NeighborParticleContainer']]],
-  ['mccgsolver',['MCCGSolver',['../classamrex_1_1MCCGSolver.html',1,'amrex']]],
-  ['mcinterpbndrydata',['MCInterpBndryData',['../classamrex_1_1MCInterpBndryData.html',1,'amrex']]],
-  ['mclinop',['MCLinOp',['../classamrex_1_1MCLinOp.html',1,'amrex']]],
-  ['mcmultigrid',['MCMultiGrid',['../classamrex_1_1MCMultiGrid.html',1,'amrex']]],
-  ['meminfo',['MemInfo',['../structamrex_1_1MemProfiler_1_1MemInfo.html',1,'amrex::MemProfiler']]],
   ['meminfo',['meminfo',['../structamrex_1_1FabArrayBase_1_1meminfo.html',1,'amrex::FabArrayBase']]],
+  ['meminfo',['MemInfo',['../structamrex_1_1MemProfiler_1_1MemInfo.html',1,'amrex::MemProfiler']]],
   ['memprofiler',['MemProfiler',['../classamrex_1_1MemProfiler.html',1,'amrex']]],
   ['meshstatemap',['MeshStateMap',['../classamrex_1_1InSituUtils_1_1MeshStateMap.html',1,'amrex::InSituUtils']]],
   ['message',['Message',['../classamrex_1_1ParallelDescriptor_1_1Message.html',1,'amrex::ParallelDescriptor']]],
@@ -44,7 +40,6 @@ var searchData=
   ['multifab',['MultiFab',['../classamrex_1_1MultiFab.html',1,'amrex']]],
   ['multifabcopydescriptor',['MultiFabCopyDescriptor',['../classamrex_1_1MultiFabCopyDescriptor.html',1,'amrex']]],
   ['multigfab',['MultiGFab',['../classamrex_1_1EB2_1_1MultiGFab.html',1,'amrex::EB2']]],
-  ['multigrid',['MultiGrid',['../classamrex_1_1MultiGrid.html',1,'amrex']]],
   ['multimask',['MultiMask',['../classamrex_1_1MultiMask.html',1,'amrex']]],
   ['multimaskiter',['MultiMaskIter',['../classamrex_1_1MultiMaskIter.html',1,'amrex']]]
 ];

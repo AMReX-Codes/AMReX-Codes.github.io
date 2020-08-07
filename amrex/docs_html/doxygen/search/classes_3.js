@@ -28,6 +28,5 @@ var searchData=
   ['distfcnelement2d',['distFcnElement2d',['../classamrex_1_1distFcnElement2d.html',1,'amrex']]],
   ['distribution',['Distribution',['../classhacc_1_1Distribution.html',1,'hacc']]],
   ['distribution_5ft',['distribution_t',['../structdistribution__t.html',1,'']]],
-  ['distributionmapping',['DistributionMapping',['../classamrex_1_1DistributionMapping.html',1,'amrex']]],
-  ['divvis',['DivVis',['../classamrex_1_1DivVis.html',1,'amrex']]]
+  ['distributionmapping',['DistributionMapping',['../classamrex_1_1DistributionMapping.html',1,'amrex']]]
 ];
