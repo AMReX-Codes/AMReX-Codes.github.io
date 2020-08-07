@@ -128,7 +128,7 @@ var searchData=
   ['plotfilemf',['PlotFileMF',['../classamrex_1_1LSCoreBase.html#af777c924269670878cf0ec226b69e768',1,'amrex::LSCoreBase']]],
   ['plotfilename',['PlotFileName',['../classamrex_1_1LSCoreBase.html#aeedfe5ae1a68e0648089c69b8c60a185',1,'amrex::LSCoreBase']]],
   ['plotfilevarnames',['PlotFileVarNames',['../classamrex_1_1LSCoreBase.html#a4cf5ec26160d97c61722a2c726ef2474',1,'amrex::LSCoreBase']]],
-  ['plotfileversion',['PlotFileVersion',['../classamrex_1_1AmrData.html#a5cb88061802c7fccc8941624727a57a8',1,'amrex::AmrData::PlotFileVersion() const '],['../classamrex_1_1AmrData.html#a0355e0d8aae31aeef78ea04e30b59fc2',1,'amrex::AmrData::plotFileVersion()']]],
+  ['plotfileversion',['plotFileVersion',['../classamrex_1_1AmrData.html#a0355e0d8aae31aeef78ea04e30b59fc2',1,'amrex::AmrData::plotFileVersion()'],['../classamrex_1_1AmrData.html#a5cb88061802c7fccc8941624727a57a8',1,'amrex::AmrData::PlotFileVersion() const ']]],
   ['plotint',['plotInt',['../classamrex_1_1Amr.html#a6b328e1464fc914bea4ea6da8a067c57',1,'amrex::Amr']]],
   ['plotlogper',['plotLogPer',['../classamrex_1_1Amr.html#a3a98ce23547463e17b55901b8818f0fc',1,'amrex::Amr']]],
   ['plotper',['plotPer',['../classamrex_1_1Amr.html#a5a931bcdf3440fa41801f73a87f417ef',1,'amrex::Amr']]],

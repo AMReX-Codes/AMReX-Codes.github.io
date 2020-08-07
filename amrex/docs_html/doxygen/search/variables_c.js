@@ -117,6 +117,7 @@ var searchData=
   ['m_5fdir',['m_dir',['../classamrex_1_1EB2_1_1RotationIF.html#a2e57f52a7f9f0b9b64c98c2c0cb48fed',1,'amrex::EB2::RotationIF::m_dir()'],['../AMReX__Cluster_8cpp.html#af2f77eb4cb49eea0b3272ac65d4ff73f',1,'m_dir():&#160;AMReX_Cluster.cpp']]],
   ['m_5fdirection',['m_direction',['../classamrex_1_1EB2_1_1CylinderIF.html#a7dd72f5ab847bff174c67eff2c1b00e5',1,'amrex::EB2::CylinderIF::m_direction()'],['../classamrex_1_1EB2_1_1ExtrusionIF.html#adaed3ae1e902f8f656e39c2a58de8b11',1,'amrex::EB2::ExtrusionIF::m_direction()']]],
   ['m_5fdirichlet_5fmask',['m_dirichlet_mask',['../classamrex_1_1MLNodeLinOp.html#aaa52abefe4405ee59158a27c112ccfa9',1,'amrex::MLNodeLinOp']]],
+  ['m_5fdivu',['m_divu',['../classamrex_1_1MacProjector.html#a384ee79e889b8681cce159cd28a4a832',1,'amrex::MacProjector']]],
   ['m_5fdivu_5floc',['m_divu_loc',['../classamrex_1_1MacProjector.html#ad0bba3cdb810fd7e1858bf4cc65e3341',1,'amrex::MacProjector']]],
   ['m_5fdm',['m_dm',['../classamrex_1_1ParticleBufferMap.html#a990b67e8bf90b3e0a7c137bb67eee236',1,'amrex::ParticleBufferMap']]],
   ['m_5fdm_5fid',['m_dm_id',['../structamrex_1_1FabArrayBase_1_1BDKey.html#ad4cad04286d0ad719cfe6125b146932e',1,'amrex::FabArrayBase::BDKey']]],
