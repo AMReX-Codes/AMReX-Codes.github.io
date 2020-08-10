@@ -43,6 +43,6 @@ var searchData=
   ['isstoreatomic',['IsStoreAtomic',['../structamrex_1_1IsStoreAtomic.html',1,'amrex']]],
   ['isstoreatomic_3c_20ebcellflag_20_3e',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
   ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]],
-  ['iterator',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator']]],
-  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]]
+  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]],
+  ['iterator',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator']]]
 ];

@@ -3,7 +3,6 @@ var searchData=
   ['max',['max',['../classamrex_1_1RealVect.html#a2c15c7a018202ae522e0777c120fa109',1,'amrex::RealVect']]],
   ['max_5flbound',['max_lbound',['../classamrex_1_1Box.html#af6132d21295f22c35eae8362d4331585',1,'amrex::Box::max_lbound()'],['../classamrex_1_1Box.html#a97bd90cd8224ba2d6051426676ac7521',1,'amrex::Box::max_lbound()']]],
   ['mfghostiter',['MFGhostIter',['../classamrex_1_1FabArrayBase.html#a0730c47ed240b86d1a24126a0adf6b13',1,'amrex::FabArrayBase']]],
-  ['mfgraph',['MFGraph',['../classamrex_1_1Amr.html#a60f56cd45cbe9dc96de858a4ecc30f5a',1,'amrex::Amr::MFGraph()'],['../classamrex_1_1AmrLevel.html#a60f56cd45cbe9dc96de858a4ecc30f5a',1,'amrex::AmrLevel::MFGraph()'],['../classamrex_1_1FabArray.html#a60f56cd45cbe9dc96de858a4ecc30f5a',1,'amrex::FabArray::MFGraph()']]],
   ['mfiter',['MFIter',['../classamrex_1_1FabArrayBase.html#a11fd6aa3197ac10c8fb27ee5a5c96d57',1,'amrex::FabArrayBase']]],
   ['min',['min',['../classamrex_1_1RealVect.html#a0450ba685d7fa9c493158ec2a005f792',1,'amrex::RealVect']]],
   ['min_5fubound',['min_ubound',['../classamrex_1_1Box.html#aee1778576c9838c081d03faa8f2d4b02',1,'amrex::Box::min_ubound()'],['../classamrex_1_1Box.html#a490c302952ef6aed95e3cd734dd51c5f',1,'amrex::Box::min_ubound()']]],
