@@ -735,7 +735,7 @@
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ifstream<sp/>ifs<sp/>{</highlight><highlight class="stringliteral">&quot;/proc/cray_xt/cname&quot;</highlight><highlight class="normal">};</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!ifs)<sp/>{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>not<sp/>on<sp/>a<sp/>cray</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Coord<sp/>{0,0,0,0};<sp/></highlight><highlight class="comment">//<sp/>initializer_list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Coord<sp/>{{0,0,0,0}};<sp/></highlight><highlight class="comment">//<sp/>initializer_list</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>t0,<sp/>t1,<sp/>t2,<sp/>t3,<sp/>t4;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ifs<sp/>&gt;&gt;<sp/>t0<sp/>&gt;&gt;<sp/>cabx<sp/>&gt;&gt;<sp/>t1<sp/>&gt;&gt;<sp/>caby<sp/>&gt;&gt;<sp/>t2<sp/>&gt;&gt;<sp/>cab_chas<sp/>&gt;&gt;<sp/>t3<sp/>&gt;&gt;<sp/>slot<sp/>&gt;&gt;<sp/>t4<sp/>&gt;&gt;<sp/>node;</highlight></codeline>
@@ -750,7 +750,7 @@
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>chas<sp/>=<sp/>cab_chas<sp/>+<sp/>3*(cabx<sp/>&amp;<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>2<sp/>cabinets<sp/>per<sp/>group<sp/>(6<sp/>chassis<sp/>per<sp/>group)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Coord<sp/>{node,<sp/>slot,<sp/>chas,<sp/>group};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Coord<sp/>{{node,<sp/>slot,<sp/>chas,<sp/>group}};</highlight></codeline>
 <codeline lineno="53"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
