@@ -217,6 +217,7 @@ var searchData=
   ['mlndlap_5frestriction_5frap',['mlndlap_restriction_rap',['../namespaceamrex.html#a54b35401f785507dde1f60a0b90fea79',1,'amrex']]],
   ['mlndlap_5frhcc',['mlndlap_rhcc',['../namespaceamrex.html#ad382296e45563c776dea2087a1ece9f6',1,'amrex']]],
   ['mlndlap_5frhcc_5ffine_5fcontrib',['mlndlap_rhcc_fine_contrib',['../namespaceamrex.html#a50a25a7d6e177cc7269c1e4072f27cd3',1,'amrex']]],
+  ['mlndlap_5fsemi_5favgdown_5fcoeff',['mlndlap_semi_avgdown_coeff',['../namespaceamrex.html#aae14fc311b420fb2a0cfecad14dffa24',1,'amrex']]],
   ['mlndlap_5fsemi_5finterpadd_5faa',['mlndlap_semi_interpadd_aa',['../namespaceamrex.html#a3c1eb435ec8a491ee3d396bc16789719',1,'amrex']]],
   ['mlndlap_5fsemi_5frestriction',['mlndlap_semi_restriction',['../namespaceamrex.html#acad343e05d8d8122ea3a97278237730f',1,'amrex']]],
   ['mlndlap_5fset_5fdirichlet_5fmask',['mlndlap_set_dirichlet_mask',['../namespaceamrex.html#a0e8a1a08fdaf2ec77f14915f312a1d89',1,'amrex']]],
