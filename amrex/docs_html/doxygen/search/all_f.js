@@ -76,7 +76,7 @@ var searchData=
   ['ordered_5fsimplify',['ordered_simplify',['../classamrex_1_1BoxList.html#ab9071e12fb35012248c8978ed5e9b5a1',1,'amrex::BoxList']]],
   ['orderedboxes',['OrderedBoxes',['../classamrex_1_1OrderedBoxes.html#abf001c57e7a3772e49e5870334baaa05',1,'amrex::OrderedBoxes']]],
   ['orderedboxes',['OrderedBoxes',['../classamrex_1_1OrderedBoxes.html',1,'amrex']]],
-  ['ordering',['ordering',['../classamrex_1_1FArrayBox.html#a9dd03f8360cfc2cfdf803298308f53dd',1,'amrex::FArrayBox::ordering()'],['../classamrex_1_1IntDescriptor.html#a330214b8c0c3e224aecd2d2d95c0a839',1,'amrex::IntDescriptor::Ordering()'],['../classamrex_1_1FABio.html#adbdc54b2ed6a4fa2d0cfd19076e5cc39',1,'amrex::FABio::Ordering()']]],
+  ['ordering',['Ordering',['../classamrex_1_1IntDescriptor.html#a330214b8c0c3e224aecd2d2d95c0a839',1,'amrex::IntDescriptor::Ordering()'],['../classamrex_1_1FABio.html#adbdc54b2ed6a4fa2d0cfd19076e5cc39',1,'amrex::FABio::Ordering()'],['../classamrex_1_1FArrayBox.html#a9dd03f8360cfc2cfdf803298308f53dd',1,'amrex::FArrayBox::ordering()']]],
   ['orientation',['Orientation',['../classamrex_1_1Orientation.html',1,'amrex']]],
   ['orientation',['Orientation',['../classamrex_1_1Orientation.html#a03b607d215c6acdfea306700d0ea1111',1,'amrex::Orientation::Orientation() noexcept'],['../classamrex_1_1Orientation.html#a382d3782efffb9d5c5d132f5758b7cb5',1,'amrex::Orientation::Orientation(int dir, Side side) noexcept'],['../classamrex_1_1Orientation.html#a34e2f03f73dfbab5befb943c700e890b',1,'amrex::Orientation::Orientation(Direction dir, Side side) noexcept'],['../classamrex_1_1Orientation.html#a77e0b0c3ba62b33380805f6d6da3ca5e',1,'amrex::Orientation::Orientation(int v) noexcept']]],
   ['orientationiter',['OrientationIter',['../classamrex_1_1Orientation.html#a89ae2d0b6ad2bb943c5bf57233fdae87',1,'amrex::Orientation::OrientationIter()'],['../classamrex_1_1OrientationIter.html#abf8068b28ddd67e796d05530e969eacf',1,'amrex::OrientationIter::OrientationIter() noexcept'],['../classamrex_1_1OrientationIter.html#ab64091346540ed0e8a9da3a2f567b980',1,'amrex::OrientationIter::OrientationIter(const Orientation &amp;_face) noexcept'],['../classamrex_1_1OrientationIter.html#a253004b1b5e149ee012d73724c077696',1,'amrex::OrientationIter::OrientationIter(int _face) noexcept']]],
@@ -91,6 +91,7 @@ var searchData=
   ['outflow',['Outflow',['../AMReX__BC__TYPES_8H.html#a074cf210a9dd1472db2a2811976abb88',1,'AMReX_BC_TYPES.H']]],
   ['outofmemory',['OutOfMemory',['../namespaceamrex.html#afe890be0bd82650235456eabcf50e309',1,'amrex']]],
   ['outside_5fdomain',['outside_domain',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9aa3c78d810a253d1eace3c04595537ff1',1,'amrex::BndryData']]],
+  ['outsideroundoffdomain',['outsideRoundoffDomain',['../classamrex_1_1Geometry.html#a519b2f060ac1d064b39252f66b19b612',1,'amrex::Geometry']]],
   ['outstream',['OutStream',['../namespaceamrex.html#add2f0f36ce80f2f3934e3a8ec2a966df',1,'amrex']]],
   ['overlapmask',['OverlapMask',['../classamrex_1_1MultiFab.html#a810f7090a63aab0173b8cecbc53bb9e1',1,'amrex::MultiFab']]],
   ['overridesync',['OverrideSync',['../classamrex_1_1MultiFab.html#aec134620b7dfd17d0b8a540e9a96f41c',1,'amrex::MultiFab::OverrideSync(const Periodicity &amp;period=Periodicity::NonPeriodic())'],['../classamrex_1_1MultiFab.html#afc2840698e1cec5a44ebeb9d34783327',1,'amrex::MultiFab::OverrideSync(const iMultiFab &amp;msk, const Periodicity &amp;period=Periodicity::NonPeriodic())'],['../namespaceamrex.html#a5821b989454c54f92dd1f2312e95b5b6',1,'amrex::OverrideSync()']]],
@@ -102,5 +103,5 @@ var searchData=
   ['owner_5fmask',['owner_mask',['../classamrex_1_1HypreNodeLap.html#ac8924539f89bd4ae28eb0df416235f4e',1,'amrex::HypreNodeLap']]],
   ['owner_5ftask',['owner_task',['../structamrex_1_1ForkJoin_1_1MFFork.html#aab173e1a49428a72e1099f8925dfeb56',1,'amrex::ForkJoin::MFFork']]],
   ['ownermask',['OwnerMask',['../classamrex_1_1MultiFab.html#a2408f4add699045c65b4dbe0ff5390bc',1,'amrex::MultiFab::OwnerMask()'],['../namespaceamrex.html#a63e28af3672b72154d156eac5f51ce06',1,'amrex::OwnerMask()']]],
-  ['ownership',['ownership',['../classamrex_1_1FabArrayBase.html#ab4d5df57a6eaa1d785d131b059b43e18',1,'amrex::FabArrayBase::ownership()'],['../classamrex_1_1FabArrayBase.html#a8e414f069d04091245f3e9e94a3aa237',1,'amrex::FabArrayBase::OwnerShip() const noexcept']]]
+  ['ownership',['OwnerShip',['../classamrex_1_1FabArrayBase.html#a8e414f069d04091245f3e9e94a3aa237',1,'amrex::FabArrayBase::OwnerShip() const noexcept'],['../classamrex_1_1FabArrayBase.html#ab4d5df57a6eaa1d785d131b059b43e18',1,'amrex::FabArrayBase::ownership()']]]
 ];

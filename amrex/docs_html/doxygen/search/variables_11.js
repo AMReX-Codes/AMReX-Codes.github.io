@@ -57,6 +57,7 @@ var searchData=
   ['reverse_5forder',['REVERSE_ORDER',['../namespaceamrex.html#a4f06187236b4b28934f47fc5bffad56d',1,'amrex']]],
   ['rhs',['rhs',['../classamrex_1_1MLMG.html#abc8a02638fb38ec33c9567569a501317',1,'amrex::MLMG']]],
   ['rng',['rng',['../classamrex_1_1DeriveRec.html#aef8dca7a34e2c3e59d330ad5de2c35dc',1,'amrex::DeriveRec']]],
+  ['roundoff_5fdomain',['roundoff_domain',['../classamrex_1_1Geometry.html#af3f7a3e4807fd7a925377b93bad4476b',1,'amrex::Geometry']]],
   ['rstartstop',['rStartStop',['../structRegionsProfStats_1_1DataBlock.html#a71050a34ed68d57b9659601e7c9ee9da',1,'RegionsProfStats::DataBlock']]],
   ['runlog',['runlog',['../classamrex_1_1Amr.html#abca666179e968bdbf467f8a903830bcd',1,'amrex::Amr']]],
   ['runlog_5fterse',['runlog_terse',['../classamrex_1_1Amr.html#a693fdb636ccbf5dde6fb220c835ee2a2',1,'amrex::Amr']]]

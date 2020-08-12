@@ -154,6 +154,7 @@ var searchData=
   ['computereswithcrsecorfinecor',['computeResWithCrseCorFineCor',['../classamrex_1_1MLMG.html#a97d673162294d25b9b325b636cb9183d',1,'amrex::MLMG']]],
   ['computereswithcrsesolfinecor',['computeResWithCrseSolFineCor',['../classamrex_1_1MLMG.html#aa802d8378f3912da5b884fcc07c2351b',1,'amrex::MLMG']]],
   ['computerhs',['computeRHS',['../classamrex_1_1NodalProjector.html#aaf0ee20d8f578821d845bb6c7e3b476c',1,'amrex::NodalProjector']]],
+  ['computeroundoffdomain',['computeRoundoffDomain',['../classamrex_1_1Geometry.html#aa9f2a9f6b90b4c58d8b870685669a398',1,'amrex::Geometry']]],
   ['computesyncresidual',['computeSyncResidual',['../classamrex_1_1NodalProjector.html#a23ce7fe70a5802e864f014d41e749c88',1,'amrex::NodalProjector']]],
   ['computevolinv',['computeVolInv',['../classamrex_1_1MLMG.html#a3cd643e6bf9f7e6d9d2b8cb7fa0b7c71',1,'amrex::MLMG']]],
   ['compvelgrad',['compVelGrad',['../classamrex_1_1MLEBTensorOp.html#ac889d56720eb02c4fe2feac08e677fbb',1,'amrex::MLEBTensorOp::compVelGrad()'],['../classamrex_1_1MLTensorOp.html#a7636859e8349eada08c3ee46a07901c8',1,'amrex::MLTensorOp::compVelGrad()']]],

@@ -140,6 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a69dfda38f7288ba1c26211d5b2160c1c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a69dfda38f7288ba1c26211d5b2160c1c">ProbDomain</a> () const noexcept</td></tr>
 <tr class="memdesc:a69dfda38f7288ba1c26211d5b2160c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the problem domain.  <a href="#a69dfda38f7288ba1c26211d5b2160c1c">More...</a><br /></td></tr>
 <tr class="separator:a69dfda38f7288ba1c26211d5b2160c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9cdc08bdd77d5be479b2e3e0bbf62d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#aac9cdc08bdd77d5be479b2e3e0bbf62d">RoundoffDomain</a> () const noexcept</td></tr>
+<tr class="memdesc:aac9cdc08bdd77d5be479b2e3e0bbf62d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the roundoff domain.  <a href="#aac9cdc08bdd77d5be479b2e3e0bbf62d">More...</a><br /></td></tr>
+<tr class="separator:aac9cdc08bdd77d5be479b2e3e0bbf62d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae68fad0b0c42fcd904bcc36c8d678ca9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#ae68fad0b0c42fcd904bcc36c8d678ca9">ProbDomain</a> (const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a> &amp;rb) noexcept</td></tr>
 <tr class="memdesc:ae68fad0b0c42fcd904bcc36c8d678ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the problem domain.  <a href="#ae68fad0b0c42fcd904bcc36c8d678ca9">More...</a><br /></td></tr>
 <tr class="separator:ae68fad0b0c42fcd904bcc36c8d678ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,6 +228,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1d9c01b45625d9e6f8e0e4d1cdd4a5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a122947abb8d93a6984f26277576faad3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a122947abb8d93a6984f26277576faad3">refine</a> (<a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;rr)</td></tr>
 <tr class="separator:a122947abb8d93a6984f26277576faad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519b2f060ac1d064b39252f66b19b612"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a519b2f060ac1d064b39252f66b19b612">outsideRoundoffDomain</a> (<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(Real x, Real y, Real z)) const </td></tr>
+<tr class="memdesc:a519b2f060ac1d064b39252f66b19b612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if a point is outside the roundoff domain. All particles with positions inside the roundoff domain are sure to be mapped to cells inside the <a class="el" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1" title="Returns our rectangular domain. ">Domain()</a> box. Note that the same need not be true for all points inside <a class="el" href="classamrex_1_1Geometry.html#a69dfda38f7288ba1c26211d5b2160c1c" title="Returns the problem domain. ">ProbDomain()</a>.  <a href="#a519b2f060ac1d064b39252f66b19b612">More...</a><br /></td></tr>
+<tr class="separator:a519b2f060ac1d064b39252f66b19b612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac954063b2f27b47e4a5e0afbcea2e62a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#ac954063b2f27b47e4a5e0afbcea2e62a">insideRoundoffDomain</a> (<a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(Real x, Real y, Real z)) const </td></tr>
+<tr class="memdesc:ac954063b2f27b47e4a5e0afbcea2e62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if a point is inside the roundoff domain. All particles with positions inside the roundoff domain are sure to be mapped to cells inside the <a class="el" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1" title="Returns our rectangular domain. ">Domain()</a> box. Note that the same need not be true for all points inside <a class="el" href="classamrex_1_1Geometry.html#a69dfda38f7288ba1c26211d5b2160c1c" title="Returns the problem domain. ">ProbDomain()</a>.  <a href="#ac954063b2f27b47e4a5e0afbcea2e62a">More...</a><br /></td></tr>
+<tr class="separator:ac954063b2f27b47e4a5e0afbcea2e62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9f2a9f6b90b4c58d8b870685669a398"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#aa9f2a9f6b90b4c58d8b870685669a398">computeRoundoffDomain</a> ()</td></tr>
+<tr class="memdesc:aa9f2a9f6b90b4c58d8b870685669a398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the roundoff domain. Public because it contains an extended host / device lambda.  <a href="#aa9f2a9f6b90b4c58d8b870685669a398">More...</a><br /></td></tr>
+<tr class="separator:aa9f2a9f6b90b4c58d8b870685669a398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classamrex_1_1CoordSys"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classamrex_1_1CoordSys')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classamrex_1_1CoordSys.html">amrex::CoordSys</a></td></tr>
 <tr class="memitem:a958c53af2953cc7d946b730cfe099b2a inherit pub_methods_classamrex_1_1CoordSys"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CoordSys.html#a958c53af2953cc7d946b730cfe099b2a">CoordSys</a> () noexcept</td></tr>
 <tr class="memdesc:a958c53af2953cc7d946b730cfe099b2a inherit pub_methods_classamrex_1_1CoordSys"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to undefined state.  <a href="#a958c53af2953cc7d946b730cfe099b2a">More...</a><br /></td></tr>
@@ -402,6 +414,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a84b1ad3fef8594c10d9ff2000505b20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af62cd34804aea5643a6fc2205495b7a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1RealBox.html">RealBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#af62cd34804aea5643a6fc2205495b7a2">prob_domain</a></td></tr>
 <tr class="separator:af62cd34804aea5643a6fc2205495b7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f7a3e4807fd7a925377b93bad4476b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1RealBox.html">RealBox</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#af3f7a3e4807fd7a925377b93bad4476b">roundoff_domain</a></td></tr>
+<tr class="separator:af3f7a3e4807fd7a925377b93bad4476b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52477661ac7c7ccbd93f397340176c74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Box.html">Box</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Geometry.html#a52477661ac7c7ccbd93f397340176c74">domain</a></td></tr>
 <tr class="separator:a52477661ac7c7ccbd93f397340176c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -639,6 +653,23 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa9f2a9f6b90b4c58d8b870685669a398"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::Geometry::computeRoundoffDomain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the roundoff domain. Public because it contains an extended host / device lambda. </p>
 
 </div>
 </div>
@@ -1124,6 +1155,24 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ac954063b2f27b47e4a5e0afbcea2e62a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Geometry::insideRoundoffDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(Real x, Real y, Real z)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if a point is inside the roundoff domain. All particles with positions inside the roundoff domain are sure to be mapped to cells inside the <a class="el" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1" title="Returns our rectangular domain. ">Domain()</a> box. Note that the same need not be true for all points inside <a class="el" href="classamrex_1_1Geometry.html#a69dfda38f7288ba1c26211d5b2160c1c" title="Returns the problem domain. ">ProbDomain()</a>. </p>
+
+</div>
+</div>
 <a class="anchor" id="aecbdf44d0934d9245886228cdffb8f37"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1291,6 +1340,24 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a519b2f060ac1d064b39252f66b19b612"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::Geometry::outsideRoundoffDomain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd">AMREX_D_DECL</a>(Real x, Real y, Real z)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if a point is outside the roundoff domain. All particles with positions inside the roundoff domain are sure to be mapped to cells inside the <a class="el" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1" title="Returns our rectangular domain. ">Domain()</a> box. Note that the same need not be true for all points inside <a class="el" href="classamrex_1_1Geometry.html#a69dfda38f7288ba1c26211d5b2160c1c" title="Returns the problem domain. ">ProbDomain()</a>. </p>
 
 </div>
 </div>
@@ -1778,6 +1845,31 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aac9cdc08bdd77d5be479b2e3e0bbf62d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classamrex_1_1RealBox.html">RealBox</a>&amp; amrex::Geometry::RoundoffDomain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the roundoff domain. </p>
+
+</div>
+</div>
 <a class="anchor" id="a07025080452434734ae74c23e9f97224"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1895,6 +1987,26 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1RealBox.html">RealBox</a> amrex::Geometry::prob_domain</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af3f7a3e4807fd7a925377b93bad4476b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1RealBox.html">RealBox</a> amrex::Geometry::roundoff_domain</td>
         </tr>
       </table>
   </td>
