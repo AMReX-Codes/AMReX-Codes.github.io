@@ -162,5 +162,6 @@ var searchData=
   ['numtag',['numTag',['../classamrex_1_1Cluster.html#a63a315fa3deb62851baf4e607d0c8c03',1,'amrex::Cluster::numTag() const noexcept'],['../classamrex_1_1Cluster.html#ad765826ea9e9762f2328cac81faefc5c',1,'amrex::Cluster::numTag(const Box &amp;b) const noexcept']]],
   ['numtags',['numTags',['../classamrex_1_1TagBox.html#affcec22ce9f84d18281fdb4d6f664281',1,'amrex::TagBox::numTags(const Box &amp;bx) const noexcept'],['../classamrex_1_1TagBox.html#a74f54549dc1e225bcbcb312618cfcd17',1,'amrex::TagBox::numTags() const noexcept'],['../classamrex_1_1TagBoxArray.html#a4d717be2a92435644622a931fe75a4c3',1,'amrex::TagBoxArray::numTags()']]],
   ['numthreadsperblockparallelfor',['numThreadsPerBlockParallelFor',['../namespaceamrex_1_1Gpu.html#a9ac3f1c6e71f0842b8f152fce7e4a7fb',1,'amrex::Gpu']]],
+  ['numtilesinbox',['numTilesInBox',['../namespaceamrex.html#a77b016483c8263c1a67e93d79d31da4c',1,'amrex']]],
   ['numtotalparticles',['numTotalParticles',['../classamrex_1_1ArrayOfStructs.html#af47b9febf28eadfb17e39b09f5b6a709',1,'amrex::ArrayOfStructs::numTotalParticles()'],['../structamrex_1_1ParticleTile.html#a70c9e67d120fb210f4996abc82d3a8a3',1,'amrex::ParticleTile::numTotalParticles()'],['../structamrex_1_1StructOfArrays.html#a4a6a9d0204fa1f71a8fa230d604167a0',1,'amrex::StructOfArrays::numTotalParticles()']]]
 ];

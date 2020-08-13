@@ -106,8 +106,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Types</h2></td></tr>
 <tr class="memitem:ae914634726f075979b5e855a5fda0924"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924">BinIteratorFactory</a> = <a class="el" href="structamrex_1_1DenseBinIteratorFactory.html">DenseBinIteratorFactory</a>&lt; T &gt;</td></tr>
 <tr class="separator:ae914634726f075979b5e855a5fda0924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a775125f1d1b82696b994f1f8f59309d4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#a775125f1d1b82696b994f1f8f59309d4">bin_type</a> = <a class="el" href="classamrex_1_1IntVect.html">IntVect</a></td></tr>
-<tr class="separator:a775125f1d1b82696b994f1f8f59309d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace91724777a08f267ca7515117ebe620"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ace91724777a08f267ca7515117ebe620">index_type</a> = unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a></td></tr>
 <tr class="separator:ace91724777a08f267ca7515117ebe620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -117,6 +115,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5eb07c849d5749bf5aa71d0d2727201d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#a5eb07c849d5749bf5aa71d0d2727201d">build</a> (N nitems, T const *v, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;bx, F &amp;&amp;f)</td></tr>
 <tr class="memdesc:a5eb07c849d5749bf5aa71d0d2727201d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <a href="#a5eb07c849d5749bf5aa71d0d2727201d">More...</a><br /></td></tr>
 <tr class="separator:a5eb07c849d5749bf5aa71d0d2727201d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="memTemplParams" colspan="2">template&lt;typename N , typename F &gt; </td></tr>
+<tr class="memitem:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#a4c7d40c3975acb725e9d2b5e76f4d2d1">build</a> (N nitems, T const *v, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbins, F &amp;&amp;f)</td></tr>
+<tr class="separator:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad79436d29055a095ee8a8ffab36475d3"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3">numItems</a> () const noexcept</td></tr>
 <tr class="memdesc:ad79436d29055a095ee8a8ffab36475d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of items in the container  <a href="#ad79436d29055a095ee8a8ffab36475d3">More...</a><br /></td></tr>
 <tr class="separator:ad79436d29055a095ee8a8ffab36475d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,20 +167,6 @@ class amrex::DenseBins&lt; T &gt;</h3>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a775125f1d1b82696b994f1f8f59309d4"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classamrex_1_1DenseBins.html">amrex::DenseBins</a>&lt; T &gt;::<a class="el" href="classamrex_1_1DenseBins.html#a775125f1d1b82696b994f1f8f59309d4">bin_type</a> =  <a class="el" href="classamrex_1_1IntVect.html">IntVect</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ae914634726f075979b5e855a5fda0924"></a>
 <div class="memitem">
 <div class="memproto">
@@ -275,6 +262,56 @@ template&lt;typename N , typename F &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a4c7d40c3975acb725e9d2b5e76f4d2d1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<div class="memtemplate">
+template&lt;typename N , typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classamrex_1_1DenseBins.html">amrex::DenseBins</a>&lt; T &gt;::build </td>
+          <td>(</td>
+          <td class="paramtype">N&#160;</td>
+          <td class="paramname"><em>nitems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nbins</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
