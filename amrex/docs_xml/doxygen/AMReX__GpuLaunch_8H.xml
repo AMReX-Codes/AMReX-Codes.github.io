@@ -4182,12 +4182,12 @@
 <codeline lineno="248"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG(where_to_run,box,nc,i,j,k,n,block)<sp/>\</highlight></codeline>
 <codeline lineno="249"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((where_to_run<sp/>==<sp/>RunOn::Device)<sp/>&amp;&amp;<sp/>(Gpu::inLaunchRegion()))<sp/>\</highlight></codeline>
 <codeline lineno="250"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="251"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(box,<sp/>nc,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>AMREX_NOEXCEPT<sp/>\</highlight></codeline>
+<codeline lineno="251"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(box,<sp/>nc,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>\</highlight></codeline>
 <codeline lineno="252"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
 <codeline lineno="253"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);<sp/>\</highlight></codeline>
 <codeline lineno="254"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="255"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="256"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::LoopConcurrentOnCpu(box,<sp/>nc,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>AMREX_NOEXCEPT<sp/>\</highlight></codeline>
+<codeline lineno="256"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::LoopConcurrentOnCpu(box,<sp/>nc,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>\</highlight></codeline>
 <codeline lineno="257"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
 <codeline lineno="258"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);<sp/>\</highlight></codeline>
 <codeline lineno="259"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
@@ -4222,12 +4222,12 @@
 <codeline lineno="288"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_HOST_DEVICE_FOR_4D_FLAG(where_to_run,box,nc,i,j,k,n,block)<sp/>\</highlight></codeline>
 <codeline lineno="289"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>((where_to_run<sp/>==<sp/>RunOn::Device)<sp/>&amp;&amp;<sp/>(Gpu::inLaunchRegion()))<sp/>\</highlight></codeline>
 <codeline lineno="290"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="291"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(box,<sp/>nc,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>AMREX_NOEXCEPT<sp/>\</highlight></codeline>
+<codeline lineno="291"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::ParallelFor(box,<sp/>nc,<sp/>[=]<sp/>AMREX_GPU_DEVICE<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>\</highlight></codeline>
 <codeline lineno="292"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
 <codeline lineno="293"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);<sp/>\</highlight></codeline>
 <codeline lineno="294"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="295"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="296"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::LoopOnCpu(box,<sp/>nc,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>AMREX_NOEXCEPT<sp/>\</highlight></codeline>
+<codeline lineno="296"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::LoopOnCpu(box,<sp/>nc,<sp/>[=]<sp/>(int<sp/>i,<sp/>int<sp/>j,<sp/>int<sp/>k,<sp/>int<sp/>n)<sp/>noexcept<sp/>\</highlight></codeline>
 <codeline lineno="297"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
 <codeline lineno="298"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);<sp/>\</highlight></codeline>
 <codeline lineno="299"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
