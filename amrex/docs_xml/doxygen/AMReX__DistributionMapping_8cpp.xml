@@ -2616,7 +2616,7 @@
 <codeline lineno="978"><highlight class="normal"></highlight></codeline>
 <codeline lineno="979"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="980"><highlight class="normal"></highlight></codeline>
-<codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imin<sp/>=<sp/>-</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(1<sp/>&lt;&lt;<sp/>29);</highlight></codeline>
+<codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>imin<sp/>=<sp/>-(1<sp/>&lt;&lt;<sp/>29);</highlight></codeline>
 <codeline lineno="982"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a8013eb3b1fc596632383f1bb7c40e92c" kindref="member">AMREX_ASSERT_WITH_MESSAGE</ref>(AMREX_D_TERM(iv[0]<sp/>&gt;=<sp/>imin<sp/>&amp;&amp;<sp/>iv[0]<sp/>&lt;<sp/>-imin,</highlight></codeline>
 <codeline lineno="983"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>iv[1]<sp/>&gt;=<sp/>imin<sp/>&amp;&amp;<sp/>iv[1]<sp/>&lt;<sp/>-imin,</highlight></codeline>
 <codeline lineno="984"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>iv[2]<sp/>&gt;=<sp/>imin<sp/>&amp;&amp;<sp/>iv[2]<sp/>&lt;<sp/>-imin),</highlight></codeline>
@@ -2643,7 +2643,7 @@
 <codeline lineno="1005"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1006"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>2)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1007"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32_t<sp/>offset<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>31;</highlight></codeline>
+<codeline lineno="1008"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32_t<sp/>offset<sp/>=<sp/>1u<sp/>&lt;&lt;<sp/>31;</highlight></codeline>
 <codeline lineno="1009"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_assert(static_cast&lt;uint32_t&gt;(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>())+1<sp/>==<sp/>offset,</highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;INT_MAX<sp/>!=<sp/>(1&lt;&lt;31)-1&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>x<sp/>=<sp/>(iv[0]<sp/>&gt;=<sp/>0)<sp/>?<sp/>static_cast&lt;uint32_t&gt;(iv[0])<sp/>+<sp/>offset</highlight></codeline>
@@ -2659,7 +2659,7 @@
 <codeline lineno="1021"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1022"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1023"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32_t<sp/>offset<sp/>=<sp/>1<sp/>&lt;&lt;<sp/>31;</highlight></codeline>
+<codeline lineno="1024"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/>uint32_t<sp/>offset<sp/>=<sp/>1u<sp/>&lt;&lt;<sp/>31;</highlight></codeline>
 <codeline lineno="1025"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_assert(static_cast&lt;uint32_t&gt;(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>())+1<sp/>==<sp/>offset,</highlight></codeline>
 <codeline lineno="1026"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;INT_MAX<sp/>!=<sp/>(1&lt;&lt;31)-1&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1027"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>token.m_morton[0]<sp/>=<sp/>(iv[0]<sp/>&gt;=<sp/>0)<sp/>?<sp/>static_cast&lt;uint32_t&gt;(iv[0])<sp/>+<sp/>offset</highlight></codeline>
