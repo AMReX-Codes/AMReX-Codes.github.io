@@ -283,7 +283,7 @@ var searchData=
   ['buckettolevel',['bucketToLevel',['../classamrex_1_1ParticleBufferMap.html#a6501558fd20b0272d2c601df97a4bc04',1,'amrex::ParticleBufferMap']]],
   ['buckettoproc',['bucketToProc',['../classamrex_1_1ParticleBufferMap.html#afcafbe099dd2b79497a2283a6cb2e2b8',1,'amrex::ParticleBufferMap']]],
   ['buf',['BUF',['../classamrex_1_1TagBox.html#ac8c350e6c62e1f2fd736b52d1b7caffaa5c2d81c416e8ee0e1bd9d475e73d31cf',1,'amrex::TagBox']]],
-  ['buffer',['buffer',['../classamrex_1_1TagBox.html#aa6324edaf14ada2c319e1a5c92062331',1,'amrex::TagBox::buffer()'],['../classamrex_1_1TagBoxArray.html#abb7286cc2647bb4359101e4fafae159d',1,'amrex::TagBoxArray::buffer()']]],
+  ['buffer',['buffer',['../classamrex_1_1TagBox.html#af77914a97d01da57fc8e01e515b4c744',1,'amrex::TagBox::buffer()'],['../classamrex_1_1TagBoxArray.html#abb7286cc2647bb4359101e4fafae159d',1,'amrex::TagBoxArray::buffer()']]],
   ['buffer_5ftag_5fcache',['buffer_tag_cache',['../classamrex_1_1NeighborParticleContainer.html#a850509e24e6a8560ae8a73f36e4df525',1,'amrex::NeighborParticleContainer']]],
   ['buffermap',['BufferMap',['../classamrex_1_1ParticleContainer.html#aa4df79694937073d318416012be05037',1,'amrex::ParticleContainer']]],
   ['bufsize',['BUFSIZE',['../namespaceamrex_1_1Amrvis.html#a8303de7f87d7f9247ba6399dcf4d2493',1,'amrex::Amrvis']]],
