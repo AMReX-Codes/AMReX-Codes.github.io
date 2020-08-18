@@ -18,6 +18,7 @@ var searchData=
   ['hasnewdata',['hasNewData',['../classamrex_1_1StateData.html#af9809e458fa0bd25965558bf3aa2c802',1,'amrex::StateData']]],
   ['hasolddata',['hasOldData',['../classamrex_1_1StateData.html#af94692a78b7f532f582acd48d9697443',1,'amrex::StateData']]],
   ['hasphysbndry',['HasPhysBndry',['../namespaceamrex.html#a948d5324e5cf514157eb7e16637e55b5',1,'amrex']]],
+  ['hastags',['hasTags',['../classamrex_1_1TagBoxArray.html#a521e13084579457ae2c834f5d4757b25',1,'amrex::TagBoxArray']]],
   ['hdrfilenameprepost',['HdrFileNamePrePost',['../classamrex_1_1ParticleContainer.html#ae2016c85148b09f863ba154d2b17f257',1,'amrex::ParticleContainer']]],
   ['header',['Header',['../structamrex_1_1VisMF_1_1Header.html#ac047b91f6a9bf22efc30801bfc4b4452',1,'amrex::VisMF::Header::Header()'],['../structamrex_1_1VisMF_1_1Header.html#a2bd7f35c8f6e9d56b50648024cfac5f2',1,'amrex::VisMF::Header::Header(const FabArray&lt; FArrayBox &gt; &amp;fafab, VisMF::How how, Version version=Version_v1, bool calcMinMax=true, MPI_Comm=ParallelDescriptor::Communicator())'],['../structamrex_1_1VisMF_1_1Header.html#acdfb696b35b3fe342f5040041f59a301',1,'amrex::VisMF::Header::Header(Header &amp;&amp;rhs) noexcept=default']]],
   ['header',['Header',['../structamrex_1_1VisMF_1_1Header.html',1,'amrex::VisMF']]],
@@ -52,14 +53,14 @@ var searchData=
   ['htod_5fmemcpy',['htod_memcpy',['../namespaceamrex.html#ae243b10c65516ed7dfeaf9aed7e75aa3',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src, int scomp, int dcomp, int ncomp)'],['../namespaceamrex.html#aa9df7c449e875ece24add0d826c4f133',1,'amrex::htod_memcpy(FabArray&lt; FAB &gt; &amp;dst, FabArray&lt; FAB &gt; const &amp;src)']]],
   ['hwm_5fbuilds',['hwm_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5',1,'amrex::MemProfiler::NBuildsInfo']]],
   ['hwm_5fbytes',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]],
-  ['hypre',['Hypre',['../classamrex_1_1Hypre.html#afd2d6c32022a99d96f73485d03272ec9',1,'amrex::Hypre::Hypre()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex::hypre()']]],
   ['hypre',['Hypre',['../classamrex_1_1Hypre.html',1,'amrex']]],
-  ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html',1,'amrex']]],
+  ['hypre',['Hypre',['../classamrex_1_1Hypre.html#afd2d6c32022a99d96f73485d03272ec9',1,'amrex::Hypre::Hypre()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a9d87b5177c778e77c47e29f2b536cd1b',1,'amrex::hypre()']]],
   ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html#ad89a45864775721cb3101273d111965f',1,'amrex::HypreABecLap']]],
+  ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html',1,'amrex']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html',1,'amrex']]],
-  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html',1,'amrex']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]]
+  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]],
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]]
 ];
