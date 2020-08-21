@@ -4639,7 +4639,7 @@
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>AMREX_DEVICE_PRINTF(...)<sp/>std::printf(__VA_ARGS__);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>xxxxx<sp/>HIP<sp/>FIX<sp/>HERE<sp/>-<sp/>printf</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>AMREX_DEVICE_PRINTF(...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>AMREX_DEVICE_PRINTF(...)<sp/>amrex::ignore_unused(__VA_ARGS__);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>!defined(__APPLE__)</highlight><highlight class="normal"></highlight></codeline>
