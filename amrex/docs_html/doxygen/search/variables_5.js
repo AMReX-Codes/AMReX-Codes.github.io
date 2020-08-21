@@ -36,8 +36,6 @@ var searchData=
   ['fb_5ftag',['fb_tag',['../classamrex_1_1FabArray.html#ac557f1eed392826db1eec4119103134a',1,'amrex::FabArray']]],
   ['fb_5fthe_5frecv_5fdata',['fb_the_recv_data',['../classamrex_1_1FabArray.html#a74208704b8f6fd0320efbab5b6d84c33',1,'amrex::FabArray']]],
   ['fb_5fthe_5fsend_5fdata',['fb_the_send_data',['../classamrex_1_1FabArray.html#acdbdf6b190956f4aea653b4a8668daf3',1,'amrex::FabArray']]],
-  ['fehlberg_5f13_5f7_5f8',['fehlberg_13_7_8',['../namespacefarkode__mod.html#a0643d66f45a35f6c1a1f841d10f92f1b',1,'farkode_mod']]],
-  ['fehlberg_5f6_5f4_5f5',['fehlberg_6_4_5',['../namespacefarkode__mod.html#ac11152fa634e9aa296133119f96385de',1,'farkode_mod']]],
   ['fifteen',['fifteen',['../namespaceamrex__constants__module.html#a4461444e428f4382ebae724a72ae6fdb',1,'amrex_constants_module']]],
   ['fifth',['fifth',['../namespaceamrex__constants__module.html#ab4479f063e724b85e86eb4f94419bf59',1,'amrex_constants_module']]],
   ['file_5fname',['file_name',['../classamrex_1_1PrintToFile.html#aabfb7ef7f6c054124db081f9fd506782',1,'amrex::PrintToFile']]],

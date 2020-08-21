@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['q',['q',['../structfarkode__mod_1_1arkodebutchertablemem.html#ae2d4e9482a99081885cfe0eb99598856',1,'farkode_mod::arkodebutchertablemem']]],
   ['qall',['Qall',['../classSDCstruct.html#ae4f82ca9e75b2c19aeb29f7bd951e5c3',1,'SDCstruct']]],
   ['qexp',['Qexp',['../classSDCstruct.html#a6e4cb54efa5588875042c900b12ed1f0',1,'SDCstruct']]],
   ['qgauss',['Qgauss',['../classSDCstruct.html#ad62b8f4e5d90f40928e8b5c3a8e0a1ed',1,'SDCstruct']]],

@@ -74,7 +74,6 @@ var searchData=
   ['arenaallocator',['ArenaAllocator',['../classamrex_1_1ArenaAllocator.html',1,'amrex']]],
   ['arenaallocatortraits',['ArenaAllocatorTraits',['../structamrex_1_1ArenaAllocatorTraits.html',1,'amrex']]],
   ['arenainfo',['ArenaInfo',['../structamrex_1_1ArenaInfo.html',1,'amrex']]],
-  ['arkodebutchertablemem',['arkodebutchertablemem',['../structfarkode__mod_1_1arkodebutchertablemem.html',1,'farkode_mod']]],
   ['array1d',['Array1D',['../structamrex_1_1Array1D.html',1,'amrex']]],
   ['array2d',['Array2D',['../structamrex_1_1Array2D.html',1,'amrex']]],
   ['array3d',['Array3D',['../structamrex_1_1Array3D.html',1,'amrex']]],

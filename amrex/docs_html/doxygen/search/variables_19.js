@@ -14,6 +14,5 @@ var searchData=
   ['zero_5fzlo_5fmask',['zero_zlo_mask',['../structamrex_1_1EB2_1_1Neighbor.html#ae99270d7b970d6f6e2f52dbc2c4921a5',1,'amrex::EB2::Neighbor']]],
   ['zhi_5fdir',['zhi_dir',['../namespaceamrex__mllinop__nd__module.html#a2db4a18b206ec1c24ba128ae22ab279c',1,'amrex_mllinop_nd_module']]],
   ['zlo_5fdir',['zlo_dir',['../namespaceamrex__mllinop__nd__module.html#a5690dc95a320456e2f6709f67cca7d17',1,'amrex_mllinop_nd_module']]],
-  ['zonneveld_5f5_5f3_5f4',['zonneveld_5_3_4',['../namespacefarkode__mod.html#a560ee99920e7d59dbcacef19240339db',1,'farkode_mod']]],
   ['zplane',['ZPLANE',['../namespaceamrex_1_1Amrvis.html#a188af44ab507bf2058f81828afccc6a6',1,'amrex::Amrvis']]]
 ];

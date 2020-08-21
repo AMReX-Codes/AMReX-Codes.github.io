@@ -1,20 +1,4 @@
 var searchData=
 [
-  ['farkode_2ef90',['farkode.f90',['../farkode_8f90.html',1,'']]],
-  ['farkode_5farkstep_5fmod_2ef90',['farkode_arkstep_mod.f90',['../farkode__arkstep__mod_8f90.html',1,'']]],
-  ['farkode_5fmod_2ef90',['farkode_mod.f90',['../farkode__mod_8f90.html',1,'']]],
-  ['fcvode_2ef90',['fcvode.f90',['../fcvode_8f90.html',1,'']]],
-  ['fcvode_5fmod_2ef90',['fcvode_mod.f90',['../fcvode__mod_8f90.html',1,'']]],
-  ['fnvector_5fmod_2ef90',['fnvector_mod.f90',['../fnvector__mod_8f90.html',1,'']]],
-  ['fnvector_5fserial_2ef90',['fnvector_serial.f90',['../SUNDIALS3_2fnvector__serial_8f90.html',1,'']]],
-  ['fnvector_5fserial_2ef90',['fnvector_serial.f90',['../CVODE_2fnvector__serial_8f90.html',1,'']]],
-  ['fnvector_5fserial_5ffprefix_2ef90',['fnvector_serial_fprefix.f90',['../fnvector__serial__fprefix_8f90.html',1,'']]],
-  ['fnvector_5fserial_5fmod_2ef90',['fnvector_serial_mod.f90',['../fnvector__serial__mod_8f90.html',1,'']]],
-  ['fsundials_5ftypes_5fmod_2ef90',['fsundials_types_mod.f90',['../fsundials__types__mod_8f90.html',1,'']]],
-  ['fsunlinsol_5fdense_2ef90',['fsunlinsol_dense.f90',['../fsunlinsol__dense_8f90.html',1,'']]],
-  ['fsunlinsol_5fdense_5fmod_2ef90',['fsunlinsol_dense_mod.f90',['../fsunlinsol__dense__mod_8f90.html',1,'']]],
-  ['fsunlinsol_5fmod_2ef90',['fsunlinsol_mod.f90',['../fsunlinsol__mod_8f90.html',1,'']]],
-  ['fsunmat_5fdense_2ef90',['fsunmat_dense.f90',['../fsunmat__dense_8f90.html',1,'']]],
-  ['fsunmatrix_5fdense_5fmod_2ef90',['fsunmatrix_dense_mod.f90',['../fsunmatrix__dense__mod_8f90.html',1,'']]],
-  ['fsunmatrix_5fmod_2ef90',['fsunmatrix_mod.f90',['../fsunmatrix__mod_8f90.html',1,'']]]
+  ['fnvector_5fserial_2ef90',['fnvector_serial.f90',['../fnvector__serial_8f90.html',1,'']]]
 ];

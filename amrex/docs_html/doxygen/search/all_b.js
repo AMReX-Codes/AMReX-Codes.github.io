@@ -8,10 +8,6 @@ var searchData=
   ['knapsack',['KNAPSACK',['../classamrex_1_1DistributionMapping.html#ad8e078b643635f0027eb797c2d54d3b8a6f5ec418bb5db591c4b5780f00cce82e',1,'amrex::DistributionMapping::KNAPSACK()'],['../namespaceamrex.html#a7c149cd13c0bd6bcd97464f0406a600b',1,'amrex::knapsack()']]],
   ['knapsackdoit',['KnapSackDoIt',['../classamrex_1_1DistributionMapping.html#a1f6ec86cb567ef3c761c2cf693aa870d',1,'amrex::DistributionMapping']]],
   ['knapsackprocessormap',['KnapSackProcessorMap',['../classamrex_1_1DistributionMapping.html#af41949391775da61f74853fc6a16b686',1,'amrex::DistributionMapping::KnapSackProcessorMap(const std::vector&lt; Long &gt; &amp;wgts, int nprocs, Real *efficiency=0, bool do_full_knapsack=true, int nmax=std::numeric_limits&lt; int &gt;::max(), bool sort=true)'],['../classamrex_1_1DistributionMapping.html#adee3630696a974eb1b9c22046f0dc653',1,'amrex::DistributionMapping::KnapSackProcessorMap(const BoxArray &amp;boxes, int nprocs)']]],
-  ['knoth_5fwolke_5f3_5f3',['knoth_wolke_3_3',['../namespacefarkode__mod.html#acc9dea8111571ab11d16aa5294d14dc0',1,'farkode_mod']]],
   ['kstride',['kstride',['../structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e',1,'amrex::Array4']]],
-  ['kt_5fsize',['kt_size',['../classamrex_1_1BaseUmap.html#ad620fcee1e1d1d1dafaad74468416138',1,'amrex::BaseUmap']]],
-  ['kvaerno_5f4_5f2_5f3',['kvaerno_4_2_3',['../namespacefarkode__mod.html#a031fca9ae6beee6a85f7b2157b1dcd39',1,'farkode_mod']]],
-  ['kvaerno_5f5_5f3_5f4',['kvaerno_5_3_4',['../namespacefarkode__mod.html#a652e2315fd33b2100d0f4cfabf826d88',1,'farkode_mod']]],
-  ['kvaerno_5f7_5f4_5f5',['kvaerno_7_4_5',['../namespacefarkode__mod.html#a54f136fef56d5967374eb9d5ee33a457',1,'farkode_mod']]]
+  ['kt_5fsize',['kt_size',['../classamrex_1_1BaseUmap.html#ad620fcee1e1d1d1dafaad74468416138',1,'amrex::BaseUmap']]]
 ];

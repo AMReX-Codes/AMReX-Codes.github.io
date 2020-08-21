@@ -40,7 +40,6 @@ var searchData=
   ['toproc',['toProc',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a198cef4a2b826e76ca0cb0f01b926193',1,'amrex::FabArrayBase::FabComTag::toProc()'],['../structCommProfStats_1_1SendRecvPair.html#a979ac419ef56bad0832b4118e99eda12',1,'CommProfStats::SendRecvPair::toProc()']]],
   ['totaltime',['totalTime',['../structBLProfStats_1_1BLPDataBlock.html#adfed01a20c958b4193ab14d7409daa49',1,'BLProfStats::BLPDataBlock::totalTime()'],['../structBLProfStats_1_1FuncStat.html#a950c1731cce4f46316a6e54354ef8882',1,'BLProfStats::FuncStat::totalTime()'],['../structBLProfStats_1_1CallTreeNode.html#a39d682d74e38686a5bf06bfabb5827d1',1,'BLProfStats::CallTreeNode::totalTime()'],['../structCommProfStats_1_1SendRecvPair.html#aba79e3f8f7ada5cb344bbfd1c5edb711',1,'CommProfStats::SendRecvPair::totalTime()']]],
   ['tprof',['tprof',['../classamrex_1_1TinyProfileRegion.html#af05c972ffb11a5d0230dc3903fc0a33f',1,'amrex::TinyProfileRegion']]],
-  ['trbdf2_5f3_5f3_5f2',['trbdf2_3_3_2',['../namespacefarkode__mod.html#aa48322391bafc865b176bc09d7c62c1f',1,'farkode_mod']]],
   ['tries',['tries',['../classamrex_1_1StreamRetry.html#ade275d3bbc75ea3549c7249d97e74f33',1,'amrex::StreamRetry']]],
   ['truesize',['truesize',['../classamrex_1_1BaseFab.html#a86d1b4b6478205b0fcec165260df5772',1,'amrex::BaseFab']]],
   ['ttstack',['ttstack',['../classamrex_1_1TinyProfiler.html#a55b136d8859480b76a1311cff89009a0',1,'amrex::TinyProfiler']]],

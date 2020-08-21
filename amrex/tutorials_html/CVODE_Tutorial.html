@@ -170,14 +170,14 @@
   <div class="section" id="tutorials-cvode">
 <h1>Tutorials/CVODE<a class="headerlink" href="#tutorials-cvode" title="Permalink to this headline">¶</a></h1>
 <p>There are two CVODE tutorials in the <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/CVODE</span></code> directory, called
-<code class="docutils literal notranslate"><span class="pre">EX1</span></code> and <code class="docutils literal notranslate"><span class="pre">EX2</span></code>.  <code class="docutils literal notranslate"><span class="pre">EX1</span></code> consists of a single ODE that is integrated with
+<code class="docutils literal notranslate"><span class="pre">EX1_F</span></code> and <code class="docutils literal notranslate"><span class="pre">EX2_F</span></code>.  <code class="docutils literal notranslate"><span class="pre">EX1_F</span></code> consists of a single ODE that is integrated with
 CVODE within each cell of a 3-D grid.  It demonstrates how to initialize the
 CVODE solver, how to call the ODE right-hand-side (RHS), and, more importantly,
 how to <em>re-</em>initialize the solver between cells, which avoids allocating and
 freeing solver memory between each cell (see the call to <code class="docutils literal notranslate"><span class="pre">FCVReInit()</span></code> in the
-<code class="docutils literal notranslate"><span class="pre">integrate_ode.f90</span></code> file in the <code class="docutils literal notranslate"><span class="pre">EX1</span></code> directory.)</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">EX2</span></code> example demonstrates the slightly more complicated case of
-integrating a system of coupled ODEs within each cell.  Similarly to <code class="docutils literal notranslate"><span class="pre">EX1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">integrate_ode.f90</span></code> file in the <code class="docutils literal notranslate"><span class="pre">EX1_F</span></code> directory.)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">EX2_F</span></code> example demonstrates the slightly more complicated case of
+integrating a system of coupled ODEs within each cell.  Similarly to <code class="docutils literal notranslate"><span class="pre">EX1_F</span></code>,
 it provides an RHS and some solver initialization.  However, it also
 demonstrates the performance effect of providing an analytic Jacobian matrix
 for the system of ODEs, rather than requiring the solver to compute the

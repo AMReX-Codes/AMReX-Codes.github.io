@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="SUNDIALS_2cvode__interface_8f90" kind="file" language="Fortran">
+    <compoundname>cvode_interface.f90</compoundname>
+    <innernamespace refid="namespacecvode__interface">cvode_interface</innernamespace>
+    <innernamespace refid="namespacefcvode__mod">fcvode_mod</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespacecvode__interface" kindref="compound">cvode_interface</ref></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fcvode_mod</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fsundials_matrix_mod</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fsundials_nvector_mod</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fsundials_linearsolver_mod</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>integer(c_int)<sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal"><ref refid="namespacecvode__interface_1ab0af7e77c12d08a608cbd74113e0d797" kindref="member">fcvdense</ref>(cvode_mem,<sp/>N)<sp/>result(ierr)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>use,<sp/></highlight><highlight class="keywordtype">intrinsic</highlight><highlight class="normal"><sp/>::<sp/>iso_c_binding</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fnvector_serial_mod</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fsunmatrix_dense_mod</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">fsunlinsol_dense_mod</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(c_ptr),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>cvode_mem</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer(c_long)</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>::<sp/>n</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(sunmatrix),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal"><sp/><sp/>::<sp/>sunmat_a</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(sunlinearsolver),<sp/></highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal"><sp/><sp/>::<sp/>sunlinsol_ls</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(n_vector),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">pointer</highlight><highlight class="normal"><sp/><sp/>::<sp/>sunvec_y</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>sunvec_y<sp/>=&gt;<sp/>fn_vnewempty_serial(n)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>sunmat_a<sp/>=&gt;<sp/>fsundensematrix(n,<sp/>n)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>sunlinsol_ls<sp/>=&gt;<sp/>fsundenselinearsolver(sunvec_y,<sp/>sunmat_a)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ierr<sp/>=<sp/>fcvodesetlinearsolver(cvode_mem,<sp/>sunlinsol_ls,<sp/>sunmat_a)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="namespacecvode__interface_1ab0af7e77c12d08a608cbd74113e0d797" kindref="member">fcvdense</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal"><ref refid="namespacecvode__interface" kindref="compound">cvode_interface</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/SUNDIALS/cvode_interface.f90"/>
+  </compounddef>
+</doxygen>
