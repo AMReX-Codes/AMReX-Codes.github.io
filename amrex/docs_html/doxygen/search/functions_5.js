@@ -81,6 +81,7 @@ var searchData=
   ['evalreduction',['EvalReduction',['../namespaceamrex_1_1Lazy.html#a0a2dd2d6e19976b8eaebb9d81a65718a',1,'amrex::Lazy']]],
   ['exch',['Exch',['../namespaceamrex_1_1Gpu_1_1Atomic.html#aead1011333d0e8605985cd0ab8c163bf',1,'amrex::Gpu::Atomic']]],
   ['exclusive_5fscan',['exclusive_scan',['../namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c',1,'amrex::Gpu']]],
+  ['exclusivesum',['ExclusiveSum',['../namespaceamrex_1_1Scan.html#a3d89941c9d430b31054150e45dbde440',1,'amrex::Scan']]],
   ['execonfinalize',['ExecOnFinalize',['../namespaceamrex.html#aec8ceac1148bd8331f3a51572068f8a0',1,'amrex']]],
   ['execoninitialize',['ExecOnInitialize',['../namespaceamrex.html#a6911748ceb0d88bf5b6bf7f3f0402e97',1,'amrex']]],
   ['exist',['Exist',['../classamrex_1_1VisMF.html#ab895515b73ef0cdc6d0e06c7590f3e76',1,'amrex::VisMF']]],

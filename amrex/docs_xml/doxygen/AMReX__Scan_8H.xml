@@ -4329,7 +4329,7 @@
 <codeline lineno="635"><highlight class="normal"></highlight></codeline>
 <codeline lineno="636"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>return<sp/>value<sp/>is<sp/>the<sp/>total<sp/>sum.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="637"><highlight class="normal">template<sp/>&lt;typename<sp/>N,<sp/>typename<sp/>T,<sp/>typename<sp/>M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="638"><highlight class="normal">T<sp/>InclusiveSum<sp/>(N<sp/>n,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>in,<sp/>T<sp/>*<sp/>out)</highlight></codeline>
+<codeline lineno="638"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Scan_1a6c7995e76bd6422d20db6f336f64989d" kindref="member">InclusiveSum</ref><sp/>(N<sp/>n,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>in,<sp/>T<sp/>*<sp/>out)</highlight></codeline>
 <codeline lineno="639"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="640"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(static_cast&lt;Long&gt;(n)<sp/>&lt;<sp/>static_cast&lt;Long&gt;(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>()));</highlight></codeline>
 <codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PrefixSum&lt;T&gt;(n,</highlight></codeline>
@@ -4340,7 +4340,7 @@
 <codeline lineno="646"><highlight class="normal"></highlight></codeline>
 <codeline lineno="647"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>return<sp/>value<sp/>is<sp/>the<sp/>total<sp/>sum.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="648"><highlight class="normal">template<sp/>&lt;typename<sp/>N,<sp/>typename<sp/>T,<sp/>typename<sp/>M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt;<sp/>&gt;</highlight></codeline>
-<codeline lineno="649"><highlight class="normal">T<sp/>ExclusiveSum<sp/>(N<sp/>n,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>in,<sp/>T<sp/>*<sp/>out)</highlight></codeline>
+<codeline lineno="649"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Scan_1a3d89941c9d430b31054150e45dbde440" kindref="member">ExclusiveSum</ref><sp/>(N<sp/>n,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>in,<sp/>T<sp/>*<sp/>out)</highlight></codeline>
 <codeline lineno="650"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="651"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(static_cast&lt;Long&gt;(n)<sp/>&lt;<sp/>static_cast&lt;Long&gt;(<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;int&gt;::max</ref>()));</highlight></codeline>
 <codeline lineno="652"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>PrefixSum&lt;T&gt;(n,</highlight></codeline>
@@ -4349,52 +4349,75 @@
 <codeline lineno="655"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Type::exclusive);</highlight></codeline>
 <codeline lineno="656"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="657"><highlight class="normal"></highlight></codeline>
-<codeline lineno="658"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="658"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="659"><highlight class="normal"></highlight></codeline>
-<codeline lineno="660"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="661"><highlight class="normal"></highlight></codeline>
-<codeline lineno="662"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38" kindref="member">Gpu</ref></highlight></codeline>
+<codeline lineno="660"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>return<sp/>value<sp/>is<sp/>the<sp/>total<sp/>sum.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="661"><highlight class="normal">template<sp/>&lt;typename<sp/>N,<sp/>typename<sp/>T,<sp/>typename<sp/>M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="662" refid="namespaceamrex_1_1Scan_1a6c7995e76bd6422d20db6f336f64989d" refkind="member"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Scan_1a6c7995e76bd6422d20db6f336f64989d" kindref="member">InclusiveSum</ref><sp/>(N<sp/>n,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>in,<sp/>T<sp/>*<sp/>out)</highlight></codeline>
 <codeline lineno="663"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>InIter,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>OutIter&gt;</highlight></codeline>
-<codeline lineno="665" refid="namespaceamrex_1_1Gpu_1ab4e0fa80e6873e53208d917854f37129" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>OutIter<sp/><ref refid="namespaceamrex_1_1Gpu_1ab4e0fa80e6873e53208d917854f37129" kindref="member">inclusive_scan</ref><sp/>(InIter<sp/><ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>,<sp/>InIter<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>,<sp/>OutIter<sp/>result)</highlight></codeline>
-<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="667"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>std::distance(begin,<sp/>end);</highlight></codeline>
-<codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Scan::InclusiveSum(N,<sp/>&amp;(*begin),<sp/>&amp;(*result));</highlight></codeline>
-<codeline lineno="670"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutIter<sp/>result_end<sp/>=<sp/>result;</highlight></codeline>
-<codeline lineno="671"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(result_end,<sp/>N);</highlight></codeline>
-<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result_end;</highlight></codeline>
-<codeline lineno="673"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::partial_sum(begin,<sp/>end,<sp/>result);</highlight></codeline>
-<codeline lineno="675"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="677"><highlight class="normal"></highlight></codeline>
-<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>InIter,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>OutIter&gt;</highlight></codeline>
-<codeline lineno="679" refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>OutIter<sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">exclusive_scan</ref>(InIter<sp/><ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>,<sp/>InIter<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>,<sp/>OutIter<sp/>result)</highlight></codeline>
-<codeline lineno="680"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="681"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="682"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>std::distance(begin,<sp/>end);</highlight></codeline>
-<codeline lineno="683"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Scan::ExclusiveSum(N,<sp/>&amp;(*begin),<sp/>&amp;(*result));</highlight></codeline>
-<codeline lineno="684"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutIter<sp/>result_end<sp/>=<sp/>result;</highlight></codeline>
-<codeline lineno="685"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(result_end,<sp/>N);</highlight></codeline>
-<codeline lineno="686"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result_end;</highlight></codeline>
-<codeline lineno="687"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="688"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(begin<sp/>==<sp/>end)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
-<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="690"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::iterator_traits&lt;InIter&gt;::value_type<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52" kindref="member">sum</ref><sp/>=<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
-<codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*result++<sp/>=<sp/>sum<sp/>-<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
-<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(++begin<sp/>!=<sp/>end)<sp/>{</highlight></codeline>
-<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>std::move(sum)<sp/>+<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
-<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*result++<sp/>=<sp/>sum<sp/>-<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
-<codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>++result;</highlight></codeline>
+<codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partial_sum(in,<sp/>in+n,<sp/>out);</highlight></codeline>
+<codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>0)<sp/>?<sp/>out[n-1]<sp/>:<sp/>T(0);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="667"><highlight class="normal"></highlight></codeline>
+<codeline lineno="668"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>return<sp/>value<sp/>is<sp/>the<sp/>total<sp/>sum.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="669"><highlight class="normal">template<sp/>&lt;typename<sp/>N,<sp/>typename<sp/>T,<sp/>typename<sp/>M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="670" refid="namespaceamrex_1_1Scan_1a3d89941c9d430b31054150e45dbde440" refkind="member"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Scan_1a3d89941c9d430b31054150e45dbde440" kindref="member">ExclusiveSum</ref><sp/>(N<sp/>n,<sp/>T<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*<sp/>in,<sp/>T<sp/>*<sp/>out)</highlight></codeline>
+<codeline lineno="671"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="672"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="673"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out[0]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="674"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::partial_sum(in,<sp/>in+n-1,<sp/>out+1);</highlight></codeline>
+<codeline lineno="675"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>in[n-1]+out[n-1];</highlight></codeline>
+<codeline lineno="676"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="677"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="678"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="679"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="680"><highlight class="normal"></highlight></codeline>
+<codeline lineno="681"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="682"><highlight class="normal"></highlight></codeline>
+<codeline lineno="683"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="684"><highlight class="normal"></highlight></codeline>
+<codeline lineno="685"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38" kindref="member">Gpu</ref></highlight></codeline>
+<codeline lineno="686"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="687"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>InIter,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>OutIter&gt;</highlight></codeline>
+<codeline lineno="688" refid="namespaceamrex_1_1Gpu_1ab4e0fa80e6873e53208d917854f37129" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>OutIter<sp/><ref refid="namespaceamrex_1_1Gpu_1ab4e0fa80e6873e53208d917854f37129" kindref="member">inclusive_scan</ref><sp/>(InIter<sp/><ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>,<sp/>InIter<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>,<sp/>OutIter<sp/>result)</highlight></codeline>
+<codeline lineno="689"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="690"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>std::distance(begin,<sp/>end);</highlight></codeline>
+<codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Scan_1a6c7995e76bd6422d20db6f336f64989d" kindref="member">Scan::InclusiveSum</ref>(N,<sp/>&amp;(*begin),<sp/>&amp;(*result));</highlight></codeline>
+<codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutIter<sp/>result_end<sp/>=<sp/>result;</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(result_end,<sp/>N);</highlight></codeline>
+<codeline lineno="695"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result_end;</highlight></codeline>
+<codeline lineno="696"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::partial_sum(begin,<sp/>end,<sp/>result);</highlight></codeline>
 <codeline lineno="698"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="699"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="700"><highlight class="normal"></highlight></codeline>
-<codeline lineno="701"><highlight class="normal">}}</highlight></codeline>
-<codeline lineno="702"><highlight class="normal"></highlight></codeline>
-<codeline lineno="703"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="701"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>InIter,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>OutIter&gt;</highlight></codeline>
+<codeline lineno="702" refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>OutIter<sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">exclusive_scan</ref>(InIter<sp/><ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>,<sp/>InIter<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>,<sp/>OutIter<sp/>result)</highlight></codeline>
+<codeline lineno="703"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="704"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="705"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>std::distance(begin,<sp/>end);</highlight></codeline>
+<codeline lineno="706"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Scan_1a3d89941c9d430b31054150e45dbde440" kindref="member">Scan::ExclusiveSum</ref>(N,<sp/>&amp;(*begin),<sp/>&amp;(*result));</highlight></codeline>
+<codeline lineno="707"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>OutIter<sp/>result_end<sp/>=<sp/>result;</highlight></codeline>
+<codeline lineno="708"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(result_end,<sp/>N);</highlight></codeline>
+<codeline lineno="709"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result_end;</highlight></codeline>
+<codeline lineno="710"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="711"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(begin<sp/>==<sp/>end)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="712"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="713"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>std::iterator_traits&lt;InIter&gt;::value_type<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52" kindref="member">sum</ref><sp/>=<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
+<codeline lineno="714"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*result++<sp/>=<sp/>sum<sp/>-<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
+<codeline lineno="715"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="716"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(++begin<sp/>!=<sp/>end)<sp/>{</highlight></codeline>
+<codeline lineno="717"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>std::move(sum)<sp/>+<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
+<codeline lineno="718"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*result++<sp/>=<sp/>sum<sp/>-<sp/>*<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>;</highlight></codeline>
+<codeline lineno="719"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>++result;</highlight></codeline>
+<codeline lineno="721"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="722"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="723"><highlight class="normal"></highlight></codeline>
+<codeline lineno="724"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="725"><highlight class="normal"></highlight></codeline>
+<codeline lineno="726"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Scan.H"/>
   </compounddef>

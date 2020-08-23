@@ -17,6 +17,7 @@ var searchData=
   ['inc',['Inc',['../namespaceamrex_1_1Gpu_1_1Atomic.html#ac87e449691a622f1f9175c75cb79892a',1,'amrex::Gpu::Atomic']]],
   ['include',['Include',['../classRegionsProfStats.html#a5f25e2c23a4dcf6d5bcadd45d045b619',1,'RegionsProfStats']]],
   ['inclusive_5fscan',['inclusive_scan',['../namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129',1,'amrex::Gpu']]],
+  ['inclusivesum',['InclusiveSum',['../namespaceamrex_1_1Scan.html#a6c7995e76bd6422d20db6f336f64989d',1,'amrex::Scan']]],
   ['increment',['Increment',['../classamrex_1_1ParticleContainer.html#a5b610b558d1559e50c8edfaf7ed2ca27',1,'amrex::ParticleContainer']]],
   ['incrementnumberofusers',['IncrementNumberOfUsers',['../classamrex_1_1DataServices.html#a1e86b7049dda4298109713894149ff36',1,'amrex::DataServices']]],
   ['incrementwithtotal',['IncrementWithTotal',['../classamrex_1_1ParticleContainer.html#a48897ca75f60ca616cff453a60b18d59',1,'amrex::ParticleContainer']]],
