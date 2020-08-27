@@ -24,6 +24,7 @@ var searchData=
   ['ic',['ic',['../structamrex_1_1Gpu_1_1ComponentBox.html#a99986b3406a40b454717360c972a5725',1,'amrex::Gpu::ComponentBox::ic()'],['../classamrex_1_1NeighborParticleContainer.html#aeaa3b1bb8b6e40c8899b06779754db1d',1,'amrex::NeighborParticleContainer::ic()']]],
   ['id',['id',['../classamrex_1_1StateDescriptor.html#aaa15aa2f29efcb1129570ab6ba798db4',1,'amrex::StateDescriptor']]],
   ['idir',['iDir',['../classamrex_1_1OrderedBoxes.html#a86a670ba1e5f59b903e5cbb047509177',1,'amrex::OrderedBoxes']]],
+  ['ids',['ids',['../unionamrex_1_1Particle_1_1im__t.html#a9231d854e22867e9254ea848885d19cc',1,'amrex::Particle::im_t']]],
   ['ieee_5fdouble',['ieee_double',['../classamrex_1_1FPC.html#abdb4c6267365b40cf9675d3180b50634',1,'amrex::FPC']]],
   ['ieee_5ffloat',['ieee_float',['../classamrex_1_1FPC.html#afac92c1763e3625fb356c57f027faf34',1,'amrex::FPC']]],
   ['ifile',['ifile',['../structamrex_1_1AsyncOut_1_1WriteInfo.html#a3216a69095c3102d7197657e89018f7f',1,'amrex::AsyncOut::WriteInfo']]],
