@@ -1861,8 +1861,8 @@
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>total_buffer_size<sp/>=<sp/>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1a03f46ec462fad618d823836214c9411a" kindref="member">m_snd_offsets</ref>.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>()<sp/>==<sp/>0)<sp/>?<sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1a813195052803b3c8844eb604a508e9b0" kindref="member">m_box_offsets</ref>[num_buckets]*psize<sp/>:<sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1a03f46ec462fad618d823836214c9411a" kindref="member">m_snd_offsets</ref>.back();</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>snd_buffer.resize(total_buffer_size);</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"></highlight></codeline>
-<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_real<sp/>=<sp/>pc.communicate_real_comp.<ref refid="classamrex_1_1Vector_1ab7e27d7251f3583037eee2d3333f53dd" kindref="member">dataPtr</ref>();</highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_int<sp/><sp/>=<sp/>pc.communicate_int_comp.dataPtr();</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_real<sp/>=<sp/>pc.d_communicate_real_comp.<ref refid="classamrex_1_1Vector_1ab7e27d7251f3583037eee2d3333f53dd" kindref="member">dataPtr</ref>();</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_int<sp/><sp/>=<sp/>pc.d_communicate_int_comp.dataPtr();</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight></codeline>
 <codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>num_levels;<sp/>++lev)</highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -1951,8 +1951,8 @@
 <codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>offsets;</highlight></codeline>
 <codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>policy.resizeTiles(tiles,<sp/>sizes,<sp/>offsets);</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"></highlight></codeline>
-<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_real<sp/>=<sp/>pc.communicate_real_comp.dataPtr();</highlight></codeline>
-<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_int<sp/><sp/>=<sp/>pc.communicate_int_comp.dataPtr();</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_real<sp/>=<sp/>pc.d_communicate_real_comp.dataPtr();</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_int<sp/><sp/>=<sp/>pc.d_communicate_int_comp.dataPtr();</highlight></codeline>
 <codeline lineno="352"><highlight class="normal"></highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>local<sp/>unpack</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uindex<sp/>=<sp/>0;</highlight></codeline>
@@ -2120,8 +2120,8 @@
 <codeline lineno="516"><highlight class="normal"></highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1ac2e31e632d2856477f32757e16ba053e" kindref="member">m_nrcvs</ref><sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_real<sp/>=<sp/>pc.communicate_real_comp.dataPtr();</highlight></codeline>
-<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_int<sp/><sp/>=<sp/>pc.communicate_int_comp.dataPtr();</highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_real<sp/>=<sp/>pc.d_communicate_real_comp.dataPtr();</highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_comm_int<sp/><sp/>=<sp/>pc.d_communicate_int_comp.dataPtr();</highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p_rcv_buffer<sp/>=<sp/>rcv_buffer.dataPtr();</highlight></codeline>
 <codeline lineno="522"><highlight class="normal"></highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>sizes;</highlight></codeline>

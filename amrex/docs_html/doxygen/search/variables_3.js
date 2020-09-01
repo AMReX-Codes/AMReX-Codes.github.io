@@ -4,6 +4,8 @@ var searchData=
   ['d2_5fchunk',['d2_chunk',['../structdistribution__t.html#a957bdfca24a116d7bb5f7bcbde3a93fa',1,'distribution_t']]],
   ['d3_5fchunk',['d3_chunk',['../structdistribution__t.html#a971ee0fe2ddf42e0669273a5ebda1512',1,'distribution_t']]],
   ['d_5fbucket_5fto_5fpid',['d_bucket_to_pid',['../classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15',1,'amrex::ParticleBufferMap']]],
+  ['d_5fcommunicate_5fint_5fcomp',['d_communicate_int_comp',['../classamrex_1_1ParticleContainer.html#a53ca60f7318ed230c8e04542bf550295',1,'amrex::ParticleContainer']]],
+  ['d_5fcommunicate_5freal_5fcomp',['d_communicate_real_comp',['../classamrex_1_1ParticleContainer.html#a50bc06ae744be06e4101b09e6ec1af25',1,'amrex::ParticleContainer']]],
   ['d_5fdata',['d_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#afcdba42d606234841dc54107bb186fb8',1,'amrex::Gpu::AsyncArray']]],
   ['d_5flev_5fgid_5fto_5fbucket',['d_lev_gid_to_bucket',['../classamrex_1_1ParticleBufferMap.html#a22ef66dc732fb28117376c5a3cf60c9a',1,'amrex::ParticleBufferMap']]],
   ['d_5flev_5foffsets',['d_lev_offsets',['../classamrex_1_1ParticleBufferMap.html#a4d6a055510febbd0115e3cc4fcb77e71',1,'amrex::ParticleBufferMap']]],

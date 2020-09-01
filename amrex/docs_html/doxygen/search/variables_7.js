@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['h_5fcommunicate_5fint_5fcomp',['h_communicate_int_comp',['../classamrex_1_1ParticleContainer.html#a94bbcb336d799cf0eb813432a2a66dc1',1,'amrex::ParticleContainer']]],
+  ['h_5fcommunicate_5freal_5fcomp',['h_communicate_real_comp',['../classamrex_1_1ParticleContainer.html#a7d5f44b63b6087120e27046eacb720b0',1,'amrex::ParticleContainer']]],
   ['h_5fdata',['h_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#a4d8ff9603bf44cd72f83703f34ecb0c9',1,'amrex::Gpu::AsyncArray']]],
   ['half',['half',['../namespaceamrex__constants__module.html#a0054397f5649f24a3da0cb5933162018',1,'amrex_constants_module']]],
   ['has_5fmetric_5fterm',['has_metric_term',['../structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b',1,'amrex::LPInfo']]],
