@@ -1384,14 +1384,14 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bnorm(i,j,0,1)<sp/>=<sp/>signy;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i,j,0)<sp/>=<sp/>0.5*(axm+axp);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vcent(i,j,0,0)<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vcent(i,j,0,1)<sp/>=<sp/>(0.125*(ayp-aym)<sp/>+<sp/>ny*0.5*bcent(i,j,0,1)*bcent(i,j,0,1))<sp/>/<sp/>vfrac(i,j,0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vcent(i,j,0,1)<sp/>=<sp/>(0.125*(ayp-aym)<sp/>+<sp/>ny*0.5*bcent(i,j,0,1)*bcent(i,j,0,1))<sp/>/<sp/>(vfrac(i,j,0)<sp/>+<sp/>1.e-30);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nyabs<sp/>&lt;<sp/>tiny<sp/>or<sp/>nxabs<sp/>&gt;<sp/>almostone)<sp/>{</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>barea(i,j,0)<sp/>=<sp/>1.0;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bcent(i,j,0,1)<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bnorm(i,j,0,0)<sp/>=<sp/>signx;</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bnorm(i,j,0,1)<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i,j,0)<sp/>=<sp/>0.5*(aym+ayp);</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vcent(i,j,0,0)<sp/>=<sp/>(0.125*(axp-axm)<sp/>+<sp/>nx*0.5*bcent(i,j,0,0)*bcent(i,j,0,0))<sp/>/<sp/>vfrac(i,j,0);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vcent(i,j,0,0)<sp/>=<sp/>(0.125*(axp-axm)<sp/>+<sp/>nx*0.5*bcent(i,j,0,0)*bcent(i,j,0,0))<sp/>/<sp/>(vfrac(i,j,0)<sp/>+<sp/>1.e-30);</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vcent(i,j,0,1)<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>aa<sp/>=<sp/>nxabs/ny;</highlight></codeline>
