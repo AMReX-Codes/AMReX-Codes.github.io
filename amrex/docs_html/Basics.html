@@ -448,11 +448,11 @@ run with</p>
 default in AMReX.  In this case, it is often convenient to define a function that
 sets the variable(s), and pass the name of that function to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code>.
 As an example, we may define <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">add_par</span></span></code> to set <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">extend_domain_face</span></span></code>
-to true if it hasn’t already been set in the inputs file.</p>
+to false if it hasn’t already been set in the inputs file.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">add_par</span> <span class="p">()</span> <span class="p">{</span>
    <span class="n">ParmParse</span> <span class="n">pp</span><span class="p">(</span><span class="s">&quot;eb2&quot;</span><span class="p">);</span>
    <span class="k">if</span><span class="p">(</span><span class="n">not</span> <span class="n">pp</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&quot;extend_domain_face&quot;</span><span class="p">))</span> <span class="p">{</span>
-      <span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;extend_domain_face&quot;</span><span class="p">,</span><span class="nb">true</span><span class="p">);</span>
+      <span class="n">pp</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;extend_domain_face&quot;</span><span class="p">,</span><span class="nb">false</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">};</span>
 </pre></div>
@@ -461,7 +461,7 @@ to true if it hasn’t already been set in the inputs file.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="n">add_par</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This value replaces the current default value of false in AMReX itself, but
+<p>This value replaces the current default value of true in AMReX itself, but
 can still be over-written by setting a value in the inputs file.</p>
 </div>
 <div class="section" id="initialize-and-finalize">
