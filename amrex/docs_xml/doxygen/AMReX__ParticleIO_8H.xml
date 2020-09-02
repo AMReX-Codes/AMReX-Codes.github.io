@@ -2558,7 +2558,7 @@
 <codeline lineno="428"><highlight class="normal"></highlight></codeline>
 <codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IOProcNumber<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>();</highlight></codeline>
 <codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>nparticles<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>maxnextid<sp/><sp/>=<sp/>ParticleType::NextID();</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/><sp/>maxnextid<sp/><sp/>=<sp/>ParticleType::NextID();</highlight></codeline>
 <codeline lineno="432"><highlight class="normal"></highlight></codeline>
 <codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>m_particles.size();<sp/><sp/>lev++)<sp/>{</highlight></codeline>
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>pmap<sp/>=<sp/>m_particles[lev];</highlight></codeline>
@@ -2578,7 +2578,7 @@
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(nparticles,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"></highlight></codeline>
 <codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/>ParticleType::NextID(maxnextid);</highlight></codeline>
-<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a709e52679c5ca426b23c887ffe1b4ab9" kindref="member">ParallelDescriptor::ReduceIntMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a72761a0aff0775f8f6943062a34fca31" kindref="member">ParallelDescriptor::ReduceLongMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"></highlight></codeline>
 <codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/>nparticlesPrePost<sp/>=<sp/>nparticles;</highlight></codeline>
 <codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/>maxnextidPrePost<sp/><sp/>=<sp/>maxnextid;</highlight></codeline>
@@ -2917,7 +2917,7 @@
 <codeline lineno="787"><highlight class="normal"><sp/><sp/><sp/><sp/>HdrFile<sp/>&gt;&gt;<sp/>nparticles;</highlight></codeline>
 <codeline lineno="788"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nparticles<sp/>&gt;=<sp/>0);</highlight></codeline>
 <codeline lineno="789"><highlight class="normal"></highlight></codeline>
-<codeline lineno="790"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxnextid;</highlight></codeline>
+<codeline lineno="790"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>maxnextid;</highlight></codeline>
 <codeline lineno="791"><highlight class="normal"><sp/><sp/><sp/><sp/>HdrFile<sp/>&gt;&gt;<sp/>maxnextid;</highlight></codeline>
 <codeline lineno="792"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(maxnextid<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/>ParticleType::NextID(maxnextid);</highlight></codeline>

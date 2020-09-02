@@ -423,7 +423,7 @@
 <codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="326"><highlight class="normal"></highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>nparticles<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxnextid;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>maxnextid;</highlight></codeline>
 <codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(usePrePost)</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -451,7 +451,7 @@
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(nparticles,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ParticleType::NextID(maxnextid);</highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a709e52679c5ca426b23c887ffe1b4ab9" kindref="member">ParallelDescriptor::ReduceIntMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a72761a0aff0775f8f6943062a34fca31" kindref="member">ParallelDescriptor::ReduceLongMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="358"><highlight class="normal"></highlight></codeline>
 <codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>hid_t<sp/>fapl,<sp/>dxpl,<sp/>fid,<sp/>grp;</highlight></codeline>
@@ -562,7 +562,7 @@
 <codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateWriteHDF5AttrLong(fid,<sp/></highlight><highlight class="stringliteral">&quot;nparticles&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>&amp;nparticles);</highlight></codeline>
 <codeline lineno="465"><highlight class="normal"></highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>value<sp/>of<sp/>nextid<sp/>that<sp/>we<sp/>need<sp/>to<sp/>restore<sp/>on<sp/>restart.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateWriteHDF5AttrInt(fid,<sp/></highlight><highlight class="stringliteral">&quot;maxnextid&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>&amp;maxnextid);</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CreateWriteHDF5AttrLong(fid,<sp/></highlight><highlight class="stringliteral">&quot;maxnextid&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>&amp;maxnextid);</highlight></codeline>
 <codeline lineno="468"><highlight class="normal"></highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Then<sp/>the<sp/>finest<sp/>level<sp/>of<sp/>the<sp/>AMR<sp/>hierarchy.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>finest_level<sp/>=<sp/>finestLevel();</highlight></codeline>
@@ -1073,8 +1073,8 @@
 <codeline lineno="975"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(nparticles<sp/>&gt;=<sp/>0);</highlight></codeline>
 <codeline lineno="976"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="977"><highlight class="normal"><sp/><sp/><sp/><sp/>aname<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;maxnextid&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxnextid;</highlight></codeline>
-<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5AttrInt(fid,<sp/>aname.c_str(),<sp/>&amp;maxnextid);</highlight></codeline>
+<codeline lineno="978"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>maxnextid;</highlight></codeline>
+<codeline lineno="979"><highlight class="normal"><sp/><sp/><sp/><sp/>ret<sp/>=<sp/>ReadHDF5AttrLong(fid,<sp/>aname.c_str(),<sp/>&amp;maxnextid);</highlight></codeline>
 <codeline lineno="980"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ret<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="981"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg(</highlight><highlight class="stringliteral">&quot;ParticleContainer::RestartHDF5():<sp/>unable<sp/>to<sp/>read<sp/>attribute<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="982"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>msg<sp/>+=<sp/>aname;</highlight></codeline>

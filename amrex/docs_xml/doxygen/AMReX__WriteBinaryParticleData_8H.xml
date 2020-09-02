@@ -2325,7 +2325,7 @@
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>HdrFile;</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>nparticles<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxnextid;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>maxnextid;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>evaluate<sp/>f<sp/>for<sp/>every<sp/>particle<sp/>to<sp/>determine<sp/>which<sp/>ones<sp/>to<sp/>output</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;std::map&lt;std::pair&lt;int,<sp/>int&gt;,<sp/>Gpu::DeviceVector&lt;int&gt;<sp/>&gt;<sp/>&gt;<sp/>particle_io_flags(pc.GetParticles().size());</highlight></codeline>
@@ -2373,7 +2373,7 @@
 <codeline lineno="114"><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a98c9e67e17bd55e681d9e790611a1289" kindref="member">ParallelDescriptor::ReduceLongSum</ref>(nparticles,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PC::ParticleType::NextID(maxnextid);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a709e52679c5ca426b23c887ffe1b4ab9" kindref="member">ParallelDescriptor::ReduceIntMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a72761a0aff0775f8f6943062a34fca31" kindref="member">ParallelDescriptor::ReduceLongMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1ParallelDescriptor_1ac7fb3467af4aabf15e61cb9c27e916d9" kindref="member">ParallelDescriptor::IOProcessor</ref>())</highlight></codeline>
@@ -2697,8 +2697,8 @@
 <codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a732a4be5017987f2d6edc0fcd2329301" kindref="member">ParallelDescriptor::Barrier</ref>();</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"></highlight></codeline>
-<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxnextid<sp/>=<sp/>PC::ParticleType::NextID();</highlight></codeline>
-<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a709e52679c5ca426b23c887ffe1b4ab9" kindref="member">ParallelDescriptor::ReduceIntMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>maxnextid<sp/>=<sp/>PC::ParticleType::NextID();</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a72761a0aff0775f8f6943062a34fca31" kindref="member">ParallelDescriptor::ReduceLongMax</ref>(maxnextid,<sp/>IOProcNumber);</highlight></codeline>
 <codeline lineno="443"><highlight class="normal"></highlight></codeline>
 <codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>np_on_rank(NProcs,<sp/>0L);</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>psize<sp/>=<sp/>PSizeInFile&lt;ParticleReal&gt;(write_real_comp,<sp/>write_int_comp);</highlight></codeline>
