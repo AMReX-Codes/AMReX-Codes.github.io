@@ -172,6 +172,7 @@ var searchData=
   ['amrex_5feb_5flscorebase_2ecpp',['AMReX_EB_LSCoreBase.cpp',['../AMReX__EB__LSCoreBase_8cpp.html',1,'']]],
   ['amrex_5feb_5flscorebase_2eh',['AMReX_EB_LSCoreBase.H',['../AMReX__EB__LSCoreBase_8H.html',1,'']]],
   ['amrex_5feb_5flscorei_2eh',['AMReX_EB_LSCoreI.H',['../AMReX__EB__LSCoreI_8H.html',1,'']]],
+  ['amrex_5feb_5fslopes_5fk_2eh',['AMReX_EB_slopes_K.H',['../AMReX__EB__slopes__K_8H.html',1,'']]],
   ['amrex_5feb_5ftagging_2ef90',['AMReX_EB_Tagging.F90',['../AMReX__EB__Tagging_8F90.html',1,'']]],
   ['amrex_5feb_5fto_5fpvd_2ef90',['AMReX_eb_to_pvd.F90',['../AMReX__eb__to__pvd_8F90.html',1,'']]],
   ['amrex_5feb_5futils_2ecpp',['AMReX_EB_utils.cpp',['../AMReX__EB__utils_8cpp.html',1,'']]],
