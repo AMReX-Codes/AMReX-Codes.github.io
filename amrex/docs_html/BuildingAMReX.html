@@ -303,7 +303,9 @@ precision by setting <code class="docutils literal notranslate"><span class="pre
 to FALSE.  The meaning of these variables should
 be obvious.  When <code class="docutils literal notranslate"><span class="pre">DEBUG=TRUE</span></code>, aggressive compiler optimization flags are
 turned off and assertions in source code are turned on. For production runs,
-<code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> should be set to FALSE.</p>
+<code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> should be set to FALSE.
+An advanced variable, <code class="docutils literal notranslate"><span class="pre">MPI_THREAD_MULTIPLE</span></code>, can be set to TRUE to initialize
+MPI with support for concurrent MPI calls from multiple threads.</p>
 <p>Variables <code class="docutils literal notranslate"><span class="pre">USE_CUDA</span></code>, <code class="docutils literal notranslate"><span class="pre">USE_HIP</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_DPCPP</span></code> are used for
 targeting Nvidia, AMD and Intel GPUs, respectively.  At most one of
 the three can be TRUE.</p>
@@ -749,62 +751,67 @@ below.</p>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>ENABLE_PROFPARSER</p></td>
+<tr class="row-even"><td><p>ENABLE_MPI_THREAD_MULTIPLE</p></td>
+<td><p>Concurrent MPI calls from multiple threads</p></td>
+<td><p>NO</p></td>
+<td><p>YES, NO</p></td>
+</tr>
+<tr class="row-odd"><td><p>ENABLE_PROFPARSER</p></td>
 <td><p>Build with profile parser support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>ENABLE_FPE</p></td>
+<tr class="row-even"><td><p>ENABLE_FPE</p></td>
 <td><p>Build with Floating Point Exceptions checks</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>ENABLE_ASSERTIONS</p></td>
+<tr class="row-odd"><td><p>ENABLE_ASSERTIONS</p></td>
 <td><p>Build with assertions turned on</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>ENABLE_SUNDIALS</p></td>
+<tr class="row-even"><td><p>ENABLE_SUNDIALS</p></td>
 <td><p>Enable SUNDIALS 4 interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>ENABLE_SENSEI_IN_SITU</p></td>
+<tr class="row-odd"><td><p>ENABLE_SENSEI_IN_SITU</p></td>
 <td><p>Enable SENSEI_IN_SITU infrastucture</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>ENABLE_CONDUIT</p></td>
+<tr class="row-even"><td><p>ENABLE_CONDUIT</p></td>
 <td><p>Enable Conduit support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>ENABLE_ASCENT</p></td>
+<tr class="row-odd"><td><p>ENABLE_ASCENT</p></td>
 <td><p>Enable Ascent support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>ENABLE_HYPRE</p></td>
+<tr class="row-even"><td><p>ENABLE_HYPRE</p></td>
 <td><p>Enable HYPRE interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>ENABLE_HDF5</p></td>
+<tr class="row-odd"><td><p>ENABLE_HDF5</p></td>
 <td><p>Enable HDF5-based I/O</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>ENABLE_PLOTFILE_TOOLS</p></td>
+<tr class="row-even"><td><p>ENABLE_PLOTFILE_TOOLS</p></td>
 <td><p>Build and install plotfile postprocessing tools</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>ENABLE_TUTORIALS</p></td>
+<tr class="row-odd"><td><p>ENABLE_TUTORIALS</p></td>
 <td><p>Build tutorials</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>ALLOW_DIFFERENT_COMPILER</p></td>
+<tr class="row-even"><td><p>ALLOW_DIFFERENT_COMPILER</p></td>
 <td><p>Allow an app to use a different compiler</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
