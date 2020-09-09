@@ -533,6 +533,7 @@ var searchData=
   ['amrex_5fsdcquadrature_2ef90',['AMReX_SDCquadrature.F90',['../AMReX__SDCquadrature_8F90.html',1,'']]],
   ['amrex_5fsdcstruct_2ecpp',['AMReX_SDCstruct.cpp',['../AMReX__SDCstruct_8cpp.html',1,'']]],
   ['amrex_5fsdcstruct_2eh',['AMReX_SDCstruct.H',['../AMReX__SDCstruct_8H.html',1,'']]],
+  ['amrex_5fslopes_5fk_2eh',['AMReX_Slopes_K.H',['../AMReX__Slopes__K_8H.html',1,'']]],
   ['amrex_5fspace_2eh',['AMReX_SPACE.H',['../AMReX__SPACE_8H.html',1,'']]],
   ['amrex_5fsparsebins_2eh',['AMReX_SparseBins.H',['../AMReX__SparseBins_8H.html',1,'']]],
   ['amrex_5fstatedata_2ecpp',['AMReX_StateData.cpp',['../AMReX__StateData_8cpp.html',1,'']]],
