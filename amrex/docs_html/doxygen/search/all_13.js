@@ -384,7 +384,7 @@ var searchData=
   ['single',['single',['../classamrex_1_1ForkJoin.html#a72de18d1d16fadce31b830834ffff282add5c07036f2975ff4bce568b6511d3bc',1,'amrex::ForkJoin']]],
   ['single_5fseg_5fcpdist',['single_seg_cpdist',['../classamrex_1_1LineDistFcnElement2d.html#a75032051cd58287dab296213debba3ae',1,'amrex::LineDistFcnElement2d']]],
   ['single_5fspline_5fcpdist',['single_spline_cpdist',['../classamrex_1_1SplineDistFcnElement2d.html#acf31e283cdbb4c8500f26e0c82eb31d6',1,'amrex::SplineDistFcnElement2d']]],
-  ['single_5ftask',['single_task',['../namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae',1,'amrex']]],
+  ['single_5ftask',['single_task',['../namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae',1,'amrex::single_task(gpuStream_t stream, L &amp;&amp;f) noexcept'],['../namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919',1,'amrex::single_task(L &amp;&amp;f) noexcept']]],
   ['single_5fvalued',['single_valued',['../namespaceamrex__ebcellflag__module.html#a34d542ffa101be3b08b45ad08a1aa41e',1,'amrex_ebcellflag_module']]],
   ['single_5fvalued_5fbits',['single_valued_bits',['../classamrex_1_1EBCellFlag.html#acc96dac6bf3def385c6a9bd418b71b6e',1,'amrex::EBCellFlag']]],
   ['single_5fvof_5fbits',['single_vof_bits',['../classamrex_1_1EBCellFlag.html#a7ee55a07343cf958411c2400a2925a9a',1,'amrex::EBCellFlag']]],
