@@ -709,11 +709,11 @@ an <code class="code cpp c++ docutils literal notranslate"><span class="name"><s
 by value to GPU kernels. In GPU device code, we can use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array4</span></span></code>
 or, if necessary, we can make an alias <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BaseFab</span></span></code> from an
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Array4</span></span></code>.  For example,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_GPU_HOST_DEVICE</span> <span class="kt">void</span> <span class="nf">g</span> <span class="p">(</span><span class="n">FArrayBox</span><span class="o">&amp;</span> <span class="n">fab</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_GPU_HOST_DEVICE</span> <span class="kt">void</span> <span class="n">g</span> <span class="p">(</span><span class="n">FArrayBox</span><span class="o">&amp;</span> <span class="n">fab</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 
-<span class="n">AMREX_GPU_HOST_DEVICE</span> <span class="kt">void</span> <span class="nf">f</span> <span class="p">(</span><span class="n">Box</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">bx</span><span class="p">,</span> <span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">AMREX_GPU_HOST_DEVICE</span> <span class="kt">void</span> <span class="n">f</span> <span class="p">(</span><span class="n">Box</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">bx</span><span class="p">,</span> <span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">FArrayBox</span> <span class="n">fab</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">bx</span><span class="p">.</span><span class="n">ixType</span><span class="p">());</span>
+  <span class="n">FArrayBox</span> <span class="nf">fab</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">bx</span><span class="p">.</span><span class="n">ixType</span><span class="p">());</span>
   <span class="n">g</span><span class="p">(</span><span class="n">fab</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -1310,7 +1310,7 @@ the <code class="docutils literal notranslate"><span class="pre">AMREX_FORCE_INL
 </ul>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">AMREX_GPU_DEVICE</span>
 <span class="n">AMREX_FORCE_INLINE</span>
-<span class="kt">void</span> <span class="nf">plusone_cudacpp</span> <span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">bx</span><span class="p">,</span> <span class="n">amrex</span><span class="o">::</span><span class="n">FArrayBox</span><span class="o">&amp;</span> <span class="n">fab</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">plusone_cudacpp</span> <span class="p">(</span><span class="n">amrex</span><span class="o">::</span><span class="n">Box</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">bx</span><span class="p">,</span> <span class="n">amrex</span><span class="o">::</span><span class="n">FArrayBox</span><span class="o">&amp;</span> <span class="n">fab</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="p">...</span>
 <span class="p">}</span>
