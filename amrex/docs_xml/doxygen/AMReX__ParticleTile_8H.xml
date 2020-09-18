@@ -1901,7 +1901,7 @@
 <codeline lineno="506"><highlight class="normal"></highlight></codeline>
 <codeline lineno="507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>NArrayInt;</highlight></codeline>
 <codeline lineno="508"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int*&gt;</ref><sp/>h_runtime_i_ptrs;</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int*&gt;</ref><sp/>h_runtime_i_ptrs(m_runtime_i_ptrs.size());</highlight></codeline>
 <codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>i_ptr<sp/>:<sp/>h_runtime_i_ptrs)<sp/>{</highlight></codeline>
 <codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i_ptr<sp/>=<sp/>m_soa_tile.GetIntData(index++).<ref refid="classamrex_1_1PODVector_1aed3e37de016bb3a5bdeef31fe0f8b4e0" kindref="member">dataPtr</ref>();</highlight></codeline>
 <codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
