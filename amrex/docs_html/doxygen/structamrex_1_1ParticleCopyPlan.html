@@ -114,8 +114,10 @@ Public Member Functions</h2></td></tr>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a7d3018f1b395f2aebb3caa3acb43be9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::map&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html#a7d3018f1b395f2aebb3caa3acb43be9a">m_dst_indices</a></td></tr>
 <tr class="separator:a7d3018f1b395f2aebb3caa3acb43be9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7da12a244915034c0688b4eedccbeec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt; unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html#ad7da12a244915034c0688b4eedccbeec">m_box_counts</a></td></tr>
-<tr class="separator:ad7da12a244915034c0688b4eedccbeec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7285486c8e5119099572a46997f89641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt; unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html#a7285486c8e5119099572a46997f89641">m_box_counts_d</a></td></tr>
+<tr class="separator:a7285486c8e5119099572a46997f89641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d72a20fb9d967f606d7e1ed546b6ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#a3d871a58c724cf2f3a5fb0247d592beb">Gpu::HostVector</a>&lt; unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html#ad7d72a20fb9d967f606d7e1ed546b6ac">m_box_counts_h</a></td></tr>
+<tr class="separator:ad7d72a20fb9d967f606d7e1ed546b6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a813195052803b3c8844eb604a508e9b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt; unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html#a813195052803b3c8844eb604a508e9b0">m_box_offsets</a></td></tr>
 <tr class="separator:a813195052803b3c8844eb604a508e9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a688bba8ba5f6445403254ab976e17130"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1ParticleCopyPlan.html#a688bba8ba5f6445403254ab976e17130">m_rcv_box_counts</a></td></tr>
@@ -432,12 +434,24 @@ template&lt;class PC , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, in
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="ad7da12a244915034c0688b4eedccbeec"></a>
+<a class="anchor" id="a7285486c8e5119099572a46997f89641"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt;unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; amrex::ParticleCopyPlan::m_box_counts</td>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt;unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; amrex::ParticleCopyPlan::m_box_counts_d</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad7d72a20fb9d967f606d7e1ed546b6ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Gpu.html#a3d871a58c724cf2f3a5fb0247d592beb">Gpu::HostVector</a>&lt;unsigned <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&gt; amrex::ParticleCopyPlan::m_box_counts_h</td>
         </tr>
       </table>
 </div><div class="memdoc">
