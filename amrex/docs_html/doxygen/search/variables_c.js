@@ -523,7 +523,7 @@ var searchData=
   ['max_5feb_5fpad',['max_eb_pad',['../classamrex_1_1LSCoreBase.html#a1d8e97ef9f32164ac040646e71ceea1c',1,'amrex::LSCoreBase']]],
   ['max_5fefficiency',['max_efficiency',['../namespaceamrex.html#a0dc972d04970bb21c8988fb02790526c',1,'amrex']]],
   ['max_5ffmg_5fiters',['max_fmg_iters',['../classamrex_1_1MLMG.html#aefc9d57def6cdc2851da4d26e38e092f',1,'amrex::MLMG']]],
-  ['max_5fgpu_5fstreams',['max_gpu_streams',['../classamrex_1_1Gpu_1_1Device.html#ad39ec9fe7c3da14f7e340b9cd4b4cc5d',1,'amrex::Gpu::Device']]],
+  ['max_5fgpu_5fstreams',['max_gpu_streams',['../classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e',1,'amrex::Gpu::Device']]],
   ['max_5fgrid_5fsize',['max_grid_size',['../structamrex_1_1AmrInfo.html#ad3142cf009fdd8667c2352c39fb2c522',1,'amrex::AmrInfo::max_grid_size()'],['../namespaceamrex_1_1EB2.html#a6a03e6a896276bd89190ad6eee9566e1',1,'amrex::EB2::max_grid_size()']]],
   ['max_5fiters',['max_iters',['../classamrex_1_1MLMG.html#ae4f94ee42b8da24efdafd34b023e2457',1,'amrex::MLMG']]],
   ['max_5flevel',['max_level',['../structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93',1,'amrex::AmrInfo']]],
