@@ -95,5 +95,6 @@ var searchData=
   ['fullfilename',['fullFileName',['../classamrex_1_1NFilesIter.html#a153902641555fc709b3befb6a4c6e881',1,'amrex::NFilesIter']]],
   ['func',['func',['../classamrex_1_1DeriveRec.html#a10804ba5e49805dde6c9343a0998b475',1,'amrex::DeriveRec']]],
   ['func_5f3d',['func_3d',['../classamrex_1_1DeriveRec.html#a540136f9f500bb35628b3e034161bd51',1,'amrex::DeriveRec']]],
-  ['func_5ffab',['func_fab',['../classamrex_1_1DeriveRec.html#af68c5991f26f4c0642a77d0c03009f3e',1,'amrex::DeriveRec']]]
+  ['func_5ffab',['func_fab',['../classamrex_1_1DeriveRec.html#af68c5991f26f4c0642a77d0c03009f3e',1,'amrex::DeriveRec']]],
+  ['fusible',['fusible',['../classamrex_1_1Gpu_1_1KernelInfo.html#a8aa9d3dbb11518a26de463a669781505',1,'amrex::Gpu::KernelInfo']]]
 ];

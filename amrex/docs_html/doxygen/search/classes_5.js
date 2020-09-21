@@ -143,5 +143,6 @@ var searchData=
   ['fpinfo',['FPinfo',['../structamrex_1_1FabArrayBase_1_1FPinfo.html',1,'amrex::FabArrayBase']]],
   ['frame',['Frame',['../classamrex_1_1ParallelContext_1_1Frame.html',1,'amrex::ParallelContext']]],
   ['frame',['Frame',['../classamrex_1_1ParmParse_1_1Frame.html',1,'amrex::ParmParse']]],
-  ['funcstat',['FuncStat',['../structBLProfStats_1_1FuncStat.html',1,'BLProfStats']]]
+  ['funcstat',['FuncStat',['../structBLProfStats_1_1FuncStat.html',1,'BLProfStats']]],
+  ['fusesafeguard',['FuseSafeGuard',['../structamrex_1_1Gpu_1_1FuseSafeGuard.html',1,'amrex::Gpu']]]
 ];

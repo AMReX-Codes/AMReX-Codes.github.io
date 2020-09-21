@@ -4263,6 +4263,9 @@
     <member refid="structBLProfStats_1_1FuncStat_1a9584e7e0ee928c9d2f7bcf6b817c4629" kind="function"><name>FuncStat</name></member>
     <member refid="structBLProfStats_1_1FuncStat_1ac8b5d8a4c6027d6b3f0b02c3c7c2b633" kind="function"><name>FuncStat</name></member>
   </compound>
+  <compound refid="structamrex_1_1Gpu_1_1FuseSafeGuard" kind="struct"><name>amrex::Gpu::FuseSafeGuard</name>
+    <member refid="structamrex_1_1Gpu_1_1FuseSafeGuard_1ad69471a99ccd91523b5c66b72fbb7c45" kind="function"><name>FuseSafeGuard</name></member>
+  </compound>
   <compound refid="classamrex_1_1Geometry" kind="class"><name>amrex::Geometry</name>
     <member refid="classamrex_1_1Geometry_1a84b1ad3fef8594c10d9ff2000505b20a" kind="variable"><name>is_periodic</name></member>
     <member refid="classamrex_1_1Geometry_1af62cd34804aea5643a6fc2205495b7a2" kind="variable"><name>prob_domain</name></member>
@@ -5059,6 +5062,11 @@
   </compound>
   <compound refid="structKeepValidFilter" kind="struct"><name>KeepValidFilter</name>
     <member refid="structKeepValidFilter_1af4bf053d8e8024c447f42ee722e08eb5" kind="function"><name>operator()</name></member>
+  </compound>
+  <compound refid="classamrex_1_1Gpu_1_1KernelInfo" kind="class"><name>amrex::Gpu::KernelInfo</name>
+    <member refid="classamrex_1_1Gpu_1_1KernelInfo_1a8aa9d3dbb11518a26de463a669781505" kind="variable"><name>fusible</name></member>
+    <member refid="classamrex_1_1Gpu_1_1KernelInfo_1adae6e3722dfae3c6db2714e93bdd0329" kind="function"><name>setFusible</name></member>
+    <member refid="classamrex_1_1Gpu_1_1KernelInfo_1af6b629bbe0941103c347f80ac6d1e9c7" kind="function"><name>isFusible</name></member>
   </compound>
   <compound refid="classamrex_1_1EB2_1_1LatheIF" kind="class"><name>amrex::EB2::LatheIF</name>
     <member refid="classamrex_1_1EB2_1_1LatheIF_1a4673532f2e2842aec58a63be5b8b32ac" kind="variable"><name>m_f</name></member>
@@ -6867,19 +6875,6 @@
     <member refid="classamrex_1_1NodalProjector_1a0ffd6b9d9cccf9d8f2d4ba671ed0e559" kind="function"><name>averageDown</name></member>
     <member refid="classamrex_1_1NodalProjector_1a09e3fe505727d0cec4c6e41648e39121" kind="function"><name>printInfo</name></member>
   </compound>
-  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
-  </compound>
-  <compound refid="structamrex_1_1EArena_1_1Node" kind="struct"><name>amrex::EArena::Node</name>
-    <member refid="structamrex_1_1EArena_1_1Node_1af098a20a26f8c6450ac2751d8f02a263" kind="variable"><name>m_block</name></member>
-    <member refid="structamrex_1_1EArena_1_1Node_1a8f0286fae08719933cb4848f028ac40a" kind="variable"><name>m_owner</name></member>
-    <member refid="structamrex_1_1EArena_1_1Node_1a89529f45bfc11373bc41d2da43c3a12f" kind="variable"><name>m_size</name></member>
-    <member refid="structamrex_1_1EArena_1_1Node_1a288b2fef1ea5646d959ae154b8790ecb" kind="function"><name>Node</name></member>
-    <member refid="structamrex_1_1EArena_1_1Node_1ab2e370518b6574a337ddd9fc4cefe3bf" kind="function"><name>Node</name></member>
-  </compound>
   <compound refid="classamrex_1_1CArena_1_1Node" kind="class"><name>amrex::CArena::Node</name>
     <member refid="classamrex_1_1CArena_1_1Node_1a999ce0f54f3eae13c2533caabe5acc89" kind="variable"><name>m_block</name></member>
     <member refid="classamrex_1_1CArena_1_1Node_1a8d1a994928ff734df597327f22db12dd" kind="variable"><name>m_owner</name></member>
@@ -6893,6 +6888,19 @@
     <member refid="classamrex_1_1CArena_1_1Node_1a736fe7c725b517fece9136f39e983765" kind="function"><name>size</name></member>
     <member refid="classamrex_1_1CArena_1_1Node_1abef15ce1cbccdaa8dc7aa6a6bb4a0609" kind="function"><name>owner</name></member>
     <member refid="classamrex_1_1CArena_1_1Node_1a9d48386ac6a4c17d1e2b4eb8ad13e221" kind="function"><name>coalescable</name></member>
+  </compound>
+  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
+  </compound>
+  <compound refid="structamrex_1_1EArena_1_1Node" kind="struct"><name>amrex::EArena::Node</name>
+    <member refid="structamrex_1_1EArena_1_1Node_1af098a20a26f8c6450ac2751d8f02a263" kind="variable"><name>m_block</name></member>
+    <member refid="structamrex_1_1EArena_1_1Node_1a8f0286fae08719933cb4848f028ac40a" kind="variable"><name>m_owner</name></member>
+    <member refid="structamrex_1_1EArena_1_1Node_1a89529f45bfc11373bc41d2da43c3a12f" kind="variable"><name>m_size</name></member>
+    <member refid="structamrex_1_1EArena_1_1Node_1a288b2fef1ea5646d959ae154b8790ecb" kind="function"><name>Node</name></member>
+    <member refid="structamrex_1_1EArena_1_1Node_1ab2e370518b6574a337ddd9fc4cefe3bf" kind="function"><name>Node</name></member>
   </compound>
   <compound refid="classamrex_1_1NodeBilinear" kind="class"><name>amrex::NodeBilinear</name>
     <member refid="classamrex_1_1NodeBilinear_1a6420242043deed007eccffb7f763f226" kind="function"><name>~NodeBilinear</name></member>
@@ -9109,25 +9117,25 @@
   </compound>
   <compound refid="namespace_0D138" kind="namespace"><name>@138</name>
   </compound>
-  <compound refid="namespace_0D193" kind="namespace"><name>@193</name>
+  <compound refid="namespace_0D194" kind="namespace"><name>@194</name>
   </compound>
-  <compound refid="namespace_0D197" kind="namespace"><name>@197</name>
+  <compound refid="namespace_0D198" kind="namespace"><name>@198</name>
   </compound>
-  <compound refid="namespace_0D207" kind="namespace"><name>@207</name>
+  <compound refid="namespace_0D208" kind="namespace"><name>@208</name>
   </compound>
-  <compound refid="namespace_0D242" kind="namespace"><name>@242</name>
+  <compound refid="namespace_0D243" kind="namespace"><name>@243</name>
   </compound>
-  <compound refid="namespace_0D251" kind="namespace"><name>@251</name>
+  <compound refid="namespace_0D252" kind="namespace"><name>@252</name>
   </compound>
-  <compound refid="namespace_0D258" kind="namespace"><name>@258</name>
+  <compound refid="namespace_0D259" kind="namespace"><name>@259</name>
   </compound>
-  <compound refid="namespace_0D292" kind="namespace"><name>@292</name>
+  <compound refid="namespace_0D293" kind="namespace"><name>@293</name>
   </compound>
-  <compound refid="namespace_0D340" kind="namespace"><name>@340</name>
+  <compound refid="namespace_0D341" kind="namespace"><name>@341</name>
   </compound>
-  <compound refid="namespace_0D400" kind="namespace"><name>@400</name>
+  <compound refid="namespace_0D401" kind="namespace"><name>@401</name>
   </compound>
-  <compound refid="namespace_0D407" kind="namespace"><name>@407</name>
+  <compound refid="namespace_0D408" kind="namespace"><name>@408</name>
   </compound>
   <compound refid="namespace_0D51" kind="namespace"><name>@51</name>
   </compound>
@@ -9557,20 +9565,34 @@
     <member refid="namespaceamrex_1a006c22eb1e141a0784faa415c00a49c4" kind="function"><name>launch_host</name></member>
     <member refid="namespaceamrex_1a3365c3faa5657c39e8d8aa3ac2b7592c" kind="function"><name>launch_host</name></member>
     <member refid="namespaceamrex_1ada73ee47d1c3a0d63725ce77e1334257" kind="function"><name>launch</name></member>
-    <member refid="namespaceamrex_1a2ae7641825bcad6d283e9ccea0a14c87" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a6d387a74be2cf34825f4df1714211d53" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1a1338b6bf9c4fff7e8e02e7e94c6eaf90" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a1f96992be96d02a07ea0e149e99df565" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1ac950f9050c0592766dcec5df91d3ecdf" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a7a53683758ce030b27048caae20ff8dc" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1ad54611c0df621fe9e1d23448e8cf5945" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1ab5dd9e9791b83bb793615d76f105a68c" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1acf0dc29b5b897b4b7ff1270789dd26f8" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1af1f90391c15f499e0cccd040e37cb6c9" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a1f6299867366078876af90fa56151713" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1a449c50e570892227680d09214837997c" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1acedc4571436ef7196461a337daafe577" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1a2f862185c98a2db7caeebe295468326d" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a254b157995b540641c02a74d2ad65ebe" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a58f6305adbac638674782f274ce8bb80" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1aff9b2ebd167a621c7784769618bda4c6" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a3402f6ed86316371198e6c2ff17ac5ac" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a6daa7b128f7df0ad214eb964c3467cdf" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a897ec22faf83646115076a4520a5abbf" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1ac96f4d9630c4ea1445766061b3fed3f4" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a4508b95a3ecc4f15b0b66d7520981f4b" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a27afa434166c6cd6925b63f2729f1e76" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a71600bb098640c24e93a816035b4a254" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a53fa136d7eac223e2fad334c8b15e138" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a9744823a175d8d361c9ad0f48d6d2ca7" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a88a534ac7f6788df74e2a3b69f36d5ee" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1ac4fca0bbf870bf63e6410d5bfb8f6cec" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1aa3d67648733b6d47b6f579e9f157ee11" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a12ef8f8c8150215890fcf56e024ffe54" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a3410871e25fe94c964b94bdc5a5af600" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1aeeba5c10b16807384e4d6fbc84843f28" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a7421bdf4eb985c8246d56cb401862eec" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a24ce492df29f97eea1da6d4d6a0e5bdc" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1a10d0f241ad4d9d28d20fa84630e7c476" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a3176ade9b263bdb8eff5d6899c1b44bf" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a723dc684ea9fb13ba007143c904d0b45" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1ae29d0bf15408a1011f1efe2268bc02c1" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a6f268bb50cb57088d5321ed0c04c61b1" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1ad72c9207638dee72b9c2ccedc35868d6" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1ac9332ec3412332457a7273412131b24a" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a410d6b1d4212f6b2cd1166ab26a693c6" kind="function"><name>ParallelFor</name></member>
     <member refid="namespaceamrex_1a5a1395d7a528a4346d3abbbf457bf078" kind="function"><name>FabReduce</name></member>
     <member refid="namespaceamrex_1a6fbc9ce751f84cb6447998a0ef18da98" kind="function"><name>FabReduce</name></member>
     <member refid="namespaceamrex_1aa97bf4be56f176e3af5b90f5b5955a04" kind="function"><name>VecReduce</name></member>
@@ -9588,35 +9610,43 @@
     <member refid="namespaceamrex_1ab85f87612e22364c1d3e310670c9fef0" kind="function"><name>HostDeviceFor</name></member>
     <member refid="namespaceamrex_1ac4cd096351a9069431300195029519db" kind="function"><name>HostDeviceFor</name></member>
     <member refid="namespaceamrex_1a6857dbe043af9dfc73a2bc572b14e918" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1aaa43ade38dff5d2e3eea8085d5c2e99e" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1ae691b4150bbebc8fa1a0ad685c42a15b" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1ac8ee3123268c4e941ac44214a7e5f9f8" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1afff3ae3db80c80c67b8a89f72c7fad01" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1a49077d5108dc85db1db7938f039a778b" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1a35d0951b57ea7c93629e68e42c3a6807" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1aa928415b2afda06373493941877c8daa" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1aad398246e65a7d7102beb5169e03a04d" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1a5b26a31faefa1749b9fb899d1818244b" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1a3b9faf23e1d7db427410543fb90dfe54" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1a5484386a731a820195e419b9ff0d0fc2" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1aec488f9795341de5cb922ba7ad08066c" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1a440c08a8f25cc712e02cefb709238206" kind="function"><name>HostDeviceFor</name></member>
+    <member refid="namespaceamrex_1ad6c49d13c537803899b8c4cc0cce7516" kind="function"><name>HostDeviceFor</name></member>
     <member refid="namespaceamrex_1a3bddb069b268576e6fa712be45c218ae" kind="function"><name>single_task</name></member>
     <member refid="namespaceamrex_1a1943b9e3d049575658e8d169748d9b17" kind="function"><name>launch</name></member>
     <member refid="namespaceamrex_1a93bf7d62b3ca318333e7e1d4a6d5d5c1" kind="function"><name>launch</name></member>
     <member refid="namespaceamrex_1a685ae8eab582f895ce964b6a99030ef2" kind="function"><name>launch</name></member>
-    <member refid="namespaceamrex_1a84c5b3fff9a76ac7f3f0e6d09ab91c53" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1a8488701a53ce11463b9b2ddc7e3ea607" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1afe3e5414ba5c14693c098f64a5b92a65" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1a8ca20f002f2be88cc62696a57d5510f6" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1a5d01842b1aa1bef96aa830692153df8b" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1aad4924868a04a97096eb3e38853cfe71" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1af4a8fe7681c8ec356211136e29609eb0" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1ad411e7926ae6751ea3dabe64167bee9a" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a1bcec6d48338476959117b14facc7368" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1adbfb2297d04a71bbc7119a6706d73ba7" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1ac74579b6de3ede3f4e2927b41c6ea8de" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a0b75f1534270f96efb923ee993df3f34" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1aabb083e8f18e46a6835696c3e75506f7" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1a7336e8a8cb02bcd741e12c5672a769fa" kind="function"><name>ParallelFor</name></member>
     <member refid="namespaceamrex_1a935f69088ed7c3ddb4dab90b7ca0d000" kind="function"><name>FabReduce</name></member>
     <member refid="namespaceamrex_1a634be97c589e01fc1c437058de57fce7" kind="function"><name>FabReduce</name></member>
     <member refid="namespaceamrex_1a42bbe812e31af6f89c8fcc4b7c9c88df" kind="function"><name>VecReduce</name></member>
     <member refid="namespaceamrex_1aa785b3b07c24c864604e8de72a0bb919" kind="function"><name>single_task</name></member>
-    <member refid="namespaceamrex_1a254b157995b540641c02a74d2ad65ebe" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a6daa7b128f7df0ad214eb964c3467cdf" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a27afa434166c6cd6925b63f2729f1e76" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a88a534ac7f6788df74e2a3b69f36d5ee" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1aa3d67648733b6d47b6f579e9f157ee11" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a3410871e25fe94c964b94bdc5a5af600" kind="function"><name>For</name></member>
-    <member refid="namespaceamrex_1a7421bdf4eb985c8246d56cb401862eec" kind="function"><name>For</name></member>
+    <member refid="namespaceamrex_1aa4cf3c75a27fc2260835ebc8fc0c6b22" kind="function"><name>HostDeviceParallelFor</name></member>
     <member refid="namespaceamrex_1aaf3a6e20d26cc2510d4883b5ce603393" kind="function"><name>HostDeviceParallelFor</name></member>
-    <member refid="namespaceamrex_1af13fed12dc210f4209f3b0d2b45fe7a0" kind="function"><name>HostDeviceParallelFor</name></member>
-    <member refid="namespaceamrex_1ab39347f3d7280f870ed38fde9cc2a9e0" kind="function"><name>HostDeviceParallelFor</name></member>
-    <member refid="namespaceamrex_1a10a598f6d9edf97f7b99f60f3fce33a2" kind="function"><name>HostDeviceParallelFor</name></member>
-    <member refid="namespaceamrex_1a396905a045fcd9dc9cc643f2ec61acb2" kind="function"><name>HostDeviceParallelFor</name></member>
-    <member refid="namespaceamrex_1a4482c9e053778ebaf7908858feaea277" kind="function"><name>HostDeviceParallelFor</name></member>
-    <member refid="namespaceamrex_1a58b606e16a2180bed3c9df9c1ee63f79" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1a3e7140d01a3069aaf23524b0e2ba4a4a" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1aa9ae3294d0b8e59263313243942b35de" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1a3ab6d49a98bf0aa681f63e4854c9fcaa" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1a87a4ced1368be9b1d4229168cdd08685" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1aeb0929626cb69cd6ce49a53de1d71e08" kind="function"><name>HostDeviceParallelFor</name></member>
+    <member refid="namespaceamrex_1aade0ea904d3c8d69e5f375838fd643ac" kind="function"><name>HostDeviceParallelFor</name></member>
     <member refid="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" kind="function"><name>isEmpty</name></member>
     <member refid="namespaceamrex_1abb63128824cf099d9c02ef49c3288713" kind="function"><name>isEmpty</name></member>
     <member refid="namespaceamrex_1a63e28af3672b72154d156eac5f51ce06" kind="function"><name>OwnerMask</name></member>
@@ -10281,34 +10311,34 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D109" kind="namespace"><name>amrex::@109</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D177" kind="namespace"><name>amrex::@177</name>
+  <compound refid="namespaceamrex_1_1_0D178" kind="namespace"><name>amrex::@178</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D179" kind="namespace"><name>amrex::@179</name>
+  <compound refid="namespaceamrex_1_1_0D180" kind="namespace"><name>amrex::@180</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D205" kind="namespace"><name>amrex::@205</name>
+  <compound refid="namespaceamrex_1_1_0D206" kind="namespace"><name>amrex::@206</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D225" kind="namespace"><name>amrex::@225</name>
-    <member refid="AMReX__ParmParse_8cpp_1a7f1839962127bd655694cee290cef413" kind="enum"><name>PType</name></member>
-    <member refid="AMReX__ParmParse_8cpp_1a6b7ff253c303a8b67cbf1e026a0082f5" kind="enum"><name>lexState</name></member>
+  <compound refid="namespaceamrex_1_1_0D226" kind="namespace"><name>amrex::@226</name>
+    <member refid="AMReX__ParmParse_8cpp_1a6e9fccc738ebc52977063fc6038fe2b6" kind="enum"><name>PType</name></member>
+    <member refid="AMReX__ParmParse_8cpp_1adfa64030c3364fda8946cebe315e0132" kind="enum"><name>lexState</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D236" kind="namespace"><name>amrex::@236</name>
+  <compound refid="namespaceamrex_1_1_0D237" kind="namespace"><name>amrex::@237</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D254" kind="namespace"><name>amrex::@254</name>
+  <compound refid="namespaceamrex_1_1_0D255" kind="namespace"><name>amrex::@255</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D263" kind="namespace"><name>amrex::@263</name>
+  <compound refid="namespaceamrex_1_1_0D264" kind="namespace"><name>amrex::@264</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D267" kind="namespace"><name>amrex::@267</name>
+  <compound refid="namespaceamrex_1_1_0D268" kind="namespace"><name>amrex::@268</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D27" kind="namespace"><name>amrex::@27</name>
     <member refid="AMReX__Cluster_8cpp_1a307d40f9ddd3936b402b55fddef81d0f" kind="enum"><name>CutStatus</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1_0D34" kind="namespace"><name>amrex::@34</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D355" kind="namespace"><name>amrex::@355</name>
-  </compound>
   <compound refid="namespaceamrex_1_1_0D356" kind="namespace"><name>amrex::@356</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D371" kind="namespace"><name>amrex::@371</name>
+  <compound refid="namespaceamrex_1_1_0D357" kind="namespace"><name>amrex::@357</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D372" kind="namespace"><name>amrex::@372</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D42" kind="namespace"><name>amrex::@42</name>
   </compound>
@@ -10316,37 +10346,37 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D44" kind="namespace"><name>amrex::@44</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D449" kind="namespace"><name>amrex::@449</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D455" kind="namespace"><name>amrex::@455</name>
+  <compound refid="namespaceamrex_1_1_0D450" kind="namespace"><name>amrex::@450</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D456" kind="namespace"><name>amrex::@456</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D457" kind="namespace"><name>amrex::@457</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D459" kind="namespace"><name>amrex::@459</name>
+  <compound refid="namespaceamrex_1_1_0D458" kind="namespace"><name>amrex::@458</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D461" kind="namespace"><name>amrex::@461</name>
+  <compound refid="namespaceamrex_1_1_0D460" kind="namespace"><name>amrex::@460</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D465" kind="namespace"><name>amrex::@465</name>
+  <compound refid="namespaceamrex_1_1_0D462" kind="namespace"><name>amrex::@462</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D474" kind="namespace"><name>amrex::@474</name>
+  <compound refid="namespaceamrex_1_1_0D466" kind="namespace"><name>amrex::@466</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D475" kind="namespace"><name>amrex::@475</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D476" kind="namespace"><name>amrex::@476</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D479" kind="namespace"><name>amrex::@479</name>
+  <compound refid="namespaceamrex_1_1_0D477" kind="namespace"><name>amrex::@477</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D482" kind="namespace"><name>amrex::@482</name>
+  <compound refid="namespaceamrex_1_1_0D480" kind="namespace"><name>amrex::@480</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D483" kind="namespace"><name>amrex::@483</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D484" kind="namespace"><name>amrex::@484</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D497" kind="namespace"><name>amrex::@497</name>
+  <compound refid="namespaceamrex_1_1_0D485" kind="namespace"><name>amrex::@485</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D513" kind="namespace"><name>amrex::@513</name>
+  <compound refid="namespaceamrex_1_1_0D498" kind="namespace"><name>amrex::@498</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D514" kind="namespace"><name>amrex::@514</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D54" kind="namespace"><name>amrex::@54</name>
   </compound>
@@ -10531,9 +10561,7 @@
     <member refid="namespaceamrex_1_1EB2_1a1d98d3722935491fe83fe526ec9d5760" kind="function"><name>translate</name></member>
     <member refid="namespaceamrex_1_1EB2_1ae1c1ff0fbaf7ff938aae5f3daf43d607" kind="function"><name>makeUnion</name></member>
   </compound>
-  <compound refid="namespaceamrex_1_1EB2_1_1_0D298" kind="namespace"><name>amrex::EB2::@298</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1EB2_1_1_0D300" kind="namespace"><name>amrex::EB2::@300</name>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0D299" kind="namespace"><name>amrex::EB2::@299</name>
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1_0D301" kind="namespace"><name>amrex::EB2::@301</name>
   </compound>
@@ -10541,7 +10569,9 @@
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1_0D303" kind="namespace"><name>amrex::EB2::@303</name>
   </compound>
-  <compound refid="namespaceamrex_1_1EB2_1_1_0D328" kind="namespace"><name>amrex::EB2::@328</name>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0D304" kind="namespace"><name>amrex::EB2::@304</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1EB2_1_1_0D329" kind="namespace"><name>amrex::EB2::@329</name>
   </compound>
   <compound refid="namespaceamrex_1_1EB2_1_1IIF__detail" kind="namespace"><name>amrex::EB2::IIF_detail</name>
     <member refid="namespaceamrex_1_1EB2_1_1IIF__detail_1ab29fda705d6e62fff3c0966fc83c76ff" kind="function"><name>do_min</name></member>
@@ -11968,6 +11998,8 @@
   </compound>
   <compound refid="AMReX__GpuFuse_8H" kind="file"><name>AMReX_GpuFuse.H</name>
   </compound>
+  <compound refid="AMReX__GpuKernelInfo_8H" kind="file"><name>AMReX_GpuKernelInfo.H</name>
+  </compound>
   <compound refid="AMReX__GpuLaunch_8cpp" kind="file"><name>AMReX_GpuLaunch.cpp</name>
   </compound>
   <compound refid="AMReX__GpuLaunch_8H" kind="file"><name>AMReX_GpuLaunch.H</name>
@@ -11978,6 +12010,7 @@
     <member refid="AMReX__GpuLaunch_8H_1ac8ec1cc313d4dad0d4c5bbe4bae0862a" kind="define"><name>AMREX_GET_MACRO</name></member>
     <member refid="AMReX__GpuLaunch_8H_1a224e4236496017e5f5cbcec29e94c379" kind="define"><name>AMREX_LAUNCH_DEVICE_LAMBDA</name></member>
     <member refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kind="define"><name>AMREX_LAUNCH_HOST_DEVICE_LAMBDA</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1ab7bc1567bf12406408b0d5ba94d0b0fe" kind="define"><name>AMREX_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA</name></member>
     <member refid="AMReX__GpuLaunch_8H_1a39a4c246c2c105435c9df228aa98c2a6" kind="define"><name>AMREX_FOR_1D</name></member>
     <member refid="AMReX__GpuLaunch_8H_1a1a2a3f6095bcdeb590ee81b4329c350d" kind="define"><name>AMREX_FOR_3D</name></member>
     <member refid="AMReX__GpuLaunch_8H_1ac9a8d7b0c7a78713e4fdd55ee2e4fb83" kind="define"><name>AMREX_FOR_4D</name></member>
@@ -11990,6 +12023,12 @@
     <member refid="AMReX__GpuLaunch_8H_1a3611c23eea6919c2351f474c872c1038" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_1D</name></member>
     <member refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_3D</name></member>
     <member refid="AMReX__GpuLaunch_8H_1afd60f7bb161794f08fe97f8f36e1f52d" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_4D</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1a30a13e338f4a02a15e4142c46ff18a81" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FUSIBLE</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1a5abd57b86c7db171a1e4fe14579bf979" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FUSIBLE</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1a0206546a2d346a82cc3955b4e02e5c3a" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FUSIBLE</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1a0098e8201246fef532914bc73452ae53" kind="define"><name>AMREX_HOST_DEVICE_FOR_1D_FUSIBLE</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1a3cac6823165800dd4fbd850eca49cc18" kind="define"><name>AMREX_HOST_DEVICE_FOR_3D_FUSIBLE</name></member>
+    <member refid="AMReX__GpuLaunch_8H_1afb13ad55044f5ff34fad12d05930f90d" kind="define"><name>AMREX_HOST_DEVICE_FOR_4D_FUSIBLE</name></member>
     <member refid="AMReX__GpuLaunch_8H_1a1bb4109b1b472fbcfb59fc4111460564" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG</name></member>
     <member refid="AMReX__GpuLaunch_8H_1afef0aea2a8ff04d4d7a6c06d92b48fbd" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FLAG</name></member>
     <member refid="AMReX__GpuLaunch_8H_1ab10b9f44fb4000025c4d7a025abac805" kind="define"><name>AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG</name></member>
@@ -12038,10 +12077,13 @@
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a289cd6699548aba71d287d94299ae098" kind="define"><name>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1ab8f5b7c92c1194b0f0482c84ce1fe5b3" kind="define"><name>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a29d34dc14598d6232a67c02ced582cb3" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_1D</name></member>
+    <member refid="AMReX__GpuLaunchMacrosG_8H_1a03fd176f103be8175d6815fec4fe8d4a" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_1D_FUSIBLE</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1aaa11b38ec048ffdce3869fb15f3d1ff7" kind="define"><name>AMREX_GPU_DEVICE_FOR_1D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1aa12bff29d50b58116aebcfdf836b1554" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_3D</name></member>
+    <member refid="AMReX__GpuLaunchMacrosG_8H_1a03fc969b103fc21b568d5b48053061eb" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_3D_FUSIBLE</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a756074cbdeac9c602bfcdf0f5b1ba731" kind="define"><name>AMREX_GPU_DEVICE_FOR_3D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a111936fe89c50b4c720ad71fb48f371a" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_4D</name></member>
+    <member refid="AMReX__GpuLaunchMacrosG_8H_1a26e26f0f64f1979cbabe53e3109e1e1b" kind="define"><name>AMREX_GPU_HOST_DEVICE_FOR_4D_FUSIBLE</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1a2d61db5a48c71c8460df5ddc71d9b25a" kind="define"><name>AMREX_GPU_DEVICE_FOR_4D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1ab14f59d411d19d19888ee7fd5fc3318c" kind="define"><name>AMREX_GPU_DEVICE_PARALLEL_FOR_1D</name></member>
     <member refid="AMReX__GpuLaunchMacrosG_8H_1ad4db49719b03555018b9092c203eacfb" kind="define"><name>AMREX_GPU_DEVICE_PARALLEL_FOR_3D</name></member>

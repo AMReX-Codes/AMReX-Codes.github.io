@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="AMReX__GpuQualifiers_8H_source.html">AMReX_GpuQualifiers.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuKernelInfo_8H_source.html">AMReX_GpuKernelInfo.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuControl_8H_source.html">AMReX_GpuControl.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuTypes_8H_source.html">AMReX_GpuTypes.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuError_8H_source.html">AMReX_GpuError.H</a>&gt;</code><br />
@@ -102,6 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;<a class="el" href="AMReX__GpuDevice_8H_source.html">AMReX_GpuDevice.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuMemory_8H_source.html">AMReX_GpuMemory.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuReduce_8H_source.html">AMReX_GpuReduce.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__GpuFuse_8H_source.html">AMReX_GpuFuse.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Tuple_8H_source.html">AMReX_Tuple.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Box_8H_source.html">AMReX_Box.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Loop_8H_source.html">AMReX_Loop.H</a>&gt;</code><br />
@@ -151,6 +153,8 @@ Macros</h2></td></tr>
 <tr class="separator:a224e4236496017e5f5cbcec29e94c379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20fce791cf3cebcb24e689bb5da837c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a20fce791cf3cebcb24e689bb5da837c0">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</a>(...)</td></tr>
 <tr class="separator:a20fce791cf3cebcb24e689bb5da837c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7bc1567bf12406408b0d5ba94d0b0fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#ab7bc1567bf12406408b0d5ba94d0b0fe">AMREX_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#a20fce791cf3cebcb24e689bb5da837c0">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:ab7bc1567bf12406408b0d5ba94d0b0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39a4c246c2c105435c9df228aa98c2a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#aaa11b38ec048ffdce3869fb15f3d1ff7">AMREX_GPU_DEVICE_FOR_1D</a>(__VA_ARGS__)</td></tr>
 <tr class="separator:a39a4c246c2c105435c9df228aa98c2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a2a3f6095bcdeb590ee81b4329c350d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a1a2a3f6095bcdeb590ee81b4329c350d">AMREX_FOR_3D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a756074cbdeac9c602bfcdf0f5b1ba731">AMREX_GPU_DEVICE_FOR_3D</a>(__VA_ARGS__)</td></tr>
@@ -175,6 +179,18 @@ Macros</h2></td></tr>
 <tr class="separator:a75c5025bd1ba39794c9f3ce7212ed7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd60f7bb161794f08fe97f8f36e1f52d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a54b13c49a62108209b5fb525fbc56d44">AMREX_GPU_HOST_DEVICE_PARALLEL_FOR_4D</a>(__VA_ARGS__)</td></tr>
 <tr class="separator:afd60f7bb161794f08fe97f8f36e1f52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a13e338f4a02a15e4142c46ff18a81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a30a13e338f4a02a15e4142c46ff18a81">AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FUSIBLE</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#a3611c23eea6919c2351f474c872c1038">AMREX_HOST_DEVICE_PARALLEL_FOR_1D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a30a13e338f4a02a15e4142c46ff18a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abd57b86c7db171a1e4fe14579bf979"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a5abd57b86c7db171a1e4fe14579bf979">AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FUSIBLE</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#a75c5025bd1ba39794c9f3ce7212ed7ae">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a5abd57b86c7db171a1e4fe14579bf979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0206546a2d346a82cc3955b4e02e5c3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a0206546a2d346a82cc3955b4e02e5c3a">AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FUSIBLE</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a0206546a2d346a82cc3955b4e02e5c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0098e8201246fef532914bc73452ae53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a0098e8201246fef532914bc73452ae53">AMREX_HOST_DEVICE_FOR_1D_FUSIBLE</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a29d34dc14598d6232a67c02ced582cb3">AMREX_GPU_HOST_DEVICE_FOR_1D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a0098e8201246fef532914bc73452ae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cac6823165800dd4fbd850eca49cc18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a3cac6823165800dd4fbd850eca49cc18">AMREX_HOST_DEVICE_FOR_3D_FUSIBLE</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#aa12bff29d50b58116aebcfdf836b1554">AMREX_GPU_HOST_DEVICE_FOR_3D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:a3cac6823165800dd4fbd850eca49cc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb13ad55044f5ff34fad12d05930f90d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#afb13ad55044f5ff34fad12d05930f90d">AMREX_HOST_DEVICE_FOR_4D_FUSIBLE</a>(...)&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a111936fe89c50b4c720ad71fb48f371a">AMREX_GPU_HOST_DEVICE_FOR_4D</a>(__VA_ARGS__)</td></tr>
+<tr class="separator:afb13ad55044f5ff34fad12d05930f90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb4109b1b472fbcfb59fc4111460564"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#a1bb4109b1b472fbcfb59fc4111460564">AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FLAG</a>(where_to_run,  n,  i,  block)</td></tr>
 <tr class="separator:a1bb4109b1b472fbcfb59fc4111460564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afef0aea2a8ff04d4d7a6c06d92b48fbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AMReX__GpuLaunch_8H.html#afef0aea2a8ff04d4d7a6c06d92b48fbd">AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FLAG</a>(where_to_run,  box,  i,  j,  k,  block)</td></tr>
@@ -425,6 +441,22 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a0098e8201246fef532914bc73452ae53"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_FOR_1D_FUSIBLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a29d34dc14598d6232a67c02ced582cb3">AMREX_GPU_HOST_DEVICE_FOR_1D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="af98b03b7b3a87691d2e944fcd96c5a84"></a>
 <div class="memitem">
 <div class="memproto">
@@ -491,6 +523,22 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(where_to_run); <a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">    amrex::LoopOnCpu</a>(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept \</div><div class="line">        block \</div><div class="line">    );</div><div class="ttc" id="namespaceamrex_html_a95b1159ba3a5494abd49dc9b3d34eacf"><div class="ttname"><a href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables. </div><div class="ttdef"><b>Definition:</b> AMReX.H:96</div></div>
 <div class="ttc" id="namespaceamrex_html_a9d2e38bd2809143536efe0db90492957"><div class="ttname"><a href="namespaceamrex.html#a9d2e38bd2809143536efe0db90492957">amrex::LoopOnCpu</a></div><div class="ttdeci">void LoopOnCpu(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:118</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3cac6823165800dd4fbd850eca49cc18"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_FOR_3D_FUSIBLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#aa12bff29d50b58116aebcfdf836b1554">AMREX_GPU_HOST_DEVICE_FOR_3D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="af44071ada5d6349748d7ee4bd8fcd8d9"></a>
@@ -574,6 +622,22 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="afb13ad55044f5ff34fad12d05930f90d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_FOR_4D_FUSIBLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunchMacrosG_8H.html#a111936fe89c50b4c720ad71fb48f371a">AMREX_GPU_HOST_DEVICE_FOR_4D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3611c23eea6919c2351f474c872c1038"></a>
 <div class="memitem">
 <div class="memproto">
@@ -627,6 +691,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">{  <span class="keyword">using</span> amrex_i_inttype = <span class="keyword">typename</span> std::remove_const&lt;decltype(n)&gt;::type; <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">    amrex::ignore_unused</a>(where_to_run); \</div><div class="line">    AMREX_PRAGMA_SIMD \</div><div class="line">    for (amrex_i_inttype i = 0; i &lt; n; ++i) { \</div><div class="line">        block \</div><div class="line">    }}</div><div class="ttc" id="namespaceamrex_html_a95b1159ba3a5494abd49dc9b3d34eacf"><div class="ttname"><a href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables. </div><div class="ttdef"><b>Definition:</b> AMReX.H:96</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a30a13e338f4a02a15e4142c46ff18a81"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_1D_FUSIBLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#a3611c23eea6919c2351f474c872c1038">AMREX_HOST_DEVICE_PARALLEL_FOR_1D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="a75c5025bd1ba39794c9f3ce7212ed7ae"></a>
@@ -695,6 +775,22 @@ Functions</h2></td></tr>
 <b>Value:</b><div class="fragment"><div class="line"><a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(where_to_run); <a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">\</a></div><div class="line"><a class="code" href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">    amrex::LoopConcurrentOnCpu</a>(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept \</div><div class="line">        block \</div><div class="line">    );</div><div class="ttc" id="namespaceamrex_html_abdd5d7a3b382bc1d21220946d7084839"><div class="ttname"><a href="namespaceamrex.html#abdd5d7a3b382bc1d21220946d7084839">amrex::LoopConcurrentOnCpu</a></div><div class="ttdeci">void LoopConcurrentOnCpu(Dim3 lo, Dim3 hi, F &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Loop.H:139</div></div>
 <div class="ttc" id="namespaceamrex_html_a95b1159ba3a5494abd49dc9b3d34eacf"><div class="ttname"><a href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void ignore_unused(const Ts &amp;...)</div><div class="ttdoc">This shuts up the compiler about unused variables. </div><div class="ttdef"><b>Definition:</b> AMReX.H:96</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5abd57b86c7db171a1e4fe14579bf979"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_3D_FUSIBLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#a75c5025bd1ba39794c9f3ce7212ed7ae">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="afd60f7bb161794f08fe97f8f36e1f52d"></a>
@@ -778,6 +874,22 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a class="anchor" id="a0206546a2d346a82cc3955b4e02e5c3a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FUSIBLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a224e4236496017e5f5cbcec29e94c379"></a>
 <div class="memitem">
 <div class="memproto">
@@ -791,12 +903,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a>(__VA_ARGS__,\</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#aa3c3a61eea0e24f7656e735fd6967539">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#a4639cdef27e47fdf3e607cb4d57920fe">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#a5a37adc8398e48fbcb6db85b72b06793">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>)(__VA_ARGS__)</div><div class="ttc" id="AMReX__GpuLaunch_8H_html_a23987d1e81da6d4c71acf5f460eed8ef"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a></div><div class="ttdeci">#define AMREX_WRONG_NUM_ARGS(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:166</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a>(__VA_ARGS__,\</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#aa3c3a61eea0e24f7656e735fd6967539">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#a4639cdef27e47fdf3e607cb4d57920fe">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#a5a37adc8398e48fbcb6db85b72b06793">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>)(__VA_ARGS__)</div><div class="ttc" id="AMReX__GpuLaunch_8H_html_a23987d1e81da6d4c71acf5f460eed8ef"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a></div><div class="ttdeci">#define AMREX_WRONG_NUM_ARGS(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:168</div></div>
 <div class="ttc" id="AMReX__GpuLaunchMacrosC_8H_html_aa3c3a61eea0e24f7656e735fd6967539"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8H.html#aa3c3a61eea0e24f7656e735fd6967539">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3</a></div><div class="ttdeci">#define AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_3(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchMacrosC.H:36</div></div>
-<div class="ttc" id="AMReX__GpuLaunch_8H_html_ac8ec1cc313d4dad0d4c5bbe4bae0862a"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a></div><div class="ttdeci">#define AMREX_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, NAME,...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:167</div></div>
+<div class="ttc" id="AMReX__GpuLaunch_8H_html_ac8ec1cc313d4dad0d4c5bbe4bae0862a"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a></div><div class="ttdeci">#define AMREX_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, NAME,...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:169</div></div>
 <div class="ttc" id="AMReX__GpuLaunchMacrosC_8H_html_a4639cdef27e47fdf3e607cb4d57920fe"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8H.html#a4639cdef27e47fdf3e607cb4d57920fe">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2</a></div><div class="ttdeci">#define AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE_2(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchMacrosC.H:35</div></div>
 <div class="ttc" id="AMReX__GpuLaunchMacrosC_8H_html_a5a37adc8398e48fbcb6db85b72b06793"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8H.html#a5a37adc8398e48fbcb6db85b72b06793">AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE</a></div><div class="ttdeci">#define AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchMacrosC.H:34</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="ab7bc1567bf12406408b0d5ba94d0b0fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AMREX_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="AMReX__GpuLaunch_8H.html#a20fce791cf3cebcb24e689bb5da837c0">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</a>(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="a20fce791cf3cebcb24e689bb5da837c0"></a>
@@ -812,10 +940,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a>(__VA_ARGS__,\</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#a85943be0d705485c46b55c8442846c61">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#ad1f3024e42b239e08da4610129518d1b">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#ae57c0c24e324c7f036e03631ac52ccef">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>)(__VA_ARGS__)</div><div class="ttc" id="AMReX__GpuLaunch_8H_html_a23987d1e81da6d4c71acf5f460eed8ef"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a></div><div class="ttdeci">#define AMREX_WRONG_NUM_ARGS(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:166</div></div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a>(__VA_ARGS__,\</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#a85943be0d705485c46b55c8442846c61">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#ad1f3024e42b239e08da4610129518d1b">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunchMacrosC_8H.html#ae57c0c24e324c7f036e03631ac52ccef">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>, \</div><div class="line">                                                        <a class="code" href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a>)(__VA_ARGS__)</div><div class="ttc" id="AMReX__GpuLaunch_8H_html_a23987d1e81da6d4c71acf5f460eed8ef"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a23987d1e81da6d4c71acf5f460eed8ef">AMREX_WRONG_NUM_ARGS</a></div><div class="ttdeci">#define AMREX_WRONG_NUM_ARGS(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:168</div></div>
 <div class="ttc" id="AMReX__GpuLaunchMacrosC_8H_html_a85943be0d705485c46b55c8442846c61"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8H.html#a85943be0d705485c46b55c8442846c61">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3</a></div><div class="ttdeci">#define AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3(TN1, TI1, block1, TN2, TI2, block2, TN3, TI3, block3)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchMacrosC.H:21</div></div>
 <div class="ttc" id="AMReX__GpuLaunchMacrosC_8H_html_ae57c0c24e324c7f036e03631ac52ccef"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8H.html#ae57c0c24e324c7f036e03631ac52ccef">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE</a></div><div class="ttdeci">#define AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE(TN, TI, block)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchMacrosC.H:4</div></div>
-<div class="ttc" id="AMReX__GpuLaunch_8H_html_ac8ec1cc313d4dad0d4c5bbe4bae0862a"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a></div><div class="ttdeci">#define AMREX_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, NAME,...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:167</div></div>
+<div class="ttc" id="AMReX__GpuLaunch_8H_html_ac8ec1cc313d4dad0d4c5bbe4bae0862a"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#ac8ec1cc313d4dad0d4c5bbe4bae0862a">AMREX_GET_MACRO</a></div><div class="ttdeci">#define AMREX_GET_MACRO(_1, _2, _3, _4, _5, _6, _7, _8, _9, NAME,...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:169</div></div>
 <div class="ttc" id="AMReX__GpuLaunchMacrosC_8H_html_ad1f3024e42b239e08da4610129518d1b"><div class="ttname"><a href="AMReX__GpuLaunchMacrosC_8H.html#ad1f3024e42b239e08da4610129518d1b">AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2</a></div><div class="ttdeci">#define AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2(TN1, TI1, block1, TN2, TI2, block2)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchMacrosC.H:11</div></div>
 </div><!-- fragment -->
 </div>
