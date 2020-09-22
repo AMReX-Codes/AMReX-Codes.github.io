@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['randomengine',['RandomEngine',['../structamrex_1_1RandomEngine.html',1,'amrex']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html',1,'amrex::Gpu::range_detail']]],
   ['realbox',['RealBox',['../classamrex_1_1RealBox.html',1,'amrex']]],
   ['realdescriptor',['RealDescriptor',['../classamrex_1_1RealDescriptor.html',1,'amrex']]],

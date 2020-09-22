@@ -243,6 +243,7 @@
     <innerclass refid="classamrex_1_1PolymorphicAllocator" prot="public">amrex::PolymorphicAllocator</innerclass>
     <innerclass refid="classamrex_1_1Print" prot="public">amrex::Print</innerclass>
     <innerclass refid="classamrex_1_1PrintToFile" prot="public">amrex::PrintToFile</innerclass>
+    <innerclass refid="structamrex_1_1RandomEngine" prot="public">amrex::RandomEngine</innerclass>
     <innerclass refid="classamrex_1_1RealBox" prot="public">amrex::RealBox</innerclass>
     <innerclass refid="classamrex_1_1RealDescriptor" prot="public">amrex::RealDescriptor</innerclass>
     <innerclass refid="classamrex_1_1RealVect" prot="public">amrex::RealVect</innerclass>
@@ -11252,7 +11253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="62" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="62" bodyend="62"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="64" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="64" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3365c3faa5657c39e8d8aa3ac2b7592c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -11283,7 +11284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="65" bodyend="68"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunch.H" bodystart="67" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ada73ee47d1c3a0d63725ce77e1334257" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14134,6 +14135,102 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="521" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="521" bodyend="529"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a2de21a574a15104cfa7e94e52dd6ab67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelForRNG</definition>
+        <argsstring>(T n, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="532" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="532" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a6b36710af5d429b6ee50b3d6ff67c240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelForRNG</definition>
+        <argsstring>(Box const &amp;box, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="540" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="540" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1ae0528e001d631f2240d2d111fed2607d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::ParallelForRNG</definition>
+        <argsstring>(Box const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" line="552" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsC.H" bodystart="552" bodyend="563"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3bddb069b268576e6fa712be45c218ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -14158,7 +14255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="597" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="597" bodyend="602"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="721" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="721" bodyend="726"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1943b9e3d049575658e8d169748d9b17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14196,7 +14293,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="605" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="605" bodyend="611"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="729" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="729" bodyend="735"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a93bf7d62b3ca318333e7e1d4a6d5d5c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14230,7 +14327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="614" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="614" bodyend="617"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="738" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="738" bodyend="741"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a685ae8eab582f895ce964b6a99030ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14259,7 +14356,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="620" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="620" bodyend="631"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="744" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="744" bodyend="755"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad411e7926ae6751ea3dabe64167bee9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14296,7 +14393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="635" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="635" bodyend="655"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="759" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="759" bodyend="779"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1bcec6d48338476959117b14facc7368" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14326,7 +14423,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="659" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="659" bodyend="688"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="783" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="783" bodyend="812"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1adbfb2297d04a71bbc7119a6706d73ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14367,7 +14464,103 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="692" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="692" bodyend="723"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="816" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="816" bodyend="847"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a37999a74566dc30db74f780d2fb20065" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
+        <argsstring>(T n, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <param>
+          <type>T</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="851" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="851" bodyend="866"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a3e8e41bceaa94ec7e7b6408ddc2f4c7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename L</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
+        <argsstring>(Box const &amp;box, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="870" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="870" bodyend="894"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1abafdba3f3086387e6c891c0a6744c136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename L</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; MaybeDeviceRunnable&lt; L &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
+        <argsstring>(Box const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
+        <name>ParallelForRNG</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>box</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>L &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="898" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="898" bodyend="924"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac74579b6de3ede3f4e2927b41c6ea8de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14408,7 +14601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="727" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="727" bodyend="773"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="928" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="928" bodyend="974"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0b75f1534270f96efb923ee993df3f34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14460,7 +14653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="777" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="777" bodyend="837"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="978" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="978" bodyend="1038"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aabb083e8f18e46a6835696c3e75506f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14523,7 +14716,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="843" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="843" bodyend="894"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1044" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1044" bodyend="1095"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7336e8a8cb02bcd741e12c5672a769fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14608,7 +14801,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="901" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="901" bodyend="968"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1102" bodyend="1169"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a935f69088ed7c3ddb4dab90b7ca0d000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14648,7 +14841,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="972" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="972" bodyend="996"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1173" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1173" bodyend="1197"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a634be97c589e01fc1c437058de57fce7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14699,7 +14892,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1001" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1001" bodyend="1027"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1202" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1202" bodyend="1228"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a42bbe812e31af6f89c8fcc4b7c9c88df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14746,7 +14939,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1032" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1032" bodyend="1047"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1233" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1233" bodyend="1248"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa785b3b07c24c864604e8de72a0bb919" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14768,7 +14961,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1052" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1052" bodyend="1055"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1253" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1253" bodyend="1256"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa4cf3c75a27fc2260835ebc8fc0c6b22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14805,7 +14998,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1225" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1225" bodyend="1233"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1426" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1426" bodyend="1434"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aaf3a6e20d26cc2510d4883b5ce603393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14838,7 +15031,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1237" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1237" bodyend="1240"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1438" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1438" bodyend="1441"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3e7140d01a3069aaf23524b0e2ba4a4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14868,7 +15061,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1244" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1244" bodyend="1251"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1445" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1445" bodyend="1452"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa9ae3294d0b8e59263313243942b35de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14909,7 +15102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1255" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1255" bodyend="1262"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1456" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1456" bodyend="1463"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a3ab6d49a98bf0aa681f63e4854c9fcaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -14950,7 +15143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1266" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1266" bodyend="1275"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1467" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1467" bodyend="1476"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a87a4ced1368be9b1d4229168cdd08685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15002,7 +15195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1279" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1279" bodyend="1291"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1480" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1480" bodyend="1492"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aeb0929626cb69cd6ce49a53de1d71e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15065,7 +15258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1297" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1297" bodyend="1307"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1498" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1498" bodyend="1508"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aade0ea904d3c8d69e5f375838fd643ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -15150,7 +15343,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1314" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1314" bodyend="1329"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1515" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1515" bodyend="1530"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -20152,6 +20345,36 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Print.H" bodystart="25" bodyend="29"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a9c2e0a4a094d4ec2c2142e17e19a0b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1a0f98b338ae374935436589280ddeddd4" kindref="member">AMREX_GPU_EXTERNAL</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
+        <definition>AMREX_GPU_HOST_DEVICE amrex::Real amrex::Random</definition>
+        <argsstring>()</argsstring>
+        <name>Random</name>
+        <briefdescription>
+<para>Generate a psuedo-random double from uniform distribution. </para>        </briefdescription>
+        <detaileddescription>
+<para>Generates one pseudorandom real number (double) from a uniform distribution between 0.0 and 1.0 (0.0 included, 1.0 excluded) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="20" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="188" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a65fcc9ad910569bc247b330997d5ed52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> Real</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real amrex::Random</definition>
+        <argsstring>(RandomEngine const &amp;random_engine)</argsstring>
+        <name>Random</name>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref> const &amp;</type>
+          <declname>random_engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" bodystart="23" bodyend="44"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a35c0a4ac17c807639d76eea620e948df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a0f98b338ae374935436589280ddeddd4" kindref="member">AMREX_GPU_EXTERNAL</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
         <definition>AMREX_GPU_EXTERNAL AMREX_GPU_HOST_DEVICE Real amrex::RandomNormal</definition>
@@ -20166,25 +20389,37 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>stddev</declname>
         </param>
         <briefdescription>
-<para>Generate a psuedo-random double using C++11&apos;s mt19937. </para>        </briefdescription>
+<para>Generate a psuedo-random double from a normal distribution. </para>        </briefdescription>
         <detaileddescription>
 <para>Generates one pseudorandom real number (double) from a normal distribution with mean &apos;mean&apos; and standard deviation &apos;stddev&apos;. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="18" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="53" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a9c2e0a4a094d4ec2c2142e17e19a0b80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a0f98b338ae374935436589280ddeddd4" kindref="member">AMREX_GPU_EXTERNAL</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> Real</type>
-        <definition>AMREX_GPU_HOST_DEVICE amrex::Real amrex::Random</definition>
-        <argsstring>()</argsstring>
-        <name>Random</name>
+      <memberdef kind="function" id="namespaceamrex_1a10f7574cba3e496a27f09204cce8aa6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> Real</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real amrex::RandomNormal</definition>
+        <argsstring>(Real mean, Real stddev, RandomEngine const &amp;random_engine)</argsstring>
+        <name>RandomNormal</name>
+        <param>
+          <type>Real</type>
+          <declname>mean</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>stddev</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref> const &amp;</type>
+          <declname>random_engine</declname>
+        </param>
         <briefdescription>
-<para>Generate a psuedo-random double using C++11&apos;s mt19937. </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
-<para>Generates one pseudorandom real number (double) from a uniform distribution between 0.0 and 1.0 (0.0 included, 1.0 excluded) </para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="27" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="156" bodyend="195"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" bodystart="56" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a65dcf8382a6d026fe03803c4453b2e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a0f98b338ae374935436589280ddeddd4" kindref="member">AMREX_GPU_EXTERNAL</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -20201,7 +20436,28 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>Generates one pseudorandom positive integer number (double) extracted from a Poisson distribution, given the Real parameter lambda. The CPU version of this function relies on the standard Template Library The GPU version of this function relies on the cuRAND library </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="38" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a62b2d5b64c692d02452cbed5ee65e61e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE unsigned int amrex::RandomPoisson</definition>
+        <argsstring>(Real lambda, RandomEngine const &amp;random_engine)</argsstring>
+        <name>RandomPoisson</name>
+        <param>
+          <type>Real</type>
+          <declname>lambda</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref> const &amp;</type>
+          <declname>random_engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="91" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" bodystart="91" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae6d24c34f5165da0e406a9cbf67468ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1a0f98b338ae374935436589280ddeddd4" kindref="member">AMREX_GPU_EXTERNAL</ref> <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -20218,7 +20474,28 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>The CPU version of this function uses C++11&apos;s mt19937. The GPU version uses CURAND&apos;s XORWOW generator. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="235" bodyend="270"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="113" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="267" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a3768023f2b8cf90a47c693514b97d579" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE unsigned int amrex::Random_int</definition>
+        <argsstring>(unsigned int n, RandomEngine const &amp;random_engine)</argsstring>
+        <name>Random_int</name>
+        <param>
+          <type>unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1RandomEngine" kindref="compound">RandomEngine</ref> const &amp;</type>
+          <declname>random_engine</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="116" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" bodystart="116" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a4bcd8d65b3b8e649e5d701d5a9ef4093" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1af7feff7858c7b1d3557509d883c46674" kindref="member">AMREX_GPU_HOST</ref> ULong</type>
@@ -20235,7 +20512,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>The CPU version of this function uses C++11&apos;s mt19937. There is no GPU version. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="65" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="155" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae9f820f5a65928568f3751fd584fa5ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20257,24 +20534,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
 <para>There is also an entry point for Fortran callable as:</para><para>INTEGER seed call blutilinitrand(seed)</para><para>or</para><para>INTEGER seed call blinitrand(seed) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="79" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a404b0ad92acc3684ad1e12ef7746d0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::ResizeRandomSeed</definition>
-        <argsstring>(int N)</argsstring>
-        <name>ResizeRandomSeed</name>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>N</declname>
-        </param>
-        <briefdescription>
-<para>Resize seed array and copy address to global symbol. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="84" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="340" bodyend="406"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="169" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a113534c1251300931774c81dbf2fcbae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20291,24 +20551,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="85" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a4125d429c379e2c09dd742aa6acc1e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::InitRandSeedOnDevice</definition>
-        <argsstring>(int N)</argsstring>
-        <name>InitRandSeedOnDevice</name>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>N</declname>
-        </param>
-        <briefdescription>
-<para>Set the seeds of the random number generator for each CUDA thread . An in-built CUDA library, curand_init is used here. The pseusorandom sequence currently implemented is obtained from the XORWOW and MRG32k3a generator. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="93" column="1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="171" column="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad1b283df95b292f478597bc503170459" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20325,7 +20568,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="281" bodyend="286"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="177" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="313" bodyend="318"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae45a9a3a96e46d7b15173894b25134fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20350,7 +20593,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="101" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="289" bodyend="308"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="179" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="321" bodyend="340"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aa2c1209819cd8dd79499c2b9f088120e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20380,7 +20623,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="112" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="311" bodyend="332"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="190" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="343" bodyend="364"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aaf97cdbc0db387b57d9641d57cce591e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20401,7 +20644,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="119" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="435" bodyend="458"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="197" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="404" bodyend="427"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1abce0125a244f443854b1c4a2709c5990" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -20414,7 +20657,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="129" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="409" bodyend="432"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.H" line="199" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Random.cpp" bodystart="372" bodyend="401"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a1e3af8577a1ee3509e9bd184d2ab575a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>

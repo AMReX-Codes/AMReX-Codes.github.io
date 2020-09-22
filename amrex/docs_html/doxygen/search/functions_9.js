@@ -61,7 +61,6 @@ var searchData=
   ['initproxmap',['InitProxMap',['../classCommProfStats.html#a599b15517a65dde41a441be3705e8c01',1,'CommProfStats']]],
   ['initrandom',['InitRandom',['../classamrex_1_1ParticleContainer.html#a607bf9ea2040821f633079b5fc384573',1,'amrex::ParticleContainer::InitRandom()'],['../namespaceamrex.html#ae9f820f5a65928568f3751fd584fa5ed',1,'amrex::InitRandom()']]],
   ['initrandomperbox',['InitRandomPerBox',['../classamrex_1_1ParticleContainer.html#a69535e29fdd3ce01b696fe3d681d64b3',1,'amrex::ParticleContainer']]],
-  ['initrandseedondevice',['InitRandSeedOnDevice',['../namespaceamrex.html#a4125d429c379e2c09dd742aa6acc1e0e',1,'amrex']]],
   ['initregiontimeranges',['InitRegionTimeRanges',['../classamrex_1_1DataServices.html#a40a30a866f8437287bd706633d3ffef5',1,'amrex::DataServices::InitRegionTimeRanges()'],['../classRegionsProfStats.html#a8a1590c491b357676bac273650f527c8',1,'RegionsProfStats::InitRegionTimeRanges()']]],
   ['initsubcycle',['initSubcycle',['../classamrex_1_1Amr.html#ac817c89d71bd72e6514b12b78ba3a955',1,'amrex::Amr']]],
   ['initval',['initVal',['../classamrex_1_1FArrayBox.html#a0950587ec6e53ece5805ffb5ab71cf60',1,'amrex::FArrayBox::initVal()'],['../classamrex_1_1MultiFab.html#aa4f9b9a2a37baa29e7767a80f6856dcd',1,'amrex::MultiFab::initVal()']]],
