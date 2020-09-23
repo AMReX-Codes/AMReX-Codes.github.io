@@ -16,7 +16,7 @@ var searchData=
   ['calcrefratios',['calcRefRatios',['../classCommProfStats.html#a71a0a4c9fbfae52c4da448c6ac832319',1,'CommProfStats']]],
   ['calculateminmax',['CalculateMinMax',['../structamrex_1_1VisMF_1_1Header.html#a67ebe2f805154bc932ce0d58aebf9e62',1,'amrex::VisMF::Header']]],
   ['call_5faddr2line',['call_addr2line',['../namespaceamrex_1_1system.html#a1ed2a732c93fe26dfa4fbb63c2a698eb',1,'amrex::system']]],
-  ['call_5ff',['call_f',['../classamrex_1_1ReduceOps.html#afae6476d3ca7e59a040c826d0a774dd0',1,'amrex::ReduceOps::call_f(Box const &amp;box, D &amp;, F const &amp;f) noexcept-&gt; decltype(f(0, 0, 0))'],['../classamrex_1_1ReduceOps.html#a4bb67dee93feb15a157cffb149661a90',1,'amrex::ReduceOps::call_f(Box const &amp;box, D &amp;, F const &amp;f) noexcept-&gt; decltype(f(Box()))']]],
+  ['call_5ff',['call_f',['../classamrex_1_1ReduceOps.html#afae6476d3ca7e59a040c826d0a774dd0',1,'amrex::ReduceOps::call_f(Box const &amp;box, D &amp;, F const &amp;f) noexcept-&gt; decltype(f(0, 0, 0))'],['../classamrex_1_1ReduceOps.html#a4bb67dee93feb15a157cffb149661a90',1,'amrex::ReduceOps::call_f(Box const &amp;box, D &amp;, F const &amp;f) noexcept-&gt; decltype(f(Box()))'],['../namespaceparticle__detail.html#af0179350cb9d2200351029ebfe669c86',1,'particle_detail::call_f()']]],
   ['calledfunctions',['calledFunctions',['../structBLProfStats_1_1CallTreeNode.html#a696987a2e37d477370485150489b48df',1,'BLProfStats::CallTreeNode']]],
   ['calltreenode',['CallTreeNode',['../structBLProfStats_1_1CallTreeNode.html',1,'BLProfStats']]],
   ['calltreenode',['CallTreeNode',['../structBLProfStats_1_1CallTreeNode.html#a58a170e22648cb330508a33ecd8396c5',1,'BLProfStats::CallTreeNode']]],
