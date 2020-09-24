@@ -56,6 +56,7 @@ var searchData=
   ['paralleldescriptor',['ParallelDescriptor',['../namespaceamrex_1_1ParallelDescriptor.html',1,'amrex']]],
   ['parallelgather',['ParallelGather',['../namespaceamrex_1_1ParallelGather.html',1,'amrex']]],
   ['parallelreduce',['ParallelReduce',['../namespaceamrex_1_1ParallelReduce.html',1,'amrex']]],
+  ['particle_5fdetail',['particle_detail',['../namespaceamrex_1_1particle__detail.html',1,'amrex']]],
   ['range_5fdetail',['range_detail',['../namespaceamrex_1_1Gpu_1_1range__detail.html',1,'amrex::Gpu']]],
   ['reduce',['Reduce',['../namespaceamrex_1_1Reduce.html',1,'amrex']]],
   ['scan',['Scan',['../namespaceamrex_1_1Scan.html',1,'amrex']]],
