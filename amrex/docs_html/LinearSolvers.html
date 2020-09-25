@@ -103,6 +103,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">MLMG and Linear Operator Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">Boundary Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#curvilinear-coordinates">Curvilinear Coordinates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#embedded-boundaries">Embedded Boundaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#external-solvers">External Solvers</a></li>
@@ -353,7 +354,7 @@ a cell-centered array is a convenience of implementation.</p>
 <p>There are many parameters that can be set.  Here we discuss some
 commonly used ones.</p>
 <p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> and
-<code class="code cpp c++ docutils literal notranslate"><span class="name label"><span class="pre">MLMG</span></span><span class="punctuation"><span class="pre">:</span></span><span class="name"><span class="pre">setBottomVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> can be control the verbosity of the
+<code class="code cpp c++ docutils literal notranslate"><span class="name label"><span class="pre">MLMG</span></span><span class="punctuation"><span class="pre">:</span></span><span class="name"><span class="pre">setBottomVerbose</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code> control the verbosity of the
 linear operator, multigrid solver and the bottom solver, respectively.</p>
 <p>The multigrid solver is an iterative solver.  The maximal number of
 iterations can be changed with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setMaxIter</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code>.  We can
@@ -375,12 +376,13 @@ operators for the multigrid.</p>
 <span class="n">mlmg</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">in</span><span class="p">);</span>  <span class="c1">// here both in and out are const Vector&lt;MultiFab*&gt;&amp;</span>
 </pre></div>
 </div>
-<p>At the bottom of the multigrid cycles, we use the biconjugate gradient
-stabilized method as the bottom solver.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span></code> member method</p>
+<p>At the bottom of the multigrid cycles, we use a <code class="docutils literal notranslate"><span class="pre">bottom</span> <span class="pre">solver</span></code> which may be
+different than the relaxation used at the other levels. The default bottom solver is the
+biconjugate gradient stabilized method, but can easily be changed with the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span></code> member method</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setBottomSolver</span> <span class="p">(</span><span class="n">BottomSolver</span> <span class="n">s</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>can be used to change the bottom solver.  Available choices are</p>
+<p>Available choices are</p>
 <ul class="simple">
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">bicgstab</span></span></code>: The default.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cg</span></span></code>: The conjugate gradient method.  The
@@ -393,6 +395,21 @@ if cg fails.  The matrix must be symmetric.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">hypre</span></span></code>: BoomerAMG in hypre.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">petsc</span></span></code>: Currently for cell-centered only.</p></li>
 </ul>
+</div>
+<div class="section" id="boundary-stencils-for-cell-centered-solvers">
+<h1>Boundary Stencils for Cell-Centered Solvers<a class="headerlink" href="#boundary-stencils-for-cell-centered-solvers" title="Permalink to this headline">¶</a></h1>
+<p>We have the option using the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span></code> member method</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setMaxOrder</span> <span class="p">(</span><span class="kt">int</span> <span class="n">maxorder</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>to set the order of the cell-centered linear operator stencil at physical boundaries
+with Dirichlet boundary conditions and at coarse-fine boundaries.  In both of these
+cases, the boundary value is not defined at the center of the ghost cell.
+The order determines the number of interior cells that are used in the extrapolation
+of the boundary value from the cell face to the center of the ghost cell, where
+the extrapolated value is then used in the regular stencil.  For example,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">maxorder</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">2</span></span></code> uses the boundary value and the first interior value to extrapolate
+to the ghost cell center; <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">maxorder</span></span> <span class="operator"><span class="pre">=</span></span> <span class="literal number integer"><span class="pre">3</span></span></code> uses the boundary value and the first two interior values.</p>
 </div>
 <div class="section" id="curvilinear-coordinates">
 <h1>Curvilinear Coordinates<a class="headerlink" href="#curvilinear-coordinates" title="Permalink to this headline">¶</a></h1>
@@ -586,7 +603,7 @@ the MACProjector object and use it to perform a MAC projection.</p>
                                   <span class="n">LinOpBCType</span><span class="o">::</span><span class="n">Periodic</span><span class="p">)});</span>
 
 <span class="n">macproj</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span>
-<span class="n">macproj</span><span class="p">.</span><span class="n">setCGVerbose</span><span class="p">(</span><span class="n">cg_verbose</span><span class="p">);</span>
+<span class="n">macproj</span><span class="p">.</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="n">bottom_verbose</span><span class="p">);</span>
 
 <span class="c1">// Define the relative tolerance</span>
 <span class="n">Real</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">e</span><span class="mi">-8</span><span class="p">;</span>
@@ -730,10 +747,10 @@ gradient term to make the vector field result satisfy the divergence constraint.
 
 <span class="c1">// We can specify the maximum number of iterations</span>
 <span class="n">nodal_solver</span><span class="p">.</span><span class="n">setMaxIter</span><span class="p">(</span><span class="n">mg_maxiter</span><span class="p">);</span>
-<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setCGMaxIter</span><span class="p">(</span><span class="n">mg_cg_maxiter</span><span class="p">);</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomMaxIter</span><span class="p">(</span><span class="n">mg_bottom_maxiter</span><span class="p">);</span>
 
 <span class="n">nodal_solver</span><span class="p">.</span><span class="n">setVerbose</span><span class="p">(</span><span class="n">mg_verbose</span><span class="p">);</span>
-<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setCGVerbose</span><span class="p">(</span><span class="n">mg_cg_verbose</span><span class="p">);</span>
+<span class="n">nodal_solver</span><span class="p">.</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="n">mg_bottom_verbose</span><span class="p">);</span>
 
 <span class="c1">// Set bottom-solver to use hypre instead of native BiCGStab</span>
 <span class="c1">//   ( we could also have set this to cg, bicgcg, cgbicg)</span>
