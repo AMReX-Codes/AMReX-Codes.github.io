@@ -2208,6 +2208,105 @@
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EBInterpolater.cpp" line="10" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EBInterpolater.H" bodystart="33" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>amrex::RandomEngine</definition>
+        <argsstring></argsstring>
+        <name>RandomEngine</name>
+        <initializer>{}))
+{
+    auto np = src.numParticles();
+    <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt;Index&gt; mask(np);
+
+    auto p_mask = mask.dataPtr();
+    const auto src_data = src.getConstParticleTileData();
+
+    <ref refid="namespaceamrex_1a2de21a574a15104cfa7e94e52dd6ab67" kindref="member">amrex::ParallelForRNG</ref>(np,
+    [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> i, <ref refid="structamrex_1_1RandomEngine" kindref="compound">amrex::RandomEngine</ref> const&amp; engine) noexcept
+    {
+        p_mask[i] = <ref refid="namespaceamrex_1_1particle__detail_1a523e52be1708e45a794bf3641f4e6325" kindref="member">particle_detail::call_f</ref>(p, src_data, i, engine);
+    });
+
+    return <ref refid="namespaceamrex_1a86fc8a08b6a63681e7751ac0b20bd96b" kindref="member">filterParticles</ref>(dst, src, mask.dataPtr(), src_start, dst_start, n);
+}
+
+
+template &lt;typename DstTile, typename <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref>, typename Index, typename F,
+          <ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;Index&gt;::value</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="379" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a403cfbd1297211846d8daf45b3d0b440" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::foo</definition>
+        <argsstring></argsstring>
+        <name>foo</name>
+        <initializer>= 0&gt;
+Index <ref refid="namespaceamrex_1acfeb85d997064713ba48c86f9acf72b2" kindref="member">filterAndTransformParticles</ref> (DstTile&amp; dst, const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref>&amp; src, Index* mask, F&amp;&amp; f) noexcept
+{
+    auto np = src.numParticles();
+    <ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt;Index&gt; offsets(np);
+    <ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">Gpu::exclusive_scan</ref>(mask, mask+np, offsets.begin());
+
+    Index last_mask, last_offset;
+    <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, mask+np-1, mask + np, &amp;last_mask);
+    <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);    
+
+    auto p_offsets = offsets.dataPtr();
+    
+    const auto src_data = src.getConstParticleTileData();
+          auto dst_data = dst.getParticleTileData();
+
+    <ref refid="AMReX__GpuLaunch_8H_1a98b67baa1382f64a8b07abb4c2edbf92" kindref="member">AMREX_HOST_DEVICE_FOR_1D</ref>( np, i,
+    {
+        if (mask[i]) f(dst_data, src_data, i, p_offsets[i]);
+    });
+
+    <ref refid="namespaceamrex_1_1Gpu_1a67a618504ee5fb94bd65a5d393e344b4" kindref="member">Gpu::streamSynchronize</ref>();
+    return last_mask + last_offset;
+}
+
+    
+template &lt;typename DstTile</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="412" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::SrcTile</definition>
+        <argsstring></argsstring>
+        <name>SrcTile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="452" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::Pred</definition>
+        <argsstring></argsstring>
+        <name>Pred</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="452" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="412" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="namespaceamrex_1a5d5710eb4e8adfefe7b93086718fe07b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -40139,7 +40238,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -40217,7 +40316,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -40326,7 +40425,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -40418,7 +40517,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -40545,7 +40644,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -40658,7 +40757,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -40812,7 +40911,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -40901,7 +41000,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -41014,11 +41113,11 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Pred &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -41073,7 +41172,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="353" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="353" bodyend="357"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a81235cab555bb573050b903a58101d1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a0a6b99efd8edda2b04eefb3eb30c2b0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename DstTile</type>
@@ -41093,18 +41192,18 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </templateparamlist>
         <type>auto</type>
         <definition>auto amrex::filterParticles</definition>
-        <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, Index src_start, Index dst_start, N n) noexcept-&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</argsstring>
+        <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, Index src_start, Index dst_start, N n) noexcept-&gt; decltype(particle_detail::call_f(p, typename SrcTile::ConstParticleTileDataType(), int</argsstring>
         <name>filterParticles</name>
         <param>
           <type>DstTile &amp;</type>
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Pred &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -41190,132 +41289,11 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="377" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="377" bodyend="394"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="377" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="377" bodyend="379"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af6ec82174b9e85180e43d20c64b52b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename DstTile</type>
-          </param>
-          <param>
-            <type>typename SrcTile</type>
-          </param>
-          <param>
-            <type>typename Index</type>
-          </param>
-          <param>
-            <type>typename F</type>
-          </param>
-          <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
-            <declname>foo</declname>
-            <defname>foo</defname>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>Index</type>
-        <definition>Index amrex::filterAndTransformParticles</definition>
-        <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, Index *mask, F &amp;&amp;f) noexcept</argsstring>
-        <name>filterAndTransformParticles</name>
-        <param>
-          <type>DstTile &amp;</type>
-          <declname>dst</declname>
-        </param>
-        <param>
-          <type>const SrcTile &amp;</type>
-          <declname>src</declname>
-        </param>
-        <param>
-          <type>Index *</type>
-          <declname>mask</declname>
-        </param>
-        <param>
-          <type>F &amp;&amp;</type>
-          <declname>f</declname>
-        </param>
-        <briefdescription>
-<para>Conditionally copy particles from src to dst based on the value of mask. A transformation will also be applied to the particles on copy. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>DstTile</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the dst particle tile type </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>SrcTile</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the src particle tile type </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Index</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the index type, e.g. unsigned int </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>F</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the transform function type</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>dst</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the destination tile </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>src</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the source tile </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>mask</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>pointer to the mask - 1 means copy, 0 means don&apos;t copy </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>f</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>defines the transformation that will be applied to the particles on copy </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="413" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="413" bodyend="435"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a9077c8d454492a06a8731ac163bf420b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename DstTile</type>
-          </param>
-          <param>
-            <type>typename SrcTile</type>
-          </param>
-          <param>
-            <type>typename Pred</type>
-          </param>
-          <param>
-            <type>typename F</type>
-          </param>
-        </templateparamlist>
-        <type>auto</type>
-        <definition>auto amrex::filterAndTransformParticles</definition>
+      <memberdef kind="function" id="namespaceamrex_1acfeb85d997064713ba48c86f9acf72b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> F auto</type>
+        <definition>int F auto amrex::filterAndTransformParticles</definition>
         <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept-&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</argsstring>
         <name>filterAndTransformParticles</name>
         <param>
@@ -41323,11 +41301,11 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Pred &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <param>
@@ -41335,67 +41313,9 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>f</declname>
         </param>
         <briefdescription>
-<para>Conditionally copy particles from src to dst based on a predicate. A transformation will also be applied to the particles on copy. </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>DstTile</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the dst particle tile type </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>SrcTile</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the src particle tile type </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Pred</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>a function object </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>F</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the transform function type</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>dst</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the destination tile </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>src</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the source tile </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>p</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>predicate function - particles will be copied if p returns true </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>f</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>defines the transformation that will be applied to the particles on copy </para></parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="453" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="453" bodyend="470"/>
@@ -41437,7 +41357,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
@@ -41559,11 +41479,11 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const SrcTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Pred &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <param>

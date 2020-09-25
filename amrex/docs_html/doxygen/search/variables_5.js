@@ -82,6 +82,7 @@ var searchData=
   ['fname',['fname',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a38621bfbdcc37e8e877df3a96bf3c5e3',1,'amrex::TinyProfiler::ProcStats::fname()'],['../classamrex_1_1TinyProfiler.html#a8691b33b40a313ca7ffe01a287f57dff',1,'amrex::TinyProfiler::fname()']]],
   ['fnamenumber',['fnameNumber',['../structBLProfStats_1_1CallTreeNode.html#ac01a3f5eb9b5f39ea6fbc013381f9e15',1,'BLProfStats::CallTreeNode']]],
   ['fnameremap',['fnameRemap',['../classRegionsProfStats.html#ad939cb55c98e57e3999caabc8096c2e7',1,'RegionsProfStats']]],
+  ['foo',['foo',['../namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440',1,'amrex']]],
   ['forked',['forked',['../structamrex_1_1ForkJoin_1_1MFFork.html#a335de4835763f4875e6c6089f5e739c9',1,'amrex::ForkJoin::MFFork']]],
   ['format',['format',['../classamrex_1_1FArrayBox.html#a8cb9b648353fe9b5fb90cdfccf5b0c89',1,'amrex::FArrayBox']]],
   ['four',['four',['../namespaceamrex__constants__module.html#aab3ec0e1c5a8f711f4923fc6d3f8a215',1,'amrex_constants_module']]],
