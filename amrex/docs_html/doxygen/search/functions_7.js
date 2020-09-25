@@ -221,7 +221,6 @@ var searchData=
   ['getphi',['getPhi',['../classamrex_1_1NodalProjector.html#aec6781e79ae0cd7083834da01558c7d8',1,'amrex::NodalProjector']]],
   ['getpid',['GetPID',['../structamrex_1_1GetPID.html#aa3aa125952410bb95dc36e7472a9c7bf',1,'amrex::GetPID']]],
   ['getpidfunctor',['getPIDFunctor',['../classamrex_1_1ParticleBufferMap.html#a30c143c9bfbc1260a3a2bab45e30465a',1,'amrex::ParticleBufferMap']]],
-  ['getposition',['GetPosition',['../classamrex_1_1ParIterBase.html#a1fe48395194d81c991298f89c0e9d22c',1,'amrex::ParIterBase']]],
   ['getprecision',['getPrecision',['../classamrex_1_1FArrayBox.html#a35de13164243364f3ed296772f0b750a',1,'amrex::FArrayBox']]],
   ['getprefix',['getPrefix',['../classamrex_1_1ParmParse.html#a08e171326a69b8908680efab0309d9dc',1,'amrex::ParmParse::getPrefix()'],['../classamrex_1_1ParmParse_1_1Frame.html#a456c4ad6dcffaaba3ae63f9b297bff18',1,'amrex::ParmParse::Frame::getPrefix()']]],
   ['getprobdomain',['GetProbDomain',['../classCommProfStats.html#a3560cd7a0132af162718d66a724192e1',1,'CommProfStats']]],
