@@ -298,21 +298,17 @@
 <codeline lineno="288"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;NeighborParticleContainer&lt;NStructReal,<sp/>NStructInt&gt;::clearNeighborsGPU&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"></highlight></codeline>
-<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(this-&gt;numLevels()<sp/>==<sp/>1);</highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="293"><highlight class="normal"></highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_grid<sp/>=<sp/>mfi.index();</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_tile<sp/>=<sp/>mfi.LocalTileIndex();</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(src_tile<sp/>==<sp/>0);</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>std::make_pair(src_grid,<sp/>src_tile);</highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ptile<sp/>=<sp/>this-&gt;GetParticles(lev)[index];</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptile.setNumNeighbors(0);</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="303"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"></highlight></codeline>
-<codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>0;<sp/>lev<sp/>&lt;<sp/>this-&gt;numLevels();<sp/>++lev)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ptile<sp/>=<sp/>this-&gt;ParticlesAt(lev,<sp/>mfi);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptile.setNumNeighbors(0);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H"/>
   </compounddef>
