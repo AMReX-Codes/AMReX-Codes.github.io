@@ -17935,7 +17935,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="839" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="839" bodyend="861"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a317539bf02f01cd6f5c4a89d1943c9d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aff7bc26e4e82b323802d4b6d546101fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename FAB</type>
@@ -17943,7 +17943,7 @@ template &lt;typename DstTile</initializer>
         </templateparamlist>
         <type>void</type>
         <definition>void amrex::average_down_nodal</definition>
-        <argsstring>(const FabArray&lt; FAB &gt; &amp;S_fine, FabArray&lt; FAB &gt; &amp;S_crse, const IntVect &amp;ratio, int ngcrse=0)</argsstring>
+        <argsstring>(const FabArray&lt; FAB &gt; &amp;S_fine, FabArray&lt; FAB &gt; &amp;S_crse, const IntVect &amp;ratio, int ngcrse=0, bool mfiter_is_definitely_safe=false)</argsstring>
         <name>average_down_nodal</name>
         <param>
           <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -17964,13 +17964,18 @@ template &lt;typename DstTile</initializer>
           <declname>ngcrse</declname>
           <defval>0</defval>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>mfiter_is_definitely_safe</declname>
+          <defval>false</defval>
+        </param>
         <briefdescription>
 <para>Average fine node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse node-centered <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>        </briefdescription>
         <detaileddescription>
 <para>Average fine node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. This routine assumes that the crse BoxArray is a coarsened version of the fine BoxArray. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="273" bodyend="307"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="274" bodyend="308"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a60886a6799fb7ae612bf30d74a493a26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -18010,7 +18015,7 @@ template &lt;typename DstTile</initializer>
 <para>Return an <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> that has the same BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> as the coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> cmf. Cells covered by the coarsened fine grids are set to fine_value, whereas other cells are set to crse_value. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="148" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="217" bodyend="222"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="149" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="218" bodyend="223"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a78142d53611f8627f6d68afd0779ef54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -18052,7 +18057,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="154" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="226" bodyend="231"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="155" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="227" bodyend="232"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a478148eaeebd74ddc7956806c55fa2cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -18098,7 +18103,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="160" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="235" bodyend="248"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="161" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="236" bodyend="249"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af559f21584872566541db61cbacf7470" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -18148,7 +18153,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="164" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="252" bodyend="268"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="165" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="253" bodyend="269"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a24aa5b51c299dd1337df192681f47e0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -18173,7 +18178,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="192" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="192" bodyend="210"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" line="193" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="193" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aeadc3d45ec6aeb4163a09bee0954a3f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> void</type>
@@ -23518,6 +23523,36 @@ Returns the index of the first element for which f is 0. </para>        </detail
         <inbodydescription>
         </inbodydescription>
         <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_utils.cpp" line="15" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_utils.cpp" bodystart="15" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a432c3b4f5a385efd93de62c6402e2b0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename G</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::FillImpFunc</definition>
+        <argsstring>(MultiFab &amp;mf, G const &amp;gshop, Geometry const &amp;geom)</argsstring>
+        <name>FillImpFunc</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type>G const &amp;</type>
+          <declname>gshop</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_utils.H" line="40" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/EB/AMReX_EB_utils.H" bodystart="40" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aca824ed9a83373a83533e948d2175dee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
