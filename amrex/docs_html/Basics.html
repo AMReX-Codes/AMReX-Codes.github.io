@@ -2352,7 +2352,7 @@ domain, the physical coordinates of the box, and the periodicity:</p>
     <span class="n">IntVect</span> <span class="nf">dom_hi</span><span class="p">(</span><span class="n">AMREX_D_DECL</span><span class="p">(</span><span class="n">n_cell</span><span class="mi">-1</span><span class="p">,</span> <span class="n">n_cell</span><span class="mi">-1</span><span class="p">,</span> <span class="n">n_cell</span><span class="mi">-1</span><span class="p">));</span>
     <span class="n">Box</span> <span class="nf">domain</span><span class="p">(</span><span class="n">dom_lo</span><span class="p">,</span> <span class="n">dom_hi</span><span class="p">);</span>
 
-    <span class="c1">// Initialize the boxarray &quot;ba&quot; from the single box &quot;bx&quot;</span>
+    <span class="c1">// Initialize the boxarray &quot;ba&quot; from the single box &quot;domain&quot;</span>
     <span class="n">ba</span><span class="p">.</span><span class="n">define</span><span class="p">(</span><span class="n">domain</span><span class="p">);</span>
     <span class="c1">// Break up boxarray &quot;ba&quot; into chunks no larger than &quot;max_grid_size&quot; along a direction</span>
     <span class="n">ba</span><span class="p">.</span><span class="n">maxSize</span><span class="p">(</span><span class="n">max_grid_size</span><span class="p">);</span>
@@ -2398,7 +2398,7 @@ and ghost cells associated with each grid:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>To access and/or modify data n a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> we use the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, where each
+<p>To access and/or modify data in a <code class="docutils literal notranslate"><span class="pre">MultiFab</span></code> we use the <code class="docutils literal notranslate"><span class="pre">MFIter</span></code>, where each
 processor loops over grids it owns to access and/or modify data on that grid:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize phi_new by calling a Fortran routine.</span>
 <span class="c1">// MFIter = MultiFab Iterator</span>

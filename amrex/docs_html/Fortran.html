@@ -404,7 +404,7 @@ example,</p>
             <span class="c">! mf1 is still the owner of the data.</span>
 <span class="k">call </span><span class="n">amrex_multifab_destroy</span><span class="p">(</span><span class="n">mf1</span><span class="p">)</span>
 <span class="c">! mf2 no longer contains a valid pointer because mf1 has been destroyed.</span>
-<span class="k">call </span><span class="n">amrex_multifab_destroyed</span><span class="p">(</span><span class="n">mf2</span><span class="p">)</span>  <span class="c">! But we still need to destroy it.</span>
+<span class="k">call </span><span class="n">amrex_multifab_destroy</span><span class="p">(</span><span class="n">mf2</span><span class="p">)</span>  <span class="c">! But we still need to destroy it.</span>
 </pre></div>
 </div>
 <p>If we need to transfer the ownership, <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">amrex_multifab</span></span></code>,
@@ -414,7 +414,7 @@ example,</p>
 <span class="k">call </span><span class="n">amrex_multifab_build</span><span class="p">(</span><span class="n">mf1</span><span class="p">,</span> <span class="p">...)</span>
 <span class="k">call </span><span class="n">mf2</span><span class="p">%</span><span class="n">move</span><span class="p">(</span><span class="n">mf1</span><span class="p">)</span>   <span class="c">! mf2 is now the data owner and mf1 is not.</span>
 <span class="k">call </span><span class="n">amrex_multifab_destroy</span><span class="p">(</span><span class="n">mf1</span><span class="p">)</span>
-<span class="k">call </span><span class="n">amrex_multifab_destroyed</span><span class="p">(</span><span class="n">mf2</span><span class="p">)</span>
+<span class="k">call </span><span class="n">amrex_multifab_destroy</span><span class="p">(</span><span class="n">mf2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">amrex_multifab</span></span></code> also has a type-bound <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">swap</span></span></code> procedure for

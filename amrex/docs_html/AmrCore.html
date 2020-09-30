@@ -216,7 +216,7 @@
 </table>
 <div class="section" id="amrcore-source-code-details">
 <span id="ss-amrcore"></span><h1>AmrCore Source Code: Details<a class="headerlink" href="#amrcore-source-code-details" title="Permalink to this headline">¶</a></h1>
-<p>Here we provide more information about the source code in <code class="docutils literal notranslate"><span class="pre">amrex/Src/AmrCore.</span></code></p>
+<p>Here we provide more information about the source code in <code class="docutils literal notranslate"><span class="pre">amrex/Src/AmrCore</span></code>.</p>
 <div class="section" id="amrmesh-and-amrcore">
 <h2>AmrMesh and AmrCore<a class="headerlink" href="#amrmesh-and-amrcore" title="Permalink to this headline">¶</a></h2>
 <p>For single-level simulations
@@ -378,7 +378,7 @@ of using <code class="code cpp c++ docutils literal notranslate"><span class="na
 <p>A <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FillPatchUtil</span></span></code> uses an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Interpolator</span></span></code>. This is largely hidden from application codes.
 AMReX_Interpolater.cpp/H contains the virtual base class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Interpolater</span></span></code>, which provides
 an interface for coarse-to-fine spatial interpolation operators. The fillpatch routines described
-above require an Interpolater for FillPatchTwoLevels()
+above require an Interpolater for FillPatchTwoLevels().
 Within AMReX_Interpolater.cpp/H are the derived classes:</p>
 <ul class="simple">
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NodeBilinear</span></span></code></p></li>
@@ -548,7 +548,7 @@ simulation.</p></li>
         <span class="n">AmrCoreAdv</span><span class="o">::</span><span class="n">MakeNewLevelFromScratch</span><span class="p">()</span>
               <span class="cm">/* allocate phi_old, phi_new, t_new, and flux registers */</span>
               <span class="n">initdata</span><span class="p">()</span>  <span class="c1">// fill phi</span>
-      <span class="p">}</span> <span class="p">(</span><span class="k">while</span> <span class="p">(</span><span class="n">finest_level</span> <span class="o">&lt;</span> <span class="n">max_level</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">finest_level</span> <span class="o">&lt;</span> <span class="n">max_level</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="n">amr_core_adv</span><span class="p">.</span><span class="n">Evolve</span><span class="p">()</span>
     <span class="n">loop</span> <span class="n">over</span> <span class="n">time</span> <span class="n">steps</span> <span class="p">{</span>
