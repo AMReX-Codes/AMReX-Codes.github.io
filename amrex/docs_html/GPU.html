@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Overview of AMReX GPU Strategy &mdash; amrex 20.10-dev documentation</title>
+  <title>Overview of AMReX GPU Strategy &mdash; amrex 20.11-dev documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                20.10-dev
+                20.11-dev
               </div>
             
           
@@ -307,7 +307,7 @@ CUDA guarantees execution order of kernels within the same stream, while
 allowing different streams to run simultaneously. AMReX places each iteration
 of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loops on separate streams, allowing each independent
 iterations to be run simultaneously and maximize available GPU resources.</p>
-<p>The AMReX implementation of CUDA streams is illustrated in <a class="reference internal" href="#fig-gpu-streams"><span class="std std-numref">Fig. 16</span></a>.
+<p>The AMReX implementation of CUDA streams is illustrated in <a class="reference internal" href="#fig-gpu-streams"><span class="std std-numref">Fig. 15</span></a>.
 The CPU runs the first iteration of the MFIter loop (blue), which contains three
 GPU kernels.  The kernels begin immediately in GPU Stream 1 and run in the same
 order they were added. The second (red) and third (green) iterations are similarly
@@ -320,7 +320,7 @@ to complete before continuing.</p>
 </ul>
 <div class="figure align-default" id="id2">
 <span id="fig-gpu-streams"></span><img alt="_images/Streams.png" src="_images/Streams.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Timeline illustration of GPU streams. Illustrates the case of an
 MFIter loop of five iterations with three GPU kernels each being
 ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>

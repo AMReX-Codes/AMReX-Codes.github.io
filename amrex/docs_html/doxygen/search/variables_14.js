@@ -13,7 +13,6 @@ var searchData=
   ['use_5fgpu_5faware_5fmpi',['use_gpu_aware_mpi',['../namespaceamrex_1_1ParallelDescriptor.html#af122c95310b715f9006b650405e56bc8',1,'amrex::ParallelDescriptor']]],
   ['use_5fmask',['use_mask',['../classamrex_1_1NeighborParticleContainer.html#a21bd4a08b87b0afeeb0d8889c619c86c',1,'amrex::NeighborParticleContainer']]],
   ['use_5fnew_5fchop',['use_new_chop',['../structamrex_1_1AmrInfo.html#a7caf591556b0da33b2a44a7726706395',1,'amrex::AmrInfo']]],
-  ['use_5fphierr',['use_phierr',['../classamrex_1_1LSCoreBase.html#af4ed8d84ded37119725a657db8b99d85',1,'amrex::LSCoreBase']]],
   ['usedynamicsetselection',['useDynamicSetSelection',['../classamrex_1_1VisMF.html#a9149ec039a2136083c03aabdaa275672',1,'amrex::VisMF']]],
   ['usepersistentifstreams',['usePersistentIFStreams',['../classamrex_1_1VisMF.html#a806512ed6337ff31d9eb6f63f94ce792',1,'amrex::VisMF']]],
   ['useprepost',['usePrePost',['../classamrex_1_1ParticleContainer.html#a8bbd5c1953c2de901dadb2f54fdb3983',1,'amrex::ParticleContainer']]],

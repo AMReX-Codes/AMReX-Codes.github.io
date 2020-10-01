@@ -2,8 +2,6 @@ var searchData=
 [
   ['gcc_5fmap_5fnode_5fextra_5fbytes',['gcc_map_node_extra_bytes',['../namespaceamrex.html#ae9f4a54b51971f15803c95c7f677c1b8',1,'amrex']]],
   ['geom',['geom',['../classamrex_1_1AmrLevel.html#a571b97b176d8618fba71f56c8b44a7c8',1,'amrex::AmrLevel::geom()'],['../classamrex_1_1StateDataPhysBCFunct.html#a9ed7dada88b807adcc2d46ccbe6cbe53',1,'amrex::StateDataPhysBCFunct::geom()'],['../classamrex_1_1AmrMesh.html#a239ef06043779ea301395ae14876d6cb',1,'amrex::AmrMesh::geom()'],['../classamrex_1_1BndryData.html#a2aee61504e5cdef7ac8af1986bff5c6c',1,'amrex::BndryData::geom()'],['../classamrex_1_1Hypre.html#a97c4612c2a7f58b47c36ec710cb1b0f6',1,'amrex::Hypre::geom()'],['../classamrex_1_1HypreNodeLap.html#a3ec12508ffa505780af64ebc27188233',1,'amrex::HypreNodeLap::geom()'],['../classamrex_1_1PETScABecLap.html#afca4d4cd5e3361c1d6fd1c64eff38141',1,'amrex::PETScABecLap::geom()']]],
-  ['geom_5feb',['geom_eb',['../classamrex_1_1LSFactory.html#a0509b5a4b9f43e4bbd27447f90904db2',1,'amrex::LSFactory']]],
-  ['geom_5fls',['geom_ls',['../classamrex_1_1LSFactory.html#abaf73ecda23b186c3a73278fa316c8d3',1,'amrex::LSFactory']]],
   ['geomelements',['geomElements',['../classamrex_1_1EB2_1_1SplineIF.html#aa2fa17ff2ba083371845090960b56abc',1,'amrex::EB2::SplineIF']]],
   ['glmap',['glMap',['../classCommProfStats.html#a4bc1d2909ad88865d5905ea827e62918',1,'CommProfStats']]],
   ['global_5fdepth',['global_depth',['../classamrex_1_1TinyProfiler.html#ae7befef46d2ca9e3de4299f950647451',1,'amrex::TinyProfiler']]],

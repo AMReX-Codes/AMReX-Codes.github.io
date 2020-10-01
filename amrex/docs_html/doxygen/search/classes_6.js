@@ -42,6 +42,5 @@ var searchData=
   ['graphsafeguard',['GraphSafeGuard',['../structamrex_1_1Gpu_1_1GraphSafeGuard.html',1,'amrex::Gpu']]],
   ['greater',['Greater',['../structamrex_1_1Greater.html',1,'amrex']]],
   ['gridsize',['GridSize',['../structamrex_1_1Gpu_1_1GridSize.html',1,'amrex::Gpu']]],
-  ['gshoplevel',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]],
-  ['gshoplsfactory',['GShopLSFactory',['../classamrex_1_1GShopLSFactory.html',1,'amrex']]]
+  ['gshoplevel',['GShopLevel',['../classamrex_1_1EB2_1_1GShopLevel.html',1,'amrex::EB2']]]
 ];

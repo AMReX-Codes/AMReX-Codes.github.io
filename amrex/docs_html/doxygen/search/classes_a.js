@@ -22,9 +22,5 @@ var searchData=
   ['lipairlt',['LIpairLT',['../structamrex_1_1DistributionMapping_1_1LIpairLT.html',1,'amrex::DistributionMapping']]],
   ['logicaland',['LogicalAnd',['../structamrex_1_1LogicalAnd.html',1,'amrex']]],
   ['logicalor',['LogicalOr',['../structamrex_1_1LogicalOr.html',1,'amrex']]],
-  ['lpinfo',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
-  ['lscore',['LSCore',['../classamrex_1_1LSCore.html',1,'amrex']]],
-  ['lscorebase',['LSCoreBase',['../classamrex_1_1LSCoreBase.html',1,'amrex']]],
-  ['lsfactory',['LSFactory',['../classamrex_1_1LSFactory.html',1,'amrex']]],
-  ['lsutility',['LSUtility',['../classamrex_1_1LSUtility.html',1,'amrex']]]
+  ['lpinfo',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]]
 ];

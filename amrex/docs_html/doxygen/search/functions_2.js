@@ -120,7 +120,6 @@ var searchData=
   ['buildbc',['buildBC',['../classamrex_1_1DeriveRec.html#a3b07b7cec32b864ae58f09942234421e',1,'amrex::DeriveRec']]],
   ['buildbc3d',['buildBC3D',['../classamrex_1_1DeriveRec.html#af66abf3e0352de5d8f79dbdde22ef22c',1,'amrex::DeriveRec']]],
   ['buildcellflag',['buildCellFlag',['../classamrex_1_1EB2_1_1Level.html#adbbdc98f272b71363491d9a348e1f92a',1,'amrex::EB2::Level']]],
-  ['buildeblevel',['BuildEBLevel',['../classamrex_1_1LSCore.html#a917795217583cdd187bdf68987e5b6c9',1,'amrex::LSCore::BuildEBLevel(const EB2::GeometryShop&lt; F &gt; &amp;gshop, int lev, const Vector&lt; Geometry &gt; &amp;geom)'],['../classamrex_1_1LSCore.html#a796141f193c78640cf04aac2db83c3b8',1,'amrex::LSCore::BuildEBLevel(const EB2::GeometryShop&lt; F &gt; gshop, int lev, const Vector&lt; Geometry &gt; &amp;geom, int max_crse_level, int required_crse_lev)']]],
   ['buildfinemask',['buildFineMask',['../classamrex_1_1MLMG.html#aa2a89a45fc288f18494a1304ce6fe5e2',1,'amrex::MLMG']]],
   ['buildmask',['BuildMask',['../classamrex_1_1FabArray.html#a4f4a269de9e494ef89075265e5b8ecb2',1,'amrex::FabArray']]],
   ['buildmasks',['buildMasks',['../classamrex_1_1MLNodeLinOp.html#aa43fb0696cb5782669c8ee368b743099',1,'amrex::MLNodeLinOp::buildMasks()'],['../classamrex_1_1NeighborParticleContainer.html#af79112d043b45868fb00cf720d61b0a5',1,'amrex::NeighborParticleContainer::BuildMasks()']]],

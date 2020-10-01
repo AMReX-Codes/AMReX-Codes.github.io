@@ -11,8 +11,6 @@ var searchData=
   ['level',['level',['../classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4',1,'amrex::AmrLevel::level()'],['../structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#a5032d82349c94d0cb1b2949734076a6e',1,'amrex::NeighborParticleContainer::NeighborCopyTag::level()']]],
   ['level_5fcount',['level_count',['../classamrex_1_1Amr.html#a1a1d9a33774055f267ad5297b2846ecc',1,'amrex::Amr']]],
   ['level_5fid',['level_id',['../structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag.html#a20e639722bdde70fc4f2b123de0624e6',1,'amrex::NeighborParticleContainer::NeighborCommTag']]],
-  ['level_5fset',['level_set',['../classamrex_1_1LSCoreBase.html#a120eaa256d41fb7834e7cd1e009dc151',1,'amrex::LSCoreBase']]],
-  ['level_5fset_5fvalid',['level_set_valid',['../classamrex_1_1LSCoreBase.html#ae753489d344207e275cb87c774c9a167',1,'amrex::LSCoreBase']]],
   ['level_5fsteps',['level_steps',['../classamrex_1_1Amr.html#a38fbd17db8a050b5bf3302427b9285ea',1,'amrex::Amr']]],
   ['levelbld',['levelbld',['../classamrex_1_1Amr.html#a99ffc00c495183894b2ee7e11a79685e',1,'amrex::Amr']]],
   ['leveldirectoriescreated',['levelDirectoriesCreated',['../classamrex_1_1ParticleContainer.html#a86f015f9137536c34fbd5832f53dcf16',1,'amrex::ParticleContainer']]],
@@ -35,13 +33,6 @@ var searchData=
   ['localindexmap',['localIndexMap',['../structamrex_1_1FabArrayBase_1_1TileArray.html#a65f8a2b40876923cd17cd7bb45b1177e',1,'amrex::FabArrayBase::TileArray']]],
   ['localtileindexmap',['localTileIndexMap',['../structamrex_1_1FabArrayBase_1_1TileArray.html#a77df041121016e402a0b5df46a8fe7e6',1,'amrex::FabArrayBase::TileArray']]],
   ['lp',['Lp',['../classamrex_1_1MLCGSolver.html#a6545d114e5d595327ffd94ac69f22170',1,'amrex::MLCGSolver']]],
-  ['ls_5fba',['ls_ba',['../classamrex_1_1LSFactory.html#aac702d5404b3c220d7ae24fe8e5fe05f',1,'amrex::LSFactory']]],
-  ['ls_5fdm',['ls_dm',['../classamrex_1_1LSFactory.html#aa1f324014ab0b366a03051fafb2035dc',1,'amrex::LSFactory']]],
-  ['ls_5ffactory',['ls_factory',['../classamrex_1_1LSCoreBase.html#a1f4cff404c7fed0de6bdf3bceac89ef0',1,'amrex::LSCoreBase']]],
-  ['ls_5fgrid',['ls_grid',['../classamrex_1_1LSFactory.html#abf257d1da9d0d205ef15f12dc51338c4',1,'amrex::LSFactory']]],
-  ['ls_5fgrid_5fpad',['ls_grid_pad',['../classamrex_1_1LSFactory.html#ac967f340aea2740d70f37342edc06655',1,'amrex::LSFactory']]],
-  ['ls_5fgrid_5fref',['ls_grid_ref',['../classamrex_1_1LSFactory.html#a6177b2179dadab7809177582f73a34b9',1,'amrex::LSFactory']]],
-  ['ls_5fvalid',['ls_valid',['../classamrex_1_1LSFactory.html#a06091e66f3ac5659b68ba15e6f71992b',1,'amrex::LSFactory']]],
   ['lst',['lst',['../classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a',1,'amrex::DeriveList::lst()'],['../classamrex_1_1ClusterList.html#a27c46e812840379455b46b092f2e6732',1,'amrex::ClusterList::lst()']]],
   ['lta',['lta',['../classamrex_1_1MFGhostIter.html#ac0f73b4439a279cfaf8e200a2739abf4',1,'amrex::MFGhostIter']]]
 ];

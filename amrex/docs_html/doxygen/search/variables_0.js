@@ -18,7 +18,6 @@ var searchData=
   ['allregular',['allregular',['../classamrex_1_1EB2_1_1GeometryShop.html#a6c5e06b24c520ce426abd4d936b4cab5',1,'amrex::EB2::GeometryShop']]],
   ['alpha',['alpha',['../structamrex_1_1algoim_1_1Interval.html#a017e3af95c08cb7c803eb4717bc2da14',1,'amrex::algoim::Interval']]],
   ['always_5fuse_5fbnorm',['always_use_bnorm',['../classamrex_1_1MLMG.html#a383d3320ac67af7ea304a3fad4c53ff6',1,'amrex::MLMG']]],
-  ['amr_5flev',['amr_lev',['../classamrex_1_1LSFactory.html#a6295aa12f7875f614467b1f349b52a9a',1,'amrex::LSFactory']]],
   ['amr_5flevel',['amr_level',['../classamrex_1_1Amr.html#a48ea3d37aac2f07a6488cb599f45fc8b',1,'amrex::Amr']]],
   ['amrdata',['amrData',['../classamrex_1_1DataServices.html#a4dccda9d17c5bef5bd00585d8ab7f993',1,'amrex::DataServices']]],
   ['amrex_5fbc_5fbogus',['amrex_bc_bogus',['../namespaceamrex__bc__types__module.html#ab480fd31227317f2aa8691adfece03ae',1,'amrex_bc_types_module']]],
