@@ -79,6 +79,7 @@ var searchData=
   ['_7ehypreabeclap',['~HypreABecLap',['../classamrex_1_1HypreABecLap.html#a0e273f01ae93c34aece89b8e8f904359',1,'amrex::HypreABecLap']]],
   ['_7ehypreabeclap2',['~HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#a5be77cc8393b0445e2f7341cd4311f61',1,'amrex::HypreABecLap2']]],
   ['_7ehypreabeclap3',['~HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ac934d916d663753b28efb875e133d7cd',1,'amrex::HypreABecLap3']]],
+  ['_7ehypreijiface',['~HypreIJIface',['../classamrex_1_1HypreIJIface.html#a415acbef953758af2e22a518e6199ba8',1,'amrex::HypreIJIface']]],
   ['_7ehyprenodelap',['~HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#ac4fd7635fb3f2ef04617ec9a1e17f0ac',1,'amrex::HypreNodeLap']]],
   ['_7eiarraybox',['~IArrayBox',['../classamrex_1_1IArrayBox.html#aa84accf79a8cccd1f0f52fee228e1a82',1,'amrex::IArrayBox']]],
   ['_7eimultifab',['~iMultiFab',['../classamrex_1_1iMultiFab.html#a77c0301219eda95adb837e20401cef7a',1,'amrex::iMultiFab']]],

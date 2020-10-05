@@ -10,5 +10,6 @@ var searchData=
   ['hi',['hi',['../structamrex_1_1ForkJoin_1_1ComponentSet.html#aa6ebc6ce0f58172561258c343c9b0921',1,'amrex::ForkJoin::ComponentSet']]],
   ['hosttodevice',['hostToDevice',['../namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9',1,'amrex::Gpu']]],
   ['hwm_5fbuilds',['hwm_builds',['../structamrex_1_1MemProfiler_1_1NBuildsInfo.html#ac85d7c7f2a90d5d1025386987ad4aaa5',1,'amrex::MemProfiler::NBuildsInfo']]],
-  ['hwm_5fbytes',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]]
+  ['hwm_5fbytes',['hwm_bytes',['../structamrex_1_1MemProfiler_1_1MemInfo.html#a8661ed517702715ed45adc3550f8cad0',1,'amrex::MemProfiler::MemInfo']]],
+  ['hypre_5fij',['hypre_ij',['../classamrex_1_1HypreABecLap3.html#a5315b73e446b5f629e873416fa8ae149',1,'amrex::HypreABecLap3::hypre_ij()'],['../classamrex_1_1HypreNodeLap.html#a9edf6830b04060921e5fcd8c3b95ab79',1,'amrex::HypreNodeLap::hypre_ij()']]]
 ];

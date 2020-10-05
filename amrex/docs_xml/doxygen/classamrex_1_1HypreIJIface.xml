@@ -1,0 +1,958 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classamrex_1_1HypreIJIface" kind="class" language="C++" prot="public">
+    <compoundname>amrex::HypreIJIface</compoundname>
+    <includes refid="AMReX__HypreIJIface_8H" local="no">AMReX_HypreIJIface.H</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" prot="public" static="no">
+        <type>HYPRE_Int</type>
+        <definition>using amrex::HypreIJIface::HypreIntType =  HYPRE_Int</definition>
+        <argsstring></argsstring>
+        <name>HypreIntType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="17" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" prot="public" static="no">
+        <type>HYPRE_Real</type>
+        <definition>using amrex::HypreIJIface::HypreRealType =  HYPRE_Real</definition>
+        <argsstring></argsstring>
+        <name>HypreRealType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="18" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a07f28528e66771da54579a9419cff957" prot="private" static="no" mutable="no">
+        <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+        <definition>MPI_Comm amrex::HypreIJIface::m_comm</definition>
+        <argsstring></argsstring>
+        <name>m_comm</name>
+        <initializer>{<ref refid="AMReX__ccse-mpi_8H_1a9c299ed1c4c5eaa48a6446c85fb2d689" kindref="member">MPI_COMM_NULL</ref>}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="63" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1abfee36b1993dbc4950e1288521db42c6" prot="private" static="no" mutable="no">
+        <type>HYPRE_IJMatrix</type>
+        <definition>HYPRE_IJMatrix amrex::HypreIJIface::m_mat</definition>
+        <argsstring></argsstring>
+        <name>m_mat</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="65" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1ab6b44070d9d15cc4932b59f06a0558cd" prot="private" static="no" mutable="no">
+        <type>HYPRE_IJVector</type>
+        <definition>HYPRE_IJVector amrex::HypreIJIface::m_rhs</definition>
+        <argsstring></argsstring>
+        <name>m_rhs</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="66" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a4c1ff70e7ba67cb35235e310144a07ce" prot="private" static="no" mutable="no">
+        <type>HYPRE_IJVector</type>
+        <definition>HYPRE_IJVector amrex::HypreIJIface::m_sln</definition>
+        <argsstring></argsstring>
+        <name>m_sln</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="67" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a95128f78f0176e507ec9b05cddbb80a5" prot="private" static="no" mutable="no">
+        <type>HYPRE_ParCSRMatrix</type>
+        <definition>HYPRE_ParCSRMatrix amrex::HypreIJIface::m_parA</definition>
+        <argsstring></argsstring>
+        <name>m_parA</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="69" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a470b11bb06368021f02f861a95520128" prot="private" static="no" mutable="no">
+        <type>HYPRE_ParVector</type>
+        <definition>HYPRE_ParVector amrex::HypreIJIface::m_parRhs</definition>
+        <argsstring></argsstring>
+        <name>m_parRhs</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="70" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1abc0833145a0104c5fd87f4d16dc89db9" prot="private" static="no" mutable="no">
+        <type>HYPRE_ParVector</type>
+        <definition>HYPRE_ParVector amrex::HypreIJIface::m_parSln</definition>
+        <argsstring></argsstring>
+        <name>m_parSln</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="71" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a6bb23759218b92724ea79d95bb57ec99" prot="private" static="no" mutable="no">
+        <type>HYPRE_Solver</type>
+        <definition>HYPRE_Solver amrex::HypreIJIface::m_solver</definition>
+        <argsstring></argsstring>
+        <name>m_solver</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="73" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1acf501d7d69fdc89f757a8d27e455072a" prot="private" static="no" mutable="no">
+        <type>HYPRE_Solver</type>
+        <definition>HYPRE_Solver amrex::HypreIJIface::m_precond</definition>
+        <argsstring></argsstring>
+        <name>m_precond</name>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="74" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1aba91fd7d31b0749b326b8951483bd7fd" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverDestroyPtr) (HYPRE_Solver)</definition>
+        <argsstring>)(HYPRE_Solver)</argsstring>
+        <name>m_solverDestroyPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="76" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a0a39d10868c7060639ccc1d20dc09f49" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverSetupPtr) (HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</definition>
+        <argsstring>)(HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</argsstring>
+        <name>m_solverSetupPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="77" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="77" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a83da26622ba6d3465b95ca419d86586c" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverSolvePtr) (HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</definition>
+        <argsstring>)(HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</argsstring>
+        <name>m_solverSolvePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="79" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="79" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1af2a5eaf05419e462af43e6dbac0f7e32" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverPrecondPtr) (HYPRE_Solver, HYPRE_PtrToParSolverFcn, HYPRE_PtrToParSolverFcn, HYPRE_Solver)</definition>
+        <argsstring>)(HYPRE_Solver, HYPRE_PtrToParSolverFcn, HYPRE_PtrToParSolverFcn, HYPRE_Solver)</argsstring>
+        <name>m_solverPrecondPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="81" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="81" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1ad878f5c593038147c41c21ca7c8ec7d4" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_precondDestroyPtr) (HYPRE_Solver)</definition>
+        <argsstring>)(HYPRE_Solver)</argsstring>
+        <name>m_precondDestroyPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="87" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="87" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a47d2841ac9969152f7c22549648ae15a" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_precondSetupPtr) (HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</definition>
+        <argsstring>)(HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</argsstring>
+        <name>m_precondSetupPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="88" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="88" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a689f3de56a17e91425f008df5ddd02b0" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_precondSolvePtr) (HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</definition>
+        <argsstring>)(HYPRE_Solver, HYPRE_ParCSRMatrix, HYPRE_ParVector, HYPRE_ParVector)</argsstring>
+        <name>m_precondSolvePtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="90" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="90" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a8958d5be73e22ee0220a2ec5bceddaab" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverSetTolPtr) (HYPRE_Solver, double)</definition>
+        <argsstring>)(HYPRE_Solver, double)</argsstring>
+        <name>m_solverSetTolPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="93" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="93" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a63b285e73b96463171d300164dfdc9a7" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverSetAbsTolPtr) (HYPRE_Solver, double)</definition>
+        <argsstring>)(HYPRE_Solver, double)</argsstring>
+        <name>m_solverSetAbsTolPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="94" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="94" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a8215a538fc2174de6ba720bf22aa9738" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverSetMaxIterPtr) (HYPRE_Solver, HypreIntType)</definition>
+        <argsstring>)(HYPRE_Solver, HypreIntType)</argsstring>
+        <name>m_solverSetMaxIterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="95" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1afd57a1fed363b002efd0870b9121d808" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverNumItersPtr) (HYPRE_Solver, HypreIntType *)</definition>
+        <argsstring>)(HYPRE_Solver, HypreIntType *)</argsstring>
+        <name>m_solverNumItersPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="96" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a3937b0448aab02a5bc15670f0ee3e300" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref>(*</type>
+        <definition>HypreIntType(* amrex::HypreIJIface::m_solverFinalResidualNormPtr) (HYPRE_Solver, double *)</definition>
+        <argsstring>)(HYPRE_Solver, double *)</argsstring>
+        <name>m_solverFinalResidualNormPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="97" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a9973ebbe0d5b11055141cfc15a1a2cad" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+        <definition>HypreIntType amrex::HypreIJIface::m_ilower</definition>
+        <argsstring></argsstring>
+        <name>m_ilower</name>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="99" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1aa3fa7e313e805db63a29e594319ec349" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+        <definition>HypreIntType amrex::HypreIJIface::m_iupper</definition>
+        <argsstring></argsstring>
+        <name>m_iupper</name>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="100" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a5fe7d6d6cfec12f507d8fd18600af477" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" kindref="member">HypreRealType</ref></type>
+        <definition>HypreRealType amrex::HypreIJIface::m_final_res_norm</definition>
+        <argsstring></argsstring>
+        <name>m_final_res_norm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="102" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1ac7f56a34119321e36dcd74e70071caa0" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+        <definition>HypreIntType amrex::HypreIJIface::m_num_iterations</definition>
+        <argsstring></argsstring>
+        <name>m_num_iterations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="103" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a1bd8897ee5f2be854cda1560c269d680" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::HypreIJIface::m_solver_name</definition>
+        <argsstring></argsstring>
+        <name>m_solver_name</name>
+        <initializer>{&quot;BoomerAMG&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="105" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a8b1cf6f83cb8e3c65a01f11ff4003041" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::HypreIJIface::m_preconditioner_name</definition>
+        <argsstring></argsstring>
+        <name>m_preconditioner_name</name>
+        <initializer>{&quot;none&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="106" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a6889a9051d04a921daa1893fd1df1c37" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string amrex::HypreIJIface::m_file_prefix</definition>
+        <argsstring></argsstring>
+        <name>m_file_prefix</name>
+        <initializer>{&quot;IJ&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="107" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a559b510a5112ec5d239ce2b27e8dac58" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::HypreIJIface::m_verbose</definition>
+        <argsstring></argsstring>
+        <name>m_verbose</name>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Verbosity of the HYPRE solvers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="110" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1aafa24076e772ca5e72ac632f9313300c" prot="private" static="no" mutable="no">
+        <type>unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>unsigned int amrex::HypreIJIface::m_write_counter</definition>
+        <argsstring></argsstring>
+        <name>m_write_counter</name>
+        <initializer>{0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="112" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1ad68ef3fe7945a74770ed92aadd0508ee" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::HypreIJIface::m_has_preconditioner</definition>
+        <argsstring></argsstring>
+        <name>m_has_preconditioner</name>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Flag indicating whether a preconditioner has been set. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="115" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1ae6598d193c7640eac64bfc15ff2ad8a0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::HypreIJIface::m_need_setup</definition>
+        <argsstring></argsstring>
+        <name>m_need_setup</name>
+        <initializer>{true}</initializer>
+        <briefdescription>
+<para>Flag indicating whether the solver/preconditioner has been setup. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="118" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1ad473615875cdc97cafae5a44ca7fff27" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::HypreIJIface::m_recompute_preconditioner</definition>
+        <argsstring></argsstring>
+        <name>m_recompute_preconditioner</name>
+        <initializer>{true}</initializer>
+        <briefdescription>
+<para>Flag indicating whether user has requested recomputation of preconditioner. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="121" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a06b918c86f2df226b6b631916e456e72" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::HypreIJIface::m_write_files</definition>
+        <argsstring></argsstring>
+        <name>m_write_files</name>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Flag indicating whether to dump matrix files. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="124" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1HypreIJIface_1a8586f98cdc225f4e2a60cc42046b0504" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::HypreIJIface::m_overwrite_files</definition>
+        <argsstring></argsstring>
+        <name>m_overwrite_files</name>
+        <initializer>{true}</initializer>
+        <briefdescription>
+<para>Flag indicating whether the files are overwritten on subsequent writes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="127" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a937367b2afac275e281bf7764fc5520d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::HypreIJIface::HypreIJIface</definition>
+        <argsstring>(MPI_Comm comm, const HypreIntType ilower, const HypreIntType iupper, int verbose)</argsstring>
+        <name>HypreIJIface</name>
+        <param>
+          <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
+          <declname>comm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+          <declname>ilower</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+          <declname>iupper</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>verbose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="20" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="55" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a415acbef953758af2e22a518e6199ba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::HypreIJIface::~HypreIJIface</definition>
+        <argsstring>()</argsstring>
+        <name>~HypreIJIface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="23" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="75" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a2b706d04a2952ad586d31f26184b927b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::parse_inputs</definition>
+        <argsstring>(const std::string &amp;prefix=&quot;hypre&quot;)</argsstring>
+        <name>parse_inputs</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+          <defval>&quot;hypre&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="25" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="151" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1ab4bdb5426d0cca26e1afe5101c1f71af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::solve</definition>
+        <argsstring>(const HypreRealType rel_tol, const HypreRealType abs_tol, const HypreIntType max_iter)</argsstring>
+        <name>solve</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" kindref="member">HypreRealType</ref></type>
+          <declname>rel_tol</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" kindref="member">HypreRealType</ref></type>
+          <declname>abs_tol</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+          <declname>max_iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="27" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="95" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a4db1a6ece8198046ecdf4bc34dc075cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>HYPRE_IJMatrix</type>
+        <definition>HYPRE_IJMatrix amrex::HypreIJIface::A</definition>
+        <argsstring>()</argsstring>
+        <name>A</name>
+        <briefdescription>
+<para>IJ matrix instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="30" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a59934d1ececebf10c8d6fcdb0412b283" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>HYPRE_IJVector</type>
+        <definition>HYPRE_IJVector amrex::HypreIJIface::b</definition>
+        <argsstring>()</argsstring>
+        <name>b</name>
+        <briefdescription>
+<para>Right hand side IJ vector instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="33" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1adee4e26d0112560a0d334844d548a91f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>HYPRE_IJVector</type>
+        <definition>HYPRE_IJVector amrex::HypreIJIface::x</definition>
+        <argsstring>()</argsstring>
+        <name>x</name>
+        <briefdescription>
+<para>Solution IJ vector instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="36" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a0799307e126b301bb053f72e610d7230" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kindref="member">HypreIntType</ref></type>
+        <definition>HypreIntType amrex::HypreIJIface::getNumIters</definition>
+        <argsstring>()</argsstring>
+        <name>getNumIters</name>
+        <briefdescription>
+<para>Number of iterations taken by the solver to reach the desired tolerance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="39" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a81086d972d614431c8f1dbeb09f7b8ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" kindref="member">HypreRealType</ref></type>
+        <definition>HypreRealType amrex::HypreIJIface::getFinalResidualNorm</definition>
+        <argsstring>()</argsstring>
+        <name>getFinalResidualNorm</name>
+        <briefdescription>
+<para>Final residual norm after a linear solve. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="42" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="42" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1afd785510c002ae90c0406adea27abb4e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::init_preconditioner</definition>
+        <argsstring>(const std::string &amp;prefix, const std::string &amp;name)</argsstring>
+        <name>init_preconditioner</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="45" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="176" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1ad7072916b39b7d8c98e19a4d6e23dd6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::init_solver</definition>
+        <argsstring>(const std::string &amp;prefix, const std::string &amp;name)</argsstring>
+        <name>init_solver</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="46" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="188" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a7b457116878fa9bca83d6710ae7f6dde" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::boomeramg_precond_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>boomeramg_precond_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="49" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="212" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1af635b8debb95a35dc7f5201129d4cd5b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::euclid_precond_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>euclid_precond_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="50" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="288" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a2a13d67a9f8e03517f861c984457c537" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::boomeramg_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>boomeramg_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="53" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="308" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a27bb5a9047943afd18cf194c141d20ea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::gmres_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>gmres_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="54" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="350" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a83a673d85745391688b653887ebc51a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::cogmres_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>cogmres_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="55" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="380" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a2dce11a296890cc9e974d2e9102eba29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::lgmres_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>lgmres_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="56" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="408" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a3cd35a345fcd7b90cccaaa542ded29cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::flex_gmres_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>flex_gmres_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="57" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="436" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a29206029adc7725812d03454b9c178ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::bicgstab_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>bicgstab_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="58" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="464" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a24dc1ec87efeca4c5719f268b4a3cfb9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::pcg_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>pcg_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="59" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="491" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1HypreIJIface_1a457d2b6f6174b9705ebc60f9fa034388" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::HypreIJIface::hybrid_solver_configure</definition>
+        <argsstring>(const std::string &amp;prefix)</argsstring>
+        <name>hybrid_solver_configure</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="60" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp" bodystart="517" bodyend="550"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2188">
+        <label>string</label>
+      </node>
+      <node id="2187">
+        <label>amrex::HypreIJIface</label>
+        <link refid="classamrex_1_1HypreIJIface"/>
+        <childnode refid="2188" relation="usage">
+          <edgelabel>m_file_prefix</edgelabel>
+          <edgelabel>m_preconditioner_name</edgelabel>
+          <edgelabel>m_solver_name</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" line="15" column="1" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.H" bodystart="14" bodyend="128"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1HypreIJIface_1a4db1a6ece8198046ecdf4bc34dc075cf" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>A</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a59934d1ececebf10c8d6fcdb0412b283" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>b</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a29206029adc7725812d03454b9c178ed" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>bicgstab_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a7b457116878fa9bca83d6710ae7f6dde" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>boomeramg_precond_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a2a13d67a9f8e03517f861c984457c537" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>boomeramg_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a83a673d85745391688b653887ebc51a8" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>cogmres_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1af635b8debb95a35dc7f5201129d4cd5b" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>euclid_precond_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a3cd35a345fcd7b90cccaaa542ded29cf" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>flex_gmres_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a81086d972d614431c8f1dbeb09f7b8ea" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>getFinalResidualNorm</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a0799307e126b301bb053f72e610d7230" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>getNumIters</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a27bb5a9047943afd18cf194c141d20ea" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>gmres_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a457d2b6f6174b9705ebc60f9fa034388" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>hybrid_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a937367b2afac275e281bf7764fc5520d" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>HypreIJIface</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>HypreIntType</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>HypreRealType</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1afd785510c002ae90c0406adea27abb4e" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>init_preconditioner</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ad7072916b39b7d8c98e19a4d6e23dd6e" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>init_solver</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a2dce11a296890cc9e974d2e9102eba29" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>lgmres_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a07f28528e66771da54579a9419cff957" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_comm</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a6889a9051d04a921daa1893fd1df1c37" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_file_prefix</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a5fe7d6d6cfec12f507d8fd18600af477" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_final_res_norm</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ad68ef3fe7945a74770ed92aadd0508ee" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_has_preconditioner</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a9973ebbe0d5b11055141cfc15a1a2cad" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_ilower</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1aa3fa7e313e805db63a29e594319ec349" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_iupper</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1abfee36b1993dbc4950e1288521db42c6" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_mat</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ae6598d193c7640eac64bfc15ff2ad8a0" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_need_setup</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ac7f56a34119321e36dcd74e70071caa0" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_num_iterations</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a8586f98cdc225f4e2a60cc42046b0504" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_overwrite_files</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a95128f78f0176e507ec9b05cddbb80a5" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_parA</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a470b11bb06368021f02f861a95520128" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_parRhs</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1abc0833145a0104c5fd87f4d16dc89db9" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_parSln</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1acf501d7d69fdc89f757a8d27e455072a" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_precond</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ad878f5c593038147c41c21ca7c8ec7d4" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_precondDestroyPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a8b1cf6f83cb8e3c65a01f11ff4003041" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_preconditioner_name</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a47d2841ac9969152f7c22549648ae15a" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_precondSetupPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a689f3de56a17e91425f008df5ddd02b0" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_precondSolvePtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ad473615875cdc97cafae5a44ca7fff27" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_recompute_preconditioner</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ab6b44070d9d15cc4932b59f06a0558cd" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_rhs</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a4c1ff70e7ba67cb35235e310144a07ce" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_sln</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a6bb23759218b92724ea79d95bb57ec99" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solver</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a1bd8897ee5f2be854cda1560c269d680" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solver_name</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1aba91fd7d31b0749b326b8951483bd7fd" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverDestroyPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a3937b0448aab02a5bc15670f0ee3e300" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverFinalResidualNormPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1afd57a1fed363b002efd0870b9121d808" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverNumItersPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1af2a5eaf05419e462af43e6dbac0f7e32" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverPrecondPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a63b285e73b96463171d300164dfdc9a7" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverSetAbsTolPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a8215a538fc2174de6ba720bf22aa9738" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverSetMaxIterPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a8958d5be73e22ee0220a2ec5bceddaab" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverSetTolPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a0a39d10868c7060639ccc1d20dc09f49" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverSetupPtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a83da26622ba6d3465b95ca419d86586c" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_solverSolvePtr</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a559b510a5112ec5d239ce2b27e8dac58" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_verbose</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1aafa24076e772ca5e72ac632f9313300c" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_write_counter</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a06b918c86f2df226b6b631916e456e72" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>m_write_files</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a2b706d04a2952ad586d31f26184b927b" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>parse_inputs</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a24dc1ec87efeca4c5719f268b4a3cfb9" prot="private" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>pcg_solver_configure</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1ab4bdb5426d0cca26e1afe5101c1f71af" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>solve</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1adee4e26d0112560a0d334844d548a91f" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>x</name></member>
+      <member refid="classamrex_1_1HypreIJIface_1a415acbef953758af2e22a518e6199ba8" prot="public" virt="non-virtual"><scope>amrex::HypreIJIface</scope><name>~HypreIJIface</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

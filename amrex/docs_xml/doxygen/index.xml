@@ -4553,6 +4553,7 @@
     <member refid="classamrex_1_1Hypre_1aa602c05ea8f16fa5aa95d79b372cffa8" kind="variable"><name>relax_order</name></member>
     <member refid="classamrex_1_1Hypre_1ab49bedd6e91b0cbfe206bc3ab17cdbc1" kind="variable"><name>num_sweeps</name></member>
     <member refid="classamrex_1_1Hypre_1acbc3e949322292ed5e578e8a2bd87bb3" kind="variable"><name>strong_threshold</name></member>
+    <member refid="classamrex_1_1Hypre_1a9e2c8bb6ef487b2efe4482bd682b68ce" kind="variable"><name>options_namespace</name></member>
     <member refid="classamrex_1_1Hypre_1a1ab65d249a3254eb6540bedcc9ebf285" kind="variable"><name>acoefs</name></member>
     <member refid="classamrex_1_1Hypre_1a097bf586d48d127374ec0d293dd3bd41" kind="variable"><name>bcoefs</name></member>
     <member refid="classamrex_1_1Hypre_1a5cc787cbd77e527e4c58e58904305531" kind="variable"><name>scalar_a</name></member>
@@ -4568,6 +4569,7 @@
     <member refid="classamrex_1_1Hypre_1a993feadb0ec999bd7f2d92717fd9c486" kind="function"><name>setBCoeffs</name></member>
     <member refid="classamrex_1_1Hypre_1a1aa001ef00cb82f298c761cbf61de2e1" kind="function"><name>setVerbose</name></member>
     <member refid="classamrex_1_1Hypre_1accd025c6669f7d68aa001f5c4d1582ad" kind="function"><name>solve</name></member>
+    <member refid="classamrex_1_1Hypre_1a69bd65a7f09331727ec3606700f744b7" kind="function"><name>setHypreOptionsNamespace</name></member>
     <member refid="classamrex_1_1Hypre_1a176164a0be65a008953835f054ed05bb" kind="function"><name>setHypreOldDefault</name></member>
     <member refid="classamrex_1_1Hypre_1a405012151d7a1605c76dc277321f8413" kind="function"><name>setHypreRelaxType</name></member>
     <member refid="classamrex_1_1Hypre_1ae6d9ce8d191fe74154cb322a83647c65" kind="function"><name>setHypreRelaxOrder</name></member>
@@ -4606,10 +4608,10 @@
     <member refid="classamrex_1_1HypreABecLap2_1a534455bdd69a5ca6f0967f34aeb10631" kind="function"><name>getSolution</name></member>
   </compound>
   <compound refid="classamrex_1_1HypreABecLap3" kind="class"><name>amrex::HypreABecLap3</name>
+    <member refid="classamrex_1_1HypreABecLap3_1a5315b73e446b5f629e873416fa8ae149" kind="variable"><name>hypre_ij</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a3094f9b4df6d8bc23577d00b40087587" kind="variable"><name>A</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1aac9a18102f9bc2f5b4b060e49fabaea0" kind="variable"><name>b</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1accd2cc8cf99841dfb7a1707ddfe3ca8e" kind="variable"><name>x</name></member>
-    <member refid="classamrex_1_1HypreABecLap3_1a3360bc8fed204d85f2545c8e74eb51fe" kind="variable"><name>solver</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a2e125c8d535cb75d33aee7d83be455d7" kind="variable"><name>ncells_grid</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1abb94875e6a4d9d74894c0338c633ae0b" kind="variable"><name>cell_id_vec</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a4e1e2418ad02ffb9cfde30d4a611c5f7" kind="variable"><name>cell_id</name></member>
@@ -4620,6 +4622,66 @@
     <member refid="classamrex_1_1HypreABecLap3_1a73956b5120ef6513532cb22e2e8335ab" kind="function"><name>prepareSolver</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a1e022b7b14f485c9d9aa5ab1bb52a929" kind="function"><name>loadVectors</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a42b94b56191d33a7f5ba9e1f119ac6b6" kind="function"><name>getSolution</name></member>
+  </compound>
+  <compound refid="classamrex_1_1HypreIJIface" kind="class"><name>amrex::HypreIJIface</name>
+    <member refid="classamrex_1_1HypreIJIface_1a85e587afbba4ce7f0733ae56c4ee177c" kind="typedef"><name>HypreIntType</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ab04cfb0ccb604763003f5729a5ca3cb9" kind="typedef"><name>HypreRealType</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a07f28528e66771da54579a9419cff957" kind="variable"><name>m_comm</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1abfee36b1993dbc4950e1288521db42c6" kind="variable"><name>m_mat</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ab6b44070d9d15cc4932b59f06a0558cd" kind="variable"><name>m_rhs</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a4c1ff70e7ba67cb35235e310144a07ce" kind="variable"><name>m_sln</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a95128f78f0176e507ec9b05cddbb80a5" kind="variable"><name>m_parA</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a470b11bb06368021f02f861a95520128" kind="variable"><name>m_parRhs</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1abc0833145a0104c5fd87f4d16dc89db9" kind="variable"><name>m_parSln</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a6bb23759218b92724ea79d95bb57ec99" kind="variable"><name>m_solver</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1acf501d7d69fdc89f757a8d27e455072a" kind="variable"><name>m_precond</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1aba91fd7d31b0749b326b8951483bd7fd" kind="variable"><name>m_solverDestroyPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a0a39d10868c7060639ccc1d20dc09f49" kind="variable"><name>m_solverSetupPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a83da26622ba6d3465b95ca419d86586c" kind="variable"><name>m_solverSolvePtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1af2a5eaf05419e462af43e6dbac0f7e32" kind="variable"><name>m_solverPrecondPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ad878f5c593038147c41c21ca7c8ec7d4" kind="variable"><name>m_precondDestroyPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a47d2841ac9969152f7c22549648ae15a" kind="variable"><name>m_precondSetupPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a689f3de56a17e91425f008df5ddd02b0" kind="variable"><name>m_precondSolvePtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a8958d5be73e22ee0220a2ec5bceddaab" kind="variable"><name>m_solverSetTolPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a63b285e73b96463171d300164dfdc9a7" kind="variable"><name>m_solverSetAbsTolPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a8215a538fc2174de6ba720bf22aa9738" kind="variable"><name>m_solverSetMaxIterPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1afd57a1fed363b002efd0870b9121d808" kind="variable"><name>m_solverNumItersPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a3937b0448aab02a5bc15670f0ee3e300" kind="variable"><name>m_solverFinalResidualNormPtr</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a9973ebbe0d5b11055141cfc15a1a2cad" kind="variable"><name>m_ilower</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1aa3fa7e313e805db63a29e594319ec349" kind="variable"><name>m_iupper</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a5fe7d6d6cfec12f507d8fd18600af477" kind="variable"><name>m_final_res_norm</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ac7f56a34119321e36dcd74e70071caa0" kind="variable"><name>m_num_iterations</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a1bd8897ee5f2be854cda1560c269d680" kind="variable"><name>m_solver_name</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a8b1cf6f83cb8e3c65a01f11ff4003041" kind="variable"><name>m_preconditioner_name</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a6889a9051d04a921daa1893fd1df1c37" kind="variable"><name>m_file_prefix</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a559b510a5112ec5d239ce2b27e8dac58" kind="variable"><name>m_verbose</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1aafa24076e772ca5e72ac632f9313300c" kind="variable"><name>m_write_counter</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ad68ef3fe7945a74770ed92aadd0508ee" kind="variable"><name>m_has_preconditioner</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ae6598d193c7640eac64bfc15ff2ad8a0" kind="variable"><name>m_need_setup</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ad473615875cdc97cafae5a44ca7fff27" kind="variable"><name>m_recompute_preconditioner</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a06b918c86f2df226b6b631916e456e72" kind="variable"><name>m_write_files</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a8586f98cdc225f4e2a60cc42046b0504" kind="variable"><name>m_overwrite_files</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a937367b2afac275e281bf7764fc5520d" kind="function"><name>HypreIJIface</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a415acbef953758af2e22a518e6199ba8" kind="function"><name>~HypreIJIface</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a2b706d04a2952ad586d31f26184b927b" kind="function"><name>parse_inputs</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ab4bdb5426d0cca26e1afe5101c1f71af" kind="function"><name>solve</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a4db1a6ece8198046ecdf4bc34dc075cf" kind="function"><name>A</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a59934d1ececebf10c8d6fcdb0412b283" kind="function"><name>b</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1adee4e26d0112560a0d334844d548a91f" kind="function"><name>x</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a0799307e126b301bb053f72e610d7230" kind="function"><name>getNumIters</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a81086d972d614431c8f1dbeb09f7b8ea" kind="function"><name>getFinalResidualNorm</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1afd785510c002ae90c0406adea27abb4e" kind="function"><name>init_preconditioner</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1ad7072916b39b7d8c98e19a4d6e23dd6e" kind="function"><name>init_solver</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a7b457116878fa9bca83d6710ae7f6dde" kind="function"><name>boomeramg_precond_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1af635b8debb95a35dc7f5201129d4cd5b" kind="function"><name>euclid_precond_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a2a13d67a9f8e03517f861c984457c537" kind="function"><name>boomeramg_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a27bb5a9047943afd18cf194c141d20ea" kind="function"><name>gmres_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a83a673d85745391688b653887ebc51a8" kind="function"><name>cogmres_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a2dce11a296890cc9e974d2e9102eba29" kind="function"><name>lgmres_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a3cd35a345fcd7b90cccaaa542ded29cf" kind="function"><name>flex_gmres_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a29206029adc7725812d03454b9c178ed" kind="function"><name>bicgstab_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a24dc1ec87efeca4c5719f268b4a3cfb9" kind="function"><name>pcg_solver_configure</name></member>
+    <member refid="classamrex_1_1HypreIJIface_1a457d2b6f6174b9705ebc60f9fa034388" kind="function"><name>hybrid_solver_configure</name></member>
   </compound>
   <compound refid="classamrex_1_1HypreNodeLap" kind="class"><name>amrex::HypreNodeLap</name>
     <member refid="classamrex_1_1HypreNodeLap_1a55bfff3929ed41ec8c5f707f22cc392d" kind="typedef"><name>Int</name></member>
@@ -4632,18 +4694,20 @@
     <member refid="classamrex_1_1HypreNodeLap_1adf57e9f1fd02ffaff4b31a0d22a1a525" kind="variable"><name>comm</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1ad7cbb6433d195bb9fc6aaf2f7b92ff76" kind="variable"><name>linop</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a46cd3d0729be8490f8ae8840c1988d38" kind="variable"><name>verbose</name></member>
+    <member refid="classamrex_1_1HypreNodeLap_1a9edf6830b04060921e5fcd8c3b95ab79" kind="variable"><name>hypre_ij</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a84f23ccfc81e4068d4b59ff219dfdd17" kind="variable"><name>A</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a8bf1aff14a4fff3cc12887bac7c96620" kind="variable"><name>b</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1af32f270916e5ac3077cad9d15792033e" kind="variable"><name>x</name></member>
-    <member refid="classamrex_1_1HypreNodeLap_1a122058882cb0a6fddbc4a9bae3da1b89" kind="variable"><name>solver</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1ab571c163213ebca30687e13923b90fac" kind="variable"><name>nnodes_grid</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a731b9abb68433c5b5750155482f5c768" kind="variable"><name>node_id_vec</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a9a1b45b94bfcf850f38810f79ceb5041" kind="variable"><name>node_id</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a0ff36d67bd4b146e140a63de29c435e7" kind="variable"><name>tmpsoln</name></member>
+    <member refid="classamrex_1_1HypreNodeLap_1a82145850435b74caa01b3322229a059b" kind="variable"><name>options_namespace</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1af26b0bca5d124df7cefa65800d759390" kind="function"><name>HypreNodeLap</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1ac4fd7635fb3f2ef04617ec9a1e17f0ac" kind="function"><name>~HypreNodeLap</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a8ab7840824ff1afad30c2adc35584bd3" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1aa6c506e9171db3a9db1b1c32fc2b2bbc" kind="function"><name>fill_node_id</name></member>
+    <member refid="classamrex_1_1HypreNodeLap_1a9f80d1c81a4fc95cd42b3741dbccbacd" kind="function"><name>setHypreOptionsNamespace</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a9a4132962fea0f9ec7e1566e1aa6254e" kind="function"><name>loadVectors</name></member>
     <member refid="classamrex_1_1HypreNodeLap_1a58381f405245d3ca27aed91c4197bee6" kind="function"><name>getSolution</name></member>
   </compound>
@@ -5021,15 +5085,6 @@
   </compound>
   <compound refid="structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4" kind="struct"><name>amrex::IsStoreAtomic&lt; EBCellFlag &gt;</name>
   </compound>
-  <compound refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator" kind="struct"><name>amrex::Gpu::range_detail::range_impl::iterator</name>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a82d4fcf773cefe563a8c7e2ede1ffc27" kind="variable"><name>mi_b</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a50a86c9754189bac7fe0cc64355a3108" kind="variable"><name>mi_i</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1ae307cb5aa95e90cc014fdaab70c82873" kind="variable"><name>mi_s</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a7986f1b8dd09b767356976ae7bfa0d17" kind="function"><name>iterator</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a2e2e9f92ab70561863bc24cc7453a46f" kind="function"><name>operator++</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a8aabc0941165754bb046bcde35674e46" kind="function"><name>operator!=</name></member>
-    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a4fbe5d48fc816218c5458a3ca0bbce81" kind="function"><name>operator*</name></member>
-  </compound>
   <compound refid="structamrex_1_1BinIterator_1_1iterator" kind="struct"><name>amrex::BinIterator::iterator</name>
     <member refid="structamrex_1_1BinIterator_1_1iterator_1ac1bd0df198e2b1ee7b65324c70b7d7f3" kind="variable"><name>m_items</name></member>
     <member refid="structamrex_1_1BinIterator_1_1iterator_1aabe787e78944c662b6e4288f23c5eafb" kind="variable"><name>m_perm</name></member>
@@ -5049,6 +5104,15 @@
     <member refid="structamrex_1_1Neighbors_1_1iterator_1aa3897bfacd517fe8022b39be48c6bb2e" kind="function"><name>operator++</name></member>
     <member refid="structamrex_1_1Neighbors_1_1iterator_1a95832202a9e3eb4e35f9c02c9f81c1fa" kind="function"><name>operator!=</name></member>
     <member refid="structamrex_1_1Neighbors_1_1iterator_1a2741d9796ca4ed1076efdc389feaedd3" kind="function"><name>operator*</name></member>
+  </compound>
+  <compound refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator" kind="struct"><name>amrex::Gpu::range_detail::range_impl::iterator</name>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a82d4fcf773cefe563a8c7e2ede1ffc27" kind="variable"><name>mi_b</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a50a86c9754189bac7fe0cc64355a3108" kind="variable"><name>mi_i</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1ae307cb5aa95e90cc014fdaab70c82873" kind="variable"><name>mi_s</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a7986f1b8dd09b767356976ae7bfa0d17" kind="function"><name>iterator</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a2e2e9f92ab70561863bc24cc7453a46f" kind="function"><name>operator++</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a8aabc0941165754bb046bcde35674e46" kind="function"><name>operator!=</name></member>
+    <member refid="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator_1a4fbe5d48fc816218c5458a3ca0bbce81" kind="function"><name>operator*</name></member>
   </compound>
   <compound refid="structKeepValidFilter" kind="struct"><name>KeepValidFilter</name>
     <member refid="structKeepValidFilter_1af4bf053d8e8024c447f42ee722e08eb5" kind="function"><name>operator()</name></member>
@@ -8978,9 +9042,9 @@
   </compound>
   <compound refid="namespace_0D334" kind="namespace"><name>@334</name>
   </compound>
-  <compound refid="namespace_0D394" kind="namespace"><name>@394</name>
+  <compound refid="namespace_0D396" kind="namespace"><name>@396</name>
   </compound>
-  <compound refid="namespace_0D401" kind="namespace"><name>@401</name>
+  <compound refid="namespace_0D403" kind="namespace"><name>@403</name>
   </compound>
   <compound refid="namespace_0D51" kind="namespace"><name>@51</name>
   </compound>
@@ -10196,43 +10260,45 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D365" kind="namespace"><name>amrex::@365</name>
   </compound>
+  <compound refid="namespaceamrex_1_1_0D388" kind="namespace"><name>amrex::@388</name>
+  </compound>
   <compound refid="namespaceamrex_1_1_0D42" kind="namespace"><name>amrex::@42</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D43" kind="namespace"><name>amrex::@43</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D44" kind="namespace"><name>amrex::@44</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D443" kind="namespace"><name>amrex::@443</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D449" kind="namespace"><name>amrex::@449</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D450" kind="namespace"><name>amrex::@450</name>
+  <compound refid="namespaceamrex_1_1_0D445" kind="namespace"><name>amrex::@445</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D451" kind="namespace"><name>amrex::@451</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D452" kind="namespace"><name>amrex::@452</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D453" kind="namespace"><name>amrex::@453</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D455" kind="namespace"><name>amrex::@455</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D459" kind="namespace"><name>amrex::@459</name>
+  <compound refid="namespaceamrex_1_1_0D457" kind="namespace"><name>amrex::@457</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D468" kind="namespace"><name>amrex::@468</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D469" kind="namespace"><name>amrex::@469</name>
+  <compound refid="namespaceamrex_1_1_0D461" kind="namespace"><name>amrex::@461</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D470" kind="namespace"><name>amrex::@470</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D473" kind="namespace"><name>amrex::@473</name>
+  <compound refid="namespaceamrex_1_1_0D471" kind="namespace"><name>amrex::@471</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D476" kind="namespace"><name>amrex::@476</name>
+  <compound refid="namespaceamrex_1_1_0D472" kind="namespace"><name>amrex::@472</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D477" kind="namespace"><name>amrex::@477</name>
+  <compound refid="namespaceamrex_1_1_0D475" kind="namespace"><name>amrex::@475</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D478" kind="namespace"><name>amrex::@478</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D491" kind="namespace"><name>amrex::@491</name>
+  <compound refid="namespaceamrex_1_1_0D479" kind="namespace"><name>amrex::@479</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D507" kind="namespace"><name>amrex::@507</name>
+  <compound refid="namespaceamrex_1_1_0D480" kind="namespace"><name>amrex::@480</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D493" kind="namespace"><name>amrex::@493</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D509" kind="namespace"><name>amrex::@509</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D54" kind="namespace"><name>amrex::@54</name>
   </compound>
@@ -12529,6 +12595,12 @@
   <compound refid="AMReX__HypreABecLap3_8cpp" kind="file"><name>AMReX_HypreABecLap3.cpp</name>
   </compound>
   <compound refid="AMReX__HypreABecLap3_8H" kind="file"><name>AMReX_HypreABecLap3.H</name>
+  </compound>
+  <compound refid="AMReX__HypreIJIface_8cpp" kind="file"><name>AMReX_HypreIJIface.cpp</name>
+    <member refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kind="variable"><name>pp</name></member>
+    <member refid="AMReX__HypreIJIface_8cpp_1acdbe199df7d6624eeca64ea3ff06ab98" kind="variable"><name>solver</name></member>
+  </compound>
+  <compound refid="AMReX__HypreIJIface_8H" kind="file"><name>AMReX_HypreIJIface.H</name>
   </compound>
   <compound refid="AMReX__HypreNodeLap_8cpp" kind="file"><name>AMReX_HypreNodeLap.cpp</name>
   </compound>

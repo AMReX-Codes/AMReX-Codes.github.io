@@ -18,6 +18,7 @@ var searchData=
   ['one_5fylo_5fmask',['one_ylo_mask',['../structamrex_1_1EB2_1_1Neighbor.html#ae1167bbb17dc6210721c8a648092bd60',1,'amrex::EB2::Neighbor']]],
   ['one_5fzhi_5fmask',['one_zhi_mask',['../structamrex_1_1EB2_1_1Neighbor.html#aceac9e0a80381ad7e97aba7a9da7942f',1,'amrex::EB2::Neighbor']]],
   ['one_5fzlo_5fmask',['one_zlo_mask',['../structamrex_1_1EB2_1_1Neighbor.html#a56ff94eee6612d523d0fb8414d3193f0',1,'amrex::EB2::Neighbor']]],
+  ['options_5fnamespace',['options_namespace',['../classamrex_1_1Hypre.html#a9e2c8bb6ef487b2efe4482bd682b68ce',1,'amrex::Hypre::options_namespace()'],['../classamrex_1_1HypreNodeLap.html#a82145850435b74caa01b3322229a059b',1,'amrex::HypreNodeLap::options_namespace()']]],
   ['ord',['ord',['../classamrex_1_1IntDescriptor.html#a26af90d55c81141a711427bcfdf5cc58',1,'amrex::IntDescriptor::ord()'],['../classamrex_1_1RealDescriptor.html#afcfec860496e4fc3bb85266a72321efa',1,'amrex::RealDescriptor::ord()']]],
   ['ordering',['ordering',['../classamrex_1_1FArrayBox.html#a9dd03f8360cfc2cfdf803298308f53dd',1,'amrex::FArrayBox']]],
   ['orig',['orig',['../structamrex_1_1ForkJoin_1_1MFFork.html#af278943e6089937c826f0bd0967a264f',1,'amrex::ForkJoin::MFFork']]],

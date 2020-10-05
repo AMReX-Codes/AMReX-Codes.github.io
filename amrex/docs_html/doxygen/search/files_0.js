@@ -299,6 +299,8 @@ var searchData=
   ['amrex_5fhypreabeclap2_2eh',['AMReX_HypreABecLap2.H',['../AMReX__HypreABecLap2_8H.html',1,'']]],
   ['amrex_5fhypreabeclap3_2ecpp',['AMReX_HypreABecLap3.cpp',['../AMReX__HypreABecLap3_8cpp.html',1,'']]],
   ['amrex_5fhypreabeclap3_2eh',['AMReX_HypreABecLap3.H',['../AMReX__HypreABecLap3_8H.html',1,'']]],
+  ['amrex_5fhypreijiface_2ecpp',['AMReX_HypreIJIface.cpp',['../AMReX__HypreIJIface_8cpp.html',1,'']]],
+  ['amrex_5fhypreijiface_2eh',['AMReX_HypreIJIface.H',['../AMReX__HypreIJIface_8H.html',1,'']]],
   ['amrex_5fhyprenodelap_2ecpp',['AMReX_HypreNodeLap.cpp',['../AMReX__HypreNodeLap_8cpp.html',1,'']]],
   ['amrex_5fhyprenodelap_2eh',['AMReX_HypreNodeLap.H',['../AMReX__HypreNodeLap_8H.html',1,'']]],
   ['amrex_5fiarraybox_2ecpp',['AMReX_IArrayBox.cpp',['../AMReX__IArrayBox_8cpp.html',1,'']]],
