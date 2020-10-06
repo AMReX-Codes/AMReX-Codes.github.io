@@ -32,7 +32,7 @@ var searchData=
   ['hypre',['Hypre',['../classamrex_1_1Hypre.html#afd2d6c32022a99d96f73485d03272ec9',1,'amrex::Hypre']]],
   ['hypreabeclap',['HypreABecLap',['../classamrex_1_1HypreABecLap.html#ad89a45864775721cb3101273d111965f',1,'amrex::HypreABecLap']]],
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
-  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626',1,'amrex::HypreABecLap3']]],
+  ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#aea1735051057b26a6a0852159711f029',1,'amrex::HypreABecLap3']]],
   ['hypreijiface',['HypreIJIface',['../classamrex_1_1HypreIJIface.html#a937367b2afac275e281bf7764fc5520d',1,'amrex::HypreIJIface']]],
   ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]]
 ];

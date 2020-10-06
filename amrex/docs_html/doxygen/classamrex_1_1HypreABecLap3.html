@@ -110,8 +110,8 @@ Inheritance diagram for amrex::HypreABecLap3:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad31441f42c87ea482414f4980f3df626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreABecLap3.html#ad31441f42c87ea482414f4980f3df626">HypreABecLap3</a> (const BoxArray &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom_, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm_)</td></tr>
-<tr class="separator:ad31441f42c87ea482414f4980f3df626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1735051057b26a6a0852159711f029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreABecLap3.html#aea1735051057b26a6a0852159711f029">HypreABecLap3</a> (const BoxArray &amp;grids, const <a class="el" href="classamrex_1_1DistributionMapping.html">DistributionMapping</a> &amp;dmap, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;geom_, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm_, const <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> *overset_mask=nullptr)</td></tr>
+<tr class="separator:aea1735051057b26a6a0852159711f029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac934d916d663753b28efb875e133d7cd"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreABecLap3.html#ac934d916d663753b28efb875e133d7cd">~HypreABecLap3</a> ()</td></tr>
 <tr class="separator:ac934d916d663753b28efb875e133d7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84a20efbf88131a2235d161fa5d8065e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreABecLap3.html#a84a20efbf88131a2235d161fa5d8065e">solve</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;soln, const <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;rhs, Real rel_tol, Real abs_tol, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter, const <a class="el" href="classamrex_1_1BndryData.html">BndryData</a> &amp;bndry, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_bndry_order) final</td></tr>
@@ -169,6 +169,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4e1e2418ad02ffb9cfde30d4a611c5f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f0e80c22cb3ef511cf2dc5b8b5fcd77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreABecLap3.html#a8f0e80c22cb3ef511cf2dc5b8b5fcd77">m_eb_b_coeffs</a> = nullptr</td></tr>
 <tr class="separator:a8f0e80c22cb3ef511cf2dc5b8b5fcd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5deec6d79b32b6214a8ed086a2129e8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1HypreABecLap3.html#a5deec6d79b32b6214a8ed086a2129e8d">m_overset_mask</a> = nullptr</td></tr>
+<tr class="separator:a5deec6d79b32b6214a8ed086a2129e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -227,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a49181827cb7d3a5b52f02540d7e82121 inherit pro_static_attribs_classamrex_1_1Hypre"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad31441f42c87ea482414f4980f3df626"></a>
+<a class="anchor" id="aea1735051057b26a6a0852159711f029"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -253,7 +255,13 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a>&#160;</td>
-          <td class="paramname"><em>comm_</em>&#160;</td>
+          <td class="paramname"><em>comm_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> *&#160;</td>
+          <td class="paramname"><em>overset_mask</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -546,6 +554,26 @@ Additional Inherited Members</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const* amrex::HypreABecLap3::m_eb_b_coeffs = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5deec6d79b32b6214a8ed086a2129e8d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> const* amrex::HypreABecLap3::m_overset_mask = nullptr</td>
         </tr>
       </table>
   </td>

@@ -4616,7 +4616,8 @@
     <member refid="classamrex_1_1HypreABecLap3_1abb94875e6a4d9d74894c0338c633ae0b" kind="variable"><name>cell_id_vec</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a4e1e2418ad02ffb9cfde30d4a611c5f7" kind="variable"><name>cell_id</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a8f0e80c22cb3ef511cf2dc5b8b5fcd77" kind="variable"><name>m_eb_b_coeffs</name></member>
-    <member refid="classamrex_1_1HypreABecLap3_1ad31441f42c87ea482414f4980f3df626" kind="function"><name>HypreABecLap3</name></member>
+    <member refid="classamrex_1_1HypreABecLap3_1a5deec6d79b32b6214a8ed086a2129e8d" kind="variable"><name>m_overset_mask</name></member>
+    <member refid="classamrex_1_1HypreABecLap3_1aea1735051057b26a6a0852159711f029" kind="function"><name>HypreABecLap3</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1ac934d916d663753b28efb875e133d7cd" kind="function"><name>~HypreABecLap3</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a84a20efbf88131a2235d161fa5d8065e" kind="function"><name>solve</name></member>
     <member refid="classamrex_1_1HypreABecLap3_1a73956b5120ef6513532cb22e2e8335ab" kind="function"><name>prepareSolver</name></member>
@@ -5536,6 +5537,7 @@
     <member refid="classamrex_1_1MLABecLaplacian_1a4b9b75ed0ddc0a3ecdf84e8e63154ada" kind="function"><name>getACoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a231b5a037694a8fa75aff6e5ee526f8c" kind="function"><name>getBCoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a330567b4fadc2fdbd3cfef100cdbed32" kind="function"><name>makeNLinOp</name></member>
+    <member refid="classamrex_1_1MLABecLaplacian_1a07d44a7993ed0fe731eda5e7f5be5713" kind="function"><name>getOversetMask</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a0e720aeb3f158346f3d1ede0603f7d78" kind="function"><name>applyOverset</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a703ad22ae8672c91ab5c7f044530202a" kind="function"><name>averageDownCoeffsSameAmrLevel</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a850f02af43a26190e332319b9ddb8942" kind="function"><name>averageDownCoeffs</name></member>
@@ -5593,6 +5595,7 @@
     <member refid="classamrex_1_1MLCellABecLap_1a0e67dc87e4b048beb5f44d38b3ccebfe" kind="function"><name>getBScalar</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a066785981b2814b49cd7ccc98ff01831" kind="function"><name>getACoeffs</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e" kind="function"><name>getBCoeffs</name></member>
+    <member refid="classamrex_1_1MLCellABecLap_1a12969871f447b97104c918abf87c721b" kind="function"><name>getOversetMask</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1aa84934b73a868d01a1a8b7650b880efb" kind="function"><name>applyInhomogNeumannTerm</name></member>
   </compound>
   <compound refid="classamrex_1_1MLCellLinOp" kind="class"><name>amrex::MLCellLinOp</name>
@@ -9928,11 +9931,11 @@
     <member refid="namespaceamrex_1acbd817ae9ca1a59105be27f3bcc2d1fd" kind="function"><name>ParticleContainerToBlueprint</name></member>
     <member refid="namespaceamrex_1a7fc7aacdd23f3e569d67da691c515624" kind="function"><name>amrex_hpbcoef</name></member>
     <member refid="namespaceamrex_1ab422963144b41ee08fbaf07abd2f5f5b" kind="function"><name>amrex_hpmat</name></member>
-    <member refid="namespaceamrex_1a698b1a545ec18051145be63f1e503a0c" kind="function"><name>amrex_hpijmatrix</name></member>
-    <member refid="namespaceamrex_1aae1719ab73301568942754d4e00907a8" kind="function"><name>amrex_hpijmatrix</name></member>
+    <member refid="namespaceamrex_1adda4791eb238f62669a8c641b01a1262" kind="function"><name>amrex_hpijmatrix</name></member>
+    <member refid="namespaceamrex_1acae5f752b9a7ae80de17f5d467bfc4a1" kind="function"><name>amrex_hpijmatrix</name></member>
     <member refid="namespaceamrex_1a5affd47d5e3fce8c27339e8d92d20c39" kind="function"><name>amrex_hpacoef</name></member>
     <member refid="namespaceamrex_1a918411cd3ec8d7928b47409b557ff3cc" kind="function"><name>amrex_hpdiag</name></member>
-    <member refid="namespaceamrex_1a4b5db41bbc5d361e95d196b9d6fbef41" kind="function"><name>makeHypre</name></member>
+    <member refid="namespaceamrex_1af5a050719637ed453c73af4d4ca48c8d" kind="function"><name>makeHypre</name></member>
     <member refid="namespaceamrex_1abbd0e7692c28626659b75637c2c63528" kind="function"><name>makePetsc</name></member>
     <member refid="namespaceamrex_1a41265e28034440c2aaa8fb38d3cd38c5" kind="function"><name>SanitizeName</name></member>
     <member refid="namespaceamrex_1a1ebc8341ffa9cc6f20e707bfb36ce253" kind="function"><name>SimpleRemoveOverlap</name></member>
