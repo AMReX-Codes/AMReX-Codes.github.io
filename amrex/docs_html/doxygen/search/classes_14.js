@@ -73,7 +73,7 @@ var searchData=
   ['vector_3c_20gpu_3a_3amanageddevicevector_3c_20hypre_5fint_20_3e_20_3e',['Vector&lt; Gpu::ManagedDeviceVector&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20gpu_3a_3amanageddevicevector_3c_20petscint_20_3e_20_3e',['Vector&lt; Gpu::ManagedDeviceVector&lt; PetscInt &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20hypre_5fint_20_3e',['Vector&lt; HYPRE_Int &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20int_20_3e',['Vector&lt; int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;']]],
+  ['vector_3c_20int_20_3e',['Vector&lt; Int &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Int &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; int &gt;']]],
   ['vector_3c_20list_3c_20amrex_3a_3axyplotdatalistlink_20_2a_20_3e_20_3e',['Vector&lt; list&lt; amrex::XYPlotDataListLink * &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20long_20_3e',['Vector&lt; Long &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; Long &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; long &gt;']]],
   ['vector_3c_20mpi_5frequest_20_3e',['Vector&lt; MPI_Request &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
