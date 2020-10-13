@@ -2351,30 +2351,34 @@
 <codeline lineno="467"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><ref refid="classamrex_1_1NodalProjector_1a0ffd6b9d9cccf9d8f2d4ba671ed0e559" kindref="member">NodalProjector::averageDown</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">amrex::Vector&lt;amrex::MultiFab*&gt;</ref><sp/>a_var)</highlight></codeline>
 <codeline lineno="469"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>not<sp/>cartesian,<sp/>we<sp/>should<sp/>average<sp/>down<sp/>by<sp/>using<sp/>volume<sp/>weighting</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>check<sp/>that<sp/>coord<sp/>sys<sp/>is<sp/>Cartesian<sp/>only<sp/>for<sp/>coarsest<sp/>level<sp/>and<sp/>assume</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>geom<sp/>for<sp/>all<sp/>other<sp/>levels<sp/>are<sp/>Cartesian<sp/>as<sp/>well</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1abd471ebf6086189835e778f06c053833" kindref="member">AMREX_ALWAYS_ASSERT</ref>(<ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[0].IsCartesian());</highlight></codeline>
-<codeline lineno="474"><highlight class="normal"></highlight></codeline>
-<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f_lev<sp/>=<sp/>a_var.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>()-1;</highlight></codeline>
-<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c_lev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>f_lev<sp/>=<sp/>a_var.<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>()-1;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c_lev<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"></highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>f_lev-1;<sp/>lev<sp/>&gt;=<sp/>c_lev;<sp/>--lev)</highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>rr<sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev+1].Domain().size()<sp/>/<sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev].Domain().size();</highlight></codeline>
 <codeline lineno="477"><highlight class="normal"></highlight></codeline>
-<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lev<sp/>=<sp/>f_lev-1;<sp/>lev<sp/>&gt;=<sp/>c_lev;<sp/>--lev)</highlight></codeline>
-<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IntVect<sp/>rr<sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev+1].Domain().size()<sp/>/<sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev].Domain().size();</highlight></codeline>
-<codeline lineno="481"><highlight class="normal"></highlight></codeline>
-<codeline lineno="482"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a83baea24aee17c98e8771fa6eea0822f" kindref="member">EB_average_down</ref>(*a_var[lev+1],<sp/>*a_var[lev],<sp/>0,<sp/>a_var[lev]-&gt;nComp(),<sp/>rr);</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a21e594569f8a9ba321155a5ecd7ce4ce" kindref="member">average_down</ref>(*a_var[lev+1],<sp/>*a_var[lev],<sp/>0,<sp/>a_var[lev]-&gt;nComp(),<sp/>rr);</highlight></codeline>
-<codeline lineno="486"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="487"><highlight class="normal"></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"></highlight></codeline>
-<codeline lineno="490"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="491"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ebf<sp/>=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">EBFArrayBoxFactory<sp/>const&amp;</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(a_var[lev+1]-&gt;Factory());</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">amrex::MultiFab</ref><sp/><ref refid="namespaceamrex_1a7de82761ed632e5ee0b9f912c856aebca210ab9e731c9c36c2c38db15c28a8d1c" kindref="member">volume</ref>;</highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev+1].GetVolume(volume);</highlight></codeline>
+<codeline lineno="483"><highlight class="normal"></highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a83baea24aee17c98e8771fa6eea0822f" kindref="member">EB_average_down</ref>(*a_var[lev+1],<sp/>*a_var[lev],<sp/>volume,<sp/>ebf.getVolFrac(),</highlight></codeline>
+<codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>a_var[lev]-&gt;nComp(),<sp/>rr);</highlight></codeline>
+<codeline lineno="486"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a21e594569f8a9ba321155a5ecd7ce4ce" kindref="member">average_down</ref>(*a_var[lev+1],<sp/>*a_var[lev],<sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev+1],<sp/><ref refid="classamrex_1_1MacProjector_1a9d2e8fd9d6d26a8cbfb3145a8ebfb746" kindref="member">m_geom</ref>[lev],</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>a_var[lev]-&gt;nComp(),<sp/>rr);</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="492"><highlight class="normal"></highlight></codeline>
-<codeline lineno="493"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp"/>
   </compounddef>
