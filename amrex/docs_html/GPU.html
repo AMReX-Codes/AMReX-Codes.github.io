@@ -109,6 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#building-with-gnu-make">Building with GNU Make</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#building-with-cmake">Building with CMake</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-cuda-support">Enabling CUDA support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-hip-support-experimental">Enabling HIP support (experimental)</a></li>
 </ul>
 </li>
 </ul>
@@ -511,6 +512,52 @@ we provide the helper function <code class="docutils literal notranslate"><span 
 </pre></div>
 </div>
 </div>
+<div class="section" id="enabling-hip-support-experimental">
+<h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline">¶</a></h3>
+<p>To build AMReX with HIP support in CMake, add
+<code class="docutils literal notranslate"><span class="pre">-DENABLE_HIP=YES</span> <span class="pre">-DAMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation. For a full list of HIP-specific configuration options,
+check the <a class="reference internal" href="#tab-cmakehipvar"><span class="std std-ref">table</span></a> below.</p>
+<p>In AMReX CMake, the HIP compiler is treated as a special C++ compiler and therefore
+the standard CMake variables used to customize the compilation process for C++,
+for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for HIP as well.</p>
+<p>Since CMake does not support autodetection of HIP compilers/target architectures
+yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">hipcc</span></code> or <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">AMD_ARCH</span></code> to the target architecture you are building for.
+Thus <strong>``AMD_ARCH`` and ``CMAKE_CXX_COMPILER`` are required user-inputs when ``ENABLE_HIP=ON``</strong>.
+Below is an example configuration for HIP on Tulip:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -DENABLE_HIP=ON -DCMAKE_CXX_COMPILER=$(which hipcc) -DAMD_ARCH=&quot;gfx906,gfx908&quot;  [other options] /path/to/amrex/source</span>
+</pre></div>
+</div>
+<span id="tab-cmakehipvar"></span><table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">AMReX HIP-specific build options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 45%" />
+<col style="width: 12%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Possible values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ENABLE_HIP</p></td>
+<td><p>Build with HIP support</p></td>
+<td><p>NO</p></td>
+<td><p>YES, NO</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMD_ARCH</p></td>
+<td><p>AMD  target architecture  (required)</p></td>
+<td></td>
+<td><p>User-defined</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="section" id="gpu-namespace-and-macros">
@@ -552,8 +599,8 @@ AMReX provides a number of memory pools.  When compiled without
 CUDA, all <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s use standard <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">new</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">delete</span></span></code>
 operators. With CUDA, the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Arena</span></span></code>s each allocate with a
 specific type of GPU memory:</p>
-<span id="tab-gpu-arena"></span><table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 13 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<span id="tab-gpu-arena"></span><table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 14 </span><span class="caption-text">Memory Arenas</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 43%" />
 <col style="width: 57%" />
@@ -686,8 +733,8 @@ object only stores and handles the CPU version of the data.</p>
 These are configured to use the different AMReX memory Arenas, as
 summarized below. By using the memory Arenas, we can avoid expensive
 allocations and deallocations when (for example) resizing vectors.</p>
-<span id="tab-gpu-gpuvectors"></span><table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 14 </span><span class="caption-text">Memory Arenas Associated with each Gpu Vector</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<span id="tab-gpu-gpuvectors"></span><table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 15 </span><span class="caption-text">Memory Arenas Associated with each Gpu Vector</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 42%" />
 <col style="width: 58%" />
