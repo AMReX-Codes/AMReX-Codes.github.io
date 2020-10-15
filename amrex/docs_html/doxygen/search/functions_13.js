@@ -37,7 +37,7 @@ var searchData=
   ['sendrecvpairunpaired',['SendRecvPairUnpaired',['../structCommProfStats_1_1SendRecvPairUnpaired.html#af217ccce1eb0268f1a9e39f81fe19480',1,'CommProfStats::SendRecvPairUnpaired']]],
   ['senseinewmacro',['senseiNewMacro',['../namespaceamrex.html#a8d39fa37907313633609b0b404501b7d',1,'amrex::senseiNewMacro(AmrDataAdaptor)'],['../namespaceamrex.html#ac81456cdd4c1cd623e05a2494f607d00',1,'amrex::senseiNewMacro(AmrMeshDataAdaptor)']]],
   ['senseitypemacro',['senseiTypeMacro',['../classamrex_1_1AmrDataAdaptor.html#a85b2b18fd182728955fa9cb13ef5bf30',1,'amrex::AmrDataAdaptor::senseiTypeMacro()'],['../classamrex_1_1AmrMeshDataAdaptor.html#a5b94d5fbab0e48ed81b6edb7db19e0aa',1,'amrex::AmrMeshDataAdaptor::senseiTypeMacro()']]],
-  ['separator',['separator',['../CheckDecomposition_8c.html#a15b7c317b9a227be46fc94b2c8d49bdc',1,'separator(int i, int n):&#160;CheckDecomposition.c'],['../distribution_8c.html#aaed7bb4d93b34151fd86f295349cea4e',1,'separator(int i, int n):&#160;distribution.c']]],
+  ['separator',['separator',['../CheckDecomposition_8c.html#a15b7c317b9a227be46fc94b2c8d49bdc',1,'separator(int i, int n):&#160;CheckDecomposition.c'],['../distribution_8c.html#a153b7b9cfae9ce41f792ba9f71dbd3bf',1,'separator(int i, int n):&#160;distribution.c']]],
   ['seqnum',['SeqNum',['../namespaceamrex_1_1ParallelDescriptor.html#a9fa50b376ee8c97f8d84852e244fd916',1,'amrex::ParallelDescriptor']]],
   ['serializestringarray',['SerializeStringArray',['../namespaceamrex.html#ac55f6d6246ea70d74588e5f06fd92e99',1,'amrex']]],
   ['set',['set',['../classamrex_1_1BoxList.html#a5500e705c89c6c7f8d69a15fec86ac67',1,'amrex::BoxList::set()'],['../classamrex_1_1IndexType.html#a814260ba01c9ed9fdff62760a43e2d10',1,'amrex::IndexType::set()']]],
