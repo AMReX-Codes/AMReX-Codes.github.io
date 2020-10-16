@@ -1,13 +1,13 @@
 var searchData=
 [
   ['radsquared',['radSquared',['../classamrex_1_1RealVect.html#ab83bde52e73520cc1375d513030374df',1,'amrex::RealVect']]],
-  ['random',['Random',['../namespaceamrex.html#a9c2e0a4a094d4ec2c2142e17e19a0b80',1,'amrex::Random()'],['../namespaceamrex.html#a65fcc9ad910569bc247b330997d5ed52',1,'amrex::Random(RandomEngine const &amp;random_engine)']]],
-  ['random_5fint',['Random_int',['../namespaceamrex.html#ae6d24c34f5165da0e406a9cbf67468ff',1,'amrex::Random_int(unsigned int n)'],['../namespaceamrex.html#a3768023f2b8cf90a47c693514b97d579',1,'amrex::Random_int(unsigned int n, RandomEngine const &amp;random_engine)']]],
+  ['random',['Random',['../namespaceamrex.html#a3ba29f87f49dfb416b85b65c8b5cd9c3',1,'amrex::Random()'],['../namespaceamrex.html#a65fcc9ad910569bc247b330997d5ed52',1,'amrex::Random(RandomEngine const &amp;random_engine)']]],
+  ['random_5fint',['Random_int',['../namespaceamrex.html#a20796a80df81ee204983811cc8a1b705',1,'amrex::Random_int(unsigned int n)'],['../namespaceamrex.html#a3768023f2b8cf90a47c693514b97d579',1,'amrex::Random_int(unsigned int n, RandomEngine const &amp;random_engine)']]],
   ['random_5flong',['Random_long',['../namespaceamrex.html#a4bcd8d65b3b8e649e5d701d5a9ef4093',1,'amrex']]],
   ['randomengine',['RandomEngine',['../structamrex_1_1RandomEngine.html',1,'amrex']]],
   ['randomengine',['RandomEngine',['../namespaceamrex.html#ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d',1,'amrex']]],
-  ['randomnormal',['RandomNormal',['../namespaceamrex.html#a35c0a4ac17c807639d76eea620e948df',1,'amrex::RandomNormal(Real mean, Real stddev)'],['../namespaceamrex.html#a10f7574cba3e496a27f09204cce8aa6f',1,'amrex::RandomNormal(Real mean, Real stddev, RandomEngine const &amp;random_engine)']]],
-  ['randompoisson',['RandomPoisson',['../namespaceamrex.html#a65dcf8382a6d026fe03803c4453b2e40',1,'amrex::RandomPoisson(Real lambda)'],['../namespaceamrex.html#a62b2d5b64c692d02452cbed5ee65e61e',1,'amrex::RandomPoisson(Real lambda, RandomEngine const &amp;random_engine)']]],
+  ['randomnormal',['RandomNormal',['../namespaceamrex.html#a6a4ed5dc1eeb3e5b409eb8975c9e829b',1,'amrex::RandomNormal(Real mean, Real stddev)'],['../namespaceamrex.html#a10f7574cba3e496a27f09204cce8aa6f',1,'amrex::RandomNormal(Real mean, Real stddev, RandomEngine const &amp;random_engine)']]],
+  ['randompoisson',['RandomPoisson',['../namespaceamrex.html#aadec079fd8e2cdca36f7f49355e33864',1,'amrex::RandomPoisson(Real lambda)'],['../namespaceamrex.html#a62b2d5b64c692d02452cbed5ee65e61e',1,'amrex::RandomPoisson(Real lambda, RandomEngine const &amp;random_engine)']]],
   ['range',['Range',['../namespaceamrex_1_1Gpu.html#a5a7e65f26ef2a8d356ebef518f007aaf',1,'amrex::Gpu']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html',1,'amrex::Gpu::range_detail']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html#ad4f7d96980fc27cd61042157159e0b4a',1,'amrex::Gpu::range_detail::range_impl']]],
