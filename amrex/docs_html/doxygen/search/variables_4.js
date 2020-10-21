@@ -18,6 +18,7 @@ var searchData=
   ['endindex',['endIndex',['../classamrex_1_1MFIter.html#a427faab13c7d1f9d72b476452df519e1',1,'amrex::MFIter']]],
   ['endx',['endX',['../classamrex_1_1XYPlotDataList.html#ad12ab95c2383da4eb515681b9522ace4',1,'amrex::XYPlotDataList']]],
   ['endxi',['endXi',['../classamrex_1_1XYPlotDataListLink.html#a27c1524c9b6b2bbad9e9186e909830fa',1,'amrex::XYPlotDataListLink']]],
+  ['enforcesingularsolvable',['enforceSingularSolvable',['../classamrex_1_1MLLinOp.html#a831ab67f9a58e0f452f52b176219c1a0',1,'amrex::MLLinOp']]],
   ['eps',['eps',['../namespacesdcquadrature__mod.html#a5996afecb06f0cfbc667e1fc7eff3f08',1,'sdcquadrature_mod']]],
   ['err_5ffunc',['err_func',['../classamrex_1_1ErrorRec.html#accb4208e8504753dcddef021c9250e88',1,'amrex::ErrorRec']]],
   ['err_5ffunc2',['err_func2',['../classamrex_1_1ErrorRec.html#ad72e6621e0e65cba0d636c244ac5d53b',1,'amrex::ErrorRec']]],

@@ -189,6 +189,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a45b72169ccf285c17f439c4e990c0f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1189e4016e7757083343a93649f102aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a1189e4016e7757083343a93649f102aa">getMaxOrder</a> () const noexcept</td></tr>
 <tr class="separator:a1189e4016e7757083343a93649f102aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8225491c35d71e1fb7edb6355f44ac5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a8225491c35d71e1fb7edb6355f44ac5a">setEnforceSingularSolvable</a> (bool o) noexcept</td></tr>
+<tr class="separator:a8225491c35d71e1fb7edb6355f44ac5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c32b42500a25348ee5331f44ab94ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a29c32b42500a25348ee5331f44ab94ba">getEnforceSingularSolvable</a> () const noexcept</td></tr>
+<tr class="separator:a29c32b42500a25348ee5331f44ab94ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c1c62615a265e25a92ce37b3b287933"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4">BottomSolver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a7c1c62615a265e25a92ce37b3b287933">getDefaultBottomSolver</a> () const </td></tr>
 <tr class="separator:a7c1c62615a265e25a92ce37b3b287933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd287b03ea1a73f47ba1f08bb10a484d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#acd287b03ea1a73f47ba1f08bb10a484d">getNComp</a> () const </td></tr>
@@ -307,6 +311,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0815357130e78962e01abdaba2b09c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac516dba583aede117f89e339423f6114"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ac516dba583aede117f89e339423f6114">maxorder</a> = 3</td></tr>
 <tr class="separator:ac516dba583aede117f89e339423f6114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831ab67f9a58e0f452f52b176219c1a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a831ab67f9a58e0f452f52b176219c1a0">enforceSingularSolvable</a> = true</td></tr>
+<tr class="separator:a831ab67f9a58e0f452f52b176219c1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6bbf49c1bdb88256721471b22b4b044"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#ad6bbf49c1bdb88256721471b22b4b044">m_num_amr_levels</a></td></tr>
 <tr class="separator:ad6bbf49c1bdb88256721471b22b4b044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42ca524eb4deca1132be683805d2d7ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a42ca524eb4deca1132be683805d2d7ab">m_amr_ref_ratio</a></td></tr>
@@ -1509,6 +1515,29 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a29c32b42500a25348ee5331f44ab94ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLLinOp::getEnforceSingularSolvable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a86fab368911c1a98bbc6c0c84cc81486"></a>
 <div class="memitem">
 <div class="memproto">
@@ -2677,6 +2706,30 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8225491c35d71e1fb7edb6355f44ac5a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::MLLinOp::setEnforceSingularSolvable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a52d97117bad0d48c8e73546e7092e7dc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -3117,6 +3170,26 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a831ab67f9a58e0f452f52b176219c1a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool amrex::MLLinOp::enforceSingularSolvable = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a85fa2f104bbfeaa73d55d589906ecd45"></a>
 <div class="memitem">
 <div class="memproto">
