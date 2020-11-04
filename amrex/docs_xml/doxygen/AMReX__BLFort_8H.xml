@@ -521,7 +521,7 @@
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>macros<sp/>for<sp/>doing<sp/>reductions.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)<sp/>&amp;&amp;<sp/>defined(AMREX_USE_GPU_PRAGMA)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_MFITER_REDUCE_SUM(var)<sp/>mfi.add_reduce_value(var,<sp/>amrex::MFIter::SUM)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_MFITER_REDUCE_MIN(var)<sp/>mfi.add_reduce_value(var,<sp/>amrex::MFIter::MIN)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_MFITER_REDUCE_MAX(var)<sp/>mfi.add_reduce_value(var,<sp/>amrex::MFIter::MAX)</highlight><highlight class="normal"></highlight></codeline>
