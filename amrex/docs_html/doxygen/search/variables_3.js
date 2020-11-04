@@ -42,6 +42,7 @@ var searchData=
   ['device_5fset_5fpreferred',['device_set_preferred',['../structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619',1,'amrex::ArenaInfo']]],
   ['device_5fset_5freadonly',['device_set_readonly',['../structamrex_1_1ArenaInfo.html#a106f4ef6d447922447c63d296583e917',1,'amrex::ArenaInfo']]],
   ['device_5fsync',['device_sync',['../structamrex_1_1Gpu_1_1StreamItInfo.html#af984c422b61b1c2fa85896df7635e8e8',1,'amrex::Gpu::StreamItInfo::device_sync()'],['../structamrex_1_1MFItInfo.html#ab11997c86f3b753d6e0219696f17c2f7',1,'amrex::MFItInfo::device_sync()'],['../classamrex_1_1MFIter.html#a8cc2207634fdad4304d0a46c1e0ea433',1,'amrex::MFIter::device_sync()']]],
+  ['device_5fsynchronize_5faround_5fregion',['device_synchronize_around_region',['../classamrex_1_1TinyProfiler.html#ac2c4c05ecf95fbad73a0bb49012431ec',1,'amrex::TinyProfiler']]],
   ['device_5fuse_5fhostalloc',['device_use_hostalloc',['../structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81',1,'amrex::ArenaInfo']]],
   ['device_5fuse_5fmanaged_5fmemory',['device_use_managed_memory',['../structamrex_1_1ArenaInfo.html#a961c961eb343a2fa091082a6f1717b16',1,'amrex::ArenaInfo']]],
   ['devicetodevice',['deviceToDevice',['../namespaceamrex_1_1Gpu.html#a45b5d93b9e83ebcd8fb2f1e90aced0c7',1,'amrex::Gpu']]],
