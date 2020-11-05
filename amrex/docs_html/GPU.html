@@ -110,6 +110,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#building-with-cmake">Building with CMake</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-cuda-support">Enabling CUDA support</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#enabling-hip-support-experimental">Enabling HIP support (experimental)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-sycl-support-experimental">Enabling SYCL support (experimental)</a></li>
 </ul>
 </li>
 </ul>
@@ -374,7 +375,7 @@ can run it and that will generate results like:</p>
 <h2>Building with CMake<a class="headerlink" href="#building-with-cmake" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enabling-cuda-support">
 <h3>Enabling CUDA support<a class="headerlink" href="#enabling-cuda-support" title="Permalink to this headline">¶</a></h3>
-<p>To build AMReX with CUDA support in CMake, add <code class="docutils literal notranslate"><span class="pre">-DENABLE_CUDA=YES</span></code> to the
+<p>To build AMReX with CUDA support in CMake, add <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=CUDA</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation. For a full list of CUDA-specific configuration options,
 check the <a class="reference internal" href="#tab-cmakecudavar"><span class="std std-ref">table</span></a> below.</p>
 <span id="tab-cmakecudavar"></span><table class="docutils align-default" id="id3">
@@ -393,72 +394,72 @@ check the <a class="reference internal" href="#tab-cmakecudavar"><span class="st
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ENABLE_CUDA</p></td>
-<td><p>Build with CUDA support</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-odd"><td><p>CUDA_ARCH</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_ARCH</p></td>
 <td><p>CUDA target architecture</p></td>
 <td><p>Auto</p></td>
 <td><p>User-defined</p></td>
 </tr>
-<tr class="row-even"><td><p>CUDA_BACKTRACE</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_FASTMATH</p></td>
+<td><p>Enable CUDA fastmath library</p></td>
+<td><p>YES</p></td>
+<td><p>YES, NO</p></td>
+</tr>
+<tr class="row-even"><td><p>AMReX_CUDA_BACKTRACE</p></td>
 <td><p>Host function symbol names (e.g. cuda-memcheck)</p></td>
 <td><p>Auto</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>CUDA_COMPILATION_TIMER</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_COMPILATION_TIMER</p></td>
 <td><p>CSV table with time for each compilation phase</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>CUDA_DEBUG</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_DEBUG</p></td>
 <td><p>Device debug information (optimizations: off)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>CUDA_ERROR_CAPTURE_THIS</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_ERROR_CAPTURE_THIS</p></td>
 <td><p>Error if a CUDA lambda captures a class’ this</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>CUDA_KEEP_FILES</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_KEEP_FILES</p></td>
 <td><p>Keep intermediately files (folder: nvcc_tmp)</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>CUDA_LTO</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_LTO</p></td>
 <td><p>Enable CUDA link-time-optimization</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>CUDA_MAX_THREADS</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_MAX_THREADS</p></td>
 <td><p>Max number of CUDA threads per block</p></td>
 <td><p>256</p></td>
 <td><p>User-defined</p></td>
 </tr>
-<tr class="row-odd"><td><p>CUDA_MAXREGCOUNT</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_MAXREGCOUNT</p></td>
 <td><p>Limits the number of CUDA registers available</p></td>
 <td><p>255</p></td>
 <td><p>User-defined</p></td>
 </tr>
-<tr class="row-even"><td><p>CUDA_PTX_VERBOSE</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_PTX_VERBOSE</p></td>
 <td><p>Verbose code generation statistics in ptxas</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>CUDA_SHOW_CODELINES</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_SHOW_CODELINES</p></td>
 <td><p>Source information in PTX (optimizations: on)</p></td>
 <td><p>Auto</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>CUDA_SHOW_LINENUMBERS</p></td>
+<tr class="row-even"><td><p>AMReX_CUDA_SHOW_LINENUMBERS</p></td>
 <td><p>Line-number information (optimizations: on)</p></td>
 <td><p>Auto</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>CUDA_WARN_CAPTURE_THIS</p></td>
+<tr class="row-odd"><td><p>AMReX_CUDA_WARN_CAPTURE_THIS</p></td>
 <td><p>Warn if a CUDA lambda captures a class’ this</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
@@ -466,16 +467,16 @@ check the <a class="reference internal" href="#tab-cmakecudavar"><span class="st
 </tbody>
 </table>
 <p>The target architecture to build for can be specified via the configuration option
-<code class="docutils literal notranslate"><span class="pre">-DCUDA_ARCH=&lt;target-architecture&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;target-architecture&gt;</span></code> can be either
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_CUDA_ARCH=&lt;target-architecture&gt;</span></code>, where <code class="docutils literal notranslate"><span class="pre">&lt;target-architecture&gt;</span></code> can be either
 the name of the NVIDIA GPU generation, i.e. <code class="docutils literal notranslate"><span class="pre">Turing</span></code>, <code class="docutils literal notranslate"><span class="pre">Volta</span></code>, <code class="docutils literal notranslate"><span class="pre">Ampere</span></code>, <code class="docutils literal notranslate"><span class="pre">...</span></code> , or its
 <a class="reference external" href="https://developer.nvidia.com/cuda-gpus">compute capability</a>, i.e. <code class="docutils literal notranslate"><span class="pre">10.0</span></code>, <code class="docutils literal notranslate"><span class="pre">9.0</span></code>,  <code class="docutils literal notranslate"><span class="pre">...</span></code> .
 For example, on Cori GPUs you can specify the architecture as follows:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake [options] -DENABLE_CUDA=yes -DCUDA_ARCH=Volta /path/to/amrex/source</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake [options] -DAMReX_GPU_BACKEND=CUDA -DAMReX_CUDA_ARCH=Volta /path/to/amrex/source</span>
 </pre></div>
 </div>
-<p>If no architecture is specified, CMake will try to determine which GPU architecture is
-supported by the system.
-If more than one is found, CMake will build for all of them.
+<p>If no architecture is specified, CMake will default to the architecture defined in the environmental
+variable <code class="docutils literal notranslate"><span class="pre">AMReX_CUDA_ARCH</span></code>. If the latter is not defined, CMake will try to determine which GPU
+architecture is supported by the system. If more than one is found, CMake will build for all of them.
 This will generally results in a larger library and longer build times.
 If autodetection fails, a set of “common” architectures is assumed.
 <strong>Note that AMReX supports NVIDIA GPU architectures with compute capability 6.0 or higher and
@@ -515,22 +516,40 @@ we provide the helper function <code class="docutils literal notranslate"><span 
 <div class="section" id="enabling-hip-support-experimental">
 <h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline">¶</a></h3>
 <p>To build AMReX with HIP support in CMake, add
-<code class="docutils literal notranslate"><span class="pre">-DENABLE_HIP=YES</span> <span class="pre">-DAMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code> to the
-<code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation. For a full list of HIP-specific configuration options,
-check the <a class="reference internal" href="#tab-cmakehipvar"><span class="std std-ref">table</span></a> below.</p>
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=HIP</span> <span class="pre">-DAMReX_AMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code>
+to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.</p>
 <p>In AMReX CMake, the HIP compiler is treated as a special C++ compiler and therefore
 the standard CMake variables used to customize the compilation process for C++,
 for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for HIP as well.</p>
 <p>Since CMake does not support autodetection of HIP compilers/target architectures
 yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">hipcc</span></code> or <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">AMD_ARCH</span></code> to the target architecture you are building for.
-Thus <strong>``AMD_ARCH`` and ``CMAKE_CXX_COMPILER`` are required user-inputs when ``ENABLE_HIP=ON``</strong>.
+and <code class="docutils literal notranslate"><span class="pre">AMReX_AMD_ARCH</span></code> to the target architecture you are building for.
+Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP</strong>.
 Below is an example configuration for HIP on Tulip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -DENABLE_HIP=ON -DCMAKE_CXX_COMPILER=$(which hipcc) -DAMD_ARCH=&quot;gfx906,gfx908&quot;  [other options] /path/to/amrex/source</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which hipcc) -DAMReX_AMD_ARCH=&quot;gfx906,gfx908&quot;  [other options] /path/to/amrex/source</span>
 </pre></div>
 </div>
-<span id="tab-cmakehipvar"></span><table class="docutils align-default" id="id4">
-<caption><span class="caption-number">Table 13 </span><span class="caption-text">AMReX HIP-specific build options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+</div>
+<div class="section" id="enabling-sycl-support-experimental">
+<h3>Enabling SYCL support (experimental)<a class="headerlink" href="#enabling-sycl-support-experimental" title="Permalink to this headline">¶</a></h3>
+<p>To build AMReX with SYCL support in CMake, add
+<code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=SYCL</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-sycl-compiler&gt;</span></code>
+to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
+For a full list of SYCL-specific configuration options,
+check the <a class="reference internal" href="#tab-cmakesyclvar"><span class="std std-ref">table</span></a> below.</p>
+<p>In AMReX CMake, the SYCL compiler is treated as a special C++ compiler and therefore
+the standard CMake variables used to customize the compilation process for C++,
+for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for DPCPP as well.</p>
+<p>Since CMake does not support autodetection of SYCL compilers yet,
+<code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid SYCL compiler. i.e. <code class="docutils literal notranslate"><span class="pre">dpcpp</span></code>.
+Thus <strong>CMAKE_CXX_COMPILER is a required user-input when AMReX_GPU_BACKEND=SYCL</strong>.
+At this time, <strong>the only supported SYCL compiler is dpcpp</strong>.
+Below is an example configuration for SYCL:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -DAMReX_GPU_BACKEND=SYCL -DCMAKE_CXX_COMPILER=$(which dpcpp)  [other options] /path/to/amrex/source</span>
+</pre></div>
+</div>
+<span id="tab-cmakesyclvar"></span><table class="docutils align-default" id="id4">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">AMReX SYCL-specific build options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 28%" />
 <col style="width: 45%" />
@@ -545,15 +564,15 @@ Below is an example configuration for HIP on Tulip:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ENABLE_HIP</p></td>
-<td><p>Build with HIP support</p></td>
+<tr class="row-even"><td><p>AMReX_DPCPP_AOT</p></td>
+<td><p>Enable DPCPP ahead-of-time compilation</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMD_ARCH</p></td>
-<td><p>AMD  target architecture  (required)</p></td>
-<td></td>
-<td><p>User-defined</p></td>
+<tr class="row-odd"><td><p>AMReX_DPCPP_SPLIT_KERNEL</p></td>
+<td><p>Enable DPCPP kernel splitting</p></td>
+<td><p>YES</p></td>
+<td><p>YES, NO</p></td>
 </tr>
 </tbody>
 </table>
