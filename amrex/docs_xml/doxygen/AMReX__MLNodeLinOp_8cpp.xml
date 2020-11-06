@@ -2202,7 +2202,7 @@
 <codeline lineno="379"><highlight class="normal"></highlight></codeline>
 <codeline lineno="380"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HYPRE</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="381"><highlight class="normal">std::unique_ptr&lt;HypreNodeLap&gt;</highlight></codeline>
-<codeline lineno="382"><highlight class="normal">MLNodeLinOp::makeHypreNodeLap<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bottom_verbose)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="382"><highlight class="normal">MLNodeLinOp::makeHypreNodeLap<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bottom_verbose,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>options_namespace)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="383"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[0].back();</highlight></codeline>
 <codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[0].back();</highlight></codeline>
@@ -2214,7 +2214,7 @@
 <codeline lineno="391"><highlight class="normal"></highlight></codeline>
 <codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;HypreNodeLap&gt;<sp/>hypre_solver</highlight></codeline>
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1HypreNodeLap" kindref="compound">amrex::HypreNodeLap</ref>(ba,<sp/>dm,<sp/>geom,<sp/>factory,<sp/>owner_mask,<sp/>dirichlet_mask,</highlight></codeline>
-<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comm,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>bottom_verbose));</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comm,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>bottom_verbose,<sp/>options_namespace));</highlight></codeline>
 <codeline lineno="395"><highlight class="normal"></highlight></codeline>
 <codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>hypre_solver;</highlight></codeline>
 <codeline lineno="397"><highlight class="normal">}</highlight></codeline>

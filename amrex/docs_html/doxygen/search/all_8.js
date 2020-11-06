@@ -67,7 +67,7 @@ var searchData=
   ['hypreijiface',['HypreIJIface',['../classamrex_1_1HypreIJIface.html#a937367b2afac275e281bf7764fc5520d',1,'amrex::HypreIJIface']]],
   ['hypreijiface',['HypreIJIface',['../classamrex_1_1HypreIJIface.html',1,'amrex']]],
   ['hypreinttype',['HypreIntType',['../classamrex_1_1HypreIJIface.html#a85e587afbba4ce7f0733ae56c4ee177c',1,'amrex::HypreIJIface']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]],
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#ad99767a5bee39ac11fc1c49b01beaf26',1,'amrex::HypreNodeLap']]],
   ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html',1,'amrex']]],
   ['hyprerealtype',['HypreRealType',['../classamrex_1_1HypreIJIface.html#ab04cfb0ccb604763003f5729a5ca3cb9',1,'amrex::HypreIJIface']]]
 ];

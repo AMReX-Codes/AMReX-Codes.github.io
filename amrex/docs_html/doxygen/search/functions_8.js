@@ -34,5 +34,5 @@ var searchData=
   ['hypreabeclap2',['HypreABecLap2',['../classamrex_1_1HypreABecLap2.html#aa79f49e5c3aa20259c177558228f79e4',1,'amrex::HypreABecLap2']]],
   ['hypreabeclap3',['HypreABecLap3',['../classamrex_1_1HypreABecLap3.html#aea1735051057b26a6a0852159711f029',1,'amrex::HypreABecLap3']]],
   ['hypreijiface',['HypreIJIface',['../classamrex_1_1HypreIJIface.html#a937367b2afac275e281bf7764fc5520d',1,'amrex::HypreIJIface']]],
-  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#af26b0bca5d124df7cefa65800d759390',1,'amrex::HypreNodeLap']]]
+  ['hyprenodelap',['HypreNodeLap',['../classamrex_1_1HypreNodeLap.html#ad99767a5bee39ac11fc1c49b01beaf26',1,'amrex::HypreNodeLap']]]
 ];
