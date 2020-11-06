@@ -72,6 +72,7 @@ var searchData=
   ['adjcell',['adjCell',['../namespaceamrex.html#a68db5764cbf67a29f9cd2cc91d291a82',1,'amrex']]],
   ['adjcellhi',['adjCellHi',['../namespaceamrex.html#a6b84705b46b7a57e78bb865c63eacab9',1,'amrex']]],
   ['adjcelllo',['adjCellLo',['../namespaceamrex.html#aae360b0fe88c8af72c293906e6e7d3c3',1,'amrex']]],
+  ['adjustsingularmatrix',['adjustSingularMatrix',['../classamrex_1_1HypreIJIface.html#ad526c595a708854f336b850fa02c48fd',1,'amrex::HypreIJIface']]],
   ['advance',['advance',['../classamrex_1_1AmrLevel.html#a96b6f33d22c9341b1cff894f17555f47',1,'amrex::AmrLevel']]],
   ['advectwithucc',['AdvectWithUcc',['../classamrex_1_1TracerParticleContainer.html#a253582e870527bc4f7b3b9d8fa0e57ca',1,'amrex::TracerParticleContainer']]],
   ['advectwithumac',['AdvectWithUmac',['../classamrex_1_1TracerParticleContainer.html#aeb2b5968ca674ddbf8ffa162622a3bf1',1,'amrex::TracerParticleContainer']]],

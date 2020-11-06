@@ -68,6 +68,7 @@ var searchData=
   ['iobuffersize',['ioBufferSize',['../classamrex_1_1VisMF.html#a1f60977c11c2c87df32b47debd813b9e',1,'amrex::VisMF']]],
   ['ioprocessor',['ioProcessor',['../namespaceamrex_1_1ParallelDescriptor.html#a170c7ee692d457514ef07c0d6206f7e2',1,'amrex::ParallelDescriptor']]],
   ['irregular',['irregular',['../namespaceamrex_1_1EB2_1_1Type.html#ad02e320d1e8e105e0f531f235bd8fce4',1,'amrex::EB2::Type']]],
+  ['is_5fmatrix_5fsingular',['is_matrix_singular',['../classamrex_1_1Hypre.html#a0a7daa97b3caa6216418e78ddf2835ec',1,'amrex::Hypre']]],
   ['is_5fperiodic',['is_periodic',['../structamrex_1_1GeometryData.html#a1c153da19d61edca41192dd82233071b',1,'amrex::GeometryData::is_periodic()'],['../classamrex_1_1Geometry.html#a84b1ad3fef8594c10d9ff2000505b20a',1,'amrex::Geometry::is_periodic()']]],
   ['isopen',['isOpen',['../structamrex_1_1VisMF_1_1PersistentIFStream.html#ac1ecab1d0722305f0a0257611aeb1bde',1,'amrex::VisMF::PersistentIFStream']]],
   ['isoview',['ISOVIEW',['../namespaceamrex_1_1Amrvis.html#a166072d05a5e20994289f487f0e37c67',1,'amrex::Amrvis']]],
