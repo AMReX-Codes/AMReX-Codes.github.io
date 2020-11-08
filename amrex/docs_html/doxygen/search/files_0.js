@@ -273,7 +273,6 @@ var searchData=
   ['amrex_5fgpufuse_2ecpp',['AMReX_GpuFuse.cpp',['../AMReX__GpuFuse_8cpp.html',1,'']]],
   ['amrex_5fgpufuse_2eh',['AMReX_GpuFuse.H',['../AMReX__GpuFuse_8H.html',1,'']]],
   ['amrex_5fgpukernelinfo_2eh',['AMReX_GpuKernelInfo.H',['../AMReX__GpuKernelInfo_8H.html',1,'']]],
-  ['amrex_5fgpulaunch_2ecpp',['AMReX_GpuLaunch.cpp',['../AMReX__GpuLaunch_8cpp.html',1,'']]],
   ['amrex_5fgpulaunch_2eh',['AMReX_GpuLaunch.H',['../AMReX__GpuLaunch_8H.html',1,'']]],
   ['amrex_5fgpulaunchfunctsc_2eh',['AMReX_GpuLaunchFunctsC.H',['../AMReX__GpuLaunchFunctsC_8H.html',1,'']]],
   ['amrex_5fgpulaunchfunctsg_2eh',['AMReX_GpuLaunchFunctsG.H',['../AMReX__GpuLaunchFunctsG_8H.html',1,'']]],

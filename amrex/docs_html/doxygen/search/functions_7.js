@@ -133,7 +133,6 @@ var searchData=
   ['getgravity',['GetGravity',['../structamrex_1_1Particle.html#a92d50a0cfc06c857c16d7d072bf77e95',1,'amrex::Particle']]],
   ['getgridassignor',['getGridAssignor',['../classamrex_1_1ParticleLocator.html#ac1dbedf587229a97793b03cffa340c5d',1,'amrex::ParticleLocator::getGridAssignor()'],['../classamrex_1_1AmrParticleLocator.html#abd5f11521215d7eb8477770dbff30816',1,'amrex::AmrParticleLocator::getGridAssignor()']]],
   ['getgrids',['GetGrids',['../classamrex_1_1AmrData.html#a780cda5b717c23ce62c232042dc686f8',1,'amrex::AmrData::GetGrids(int level, int componentIndex)'],['../classamrex_1_1AmrData.html#a2fb7ab2d7a3b0eab52eab3edff96621d',1,'amrex::AmrData::GetGrids(int level, int componentIndex, const Box &amp;onBox)']]],
-  ['getgridsize',['getGridSize',['../namespaceamrex_1_1Gpu.html#a8116e775f35d977f35ff6a522db709d9',1,'amrex::Gpu']]],
   ['getgroupsets',['GetGroupSets',['../classamrex_1_1VisMF.html#a8645f0e85a9ccda7b565b6fbabb5bac3',1,'amrex::VisMF']]],
   ['getheaderfilenames',['GetHeaderFileNames',['../classCommProfStats.html#a0cab8d7c366a08ed7c4ea33d10be5607',1,'CommProfStats::GetHeaderFileNames()'],['../classRegionsProfStats.html#a9186078d1f971d7a0c3574f4549e9a02',1,'RegionsProfStats::GetHeaderFileNames()']]],
   ['getheaderversion',['GetHeaderVersion',['../classamrex_1_1VisMF.html#a5be9ce5dc3ed0083f7959e63528de583',1,'amrex::VisMF']]],
