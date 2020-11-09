@@ -81,7 +81,7 @@ var searchData=
   ['densebins',['DenseBins',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['densebins_3c_20amrex_3a_3aparticle_20_3e',['DenseBins&lt; amrex::Particle &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
   ['densebins_3c_20particletype_20_3e',['DenseBins&lt; ParticleType &gt;',['../classamrex_1_1DenseBins.html',1,'amrex']]],
-  ['depth',['depth',['../structamrex_1_1TinyProfiler_1_1Stats.html#a9fc076452eebe7a8e37d2820b05f2dad',1,'amrex::TinyProfiler::Stats']]],
+  ['depth',['depth',['../classamrex_1_1MFIter.html#a46b0a938c3d5f41c379d0adc7bf19c0d',1,'amrex::MFIter::depth()'],['../structamrex_1_1TinyProfiler_1_1Stats.html#a9fc076452eebe7a8e37d2820b05f2dad',1,'amrex::TinyProfiler::Stats::depth()']]],
   ['der_5ftype',['der_type',['../classamrex_1_1DeriveRec.html#a9d57d46fa6d94f5e72b31c5a00cc92bd',1,'amrex::DeriveRec']]],
   ['derfunc',['derFunc',['../classamrex_1_1DeriveRec.html#a4cc703ca266623995fc8245ddd618ce3',1,'amrex::DeriveRec']]],
   ['derfunc3d',['derFunc3D',['../classamrex_1_1DeriveRec.html#a186034c4106bb55fd756738441b7837d',1,'amrex::DeriveRec']]],

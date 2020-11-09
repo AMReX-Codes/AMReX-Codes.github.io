@@ -53,7 +53,7 @@ var searchData=
   ['nmax',['nmax',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a601e3d46b6b378292f6861605af53b55',1,'amrex::TinyProfiler::ProcStats']]],
   ['nmffileinstreams',['nMFFileInStreams',['../classamrex_1_1VisMF.html#abfbb2ed9c1aa1c00786e7ae2218f0b0f',1,'amrex::VisMF']]],
   ['nmin',['nmin',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a4712cf4e60cf2801bc15d5a4555cd80b',1,'amrex::TinyProfiler::ProcStats']]],
-  ['nnodes',['nnodes',['../structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12',1,'amrex::algoim::QuadratureRule::nnodes()'],['../classSDCstruct.html#a3c3082e11f568453735e5716a4ba7b52',1,'SDCstruct::Nnodes()']]],
+  ['nnodes',['Nnodes',['../classSDCstruct.html#a3c3082e11f568453735e5716a4ba7b52',1,'SDCstruct::Nnodes()'],['../structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12',1,'amrex::algoim::QuadratureRule::nnodes()']]],
   ['nnodes_5fgrid',['nnodes_grid',['../classamrex_1_1HypreNodeLap.html#ab571c163213ebca30687e13923b90fac',1,'amrex::HypreNodeLap']]],
   ['nodal_5fgrids',['nodal_grids',['../classamrex_1_1AmrLevel.html#a4672d7cd3c482aedb037347c1fddc0ff',1,'amrex::AmrLevel']]],
   ['node_5fbilinear_5finterp',['node_bilinear_interp',['../namespaceamrex.html#a7655c2dbeff4b92d06ddf5d3f964e7b2',1,'amrex']]],

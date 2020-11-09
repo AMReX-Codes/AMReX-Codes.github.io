@@ -29,7 +29,7 @@ var searchData=
   ['defaultfiletype',['defaultFileType',['../classamrex_1_1AmrData.html#a85ba54b8833cffb9983c02e13c3536a4',1,'amrex::AmrData']]],
   ['defaulthunksize',['DefaultHunkSize',['../classamrex_1_1CArena.html#a3025f965a6401b591a232fe52fe2c878',1,'amrex::CArena::DefaultHunkSize()'],['../classamrex_1_1EArena.html#a073384cb9f5fd01012df9425e163803d',1,'amrex::EArena::DefaultHunkSize()']]],
   ['define_5ffunction_5fcalled',['define_function_called',['../classamrex_1_1FabArray.html#a8a547f660eb49f5b25df2a1eddcd7eef',1,'amrex::FabArray']]],
-  ['depth',['depth',['../structamrex_1_1TinyProfiler_1_1Stats.html#a9fc076452eebe7a8e37d2820b05f2dad',1,'amrex::TinyProfiler::Stats']]],
+  ['depth',['depth',['../classamrex_1_1MFIter.html#a46b0a938c3d5f41c379d0adc7bf19c0d',1,'amrex::MFIter::depth()'],['../structamrex_1_1TinyProfiler_1_1Stats.html#a9fc076452eebe7a8e37d2820b05f2dad',1,'amrex::TinyProfiler::Stats::depth()']]],
   ['der_5ftype',['der_type',['../classamrex_1_1DeriveRec.html#a9d57d46fa6d94f5e72b31c5a00cc92bd',1,'amrex::DeriveRec']]],
   ['derive_5flst',['derive_lst',['../classamrex_1_1AmrLevel.html#a792f148ee0bb20432a4acefa1c2cac9a',1,'amrex::AmrLevel']]],
   ['derive_5fname',['derive_name',['../classamrex_1_1DeriveRec.html#a77433a32f069c939a91530330272b36d',1,'amrex::DeriveRec::derive_name()'],['../classamrex_1_1ErrorRec.html#ab6d9228aa813bc973c657510edc9b365',1,'amrex::ErrorRec::derive_name()']]],

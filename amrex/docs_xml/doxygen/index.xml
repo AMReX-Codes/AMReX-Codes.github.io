@@ -89,6 +89,7 @@
     <member refid="classamrex_1_1Amr_1af12817d167774c57ed1c1f24bb03954a" kind="variable"><name>first_plotfile</name></member>
     <member refid="classamrex_1_1Amr_1a49468e4d346f32d97ab09f48f4ff9dd2" kind="variable"><name>initial_ba</name></member>
     <member refid="classamrex_1_1Amr_1ad17547793e589e382cafaea103a01637" kind="variable"><name>regrid_ba</name></member>
+    <member refid="classamrex_1_1Amr_1a9f1bea870dda8d846c53e5302e9d4941" kind="variable"><name>compute_new_dt_on_regrid</name></member>
     <member refid="classamrex_1_1Amr_1a74f3b055b554426d6404985f46bc5713" kind="variable"><name>intersect_lox</name></member>
     <member refid="classamrex_1_1Amr_1a63e0fe7c5999847347e2959ef6d35e84" kind="variable"><name>intersect_loy</name></member>
     <member refid="classamrex_1_1Amr_1ac8fbee6b944ffeb46dac1abb6c4e979c" kind="variable"><name>intersect_loz</name></member>
@@ -192,6 +193,7 @@
     <member refid="classamrex_1_1Amr_1a0517c3858954b59c15be4b72472c0e55" kind="function"><name>clearDeriveSmallPlotVarList</name></member>
     <member refid="classamrex_1_1Amr_1a075723bf2fb621f6decda9d20d4cb3ce" kind="function"><name>fillDerivePlotVarList</name></member>
     <member refid="classamrex_1_1Amr_1aac5f926db1c887325c23896f29feb866" kind="function"><name>fillDeriveSmallPlotVarList</name></member>
+    <member refid="classamrex_1_1Amr_1a5ab06f1b57ba4e63bacb37f8d394e744" kind="function"><name>setComputeNewDtOnRegrid</name></member>
     <member refid="classamrex_1_1Amr_1aa33f37ed3b665ed7c5eb98de5cdafcd3" kind="function"><name>Initialize</name></member>
     <member refid="classamrex_1_1Amr_1adce93d1ef45e49e692f62ee9fa8ac48f" kind="function"><name>Finalize</name></member>
     <member refid="classamrex_1_1Amr_1acadd647c5f887a16b8c6d1fd09b2f41f" kind="function"><name>initialBa</name></member>
@@ -5464,6 +5466,7 @@
     <member refid="classamrex_1_1MFIter_1a72828c9a333be0dfff3e89e350fd0e11" kind="variable"><name>local_tile_index_map</name></member>
     <member refid="classamrex_1_1MFIter_1a967c3c48ccb4f316911d06fcaccb29fa" kind="variable"><name>num_local_tiles</name></member>
     <member refid="classamrex_1_1MFIter_1a07296b12634219c4a15337435852a67b" kind="variable"><name>nextDynamicIndex</name></member>
+    <member refid="classamrex_1_1MFIter_1a46b0a938c3d5f41c379d0adc7bf19c0d" kind="variable"><name>depth</name></member>
     <member refid="classamrex_1_1MFIter_1aac055187a5b4d7200fc77827dc28a76c" kind="function"><name>MFIter</name></member>
     <member refid="classamrex_1_1MFIter_1ae7623281ac9e772db1fc5085a64aeeca" kind="function"><name>MFIter</name></member>
     <member refid="classamrex_1_1MFIter_1a1d9668de99635aa50096d0f091d8b9b0" kind="function"><name>MFIter</name></member>
@@ -9137,20 +9140,6 @@
     <member refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kind="typedef"><name>EnableIf_t</name></member>
     <member refid="namespaceamrex_1ae337b46a7ca54b353861635503079536" kind="typedef"><name>MaxResSteadyClock</name></member>
     <member refid="namespaceamrex_1a2172ed493dfadbd34d5cdb72995f96af" kind="typedef"><name>TracerParIter</name></member>
-    <member refid="namespaceamrex_1aee4d1d20e920bfb1eceeb7db0a36be0f" kind="variable"><name>plot_nfiles</name></member>
-    <member refid="namespaceamrex_1a5b71dcdf9f42d1ea8bf9c95f24d150b4" kind="variable"><name>mffile_nstreams</name></member>
-    <member refid="namespaceamrex_1aee298693c19108f120311352e1404a77" kind="variable"><name>probinit_natonce</name></member>
-    <member refid="namespaceamrex_1a18ffd2e93f9a414d44ed7d7aa194f549" kind="variable"><name>plot_files_output</name></member>
-    <member refid="namespaceamrex_1ac03d4bd20c1a39f7e2d14086558bb511" kind="variable"><name>checkpoint_nfiles</name></member>
-    <member refid="namespaceamrex_1a54360d5e4005db7d308c6aff7628d08d" kind="variable"><name>regrid_on_restart</name></member>
-    <member refid="namespaceamrex_1af1ff4a567f8d0cdc485062507aac9742" kind="variable"><name>use_efficient_regrid</name></member>
-    <member refid="namespaceamrex_1a8e6b05f30acfc8c62599db29b80f0458" kind="variable"><name>plotfile_on_restart</name></member>
-    <member refid="namespaceamrex_1a4fc063c9af672541af3137ecc39913ae" kind="variable"><name>insitu_on_restart</name></member>
-    <member refid="namespaceamrex_1a9819d0b6f03d68de014c21d81400ab15" kind="variable"><name>checkpoint_on_restart</name></member>
-    <member refid="namespaceamrex_1a15554a13b4b666cd9c7771d2f6c50f7e" kind="variable"><name>checkpoint_files_output</name></member>
-    <member refid="namespaceamrex_1a3effddc12a2d9eb3c02491feacfd59c4" kind="variable"><name>compute_new_dt_on_regrid</name></member>
-    <member refid="namespaceamrex_1aee87bad8e223463237efb0e157629193" kind="variable"><name>precreateDirectories</name></member>
-    <member refid="namespaceamrex_1a82af7510a857d501de8f3a1de444472a" kind="variable"><name>prereadFAHeaders</name></member>
     <member refid="namespaceamrex_1afdf427459e2b9a7718975c38a36d8be2" kind="variable"><name>INVALID_TIME</name></member>
     <member refid="namespaceamrex_1a77d7d152de71abe1856e19ee2122a24a" kind="variable"><name>MFNEWDATA</name></member>
     <member refid="namespaceamrex_1a22e5d2b124fbc2a101b2538d589e2899" kind="variable"><name>MFOLDDATA</name></member>
@@ -9197,8 +9186,6 @@
     <member refid="namespaceamrex_1a403cfbd1297211846d8daf45b3d0b440" kind="variable"><name>foo</name></member>
     <member refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kind="variable"><name>SrcTile</name></member>
     <member refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kind="variable"><name>Pred</name></member>
-    <member refid="namespaceamrex_1a5d5710eb4e8adfefe7b93086718fe07b" kind="function"><name>plot_headerversion</name></member>
-    <member refid="namespaceamrex_1acd89c8b241e3ebc4d5ce44be10a46368" kind="function"><name>checkpoint_headerversion</name></member>
     <member refid="namespaceamrex_1a5d9cc4679a3fca647c2d0d91bc0b2cef" kind="function"><name>NeedToTouchUpPhysCorners</name></member>
     <member refid="namespaceamrex_1a948d5324e5cf514157eb7e16637e55b5" kind="function"><name>HasPhysBndry</name></member>
     <member refid="namespaceamrex_1adf9b8a2c079e01271e32cb7cba3057de" kind="function"><name>FixUpPhysCorners</name></member>

@@ -270,7 +270,7 @@ var searchData=
   ['gfab',['GFab',['../classamrex_1_1EB2_1_1GFab.html',1,'amrex::EB2']]],
   ['gfab',['GFab',['../classamrex_1_1EB2_1_1GFab.html#aa8d516e6b8844b78816ade68a2c86165',1,'amrex::EB2::GFab']]],
   ['ghostnodes',['ghostnodes',['../classamrex_1_1MLMG.html#a318536fe822c58660f772ef85c0ef1ddabddf1f772a4b8a67379933a3664a17c2',1,'amrex::MLMG']]],
-  ['glmap',['GLMap',['../classCommProfStats.html#aa5ce920c54057a16a0f3ea4ccd49789b',1,'CommProfStats::GLMap() const '],['../classCommProfStats.html#a4bc1d2909ad88865d5905ea827e62918',1,'CommProfStats::glMap()']]],
+  ['glmap',['glMap',['../classCommProfStats.html#a4bc1d2909ad88865d5905ea827e62918',1,'CommProfStats::glMap()'],['../classCommProfStats.html#aa5ce920c54057a16a0f3ea4ccd49789b',1,'CommProfStats::GLMap() const ']]],
   ['global_5fdepth',['global_depth',['../classamrex_1_1TinyProfiler.html#ae7befef46d2ca9e3de4299f950647451',1,'amrex::TinyProfiler']]],
   ['global_5fng',['global_ng',['../classhacc_1_1Dfft.html#a2cab2c483fa9a5eba94603a77cf3eba6',1,'hacc::Dfft::global_ng(int i) const '],['../classhacc_1_1Dfft.html#a405b18293b7ab8d9fe37dcd5459d786f',1,'hacc::Dfft::global_ng() const)[3]'],['../classhacc_1_1Distribution.html#a968233dc311fd6167d5349937c836dda',1,'hacc::Distribution::global_ng(int i) const '],['../classhacc_1_1Distribution.html#a9f8f18570b9de4ea1039d06ae8b4c11c',1,'hacc::Distribution::global_ng() const)[3]']]],
   ['global_5fsize',['global_size',['../classhacc_1_1Dfft.html#a16fa22c22a683a55b2604c8a0b5c3717',1,'hacc::Dfft::global_size()'],['../classhacc_1_1Distribution.html#a733727a6030abfbe51821a36d03e645a',1,'hacc::Distribution::global_size()']]],
