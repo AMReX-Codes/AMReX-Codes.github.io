@@ -503,6 +503,12 @@ by adding</p>
 </div>
 <p>where
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">nodal_projector</span></span></code> is the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NodalProjector</span></span></code> object we have built.</p>
+<p>The following parameter should be set to True if the problem to be solved has a singular matrix.
+In this case, the solution is only defined to within a constant.  Setting this parameter to True
+replaces one row in the matrix sent to hypre from AMReX by a row that sets the value at one cell to 0.</p>
+<ul class="simple">
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">hypre</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">adjust_singular_matrix</span></span></code>:   Default is False.</p></li>
+</ul>
 <p>The following parameters can be set in the inputs file to control the choice of preconditioner and smoother:</p>
 <ul class="simple">
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">hypre</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">hypre_solver</span></span></code>:   Default is BoomerAMG.</p></li>
