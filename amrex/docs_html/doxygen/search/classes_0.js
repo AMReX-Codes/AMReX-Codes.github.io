@@ -80,6 +80,7 @@ var searchData=
   ['array4',['Array4',['../structamrex_1_1Array4.html',1,'amrex']]],
   ['array4boxtag',['Array4BoxTag',['../structArray4BoxTag.html',1,'']]],
   ['array4copytag',['Array4CopyTag',['../structArray4CopyTag.html',1,'']]],
+  ['array4maskcopytag',['Array4MaskCopyTag',['../structArray4MaskCopyTag.html',1,'']]],
   ['arrayofstructs',['ArrayOfStructs',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
   ['arrayofstructs_3c_20nstructreal_2c_20nstructint_2c_20allocator_20_3e',['ArrayOfStructs&lt; NStructReal, NStructInt, Allocator &gt;',['../classamrex_1_1ArrayOfStructs.html',1,'amrex']]],
   ['assigngrid',['AssignGrid',['../structamrex_1_1AssignGrid.html',1,'amrex']]],

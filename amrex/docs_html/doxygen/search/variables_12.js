@@ -30,7 +30,7 @@ var searchData=
   ['seven',['seven',['../namespaceamrex__constants__module.html#adcf19334126a0c0621bb1a5d277f513e',1,'amrex_constants_module']]],
   ['seven12th',['seven12th',['../namespaceamrex__constants__module.html#a9da77625a7b0670eb8278879579f82f4',1,'amrex_constants_module']]],
   ['seventh',['seventh',['../namespaceamrex__constants__module.html#a0b5112227b87f2cc4d60b17991780f73',1,'amrex_constants_module']]],
-  ['sfab',['sfab',['../structFabCopyTag.html#a4ff330a96d834decbe692af33b5ef290',1,'FabCopyTag::sfab()'],['../structArray4CopyTag.html#a36f5e1c50f14fcc141780b360e73136d',1,'Array4CopyTag::sfab()']]],
+  ['sfab',['sfab',['../structFabCopyTag.html#a4ff330a96d834decbe692af33b5ef290',1,'FabCopyTag::sfab()'],['../structArray4CopyTag.html#a36f5e1c50f14fcc141780b360e73136d',1,'Array4CopyTag::sfab()'],['../structArray4MaskCopyTag.html#a26bd6c0c253bace63adcc14f965a410e',1,'Array4MaskCopyTag::sfab()']]],
   ['sfc_5fthreshold',['sfc_threshold',['../namespaceamrex.html#a3b82c3e2c727baf0805e10a006744bc0',1,'amrex']]],
   ['shared',['shared',['../structamrex_1_1FabInfo.html#aad9bb4d1cfbd53be67289b734bf5042c',1,'amrex::FabInfo']]],
   ['shared_5fmemory',['shared_memory',['../classamrex_1_1BaseFab.html#a4e65169d29942cf3adde870d63a91834',1,'amrex::BaseFab']]],
