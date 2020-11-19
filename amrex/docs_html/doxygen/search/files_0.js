@@ -454,6 +454,8 @@ var searchData=
   ['amrex_5fnfiles_2eh',['AMReX_NFiles.H',['../AMReX__NFiles_8H.html',1,'']]],
   ['amrex_5fnodalprojector_2ecpp',['AMReX_NodalProjector.cpp',['../AMReX__NodalProjector_8cpp.html',1,'']]],
   ['amrex_5fnodalprojector_2eh',['AMReX_NodalProjector.H',['../AMReX__NodalProjector_8H.html',1,'']]],
+  ['amrex_5fnonlocalbc_2eh',['AMReX_NonLocalBC.H',['../AMReX__NonLocalBC_8H.html',1,'']]],
+  ['amrex_5fnonlocalbcimpl_2eh',['AMReX_NonLocalBCImpl.H',['../AMReX__NonLocalBCImpl_8H.html',1,'']]],
   ['amrex_5fomp_5fmod_2ef90',['AMReX_omp_mod.F90',['../AMReX__omp__mod_8F90.html',1,'']]],
   ['amrex_5fopenmp_2eh',['AMReX_OpenMP.H',['../AMReX__OpenMP_8H.html',1,'']]],
   ['amrex_5forientation_2ecpp',['AMReX_Orientation.cpp',['../AMReX__Orientation_8cpp.html',1,'']]],

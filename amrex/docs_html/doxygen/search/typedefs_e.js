@@ -15,6 +15,8 @@ var searchData=
   ['pctype',['PCType',['../classamrex_1_1ParIterBase.html#adb4bddfdf4e201a354205dc941305854',1,'amrex::ParIterBase']]],
   ['pinnedvector',['PinnedVector',['../namespaceamrex_1_1Gpu.html#af9749d46a7d1bfabf6c7430c0e4a777b',1,'amrex::Gpu']]],
   ['pointer',['pointer',['../classamrex_1_1PODVector.html#ac45bc075fc9a1f60362dea58a71bf4c0',1,'amrex::PODVector::pointer()'],['../classhacc_1_1AlignedAllocator.html#a8a10b255de4c608b3775a315e409ef8d',1,'hacc::AlignedAllocator::pointer()']]],
+  ['polarbcache',['PolarBCache',['../classamrex_1_1FabArrayBase.html#ae848c74c7550fb55e2f9d7b74777b57e',1,'amrex::FabArrayBase']]],
+  ['polarbcacheiter',['PolarBCacheIter',['../classamrex_1_1FabArrayBase.html#a242fe8ea3608d28675efccf79fbbd961',1,'amrex::FabArrayBase']]],
   ['polymorphicvector',['PolymorphicVector',['../namespaceamrex_1_1Gpu.html#aa06084d673c5ad11d0431208239fe562',1,'amrex::Gpu']]],
   ['propagate_5fon_5fcontainer_5fcopy_5fassignment',['propagate_on_container_copy_assignment',['../structamrex_1_1ArenaAllocatorTraits.html#a877662d4bb47c6680edf92709420599b',1,'amrex::ArenaAllocatorTraits']]],
   ['propagate_5fon_5fcontainer_5fmove_5fassignment',['propagate_on_container_move_assignment',['../structamrex_1_1ArenaAllocatorTraits.html#a7c21ffe5ae786795e9792884b68c3c3d',1,'amrex::ArenaAllocatorTraits']]],

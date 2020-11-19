@@ -23,6 +23,7 @@ var searchData=
   ['unknown',['unknown',['../namespaceamrex_1_1EB2_1_1Type.html#a67578cca36fb255263c1b8c613b31e5a',1,'amrex::EB2::Type']]],
   ['unmatchedcftype',['unmatchedCFType',['../structCommProfStats_1_1SendRecvPairUnpaired.html#af8626cf71af203407435c096f88c1c3c',1,'CommProfStats::SendRecvPairUnpaired']]],
   ['unnamed',['Unnamed',['../namespaceamrex_1_1ParallelDescriptor.html#ac6df74b4b37bb6ee58dffea68507d259',1,'amrex::ParallelDescriptor']]],
+  ['unpack_5frecv_5fbuffer_5fcpu',['unpack_recv_buffer_cpu',['../namespaceamrex_1_1NonLocalBC.html#a2b84f3041ad542a1aa6122a626ff231b',1,'amrex::NonLocalBC']]],
   ['unpackbuffer',['unpackBuffer',['../namespaceamrex.html#a088b41cb8cc59ea2e3235669ca30b9b7',1,'amrex']]],
   ['unpackparticledata',['unpackParticleData',['../structamrex_1_1ParticleTileData.html#aa50144add229aa705f8586bf22873398',1,'amrex::ParticleTileData']]],
   ['unpackremotes',['unpackRemotes',['../namespaceamrex.html#a1dd1ea6c385ce3a863e1818566937e24',1,'amrex']]],

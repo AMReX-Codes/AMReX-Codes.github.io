@@ -34,5 +34,7 @@ var searchData=
   ['localtileindexmap',['localTileIndexMap',['../structamrex_1_1FabArrayBase_1_1TileArray.html#a77df041121016e402a0b5df46a8fe7e6',1,'amrex::FabArrayBase::TileArray']]],
   ['lp',['Lp',['../classamrex_1_1MLCGSolver.html#a6545d114e5d595327ffd94ac69f22170',1,'amrex::MLCGSolver']]],
   ['lst',['lst',['../classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a',1,'amrex::DeriveList::lst()'],['../classamrex_1_1ClusterList.html#a27c46e812840379455b46b092f2e6732',1,'amrex::ClusterList::lst()']]],
-  ['lta',['lta',['../classamrex_1_1MFGhostIter.html#ac0f73b4439a279cfaf8e200a2739abf4',1,'amrex::MFGhostIter']]]
+  ['lta',['lta',['../classamrex_1_1MFGhostIter.html#ac0f73b4439a279cfaf8e200a2739abf4',1,'amrex::MFGhostIter']]],
+  ['lx',['Lx',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a4f21d05f161053497b9f34dc212821b5',1,'amrex::NonLocalBC::PolarFn::Lx()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a647f7f2f14eb12e2e9230804fefa9529',1,'amrex::NonLocalBC::PolarFn2::Lx()']]],
+  ['ly',['Ly',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e',1,'amrex::NonLocalBC::Rotate180Fn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a1d0e35f2f99a8af476ad46075de03441',1,'amrex::NonLocalBC::PolarFn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8',1,'amrex::NonLocalBC::PolarFn2::Ly()']]]
 ];

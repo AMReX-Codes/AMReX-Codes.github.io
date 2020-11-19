@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['rb180cache',['RB180Cache',['../classamrex_1_1FabArrayBase.html#af99de5735cac80b4400637c127031ed9',1,'amrex::FabArrayBase']]],
+  ['rb180cacheiter',['RB180CacheIter',['../classamrex_1_1FabArrayBase.html#a63963907fa7e09b07008c5bbd11a1a0a',1,'amrex::FabArrayBase']]],
+  ['rb90cache',['RB90Cache',['../classamrex_1_1FabArrayBase.html#a916f834bf453a57b557aa66408d7d748',1,'amrex::FabArrayBase']]],
+  ['rb90cacheiter',['RB90CacheIter',['../classamrex_1_1FabArrayBase.html#aa850e5ff039851c262daddf6d185c817',1,'amrex::FabArrayBase']]],
   ['realarray',['RealArray',['../namespaceamrex.html#a9de48c04056551924746c42f9eda3c8f',1,'amrex']]],
   ['realtuple',['RealTuple',['../classamrex_1_1BndryData.html#ab4ed85c429f2c9ba26ce7e046590aee0',1,'amrex::BndryData::RealTuple()'],['../classamrex_1_1MLCellLinOp.html#ae233eeb511516448492f38fe53fa9cd9',1,'amrex::MLCellLinOp::RealTuple()']]],
   ['realtype',['RealType',['../classamrex_1_1ArrayOfStructs.html#aa1d5cf31ace27020a023285202c95d9e',1,'amrex::ArrayOfStructs::RealType()'],['../structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26',1,'amrex::Particle::RealType()'],['../structamrex_1_1ParticleCommData.html#abbdc95b6c7ad4a5990ee08971e53b0d1',1,'amrex::ParticleCommData::RealType()'],['../classamrex_1_1ParticleContainer.html#a7fc9bf8345c66057c7ec029dca568732',1,'amrex::ParticleContainer::RealType()']]],

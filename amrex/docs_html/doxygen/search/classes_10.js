@@ -2,6 +2,8 @@ var searchData=
 [
   ['randomengine',['RandomEngine',['../structamrex_1_1RandomEngine.html',1,'amrex']]],
   ['range_5fimpl',['range_impl',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl.html',1,'amrex::Gpu::range_detail']]],
+  ['rb180',['RB180',['../structamrex_1_1FabArrayBase_1_1RB180.html',1,'amrex::FabArrayBase']]],
+  ['rb90',['RB90',['../structamrex_1_1FabArrayBase_1_1RB90.html',1,'amrex::FabArrayBase']]],
   ['realbox',['RealBox',['../classamrex_1_1RealBox.html',1,'amrex']]],
   ['realdescriptor',['RealDescriptor',['../classamrex_1_1RealDescriptor.html',1,'amrex']]],
   ['realvect',['RealVect',['../classamrex_1_1RealVect.html',1,'amrex']]],
@@ -20,6 +22,10 @@ var searchData=
   ['refid',['RefID',['../structamrex_1_1DistributionMapping_1_1RefID.html',1,'amrex::DistributionMapping']]],
   ['regionsprofstats',['RegionsProfStats',['../classRegionsProfStats.html',1,'']]],
   ['regiontag',['RegionTag',['../structamrex_1_1FabArrayBase_1_1RegionTag.html',1,'amrex::FabArrayBase']]],
+  ['rotate180fn',['Rotate180Fn',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html',1,'amrex::NonLocalBC']]],
+  ['rotate90clockwise',['Rotate90ClockWise',['../structamrex_1_1NonLocalBC_1_1Rotate90ClockWise.html',1,'amrex::NonLocalBC']]],
+  ['rotate90counterclockwise',['Rotate90CounterClockWise',['../structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise.html',1,'amrex::NonLocalBC']]],
+  ['rotate90dsttosrc',['Rotate90DstToSrc',['../structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc.html',1,'amrex::NonLocalBC']]],
   ['rotationif',['RotationIF',['../classamrex_1_1EB2_1_1RotationIF.html',1,'amrex::EB2']]],
   ['runongpu',['RunOnGpu',['../structamrex_1_1RunOnGpu.html',1,'amrex']]]
 ];
