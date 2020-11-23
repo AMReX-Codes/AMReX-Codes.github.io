@@ -23,7 +23,6 @@ var searchData=
   ['amrex_5fparmparse_5fmodule',['amrex_parmparse_module',['../namespaceamrex__parmparse__module.html',1,'']]],
   ['amrex_5fstring_5fmodule',['amrex_string_module',['../namespaceamrex__string__module.html',1,'']]],
   ['amrvis',['Amrvis',['../namespaceamrex_1_1Amrvis.html',1,'amrex']]],
-  ['arkode_5finterface',['arkode_interface',['../namespacearkode__interface.html',1,'']]],
   ['asyncout',['AsyncOut',['../namespaceamrex_1_1AsyncOut.html',1,'amrex']]],
   ['atomic',['Atomic',['../namespaceamrex_1_1Gpu_1_1Atomic.html',1,'amrex::Gpu']]],
   ['atomic',['Atomic',['../namespaceamrex_1_1HostDevice_1_1Atomic.html',1,'amrex::HostDevice']]],

@@ -2,12 +2,8 @@ var searchData=
 [
   ['l',['l',['../structamrex_1_1BaseUmap_1_1Tuple.html#ad49a1cad219bebc88b8aa4b80aca2933',1,'amrex::BaseUmap::Tuple']]],
   ['last_5fcheckpoint',['last_checkpoint',['../classamrex_1_1Amr.html#aedc8350798946e5e5d1d68b4861195a5',1,'amrex::Amr']]],
-  ['last_5forder',['last_order',['../structintegrator__stats__mod_1_1integrator__stats__t.html#a3c4f39d05c45e506b47832d222221042',1,'integrator_stats_mod::integrator_stats_t']]],
   ['last_5fplotfile',['last_plotfile',['../classamrex_1_1Amr.html#a8bdd58e0f251c3097ae6631621a32253',1,'amrex::Amr']]],
   ['last_5fsmallplotfile',['last_smallplotfile',['../classamrex_1_1Amr.html#ac3c786f18b9e2b297f07f10e28852bbf',1,'amrex::Amr']]],
-  ['last_5fstep_5fsize',['last_step_size',['../structintegrator__stats__mod_1_1integrator__stats__t.html#a967486a03d35e4f3f96f060be2c89fb4',1,'integrator_stats_mod::integrator_stats_t']]],
-  ['ldata',['ldata',['../structsundials__fdlsmat_1_1sundlsmat.html#ad7402694c01cb316aaef13ea18a15116',1,'sundials_fdlsmat::sundlsmat']]],
-  ['ldim',['ldim',['../structsundials__fdlsmat_1_1sundlsmat.html#a209b4ae0913e005f2db2a57ef5cea3b4',1,'sundials_fdlsmat::sundlsmat']]],
   ['level',['level',['../classamrex_1_1AmrLevel.html#a15535c7cc1f73df2cc3b0b720d8ab5a4',1,'amrex::AmrLevel::level()'],['../structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag.html#a5032d82349c94d0cb1b2949734076a6e',1,'amrex::NeighborParticleContainer::NeighborCopyTag::level()']]],
   ['level_5fcount',['level_count',['../classamrex_1_1Amr.html#a1a1d9a33774055f267ad5297b2846ecc',1,'amrex::Amr']]],
   ['level_5fid',['level_id',['../structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag.html#a20e639722bdde70fc4f2b123de0624e6',1,'amrex::NeighborParticleContainer::NeighborCommTag']]],

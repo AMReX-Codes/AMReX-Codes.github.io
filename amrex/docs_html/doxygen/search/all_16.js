@@ -61,7 +61,7 @@ var searchData=
   ['vector_3c_20amrex_3a_3avector_3c_20array_3c_20std_3a_3aunique_5fptr_3c_20amrex_3a_3amultifab_20_3e_2c_20amrex_5fspacedim_20_3e_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Array&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, AMREX_SPACEDIM &gt; &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20bctuple_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; BCTuple &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20boxarray_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; BoxArray &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
-  ['vector_3c_20amrex_3a_3avector_3c_20int_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; Int &gt; &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;']]],
+  ['vector_3c_20amrex_3a_3avector_3c_20int_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; int &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;'],['../classamrex_1_1Vector.html',1,'amrex::Vector&lt; amrex::Vector&lt; Int &gt; &gt;']]],
   ['vector_3c_20amrex_3a_3avector_3c_20long_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Long &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20real_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; Real &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3avector_3c_20realtuple_20_3e_20_3e',['Vector&lt; amrex::Vector&lt; RealTuple &gt; &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['m',['m',['../structsundials__fdlsmat_1_1sundlsmat.html#afac233acc0cc790f706bd76e2a3bffd2',1,'sundials_fdlsmat::sundlsmat']]],
   ['m_5fa_5fcoeffs',['m_a_coeffs',['../classamrex_1_1MLABecLaplacian.html#a4f2dd2fecc4cbd8df8cdf264330b6cee',1,'amrex::MLABecLaplacian::m_a_coeffs()'],['../classamrex_1_1MLALaplacian.html#aee58cd65c0b079063c4eb55bfd14637a',1,'amrex::MLALaplacian::m_a_coeffs()'],['../classamrex_1_1MLEBABecLap.html#a48c0efb6e525e5c901c1ee34fa5119ca',1,'amrex::MLEBABecLap::m_a_coeffs()']]],
   ['m_5fa_5fscalar',['m_a_scalar',['../classamrex_1_1MLABecLaplacian.html#a56c309c11b2dfa0ae7b4153cbf352329',1,'amrex::MLABecLaplacian::m_a_scalar()'],['../classamrex_1_1MLALaplacian.html#a9f52dcdbaab0fbc216169c6fb4405110',1,'amrex::MLALaplacian::m_a_scalar()'],['../classamrex_1_1MLEBABecLap.html#ac43a9c8728bb7861415d80283d41e064',1,'amrex::MLEBABecLap::m_a_scalar()']]],
   ['m_5fabeclap',['m_abeclap',['../classamrex_1_1MacProjector.html#a6bbf0668ee0f491ae7917f308d2b393a',1,'amrex::MacProjector']]],
@@ -600,7 +599,6 @@ var searchData=
   ['minlevel',['minLevel',['../classamrex_1_1XYPlotDataList.html#a0eed5ea2a8a29466eef5434f09752ebf',1,'amrex::XYPlotDataList']]],
   ['minregiontime',['minRegionTime',['../classBLProfStats.html#ae1b239768583ca1b1f592d3527e5e36f',1,'BLProfStats']]],
   ['mixedcells',['mixedcells',['../classamrex_1_1EB2_1_1GeometryShop.html#a9619112cbd6b83ba95c41b7f8785f0c9',1,'amrex::EB2::GeometryShop']]],
-  ['ml',['ml',['../structsundials__fdlsmat_1_1sundlsmat.html#a3e49fcbde77ee9f888c96bd1a6afc2ec',1,'sundials_fdlsmat::sundlsmat']]],
   ['mlmg',['mlmg',['../classamrex_1_1MLCGSolver.html#ae0ff5ed0f4b00ad5bc6051960724f77c',1,'amrex::MLCGSolver']]],
   ['mn',['mn',['../structamrex_1_1MemProfiler_1_1Bytes.html#af005129839d5b950c0e09b1e38a6a751',1,'amrex::MemProfiler::Bytes::mn()'],['../structamrex_1_1MemProfiler_1_1Builds.html#a2756a5fbf45d016bd03416184543526b',1,'amrex::MemProfiler::Builds::mn()']]],
   ['mpi_5fcomm_5fnull',['MPI_COMM_NULL',['../AMReX__ccse-mpi_8H.html#a9c299ed1c4c5eaa48a6446c85fb2d689',1,'AMReX_ccse-mpi.H']]],
@@ -613,7 +611,6 @@ var searchData=
   ['mpi_5fproc_5fnull',['MPI_PROC_NULL',['../AMReX__ccse-mpi_8H.html#af7dcaf76f6b9b428d64f80155365e1df',1,'AMReX_ccse-mpi.H']]],
   ['mpi_5frequest_5fnull',['MPI_REQUEST_NULL',['../AMReX__ccse-mpi_8H.html#a1f063a918d9598b982feec3690d69bec',1,'AMReX_ccse-mpi.H']]],
   ['mtimerstotalssorted',['mTimersTotalsSorted',['../classRegionsProfStats.html#ae7b5e31a9fc2540ebcced76270cd6dbb',1,'RegionsProfStats']]],
-  ['mu',['mu',['../structsundials__fdlsmat_1_1sundlsmat.html#a9484601a2e11bc43b8f297b2b76a80d0',1,'sundials_fdlsmat::sundlsmat']]],
   ['multi_5fvalued',['multi_valued',['../namespaceamrex__ebcellflag__module.html#ad0031001816fff176a885f73100062a8',1,'amrex_ebcellflag_module']]],
   ['multi_5fvalued_5fbits',['multi_valued_bits',['../classamrex_1_1EBCellFlag.html#a8fe56028eeb58ef0718c19c6855f6bcb',1,'amrex::EBCellFlag']]],
   ['mx',['mx',['../structamrex_1_1MemProfiler_1_1Bytes.html#ae97a8af2e85ff53fc98d90d294693657',1,'amrex::MemProfiler::Bytes::mx()'],['../structamrex_1_1MemProfiler_1_1Builds.html#a2c94315722d15392846ab3b77a58c3d0',1,'amrex::MemProfiler::Builds::mx()']]],

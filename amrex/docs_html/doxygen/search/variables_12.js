@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['s_5fmu',['s_mu',['../structsundials__fdlsmat_1_1sundlsmat.html#a83925a7fffc976a82ca5635219484816',1,'sundials_fdlsmat::sundlsmat']]],
   ['s_5fpout',['s_pout',['../namespaceamrex.html#acfcde804095e39e72c044334abee8044',1,'amrex']]],
   ['s_5fpout_5fbasename',['s_pout_basename',['../namespaceamrex.html#a2728e462d28f66dc62edc4974850d0e2',1,'amrex']]],
   ['s_5fpout_5ffilename',['s_pout_filename',['../namespaceamrex.html#ae58ed08a7ada5774ab9f0a1cc892113c',1,'amrex']]],

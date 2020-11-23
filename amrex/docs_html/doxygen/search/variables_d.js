@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n',['n',['../structamrex_1_1NumComps.html#a51d8b50d57ee8a52833c414ae13a5381',1,'amrex::NumComps::n()'],['../structamrex_1_1TinyProfiler_1_1Stats.html#a23fedc6778a6f6a72862b3a659494231',1,'amrex::TinyProfiler::Stats::n()'],['../structsundials__fdlsmat_1_1sundlsmat.html#aa5ddbaed6c72bdd0cb997103ede9169e',1,'sundials_fdlsmat::sundlsmat::n()'],['../structprocess__topology__t.html#a34fd641ec3073c157da173359feb99e6',1,'process_topology_t::n()'],['../structdistribution__t.html#ad0fc01a1d38109451e446decb6cf91c5',1,'distribution_t::n()']]],
+  ['n',['n',['../structamrex_1_1NumComps.html#a51d8b50d57ee8a52833c414ae13a5381',1,'amrex::NumComps::n()'],['../structamrex_1_1TinyProfiler_1_1Stats.html#a23fedc6778a6f6a72862b3a659494231',1,'amrex::TinyProfiler::Stats::n()'],['../structprocess__topology__t.html#a34fd641ec3073c157da173359feb99e6',1,'process_topology_t::n()'],['../structdistribution__t.html#ad0fc01a1d38109451e446decb6cf91c5',1,'distribution_t::n()']]],
   ['n_5fcomp',['n_comp',['../classamrex_1_1FabArrayBase.html#a4ff6141edd1ba1d1940c45b98a619b04',1,'amrex::FabArrayBase']]],
   ['n_5fcycle',['n_cycle',['../classamrex_1_1Amr.html#a091b2e0b9cd006fd375a407f8ed98f80',1,'amrex::Amr']]],
   ['n_5fderive',['n_derive',['../classamrex_1_1DeriveRec.html#a37c756f3c98d63ce682589e6abf3a6c4',1,'amrex::DeriveRec']]],
@@ -9,9 +9,7 @@ var searchData=
   ['n_5fgrow',['n_grow',['../classamrex_1_1FabArrayBase.html#aad48d978f6df9294ff3cbdb8978b8914',1,'amrex::FabArrayBase']]],
   ['n_5fpoints',['n_points',['../structamrex_1_1FabArray_1_1ShMem.html#aae8be9e2e342b9ba03c2b087855a5df1',1,'amrex::FabArray::ShMem']]],
   ['n_5fproper',['n_proper',['../structamrex_1_1AmrInfo.html#a36e0332bccfe906856f622730eeafbcf',1,'amrex::AmrInfo']]],
-  ['n_5frhs_5feval',['n_rhs_eval',['../structintegrator__stats__mod_1_1integrator__stats__t.html#af475cd49d4f67d1ddaee820b967a2e72',1,'integrator_stats_mod::integrator_stats_t']]],
   ['n_5fstate',['n_state',['../classamrex_1_1DeriveRec.html#a2cc67c5168b67d6772586e58d5e2c5a3',1,'amrex::DeriveRec']]],
-  ['n_5fsteps',['n_steps',['../structintegrator__stats__mod_1_1integrator__stats__t.html#ad65849a1f2e9c7e8c0d4ac26d0870c9c',1,'integrator_stats_mod::integrator_stats_t']]],
   ['n_5fvalues',['n_values',['../structamrex_1_1FabArray_1_1ShMem.html#a7127367bcb4407b08339a44b7ecca386',1,'amrex::FabArray::ShMem']]],
   ['nai',['NAI',['../structamrex_1_1ParticleTileData.html#a7688567eff09558d08cec6cd74df12bb',1,'amrex::ParticleTileData::NAI()'],['../structamrex_1_1ConstParticleTileData.html#aa0a3417d6bb97e1a4d50d543d8872e6d',1,'amrex::ConstParticleTileData::NAI()'],['../structamrex_1_1ParticleTile.html#a234f66d81e35ea602712a866f65b82c2',1,'amrex::ParticleTile::NAI()']]],
   ['name',['name',['../structamrex_1_1FabArrayBase_1_1CacheStats.html#a66050f0c470418cb4ab408bc117f3e63',1,'amrex::FabArrayBase::CacheStats::name()'],['../structCommProfStats_1_1BarrierEntry.html#aa4edfb42a1c77e953234b83e0f87ce6f',1,'CommProfStats::BarrierEntry::name()']]],
@@ -53,7 +51,7 @@ var searchData=
   ['nmax',['nmax',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a601e3d46b6b378292f6861605af53b55',1,'amrex::TinyProfiler::ProcStats']]],
   ['nmffileinstreams',['nMFFileInStreams',['../classamrex_1_1VisMF.html#abfbb2ed9c1aa1c00786e7ae2218f0b0f',1,'amrex::VisMF']]],
   ['nmin',['nmin',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#a4712cf4e60cf2801bc15d5a4555cd80b',1,'amrex::TinyProfiler::ProcStats']]],
-  ['nnodes',['Nnodes',['../classSDCstruct.html#a3c3082e11f568453735e5716a4ba7b52',1,'SDCstruct::Nnodes()'],['../structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12',1,'amrex::algoim::QuadratureRule::nnodes()']]],
+  ['nnodes',['nnodes',['../structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12',1,'amrex::algoim::QuadratureRule::nnodes()'],['../classSDCstruct.html#a3c3082e11f568453735e5716a4ba7b52',1,'SDCstruct::Nnodes()']]],
   ['nnodes_5fgrid',['nnodes_grid',['../classamrex_1_1HypreNodeLap.html#ab571c163213ebca30687e13923b90fac',1,'amrex::HypreNodeLap']]],
   ['nodal_5fgrids',['nodal_grids',['../classamrex_1_1AmrLevel.html#a4672d7cd3c482aedb037347c1fddc0ff',1,'amrex::AmrLevel']]],
   ['node_5fbilinear_5finterp',['node_bilinear_interp',['../namespaceamrex.html#a7655c2dbeff4b92d06ddf5d3f964e7b2',1,'amrex']]],

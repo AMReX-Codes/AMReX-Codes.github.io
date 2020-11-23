@@ -48,5 +48,5 @@ var searchData=
   ['two',['two',['../namespaceamrex__constants__module.html#a3b52f9631247ee9d89ef856418d73e7e',1,'amrex_constants_module']]],
   ['two3rd',['two3rd',['../namespaceamrex__constants__module.html#ae2f6d8cbb02d2ebbdda8d6f26aea04df',1,'amrex_constants_module']]],
   ['typ',['typ',['../structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b',1,'amrex::DeriveRec::StateRange::typ()'],['../classamrex_1_1MFIter.html#a1406cbb9152b357a39e877b78eb8ff0d',1,'amrex::MFIter::typ()']]],
-  ['type',['type',['../classamrex_1_1StateDescriptor.html#acb33de9ee20312affa72aa7cc80b8bdd',1,'amrex::StateDescriptor::type()'],['../structsundials__fdlsmat_1_1sundlsmat.html#a15a023155f13d76ac83daf29d710e0c1',1,'sundials_fdlsmat::sundlsmat::type()']]]
+  ['type',['type',['../classamrex_1_1StateDescriptor.html#acb33de9ee20312affa72aa7cc80b8bdd',1,'amrex::StateDescriptor']]]
 ];
