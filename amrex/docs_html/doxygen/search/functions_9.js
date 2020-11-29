@@ -59,6 +59,7 @@ var searchData=
   ['initonepercell',['InitOnePerCell',['../classamrex_1_1ParticleContainer.html#a23fef3ef39243107d38903a067b38bc7',1,'amrex::ParticleContainer']]],
   ['initparams',['InitParams',['../classamrex_1_1BLProfiler.html#af6d5560f2938564e691ec706ef87b5f3',1,'amrex::BLProfiler::InitParams()'],['../classamrex_1_1BLProfiler.html#a3dd15ac8b4c21b85653d2bc8a56eb970',1,'amrex::BLProfiler::InitParams(const Real, const bool, const bool)']]],
   ['initpltandchk',['initPltAndChk',['../classamrex_1_1Amr.html#a210649d50f9f052bcaf38336ce97f986',1,'amrex::Amr']]],
+  ['initprojector',['initProjector',['../classamrex_1_1MacProjector.html#a2f72573416187a59ececbad4b337944e',1,'amrex::MacProjector']]],
   ['initproxmap',['InitProxMap',['../classCommProfStats.html#a599b15517a65dde41a441be3705e8c01',1,'CommProfStats']]],
   ['initrandom',['InitRandom',['../classamrex_1_1ParticleContainer.html#a607bf9ea2040821f633079b5fc384573',1,'amrex::ParticleContainer::InitRandom()'],['../namespaceamrex.html#ae9f820f5a65928568f3751fd584fa5ed',1,'amrex::InitRandom()']]],
   ['initrandomperbox',['InitRandomPerBox',['../classamrex_1_1ParticleContainer.html#a69535e29fdd3ce01b696fe3d681d64b3',1,'amrex::ParticleContainer']]],
