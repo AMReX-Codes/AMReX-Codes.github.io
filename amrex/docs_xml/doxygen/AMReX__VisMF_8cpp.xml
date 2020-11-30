@@ -3011,7 +3011,7 @@
 <codeline lineno="1374"><highlight class="normal"><sp/><sp/><sp/><sp/>FullHdrFileName<sp/>+=<sp/><ref refid="namespaceamrex_1a800f0e7b7cc45c727ac9b9bc6dc25405" kindref="member">TheMultiFabHdrFileSuffix</ref>;</highlight></codeline>
 <codeline lineno="1375"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1376"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;char&gt;<sp/>fileCharPtr;</highlight></codeline>
-<codeline lineno="1377"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa123b1406423d74e38759f1412955db8" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(FullHdrFileName,<sp/>fileCharPtr);</highlight></codeline>
+<codeline lineno="1377"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a4736dec48acb46827a04cdca7b4045d7" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(FullHdrFileName,<sp/>fileCharPtr);</highlight></codeline>
 <codeline lineno="1378"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>fileCharPtrString(fileCharPtr.dataPtr());</highlight></codeline>
 <codeline lineno="1379"><highlight class="normal"><sp/><sp/><sp/><sp/>std::istringstream<sp/>infs(fileCharPtrString,<sp/>std::istringstream::in);</highlight></codeline>
 <codeline lineno="1380"><highlight class="normal"></highlight></codeline>
@@ -3147,7 +3147,7 @@
 <codeline lineno="1510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>fileCharPtrString;</highlight></codeline>
 <codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(faHeader<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="1512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;char&gt;<sp/>fileCharPtr;</highlight></codeline>
-<codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa123b1406423d74e38759f1412955db8" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(FullHdrFileName,<sp/>fileCharPtr);</highlight></codeline>
+<codeline lineno="1513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a4736dec48acb46827a04cdca7b4045d7" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(FullHdrFileName,<sp/>fileCharPtr);</highlight></codeline>
 <codeline lineno="1514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileCharPtrString<sp/>=<sp/>fileCharPtr.dataPtr();</highlight></codeline>
 <codeline lineno="1515"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileCharPtrString<sp/>=<sp/>faHeader;</highlight></codeline>
@@ -3512,7 +3512,7 @@
 <codeline lineno="1875"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>availableFiles.insert(iopFileIndex);</highlight></codeline>
 <codeline lineno="1876"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>busyProcs.erase(ioProcNum);</highlight></codeline>
 <codeline lineno="1877"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a411cea849dee5d54c8335c79f35af182" kindref="member">ParallelDescriptor::IProbe</ref>(MPI_ANY_SOURCE,<sp/>doneTag,<sp/>doneFlag,<sp/>status);</highlight></codeline>
+<codeline lineno="1878"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa6542637438eaa734790f6ab8ae83ce0" kindref="member">ParallelDescriptor::IProbe</ref>(MPI_ANY_SOURCE,<sp/>doneTag,<sp/>doneFlag,<sp/>status);</highlight></codeline>
 <codeline lineno="1879"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doneFlag)<sp/>{</highlight></codeline>
 <codeline lineno="1880"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="1881"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3591,7 +3591,7 @@
 <codeline lineno="1954"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iss.open(FullHdrFileName.c_str(),<sp/>std::ios::in);</highlight></codeline>
 <codeline lineno="1955"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exist<sp/>=<sp/>iss.good();</highlight></codeline>
 <codeline lineno="1956"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1957"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a20157f27c3bf88a426b0f44bd6bbf135" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;exist,<sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
+<codeline lineno="1957"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;exist,<sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="1958"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>exist;</highlight></codeline>
 <codeline lineno="1959"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1960"><highlight class="normal"></highlight></codeline>
@@ -3602,7 +3602,7 @@
 <codeline lineno="1965"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>BL_PROFILE(&quot;VisMF::ReadFAHeader()&quot;);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1966"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1967"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>FullHdrFileName(fafabName<sp/>+<sp/>TheMultiFabHdrFileSuffix);</highlight></codeline>
-<codeline lineno="1968"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1aa123b1406423d74e38759f1412955db8" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(FullHdrFileName,<sp/>faHeader);</highlight></codeline>
+<codeline lineno="1968"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a4736dec48acb46827a04cdca7b4045d7" kindref="member">ParallelDescriptor::ReadAndBcastFile</ref>(FullHdrFileName,<sp/>faHeader);</highlight></codeline>
 <codeline lineno="1969"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1970"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1971"><highlight class="normal"></highlight></codeline>
@@ -3703,8 +3703,8 @@
 <codeline lineno="2066"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2067"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2068"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2069"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a20157f27c3bf88a426b0f44bd6bbf135" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;isOk,<sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
-<codeline lineno="2070"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a20157f27c3bf88a426b0f44bd6bbf135" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;v1,<sp/><sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
+<codeline lineno="2069"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;isOk,<sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
+<codeline lineno="2070"><highlight class="normal"><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;v1,<sp/><sp/>1,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="2071"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2072"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isOk;</highlight></codeline>
 <codeline lineno="2073"><highlight class="normal"></highlight></codeline>

@@ -113,7 +113,7 @@ var searchData=
   ['collectdata',['CollectData',['../classamrex_1_1FabArrayCopyDescriptor.html#a6702b3562050e933b50c54d55cfa4caa',1,'amrex::FabArrayCopyDescriptor']]],
   ['collectfuncstats',['CollectFuncStats',['../classBLProfStats.html#ac538df4b2ca012677d2f4c63a7a17eb6',1,'BLProfStats::CollectFuncStats()'],['../classRegionsProfStats.html#aac44ade120289132d039d3301a618e71',1,'RegionsProfStats::CollectFuncStats()']]],
   ['collectmprofstats',['CollectMProfStats',['../namespaceamrex.html#abf61acca5a480f47841ff87d3fc31536',1,'amrex']]],
-  ['comm_5fdup',['Comm_dup',['../namespaceamrex_1_1ParallelDescriptor.html#ace0982cd881d1f09d60a8e38b5565e6c',1,'amrex::ParallelDescriptor']]],
+  ['comm_5fdup',['Comm_dup',['../namespaceamrex_1_1ParallelDescriptor.html#ab513eb7f98a3f225eda4e3dc0d2ec2b7',1,'amrex::ParallelDescriptor']]],
   ['comm_5fnowait',['Comm_nowait',['../namespaceamrex_1_1NonLocalBC.html#a9ceb33878a763d9be662a21559d65463',1,'amrex::NonLocalBC']]],
   ['command_5fargument_5fcount',['command_argument_count',['../namespaceamrex.html#a0f3d8f755663a93f3953f7cda5590cac',1,'amrex']]],
   ['commcontainer',['CommContainer',['../structamrex_1_1MLLinOp_1_1CommContainer.html#a8f1b7a4c500995611703e56e66931428',1,'amrex::MLLinOp::CommContainer::CommContainer(MPI_Comm m) noexcept'],['../structamrex_1_1MLLinOp_1_1CommContainer.html#a60804da348a4b69619286dc0867f39e0',1,'amrex::MLLinOp::CommContainer::CommContainer(const CommContainer &amp;)=delete'],['../structamrex_1_1MLLinOp_1_1CommContainer.html#a186857eb564ead75427bed97573e3283',1,'amrex::MLLinOp::CommContainer::CommContainer(CommContainer &amp;&amp;)=delete']]],

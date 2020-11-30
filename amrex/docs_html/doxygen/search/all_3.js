@@ -162,7 +162,7 @@ var searchData=
   ['collectmprofstats',['CollectMProfStats',['../namespaceamrex.html#abf61acca5a480f47841ff87d3fc31536',1,'amrex']]],
   ['colorcontours',['COLORCONTOURS',['../namespaceamrex_1_1Amrvis.html#adff45b199da741c907d4b88ed38b323ba934948a3b1e3ecc0aed7fd86b0695094',1,'amrex::Amrvis']]],
   ['comm',['comm',['../classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f',1,'amrex::ParallelContext::Frame::comm()'],['../classamrex_1_1Print.html#a6bf798b3678aa43c4bcc819b794b7d1a',1,'amrex::Print::comm()'],['../classamrex_1_1PrintToFile.html#a17f059a2527f418f635f7c06564224a7',1,'amrex::PrintToFile::comm()'],['../classamrex_1_1Hypre.html#a55f4b29b2291555432bbc82aa86c0931',1,'amrex::Hypre::comm()'],['../classamrex_1_1HypreNodeLap.html#adf57e9f1fd02ffaff4b31a0d22a1a525',1,'amrex::HypreNodeLap::comm()'],['../classamrex_1_1PETScABecLap.html#a12f0bff39693de9bdefaecc8c5970e93',1,'amrex::PETScABecLap::comm()'],['../structamrex_1_1MLLinOp_1_1CommContainer.html#a772c93e540a8c4a0e75b5874e09a0f60',1,'amrex::MLLinOp::CommContainer::comm()']]],
-  ['comm_5fdup',['Comm_dup',['../namespaceamrex_1_1ParallelDescriptor.html#ace0982cd881d1f09d60a8e38b5565e6c',1,'amrex::ParallelDescriptor']]],
+  ['comm_5fdup',['Comm_dup',['../namespaceamrex_1_1ParallelDescriptor.html#ab513eb7f98a3f225eda4e3dc0d2ec2b7',1,'amrex::ParallelDescriptor']]],
   ['comm_5fnowait',['Comm_nowait',['../namespaceamrex_1_1NonLocalBC.html#a9ceb33878a763d9be662a21559d65463',1,'amrex::NonLocalBC']]],
   ['comm_5ftile_5fsize',['comm_tile_size',['../classamrex_1_1FabArrayBase.html#aec4332affa6c055da41aab70b684a064',1,'amrex::FabArrayBase']]],
   ['command_5fargument_5fcount',['command_argument_count',['../namespaceamrex.html#a0f3d8f755663a93f3953f7cda5590cac',1,'amrex']]],

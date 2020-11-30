@@ -1722,10 +1722,10 @@
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>nbytes<sp/>=<sp/>m_snd_num_particles[i]*psize;</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>acd<sp/>=<sp/>ParallelDescriptor::alignof_comm_data(nbytes);</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>Cnt<sp/>=<sp/><ref refid="namespaceamrex_1ad67a8a03bbc2b472ade7e3d2a4866fa1" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>Cnt<sp/>=<sp/><ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>nbytes);</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>bytes_to_send<sp/>=<sp/>(i<sp/>==<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">MyProc</ref>)<sp/>?<sp/>0<sp/>:<sp/>Cnt;</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_snd_counts.push_back(bytes_to_send);</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_snd_offsets.push_back(<ref refid="namespaceamrex_1ad67a8a03bbc2b472ade7e3d2a4866fa1" kindref="member">amrex::aligned_size</ref>(acd,<sp/>m_snd_offsets.back())<sp/>+<sp/>Cnt);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_snd_offsets.push_back(<ref refid="namespaceamrex_1ad7bef6630afa8a2109d2a242cc2d7591" kindref="member">amrex::aligned_size</ref>(acd,<sp/>m_snd_offsets.back())<sp/>+<sp/>Cnt);</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_snd_pad_correction_h.push_back(m_snd_pad_correction_h.back()<sp/>+<sp/>nbytes);</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"></highlight></codeline>
@@ -1755,7 +1755,7 @@
 <codeline lineno="214"><highlight class="normal"></highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_nrcvs<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(m_build_rreqs,<sp/>m_build_stats);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(m_build_rreqs,<sp/>m_build_stats);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"></highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>rcv_box_offsets;</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1PODVector" kindref="compound">Gpu::HostVector&lt;int&gt;</ref><sp/>rcv_box_counts;</highlight></codeline>
@@ -1847,7 +1847,7 @@
 <codeline lineno="306"><highlight class="normal"></highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_rcvs<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(rreqs,<sp/>stats);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(rreqs,<sp/>stats);</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(Snds,Rcvs);</highlight></codeline>
@@ -1927,7 +1927,7 @@
 <codeline lineno="386"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1ac2e31e632d2856477f32757e16ba053e" kindref="member">m_nrcvs</ref><sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab581b8dba6006dbb3457d925c4b0f244" kindref="member">ParallelDescriptor::Waitall</ref>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aa7dcdca22d276a177da66220283582c0" kindref="member">m_particle_rreqs</ref>,<sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aac55f2c595ea7f57832345df3d5fb78b" kindref="member">m_particle_stats</ref>);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a63d04588d41cd108e9255c231e2562d9" kindref="member">ParallelDescriptor::Waitall</ref>(plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aa7dcdca22d276a177da66220283582c0" kindref="member">m_particle_rreqs</ref>,<sp/>plan.<ref refid="structamrex_1_1ParticleCopyPlan_1aac55f2c595ea7f57832345df3d5fb78b" kindref="member">m_particle_stats</ref>);</highlight></codeline>
 <codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="391"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(plan);</highlight></codeline>

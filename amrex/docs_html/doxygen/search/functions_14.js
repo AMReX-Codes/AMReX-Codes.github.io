@@ -14,7 +14,7 @@ var searchData=
   ['teamsize',['TeamSize',['../namespaceamrex_1_1ParallelDescriptor.html#a9854dea7eb2ee59093ed0bd80af9063e',1,'amrex::ParallelDescriptor']]],
   ['tensorproductintegral',['tensorProductIntegral',['../structamrex_1_1algoim_1_1ImplicitIntegral.html#a4c3a229f570e434e2c56fdf8bee3425d',1,'amrex::algoim::ImplicitIntegral']]],
   ['terrain',['Terrain',['../classamrex_1_1AmrData.html#a9876c6584cedf4237b5e06683b0baa28',1,'amrex::AmrData']]],
-  ['test',['test',['../classamrex_1_1IndexType.html#a03f0252cd9221c11a5e6785ace4ff40e',1,'amrex::IndexType::test()'],['../classamrex_1_1ParallelDescriptor_1_1Message.html#a42d6517959dbf89018b970cb1c0cf66e',1,'amrex::ParallelDescriptor::Message::test()'],['../namespaceamrex_1_1ParallelDescriptor.html#affba679357b6ad488b02adc81a353697',1,'amrex::ParallelDescriptor::Test()']]],
+  ['test',['test',['../classamrex_1_1IndexType.html#a03f0252cd9221c11a5e6785ace4ff40e',1,'amrex::IndexType::test()'],['../classamrex_1_1ParallelDescriptor_1_1Message.html#a42d6517959dbf89018b970cb1c0cf66e',1,'amrex::ParallelDescriptor::Message::test()'],['../namespaceamrex_1_1ParallelDescriptor.html#a07419f788f738f82f07c288c70af5e6f',1,'amrex::ParallelDescriptor::Test()']]],
   ['the_5farena',['The_Arena',['../namespaceamrex.html#ae3d1414946b992f39ca41f135f12a0d1',1,'amrex']]],
   ['the_5fcpu_5farena',['The_Cpu_Arena',['../namespaceamrex.html#adcb4e473f4a6058ae8abd15c75bde706',1,'amrex']]],
   ['the_5fdevice_5farena',['The_Device_Arena',['../namespaceamrex.html#a97a60825e6e7886b3502c2f4ed1eb417',1,'amrex']]],
