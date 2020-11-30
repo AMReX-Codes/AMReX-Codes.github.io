@@ -58,6 +58,7 @@ var searchData=
   ['polarfn',['PolarFn',['../structamrex_1_1NonLocalBC_1_1PolarFn.html',1,'amrex::NonLocalBC']]],
   ['polarfn2',['PolarFn2',['../structamrex_1_1NonLocalBC_1_1PolarFn2.html',1,'amrex::NonLocalBC']]],
   ['poly_5feval',['poly_eval',['../interfacesdcquadrature__mod_1_1poly__eval.html',1,'sdcquadrature_mod']]],
+  ['polyif',['PolyIF',['../classamrex_1_1EB2_1_1PolyIF.html',1,'amrex::EB2']]],
   ['polymorphicallocator',['PolymorphicAllocator',['../classamrex_1_1PolymorphicAllocator.html',1,'amrex']]],
   ['polynomialif',['PolynomialIF',['../classamrex_1_1EB2_1_1PolynomialIF.html',1,'amrex::EB2']]],
   ['polyterm',['PolyTerm',['../classamrex_1_1EB2_1_1PolyTerm.html',1,'amrex::EB2']]],
