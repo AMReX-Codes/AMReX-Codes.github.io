@@ -82,7 +82,7 @@ var searchData=
   ['tilesize',['tilesize',['../structamrex_1_1MFItInfo.html#a8926b61d823e5a23f6bbf00814afba13',1,'amrex::MFItInfo']]],
   ['tiling',['Tiling',['../classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a1db74b1bbdeb756077e4bc33e25a2740',1,'amrex::MFIter']]],
   ['tilingifnotgpu',['TilingIfNotGPU',['../namespaceamrex.html#a89faf58cc9f92b14a4c334bcb8390966',1,'amrex']]],
-  ['time',['time',['../classamrex_1_1AmrData.html#af36e6cd9e76d13205ad8dfc57cba5b58',1,'amrex::AmrData::time()'],['../classamrex_1_1PlotFileDataImpl.html#a493f2666f351bd922bb6ca42eaf6b7f5',1,'amrex::PlotFileDataImpl::time()'],['../classamrex_1_1PlotFileData.html#ad827fbbd6757ac18eb39a4c5ce37ef95',1,'amrex::PlotFileData::time()'],['../classamrex_1_1AmrData.html#a15fd75f8f746bd68dad3f84ea821f7d3',1,'amrex::AmrData::Time()']]],
+  ['time',['Time',['../classamrex_1_1AmrData.html#a15fd75f8f746bd68dad3f84ea821f7d3',1,'amrex::AmrData::Time() const '],['../classamrex_1_1AmrData.html#af36e6cd9e76d13205ad8dfc57cba5b58',1,'amrex::AmrData::time()'],['../classamrex_1_1PlotFileDataImpl.html#a493f2666f351bd922bb6ca42eaf6b7f5',1,'amrex::PlotFileDataImpl::time()'],['../classamrex_1_1PlotFileData.html#ad827fbbd6757ac18eb39a4c5ce37ef95',1,'amrex::PlotFileData::time()']]],
   ['timecenter',['TimeCenter',['../classamrex_1_1StateDescriptor.html#a8e14d2e57bdb2fbd440c8c26c8b99434',1,'amrex::StateDescriptor']]],
   ['timeinterval',['TimeInterval',['../structamrex_1_1StateData_1_1TimeInterval.html',1,'amrex::StateData']]],
   ['timelevel',['TimeLevel',['../classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33a',1,'amrex::AmrLevel']]],
