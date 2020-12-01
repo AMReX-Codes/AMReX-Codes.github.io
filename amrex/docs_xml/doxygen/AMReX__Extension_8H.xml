@@ -5015,7 +5015,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="124" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="124" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="126" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__Extension_8H_1aca0e371f8327722548a19e84acabea8e" prot="public" static="no">
         <name>AMREX_ATTRIBUTE_WEAK</name>
@@ -5026,7 +5026,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="134" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="134" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="136" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__Extension_8H_1a8c2a4f7808c3093eb46278654b309fe3" prot="public" static="no">
         <name>AMREX_FALLTHROUGH</name>
@@ -5037,7 +5037,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="148" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="148" bodyend="-1"/>
+        <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" line="150" column="10" bodyfile="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H" bodystart="150" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -5165,46 +5165,48 @@
 <codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">//<sp/>no<sp/>inline</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)<sp/>||<sp/>defined(__clang__)<sp/>||<sp/>defined(__CUDACC__)<sp/>||<sp/>defined(__HIP__)<sp/>||<sp/>defined(__SYCL_COMPILER_VERSION)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE<sp/>__attribute__((noinline))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="124" refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">//<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_MSC_VER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE<sp/>__declspec(noinline)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>(defined(__GNUC__)<sp/>||<sp/>defined(__clang__)<sp/>||<sp/>defined(__CUDACC__)<sp/>||<sp/>defined(__HIP__)<sp/>||<sp/>defined(__SYCL_COMPILER_VERSION))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE<sp/>__attribute__((noinline))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="AMReX__Extension_8H_1a5fddc549617b82ce5fc2b33aa9b6aa6f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_NO_INLINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_TYPECHECK)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="134" refid="AMReX__Extension_8H_1aca0e371f8327722548a19e84acabea8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)<sp/>&amp;&amp;<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iso646.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(__cplusplus<sp/>&gt;=<sp/>201703L)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[clang::fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>(__GNUC__<sp/>&gt;=<sp/>7)<sp/>&amp;&amp;<sp/>!defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[gnu::fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="148" refid="AMReX__Extension_8H_1a8c2a4f7808c3093eb46278654b309fe3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">//<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_TYPECHECK)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="AMReX__Extension_8H_1aca0e371f8327722548a19e84acabea8e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_ATTRIBUTE_WEAK<sp/>__attribute__((weak))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)<sp/>&amp;&amp;<sp/>defined(_WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iso646.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(__cplusplus<sp/>&gt;=<sp/>201703L)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__clang__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[clang::fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__GNUC__)<sp/>&amp;&amp;<sp/>(__GNUC__<sp/>&gt;=<sp/>7)<sp/>&amp;&amp;<sp/>!defined(__INTEL_COMPILER)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>[[gnu::fallthrough]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="AMReX__Extension_8H_1a8c2a4f7808c3093eb46278654b309fe3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>DPCPP<sp/>version<sp/>strings</highlight></codeline>
-<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>beta08<sp/>#define<sp/>__SYCL_COMPILER_VERSION<sp/>20200715</highlight></codeline>
-<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>beta09<sp/>#define<sp/>__SYCL_COMPILER_VERSION<sp/>20200827</highlight></codeline>
-<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>beta10<sp/>#define<sp/>__SYCL_COMPILER_VERSION<sp/>20201005</highlight></codeline>
-<codeline lineno="160"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>DPCPP<sp/>version<sp/>strings</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>beta08<sp/>#define<sp/>__SYCL_COMPILER_VERSION<sp/>20200715</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/>beta09<sp/>#define<sp/>__SYCL_COMPILER_VERSION<sp/>20200827</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*<sp/>beta10<sp/>#define<sp/>__SYCL_COMPILER_VERSION<sp/>20201005</highlight></codeline>
+<codeline lineno="162"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_Extension.H"/>
   </compounddef>
