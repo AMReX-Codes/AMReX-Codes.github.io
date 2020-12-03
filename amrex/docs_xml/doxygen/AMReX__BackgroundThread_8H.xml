@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="AMReX__BackgroundThread_8H" kind="file" language="C++">
     <compoundname>AMReX_BackgroundThread.H</compoundname>
+    <includes local="no">AMReX_Config.H</includes>
     <includes local="no">algorithm</includes>
     <includes local="no">condition_variable</includes>
     <includes local="no">functional</includes>
@@ -12,60 +13,65 @@
     <includedby refid="AMReX__AsyncOut_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_AsyncOut.cpp</includedby>
     <includedby refid="AMReX__BackgroundThread_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BackgroundThread.cpp</includedby>
     <incdepgraph>
-      <node id="8404">
+      <node id="8466">
         <label>functional</label>
       </node>
-      <node id="8407">
+      <node id="8469">
         <label>queue</label>
       </node>
-      <node id="8401">
+      <node id="8462">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BackgroundThread.H</label>
         <link refid="AMReX_BackgroundThread.H"/>
-        <childnode refid="8402" relation="include">
+        <childnode refid="8463" relation="include">
         </childnode>
-        <childnode refid="8403" relation="include">
+        <childnode refid="8464" relation="include">
         </childnode>
-        <childnode refid="8404" relation="include">
+        <childnode refid="8465" relation="include">
         </childnode>
-        <childnode refid="8405" relation="include">
+        <childnode refid="8466" relation="include">
         </childnode>
-        <childnode refid="8406" relation="include">
+        <childnode refid="8467" relation="include">
         </childnode>
-        <childnode refid="8407" relation="include">
+        <childnode refid="8468" relation="include">
         </childnode>
-        <childnode refid="8408" relation="include">
+        <childnode refid="8469" relation="include">
+        </childnode>
+        <childnode refid="8470" relation="include">
         </childnode>
       </node>
-      <node id="8403">
+      <node id="8465">
         <label>condition_variable</label>
       </node>
-      <node id="8406">
+      <node id="8463">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="8468">
         <label>mutex</label>
       </node>
-      <node id="8408">
+      <node id="8470">
         <label>thread</label>
       </node>
-      <node id="8402">
+      <node id="8464">
         <label>algorithm</label>
       </node>
-      <node id="8405">
+      <node id="8467">
         <label>memory</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="8409">
+      <node id="8471">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BackgroundThread.H</label>
         <link refid="AMReX_BackgroundThread.H"/>
-        <childnode refid="8410" relation="include">
+        <childnode refid="8472" relation="include">
         </childnode>
-        <childnode refid="8411" relation="include">
+        <childnode refid="8473" relation="include">
         </childnode>
       </node>
-      <node id="8411">
+      <node id="8473">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BackgroundThread.cpp</label>
         <link refid="AMReX__BackgroundThread_8cpp"/>
       </node>
-      <node id="8410">
+      <node id="8472">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_AsyncOut.cpp</label>
         <link refid="AMReX__AsyncOut_8cpp"/>
       </node>
@@ -79,43 +85,44 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AMREX_BACKGROUND_THREAD_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_BACKGROUND_THREAD_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14" refid="classamrex_1_1BackgroundThread" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BackgroundThread" kindref="compound">BackgroundThread</ref></highlight></codeline>
-<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1a276804e5d463c6c46c248701f73f18c7" kindref="member">BackgroundThread</ref><sp/>();</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1ab5ad8734e492ca7784f7fa8af2d4c29e" kindref="member">~BackgroundThread</ref><sp/>();</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a31e717cddbcc5e4079da2d35d11a5c68" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;&amp;&amp;<sp/>a_f);</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a31e717cddbcc5e4079da2d35d11a5c68" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_f);</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a1087e92b5b216fe4574e45078338cd51" kindref="member">Finish</ref><sp/>();<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>required.<sp/>Call<sp/>this<sp/>if<sp/>you<sp/>want<sp/>all<sp/>jobs<sp/>to<sp/>finish.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a7ef8784994644d4a4fa8a46205610b2b" kindref="member">do_job</ref><sp/>();</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="classamrex_1_1BackgroundThread_1a3093fd845f22fd2dd628aca6a442851f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;std::thread&gt;<sp/><ref refid="classamrex_1_1BackgroundThread_1a3093fd845f22fd2dd628aca6a442851f" kindref="member">m_thread</ref>;</highlight></codeline>
-<codeline lineno="29" refid="classamrex_1_1BackgroundThread_1a9f33f06880c6b03a62b70fd559ab53df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/><ref refid="classamrex_1_1BackgroundThread_1a9f33f06880c6b03a62b70fd559ab53df" kindref="member">m_mutx</ref>;</highlight></codeline>
-<codeline lineno="30" refid="classamrex_1_1BackgroundThread_1a71752cb305b9ed234397d1575b5c679b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::condition_variable<sp/><ref refid="classamrex_1_1BackgroundThread_1a71752cb305b9ed234397d1575b5c679b" kindref="member">m_job_cond</ref>;</highlight></codeline>
-<codeline lineno="31" refid="classamrex_1_1BackgroundThread_1adbb640d4685fec31cf46171b7833a059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::condition_variable<sp/><ref refid="classamrex_1_1BackgroundThread_1adbb640d4685fec31cf46171b7833a059" kindref="member">m_done_cond</ref>;</highlight></codeline>
-<codeline lineno="32" refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::queue&lt;std::function&lt;void()&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" kindref="member">m_func</ref>;</highlight></codeline>
-<codeline lineno="33" refid="classamrex_1_1BackgroundThread_1a50eaee402e1e16b45a4e535eda4f2860" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a50eaee402e1e16b45a4e535eda4f2860" kindref="member">m_clearing</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="34" refid="classamrex_1_1BackgroundThread_1a3011c472d16bad3f2fb7f8749dfb31f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a3011c472d16bad3f2fb7f8749dfb31f4" kindref="member">m_finalizing</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classamrex_1_1BackgroundThread" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1BackgroundThread" kindref="compound">BackgroundThread</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1a276804e5d463c6c46c248701f73f18c7" kindref="member">BackgroundThread</ref><sp/>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1ab5ad8734e492ca7784f7fa8af2d4c29e" kindref="member">~BackgroundThread</ref><sp/>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a31e717cddbcc5e4079da2d35d11a5c68" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;&amp;&amp;<sp/>a_f);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a31e717cddbcc5e4079da2d35d11a5c68" kindref="member">Submit</ref><sp/>(std::function&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">()&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_f);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a1087e92b5b216fe4574e45078338cd51" kindref="member">Finish</ref><sp/>();<sp/></highlight><highlight class="comment">//<sp/>Not<sp/>required.<sp/>Call<sp/>this<sp/>if<sp/>you<sp/>want<sp/>all<sp/>jobs<sp/>to<sp/>finish.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a7ef8784994644d4a4fa8a46205610b2b" kindref="member">do_job</ref><sp/>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classamrex_1_1BackgroundThread_1a3093fd845f22fd2dd628aca6a442851f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;std::thread&gt;<sp/><ref refid="classamrex_1_1BackgroundThread_1a3093fd845f22fd2dd628aca6a442851f" kindref="member">m_thread</ref>;</highlight></codeline>
+<codeline lineno="30" refid="classamrex_1_1BackgroundThread_1a9f33f06880c6b03a62b70fd559ab53df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::mutex<sp/><ref refid="classamrex_1_1BackgroundThread_1a9f33f06880c6b03a62b70fd559ab53df" kindref="member">m_mutx</ref>;</highlight></codeline>
+<codeline lineno="31" refid="classamrex_1_1BackgroundThread_1a71752cb305b9ed234397d1575b5c679b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::condition_variable<sp/><ref refid="classamrex_1_1BackgroundThread_1a71752cb305b9ed234397d1575b5c679b" kindref="member">m_job_cond</ref>;</highlight></codeline>
+<codeline lineno="32" refid="classamrex_1_1BackgroundThread_1adbb640d4685fec31cf46171b7833a059" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::condition_variable<sp/><ref refid="classamrex_1_1BackgroundThread_1adbb640d4685fec31cf46171b7833a059" kindref="member">m_done_cond</ref>;</highlight></codeline>
+<codeline lineno="33" refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::queue&lt;std::function&lt;void()&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1BackgroundThread_1ab67b8bb7e25e2ed11cc2232a777835fd" kindref="member">m_func</ref>;</highlight></codeline>
+<codeline lineno="34" refid="classamrex_1_1BackgroundThread_1a50eaee402e1e16b45a4e535eda4f2860" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a50eaee402e1e16b45a4e535eda4f2860" kindref="member">m_clearing</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35" refid="classamrex_1_1BackgroundThread_1a3011c472d16bad3f2fb7f8749dfb31f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1BackgroundThread_1a3011c472d16bad3f2fb7f8749dfb31f4" kindref="member">m_finalizing</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_BackgroundThread.H"/>
   </compounddef>

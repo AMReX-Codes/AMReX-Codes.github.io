@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="AMReX__MemProfiler_8H" kind="file" language="C++">
     <compoundname>AMReX_MemProfiler.H</compoundname>
+    <includes local="no">AMReX_Config.H</includes>
     <includes refid="AMReX__INT_8H" local="no">AMReX_INT.H</includes>
     <includes local="no">stack</includes>
     <includes local="no">functional</includes>
@@ -12,66 +13,73 @@
     <includes local="no">memory</includes>
     <includedby refid="AMReX__MemProfiler_8cpp" local="no">/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MemProfiler.cpp</includedby>
     <incdepgraph>
-      <node id="36294">
+      <node id="36492">
         <label>functional</label>
       </node>
-      <node id="36290">
+      <node id="36487">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MemProfiler.H</label>
         <link refid="AMReX_MemProfiler.H"/>
-        <childnode refid="36291" relation="include">
+        <childnode refid="36488" relation="include">
         </childnode>
-        <childnode refid="36293" relation="include">
+        <childnode refid="36489" relation="include">
         </childnode>
-        <childnode refid="36294" relation="include">
+        <childnode refid="36491" relation="include">
         </childnode>
-        <childnode refid="36295" relation="include">
+        <childnode refid="36492" relation="include">
         </childnode>
-        <childnode refid="36296" relation="include">
+        <childnode refid="36493" relation="include">
         </childnode>
-        <childnode refid="36297" relation="include">
+        <childnode refid="36494" relation="include">
         </childnode>
-        <childnode refid="36298" relation="include">
+        <childnode refid="36495" relation="include">
         </childnode>
-        <childnode refid="36299" relation="include">
+        <childnode refid="36496" relation="include">
+        </childnode>
+        <childnode refid="36497" relation="include">
         </childnode>
       </node>
-      <node id="36295">
+      <node id="36493">
         <label>string</label>
       </node>
-      <node id="36297">
+      <node id="36495">
         <label>map</label>
       </node>
-      <node id="36296">
+      <node id="36488">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="36494">
         <label>vector</label>
       </node>
-      <node id="36293">
+      <node id="36491">
         <label>stack</label>
       </node>
-      <node id="36291">
+      <node id="36489">
         <label>AMReX_INT.H</label>
         <link refid="AMReX__INT_8H"/>
-        <childnode refid="36292" relation="include">
+        <childnode refid="36488" relation="include">
+        </childnode>
+        <childnode refid="36490" relation="include">
         </childnode>
       </node>
-      <node id="36298">
+      <node id="36496">
         <label>iostream</label>
       </node>
-      <node id="36299">
+      <node id="36497">
         <label>memory</label>
       </node>
-      <node id="36292">
+      <node id="36490">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="36301">
+      <node id="36499">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MemProfiler.cpp</label>
         <link refid="AMReX__MemProfiler_8cpp"/>
       </node>
-      <node id="36300">
+      <node id="36498">
         <label>/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MemProfiler.H</label>
         <link refid="AMReX_MemProfiler.H"/>
-        <childnode refid="36301" relation="include">
+        <childnode refid="36499" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -89,77 +97,78 @@
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BL_MEMPROFILER_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_MEMPROFILER_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__INT_8H" kindref="compound">AMReX_INT.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stack&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16" refid="classamrex_1_1MemProfiler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref></highlight></codeline>
-<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="structamrex_1_1MemProfiler_1_1MemInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemInfo</ref><sp/>{</highlight></codeline>
-<codeline lineno="21" refid="structamrex_1_1MemProfiler_1_1MemInfo_1a821bd45f3af572df6c5dad7f24de66fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1MemInfo_1a821bd45f3af572df6c5dad7f24de66fc" kindref="member">current_bytes</ref>;</highlight></codeline>
-<codeline lineno="22" refid="structamrex_1_1MemProfiler_1_1MemInfo_1a8661ed517702715ed45adc3550f8cad0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1MemInfo_1a8661ed517702715ed45adc3550f8cad0" kindref="member">hwm_bytes</ref>;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25" refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" kindref="compound">NBuildsInfo</ref><sp/>{</highlight></codeline>
-<codeline lineno="26" refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1a1af174d3541b8cb0ffddf9902562db08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1a1af174d3541b8cb0ffddf9902562db08" kindref="member">current_builds</ref>;</highlight></codeline>
-<codeline lineno="27" refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1ac85d7c7f2a90d5d1025386987ad4aaa5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1ac85d7c7f2a90d5d1025386987ad4aaa5" kindref="member">hwm_builds</ref>;</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" kindref="member">add</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>std::function&lt;<ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemInfo</ref>()&gt;&amp;&amp;<sp/>f);</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" kindref="member">add</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>std::function&lt;<ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" kindref="compound">NBuildsInfo</ref>()&gt;&amp;&amp;<sp/>f);</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a63001e27552e159e32b2ed48fc39bb1f" kindref="member">report</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix<sp/>=<sp/>std::string());</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a68cb3cd35ae7cc4bc40b4f9cfd44d016" kindref="member">Finalize</ref><sp/>();</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" kindref="member">MemProfiler</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a54c7c8dd45cada5e8bfd707f5df76349" kindref="member">operator= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" kindref="member">MemProfiler</ref><sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="41" refid="classamrex_1_1MemProfiler_1a2b1473094731fadfe3fb624993cf2b65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1a2b1473094731fadfe3fb624993cf2b65" kindref="member">~MemProfiler</ref><sp/>()<sp/>{}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a25fa7aefe3796c3c7be599eb19ab8228" kindref="member">report_</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>memory_log_name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47" refid="structamrex_1_1MemProfiler_1_1Bytes" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1Bytes" kindref="compound">Bytes</ref><sp/>{</highlight></codeline>
-<codeline lineno="48" refid="structamrex_1_1MemProfiler_1_1Bytes_1af005129839d5b950c0e09b1e38a6a751" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1Bytes_1af005129839d5b950c0e09b1e38a6a751" kindref="member">mn</ref>;</highlight></codeline>
-<codeline lineno="49" refid="structamrex_1_1MemProfiler_1_1Bytes_1ae97a8af2e85ff53fc98d90d294693657" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1Bytes_1ae97a8af2e85ff53fc98d90d294693657" kindref="member">mx</ref>;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a812ec562125b5510af6c9546a8fca3e2" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Bytes" kindref="compound">MemProfiler::Bytes</ref>&amp;<sp/>bytes);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54" refid="structamrex_1_1MemProfiler_1_1Builds" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1Builds" kindref="compound">Builds</ref><sp/>{</highlight></codeline>
-<codeline lineno="55" refid="structamrex_1_1MemProfiler_1_1Builds_1a2756a5fbf45d016bd03416184543526b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Builds_1a2756a5fbf45d016bd03416184543526b" kindref="member">mn</ref>;</highlight></codeline>
-<codeline lineno="56" refid="structamrex_1_1MemProfiler_1_1Builds_1a2c94315722d15392846ab3b77a58c3d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Builds_1a2c94315722d15392846ab3b77a58c3d0" kindref="member">mx</ref>;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a812ec562125b5510af6c9546a8fca3e2" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Builds" kindref="compound">MemProfiler::Builds</ref>&amp;<sp/>builds);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a4de3370fe39ada9432b7c7736f00fd90" kindref="member">getInstance</ref><sp/>();</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63" refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;MemProfiler&gt;<sp/><ref refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" kindref="member">the_instance</ref>;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="classamrex_1_1MemProfiler_1ab272efb42368045a4256dfcb96957910" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1ab272efb42368045a4256dfcb96957910" kindref="member">the_names</ref>;</highlight></codeline>
-<codeline lineno="66" refid="classamrex_1_1MemProfiler_1a6dd906af9d999ab3e04b156b38605bbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::function&lt;MemInfo()&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1MemProfiler_1a6dd906af9d999ab3e04b156b38605bbf" kindref="member">the_funcs</ref>;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="classamrex_1_1MemProfiler_1a30a2f79d4632035a2ad21fc81e47071a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1a30a2f79d4632035a2ad21fc81e47071a" kindref="member">the_names_builds</ref>;</highlight></codeline>
-<codeline lineno="69" refid="classamrex_1_1MemProfiler_1a1e3b2c95bff96ca4c2f14152e7ad179e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::function&lt;NBuildsInfo()&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1MemProfiler_1a1e3b2c95bff96ca4c2f14152e7ad179e" kindref="member">the_funcs_builds</ref>;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__INT_8H" kindref="compound">AMReX_INT.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stack&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classamrex_1_1MemProfiler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="structamrex_1_1MemProfiler_1_1MemInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="structamrex_1_1MemProfiler_1_1MemInfo_1a821bd45f3af572df6c5dad7f24de66fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1MemInfo_1a821bd45f3af572df6c5dad7f24de66fc" kindref="member">current_bytes</ref>;</highlight></codeline>
+<codeline lineno="23" refid="structamrex_1_1MemProfiler_1_1MemInfo_1a8661ed517702715ed45adc3550f8cad0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1MemInfo_1a8661ed517702715ed45adc3550f8cad0" kindref="member">hwm_bytes</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" kindref="compound">NBuildsInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="27" refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1a1af174d3541b8cb0ffddf9902562db08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1a1af174d3541b8cb0ffddf9902562db08" kindref="member">current_builds</ref>;</highlight></codeline>
+<codeline lineno="28" refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1ac85d7c7f2a90d5d1025386987ad4aaa5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo_1ac85d7c7f2a90d5d1025386987ad4aaa5" kindref="member">hwm_builds</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" kindref="member">add</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>std::function&lt;<ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemInfo</ref>()&gt;&amp;&amp;<sp/>f);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" kindref="member">add</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>std::function&lt;<ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" kindref="compound">NBuildsInfo</ref>()&gt;&amp;&amp;<sp/>f);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a63001e27552e159e32b2ed48fc39bb1f" kindref="member">report</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix<sp/>=<sp/>std::string());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a68cb3cd35ae7cc4bc40b4f9cfd44d016" kindref="member">Finalize</ref><sp/>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" kindref="member">MemProfiler</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a54c7c8dd45cada5e8bfd707f5df76349" kindref="member">operator= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" kindref="member">MemProfiler</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="42" refid="classamrex_1_1MemProfiler_1a2b1473094731fadfe3fb624993cf2b65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1a2b1473094731fadfe3fb624993cf2b65" kindref="member">~MemProfiler</ref><sp/>()<sp/>{}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler_1a25fa7aefe3796c3c7be599eb19ab8228" kindref="member">report_</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>prefix,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>memory_log_name)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structamrex_1_1MemProfiler_1_1Bytes" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1Bytes" kindref="compound">Bytes</ref><sp/>{</highlight></codeline>
+<codeline lineno="49" refid="structamrex_1_1MemProfiler_1_1Bytes_1af005129839d5b950c0e09b1e38a6a751" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1Bytes_1af005129839d5b950c0e09b1e38a6a751" kindref="member">mn</ref>;</highlight></codeline>
+<codeline lineno="50" refid="structamrex_1_1MemProfiler_1_1Bytes_1ae97a8af2e85ff53fc98d90d294693657" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1MemProfiler_1_1Bytes_1ae97a8af2e85ff53fc98d90d294693657" kindref="member">mx</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a812ec562125b5510af6c9546a8fca3e2" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Bytes" kindref="compound">MemProfiler::Bytes</ref>&amp;<sp/>bytes);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="structamrex_1_1MemProfiler_1_1Builds" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1MemProfiler_1_1Builds" kindref="compound">Builds</ref><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="structamrex_1_1MemProfiler_1_1Builds_1a2756a5fbf45d016bd03416184543526b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Builds_1a2756a5fbf45d016bd03416184543526b" kindref="member">mn</ref>;</highlight></codeline>
+<codeline lineno="57" refid="structamrex_1_1MemProfiler_1_1Builds_1a2c94315722d15392846ab3b77a58c3d0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Builds_1a2c94315722d15392846ab3b77a58c3d0" kindref="member">mx</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a812ec562125b5510af6c9546a8fca3e2" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1MemProfiler_1_1Builds" kindref="compound">MemProfiler::Builds</ref>&amp;<sp/>builds);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref>&amp;<sp/><ref refid="classamrex_1_1MemProfiler_1a4de3370fe39ada9432b7c7736f00fd90" kindref="member">getInstance</ref><sp/>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::unique_ptr&lt;MemProfiler&gt;<sp/><ref refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" kindref="member">the_instance</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classamrex_1_1MemProfiler_1ab272efb42368045a4256dfcb96957910" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1ab272efb42368045a4256dfcb96957910" kindref="member">the_names</ref>;</highlight></codeline>
+<codeline lineno="67" refid="classamrex_1_1MemProfiler_1a6dd906af9d999ab3e04b156b38605bbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::function&lt;MemInfo()&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1MemProfiler_1a6dd906af9d999ab3e04b156b38605bbf" kindref="member">the_funcs</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classamrex_1_1MemProfiler_1a30a2f79d4632035a2ad21fc81e47071a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1a30a2f79d4632035a2ad21fc81e47071a" kindref="member">the_names_builds</ref>;</highlight></codeline>
+<codeline lineno="70" refid="classamrex_1_1MemProfiler_1a1e3b2c95bff96ca4c2f14152e7ad179e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::function&lt;NBuildsInfo()&gt;<sp/>&gt;<sp/><ref refid="classamrex_1_1MemProfiler_1a1e3b2c95bff96ca4c2f14152e7ad179e" kindref="member">the_funcs_builds</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/AMReX-Codes/amrex/Src/Base/AMReX_MemProfiler.H"/>
   </compounddef>
