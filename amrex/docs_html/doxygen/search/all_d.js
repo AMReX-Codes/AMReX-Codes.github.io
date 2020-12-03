@@ -667,7 +667,7 @@ var searchData=
   ['mem_5fadvise_5fset_5fpreferred',['mem_advise_set_preferred',['../classamrex_1_1Gpu_1_1Device.html#ae88f180144c332b3c64ce46584484b10',1,'amrex::Gpu::Device']]],
   ['mem_5fadvise_5fset_5freadonly',['mem_advise_set_readonly',['../classamrex_1_1Gpu_1_1Device.html#aa2984b48d13a570d6987968741a04741',1,'amrex::Gpu::Device']]],
   ['memcopyimpl',['memCopyImpl',['../namespaceamrex_1_1detail.html#aa59349c2dc230fb4a0c79fd80154b201',1,'amrex::detail::memCopyImpl(void *dst, const void *src, std::size_t count)'],['../namespaceamrex_1_1detail.html#a5eae9e79bcaf47cc572db8a613117788',1,'amrex::detail::memCopyImpl(void *dst, const void *src, std::size_t count)']]],
-  ['memcpy',['memcpy',['../namespaceamrex.html#a4aaf44f52d75f00ed1fd680f1ee6b392',1,'amrex']]],
+  ['memcpy',['memcpy',['../namespaceamrex_1_1Gpu.html#a90ff215e828e9192dbd196a78cacf083',1,'amrex::Gpu']]],
   ['meminfo',['meminfo',['../structamrex_1_1FabArrayBase_1_1meminfo.html',1,'amrex::FabArrayBase']]],
   ['meminfo',['MemInfo',['../structamrex_1_1MemProfiler_1_1MemInfo.html',1,'amrex::MemProfiler']]],
   ['memmoveimpl',['memMoveImpl',['../namespaceamrex_1_1detail.html#a4ad48aa99f6648fea787451a974dda26',1,'amrex::detail::memMoveImpl(void *dst, const void *src, std::size_t count, T &amp;allocator)'],['../namespaceamrex_1_1detail.html#a1470b94793e6b77a8735c66329069612',1,'amrex::detail::memMoveImpl(void *dst, const void *src, std::size_t count, T &amp;)']]],
