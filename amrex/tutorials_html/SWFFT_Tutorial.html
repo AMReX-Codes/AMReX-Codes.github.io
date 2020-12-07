@@ -1,0 +1,274 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials/SWFFT &mdash; amrex 20.01-dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Tutorials/SDC" href="SDC_Tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                20.01-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVODE_Tutorial.html">Tutorials/CVODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Tutorial.html">Tutorials/GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/SWFFT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#swfft-poisson">SWFFT_poisson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#swfft-simple">SWFFT_simple</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tutorials/SWFFT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/SWFFT_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorials-swfft">
+<h1>Tutorials/SWFFT<a class="headerlink" href="#tutorials-swfft" title="Permalink to this headline">¶</a></h1>
+<p>This Tutorial demonstrates how to call the SWFFT wrapper to the FFTW3 solver.</p>
+<p>Note that the SWFFT source code was developed by Adrian Pope and colleagues and
+is available at:</p>
+<p><a class="reference external" href="https://xgitlab.cels.anl.gov/hacc/SWFFT">https://xgitlab.cels.anl.gov/hacc/SWFFT</a></p>
+<p>Please refer to the AMReX documentation at <span class="xref std std-ref">amrex_docs:swfftdoc</span> for a brief explanation of how the SWFFT redistributes data into pencil grids.</p>
+<p>AMReX contains two SWFFT tutorials, <code class="docutils literal notranslate"><span class="pre">SWFFT_poisson</span></code> and <code class="docutils literal notranslate"><span class="pre">SWFFT_simple</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SWFFT_poisson</span></code> tutorial: The tutorial found in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/SWFFT/SWFFT_poisson</span></code> solves a Poisson equation with periodic boundary conditions.  In it, both a forward FFT and reverse FFT are called to solve the equation, however, no reordering of the DFT data in k-space is performed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SWFFT_simple</span></code> tutorial: This tutorial: <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/SWFFT/SWFFT_simple</span></code>, is useful if the objective is to simply take a forward FFT of data, and the DFT’s ordering in k-space matters to the user.  This tutorial initializes a 3D or 2D <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>, takes a forward FFT, and then redistributes the data in k-space back to the “correct,” 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>, ordering.  The results are written to a plot file.</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="swfft-poisson">
+<span id="section-swfft-tutorial-swfft-pois"></span><h2>SWFFT_poisson<a class="headerlink" href="#swfft-poisson" title="Permalink to this headline">¶</a></h2>
+<p>In this test case we set up a right hand side (rhs), call the forward transform,
+modify the coefficients, then call the backward solver and output the solution
+to the discrete Poisson equation.</p>
+<p>To build the code, type ‘make’ in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/SWFFT/SWFFT_poisson</span></code>.  This
+will include code from <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/SWFFT</span></code> and you will need to
+link to the FFT solvers themselves (on NERSC’s Cori machine, for example,
+you would need to “module load fft”)</p>
+<p>To run the code, type ‘main3d.gnu.MPI.ex inputs’ in this directory</p>
+<p>To visualize the output, set the bool write_data to true, then
+use amrvis3d (source available at <a class="reference external" href="https://github.com/AMReX-Codes/Amrvis">https://github.com/AMReX-Codes/Amrvis</a>):</p>
+<p>amrvis3d -mf RHS SOL_EXACT SOL_COMP</p>
+<p>to visualize the rhs, the exact solution and the computed solution.</p>
+<p>The max norm of the difference between the exact and computed solution is also printed.</p>
+<p>For instructions on how to take a forward FFT only using SWFFT, please refer to <a class="reference internal" href="#section-swfft-tutorial-swfft-simple"><span class="std std-ref">SWFFT_simple</span></a>.</p>
+</div>
+<div class="section" id="swfft-simple">
+<span id="section-swfft-tutorial-swfft-simple"></span><h2>SWFFT_simple<a class="headerlink" href="#swfft-simple" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial initializes a 3D or 2D <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code>, takes a forward FFT, and then redistributes the data in k-space back to the “correct,” 0 to <span class="math notranslate nohighlight">\(2\pi\)</span>, ordering.  The results are written to a plot file.</p>
+<p>In a similar fashion to the <code class="docutils literal notranslate"><span class="pre">SWFFT_poisson</span></code> tutorial:</p>
+<p>To build the code, type ‘make’ in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/SWFFT/SWFFT_simple</span></code>.  This
+will include code from <code class="docutils literal notranslate"><span class="pre">amrex/Src/Extern/SWFFT</span></code> and you will need to
+link to the FFT solvers themselves (on NERSC’s Cori machine, for example,
+you would need to “module load fft”)</p>
+<p>To run the code, type ‘main*.ex inputs.oneGrid’ in this directory to run the code in serial. To run the code in parallel, type ‘mpiexec -n $N main*.ex inputs.multipleGrids’ instead, where <code class="docutils literal notranslate"><span class="pre">N</span></code> holds the number of MPI processes (equal to the number of grids). <code class="docutils literal notranslate"><span class="pre">run_me_2d</span></code> and <code class="docutils literal notranslate"><span class="pre">run_me_3d</span></code> also provide examples of how to run the code.</p>
+<p>Use amrvis2d or amrvis3d to visualize the output (source available at <a class="reference external" href="https://github.com/AMReX-Codes/Amrvis">https://github.com/AMReX-Codes/Amrvis</a>):</p>
+<p>amrvis${dims}d plt_fft*</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">dims</span></code> specifies <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code>. The DFT of the data and the original data are labeled as <code class="docutils literal notranslate"><span class="pre">FFT_of_phi</span></code> and <code class="docutils literal notranslate"><span class="pre">phi</span></code> within the plot file.</p>
+<p>The <a class="reference internal" href="#section-swfft-tutorial-swfft-pois"><span class="std std-ref">SWFFT_poisson</span></a> tutorial provides an example of solving a Poisson equation using a discrete spectral method, in which a forward and reverse FFT of a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> are computed.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="SDC_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/SDC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

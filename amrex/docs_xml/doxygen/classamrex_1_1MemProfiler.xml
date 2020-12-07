@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classamrex_1_1MemProfiler" kind="class" language="C++" prot="public">
+    <compoundname>amrex::MemProfiler</compoundname>
+    <includes refid="AMReX__MemProfiler_8H" local="no">AMReX_MemProfiler.H</includes>
+    <innerclass refid="structamrex_1_1MemProfiler_1_1Builds" prot="private">amrex::MemProfiler::Builds</innerclass>
+    <innerclass refid="structamrex_1_1MemProfiler_1_1Bytes" prot="private">amrex::MemProfiler::Bytes</innerclass>
+    <innerclass refid="structamrex_1_1MemProfiler_1_1MemInfo" prot="public">amrex::MemProfiler::MemInfo</innerclass>
+    <innerclass refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" prot="public">amrex::MemProfiler::NBuildsInfo</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" prot="private" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; MemProfiler &gt; amrex::MemProfiler::the_instance</definition>
+        <argsstring></argsstring>
+        <name>the_instance</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="64" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1MemProfiler_1ab272efb42368045a4256dfcb96957910" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; amrex::MemProfiler::the_names</definition>
+        <argsstring></argsstring>
+        <name>the_names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="66" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MemProfiler_1a6dd906af9d999ab3e04b156b38605bbf" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::function&lt; <ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemInfo</ref>()&gt; &gt;</type>
+        <definition>std::vector&lt;std::function&lt;MemInfo()&gt; &gt; amrex::MemProfiler::the_funcs</definition>
+        <argsstring></argsstring>
+        <name>the_funcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="67" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MemProfiler_1a30a2f79d4632035a2ad21fc81e47071a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; amrex::MemProfiler::the_names_builds</definition>
+        <argsstring></argsstring>
+        <name>the_names_builds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="69" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1MemProfiler_1a1e3b2c95bff96ca4c2f14152e7ad179e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::function&lt; <ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" kindref="compound">NBuildsInfo</ref>()&gt; &gt;</type>
+        <definition>std::vector&lt;std::function&lt;NBuildsInfo()&gt; &gt; amrex::MemProfiler::the_funcs_builds</definition>
+        <argsstring></argsstring>
+        <name>the_funcs_builds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="70" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MemProfiler::add</definition>
+        <argsstring>(const std::string &amp;name, std::function&lt; MemInfo()&gt; &amp;&amp;f)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemInfo</ref>()&gt; &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="24" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1af8db003fd05c10da821f6af831421b54" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MemProfiler::add</definition>
+        <argsstring>(const std::string &amp;name, std::function&lt; NBuildsInfo()&gt; &amp;&amp;f)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>std::function&lt; <ref refid="structamrex_1_1MemProfiler_1_1NBuildsInfo" kindref="compound">NBuildsInfo</ref>()&gt; &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="37" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a63001e27552e159e32b2ed48fc39bb1f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MemProfiler::report</definition>
+        <argsstring>(const std::string &amp;prefix=std::string())</argsstring>
+        <name>report</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+          <defval>std::string()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="65" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a68cb3cd35ae7cc4bc40b4f9cfd44d016" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MemProfiler::Finalize</definition>
+        <argsstring>()</argsstring>
+        <name>Finalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="36" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a7f665368612f734b0bd1f15aa71e517a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MemProfiler::MemProfiler</definition>
+        <argsstring>(const MemProfiler &amp;)=delete</argsstring>
+        <name>MemProfiler</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a54c7c8dd45cada5e8bfd707f5df76349" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref> &amp;</type>
+        <definition>MemProfiler&amp; amrex::MemProfiler::operator=</definition>
+        <argsstring>(const MemProfiler &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MemProfiler::MemProfiler</definition>
+        <argsstring>()</argsstring>
+        <name>MemProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="41" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a2b1473094731fadfe3fb624993cf2b65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>amrex::MemProfiler::~MemProfiler</definition>
+        <argsstring>()</argsstring>
+        <name>~MemProfiler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="42" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a156e0f871fceba9344ac559da58771de" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::MemProfiler::report_</definition>
+        <argsstring>(const std::string &amp;prefix, const std::string &amp;memory_log_name) const</argsstring>
+        <name>report_</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>memory_log_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="46" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="79" bodyend="328"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1MemProfiler_1a812ec562125b5510af6c9546a8fca3e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const MemProfiler::Bytes &amp;bytes)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1MemProfiler_1_1Bytes" kindref="compound">MemProfiler::Bytes</ref> &amp;</type>
+          <declname>bytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="52" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="331" bodyend="358"/>
+      </memberdef>
+      <memberdef kind="friend" id="classamrex_1_1MemProfiler_1a1c6655dee766a41eac839110be203d58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const MemProfiler::Builds &amp;builds)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1MemProfiler_1_1Builds" kindref="compound">MemProfiler::Builds</ref> &amp;</type>
+          <declname>builds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="59" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="361" bodyend="367"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classamrex_1_1MemProfiler_1a4de3370fe39ada9432b7c7736f00fd90" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MemProfiler" kindref="compound">MemProfiler</ref> &amp;</type>
+        <definition>MemProfiler &amp; amrex::MemProfiler::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="62" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.cpp" bodystart="50" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemProfiler.H" bodystart="17" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>add</name></member>
+      <member refid="classamrex_1_1MemProfiler_1af8db003fd05c10da821f6af831421b54" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>add</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a68cb3cd35ae7cc4bc40b4f9cfd44d016" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a4de3370fe39ada9432b7c7736f00fd90" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>getInstance</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a7f665368612f734b0bd1f15aa71e517a" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>MemProfiler</name></member>
+      <member refid="classamrex_1_1MemProfiler_1aa94fbdffa3b9649047f9e0d3c74221a4" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>MemProfiler</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a812ec562125b5510af6c9546a8fca3e2" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a1c6655dee766a41eac839110be203d58" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a54c7c8dd45cada5e8bfd707f5df76349" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a63001e27552e159e32b2ed48fc39bb1f" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>report</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a156e0f871fceba9344ac559da58771de" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>report_</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a6dd906af9d999ab3e04b156b38605bbf" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>the_funcs</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a1e3b2c95bff96ca4c2f14152e7ad179e" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>the_funcs_builds</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a40ba66fec50cd477016a8ce11568f4ac" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>the_instance</name></member>
+      <member refid="classamrex_1_1MemProfiler_1ab272efb42368045a4256dfcb96957910" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>the_names</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a30a2f79d4632035a2ad21fc81e47071a" prot="private" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>the_names_builds</name></member>
+      <member refid="classamrex_1_1MemProfiler_1a2b1473094731fadfe3fb624993cf2b65" prot="public" virt="non-virtual"><scope>amrex::MemProfiler</scope><name>~MemProfiler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

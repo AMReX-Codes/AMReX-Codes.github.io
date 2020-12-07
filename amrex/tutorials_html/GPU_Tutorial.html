@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorials/GPU &mdash; amrex 20.01-dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorials/LinearSolvers" href="LinearSolvers_Tutorial.html" />
+    <link rel="prev" title="Tutorials/Forkjoin" href="ForkJoin_Tutorial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                20.01-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Blueprint_Tutorial.html">Tutorials/Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CVODE_Tutorial.html">Tutorials/CVODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Tutorial.html">Tutorials/EB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin_Tutorial.html">Tutorials/Forkjoin</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials/GPU</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#your-first-amrex-gpu-application"><strong>Your first AMReX GPU application</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch"><strong>Launch</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cns"><strong>CNS</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#amrcore"><strong>AmrCore</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Tutorial.html">Tutorials/LinearSolvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MUI_Tutorial.html">Tutorials/MUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particles_Tutorial.html">Tutorials/Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SDC_Tutorial.html">Tutorials/SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SWFFT_Tutorial.html">Tutorials/SWFFT</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Tutorials/GPU</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/GPU_Tutorial.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tutorials-gpu">
+<h1>Tutorials/GPU<a class="headerlink" href="#tutorials-gpu" title="Permalink to this headline">¶</a></h1>
+<p>The tutorials in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/GPU</span></code> demonstrate the implementation
+of AMReX’s GPU toolkit as well as provide GPU ported versions of CPU
+tutorials to help applications convert to GPUs.</p>
+<div class="section" id="your-first-amrex-gpu-application">
+<h2><strong>Your first AMReX GPU application</strong><a class="headerlink" href="#your-first-amrex-gpu-application" title="Permalink to this headline">¶</a></h2>
+<p>This is a step-by-step guide to preparing, compiling and running your first
+AMReX GPU program.  This guide will use <code class="docutils literal notranslate"><span class="pre">Tutorials/GPU/Launch</span></code>,
+and instructions will focus on ORNL’s systems:</p>
+<ol class="arabic simple">
+<li><p>Before compiling, the <code class="docutils literal notranslate"><span class="pre">pgi</span></code> and <code class="docutils literal notranslate"><span class="pre">cuda</span></code> software must be available.
+On ORNL systems, the modules can be loaded directly by typing:</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">module load pgi cuda</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Tutorials/GPU/Launch</span></code> to compile the executable.  Compile with
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">USE_CUDA=TRUE</span> <span class="pre">COMP=pgi</span> <span class="pre">USE_MPI=TRUE</span> <span class="pre">USE_OMP=FALSE</span></code>, or edit the
+<code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> to match this configuration and run <code class="docutils literal notranslate"><span class="pre">make</span></code>. This
+should result in an executable: <code class="docutils literal notranslate"><span class="pre">main3d.pgi.MPI.CUDA.ex</span></code>.</p></li>
+<li><p>On Summit systems, this executable can be submitted by using one of the run
+scripts found in <code class="docutils literal notranslate"><span class="pre">Tutorials/GPU</span></code>.  <code class="docutils literal notranslate"><span class="pre">run.script</span></code> can be used to run on
+Summitdev, and <code class="docutils literal notranslate"><span class="pre">run.summit</span></code> can be used for Summit.  To change the number
+of ranks and GPUs used in the simulation, change the number of resource sets,
+<code class="docutils literal notranslate"><span class="pre">n</span></code> in the <code class="docutils literal notranslate"><span class="pre">jsrun</span></code> line.  For the first <code class="docutils literal notranslate"><span class="pre">Launch</span></code> tutorial, use <code class="docutils literal notranslate"><span class="pre">n=1</span></code>
+and set <code class="docutils literal notranslate"><span class="pre">INPUTS=&quot;&quot;</span></code> because no input file is used in this example.</p></li>
+</ol>
+<p>When ready, submit the job script (on Summit: <code class="docutils literal notranslate"><span class="pre">bsub</span> <span class="pre">run.script</span></code>).
+Congratulations! You’ve accelerated AMReX using GPUs!</p>
+</div>
+<div class="section" id="launch">
+<h2><strong>Launch</strong><a class="headerlink" href="#launch" title="Permalink to this headline">¶</a></h2>
+<p>Launch shows multiple examples of how GPU work can be offloaded using the tools
+available in AMReX. It includes examples of multiple AMReX macro launch methods,
+launching a Fortran function using CUDA and launching work using OpenACC and
+OpenMP offloading. This tutorial will be regularly updated with AMReX’s
+preferred GPU launch methodologies.</p>
+</div>
+<div class="section" id="cns">
+<h2><strong>CNS</strong><a class="headerlink" href="#cns" title="Permalink to this headline">¶</a></h2>
+<p>CNS is a direct GPU port of the <code class="docutils literal notranslate"><span class="pre">Tutorials/EB/CNS</span></code> tutorial.</p>
+</div>
+<div class="section" id="amrcore">
+<h2><strong>AmrCore</strong><a class="headerlink" href="#amrcore" title="Permalink to this headline">¶</a></h2>
+<p>AmrCore is a direct GPU port of the <code class="docutils literal notranslate"><span class="pre">Tutorials/Amr/Advection_AmrCore</span></code> tutorial
+that advects a single scalar field with a velocity field specified on faces, using
+strategies similar to HeatEquation and CNS.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LinearSolvers_Tutorial.html" class="btn btn-neutral float-right" title="Tutorials/LinearSolvers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ForkJoin_Tutorial.html" class="btn btn-neutral float-left" title="Tutorials/Forkjoin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

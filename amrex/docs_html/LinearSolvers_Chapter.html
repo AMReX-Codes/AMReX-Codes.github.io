@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linear Solvers &mdash; amrex 20.01-dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MLMG and Linear Operator Classes" href="LinearSolvers.html" />
+    <link rel="prev" title="Plotfile" href="IO.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                20.01-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linear Solvers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html">MLMG and Linear Operator Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#curvilinear-coordinates">Curvilinear Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#embedded-boundaries">Embedded Boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#external-solvers">External Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#mac-projection">MAC Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#nodal-projection">Nodal Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#tensor-solve">Tensor Solve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LinearSolvers.html#multi-component-operators">Multi-Component Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Linear Solvers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/LinearSolvers_Chapter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linear-solvers">
+<span id="chap-linearsolvers"></span><h1>Linear Solvers<a class="headerlink" href="#linear-solvers" title="Permalink to this headline">¶</a></h1>
+<p>AMReX supports both single-level solves and composite solves on multiple AMR levels,
+with the scalar solution to the linear system defined on either cell centers or nodes.
+AMReX also supports solution of linear systems with embedded boundaries.
+(See chapter <a class="reference internal" href="EB_Chapter.html#chap-eb"><span class="std std-ref">Embedded Boundaries</span></a> for more details on the embedded boundary representation of
+complex geometry.)</p>
+<p>The default solution technique is geometric multigrid, but AMReX includes native
+BiCGStab solvers for a single level as well as interfaces to the hypre library.</p>
+<p>In this Chapter we give an overview of the linear solvers in AMReX
+that solve linear systems in the canonical form</p>
+<div class="math notranslate nohighlight" id="equation-eqn-abeclap">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-abeclap" title="Permalink to this equation">¶</a></span>\[(A \alpha - B \nabla \cdot \beta \nabla ) \phi = f,\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are scalar constants,
+<span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are scalar fields,
+<span class="math notranslate nohighlight">\(\phi\)</span> is the unknown,
+and <span class="math notranslate nohighlight">\(f\)</span> is the right-hand side of the equation.  Note
+that Poisson’s equation <span class="math notranslate nohighlight">\(\nabla^2 \phi = f\)</span> is a special case
+of the canonical form.  The solution <span class="math notranslate nohighlight">\(\phi\)</span> is at either
+cell centers or nodes.</p>
+<p>For the cell-centered solver, <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span>
+are represented by cell-centered MultiFabs,
+and <span class="math notranslate nohighlight">\(\beta\)</span> is represented by <code class="docutils literal notranslate"><span class="pre">AMREX_SPACEDIM</span></code> face type
+MultiFabs, i.e.  there are separate MultiFabs for the <span class="math notranslate nohighlight">\(\beta\)</span>
+coefficient in each coordinate direction.</p>
+<p>For the nodal solver, <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\alpha\)</span> are assumed to be zero,
+<span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(f\)</span> are nodal,
+and <span class="math notranslate nohighlight">\(\beta\)</span> (whcih we later refer to as <span class="math notranslate nohighlight">\(\sigma\)</span>) is cell-centered.</p>
+<p>In addition to these solvers, AMReX has support for tensor solves used
+to calculate the viscous terms that appear in the compressible Navier-Stokes
+equations.  In these solves, all components of the velocity field are solved
+for simultaneously.  The tensor solve functionality is only available for
+cell-centered velocity.</p>
+<p>The tutorials in <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/LinearSolvers/</span></code> show examples of
+using the solvers.  The tutorial
+<code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX3_C</span></code> shows how to solve the
+heat equation implicitly using the solver.  The tutorials also show
+how to add linear solvers into the build system.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html">MLMG and Linear Operator Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#boundary-conditions">Boundary Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#parameters">Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#boundary-stencils-for-cell-centered-solvers">Boundary Stencils for Cell-Centered Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#curvilinear-coordinates">Curvilinear Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#embedded-boundaries">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#external-solvers">External Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#mac-projection">MAC Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#nodal-projection">Nodal Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#tensor-solve">Tensor Solve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers.html#multi-component-operators">Multi-Component Operators</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="LinearSolvers.html" class="btn btn-neutral float-right" title="MLMG and Linear Operator Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="IO.html" class="btn btn-neutral float-left" title="Plotfile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
