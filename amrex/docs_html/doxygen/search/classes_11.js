@@ -19,7 +19,6 @@ var searchData=
   ['statemap',['StateMap',['../classamrex_1_1InSituUtils_1_1StateMap.html',1,'amrex::InSituUtils']]],
   ['staterange',['StateRange',['../structamrex_1_1DeriveRec_1_1StateRange.html',1,'amrex::DeriveRec']]],
   ['stats',['Stats',['../structamrex_1_1TinyProfiler_1_1Stats.html',1,'amrex::TinyProfiler']]],
-  ['stltools',['STLtools',['../classamrex_1_1STLtools.html',1,'amrex']]],
   ['streamiter',['StreamIter',['../classamrex_1_1Gpu_1_1StreamIter.html',1,'amrex::Gpu']]],
   ['streamitinfo',['StreamItInfo',['../structamrex_1_1Gpu_1_1StreamItInfo.html',1,'amrex::Gpu']]],
   ['streamretry',['StreamRetry',['../classamrex_1_1StreamRetry.html',1,'amrex']]],

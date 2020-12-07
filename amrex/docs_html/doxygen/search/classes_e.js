@@ -45,13 +45,12 @@ var searchData=
   ['podvector',['PODVector',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3aassigngrid_3c_20biniteratorfactory_20_3e_20_3e',['PODVector&lt; amrex::AssignGrid&lt; BinIteratorFactory &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3abox_20_3e',['PODVector&lt; amrex::Box &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
-  ['podvector_3c_20amrex_3a_3areal_20_3e',['PODVector&lt; amrex::Real &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
-  ['podvector_3c_20const_20int_20_2a_2c_20allocator_3c_20const_20int_20_2a_3e_20_3e',['PODVector&lt; const int *, Allocator&lt; const int *&gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
-  ['podvector_3c_20const_20particlereal_20_2a_2c_20allocator_3c_20const_20particlereal_20_2a_3e_20_3e',['PODVector&lt; const ParticleReal *, Allocator&lt; const ParticleReal *&gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20const_20int_20_2a_2c_20allocator_3c_20const_20int_20_2a_20_3e_20_3e',['PODVector&lt; const int *, Allocator&lt; const int * &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20const_20particlereal_20_2a_2c_20allocator_3c_20const_20particlereal_20_2a_20_3e_20_3e',['PODVector&lt; const ParticleReal *, Allocator&lt; const ParticleReal * &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20index_5ftype_20_3e',['PODVector&lt; index_type &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
-  ['podvector_3c_20int_20_2a_2c_20allocator_3c_20int_20_2a_3e_20_3e',['PODVector&lt; int *, Allocator&lt; int *&gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20int_20_2a_2c_20allocator_3c_20int_20_2a_20_3e_20_3e',['PODVector&lt; int *, Allocator&lt; int * &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20int_20_3e',['PODVector&lt; int &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
-  ['podvector_3c_20particlereal_20_2a_2c_20allocator_3c_20particlereal_20_2a_3e_20_3e',['PODVector&lt; ParticleReal *, Allocator&lt; ParticleReal *&gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20particlereal_20_2a_2c_20allocator_3c_20particlereal_20_2a_20_3e_20_3e',['PODVector&lt; ParticleReal *, Allocator&lt; ParticleReal * &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20particletype_2c_20allocator_3c_20particletype_20_3e_20_3e',['PODVector&lt; ParticleType, Allocator&lt; ParticleType &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20std_3a_3asize_5ft_20_3e',['PODVector&lt; std::size_t &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20unsigned_20int_20_3e',['PODVector&lt; unsigned int &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
@@ -70,5 +69,5 @@ var searchData=
   ['processteam',['ProcessTeam',['../structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html',1,'amrex::ParallelDescriptor']]],
   ['procstats',['ProcStats',['../structamrex_1_1TinyProfiler_1_1ProcStats.html',1,'amrex::TinyProfiler']]],
   ['psicode',['PsiCode',['../structamrex_1_1algoim_1_1PsiCode.html',1,'amrex::algoim']]],
-  ['psicode_3c_20n_20_3e_2c_201_3c_3c_28n_20_2d_201_29_3e',['PsiCode&lt; N &gt;, 1&lt;&lt;(N - 1)&gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]]
+  ['psicode_3c_20n_20_3e_2c_201_3c_3c_20_28n_2d1_29_3e',['PsiCode&lt; N &gt;, 1&lt;&lt; (N-1)&gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]]
 ];

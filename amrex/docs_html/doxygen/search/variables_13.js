@@ -48,5 +48,5 @@ var searchData=
   ['two',['two',['../namespaceamrex__constants__module.html#a3b52f9631247ee9d89ef856418d73e7e',1,'amrex_constants_module']]],
   ['two3rd',['two3rd',['../namespaceamrex__constants__module.html#ae2f6d8cbb02d2ebbdda8d6f26aea04df',1,'amrex_constants_module']]],
   ['typ',['typ',['../structamrex_1_1DeriveRec_1_1StateRange.html#a7df7b9fdc8a7fdba375183541593b26b',1,'amrex::DeriveRec::StateRange::typ()'],['../classamrex_1_1MFIter.html#a1406cbb9152b357a39e877b78eb8ff0d',1,'amrex::MFIter::typ()']]],
-  ['type',['type',['../classamrex_1_1StateDescriptor.html#acb33de9ee20312affa72aa7cc80b8bdd',1,'amrex::StateDescriptor::type()'],['../structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html#a474c374c08deeca905c2167f997f8b49',1,'amrex::detail::invoke_result&lt; decltype(void(INVOKE(std::declval&lt; F &gt;(), std::declval&lt; Args &gt;()...))), F, Args... &gt;::type()']]]
+  ['type',['type',['../classamrex_1_1StateDescriptor.html#acb33de9ee20312affa72aa7cc80b8bdd',1,'amrex::StateDescriptor']]]
 ];
