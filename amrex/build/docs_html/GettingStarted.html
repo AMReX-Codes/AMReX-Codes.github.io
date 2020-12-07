@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Downloading the Code &mdash; amrex 20.01-dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Building AMReX" href="BuildingAMReX_Chapter.html" />
+    <link rel="prev" title="Getting Started" href="GettingStarted_Chapter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> amrex
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                20.01-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Downloading the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-hello-world">Example: Hello World</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-code">Building the Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-code">Running the Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallelization">Parallelization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#example-heat-equation-solver">Example: Heat Equation Solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#building-and-running-the-code">Building and Running the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization">Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BuildingAMReX_Chapter.html">Building AMReX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basics_Chapter.html">Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ManagingGridHierarchy_Chapter.html">Gridding and Load Balancing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrCore_Chapter.html">AmrCore Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AmrLevel_Chapter.html">Amr Source Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ForkJoin.html">Fork-Join</a></li>
+<li class="toctree-l1"><a class="reference internal" href="IO_Chapter.html">I/O (Plotfile, Checkpoint)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSolvers_Chapter.html">Linear Solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Particle_Chapter.html">Particles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Fortran_Chapter.html">Fortran Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EB_Chapter.html">Embedded Boundaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GPU_Chapter.html">GPU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inputs_Chapter.html">Run-time Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html">AMReX-based Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Profiling_Tools_Chapter.html">External Profiling Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="External_Frameworks_Chapter.html">External Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Regression_Testing_Chapter.html">Regression Testing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="GettingStarted_Chapter.html">Getting Started</a> &raquo;</li>
+        
+      <li>Downloading the Code</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/GettingStarted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="downloading-the-code">
+<h1>Downloading the Code<a class="headerlink" href="#downloading-the-code" title="Permalink to this headline">¶</a></h1>
+<p>The source code is available at <a class="reference external" href="https://github.com/AMReX-Codes/amrex">https://github.com/AMReX-Codes/amrex</a>. The
+GitHub repo is our central repo for development. The development branch
+includes the latest state of the code, and it is tagged as a release
+on a monthly basis with version number YY.MM (e.g., 17.04). The MM part of the
+version is incremented every month, and the YY part every year.  Bug fix
+releases are tagged with YY.MM.patch (e.g., 17.04.1).</p>
+<p>AMReX can also be obtained using spack (<a class="reference external" href="https://spack.io/">https://spack.io/</a>).  Assuming
+you have spack installed, simply type “spack install amrex”.</p>
+</div>
+<div class="section" id="example-hello-world">
+<h1>Example: Hello World<a class="headerlink" href="#example-hello-world" title="Permalink to this headline">¶</a></h1>
+<p>The source code of this example is at <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/</span></code>
+and is also shown below.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;AMReX.H&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;AMReX_Print.H&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+    <span class="n">amrex</span><span class="o">::</span><span class="n">Initialize</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="n">argv</span><span class="p">);</span>
+    <span class="n">amrex</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello world from AMReX version &quot;</span>
+                   <span class="o">&lt;&lt;</span> <span class="n">amrex</span><span class="o">::</span><span class="n">Version</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+    <span class="n">amrex</span><span class="o">::</span><span class="n">Finalize</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The main body of this short example contains three statements.  Usually the
+first and last statements for the <code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">int</span></span> <span class="name"><span class="pre">main</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> function of every
+program should be calling <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Initialize</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Finalize</span></span></code>,
+respectively. The second statement calls <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Print</span></span></code> to print out a
+string that includes the AMReX version returned by the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Version</span></span></code>
+function. The example code includes two AMReX header files. Note that the name
+of all AMReX header files starts with <code class="docutils literal notranslate"><span class="pre">AMReX_</span></code> (or just AMReX in the case of
+AMReX.H). All AMReX C++ functions are in the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span></code> namespace.</p>
+<div class="section" id="building-the-code">
+<h2>Building the Code<a class="headerlink" href="#building-the-code" title="Permalink to this headline">¶</a></h2>
+<p>You build the code in the <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/</span></code> directory.
+Typing <code class="docutils literal notranslate"><span class="pre">make</span></code> will start the compilation process and result in an executable
+named <code class="docutils literal notranslate"><span class="pre">main3d.gnu.DEBUG.ex</span></code>. The name shows that the GNU compiler with debug
+options set by AMReX is used.  It also shows that the executable is built for
+3D. Although this simple example code is dimension independent, dimensionality
+does matter for all non-trivial examples. The build process can be adjusted by
+modifying the <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/GNUmakefile</span></code> file.  More
+details on how to build AMReX can be found in <a class="reference internal" href="BuildingAMReX_Chapter.html#chap-buildingamrex"><span class="std std-ref">Building AMReX</span></a>.</p>
+</div>
+<div class="section" id="running-the-code">
+<h2>Running the Code<a class="headerlink" href="#running-the-code" title="Permalink to this headline">¶</a></h2>
+<p>The example code can be run as follows,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./main3d.gnu.DEBUG.ex</span>
+</pre></div>
+</div>
+<p>The result may look like,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
+<span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) finalized</span>
+</pre></div>
+</div>
+<p>The version string means the current commit 5775aed933c4 (note that the first
+letter g in g577.. is not part of the hash) is based on 17.05 with 30
+additional commits and the AMReX work tree is dirty (i.e. there are uncommitted
+changes).</p>
+<p>In the GNUmakefile there are compilation options for DEBUG mode (less optimized
+code with more error checking), dimensionality, compiler type, and flags to
+enable MPI and/or OpenMP parallelism.  If there are multiple instances of a
+parameter, the last instance takes precedence.</p>
+</div>
+<div class="section" id="parallelization">
+<h2>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s build with MPI by typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">USE_MPI=TRUE</span></code> (alternatively you can
+set <code class="docutils literal notranslate"><span class="pre">USE_MPI=TRUE</span></code> in the GNUmakefile). This should make an executable named
+<code class="docutils literal notranslate"><span class="pre">main3d.gnu.DEBUG.MPI.ex</span></code>. Note MPI in the file name. You can then run,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 ./main3d.gnu.DEBUG.MPI.ex amrex.v=1</span>
+</pre></div>
+</div>
+<p>The result may look like,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MPI initialized with 4 MPI processes</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
+<span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) finalized</span>
+</pre></div>
+</div>
+<p>If the compilation fails, you are referred to <a class="reference internal" href="BuildingAMReX_Chapter.html#chap-buildingamrex"><span class="std std-ref">Building AMReX</span></a> for
+more details on how to configure the build system.  The <em>optional</em> command line
+argument <code class="docutils literal notranslate"><span class="pre">amrex.v=1</span></code> sets the AMReX verbosity level
+to 1 to print the number of MPI processes used.  The default verbosity
+level is 1, and you can pass <code class="docutils literal notranslate"><span class="pre">amrex.v=0</span></code> to turn it off.
+More details on how runtime parameters are handled can be found in
+section <a class="reference internal" href="Basics.html#sec-basics-parmparse"><span class="std std-ref">ParmParse</span></a>.</p>
+<p>If you want to build with OpenMP, type make <code class="docutils literal notranslate"><span class="pre">USE_OMP=TRUE</span></code>.  This should make
+an executable named <code class="docutils literal notranslate"><span class="pre">main3d.gnu.DEBUG.OMP.ex</span></code>. Note OMP in the file name.
+Make sure the <code class="docutils literal notranslate"><span class="pre">OMP_NUM_THREADS</span></code> environment variable is set on your system.
+You can then run,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OMP_NUM_THREADS=4 ./main3d.gnu.DEBUG.OMP.ex</span>
+</pre></div>
+</div>
+<p>The result may look like,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OMP initialized with 4 OMP threads</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
+<span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) finalized</span>
+</pre></div>
+</div>
+<p>Note that you can build with both <code class="docutils literal notranslate"><span class="pre">USE_MPI=TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">USE_OMP=TRUE</span></code>.  You
+can then run,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">OMP_NUM_THREADS=4 mpiexec -n 2 ./main3d.gnu.DEBUG.MPI.OMP.ex</span>
+</pre></div>
+</div>
+<p>The result may look like,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">MPI initialized with 2 MPI processes</span>
+<span class="go">OMP initialized with 4 OMP threads</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) initialized</span>
+<span class="go">Hello world from AMReX version 17.05-30-g5775aed933c4-dirty</span>
+<span class="go">AMReX (17.05-30-g5775aed933c4-dirty) finalized</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-heat-equation-solver">
+<span id="sec-heat-equation"></span><h1>Example: Heat Equation Solver<a class="headerlink" href="#example-heat-equation-solver" title="Permalink to this headline">¶</a></h1>
+<p>We now look at a more complicated example at
+<code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX1_C</span></code> and show how simulation results
+can be visualized. This example solves the heat equation,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial\phi}{\partial t} = \nabla^2\phi\]</div>
+<p>using forward Euler temporal integration on a periodic domain.  We could use a
+5-point (in 2D) or 7-point (in 3D) stencil, but for demonstration purposes we
+spatially discretize the PDE by first constructing (negative) fluxes on cell faces, e.g.,</p>
+<div class="math notranslate nohighlight">
+\[F_{i+^1\!/_2,\,j} = \frac{\phi_{i+1,j}-\phi_{i,j}}{\Delta x},\]</div>
+<p>and then taking the divergence to update the cells,</p>
+<div class="math notranslate nohighlight">
+\[\phi_{i,\,j}^{n+1} = \phi_{i,\,j}^n
++ \frac{\Delta t}{\Delta x}\left(F_{i+^1\!/_2,\,j}-F_{i-^1\!/_2,\,j}\right)
++ \frac{\Delta t}{\Delta y}\left(F_{i,\,j+^1\!/_2}-F_{i,\,j-^1\!/_2}\right)\]</div>
+<p>The implementation details of the code are discussed in section
+<a class="reference internal" href="Basics.html#sec-basics-heat1"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a>.  For now let’s just build and run the code, and
+visualizae the results.</p>
+<div class="section" id="building-and-running-the-code">
+<h2>Building and Running the Code<a class="headerlink" href="#building-and-running-the-code" title="Permalink to this headline">¶</a></h2>
+<p>To build a 2D executable, go to
+<code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX1_C/Exec</span></code> and type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=2</span></code>. This
+will generate an executable named <code class="docutils literal notranslate"><span class="pre">main2d.gnu.ex</span></code>. To run it, type,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./main2d.gnu.ex inputs_2d</span>
+</pre></div>
+</div>
+<p>Note that the command takes a file <code class="docutils literal notranslate"><span class="pre">inputs_2d.</span></code> The calculation solves the
+heat equation in 2D on a domain with <span class="math notranslate nohighlight">\(256 \times 256\)</span> cells.  It runs
+<span class="math notranslate nohighlight">\(10,000\)</span> steps and makes a plotfile every <span class="math notranslate nohighlight">\(1,000\)</span> steps.  When the
+run finishes, you will have a number of plotfiles, <code class="docutils literal notranslate"><span class="pre">plt00000,</span> <span class="pre">plt01000,</span></code> etc,
+in the directory where you are running.  You can control runtime parameters
+such as how many time steps to run and how often to write plotfiles by setting
+them in <code class="docutils literal notranslate"><span class="pre">inputs_2d.</span></code></p>
+</div>
+</div>
+<div class="section" id="visualization">
+<h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
+<p>There are several visualization tools that can be used for AMReX plotfiles.
+One standard tool used within the AMReX-community is Amrvis, a package
+developed and supported by CCSE that is designed specifically for highly
+efficient visualization of block-structured hierarchical AMR data.  (Amrvis can
+also be used to visualize performance data; see the <a class="reference internal" href="AMReX_Profiling_Tools_Chapter.html#chap-amrex-based-profiling-tools"><span class="std std-ref">AMReX-based Profiling Tools</span></a> chapter for further details.) Plotfiles can also be viewed
+using the VisIt, ParaView, and yt packages.  Particle data can be viewed using
+ParaView.  Refer to Chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a> for how to use each of
+these tools.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BuildingAMReX_Chapter.html" class="btn btn-neutral float-right" title="Building AMReX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GettingStarted_Chapter.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2017-2018, AMReX Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

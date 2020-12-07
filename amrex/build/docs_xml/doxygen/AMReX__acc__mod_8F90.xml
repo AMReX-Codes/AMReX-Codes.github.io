@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="AMReX__acc__mod_8F90" kind="file" language="Fortran">
+    <compoundname>AMReX_acc_mod.F90</compoundname>
+    <innernamespace refid="namespaceamrex__acc__module">amrex_acc_module</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="namespaceamrex__acc__module" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__acc__module" kindref="compound">amrex_acc_module</ref></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>::<sp/><ref refid="namespaceamrex__acc__module_1aafbf079c34c708eb6c38b72a05c77249" kindref="member">acc_stream</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module_1a7eb8614e7eeb5eca0fea6ecaf6ad999a" kindref="member">amrex_initialize_acc</ref><sp/>(id)<sp/>bind(c,name=&apos;amrex_initialize_acc&apos;)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_ACC</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">openacc</highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal"><sp/>:<sp/>acc_init,<sp/>acc_set_device_num,<sp/>acc_device_nvidia,<sp/>acc_async_sync</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>id</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_ACC</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">acc_init(acc_device_nvidia)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">acc_set_device_num(id,<sp/>acc_device_nvidia)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex__acc__module_1aafbf079c34c708eb6c38b72a05c77249" kindref="member">acc_stream</ref><sp/>=<sp/>acc_async_sync</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module_1a7eb8614e7eeb5eca0fea6ecaf6ad999a" kindref="member">amrex_initialize_acc</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module_1a7537721c18f228fca42f0db3e75a4470" kindref="member">amrex_finalize_acc</ref><sp/>()<sp/>bind(c,name=&apos;amrex_finalize_acc&apos;)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_ACC</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">openacc</highlight><highlight class="keywordtype">,<sp/>only</highlight><highlight class="normal">:<sp/>acc_shutdown,<sp/>acc_device_nvidia</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal">acc_shutdown(acc_device_nvidia)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module_1a7537721c18f228fca42f0db3e75a4470" kindref="member">amrex_finalize_acc</ref></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module_1ae6e5f688f216b146a2cc609ec638a462" kindref="member">amrex_set_acc_stream</ref><sp/>(acc_stream_in)<sp/>bind(c,name=&apos;amrex_set_acc_stream&apos;)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">value</highlight><highlight class="normal"><sp/>::<sp/>acc_stream_in</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>Set<sp/>the<sp/>OpenACC<sp/>stream<sp/>(to<sp/>be<sp/>used<sp/>with<sp/>the<sp/>async<sp/>clause)<sp/>to<sp/>be<sp/>consistente</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>with<sp/>the<sp/>CUDA<sp/>stream<sp/>that<sp/>AMReX<sp/>is<sp/>using.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex__acc__module_1aafbf079c34c708eb6c38b72a05c77249" kindref="member">acc_stream</ref><sp/>=<sp/>acc_stream_in</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/>end<sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module_1ae6e5f688f216b146a2cc609ec638a462" kindref="member">amrex_set_acc_stream</ref></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex__acc__module" kindref="compound">amrex_acc_module</ref></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_acc_mod.F90"/>
+  </compounddef>
+</doxygen>
