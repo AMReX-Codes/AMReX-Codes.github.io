@@ -1,0 +1,2579 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="AMReX__VisMF_8H" kind="file" language="C++">
+    <compoundname>AMReX_VisMF.H</compoundname>
+    <includes local="no">AMReX_Config.H</includes>
+    <includes local="no">iosfwd</includes>
+    <includes local="no">string</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">queue</includes>
+    <includes refid="AMReX__REAL_8H" local="no">AMReX_REAL.H</includes>
+    <includes refid="AMReX__FabArray_8H" local="no">AMReX_FabArray.H</includes>
+    <includes refid="AMReX__FArrayBox_8H" local="no">AMReX_FArrayBox.H</includes>
+    <includes refid="AMReX__FabConv_8H" local="no">AMReX_FabConv.H</includes>
+    <includes refid="AMReX__AsyncOut_8H" local="no">AMReX_AsyncOut.H</includes>
+    <includedby refid="AMReX__AmrLevel_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.cpp</includedby>
+    <includedby refid="AMReX__AmrLevel_8H" local="no">/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.H</includedby>
+    <includedby refid="AMReX__StateData_8H" local="no">/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H</includedby>
+    <includedby refid="AMReX_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp</includedby>
+    <includedby refid="AMReX__BLBackTrace_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_BLBackTrace.cpp</includedby>
+    <includedby refid="AMReX__DistributionMapping_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp</includedby>
+    <includedby refid="AMReX__NFiles_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_NFiles.H</includedby>
+    <includedby refid="AMReX__PlotFileDataImpl_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileDataImpl.cpp</includedby>
+    <includedby refid="AMReX__PlotFileDataImpl_8H" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileDataImpl.H</includedby>
+    <includedby refid="AMReX__PlotFileUtil_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileUtil.cpp</includedby>
+    <includedby refid="AMReX__VisMF_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_VisMF.cpp</includedby>
+    <includedby refid="AMReX__FabSet_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Boundary/AMReX_FabSet.cpp</includedby>
+    <includedby refid="AMReX__EB2__Level_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.H</includedby>
+    <includedby refid="AMReX__EBMultiFabUtil_8cpp" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMultiFabUtil.cpp</includedby>
+    <includedby refid="AMReX__AmrData_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_AmrData.cpp</includedby>
+    <includedby refid="AMReX__AmrData_8H" local="no">/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_AmrData.H</includedby>
+    <includedby refid="AMReX__HypreABecLap3_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap3.cpp</includedby>
+    <includedby refid="AMReX__HypreNodeLap_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreNodeLap.cpp</includedby>
+    <includedby refid="AMReX__MLCGSolver_8cpp" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCGSolver.cpp</includedby>
+    <includedby refid="AMReX__MLLinOp_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.H</includedby>
+    <includedby refid="AMReX__MLMG_8cpp" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG.cpp</includedby>
+    <includedby refid="AMReX__Particles_8H" local="no">/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particles.H</includedby>
+    <incdepgraph>
+      <node id="49277">
+        <label>atomic</label>
+      </node>
+      <node id="49242">
+        <label>AMReX_Periodicity.H</label>
+        <link refid="AMReX__Periodicity_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+      </node>
+      <node id="49202">
+        <label>AMReX_Algorithm.H</label>
+        <link refid="AMReX__Algorithm_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49203" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+      </node>
+      <node id="49246">
+        <label>AMReX_GpuKernelInfo.H</label>
+        <link refid="AMReX__GpuKernelInfo_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49251">
+        <label>AMReX_OpenMP.H</label>
+        <link refid="AMReX__OpenMP_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49201">
+        <label>AMReX_SPACE.H</label>
+        <link refid="AMReX__SPACE_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49286">
+        <label>AMReX_FBI.H</label>
+        <link refid="AMReX__FBI_8H"/>
+      </node>
+      <node id="49219">
+        <label>iomanip</label>
+      </node>
+      <node id="49193">
+        <label>functional</label>
+      </node>
+      <node id="49166">
+        <label>queue</label>
+      </node>
+      <node id="49173">
+        <label>limits</label>
+      </node>
+      <node id="49224">
+        <label>AMReX_BLProfiler.H</label>
+        <link refid="AMReX__BLProfiler_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+      </node>
+      <node id="49209">
+        <label>AMReX_IndexType.H</label>
+        <link refid="AMReX__IndexType_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+      </node>
+      <node id="49258">
+        <label>AMReX_Functional.H</label>
+        <link refid="AMReX__Functional_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+      </node>
+      <node id="49212">
+        <label>AMReX_BoxArray.H</label>
+        <link refid="AMReX__BoxArray_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49174" relation="include">
+        </childnode>
+        <childnode refid="49214" relation="include">
+        </childnode>
+        <childnode refid="49209" relation="include">
+        </childnode>
+        <childnode refid="49215" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+      </node>
+      <node id="49275">
+        <label>AMReX_FArrayBox.H</label>
+        <link refid="AMReX__FArrayBox_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49276" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49217" relation="include">
+        </childnode>
+        <childnode refid="49191" relation="include">
+        </childnode>
+      </node>
+      <node id="49270">
+        <label>iterator</label>
+      </node>
+      <node id="49169">
+        <label>float.h</label>
+      </node>
+      <node id="49243">
+        <label>AMReX_FabArrayBase.H</label>
+        <link refid="AMReX__FabArrayBase_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49212" relation="include">
+        </childnode>
+        <childnode refid="49230" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+        <childnode refid="49244" relation="include">
+        </childnode>
+        <childnode refid="49242" relation="include">
+        </childnode>
+        <childnode refid="49218" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+      </node>
+      <node id="49265">
+        <label>AMReX_GpuLaunchFunctsC.H</label>
+        <link refid="AMReX__GpuLaunchFunctsC_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49178">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+      </node>
+      <node id="49183">
+        <label>AMReX_GpuAssert.H</label>
+        <link refid="AMReX__GpuAssert_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49184" relation="include">
+        </childnode>
+      </node>
+      <node id="49165">
+        <label>cstdint</label>
+      </node>
+      <node id="49233">
+        <label>AMReX_RealBox.H</label>
+        <link refid="AMReX__RealBox_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49196" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49234" relation="include">
+        </childnode>
+      </node>
+      <node id="49235">
+        <label>AMReX_Utility.H</label>
+        <link refid="AMReX__Utility_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49197" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49174" relation="include">
+        </childnode>
+        <childnode refid="49236" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49208" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49237" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49212" relation="include">
+        </childnode>
+        <childnode refid="49230" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+        <childnode refid="49238" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49240" relation="include">
+        </childnode>
+      </node>
+      <node id="49285">
+        <label>AMReX_FabArrayCommI.H</label>
+        <link refid="AMReX__FabArrayCommI_8H"/>
+        <childnode refid="49286" relation="include">
+        </childnode>
+        <childnode refid="49287" relation="include">
+        </childnode>
+      </node>
+      <node id="49268">
+        <label>AMReX_GpuAllocators.H</label>
+        <link refid="AMReX__GpuAllocators_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49174" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49218" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+      </node>
+      <node id="49256">
+        <label>AMReX_GpuReduce.H</label>
+        <link refid="AMReX__GpuReduce_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49200" relation="include">
+        </childnode>
+        <childnode refid="49257" relation="include">
+        </childnode>
+        <childnode refid="49259" relation="include">
+        </childnode>
+        <childnode refid="49258" relation="include">
+        </childnode>
+      </node>
+      <node id="49260">
+        <label>AMReX_Tuple.H</label>
+        <link refid="AMReX__Tuple_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49196" relation="include">
+        </childnode>
+        <childnode refid="49261" relation="include">
+        </childnode>
+        <childnode refid="49193" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49262" relation="include">
+        </childnode>
+        <childnode refid="49258" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+      </node>
+      <node id="49204">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+      </node>
+      <node id="49222">
+        <label>AMReX_BLBackTrace.H</label>
+        <link refid="AMReX__BLBackTrace_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49223" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49197" relation="include">
+        </childnode>
+        <childnode refid="49182" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+      </node>
+      <node id="49200">
+        <label>AMReX_GpuTypes.H</label>
+        <link refid="AMReX__GpuTypes_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49191">
+        <label>cmath</label>
+      </node>
+      <node id="49184">
+        <label>cassert</label>
+      </node>
+      <node id="49167">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49169" relation="include">
+        </childnode>
+      </node>
+      <node id="49187">
+        <label>stdexcept</label>
+      </node>
+      <node id="49185">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49226">
+        <label>numeric</label>
+      </node>
+      <node id="49161">
+        <label>string</label>
+      </node>
+      <node id="49249">
+        <label>AMReX_GpuDevice.H</label>
+        <link refid="AMReX__GpuDevice_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49196" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49235" relation="include">
+        </childnode>
+        <childnode refid="49200" relation="include">
+        </childnode>
+        <childnode refid="49250" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49251" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+      </node>
+      <node id="49289">
+        <label>AMReX_AsyncOut.H</label>
+        <link refid="AMReX__AsyncOut_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49193" relation="include">
+        </childnode>
+      </node>
+      <node id="49174">
+        <label>map</label>
+      </node>
+      <node id="49281">
+        <label>unordered_set</label>
+      </node>
+      <node id="49229">
+        <label>AMReX_Arena.H</label>
+        <link refid="AMReX__Arena_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+      </node>
+      <node id="49250">
+        <label>AMReX_GpuError.H</label>
+        <link refid="AMReX__GpuError_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49235" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+      </node>
+      <node id="49180">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49237">
+        <label>cfloat</label>
+      </node>
+      <node id="49203">
+        <label>AMReX_Dim3.H</label>
+        <link refid="AMReX__Dim3_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+      </node>
+      <node id="49220">
+        <label>AMReX_ParallelContext.H</label>
+        <link refid="AMReX__ParallelContext_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49162" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+      </node>
+      <node id="49162">
+        <label>fstream</label>
+      </node>
+      <node id="49215">
+        <label>AMReX_BoxList.H</label>
+        <link refid="AMReX__BoxList_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49209" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+      </node>
+      <node id="49158">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_VisMF.H</label>
+        <link refid="AMReX__VisMF_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49162" relation="include">
+        </childnode>
+        <childnode refid="49163" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49165" relation="include">
+        </childnode>
+        <childnode refid="49166" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49170" relation="include">
+        </childnode>
+        <childnode refid="49275" relation="include">
+        </childnode>
+        <childnode refid="49288" relation="include">
+        </childnode>
+        <childnode refid="49289" relation="include">
+        </childnode>
+      </node>
+      <node id="49254">
+        <label>AMReX_GpuRange.H</label>
+        <link refid="AMReX__GpuRange_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49250" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+      </node>
+      <node id="49199">
+        <label>AMReX_GpuControl.H</label>
+        <link refid="AMReX__GpuControl_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49200" relation="include">
+        </childnode>
+      </node>
+      <node id="49179">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49181" relation="include">
+        </childnode>
+        <childnode refid="49183" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+        <childnode refid="49186" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49190" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49193" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49182" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+      </node>
+      <node id="49238">
+        <label>AMReX_Random.H</label>
+        <link refid="AMReX__Random_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+        <childnode refid="49239" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49165" relation="include">
+        </childnode>
+      </node>
+      <node id="49168">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49239">
+        <label>AMReX_RandomEngine.H</label>
+        <link refid="AMReX__RandomEngine_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+      </node>
+      <node id="49241">
+        <label>sys/types.h</label>
+      </node>
+      <node id="49266">
+        <label>AMReX_GpuAsyncArray.H</label>
+        <link refid="AMReX__GpuAsyncArray_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49172" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+      </node>
+      <node id="49278">
+        <label>AMReX_BArena.H</label>
+        <link refid="AMReX__BArena_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+      </node>
+      <node id="49283">
+        <label>AMReX_Reduce.H</label>
+        <link refid="AMReX__Reduce_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+      </node>
+      <node id="49225">
+        <label>typeinfo</label>
+      </node>
+      <node id="49181">
+        <label>AMReX_GpuPrint.H</label>
+        <link refid="AMReX__GpuPrint_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49182" relation="include">
+        </childnode>
+      </node>
+      <node id="49231">
+        <label>AMReX_Geometry.H</label>
+        <link refid="AMReX__Geometry_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49174" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49232" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+        <childnode refid="49233" relation="include">
+        </childnode>
+        <childnode refid="49242" relation="include">
+        </childnode>
+      </node>
+      <node id="49279">
+        <label>AMReX_CArena.H</label>
+        <link refid="AMReX__CArena_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49177" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+        <childnode refid="49280" relation="include">
+        </childnode>
+        <childnode refid="49281" relation="include">
+        </childnode>
+        <childnode refid="49193" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+      </node>
+      <node id="49159">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="49182">
+        <label>cstdio</label>
+      </node>
+      <node id="49287">
+        <label>AMReX_PCI.H</label>
+        <link refid="AMReX__PCI_8H"/>
+      </node>
+      <node id="49261">
+        <label>tuple</label>
+      </node>
+      <node id="49230">
+        <label>AMReX_DistributionMapping.H</label>
+        <link refid="AMReX__DistributionMapping_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49174" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+      </node>
+      <node id="49211">
+        <label>AMReX_Array4.H</label>
+        <link refid="AMReX__Array4_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49181" relation="include">
+        </childnode>
+      </node>
+      <node id="49221">
+        <label>AMReX_ParallelDescriptor.H</label>
+        <link refid="AMReX__ParallelDescriptor_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+        <childnode refid="49220" relation="include">
+        </childnode>
+        <childnode refid="49222" relation="include">
+        </childnode>
+        <childnode refid="49224" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49225" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+        <childnode refid="49193" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49226" relation="include">
+        </childnode>
+        <childnode refid="49227" relation="include">
+        </childnode>
+      </node>
+      <node id="49210">
+        <label>AMReX_Orientation.H</label>
+        <link refid="AMReX__Orientation_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+      </node>
+      <node id="49252">
+        <label>AMReX_GpuLaunchGlobal.H</label>
+        <link refid="AMReX__GpuLaunchGlobal_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+      </node>
+      <node id="49234">
+        <label>AMReX_RealVect.H</label>
+        <link refid="AMReX__RealVect_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49172" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49191" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49235" relation="include">
+        </childnode>
+        <childnode refid="49190" relation="include">
+        </childnode>
+      </node>
+      <node id="49223">
+        <label>stack</label>
+      </node>
+      <node id="49175">
+        <label>vector</label>
+      </node>
+      <node id="49263">
+        <label>AMReX_Loop.H</label>
+        <link refid="AMReX__Loop_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+      </node>
+      <node id="49274">
+        <label>AMReX_MFIter.H</label>
+        <link refid="AMReX__MFIter_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49243" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49275" relation="include">
+        </childnode>
+        <childnode refid="49233" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+      </node>
+      <node id="49272">
+        <label>AMReX_Scan.H</label>
+        <link refid="AMReX__Scan_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49165" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+      </node>
+      <node id="49164">
+        <label>utility</label>
+      </node>
+      <node id="49205">
+        <label>AMReX_Box.H</label>
+        <link refid="AMReX__Box_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49202" relation="include">
+        </childnode>
+        <childnode refid="49206" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49209" relation="include">
+        </childnode>
+        <childnode refid="49210" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49211" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+      </node>
+      <node id="49216">
+        <label>AMReX_BoxDomain.H</label>
+        <link refid="AMReX__BoxDomain_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49209" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+        <childnode refid="49215" relation="include">
+        </childnode>
+      </node>
+      <node id="49196">
+        <label>array</label>
+      </node>
+      <node id="49267">
+        <label>AMReX_GpuElixir.H</label>
+        <link refid="AMReX__GpuElixir_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+      </node>
+      <node id="49197">
+        <label>sstream</label>
+      </node>
+      <node id="49269">
+        <label>AMReX_GpuContainers.H</label>
+        <link refid="AMReX__GpuContainers_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49226" relation="include">
+        </childnode>
+        <childnode refid="49270" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49271" relation="include">
+        </childnode>
+        <childnode refid="49268" relation="include">
+        </childnode>
+        <childnode refid="49272" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+      </node>
+      <node id="49188">
+        <label>AMReX_INT.H</label>
+        <link refid="AMReX__INT_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49189" relation="include">
+        </childnode>
+      </node>
+      <node id="49253">
+        <label>AMReX_GpuLaunch.H</label>
+        <link refid="AMReX__GpuLaunch_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49246" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49200" relation="include">
+        </childnode>
+        <childnode refid="49250" relation="include">
+        </childnode>
+        <childnode refid="49254" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+        <childnode refid="49255" relation="include">
+        </childnode>
+        <childnode refid="49256" relation="include">
+        </childnode>
+        <childnode refid="49247" relation="include">
+        </childnode>
+        <childnode refid="49260" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49263" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49252" relation="include">
+        </childnode>
+        <childnode refid="49239" relation="include">
+        </childnode>
+        <childnode refid="49202" relation="include">
+        </childnode>
+        <childnode refid="49213" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49264" relation="include">
+        </childnode>
+        <childnode refid="49265" relation="include">
+        </childnode>
+      </node>
+      <node id="49264">
+        <label>AMReX_GpuLaunchMacrosC.H</label>
+        <link refid="AMReX__GpuLaunchMacrosC_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49257">
+        <label>AMReX_GpuAtomic.H</label>
+        <link refid="AMReX__GpuAtomic_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49258" relation="include">
+        </childnode>
+      </node>
+      <node id="49284">
+        <label>AMReX_LayoutData.H</label>
+        <link refid="AMReX__LayoutData_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49243" relation="include">
+        </childnode>
+        <childnode refid="49274" relation="include">
+        </childnode>
+      </node>
+      <node id="49160">
+        <label>iosfwd</label>
+      </node>
+      <node id="49192">
+        <label>cstdlib</label>
+      </node>
+      <node id="49228">
+        <label>AMReX_MakeType.H</label>
+        <link refid="AMReX__MakeType_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49276">
+        <label>AMReX_BaseFab.H</label>
+        <link refid="AMReX__BaseFab_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49191" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49208" relation="include">
+        </childnode>
+        <childnode refid="49196" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49277" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49263" relation="include">
+        </childnode>
+        <childnode refid="49215" relation="include">
+        </childnode>
+        <childnode refid="49278" relation="include">
+        </childnode>
+        <childnode refid="49279" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49224" relation="include">
+        </childnode>
+        <childnode refid="49282" relation="include">
+        </childnode>
+        <childnode refid="49228" relation="include">
+        </childnode>
+        <childnode refid="49235" relation="include">
+        </childnode>
+        <childnode refid="49283" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+        <childnode refid="49190" relation="include">
+        </childnode>
+      </node>
+      <node id="49262">
+        <label>AMReX_IndexSequence.H</label>
+        <link refid="AMReX__IndexSequence_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+      </node>
+      <node id="49171">
+        <label>iostream</label>
+      </node>
+      <node id="49195">
+        <label>AMReX_Array.H</label>
+        <link refid="AMReX__Array_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49196" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49197" relation="include">
+        </childnode>
+        <childnode refid="49182" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49202" relation="include">
+        </childnode>
+        <childnode refid="49203" relation="include">
+        </childnode>
+      </node>
+      <node id="49213">
+        <label>cstddef</label>
+      </node>
+      <node id="49259">
+        <label>AMReX_GpuUtility.H</label>
+        <link refid="AMReX__GpuUtility_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49200" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49211" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49191" relation="include">
+        </childnode>
+        <childnode refid="49172" relation="include">
+        </childnode>
+      </node>
+      <node id="49214">
+        <label>unordered_map</label>
+      </node>
+      <node id="49208">
+        <label>climits</label>
+      </node>
+      <node id="49207">
+        <label>AMReX_IntVect.H</label>
+        <link refid="AMReX__IntVect_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49203" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49190" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49191" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49208" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+      </node>
+      <node id="49280">
+        <label>mutex</label>
+      </node>
+      <node id="49271">
+        <label>AMReX_PODVector.H</label>
+        <link refid="AMReX__PODVector_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+        <childnode refid="49268" relation="include">
+        </childnode>
+        <childnode refid="49269" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+        <childnode refid="49172" relation="include">
+        </childnode>
+      </node>
+      <node id="49236">
+        <label>chrono</label>
+      </node>
+      <node id="49288">
+        <label>AMReX_FabConv.H</label>
+        <link refid="AMReX__FabConv_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49160" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49188" relation="include">
+        </childnode>
+      </node>
+      <node id="49227">
+        <label>csignal</label>
+      </node>
+      <node id="49217">
+        <label>AMReX_FabFactory.H</label>
+        <link refid="AMReX__FabFactory_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49218" relation="include">
+        </childnode>
+        <childnode refid="49228" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+      </node>
+      <node id="49247">
+        <label>AMReX_GpuFuse.H</label>
+        <link refid="AMReX__GpuFuse_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+        <childnode refid="49252" relation="include">
+        </childnode>
+        <childnode refid="49172" relation="include">
+        </childnode>
+        <childnode refid="49194" relation="include">
+        </childnode>
+      </node>
+      <node id="49163">
+        <label>thread</label>
+      </node>
+      <node id="49244">
+        <label>AMReX_ParallelReduce.H</label>
+        <link refid="AMReX__ParallelReduce_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+        <childnode refid="49218" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+      </node>
+      <node id="49190">
+        <label>AMReX_Math.H</label>
+        <link refid="AMReX__Math_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+        <childnode refid="49191" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+      </node>
+      <node id="49245">
+        <label>AMReX_Gpu.H</label>
+        <link refid="AMReX__Gpu_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49246" relation="include">
+        </childnode>
+        <childnode refid="49181" relation="include">
+        </childnode>
+        <childnode refid="49183" relation="include">
+        </childnode>
+        <childnode refid="49200" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49247" relation="include">
+        </childnode>
+        <childnode refid="49253" relation="include">
+        </childnode>
+        <childnode refid="49250" relation="include">
+        </childnode>
+        <childnode refid="49257" relation="include">
+        </childnode>
+        <childnode refid="49259" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+        <childnode refid="49266" relation="include">
+        </childnode>
+        <childnode refid="49267" relation="include">
+        </childnode>
+        <childnode refid="49255" relation="include">
+        </childnode>
+        <childnode refid="49254" relation="include">
+        </childnode>
+        <childnode refid="49256" relation="include">
+        </childnode>
+        <childnode refid="49268" relation="include">
+        </childnode>
+        <childnode refid="49269" relation="include">
+        </childnode>
+        <childnode refid="49273" relation="include">
+        </childnode>
+      </node>
+      <node id="49255">
+        <label>AMReX_GpuMemory.H</label>
+        <link refid="AMReX__GpuMemory_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49180" relation="include">
+        </childnode>
+        <childnode refid="49199" relation="include">
+        </childnode>
+        <childnode refid="49249" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49229" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+      </node>
+      <node id="49206">
+        <label>AMReX_ArrayLim.H</label>
+        <link refid="AMReX__ArrayLim_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+      </node>
+      <node id="49186">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49187" relation="include">
+        </childnode>
+      </node>
+      <node id="49198">
+        <label>type_traits</label>
+      </node>
+      <node id="49177">
+        <label>set</label>
+      </node>
+      <node id="49232">
+        <label>AMReX_CoordSys.H</label>
+        <link refid="AMReX__CoordSys_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+      </node>
+      <node id="49176">
+        <label>algorithm</label>
+      </node>
+      <node id="49170">
+        <label>AMReX_FabArray.H</label>
+        <link refid="AMReX__FabArray_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49171" relation="include">
+        </childnode>
+        <childnode refid="49172" relation="include">
+        </childnode>
+        <childnode refid="49173" relation="include">
+        </childnode>
+        <childnode refid="49174" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49175" relation="include">
+        </childnode>
+        <childnode refid="49176" relation="include">
+        </childnode>
+        <childnode refid="49177" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49195" relation="include">
+        </childnode>
+        <childnode refid="49204" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49212" relation="include">
+        </childnode>
+        <childnode refid="49216" relation="include">
+        </childnode>
+        <childnode refid="49217" relation="include">
+        </childnode>
+        <childnode refid="49230" relation="include">
+        </childnode>
+        <childnode refid="49231" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+        <childnode refid="49235" relation="include">
+        </childnode>
+        <childnode refid="49185" relation="include">
+        </childnode>
+        <childnode refid="49224" relation="include">
+        </childnode>
+        <childnode refid="49242" relation="include">
+        </childnode>
+        <childnode refid="49218" relation="include">
+        </childnode>
+        <childnode refid="49243" relation="include">
+        </childnode>
+        <childnode refid="49274" relation="include">
+        </childnode>
+        <childnode refid="49228" relation="include">
+        </childnode>
+        <childnode refid="49248" relation="include">
+        </childnode>
+        <childnode refid="49284" relation="include">
+        </childnode>
+        <childnode refid="49276" relation="include">
+        </childnode>
+        <childnode refid="49245" relation="include">
+        </childnode>
+        <childnode refid="49285" relation="include">
+        </childnode>
+      </node>
+      <node id="49240">
+        <label>AMReX_FileSystem.H</label>
+        <link refid="AMReX__FileSystem_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49161" relation="include">
+        </childnode>
+        <childnode refid="49241" relation="include">
+        </childnode>
+      </node>
+      <node id="49172">
+        <label>cstring</label>
+      </node>
+      <node id="49273">
+        <label>AMReX_CudaGraph.H</label>
+        <link refid="AMReX__CudaGraph_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+      </node>
+      <node id="49194">
+        <label>memory</label>
+      </node>
+      <node id="49189">
+        <label>inttypes.h</label>
+      </node>
+      <node id="49248">
+        <label>AMReX_TypeTraits.H</label>
+        <link refid="AMReX__TypeTraits_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49198" relation="include">
+        </childnode>
+        <childnode refid="49168" relation="include">
+        </childnode>
+      </node>
+      <node id="49282">
+        <label>AMReX_BoxIterator.H</label>
+        <link refid="AMReX__BoxIterator_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49192" relation="include">
+        </childnode>
+        <childnode refid="49178" relation="include">
+        </childnode>
+        <childnode refid="49205" relation="include">
+        </childnode>
+        <childnode refid="49167" relation="include">
+        </childnode>
+        <childnode refid="49201" relation="include">
+        </childnode>
+        <childnode refid="49207" relation="include">
+        </childnode>
+      </node>
+      <node id="49218">
+        <label>AMReX_Print.H</label>
+        <link refid="AMReX__Print_8H"/>
+        <childnode refid="49159" relation="include">
+        </childnode>
+        <childnode refid="49197" relation="include">
+        </childnode>
+        <childnode refid="49162" relation="include">
+        </childnode>
+        <childnode refid="49219" relation="include">
+        </childnode>
+        <childnode refid="49164" relation="include">
+        </childnode>
+        <childnode refid="49179" relation="include">
+        </childnode>
+        <childnode refid="49220" relation="include">
+        </childnode>
+        <childnode refid="49221" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="49349">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLTensorOp.cpp</label>
+        <link refid="AMReX__MLTensorOp_8cpp"/>
+      </node>
+      <node id="49342">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H</label>
+        <link refid="AMReX__MLCellLinOp_8H"/>
+        <childnode refid="49343" relation="include">
+        </childnode>
+        <childnode refid="49360" relation="include">
+        </childnode>
+        <childnode refid="49361" relation="include">
+        </childnode>
+      </node>
+      <node id="49316">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileUtil.H</label>
+        <link refid="AMReX__PlotFileUtil_8H"/>
+        <childnode refid="49293" relation="include">
+        </childnode>
+        <childnode refid="49317" relation="include">
+        </childnode>
+        <childnode refid="49318" relation="include">
+        </childnode>
+      </node>
+      <node id="49335">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_BLWritePlotFile.H</label>
+        <link refid="AMReX__BLWritePlotFile_8H"/>
+        <childnode refid="49336" relation="include">
+        </childnode>
+      </node>
+      <node id="49323">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.cpp</label>
+        <link refid="AMReX__EB2_8cpp"/>
+      </node>
+      <node id="49362">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCGSolver.H</label>
+        <link refid="AMReX__MLCGSolver_8H"/>
+        <childnode refid="49340" relation="include">
+        </childnode>
+        <childnode refid="49363" relation="include">
+        </childnode>
+      </node>
+      <node id="49324">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.H</label>
+        <link refid="AMReX__EB__utils_8H"/>
+        <childnode refid="49325" relation="include">
+        </childnode>
+      </node>
+      <node id="49330">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMultiFabUtil.cpp</label>
+        <link refid="AMReX__EBMultiFabUtil_8cpp"/>
+      </node>
+      <node id="49345">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.cpp</label>
+        <link refid="AMReX__MLABecLaplacian_8cpp"/>
+      </node>
+      <node id="49317">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileUtil.cpp</label>
+        <link refid="AMReX__PlotFileUtil_8cpp"/>
+      </node>
+      <node id="49296">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H</label>
+        <link refid="AMReX__StateData_8H"/>
+        <childnode refid="49293" relation="include">
+        </childnode>
+        <childnode refid="49292" relation="include">
+        </childnode>
+        <childnode refid="49297" relation="include">
+        </childnode>
+        <childnode refid="49295" relation="include">
+        </childnode>
+      </node>
+      <node id="49343">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap.H</label>
+        <link refid="AMReX__MLCellABecLap_8H"/>
+        <childnode refid="49344" relation="include">
+        </childnode>
+        <childnode refid="49352" relation="include">
+        </childnode>
+        <childnode refid="49355" relation="include">
+        </childnode>
+        <childnode refid="49356" relation="include">
+        </childnode>
+        <childnode refid="49359" relation="include">
+        </childnode>
+      </node>
+      <node id="49299">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_BLBackTrace.cpp</label>
+        <link refid="AMReX__BLBackTrace_8cpp"/>
+      </node>
+      <node id="49331">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_AmrData.cpp</label>
+        <link refid="AMReX__AmrData_8cpp"/>
+      </node>
+      <node id="49300">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_DistributionMapping.cpp</label>
+        <link refid="AMReX__DistributionMapping_8cpp"/>
+      </node>
+      <node id="49370">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeTensorLaplacian.H</label>
+        <link refid="AMReX__MLNodeTensorLaplacian_8H"/>
+        <childnode refid="49371" relation="include">
+        </childnode>
+        <childnode refid="49372" relation="include">
+        </childnode>
+      </node>
+      <node id="49329">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBDataCollection.cpp</label>
+        <link refid="AMReX__EBDataCollection_8cpp"/>
+      </node>
+      <node id="49368">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian.H</label>
+        <link refid="AMReX__MLNodeLaplacian_8H"/>
+        <childnode refid="49339" relation="include">
+        </childnode>
+        <childnode refid="49364" relation="include">
+        </childnode>
+        <childnode refid="49365" relation="include">
+        </childnode>
+        <childnode refid="49366" relation="include">
+        </childnode>
+      </node>
+      <node id="49348">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLTensorOp.H</label>
+        <link refid="AMReX__MLTensorOp_8H"/>
+        <childnode refid="49349" relation="include">
+        </childnode>
+      </node>
+      <node id="49356">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.H</label>
+        <link refid="AMReX__MLEBABecLap_8H"/>
+        <childnode refid="49346" relation="include">
+        </childnode>
+        <childnode refid="49357" relation="include">
+        </childnode>
+        <childnode refid="49358" relation="include">
+        </childnode>
+      </node>
+      <node id="49371">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeTensorLap_K.H</label>
+        <link refid="AMReX__MLNodeTensorLap__K_8H"/>
+        <childnode refid="49372" relation="include">
+        </childnode>
+      </node>
+      <node id="49305">
+        <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParticles.H</label>
+        <link refid="AMReX__AmrParticles_8H"/>
+      </node>
+      <node id="49359">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson.H</label>
+        <link refid="AMReX__MLPoisson_8H"/>
+        <childnode refid="49354" relation="include">
+        </childnode>
+      </node>
+      <node id="49350">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/Projections/AMReX_MacProjector.H</label>
+        <link refid="AMReX__MacProjector_8H"/>
+        <childnode refid="49351" relation="include">
+        </childnode>
+      </node>
+      <node id="49291">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.cpp</label>
+        <link refid="AMReX__AmrLevel_8cpp"/>
+      </node>
+      <node id="49318">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreIJIface.cpp</label>
+        <link refid="AMReX__HypreIJIface_8cpp"/>
+      </node>
+      <node id="49357">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.cpp</label>
+        <link refid="AMReX__MLEBTensorOp_8cpp"/>
+      </node>
+      <node id="49347">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG.cpp</label>
+        <link refid="AMReX__MLMG_8cpp"/>
+      </node>
+      <node id="49339">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreNodeLap.cpp</label>
+        <link refid="AMReX__HypreNodeLap_8cpp"/>
+      </node>
+      <node id="49297">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp</label>
+        <link refid="AMReX__StateData_8cpp"/>
+      </node>
+      <node id="49310">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticle_mod_K.H</label>
+        <link refid="AMReX__TracerParticle__mod__K_8H"/>
+        <childnode refid="49311" relation="include">
+        </childnode>
+      </node>
+      <node id="49290">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_VisMF.H</label>
+        <link refid="AMReX__VisMF_8H"/>
+        <childnode refid="49291" relation="include">
+        </childnode>
+        <childnode refid="49292" relation="include">
+        </childnode>
+        <childnode refid="49296" relation="include">
+        </childnode>
+        <childnode refid="49298" relation="include">
+        </childnode>
+        <childnode refid="49299" relation="include">
+        </childnode>
+        <childnode refid="49300" relation="include">
+        </childnode>
+        <childnode refid="49301" relation="include">
+        </childnode>
+        <childnode refid="49314" relation="include">
+        </childnode>
+        <childnode refid="49315" relation="include">
+        </childnode>
+        <childnode refid="49317" relation="include">
+        </childnode>
+        <childnode refid="49303" relation="include">
+        </childnode>
+        <childnode refid="49319" relation="include">
+        </childnode>
+        <childnode refid="49320" relation="include">
+        </childnode>
+        <childnode refid="49330" relation="include">
+        </childnode>
+        <childnode refid="49331" relation="include">
+        </childnode>
+        <childnode refid="49332" relation="include">
+        </childnode>
+        <childnode refid="49338" relation="include">
+        </childnode>
+        <childnode refid="49339" relation="include">
+        </childnode>
+        <childnode refid="49340" relation="include">
+        </childnode>
+        <childnode refid="49341" relation="include">
+        </childnode>
+        <childnode refid="49347" relation="include">
+        </childnode>
+        <childnode refid="49304" relation="include">
+        </childnode>
+      </node>
+      <node id="49314">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileDataImpl.cpp</label>
+        <link refid="AMReX__PlotFileDataImpl_8cpp"/>
+      </node>
+      <node id="49306">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborList.H</label>
+        <link refid="AMReX__NeighborList_8H"/>
+        <childnode refid="49307" relation="include">
+        </childnode>
+      </node>
+      <node id="49353">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALaplacian.cpp</label>
+        <link refid="AMReX__MLALaplacian_8cpp"/>
+      </node>
+      <node id="49293">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_Amr.cpp</label>
+        <link refid="AMReX__Amr_8cpp"/>
+      </node>
+      <node id="49301">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_NFiles.H</label>
+        <link refid="AMReX__NFiles_8H"/>
+        <childnode refid="49302" relation="include">
+        </childnode>
+        <childnode refid="49303" relation="include">
+        </childnode>
+        <childnode refid="49304" relation="include">
+        </childnode>
+      </node>
+      <node id="49294">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_LevelBld.H</label>
+        <link refid="AMReX__LevelBld_8H"/>
+        <childnode refid="49293" relation="include">
+        </childnode>
+      </node>
+      <node id="49360">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.cpp</label>
+        <link refid="AMReX__MLCellLinOp_8cpp"/>
+      </node>
+      <node id="49363">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG.H</label>
+        <link refid="AMReX__MLMG_8H"/>
+        <childnode refid="49340" relation="include">
+        </childnode>
+        <childnode refid="49347" relation="include">
+        </childnode>
+        <childnode refid="49364" relation="include">
+        </childnode>
+        <childnode refid="49350" relation="include">
+        </childnode>
+        <childnode refid="49365" relation="include">
+        </childnode>
+        <childnode refid="49366" relation="include">
+        </childnode>
+      </node>
+      <node id="49308">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particle_mod_K.H</label>
+        <link refid="AMReX__Particle__mod__K_8H"/>
+        <childnode refid="49304" relation="include">
+        </childnode>
+      </node>
+      <node id="49365">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.cpp</label>
+        <link refid="AMReX__NodalProjector_8cpp"/>
+      </node>
+      <node id="49352">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALaplacian.H</label>
+        <link refid="AMReX__MLALaplacian_8H"/>
+        <childnode refid="49353" relation="include">
+        </childnode>
+        <childnode refid="49354" relation="include">
+        </childnode>
+      </node>
+      <node id="49358">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBTensorOp.H</label>
+        <link refid="AMReX__MLEBTensorOp_8H"/>
+        <childnode refid="49357" relation="include">
+        </childnode>
+      </node>
+      <node id="49337">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_ProfParserBatch.cpp</label>
+        <link refid="AMReX__ProfParserBatch_8cpp"/>
+      </node>
+      <node id="49311">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticles.cpp</label>
+        <link refid="AMReX__TracerParticles_8cpp"/>
+      </node>
+      <node id="49369">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.cpp</label>
+        <link refid="AMReX__MLNodeLinOp_8cpp"/>
+      </node>
+      <node id="49322">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_algoim.cpp</label>
+        <link refid="AMReX__algoim_8cpp"/>
+      </node>
+      <node id="49351">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/Projections/AMReX_MacProjector.cpp</label>
+        <link refid="AMReX__MacProjector_8cpp"/>
+      </node>
+      <node id="49364">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian.cpp</label>
+        <link refid="AMReX__MLNodeLaplacian_8cpp"/>
+      </node>
+      <node id="49302">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_NFiles.cpp</label>
+        <link refid="AMReX__NFiles_8cpp"/>
+      </node>
+      <node id="49346">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLEBABecLap.cpp</label>
+        <link refid="AMReX__MLEBABecLap_8cpp"/>
+      </node>
+      <node id="49354">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson.cpp</label>
+        <link refid="AMReX__MLPoisson_8cpp"/>
+      </node>
+      <node id="49295">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/SENSEI/AMReX_AmrDataAdaptor.cpp</label>
+        <link refid="AMReX__AmrDataAdaptor_8cpp"/>
+      </node>
+      <node id="49332">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_AmrData.H</label>
+        <link refid="AMReX__AmrData_8H"/>
+        <childnode refid="49331" relation="include">
+        </childnode>
+        <childnode refid="49333" relation="include">
+        </childnode>
+      </node>
+      <node id="49321">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H</label>
+        <link refid="AMReX__EB2_8H"/>
+        <childnode refid="49322" relation="include">
+        </childnode>
+        <childnode refid="49323" relation="include">
+        </childnode>
+        <childnode refid="49324" relation="include">
+        </childnode>
+        <childnode refid="49326" relation="include">
+        </childnode>
+        <childnode refid="49327" relation="include">
+        </childnode>
+      </node>
+      <node id="49298">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX.cpp</label>
+        <link refid="AMReX_8cpp"/>
+      </node>
+      <node id="49309">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_TracerParticles.H</label>
+        <link refid="AMReX__TracerParticles_8H"/>
+        <childnode refid="49305" relation="include">
+        </childnode>
+        <childnode refid="49310" relation="include">
+        </childnode>
+        <childnode refid="49311" relation="include">
+        </childnode>
+      </node>
+      <node id="49326">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBFabFactory.cpp</label>
+        <link refid="AMReX__EBFabFactory_8cpp"/>
+      </node>
+      <node id="49344">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLABecLaplacian.H</label>
+        <link refid="AMReX__MLABecLaplacian_8H"/>
+        <childnode refid="49345" relation="include">
+        </childnode>
+        <childnode refid="49346" relation="include">
+        </childnode>
+        <childnode refid="49347" relation="include">
+        </childnode>
+        <childnode refid="49348" relation="include">
+        </childnode>
+        <childnode refid="49350" relation="include">
+        </childnode>
+      </node>
+      <node id="49355">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap.cpp</label>
+        <link refid="AMReX__MLCellABecLap_8cpp"/>
+      </node>
+      <node id="49366">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/Projections/AMReX_NodalProjector.H</label>
+        <link refid="AMReX__NodalProjector_8H"/>
+        <childnode refid="49365" relation="include">
+        </childnode>
+      </node>
+      <node id="49303">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_VisMF.cpp</label>
+        <link refid="AMReX__VisMF_8cpp"/>
+      </node>
+      <node id="49334">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_DataServices.cpp</label>
+        <link refid="AMReX__DataServices_8cpp"/>
+      </node>
+      <node id="49327">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.cpp</label>
+        <link refid="AMReX__WriteEBSurface_8cpp"/>
+      </node>
+      <node id="49361">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.cpp</label>
+        <link refid="AMReX__MLLinOp_8cpp"/>
+      </node>
+      <node id="49338">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap3.cpp</label>
+        <link refid="AMReX__HypreABecLap3_8cpp"/>
+      </node>
+      <node id="49340">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCGSolver.cpp</label>
+        <link refid="AMReX__MLCGSolver_8cpp"/>
+      </node>
+      <node id="49319">
+        <label>/home/runner/work/amrex/amrex/Src/Boundary/AMReX_FabSet.cpp</label>
+        <link refid="AMReX__FabSet_8cpp"/>
+      </node>
+      <node id="49328">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.cpp</label>
+        <link refid="AMReX__EB2__Level_8cpp"/>
+      </node>
+      <node id="49341">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.H</label>
+        <link refid="AMReX__MLLinOp_8H"/>
+        <childnode refid="49342" relation="include">
+        </childnode>
+        <childnode refid="49362" relation="include">
+        </childnode>
+        <childnode refid="49361" relation="include">
+        </childnode>
+        <childnode refid="49363" relation="include">
+        </childnode>
+        <childnode refid="49367" relation="include">
+        </childnode>
+      </node>
+      <node id="49312">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_WriteBinaryParticleData.H</label>
+        <link refid="AMReX__WriteBinaryParticleData_8H"/>
+        <childnode refid="49313" relation="include">
+        </childnode>
+      </node>
+      <node id="49315">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileDataImpl.H</label>
+        <link refid="AMReX__PlotFileDataImpl_8H"/>
+        <childnode refid="49314" relation="include">
+        </childnode>
+        <childnode refid="49316" relation="include">
+        </childnode>
+      </node>
+      <node id="49320">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_Level.H</label>
+        <link refid="AMReX__EB2__Level_8H"/>
+        <childnode refid="49321" relation="include">
+        </childnode>
+        <childnode refid="49328" relation="include">
+        </childnode>
+        <childnode refid="49329" relation="include">
+        </childnode>
+        <childnode refid="49326" relation="include">
+        </childnode>
+      </node>
+      <node id="49304">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_Particles.H</label>
+        <link refid="AMReX__Particles_8H"/>
+        <childnode refid="49305" relation="include">
+        </childnode>
+        <childnode refid="49306" relation="include">
+        </childnode>
+        <childnode refid="49307" relation="include">
+        </childnode>
+        <childnode refid="49308" relation="include">
+        </childnode>
+        <childnode refid="49309" relation="include">
+        </childnode>
+        <childnode refid="49312" relation="include">
+        </childnode>
+      </node>
+      <node id="49372">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeTensorLaplacian.cpp</label>
+        <link refid="AMReX__MLNodeTensorLaplacian_8cpp"/>
+      </node>
+      <node id="49336">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_BLWritePlotFile.cpp</label>
+        <link refid="AMReX__BLWritePlotFile_8cpp"/>
+      </node>
+      <node id="49367">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLinOp.H</label>
+        <link refid="AMReX__MLNodeLinOp_8H"/>
+        <childnode refid="49368" relation="include">
+        </childnode>
+        <childnode refid="49369" relation="include">
+        </childnode>
+        <childnode refid="49370" relation="include">
+        </childnode>
+      </node>
+      <node id="49292">
+        <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_AmrLevel.H</label>
+        <link refid="AMReX__AmrLevel_8H"/>
+        <childnode refid="49293" relation="include">
+        </childnode>
+        <childnode refid="49291" relation="include">
+        </childnode>
+        <childnode refid="49294" relation="include">
+        </childnode>
+        <childnode refid="49295" relation="include">
+        </childnode>
+      </node>
+      <node id="49313">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleIO.H</label>
+        <link refid="AMReX__ParticleIO_8H"/>
+        <childnode refid="49304" relation="include">
+        </childnode>
+      </node>
+      <node id="49325">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_utils.cpp</label>
+        <link refid="AMReX__EB__utils_8cpp"/>
+      </node>
+      <node id="49333">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_DataServices.H</label>
+        <link refid="AMReX__DataServices_8H"/>
+        <childnode refid="49334" relation="include">
+        </childnode>
+        <childnode refid="49335" relation="include">
+        </childnode>
+        <childnode refid="49337" relation="include">
+        </childnode>
+      </node>
+      <node id="49307">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H</label>
+        <link refid="AMReX__NeighborParticles_8H"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classamrex_1_1VisMF" prot="public">amrex::VisMF</innerclass>
+    <innerclass refid="structamrex_1_1VisMF_1_1FabOnDisk" prot="public">amrex::VisMF::FabOnDisk</innerclass>
+    <innerclass refid="structamrex_1_1VisMF_1_1Header" prot="public">amrex::VisMF::Header</innerclass>
+    <innerclass refid="structamrex_1_1VisMF_1_1FabReadLink" prot="public">amrex::VisMF::FabReadLink</innerclass>
+    <innerclass refid="structamrex_1_1VisMF_1_1PersistentIFStream" prot="public">amrex::VisMF::PersistentIFStream</innerclass>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>BL_VISMF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BL_VISMF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iosfwd&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__REAL_8H" kindref="compound">AMReX_REAL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__FabArray_8H" kindref="compound">AMReX_FabArray.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__FArrayBox_8H" kindref="compound">AMReX_FArrayBox.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__FabConv_8H" kindref="compound">AMReX_FabConv.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AsyncOut_8H" kindref="compound">AMReX_AsyncOut.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">NFilesIter;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MultiFab;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classamrex_1_1VisMF" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1VisMF" kindref="compound">VisMF</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="classamrex_1_1VisMF_1a8d42e2d701538071d3522ce0272e5795ac67ac04832d2bbe370aa12c6ca513e85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a8d42e2d701538071d3522ce0272e5795ac67ac04832d2bbe370aa12c6ca513e85" kindref="member">IO_Buffer_Size</ref><sp/>=<sp/>262144<sp/>*<sp/>8<sp/>};</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#ifdef<sp/>BL_SETBUF_SIGNED_CHAR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ad0a5e71e7eafe2b4f3f23ea91a56f4b0" kindref="member">Setbuf_Char_Type</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classamrex_1_1VisMF_1ad0a5e71e7eafe2b4f3f23ea91a56f4b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ad0a5e71e7eafe2b4f3f23ea91a56f4b0" kindref="member">Setbuf_Char_Type</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Setbuf_Char_Type&gt;</ref><sp/><ref refid="classamrex_1_1VisMF_1a0027a67a36ec8d1b6eca3e2377c9c050" kindref="member">IO_Buffer</ref>;</highlight></codeline>
+<codeline lineno="48" refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156a93fcd009ee92168a4e419161fc19635b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156" kindref="member">How</ref><sp/>{<sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156a93fcd009ee92168a4e419161fc19635b" kindref="member">OneFilePerCPU</ref>,<sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156a167fa24b841257fa58af35b658f5d6c1" kindref="member">NFiles</ref><sp/>};</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ae372e9dede4ddc3c4c271118812e9b39" kindref="member">VisMF</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fafab_name);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1adae69cdb339309e76cfb37486e60ffe4" kindref="member">~VisMF</ref><sp/>();</highlight></codeline>
+<codeline lineno="58" refid="structamrex_1_1VisMF_1_1FabOnDisk" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1VisMF_1_1FabOnDisk" kindref="compound">FabOnDisk</ref></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk_1a909e67bdc85c7a669788ae3144c7709a" kindref="member">FabOnDisk</ref><sp/>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk_1a909e67bdc85c7a669788ae3144c7709a" kindref="member">FabOnDisk</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,<sp/>Long<sp/>offset);</highlight></codeline>
+<codeline lineno="65" refid="structamrex_1_1VisMF_1_1FabOnDisk_1a3384af022eabbdadda0f20d0bda79ebe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk_1a3384af022eabbdadda0f20d0bda79ebe" kindref="member">m_name</ref>;<sp/></highlight></codeline>
+<codeline lineno="66" refid="structamrex_1_1VisMF_1_1FabOnDisk_1a2592709514015ee6c2e68a254a2b5806" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk_1a2592709514015ee6c2e68a254a2b5806" kindref="member">m_head</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="69" refid="structamrex_1_1VisMF_1_1Header" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72" refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">Version</ref><sp/>{</highlight></codeline>
+<codeline lineno="73" refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54da3394365084045ae347fad00a360767d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Undefined_v1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="74" refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54dad8a8b7451642ebbf0f06d98d6aec42c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Version_v1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NoFabHeader_v1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>2,<sp/><sp/></highlight></codeline>
+<codeline lineno="78" refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54da27bc8d82bb52f548646a14b92cf8f43f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NoFabHeaderMinMax_v1<sp/><sp/><sp/>=<sp/>3,<sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NoFabHeaderFAMinMax_v1<sp/>=<sp/>4<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref><sp/>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>&amp;<sp/>fafab,<sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156" kindref="member">VisMF::How</ref><sp/>how,<sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">Version</ref><sp/>version<sp/>=<sp/>Version_v1,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>calcMinMax<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref><sp/>(<ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref>&amp;&amp;<sp/>rhs)<sp/>noexcept<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CalculateMinMax(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>&amp;<sp/>fafab,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>procToWrite<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>(),</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="structamrex_1_1VisMF_1_1Header_1aacee1781de8865ef3c3eb1d282bc6f9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aacee1781de8865ef3c3eb1d282bc6f9b" kindref="member">m_vers</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="99" refid="structamrex_1_1VisMF_1_1Header_1acd1a09adb4489f55771a680dd2cc9d43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156" kindref="member">How</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1acd1a09adb4489f55771a680dd2cc9d43" kindref="member">m_how</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100" refid="structamrex_1_1VisMF_1_1Header_1ae01923bcfc09d7f3aab7f68c9380c54e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1ae01923bcfc09d7f3aab7f68c9380c54e" kindref="member">m_ncomp</ref>;<sp/></highlight></codeline>
+<codeline lineno="101" refid="structamrex_1_1VisMF_1_1Header_1aeca546f429ec75acace53426c6907257" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aeca546f429ec75acace53426c6907257" kindref="member">m_ngrow</ref>;<sp/></highlight></codeline>
+<codeline lineno="102" refid="structamrex_1_1VisMF_1_1Header_1ab62ef15c4a342cc3eb61e116b23bd285" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxArray<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1ab62ef15c4a342cc3eb61e116b23bd285" kindref="member">m_ba</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="structamrex_1_1VisMF_1_1Header_1ad91e0c829d8420c6f1d3b101d36a4016" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt; FabOnDisk &gt;</ref><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1ad91e0c829d8420c6f1d3b101d36a4016" kindref="member">m_fod</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>These<sp/>are<sp/>not<sp/>defined<sp/>if<sp/>they<sp/>are<sp/>not<sp/>in<sp/>the<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="structamrex_1_1VisMF_1_1Header_1a321215a8ba0e8ef28744b61bdd15d0d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt; Vector&lt;Real&gt;</ref><sp/>&gt;<sp/><ref refid="structamrex_1_1VisMF_1_1Header_1a321215a8ba0e8ef28744b61bdd15d0d4" kindref="member">m_min</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108" refid="structamrex_1_1VisMF_1_1Header_1abfc04c1de628cba28c97f597fd5e9448" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt; Vector&lt;Real&gt;</ref><sp/>&gt;<sp/><ref refid="structamrex_1_1VisMF_1_1Header_1abfc04c1de628cba28c97f597fd5e9448" kindref="member">m_max</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109" refid="structamrex_1_1VisMF_1_1Header_1afaf3496aa1e0bce82336411d0ee67fb6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1afaf3496aa1e0bce82336411d0ee67fb6" kindref="member">m_famin</ref>;<sp/></highlight></codeline>
+<codeline lineno="110" refid="structamrex_1_1VisMF_1_1Header_1a7f2c6b837b0a29af54ae8280eb42c8c9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1a7f2c6b837b0a29af54ae8280eb42c8c9" kindref="member">m_famax</ref>;<sp/></highlight></codeline>
+<codeline lineno="111" refid="structamrex_1_1VisMF_1_1Header_1ae83557a09400cdcb97b0220b3ced8d43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1RealDescriptor" kindref="compound">RealDescriptor</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1ae83557a09400cdcb97b0220b3ced8d43" kindref="member">m_writtenRD</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="structamrex_1_1VisMF_1_1FabReadLink" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1VisMF_1_1FabReadLink" kindref="compound">FabReadLink</ref></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117" refid="structamrex_1_1VisMF_1_1FabReadLink_1a6064cc4034c3d95989892cac82c68fea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1FabReadLink_1a6064cc4034c3d95989892cac82c68fea" kindref="member">rankToRead</ref>;</highlight></codeline>
+<codeline lineno="118" refid="structamrex_1_1VisMF_1_1FabReadLink_1afdb4b80e717d79ddc293c138b190fb51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1FabReadLink_1afdb4b80e717d79ddc293c138b190fb51" kindref="member">faIndex</ref>;</highlight></codeline>
+<codeline lineno="119" refid="structamrex_1_1VisMF_1_1FabReadLink_1ae58b44ddc77631e4a5829b09e61a0236" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="structamrex_1_1VisMF_1_1FabReadLink_1ae58b44ddc77631e4a5829b09e61a0236" kindref="member">fileOffset</ref>;</highlight></codeline>
+<codeline lineno="120" refid="structamrex_1_1VisMF_1_1FabReadLink_1ad40376645132122ecd967a0473681454" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/><ref refid="structamrex_1_1VisMF_1_1FabReadLink_1ad40376645132122ecd967a0473681454" kindref="member">box</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1FabReadLink" kindref="compound">FabReadLink</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1FabReadLink" kindref="compound">FabReadLink</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ranktoread,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>faindex,<sp/>Long<sp/>fileoffset,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>&amp;b);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="structamrex_1_1VisMF_1_1PersistentIFStream" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1VisMF_1_1PersistentIFStream" kindref="compound">PersistentIFStream</ref></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129" refid="structamrex_1_1VisMF_1_1PersistentIFStream_1ac1215d1effdf6c549d4d06a61004880d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ifstream<sp/><sp/><sp/>*<ref refid="structamrex_1_1VisMF_1_1PersistentIFStream_1ac1215d1effdf6c549d4d06a61004880d" kindref="member">pstr</ref>;</highlight></codeline>
+<codeline lineno="130" refid="structamrex_1_1VisMF_1_1PersistentIFStream_1a85eca5ae503569f1b40b8d4bac373997" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::streampos<sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1PersistentIFStream_1a85eca5ae503569f1b40b8d4bac373997" kindref="member">currentPosition</ref>;</highlight></codeline>
+<codeline lineno="131" refid="structamrex_1_1VisMF_1_1PersistentIFStream_1ac1ecab1d0722305f0a0257611aeb1bde" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1PersistentIFStream_1ac1ecab1d0722305f0a0257611aeb1bde" kindref="member">isOpen</ref>;</highlight></codeline>
+<codeline lineno="132" refid="structamrex_1_1VisMF_1_1PersistentIFStream_1a1e023351bf031aee0da7cc17272716ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">VisMF::IO_Buffer</ref><sp/><ref refid="structamrex_1_1VisMF_1_1PersistentIFStream_1a1e023351bf031aee0da7cc17272716ae" kindref="member">ioBuffer</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1PersistentIFStream" kindref="compound">PersistentIFStream</ref>();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="structamrex_1_1VisMF_1_1PersistentIFStream" kindref="compound">PersistentIFStream</ref>();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::ifstream<sp/>*<ref refid="classamrex_1_1VisMF_1a1f7ef6b7304a0ff3dd4df629cef4971e" kindref="member">OpenStream</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fileName);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a9f63d703f45cf3be27c339a38d893796" kindref="member">CloseStream</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fileName,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forceClose<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a6a1a78975e5decf1c7aae4555a240628" kindref="member">DeleteStream</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fileName);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a3eb747b7ba5f46a315650c84c1162418" kindref="member">CloseAllStreams</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1af7f852d2d1e0656e85e58dcf5ba364b1" kindref="member">NoFabHeader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">VisMF::Header</ref><sp/>&amp;hdr);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1adec7196972698a4a61e5d5eed628aa8c" kindref="member">nComp</ref><sp/>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a887f01ad484d73b2eaab8ef3e9568d88" kindref="member">nGrow</ref><sp/>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/><ref refid="classamrex_1_1VisMF_1a07b1ead2f2b6a21362bcfbe6fa0cc784" kindref="member">nGrowVect</ref><sp/>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a4d78a01bd23f19f9a1e0289490d79cfc" kindref="member">size</ref><sp/>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/><ref refid="classamrex_1_1VisMF_1a27de055318e371ff5be7e5b2768abbae" kindref="member">boxArray</ref><sp/>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><ref refid="classamrex_1_1VisMF_1ae085e236dab30e007b0618d4e4ef6c2d" kindref="member">min</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1adec7196972698a4a61e5d5eed628aa8c" kindref="member">nComp</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><ref refid="classamrex_1_1VisMF_1ae085e236dab30e007b0618d4e4ef6c2d" kindref="member">min</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1adec7196972698a4a61e5d5eed628aa8c" kindref="member">nComp</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><ref refid="classamrex_1_1VisMF_1a110072536de1d4531dcd88a766c41ac9" kindref="member">max</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1adec7196972698a4a61e5d5eed628aa8c" kindref="member">nComp</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><ref refid="classamrex_1_1VisMF_1a110072536de1d4531dcd88a766c41ac9" kindref="member">max</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1adec7196972698a4a61e5d5eed628aa8c" kindref="member">nComp</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/><ref refid="classamrex_1_1VisMF_1a6849db338a0e6174a0b39b5e483b74b9" kindref="member">GetFab</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>compIndex)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ab3c166ef170fe72fdda5fab9cd9176e0" kindref="member">clear</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>compIndex);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ab3c166ef170fe72fdda5fab9cd9176e0" kindref="member">clear</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ab3c166ef170fe72fdda5fab9cd9176e0" kindref="member">clear</ref><sp/>();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1a527bd21764fd10a8fb440b897e30c12a" kindref="member">Write</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref><sp/>&amp;fafab,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>name,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156" kindref="member">VisMF::How</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>how<sp/>=<sp/>NFiles,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_ghost<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aa912ecd1d879bd8fc207f4a1a5772bed" kindref="member">AsyncWrite</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>mf_name,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>valid_cells_only<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aa912ecd1d879bd8fc207f4a1a5772bed" kindref="member">AsyncWrite</ref><sp/>(<ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>&amp;&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>mf_name,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>valid_cells_only<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1a8807abfd4ec1e3790a765096f2d6b724" kindref="member">WriteOnlyHeader</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref><sp/>&amp;<sp/>mf,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<sp/>mf_name,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156" kindref="member">VisMF::How</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>how<sp/>=<sp/>NFiles);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ad4a180abf07b6a7129d8fd4f6ee0d798" kindref="member">RemoveFiles</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a4ee12165f32372e900a0f0967a344708" kindref="member">verbose</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a584871b7013d4d9e46d16eb6d53803ed" kindref="member">Read</ref><sp/>(<ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref><sp/>&amp;fafab,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*faHeader<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>coordinatorProc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>(),</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>allow_empty_mf<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ab895515b73ef0cdc6d0e06c7590f3e76" kindref="member">Exist</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1abdcbffdd50b28342be875ac0da817056" kindref="member">ReadFAHeader</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fafabName,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;char&gt;</ref><sp/>&amp;header);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ae12f838572701049902254dfb46eb650" kindref="member">Check</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;name);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1a1b41ff82637f2e2f4dd33f27a0d62ad1" kindref="member">FileOffset</ref><sp/>(std::ostream&amp;<sp/>os);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>*<sp/><ref refid="classamrex_1_1VisMF_1af49a2c7b6fd6fdf8f80c84004317f002" kindref="member">readFAB</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>fafabName);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>*<sp/><ref refid="classamrex_1_1VisMF_1af49a2c7b6fd6fdf8f80c84004317f002" kindref="member">readFAB</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>icomp);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1VisMF_1a73b516dcb8729a411f75eaa5d7fc1b54" kindref="member">GetNOutFiles</ref><sp/>();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aeea445c6cb42961bb091d40ee7545607" kindref="member">SetNOutFiles</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newoutfiles,<sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245" refid="classamrex_1_1VisMF_1a738d789073dd1072ac3a0c640429574c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1VisMF_1a738d789073dd1072ac3a0c640429574c" kindref="member">GetMFFileInStreams</ref><sp/>()<sp/><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1abfbb2ed9c1aa1c00786e7ae2218f0b0f" kindref="member">nMFFileInStreams</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1abda03b733e4f5e0b9f005f764f1a5b65" kindref="member">SetMFFileInStreams</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nstreams,<sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="classamrex_1_1VisMF_1a51041736815ed12616b075d56e53fd2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a51041736815ed12616b075d56e53fd2f" kindref="member">GetVerbose</ref><sp/>()<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a4ee12165f32372e900a0f0967a344708" kindref="member">verbose</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="249" refid="classamrex_1_1VisMF_1a998f1813f57b8415140b26966fd0f86c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a998f1813f57b8415140b26966fd0f86c" kindref="member">SetVerbose</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a4ee12165f32372e900a0f0967a344708" kindref="member">verbose</ref><sp/>=<sp/>v;<sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="classamrex_1_1VisMF_1a5be9ce5dc3ed0083f7959e63528de583" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">VisMF::Header::Version</ref><sp/><ref refid="classamrex_1_1VisMF_1a5be9ce5dc3ed0083f7959e63528de583" kindref="member">GetHeaderVersion</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a7f4058d4117af92e70d889263657e9f8" kindref="member">currentVersion</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="252" refid="classamrex_1_1VisMF_1a2ce0e613077c3ec9c4c687628154c5ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a2ce0e613077c3ec9c4c687628154c5ce" kindref="member">SetHeaderVersion</ref><sp/>(<ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">VisMF::Header::Version</ref><sp/>version)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a7f4058d4117af92e70d889263657e9f8" kindref="member">currentVersion</ref><sp/>=<sp/>version;<sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255" refid="classamrex_1_1VisMF_1a8645f0e85a9ccda7b565b6fbabb5bac3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a8645f0e85a9ccda7b565b6fbabb5bac3" kindref="member">GetGroupSets</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a51fdeeea196eac049978076bf6671720" kindref="member">groupSets</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="256" refid="classamrex_1_1VisMF_1a0e5c0555decdea8a4d09c7eabff1a07d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0e5c0555decdea8a4d09c7eabff1a07d" kindref="member">SetGroupSets</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>groupsets)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a51fdeeea196eac049978076bf6671720" kindref="member">groupSets</ref><sp/>=<sp/>groupsets;<sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258" refid="classamrex_1_1VisMF_1a260347a951d2b4a4669cb4dc79956450" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a260347a951d2b4a4669cb4dc79956450" kindref="member">GetSetBuf</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0ab15576cd65ae5152ba609b54b24550" kindref="member">setBuf</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="259" refid="classamrex_1_1VisMF_1af73ff9fbd9a91c471bfbe750de045fb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1af73ff9fbd9a91c471bfbe750de045fb9" kindref="member">SetSetBuf</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setbuf)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a0ab15576cd65ae5152ba609b54b24550" kindref="member">setBuf</ref><sp/>=<sp/>setbuf;<sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="classamrex_1_1VisMF_1aca85185856423d34e7e15041139aee01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aca85185856423d34e7e15041139aee01" kindref="member">GetUseSingleRead</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a7127d8495966b5d5506d3cff6c536a12" kindref="member">useSingleRead</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="262" refid="classamrex_1_1VisMF_1a6142ed0a2ebee84b7961a5f429a3f4de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a6142ed0a2ebee84b7961a5f429a3f4de" kindref="member">SetUseSingleRead</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usesingleread)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a7127d8495966b5d5506d3cff6c536a12" kindref="member">useSingleRead</ref><sp/>=<sp/>usesingleread;<sp/>}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="classamrex_1_1VisMF_1aead41678a66e4c5a4f315404d3ffed10" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aead41678a66e4c5a4f315404d3ffed10" kindref="member">GetUseSingleWrite</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0706ea7e89d0d5b2d9a60acacc8f38f0" kindref="member">useSingleWrite</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="265" refid="classamrex_1_1VisMF_1a2a642eb132677ff8e2cda24a665def96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a2a642eb132677ff8e2cda24a665def96" kindref="member">SetUseSingleWrite</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usesinglewrite)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a0706ea7e89d0d5b2d9a60acacc8f38f0" kindref="member">useSingleWrite</ref><sp/>=<sp/>usesinglewrite;<sp/>}</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267" refid="classamrex_1_1VisMF_1a67cbe97a6341b35ab4036a8b0ca59f3c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a67cbe97a6341b35ab4036a8b0ca59f3c" kindref="member">GetCheckFilePositions</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a174cc2335d85746e4c0c05c71c0a816b" kindref="member">checkFilePositions</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="268" refid="classamrex_1_1VisMF_1a5fa42d848c0d0dc397ddf05fd16c5e16" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a5fa42d848c0d0dc397ddf05fd16c5e16" kindref="member">SetCheckFilePositions</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cfp)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a174cc2335d85746e4c0c05c71c0a816b" kindref="member">checkFilePositions</ref><sp/>=<sp/>cfp;<sp/>}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="classamrex_1_1VisMF_1a92c8f7a70093675fe29a9b3cfbe8e10f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a92c8f7a70093675fe29a9b3cfbe8e10f" kindref="member">GetUsePersistentIFStreams</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a806512ed6337ff31d9eb6f63f94ce792" kindref="member">usePersistentIFStreams</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="271" refid="classamrex_1_1VisMF_1ae3d6b0ee4099108fc70fff4deb69b738" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ae3d6b0ee4099108fc70fff4deb69b738" kindref="member">SetUsePersistentIFStreams</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usepifs)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a806512ed6337ff31d9eb6f63f94ce792" kindref="member">usePersistentIFStreams</ref><sp/>=<sp/>usepifs;<sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273" refid="classamrex_1_1VisMF_1a7310b7f7d63449b1b38bcb8afdac7db8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a7310b7f7d63449b1b38bcb8afdac7db8" kindref="member">GetUseSynchronousReads</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0c9e87f4c459196a9f1ce7870ccbf9cb" kindref="member">useSynchronousReads</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="274" refid="classamrex_1_1VisMF_1a97d811af2fd976d508e3f0cb4460c0fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a97d811af2fd976d508e3f0cb4460c0fb" kindref="member">SetUseSynchronousReads</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usepsr)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a0c9e87f4c459196a9f1ce7870ccbf9cb" kindref="member">useSynchronousReads</ref><sp/>=<sp/>usepsr;<sp/>}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276" refid="classamrex_1_1VisMF_1a20746ef0d6ef7d8491c815e2a954d13c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a20746ef0d6ef7d8491c815e2a954d13c" kindref="member">GetUseDynamicSetSelection</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a9149ec039a2136083c03aabdaa275672" kindref="member">useDynamicSetSelection</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="277" refid="classamrex_1_1VisMF_1ae5edd64d22f48b760a17f2e1c7369df6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ae5edd64d22f48b760a17f2e1c7369df6" kindref="member">SetUseDynamicSetSelection</ref><sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>usedss)<sp/>{<sp/><ref refid="classamrex_1_1VisMF_1a9149ec039a2136083c03aabdaa275672" kindref="member">useDynamicSetSelection</ref><sp/>=<sp/>usedss;<sp/>}</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279" refid="classamrex_1_1VisMF_1ab282227d4bfb63e964c0e404f5175af5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1ab282227d4bfb63e964c0e404f5175af5" kindref="member">GetIOBufferSize</ref><sp/>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a1f60977c11c2c87df32b47debd813b9e" kindref="member">ioBufferSize</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="280" refid="classamrex_1_1VisMF_1ae58b8cefb7f917ce5a819a08d2386d70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ae58b8cefb7f917ce5a819a08d2386d70" kindref="member">SetIOBufferSize</ref><sp/>(Long<sp/>iobuffersize)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(iobuffersize<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1a1f60977c11c2c87df32b47debd813b9e" kindref="member">ioBufferSize</ref><sp/>=<sp/>iobuffersize;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aca0f6fbf4458284d275ca2f0625c2303" kindref="member">Initialize</ref><sp/>();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1aae19503ef83149be04e9d97f1c6bd6a3" kindref="member">Finalize</ref><sp/>();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>These<sp/>are<sp/>disallowed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1ae372e9dede4ddc3c4c271118812e9b39" kindref="member">VisMF</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF" kindref="compound">VisMF</ref>&amp;);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF" kindref="compound">VisMF</ref>&amp;<sp/><ref refid="classamrex_1_1VisMF_1a5d27212879138a4ea1e4264fa3fc9192" kindref="member">operator= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF" kindref="compound">VisMF</ref>&amp;);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk" kindref="compound">FabOnDisk</ref><sp/><ref refid="classamrex_1_1VisMF_1a527bd21764fd10a8fb440b897e30c12a" kindref="member">Write</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref>&amp;<sp/><sp/><sp/>fab,</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes);</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1a1da6ab2f7999738ec807b98d6af43e49" kindref="member">WriteHeaderDoit</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fafab_name,</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">VisMF::Header</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>&amp;hdr);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1add3fb6556f6006594d5589b40d99beec" kindref="member">WriteHeader</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fafab_name,</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">VisMF::Header</ref><sp/><sp/><sp/><sp/><sp/>&amp;hdr,</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>procToWrite<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>(),</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a3f74b018e90a133b54a5d1cde07580c7" kindref="member">FindOffsets</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref><sp/>&amp;fafab,</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fafab_name,</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">VisMF::Header</ref><sp/>&amp;hdr,</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">VisMF::Header::Version</ref><sp/>whichVersion,</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NFilesIter" kindref="compound">NFilesIter</ref><sp/>&amp;nfi,</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref><sp/>comm<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>());</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref><sp/>*<ref refid="classamrex_1_1VisMF_1af49a2c7b6fd6fdf8f80c84004317f002" kindref="member">readFAB</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabIndex,</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fafab_name,</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref><sp/><sp/><sp/><sp/><sp/><sp/>&amp;hdr,</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>whichComp<sp/>=<sp/>-1);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1af49a2c7b6fd6fdf8f80c84004317f002" kindref="member">readFAB</ref><sp/>(<ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref><sp/>&amp;fafab,</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fabIndex,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;fafab_name,</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref>&amp;<sp/><sp/><sp/><sp/><sp/><sp/>hdr);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classamrex_1_1VisMF_1a87ed18b9e628d872b53b55a5b3fed710" kindref="member">DirName</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classamrex_1_1VisMF_1acdc54dfd982d910dafbe21e9c0459bf1" kindref="member">BaseName</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a47bde5693ee83a851572ff7c2491fc8c" kindref="member">AsyncWriteDoit</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray&lt;FArrayBox&gt;</ref>&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>mf_name,</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_rvalue,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>valid_cells_only);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340" refid="classamrex_1_1VisMF_1a3e29beee8db471f8b5cca2c5ab03e1c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classamrex_1_1VisMF_1a3e29beee8db471f8b5cca2c5ab03e1c8" kindref="member">m_fafabname</ref>;</highlight></codeline>
+<codeline lineno="342" refid="classamrex_1_1VisMF_1a8b04406fcfdbec77eba187d3ceb9b2dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">Header</ref><sp/><ref refid="classamrex_1_1VisMF_1a8b04406fcfdbec77eba187d3ceb9b2dc" kindref="member">m_hdr</ref>;</highlight></codeline>
+<codeline lineno="344" refid="classamrex_1_1VisMF_1a6e7c0f5fc1401ba1497916e015b8591c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt; Vector&lt;FArrayBox*&gt;</ref><sp/>&gt;<sp/><ref refid="classamrex_1_1VisMF_1a6e7c0f5fc1401ba1497916e015b8591c" kindref="member">m_pa</ref>;</highlight></codeline>
+<codeline lineno="350" refid="classamrex_1_1VisMF_1accf2e64d0fa423eb3c82df8c1189e908" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::map&lt;std::string,<sp/>VisMF::PersistentIFStream&gt;<sp/><ref refid="classamrex_1_1VisMF_1accf2e64d0fa423eb3c82df8c1189e908" kindref="member">persistentIFStreams</ref>;</highlight></codeline>
+<codeline lineno="352" refid="classamrex_1_1VisMF_1ade6a45cdc3be4fb324ccd3a863788aae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ade6a45cdc3be4fb324ccd3a863788aae" kindref="member">nOutFiles</ref>;</highlight></codeline>
+<codeline lineno="353" refid="classamrex_1_1VisMF_1abfbb2ed9c1aa1c00786e7ae2218f0b0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1abfbb2ed9c1aa1c00786e7ae2218f0b0f" kindref="member">nMFFileInStreams</ref>;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="classamrex_1_1VisMF_1a4ee12165f32372e900a0f0967a344708" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a4ee12165f32372e900a0f0967a344708" kindref="member">verbose</ref>;</highlight></codeline>
+<codeline lineno="356" refid="classamrex_1_1VisMF_1a7f4058d4117af92e70d889263657e9f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">VisMF::Header::Version</ref><sp/><ref refid="classamrex_1_1VisMF_1a7f4058d4117af92e70d889263657e9f8" kindref="member">currentVersion</ref>;</highlight></codeline>
+<codeline lineno="357" refid="classamrex_1_1VisMF_1a51fdeeea196eac049978076bf6671720" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a51fdeeea196eac049978076bf6671720" kindref="member">groupSets</ref>;</highlight></codeline>
+<codeline lineno="358" refid="classamrex_1_1VisMF_1a0ab15576cd65ae5152ba609b54b24550" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0ab15576cd65ae5152ba609b54b24550" kindref="member">setBuf</ref>;</highlight></codeline>
+<codeline lineno="359" refid="classamrex_1_1VisMF_1a7127d8495966b5d5506d3cff6c536a12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a7127d8495966b5d5506d3cff6c536a12" kindref="member">useSingleRead</ref>;</highlight></codeline>
+<codeline lineno="360" refid="classamrex_1_1VisMF_1a0706ea7e89d0d5b2d9a60acacc8f38f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0706ea7e89d0d5b2d9a60acacc8f38f0" kindref="member">useSingleWrite</ref>;</highlight></codeline>
+<codeline lineno="361" refid="classamrex_1_1VisMF_1a174cc2335d85746e4c0c05c71c0a816b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a174cc2335d85746e4c0c05c71c0a816b" kindref="member">checkFilePositions</ref>;</highlight></codeline>
+<codeline lineno="362" refid="classamrex_1_1VisMF_1a806512ed6337ff31d9eb6f63f94ce792" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a806512ed6337ff31d9eb6f63f94ce792" kindref="member">usePersistentIFStreams</ref>;</highlight></codeline>
+<codeline lineno="363" refid="classamrex_1_1VisMF_1a0c9e87f4c459196a9f1ce7870ccbf9cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a0c9e87f4c459196a9f1ce7870ccbf9cb" kindref="member">useSynchronousReads</ref>;</highlight></codeline>
+<codeline lineno="364" refid="classamrex_1_1VisMF_1a9149ec039a2136083c03aabdaa275672" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1a9149ec039a2136083c03aabdaa275672" kindref="member">useDynamicSetSelection</ref>;</highlight></codeline>
+<codeline lineno="365" refid="classamrex_1_1VisMF_1ad6b2c32f84c4e530a473eab6ffd666f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1VisMF_1ad6b2c32f84c4e530a473eab6ffd666f2" kindref="member">allowSparseWrites</ref>;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367" refid="classamrex_1_1VisMF_1a1f60977c11c2c87df32b47debd813b9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Long<sp/><ref refid="classamrex_1_1VisMF_1a1f60977c11c2c87df32b47debd813b9e" kindref="member">ioBufferSize</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="368"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk" kindref="compound">VisMF::FabOnDisk</ref>&amp;<sp/>fod);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal">std::istream&amp;<sp/><ref refid="namespaceamrex_1aac7b44499bc56506bcf5ed89ec42bc09" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,<sp/><ref refid="structamrex_1_1VisMF_1_1FabOnDisk" kindref="compound">VisMF::FabOnDisk</ref>&amp;<sp/>fod);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal">std::ostream&amp;<sp/>operator&lt;&lt;<sp/>(std::ostream&amp;<sp/>os,<sp/>const<sp/>Vector&lt;VisMF::FabOnDisk&gt;&amp;<sp/>fa);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal">std::istream&amp;<sp/><ref refid="namespaceamrex_1aac7b44499bc56506bcf5ed89ec42bc09" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,<sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;VisMF::FabOnDisk&gt;</ref>&amp;<sp/>fa);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">std::ostream&amp;<sp/><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/>os,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">VisMF::Header</ref>&amp;<sp/>hd);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal">std::istream&amp;<sp/><ref refid="namespaceamrex_1aac7b44499bc56506bcf5ed89ec42bc09" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,<sp/><ref refid="structamrex_1_1VisMF_1_1Header" kindref="compound">VisMF::Header</ref>&amp;<sp/>hd);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*BL_VISMF_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_VisMF.H"/>
+  </compounddef>
+</doxygen>

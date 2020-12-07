@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structamrex_1_1Array3D" kind="struct" language="C++" prot="public">
+    <compoundname>amrex::Array3D</compoundname>
+    <includes refid="AMReX__Array_8H" local="no">AMReX_Array.H</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>XLO</declname>
+        <defname>XLO</defname>
+      </param>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>XHI</declname>
+        <defname>XHI</defname>
+      </param>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>YLO</declname>
+        <defname>YLO</defname>
+      </param>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>YHI</declname>
+        <defname>YHI</defname>
+      </param>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>ZLO</declname>
+        <defname>ZLO</defname>
+      </param>
+      <param>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <declname>ZHI</declname>
+        <defname>ZHI</defname>
+      </param>
+      <param>
+        <type>class ORDER</type>
+        <defval><ref refid="structamrex_1_1Order_1_1F" kindref="compound">Order::F</ref></defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structamrex_1_1Array3D_1a8434ec94124e414497999f2bbf293ae0" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;::arr[(XHI-XLO+1) *(YHI-YLO+1) *(ZHI-ZLO+1)]</definition>
+        <argsstring>[(XHI-XLO+1) *(YHI-YLO+1) *(ZHI-ZLO+1)]</argsstring>
+        <name>arr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="171" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structamrex_1_1Array3D_1aee1539b552b20a4bead8cd53a99d4f02" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename O</type>
+            <defval>ORDER</defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; std::is_same&lt; O, <ref refid="structamrex_1_1Order_1_1F" kindref="compound">Order::F</ref> &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> const T &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE const T&amp; amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;::operator()</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>operator()</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="142" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Array3D_1abf54e64537c495cc45a1be3d73982a4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename O</type>
+            <defval>ORDER</defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; std::is_same&lt; O, <ref refid="structamrex_1_1Order_1_1F" kindref="compound">Order::F</ref> &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T&amp; amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;::operator()</definition>
+        <argsstring>(int i, int j, int k) noexcept</argsstring>
+        <name>operator()</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="150" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Array3D_1aee1539b552b20a4bead8cd53a99d4f02" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename O</type>
+            <defval>ORDER</defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; std::is_same&lt; O, <ref refid="structamrex_1_1Order_1_1C" kindref="compound">Order::C</ref> &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> const T &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE const T&amp; amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;::operator()</definition>
+        <argsstring>(int i, int j, int k) const noexcept</argsstring>
+        <name>operator()</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="158" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="structamrex_1_1Array3D_1abf54e64537c495cc45a1be3d73982a4a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename O</type>
+            <defval>ORDER</defval>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; std::is_same&lt; O, <ref refid="structamrex_1_1Order_1_1C" kindref="compound">Order::C</ref> &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T &amp;</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T&amp; amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;::operator()</definition>
+        <argsstring>(int i, int j, int k) noexcept</argsstring>
+        <name>operator()</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>j</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="166" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="166" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="466">
+        <label>T</label>
+      </node>
+      <node id="465">
+        <label>amrex::Array3D&lt; T, XLO, XHI, YLO, YHI, ZLO, ZHI, ORDER &gt;</label>
+        <link refid="structamrex_1_1Array3D"/>
+        <childnode refid="466" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" line="138" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Array.H" bodystart="137" bodyend="172"/>
+    <listofallmembers>
+      <member refid="structamrex_1_1Array3D_1a8434ec94124e414497999f2bbf293ae0" prot="public" virt="non-virtual"><scope>amrex::Array3D</scope><name>arr</name></member>
+      <member refid="structamrex_1_1Array3D_1aee1539b552b20a4bead8cd53a99d4f02" prot="public" virt="non-virtual"><scope>amrex::Array3D</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1Array3D_1abf54e64537c495cc45a1be3d73982a4a" prot="public" virt="non-virtual"><scope>amrex::Array3D</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1Array3D_1aee1539b552b20a4bead8cd53a99d4f02" prot="public" virt="non-virtual"><scope>amrex::Array3D</scope><name>operator()</name></member>
+      <member refid="structamrex_1_1Array3D_1abf54e64537c495cc45a1be3d73982a4a" prot="public" virt="non-virtual"><scope>amrex::Array3D</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

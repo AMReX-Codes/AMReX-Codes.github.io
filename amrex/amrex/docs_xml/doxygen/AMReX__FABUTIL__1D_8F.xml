@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="AMReX__FABUTIL__1D_8F" kind="file" language="Fortran">
+    <compoundname>AMReX_FABUTIL_1D.F</compoundname>
+    <includes refid="AMReX__REAL_8H" local="yes">AMReX_REAL.H</includes>
+    <includes refid="AMReX__CONSTANTS_8H" local="yes">AMReX_CONSTANTS.H</includes>
+    <incdepgraph>
+      <node id="61439">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F</label>
+        <link refid="AMReX__FABUTIL__1D_8F"/>
+        <childnode refid="61440" relation="include">
+        </childnode>
+        <childnode refid="61444" relation="include">
+        </childnode>
+      </node>
+      <node id="61443">
+        <label>float.h</label>
+      </node>
+      <node id="61440">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="61441" relation="include">
+        </childnode>
+        <childnode refid="61442" relation="include">
+        </childnode>
+        <childnode refid="61443" relation="include">
+        </childnode>
+      </node>
+      <node id="61444">
+        <label>AMReX_CONSTANTS.H</label>
+        <link refid="AMReX__CONSTANTS_8H"/>
+        <childnode refid="61441" relation="include">
+        </childnode>
+        <childnode refid="61440" relation="include">
+        </childnode>
+      </node>
+      <node id="61442">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+        <childnode refid="61441" relation="include">
+        </childnode>
+      </node>
+      <node id="61441">
+        <label>AMReX_Config.H</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="AMReX__FABUTIL__1D_8F_1ad2a7c88f73224302fbe08f2168d32134" prot="public" static="no">
+        <name>FORT_CINTERP</name>
+        <initializer>cinterp1d</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" line="3" column="11"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__FABUTIL__1D_8F_1a7478c4cc9dc12aa9abf4160447509e1b" prot="public" static="no">
+        <name>FORT_PCINTERP</name>
+        <initializer>pcinterp1d</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" line="4" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__FABUTIL__1D_8F_1a4cc012e58f3c17b40e18612e7a26e802" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fort_cinterp</definition>
+        <argsstring>(fine, floi1, floi2, fhii1, fhii2, fblo, fbhi, nvar, lratio, crse, clo, chi, cblo, cbhi, fslo, fshi, cslope, clen, fslope, fdat, flen, voff)</argsstring>
+        <name>fort_cinterp</name>
+        <param>
+          <type>fine</type>
+          <defname>fine</defname>
+        </param>
+        <param>
+          <type>floi1</type>
+          <defname>floi1</defname>
+        </param>
+        <param>
+          <type>floi2</type>
+          <defname>floi2</defname>
+        </param>
+        <param>
+          <type>fhii1</type>
+          <defname>fhii1</defname>
+        </param>
+        <param>
+          <type>fhii2</type>
+          <defname>fhii2</defname>
+        </param>
+        <param>
+          <type>fblo</type>
+          <defname>fblo</defname>
+        </param>
+        <param>
+          <type>fbhi</type>
+          <defname>fbhi</defname>
+        </param>
+        <param>
+          <type>nvar</type>
+          <defname>nvar</defname>
+        </param>
+        <param>
+          <type>lratio</type>
+          <defname>lratio</defname>
+        </param>
+        <param>
+          <type>crse</type>
+          <defname>crse</defname>
+        </param>
+        <param>
+          <type>clo</type>
+          <defname>clo</defname>
+        </param>
+        <param>
+          <type>chi</type>
+          <defname>chi</defname>
+        </param>
+        <param>
+          <type>cblo</type>
+          <defname>cblo</defname>
+        </param>
+        <param>
+          <type>cbhi</type>
+          <defname>cbhi</defname>
+        </param>
+        <param>
+          <type>fslo</type>
+          <defname>fslo</defname>
+        </param>
+        <param>
+          <type>fshi</type>
+          <defname>fshi</defname>
+        </param>
+        <param>
+          <type>cslope</type>
+          <defname>cslope</defname>
+        </param>
+        <param>
+          <type>clen</type>
+          <defname>clen</defname>
+        </param>
+        <param>
+          <type>fslope</type>
+          <defname>fslope</defname>
+        </param>
+        <param>
+          <type>fdat</type>
+          <defname>fdat</defname>
+        </param>
+        <param>
+          <type>flen</type>
+          <defname>flen</defname>
+        </param>
+        <param>
+          <type>voff</type>
+          <defname>voff</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" line="12" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" bodystart="15" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__FABUTIL__1D_8F_1abfc0c38839c4526272eaa136a5a3f46d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine fort_pcinterp</definition>
+        <argsstring>(fine, floi1, fhii1, fblo, fbhi, lrat, nvar, crse, cloi1, chii1, cblo, cbhi, temp, tloi, thii)</argsstring>
+        <name>fort_pcinterp</name>
+        <param>
+          <type>fine</type>
+          <defname>fine</defname>
+        </param>
+        <param>
+          <type>floi1</type>
+          <defname>floi1</defname>
+        </param>
+        <param>
+          <type>fhii1</type>
+          <defname>fhii1</defname>
+        </param>
+        <param>
+          <type>fblo</type>
+          <defname>fblo</defname>
+        </param>
+        <param>
+          <type>fbhi</type>
+          <defname>fbhi</defname>
+        </param>
+        <param>
+          <type>lrat</type>
+          <defname>lrat</defname>
+        </param>
+        <param>
+          <type>nvar</type>
+          <defname>nvar</defname>
+        </param>
+        <param>
+          <type>crse</type>
+          <defname>crse</defname>
+        </param>
+        <param>
+          <type>cloi1</type>
+          <defname>cloi1</defname>
+        </param>
+        <param>
+          <type>chii1</type>
+          <defname>chii1</defname>
+        </param>
+        <param>
+          <type>cblo</type>
+          <defname>cblo</defname>
+        </param>
+        <param>
+          <type>cbhi</type>
+          <defname>cbhi</defname>
+        </param>
+        <param>
+          <type>temp</type>
+          <defname>temp</defname>
+        </param>
+        <param>
+          <type>tloi</type>
+          <defname>tloi</defname>
+        </param>
+        <param>
+          <type>thii</type>
+          <defname>thii</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" line="204" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" bodystart="206" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__FABUTIL__1D_8F_1a39695606b5463f122a72efd357401044" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>subroutine</type>
+        <definition>subroutine cartgridminmax1d</definition>
+        <argsstring>(data, lo1, lo2, hi1, hi2, vfracdata, vfeps, dmin, dmax)</argsstring>
+        <name>cartgridminmax1d</name>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>lo1</type>
+          <defname>lo1</defname>
+        </param>
+        <param>
+          <type>lo2</type>
+          <defname>lo2</defname>
+        </param>
+        <param>
+          <type>hi1</type>
+          <defname>hi1</defname>
+        </param>
+        <param>
+          <type>hi2</type>
+          <defname>hi2</defname>
+        </param>
+        <param>
+          <type>vfracdata</type>
+          <defname>vfracdata</defname>
+        </param>
+        <param>
+          <type>vfeps</type>
+          <defname>vfeps</defname>
+        </param>
+        <param>
+          <type>dmin</type>
+          <defname>dmin</defname>
+        </param>
+        <param>
+          <type>dmax</type>
+          <defname>dmax</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" line="255" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F" bodystart="257" bodyend="280"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">c<sp/>:::<sp/>SCCS<sp/>stuff<sp/>&quot;@(#)FABUTIL_2D.F<sp/><sp/>3.1\t6/25/93&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>FORT_CINTERP<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinterp1d</highlight></codeline>
+<codeline lineno="4"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/><sp/><sp/>FORT_PCINTERP<sp/><sp/><sp/><sp/><sp/><sp/>pcinterp1d</highlight></codeline>
+<codeline lineno="5"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>AMREX_XSDK</highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;AMReX_REAL.H&quot;</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&quot;AMReX_CONSTANTS.H&quot;</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FABUTIL__1D_8F_1a4cc012e58f3c17b40e18612e7a26e802" kindref="member">fort_cinterp</ref><sp/>(fine,floi1,floi2,fhii1,fhii2,<sp/>fblo,fbhi,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>$<sp/>nvar,lratio,<sp/>crse,clo,chi,cblo,cbhi,fslo,fshi,<sp/>cslope,clen,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>$<sp/>fslope,fdat,flen,voff)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>floi1,floi2,<sp/>fhii1,fhii2</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>fblo(2),<sp/>fbhi(2)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>cblo(2),<sp/>cbhi(2)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>fslo(2),<sp/>fshi(2)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>lratio,<sp/>nvar,<sp/>clen,<sp/>flen,<sp/>clo,<sp/>chi</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>fine(floi1<sp/>:fhii1<sp/>,floi2<sp/>:fhii2,<sp/>nvar)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>crse(clo:chi,<sp/>nvar)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>cslope(clo:chi,<sp/>2)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>fslope(flen,<sp/>2)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>fdat(flen)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>voff(flen)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>NOTE:<sp/>data<sp/>must<sp/>be<sp/>sent<sp/>in<sp/>so<sp/>that<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>cslope(1,*)<sp/>and<sp/>crse(1,*)<sp/>are<sp/>associated<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>the<sp/>same<sp/>cell</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>cinterp:<sp/><sp/><sp/>conservative<sp/>interpolation<sp/>from<sp/>coarse<sp/>grid<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>subregion<sp/>of<sp/>fine<sp/>grid<sp/>defined<sp/>by<sp/>(fblo,fbhi)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>Inputs/Outputs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fine<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;=&gt;<sp/><sp/>(modify)<sp/>fine<sp/>grid<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>flo,fhi<sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>index<sp/>limits<sp/>of<sp/>fine<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fblo,fbhi<sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>subregion<sp/>of<sp/>fine<sp/>grid<sp/>to<sp/>get<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>nvar<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>number<sp/>of<sp/>variables<sp/>in<sp/>state<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>lratio<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>refinement<sp/>ratio<sp/>between<sp/>levels</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>crse<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>coarse<sp/>grid<sp/>data<sp/>widended<sp/>by<sp/>1<sp/>zone</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>and<sp/>unrolled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>clo,chi<sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>one<sp/>dimensional<sp/>limits<sp/>of<sp/>crse<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>cslo,cshi<sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>coarse<sp/>grid<sp/>index<sp/>limits<sp/>where</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>slopes<sp/>are<sp/>to<sp/>be<sp/>defined.<sp/>This<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>the<sp/>projection<sp/>of<sp/>(fblo,fbhi)<sp/>down</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>to<sp/>the<sp/>coarse<sp/>level<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fslo,fshi<sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>fine<sp/>grid<sp/>index<sp/>limits<sp/>where</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>slopes<sp/>are<sp/>needed.<sp/><sp/>This<sp/>is<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>refinement<sp/>of<sp/>(cslo,cshi)<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>contains<sp/>but<sp/>may<sp/>not<sp/>be<sp/>identical</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>to<sp/>(fblo,fbhi).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>cslope<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(modify)<sp/>temp<sp/>array<sp/>coarse<sp/>grid<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>clen<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>length<sp/>of<sp/>coarse<sp/>gtid<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fslope<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(modify)<sp/>temp<sp/>array<sp/>for<sp/>fine<sp/>grid<sp/>slope</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>flen<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>length<sp/>of<sp/>fine<sp/>grid<sp/>slope<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fdat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>temp<sp/>array<sp/>for<sp/>fine<sp/>grid<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>local<sp/>var</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>n,<sp/>fn</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>i,<sp/>ic,<sp/>ioff</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>j,<sp/>jc,<sp/>joff</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>ist,<sp/>jst</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>hafrat,<sp/>volratio</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>cen,<sp/>forw,<sp/>back,<sp/>slp</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>xoff,<sp/>yoff</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>ncbx,<sp/>ncby</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>ncsx,<sp/>ncsy</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>islo,<sp/>jslo</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>icc,<sp/>istart,<sp/>iend</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>lenx,<sp/>leny,<sp/>maxlen</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="AMReX__error__mod_8F90_1adf74d100df3372e88670b8c79c770425" kindref="member">bl_abort</ref>(</highlight><highlight class="stringliteral">&quot;fix<sp/>FORT_CINTERP<sp/>for<sp/>1d.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>hafrat<sp/>=<sp/><ref refid="namespaceamrex__constants__module_1a0054397f5649f24a3da0cb5933162018" kindref="member">half</ref>*float(lratio-1)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>volratio<sp/>=<sp/><ref refid="namespaceamrex__constants__module_1ac1e62f94cf48ab5f9c7203871884b89d" kindref="member">one</ref>/float(lratio)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ncbx<sp/>=<sp/>cbhi(1)-cblo(1)+1</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ncby<sp/>=<sp/>cbhi(2)-cblo(2)+1</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ncsx<sp/>=<sp/>ncbx+2</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ncsy<sp/>=<sp/>ncby+2</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ist<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jst<sp/>=<sp/>ncsx</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>islo<sp/>=<sp/>cblo(1)-1</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>jslo<sp/>=<sp/>cblo(2)-1</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lenx<sp/>=<sp/>fbhi(1)-fblo(1)+1</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>leny<sp/>=<sp/>fbhi(2)-fblo(2)+1</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>maxlen<sp/>=<sp/>max(lenx,leny)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(maxlen<sp/>.eq.<sp/>lenx)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>100<sp/>i<sp/>=<sp/>fblo(1),<sp/>fbhi(1)<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>i-fslo(1)+1</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ioff<sp/>=<sp/>mod(fn-1,lratio)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>voff(fn)<sp/>=<sp/>float(ioff)-hafrat</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">100<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>110<sp/>j<sp/>=<sp/>fblo(2),<sp/>fbhi(2)<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>j-fslo(2)+1</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>joff<sp/>=<sp/>mod(fn-1,lratio)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>voff(fn)<sp/>=<sp/>float(joff)-hafrat</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">110<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>120<sp/>n<sp/>=<sp/>1,<sp/>nvar<sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>:::::<sp/>compute<sp/>slopes<sp/>in<sp/>x<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>130<sp/>i<sp/>=<sp/>1,<sp/>clen<sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cen<sp/>=<sp/><ref refid="namespaceamrex__constants__module_1a0054397f5649f24a3da0cb5933162018" kindref="member">half</ref>*(crse(i+ist,n)-crse(i-ist,n))</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>forw<sp/>=<sp/>crse(i+ist,n)-crse(i,n)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>back<sp/>=<sp/>crse(i,n)-crse(i-ist,n)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>slp<sp/>=<sp/>sign(<ref refid="namespaceamrex__constants__module_1ac1e62f94cf48ab5f9c7203871884b89d" kindref="member">one</ref>,cen)*min(<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(cen),<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(forw),<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(back))</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cslope(i,1)=merge(slp,<ref refid="namespaceamrex__constants__module_1a1f4791a841a93287a5d1a9f841bdecd1" kindref="member">zero</ref>,forw*back&gt;=0.0d0)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">130<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>:::::<sp/>compute<sp/>slopes<sp/>in<sp/>y<sp/>direction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>140<sp/>i<sp/>=<sp/>1,<sp/>clen<sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cen<sp/>=<sp/><ref refid="namespaceamrex__constants__module_1a0054397f5649f24a3da0cb5933162018" kindref="member">half</ref>*(crse(i+jst,n)-crse(i-jst,n))</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>forw<sp/>=<sp/>crse(i+jst,n)-crse(i,n)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>back<sp/>=<sp/>crse(i,n)-crse(i-jst,n)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>slp<sp/>=<sp/>sign(<ref refid="namespaceamrex__constants__module_1ac1e62f94cf48ab5f9c7203871884b89d" kindref="member">one</ref>,cen)*min(<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(cen),<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(forw),<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">abs</ref>(back))</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cslope(i,2)=merge(slp,<ref refid="namespaceamrex__constants__module_1a1f4791a841a93287a5d1a9f841bdecd1" kindref="member">zero</ref>,forw*back&gt;=0.0d0)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">140<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(maxlen<sp/>.eq.<sp/>lenx)<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>150<sp/>jc<sp/>=<sp/>cblo(2),<sp/>cbhi(2)<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>..,.......:::::<sp/>strip<sp/>out<sp/>a<sp/>fine<sp/>grid<sp/>slope<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>160<sp/>ioff<sp/>=<sp/>1,<sp/>lratio<sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>icc<sp/>=<sp/>clo<sp/>+<sp/>ist<sp/>+<sp/>jst*(jc-jslo)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>istart<sp/>=<sp/>ioff</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iend<sp/>=<sp/>ioff<sp/>+<sp/>(ncbx-1)*lratio</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>170<sp/>fn<sp/>=<sp/>istart,<sp/>iend,<sp/>lratio<sp/></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fslope(fn,1)<sp/>=<sp/>cslope(icc,1)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fslope(fn,2)<sp/>=<sp/>cslope(icc,2)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdat(fn)<sp/>=<sp/>crse(icc,n)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>icc<sp/>=<sp/>icc<sp/>+<sp/>ist</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">170<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">160<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>180<sp/>joff<sp/>=<sp/>0,<sp/>lratio-1<sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j<sp/>=<sp/>lratio*jc<sp/>+<sp/>joff</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>.lt.<sp/>fblo(2))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>180</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>---<sp/>next<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j<sp/>.gt.<sp/>fbhi(2))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>181</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>---<sp/>break<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yoff<sp/>=<sp/>float(joff)-hafrat</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>190<sp/>i<sp/>=<sp/>fblo(1),<sp/>fbhi(1)<sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>i-fslo(1)+1</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,n)<sp/>=<sp/>fdat(fn)<sp/>+<sp/>volratio*<sp/>(voff(fn)*</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>$<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fslope(fn,1)+yoff*fslope(fn,2))</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">190<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal">180<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">181<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">150<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>200<sp/>ic<sp/>=<sp/>cblo(1),<sp/>cbhi(1)<sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>..,.......:::::<sp/>strip<sp/>out<sp/>a<sp/>fine<sp/>grid<sp/>slope<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>210<sp/>joff<sp/>=<sp/>1,<sp/>lratio<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>icc<sp/>=<sp/>clo<sp/>+<sp/>ist*(ic-islo)<sp/>+<sp/>jst</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>istart<sp/>=<sp/>joff</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iend<sp/>=<sp/>joff<sp/>+<sp/>(ncby-1)*lratio</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>220<sp/>fn<sp/>=<sp/>istart,<sp/>iend,<sp/>lratio<sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fslope(fn,1)<sp/>=<sp/>cslope(icc,1)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fslope(fn,2)<sp/>=<sp/>cslope(icc,2)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fdat(fn)<sp/>=<sp/>crse(icc,n)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>icc<sp/>=<sp/>icc<sp/>+<sp/>jst</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">220<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">210<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>230<sp/>ioff<sp/>=<sp/>0,<sp/>lratio-1<sp/></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>lratio*ic<sp/>+<sp/>ioff</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>.lt.<sp/>fblo(1))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>230</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>---<sp/>next<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>.gt.<sp/>fbhi(1))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>231</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>---<sp/>break<sp/>---</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xoff<sp/>=<sp/>float(ioff)-hafrat</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>240<sp/>j<sp/>=<sp/>fblo(2),<sp/>fbhi(2)<sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>j-fslo(2)+1</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,n)<sp/>=<sp/>fdat(fn)<sp/>+<sp/>volratio*<sp/>(xoff*</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>$<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fslope(fn,1)+voff(fn)*fslope(fn,2))</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">240<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">230<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">231<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal">200<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">120<sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FABUTIL__1D_8F_1abfc0c38839c4526272eaa136a5a3f46d" kindref="member">fort_pcinterp</ref><sp/>(fine,floi1,fhii1,fblo,<sp/>fbhi,lrat,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>$<sp/>nvar,<sp/>crse,cloi1,chii1,cblo,<sp/>cbhi,temp,tloi,thii)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>floi1</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>fhii1</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>cloi1</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>chii1</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>fblo(1),<sp/>fbhi(1)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>cblo(1),<sp/>cbhi(1)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>lrat,<sp/>nvar,<sp/>tloi,<sp/>thii</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>fine(floi1<sp/>:fhii1,<sp/>nvar)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>crse(cloi1<sp/>:chii1,<sp/>nvar)</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>temp(tloi:thii<sp/>+<sp/>1)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>pcinterp:<sp/><sp/>use<sp/>piecewise<sp/>constant<sp/>interpolation<sp/>to<sp/>define</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>values<sp/>on<sp/>the<sp/>subregion<sp/>of<sp/>the<sp/>fine<sp/>FAB<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>by<sp/>(fblo,fbhi).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>Inputs/Outputs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fine<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;=&gt;<sp/><sp/>(modify)<sp/>fab<sp/>to<sp/>get<sp/>interpolated<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>flo,fhi<sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>index<sp/>limits<sp/>of<sp/>fine</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>fblo,fbhi<sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>subregion<sp/>of<sp/>fine<sp/>grid<sp/>to<sp/>get<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>crse<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>fab<sp/>holding<sp/>coarse<sp/>grid<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>clo,chi<sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>index<sp/>limits<sp/>of<sp/>src</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>cblo,cbhi<sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>subregion<sp/>of<sp/>coarse<sp/>grid<sp/>holding<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>temp<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(modify)<sp/>temporary<sp/>space<sp/>for<sp/>vectorization</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>tlo,thi<sp/><sp/><sp/><sp/><sp/><sp/>=&gt;<sp/><sp/>(const)<sp/><sp/>index<sp/>limits<sp/>of<sp/>temp<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>local<sp/>var</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>i,ic,ioff,n</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>ixproj,ii,ll</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ixproj(ii,ll)<sp/>=<sp/>(ii<sp/>+<sp/>ll*iabs(ii))/ll<sp/>-<sp/>iabs(ii)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>130<sp/>n<sp/>=<sp/>1,<sp/>nvar<sp/></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>140<sp/>ioff<sp/>=<sp/>0,<sp/>lrat-1<sp/></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>150<sp/>ic<sp/>=<sp/>cblo(1),cbhi(1)<sp/></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>lrat*ic<sp/>+<sp/>ioff</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp(i)<sp/>=<sp/>crse(ic,n)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">150<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal">140<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>160<sp/>i<sp/>=<sp/>fblo(1),<sp/>fbhi(1)<sp/></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,n)<sp/>=<sp/>temp(i)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal">160<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal">130<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">c<sp/>:::<sp/>--------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__FABUTIL__1D_8F_1a39695606b5463f122a72efd357401044" kindref="member">cartgridminmax1d</ref><sp/>(data,<sp/>lo1,<sp/>lo2,<sp/>hi1,<sp/>hi2,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>$<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfracdata,<sp/>vfeps,<sp/>dmin,<sp/>dmax)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>lo1,<sp/>lo2,<sp/>hi1,<sp/>hi2</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/></highlight><highlight class="keyword">data</highlight><highlight class="normal">(lo1:hi1<sp/>,lo2:hi2)</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>vfracdata(lo1:hi1<sp/>,lo2:hi2)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/>vfeps,<sp/>dmin,<sp/>dmax</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/>i,<sp/>j</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">call<sp/></highlight><highlight class="normal"><ref refid="AMReX__error__mod_8F90_1adf74d100df3372e88670b8c79c770425" kindref="member">bl_abort</ref>(</highlight><highlight class="stringliteral">&quot;fix<sp/>cartgridminmax1d<sp/>for<sp/>1d.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dmax<sp/>=<sp/>-bigreal</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dmin<sp/>=<sp/>bigreal</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>420<sp/>j<sp/>=<sp/>lo2,<sp/>hi2</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>430<sp/>i<sp/>=<sp/>lo1,<sp/>hi1</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/><sp/>print<sp/>*,<sp/>&quot;i<sp/>j<sp/>vfracdata(i,j)<sp/>=<sp/>&quot;,i,j,vfracdata(i,j)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>.not.<sp/>(vfracdata(i,j).lt.vfeps))<sp/></highlight><highlight class="keywordflow">then</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dmax<sp/>=<sp/>max(dmax,</highlight><highlight class="keyword">data</highlight><highlight class="normal">(i,j))</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dmin<sp/>=<sp/>min(dmin,</highlight><highlight class="keyword">data</highlight><highlight class="normal">(i,j))</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal">430<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal">420<sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_FABUTIL_1D.F"/>
+  </compounddef>
+</doxygen>

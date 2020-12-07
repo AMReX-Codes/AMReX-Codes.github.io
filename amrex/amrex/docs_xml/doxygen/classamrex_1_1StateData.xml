@@ -1,0 +1,1898 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classamrex_1_1StateData" kind="class" language="C++" prot="public">
+    <compoundname>amrex::StateData</compoundname>
+    <includes refid="AMReX__StateData_8H" local="no">AMReX_StateData.H</includes>
+    <innerclass refid="structamrex_1_1StateData_1_1TimeInterval" prot="private">amrex::StateData::TimeInterval</innerclass>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classamrex_1_1StateData_1a51a3670e2ed07485744ef6462ebfd6ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class StateDataPhysBCFunct</definition>
+        <argsstring></argsstring>
+        <name>StateDataPhysBCFunct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1StateData_1ac29954add581987ecf4948fb9090b2d6" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &gt;</type>
+        <definition>std::unique_ptr&lt;FabFactory&lt;FArrayBox&gt; &gt; amrex::StateData::m_factory</definition>
+        <argsstring></argsstring>
+        <name>m_factory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="413" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="413" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a5201a1b8230055d506cef5f265a8b8e2" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref> *</type>
+        <definition>const StateDescriptor* amrex::StateData::desc</definition>
+        <argsstring></argsstring>
+        <name>desc</name>
+        <briefdescription>
+<para>Pointer to data descriptor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="422" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a51e767063a27b4c6941e585193242bde" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
+        <definition>Box amrex::StateData::domain</definition>
+        <argsstring></argsstring>
+        <name>domain</name>
+        <briefdescription>
+<para>Problem domain. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="425" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1af7a3b275665dcd4803b3780a02e36b48" prot="private" static="no" mutable="no">
+        <type>BoxArray</type>
+        <definition>BoxArray amrex::StateData::grids</definition>
+        <argsstring></argsstring>
+        <name>grids</name>
+        <briefdescription>
+<para>Grids defined at this level. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="428" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1aa537bc30a17ee4576c5490ca30da94c1" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref></type>
+        <definition>DistributionMapping amrex::StateData::dmap</definition>
+        <argsstring></argsstring>
+        <name>dmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="430" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="430" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1ad6b519ebb5a60157c412e833587b12b3" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1StateData_1_1TimeInterval" kindref="compound">TimeInterval</ref></type>
+        <definition>TimeInterval amrex::StateData::new_time</definition>
+        <argsstring></argsstring>
+        <name>new_time</name>
+        <briefdescription>
+<para>Time variable assoc with new data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="433" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="433" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a49bf88f51c149857686027e44513f4f8" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1StateData_1_1TimeInterval" kindref="compound">TimeInterval</ref></type>
+        <definition>TimeInterval amrex::StateData::old_time</definition>
+        <argsstring></argsstring>
+        <name>old_time</name>
+        <briefdescription>
+<para>Time variable assoc with old data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="436" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="436" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a08b05c680ad59e2ac04f8178d52cf3a0" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MultiFab&gt; amrex::StateData::new_data</definition>
+        <argsstring></argsstring>
+        <name>new_data</name>
+        <briefdescription>
+<para>Pointer to new-time data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="439" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a9702465fcc6db1bb193b1a82222b0e1c" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MultiFab&gt; amrex::StateData::old_data</definition>
+        <argsstring></argsstring>
+        <name>old_data</name>
+        <briefdescription>
+<para>Pointer to previous time data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="442" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="442" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a79cbe7313de5292d236958355ff878dd" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
+        <definition>Arena* amrex::StateData::arena</definition>
+        <argsstring></argsstring>
+        <name>arena</name>
+        <briefdescription>
+<para><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> we should use for allocating the data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="445" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="445" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1StateData_1af35f43aa012590a264cbb08405ff5c1f" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt;</type>
+        <definition>Vector&lt; std::string &gt; amrex::StateData::fabArrayHeaderNames</definition>
+        <argsstring></argsstring>
+        <name>fabArrayHeaderNames</name>
+        <briefdescription>
+<para>This is used as a temporary collection of <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> header names written during a checkpoint. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="451" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="451" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1StateData_1a60cd1a78a793b7a4ce54e70da0f0dd55" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char &gt; &gt; *</type>
+        <definition>std::map&lt; std::string, Vector&lt; char &gt; &gt; * amrex::StateData::faHeaderMap</definition>
+        <argsstring></argsstring>
+        <name>faHeaderMap</name>
+        <briefdescription>
+<para>This is used to store preread <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> headers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="454" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="454" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1StateData_1a947b62feb1753b7ebe6c604066b1d494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::StateData::StateData</definition>
+        <argsstring>()</argsstring>
+        <name>StateData</name>
+        <briefdescription>
+<para>The default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="42" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="31" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ae0dbe25ac3e59b6bfb42e24f8fa8cf9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::StateData::StateData</definition>
+        <argsstring>(const Box &amp;p_domain, const BoxArray &amp;grds, const DistributionMapping &amp;dm, const StateDescriptor *d, Real cur_time, Real dt, const FabFactory&lt; FArrayBox &gt; &amp;factory)</argsstring>
+        <name>StateData</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>p_domain</declname>
+        </param>
+        <param>
+          <type>const BoxArray &amp;</type>
+          <declname>grds</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>cur_time</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
+          <declname>factory</declname>
+        </param>
+        <briefdescription>
+<para>Constructor that properly initializes data members. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cur_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>factory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="55" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="39" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a3d5f27474f7f24ed6995b4735150be55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::StateData::~StateData</definition>
+        <argsstring>()</argsstring>
+        <name>~StateData</name>
+        <briefdescription>
+<para>The destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="66" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="299" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a9ed30f9771b7271144f8746cc4644cfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::StateData::StateData</definition>
+        <argsstring>(StateData &amp;&amp;rhs) noexcept</argsstring>
+        <name>StateData</name>
+        <param>
+          <type><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="68" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a9ee2ed55ac82c740d722ffe69da70f41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::StateData::StateData</definition>
+        <argsstring>(StateData const &amp;rhs)=delete</argsstring>
+        <name>StateData</name>
+        <param>
+          <type><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a88fe31cedc20fc3eca6ac202052b4226" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::operator=</definition>
+        <argsstring>(StateData &amp;&amp;rhs)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a087e0bdda15383b06555eaf5e942d726" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::operator=</definition>
+        <argsstring>(StateData const &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> const &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="72" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="65" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a4e4c8151397754fd5f8dadb6307bb58a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::define</definition>
+        <argsstring>(const Box &amp;p_domain, const BoxArray &amp;grds, const DistributionMapping &amp;dm, const StateDescriptor &amp;d, Real cur_time, Real dt, const FabFactory&lt; FArrayBox &gt; &amp;factory)</argsstring>
+        <name>define</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>p_domain</declname>
+        </param>
+        <param>
+          <type>const BoxArray &amp;</type>
+          <declname>grds</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>cur_time</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
+          <declname>factory</declname>
+        </param>
+        <briefdescription>
+<para>Initializes data members if you used default constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cur_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>factory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="86" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="90" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a1c745ccf4e72c085db52b18751ccc25f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::copyOld</definition>
+        <argsstring>(const StateData &amp;state)</argsstring>
+        <name>copyOld</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Copies old data from another <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> object and sets the same time level. If old data is uninitialized, allocates it with same properties as the input data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="100" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="136" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ad67c07eef71baec1306b491e1f02475d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::copyNew</definition>
+        <argsstring>(const StateData &amp;state)</argsstring>
+        <name>copyNew</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Copies new data from another <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> object and sets the same time level. If new data is uninitialized, allocates it with the same properties as the input data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="108" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="152" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ac696f694c50d2b6251f9576fabfdedcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::allocOldData</definition>
+        <argsstring>()</argsstring>
+        <name>allocOldData</name>
+        <briefdescription>
+<para>Allocates space for old timestep data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="113" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="305" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a06540ec48ea9f0078a983964f233a9d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::removeOldData</definition>
+        <argsstring>()</argsstring>
+        <name>removeOldData</name>
+        <briefdescription>
+<para>Deletes the space used by the old timestep data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="118" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ad51ab660eddbb7e6d4b51f53101a5509" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>Reverts back to initial state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="123" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="168" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ac6dd29902982ccf98c08a09c793a49be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::swapTimeLevels</definition>
+        <argsstring>(Real dt)</argsstring>
+        <name>swapTimeLevels</name>
+        <param>
+          <type>Real</type>
+          <declname>dt</declname>
+        </param>
+        <briefdescription>
+<para>Old data becomes new data and new time is incremented by dt. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="130" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="386" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a19585d569e94bd3e15d5c6a0f4c969c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::replaceOldData</definition>
+        <argsstring>(MultiFab &amp;&amp;mf)</argsstring>
+        <name>replaceOldData</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;&amp;</type>
+          <declname>mf</declname>
+        </param>
+        <briefdescription>
+<para>Swaps old data with a new <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. Deletes the previous old data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="138" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="403" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1adfaafffb0ba3924042c4357b7d51fe53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::replaceOldData</definition>
+        <argsstring>(StateData &amp;s)</argsstring>
+        <name>replaceOldData</name>
+        <param>
+          <type><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Swaps old data with another <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref>. Does not delete the previous old data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="146" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="411" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a0a6ffa5747a2c044f456d77adf50f338" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::replaceNewData</definition>
+        <argsstring>(MultiFab &amp;&amp;mf)</argsstring>
+        <name>replaceNewData</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;&amp;</type>
+          <declname>mf</declname>
+        </param>
+        <briefdescription>
+<para>Swaps new data with a new <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. Deletes the previous new data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="154" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="417" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a3c5fc5e62763a1c66248c47951055162" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::replaceNewData</definition>
+        <argsstring>(StateData &amp;s)</argsstring>
+        <name>replaceNewData</name>
+        <param>
+          <type><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Swaps new data with another <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref>. Does not delete the previous new data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="162" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="425" bodyend="428"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1aa828fea0bc5b7fe08079dada98fbef0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::setTimeLevel</definition>
+        <argsstring>(Real t_new, Real dt_old, Real dt_new)</argsstring>
+        <name>setTimeLevel</name>
+        <param>
+          <type>Real</type>
+          <declname>t_new</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>dt_old</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>dt_new</declname>
+        </param>
+        <briefdescription>
+<para>Sets time of old and new data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_new</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt_old</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt_new</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="172" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="367" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ad5549950ed75c487d3d3d30c2bd9969d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::setOldTimeLevel</definition>
+        <argsstring>(Real t_old)</argsstring>
+        <name>setOldTimeLevel</name>
+        <param>
+          <type>Real</type>
+          <declname>t_old</declname>
+        </param>
+        <briefdescription>
+<para>Sets time of old data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_old</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="181" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="324" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1acbed4b637247d0c19c323065379192e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::setNewTimeLevel</definition>
+        <argsstring>(Real t_new)</argsstring>
+        <name>setNewTimeLevel</name>
+        <param>
+          <type>Real</type>
+          <declname>t_new</declname>
+        </param>
+        <briefdescription>
+<para>Sets time of new data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_new</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="188" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="337" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a510161288b4431ae99e52743843e47a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::syncNewTimeLevel</definition>
+        <argsstring>(Real t_new)</argsstring>
+        <name>syncNewTimeLevel</name>
+        <param>
+          <type>Real</type>
+          <declname>t_new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="190" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="350" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a9c9d09d9399b42dacae6863ff33fb8ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::RegisterData</definition>
+        <argsstring>(MultiFabCopyDescriptor &amp;multiFabCopyDesc, Vector&lt; MultiFabId &gt; &amp;mfid)</argsstring>
+        <name>RegisterData</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFabCopyDescriptor" kindref="compound">MultiFabCopyDescriptor</ref> &amp;</type>
+          <declname>multiFabCopyDesc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a270e267cbd0e472dd8297d46a9c76854" kindref="member">MultiFabId</ref> &gt; &amp;</type>
+          <declname>mfid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="192" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="576" bodyend="582"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1add0ef828c3264079f14cc05abcbb6cb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::InterpAddBox</definition>
+        <argsstring>(MultiFabCopyDescriptor &amp;multiFabCopyDesc, Vector&lt; MultiFabId &gt; &amp;mfid, BoxList *returnedUnfillableBoxes, Vector&lt; FillBoxId &gt; &amp;returnedFillBoxIds, const Box &amp;subbox, Real time, int src_comp, int dest_comp, int num_comp, bool extrap=false)</argsstring>
+        <name>InterpAddBox</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFabCopyDescriptor" kindref="compound">MultiFabCopyDescriptor</ref> &amp;</type>
+          <declname>multiFabCopyDesc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a270e267cbd0e472dd8297d46a9c76854" kindref="member">MultiFabId</ref> &gt; &amp;</type>
+          <declname>mfid</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1BoxList" kindref="compound">BoxList</ref> *</type>
+          <declname>returnedUnfillableBoxes</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1FillBoxId" kindref="compound">FillBoxId</ref> &gt; &amp;</type>
+          <declname>returnedFillBoxIds</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>subbox</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>src_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dest_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_comp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrap</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="195" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="585" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a64b6d97172a5fa5f54ecaed8181bbe28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::InterpFillFab</definition>
+        <argsstring>(MultiFabCopyDescriptor &amp;fabCopyDesc, const Vector&lt; MultiFabId &gt; &amp;mfid, const Vector&lt; FillBoxId &gt; &amp;fillBoxIds, FArrayBox &amp;dest, Real time, int src_comp, int dest_comp, int num_comp, bool extrap=false)</argsstring>
+        <name>InterpFillFab</name>
+        <param>
+          <type><ref refid="classamrex_1_1MultiFabCopyDescriptor" kindref="compound">MultiFabCopyDescriptor</ref> &amp;</type>
+          <declname>fabCopyDesc</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a270e267cbd0e472dd8297d46a9c76854" kindref="member">MultiFabId</ref> &gt; &amp;</type>
+          <declname>mfid</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1FillBoxId" kindref="compound">FillBoxId</ref> &gt; &amp;</type>
+          <declname>fillBoxIds</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>src_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dest_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_comp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>extrap</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="206" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="659" bodyend="711"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a7ca9ba16e42a6ffe8e9bcbabf51d25db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::FillBoundary</definition>
+        <argsstring>(FArrayBox &amp;dest, Real time, const Real *dx, const RealBox &amp;prob_domain, int dest_comp, int src_comp, int num_comp=1)</argsstring>
+        <name>FillBoundary</name>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const Real *</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1RealBox" kindref="compound">RealBox</ref> &amp;</type>
+          <declname>prob_domain</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dest_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>src_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_comp</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Set physical bndry values. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prob_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>num_comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="228" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="431" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a593e4c97974095398a43d0132ef3a868" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::FillBoundary</definition>
+        <argsstring>(Box const &amp;bx, FArrayBox &amp;dest, Real time, Geometry const &amp;geom, int dest_comp, int src_comp, int num_comp)</argsstring>
+        <name>FillBoundary</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dest_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>src_comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>num_comp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="236" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="521" bodyend="573"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a83d7bc0a021a283efce9b4f500315540" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::checkPoint</definition>
+        <argsstring>(const std::string &amp;name, const std::string &amp;fullpathname, std::ostream &amp;os, VisMF::How how, bool dump_old=true)</argsstring>
+        <name>checkPoint</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>fullpathname</declname>
+        </param>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1VisMF_1aa50a3ce471ac0bdf8f78134f0004e156" kindref="member">VisMF::How</ref></type>
+          <declname>how</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>dump_old</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Write the state data to a checkpoint file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fullpathname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>how</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dump_old</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="253" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="770" bodyend="843"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1aa1a00caa21e6aadb0d1916138824a3f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::restart</definition>
+        <argsstring>(std::istream &amp;is, const Box &amp;p_domain, const BoxArray &amp;grds, const DistributionMapping &amp;dm, const FabFactory&lt; FArrayBox &gt; &amp;factroy, const StateDescriptor &amp;d, const std::string &amp;restart_file)</argsstring>
+        <name>restart</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>p_domain</declname>
+        </param>
+        <param>
+          <type>const BoxArray &amp;</type>
+          <declname>grds</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>dm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
+          <declname>factroy</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>restart_file</declname>
+        </param>
+        <briefdescription>
+<para>Restart with domain box, grids, and dmap provided. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_domain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>grds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>factroy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>restart_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="270" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="176" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1aa6591b111a02fd2bc24bf77c7d2e41e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::restart</definition>
+        <argsstring>(const StateDescriptor &amp;d, const StateData &amp;rhs)</argsstring>
+        <name>restart</name>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref> &amp;</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>or from another similar state </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>d</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="284" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="281" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1af7d0d9b72529aed95163ed531d9c7e81" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref> *</type>
+        <definition>const StateDescriptor* amrex::StateData::descriptor</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>descriptor</name>
+        <briefdescription>
+<para>Returns the <ref refid="classamrex_1_1StateDescriptor" kindref="compound">StateDescriptor</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="290" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="290" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ae6c8e83a79b4df57c9dccb1f5062204a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+        <definition>const Box&amp; amrex::StateData::getDomain</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>getDomain</name>
+        <briefdescription>
+<para>Returns the valid domain. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="295" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="295" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a805fefd43e63ca5b6b0b3ddd26f8b04c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const BoxArray &amp;</type>
+        <definition>const BoxArray&amp; amrex::StateData::boxArray</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>boxArray</name>
+        <briefdescription>
+<para>Returns the BoxArray. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="300" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="300" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a1f08c8bd5682d1afe2031d820e4456f9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+        <definition>const DistributionMapping&amp; amrex::StateData::DistributionMap</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>DistributionMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="302" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="302" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a74036cca3383362145e0dd06a14a65ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::setDistributionMap</definition>
+        <argsstring>(DistributionMapping &amp;new_dmap) noexcept</argsstring>
+        <name>setDistributionMap</name>
+        <param>
+          <type><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
+          <declname>new_dmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>new_dmap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="308" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="308" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a82894d26881a9d4dbabb3cfbf6053e4d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1FabFactory" kindref="compound">FabFactory</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
+        <definition>const FabFactory&lt;FArrayBox&gt;&amp; amrex::StateData::Factory</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>Factory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="310" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="310" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a46807890235430fd9f2e12d422a6321b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::StateData::curTime</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>curTime</name>
+        <briefdescription>
+<para>Returns the current time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="315" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="315" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1aacf7931abf97b3774c79b60e80d177a4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real amrex::StateData::prevTime</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>prevTime</name>
+        <briefdescription>
+<para>Returns the previous time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="323" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="323" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a2351d4871d6a5f299b26c1d6150690a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+        <definition>MultiFab&amp; amrex::StateData::newData</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>newData</name>
+        <briefdescription>
+<para>Returns the new data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="331" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="331" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a5a81beda34e62a92aadd7941bcc5157e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+        <definition>const MultiFab&amp; amrex::StateData::newData</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>newData</name>
+        <briefdescription>
+<para>Returns the new data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="336" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="336" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1aad9dcb2a2c843b2643d2d3637f047341" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+        <definition>MultiFab&amp; amrex::StateData::oldData</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>oldData</name>
+        <briefdescription>
+<para>Returns the old data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="341" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="341" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a37932d39174ba8a1475585e6a843ae4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
+        <definition>const MultiFab&amp; amrex::StateData::oldData</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>oldData</name>
+        <briefdescription>
+<para>Returns the old data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="346" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="346" bodyend="346"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a85837b66263e6415ba8a9b4830749ac8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox&amp; amrex::StateData::newGrid</definition>
+        <argsstring>(int i) noexcept</argsstring>
+        <name>newGrid</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Returns the FAB of new data at grid index `i&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="353" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="353" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a328237a5f801df70d0bb7ca0b3b4f354" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
+        <definition>FArrayBox&amp; amrex::StateData::oldGrid</definition>
+        <argsstring>(int i) noexcept</argsstring>
+        <name>oldGrid</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Returns the FAB of old data at grid index `i&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="360" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="360" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a84e433aa5076093c39d51bf97a9b0ca6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref></type>
+        <definition>BCRec amrex::StateData::getBC</definition>
+        <argsstring>(int comp, int i) const noexcept</argsstring>
+        <name>getBC</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>comp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Returns boundary conditions of specified component on the specified grid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="368" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="316" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1aa92325475654d8018a7a4d96811ff90b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::printTimeInterval</definition>
+        <argsstring>(std::ostream &amp;os) const</argsstring>
+        <name>printTimeInterval</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>os</declname>
+        </param>
+        <briefdescription>
+<para>Prints out the time interval. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>os</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="375" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="846" bodyend="858"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1af94692a78b7f532f582acd48d9697443" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::StateData::hasOldData</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>hasOldData</name>
+        <briefdescription>
+<para>True if there is any old data available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="380" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="380" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1af9809e458fa0bd25965558bf3aa2c802" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool amrex::StateData::hasNewData</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>hasNewData</name>
+        <briefdescription>
+<para>True if there is any new data available. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="385" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="385" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a24e87a10e6f20dcab604804d41bbe525" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::getData</definition>
+        <argsstring>(Vector&lt; MultiFab *&gt; &amp;data, Vector&lt; Real &gt; &amp;datatime, Real time) const</argsstring>
+        <name>getData</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *&gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt; &amp;</type>
+          <declname>datatime</declname>
+        </param>
+        <param>
+          <type>Real</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="387" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="714" bodyend="767"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a593ba91494f1ec4754498a39a2ea91be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
+        <definition>Arena* amrex::StateData::getArena</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>getArena</name>
+        <briefdescription>
+<para>Get the <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="394" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="394" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ae83ccc99cebafd9a616419f206acfc72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::setArena</definition>
+        <argsstring>(Arena *ar) noexcept</argsstring>
+        <name>setArena</name>
+        <param>
+          <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
+          <declname>ar</declname>
+        </param>
+        <briefdescription>
+<para>Set the <ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="399" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="399" bodyend="399"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1StateData_1a024ebcb9c74754c219b73d26d31683af" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::string &gt; &amp;</type>
+        <definition>static const Vector&lt;std::string&gt;&amp; amrex::StateData::FabArrayHeaderNames</definition>
+        <argsstring>()</argsstring>
+        <name>FabArrayHeaderNames</name>
+        <briefdescription>
+<para>These facilitate prereading <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> headers to avoid synchronization when reading multiple FabArrays. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="405" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="405" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1ad627f2819f507158b90f5f2570b1d182" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void amrex::StateData::ClearFabArrayHeaderNames</definition>
+        <argsstring>()</argsstring>
+        <name>ClearFabArrayHeaderNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="406" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="406" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1StateData_1a0ae8938d03e0425949acee6bfdf003af" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void amrex::StateData::SetFAHeaderMapPtr</definition>
+        <argsstring>(std::map&lt; std::string, Vector&lt; char &gt; &gt; *fahmp)</argsstring>
+        <name>SetFAHeaderMapPtr</name>
+        <param>
+          <type>std::map&lt; std::string, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char &gt; &gt; *</type>
+          <declname>fahmp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="408" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="408" bodyend="408"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1StateData_1a36bd8af570145a2fad26927f2986e996" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::StateData::restartDoit</definition>
+        <argsstring>(std::istream &amp;is, const std::string &amp;restart_file)</argsstring>
+        <name>restartDoit</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>restart_file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="456" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp" bodystart="211" bodyend="278"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Current and previous level-time data. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> holds state data on a level for the current and previous time step. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="4543">
+        <label>std::vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt; &gt;</label>
+      </node>
+      <node id="4538">
+        <label>amrex::ArenaInfo</label>
+        <link refid="structamrex_1_1ArenaInfo"/>
+      </node>
+      <node id="4542">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4543" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4553">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="4553" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="4551">
+        <label>Real</label>
+      </node>
+      <node id="4539">
+        <label>amrex::StateDescriptor</label>
+        <link refid="classamrex_1_1StateDescriptor"/>
+        <childnode refid="4540" relation="usage">
+          <edgelabel>mapper_comp</edgelabel>
+        </childnode>
+        <childnode refid="4542" relation="usage">
+          <edgelabel>bc_func</edgelabel>
+        </childnode>
+        <childnode refid="4544" relation="usage">
+          <edgelabel>bc</edgelabel>
+        </childnode>
+        <childnode refid="4546" relation="usage">
+          <edgelabel>max_map_start_comp</edgelabel>
+          <edgelabel>min_map_end_comp</edgelabel>
+          <edgelabel>m_groupsize</edgelabel>
+          <edgelabel>m_primary</edgelabel>
+        </childnode>
+        <childnode refid="4535" relation="usage">
+          <edgelabel>names</edgelabel>
+        </childnode>
+        <childnode refid="4548" relation="usage">
+          <edgelabel>mapper</edgelabel>
+        </childnode>
+        <childnode refid="4549" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="4536">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="4537">
+        <label>amrex::Arena</label>
+        <link refid="classamrex_1_1Arena"/>
+        <childnode refid="4538" relation="usage">
+          <edgelabel>arena_info</edgelabel>
+        </childnode>
+      </node>
+      <node id="4546">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4547" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4545">
+        <label>std::vector&lt; amrex::BCRec, std::allocator&lt; amrex::BCRec &gt; &gt;</label>
+      </node>
+      <node id="4541">
+        <label>std::vector&lt; amrex::Interpolater *, std::allocator&lt; amrex::Interpolater *&gt; &gt;</label>
+      </node>
+      <node id="4548">
+        <label>amrex::Interpolater</label>
+        <link refid="classamrex_1_1Interpolater"/>
+      </node>
+      <node id="4544">
+        <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4545" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4547">
+        <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
+      </node>
+      <node id="4550">
+        <label>amrex::StateData::TimeInterval</label>
+        <link refid="structamrex_1_1StateData_1_1TimeInterval"/>
+        <childnode refid="4551" relation="usage">
+          <edgelabel>stop</edgelabel>
+          <edgelabel>start</edgelabel>
+        </childnode>
+      </node>
+      <node id="4552">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="4553" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="4549" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="4549">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="4535">
+        <label>amrex::Vector&lt; std::string &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4536" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4534">
+        <label>amrex::DistributionMapping</label>
+        <link refid="classamrex_1_1DistributionMapping"/>
+      </node>
+      <node id="4533">
+        <label>amrex::StateData</label>
+        <link refid="classamrex_1_1StateData"/>
+        <childnode refid="4534" relation="usage">
+          <edgelabel>dmap</edgelabel>
+        </childnode>
+        <childnode refid="4535" relation="usage">
+          <edgelabel>fabArrayHeaderNames</edgelabel>
+        </childnode>
+        <childnode refid="4537" relation="usage">
+          <edgelabel>arena</edgelabel>
+        </childnode>
+        <childnode refid="4539" relation="usage">
+          <edgelabel>desc</edgelabel>
+        </childnode>
+        <childnode refid="4550" relation="usage">
+          <edgelabel>new_time</edgelabel>
+          <edgelabel>old_time</edgelabel>
+        </childnode>
+        <childnode refid="4552" relation="usage">
+          <edgelabel>domain</edgelabel>
+        </childnode>
+      </node>
+      <node id="4540">
+        <label>amrex::Vector&lt; amrex::Interpolater *&gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="4541" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="33" bodyend="457"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1StateData_1ac696f694c50d2b6251f9576fabfdedcb" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>allocOldData</name></member>
+      <member refid="classamrex_1_1StateData_1a79cbe7313de5292d236958355ff878dd" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>arena</name></member>
+      <member refid="classamrex_1_1StateData_1a805fefd43e63ca5b6b0b3ddd26f8b04c" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>boxArray</name></member>
+      <member refid="classamrex_1_1StateData_1a83d7bc0a021a283efce9b4f500315540" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>checkPoint</name></member>
+      <member refid="classamrex_1_1StateData_1ad627f2819f507158b90f5f2570b1d182" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>ClearFabArrayHeaderNames</name></member>
+      <member refid="classamrex_1_1StateData_1ad67c07eef71baec1306b491e1f02475d" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>copyNew</name></member>
+      <member refid="classamrex_1_1StateData_1a1c745ccf4e72c085db52b18751ccc25f" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>copyOld</name></member>
+      <member refid="classamrex_1_1StateData_1a46807890235430fd9f2e12d422a6321b" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>curTime</name></member>
+      <member refid="classamrex_1_1StateData_1a4e4c8151397754fd5f8dadb6307bb58a" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>define</name></member>
+      <member refid="classamrex_1_1StateData_1a5201a1b8230055d506cef5f265a8b8e2" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>desc</name></member>
+      <member refid="classamrex_1_1StateData_1af7d0d9b72529aed95163ed531d9c7e81" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>descriptor</name></member>
+      <member refid="classamrex_1_1StateData_1a1f08c8bd5682d1afe2031d820e4456f9" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>DistributionMap</name></member>
+      <member refid="classamrex_1_1StateData_1aa537bc30a17ee4576c5490ca30da94c1" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>dmap</name></member>
+      <member refid="classamrex_1_1StateData_1a51e767063a27b4c6941e585193242bde" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>domain</name></member>
+      <member refid="classamrex_1_1StateData_1af35f43aa012590a264cbb08405ff5c1f" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>fabArrayHeaderNames</name></member>
+      <member refid="classamrex_1_1StateData_1a024ebcb9c74754c219b73d26d31683af" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>FabArrayHeaderNames</name></member>
+      <member refid="classamrex_1_1StateData_1a82894d26881a9d4dbabb3cfbf6053e4d" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>Factory</name></member>
+      <member refid="classamrex_1_1StateData_1a60cd1a78a793b7a4ce54e70da0f0dd55" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>faHeaderMap</name></member>
+      <member refid="classamrex_1_1StateData_1a7ca9ba16e42a6ffe8e9bcbabf51d25db" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>FillBoundary</name></member>
+      <member refid="classamrex_1_1StateData_1a593e4c97974095398a43d0132ef3a868" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>FillBoundary</name></member>
+      <member refid="classamrex_1_1StateData_1a593ba91494f1ec4754498a39a2ea91be" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>getArena</name></member>
+      <member refid="classamrex_1_1StateData_1a84e433aa5076093c39d51bf97a9b0ca6" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>getBC</name></member>
+      <member refid="classamrex_1_1StateData_1a24e87a10e6f20dcab604804d41bbe525" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>getData</name></member>
+      <member refid="classamrex_1_1StateData_1ae6c8e83a79b4df57c9dccb1f5062204a" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>getDomain</name></member>
+      <member refid="classamrex_1_1StateData_1af7a3b275665dcd4803b3780a02e36b48" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>grids</name></member>
+      <member refid="classamrex_1_1StateData_1af9809e458fa0bd25965558bf3aa2c802" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>hasNewData</name></member>
+      <member refid="classamrex_1_1StateData_1af94692a78b7f532f582acd48d9697443" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>hasOldData</name></member>
+      <member refid="classamrex_1_1StateData_1add0ef828c3264079f14cc05abcbb6cb8" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>InterpAddBox</name></member>
+      <member refid="classamrex_1_1StateData_1a64b6d97172a5fa5f54ecaed8181bbe28" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>InterpFillFab</name></member>
+      <member refid="classamrex_1_1StateData_1ac29954add581987ecf4948fb9090b2d6" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>m_factory</name></member>
+      <member refid="classamrex_1_1StateData_1a08b05c680ad59e2ac04f8178d52cf3a0" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>new_data</name></member>
+      <member refid="classamrex_1_1StateData_1ad6b519ebb5a60157c412e833587b12b3" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>new_time</name></member>
+      <member refid="classamrex_1_1StateData_1a2351d4871d6a5f299b26c1d6150690a7" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>newData</name></member>
+      <member refid="classamrex_1_1StateData_1a5a81beda34e62a92aadd7941bcc5157e" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>newData</name></member>
+      <member refid="classamrex_1_1StateData_1a85837b66263e6415ba8a9b4830749ac8" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>newGrid</name></member>
+      <member refid="classamrex_1_1StateData_1a9702465fcc6db1bb193b1a82222b0e1c" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>old_data</name></member>
+      <member refid="classamrex_1_1StateData_1a49bf88f51c149857686027e44513f4f8" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>old_time</name></member>
+      <member refid="classamrex_1_1StateData_1aad9dcb2a2c843b2643d2d3637f047341" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>oldData</name></member>
+      <member refid="classamrex_1_1StateData_1a37932d39174ba8a1475585e6a843ae4b" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>oldData</name></member>
+      <member refid="classamrex_1_1StateData_1a328237a5f801df70d0bb7ca0b3b4f354" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>oldGrid</name></member>
+      <member refid="classamrex_1_1StateData_1a88fe31cedc20fc3eca6ac202052b4226" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1StateData_1a087e0bdda15383b06555eaf5e942d726" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1StateData_1aacf7931abf97b3774c79b60e80d177a4" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>prevTime</name></member>
+      <member refid="classamrex_1_1StateData_1aa92325475654d8018a7a4d96811ff90b" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>printTimeInterval</name></member>
+      <member refid="classamrex_1_1StateData_1a9c9d09d9399b42dacae6863ff33fb8ee" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>RegisterData</name></member>
+      <member refid="classamrex_1_1StateData_1a06540ec48ea9f0078a983964f233a9d2" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>removeOldData</name></member>
+      <member refid="classamrex_1_1StateData_1a0a6ffa5747a2c044f456d77adf50f338" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>replaceNewData</name></member>
+      <member refid="classamrex_1_1StateData_1a3c5fc5e62763a1c66248c47951055162" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>replaceNewData</name></member>
+      <member refid="classamrex_1_1StateData_1a19585d569e94bd3e15d5c6a0f4c969c6" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>replaceOldData</name></member>
+      <member refid="classamrex_1_1StateData_1adfaafffb0ba3924042c4357b7d51fe53" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>replaceOldData</name></member>
+      <member refid="classamrex_1_1StateData_1ad51ab660eddbb7e6d4b51f53101a5509" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>reset</name></member>
+      <member refid="classamrex_1_1StateData_1aa1a00caa21e6aadb0d1916138824a3f5" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>restart</name></member>
+      <member refid="classamrex_1_1StateData_1aa6591b111a02fd2bc24bf77c7d2e41e2" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>restart</name></member>
+      <member refid="classamrex_1_1StateData_1a36bd8af570145a2fad26927f2986e996" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>restartDoit</name></member>
+      <member refid="classamrex_1_1StateData_1ae83ccc99cebafd9a616419f206acfc72" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>setArena</name></member>
+      <member refid="classamrex_1_1StateData_1a74036cca3383362145e0dd06a14a65ad" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>setDistributionMap</name></member>
+      <member refid="classamrex_1_1StateData_1a0ae8938d03e0425949acee6bfdf003af" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>SetFAHeaderMapPtr</name></member>
+      <member refid="classamrex_1_1StateData_1acbed4b637247d0c19c323065379192e4" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>setNewTimeLevel</name></member>
+      <member refid="classamrex_1_1StateData_1ad5549950ed75c487d3d3d30c2bd9969d" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>setOldTimeLevel</name></member>
+      <member refid="classamrex_1_1StateData_1aa828fea0bc5b7fe08079dada98fbef0b" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>setTimeLevel</name></member>
+      <member refid="classamrex_1_1StateData_1a947b62feb1753b7ebe6c604066b1d494" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>StateData</name></member>
+      <member refid="classamrex_1_1StateData_1ae0dbe25ac3e59b6bfb42e24f8fa8cf9c" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>StateData</name></member>
+      <member refid="classamrex_1_1StateData_1a9ed30f9771b7271144f8746cc4644cfe" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>StateData</name></member>
+      <member refid="classamrex_1_1StateData_1a9ee2ed55ac82c740d722ffe69da70f41" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>StateData</name></member>
+      <member refid="classamrex_1_1StateData_1a51a3670e2ed07485744ef6462ebfd6ce" prot="private" virt="non-virtual"><scope>amrex::StateData</scope><name>StateDataPhysBCFunct</name></member>
+      <member refid="classamrex_1_1StateData_1ac6dd29902982ccf98c08a09c793a49be" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>swapTimeLevels</name></member>
+      <member refid="classamrex_1_1StateData_1a510161288b4431ae99e52743843e47a8" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>syncNewTimeLevel</name></member>
+      <member refid="classamrex_1_1StateData_1a3d5f27474f7f24ed6995b4735150be55" prot="public" virt="non-virtual"><scope>amrex::StateData</scope><name>~StateData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,609 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="AMReX__MemPool_8cpp" kind="file" language="C++">
+    <compoundname>AMReX_MemPool.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">new</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">cstdint</includes>
+    <includes refid="AMReX__CArena_8H" local="no">AMReX_CArena.H</includes>
+    <includes refid="AMReX__MemPool_8H" local="no">AMReX_MemPool.H</includes>
+    <includes refid="AMReX__Vector_8H" local="no">AMReX_Vector.H</includes>
+    <includes refid="AMReX__OpenMP_8H" local="no">AMReX_OpenMP.H</includes>
+    <includes refid="AMReX__ParmParse_8H" local="no">AMReX_ParmParse.H</includes>
+    <incdepgraph>
+      <node id="36554">
+        <label>list</label>
+      </node>
+      <node id="36551">
+        <label>AMReX_ParmParse.H</label>
+        <link refid="AMReX__ParmParse_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36552" relation="include">
+        </childnode>
+        <childnode refid="36528" relation="include">
+        </childnode>
+        <childnode refid="36553" relation="include">
+        </childnode>
+        <childnode refid="36524" relation="include">
+        </childnode>
+        <childnode refid="36554" relation="include">
+        </childnode>
+        <childnode refid="36555" relation="include">
+        </childnode>
+        <childnode refid="36530" relation="include">
+        </childnode>
+      </node>
+      <node id="36550">
+        <label>AMReX_OpenMP.H</label>
+        <link refid="AMReX__OpenMP_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+      </node>
+      <node id="36527">
+        <label>functional</label>
+      </node>
+      <node id="36514">
+        <label>limits</label>
+      </node>
+      <node id="36544">
+        <label>float.h</label>
+      </node>
+      <node id="36530">
+        <label>AMReX_BLassert.H</label>
+        <link refid="AMReX__BLassert_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36531" relation="include">
+        </childnode>
+      </node>
+      <node id="36535">
+        <label>AMReX_GpuAssert.H</label>
+        <link refid="AMReX__GpuAssert_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36536" relation="include">
+        </childnode>
+      </node>
+      <node id="36519">
+        <label>cstdint</label>
+      </node>
+      <node id="36549">
+        <label>AMReX_Vector.H</label>
+        <link refid="AMReX__Vector_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36515" relation="include">
+        </childnode>
+        <childnode refid="36524" relation="include">
+        </childnode>
+        <childnode refid="36517" relation="include">
+        </childnode>
+        <childnode refid="36530" relation="include">
+        </childnode>
+        <childnode refid="36540" relation="include">
+        </childnode>
+        <childnode refid="36541" relation="include">
+        </childnode>
+      </node>
+      <node id="36546">
+        <label>cmath</label>
+      </node>
+      <node id="36536">
+        <label>cassert</label>
+      </node>
+      <node id="36543">
+        <label>AMReX_REAL.H</label>
+        <link refid="AMReX__REAL_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36540" relation="include">
+        </childnode>
+        <childnode refid="36544" relation="include">
+        </childnode>
+      </node>
+      <node id="36539">
+        <label>stdexcept</label>
+      </node>
+      <node id="36537">
+        <label>AMReX_ccse-mpi.H</label>
+        <link refid="AMReX__ccse-mpi_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+      </node>
+      <node id="36528">
+        <label>string</label>
+      </node>
+      <node id="36526">
+        <label>unordered_set</label>
+      </node>
+      <node id="36529">
+        <label>AMReX_Arena.H</label>
+        <link refid="AMReX__Arena_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36530" relation="include">
+        </childnode>
+        <childnode refid="36522" relation="include">
+        </childnode>
+        <childnode refid="36547" relation="include">
+        </childnode>
+      </node>
+      <node id="36532">
+        <label>AMReX_GpuQualifiers.H</label>
+        <link refid="AMReX__GpuQualifiers_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+      </node>
+      <node id="36531">
+        <label>AMReX.H</label>
+        <link refid="AMReX_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36532" relation="include">
+        </childnode>
+        <childnode refid="36533" relation="include">
+        </childnode>
+        <childnode refid="36535" relation="include">
+        </childnode>
+        <childnode refid="36537" relation="include">
+        </childnode>
+        <childnode refid="36538" relation="include">
+        </childnode>
+        <childnode refid="36540" relation="include">
+        </childnode>
+        <childnode refid="36541" relation="include">
+        </childnode>
+        <childnode refid="36543" relation="include">
+        </childnode>
+        <childnode refid="36545" relation="include">
+        </childnode>
+        <childnode refid="36513" relation="include">
+        </childnode>
+        <childnode refid="36527" relation="include">
+        </childnode>
+        <childnode refid="36528" relation="include">
+        </childnode>
+        <childnode refid="36534" relation="include">
+        </childnode>
+        <childnode refid="36524" relation="include">
+        </childnode>
+        <childnode refid="36517" relation="include">
+        </childnode>
+      </node>
+      <node id="36540">
+        <label>AMReX_Extension.H</label>
+        <link refid="AMReX__Extension_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+      </node>
+      <node id="36548">
+        <label>AMReX_MemPool.H</label>
+        <link refid="AMReX__MemPool_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36543" relation="include">
+        </childnode>
+      </node>
+      <node id="36533">
+        <label>AMReX_GpuPrint.H</label>
+        <link refid="AMReX__GpuPrint_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36534" relation="include">
+        </childnode>
+      </node>
+      <node id="36521">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="36520">
+        <label>AMReX_CArena.H</label>
+        <link refid="AMReX__CArena_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36522" relation="include">
+        </childnode>
+        <childnode refid="36523" relation="include">
+        </childnode>
+        <childnode refid="36524" relation="include">
+        </childnode>
+        <childnode refid="36525" relation="include">
+        </childnode>
+        <childnode refid="36526" relation="include">
+        </childnode>
+        <childnode refid="36527" relation="include">
+        </childnode>
+        <childnode refid="36528" relation="include">
+        </childnode>
+        <childnode refid="36529" relation="include">
+        </childnode>
+      </node>
+      <node id="36534">
+        <label>cstdio</label>
+      </node>
+      <node id="36552">
+        <label>stack</label>
+      </node>
+      <node id="36524">
+        <label>vector</label>
+      </node>
+      <node id="36516">
+        <label>new</label>
+      </node>
+      <node id="36555">
+        <label>array</label>
+      </node>
+      <node id="36541">
+        <label>AMReX_INT.H</label>
+        <link refid="AMReX__INT_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36542" relation="include">
+        </childnode>
+      </node>
+      <node id="36553">
+        <label>iosfwd</label>
+      </node>
+      <node id="36547">
+        <label>cstdlib</label>
+      </node>
+      <node id="36513">
+        <label>iostream</label>
+      </node>
+      <node id="36522">
+        <label>cstddef</label>
+      </node>
+      <node id="36525">
+        <label>mutex</label>
+      </node>
+      <node id="36512">
+        <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp</label>
+        <link refid="AMReX__MemPool_8cpp"/>
+        <childnode refid="36513" relation="include">
+        </childnode>
+        <childnode refid="36514" relation="include">
+        </childnode>
+        <childnode refid="36515" relation="include">
+        </childnode>
+        <childnode refid="36516" relation="include">
+        </childnode>
+        <childnode refid="36517" relation="include">
+        </childnode>
+        <childnode refid="36518" relation="include">
+        </childnode>
+        <childnode refid="36519" relation="include">
+        </childnode>
+        <childnode refid="36520" relation="include">
+        </childnode>
+        <childnode refid="36548" relation="include">
+        </childnode>
+        <childnode refid="36549" relation="include">
+        </childnode>
+        <childnode refid="36550" relation="include">
+        </childnode>
+        <childnode refid="36551" relation="include">
+        </childnode>
+      </node>
+      <node id="36545">
+        <label>AMReX_Math.H</label>
+        <link refid="AMReX__Math_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36532" relation="include">
+        </childnode>
+        <childnode refid="36540" relation="include">
+        </childnode>
+        <childnode refid="36546" relation="include">
+        </childnode>
+        <childnode refid="36547" relation="include">
+        </childnode>
+      </node>
+      <node id="36538">
+        <label>AMReX_Exception.H</label>
+        <link refid="AMReX__Exception_8H"/>
+        <childnode refid="36521" relation="include">
+        </childnode>
+        <childnode refid="36539" relation="include">
+        </childnode>
+      </node>
+      <node id="36523">
+        <label>set</label>
+      </node>
+      <node id="36515">
+        <label>algorithm</label>
+      </node>
+      <node id="36518">
+        <label>cstring</label>
+      </node>
+      <node id="36517">
+        <label>memory</label>
+      </node>
+      <node id="36542">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1a0c81aff9a077e415a6dba72b2b8b8e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mempool_init</definition>
+        <argsstring>()</argsstring>
+        <name>amrex_mempool_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="35" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1a4dd49892147e767c1b44ffb5be366739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mempool_finalize</definition>
+        <argsstring>()</argsstring>
+        <name>amrex_mempool_finalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="80" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="80" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1a4e1a0005e248ebe6c6005d8344ebc7a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* amrex_mempool_alloc</definition>
+        <argsstring>(size_t nbytes)</argsstring>
+        <name>amrex_mempool_alloc</name>
+        <param>
+          <type>size_t</type>
+          <declname>nbytes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="86" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1a02550f5d3498f47d6ef88f13340bb20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mempool_free</definition>
+        <argsstring>(void *p)</argsstring>
+        <name>amrex_mempool_free</name>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="92" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="92" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1a29cdf545f17f50c622ecaf176189d29f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_mempool_get_stats</definition>
+        <argsstring>(int &amp;mp_min, int &amp;mp_max, int &amp;mp_tot)</argsstring>
+        <name>amrex_mempool_get_stats</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>mp_min</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>mp_max</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>mp_tot</declname>
+        </param>
+        <briefdescription>
+<para>min, max &amp; tot in MB </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="98" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="98" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1a3c075e31a22dc6c15e7da22613154e74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_real_array_init</definition>
+        <argsstring>(Real *p, size_t nelems)</argsstring>
+        <name>amrex_real_array_init</name>
+        <param>
+          <type>Real *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nelems</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="114" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="AMReX__MemPool_8cpp_1ac5945e956f410432b6b174d888dd6dce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex_array_init_snan</definition>
+        <argsstring>(Real *p, size_t nelems)</argsstring>
+        <name>amrex_array_init_snan</name>
+        <param>
+          <type>Real *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>nelems</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" line="119" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp" bodystart="119" bodyend="142"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;new&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__CArena_8H" kindref="compound">AMReX_CArena.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MemPool_8H" kindref="compound">AMReX_MemPool.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Vector_8H" kindref="compound">AMReX_Vector.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__OpenMP_8H" kindref="compound">AMReX_OpenMP.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__MemProfiler_8H" kindref="compound">AMReX_MemProfiler.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__ParmParse_8H" kindref="compound">AMReX_ParmParse.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;std::unique_ptr&lt;CArena&gt;</ref><sp/>&gt;<sp/>the_memory_pool;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_TESTING)<sp/>||<sp/>defined(AMREX_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_snan<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>init_snan<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1a0c81aff9a077e415a6dba72b2b8b8e6a" kindref="member">amrex_mempool_init</ref><sp/>()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref>)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1ParmParse" kindref="compound">ParmParse</ref><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>(</highlight><highlight class="stringliteral">&quot;fab&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref>.<ref refid="classamrex_1_1ParmParse_1aa98ab18bc26692876f9590316af5b1fa" kindref="member">query</ref>(</highlight><highlight class="stringliteral">&quot;init_snan&quot;</highlight><highlight class="normal">,<sp/>init_snan);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nthreads<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1ade36032ab5920b203a693a1cc44bd82a" kindref="member">OpenMP::get_max_threads</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>the_memory_pool.resize(nthreads);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;nthreads;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>xxxxx<sp/>HIP<sp/>FIX<sp/>THIS<sp/>-<sp/>Default<sp/>Arena<sp/>w/o<sp/>managed?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Default<sp/>arena<sp/>is<sp/>currently<sp/>Device<sp/>on<sp/>HIP<sp/>where<sp/>there<sp/>is<sp/>no<sp/>managed<sp/>option.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Need<sp/>to<sp/>adjust<sp/>to<sp/>CPU<sp/>specifically<sp/>in<sp/>that<sp/>case.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HIP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_memory_pool[i].reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref>(0,<sp/><ref refid="structamrex_1_1ArenaInfo" kindref="compound">ArenaInfo</ref>().SetCpuMemory()));</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_memory_pool[i].reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1CArena" kindref="compound">CArena</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>num_threads(nthreads)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>1024*1024*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(double);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p<sp/>=<sp/><ref refid="AMReX__MemPool_8cpp_1a4e1a0005e248ebe6c6005d8344ebc7a2" kindref="member">amrex_mempool_alloc</ref>(N);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memset(p,<sp/>0,<sp/>N);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MemPool_8cpp_1a02550f5d3498f47d6ef88f13340bb20b" kindref="member">amrex_mempool_free</ref>(p);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_MEM_PROFILING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MemProfiler_1a60a5588f410871ac0d6c15c495979ed0" kindref="member">MemProfiler::add</ref>(</highlight><highlight class="stringliteral">&quot;MemPool&quot;</highlight><highlight class="normal">,<sp/>std::function&lt;<ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemProfiler::MemInfo</ref>()&gt;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>([]<sp/>()<sp/>-&gt;<sp/><ref refid="structamrex_1_1MemProfiler_1_1MemInfo" kindref="compound">MemProfiler::MemInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MB_min,<sp/>MB_max,<sp/>MB_tot;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__MemPool_8cpp_1a29cdf545f17f50c622ecaf176189d29f" kindref="member">amrex_mempool_get_stats</ref>(MB_min,<sp/>MB_max,<sp/>MB_tot);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>b<sp/>=<sp/>MB_tot<sp/>*<sp/>(1024L*1024L);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{b,<sp/>b};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1a4dd49892147e767c1b44ffb5be366739" kindref="member">amrex_mempool_finalize</ref><sp/>()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a4f43e2df85d0db8585e437a05c9c6a81" kindref="member">initialized</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>the_memory_pool.clear();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="AMReX__MemPool_8cpp_1a4e1a0005e248ebe6c6005d8344ebc7a2" kindref="member">amrex_mempool_alloc</ref><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nbytes)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>the_memory_pool[tid]-&gt;alloc(nbytes);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1a02550f5d3498f47d6ef88f13340bb20b" kindref="member">amrex_mempool_free</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)<sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tid<sp/>=<sp/><ref refid="namespaceamrex_1_1OpenMP_1a27ed6354b68b2bd8721658a8779af032" kindref="member">OpenMP::get_thread_num</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>the_memory_pool[tid]-&gt;free(p);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1a29cdf545f17f50c622ecaf176189d29f" kindref="member">amrex_mempool_get_stats</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_min,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_max,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>mp_tot)<sp/></highlight><highlight class="comment">//<sp/>min,<sp/>max<sp/>&amp;<sp/>tot<sp/>in<sp/>MB</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hsu_min=<ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;size_t&gt;::max</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hsu_max=0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hsu_tot=0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>mp<sp/>:<sp/>the_memory_pool)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>hsu<sp/>=<sp/>mp-&gt;heap_space_used();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>hsu_min<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(hsu,<sp/>hsu_min);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>hsu_max<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(hsu,<sp/>hsu_max);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>hsu_tot<sp/>+=<sp/>hsu;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>mp_min<sp/>=<sp/>hsu_min/(1024*1024);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>mp_max<sp/>=<sp/>hsu_max/(1024*1024);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>mp_tot<sp/>=<sp/>hsu_tot/(1024*1024);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1a3c075e31a22dc6c15e7da22613154e74" kindref="member">amrex_real_array_init</ref><sp/>(Real*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(init_snan)<sp/><ref refid="AMReX__MemPool_8cpp_1ac5945e956f410432b6b174d888dd6dce" kindref="member">amrex_array_init_snan</ref>(p,<sp/>nelems);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__MemPool_8cpp_1ac5945e956f410432b6b174d888dd6dce" kindref="member">amrex_array_init_snan</ref><sp/>(Real*<sp/>p,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>nelems)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_DOUBLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>UINT64_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint64_t<sp/>snan<sp/>=<sp/>UINT64_C(0x7ff0000080000001);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint64_t),<sp/></highlight><highlight class="stringliteral">&quot;MemPool:<sp/>sizeof<sp/>double<sp/>!=<sp/>sizeof<sp/>uint64_t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nelems;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a90ff215e828e9192dbd196a78cacf083" kindref="member">std::memcpy</ref>(p++,<sp/>&amp;snan,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>UINT32_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>snan<sp/>=<sp/>UINT32_C(0x7fa00000);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>static_assert(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(uint32_t),<sp/></highlight><highlight class="stringliteral">&quot;MemPool:<sp/>sizeof<sp/>float<sp/>!=<sp/>sizeof<sp/>uint32_t&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nelems;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a90ff215e828e9192dbd196a78cacf083" kindref="member">std::memcpy</ref>(p++,<sp/>&amp;snan,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MemPool.cpp"/>
+  </compounddef>
+</doxygen>
