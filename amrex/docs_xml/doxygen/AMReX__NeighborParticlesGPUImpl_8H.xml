@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="AMReX__NeighborParticlesGPUImpl_8H" kind="file" language="C++">
     <compoundname>AMReX_NeighborParticlesGPUImpl.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <incdepgraph>
-      <node id="75108">
-        <label>/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H</label>
-        <link refid="AMReX_NeighborParticlesGPUImpl.H"/>
-        <childnode refid="75109" relation="include">
+      <node id="75591">
+        <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H</label>
+        <link refid="AMReX__NeighborParticlesGPUImpl_8H"/>
+        <childnode refid="75592" relation="include">
         </childnode>
       </node>
-      <node id="75109">
+      <node id="75592">
         <label>AMReX_Config.H</label>
       </node>
     </incdepgraph>
@@ -51,7 +51,7 @@
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>edge_boxes.push_back(lo_edge_box);<sp/>bl.push_back(lo_edge_box);</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>edge_box<sp/>:<sp/>edge_boxes)<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++k)<sp/>{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((j<sp/>==<sp/>k)<sp/>or<sp/>(i<sp/>==<sp/>k))<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((j<sp/>==<sp/>k)<sp/>||<sp/>(i<sp/>==<sp/>k))<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>hi_corner_box<sp/>=<sp/><ref refid="namespaceamrex_1a6b84705b46b7a57e78bb865c63eacab9" kindref="member">adjCellHi</ref>(edge_box,<sp/>k,<sp/>ncells);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>lo_corner_box<sp/>=<sp/><ref refid="namespaceamrex_1aae360b0fe88c8af72c293906e6e7d3c3" kindref="member">adjCellLo</ref>(edge_box,<sp/>k,<sp/>ncells);</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bl.push_back(hi_corner_box);</highlight></codeline>
@@ -80,7 +80,7 @@
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba<sp/>=<sp/>this-&gt;ParticleBoxArray(lev);</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>&amp;<sp/>dmap<sp/>=<sp/>this-&gt;ParticleDistributionMap(lev);</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ba.size()<sp/>==<sp/>1<sp/>and<sp/>(not<sp/>geom.<ref refid="classamrex_1_1Geometry_1a40882432c46bfa9ae6a7316a0889dc35" kindref="member">isAnyPeriodic</ref>())<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ba.size()<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>(!<sp/>geom.<ref refid="classamrex_1_1Geometry_1a40882432c46bfa9ae6a7316a0889dc35" kindref="member">isAnyPeriodic</ref>())<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_neighbor_mask_ptr<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal"><sp/>||</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>BoxArray::SameRefs(m_neighbor_mask_ptr-&gt;boxArray(),<sp/>ba)<sp/>||</highlight></codeline>
@@ -90,7 +90,7 @@
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_mask_ptr-&gt;setVal(-1);</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref>&amp;<sp/>periodicity<sp/>=<sp/>geom.<ref refid="classamrex_1_1Geometry_1a7b365b1560bb9a31cf49cd55668085cf" kindref="member">periodicity</ref>();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>periodicity.<ref refid="classamrex_1_1Periodicity_1a2d7d41d1e3e15bb7172362d142ebf5aa" kindref="member">shiftIntVect</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>periodicity.<ref refid="classamrex_1_1Periodicity_1aa00f72c117ab2cfa93707b4dfce502c6" kindref="member">shiftIntVect</ref>();</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi(ba,<sp/>dmap);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -109,7 +109,7 @@
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbor_grid<sp/>=<sp/>isec.first;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>isec_box<sp/>=<sp/>isec.second<sp/>-<sp/>*pit;</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(grid<sp/>==<sp/>nbor_grid)<sp/>and<sp/>(*pit<sp/>==<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(0,<sp/>0,<sp/>0))))<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(grid<sp/>==<sp/>nbor_grid)<sp/>&amp;&amp;<sp/>(*pit<sp/>==<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(0,<sp/>0,<sp/>0))))<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>neighbor_grids.insert(NeighborTask(nbor_grid,<sp/>isec_box,<sp/>*pit));</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -176,7 +176,7 @@
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>plev<sp/><sp/>=<sp/>this-&gt;GetParticles(lev);</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>ba<sp/>=<sp/>this-&gt;ParticleBoxArray(lev);</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ba.size()<sp/>==<sp/>1<sp/>and<sp/>(not<sp/>geom.isAnyPeriodic())<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ba.size()<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>(!<sp/>geom.isAnyPeriodic())<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"></highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<ref refid="classamrex_1_1MFIter" kindref="compound">MFIter</ref><sp/>mfi<sp/>=<sp/>this-&gt;MakeMFIter(lev);<sp/>mfi.<ref refid="classamrex_1_1MFIter_1a61b9a1d5eda39765d1db9b9b936558c7" kindref="member">isValid</ref>();<sp/>++mfi)</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -325,6 +325,6 @@
 <codeline lineno="303"><highlight class="normal"></highlight></codeline>
 <codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="/home/travis/build/AMReX-Codes/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H"/>
   </compounddef>
 </doxygen>

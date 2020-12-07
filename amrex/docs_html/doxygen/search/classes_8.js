@@ -10,8 +10,7 @@ var searchData=
   ['indextype',['IndexType',['../classamrex_1_1IndexType.html',1,'amrex']]],
   ['insitubridge',['InSituBridge',['../classamrex_1_1InSituBridge.html',1,'amrex']]],
   ['intdescriptor',['IntDescriptor',['../classamrex_1_1IntDescriptor.html',1,'amrex']]],
-  ['internalstype',['InternalsType',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html',1,'amrex::AmrDataAdaptor']]],
-  ['internalstype',['InternalsType',['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html',1,'amrex::AmrMeshDataAdaptor']]],
+  ['internalstype',['InternalsType',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html',1,'amrex::AmrDataAdaptor::InternalsType'],['../structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html',1,'amrex::AmrMeshDataAdaptor::InternalsType']]],
   ['interpbndrydata',['InterpBndryData',['../classamrex_1_1InterpBndryData.html',1,'amrex']]],
   ['interpolater',['Interpolater',['../classamrex_1_1Interpolater.html',1,'amrex']]],
   ['interpolaterboxcoarsener',['InterpolaterBoxCoarsener',['../classamrex_1_1InterpolaterBoxCoarsener.html',1,'amrex']]],
@@ -20,6 +19,7 @@ var searchData=
   ['intvect',['IntVect',['../classamrex_1_1IntVect.html',1,'amrex']]],
   ['inversecopytag',['InverseCopyTag',['../structamrex_1_1NeighborParticleContainer_1_1InverseCopyTag.html',1,'amrex::NeighborParticleContainer']]],
   ['invoke_5fresult',['invoke_result',['../structamrex_1_1detail_1_1invoke__result.html',1,'amrex::detail']]],
+  ['invoke_5fresult_3c_20decltype_28void_28invoke_28std_3a_3adeclval_3c_20f_20_3e_28_29_2c_20std_3a_3adeclval_3c_20args_20_3e_28_29_2e_2e_2e_29_29_29_2c_20f_2c_20args_2e_2e_2e_20_3e',['invoke_result&lt; decltype(void(INVOKE(std::declval&lt; F &gt;(), std::declval&lt; Args &gt;()...))), F, Args... &gt;',['../structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b.html',1,'amrex::detail']]],
   ['isbasefab',['IsBaseFab',['../structamrex_1_1IsBaseFab.html',1,'amrex']]],
   ['isbasefab_3c_20d_2c_20typename_20std_3a_3aenable_5fif_3c_20std_3a_3ais_5fbase_5fof_3c_20basefab_3c_20typename_20d_3a_3avalue_5ftype_20_3e_2c_20d_20_3e_3a_3avalue_20_3e_3a_3atype_20_3e',['IsBaseFab&lt; D, typename std::enable_if&lt; std::is_base_of&lt; BaseFab&lt; typename D::value_type &gt;, D &gt;::value &gt;::type &gt;',['../structamrex_1_1IsBaseFab_3_01D_00_01typename_01std_1_1enable__if_3_01std_1_1is__base__of_3_01Basc4401839a878456c6d47850080d07e31.html',1,'amrex']]],
   ['isfabarray',['IsFabArray',['../structamrex_1_1IsFabArray.html',1,'amrex']]],
@@ -41,7 +41,5 @@ var searchData=
   ['isgpuable_3c_20unionif_3c_20tail_2e_2e_2e_20_3e_20_3e',['IsGPUable&lt; UnionIF&lt; Tail... &gt; &gt;',['../structamrex_1_1EB2_1_1IsGPUable.html',1,'amrex::EB2']]],
   ['isstoreatomic',['IsStoreAtomic',['../structamrex_1_1IsStoreAtomic.html',1,'amrex']]],
   ['isstoreatomic_3c_20ebcellflag_20_3e',['IsStoreAtomic&lt; EBCellFlag &gt;',['../structamrex_1_1IsStoreAtomic_3_01EBCellFlag_01_4.html',1,'amrex']]],
-  ['iterator',['iterator',['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator']]],
-  ['iterator',['iterator',['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors']]],
-  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl']]]
+  ['iterator',['iterator',['../structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html',1,'amrex::Gpu::range_detail::range_impl&lt; T &gt;::iterator'],['../structamrex_1_1BinIterator_1_1iterator.html',1,'amrex::BinIterator&lt; T &gt;::iterator'],['../structamrex_1_1Neighbors_1_1iterator.html',1,'amrex::Neighbors&lt; ParticleType &gt;::iterator']]]
 ];
