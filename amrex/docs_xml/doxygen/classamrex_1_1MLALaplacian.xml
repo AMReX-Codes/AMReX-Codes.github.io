@@ -628,7 +628,7 @@
         <link refid="classamrex_1_1MLALaplacian"/>
         <childnode refid="2771" relation="public-inheritance">
         </childnode>
-        <childnode refid="2831" relation="usage">
+        <childnode refid="2833" relation="usage">
           <edgelabel>m_a_coeffs</edgelabel>
         </childnode>
         <childnode refid="2790" relation="usage">
@@ -663,7 +663,7 @@
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
-      <node id="2832">
+      <node id="2834">
         <label>std::vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;, std::allocator&lt; amrex::Vector&lt; amrex::MultiFab &gt; &gt; &gt;</label>
       </node>
       <node id="2798">
@@ -841,10 +841,10 @@
           <edgelabel>info</edgelabel>
         </childnode>
       </node>
-      <node id="2831">
+      <node id="2833">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="2832" relation="public-inheritance">
+        <childnode refid="2834" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2826">
@@ -881,6 +881,9 @@
         <link refid="classamrex_1_1MLCellABecLap"/>
         <childnode refid="2772" relation="public-inheritance">
         </childnode>
+        <childnode refid="2831" relation="usage">
+          <edgelabel>m_overset_mask</edgelabel>
+        </childnode>
       </node>
       <node id="2794">
         <label>amrex::DistributionMapping::Ref</label>
@@ -900,6 +903,12 @@
         <label>amrex::Vector&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="2811" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2831">
+        <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="2832" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2788">
@@ -1037,6 +1046,9 @@
           <edgelabel>m_bdkey</edgelabel>
         </childnode>
       </node>
+      <node id="2832">
+        <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt; &gt;</label>
+      </node>
       <node id="2796">
         <label>std::vector&lt; std::size_t, std::allocator&lt; std::size_t &gt; &gt;</label>
       </node>
@@ -1058,7 +1070,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1ae77f68c02a722cf55b176d17e2c49a90" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>applyBC</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1a576364fc5fcadf5eb1b23a7a693fa3ba" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>applyInhomogNeumannTerm</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1af6190fe1b9d2ed218129e7ad6f4b4f64" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>applyMetricTerm</name></member>
-      <member refid="classamrex_1_1MLLinOp_1af43ce113549e125050df7b81c1e6feca" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>applyOverset</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1ad9c4081306f2882750345d3161ca2261" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>applyOverset</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a42be83da50e1429a6f86236d03d57497" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>averageDownCoeffs</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a14d16b6fad7291dbd24ae23dbd14846d" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>averageDownCoeffsSameAmrLevel</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a66d0a88c0fc3855bccc4a14da47a3165" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>averageDownCoeffsToCoarseAmrLevel</name></member>
@@ -1072,6 +1084,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1aead98967987fb3826008fc69f3270247" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>compGrad</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a3c1832912375e08e8bd38775b6b532b3" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>correctionResidual</name></member>
       <member refid="classamrex_1_1MLALaplacian_1af8dd769763527b099464e31ece687888" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>define</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1ab0367e6ee533865b423123eeb4e6e97b" prot="public" virt="non-virtual" ambiguityscope="amrex::MLCellABecLap::"><scope>amrex::MLALaplacian</scope><name>define</name></member>
       <member refid="classamrex_1_1MLLinOp_1a2940aad54767b9998943db75ae57dfba" prot="public" virt="non-virtual" ambiguityscope="amrex::MLLinOp::"><scope>amrex::MLALaplacian</scope><name>define</name></member>
       <member refid="classamrex_1_1MLLinOp_1a355691d7877fb9a9aabc65db76d0f2b4" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>doAgglomeration</name></member>
       <member refid="classamrex_1_1MLLinOp_1a79f98e0cf06f695dbad6052c5d53e00b" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>doConsolidation</name></member>
@@ -1096,7 +1109,7 @@
       <member refid="classamrex_1_1MLLinOp_1a1189e4016e7757083343a93649f102aa" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>getMaxOrder</name></member>
       <member refid="classamrex_1_1MLLinOp_1a525b102eb592e2b44a864c62e64e9566" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getNComp</name></member>
       <member refid="classamrex_1_1MLLinOp_1a53fabf0ebd4dd86e92a3c7e5a161f5a6" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getNGrow</name></member>
-      <member refid="classamrex_1_1MLCellABecLap_1a08a137d336a5989f8b0b94b431db0747" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getOversetMask</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1acb4d23e32365a814323cdd4787884420" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>getOversetMask</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac313a2de49bd67c23fad23d5c4045e70" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>HiBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1a85fa2f104bbfeaa73d55d589906ecd45" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>info</name></member>
       <member refid="classamrex_1_1MLLinOp_1a48b2fe73722eee0a1d50b6e0b9558174" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>Initialize</name></member>
@@ -1145,6 +1158,7 @@
       <member refid="classamrex_1_1MLLinOp_1aa53a765aea0ed0c4e7410d147380079f" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_needs_coarse_data_for_bc</name></member>
       <member refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_num_amr_levels</name></member>
       <member refid="classamrex_1_1MLLinOp_1ababf1d5df3da022563dc90ee2c81ad75" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_num_mg_levels</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1aeee38af8d207ad6bc70087b4c6ec4215" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_overset_mask</name></member>
       <member refid="classamrex_1_1MLLinOp_1a614164d6c8e680ccb5ac8fb9cf1558ed" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_parent</name></member>
       <member refid="classamrex_1_1MLLinOp_1a2faeb23bc1e93e2b0cd693cb94a18d08" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_raii_comm</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a2ffd8d47358983d3c013b8012eeb1b8e" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_undrrelxr</name></member>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="AMReX__MLCellABecLap__3D__K_8H" kind="file" language="C++">
+    <compoundname>AMReX_MLCellABecLap_3D_K.H</compoundname>
+    <includes local="no">AMReX_Config.H</includes>
+    <includedby refid="AMReX__MLCellABecLap__K_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_K.H</includedby>
+    <incdepgraph>
+      <node id="68832">
+        <label>AMReX_Config.H</label>
+      </node>
+      <node id="68831">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_3D_K.H</label>
+        <link refid="AMReX__MLCellABecLap__3D__K_8H"/>
+        <childnode refid="68832" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="68834">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_K.H</label>
+        <link refid="AMReX__MLCellABecLap__K_8H"/>
+        <childnode refid="68835" relation="include">
+        </childnode>
+      </node>
+      <node id="68833">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_3D_K.H</label>
+        <link refid="AMReX__MLCellABecLap__3D__K_8H"/>
+        <childnode refid="68834" relation="include">
+        </childnode>
+      </node>
+      <node id="68835">
+        <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap.cpp</label>
+        <link refid="AMReX__MLCellABecLap_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceamrex">amrex</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>AMREX_MLCELLABECLAP_3D_K_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_MLCELLABECLAP_3D_K_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a078658f433f21a921eaee99b9bb2423f" kindref="member">coarsen_overset_mask</ref><sp/>(Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bx,<sp/>Array4&lt;int&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cmsk,<sp/>Array4&lt;int<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fmsk)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>noexcept</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nerrors<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lo<sp/>=<sp/><ref refid="namespaceamrex_1a71600c8a528e0f1863154e4cf0183cbc" kindref="member">amrex::lbound</ref>(bx);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>hi<sp/>=<sp/><ref refid="namespaceamrex_1a6ce6b4176121c2c23327903a8139af0c" kindref="member">amrex::ubound</ref>(bx);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>lo.z;<sp/>k<sp/>&lt;=<sp/>hi.z;<sp/>++k)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>lo.y;<sp/>j<sp/>&lt;=<sp/>hi.y;<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>2*i;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jj<sp/>=<sp/>2*j;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>kk<sp/>=<sp/>2*k;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmsk(i,j,k)<sp/>=<sp/>fmsk(ii,jj<sp/><sp/>,kk<sp/><sp/>)<sp/>+<sp/>fmsk(ii+1,jj<sp/><sp/>,kk<sp/><sp/>)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fmsk(ii,jj+1,kk<sp/><sp/>)<sp/>+<sp/>fmsk(ii+1,jj+1,kk<sp/><sp/>)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fmsk(ii,jj<sp/><sp/>,kk+1)<sp/>+<sp/>fmsk(ii+1,jj<sp/><sp/>,kk+1)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fmsk(ii,jj+1,kk+1)<sp/>+<sp/>fmsk(ii+1,jj+1,kk+1);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cmsk(i,j,k)<sp/>==<sp/>8)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cmsk(i,j,k)<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cmsk(i,j,k)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++nerrors;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}}}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nerrors;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellABecLap_3D_K.H"/>
+  </compounddef>
+</doxygen>

@@ -1292,7 +1292,9 @@ as:</p>
 <span class="p">});</span>
 </pre></div>
 </div>
-<p>Users that choose to implement the macro launches should be aware of the limitations
+<p>One should also avoid using <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">continue</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">return</span></span></code> inside the macros
+because it is not an actual <code class="code cpp c++ docutils literal notranslate"><span class="keyword"><span class="pre">for</span></span></code> loop.
+Users that choose to implement the macro launches should be aware of the limitations
 of C++ preprocessing macros to ensure GPU offloading is done properly.</p>
 <p>Finally, AMReX’s most common CPU threading strategy for GPU/CPU systems is to utilize
 OpenMP threads to maintain multi-threaded parallelism on work chosen to run on the host.

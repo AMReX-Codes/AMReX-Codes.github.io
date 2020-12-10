@@ -5262,7 +5262,6 @@
     <member refid="classamrex_1_1MLABecLaplacian_1a431b88eacbb25a6fc2704cca95790b1b" kind="variable"><name>m_b_scalar</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a4f2dd2fecc4cbd8df8cdf264330b6cee" kind="variable"><name>m_a_coeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a690294478b3f4e211d738879fcc2d487" kind="variable"><name>m_b_coeffs</name></member>
-    <member refid="classamrex_1_1MLABecLaplacian_1a7ccb3f9af8125f675a2cda9214ec8bf5" kind="variable"><name>m_overset_mask</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a225329bffa463bc382ff2bc473a21098" kind="variable"><name>m_is_singular</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1abf3b9bd60c5bffecca969aae4b710744" kind="function"><name>MLABecLaplacian</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a9689c471d20bcd84b469530512a223d5" kind="function"><name>MLABecLaplacian</name></member>
@@ -5294,13 +5293,12 @@
     <member refid="classamrex_1_1MLABecLaplacian_1ae12be3a3c5d40ddfbe6545102d337467" kind="function"><name>getACoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1ace4be849d71ce58b8a9821f27258a167" kind="function"><name>getBCoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a6c29c456c300b9376e44182204234ffa" kind="function"><name>makeNLinOp</name></member>
-    <member refid="classamrex_1_1MLABecLaplacian_1a07d44a7993ed0fe731eda5e7f5be5713" kind="function"><name>getOversetMask</name></member>
-    <member refid="classamrex_1_1MLABecLaplacian_1a0e720aeb3f158346f3d1ede0603f7d78" kind="function"><name>applyOverset</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a703ad22ae8672c91ab5c7f044530202a" kind="function"><name>averageDownCoeffsSameAmrLevel</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a850f02af43a26190e332319b9ddb8942" kind="function"><name>averageDownCoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a9f80d265602f986fc8e4a4255ff3a525" kind="function"><name>averageDownCoeffsToCoarseAmrLevel</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a4c648c8c2131afb622bc29f4aed80f8a" kind="function"><name>applyMetricTermsCoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a6af504f34d971e15df085a16446327d0" kind="function"><name>FFlux</name></member>
+    <member refid="classamrex_1_1MLABecLaplacian_1a283853eeb0e1f06102254ba76a76c7cc" kind="function"><name>define_ab_coeffs</name></member>
   </compound>
   <compound refid="classamrex_1_1MLALaplacian" kind="class"><name>amrex::MLALaplacian</name>
     <member refid="classamrex_1_1MLALaplacian_1a9f52dcdbaab0fbc216169c6fb4405110" kind="variable"><name>m_a_scalar</name></member>
@@ -5336,6 +5334,7 @@
   <compound refid="classamrex_1_1MLCellABecLap" kind="class"><name>amrex::MLCellABecLap</name>
     <member refid="classamrex_1_1MLCellABecLap_1a1b4821805159b0595b6b7b1e0135b54f" kind="friend"><name>MLMG</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a7b344595276c27ed17dacb3ea1fb95aa" kind="friend"><name>MLCGSolver</name></member>
+    <member refid="classamrex_1_1MLCellABecLap_1aeee38af8d207ad6bc70087b4c6ec4215" kind="variable"><name>m_overset_mask</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a4645fe35e39e5f36fe87938a48ea9641" kind="function"><name>MLCellABecLap</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1aaa11148ef1cc3386414a3b3d02f9a4b2" kind="function"><name>~MLCellABecLap</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1aff6a0f1c81880c9e944e725098d73a7c" kind="function"><name>MLCellABecLap</name></member>
@@ -5343,6 +5342,8 @@
     <member refid="classamrex_1_1MLCellABecLap_1a7fd4867774038467f97cfac185e235ac" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1ac72a224155e09fd10918b66384ccdb81" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1acf81aa134d6acc149b73757189d16a10" kind="function"><name>define</name></member>
+    <member refid="classamrex_1_1MLCellABecLap_1ab0367e6ee533865b423123eeb4e6e97b" kind="function"><name>define</name></member>
+    <member refid="classamrex_1_1MLCellABecLap_1acb4d23e32365a814323cdd4787884420" kind="function"><name>getOversetMask</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1adb891ed98442838db52ab71e703ff752" kind="function"><name>needsUpdate</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1aa107a7270bd64cf582e25812c5e5cbab" kind="function"><name>update</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a7d6d2646e9f6afaf7ed70bf0c86fa762" kind="function"><name>prepareForSolve</name></member>
@@ -5352,8 +5353,8 @@
     <member refid="classamrex_1_1MLCellABecLap_1a0e67dc87e4b048beb5f44d38b3ccebfe" kind="function"><name>getBScalar</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a066785981b2814b49cd7ccc98ff01831" kind="function"><name>getACoeffs</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e" kind="function"><name>getBCoeffs</name></member>
-    <member refid="classamrex_1_1MLCellABecLap_1a08a137d336a5989f8b0b94b431db0747" kind="function"><name>getOversetMask</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a576364fc5fcadf5eb1b23a7a693fa3ba" kind="function"><name>applyInhomogNeumannTerm</name></member>
+    <member refid="classamrex_1_1MLCellABecLap_1ad9c4081306f2882750345d3161ca2261" kind="function"><name>applyOverset</name></member>
   </compound>
   <compound refid="classamrex_1_1MLCellLinOp" kind="class"><name>amrex::MLCellLinOp</name>
     <member refid="classamrex_1_1MLCellLinOp_1ae233eeb511516448492f38fe53fa9cd9" kind="typedef"><name>RealTuple</name></member>
@@ -5931,12 +5932,14 @@
     <member refid="classamrex_1_1MLPoisson_1afffef821b522beac6e041bd1f4ca424f" kind="variable"><name>m_is_singular</name></member>
     <member refid="classamrex_1_1MLPoisson_1ad86b607cb6313b21110a23ca8688e8a2" kind="function"><name>MLPoisson</name></member>
     <member refid="classamrex_1_1MLPoisson_1a0b0f0182abb2d0ae0af7ed6747e8966f" kind="function"><name>MLPoisson</name></member>
+    <member refid="classamrex_1_1MLPoisson_1a2ba1ef47a809b4631767eb37887cbc94" kind="function"><name>MLPoisson</name></member>
     <member refid="classamrex_1_1MLPoisson_1aa6be26cbc36200cddc21f42d00de1483" kind="function"><name>~MLPoisson</name></member>
     <member refid="classamrex_1_1MLPoisson_1a6f59fe5fa7a9cb43caad1c372d562216" kind="function"><name>MLPoisson</name></member>
     <member refid="classamrex_1_1MLPoisson_1ab1fa13628d8c2976843a8cc6e77601cf" kind="function"><name>MLPoisson</name></member>
     <member refid="classamrex_1_1MLPoisson_1aa94256727c335854901a5b3983398053" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLPoisson_1a2976580d5f0b1c765e0f61dc348b1a09" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLPoisson_1a7b3b4ce7ef56acfedc3365da5ec6402a" kind="function"><name>define</name></member>
+    <member refid="classamrex_1_1MLPoisson_1a8bcd8443142d81d9e868c4b461015b73" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1MLPoisson_1af7ed92c7fa5541ead4182b86c3a7d275" kind="function"><name>prepareForSolve</name></member>
     <member refid="classamrex_1_1MLPoisson_1aefdfec1d9ad383609a1becaa7974d15a" kind="function"><name>isSingular</name></member>
     <member refid="classamrex_1_1MLPoisson_1aee620ca36a51d37385f849f261eb6502" kind="function"><name>isBottomSingular</name></member>
@@ -9708,7 +9711,6 @@
     <member refid="namespaceamrex_1a38b82f0c068dedfb4b93fd627351375e" kind="function"><name>abec_gsrb</name></member>
     <member refid="namespaceamrex_1a54dbb9b0b67827d3e26099d41a29972f" kind="function"><name>abec_gsrb_os</name></member>
     <member refid="namespaceamrex_1a5e778f899e6b3506d7dc0efab2f8f18e" kind="function"><name>abec_gsrb_with_line_solve</name></member>
-    <member refid="namespaceamrex_1a078658f433f21a921eaee99b9bb2423f" kind="function"><name>coarsen_overset_mask</name></member>
     <member refid="namespaceamrex_1aa12f7835461bbc8c6107ce285ef1fd4a" kind="function"><name>overset_rescale_bcoef_x</name></member>
     <member refid="namespaceamrex_1aa6c3f47550be0fa19b9954f898efe87f" kind="function"><name>mlabeclap_adotx</name></member>
     <member refid="namespaceamrex_1aae218e875bd2cc43f355bebbf661d00a" kind="function"><name>mlabeclap_adotx_os</name></member>
@@ -9748,6 +9750,7 @@
     <member refid="namespaceamrex_1aff4a4759886d0d815c4d1266415eb937" kind="function"><name>mlalap_flux_z</name></member>
     <member refid="namespaceamrex_1a13449831c24c814a0e3046686b305a3c" kind="function"><name>mlalap_flux_zface</name></member>
     <member refid="namespaceamrex_1a3cea40e415a6811dcdd4c34c86e09961" kind="function"><name>mlalap_gsrb</name></member>
+    <member refid="namespaceamrex_1a078658f433f21a921eaee99b9bb2423f" kind="function"><name>coarsen_overset_mask</name></member>
     <member refid="namespaceamrex_1a4b562b00cd47b22ceabc8f4f68251cde" kind="function"><name>mlebabeclap_adotx</name></member>
     <member refid="namespaceamrex_1adaf35cd6ed336b8c439985415ea0b20f" kind="function"><name>mlebabeclap_ebflux</name></member>
     <member refid="namespaceamrex_1a25e78ce293962126c40b99388937ee44" kind="function"><name>mlebabeclap_gsrb</name></member>
@@ -9877,27 +9880,33 @@
     <member refid="namespaceamrex_1aeb97b30cc1d2f209245e7624fb369e93" kind="function"><name>mlndtslap_gauss_seidel</name></member>
     <member refid="namespaceamrex_1a7dd14d39cc4e8c7901b5152ee458f6a0" kind="function"><name>mlndtslap_normalize</name></member>
     <member refid="namespaceamrex_1a6a70e0f53cf779275eab518f6e11e184" kind="function"><name>mlpoisson_adotx</name></member>
+    <member refid="namespaceamrex_1a80ebb0cc1dd59707e6caf3b1623c9ae2" kind="function"><name>mlpoisson_adotx_os</name></member>
     <member refid="namespaceamrex_1a614625fade07c93188a447ded90afec4" kind="function"><name>mlpoisson_adotx_m</name></member>
     <member refid="namespaceamrex_1afbedb0b9038330e68b37f3af76f61d48" kind="function"><name>mlpoisson_flux_x</name></member>
     <member refid="namespaceamrex_1a4a26357a11beffc792bfd42f802486ba" kind="function"><name>mlpoisson_flux_x_m</name></member>
     <member refid="namespaceamrex_1aa8c3eadf17db34750cd867b81e6632b3" kind="function"><name>mlpoisson_flux_xface</name></member>
     <member refid="namespaceamrex_1aec5ce8ddd36cd29b8ca8978ce13ab874" kind="function"><name>mlpoisson_flux_xface_m</name></member>
     <member refid="namespaceamrex_1af29d6629339175bd025254d6ae0ad97f" kind="function"><name>mlpoisson_gsrb</name></member>
+    <member refid="namespaceamrex_1a954e965a2e06fba0e287d8c1a1822c89" kind="function"><name>mlpoisson_gsrb_os</name></member>
     <member refid="namespaceamrex_1a261c24cd159286029b2b2af54420ddad" kind="function"><name>mlpoisson_gsrb_m</name></member>
     <member refid="namespaceamrex_1a47691dcd355d36f18e28ba82fcb6647a" kind="function"><name>mlpoisson_normalize</name></member>
     <member refid="namespaceamrex_1aaa58299b8256905558b53614ea14bce9" kind="function"><name>mlpoisson_adotx</name></member>
+    <member refid="namespaceamrex_1a6fee66c50a523f872dced1aba8495060" kind="function"><name>mlpoisson_adotx_os</name></member>
     <member refid="namespaceamrex_1ae0e4f18dc5b9fca27eacbd2a352460f6" kind="function"><name>mlpoisson_adotx_m</name></member>
     <member refid="namespaceamrex_1a9c04ad40a40ba94759ffe585de26e9eb" kind="function"><name>mlpoisson_flux_y</name></member>
     <member refid="namespaceamrex_1adf14ae5ac2a3a1f682c05fd260879fc7" kind="function"><name>mlpoisson_flux_y_m</name></member>
     <member refid="namespaceamrex_1a1d974391e6e3fc76bda835895aab3595" kind="function"><name>mlpoisson_flux_yface</name></member>
     <member refid="namespaceamrex_1ac1504453e08e93328b8c5a33530d1a86" kind="function"><name>mlpoisson_flux_yface_m</name></member>
     <member refid="namespaceamrex_1aa36c66dee8f21fdfa1bf03fde370fffa" kind="function"><name>mlpoisson_gsrb</name></member>
+    <member refid="namespaceamrex_1afeababf5371467b3dcfb891aa3c54e22" kind="function"><name>mlpoisson_gsrb_os</name></member>
     <member refid="namespaceamrex_1a8976671c5958750e293ee7943197a1b1" kind="function"><name>mlpoisson_gsrb_m</name></member>
     <member refid="namespaceamrex_1ad53e940efdcb589e6c501ebe5c2319b4" kind="function"><name>mlpoisson_normalize</name></member>
     <member refid="namespaceamrex_1a2a22a8a7a11608e621a4fadfb7948e18" kind="function"><name>mlpoisson_adotx</name></member>
+    <member refid="namespaceamrex_1a740f034b6536c7f9aeb95bb46f26fda5" kind="function"><name>mlpoisson_adotx_os</name></member>
     <member refid="namespaceamrex_1aaeacbae13092acb976061d0c07392ee1" kind="function"><name>mlpoisson_flux_z</name></member>
     <member refid="namespaceamrex_1a0e3a9d3a8577165f8859b201b3825806" kind="function"><name>mlpoisson_flux_zface</name></member>
     <member refid="namespaceamrex_1a3af5435c1fe72b5f4894af1b43381a66" kind="function"><name>mlpoisson_gsrb</name></member>
+    <member refid="namespaceamrex_1ae998720210db209874b2fb93d030832b" kind="function"><name>mlpoisson_gsrb_os</name></member>
     <member refid="namespaceamrex_1ac5860217240005524baa7a46b62ac656" kind="function"><name>mltensor_fill_corners</name></member>
     <member refid="namespaceamrex_1a7030037af193bb2bf648e008000c57dd" kind="function"><name>mltensor_cross_terms_fx</name></member>
     <member refid="namespaceamrex_1aff33f49d1494120e79df850eaa87201e" kind="function"><name>mltensor_cross_terms_fy</name></member>
@@ -10014,37 +10023,37 @@
   </compound>
   <compound refid="namespaceamrex_1_1_0D44" kind="namespace"><name>amrex::@44</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D449" kind="namespace"><name>amrex::@449</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D455" kind="namespace"><name>amrex::@455</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D456" kind="namespace"><name>amrex::@456</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D457" kind="namespace"><name>amrex::@457</name>
+  <compound refid="namespaceamrex_1_1_0D453" kind="namespace"><name>amrex::@453</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D459" kind="namespace"><name>amrex::@459</name>
   </compound>
+  <compound refid="namespaceamrex_1_1_0D460" kind="namespace"><name>amrex::@460</name>
+  </compound>
   <compound refid="namespaceamrex_1_1_0D461" kind="namespace"><name>amrex::@461</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D463" kind="namespace"><name>amrex::@463</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D465" kind="namespace"><name>amrex::@465</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D474" kind="namespace"><name>amrex::@474</name>
+  <compound refid="namespaceamrex_1_1_0D469" kind="namespace"><name>amrex::@469</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D475" kind="namespace"><name>amrex::@475</name>
-  </compound>
-  <compound refid="namespaceamrex_1_1_0D476" kind="namespace"><name>amrex::@476</name>
+  <compound refid="namespaceamrex_1_1_0D478" kind="namespace"><name>amrex::@478</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D479" kind="namespace"><name>amrex::@479</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D482" kind="namespace"><name>amrex::@482</name>
+  <compound refid="namespaceamrex_1_1_0D480" kind="namespace"><name>amrex::@480</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D483" kind="namespace"><name>amrex::@483</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D484" kind="namespace"><name>amrex::@484</name>
+  <compound refid="namespaceamrex_1_1_0D486" kind="namespace"><name>amrex::@486</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D497" kind="namespace"><name>amrex::@497</name>
+  <compound refid="namespaceamrex_1_1_0D487" kind="namespace"><name>amrex::@487</name>
   </compound>
-  <compound refid="namespaceamrex_1_1_0D513" kind="namespace"><name>amrex::@513</name>
+  <compound refid="namespaceamrex_1_1_0D488" kind="namespace"><name>amrex::@488</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D501" kind="namespace"><name>amrex::@501</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1_0D517" kind="namespace"><name>amrex::@517</name>
   </compound>
   <compound refid="namespaceamrex_1_1_0D54" kind="namespace"><name>amrex::@54</name>
   </compound>
@@ -12543,6 +12552,14 @@
   <compound refid="AMReX__MLCellABecLap_8cpp" kind="file"><name>AMReX_MLCellABecLap.cpp</name>
   </compound>
   <compound refid="AMReX__MLCellABecLap_8H" kind="file"><name>AMReX_MLCellABecLap.H</name>
+  </compound>
+  <compound refid="AMReX__MLCellABecLap__1D__K_8H" kind="file"><name>AMReX_MLCellABecLap_1D_K.H</name>
+  </compound>
+  <compound refid="AMReX__MLCellABecLap__2D__K_8H" kind="file"><name>AMReX_MLCellABecLap_2D_K.H</name>
+  </compound>
+  <compound refid="AMReX__MLCellABecLap__3D__K_8H" kind="file"><name>AMReX_MLCellABecLap_3D_K.H</name>
+  </compound>
+  <compound refid="AMReX__MLCellABecLap__K_8H" kind="file"><name>AMReX_MLCellABecLap_K.H</name>
   </compound>
   <compound refid="AMReX__MLCellLinOp_8cpp" kind="file"><name>AMReX_MLCellLinOp.cpp</name>
   </compound>

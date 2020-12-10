@@ -197,7 +197,7 @@ var searchData=
   ['getnumvofs',['getNumVoFs',['../classamrex_1_1EBCellFlag.html#a84a126f074a69bb0d306d0a44a775b23',1,'amrex::EBCellFlag']]],
   ['getoffsets',['GetOffsets',['../classamrex_1_1NeighborList.html#a78237e02dfe0d7faa5de361bc9a17566',1,'amrex::NeighborList::GetOffsets()'],['../classamrex_1_1NeighborList.html#a59a916fe644a969eeb0ca7bf5ed6cce8',1,'amrex::NeighborList::GetOffsets() const']]],
   ['getordering',['getOrdering',['../classamrex_1_1FArrayBox.html#aaa904e14fc1335783b62f47ad001348e',1,'amrex::FArrayBox']]],
-  ['getoversetmask',['getOversetMask',['../classamrex_1_1MLABecLaplacian.html#a07d44a7993ed0fe731eda5e7f5be5713',1,'amrex::MLABecLaplacian::getOversetMask()'],['../classamrex_1_1MLCellABecLap.html#a08a137d336a5989f8b0b94b431db0747',1,'amrex::MLCellABecLap::getOversetMask()']]],
+  ['getoversetmask',['getOversetMask',['../classamrex_1_1MLCellABecLap.html#acb4d23e32365a814323cdd4787884420',1,'amrex::MLCellABecLap']]],
   ['getownership',['getOwnerShip',['../classamrex_1_1DistributionMapping.html#a8eb230cc640400a27702a048a611b0af',1,'amrex::DistributionMapping']]],
   ['getpairindex',['GetPairIndex',['../classamrex_1_1ParIterBase.html#a9ddb47b162aa20ce489190a54a2d676b',1,'amrex::ParIterBase']]],
   ['getpargdb',['GetParGDB',['../classamrex_1_1ParticleContainer.html#a29ae5b714b6b8eee29ed3cecb2447a45',1,'amrex::ParticleContainer::GetParGDB() const'],['../classamrex_1_1ParticleContainer.html#a950d107db7286ee354c85414bf87fd4b',1,'amrex::ParticleContainer::GetParGDB()']]],
