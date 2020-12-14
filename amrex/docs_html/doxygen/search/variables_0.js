@@ -13,6 +13,7 @@ var searchData=
   ['align_5fsize',['align_size',['../classamrex_1_1Arena.html#a4b2f3b31e81e52426aef615cb2aaa7b7',1,'amrex::Arena']]],
   ['allcovered',['allcovered',['../classamrex_1_1EB2_1_1GeometryShop.html#a61a81964ef63f4044f3b0083e9cefbea',1,'amrex::EB2::GeometryShop']]],
   ['alloc',['alloc',['../structamrex_1_1MFInfo.html#a61ae5fd154086ea2849fe236e1dce794',1,'amrex::MFInfo::alloc()'],['../structamrex_1_1FabArray_1_1ShMem.html#ac36d589efc67807c91dadd18b01ad39d',1,'amrex::FabArray::ShMem::alloc()'],['../structamrex_1_1FabInfo.html#a826adbd1c96b9aab9f1826b69a894459',1,'amrex::FabInfo::alloc()']]],
+  ['allow_5fmultiple_5fmfiters',['allow_multiple_mfiters',['../classamrex_1_1MFIter.html#ab2fc387b6146040c8efcef278b258f78',1,'amrex::MFIter']]],
   ['allowsparsewrites',['allowSparseWrites',['../classamrex_1_1VisMF.html#ad6b2c32f84c4e530a473eab6ffd666f2',1,'amrex::VisMF']]],
   ['allprocs',['AllProcs',['../classamrex_1_1Print.html#ac54860bd8ad68a5551e588ff8e01aa3b',1,'amrex::Print::AllProcs()'],['../classamrex_1_1PrintToFile.html#a0067feaedbdfba6996f079b3b44162cc',1,'amrex::PrintToFile::AllProcs()']]],
   ['allregular',['allregular',['../classamrex_1_1EB2_1_1GeometryShop.html#a6c5e06b24c520ce426abd4d936b4cab5',1,'amrex::EB2::GeometryShop']]],

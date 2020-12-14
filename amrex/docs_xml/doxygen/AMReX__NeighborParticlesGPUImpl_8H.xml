@@ -4,13 +4,13 @@
     <compoundname>AMReX_NeighborParticlesGPUImpl.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <incdepgraph>
-      <node id="75793">
+      <node id="76148">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H</label>
         <link refid="AMReX__NeighborParticlesGPUImpl_8H"/>
-        <childnode refid="75794" relation="include">
+        <childnode refid="76149" relation="include">
         </childnode>
       </node>
-      <node id="75794">
+      <node id="76149">
         <label>AMReX_Config.H</label>
       </node>
     </incdepgraph>
@@ -186,7 +186,7 @@
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>src_tile<sp/>=<sp/>plev[index];</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>aos<sp/><sp/><sp/>=<sp/>src_tile.GetArrayOfStructs();</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__eb__to__vtk_1af2ac1714ba629496c770f2c5d141431c" kindref="member">np</ref><sp/>=<sp/>aos.numParticles();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>np<sp/>=<sp/>aos.numParticles();</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;const int&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mask_arr<sp/>=<sp/>m_neighbor_mask_ptr-&gt;array(mfi);</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>
@@ -213,7 +213,7 @@
 <codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">amrex::Gpu::exclusive_scan</ref>(counts.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>(),<sp/>counts.<ref refid="classamrex_1_1PODVector_1a834016620c6c540a3af5cbe7a2637bed" kindref="member">end</ref>(),<sp/>offsets.<ref refid="classamrex_1_1PODVector_1a688bc1525c5bcb7456f6423383540666" kindref="member">begin</ref>());</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_copies;</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a998c5815369d23cd73eea1b09f43a966" kindref="member">Gpu::dtoh_memcpy</ref>(&amp;num_copies,<sp/>offsets.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>()+<ref refid="namespaceamrex__eb__to__vtk_1af2ac1714ba629496c770f2c5d141431c" kindref="member">np</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a998c5815369d23cd73eea1b09f43a966" kindref="member">Gpu::dtoh_memcpy</ref>(&amp;num_copies,<sp/>offsets.<ref refid="classamrex_1_1PODVector_1a52a678e008fab2346394fcad18bc90c4" kindref="member">data</ref>()+np,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>));</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>neighbor_copy_op.resize(gid,<sp/>lev,<sp/>num_copies);</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"></highlight></codeline>

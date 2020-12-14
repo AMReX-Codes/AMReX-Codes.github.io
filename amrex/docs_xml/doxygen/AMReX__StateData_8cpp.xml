@@ -2032,13 +2032,13 @@
 <codeline lineno="137"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MultiFab&amp;<sp/>MF<sp/>=<sp/>state.oldData();</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex__eb__to__vtk_1aa47673e8feae3e3e3527167ae6560d7d" kindref="member">nc</ref><sp/>=<sp/>MF.nComp();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nc<sp/>=<sp/>MF.nComp();</highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ng<sp/>=<sp/>MF.nGrow();</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nc<sp/>==<sp/>(*old_data).nComp());</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ng<sp/>==<sp/>(*old_data).nGrow());</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*old_data,<sp/>state.oldData(),<sp/>0,<sp/>0,<sp/><ref refid="namespaceamrex__eb__to__vtk_1aa47673e8feae3e3e3527167ae6560d7d" kindref="member">nc</ref>,<sp/>ng);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*old_data,<sp/>state.oldData(),<sp/>0,<sp/>0,<sp/>nc,<sp/>ng);</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>old_time<sp/>=<sp/>state.old_time;</highlight></codeline>
 <codeline lineno="149"><highlight class="normal">}</highlight></codeline>
@@ -2054,7 +2054,7 @@
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(nc<sp/>==<sp/>(*new_data).nComp());</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ng<sp/>==<sp/>(*new_data).nGrow());</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*new_data,<sp/>state.newData(),<sp/>0,<sp/>0,<sp/><ref refid="namespaceamrex__eb__to__vtk_1aa47673e8feae3e3e3527167ae6560d7d" kindref="member">nc</ref>,<sp/>ng);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(*new_data,<sp/>state.newData(),<sp/>0,<sp/>0,<sp/>nc,<sp/>ng);</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>new_time<sp/>=<sp/>state.new_time;</highlight></codeline>
 <codeline lineno="165"><highlight class="normal">}</highlight></codeline>

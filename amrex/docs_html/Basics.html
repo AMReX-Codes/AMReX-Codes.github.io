@@ -122,6 +122,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#mfiter-and-tiling">MFIter and Tiling</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mfiter-without-tiling">MFIter without Tiling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mfiter-with-tiling">MFIter with Tiling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-mfiters">Multiple MFIters</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#fortran-and-c-kernels">Fortran and C++ Kernels</a></li>
@@ -1719,6 +1720,30 @@ value. There are three ways of using these functions.</p>
 <p>But <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span><span class="operator"><span class="pre">&amp;</span></span> <span class="name"><span class="pre">bx</span></span> <span class="operator"><span class="pre">=</span></span> <span class="name"><span class="pre">mfi</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">validbox</span></span><span class="punctuation"><span class="pre">()</span></span></code> is not legal and will not compile.</p>
 <p>Finally it should be emphasized that tiling should not be used when
 running on GPUs because of kernel launch overhead.</p>
+</div>
+<div class="section" id="multiple-mfiters">
+<h2>Multiple MFIters<a class="headerlink" href="#multiple-mfiters" title="Permalink to this headline">¶</a></h2>
+<p>To avoid some common bugs, it is not allowed to have multiple active
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> objects like below by default.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi1</span><span class="p">(...);</span> <span class="p">...)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi2</span><span class="p">(...);</span> <span class="p">...)</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">call </span><span class="n">amrex_mfiter_build</span><span class="p">(</span><span class="n">mf1</span><span class="p">,</span> <span class="p">...)</span>
+<span class="k">call </span><span class="n">amrex_mfiter_build</span><span class="p">(</span><span class="n">mf2</span><span class="p">,</span> <span class="p">...)</span>
+</pre></div>
+</div>
+<p>The will results in an assertion failure at runtime.  To disable the
+assertion, one could call</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">old_flag</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">MFIter</span><span class="o">::</span><span class="n">allowMultipleMFIters</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="kt">logical</span> <span class="kd">::</span> <span class="n">old_flag</span>
+<span class="n">old_flag</span> <span class="o">=</span> <span class="n">amrex_mfiter_allow_multiple</span><span class="p">(.</span><span class="n">true</span><span class="p">.)</span>
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="fortran-and-c-kernels">

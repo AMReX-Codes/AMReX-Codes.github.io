@@ -6,7 +6,6 @@ var searchData=
   ['amrex_5fbc_5ftypes_5fmodule',['amrex_bc_types_module',['../namespaceamrex__bc__types__module.html',1,'']]],
   ['amrex_5fconstants_5fmodule',['amrex_constants_module',['../namespaceamrex__constants__module.html',1,'']]],
   ['amrex_5feb_5fflux_5freg_5fnd_5fmodule',['amrex_eb_flux_reg_nd_module',['../namespaceamrex__eb__flux__reg__nd__module.html',1,'']]],
-  ['amrex_5feb_5fto_5fvtk',['amrex_eb_to_vtk',['../namespaceamrex__eb__to__vtk.html',1,'']]],
   ['amrex_5febcellflag_5fmodule',['amrex_ebcellflag_module',['../namespaceamrex__ebcellflag__module.html',1,'']]],
   ['amrex_5ferror_5fmodule',['amrex_error_module',['../namespaceamrex__error__module.html',1,'']]],
   ['amrex_5ffilcc_5fmodule',['amrex_filcc_module',['../namespaceamrex__filcc__module.html',1,'']]],

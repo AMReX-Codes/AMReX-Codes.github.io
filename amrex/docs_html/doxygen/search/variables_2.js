@@ -32,7 +32,6 @@ var searchData=
   ['compute_5fnew_5fdt_5fon_5fregrid',['compute_new_dt_on_regrid',['../classamrex_1_1Amr.html#a9f1bea870dda8d846c53e5302e9d4941',1,'amrex::Amr']]],
   ['con_5fgrid_5fsize',['con_grid_size',['../structamrex_1_1LPInfo.html#a6401e55c64a1d87c4f98d5e240c414a5',1,'amrex::LPInfo']]],
   ['config',['config',['../classamrex_1_1InSituBridge.html#a1ebf5d26f2262a8604ef624ebc72fdf2',1,'amrex::InSituBridge']]],
-  ['connectivity',['connectivity',['../namespaceamrex__eb__to__vtk.html#a00b7dee9f4e5f2e164041741530ac758',1,'amrex_eb_to_vtk']]],
   ['control_5fpoints_5fx',['control_points_x',['../classamrex_1_1LineDistFcnElement2d.html#a484c372e01f95e8b7426541ba14cf903',1,'amrex::LineDistFcnElement2d::control_points_x()'],['../classamrex_1_1SplineDistFcnElement2d.html#ac1c23f1058ddc5e09b1d859e3cba904a',1,'amrex::SplineDistFcnElement2d::control_points_x()']]],
   ['control_5fpoints_5fy',['control_points_y',['../classamrex_1_1LineDistFcnElement2d.html#a10bdd01583d4250e8c717c69280f3490',1,'amrex::LineDistFcnElement2d::control_points_y()'],['../classamrex_1_1SplineDistFcnElement2d.html#a3662f00f13decf4a4ad983e1cc19c2f9',1,'amrex::SplineDistFcnElement2d::control_points_y()']]],
   ['coord',['coord',['../structamrex_1_1GeometryData.html#a68d36ab01dbd0848e0f3e43ef59b74cb',1,'amrex::GeometryData']]],
