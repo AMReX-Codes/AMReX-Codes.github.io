@@ -379,6 +379,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FabSetIter.html">FabSetIter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FaceDivFree.html">FaceDivFree</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divergence-free interpolation on face centered data.  <a href="classamrex_1_1FaceDivFree.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1FaceLinear.html">FaceLinear</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bilinear interpolation on face data.  <a href="classamrex_1_1FaceLinear.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -922,12 +925,24 @@ Functions</h2></td></tr>
 <tr class="memitem:a32e50a6d56b30a2ed76f6b4f130db855"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
 <tr class="memitem:a32e50a6d56b30a2ed76f6b4f130db855"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a32e50a6d56b30a2ed76f6b4f130db855">FillPatchTwoLevels</a> (MF &amp;mf, Real time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF *&gt; &amp;cmf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;ct, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; MF *&gt; &amp;fmf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;ft, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, BC &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, BC &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
 <tr class="separator:a32e50a6d56b30a2ed76f6b4f130db855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d0ba2b002dcedd4c4796d298f0adeb0"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
+<tr class="memitem:a7d0ba2b002dcedd4c4796d298f0adeb0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7d0ba2b002dcedd4c4796d298f0adeb0">FillPatchTwoLevels</a> (<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;mf, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, Real time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;cmf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;ct, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;fmf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;ft, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
+<tr class="separator:a7d0ba2b002dcedd4c4796d298f0adeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa559fc8c450f44026f51beed23f6d2c8"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
+<tr class="memitem:aa559fc8c450f44026f51beed23f6d2c8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa559fc8c450f44026f51beed23f6d2c8">FillPatchTwoLevels</a> (<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;mf, Real time, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;cmf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;ct, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;fmf, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;ft, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
+<tr class="separator:aa559fc8c450f44026f51beed23f6d2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11360ea60c2b1db7e9ce603c239a07d3"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
 <tr class="memitem:a11360ea60c2b1db7e9ce603c239a07d3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a11360ea60c2b1db7e9ce603c239a07d3">InterpFromCoarseLevel</a> (MF &amp;mf, Real time, const MF &amp;cmf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, BC &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, BC &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
 <tr class="separator:a11360ea60c2b1db7e9ce603c239a07d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00c2ef83d0cc5d4ffd7bf85678be67e2"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
 <tr class="memitem:a00c2ef83d0cc5d4ffd7bf85678be67e2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a00c2ef83d0cc5d4ffd7bf85678be67e2">InterpFromCoarseLevel</a> (MF &amp;mf, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, Real time, const MF &amp;cmf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, BC &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, BC &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
 <tr class="separator:a00c2ef83d0cc5d4ffd7bf85678be67e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acefb737b3245e2fca216e950f3c8ed4f"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
+<tr class="memitem:acefb737b3245e2fca216e950f3c8ed4f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#acefb737b3245e2fca216e950f3c8ed4f">InterpFromCoarseLevel</a> (<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;mf, Real time, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &amp;cmf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
+<tr class="separator:acefb737b3245e2fca216e950f3c8ed4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a433c53798971a0f7647d1bb357bb6"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </td></tr>
+<tr class="memitem:a96a433c53798971a0f7647d1bb357bb6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a96a433c53798971a0f7647d1bb357bb6">InterpFromCoarseLevel</a> (<a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;mf, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;nghost, Real time, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &amp;cmf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> scomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> dcomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;cgeom, const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;fgeom, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;cbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cbccomp, <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;fbc, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fbccomp, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, Interp *mapper, const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;bcs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</td></tr>
+<tr class="separator:a96a433c53798971a0f7647d1bb357bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18058abd47bcc0f005182c829f1f4e0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a18058abd47bcc0f005182c829f1f4e0a">fluxreg_fineadd</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;bx, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;reg, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> rcomp, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;flx, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fcomp, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="structamrex_1_1Dim3.html">Dim3</a> const &amp;ratio, const Real mult) noexcept</td></tr>
 <tr class="memdesc:a18058abd47bcc0f005182c829f1f4e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add fine grid flux to flux register. Flux array is a fine grid edge based object, Register is a coarse grid edge based object. It is assumed that the coarsened flux region contains the register region.  <a href="#a18058abd47bcc0f005182c829f1f4e0a">More...</a><br /></td></tr>
 <tr class="separator:a18058abd47bcc0f005182c829f1f4e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -956,6 +971,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a3a130e78c478fddbb794329c104cbc05"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3a130e78c478fddbb794329c104cbc05"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3a130e78c478fddbb794329c104cbc05">nodebilin_interp</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;bx, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;fine, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> fcomp, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T const &gt; const &amp;slope, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T const &gt; const &amp;crse, const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ccomp, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ratio) noexcept</td></tr>
 <tr class="separator:a3a130e78c478fddbb794329c104cbc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749ef3bbd2184e2931cb0a63f54aa73a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a749ef3bbd2184e2931cb0a63f54aa73a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a749ef3bbd2184e2931cb0a63f54aa73a">facediv_face_interp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T const &gt; const &amp;, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; const &amp;, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;) noexcept</td></tr>
+<tr class="separator:a749ef3bbd2184e2931cb0a63f54aa73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b18d53f86cdda4a55b0acd41d7cfbab"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7b18d53f86cdda4a55b0acd41d7cfbab"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7b18d53f86cdda4a55b0acd41d7cfbab">facediv_int</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt;, AMREX_SPACEDIM &gt; const &amp;, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;, <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; Real, AMREX_SPACEDIM &gt; const &amp;) noexcept</td></tr>
+<tr class="separator:a7b18d53f86cdda4a55b0acd41d7cfbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa143e23e7784eca50c904ce19588d503"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa143e23e7784eca50c904ce19588d503"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa143e23e7784eca50c904ce19588d503">face_linear_interp_x</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> n, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;fine, <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T const &gt; const &amp;crse, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;ratio) noexcept</td></tr>
 <tr class="separator:aa143e23e7784eca50c904ce19588d503"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1290,6 +1311,10 @@ Functions</h2></td></tr>
 <tr class="separator:a22ce5ec6a27aa7bce43ca708cec77023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a255709aafea190412cf8a963f450ebc9"><td class="memItemLeft" align="right" valign="top">BoxArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a255709aafea190412cf8a963f450ebc9">coarsen</a> (const BoxArray &amp;ba, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio)</td></tr>
 <tr class="separator:a255709aafea190412cf8a963f450ebc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c03c73102c83c74769b7773fb82483"><td class="memItemLeft" align="right" valign="top">BoxArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae4c03c73102c83c74769b7773fb82483">refine</a> (const BoxArray &amp;ba, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ratio)</td></tr>
+<tr class="separator:ae4c03c73102c83c74769b7773fb82483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85187c36418a08cc244643e6fc869f4c"><td class="memItemLeft" align="right" valign="top">BoxArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a85187c36418a08cc244643e6fc869f4c">refine</a> (const BoxArray &amp;ba, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio)</td></tr>
+<tr class="separator:a85187c36418a08cc244643e6fc869f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a719e505b04b336141e1a9a6ab52ecbcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1BoxList.html">BoxList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a719e505b04b336141e1a9a6ab52ecbcd">GetBndryCells</a> (const BoxArray &amp;ba, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngrow)</td></tr>
 <tr class="separator:a719e505b04b336141e1a9a6ab52ecbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69e582cef17dfd91d829e59457a28fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab69e582cef17dfd91d829e59457a28fd">readBoxArray</a> (BoxArray &amp;ba, std::istream &amp;is, bool bReadSpecial)</td></tr>
@@ -3546,6 +3571,8 @@ Variables</h2></td></tr>
 <tr class="separator:a7655c2dbeff4b92d06ddf5d3f964e7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6271bbc97d9b2c15eb418a6e4024c76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FaceLinear.html">FaceLinear</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af6271bbc97d9b2c15eb418a6e4024c76">face_linear_interp</a></td></tr>
 <tr class="separator:af6271bbc97d9b2c15eb418a6e4024c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56316d7d561f65317664a3c83ab30efc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1FaceDivFree.html">FaceDivFree</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a56316d7d561f65317664a3c83ab30efc">face_divfree_interp</a></td></tr>
+<tr class="separator:a56316d7d561f65317664a3c83ab30efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdf3882926f66513ad7885b4cd468233"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1CellConservativeLinear.html">CellConservativeLinear</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#acdf3882926f66513ad7885b4cd468233">lincc_interp</a></td></tr>
 <tr class="separator:acdf3882926f66513ad7885b4cd468233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a7cd403bb1a4e3a44a90722f83f40f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1CellConservativeLinear.html">CellConservativeLinear</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5a7cd403bb1a4e3a44a90722f83f40f5">cell_cons_interp</a> (0)</td></tr>
@@ -18317,6 +18344,160 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a749ef3bbd2184e2931cb0a63f54aa73a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a749ef3bbd2184e2931cb0a63f54aa73a">&#9670;&nbsp;</a></span>facediv_face_interp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::facediv_face_interp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ci</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ck</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>idir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>crse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; const <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b18d53f86cdda4a55b0acd41d7cfbab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b18d53f86cdda4a55b0acd41d7cfbab">&#9670;&nbsp;</a></span>facediv_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::facediv_int </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ci</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ck</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; T &gt;, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; Real, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>cellSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad6108ad28798d6aa4e7cf1c2f7e72b3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6108ad28798d6aa4e7cf1c2f7e72b3a">&#9670;&nbsp;</a></span>filcc_cell()</h2>
 
@@ -18756,7 +18937,7 @@ template&lt;typename MF , typename BC &gt; </div>
 </div>
 </div>
 <a id="ab4f182b9382eae973021619b9c3ed949"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4f182b9382eae973021619b9c3ed949">&#9670;&nbsp;</a></span>FillPatchTwoLevels() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f182b9382eae973021619b9c3ed949">&#9670;&nbsp;</a></span>FillPatchTwoLevels() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -18906,7 +19087,7 @@ template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook
 </div>
 </div>
 <a id="a32e50a6d56b30a2ed76f6b4f130db855"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32e50a6d56b30a2ed76f6b4f130db855">&#9670;&nbsp;</a></span>FillPatchTwoLevels() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e50a6d56b30a2ed76f6b4f130db855">&#9670;&nbsp;</a></span>FillPatchTwoLevels() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -19019,6 +19200,300 @@ template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>bcscomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PreInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>pre_interp</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PostInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>post_interp</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d0ba2b002dcedd4c4796d298f0adeb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d0ba2b002dcedd4c4796d298f0adeb0">&#9670;&nbsp;</a></span>FillPatchTwoLevels() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>cgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>fgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>fbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Interp *&#160;</td>
+          <td class="paramname"><em>mapper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>bcscomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PreInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>pre_interp</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PostInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>post_interp</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa559fc8c450f44026f51beed23f6d2c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa559fc8c450f44026f51beed23f6d2c8">&#9670;&nbsp;</a></span>FillPatchTwoLevels() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>cgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>fgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>fbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Interp *&#160;</td>
+          <td class="paramname"><em>mapper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>bcs</em>, </td>
         </tr>
         <tr>
@@ -25209,7 +25684,7 @@ template&lt;class FAB , class foo  = amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::
 </div>
 </div>
 <a id="a11360ea60c2b1db7e9ce603c239a07d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11360ea60c2b1db7e9ce603c239a07d3">&#9670;&nbsp;</a></span>InterpFromCoarseLevel() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a11360ea60c2b1db7e9ce603c239a07d3">&#9670;&nbsp;</a></span>InterpFromCoarseLevel() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -25335,7 +25810,7 @@ template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook
 </div>
 </div>
 <a id="a00c2ef83d0cc5d4ffd7bf85678be67e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c2ef83d0cc5d4ffd7bf85678be67e2">&#9670;&nbsp;</a></span>InterpFromCoarseLevel() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c2ef83d0cc5d4ffd7bf85678be67e2">&#9670;&nbsp;</a></span>InterpFromCoarseLevel() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -25436,6 +25911,264 @@ template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>bcscomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PreInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>pre_interp</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PostInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>post_interp</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acefb737b3245e2fca216e950f3c8ed4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acefb737b3245e2fca216e950f3c8ed4f">&#9670;&nbsp;</a></span>InterpFromCoarseLevel() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>cgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>fgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>fbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Interp *&#160;</td>
+          <td class="paramname"><em>mapper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>bcscomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PreInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>pre_interp</em> = <code>{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const PostInterpHook &amp;&#160;</td>
+          <td class="paramname"><em>post_interp</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96a433c53798971a0f7647d1bb357bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a433c53798971a0f7647d1bb357bb6">&#9670;&nbsp;</a></span>InterpFromCoarseLevel() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF , typename BC , typename Interp , typename PreInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;, typename PostInterpHook  = NullInterpHook&lt;typename MF::FABType::value_type&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">EnableIf_t</a>&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; MF *, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cmf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>scomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>dcomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>cgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Geometry.html">Geometry</a> &amp;&#160;</td>
+          <td class="paramname"><em>fgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>cbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; BC, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fbc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>fbccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Interp *&#160;</td>
+          <td class="paramname"><em>mapper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1BCRec.html">BCRec</a> &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>bcs</em>, </td>
         </tr>
         <tr>
@@ -42281,8 +43014,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aaa58299b8256905558b53614ea14bce9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa58299b8256905558b53614ea14bce9">&#9670;&nbsp;</a></span>mlpoisson_adotx() <span class="overload">[1/3]</span></h2>
+<a id="a2a22a8a7a11608e621a4fadfb7948e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a22a8a7a11608e621a4fadfb7948e18">&#9670;&nbsp;</a></span>mlpoisson_adotx() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -42301,6 +43034,12 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -42324,7 +43063,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>dhy</em>&#160;</td>
+          <td class="paramname"><em>dhy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dhz</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -42389,8 +43134,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a2a22a8a7a11608e621a4fadfb7948e18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a22a8a7a11608e621a4fadfb7948e18">&#9670;&nbsp;</a></span>mlpoisson_adotx() <span class="overload">[3/3]</span></h2>
+<a id="aaa58299b8256905558b53614ea14bce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa58299b8256905558b53614ea14bce9">&#9670;&nbsp;</a></span>mlpoisson_adotx() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -42409,12 +43154,6 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
           <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -42438,13 +43177,7 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>dhy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>dhz</em>&#160;</td>
+          <td class="paramname"><em>dhy</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -44831,134 +45564,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ac5860217240005524baa7a46b62ac656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5860217240005524baa7a46b62ac656">&#9670;&nbsp;</a></span>mltensor_fill_corners() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::mltensor_fill_corners </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>icorner</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>vbox</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>vel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mxlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mylo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>mxhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>myhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalxlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalylo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalxhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcvalyhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a>, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bct</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; Real, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>bcl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>inhomog</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>maxorder</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; Real, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>dxinv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>domain</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa866ba86aa241659d3373598479f2e4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa866ba86aa241659d3373598479f2e4f">&#9670;&nbsp;</a></span>mltensor_fill_corners() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa866ba86aa241659d3373598479f2e4f">&#9670;&nbsp;</a></span>mltensor_fill_corners() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -45055,6 +45662,132 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
           <td class="paramname"><em>bcvalzhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="classamrex_1_1BoundCond.html">BoundCond</a>, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; Real, 2 *AMREX_SPACEDIM *AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>inhomog</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>maxorder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; Real, AMREX_SPACEDIM &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dxinv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5860217240005524baa7a46b62ac656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5860217240005524baa7a46b62ac656">&#9670;&nbsp;</a></span>mltensor_fill_corners() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::mltensor_fill_corners </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>icorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>vbox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mxlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mylo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>mxhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>myhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalxlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalylo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalxhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcvalyhi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -47299,8 +48032,38 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="ac38f92b345723f71defea15e208ee644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38f92b345723f71defea15e208ee644">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[2/41]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; amrex::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1Orientation.html">Orientation</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write to an ostream in ASCII format. </p>
+
+</div>
+</div>
 <a id="ab7f948f87bc8aa58451aa8b78e9c883a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7f948f87bc8aa58451aa8b78e9c883a">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[2/41]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f948f87bc8aa58451aa8b78e9c883a">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[3/41]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -47329,7 +48092,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a73fb53c873d555a7a3cc7b33e88a5f33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73fb53c873d555a7a3cc7b33e88a5f33">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[3/41]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a73fb53c873d555a7a3cc7b33e88a5f33">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[4/41]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -47355,36 +48118,6 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Write an <a class="el" href="classamrex_1_1IndexType.html" title="Cell-Based or Node-Based Indices. ">IndexType</a> to an ostream in ASCII. </p>
-
-</div>
-</div>
-<a id="ac38f92b345723f71defea15e208ee644"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac38f92b345723f71defea15e208ee644">&#9670;&nbsp;</a></span>operator<<() <span class="overload">[4/41]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::ostream &amp; amrex::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classamrex_1_1Orientation.html">Orientation</a> &amp;&#160;</td>
-          <td class="paramname"><em>o</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Write to an ostream in ASCII format. </p>
 
 </div>
 </div>
@@ -54634,7 +55367,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="afe1aa5a62080b50fbc4c3646ddbc6c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe1aa5a62080b50fbc4c3646ddbc6c8a">&#9670;&nbsp;</a></span>refine() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1aa5a62080b50fbc4c3646ddbc6c8a">&#9670;&nbsp;</a></span>refine() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54664,7 +55397,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="af32b91948787281bd9c0c691f3f355dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af32b91948787281bd9c0c691f3f355dd">&#9670;&nbsp;</a></span>refine() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af32b91948787281bd9c0c691f3f355dd">&#9670;&nbsp;</a></span>refine() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54700,7 +55433,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="ad0f0f651612f7b14e3c2768e69aaeb92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0f0f651612f7b14e3c2768e69aaeb92">&#9670;&nbsp;</a></span>refine() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f0f651612f7b14e3c2768e69aaeb92">&#9670;&nbsp;</a></span>refine() <span class="overload">[3/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54736,7 +55469,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="a54d77694c8efe15e13ae6e08ba5e9fae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54d77694c8efe15e13ae6e08ba5e9fae">&#9670;&nbsp;</a></span>refine() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d77694c8efe15e13ae6e08ba5e9fae">&#9670;&nbsp;</a></span>refine() <span class="overload">[4/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54772,7 +55505,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="adfc791fe29b7108a57b8af1f44a0c7f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfc791fe29b7108a57b8af1f44a0c7f5">&#9670;&nbsp;</a></span>refine() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc791fe29b7108a57b8af1f44a0c7f5">&#9670;&nbsp;</a></span>refine() <span class="overload">[5/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54808,7 +55541,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="abb7cbdfb8c8ec3d94bec38fcf10b92db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb7cbdfb8c8ec3d94bec38fcf10b92db">&#9670;&nbsp;</a></span>refine() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb7cbdfb8c8ec3d94bec38fcf10b92db">&#9670;&nbsp;</a></span>refine() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54845,7 +55578,7 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div>
 </div>
 <a id="aeda82776b77d98746dcda422ab7586a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeda82776b77d98746dcda422ab7586a3">&#9670;&nbsp;</a></span>refine() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda82776b77d98746dcda422ab7586a3">&#9670;&nbsp;</a></span>refine() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -54879,6 +55612,62 @@ template&lt;class FAB1 , class FAB2 , class FAB3 , class F , class bar  = amrex:
 </div><div class="memdoc">
 
 <p>Refine <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice. ">Box</a> by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo*ratio and hi &lt;- (hi+1)*ratio - 1. NOTE: if type(dir) = NODE centered: lo &lt;- lo*ratio and hi &lt;- hi*ratio. </p>
+
+</div>
+</div>
+<a id="ae4c03c73102c83c74769b7773fb82483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c03c73102c83c74769b7773fb82483">&#9670;&nbsp;</a></span>refine() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoxArray amrex::refine </td>
+          <td>(</td>
+          <td class="paramtype">const BoxArray &amp;&#160;</td>
+          <td class="paramname"><em>ba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ratio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85187c36418a08cc244643e6fc869f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85187c36418a08cc244643e6fc869f4c">&#9670;&nbsp;</a></span>refine() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BoxArray amrex::refine </td>
+          <td>(</td>
+          <td class="paramtype">const BoxArray &amp;&#160;</td>
+          <td class="paramname"><em>ba</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>ratio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -59783,8 +60572,80 @@ template&lt;typename To , typename From &gt; </div>
 
 </div>
 </div>
+<a id="a61c2415c625485ccfed2f1c7e9b9db8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c2415c625485ccfed2f1c7e9b9db8b">&#9670;&nbsp;</a></span>yafluxreg_crseadd() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::yafluxreg_crseadd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>fy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dtdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Real&#160;</td>
+          <td class="paramname"><em>dtdy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>nc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab2ea3b54c3008390ec817a61b805b126"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2ea3b54c3008390ec817a61b805b126">&#9670;&nbsp;</a></span>yafluxreg_crseadd() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ea3b54c3008390ec817a61b805b126">&#9670;&nbsp;</a></span>yafluxreg_crseadd() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -59845,78 +60706,6 @@ template&lt;typename To , typename From &gt; </div>
           <td></td>
           <td class="paramtype">Real&#160;</td>
           <td class="paramname"><em>dtdz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
-          <td class="paramname"><em>nc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a61c2415c625485ccfed2f1c7e9b9db8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61c2415c625485ccfed2f1c7e9b9db8b">&#9670;&nbsp;</a></span>yafluxreg_crseadd() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void amrex::yafluxreg_crseadd </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>flag</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>fx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structamrex_1_1Array4.html">Array4</a>&lt; Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>fy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>dtdx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Real&#160;</td>
-          <td class="paramname"><em>dtdy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -60176,6 +60965,20 @@ template&lt;typename To , typename From &gt; </div>
 
 </div>
 </div>
+<a id="a56316d7d561f65317664a3c83ab30efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56316d7d561f65317664a3c83ab30efc">&#9670;&nbsp;</a></span>face_divfree_interp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1FaceDivFree.html">FaceDivFree</a> amrex::face_divfree_interp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af6271bbc97d9b2c15eb418a6e4024c76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af6271bbc97d9b2c15eb418a6e4024c76">&#9670;&nbsp;</a></span>face_linear_interp</h2>
 
@@ -60223,7 +61026,7 @@ template&lt;typename To , typename From &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= 0&gt;</div><div class="line">Index <a class="code" href="namespaceamrex.html#a7939d1b7f76204c7b70ea282174f89c0">filterAndTransformParticles</a> (DstTile&amp; dst, <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#acc23406c7dfc89ca51a4c37a6430bdea">SrcTile</a>&amp; src, Index* mask, F&amp;&amp; f) noexcept</div><div class="line">{</div><div class="line">    <span class="keyword">auto</span> np = src.numParticles();</div><div class="line">    Gpu::DeviceVector&lt;Index&gt; offsets(np);</div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">Gpu::exclusive_scan</a>(mask, mask+np, offsets.begin());</div><div class="line"></div><div class="line">    Index last_mask, last_offset;</div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);    </div><div class="line"></div><div class="line">    <span class="keyword">auto</span> p_offsets = offsets.dataPtr();</div><div class="line">    </div><div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div><div class="line">          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div><div class="line"></div><div class="line">    <a class="code" href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div><div class="line">    {</div><div class="line">        <span class="keywordflow">if</span> (mask[i]) f(dst_data, src_data, i, p_offsets[i]);</div><div class="line">    });</div><div class="line"></div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25">Gpu::synchronize</a>();</div><div class="line">    <span class="keywordflow">return</span> last_mask + last_offset;</div><div class="line">}</div><div class="line"></div><div class="line">    </div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DstTile</div><div class="ttc" id="AMReX__GpuLaunch_8H_html_a98b67baa1382f64a8b07abb4c2edbf92"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_FOR_1D(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:227</div></div>
+<b>Initial value:</b><div class="fragment"><div class="line">= 0&gt;</div><div class="line">Index <a class="code" href="namespaceamrex.html#a7939d1b7f76204c7b70ea282174f89c0">filterAndTransformParticles</a> (DstTile&amp; dst, <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#acc23406c7dfc89ca51a4c37a6430bdea">SrcTile</a>&amp; src, Index* mask, F&amp;&amp; f) noexcept</div><div class="line">{</div><div class="line">    <span class="keyword">auto</span> np = src.numParticles();</div><div class="line">    Gpu::DeviceVector&lt;Index&gt; offsets(np);</div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">Gpu::exclusive_scan</a>(mask, mask+np, offsets.begin());</div><div class="line"></div><div class="line">    Index last_mask, last_offset;</div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);    </div><div class="line"></div><div class="line">    <span class="keyword">auto</span> p_offsets = offsets.dataPtr();</div><div class="line">    </div><div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div><div class="line">          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div><div class="line"></div><div class="line">    <a class="code" href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div><div class="line">    {</div><div class="line">        <span class="keywordflow">if</span> (mask[i]) f(dst_data, src_data, i, p_offsets[i]);</div><div class="line">    });</div><div class="line"></div><div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25">Gpu::synchronize</a>();</div><div class="line">    <span class="keywordflow">return</span> last_mask + last_offset;</div><div class="line">}</div><div class="line"></div><div class="line">    </div><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DstTile</div><div class="ttc" id="AMReX__GpuLaunch_8H_html_a98b67baa1382f64a8b07abb4c2edbf92"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a></div><div class="ttdeci">#define AMREX_HOST_DEVICE_FOR_1D(...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:230</div></div>
 <div class="ttc" id="namespaceamrex_1_1Gpu_html_a3f116832e254a3422729b3455b22f18c"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">amrex::Gpu::exclusive_scan</a></div><div class="ttdeci">OutIter exclusive_scan(InIter begin, InIter end, OutIter result)</div><div class="ttdef"><b>Definition:</b> AMReX_Scan.H:716</div></div>
 <div class="ttc" id="namespaceamrex_html_a7939d1b7f76204c7b70ea282174f89c0"><div class="ttname"><a href="namespaceamrex.html#a7939d1b7f76204c7b70ea282174f89c0">amrex::filterAndTransformParticles</a></div><div class="ttdeci">auto filterAndTransformParticles(DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</div><div class="ttdoc">Conditionally copy particles from src to dst1 and dst2 based on a predicate. A transformation will al...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:543</div></div>
 <div class="ttc" id="namespaceamrex_html_acc23406c7dfc89ca51a4c37a6430bdea"><div class="ttname"><a href="namespaceamrex.html#acc23406c7dfc89ca51a4c37a6430bdea">amrex::SrcTile</a></div><div class="ttdeci">int SrcTile</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:419</div></div>

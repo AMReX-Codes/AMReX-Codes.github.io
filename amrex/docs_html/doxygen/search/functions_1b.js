@@ -65,6 +65,7 @@ var searchData=
   ['_7efabfactory',['~FabFactory',['../classamrex_1_1FabFactory.html#af726b92f11c995d2a3225f3fa8a0754b',1,'amrex::FabFactory']]],
   ['_7efabio',['~FABio',['../classamrex_1_1FABio.html#a083e8bc68fa9f61b921f6aec21ea3f95',1,'amrex::FABio']]],
   ['_7efabset',['~FabSet',['../classamrex_1_1FabSet.html#ac79a8fcbd950fa941c9db2c7fa4e892b',1,'amrex::FabSet']]],
+  ['_7efacedivfree',['~FaceDivFree',['../classamrex_1_1FaceDivFree.html#a6799662d4889c4b188f8f1b2d9e9e7a1',1,'amrex::FaceDivFree']]],
   ['_7efacelinear',['~FaceLinear',['../classamrex_1_1FaceLinear.html#a82d92835cb2d626c9b1551e201b08a68',1,'amrex::FaceLinear']]],
   ['_7efarraybox',['~FArrayBox',['../classamrex_1_1FArrayBox.html#ad6e306b56d29642be5ee0acac88f07f8',1,'amrex::FArrayBox']]],
   ['_7efb',['~FB',['../structamrex_1_1FabArrayBase_1_1FB.html#a3a5bf414a1fa823843b3c35d2ee5bbc9',1,'amrex::FabArrayBase::FB']]],

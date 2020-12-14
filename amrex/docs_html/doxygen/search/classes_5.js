@@ -33,6 +33,7 @@ var searchData=
   ['fabsetiter',['FabSetIter',['../classamrex_1_1FabSetIter.html',1,'amrex']]],
   ['fabtype',['FABType',['../structamrex_1_1FabArray_1_1FABType.html',1,'amrex::FabArray']]],
   ['face',['Face',['../structamrex_1_1EB2_1_1Face.html',1,'amrex::EB2']]],
+  ['facedivfree',['FaceDivFree',['../classamrex_1_1FaceDivFree.html',1,'amrex']]],
   ['facelinear',['FaceLinear',['../classamrex_1_1FaceLinear.html',1,'amrex']]],
   ['farraybox',['FArrayBox',['../classamrex_1_1FArrayBox.html',1,'amrex']]],
   ['fb',['FB',['../structamrex_1_1FabArrayBase_1_1FB.html',1,'amrex::FabArrayBase']]],
