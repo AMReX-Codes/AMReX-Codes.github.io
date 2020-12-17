@@ -229,8 +229,7 @@
 with minimal changes and maximum flexibility.  This allows
 application teams to get running on GPUs quickly while allowing
 long term performance tuning and programming model selection.  AMReX
-uses CUDA for GPUs, but application teams can use CUDA, CUDA
-Fortran, OpenACC or OpenMP in their individual codes.</p>
+uses CUDA for GPUs, but application teams can use CUDA,  OpenACC or OpenMP in their individual codes.</p>
 <p>When running AMReX on a CPU system, the parallelization strategy is a
 combination of MPI and OpenMP using tiling, as detailed in
 <a class="reference internal" href="Basics.html#sec-basics-mfiter-tiling"><span class="std std-ref">MFIter with Tiling</span></a>. However, tiling is ineffective on GPUs
@@ -334,9 +333,7 @@ ran with three GPU streams.</span><a class="headerlink" href="#id2" title="Perma
 <h2>Building with GNU Make<a class="headerlink" href="#building-with-gnu-make" title="Permalink to this headline">¶</a></h2>
 <p>To build AMReX with GPU support, add <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code> or as a command line argument.</p>
-<p>Only IBM and PGI support CUDA Fortran, which is also built when
-<code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>.</p>
-<p>AMReX does not require OpenACC or CUDA Fortran, but application codes
+<p>AMReX does not require OpenACC, but application codes
 can use them if they are supported by the compiler.  For OpenACC support, add
 <code class="docutils literal notranslate"><span class="pre">USE_ACC=TRUE</span></code>.  PGI, Cray and GNU compilers support OpenACC.  Thus,
 for OpenACC, you must use <code class="docutils literal notranslate"><span class="pre">COMP=pgi</span></code>, <code class="docutils literal notranslate"><span class="pre">COMP=cray</span></code> or <code class="docutils literal notranslate"><span class="pre">COMP=gnu</span></code>.</p>
@@ -612,12 +609,7 @@ These include:</p>
 empty space.</p>
 <p>When AMReX is compiled with <code class="docutils literal notranslate"><span class="pre">USE_CUDA=TRUE</span></code>, the preprocessor
 macros <code class="docutils literal notranslate"><span class="pre">AMREX_USE_CUDA</span></code> and <code class="docutils literal notranslate"><span class="pre">AMREX_USE_GPU</span></code> are defined for
-conditional programming.  For PGI and IBM compilers,
-<code class="docutils literal notranslate"><span class="pre">AMREX_USE_CUDA_FORTRAN</span></code> is also defined, as well as
-<code class="docutils literal notranslate"><span class="pre">-DAMREX_CUDA_FORT_GLOBAL='attributes(global)'</span></code>,
-<code class="docutils literal notranslate"><span class="pre">-DAMREX_CUDA_FORT_DEVICE='attributes(device)'</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">-DAMREX_CUDA_FORT_HOST='attributes(host)'</span></code> so that CUDA Fortran
-functions can be properly labelled.  When AMReX is compiled with
+conditional programming.  When AMReX is compiled with
 <code class="docutils literal notranslate"><span class="pre">USE_ACC=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_USE_ACC</span></code> is defined.  When AMReX is
 compiled with <code class="docutils literal notranslate"><span class="pre">USE_OMP_OFFLOAD=TRUE</span></code>, <code class="docutils literal notranslate"><span class="pre">AMREX_USE_OMP_OFFLOAD</span></code> is
 defined.</p>
@@ -944,7 +936,7 @@ async-safe.</p>
 <div class="section" id="kernel-launch">
 <span id="sec-gpu-launch"></span><h1>Kernel Launch<a class="headerlink" href="#kernel-launch" title="Permalink to this headline">¶</a></h1>
 <p>In this section, how to offload work to the GPU will be demonstrated.
-AMReX supports offloading work with CUDA, CUDA Fortran, OpenACC or OpenMP.</p>
+AMReX supports offloading work with CUDA, OpenACC, or OpenMP.</p>
 <p>When using CUDA, AMReX provides users with portable C++ function calls or
 C++ macros that launch a user-defined lambda function.  When compiled without CUDA,
 the lambda function is ran on the CPU. When compiled with CUDA, the launch function
