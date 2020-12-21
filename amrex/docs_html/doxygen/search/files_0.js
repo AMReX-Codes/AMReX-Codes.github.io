@@ -265,6 +265,7 @@ var searchData=
   ['amrex_5fgpuasyncarray_2ecpp',['AMReX_GpuAsyncArray.cpp',['../AMReX__GpuAsyncArray_8cpp.html',1,'']]],
   ['amrex_5fgpuasyncarray_2eh',['AMReX_GpuAsyncArray.H',['../AMReX__GpuAsyncArray_8H.html',1,'']]],
   ['amrex_5fgpuatomic_2eh',['AMReX_GpuAtomic.H',['../AMReX__GpuAtomic_8H.html',1,'']]],
+  ['amrex_5fgpubuffer_2eh',['AMReX_GpuBuffer.H',['../AMReX__GpuBuffer_8H.html',1,'']]],
   ['amrex_5fgpucomplex_2eh',['AMReX_GpuComplex.H',['../AMReX__GpuComplex_8H.html',1,'']]],
   ['amrex_5fgpucontainers_2eh',['AMReX_GpuContainers.H',['../AMReX__GpuContainers_8H.html',1,'']]],
   ['amrex_5fgpucontrol_2ecpp',['AMReX_GpuControl.cpp',['../AMReX__GpuControl_8cpp.html',1,'']]],

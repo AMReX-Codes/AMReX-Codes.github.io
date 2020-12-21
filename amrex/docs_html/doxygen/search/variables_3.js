@@ -6,7 +6,7 @@ var searchData=
   ['d_5fbucket_5fto_5fpid',['d_bucket_to_pid',['../classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15',1,'amrex::ParticleBufferMap']]],
   ['d_5fcommunicate_5fint_5fcomp',['d_communicate_int_comp',['../classamrex_1_1ParticleContainer.html#a53ca60f7318ed230c8e04542bf550295',1,'amrex::ParticleContainer']]],
   ['d_5fcommunicate_5freal_5fcomp',['d_communicate_real_comp',['../classamrex_1_1ParticleContainer.html#a50bc06ae744be06e4101b09e6ec1af25',1,'amrex::ParticleContainer']]],
-  ['d_5fdata',['d_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#afcdba42d606234841dc54107bb186fb8',1,'amrex::Gpu::AsyncArray']]],
+  ['d_5fdata',['d_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#afcdba42d606234841dc54107bb186fb8',1,'amrex::Gpu::AsyncArray::d_data()'],['../classamrex_1_1Gpu_1_1Buffer.html#aeacd56724049c42730ee14018ded7919',1,'amrex::Gpu::Buffer::d_data()']]],
   ['d_5flev_5fgid_5fto_5fbucket',['d_lev_gid_to_bucket',['../classamrex_1_1ParticleBufferMap.html#a22ef66dc732fb28117376c5a3cf60c9a',1,'amrex::ParticleBufferMap']]],
   ['d_5flev_5foffsets',['d_lev_offsets',['../classamrex_1_1ParticleBufferMap.html#a4d6a055510febbd0115e3cc4fcb77e71',1,'amrex::ParticleBufferMap']]],
   ['data',['data',['../classamrex_1_1BaseUmap.html#a407410aa62ca3aa7e0b3c331f877ea46',1,'amrex::BaseUmap::data()'],['../structamrex_1_1DistributionMapping_1_1RefID.html#a83d7d3288a3b51ffca12886346794042',1,'amrex::DistributionMapping::RefID::data()'],['../classamrex_1_1ForkJoin.html#a1223321add76c9d8eb7dc032c051012d',1,'amrex::ForkJoin::data()'],['../structamrex__string__module_1_1amrex__string.html#a1cb43abc58711a19adfafd9c4a44fd69',1,'amrex_string_module::amrex_string::data()']]],

@@ -26,6 +26,7 @@ var searchData=
   ['_7ebndryregister',['~BndryRegister',['../classamrex_1_1BndryRegister.html#a3607c6a07e3dd764daaf2cb5301f1a59',1,'amrex::BndryRegister']]],
   ['_7eboxconverter',['~BoxConverter',['../classamrex_1_1BoxConverter.html#ac8cf3b117a120af92b38b5e9d25fcf23',1,'amrex::BoxConverter']]],
   ['_7eboxiterator',['~BoxIterator',['../classamrex_1_1BoxIterator.html#aad3066fecf437d5d90a950b9302beeba',1,'amrex::BoxIterator']]],
+  ['_7ebuffer',['~Buffer',['../classamrex_1_1Gpu_1_1Buffer.html#afffe7f8feead000efce9976e422ac931',1,'amrex::Gpu::Buffer']]],
   ['_7ecarena',['~CArena',['../classamrex_1_1CArena.html#abca549bb11a9efb8b05dca10c32aab81',1,'amrex::CArena']]],
   ['_7ecellbilinear',['~CellBilinear',['../classamrex_1_1CellBilinear.html#a6029864465ef31a538c6a57504a5bcb1',1,'amrex::CellBilinear']]],
   ['_7ecellconservativelinear',['~CellConservativeLinear',['../classamrex_1_1CellConservativeLinear.html#a6d6fcd6f8a4397afacebc3e357fa70e4',1,'amrex::CellConservativeLinear']]],

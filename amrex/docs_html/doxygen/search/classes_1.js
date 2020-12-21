@@ -33,6 +33,7 @@ var searchData=
   ['boxif',['BoxIF',['../classamrex_1_1EB2_1_1BoxIF.html',1,'amrex::EB2']]],
   ['boxiterator',['BoxIterator',['../classamrex_1_1BoxIterator.html',1,'amrex']]],
   ['boxlist',['BoxList',['../classamrex_1_1BoxList.html',1,'amrex']]],
+  ['buffer',['Buffer',['../classamrex_1_1Gpu_1_1Buffer.html',1,'amrex::Gpu']]],
   ['builds',['Builds',['../structamrex_1_1MemProfiler_1_1Builds.html',1,'amrex::MemProfiler']]],
   ['bytes',['Bytes',['../structamrex_1_1MemProfiler_1_1Bytes.html',1,'amrex::MemProfiler']]]
 ];
