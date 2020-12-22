@@ -3822,68 +3822,71 @@
 <codeline lineno="272"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sz<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="274"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Device::streamQueue();</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.memcpy(p_d,<sp/>p_h,<sp/>sz);<sp/>});</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_d,<sp/>p_h,<sp/>sz,<sp/>hipMemcpyHostToDevice,<sp/>gpuStream()));,</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_d,<sp/>p_h,<sp/>sz,<sp/>cudaMemcpyHostToDevice,<sp/>gpuStream()));<sp/>)</highlight></codeline>
-<codeline lineno="281"><highlight class="normal">#endif</highlight></codeline>
-<codeline lineno="282"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="285"><highlight class="normal">dtoh_memcpy_async<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_h,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sz)<sp/>noexcept</highlight></codeline>
-<codeline lineno="286"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sz<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Device::streamQueue();</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.memcpy(p_h,<sp/>p_d,<sp/>sz);<sp/>});</highlight></codeline>
-<codeline lineno="291"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_h,<sp/>p_d,<sp/>sz,<sp/>hipMemcpyDeviceToHost,<sp/>gpuStream()));,</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_h,<sp/>p_d,<sp/>sz,<sp/>cudaMemcpyDeviceToHost,<sp/>gpuStream()));<sp/>)</highlight></codeline>
-<codeline lineno="295"><highlight class="normal">#endif</highlight></codeline>
-<codeline lineno="296"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"></highlight></codeline>
-<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="299"><highlight class="normal">dtod_memcpy_async<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sz)<sp/>noexcept</highlight></codeline>
-<codeline lineno="300"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sz<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="302"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Device::streamQueue();</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.memcpy(p_d_dst,<sp/>p_d_src,<sp/>sz);<sp/>});</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
-<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>hipMemcpyDeviceToDevice,<sp/>gpuStream()));,</highlight></codeline>
-<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>cudaMemcpyDeviceToDevice,<sp/>gpuStream()));<sp/>)</highlight></codeline>
-<codeline lineno="309"><highlight class="normal">#endif</highlight></codeline>
-<codeline lineno="310"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Device::onNullStream())<sp/>Device::nonNullStreamSynchronize();</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Device::streamQueue();</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.memcpy(p_d,<sp/>p_h,<sp/>sz);<sp/>});</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_d,<sp/>p_h,<sp/>sz,<sp/>hipMemcpyHostToDevice,<sp/>gpuStream()));,</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_d,<sp/>p_h,<sp/>sz,<sp/>cudaMemcpyHostToDevice,<sp/>gpuStream()));<sp/>)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="283"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal">dtoh_memcpy_async<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_h,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sz)<sp/>noexcept</highlight></codeline>
+<codeline lineno="287"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sz<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Device::onNullStream())<sp/>Device::nonNullStreamSynchronize();</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Device::streamQueue();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.memcpy(p_h,<sp/>p_d,<sp/>sz);<sp/>});</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_h,<sp/>p_d,<sp/>sz,<sp/>hipMemcpyDeviceToHost,<sp/>gpuStream()));,</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_h,<sp/>p_d,<sp/>sz,<sp/>cudaMemcpyDeviceToHost,<sp/>gpuStream()));<sp/>)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="298"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal">dtod_memcpy_async<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p_d_src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::size_t<sp/>sz)<sp/>noexcept</highlight></codeline>
+<codeline lineno="302"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sz<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_DPCPP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Device::onNullStream())<sp/>Device::nonNullStreamSynchronize();</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>Device::streamQueue();</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{<sp/>h.memcpy(p_d_dst,<sp/>p_d_src,<sp/>sz);<sp/>});</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuControl_8H_1a0008c69fc4b1c0dff4da75ec778f4941" kindref="member">AMREX_HIP_OR_CUDA</ref>(</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL(hipMemcpyAsync(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>hipMemcpyDeviceToDevice,<sp/>gpuStream()));,</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaMemcpyAsync(p_d_dst,<sp/>p_d_src,<sp/>sz,<sp/>cudaMemcpyDeviceToDevice,<sp/>gpuStream()));<sp/>)</highlight></codeline>
 <codeline lineno="312"><highlight class="normal">#endif</highlight></codeline>
-<codeline lineno="313"><highlight class="normal"></highlight></codeline>
-<codeline lineno="314"><highlight class="normal">#ifdef<sp/>AMREX_USE_DPCPP</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="316"><highlight class="normal">onNullStream<sp/>()</highlight></codeline>
-<codeline lineno="317"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Device::onNullStream();</highlight></codeline>
-<codeline lineno="319"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="320"><highlight class="normal"></highlight></codeline>
-<codeline lineno="321"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="322"><highlight class="normal">onNullStream<sp/>(gpuStream_t<sp/>stream)</highlight></codeline>
-<codeline lineno="323"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Device::onNullStream(stream);</highlight></codeline>
-<codeline lineno="325"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="326"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="327"><highlight class="normal"></highlight></codeline>
-<codeline lineno="328"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="329"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>callbackAdded<sp/>();</highlight></codeline>
-<codeline lineno="330"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetNumCallbacks<sp/>();</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getNumCallbacks<sp/>();</highlight></codeline>
-<codeline lineno="332"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"></highlight></codeline>
-<codeline lineno="334"><highlight class="normal">}}</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"></highlight></codeline>
-<codeline lineno="336"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="313"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal">#endif</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal">#ifdef<sp/>AMREX_USE_DPCPP</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal">onNullStream<sp/>()</highlight></codeline>
+<codeline lineno="320"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Device::onNullStream();</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal">onNullStream<sp/>(gpuStream_t<sp/>stream)</highlight></codeline>
+<codeline lineno="326"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Device::onNullStream(stream);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>callbackAdded<sp/>();</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resetNumCallbacks<sp/>();</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getNumCallbacks<sp/>();</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H"/>
   </compounddef>
