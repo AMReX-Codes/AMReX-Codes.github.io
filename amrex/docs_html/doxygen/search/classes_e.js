@@ -60,6 +60,7 @@ var searchData=
   ['poly_5feval',['poly_eval',['../interfacesdcquadrature__mod_1_1poly__eval.html',1,'sdcquadrature_mod']]],
   ['polyif',['PolyIF',['../classamrex_1_1EB2_1_1PolyIF.html',1,'amrex::EB2']]],
   ['polymorphicallocator',['PolymorphicAllocator',['../classamrex_1_1PolymorphicAllocator.html',1,'amrex']]],
+  ['polymorphicarray4',['PolymorphicArray4',['../structamrex_1_1PolymorphicArray4.html',1,'amrex']]],
   ['polynomialif',['PolynomialIF',['../classamrex_1_1EB2_1_1PolynomialIF.html',1,'amrex::EB2']]],
   ['polyterm',['PolyTerm',['../classamrex_1_1EB2_1_1PolyTerm.html',1,'amrex::EB2']]],
   ['pp_5fentry',['PP_entry',['../structamrex_1_1ParmParse_1_1PP__entry.html',1,'amrex::ParmParse']]],
