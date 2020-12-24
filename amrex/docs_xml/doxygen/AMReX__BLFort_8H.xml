@@ -308,68 +308,6 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" line="36" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" bodystart="36" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="AMReX__BLFort_8H_1acfc68d72bfb2c480dc1fcffefb751a42" prot="public" static="no">
-        <name>AMREX_FORT_LAUNCH</name>
-        <param><defname>box</defname></param>
-        <param><defname>function</defname></param>
-        <param><defname>...</defname></param>
-        <initializer>function(__VA_ARGS__)</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" line="67" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" bodystart="67" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="AMReX__BLFort_8H_1a6d79db1edf1129dd74b3a38a58e4e312" prot="public" static="no">
-        <name>AMREX_FORT_LAUNCHABLE</name>
-        <param><defname>func</defname></param>
-        <initializer>func</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" line="68" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" bodystart="68" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="AMReX__BLFort_8H_1ab9b27d9b7f572d06d445893e88fa42d3" prot="public" static="no">
-        <name>AMREX_DEVICE_LAUNCHABLE</name>
-        <param><defname>func</defname></param>
-        <initializer>func</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" line="81" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" bodystart="81" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="AMReX__BLFort_8H_1a084ade7de3577dda5d361184403fa036" prot="public" static="no">
-        <name>AMREX_DEVICE_LAUNCHABLE_STRIDED</name>
-        <param><defname>func</defname></param>
-        <initializer>func</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" line="82" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" bodystart="82" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="AMReX__BLFort_8H_1a6b5509459bf56719ba68a6055511fd62" prot="public" static="no">
-        <name>AMREX_DEVICE_LAUNCH</name>
-        <param><defname>function</defname></param>
-        <initializer>function</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" line="108" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H" bodystart="108" bodyend="-1"/>
-      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -415,77 +353,7 @@
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>a<sp/>macro<sp/>that<sp/>launches<sp/>a<sp/>Fortran<sp/>function.<sp/>For<sp/>normal</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CPU<sp/>code,<sp/>it<sp/>does<sp/>nothing<sp/>--<sp/>only<sp/>launches<sp/>the<sp/>function.<sp/>For</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GPU<sp/>code,<sp/>it<sp/>launches<sp/>a<sp/>kernel<sp/>using<sp/>the<sp/>first<sp/>two<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>as<sp/>bounds<sp/>of<sp/>the<sp/>box<sp/>to<sp/>launch<sp/>the<sp/>kernel<sp/>on.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>form<sp/>of<sp/>the<sp/>function<sp/>launch<sp/>MUST<sp/>be:</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>AMREX_FORT_LAUNCH(box,<sp/>function,<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>where<sp/>everything<sp/>after<sp/>the<sp/>function<sp/>name<sp/>(represented<sp/>here<sp/>by<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/>are<sp/>the<sp/>actual<sp/>function<sp/>arguments,<sp/>as<sp/>defined<sp/>in<sp/>the<sp/>Fortran<sp/>subroutine.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>box<sp/>is<sp/>the<sp/>current<sp/>Box<sp/>for<sp/>this<sp/>MFIter<sp/>iteration.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)<sp/>&amp;&amp;<sp/>defined(__CUDACC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__Gpu_8H" kindref="compound">AMReX_Gpu.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FORT_LAUNCH(box,<sp/>function,<sp/>...)<sp/><sp/>\</highlight></codeline>
-<codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>\</highlight></codeline>
-<codeline lineno="57"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>dim3<sp/>numBlocks,<sp/>numThreads;<sp/>\</highlight></codeline>
-<codeline lineno="58"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Gpu::Device::c_threads_and_blocks(box.loVect(),<sp/>box.hiVect(),<sp/>numBlocks,<sp/>numThreads);<sp/>\</highlight></codeline>
-<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>function&lt;&lt;&lt;numBlocks,<sp/>numThreads,<sp/>0,<sp/>amrex::Gpu::gpuStream()&gt;&gt;&gt;(__VA_ARGS__);<sp/>\</highlight></codeline>
-<codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_GPU_ERROR_CHECK();<sp/>\</highlight></codeline>
-<codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FORT_LAUNCHABLE(func)<sp/>__global__<sp/>func</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="AMReX__BLFort_8H_1acfc68d72bfb2c480dc1fcffefb751a42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FORT_LAUNCH(box,<sp/>function,<sp/>...)<sp/>function(__VA_ARGS__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68" refid="AMReX__BLFort_8H_1a6d79db1edf1129dd74b3a38a58e4e312" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FORT_LAUNCHABLE(func)<sp/>func</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>macro<sp/>&quot;deletes&quot;<sp/>a<sp/>function<sp/>when<sp/>we&apos;re<sp/>using<sp/>CUDA,</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>a<sp/>script<sp/>can<sp/>replace<sp/>it.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCHABLE(func)<sp/>null##func</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCHABLE_STRIDED(func)<sp/>null##func</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="AMReX__BLFort_8H_1ab9b27d9b7f572d06d445893e88fa42d3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCHABLE(func)<sp/>func</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82" refid="AMReX__BLFort_8H_1a084ade7de3577dda5d361184403fa036" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCHABLE_STRIDED(func)<sp/>func</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Decorate<sp/>the<sp/>calls<sp/>to<sp/>the<sp/>GPU.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)<sp/>&amp;&amp;<sp/>defined(__CUDACC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>((__CUDACC_VER_MAJOR__<sp/>&gt;<sp/>9)<sp/>||<sp/>(__CUDACC_VER_MAJOR__<sp/>==<sp/>9<sp/>&amp;&amp;<sp/>__CUDACC_VER_MINOR__<sp/>&gt;=<sp/>1))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCH(function)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="92"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>dim3<sp/>function##numBlocks,<sp/>function##numThreads;<sp/>\</highlight></codeline>
-<codeline lineno="93"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Gpu::Device::grid_stride_threads_and_blocks(function##numBlocks,<sp/>function##numThreads);<sp/>\</highlight></codeline>
-<codeline lineno="94"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_GPU_SAFE_CALL(cudaFuncSetAttribute(&amp;cuda_##function,<sp/>cudaFuncAttributePreferredSharedMemoryCarveout,<sp/>0));<sp/>\</highlight></codeline>
-<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>cuda_##function&lt;&lt;&lt;function##numBlocks,<sp/>function##numThreads,<sp/>0,<sp/>amrex::Gpu::gpuStream()&gt;&gt;&gt;<sp/>\</highlight></codeline>
-<codeline lineno="96"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCH(function)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
-<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>dim3<sp/>function##numBlocks,<sp/>function##numThreads;<sp/>\</highlight></codeline>
-<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>amrex::Gpu::Device::grid_stride_threads_and_blocks(function##numBlocks,<sp/>function##numThreads);<sp/>\</highlight></codeline>
-<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>cuda_##function&lt;&lt;&lt;function##numBlocks,<sp/>function##numThreads,<sp/>0,<sp/>amrex::Gpu::gpuStream()&gt;&gt;&gt;<sp/>\</highlight></codeline>
-<codeline lineno="103"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108" refid="AMReX__BLFort_8H_1a6b5509459bf56719ba68a6055511fd62" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_DEVICE_LAUNCH(function)<sp/>function</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BLFort.H"/>
   </compounddef>
