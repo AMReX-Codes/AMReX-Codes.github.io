@@ -238,7 +238,7 @@ var searchData=
   ['flag',['flag',['../structamrex_1_1EB2_1_1Neighbor.html#a02795942f0ecd9ff232334b4c4ccdb20',1,'amrex::EB2::Neighbor::flag()'],['../classamrex_1_1EBCellFlag.html#ab630a116c4a01a64f68d4a8a1592360f',1,'amrex::EBCellFlag::flag()']]],
   ['flag_5finvoked',['flag_invoked',['../classamrex_1_1ForkJoin.html#ad9801acca834dcbc7ec55dd3c34f48aa',1,'amrex::ForkJoin']]],
   ['flag_5fverbose',['flag_verbose',['../classamrex_1_1ForkJoin.html#a943794e0f810e216579ad8156d11cd20',1,'amrex::ForkJoin']]],
-  ['flags',['flags',['../classamrex_1_1MFIter.html#a1184620f493f560be355cf02e5a0e619',1,'amrex::MFIter::flags()'],['../classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38',1,'amrex::MFIter::Flags()']]],
+  ['flags',['Flags',['../classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38',1,'amrex::MFIter::Flags()'],['../classamrex_1_1MFIter.html#a1184620f493f560be355cf02e5a0e619',1,'amrex::MFIter::flags()']]],
   ['flex_5fgmres_5fsolver_5fconfigure',['flex_gmres_solver_configure',['../classamrex_1_1HypreIJIface.html#a3cd35a345fcd7b90cccaaa542ded29cf',1,'amrex::HypreIJIface']]],
   ['flip',['flip',['../classamrex_1_1IndexType.html#ade7967059ecbfe9a07f8784f6138c919',1,'amrex::IndexType::flip()'],['../classamrex_1_1Orientation.html#a2b165e7e8b05111ce8c93285bc85f081',1,'amrex::Orientation::flip()']]],
   ['floor',['floor',['../classamrex_1_1RealVect.html#ad83cc01ed7402d9d384b73c046a96b87',1,'amrex::RealVect']]],

@@ -3,6 +3,7 @@ var searchData=
   ['latheif',['LatheIF',['../classamrex_1_1EB2_1_1LatheIF.html',1,'amrex::EB2']]],
   ['launchsafeguard',['LaunchSafeGuard',['../structamrex_1_1Gpu_1_1LaunchSafeGuard.html',1,'amrex::Gpu']]],
   ['layoutdata',['LayoutData',['../classamrex_1_1LayoutData.html',1,'amrex']]],
+  ['layoutdata_3c_20amrex_3a_3agpuarray_3c_20amrex_3a_3amlcelllinop_3a_3abctl_2c_202_20_2aamrex_5fspacedim_20_3e_20_2a_3e',['LayoutData&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; *&gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20amrex_3a_3apodvector_3c_20hypre_5fint_20_3e_20_3e',['LayoutData&lt; amrex::PODVector&lt; HYPRE_Int &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20amrex_3a_3apodvector_3c_20petscint_20_3e_20_3e',['LayoutData&lt; amrex::PODVector&lt; PetscInt &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],
   ['layoutdata_3c_20amrex_3a_3avector_3c_20amrex_3a_3avector_3c_20amrex_3a_3aboundcond_20_3e_20_3e_20_3e',['LayoutData&lt; amrex::Vector&lt; amrex::Vector&lt; amrex::BoundCond &gt; &gt; &gt;',['../classamrex_1_1LayoutData.html',1,'amrex']]],

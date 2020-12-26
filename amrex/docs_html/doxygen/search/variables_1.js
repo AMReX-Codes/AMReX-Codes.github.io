@@ -19,6 +19,8 @@ var searchData=
   ['bcond',['bcond',['../classamrex_1_1BndryData.html#a33b33d468118587f694c916018b3f3fb',1,'amrex::BndryData::bcond()'],['../classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a141ef07902ecbdd351bb14b58ce08901',1,'amrex::MLCellLinOp::BndryCondLoc::bcond()']]],
   ['bcr',['bcr',['../classamrex_1_1DeriveRec.html#a222aca825f0b80bc8de5522d155ba0e7',1,'amrex::DeriveRec']]],
   ['bcr3d',['bcr3D',['../classamrex_1_1DeriveRec.html#a34c2f0068a7832ca670a0476cea011fc',1,'amrex::DeriveRec']]],
+  ['bctl',['bctl',['../classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a2a24054122fede85ed0f3034ca56139b',1,'amrex::MLCellLinOp::BndryCondLoc']]],
+  ['bctl_5fdv',['bctl_dv',['../classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a6fc11b838506e2666f6e165fb7a07931',1,'amrex::MLCellLinOp::BndryCondLoc']]],
   ['bctype',['bctype',['../classamrex_1_1BoundCond.html#ada76f23f789da2be981f0c3ec8784d34',1,'amrex::BoundCond']]],
   ['bdefaultinclude',['bDefaultInclude',['../classBLProfStats.html#a70374c3c2fee588ba0cdbcdcb80ad103',1,'BLProfStats']]],
   ['begin',['begin',['../structamrex_1_1Array4.html#a866f2c12eb3e3d6a26399866f355e088',1,'amrex::Array4']]],

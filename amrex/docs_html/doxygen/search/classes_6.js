@@ -20,6 +20,7 @@ var searchData=
   ['gpuarray_3c_20amrex_3a_3aalgoim_3a_3ainterval_2c_20n_20_3e',['GpuArray&lt; amrex::algoim::Interval, N &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],
   ['gpuarray_3c_20amrex_3a_3aalgoim_3a_3aquadraturerule_3a_3anode_2c_20256_20_3e',['GpuArray&lt; amrex::algoim::QuadratureRule::Node, 256 &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],
   ['gpuarray_3c_20amrex_3a_3aeb2_3a_3apolyterm_2c_20n_20_3e',['GpuArray&lt; amrex::EB2::PolyTerm, N &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],
+  ['gpuarray_3c_20amrex_3a_3amlcelllinop_3a_3abctl_2c_202_20_2aamrex_5fspacedim_20_3e',['GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],
   ['gpuarray_3c_20bool_2c_20n_20_3e',['GpuArray&lt; bool, N &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],
   ['gpuarray_3c_20const_20int_20_2aamrex_5frestrict_2c_20narrayint_20_3e',['GpuArray&lt; const int *AMREX_RESTRICT, NArrayInt &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],
   ['gpuarray_3c_20const_20particlereal_20_2aamrex_5frestrict_2c_20narrayreal_20_3e',['GpuArray&lt; const ParticleReal *AMREX_RESTRICT, NArrayReal &gt;',['../structamrex_1_1GpuArray.html',1,'amrex']]],

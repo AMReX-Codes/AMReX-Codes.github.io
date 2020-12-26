@@ -17,7 +17,7 @@ var searchData=
   ['xydpllength',['XYDPLLength',['../classamrex_1_1XYPlotDataListLink.html#aeca338f52ea471822af412f4169ad387',1,'amrex::XYPlotDataListLink']]],
   ['xypdlderived',['xypdlDerived',['../classamrex_1_1XYPlotDataList.html#af8635fd8b9a7663f863fd89af0119fa8',1,'amrex::XYPlotDataList']]],
   ['xypdlhiy',['XYPDLHiY',['../classamrex_1_1XYPlotDataList.html#a15e3b3a73f8d854567563cb9c40ca865',1,'amrex::XYPlotDataList::XYPDLHiY(const int ilev) const'],['../classamrex_1_1XYPlotDataList.html#af10b7a355491a38086bd370b05013f20',1,'amrex::XYPlotDataList::xypdlHiY()']]],
-  ['xypdlldata',['xypdllData',['../classamrex_1_1XYPlotDataListLink.html#a13d8f8d382df6f1caae0eb061304b7be',1,'amrex::XYPlotDataListLink::xypdllData()'],['../classamrex_1_1XYPlotDataListLink.html#a7c975c3cbae9c4c9b96448eda0810cc9',1,'amrex::XYPlotDataListLink::XYPDLLData() const']]],
+  ['xypdlldata',['XYPDLLData',['../classamrex_1_1XYPlotDataListLink.html#a7c975c3cbae9c4c9b96448eda0810cc9',1,'amrex::XYPlotDataListLink::XYPDLLData() const'],['../classamrex_1_1XYPlotDataListLink.html#a13d8f8d382df6f1caae0eb061304b7be',1,'amrex::XYPlotDataListLink::xypdllData()']]],
   ['xypdlllength',['xypdllLength',['../classamrex_1_1XYPlotDataListLink.html#aedc6b302ba8a41a7b0860a54f93eac00',1,'amrex::XYPlotDataListLink']]],
   ['xypdlloy',['XYPDLLoY',['../classamrex_1_1XYPlotDataList.html#af06942462c7cfc82dd8f51151a60a1c0',1,'amrex::XYPlotDataList::XYPDLLoY(const int ilev) const'],['../classamrex_1_1XYPlotDataList.html#a901a80f5953cc152073c60286cb6c860',1,'amrex::XYPlotDataList::xypdlLoY()']]],
   ['xypdlratios',['xypdlRatios',['../classamrex_1_1XYPlotDataList.html#ade612c26e3b60e7521e1bc7655d82964',1,'amrex::XYPlotDataList']]],

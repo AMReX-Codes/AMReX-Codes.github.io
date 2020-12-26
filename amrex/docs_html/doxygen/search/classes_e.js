@@ -44,6 +44,7 @@ var searchData=
   ['podvector',['PODVector',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3aassigngrid_3c_20biniteratorfactory_20_3e_20_3e',['PODVector&lt; amrex::AssignGrid&lt; BinIteratorFactory &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3abox_20_3e',['PODVector&lt; amrex::Box &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
+  ['podvector_3c_20amrex_3a_3agpuarray_3c_20amrex_3a_3amlcelllinop_3a_3abctl_2c_202_20_2aamrex_5fspacedim_20_3e_20_3e',['PODVector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20amrex_3a_3areal_20_3e',['PODVector&lt; amrex::Real &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20const_20int_20_2a_2c_20allocator_3c_20const_20int_20_2a_3e_20_3e',['PODVector&lt; const int *, Allocator&lt; const int *&gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],
   ['podvector_3c_20const_20particlereal_20_2a_2c_20allocator_3c_20const_20particlereal_20_2a_3e_20_3e',['PODVector&lt; const ParticleReal *, Allocator&lt; const ParticleReal *&gt; &gt;',['../classamrex_1_1PODVector.html',1,'amrex']]],

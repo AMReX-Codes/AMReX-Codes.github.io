@@ -87,6 +87,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0682ebf88aa6ec77c22de7b7862f4383"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7781aca5acd91bc926efdfc84f05b99"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classamrex_1_1MLCellLinOp.html#ae233eeb511516448492f38fe53fa9cd9">RealTuple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#ad7781aca5acd91bc926efdfc84f05b99">bndryLocs</a> (const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> icomp) const noexcept</td></tr>
 <tr class="separator:ad7781aca5acd91bc926efdfc84f05b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe8375b26e879cea2fc7b4d06a9da6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="structamrex_1_1MLCellLinOp_1_1BCTL.html">BCTL</a>, 2 *AMREX_SPACEDIM &gt; const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#acfe8375b26e879cea2fc7b4d06a9da6a">getBCTLPtr</a> (const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;mfi) const noexcept</td></tr>
+<tr class="separator:acfe8375b26e879cea2fc7b4d06a9da6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -94,6 +96,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a141ef07902ecbdd351bb14b58ce08901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ff8aad355f631f7d119403ca460a782"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1MLCellLinOp.html#ae233eeb511516448492f38fe53fa9cd9">RealTuple</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a6ff8aad355f631f7d119403ca460a782">bcloc</a></td></tr>
 <tr class="separator:a6ff8aad355f631f7d119403ca460a782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a24054122fede85ed0f3034ca56139b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt; <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="structamrex_1_1MLCellLinOp_1_1BCTL.html">BCTL</a>, 2 *AMREX_SPACEDIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a2a24054122fede85ed0f3034ca56139b">bctl</a></td></tr>
+<tr class="separator:a2a24054122fede85ed0f3034ca56139b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc11b838506e2666f6e165fb7a07931"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt; <a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt; <a class="el" href="structamrex_1_1MLCellLinOp_1_1BCTL.html">BCTL</a>, 2 *AMREX_SPACEDIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a6fc11b838506e2666f6e165fb7a07931">bctl_dv</a></td></tr>
+<tr class="separator:a6fc11b838506e2666f6e165fb7a07931"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17bbd9eb1d5f4d3355a31313d9b02760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp_1_1BndryCondLoc.html#a17bbd9eb1d5f4d3355a31313d9b02760">m_ncomp</a></td></tr>
 <tr class="separator:a17bbd9eb1d5f4d3355a31313d9b02760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -257,6 +263,32 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="acfe8375b26e879cea2fc7b4d06a9da6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe8375b26e879cea2fc7b4d06a9da6a">&#9670;&nbsp;</a></span>getBCTLPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="structamrex_1_1MLCellLinOp_1_1BCTL.html">BCTL</a>,2*AMREX_SPACEDIM&gt; const* amrex::MLCellLinOp::BndryCondLoc::getBCTLPtr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> &amp;&#160;</td>
+          <td class="paramname"><em>mfi</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae2e9e9cd5085a60c6cede09fc5ac03db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2e9e9cd5085a60c6cede09fc5ac03db">&#9670;&nbsp;</a></span>setLOBndryConds()</h2>
 
@@ -355,6 +387,50 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt;<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt;<a class="el" href="classamrex_1_1MLCellLinOp.html#a622b7c2ecc46a6b476aba4fb470f3dcf">BCTuple</a>&gt; &gt; amrex::MLCellLinOp::BndryCondLoc::bcond</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a24054122fede85ed0f3034ca56139b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a24054122fede85ed0f3034ca56139b">&#9670;&nbsp;</a></span>bctl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classamrex_1_1LayoutData.html">LayoutData</a>&lt;<a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="structamrex_1_1MLCellLinOp_1_1BCTL.html">BCTL</a>,2*AMREX_SPACEDIM&gt;*&gt; amrex::MLCellLinOp::BndryCondLoc::bctl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6fc11b838506e2666f6e165fb7a07931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fc11b838506e2666f6e165fb7a07931">&#9670;&nbsp;</a></span>bctl_dv</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Gpu.html#aa82b32772de552834254d9d74c6da13e">Gpu::DeviceVector</a>&lt;<a class="el" href="structamrex_1_1GpuArray.html">GpuArray</a>&lt;<a class="el" href="structamrex_1_1MLCellLinOp_1_1BCTL.html">BCTL</a>,2*AMREX_SPACEDIM&gt; &gt; amrex::MLCellLinOp::BndryCondLoc::bctl_dv</td>
         </tr>
       </table>
   </td>
