@@ -1133,6 +1133,5 @@ var searchData=
   ['system',['system',['../namespaceamrex_1_1system.html',1,'amrex']]],
   ['tri_5fgeom_5fops',['tri_geom_ops',['../namespaceamrex_1_1tri__geom__ops.html',1,'amrex']]],
   ['type',['Type',['../namespaceamrex_1_1EB2_1_1Type.html',1,'amrex::EB2']]],
-  ['uif_5fdetail',['UIF_detail',['../namespaceamrex_1_1EB2_1_1UIF__detail.html',1,'amrex::EB2']]],
-  ['util',['util',['../namespaceamrex_1_1ParallelDescriptor_1_1util.html',1,'amrex::ParallelDescriptor']]]
+  ['uif_5fdetail',['UIF_detail',['../namespaceamrex_1_1EB2_1_1UIF__detail.html',1,'amrex::EB2']]]
 ];
