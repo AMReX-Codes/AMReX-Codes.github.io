@@ -69,7 +69,7 @@ var searchData=
   ['biniterator',['BinIterator',['../structamrex_1_1BinIterator.html',1,'amrex::BinIterator&lt; T &gt;'],['../structamrex_1_1BinIterator.html#aa9fb3a20de21921860bb5ee0d743e2ee',1,'amrex::BinIterator::BinIterator()']]],
   ['biniteratorfactory',['BinIteratorFactory',['../classamrex_1_1DenseBins.html#ae914634726f075979b5e855a5fda0924',1,'amrex::DenseBins::BinIteratorFactory()'],['../classamrex_1_1ParticleLocator.html#aa04241c5ac3af03cc7e1d985fa591e45',1,'amrex::ParticleLocator::BinIteratorFactory()'],['../classamrex_1_1AmrParticleLocator.html#a881e6459bd149cf677a5dd72a3804579',1,'amrex::AmrParticleLocator::BinIteratorFactory()'],['../classamrex_1_1SparseBins.html#a015439d37e7fd4c3ded33837a8b502bc',1,'amrex::SparseBins::BinIteratorFactory()']]],
   ['binvalidminmax',['BINVALIDMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a970c9283c08d1ad380beb8cb5fbcfcb0',1,'amrex::Amrvis']]],
-  ['bisect',['bisect',['../namespaceamrex.html#a6797a579beb044720ec00800077b4bc0',1,'amrex']]],
+  ['bisect',['bisect',['../namespaceamrex.html#a6d6b1086f3f7b77f820cac8d8005ac38',1,'amrex']]],
   ['bits',['bits',['../structamrex_1_1algoim_1_1PsiCode.html#a80ddd826639ec72c71ba72a3c6dfc09a',1,'amrex::algoim::PsiCode']]],
   ['bitsmax',['BitsMax',['../namespaceamrex.html#abd60428797a6f8b12bc87f94351665c2',1,'amrex']]],
   ['bl_5fabort',['bl_abort',['../AMReX__error__mod_8F90.html#adf74d100df3372e88670b8c79c770425',1,'AMReX_error_mod.F90']]],
