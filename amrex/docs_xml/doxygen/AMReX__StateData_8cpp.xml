@@ -31,8 +31,6 @@
         <link refid="AMReX__Algorithm_8H"/>
         <childnode refid="1714" relation="include">
         </childnode>
-        <childnode refid="1712" relation="include">
-        </childnode>
         <childnode refid="1725" relation="include">
         </childnode>
         <childnode refid="1732" relation="include">
@@ -40,6 +38,14 @@
         <childnode refid="1747" relation="include">
         </childnode>
         <childnode refid="1744" relation="include">
+        </childnode>
+        <childnode refid="1737" relation="include">
+        </childnode>
+        <childnode refid="1712" relation="include">
+        </childnode>
+        <childnode refid="1711" relation="include">
+        </childnode>
+        <childnode refid="1723" relation="include">
         </childnode>
       </node>
       <node id="1796">
@@ -1347,6 +1353,8 @@
         <link refid="AMReX__BaseFab_8H"/>
         <childnode refid="1714" relation="include">
         </childnode>
+        <childnode refid="1746" relation="include">
+        </childnode>
         <childnode refid="1732" relation="include">
         </childnode>
         <childnode refid="1744" relation="include">
@@ -1950,9 +1958,9 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_FLOAT</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>Real<sp/><ref refid="namespaceamrex_1afdf427459e2b9a7718975c38a36d8be2" kindref="member">INVALID_TIME</ref><sp/>=<sp/>-1.0e30;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>Real<sp/><ref refid="namespaceamrex_1afdf427459e2b9a7718975c38a36d8be2" kindref="member">INVALID_TIME</ref><sp/>=<sp/>-1.0e30_rt;</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>Real<sp/>INVALID_TIME<sp/>=<sp/>-1.0e200;<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>Real<sp/>INVALID_TIME<sp/>=<sp/>-1.0e200_rt;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a77d7d152de71abe1856e19ee2122a24a" kindref="member">MFNEWDATA</ref><sp/>=<sp/>0;</highlight></codeline>
@@ -2169,7 +2177,7 @@
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>set<sp/>it<sp/>to<sp/>zero<sp/>in<sp/>case<sp/>a<sp/>compiler<sp/>complains<sp/>about<sp/>uninitialized<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nsets<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_data-&gt;setVal(0.0);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_data-&gt;setVal(0.0_rt);</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"></highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>mf_name;</highlight></codeline>
@@ -2227,7 +2235,7 @@
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>new_data.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MultiFab(grids,dmap,desc-&gt;nComp(),desc-&gt;nExtra(),</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo().SetTag(</highlight><highlight class="stringliteral">&quot;StateData&quot;</highlight><highlight class="normal">).SetArena(arena),</highlight></codeline>
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*m_factory));</highlight></codeline>
-<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>new_data-&gt;setVal(0.);</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>new_data-&gt;setVal(0._rt);</highlight></codeline>
 <codeline lineno="297"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
 <codeline lineno="299"><highlight class="normal"><ref refid="classamrex_1_1StateData_1a3d5f27474f7f24ed6995b4735150be55" kindref="member">StateData::~StateData</ref>()</highlight></codeline>
@@ -2283,7 +2291,7 @@
 <codeline lineno="349"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="350"><highlight class="normal"><ref refid="classamrex_1_1StateData_1a510161288b4431ae99e52743843e47a8" kindref="member">StateData::syncNewTimeLevel</ref><sp/>(Real<sp/>time)</highlight></codeline>
 <codeline lineno="351"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.stop<sp/>-<sp/>old_time.stop)*1.e-3;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.stop<sp/>-<sp/>old_time.stop)*1.e-3_rt;</highlight></codeline>
 <codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time<sp/>&gt;<sp/>new_time.stop-teps<sp/>&amp;&amp;<sp/>time<sp/>&lt;<sp/>new_time.stop+teps)</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(desc-&gt;timeType()<sp/>==<sp/><ref refid="classamrex_1_1StateDescriptor_1a8e14d2e57bdb2fbd440c8c26c8b99434ab4007993e9c944fbfd42096732e4b430" kindref="member">StateDescriptor::Point</ref>)</highlight></codeline>
@@ -2558,7 +2566,7 @@
 <codeline lineno="624"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="626"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3;</highlight></codeline>
+<codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3_rt;</highlight></codeline>
 <codeline lineno="628"><highlight class="normal"></highlight></codeline>
 <codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time<sp/>&gt;<sp/>new_time.start-teps<sp/>&amp;&amp;<sp/>time<sp/>&lt;<sp/>new_time.stop+teps)</highlight></codeline>
 <codeline lineno="630"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2625,7 +2633,7 @@
 <codeline lineno="691"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="692"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="693"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3;</highlight></codeline>
+<codeline lineno="694"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3_rt;</highlight></codeline>
 <codeline lineno="695"><highlight class="normal"></highlight></codeline>
 <codeline lineno="696"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time<sp/>&gt;<sp/>new_time.start-teps<sp/>&amp;&amp;<sp/>time<sp/>&lt;<sp/>new_time.stop+teps)</highlight></codeline>
 <codeline lineno="697"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2662,7 +2670,7 @@
 <codeline lineno="728"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="729"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="730"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3;</highlight></codeline>
+<codeline lineno="731"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3_rt;</highlight></codeline>
 <codeline lineno="732"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time<sp/>&gt;<sp/>new_time.start-teps<sp/>&amp;&amp;<sp/>time<sp/>&lt;<sp/>new_time.start+teps)<sp/>{</highlight></codeline>
 <codeline lineno="733"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.push_back(new_data.get());</highlight></codeline>
 <codeline lineno="734"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>datatime.push_back(new_time.start);</highlight></codeline>
@@ -2679,7 +2687,7 @@
 <codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3;</highlight></codeline>
+<codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>teps<sp/>=<sp/>(new_time.start<sp/>-<sp/>old_time.start)*1.e-3_rt;</highlight></codeline>
 <codeline lineno="749"><highlight class="normal"></highlight></codeline>
 <codeline lineno="750"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time<sp/>&gt;<sp/>new_time.start-teps<sp/>&amp;&amp;<sp/>time<sp/>&lt;<sp/>new_time.stop+teps)</highlight></codeline>
 <codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>

@@ -58,15 +58,21 @@
         <link refid="AMReX__Algorithm_8H"/>
         <childnode refid="325" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
-        </childnode>
         <childnode refid="340" relation="include">
         </childnode>
         <childnode refid="327" relation="include">
         </childnode>
-        <childnode refid="360" relation="include">
+        <childnode refid="359" relation="include">
         </childnode>
         <childnode refid="356" relation="include">
+        </childnode>
+        <childnode refid="349" relation="include">
+        </childnode>
+        <childnode refid="360" relation="include">
+        </childnode>
+        <childnode refid="323" relation="include">
+        </childnode>
+        <childnode refid="338" relation="include">
         </childnode>
       </node>
       <node id="410">
@@ -409,7 +415,7 @@
         <link refid="AMReX__Vector_8H"/>
         <childnode refid="325" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
         <childnode refid="353" relation="include">
         </childnode>
@@ -680,7 +686,7 @@
       <node id="385">
         <label>cfloat</label>
       </node>
-      <node id="360">
+      <node id="359">
         <label>AMReX_Dim3.H</label>
         <link refid="AMReX__Dim3_8H"/>
         <childnode refid="325" relation="include">
@@ -1002,7 +1008,7 @@
         </childnode>
         <childnode refid="401" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
       </node>
       <node id="376">
@@ -1164,7 +1170,7 @@
         </childnode>
         <childnode refid="376" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
         <childnode refid="352" relation="include">
         </childnode>
@@ -1469,7 +1475,7 @@
         </childnode>
         <childnode refid="323" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
         <childnode refid="334" relation="include">
         </childnode>
@@ -1553,6 +1559,8 @@
         <link refid="AMReX__BaseFab_8H"/>
         <childnode refid="325" relation="include">
         </childnode>
+        <childnode refid="358" relation="include">
+        </childnode>
         <childnode refid="327" relation="include">
         </childnode>
         <childnode refid="356" relation="include">
@@ -1589,7 +1597,7 @@
         </childnode>
         <childnode refid="351" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
         <childnode refid="323" relation="include">
         </childnode>
@@ -1658,7 +1666,7 @@
         </childnode>
         <childnode refid="358" relation="include">
         </childnode>
-        <childnode refid="360" relation="include">
+        <childnode refid="359" relation="include">
         </childnode>
       </node>
       <node id="381">
@@ -1715,7 +1723,7 @@
         </childnode>
         <childnode refid="362" relation="include">
         </childnode>
-        <childnode refid="360" relation="include">
+        <childnode refid="359" relation="include">
         </childnode>
         <childnode refid="356" relation="include">
         </childnode>
@@ -1735,7 +1743,7 @@
         </childnode>
         <childnode refid="366" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
       </node>
       <node id="404">
@@ -2025,7 +2033,7 @@
         </childnode>
         <childnode refid="353" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="360" relation="include">
         </childnode>
         <childnode refid="403" relation="include">
         </childnode>
@@ -2080,7 +2088,7 @@
         <childnode refid="450" relation="include">
         </childnode>
       </node>
-      <node id="359">
+      <node id="360">
         <label>algorithm</label>
       </node>
       <node id="393">
@@ -2850,7 +2858,7 @@
 <codeline lineno="598"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="599"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>old_time<sp/>=<sp/>state[state_indx].prevTime();</highlight></codeline>
 <codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>new_time<sp/>=<sp/>state[state_indx].curTime();</highlight></codeline>
-<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>0.001*(new_time<sp/>-<sp/>old_time);</highlight></codeline>
+<codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>Real(0.001)*(new_time<sp/>-<sp/>old_time);</highlight></codeline>
 <codeline lineno="602"><highlight class="normal"></highlight></codeline>
 <codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(time<sp/>&gt;<sp/>old_time-eps<sp/>&amp;&amp;<sp/>time<sp/>&lt;<sp/>old_time+eps)</highlight></codeline>
 <codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -4349,10 +4357,10 @@
 <codeline lineno="2098"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2099"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>oldtime<sp/>=<sp/>state[indx].prevTime();</highlight></codeline>
 <codeline lineno="2100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>newtime<sp/>=<sp/>state[indx].curTime();</highlight></codeline>
-<codeline lineno="2101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>haftime<sp/>=<sp/>.5<sp/>*<sp/>(oldtime<sp/>+<sp/>newtime);</highlight></codeline>
-<codeline lineno="2102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>qtime<sp/>=<sp/>oldtime<sp/>+<sp/>0.25*(newtime-oldtime);</highlight></codeline>
-<codeline lineno="2103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>tqtime<sp/>=<sp/>oldtime<sp/>+<sp/>0.75*(newtime-oldtime);</highlight></codeline>
-<codeline lineno="2104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>epsilon<sp/>=<sp/>0.001<sp/>*<sp/>(newtime<sp/>-<sp/>oldtime);</highlight></codeline>
+<codeline lineno="2101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>haftime<sp/>=<sp/>.5_rt<sp/>*<sp/>(oldtime<sp/>+<sp/>newtime);</highlight></codeline>
+<codeline lineno="2102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>qtime<sp/>=<sp/>oldtime<sp/>+<sp/>0.25_rt*(newtime-oldtime);</highlight></codeline>
+<codeline lineno="2103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>tqtime<sp/>=<sp/>oldtime<sp/>+<sp/>0.75_rt*(newtime-oldtime);</highlight></codeline>
+<codeline lineno="2104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>epsilon<sp/>=<sp/>0.001_rt<sp/>*<sp/>(newtime<sp/>-<sp/>oldtime);</highlight></codeline>
 <codeline lineno="2105"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(time<sp/>&gt;=<sp/>oldtime-epsilon<sp/>&amp;&amp;<sp/>time<sp/>&lt;=<sp/>newtime+epsilon);</highlight></codeline>
 <codeline lineno="2107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -4382,7 +4390,7 @@
 <codeline lineno="2131"><highlight class="normal">Real</highlight></codeline>
 <codeline lineno="2132"><highlight class="normal"><ref refid="classamrex_1_1AmrLevel_1a03b21d394e621b009b473c427b4769d0" kindref="member">AmrLevel::estimateWork</ref><sp/>()</highlight></codeline>
 <codeline lineno="2133"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1.0*countCells();</highlight></codeline>
+<codeline lineno="2134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Real</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(countCells());</highlight></codeline>
 <codeline lineno="2135"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="2136"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2137"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>

@@ -70,11 +70,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuQualifiers_8H_source.html">AMReX_GpuQualifiers.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Extension_8H_source.html">AMReX_Extension.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Dim3_8H_source.html">AMReX_Dim3.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__BLassert_8H_source.html">AMReX_BLassert.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Math_8H_source.html">AMReX_Math.H</a>&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="AMReX__Algorithm_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,6 +113,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6797a579beb044720ec00800077b4bc0"><td class="memTemplParams" colspan="2">template&lt;class T , class F &gt; </td></tr>
 <tr class="memitem:a6797a579beb044720ec00800077b4bc0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6797a579beb044720ec00800077b4bc0">amrex::bisect</a> (T lo, T hi, F f, T tol=1e-12, int max_iter=100)</td></tr>
 <tr class="separator:a6797a579beb044720ec00800077b4bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9314c1849b946e44ddd246d9c0562e72"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9314c1849b946e44ddd246d9c0562e72"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, bool &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9314c1849b946e44ddd246d9c0562e72">amrex::almostEqual</a> (T x, T y, int ulp=2)</td></tr>
+<tr class="separator:a9314c1849b946e44ddd246d9c0562e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

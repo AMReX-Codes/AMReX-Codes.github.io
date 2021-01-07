@@ -4,13 +4,13 @@
     <compoundname>AMReX_MLPoisson_2D_K.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <incdepgraph>
-      <node id="75520">
+      <node id="75530">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson_2D_K.H</label>
         <link refid="AMReX__MLPoisson__2D__K_8H"/>
-        <childnode refid="75521" relation="include">
+        <childnode refid="75531" relation="include">
         </childnode>
       </node>
-      <node id="75521">
+      <node id="75531">
         <label>AMReX_Config.H</label>
       </node>
     </incdepgraph>
@@ -56,7 +56,7 @@
 <codeline lineno="34"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>rel<sp/>=<sp/>probxlo<sp/>+<sp/>i*dx;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>rer<sp/>=<sp/>probxlo<sp/>+(i+1)*dx;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+0.5)*dx;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+Real(0.5))*dx;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>y(i,j,0)<sp/>=<sp/>dhx<sp/>*<sp/>(rel*x(i-1,j,0)<sp/>-<sp/>(rel+rer)*x(i,j,0)<sp/>+<sp/>rer*x(i+1,j,0))</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/>dhy<sp/>*<sp/>rc<sp/>*(x(i,j-1,0)<sp/>-<sp/><sp/>Real(2.)*x(i,j,0)<sp/>+<sp/><sp/><sp/><sp/><sp/>x(i,j+1,0));</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
@@ -152,7 +152,7 @@
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>lo.y;<sp/>j<sp/>&lt;=<sp/>hi.y;<sp/>++j)<sp/>{</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Extension_8H_1a8c414106ab987031039a0ad05bb2519b" kindref="member">AMREX_PRAGMA_SIMD</ref></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+0.5)*dx;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+Real(0.5))*dx;</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fy(i,j,0)<sp/>=<sp/>dyinv*rc*(sol(i,j,0)-sol(i,j-1,0));</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -188,13 +188,13 @@
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>lo.y;</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__Extension_8H_1a8c414106ab987031039a0ad05bb2519b" kindref="member">AMREX_PRAGMA_SIMD</ref></highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+0.5)*dx;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+Real(0.5))*dx;</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fy(i,j,0)<sp/>=<sp/>dyinv*rc*(sol(i,j,0)-sol(i,j-1,0));</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>j<sp/>+=<sp/>ylen;</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__Extension_8H_1a8c414106ab987031039a0ad05bb2519b" kindref="member">AMREX_PRAGMA_SIMD</ref></highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+0.5)*dx;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+Real(0.5))*dx;</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fy(i,j,0)<sp/>=<sp/>dyinv*rc*(sol(i,j,0)-sol(i,j-1,0));</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="178"><highlight class="normal">}</highlight></codeline>
@@ -314,7 +314,7 @@
 <codeline lineno="292"><highlight class="normal"></highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rel<sp/>=<sp/>probxlo<sp/>+<sp/>i*dx;</highlight></codeline>
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rer<sp/>=<sp/>probxlo<sp/>+(i+1)*dx;</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+0.5)*dx;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+Real(0.5))*dx;</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"></highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>gamma<sp/>=<sp/>-dhx*(rel+rer)<sp/>-<sp/>Real(2.0)*dhy*rc;</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
@@ -342,7 +342,7 @@
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rel<sp/>=<sp/>probxlo<sp/>+<sp/>i*dx;</highlight></codeline>
 <codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rer<sp/>=<sp/>probxlo<sp/>+(i+1)*dx;</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+0.5)*dx;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>rc<sp/>=<sp/>probxlo<sp/>+<sp/>(i+Real(0.5))*dx;</highlight></codeline>
 <codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x(i,j,0)<sp/>/=<sp/>(-dhx*(rel+rer)<sp/>-<sp/>dhy*rc*Real(2.0));</highlight></codeline>
 <codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

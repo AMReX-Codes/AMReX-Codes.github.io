@@ -5,31 +5,31 @@
     <includes local="no">AMReX_Config.H</includes>
     <includedby refid="AMReX__MLMG__K_8H" local="no">/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_K.H</includedby>
     <incdepgraph>
-      <node id="73475">
+      <node id="73485">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_3D_K.H</label>
         <link refid="AMReX__MLMG__3D__K_8H"/>
-        <childnode refid="73476" relation="include">
+        <childnode refid="73486" relation="include">
         </childnode>
       </node>
-      <node id="73476">
+      <node id="73486">
         <label>AMReX_Config.H</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="73479">
+      <node id="73489">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG.cpp</label>
         <link refid="AMReX__MLMG_8cpp"/>
       </node>
-      <node id="73477">
+      <node id="73487">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_3D_K.H</label>
         <link refid="AMReX__MLMG__3D__K_8H"/>
-        <childnode refid="73478" relation="include">
+        <childnode refid="73488" relation="include">
         </childnode>
       </node>
-      <node id="73478">
+      <node id="73488">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_K.H</label>
         <link refid="AMReX__MLMG__K_8H"/>
-        <childnode refid="73479" relation="include">
+        <childnode refid="73489" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
@@ -63,14 +63,14 @@
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/>i/2;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ioff<sp/>=<sp/>2*(i-ic*2)-1;</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ff(i,j,k,n)<sp/>=<sp/>0.421875*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc<sp/><sp/><sp/><sp/><sp/>,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.140625*cc(ic+ioff,jc<sp/><sp/><sp/><sp/><sp/>,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.140625*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc+joff,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.140625*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc<sp/><sp/><sp/><sp/><sp/>,kc+koff,n)</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.046875*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc+joff,kc+koff,n)</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.046875*cc(ic+ioff,jc<sp/><sp/><sp/><sp/><sp/>,kc+koff,n)</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.046875*cc(ic+ioff,jc+joff,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.015625*cc(ic+ioff,jc+joff,kc+koff,n);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ff(i,j,k,n)<sp/>=<sp/>Real(0.421875)*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc<sp/><sp/><sp/><sp/><sp/>,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.140625)*cc(ic+ioff,jc<sp/><sp/><sp/><sp/><sp/>,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.140625)*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc+joff,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.140625)*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc<sp/><sp/><sp/><sp/><sp/>,kc+koff,n)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.046875)*cc(ic<sp/><sp/><sp/><sp/><sp/>,jc+joff,kc+koff,n)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.046875)*cc(ic+ioff,jc<sp/><sp/><sp/><sp/><sp/>,kc+koff,n)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.046875)*cc(ic+ioff,jc+joff,kc<sp/><sp/><sp/><sp/><sp/>,n)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real(0.015625)*cc(ic+ioff,jc+joff,kc+koff,n);</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -117,7 +117,7 @@
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>lo.x;<sp/>i<sp/>&lt;=<sp/>hi.x;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/>i/R;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(flag(i,j,k).isCovered())<sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ff(i,j,k,n)<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ff(i,j,k,n)<sp/>=<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ff(i,j,k,n)<sp/>=<sp/>cc(ic,jc,kc,n);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -140,31 +140,31 @@
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>k_is_odd<sp/>=<sp/>(kc*2<sp/>!=<sp/>k);</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_is_odd<sp/>&amp;&amp;<sp/>j_is_odd<sp/>&amp;&amp;<sp/>k_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fine<sp/>node<sp/>at<sp/>center<sp/>of<sp/>cell</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.125*(crse(ic,<sp/><sp/>jc,<sp/><sp/>kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc,<sp/><sp/>kc+1,n)<sp/>+</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic,<sp/><sp/>jc+1,kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc+1,kc+1,n)<sp/>+</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc,<sp/><sp/>kc,n)<sp/>+<sp/>crse(ic+1,jc,<sp/><sp/>kc+1,n)<sp/>+</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc+1,kc,n)<sp/>+<sp/>crse(ic+1,jc+1,kc+1,n));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.125)*(crse(ic,<sp/><sp/>jc,<sp/><sp/>kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc,<sp/><sp/>kc+1,n)<sp/>+</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic,<sp/><sp/>jc+1,kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc+1,kc+1,n)<sp/>+</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc,<sp/><sp/>kc,n)<sp/>+<sp/>crse(ic+1,jc,<sp/><sp/>kc+1,n)<sp/>+</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc+1,kc,n)<sp/>+<sp/>crse(ic+1,jc+1,kc+1,n));</highlight></codeline>
 <codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j_is_odd<sp/>&amp;&amp;<sp/>k_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>on<sp/>a<sp/>Y-Z<sp/>face</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.25*(crse(ic,<sp/><sp/>jc,<sp/><sp/>kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc,<sp/><sp/>kc+1,n)<sp/>+</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic,<sp/><sp/>jc+1,kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc+1,kc+1,n));</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.25)*(crse(ic,<sp/><sp/>jc,<sp/><sp/>kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc,<sp/><sp/>kc+1,n)<sp/>+</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic,<sp/><sp/>jc+1,kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc+1,kc+1,n));</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_is_odd<sp/>&amp;&amp;<sp/>k_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>on<sp/>a<sp/>Z-X<sp/>face</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.25*(crse(ic,<sp/><sp/>jc,kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc,kc+1,n)<sp/>+</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc,kc,n)<sp/>+<sp/>crse(ic+1,jc,kc+1,n));</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.25)*(crse(ic,<sp/><sp/>jc,kc,n)<sp/>+<sp/>crse(ic,<sp/><sp/>jc,kc+1,n)<sp/>+</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc,kc,n)<sp/>+<sp/>crse(ic+1,jc,kc+1,n));</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_is_odd<sp/>&amp;&amp;<sp/>j_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>on<sp/>a<sp/>X-Y<sp/>face</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.25*(crse(ic<sp/><sp/>,jc,kc,n)<sp/>+<sp/>crse(ic<sp/><sp/>,jc+1,kc,n)<sp/>+</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc,kc,n)<sp/>+<sp/>crse(ic+1,jc+1,kc,n));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.25)*(crse(ic<sp/><sp/>,jc,kc,n)<sp/>+<sp/>crse(ic<sp/><sp/>,jc+1,kc,n)<sp/>+</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse(ic+1,jc,kc,n)<sp/>+<sp/>crse(ic+1,jc+1,kc,n));</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>on<sp/>X<sp/>line</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.5*(crse(ic,jc,kc,n)<sp/>+<sp/>crse(ic+1,jc,kc,n));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.5)*(crse(ic,jc,kc,n)<sp/>+<sp/>crse(ic+1,jc,kc,n));</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>on<sp/>Y<sp/>line</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.5*(crse(ic,jc,kc,n)<sp/>+<sp/>crse(ic,jc+1,kc,n));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.5)*(crse(ic,jc,kc,n)<sp/>+<sp/>crse(ic,jc+1,kc,n));</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(k_is_odd)<sp/>{</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>on<sp/>Z<sp/>line</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>0.5*(crse(ic,jc,kc,n)<sp/>+<sp/>crse(ic,jc,kc+1,n));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>Real(0.5)*(crse(ic,jc,kc,n)<sp/>+<sp/>crse(ic,jc,kc+1,n));</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Node<sp/>coincident<sp/>with<sp/>coarse<sp/>node</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,k,n)<sp/>=<sp/>crse(ic,jc,kc,n);</highlight></codeline>

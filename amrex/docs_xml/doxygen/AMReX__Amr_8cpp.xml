@@ -73,8 +73,6 @@
         <link refid="AMReX__Algorithm_8H"/>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
         <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
@@ -82,6 +80,14 @@
         <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="92">
@@ -1617,6 +1623,8 @@
         <label>AMReX_BaseFab.H</label>
         <link refid="AMReX__BaseFab_8H"/>
         <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
@@ -3293,7 +3301,7 @@
 <codeline lineno="920"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="921"><highlight class="normal"><ref refid="classamrex_1_1Amr_1a1ed3ee4ce3c8cc59e0b64767105cd936" kindref="member">Amr::writePlotFileDoit</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>pltfile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abd2e3d292645433cefc947725585f87aaaf37d08ae228a87dc6b265fd1019c97d" kindref="member">regular</ref>)</highlight></codeline>
 <codeline lineno="922"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>dPlotFileTime0<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
+<codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dPlotFileTime0<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
 <codeline lineno="924"><highlight class="normal"></highlight></codeline>
 <codeline lineno="925"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1aeea445c6cb42961bb091d40ee7545607" kindref="member">VisMF::SetNOutFiles</ref>(plot_nfiles);</highlight></codeline>
 <codeline lineno="926"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">VisMF::Header::Version</ref><sp/>currentVersion(<ref refid="classamrex_1_1VisMF_1a5be9ce5dc3ed0083f7959e63528de583" kindref="member">VisMF::GetHeaderVersion</ref>());</highlight></codeline>
@@ -3382,7 +3390,7 @@
 <codeline lineno="1009"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1010"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" kindref="member">verbose</ref><sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="1011"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IOProc<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>();</highlight></codeline>
-<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>dPlotFileTime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>dPlotFileTime0;</highlight></codeline>
+<codeline lineno="1012"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>dPlotFileTime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>dPlotFileTime0;</highlight></codeline>
 <codeline lineno="1013"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a348148608639b17ff12dcda5fb94bfcc" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(dPlotFileTime,IOProc);</highlight></codeline>
 <codeline lineno="1014"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(regular)<sp/>{</highlight></codeline>
 <codeline lineno="1015"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Print" kindref="compound">amrex::Print</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Write<sp/>plotfile<sp/>time<sp/>=<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>dPlotFileTime<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>seconds&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
@@ -3541,7 +3549,7 @@
 <codeline lineno="1168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NSets<sp/><sp/><sp/>=<sp/>(NProcs<sp/>+<sp/>(nAtOnce<sp/>-<sp/>1))<sp/>/<sp/>nAtOnce;</highlight></codeline>
 <codeline lineno="1169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MySet<sp/><sp/><sp/>=<sp/>MyProc/nAtOnce;</highlight></codeline>
 <codeline lineno="1170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1171"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>piStart<sp/>=<sp/>0,<sp/>piEnd<sp/>=<sp/>0,<sp/>piStartAll<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
+<codeline lineno="1171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>piStart<sp/>=<sp/>0,<sp/>piEnd<sp/>=<sp/>0,<sp/>piStartAll<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
 <codeline lineno="1172"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iSet<sp/>=<sp/>0;<sp/>iSet<sp/>&lt;<sp/>NSets;<sp/>++iSet)</highlight></codeline>
 <codeline lineno="1174"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3591,8 +3599,8 @@
 <codeline lineno="1218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" kindref="member">verbose</ref><sp/>&gt;<sp/>1)</highlight></codeline>
 <codeline lineno="1219"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>IOProc<sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>();</highlight></codeline>
-<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>piTotal<sp/><sp/><sp/><sp/>=<sp/>piEnd<sp/>-<sp/>piStart;</highlight></codeline>
-<codeline lineno="1222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>piTotalAll<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>piStartAll;</highlight></codeline>
+<codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>piTotal<sp/><sp/><sp/><sp/>=<sp/>piEnd<sp/>-<sp/>piStart;</highlight></codeline>
+<codeline lineno="1222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>piTotalAll<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>piStartAll;</highlight></codeline>
 <codeline lineno="1223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a348148608639b17ff12dcda5fb94bfcc" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(piTotal,<sp/><sp/><sp/><sp/>IOProc);</highlight></codeline>
 <codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a348148608639b17ff12dcda5fb94bfcc" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(piTotalAll,<sp/>IOProc);</highlight></codeline>
@@ -3734,7 +3742,7 @@
 <codeline lineno="1361"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1a71368e4ccbd5ee723f8675ee9ba4abf5" kindref="member">which_level_being_advanced</ref><sp/>=<sp/>-1;</highlight></codeline>
 <codeline lineno="1363"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>dRestartTime0<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
+<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dRestartTime0<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
 <codeline lineno="1365"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1abda03b733e4f5e0b9f005f764f1a5b65" kindref="member">VisMF::SetMFFileInStreams</ref>(mffile_nstreams);</highlight></codeline>
 <codeline lineno="1367"><highlight class="normal"></highlight></codeline>
@@ -4035,7 +4043,7 @@
 <codeline lineno="1662"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1663"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" kindref="member">verbose</ref><sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="1664"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>dRestartTime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>dRestartTime0;</highlight></codeline>
+<codeline lineno="1665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dRestartTime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>dRestartTime0;</highlight></codeline>
 <codeline lineno="1666"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1667"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a348148608639b17ff12dcda5fb94bfcc" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(dRestartTime,<ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
 <codeline lineno="1668"><highlight class="normal"></highlight></codeline>
@@ -4065,7 +4073,7 @@
 <codeline lineno="1692"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54d" kindref="member">VisMF::Header::Version</ref><sp/>currentVersion(<ref refid="classamrex_1_1VisMF_1a5be9ce5dc3ed0083f7959e63528de583" kindref="member">VisMF::GetHeaderVersion</ref>());</highlight></codeline>
 <codeline lineno="1693"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1VisMF_1a2ce0e613077c3ec9c4c687628154c5ce" kindref="member">VisMF::SetHeaderVersion</ref>(checkpoint_headerversion);</highlight></codeline>
 <codeline lineno="1694"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>dCheckPointTime0<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
+<codeline lineno="1695"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dCheckPointTime0<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
 <codeline lineno="1696"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1697"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>ckfile<sp/>=<sp/><ref refid="namespaceamrex_1a6e3a82e54e91d8c7543596b2c2476250" kindref="member">amrex::Concatenate</ref>(<ref refid="classamrex_1_1Amr_1a006c720b7d8ecf6e603785ab0b82bced" kindref="member">check_file_root</ref>,<ref refid="classamrex_1_1Amr_1a38fbd17db8a050b5bf3302427b9285ea" kindref="member">level_steps</ref>[0],<ref refid="classamrex_1_1Amr_1a1d325f8ad0d5d179fc7fcee0f35f0500" kindref="member">file_name_digits</ref>);</highlight></codeline>
 <codeline lineno="1698"><highlight class="normal"></highlight></codeline>
@@ -4197,7 +4205,7 @@
 <codeline lineno="1824"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1825"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" kindref="member">verbose</ref><sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="1826"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>dCheckPointTime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>dCheckPointTime0;</highlight></codeline>
+<codeline lineno="1827"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dCheckPointTime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>dCheckPointTime0;</highlight></codeline>
 <codeline lineno="1828"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1829"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a348148608639b17ff12dcda5fb94bfcc" kindref="member">ParallelDescriptor::ReduceRealMax</ref>(dCheckPointTime,</highlight></codeline>
 <codeline lineno="1830"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>());</highlight></codeline>
@@ -4421,8 +4429,8 @@
 <codeline lineno="2048"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2049"><highlight class="normal"><ref refid="classamrex_1_1Amr_1ab6618049b000c03c0adcc424d13cc5e7" kindref="member">Amr::coarseTimeStep</ref><sp/>(Real<sp/>stop_time)</highlight></codeline>
 <codeline lineno="2050"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2051"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/>run_stop;</highlight></codeline>
-<codeline lineno="2052"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>run_strt;</highlight></codeline>
+<codeline lineno="2051"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>run_stop;</highlight></codeline>
+<codeline lineno="2052"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>run_strt;</highlight></codeline>
 <codeline lineno="2053"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a82756cf1b5c74e5768f02b27c8d7d2fe" kindref="member">BL_PROFILE_REGION_START</ref>(</highlight><highlight class="stringliteral">&quot;Amr::coarseTimeStep()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="2054"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;Amr::coarseTimeStep()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="2055"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>stepName;</highlight></codeline>
@@ -4546,7 +4554,7 @@
 <codeline lineno="2173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>counter,<sp/>because<sp/>we<sp/>have<sp/>indeed<sp/>reached<sp/>the<sp/>next<sp/>check_per<sp/>interval</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>at<sp/>this<sp/>point.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2175"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>std::numeric_limits&lt;Real&gt;::epsilon()<sp/>*<sp/>10.0<sp/>*<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(cumtime);</highlight></codeline>
+<codeline lineno="2176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>std::numeric_limits&lt;Real&gt;::epsilon()<sp/>*<sp/>10.0_rt<sp/>*<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(cumtime);</highlight></codeline>
 <codeline lineno="2177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>next_chk_time<sp/>=<sp/>(num_per_old<sp/>+<sp/>1)<sp/>*<sp/><ref refid="classamrex_1_1Amr_1a9daa98984b300c7a3080d0752f233a0b" kindref="member">check_per</ref>;</highlight></codeline>
 <codeline lineno="2178"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((num_per_new<sp/>==<sp/>num_per_old)<sp/>&amp;&amp;<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(cumtime<sp/>-<sp/>next_chk_time)<sp/>&lt;=<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref>)</highlight></codeline>
@@ -4690,7 +4698,7 @@
 <codeline lineno="2317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>counter,<sp/>because<sp/>we<sp/>have<sp/>indeed<sp/>reached<sp/>the<sp/>next<sp/>plot_per<sp/>interval</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>at<sp/>this<sp/>point.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2319"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>std::numeric_limits&lt;Real&gt;::epsilon()<sp/>*<sp/>10.0<sp/>*<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(<ref refid="classamrex_1_1Amr_1a9b46db71980158bc8f12c2f7eebede4a" kindref="member">cumtime</ref>);</highlight></codeline>
+<codeline lineno="2320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>std::numeric_limits&lt;Real&gt;::epsilon()<sp/>*<sp/>10.0_rt<sp/>*<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(<ref refid="classamrex_1_1Amr_1a9b46db71980158bc8f12c2f7eebede4a" kindref="member">cumtime</ref>);</highlight></codeline>
 <codeline lineno="2321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>next_plot_time<sp/>=<sp/>(num_per_old<sp/>+<sp/>1)<sp/>*<sp/><ref refid="classamrex_1_1Amr_1af097e0455a9da7e8e6a9dc131d1b96f2" kindref="member">plot_per</ref>;</highlight></codeline>
 <codeline lineno="2322"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((num_per_new<sp/>==<sp/>num_per_old)<sp/>&amp;&amp;<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(<ref refid="classamrex_1_1Amr_1a9b46db71980158bc8f12c2f7eebede4a" kindref="member">cumtime</ref><sp/>-<sp/>next_plot_time)<sp/>&lt;=<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref>)</highlight></codeline>
@@ -4763,7 +4771,7 @@
 <codeline lineno="2390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>counter,<sp/>because<sp/>we<sp/>have<sp/>indeed<sp/>reached<sp/>the<sp/>next<sp/>small_plot_per<sp/>interval</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>at<sp/>this<sp/>point.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2392"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>std::numeric_limits&lt;Real&gt;::epsilon()<sp/>*<sp/>10.0<sp/>*<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(<ref refid="classamrex_1_1Amr_1a9b46db71980158bc8f12c2f7eebede4a" kindref="member">cumtime</ref>);</highlight></codeline>
+<codeline lineno="2393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref><sp/>=<sp/>std::numeric_limits&lt;Real&gt;::epsilon()<sp/>*<sp/>10.0_rt<sp/>*<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(<ref refid="classamrex_1_1Amr_1a9b46db71980158bc8f12c2f7eebede4a" kindref="member">cumtime</ref>);</highlight></codeline>
 <codeline lineno="2394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>next_plot_time<sp/>=<sp/>(num_per_old<sp/>+<sp/>1)<sp/>*<sp/><ref refid="classamrex_1_1Amr_1aa9f5b7511d029e894847247437d90e19" kindref="member">small_plot_per</ref>;</highlight></codeline>
 <codeline lineno="2395"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((num_per_new<sp/>==<sp/>num_per_old)<sp/>&amp;&amp;<sp/><ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(<ref refid="classamrex_1_1Amr_1a9b46db71980158bc8f12c2f7eebede4a" kindref="member">cumtime</ref><sp/>-<sp/>next_plot_time)<sp/>&lt;=<sp/><ref refid="namespacesdcquadrature__mod_1a5996afecb06f0cfbc667e1fc7eff3f08" kindref="member">eps</ref>)</highlight></codeline>
@@ -5189,7 +5197,7 @@
 <codeline lineno="2816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>numgrid<sp/>=<sp/>bs.size();</highlight></codeline>
 <codeline lineno="2817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncells<sp/><sp/>=<sp/><ref refid="classamrex_1_1Amr_1a48ea3d37aac2f07a6488cb599f45fc8b" kindref="member">amr_level</ref>[lev]-&gt;countCells();</highlight></codeline>
 <codeline lineno="2818"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ntot<sp/><sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1AmrMesh_1a38a313616cf363d4848934853dd47092" kindref="member">Geom</ref>(lev).Domain().d_numPts();</highlight></codeline>
-<codeline lineno="2819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frac<sp/><sp/><sp/><sp/>=<sp/>Real(100.0)*(Real(ncells)<sp/>/<sp/>ntot);</highlight></codeline>
+<codeline lineno="2819"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frac<sp/><sp/><sp/><sp/>=<sp/>Real(100.0<sp/>*<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">(ncells)<sp/>/<sp/>ntot);</highlight></codeline>
 <codeline lineno="2820"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>&amp;<sp/>map<sp/><sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1Amr_1a48ea3d37aac2f07a6488cb599f45fc8b" kindref="member">amr_level</ref>[lev]-&gt;get_new_data(0).DistributionMap();</highlight></codeline>
 <codeline lineno="2821"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2822"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/>Level<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -5229,7 +5237,7 @@
 <codeline lineno="2856"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2857"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;Amr::grid_places()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="2858"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2859"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>strttime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
+<codeline lineno="2859"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>strttime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>();</highlight></codeline>
 <codeline lineno="2860"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2861"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lbase<sp/>==<sp/>0)</highlight></codeline>
 <codeline lineno="2862"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -5304,7 +5312,7 @@
 <codeline lineno="2931"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2932"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1AmrInfo_1ae0c6a5189c216220bf4aab567206c362" kindref="member">verbose</ref><sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="2933"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="2934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>stoptime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>strttime;</highlight></codeline>
+<codeline lineno="2934"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>stoptime<sp/>=<sp/><ref refid="namespaceamrex_1a6f975f843338c8eada684f0e8e2c0cb7" kindref="member">amrex::second</ref>()<sp/>-<sp/>strttime;</highlight></codeline>
 <codeline lineno="2935"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2936"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_LAZY</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2937"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Lazy_1a48f09e6d45685ddcaa72f6424891b9e4" kindref="member">Lazy::QueueReduction</ref>(<sp/>[=]<sp/>()<sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/>{</highlight></codeline>

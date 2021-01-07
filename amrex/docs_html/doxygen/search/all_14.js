@@ -86,7 +86,7 @@ var searchData=
   ['timelinefab',['TimelineFAB',['../classCommProfStats.html#a45e111eb57d243d366c3146a7ac7c0c9',1,'CommProfStats']]],
   ['timemax',['timeMax',['../structCommProfStats_1_1DataBlock.html#af575f4699084fd21a0c66470006d0aed',1,'CommProfStats::DataBlock::timeMax()'],['../structRegionsProfStats_1_1DataBlock.html#a782fccabcc5cfc65934945eb51502963',1,'RegionsProfStats::DataBlock::timeMax()']]],
   ['timemin',['timeMin',['../structCommProfStats_1_1DataBlock.html#a0e6da7295f52dca99d4abf096c1bed81',1,'CommProfStats::DataBlock::timeMin()'],['../structRegionsProfStats_1_1DataBlock.html#acbca0639ad8b69e1f647d223eefc11da',1,'RegionsProfStats::DataBlock::timeMin()']]],
-  ['timer',['timer',['../classamrex_1_1MLMG.html#a60c47161b03df19f998710df25c494fd',1,'amrex::MLMG']]],
+  ['timer',['timer',['../classamrex_1_1MLMG.html#a7f5092d758824d2ec77cbec04bbe5775',1,'amrex::MLMG']]],
   ['timer_5ftypes',['timer_types',['../classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001',1,'amrex::MLMG']]],
   ['timerange',['TimeRange',['../structBLProfStats_1_1TimeRange.html',1,'BLProfStats::TimeRange'],['../structBLProfStats_1_1TimeRange.html#a4415589fb72341b9ed4c98aed65d3e14',1,'BLProfStats::TimeRange::TimeRange()'],['../structBLProfStats_1_1TimeRange.html#acbbf9b5d2d56142d5fcc5904d77a4409',1,'BLProfStats::TimeRange::TimeRange(Real startT, Real stopT)']]],
   ['timerangecompare',['TimeRangeCompare',['../structBLProfStats_1_1TimeRangeCompare.html',1,'BLProfStats']]],
