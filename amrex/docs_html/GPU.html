@@ -358,7 +358,7 @@ environment.  Building with:</p>
 </div>
 <p>should produce an executable named <code class="docutils literal notranslate"><span class="pre">main3d.gnu.DEBUG.CUDA.ex</span></code>.  You
 can run it and that will generate results like:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ./main3d.gnu.DEBUG.CUDA.ex
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./main3d.gnu.DEBUG.CUDA.ex
 <span class="go">Initializing CUDA...</span>
 <span class="go">CUDA initialized with 1 GPU</span>
 <span class="go">AMReX (19.06-404-g0455b168b69c-dirty) initialized</span>
@@ -499,32 +499,32 @@ If autodetection fails, a set of “common” architectures is assumed.
 CUDA Toolkit version 9.0 or higher</strong>.</p>
 <p>In order to import the CUDA-enabled AMReX library into your CMake project, you need to include
 the following code into the appropriate CMakeLists.txt file:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> Find CUDA-enabled AMReX installation
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Find CUDA-enabled AMReX installation
 <span class="go">find_package(AMReX REQUIRED CUDA)</span>
 </pre></div>
 </div>
 <p>If instead of using an external installation of AMReX you prefer to include AMReX as a subproject
 in your CMake setup, we strongly encourage you to use the <code class="docutils literal notranslate"><span class="pre">AMReX_SetupCUDA</span></code> module as shown below:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> Enable CUDA in your CMake project
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Enable CUDA <span class="k">in</span> your CMake project
 <span class="go">enable_language(CUDA)</span>
 
-<span class="gp">#</span> Include the AMReX-provided CUDA setup module
+<span class="gp"># </span>Include the AMReX-provided CUDA setup module
 <span class="go">include(AMReX_SetupCUDA)</span>
 
-<span class="gp">#</span> Include AMReX <span class="nb">source</span> directory ONLY AFTER the two steps above
+<span class="gp"># </span>Include AMReX <span class="nb">source</span> directory ONLY AFTER the two steps above
 <span class="go">add_subdirectory(/path/to/amrex/source/dir)</span>
 </pre></div>
 </div>
 <p>To ensure consistency between CUDA-enabled AMReX and any CMake target that links against it,
 we provide the helper function <code class="docutils literal notranslate"><span class="pre">setup_target_for_cuda_compilation()</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span> Set all sources <span class="k">for</span> my_target
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Set all sources <span class="k">for</span> my_target
 <span class="go">target_sources(my_target source1 source2 source3 ...)</span>
 
-<span class="gp">#</span> Setup my_target to be compiled with CUDA and be linked against CUDA-enabled AMReX
-<span class="gp">#</span> MUST be <span class="k">done</span> AFTER all sources have been assigned to my_target
+<span class="gp"># </span>Setup my_target to be compiled with CUDA and be linked against CUDA-enabled AMReX
+<span class="gp"># </span>MUST be <span class="k">done</span> AFTER all sources have been assigned to my_target
 <span class="go">setup_target_for_cuda_compilation(my_target)</span>
 
-<span class="gp">#</span> Link against amrex
+<span class="gp"># </span>Link against amrex
 <span class="go">target_link_libraries(my_target AMReX::amrex)</span>
 </pre></div>
 </div>
@@ -1423,8 +1423,8 @@ including Cuda C / Fortran and OpenACC. An example Fortran particle subroutine o
 look like the following:</p>
 <div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">subroutine </span><span class="n">push_position_boris</span><span class="p">(</span><span class="n">np</span><span class="p">,</span> <span class="n">structs</span><span class="p">,</span> <span class="n">uxp</span><span class="p">,</span> <span class="n">uyp</span><span class="p">,</span> <span class="n">uzp</span><span class="p">,</span> <span class="n">gaminv</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 
-<span class="k">use </span><span class="n">em_particle_module</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">particle_t</span>
-<span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">amrex_real</span>
+<span class="k">use </span><span class="n">em_particle_module</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">particle_t</span>
+<span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">amrex_real</span>
 <span class="k">implicit none</span>
 
 <span class="kt">integer</span><span class="p">,</span>          <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span> <span class="k">value</span>  <span class="kd">::</span> <span class="n">np</span>

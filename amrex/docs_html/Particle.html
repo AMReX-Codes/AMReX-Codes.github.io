@@ -500,8 +500,8 @@ possible to pass a grid or tile worth of particles into fortran routines for
 processing, instead of iterating over them in C++. You can also define a
 Fortran derived type that is equivalent to C struct used for the particles. For
 example:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">amrex_particle_real</span>
-<span class="k">use </span><span class="nb">iso_c_binding</span> <span class="p">,</span>    <span class="n">only</span><span class="p">:</span> <span class="kt">c_int</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">amrex_particle_real</span>
+<span class="k">use </span><span class="nb">iso_c_binding</span> <span class="p">,</span>    <span class="k">only</span><span class="p">:</span> <span class="kt">c_int</span>
 
 <span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">particle_t</span>
    <span class="kt">real</span><span class="p">(</span><span class="n">amrex_particle_real</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pos</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
