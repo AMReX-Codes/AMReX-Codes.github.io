@@ -123,6 +123,8 @@ var searchData=
   ['communicator',['Communicator',['../classamrex_1_1MLLinOp.html#a941ddfa6ec11cbd0a1c835007494b057',1,'amrex::MLLinOp::Communicator()'],['../namespaceamrex_1_1ParallelDescriptor.html#a0f53686fc6a6b7dca69c230fd1336e44',1,'amrex::ParallelDescriptor::Communicator()']]],
   ['communicatorall',['CommunicatorAll',['../namespaceamrex_1_1ParallelContext.html#ae11490aa2420222dcbb8b57cf115bb1b',1,'amrex::ParallelContext']]],
   ['communicatorsub',['CommunicatorSub',['../namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8',1,'amrex::ParallelContext']]],
+  ['comp_5fbf',['comp_bf',['../namespaceamrex_1_1detail.html#a552276d715b5fb007fa8045a2f8dc713',1,'amrex::detail']]],
+  ['comp_5fbflo',['comp_bflo',['../namespaceamrex_1_1detail.html#a63f67f333c651c923c2d3eaf7b0a15aa',1,'amrex::detail']]],
   ['compcrossterms',['compCrossTerms',['../classamrex_1_1MLEBTensorOp.html#a14c881c5002de907212e7a2803d88046',1,'amrex::MLEBTensorOp']]],
   ['compdivergence',['compDivergence',['../classamrex_1_1MLNodeLaplacian.html#a8d6bd9efca024311980c6af337ac6b2c',1,'amrex::MLNodeLaplacian']]],
   ['compex',['compex',['../structamrex_1_1TinyProfiler_1_1ProcStats.html#ae641e60af08fa4f6e33d79a5f03db53a',1,'amrex::TinyProfiler::ProcStats']]],

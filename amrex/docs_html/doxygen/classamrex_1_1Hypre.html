@@ -66,8 +66,8 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
 <a href="classamrex_1_1Hypre-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">amrex::Hypre Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -135,6 +135,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aac6b099395a000804880b97e43407c5b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespaceamrex.html#afe930d74045516fece8591f173e57007">Array</a>&lt; HYPRE_Int, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#aac6b099395a000804880b97e43407c5b">hiV</a> (const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;b)</td></tr>
 <tr class="separator:aac6b099395a000804880b97e43407c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:abff4c8fa7e9790d9408099ffa9c57934"><td class="memItemLeft" align="right" valign="top">static constexpr HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934">regular_stencil_size</a> = 2*AMREX_SPACEDIM + 1</td></tr>
+<tr class="separator:abff4c8fa7e9790d9408099ffa9c57934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49181827cb7d3a5b52f02540d7e82121"><td class="memItemLeft" align="right" valign="top">static constexpr HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a49181827cb7d3a5b52f02540d7e82121">eb_stencil_size</a> = AMREX_D_TERM(3, *3, *3)</td></tr>
+<tr class="separator:a49181827cb7d3a5b52f02540d7e82121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a55f4b29b2291555432bbc82aa86c0931"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a55f4b29b2291555432bbc82aa86c0931">comm</a> = <a class="el" href="AMReX__ccse-mpi_8H.html#a9c299ed1c4c5eaa48a6446c85fb2d689">MPI_COMM_NULL</a></td></tr>
@@ -173,13 +180,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7b04bbe6b54d748e48516df1695bc139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a7daa97b3caa6216418e78ddf2835ec"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a0a7daa97b3caa6216418e78ddf2835ec">is_matrix_singular</a> { false }</td></tr>
 <tr class="separator:a0a7daa97b3caa6216418e78ddf2835ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
-Static Protected Attributes</h2></td></tr>
-<tr class="memitem:abff4c8fa7e9790d9408099ffa9c57934"><td class="memItemLeft" align="right" valign="top">static constexpr HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934">regular_stencil_size</a> = 2*AMREX_SPACEDIM + 1</td></tr>
-<tr class="separator:abff4c8fa7e9790d9408099ffa9c57934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49181827cb7d3a5b52f02540d7e82121"><td class="memItemLeft" align="right" valign="top">static constexpr HYPRE_Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Hypre.html#a49181827cb7d3a5b52f02540d7e82121">eb_stencil_size</a> = AMREX_D_TERM(3, *3, *3)</td></tr>
-<tr class="separator:a49181827cb7d3a5b52f02540d7e82121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="af08fbb42b4509a32e7f20a6101dfd13f"></a>
@@ -790,7 +790,7 @@ Static Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -988,7 +988,7 @@ Static Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

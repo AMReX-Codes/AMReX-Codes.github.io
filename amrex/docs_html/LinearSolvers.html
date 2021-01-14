@@ -482,6 +482,11 @@ as living at face centroids, modify the setBCoeffs command to be</p>
 <p>AMReX provides interfaces to the <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">hypre</a> preconditioners and solvers, including BoomerAMG, GMRES (all variants), PCG, and BICGStab as
 solvers, and BoomerAMG and Euclid as preconditioners.  These can be called as
 as bottom solvers for both cell-centered and node-based problems.</p>
+<p>If it is built with Hypre support, AMReX initializes Hypre by default in
+<cite>amrex::Initialize</cite>.  If it is built with CUDA, AMReX will also set up Hypre
+to run on device by default.  The user can choose to disable the Hypre
+initialization by AMReX with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> parameter
+<code class="docutils literal notranslate"><span class="pre">amrex.init_hypre=[0|1]</span></code>.</p>
 <p>By default the AMReX linear solver code always tries to geometrically coarsen the
 problem as much as possible.  However, as we have mentioned, we can
 call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setMaxCoarseningLevel</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number integer"><span class="pre">0</span></span><span class="punctuation"><span class="pre">)</span></span></code> on the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span></code> object
