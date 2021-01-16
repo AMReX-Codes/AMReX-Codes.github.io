@@ -1627,7 +1627,7 @@ parallel region:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Dynamic tiling, one box per OpenMP thread.</span>
 <span class="c1">// No further tiling details,</span>
 <span class="c1">//   so each thread works on a single tilebox.</span>
-<span class="cp">#ifdef _OPENMP</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel</span>
 <span class="cp">#endif</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="n">MFItInfo</span><span class="p">().</span><span class="n">SetDynamic</span><span class="p">(</span><span class="nb">true</span><span class="p">));</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
@@ -1640,7 +1640,7 @@ parallel region:</p>
 <p>Dynamic tiling also allows explicit definition of a tile size:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Dynamic tiling, one box per OpenMP thread.</span>
 <span class="c1">// No tiling in x-direction. Tile size is 16 for y and 32 for z.</span>
-<span class="cp">#ifdef _OPENMP</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel</span>
 <span class="cp">#endif</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span><span class="n">MFItInfo</span><span class="p">().</span><span class="n">SetDynamic</span><span class="p">(</span><span class="nb">true</span><span class="p">).</span><span class="n">EnableTiling</span><span class="p">(</span><span class="mi">1024000</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">32</span><span class="p">));</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
@@ -1990,7 +1990,7 @@ of the calculation.</p>
 when we iterate over a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code>.  AMReX also provides function
 templates for writing these in a concise and performance portable way
 like below,</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef _OPENMP</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel if (Gpu::notInLaunchRegion())</span>
 <span class="cp">#endif</span>
   <span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">mfa</span><span class="p">,</span><span class="n">TilingIfNotGPU</span><span class="p">());</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span>

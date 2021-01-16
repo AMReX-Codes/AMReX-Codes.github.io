@@ -3881,7 +3881,7 @@
 <codeline lineno="363"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="364" refid="namespaceamrex_1_1Gpu_1aeee12c6159c662a95ab53b5b07f4b8e1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1aeee12c6159c662a95ab53b5b07f4b8e1" kindref="member">deviceReduceSum_full</ref><sp/>(T<sp/>*<sp/>dest,<sp/>T<sp/>source)<sp/>noexcept</highlight></codeline>
 <codeline lineno="365"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="366"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="367"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>atomic</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="368"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>*dest<sp/>+=<sp/>source;</highlight></codeline>
@@ -3898,7 +3898,7 @@
 <codeline lineno="380"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="381" refid="namespaceamrex_1_1Gpu_1ab77177838702bf96404e79d35a1582da" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1ab77177838702bf96404e79d35a1582da" kindref="member">deviceReduceMin_full</ref><sp/>(T<sp/>*<sp/>dest,<sp/>T<sp/>source)<sp/>noexcept</highlight></codeline>
 <codeline lineno="382"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="383"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(gpureduce_reducemin)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="385"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/>*dest<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(*dest,<sp/>source);</highlight></codeline>
@@ -3915,7 +3915,7 @@
 <codeline lineno="397"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="398" refid="namespaceamrex_1_1Gpu_1a534f127a697d9afa2e13506bb9edacbb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1a534f127a697d9afa2e13506bb9edacbb" kindref="member">deviceReduceMax_full</ref><sp/>(T<sp/>*<sp/>dest,<sp/>T<sp/>source)<sp/>noexcept</highlight></codeline>
 <codeline lineno="399"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="400"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="401"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(gpureduce_reducemax)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="402"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>*dest<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::max</ref>(*dest,<sp/>source);</highlight></codeline>
@@ -3931,7 +3931,7 @@
 <codeline lineno="413"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="414" refid="namespaceamrex_1_1Gpu_1a2ecad6d34c489464aab2787dc6ca07ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1a2ecad6d34c489464aab2787dc6ca07ba" kindref="member">deviceReduceLogicalAnd_full</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>dest,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>source)<sp/>noexcept</highlight></codeline>
 <codeline lineno="415"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="416"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="417"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(gpureduce_reduceand)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/>*dest<sp/>=<sp/>(*dest)<sp/>&amp;&amp;<sp/>source;</highlight></codeline>
@@ -3946,7 +3946,7 @@
 <codeline lineno="428"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
 <codeline lineno="429" refid="namespaceamrex_1_1Gpu_1ace89c6e29c468163b30bd0ca38a59108" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1Gpu_1ace89c6e29c468163b30bd0ca38a59108" kindref="member">deviceReduceLogicalOr_full</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*<sp/>dest,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>source)<sp/>noexcept</highlight></codeline>
 <codeline lineno="430"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="431"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="431"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="432"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(gpureduce_reduceor)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="433"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/>*dest<sp/>=<sp/>(*dest)<sp/>||<sp/>source;</highlight></codeline>

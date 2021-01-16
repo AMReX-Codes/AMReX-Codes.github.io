@@ -696,7 +696,7 @@ interface to a Fortran routine that tags cells (in this case, <code class="code 
 
     <span class="k">const</span> <span class="n">MultiFab</span><span class="o">&amp;</span> <span class="n">state</span> <span class="o">=</span> <span class="o">*</span><span class="n">phi_new</span><span class="p">[</span><span class="n">lev</span><span class="p">];</span>
 
-<span class="cp">#ifdef _OPENMP</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel</span>
 <span class="cp">#endif</span>
     <span class="p">{</span>

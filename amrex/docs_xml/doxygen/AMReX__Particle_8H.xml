@@ -2388,9 +2388,9 @@
 <codeline lineno="763"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>next;</highlight></codeline>
 <codeline lineno="764"><highlight class="normal"></highlight><highlight class="comment">//<sp/>we<sp/>should<sp/>be<sp/>able<sp/>to<sp/>test<sp/>on<sp/>_OPENMP<sp/>&lt;<sp/>201107<sp/>for<sp/>capture<sp/>(version<sp/>3.1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="765"><highlight class="normal"></highlight><highlight class="comment">//<sp/>but<sp/>we<sp/>must<sp/>work<sp/>around<sp/>a<sp/>bug<sp/>in<sp/>gcc<sp/>&lt;<sp/>4.9</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="766"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>_OPENMP<sp/>&lt;<sp/>201307</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="766"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_OMP)<sp/>&amp;&amp;<sp/>defined(_OPENMP)<sp/>&amp;&amp;<sp/>_OPENMP<sp/>&lt;<sp/>201307</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="767"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical<sp/>(amrex_particle_nextid)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="768"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_OPENMP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="768"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="769"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>atomic<sp/>capture</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="770"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="771"><highlight class="normal"><sp/><sp/><sp/><sp/>next<sp/>=<sp/>the_next_id++;</highlight></codeline>

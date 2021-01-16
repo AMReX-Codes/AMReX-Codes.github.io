@@ -1298,7 +1298,7 @@ OpenMP threads to maintain multi-threaded parallelism on work chosen to run on t
 This means OpenMP pragmas should be maintained where CPU work is performed and usually
 turned off where work is offloaded onto the GPU.  OpenMP pragmas can be turned
 off using the conditional pragma and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">notInLaunchRegion</span></span><span class="punctuation"><span class="pre">()</span></span></code>, as shown below:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef _OPENMP</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel if (Gpu::notInLaunchRegion())</span>
 <span class="cp">#endif</span>
 </pre></div>
@@ -1314,7 +1314,7 @@ the performance or are designing more complex workflows that require OpenMP.</p>
 <p>The nature of GPU programming poses difficulties for a number
 of common AMReX patterns, such as the one below:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Given MultiFab uin and uout</span>
-<span class="cp">#ifdef _OPENMP</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel</span>
 <span class="cp">#endif</span>
 <span class="p">{</span>
@@ -1356,7 +1356,7 @@ used to extend the life of its floating point data.  The code below
 shows an example of how to rewrite the example in a performance
 portable way.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// Given MultiFab uin and uout</span>
-<span class="cp">#ifdef _OPENMP</span>
+<span class="cp">#ifdef AMREX_USE_OMP</span>
 <span class="cp">#pragma omp parallel if (Gpu::notInLaunchRegion())</span>
 <span class="cp">#endif</span>
 <span class="p">{</span>

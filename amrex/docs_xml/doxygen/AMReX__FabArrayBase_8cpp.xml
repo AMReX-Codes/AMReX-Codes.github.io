@@ -1799,7 +1799,7 @@
 <codeline lineno="48"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)<sp/>||<sp/>!defined(_OPENMP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)<sp/>||<sp/>!defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal">IntVect<sp/><ref refid="classamrex_1_1FabArrayBase_1aec4332affa6c055da41aab70b684a064" kindref="member">FabArrayBase::comm_tile_size</ref>(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(1024000,<sp/>1024000,<sp/>1024000));</highlight></codeline>
 <codeline lineno="53"><highlight class="normal">IntVect<sp/><ref refid="classamrex_1_1FabArrayBase_1a31677ce1cdddcbc405f41bb1a4351d35" kindref="member">FabArrayBase::mfghostiter_tile_size</ref>(<ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(1024000,<sp/>1024000,<sp/>1024000));</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
@@ -2139,7 +2139,7 @@
 <codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="391"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(_OPENMP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex__omp__module_1a88c4536a09e2cc9d9edff5cd040814db" kindref="member">omp_get_max_threads</ref>()<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
@@ -2470,7 +2470,7 @@
 <codeline lineno="719"><highlight class="normal"></highlight></codeline>
 <codeline lineno="720"><highlight class="normal"><sp/><sp/><sp/><sp/>BaseFab&lt;int&gt;<sp/>localtouch(<ref refid="namespaceamrex_1adcb4e473f4a6058ae8abd15c75bde706" kindref="member">The_Cpu_Arena</ref>()),<sp/>remotetouch(<ref refid="namespaceamrex_1adcb4e473f4a6058ae8abd15c75bde706" kindref="member">The_Cpu_Arena</ref>());</highlight></codeline>
 <codeline lineno="721"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check_local<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>check_remote<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="722"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="722"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="723"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex__omp__module_1a88c4536a09e2cc9d9edff5cd040814db" kindref="member">omp_get_max_threads</ref>()<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="724"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="725"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
@@ -2690,7 +2690,7 @@
 <codeline lineno="939"><highlight class="normal"></highlight></codeline>
 <codeline lineno="940"><highlight class="normal"><sp/><sp/><sp/><sp/>BaseFab&lt;int&gt;<sp/>localtouch(<ref refid="namespaceamrex_1adcb4e473f4a6058ae8abd15c75bde706" kindref="member">The_Cpu_Arena</ref>()),<sp/>remotetouch(<ref refid="namespaceamrex_1adcb4e473f4a6058ae8abd15c75bde706" kindref="member">The_Cpu_Arena</ref>());</highlight></codeline>
 <codeline lineno="941"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>check_local<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>check_remote<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="942"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_OPENMP)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="942"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_OMP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="943"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex__omp__module_1a88c4536a09e2cc9d9edff5cd040814db" kindref="member">omp_get_max_threads</ref>()<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="944"><highlight class="normal"><sp/><sp/><sp/><sp/>check_local<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="945"><highlight class="normal"><sp/><sp/><sp/><sp/>check_remote<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
@@ -3861,7 +3861,7 @@
 <codeline lineno="2110"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2111"><highlight class="normal"><sp/><sp/><sp/><sp/>TileArray*<sp/>p;</highlight></codeline>
 <codeline lineno="2112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2113"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2113"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2114"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>critical(gettilearray)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2116"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3879,7 +3879,7 @@
 <codeline lineno="2128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_TAC_stats.bytes);</highlight></codeline>
 <codeline lineno="2129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2131"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2131"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2132"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>master</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2133"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2134"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

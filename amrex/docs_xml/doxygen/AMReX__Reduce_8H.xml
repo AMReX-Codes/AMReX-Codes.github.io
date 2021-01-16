@@ -4394,7 +4394,7 @@
 <codeline lineno="842" refid="namespaceamrex_1_1Reduce_1a4f32ecfd40118417b8bb81078aa24c40" refkind="member"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Reduce_1a3a1bf2418459469b609d213560f4a8da" kindref="member">Sum</ref><sp/>(N<sp/>n,<sp/>F&amp;&amp;<sp/>f,<sp/>T<sp/>init_val<sp/>=<sp/>0)</highlight></codeline>
 <codeline lineno="843"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="844"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>r<sp/>=<sp/>init_val;</highlight></codeline>
-<codeline lineno="845"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="845"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="846"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for<sp/>reduction(+:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="847"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(N<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{</highlight></codeline>
@@ -4431,7 +4431,7 @@
 <codeline lineno="879" refid="namespaceamrex_1_1Reduce_1a7da96d3ec8efffe9ebeae62d5c3fb710" refkind="member"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Reduce_1aa9002a6dc16f2e87ac519151c6d8a7df" kindref="member">Min</ref><sp/>(N<sp/>n,<sp/>F&amp;&amp;<sp/>f,<sp/>T<sp/>init_val<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;T&gt;::max</ref>())</highlight></codeline>
 <codeline lineno="880"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="881"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>r<sp/>=<sp/>init_val;</highlight></codeline>
-<codeline lineno="882"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="882"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="883"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for<sp/>reduction(min:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="884"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="885"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(N<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{</highlight></codeline>
@@ -4468,7 +4468,7 @@
 <codeline lineno="916" refid="namespaceamrex_1_1Reduce_1a3cea6f37705bcc227603bf4c75507b94" refkind="member"><highlight class="normal">T<sp/><ref refid="namespaceamrex_1_1Reduce_1ab3af21594fb654c6c051cdc49536bf35" kindref="member">Max</ref><sp/>(N<sp/>n,<sp/>F&amp;&amp;<sp/>f,<sp/>T<sp/>init_val<sp/>=<sp/>std::numeric_limits&lt;T&gt;::lowest())</highlight></codeline>
 <codeline lineno="917"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="918"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>r<sp/>=<sp/>init_val;</highlight></codeline>
-<codeline lineno="919"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="919"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="920"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for<sp/>reduction(max:r)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="921"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="922"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(N<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{</highlight></codeline>
@@ -4509,7 +4509,7 @@
 <codeline lineno="957"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="958"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>r_min<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265" kindref="member">std::numeric_limits&lt;T&gt;::max</ref>();</highlight></codeline>
 <codeline lineno="959"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>r_max<sp/>=<sp/>std::numeric_limits&lt;T&gt;::lowest();</highlight></codeline>
-<codeline lineno="960"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="960"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="961"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for<sp/>reduction(min:r_min)<sp/>reduction(max:r_max)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="962"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="963"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(N<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>n;<sp/>++i)<sp/>{</highlight></codeline>

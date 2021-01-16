@@ -2182,7 +2182,7 @@
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref>;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
@@ -3349,7 +3349,7 @@
 <codeline lineno="1203"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//float<sp/>maxLF0(0.0),<sp/>maxLF1(0.0);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1204"><highlight class="normal"><sp/><sp/>Real<sp/>filterTLo(00.0),<sp/>filterTHi(30000.0);</highlight></codeline>
 <codeline lineno="1205"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1206"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1206"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nReads(4);</highlight></codeline>
 <codeline lineno="1208"><highlight class="normal"><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;omp_lock_t&gt;</ref><sp/>locks(nReads);</highlight></codeline>
 <codeline lineno="1209"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>locks.size();<sp/>++i)<sp/>{</highlight></codeline>
@@ -3418,7 +3418,7 @@
 <codeline lineno="1272"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1273"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1274"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(anyDataLeft)<sp/>{</highlight></codeline>
-<codeline lineno="1275"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1275"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1276"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1277"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1278"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//for(idb<sp/>=<sp/>0;<sp/>idb<sp/>&lt;<sp/>dataBlocks.size();<sp/>++idb)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
@@ -3623,7 +3623,7 @@
 <codeline lineno="1477"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1478"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1479"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1480"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_OPENMP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1480"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1481"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0);<sp/>i<sp/>&lt;<sp/>locks.size();<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="1482"><highlight class="normal"><sp/><sp/><sp/><sp/>omp_destroy_lock(&amp;(locks[i]));</highlight></codeline>
 <codeline lineno="1483"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
