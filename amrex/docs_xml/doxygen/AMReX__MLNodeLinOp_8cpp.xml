@@ -2106,7 +2106,7 @@
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>LPInfo&amp;<sp/>a_info,</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;FabFactory&lt;FArrayBox&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*&gt;&amp;<sp/>a_factory)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HYPRE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_HYPRE)<sp/>&amp;&amp;<sp/>(AMREX_SPACEDIM<sp/>&gt;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>eb_limit_coarsening<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>eb_limit_coarsening<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
@@ -2460,7 +2460,7 @@
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="378"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="379"><highlight class="normal"></highlight></codeline>
-<codeline lineno="380"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_HYPRE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_HYPRE)<sp/>&amp;&amp;<sp/>(AMREX_SPACEDIM<sp/>&gt;<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="381"><highlight class="normal">std::unique_ptr&lt;HypreNodeLap&gt;</highlight></codeline>
 <codeline lineno="382"><highlight class="normal">MLNodeLinOp::makeHypreNodeLap<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bottom_verbose,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>options_namespace)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="383"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>

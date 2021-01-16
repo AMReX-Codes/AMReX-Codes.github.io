@@ -223,7 +223,6 @@ var searchData=
   ['bottomsolve',['bottomSolve',['../classamrex_1_1MLMG.html#a105413ba8fce8beab99c2b7f11f0f028',1,'amrex::MLMG']]],
   ['bottomsolver',['BottomSolver',['../classamrex_1_1MLMG.html#a31f80f78e0f4a69ccc3f167e62ae7d51',1,'amrex::MLMG::BottomSolver()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4',1,'amrex::BottomSolver()']]],
   ['bottomsolvewithcg',['bottomSolveWithCG',['../classamrex_1_1MLMG.html#a7449cb19c1e62e14a47d020cb696f0b5',1,'amrex::MLMG']]],
-  ['bottomsolvewithhypre',['bottomSolveWithHypre',['../classamrex_1_1MLMG.html#aaf664a17642380d701b1b7b08e10fa63',1,'amrex::MLMG']]],
   ['bottomsolvewithpetsc',['bottomSolveWithPETSc',['../classamrex_1_1MLMG.html#a1d9aa957bda2ed06061254fb7e187c3f',1,'amrex::MLMG']]],
   ['boundarypointlist',['BoundaryPointList',['../classamrex_1_1Amr.html#a8dc323a910cf01ef443a1664ccabdf83',1,'amrex::Amr']]],
   ['boundarywidth',['boundaryWidth',['../classamrex_1_1AmrData.html#afe8bc6f5489bcdb1c869821656362357',1,'amrex::AmrData::boundaryWidth()'],['../classamrex_1_1AmrData.html#a561095d726e8e7578b1c59fcee3311c5',1,'amrex::AmrData::BoundaryWidth() const']]],

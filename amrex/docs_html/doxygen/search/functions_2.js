@@ -88,7 +88,6 @@ var searchData=
   ['bottomcommunicator',['BottomCommunicator',['../classamrex_1_1MLLinOp.html#a77b33530b316399f5fb5314a846d9b7e',1,'amrex::MLLinOp']]],
   ['bottomsolve',['bottomSolve',['../classamrex_1_1MLMG.html#a105413ba8fce8beab99c2b7f11f0f028',1,'amrex::MLMG']]],
   ['bottomsolvewithcg',['bottomSolveWithCG',['../classamrex_1_1MLMG.html#a7449cb19c1e62e14a47d020cb696f0b5',1,'amrex::MLMG']]],
-  ['bottomsolvewithhypre',['bottomSolveWithHypre',['../classamrex_1_1MLMG.html#aaf664a17642380d701b1b7b08e10fa63',1,'amrex::MLMG']]],
   ['bottomsolvewithpetsc',['bottomSolveWithPETSc',['../classamrex_1_1MLMG.html#a1d9aa957bda2ed06061254fb7e187c3f',1,'amrex::MLMG']]],
   ['boundarywidth',['BoundaryWidth',['../classamrex_1_1AmrData.html#a561095d726e8e7578b1c59fcee3311c5',1,'amrex::AmrData']]],
   ['boundcond',['BoundCond',['../classamrex_1_1BoundCond.html#a1863908da3b3c5480c7b1932157bbfaa',1,'amrex::BoundCond::BoundCond() noexcept'],['../classamrex_1_1BoundCond.html#a2c853c3e4ac28879a78b0454ae018961',1,'amrex::BoundCond::BoundCond(int _bctype) noexcept']]],
