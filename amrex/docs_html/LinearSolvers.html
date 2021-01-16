@@ -397,11 +397,18 @@ matrix must be symmetric.</p></li>
 if bicgstab fails.  The matrix must be symmetric.</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">cgbicg</span></span></code>: Start with cg. Switch to bicgstab
 if cg fails.  The matrix must be symmetric.</p></li>
-<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">hypre</span></span></code>: One of the solvers available through hypre; see the</p></li>
-</ul>
-<p>section below on External Solvers</p>
-<ul class="simple">
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">hypre</span></span></code>: One of the solvers available through hypre;
+see the section below on External Solvers</p></li>
 <li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLMG</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">BottomSolver</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">petsc</span></span></code>: Currently for cell-centered only.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setAgglomeration</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code> (by default true) can be used
+continue to coarsen the multigrid by copying what would have been the
+bottom solver to a new <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> with a new <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BoxArray</span></span></code> with
+fewer, larger grids, to allow for additional coarsening.</p></li>
+<li><p><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setConsolidation</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">bool</span></span><span class="punctuation"><span class="pre">)</span></span></code> (by default true) can be used
+continue to transfer a multigrid problem to fewer MPI ranks.
+There are more setting sucsh as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">LPInfo</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">setConsolidationGridSize</span></span><span class="punctuation"><span class="pre">(</span></span><span class="keyword type"><span class="pre">int</span></span><span class="punctuation"><span class="pre">)</span></span></code>,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">consolidation_threshold</span></span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">consolidation_ratio</span></span></code>, and
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">consolidation_strategy</span></span></code>, to give control over how this process works.</p></li>
 </ul>
 </div>
 <div class="section" id="boundary-stencils-for-cell-centered-solvers">

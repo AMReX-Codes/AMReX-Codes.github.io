@@ -134,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#memory-allocation">Memory Allocation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#abort-assertion-and-backtrace">Abort, Assertion and Backtrace</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#breaking-into-debuggers">Breaking into Debuggers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#example-heatequation-ex1-c">Example: HeatEquation_EX1_C</a></li>
 </ul>
 </li>
@@ -2309,6 +2310,16 @@ For example,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpiexec -n 4 valgrind --leak-check=yes --track-origins=yes --log-file=vallog.%p ./foo.exe ...</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="breaking-into-debuggers">
+<h1>Breaking into Debuggers<a class="headerlink" href="#breaking-into-debuggers" title="Permalink to this headline">¶</a></h1>
+<p>In order to break into debuggers and use modern IDEs, the backtrace signal handling described above needs to be disabled.</p>
+<p>The following runtime options need to be set in order to prevent AMReX from catching the break signals before a debugger can attach to a crashing process:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">amrex.throw_exception = 1</span>
+<span class="go">amrex.signal_handling = 0</span>
+</pre></div>
+</div>
+<p>This default behavior can also be modified by applications, see for example <a class="reference external" href="https://github.com/Exawind/amr-wind/blob/84f81a990152f4f748c1ab0fa17c8c663e51df86/amr-wind/main.cpp#L21">this custom application initializer</a>.</p>
 </div>
 <div class="section" id="example-heatequation-ex1-c">
 <span id="sec-basics-heat1"></span><h1>Example: HeatEquation_EX1_C<a class="headerlink" href="#example-heatequation-ex1-c" title="Permalink to this headline">¶</a></h1>
