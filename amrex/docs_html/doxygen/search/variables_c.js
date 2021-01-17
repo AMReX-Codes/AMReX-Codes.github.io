@@ -147,6 +147,7 @@ var searchData=
   ['m_5feb_5fphi',['m_eb_phi',['../classamrex_1_1MLEBABecLap.html#a25296274131127e2be522bd86b57be2c',1,'amrex::MLEBABecLap']]],
   ['m_5febcellflag',['m_ebcellflag',['../classamrex_1_1EBFArrayBox.html#adb16573267dc8b4b6dca43cc2f4d23d9',1,'amrex::EBFArrayBox']]],
   ['m_5febdc',['m_ebdc',['../classamrex_1_1EBFArrayBoxFactory.html#a0495e6651f6bc2531a88c903354da409',1,'amrex::EBFArrayBoxFactory']]],
+  ['m_5fedgecent',['m_edgecent',['../classamrex_1_1EB2_1_1Level.html#a58881e32864c4c8dedf033f9364438ee',1,'amrex::EB2::Level::m_edgecent()'],['../classamrex_1_1EBDataCollection.html#a32f7036b775769c3f0c6957b499fe169',1,'amrex::EBDataCollection::m_edgecent()']]],
   ['m_5fedges',['m_edges',['../structamrex_1_1EB2_1_1Vertex.html#ac91b64f531bb3c5cf456af74b4000dd8',1,'amrex::EB2::Vertex']]],
   ['m_5fepo',['m_epo',['../structamrex_1_1FabArrayBase_1_1FB.html#aa8992473f3d960f9f118c57122a349ea',1,'amrex::FabArrayBase::FB']]],
   ['m_5fextrap',['m_extrap',['../classamrex_1_1StateDescriptor.html#a4316157b8036d764b2c4eab037fc03f3',1,'amrex::StateDescriptor']]],
