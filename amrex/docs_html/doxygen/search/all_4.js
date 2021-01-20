@@ -41,6 +41,8 @@ var searchData=
   ['dec',['Dec',['../namespaceamrex_1_1Gpu_1_1Atomic.html#af95f0a9b1d17eef9d886163f84bb20cd',1,'amrex::Gpu::Atomic']]],
   ['deciderproc',['deciderProc',['../classamrex_1_1NFilesIter.html#a64d2a6da3e2847bc9601352409d79ceb',1,'amrex::NFilesIter']]],
   ['decidertag',['deciderTag',['../classamrex_1_1NFilesIter.html#a5ee82bc72ab839617286472e64131009',1,'amrex::NFilesIter']]],
+  ['decomp_5fchol_5fnp10',['decomp_chol_np10',['../namespaceamrex.html#af8df67014fdc9e1eaa206102b115bfd3',1,'amrex']]],
+  ['decomp_5fchol_5fnp6',['decomp_chol_np6',['../namespaceamrex.html#a32d409e89c5f589f2e729130898b6d8b',1,'amrex']]],
   ['decrementnumberofusers',['DecrementNumberOfUsers',['../classamrex_1_1DataServices.html#a85a4eb7cb438f3c75d8de3ecd71a70f7',1,'amrex::DataServices']]],
   ['default',['Default',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a7a1920d61156abc05a60135aefe8bc67',1,'amrex']]],
   ['default_5fvalue',['default_value',['../classamrex_1_1EBCellFlag.html#a92f709a077a386fa2d23fb8b3639fe06',1,'amrex::EBCellFlag']]],

@@ -20,6 +20,8 @@ var searchData=
   ['deallocate_5fsystem',['deallocate_system',['../classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694',1,'amrex::Arena']]],
   ['deallocaterandomseeddevarray',['DeallocateRandomSeedDevArray',['../namespaceamrex.html#abce0125a244f443854b1c4a2709c5990',1,'amrex']]],
   ['dec',['Dec',['../namespaceamrex_1_1Gpu_1_1Atomic.html#af95f0a9b1d17eef9d886163f84bb20cd',1,'amrex::Gpu::Atomic']]],
+  ['decomp_5fchol_5fnp10',['decomp_chol_np10',['../namespaceamrex.html#af8df67014fdc9e1eaa206102b115bfd3',1,'amrex']]],
+  ['decomp_5fchol_5fnp6',['decomp_chol_np6',['../namespaceamrex.html#a32d409e89c5f589f2e729130898b6d8b',1,'amrex']]],
   ['decrementnumberofusers',['DecrementNumberOfUsers',['../classamrex_1_1DataServices.html#a85a4eb7cb438f3c75d8de3ecd71a70f7',1,'amrex::DataServices']]],
   ['defaultgeometry',['DefaultGeometry',['../namespaceamrex.html#acb7e4e52bb38ce342af7e2edf41293be',1,'amrex']]],
   ['defbaselevel',['defBaseLevel',['../classamrex_1_1Amr.html#ae05b2fdc32475c82226b591968dae641',1,'amrex::Amr']]],
