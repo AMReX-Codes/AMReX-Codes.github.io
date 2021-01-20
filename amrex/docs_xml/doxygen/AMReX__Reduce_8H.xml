@@ -3867,7 +3867,7 @@
 <codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Reduce_1_1detail_1a084c624b29326e43e50a5dbe65db8b50" kindref="member">Reduce::detail::for_each_parallel</ref>&lt;0,<sp/>ReduceTuple,<sp/>Ps...&gt;(*<ref refid="namespacesdcquadrature__mod_1a8e53936d3fd7c9e7c1870a499156cd87" kindref="member">dp</ref>,r,<sp/>gh);</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="312"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Gpu::inFuseRegion()<sp/>&amp;&amp;<sp/>Gpu::inFuseReductionRegion()</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>ec.numBlocks.x*ec.numThreads.x<sp/>&lt;=<sp/>Gpu::getFuseSizeThreshold())</highlight></codeline>
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>

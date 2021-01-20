@@ -1285,7 +1285,7 @@
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal">std::unique_ptr&lt;Fuser&gt;<sp/>Fuser::m_instance<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal">Fuser::Fuser<sp/>()</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">{</highlight></codeline>

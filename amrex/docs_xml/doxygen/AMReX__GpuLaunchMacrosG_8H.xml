@@ -506,7 +506,7 @@
 <codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
 <codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE(TN,TI,block)<sp/>\</highlight></codeline>
 <codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn<sp/>=<sp/>TN;<sp/>\</highlight></codeline>
 <codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn))<sp/>{<sp/>\</highlight></codeline>
@@ -615,7 +615,7 @@
 <codeline lineno="163"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block2<sp/>\</highlight></codeline>
 <codeline lineno="164"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="165"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2)<sp/>\</highlight></codeline>
 <codeline lineno="168"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>\</highlight></codeline>
 <codeline lineno="169"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2))<sp/>{<sp/>\</highlight></codeline>
@@ -759,7 +759,7 @@
 <codeline lineno="307"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block3<sp/>\</highlight></codeline>
 <codeline lineno="308"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="309"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="310"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3)<sp/>\</highlight></codeline>
 <codeline lineno="312"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn3<sp/>=<sp/>TN3;<sp/>\</highlight></codeline>
 <codeline lineno="313"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn3))<sp/>{<sp/>\</highlight></codeline>
