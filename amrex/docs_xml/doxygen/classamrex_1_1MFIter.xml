@@ -6,9 +6,9 @@
     <derivedcompoundref refid="classamrex_1_1FillPatchIterator" prot="public" virt="non-virtual">amrex::FillPatchIterator</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1MFGhostIter" prot="public" virt="non-virtual">amrex::MFGhostIter</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1MultiMaskIter" prot="public" virt="non-virtual">amrex::MultiMaskIter</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; false, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; false, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParIterBase" prot="public" virt="non-virtual">amrex::ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</derivedcompoundref>
     <includes refid="AMReX__MFIter_8H" local="no">AMReX_MFIter.H</includes>
       <sectiondef kind="public-type">
       <memberdef kind="enum" id="classamrex_1_1MFIter_1af5cf94bce73f6da744dd94acc46cdf38" prot="public" static="no">
@@ -884,16 +884,16 @@
         <label>amrex::MFIter</label>
         <link refid="classamrex_1_1MFIter"/>
       </node>
-      <node id="2699">
-        <label>amrex::ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
+      <node id="2696">
+        <label>amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
         <link refid="classamrex_1_1ParIterBase"/>
         <childnode refid="2691" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2697">
-        <label>amrex::ParIterBase&lt; false, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
-        <link refid="classamrex_1_1ParIterBase"/>
-        <childnode refid="2691" relation="public-inheritance">
+      <node id="2700">
+        <label>amrex::ParConstIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1ParConstIter"/>
+        <childnode refid="2699" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2693">
@@ -903,15 +903,9 @@
         </childnode>
       </node>
       <node id="2698">
-        <label>amrex::ParIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
+        <label>amrex::ParIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
         <link refid="classamrex_1_1ParIter"/>
         <childnode refid="2697" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2700">
-        <label>amrex::ParConstIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
-        <link refid="classamrex_1_1ParConstIter"/>
-        <childnode refid="2699" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2694">
@@ -926,15 +920,21 @@
         <childnode refid="2691" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2695">
-        <label>amrex::MultiMaskIter</label>
-        <link refid="classamrex_1_1MultiMaskIter"/>
+      <node id="2699">
+        <label>amrex::ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1ParIterBase"/>
         <childnode refid="2691" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2696">
-        <label>amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
+      <node id="2697">
+        <label>amrex::ParIterBase&lt; false, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
         <link refid="classamrex_1_1ParIterBase"/>
+        <childnode refid="2691" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2695">
+        <label>amrex::MultiMaskIter</label>
+        <link refid="classamrex_1_1MultiMaskIter"/>
         <childnode refid="2691" relation="public-inheritance">
         </childnode>
       </node>

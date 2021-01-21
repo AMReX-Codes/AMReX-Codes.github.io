@@ -86,7 +86,7 @@ var searchData=
   ['endxi',['endXi',['../classamrex_1_1XYPlotDataListLink.html#a27c1524c9b6b2bbad9e9186e909830fa',1,'amrex::XYPlotDataListLink::endXi()'],['../classamrex_1_1XYPlotDataListLink.html#ae8c16dcec1c3fa6651a2d328c61eb47c',1,'amrex::XYPlotDataListLink::EndXi() const']]],
   ['enforceperiodic',['enforcePeriodic',['../namespaceamrex.html#ac7dd72556ee6bd9c3b9372523e9e7082',1,'amrex']]],
   ['enforceperiodicity',['EnforcePeriodicity',['../classamrex_1_1FabArray.html#adb282b42c0eb97cbb55037bc7bdea04a',1,'amrex::FabArray::EnforcePeriodicity(const Periodicity &amp;period)'],['../classamrex_1_1FabArray.html#aecf0e342dcbe19b9bb23e73c326155ff',1,'amrex::FabArray::EnforcePeriodicity(int scomp, int ncomp, const Periodicity &amp;period)'],['../classamrex_1_1FabArray.html#a076781df7b9077c51fecd6a62172ed74',1,'amrex::FabArray::EnforcePeriodicity(int scomp, int ncomp, const IntVect &amp;nghost, const Periodicity &amp;period)']]],
-  ['enforceperiodicwhere',['EnforcePeriodicWhere',['../classamrex_1_1ParticleContainer.html#abb3abb529cbb3b12cc42d430d4e24f75',1,'amrex::ParticleContainer']]],
+  ['enforceperiodicwhere',['EnforcePeriodicWhere',['../classamrex_1_1ParticleContainer.html#ab94ff69609fd02f1dedcba645a8693aa',1,'amrex::ParticleContainer']]],
   ['enforcesingularsolvable',['enforceSingularSolvable',['../classamrex_1_1MLLinOp.html#a831ab67f9a58e0f452f52b176219c1a0',1,'amrex::MLLinOp']]],
   ['eps',['eps',['../namespacesdcquadrature__mod.html#a5996afecb06f0cfbc667e1fc7eff3f08',1,'sdcquadrature_mod']]],
   ['equal',['equal',['../structamrex_1_1EArena_1_1Node_1_1equal.html',1,'amrex::EArena::Node']]],

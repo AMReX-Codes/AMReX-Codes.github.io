@@ -72,7 +72,7 @@ var searchData=
   ['totalcellsallocatedinfabs',['TotalCellsAllocatedInFabs',['../namespaceamrex.html#aa9ed510cedd140658efd18542d9479c7',1,'amrex']]],
   ['totalcellsallocatedinfabshwm',['TotalCellsAllocatedInFabsHWM',['../namespaceamrex.html#aa85143ea71ce835e3a64ce8551b726b4',1,'amrex']]],
   ['totalmem',['totalMem',['../classamrex_1_1DArena.html#a8ff607919bfe81f4c510959300430448',1,'amrex::DArena']]],
-  ['totalnumberofparticles',['TotalNumberOfParticles',['../classamrex_1_1ParticleContainer.html#a98b6781f4220562e43801b6bdb1f80f9',1,'amrex::ParticleContainer']]],
+  ['totalnumberofparticles',['TotalNumberOfParticles',['../classamrex_1_1ParticleContainer.html#a67f09468ffcdb5163cb782834d7a3592',1,'amrex::ParticleContainer']]],
   ['toupper',['toUpper',['../namespaceamrex.html#afb53573f5330e4753ad1b562e5dd95ce',1,'amrex']]],
   ['tracedatavalid',['TraceDataValid',['../classRegionsProfStats.html#a3dab65709f631d62643d8e5fad2692bd',1,'RegionsProfStats']]],
   ['tracerparticlecontainer',['TracerParticleContainer',['../classamrex_1_1TracerParticleContainer.html#af7ed016626923ecc9b262fbada496464',1,'amrex::TracerParticleContainer::TracerParticleContainer(ParGDBBase *gdb)'],['../classamrex_1_1TracerParticleContainer.html#a884d037695ad06f6871c5f1467ab4490',1,'amrex::TracerParticleContainer::TracerParticleContainer(const Geometry &amp;geom, const DistributionMapping &amp;dmap, const BoxArray &amp;ba)']]],

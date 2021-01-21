@@ -100,7 +100,7 @@ var searchData=
   ['subbox',['subBox',['../structamrex_1_1FabCopyDescriptor.html#a799a901c3f374cb4499799fce9b67d2e',1,'amrex::FabCopyDescriptor']]],
   ['subcycling_5fmode',['subcycling_mode',['../classamrex_1_1Amr.html#a746a85f8a72742a006a5c78de497c3f9',1,'amrex::Amr']]],
   ['suffix',['suffix',['../classamrex_1_1StreamRetry.html#a87fb6f4eaeaa1e62c31a3f1b4c451a87',1,'amrex::StreamRetry']]],
-  ['superparticle_5fsize',['superparticle_size',['../classamrex_1_1ParticleContainer.html#a84eea816c950428178d12cedf0780c1a',1,'amrex::ParticleContainer']]],
+  ['superparticle_5fsize',['superparticle_size',['../classamrex_1_1ParticleContainer.html#a71a5c1448096fb5347f01ee164e70456',1,'amrex::ParticleContainer']]],
   ['sys_5fname',['sys_name',['../namespaceamrex.html#abac42537a3d9d5a2f6c6fac15f99f66c',1,'amrex']]],
   ['syserror',['SysError',['../classhacc_1_1Error.html#a4a9d9e1dee3986d055bf6c64729b3dee',1,'hacc::Error']]],
   ['szi',['szi',['../namespaceamrex__mempool__module.html#ac54b332ae65afbcd1863fa9ae4174cc2',1,'amrex_mempool_module']]]

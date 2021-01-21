@@ -2,9 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="classamrex_1_1ParticleContainerBase" kind="class" language="C++" prot="public">
     <compoundname>amrex::ParticleContainerBase</compoundname>
-    <derivedcompoundref refid="classamrex_1_1ParticleContainer" prot="private" virt="non-virtual">amrex::ParticleContainer&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParticleContainer" prot="private" virt="non-virtual">amrex::ParticleContainer&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt, Allocator &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1ParticleContainer" prot="private" virt="non-virtual">amrex::ParticleContainer&lt; AMREX_SPACEDIM &gt;</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1ParticleContainer" prot="private" virt="non-virtual">amrex::ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1ParticleContainer" prot="private" virt="non-virtual">amrex::ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</derivedcompoundref>
     <includes refid="AMReX__Particles_8H" local="no">AMReX_Particles.H</includes>
     <briefdescription>
     </briefdescription>
@@ -18,22 +19,16 @@
         </childnode>
       </node>
       <node id="4161">
-        <label>amrex::ParticleContainer&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt &gt;</label>
+        <label>amrex::ParticleContainer&lt; T_NStructReal, T_NStructInt, T_NArrayReal, T_NArrayInt, Allocator &gt;</label>
         <link refid="classamrex_1_1ParticleContainer"/>
         <childnode refid="4160" relation="private-inheritance">
-        </childnode>
-      </node>
-      <node id="4166">
-        <label>amrex::AmrParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
-        <link refid="classamrex_1_1AmrParticleContainer"/>
-        <childnode refid="4165" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4160">
         <label>amrex::ParticleContainerBase</label>
         <link refid="classamrex_1_1ParticleContainerBase"/>
       </node>
-      <node id="4167">
+      <node id="4166">
         <label>amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;</label>
         <link refid="classamrex_1_1NeighborParticleContainer"/>
         <childnode refid="4165" relation="public-inheritance">
@@ -45,10 +40,22 @@
         <childnode refid="4162" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="4167">
+        <label>amrex::ParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1ParticleContainer"/>
+        <childnode refid="4160" relation="private-inheritance">
+        </childnode>
+      </node>
       <node id="4164">
         <label>amrex::AmrTracerParticleContainer</label>
         <link refid="classamrex_1_1AmrTracerParticleContainer"/>
         <childnode refid="4163" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4168">
+        <label>amrex::AmrParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;</label>
+        <link refid="classamrex_1_1AmrParticleContainer"/>
+        <childnode refid="4167" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4165">
