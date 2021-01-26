@@ -44917,7 +44917,62 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="70" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="70" bodyend="105"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="70" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="70" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a76c9efa7ebf0969d1986d57f86c1882b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Iterator</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleIterator&lt; Iterator &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::numParticlesOutOfRange</definition>
+        <argsstring>(Iterator const &amp;pti, IntVect nGrow)</argsstring>
+        <name>numParticlesOutOfRange</name>
+        <param>
+          <type>Iterator const &amp;</type>
+          <declname>pti</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>nGrow</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of particles that are more than nGrow cells from the box correspond to the input iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> ParticleIterator</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>the</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>iterator pointing to the current grid/tile to test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nGrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of grow cells allowed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="88" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="88" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9624cde7b9ad11a1692714a8a2cf4d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -44972,7 +45027,62 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="121" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="121" bodyend="124"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="139" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="139" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a16b2ad610aeda065996254dcb64e1210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PC</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::numParticlesOutOfRange</definition>
+        <argsstring>(PC const &amp;pc, IntVect nGrow)</argsstring>
+        <name>numParticlesOutOfRange</name>
+        <param>
+          <type>PC const &amp;</type>
+          <declname>pc</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>nGrow</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of particles that are more than nGrow cells from their assigned box. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version tests over all levels.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a type of <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> particle container.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle container to test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nGrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of grow cells allowed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="158" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="158" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af026262a284dc45b1a535e1d2c3da3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -45049,7 +45159,84 @@ Returns the index of the first element for which f is 0. </para>        </detail
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="142" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="142" bodyend="161"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="179" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="179" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1aa69e2d3ab61d58e37142f8ca2607da7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class PC</type>
+          </param>
+          <param>
+            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::numParticlesOutOfRange</definition>
+        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, IntVect nGrow)</argsstring>
+        <name>numParticlesOutOfRange</name>
+        <param>
+          <type>PC const &amp;</type>
+          <declname>pc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev_min</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev_max</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+          <declname>nGrow</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of particles that are more than nGrow cells from their assigned box. </para>        </briefdescription>
+        <detaileddescription>
+<para>This version goes over only the specified levels</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a type of <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> particle container.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the particle container to test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to test </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nGrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of grow cells allowed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="203" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="203" bodyend="222"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1aede00a5fe66df6418eb44590a33296a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -45082,7 +45269,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="164" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="164" bodyend="209"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="225" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="225" bodyend="270"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a77b016483c8263c1a67e93d79d31da4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -45107,7 +45294,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="212" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="212" bodyend="235"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="273" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="273" bodyend="296"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6e7a7d55a9760a9b62a5675badced0e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -45141,7 +45328,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="239" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="239" bodyend="250"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="300" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="300" bodyend="311"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7137fe4c56ae26940acfef9783458ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -45179,7 +45366,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="254" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="254" bodyend="262"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="315" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="315" bodyend="323"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ac7dd72556ee6bd9c3b9372523e9e7082" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -45213,7 +45400,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="266" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="266" bodyend="296"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="327" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="327" bodyend="357"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a763ee0c15caf00d0a7f1367b9efee403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
