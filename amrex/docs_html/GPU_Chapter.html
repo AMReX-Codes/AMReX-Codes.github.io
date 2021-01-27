@@ -119,7 +119,6 @@
 <li class="toctree-l2"><a class="reference internal" href="GPU.html#performance-tips">Performance Tips</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GPU.html#inputs-parameters">Inputs Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="GPU.html#basic-gpu-debugging">Basic Gpu Debugging</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GPU.html#limitations">Limitations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Visualization_Chapter.html">Visualization</a></li>
@@ -198,13 +197,18 @@
             
   <div class="section" id="gpu">
 <span id="chap-gpu"></span><h1>GPU<a class="headerlink" href="#gpu" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, we will present the GPU support in AMReX.  Currently
-AMReX only supports Nvidia GPUs.  Internally, it uses CUDA, but the
-users can use CUDA, OpenMP, and/or OpenACC.  A recent version of CUDA
-(e.g., &gt;= 9) is required, and the device must have compute capability
-&gt;= 6.</p>
-<p>For complete details of CUDA, OpenMP and OpenACC
+<p>In this chapter, we will present the GPU support in AMReX.  AMReX targets
+NVIDIA, AMD and Intel GPUs using their native vendor language and therefore
+requires CUDA, HIP/ROCm and DPC++/SYCL, for NVIDIA, AMD and Intel GPUs, respectively.
+Users can also use OpenMP and/or OpenACC in their applications.</p>
+<p>AMReX supports NVIDIA GPUs with compute capability &gt;= 6 and CUDA &gt;= 10
+as well as CUDA 9.1.  While HIP and DPC++ compilers are in development in
+preparation for Frontier and Aurora, AMReX only supports the latest
+publically released versions of those compilers on the Iris and Tulip testbeds.</p>
+<p>For complete details of CUDA, HIP, DPC++, OpenMP and OpenACC
 languages, see their respective documentations.</p>
+<p>Be aware, this documentation is currently focused on CUDA.  HIP and DPC++ documentation
+is forthcoming.</p>
 <p>A number of tutorials can be found at <code class="docutils literal notranslate"><span class="pre">Tutorials/GPU/</span></code>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
@@ -222,7 +226,6 @@ languages, see their respective documentations.</p>
 <li class="toctree-l1"><a class="reference internal" href="GPU.html#performance-tips">Performance Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU.html#inputs-parameters">Inputs Parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GPU.html#basic-gpu-debugging">Basic Gpu Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="GPU.html#limitations">Limitations</a></li>
 </ul>
 </div>
 </div>
