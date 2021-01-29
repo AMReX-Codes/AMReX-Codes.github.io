@@ -565,7 +565,7 @@ var searchData=
   ['mapper_5fcomp',['mapper_comp',['../classamrex_1_1StateDescriptor.html#aad110a44abcfb927e71f7ec75dae6ae9',1,'amrex::StateDescriptor']]],
   ['mask',['mask',['../structArray4MaskCopyTag.html#a6cde92cde0cbad0125d0b0abaffa78e1',1,'Array4MaskCopyTag']]],
   ['mask_5fptr',['mask_ptr',['../classamrex_1_1NeighborParticleContainer.html#ad8787f8726e711a8d7a8e0dce3fb8624',1,'amrex::NeighborParticleContainer']]],
-  ['masks',['Masks',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac',1,'amrex::AmrDataAdaptor::InternalsType::Masks()'],['../classamrex_1_1BndryData.html#af590a7b776cc9ccee49e607a3e84671d',1,'amrex::BndryData::masks()']]],
+  ['masks',['masks',['../classamrex_1_1BndryData.html#af590a7b776cc9ccee49e607a3e84671d',1,'amrex::BndryData::masks()'],['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac',1,'amrex::AmrDataAdaptor::InternalsType::Masks()']]],
   ['max_5fcoarsening_5flevel',['max_coarsening_level',['../structamrex_1_1LPInfo.html#ab29d5c837ce5f103103e6babf71e5d2e',1,'amrex::LPInfo']]],
   ['max_5fefficiency',['max_efficiency',['../namespaceamrex.html#a0dc972d04970bb21c8988fb02790526c',1,'amrex']]],
   ['max_5ffmg_5fiters',['max_fmg_iters',['../classamrex_1_1MLMG.html#aefc9d57def6cdc2851da4d26e38e092f',1,'amrex::MLMG']]],
