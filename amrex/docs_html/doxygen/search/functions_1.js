@@ -77,6 +77,8 @@ var searchData=
   ['advectwithucc',['AdvectWithUcc',['../classamrex_1_1TracerParticleContainer.html#a253582e870527bc4f7b3b9d8fa0e57ca',1,'amrex::TracerParticleContainer']]],
   ['advectwithumac',['AdvectWithUmac',['../classamrex_1_1TracerParticleContainer.html#aeb2b5968ca674ddbf8ffa162622a3bf1',1,'amrex::TracerParticleContainer']]],
   ['afterbarrier',['AfterBarrier',['../classCommProfStats.html#af04068edae93669e158694c835b0ec0c',1,'CommProfStats']]],
+  ['aggregationbuffer',['AggregationBuffer',['../classamrex_1_1ParticleContainerBase.html#a057b501a3b5f73f4c897da8ec8dd26f9',1,'amrex::ParticleContainerBase']]],
+  ['aggregationtype',['AggregationType',['../classamrex_1_1ParticleContainerBase.html#ad4184276cc974fbc7a8316a89df2eb25',1,'amrex::ParticleContainerBase']]],
   ['align',['align',['../classamrex_1_1Arena.html#a253c417e0bd2863509c75d6250468a4e',1,'amrex::Arena']]],
   ['aligned_5fsize',['aligned_size',['../namespaceamrex.html#ad7bef6630afa8a2109d2a242cc2d7591',1,'amrex']]],
   ['alignedallocator',['AlignedAllocator',['../classhacc_1_1AlignedAllocator.html#a761f44c4b8f456d6d016c21afb436091',1,'hacc::AlignedAllocator::AlignedAllocator()'],['../classhacc_1_1AlignedAllocator.html#a004c400f85ee6563f3c4178d4ee62f77',1,'hacc::AlignedAllocator::AlignedAllocator(const AlignedAllocator &amp;)'],['../classhacc_1_1AlignedAllocator.html#aa80f9621109e48a22cbd1561d2024677',1,'hacc::AlignedAllocator::AlignedAllocator(const AlignedAllocator&lt; U, M &gt; &amp;)']]],
