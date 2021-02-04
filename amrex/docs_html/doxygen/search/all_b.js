@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['k_5fhi',['K_HI',['../AMReX__MLMG__3D__K_8H.html#a5fa1fd1d257bfaebf6b9cb744172b878',1,'AMReX_MLMG_3D_K.H']]],
+  ['k_5flo',['K_LO',['../AMReX__MLMG__3D__K_8H.html#ab8c33d323d789ffb62f9d7667dd11d7f',1,'AMReX_MLMG_3D_K.H']]],
   ['keepvalidfilter',['KeepValidFilter',['../structKeepValidFilter.html',1,'']]],
   ['kernelinfo',['KernelInfo',['../classamrex_1_1Gpu_1_1KernelInfo.html',1,'amrex::Gpu']]],
   ['key',['key',['../classamrex_1_1BaseUmap.html#a12339b04b016f2b4bd806de4e29b5620',1,'amrex::BaseUmap']]],

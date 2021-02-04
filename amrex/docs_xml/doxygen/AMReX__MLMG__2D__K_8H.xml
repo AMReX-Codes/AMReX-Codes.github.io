@@ -15,6 +15,52 @@
       </node>
     </incdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="AMReX__MLMG__2D__K_8H_1a04112c67b645fa26bf66d9f82b539ddc" prot="public" static="no">
+        <name>I_LO</name>
+        <initializer>(4*(ic+1)-i)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_2D_K.H" line="110" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__MLMG__2D__K_8H_1a0acb2030b45d0173381b66cfdf91ceee" prot="public" static="no">
+        <name>J_LO</name>
+        <initializer>(4*(jc+1)-j)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_2D_K.H" line="111" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__MLMG__2D__K_8H_1a275f0531f9210313eba7b5f30bdd7bb0" prot="public" static="no">
+        <name>I_HI</name>
+        <initializer>(i-4*ic)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_2D_K.H" line="112" column="9"/>
+      </memberdef>
+      <memberdef kind="define" id="AMReX__MLMG__2D__K_8H_1a8bbac1f8523d1fb0d17386937b2480a5" prot="public" static="no">
+        <name>J_HI</name>
+        <initializer>(j-4*jc)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_2D_K.H" line="113" column="9"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -97,8 +143,8 @@
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1acdf2ba9a53a476a45bbbf569a961b051" kindref="member">mlmg_lin_nd_interp</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse)<sp/>noexcept</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1afca0d01b9a856e7f134a8447a5faaba9" kindref="member">mlmg_lin_nd_interp_r2</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse)<sp/>noexcept</highlight></codeline>
 <codeline lineno="80"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(i,2);</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jc<sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(j,2);</highlight></codeline>
@@ -120,9 +166,44 @@
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="99"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8ad240cfb1562dcba3e1f0e06849d4eb" kindref="member">mlmg_lin_nd_interp_r4</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n,<sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse)<sp/>noexcept</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ic<sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(i,4);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jc<sp/>=<sp/><ref refid="namespaceamrex_1a9fb6c36ab72dfe92709f0ea89baa4824" kindref="member">amrex::coarsen</ref>(j,4);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>i_injection<sp/>=<sp/>(ic*4<sp/>==<sp/>i);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>j_injection<sp/>=<sp/>(jc*4<sp/>==<sp/>j);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I_LO<sp/>(4*(ic+1)-i)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>J_LO<sp/>(4*(jc+1)-j)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I_HI<sp/>(i-4*ic)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>J_HI<sp/>(j-4*jc)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_injection<sp/>&amp;&amp;<sp/>j_injection)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,0,n)<sp/>=<sp/>crse(ic,jc,0,n);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_injection)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,0,n)<sp/>=<sp/>Real(0.25)*(crse(ic,jc<sp/><sp/>,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a0acb2030b45d0173381b66cfdf91ceee" kindref="member">J_LO</ref>)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>crse(ic,jc+1,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a8bbac1f8523d1fb0d17386937b2480a5" kindref="member">J_HI</ref>));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(j_injection)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,0,n)<sp/>=<sp/>Real(0.25)*(crse(ic<sp/><sp/>,jc,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a04112c67b645fa26bf66d9f82b539ddc" kindref="member">I_LO</ref>)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>crse(ic+1,jc,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a275f0531f9210313eba7b5f30bdd7bb0" kindref="member">I_HI</ref>));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine(i,j,0,n)<sp/>=<sp/>Real(0.0625)*(crse(ic<sp/><sp/>,jc<sp/><sp/>,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a04112c67b645fa26bf66d9f82b539ddc" kindref="member">I_LO</ref>*<ref refid="AMReX__MLMG__2D__K_8H_1a0acb2030b45d0173381b66cfdf91ceee" kindref="member">J_LO</ref>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>crse(ic+1,jc<sp/><sp/>,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a275f0531f9210313eba7b5f30bdd7bb0" kindref="member">I_HI</ref>*<ref refid="AMReX__MLMG__2D__K_8H_1a0acb2030b45d0173381b66cfdf91ceee" kindref="member">J_LO</ref>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>crse(ic<sp/><sp/>,jc+1,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a04112c67b645fa26bf66d9f82b539ddc" kindref="member">I_LO</ref>*<ref refid="AMReX__MLMG__2D__K_8H_1a8bbac1f8523d1fb0d17386937b2480a5" kindref="member">J_HI</ref>)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>crse(ic+1,jc+1,0,n)*Real(<ref refid="AMReX__MLMG__2D__K_8H_1a275f0531f9210313eba7b5f30bdd7bb0" kindref="member">I_HI</ref>*<ref refid="AMReX__MLMG__2D__K_8H_1a8bbac1f8523d1fb0d17386937b2480a5" kindref="member">J_HI</ref>));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>I_LO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>J_LO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>I_HI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/>J_HI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLMG_2D_K.H"/>
   </compounddef>

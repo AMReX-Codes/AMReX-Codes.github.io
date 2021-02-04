@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['sdim',['SDIM',['../AMReX__AVGDOWN__1D_8F.html#a8e0a6bf77df4cfb76fdb894573a13c0b',1,'SDIM():&#160;AMReX_AVGDOWN_1D.F'],['../AMReX__AVGDOWN__2D_8F.html#a8e0a6bf77df4cfb76fdb894573a13c0b',1,'SDIM():&#160;AMReX_AVGDOWN_2D.F'],['../AMReX__AVGDOWN__3D_8F.html#a8e0a6bf77df4cfb76fdb894573a13c0b',1,'SDIM():&#160;AMReX_AVGDOWN_3D.F']]],
-  ['showval',['SHOWVAL',['../AMReX__AmrData_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_AmrData.cpp'],['../AMReX__BLProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_BLProfStats.cpp'],['../AMReX__BLProfUtilities_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_BLProfUtilities.cpp'],['../AMReX__CommProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_CommProfStats.cpp'],['../AMReX__ProfParserBatch_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_ProfParserBatch.cpp'],['../AMReX__RegionsProfStats_8cpp.html#a943ee05343b5b1f9139dcc582078b9ef',1,'SHOWVAL():&#160;AMReX_RegionsProfStats.cpp']]],
-  ['slipwall',['SlipWall',['../AMReX__BC__TYPES_8H.html#ab7772f51c4ecaa9d12aaa1ca2d381ad4',1,'AMReX_BC_TYPES.H']]],
-  ['slx',['SLX',['../AMReX__INTERP__1D_8F90.html#a0e2e2226dc8d3bcd49b34e7656cdd4f6',1,'AMReX_INTERP_1D.F90']]],
-  ['slxy',['SLXY',['../AMReX__INTERP__1D_8F90.html#a3765cb3d3da2b7aa5cbc9967a162bf88',1,'AMReX_INTERP_1D.F90']]],
-  ['sly',['SLY',['../AMReX__INTERP__1D_8F90.html#a5c28b0e34556d1c30ea0c017a208248b',1,'AMReX_INTERP_1D.F90']]],
-  ['strip',['STRIP',['../AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672',1,'STRIP():&#160;AMReX_Amr.cpp'],['../AMReX__Amr_8cpp.html#a53529d9638a1d70f6e5989dedf4c2672',1,'STRIP():&#160;AMReX_Amr.cpp']]],
-  ['symmetry',['Symmetry',['../AMReX__BC__TYPES_8H.html#accd2f3c4d52a3931acd886e0ad0ab461',1,'AMReX_BC_TYPES.H']]]
+  ['pencil',['PENCIL',['../distribution__c_8h.html#af9b3b05b3ffa6bbf7ca05cb71e02d000',1,'distribution_c.h']]],
+  ['printcs',['PRINTCS',['../AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf',1,'AMReX_RegionsProfStats.cpp']]],
+  ['printcsnc',['PRINTCSNC',['../AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12',1,'AMReX_RegionsProfStats.cpp']]],
+  ['printcstt',['PRINTCSTT',['../AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3',1,'AMReX_RegionsProfStats.cpp']]],
+  ['putarray',['PUTARRAY',['../AMReX__FabConv_8cpp.html#a5cf722b04c76c79dc3708252c40bf8c1',1,'AMReX_FabConv.cpp']]]
 ];
