@@ -1549,10 +1549,10 @@
 <codeline lineno="842"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="843"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="844"><highlight class="normal">saddval<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
-<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr)</highlight></codeline>
+<codeline lineno="845"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ptr)</highlight></codeline>
 <codeline lineno="846"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="847"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>val;</highlight></codeline>
-<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>&lt;&lt;<sp/>ptr;</highlight></codeline>
+<codeline lineno="848"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>&lt;&lt;<sp/>std::setprecision(17)<sp/>&lt;&lt;<sp/>ptr;</highlight></codeline>
 <codeline lineno="849"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse::PP_entry<sp/>entry(name,val.str());</highlight></codeline>
 <codeline lineno="850"><highlight class="normal"><sp/><sp/><sp/><sp/>entry.m_queried=</highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="851"><highlight class="normal"><sp/><sp/><sp/><sp/>g_table.push_back(entry);</highlight></codeline>
@@ -1562,12 +1562,12 @@
 <codeline lineno="855"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline lineno="856"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="857"><highlight class="normal">saddarr<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><sp/><sp/><sp/><sp/><sp/>name,</highlight></codeline>
-<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;T&gt;&amp;<sp/><sp/><sp/>ptr)</highlight></codeline>
+<codeline lineno="858"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;T&gt;&amp;<sp/><sp/><sp/>ptr)</highlight></codeline>
 <codeline lineno="859"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="860"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;std::string&gt;<sp/>arr;</highlight></codeline>
 <codeline lineno="861"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>ptr.size();<sp/>i++)<sp/>{</highlight></codeline>
 <codeline lineno="862"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::stringstream<sp/>val;</highlight></codeline>
-<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val<sp/>&lt;&lt;<sp/>ptr[i];</highlight></codeline>
+<codeline lineno="863"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val<sp/>&lt;&lt;<sp/>std::setprecision(17)<sp/>&lt;&lt;<sp/>ptr[i];</highlight></codeline>
 <codeline lineno="864"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>arr.push_back(val.str());</highlight></codeline>
 <codeline lineno="865"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="866"><highlight class="normal"><sp/><sp/><sp/><sp/>ParmParse::PP_entry<sp/>entry(name,arr);</highlight></codeline>
