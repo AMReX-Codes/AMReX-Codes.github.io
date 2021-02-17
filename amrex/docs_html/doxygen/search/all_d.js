@@ -631,7 +631,7 @@ var searchData=
   ['maskgt',['maskGT',['../classamrex_1_1BaseFab.html#ae1a6b0d582503d0257d5927534619526',1,'amrex::BaseFab']]],
   ['maskle',['maskLE',['../classamrex_1_1BaseFab.html#a51c1b72c4a3a04fe392247242467d27f',1,'amrex::BaseFab']]],
   ['masklt',['maskLT',['../classamrex_1_1BaseFab.html#a2daea766f3544b7e920b9ca9b3cb870e',1,'amrex::BaseFab']]],
-  ['masks',['masks',['../classamrex_1_1BndryData.html#af590a7b776cc9ccee49e607a3e84671d',1,'amrex::BndryData::masks()'],['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac',1,'amrex::AmrDataAdaptor::InternalsType::Masks()']]],
+  ['masks',['Masks',['../structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a7e91eaba6548fd6e92413aa049f4a4ac',1,'amrex::AmrDataAdaptor::InternalsType::Masks()'],['../classamrex_1_1BndryData.html#af590a7b776cc9ccee49e607a3e84671d',1,'amrex::BndryData::masks()']]],
   ['maskval',['MaskVal',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9',1,'amrex::BndryData']]],
   ['match',['match',['../namespaceamrex.html#a89eb9459b4109c4f9a9b3225abae29f8',1,'amrex']]],
   ['matches',['Matches',['../structCommProfStats_1_1SendRecvPair.html#ada4147aca5b4135a7f7721ca07f39758',1,'CommProfStats::SendRecvPair::Matches(int fromproc, int toproc, int size, int mtag)'],['../structCommProfStats_1_1SendRecvPair.html#ab9001f520685adca50a661aa6ad8cfb8',1,'CommProfStats::SendRecvPair::Matches(int fromproc, int toproc, int size)']]],
