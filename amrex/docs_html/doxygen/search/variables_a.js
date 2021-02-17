@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['key_5ftable',['key_table',['../classamrex_1_1BaseUmap.html#a40c5b71c9cf854f34bc1443786fb53fb',1,'amrex::BaseUmap']]],
-  ['kstride',['kstride',['../structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e',1,'amrex::Array4']]],
-  ['kt_5fsize',['kt_size',['../classamrex_1_1BaseUmap.html#ad620fcee1e1d1d1dafaad74468416138',1,'amrex::BaseUmap']]]
+  ['jstride',['jstride',['../structamrex_1_1Array4.html#ac5874d9946c7fab10b8baccf17852150',1,'amrex::Array4']]]
 ];

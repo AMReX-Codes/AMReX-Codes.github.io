@@ -11,5 +11,6 @@ var searchData=
   ['amroldtime',['AmrOldTime',['../classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33aa42553bff8bf17dc01b76ff8e44f3d902',1,'amrex::AmrLevel']]],
   ['amrothertime',['AmrOtherTime',['../classamrex_1_1AmrLevel.html#a83fa691ff414eb69f75eb6ae1f61b33aaae1e38c840ac8908874d6775a2d8506d',1,'amrex::AmrLevel']]],
   ['animnegdir',['ANIMNEGDIR',['../namespaceamrex_1_1Amrvis.html#a599af4a9a7801ab18cba2c51f52a5120a437587b5e6651f42b8fce5f6a1e8f0e2',1,'amrex::Amrvis']]],
-  ['animposdir',['ANIMPOSDIR',['../namespaceamrex_1_1Amrvis.html#a599af4a9a7801ab18cba2c51f52a5120a399ca0b7cb31009e2c99bf20051b371a',1,'amrex::Amrvis']]]
+  ['animposdir',['ANIMPOSDIR',['../namespaceamrex_1_1Amrvis.html#a599af4a9a7801ab18cba2c51f52a5120a399ca0b7cb31009e2c99bf20051b371a',1,'amrex::Amrvis']]],
+  ['aos',['AoS',['../namespaceamrex.html#a83d03eb75adb29c552bae0a3d625895ba16b9d7db01fae7828de9941a0736d3d0',1,'amrex']]]
 ];

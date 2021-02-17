@@ -5,5 +5,6 @@ var searchData=
   ['_5fpd_5fget_5fbit',['_pd_get_bit',['../namespaceamrex.html#a58afbef5c92433b70e81edcb63d2b15f',1,'amrex']]],
   ['_5fpd_5finsert_5ffield',['_pd_insert_field',['../namespaceamrex.html#ab6d5efa978936e2c7fc647d49be1210c',1,'amrex']]],
   ['_5fpd_5freorder',['_pd_reorder',['../namespaceamrex.html#a96267bb2ea2c5fdf894b2c9c0622c30b',1,'amrex']]],
-  ['_5fpd_5fset_5fbit',['_pd_set_bit',['../namespaceamrex.html#ac3daae71af784ea861908589aa58b9e9',1,'amrex']]]
+  ['_5fpd_5fset_5fbit',['_pd_set_bit',['../namespaceamrex.html#ac3daae71af784ea861908589aa58b9e9',1,'amrex']]],
+  ['_5fptr',['_ptr',['../classamrex_1_1ref__wrapper.html#ad6587c3974bf67afc32e7d313432b20e',1,'amrex::ref_wrapper']]]
 ];

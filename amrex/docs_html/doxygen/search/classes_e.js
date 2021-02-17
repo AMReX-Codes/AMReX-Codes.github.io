@@ -9,6 +9,8 @@ var searchData=
   ['pariterbase_3c_20true_2c_20nstructreal_2c_20nstructint_2c_20narrayreal_2c_20narrayint_2c_20allocator_20_3e',['ParIterBase&lt; true, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;',['../classamrex_1_1ParIterBase.html',1,'amrex']]],
   ['parmparse',['ParmParse',['../classamrex_1_1ParmParse.html',1,'amrex']]],
   ['particle',['Particle',['../structamrex_1_1Particle.html',1,'amrex']]],
+  ['particlearray',['ParticleArray',['../structamrex_1_1ParticleArray.html',1,'amrex']]],
+  ['particlearrayaccessor',['ParticleArrayAccessor',['../structamrex_1_1ParticleArrayAccessor.html',1,'amrex']]],
   ['particlebase',['ParticleBase',['../structamrex_1_1ParticleBase.html',1,'amrex']]],
   ['particlebase_3c_20particlereal_2c_20t_5fnreal_2c_20t_5fnint_20_3e',['ParticleBase&lt; ParticleReal, T_NReal, T_NInt &gt;',['../structamrex_1_1ParticleBase.html',1,'amrex']]],
   ['particlebase_3c_20t_2c_200_2c_200_20_3e',['ParticleBase&lt; T, 0, 0 &gt;',['../structamrex_1_1ParticleBase_3_01T_00_010_00_010_01_4.html',1,'amrex']]],

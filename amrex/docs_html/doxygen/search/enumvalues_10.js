@@ -8,6 +8,7 @@ var searchData=
   ['singlevalued',['singlevalued',['../namespaceamrex.html#abd2e3d292645433cefc947725585f87aa928c4a180152a4857751871f38d5f9ef',1,'amrex']]],
   ['skipinit',['SkipInit',['../classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a30a84aa6392dc4536c6761c0cf72b097',1,'amrex::MFIter']]],
   ['smoother',['smoother',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4aa24fa9dac0801f55f51de06cd8f9d132',1,'amrex']]],
+  ['soa',['SoA',['../namespaceamrex.html#a83d03eb75adb29c552bae0a3d625895ba7df366f0036440c84928f057941f8dad',1,'amrex']]],
   ['solution',['Solution',['../classamrex_1_1MLLinOp.html#a1f2821b4a51da49d862dae1e757bb8c3a49b21ad0d38942f635877e7bbc5d7a1e',1,'amrex::MLLinOp']]],
   ['solve_5ftime',['solve_time',['../classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001a9806779ed6ebcc94ecd07dbb3ff6acca',1,'amrex::MLMG']]],
   ['special',['Special',['../classamrex_1_1ErrorRec.html#adeca3cab9dffebf73c48525e5f94872dab844c3099506080d12c1145ccdafa585',1,'amrex::ErrorRec']]],

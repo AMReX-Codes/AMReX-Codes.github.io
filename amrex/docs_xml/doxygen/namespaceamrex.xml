@@ -68,6 +68,12 @@
     <innerclass refid="classamrex_1_1DArena" prot="public">amrex::DArena</innerclass>
     <innerclass refid="structamrex_1_1DataAllocator" prot="public">amrex::DataAllocator</innerclass>
     <innerclass refid="structamrex_1_1DataDeleter" prot="public">amrex::DataDeleter</innerclass>
+    <innerclass refid="structamrex_1_1DataLayoutPolicy" prot="public">amrex::DataLayoutPolicy</innerclass>
+    <innerclass refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4" prot="public">amrex::DataLayoutPolicy&lt; ContainerType, ParticleType&lt; Types... &gt;, DataLayout::AoS &gt;</innerclass>
+    <innerclass refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4" prot="public">amrex::DataLayoutPolicy&lt; ContainerType, ParticleType&lt; Types... &gt;, DataLayout::SoA &gt;</innerclass>
+    <innerclass refid="structamrex_1_1DataLayoutPolicyRaw" prot="public">amrex::DataLayoutPolicyRaw</innerclass>
+    <innerclass refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4" prot="public">amrex::DataLayoutPolicyRaw&lt; ParticleType&lt; Types... &gt;, DataLayout::AoS &gt;</innerclass>
+    <innerclass refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4" prot="public">amrex::DataLayoutPolicyRaw&lt; ParticleType&lt; Types... &gt;, DataLayout::SoA &gt;</innerclass>
     <innerclass refid="classamrex_1_1DataServices" prot="public">amrex::DataServices</innerclass>
     <innerclass refid="classamrex_1_1DefaultFabFactory" prot="public">amrex::DefaultFabFactory</innerclass>
     <innerclass refid="structamrex_1_1DenseBinIteratorFactory" prot="public">amrex::DenseBinIteratorFactory</innerclass>
@@ -212,6 +218,8 @@
     <innerclass refid="classamrex_1_1ParIterBase" prot="public">amrex::ParIterBase</innerclass>
     <innerclass refid="classamrex_1_1ParmParse" prot="public">amrex::ParmParse</innerclass>
     <innerclass refid="structamrex_1_1Particle" prot="public">amrex::Particle</innerclass>
+    <innerclass refid="structamrex_1_1ParticleArray" prot="public">amrex::ParticleArray</innerclass>
+    <innerclass refid="structamrex_1_1ParticleArrayAccessor" prot="public">amrex::ParticleArrayAccessor</innerclass>
     <innerclass refid="structamrex_1_1ParticleBase" prot="public">amrex::ParticleBase</innerclass>
     <innerclass refid="structamrex_1_1ParticleBase_3_01T_00_010_00_010_01_4" prot="public">amrex::ParticleBase&lt; T, 0, 0 &gt;</innerclass>
     <innerclass refid="structamrex_1_1ParticleBase_3_01T_00_010_00_01NInt_01_4" prot="public">amrex::ParticleBase&lt; T, 0, NInt &gt;</innerclass>
@@ -255,6 +263,7 @@
     <innerclass refid="structamrex_1_1ReduceOpMin" prot="public">amrex::ReduceOpMin</innerclass>
     <innerclass refid="classamrex_1_1ReduceOps" prot="public">amrex::ReduceOps</innerclass>
     <innerclass refid="structamrex_1_1ReduceOpSum" prot="public">amrex::ReduceOpSum</innerclass>
+    <innerclass refid="classamrex_1_1ref__wrapper" prot="public">amrex::ref_wrapper</innerclass>
     <innerclass refid="structamrex_1_1RunOnGpu" prot="public">amrex::RunOnGpu</innerclass>
     <innerclass refid="structamrex_1_1SparseBinIteratorFactory" prot="public">amrex::SparseBinIteratorFactory</innerclass>
     <innerclass refid="classamrex_1_1SparseBins" prot="public">amrex::SparseBins</innerclass>
@@ -608,6 +617,31 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLLinOp.H" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespaceamrex_1a83d03eb75adb29c552bae0a3d625895b" prot="public" static="no">
+        <name>DataLayout</name>
+        <enumvalue id="namespaceamrex_1a83d03eb75adb29c552bae0a3d625895ba16b9d7db01fae7828de9941a0736d3d0" prot="public">
+          <name>AoS</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceamrex_1a83d03eb75adb29c552bae0a3d625895ba7df366f0036440c84928f057941f8dad" prot="public">
+          <name>SoA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A tag that defines the data layout policy used by particle tiles. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleArray.H" line="20" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleArray.H" bodystart="19" bodyend="23"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
