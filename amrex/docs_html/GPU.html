@@ -128,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#geometry">Geometry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#basefab-farraybox-iarraybox">BaseFab, FArrayBox, IArrayBox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#elixir">Elixir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#async-arena">Async Arena</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#kernel-launch">Kernel Launch</a><ul>
@@ -936,6 +937,30 @@ because the temporary <code class="code cpp c++ docutils literal notranslate"><s
 gpu kernels use its memory.  With <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>, the ownership of the
 memory is transferred to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code> that is guaranteed to be
 async-safe.</p>
+</div>
+<div class="section" id="async-arena">
+<h2>Async Arena<a class="headerlink" href="#async-arena" title="Permalink to this headline">¶</a></h2>
+<p>CUDA 11.2 has introduced a new feature, stream-ordered CUDA memory
+allocator.  This feature enables AMReX to solve the temporary memory
+allocation and deallocation issue discussed above using a memory pool.
+Instead of using <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>, we can write code like below,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span><span class="p">(</span><span class="n">mf</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="n">Box</span><span class="o">&amp;</span> <span class="n">bx</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">tilebox</span><span class="p">();</span>
+  <span class="n">FArrayBox</span> <span class="nf">tmp_fab</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">numcomps</span><span class="p">,</span> <span class="n">The_Async_Arena</span><span class="p">());</span>
+  <span class="n">Array4</span><span class="o">&lt;</span><span class="n">Real</span><span class="o">&gt;</span> <span class="k">const</span><span class="o">&amp;</span> <span class="n">tmp_arr</span> <span class="o">=</span> <span class="n">tmp_fab</span><span class="p">.</span><span class="n">array</span><span class="p">();</span>
+  <span class="n">FArrayBox</span> <span class="n">tmp_fab_2</span><span class="p">;</span>
+  <span class="n">tmp_fab_2</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">numcomps</span><span class="p">,</span> <span class="n">The_Async_Async</span><span class="p">());</span>
+
+  <span class="c1">// GPU kernels using the temporary</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is now the recommended way because it’s usually more efficient than
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code>.  Note that the code above works for CUDA older than 11.2, HIP
+and DPC++ as well, and it’s equivalent to using <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Elixir</span></span></code> in these
+cases.  By default, the release threshold for the memory pool is unlimited.
+One can adjust it with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParmParse</span></span></code> parameter,
+<code class="docutils literal notranslate"><span class="pre">amrex.the_async_arena_release_threshold</span></code>.</p>
 </div>
 </div>
 <div class="section" id="kernel-launch">
