@@ -325,6 +325,7 @@ var searchData=
   ['amrex_5feb2_5f3d_5fc_2eh',['AMReX_EB2_3D_C.H',['../AMReX__EB2__3D__C_8H.html',1,'']]],
   ['amrex_5feb2_5fbuild_5ftypes',['amrex_eb2_build_types',['../namespaceamrex_1_1EB2.html#aefdb7b36e49b26a7d9d6c13f381bf5ea',1,'amrex::EB2::amrex_eb2_build_types(Box const &amp;tbx, Box const &amp;bxg2, Array4&lt; Real const &gt; const &amp;s, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy)'],['../namespaceamrex_1_1EB2.html#a202c73f9ebfcb787c75aad17804f9490',1,'amrex::EB2::amrex_eb2_build_types(Box const &amp;tbx, Box const &amp;bxg2, Array4&lt; Real const &gt; const &amp;s, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Type_t &gt; const &amp;ex, Array4&lt; Type_t &gt; const &amp;ey, Array4&lt; Type_t &gt; const &amp;ez)']]],
   ['amrex_5feb2_5fc_2eh',['AMReX_EB2_C.H',['../AMReX__EB2__C_8H.html',1,'']]],
+  ['amrex_5feb2_5fcover_5fmultiple_5fcuts',['amrex_eb2_cover_multiple_cuts',['../namespaceamrex_1_1EB2.html#ae93581911f41d4733ba8b1815aabdeea',1,'amrex::EB2']]],
   ['amrex_5feb2_5fgeometryshop_2eh',['AMReX_EB2_GeometryShop.H',['../AMReX__EB2__GeometryShop_8H.html',1,'']]],
   ['amrex_5feb2_5fgraph_2eh',['AMReX_EB2_Graph.H',['../AMReX__EB2__Graph_8H.html',1,'']]],
   ['amrex_5feb2_5fif_2eh',['AMReX_EB2_IF.H',['../AMReX__EB2__IF_8H.html',1,'']]],

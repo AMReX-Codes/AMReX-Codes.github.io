@@ -283,7 +283,7 @@ var searchData=
   ['builds',['Builds',['../structamrex_1_1MemProfiler_1_1Builds.html',1,'amrex::MemProfiler']]],
   ['buildstencil',['buildStencil',['../classamrex_1_1MLNodeLaplacian.html#a52ede5504eb690639637884661c1676a',1,'amrex::MLNodeLaplacian']]],
   ['buildtilearray',['buildTileArray',['../classamrex_1_1FabArrayBase.html#a3bb1453b2bf26b145d0553dcaf8332be',1,'amrex::FabArrayBase']]],
-  ['buildtypes',['buildTypes',['../classamrex_1_1EB2_1_1GFab.html#aaccb2f2ff2b1a19d11a62b23c7771808',1,'amrex::EB2::GFab']]],
+  ['buildtypes',['buildTypes',['../classamrex_1_1EB2_1_1GFab.html#a4b3c8a8b6e6e860e7ca08f0745a87a8b',1,'amrex::EB2::GFab']]],
   ['buserminmax',['BUSERMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9ad1deacdbc35862f4535786f40e328d12',1,'amrex::Amrvis']]],
   ['buserstoprequest',['bUserStopRequest',['../classamrex_1_1Amr.html#a0275a70b67bcded29bdf03229bea8edb',1,'amrex::Amr']]],
   ['busylist',['BusyList',['../classamrex_1_1EArena.html#a05797269791825a6ff9f39ec670c5e1c',1,'amrex::EArena']]],
