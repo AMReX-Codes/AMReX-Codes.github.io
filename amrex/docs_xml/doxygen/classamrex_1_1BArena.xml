@@ -5,10 +5,10 @@
     <basecompoundref refid="classamrex_1_1Arena" prot="public" virt="non-virtual">amrex::Arena</basecompoundref>
     <includes refid="AMReX__BArena_8H" local="no">AMReX_BArena.H</includes>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1BArena_1a3f5a8cc7a0cb8013fe3bc8ba6270c510" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1BArena_1a87bb0b513c8ceae7ae87362130281ef3" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void *</type>
         <definition>void * amrex::BArena::alloc</definition>
-        <argsstring>(std::size_t sz) override</argsstring>
+        <argsstring>(std::size_t sz) override final</argsstring>
         <name>alloc</name>
         <reimplements refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e">alloc</reimplements>
         <param>
@@ -23,10 +23,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="24" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="4" bodyend="7"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1BArena_1a64267cbe47ae467eedfd819c6fc50cd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1BArena_1a0c28fb6078c851560f3d8972351f3b07" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
         <definition>void amrex::BArena::free</definition>
-        <argsstring>(void *pt) override</argsstring>
+        <argsstring>(void *pt) override final</argsstring>
         <name>free</name>
         <reimplements refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515">free</reimplements>
         <param>
@@ -40,6 +40,76 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="28" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BArena_1adc538e1b83f0180cef20824d976f5964" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool amrex::BArena::isDeviceAccessible</definition>
+        <argsstring>() const override final</argsstring>
+        <name>isDeviceAccessible</name>
+        <reimplements refid="classamrex_1_1Arena_1afa7c9e223346f671eb055b3ce8580e56">isDeviceAccessible</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="30" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BArena_1aec7c11de8ca3627c0dc8835b41504b21" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool amrex::BArena::isHostAccessible</definition>
+        <argsstring>() const override final</argsstring>
+        <name>isHostAccessible</name>
+        <reimplements refid="classamrex_1_1Arena_1a40d897685d407918d2d6143b5301a525">isHostAccessible</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="31" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BArena_1af912a3f7a3822ab75b82d9dfb4dd8ad7" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool amrex::BArena::isManaged</definition>
+        <argsstring>() const override final</argsstring>
+        <name>isManaged</name>
+        <reimplements refid="classamrex_1_1Arena_1a7119489f4464f902d907f6dfe9716909">isManaged</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="33" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BArena_1a8f04d0c847c95e5f796abe1e28fb12c8" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool amrex::BArena::isDevice</definition>
+        <argsstring>() const override final</argsstring>
+        <name>isDevice</name>
+        <reimplements refid="classamrex_1_1Arena_1aa45555e396ee74158b0c6f3331ce5536">isDevice</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="34" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1BArena_1a7e9aaad3e6bf3a770551ffc0e6f9cf7f" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool amrex::BArena::isPinned</definition>
+        <argsstring>() const override final</argsstring>
+        <name>isPinned</name>
+        <reimplements refid="classamrex_1_1Arena_1a336e271c5a07296e4c2866d194111784">isPinned</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="35" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.cpp" bodystart="40" bodyend="43"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -77,18 +147,23 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" bodystart="15" bodyend="29"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BArena.H" bodystart="15" bodyend="36"/>
     <listofallmembers>
       <member refid="classamrex_1_1Arena_1a253c417e0bd2863509c75d6250468a4e" prot="public" virt="non-virtual"><scope>amrex::BArena</scope><name>align</name></member>
       <member refid="classamrex_1_1Arena_1a4b2f3b31e81e52426aef615cb2aaa7b7" prot="public" virt="non-virtual"><scope>amrex::BArena</scope><name>align_size</name></member>
-      <member refid="classamrex_1_1BArena_1a3f5a8cc7a0cb8013fe3bc8ba6270c510" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>alloc</name></member>
+      <member refid="classamrex_1_1BArena_1a87bb0b513c8ceae7ae87362130281ef3" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>alloc</name></member>
       <member refid="classamrex_1_1Arena_1afc721e195430f79b2d1b287c490ef0fb" prot="protected" virt="non-virtual"><scope>amrex::BArena</scope><name>allocate_system</name></member>
       <member refid="classamrex_1_1Arena_1aeb2158ba443c9b23ba0d12bcf38a66e1" prot="protected" virt="non-virtual"><scope>amrex::BArena</scope><name>arena_info</name></member>
       <member refid="classamrex_1_1Arena_1a1af72a36a13904de0715917915db1f6b" prot="public" virt="non-virtual"><scope>amrex::BArena</scope><name>arenaInfo</name></member>
       <member refid="classamrex_1_1Arena_1ac07ba8cda253cddee3cab1168ac65694" prot="protected" virt="non-virtual"><scope>amrex::BArena</scope><name>deallocate_system</name></member>
       <member refid="classamrex_1_1Arena_1a06dd6197d2081d7dd4c1bed308edd387" prot="public" virt="non-virtual"><scope>amrex::BArena</scope><name>Finalize</name></member>
-      <member refid="classamrex_1_1BArena_1a64267cbe47ae467eedfd819c6fc50cd2" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>free</name></member>
+      <member refid="classamrex_1_1BArena_1a0c28fb6078c851560f3d8972351f3b07" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>free</name></member>
       <member refid="classamrex_1_1Arena_1a9f40990a545f4d280e905117fc6a0786" prot="public" virt="non-virtual"><scope>amrex::BArena</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1BArena_1a8f04d0c847c95e5f796abe1e28fb12c8" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>isDevice</name></member>
+      <member refid="classamrex_1_1BArena_1adc538e1b83f0180cef20824d976f5964" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>isDeviceAccessible</name></member>
+      <member refid="classamrex_1_1BArena_1aec7c11de8ca3627c0dc8835b41504b21" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>isHostAccessible</name></member>
+      <member refid="classamrex_1_1BArena_1af912a3f7a3822ab75b82d9dfb4dd8ad7" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>isManaged</name></member>
+      <member refid="classamrex_1_1BArena_1a7e9aaad3e6bf3a770551ffc0e6f9cf7f" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>isPinned</name></member>
       <member refid="classamrex_1_1Arena_1a506a68384da30629323d0839f13812c2" prot="public" virt="non-virtual"><scope>amrex::BArena</scope><name>PrintUsage</name></member>
       <member refid="classamrex_1_1Arena_1a515142557e6b630fbad746e3c33776e5" prot="public" virt="virtual"><scope>amrex::BArena</scope><name>~Arena</name></member>
     </listofallmembers>
