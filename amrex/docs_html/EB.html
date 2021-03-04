@@ -442,7 +442,7 @@ outside becomes a sphere with fluid inside.</p></li>
 <div class="section" id="eb2-indexspace">
 <h2><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IndexSpace</span></span></code><a class="headerlink" href="#eb2-indexspace" title="Permalink to this headline">¶</a></h2>
 <p>We build <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">EB2</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IndexSpace</span></span></code> with a template function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">G</span><span class="o">&gt;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">G</span><span class="o">&gt;</span>
 <span class="kt">void</span> <span class="n">EB2</span><span class="o">::</span><span class="n">Build</span> <span class="p">(</span><span class="k">const</span> <span class="n">G</span><span class="o">&amp;</span> <span class="n">gshop</span><span class="p">,</span> <span class="k">const</span> <span class="n">Geometry</span><span class="o">&amp;</span> <span class="n">geom</span><span class="p">,</span>
                  <span class="kt">int</span> <span class="n">required_coarsening_level</span><span class="p">,</span>
                  <span class="kt">int</span> <span class="n">max_coarsening_level</span><span class="p">,</span>
@@ -603,7 +603,7 @@ array of 32-bit integers, and can be used in C++ or passed to Fortran just like
 an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IArrayBox</span></span></code> (section <a class="reference internal" href="Basics.html#sec-basics-fab"><span class="std std-ref">BaseFab, FArrayBox, IArrayBox, and Array4</span></a>). AMReX provides a Fortran
 module called <code class="docutils literal notranslate"><span class="pre">amrex_ebcellflag_module</span></code>. This module contains procedures for
 testing cell types and getting neighbor information. For example</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_ebcellflag_module</span><span class="p">,</span> <span class="k">only</span> <span class="p">:</span> <span class="n">is_regular_cell</span><span class="p">,</span> <span class="n">is_single_valued_cell</span><span class="p">,</span> <span class="n">is_covered_cell</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_ebcellflag_module</span><span class="p">,</span> <span class="n">only</span> <span class="p">:</span> <span class="n">is_regular_cell</span><span class="p">,</span> <span class="n">is_single_valued_cell</span><span class="p">,</span> <span class="n">is_covered_cell</span>
 
 <span class="kt">integer</span><span class="p">,</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">flags</span><span class="p">(...)</span>
 

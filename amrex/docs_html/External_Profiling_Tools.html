@@ -319,40 +319,40 @@ hardware performance counters can also be collected through PAPI.</p>
 <p>Example MPI profile output:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1">#IPMv2.0.5########################################################</span>
 <span class="gp">#</span>
-<span class="gp"># </span><span class="nb">command</span>   : /global/cscratch1/sd/cchan2/projects/lbl/BoxLib/Tests/LinearSolvers/C_CellMG/./main3d.intel.MPI.OMP.ex.ipm inputs.3d.25600
-<span class="gp"># </span>start     : Tue Aug <span class="m">15</span> <span class="m">17</span>:34:23 <span class="m">2017</span>   host      : nid11311
-<span class="gp"># </span>stop      : Tue Aug <span class="m">15</span> <span class="m">17</span>:34:35 <span class="m">2017</span>   wallclock : <span class="m">11</span>.54
-<span class="gp"># </span>mpi_tasks : <span class="m">128</span> on <span class="m">32</span> nodes            %comm     : <span class="m">32</span>.51
-<span class="gp"># </span>mem <span class="o">[</span>GB<span class="o">]</span>  : <span class="m">126</span>.47                     gflop/sec : <span class="m">0</span>.00
+<span class="gp">#</span> <span class="nb">command</span>   : /global/cscratch1/sd/cchan2/projects/lbl/BoxLib/Tests/LinearSolvers/C_CellMG/./main3d.intel.MPI.OMP.ex.ipm inputs.3d.25600
+<span class="gp">#</span> start     : Tue Aug <span class="m">15</span> <span class="m">17</span>:34:23 <span class="m">2017</span>   host      : nid11311
+<span class="gp">#</span> stop      : Tue Aug <span class="m">15</span> <span class="m">17</span>:34:35 <span class="m">2017</span>   wallclock : <span class="m">11</span>.54
+<span class="gp">#</span> mpi_tasks : <span class="m">128</span> on <span class="m">32</span> nodes            %comm     : <span class="m">32</span>.51
+<span class="gp">#</span> mem <span class="o">[</span>GB<span class="o">]</span>  : <span class="m">126</span>.47                     gflop/sec : <span class="m">0</span>.00
 <span class="gp">#</span>
-<span class="gp">#           </span>:       <span class="o">[</span>total<span class="o">]</span>        &lt;avg&gt;          min          max
-<span class="gp"># </span>wallclock :       <span class="m">1188</span>.42         <span class="m">9</span>.28         <span class="m">8</span>.73        <span class="m">11</span>.54
-<span class="gp"># </span>MPI       :        <span class="m">386</span>.31         <span class="m">3</span>.02         <span class="m">2</span>.51         <span class="m">4</span>.78
-<span class="gp"># </span>%wall     :
-<span class="gp">#   </span>MPI     :                      <span class="m">32</span>.52        <span class="m">24</span>.36        <span class="m">41</span>.44
-<span class="gp"># </span><span class="c1">#calls    :</span>
-<span class="gp">#   </span>MPI     :       <span class="m">5031172</span>        <span class="m">39306</span>        <span class="m">23067</span>        <span class="m">57189</span>
-<span class="gp"># </span>mem <span class="o">[</span>GB<span class="o">]</span>  :        <span class="m">126</span>.47         <span class="m">0</span>.99         <span class="m">0</span>.98         <span class="m">1</span>.00
+<span class="gp">#</span>           :       <span class="o">[</span>total<span class="o">]</span>        &lt;avg&gt;          min          max
+<span class="gp">#</span> wallclock :       <span class="m">1188</span>.42         <span class="m">9</span>.28         <span class="m">8</span>.73        <span class="m">11</span>.54
+<span class="gp">#</span> MPI       :        <span class="m">386</span>.31         <span class="m">3</span>.02         <span class="m">2</span>.51         <span class="m">4</span>.78
+<span class="gp">#</span> %wall     :
+<span class="gp">#</span>   MPI     :                      <span class="m">32</span>.52        <span class="m">24</span>.36        <span class="m">41</span>.44
+<span class="gp">#</span> <span class="c1">#calls    :</span>
+<span class="gp">#</span>   MPI     :       <span class="m">5031172</span>        <span class="m">39306</span>        <span class="m">23067</span>        <span class="m">57189</span>
+<span class="gp">#</span> mem <span class="o">[</span>GB<span class="o">]</span>  :        <span class="m">126</span>.47         <span class="m">0</span>.99         <span class="m">0</span>.98         <span class="m">1</span>.00
 <span class="gp">#</span>
-<span class="gp">#                             </span><span class="o">[</span>time<span class="o">]</span>        <span class="o">[</span>count<span class="o">]</span>        &lt;%wall&gt;
-<span class="gp"># </span>MPI_Allreduce               <span class="m">225</span>.72         <span class="m">567552</span>          <span class="m">18</span>.99
-<span class="gp"># </span>MPI_Waitall                  <span class="m">92</span>.84         <span class="m">397056</span>           <span class="m">7</span>.81
-<span class="gp"># </span>MPI_Recv                     <span class="m">29</span>.36            <span class="m">193</span>           <span class="m">2</span>.47
-<span class="gp"># </span>MPI_Isend                    <span class="m">25</span>.04        <span class="m">2031810</span>           <span class="m">2</span>.11
-<span class="gp"># </span>MPI_Irecv                     <span class="m">4</span>.35        <span class="m">2031810</span>           <span class="m">0</span>.37
-<span class="gp"># </span>MPI_Allgather                 <span class="m">2</span>.60            <span class="m">128</span>           <span class="m">0</span>.22
-<span class="gp"># </span>MPI_Barrier                   <span class="m">2</span>.24            <span class="m">512</span>           <span class="m">0</span>.19
-<span class="gp"># </span>MPI_Gatherv                   <span class="m">1</span>.70            <span class="m">128</span>           <span class="m">0</span>.14
-<span class="gp"># </span>MPI_Comm_dup                  <span class="m">1</span>.23            <span class="m">256</span>           <span class="m">0</span>.10
-<span class="gp"># </span>MPI_Bcast                     <span class="m">1</span>.14            <span class="m">256</span>           <span class="m">0</span>.10
-<span class="gp"># </span>MPI_Send                      <span class="m">0</span>.06            <span class="m">319</span>           <span class="m">0</span>.01
-<span class="gp"># </span>MPI_Reduce                    <span class="m">0</span>.02            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_free                 <span class="m">0</span>.01            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_group                <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_size                 <span class="m">0</span>.00            <span class="m">256</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Comm_rank                 <span class="m">0</span>.00            <span class="m">256</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Init                      <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
-<span class="gp"># </span>MPI_Finalize                  <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
+<span class="gp">#</span>                             <span class="o">[</span>time<span class="o">]</span>        <span class="o">[</span>count<span class="o">]</span>        &lt;%wall&gt;
+<span class="gp">#</span> MPI_Allreduce               <span class="m">225</span>.72         <span class="m">567552</span>          <span class="m">18</span>.99
+<span class="gp">#</span> MPI_Waitall                  <span class="m">92</span>.84         <span class="m">397056</span>           <span class="m">7</span>.81
+<span class="gp">#</span> MPI_Recv                     <span class="m">29</span>.36            <span class="m">193</span>           <span class="m">2</span>.47
+<span class="gp">#</span> MPI_Isend                    <span class="m">25</span>.04        <span class="m">2031810</span>           <span class="m">2</span>.11
+<span class="gp">#</span> MPI_Irecv                     <span class="m">4</span>.35        <span class="m">2031810</span>           <span class="m">0</span>.37
+<span class="gp">#</span> MPI_Allgather                 <span class="m">2</span>.60            <span class="m">128</span>           <span class="m">0</span>.22
+<span class="gp">#</span> MPI_Barrier                   <span class="m">2</span>.24            <span class="m">512</span>           <span class="m">0</span>.19
+<span class="gp">#</span> MPI_Gatherv                   <span class="m">1</span>.70            <span class="m">128</span>           <span class="m">0</span>.14
+<span class="gp">#</span> MPI_Comm_dup                  <span class="m">1</span>.23            <span class="m">256</span>           <span class="m">0</span>.10
+<span class="gp">#</span> MPI_Bcast                     <span class="m">1</span>.14            <span class="m">256</span>           <span class="m">0</span>.10
+<span class="gp">#</span> MPI_Send                      <span class="m">0</span>.06            <span class="m">319</span>           <span class="m">0</span>.01
+<span class="gp">#</span> MPI_Reduce                    <span class="m">0</span>.02            <span class="m">128</span>           <span class="m">0</span>.00
+<span class="gp">#</span> MPI_Comm_free                 <span class="m">0</span>.01            <span class="m">128</span>           <span class="m">0</span>.00
+<span class="gp">#</span> MPI_Comm_group                <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
+<span class="gp">#</span> MPI_Comm_size                 <span class="m">0</span>.00            <span class="m">256</span>           <span class="m">0</span>.00
+<span class="gp">#</span> MPI_Comm_rank                 <span class="m">0</span>.00            <span class="m">256</span>           <span class="m">0</span>.00
+<span class="gp">#</span> MPI_Init                      <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
+<span class="gp">#</span> MPI_Finalize                  <span class="m">0</span>.00            <span class="m">128</span>           <span class="m">0</span>.00
 </pre></div>
 </div>
 <p>The total, average, minimum, and maximum wallclock and MPI times across ranks

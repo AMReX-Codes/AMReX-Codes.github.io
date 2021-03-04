@@ -328,7 +328,7 @@ If the coarse grid bc’s for the solve are identically zero, <code class="code 
 can be passed instead of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">crse</span></span></code>.</p>
 <p>3) Cell-centered solvers only:
 before the solve one must always call the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="n">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>If we want to supply any inhomogeneous Dirichlet or Neumann boundary
@@ -654,10 +654,10 @@ the MACProjector object and use it to perform a MAC projection.</p>
 <span class="n">macproj</span><span class="p">.</span><span class="n">setBottomVerbose</span><span class="p">(</span><span class="n">bottom_verbose</span><span class="p">);</span>
 
 <span class="c1">// Define the relative tolerance</span>
-<span class="n">Real</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">e</span><span class="mi">-8</span><span class="p">;</span>
+<span class="n">Real</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.e-8</span><span class="p">;</span>
 
 <span class="c1">// Define the absolute tolerance; note that this argument is optional</span>
-<span class="n">Real</span> <span class="n">abstol</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">e</span><span class="mi">-15</span><span class="p">;</span>
+<span class="n">Real</span> <span class="n">abstol</span> <span class="o">=</span> <span class="mf">1.e-15</span><span class="p">;</span>
 
 <span class="c1">// Solve for phi and subtract from the velocity to make it divergence-free</span>
 <span class="c1">// Note that when we build with USE_EB = TRUE, we must specify whether the velocities live</span>
@@ -716,7 +716,7 @@ gradient term to make the vector field result satisfy the divergence constraint.
 
 <span class="c1">// Set velocity field to (1,0,0) including ghost cells for this example</span>
 <span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">AMREX_SPACEDIM</span><span class="mi">-1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">vel</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">AMREX_SPACEDIM</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
 <span class="c1">//</span>
 <span class="c1">// Setup linear operator, AKA the nodal Laplacian</span>
@@ -806,10 +806,10 @@ gradient term to make the vector field result satisfy the divergence constraint.
 <span class="c1">//     nodal_solver.setBottomSolver(MLMG::BottomSolver::hypre);</span>
 
 <span class="c1">// Define the relative tolerance</span>
-<span class="n">Real</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">e</span><span class="mi">-8</span><span class="p">;</span>
+<span class="n">Real</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.e-8</span><span class="p">;</span>
 
 <span class="c1">// Define the absolute tolerance; note that this argument is optional</span>
-<span class="n">Real</span> <span class="n">abstol</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">e</span><span class="mi">-15</span><span class="p">;</span>
+<span class="n">Real</span> <span class="n">abstol</span> <span class="o">=</span> <span class="mf">1.e-15</span><span class="p">;</span>
 
 <span class="c1">//</span>
 <span class="c1">// Solve div( sigma * grad(phi) ) = RHS</span>
@@ -884,7 +884,7 @@ viscous term <cite>divtau</cite> explicitly:</p>
                          <span class="p">{(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_hi</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_hi</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">LinOpBCType</span><span class="p">)</span><span class="n">bc_hi</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span> <span class="p">);</span>
 
 <span class="c1">// Return div (eta grad)) phi</span>
-<span class="n">ebtensorop</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">-1.0</span><span class="p">);</span>
+<span class="n">ebtensorop</span><span class="p">.</span><span class="n">setScalars</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">);</span>
 
 <span class="n">amrex</span><span class="o">::</span><span class="n">Vector</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">Array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">amrex</span><span class="o">::</span><span class="n">MultiFab</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">AMREX_SPACEDIM</span><span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
 <span class="n">b</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">max_level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>

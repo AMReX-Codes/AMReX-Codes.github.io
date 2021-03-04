@@ -1,31 +1,35 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classamrex_1_1ForkJoin" kind="class" language="C++" prot="public">
     <compoundname>amrex::ForkJoin</compoundname>
     <includes refid="AMReX__ForkJoin_8H" local="no">AMReX_ForkJoin.H</includes>
     <innerclass refid="structamrex_1_1ForkJoin_1_1ComponentSet" prot="public">amrex::ForkJoin::ComponentSet</innerclass>
     <innerclass refid="structamrex_1_1ForkJoin_1_1MFFork" prot="private">amrex::ForkJoin::MFFork</innerclass>
       <sectiondef kind="public-type">
-      <memberdef kind="enum" id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" prot="public" static="no">
+      <memberdef kind="enum" id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282" prot="public" static="no" strong="yes">
+        <type></type>
         <name>Strategy</name>
         <enumvalue id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282add5c07036f2975ff4bce568b6511d3bc" prot="public">
           <name>single</name>
           <briefdescription>
-<para>one task gets a copy of whole MF </para>          </briefdescription>
+<para>one task gets a copy of whole MF </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282a24f1b0a79473250c195c7fb84e393392" prot="public">
           <name>duplicate</name>
           <briefdescription>
-<para>all tasks get a copy of whole MF </para>          </briefdescription>
+<para>all tasks get a copy of whole MF </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <enumvalue id="classamrex_1_1ForkJoin_1a72de18d1d16fadce31b830834ffff282aeefec303079ad17405c889e092e105b0" prot="public">
           <name>split</name>
           <briefdescription>
-<para>split MF components across tasks </para>          </briefdescription>
+<para>split MF components across tasks </para>
+          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -35,9 +39,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="14" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="14" bodyend="18"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="14" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="14" bodyend="18"/>
       </memberdef>
-      <memberdef kind="enum" id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" prot="public" static="no">
+      <memberdef kind="enum" id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466" prot="public" static="no" strong="yes">
+        <type></type>
         <name>Intent</name>
         <enumvalue id="classamrex_1_1ForkJoin_1a3acf0d91b32d1d08dbe32046028f1466a13b5bfe96f3e2fe411c9f66f4a582adf" prot="public">
           <name>in</name>
@@ -66,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="19" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="19" bodyend="19"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="19" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="19" bodyend="19"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -77,12 +82,13 @@
         <name>flag_verbose</name>
         <initializer>= false</initializer>
         <briefdescription>
-<para>for debugging </para>        </briefdescription>
+<para>for debugging </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="176" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="176" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="176" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ForkJoin_1ad9801acca834dcbc7ec55dd3c34f48aa" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -91,12 +97,13 @@
         <name>flag_invoked</name>
         <initializer>= false</initializer>
         <briefdescription>
-<para>track if object has been invoked yet </para>        </briefdescription>
+<para>track if object has been invoked yet </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="177" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="177" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="177" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="177" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a696ffed713794753cb3d42f63eaad6ab" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -104,12 +111,13 @@
         <argsstring></argsstring>
         <name>split_bounds</name>
         <briefdescription>
-<para>task i has ranks over the interval [result[i], result[i+1]) </para>        </briefdescription>
+<para>task i has ranks over the interval [result[i], result[i+1]) </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="178" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="178" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="178" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="178" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ForkJoin_1ac7e00cc0d9436d4445b3e338b46dd003" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -118,12 +126,13 @@
         <name>task_me</name>
         <initializer>= -1</initializer>
         <briefdescription>
-<para>which forked task the rank belongs to </para>        </briefdescription>
+<para>which forked task the rank belongs to </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="179" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="179" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="179" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="179" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a710675d78fd400523b979d941930b56e" prot="private" static="no" mutable="no">
         <type>std::map&lt; <ref refid="structamrex_1_1BoxArray_1_1RefID" kindref="compound">BoxArray::RefID</ref>, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::unique_ptr&lt; <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &gt; &gt; &gt;</type>
@@ -131,12 +140,13 @@
         <argsstring></argsstring>
         <name>dms</name>
         <briefdescription>
-<para>DM cache. </para>        </briefdescription>
+<para>DM cache. </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="180" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="180" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="180" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ForkJoin_1a1223321add76c9d8eb7dc032c051012d" prot="private" static="no" mutable="no">
         <type>std::unordered_map&lt; std::string, <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="structamrex_1_1ForkJoin_1_1MFFork" kindref="compound">MFFork</ref> &gt; &gt;</type>
@@ -149,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="181" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="181" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="181" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="181" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ForkJoin_1ac17370c5ba5f31bf037c5ca3992c3f66" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -158,12 +168,13 @@
         <name>task_output_dir</name>
         <initializer>= &quot;&quot;</initializer>
         <briefdescription>
-<para>where to write task output </para>        </briefdescription>
+<para>where to write task output </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="182" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="182" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="182" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="182" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -182,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="46" bodyend="49"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="32" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="46" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1aac9106c8fc6d9be62cf1a73f2db0e820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -199,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="34" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="51" bodyend="66"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="34" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="51" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a2d8bbf7d8eb515f4249b97829a733c33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -216,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="36" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="36" bodyend="37"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="36" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="36" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a0f117148e0f71675c66d2658a49c75cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -229,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="39" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="39" bodyend="39"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="39" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="39" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1aed6698adf890b9907f61c1c00e81618e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -242,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="41" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="41" bodyend="41"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="41" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="41" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1ab1ed7e37b6df653a97423cd2402d4817" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -255,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="43" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="43" bodyend="43"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="43" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="43" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1ac9e1d5f47bb112898e4bf7f56d738f0a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -272,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="45" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="45" bodyend="45"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="45" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="45" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a9dda141f12088bebd3b62ae96407ecdf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="structamrex_1_1ForkJoin_1_1ComponentSet" kindref="compound">ComponentSet</ref></type>
@@ -294,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="47" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="171" bodyend="176"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="47" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="171" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a3b7821d6402f8c532e1ca31bef733a75" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -311,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="49" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="49" bodyend="52"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="49" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="49" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a66e56de654ced923e6885ebd79bd75f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -349,7 +360,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="54" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="107" bodyend="138"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="54" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="107" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1aed221768a48c51c89a5b4c2c5d0de5b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -383,7 +394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="57" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="57" bodyend="60"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="57" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="57" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a3a644e5e5a02bd0c163b612784f06c24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -418,10 +429,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>these overloads are for in case the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> argument is const intent must be in </para>        </detaileddescription>
+<para>these overloads are for in case the <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> argument is const intent must be in </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="65" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="65" bodyend="70"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="65" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="65" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1aa15bb285525ea9be4f00ee4dbd6cd1eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -455,15 +467,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="71" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="71" bodyend="74"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="71" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="71" bodyend="74"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ForkJoin_1aa85661d9ea8d4f7ccf69146257b53f6b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a578bc53c0adb9017820643c61bdb1226" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::ForkJoin::reg_mf_vec</definition>
-        <argsstring>(const Vector&lt; MultiFab *&gt; &amp;mfs, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <argsstring>(const Vector&lt; MultiFab * &gt; &amp;mfs, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
         <name>reg_mf_vec</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> *&gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt; &amp;</type>
           <declname>mfs</declname>
         </param>
         <param>
@@ -489,15 +501,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="76" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="76" bodyend="82"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="76" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="76" bodyend="82"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1ForkJoin_1a881f63caba3362175d9b80ff372c70ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1ForkJoin_1ae0fe682f85964b5d7c745b1d8ca66e08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::ForkJoin::reg_mf_vec</definition>
-        <argsstring>(const Vector&lt; MultiFab const *&gt; &amp;mfs, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
+        <argsstring>(const Vector&lt; MultiFab const * &gt; &amp;mfs, const std::string &amp;name, Strategy strategy, Intent intent, int owner=-1)</argsstring>
         <name>reg_mf_vec</name>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const *&gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const * &gt; &amp;</type>
           <declname>mfs</declname>
         </param>
         <param>
@@ -518,12 +530,13 @@
           <defval>-1</defval>
         </param>
         <briefdescription>
-<para>overload in case of vector of pointer to const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> </para>        </briefdescription>
+<para>overload in case of vector of pointer to const <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="85" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="85" bodyend="91"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="85" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="85" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a96e939e22bb7efb14a07a6f9260cce89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -543,12 +556,13 @@
           <declname>ngrow</declname>
         </param>
         <briefdescription>
-<para>modify the number of grow cells associated with the multifab </para>        </briefdescription>
+<para>modify the number of grow cells associated with the multifab </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="94" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="141" bodyend="152"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="94" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="141" bodyend="152"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a89798a7caff182b9c8e3d5803842fd5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -569,7 +583,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="95" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="95" bodyend="97"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="95" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="95" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1acd674b9f0159c359a040afa7e3ba4fe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -589,12 +603,13 @@
           <declname>comp_split</declname>
         </param>
         <briefdescription>
-<para>modify how the multifab is split along components across the tasks </para>        </briefdescription>
+<para>modify how the multifab is split along components across the tasks </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="100" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="155" bodyend="168"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="100" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="155" bodyend="168"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1aeeadf363cdd980b987df6b196dcd8c6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -615,7 +630,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="101" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="101" bodyend="103"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="101" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="101" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a7d6ce14751cb1212501bb1cdc36f57cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> &amp;</type>
@@ -637,7 +652,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="107" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="107" bodyend="111"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="107" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="107" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a8e0a68a47c9455b335eff47b577a44cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> * &gt;</type>
@@ -649,12 +664,13 @@
           <declname>name</declname>
         </param>
         <briefdescription>
-<para>vector of pointers to all MFs under a name </para>        </briefdescription>
+<para>vector of pointers to all MFs under a name </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="114" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="114" bodyend="121"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="114" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="114" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a9bda4e24001c99d756c6104f67925e72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -671,7 +687,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="123" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="123" bodyend="126"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="123" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="123" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a2f557068fd57a8cd131263fa6769b631" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -693,7 +709,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="134" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="134" bodyend="149"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="134" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="134" bodyend="149"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -712,7 +728,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="128" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="128" bodyend="131"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="128" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" bodystart="128" bodyend="131"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -731,7 +747,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="184" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="69" bodyend="104"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="184" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="69" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1ac35ec951548cc1e54dfc60b0d65df8e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> &amp;</type>
@@ -753,10 +769,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>multiple MultiFabs may share the same box array only compute the DM once per unique (box array, task) pair and cache it create map from box array RefID to vector of <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> indexed by task ID </para>        </detaileddescription>
+<para>multiple MultiFabs may share the same box array only compute the DM once per unique (box array, task) pair and cache it create map from box array RefID to vector of <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> indexed by task ID </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="190" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="283" bodyend="325"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="190" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="283" bodyend="325"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1a76a2bb1b6fb5ffd97b28020531b6f3f6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -766,10 +783,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>this is called before ParallelContext::split the parent task is the top frame in <ref refid="namespaceamrex_1_1ParallelContext" kindref="compound">ParallelContext</ref>&apos;s stack </para>        </detaileddescription>
+<para>this is called before ParallelContext::split the parent task is the top frame in <ref refid="namespaceamrex_1_1ParallelContext" kindref="compound">ParallelContext</ref>&apos;s stack </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="196" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="179" bodyend="236"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="196" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="179" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1ad79ddeb1fdd7d6a72546c66728b3ccd8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -779,10 +797,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>this is called after ParallelContext::unsplit the parent task is the top frame in <ref refid="namespaceamrex_1_1ParallelContext" kindref="compound">ParallelContext</ref>&apos;s stack </para>        </detaileddescription>
+<para>this is called after ParallelContext::unsplit the parent task is the top frame in <ref refid="namespaceamrex_1_1ParallelContext" kindref="compound">ParallelContext</ref>&apos;s stack </para>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="201" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="241" bodyend="277"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="201" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="241" bodyend="277"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1af28d2dad955c8aeeb067472559794d86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__ccse-mpi_8H_1a68c509d4adb3f4a1d6fe3a9b0b87c7b9" kindref="member">MPI_Comm</ref></type>
@@ -790,12 +809,13 @@
         <argsstring>()</argsstring>
         <name>split_tasks</name>
         <briefdescription>
-<para>split top frame of stack </para>        </briefdescription>
+<para>split top frame of stack </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="204" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="330" bodyend="350"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="204" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="330" bodyend="350"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1ad4b77ac1de1547c3903014ba22c0306b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -803,12 +823,13 @@
         <argsstring>()</argsstring>
         <name>create_task_output_dir</name>
         <briefdescription>
-<para>create the task output directory </para>        </briefdescription>
+<para>create the task output directory </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="207" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="352" bodyend="362"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="207" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="352" bodyend="362"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1ForkJoin_1aecdcd8a490ce68812e19ba6e6f17d320" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::string</type>
@@ -821,12 +842,13 @@
           <defval>false</defval>
         </param>
         <briefdescription>
-<para>unique output file for this sub-task </para>        </briefdescription>
+<para>unique output file for this sub-task </para>
+        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="210" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="365" bodyend="387"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.H" line="210" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ForkJoin.cpp" bodystart="365" bodyend="387"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -834,26 +856,26 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="1943">
+      <node id="1">
         <label>amrex::ForkJoin</label>
         <link refid="classamrex_1_1ForkJoin"/>
-        <childnode refid="1944" relation="usage">
+        <childnode refid="2" relation="usage">
           <edgelabel>split_bounds</edgelabel>
         </childnode>
-        <childnode refid="1946" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>task_output_dir</edgelabel>
         </childnode>
       </node>
-      <node id="1944">
+      <node id="2">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="1945" relation="public-inheritance">
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1946">
+      <node id="4">
         <label>string</label>
       </node>
-      <node id="1945">
+      <node id="3">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
     </collaborationgraph>
@@ -888,8 +910,8 @@
       <member refid="classamrex_1_1ForkJoin_1aed221768a48c51c89a5b4c2c5d0de5b3" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
       <member refid="classamrex_1_1ForkJoin_1a3a644e5e5a02bd0c163b612784f06c24" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
       <member refid="classamrex_1_1ForkJoin_1aa15bb285525ea9be4f00ee4dbd6cd1eb" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf</name></member>
-      <member refid="classamrex_1_1ForkJoin_1aa85661d9ea8d4f7ccf69146257b53f6b" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf_vec</name></member>
-      <member refid="classamrex_1_1ForkJoin_1a881f63caba3362175d9b80ff372c70ea" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf_vec</name></member>
+      <member refid="classamrex_1_1ForkJoin_1a578bc53c0adb9017820643c61bdb1226" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf_vec</name></member>
+      <member refid="classamrex_1_1ForkJoin_1ae0fe682f85964b5d7c745b1d8ca66e08" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>reg_mf_vec</name></member>
       <member refid="classamrex_1_1ForkJoin_1a9bda4e24001c99d756c6104f67925e72" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>set_task_output_dir</name></member>
       <member refid="classamrex_1_1ForkJoin_1acc05284c00f1aafed90fb1c2a2fd6386" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>set_task_output_file</name></member>
       <member refid="classamrex_1_1ForkJoin_1ac9e1d5f47bb112898e4bf7f56d738f0a" prot="public" virt="non-virtual"><scope>amrex::ForkJoin</scope><name>SetVerbose</name></member>

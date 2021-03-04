@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="AMReX__GpuLaunchMacrosG_8H" kind="file" language="C++">
     <compoundname>AMReX_GpuLaunchMacrosG.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
     <incdepgraph>
-      <node id="31060">
+      <node id="2">
         <label>AMReX_Config.H</label>
       </node>
-      <node id="31059">
+      <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H</label>
         <link refid="AMReX__GpuLaunchMacrosG_8H"/>
-        <childnode refid="31060" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -20,7 +20,7 @@
         <param><defname>TN</defname></param>
         <param><defname>TI</defname></param>
         <param><defname>block</defname></param>
-        <initializer>{ auto const&amp; amrex_i_tn = TN; \
+        <initializer>    { auto const&amp; amrex_i_tn = TN; \
     if (!<ref refid="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" kindref="member">amrex::isEmpty</ref>(amrex_i_tn)) { \
     if (<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) \
     { \
@@ -86,7 +86,7 @@
         <param><defname>TN</defname></param>
         <param><defname>TI</defname></param>
         <param><defname>block</defname></param>
-        <initializer>{ auto const&amp; amrex_i_tn = TN; \
+        <initializer>    { auto const&amp; amrex_i_tn = TN; \
     if (!<ref refid="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" kindref="member">amrex::isEmpty</ref>(amrex_i_tn)) { \
     if (<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) \
     { \
@@ -118,13 +118,13 @@
         <param><defname>TN2</defname></param>
         <param><defname>TI2</defname></param>
         <param><defname>block2</defname></param>
-        <initializer>{ auto const&amp; amrex_i_tn1 = TN1; auto const&amp; amrex_i_tn2 = TN2; \
+        <initializer>    { auto const&amp; amrex_i_tn1 = TN1; auto const&amp; amrex_i_tn2 = TN2; \
     if (!<ref refid="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" kindref="member">amrex::isEmpty</ref>(amrex_i_tn1) || !<ref refid="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" kindref="member">amrex::isEmpty</ref>(amrex_i_tn2)) { \
     if (<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) \
     { \
         const auto amrex_i_ec1 = amrex::Gpu::ExecutionConfig(amrex_i_tn1); \
         const auto amrex_i_ec2 = amrex::Gpu::ExecutionConfig(amrex_i_tn2); \
-        dim3 amrex_i_nblocks = <ref refid="namespaceamrex_1a918b31ea2f518389047986cb72a8b546" kindref="member">amrex::max</ref>(amrex_i_ec1.numBlocks.x, \
+        dim3 amrex_i_nblocks = <ref refid="namespaceamrex_1a72d8b9352d99ebca0a7eba07dadbdfa5" kindref="member">amrex::max</ref>(amrex_i_ec1.numBlocks.x, \
                                           amrex_i_ec2.numBlocks.x); \
         amrex_i_nblocks.y = 2; \
         AMREX_LAUNCH_KERNEL(amrex_i_nblocks, amrex_i_ec1.numThreads, 0, amrex::Gpu::gpuStream(), \

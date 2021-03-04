@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="AMReX__AVGDOWN__1D_8F" kind="file" language="Fortran">
     <compoundname>AMReX_AVGDOWN_1D.F</compoundname>
     <includes refid="AMReX__REAL_8H" local="yes">AMReX_REAL.H</includes>
@@ -7,62 +7,62 @@
     <includes refid="AMReX__AVGDOWN__F_8H" local="yes">AMReX_AVGDOWN_F.H</includes>
     <includes refid="AMReX__ArrayLim_8H" local="yes">AMReX_ArrayLim.H</includes>
     <incdepgraph>
-      <node id="67270">
+      <node id="5">
         <label>float.h</label>
       </node>
-      <node id="67267">
+      <node id="2">
         <label>AMReX_REAL.H</label>
         <link refid="AMReX__REAL_8H"/>
-        <childnode refid="67268" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="67269" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="67270" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="67272">
+      <node id="7">
         <label>AMReX_AVGDOWN_F.H</label>
         <link refid="AMReX__AVGDOWN__F_8H"/>
-        <childnode refid="67268" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="67273" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
-      <node id="67271">
+      <node id="6">
         <label>AMReX_CONSTANTS.H</label>
         <link refid="AMReX__CONSTANTS_8H"/>
-        <childnode refid="67268" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="67267" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="67269">
+      <node id="4">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
-        <childnode refid="67268" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="67268">
+      <node id="3">
         <label>AMReX_Config.H</label>
       </node>
-      <node id="67273">
+      <node id="8">
         <label>AMReX_ArrayLim.H</label>
         <link refid="AMReX__ArrayLim_8H"/>
-        <childnode refid="67268" relation="include">
+        <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="67267" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="67266">
+      <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_1D.F</label>
         <link refid="AMReX__AVGDOWN__1D_8F"/>
-        <childnode refid="67267" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="67271" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="67272" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="67273" relation="include">
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -161,7 +161,7 @@
 <codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SDIM<sp/>1</highlight></codeline>
 <codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__AVGDOWN__1D_8F_1a52a22e988eb3a48f1455bf2669ebf06a" kindref="member">fort_cv_avgdown</ref><sp/>(</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__AVGDOWN__1D_8F_1a52a22e988eb3a48f1455bf2669ebf06a" kindref="member">fort_cv_avgdown</ref><sp/>(</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>crse,DIMS(crse),nvar,</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>fine,dims(fine),</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>lo,hi,ratios)</highlight></codeline>
@@ -175,11 +175,11 @@
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>lo,hi<sp/><sp/><sp/><sp/><sp/>=<sp/>index<sp/>limits<sp/>of<sp/>overlap<sp/>(crse<sp/>grid)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>ratios<sp/><sp/><sp/><sp/>=<sp/>IntVect<sp/>refinement<sp/>ratio</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(crse)</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(fine)</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lo(sdim),<sp/>hi(sdim)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(crse)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(fine)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lo(SDIM),<sp/>hi(SDIM)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>nvar</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>ratios(sdim)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>ratios(SDIM)</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>crse(dimv(crse),nvar)</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>fine(dimv(fine),nvar)</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
@@ -213,14 +213,14 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">end</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__AVGDOWN__1D_8F_1af5c5e5b5afb617d94b03b54dbb74b33f" kindref="member">fort_cv_avgdown_stag</ref><sp/>(</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__AVGDOWN__1D_8F_1af5c5e5b5afb617d94b03b54dbb74b33f" kindref="member">fort_cv_avgdown_stag</ref><sp/>(</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>nodal_dir,</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>crse,DIMS(crse)</highlight><highlight class="comment">,nvar,</highlight></codeline>
 <codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>fine,dims(fine),</highlight></codeline>
-<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>lo,hi,ratios)</highlight></codeline>
-<codeline lineno="74"><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>lo,hi,ratios)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>Average<sp/>the<sp/>fine<sp/>grid<sp/>data<sp/>onto<sp/>the<sp/>coarse</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>grid.<sp/><sp/>Overlap<sp/>is<sp/>given<sp/>in<sp/>coarse<sp/>grid<sp/>coordinates.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
@@ -231,17 +231,17 @@
 <codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>ratios<sp/><sp/><sp/><sp/>=<sp/>IntVect<sp/>refinement<sp/>ratio</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>nodal_dir</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(crse)</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(fine)</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lo(sdim),<sp/>hi(sdim)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(crse)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(fine)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lo(SDIM),<sp/>hi(SDIM)</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>nvar</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>ratios(sdim)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>ratios(SDIM)</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>crse(dimv(crse),nvar)</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>fine(dimv(fine),nvar)</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>i,<sp/>j,<sp/>n,<sp/>ic,<sp/>jc,<sp/>ioff,<sp/>joff</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lrat</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>vol_inv</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>REAL_T<sp/><sp/><sp/>vol_inv</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>NOTE:<sp/>switch<sp/>from<sp/>C++<sp/>0-based<sp/>indexing</highlight><highlight class="normal"></highlight></codeline>
@@ -281,9 +281,9 @@
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">end</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__AVGDOWN__1D_8F_1a1534365aa3aa97dfd5416210b87658fe" kindref="member">fort_avgdown</ref><sp/>(</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">subroutine<sp/></highlight><highlight class="normal"><ref refid="AMReX__AVGDOWN__1D_8F_1a1534365aa3aa97dfd5416210b87658fe" kindref="member">fort_avgdown</ref><sp/>(</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>crse,DIMS(crse),nvar,</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>fine,dims(fine),</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>&amp;<sp/><sp/><sp/><sp/><sp/>cv,dims(cv),</highlight></codeline>
@@ -301,13 +301,13 @@
 <codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>lo,hi<sp/><sp/><sp/><sp/><sp/>=<sp/>index<sp/>limits<sp/>of<sp/>overlap<sp/>(crse<sp/>grid)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>ratios<sp/><sp/><sp/><sp/>=<sp/>IntVect<sp/>refinement<sp/>ratio</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">c<sp/><sp/><sp/><sp/><sp/>----------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(crse)</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(cv)</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(fine)</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>dimdec(fv)</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lo(sdim),<sp/>hi(sdim)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(crse)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(cv)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(fine)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>DIMDEC(fv)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>lo(SDIM),<sp/>hi(SDIM)</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>nvar</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>ratios(sdim)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">integer</highlight><highlight class="normal"><sp/><sp/>ratios(SDIM)</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>crse(dimv(crse),nvar)</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/><sp/><sp/>cv(dimv(cv))</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>real_t<sp/><sp/><sp/>fine(dimv(fine),nvar)</highlight></codeline>
@@ -343,7 +343,7 @@
 <codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight><highlight class="keywordflow"><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>do</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight><highlight class="keyword"><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">end</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="198"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_AVGDOWN_1D.F"/>

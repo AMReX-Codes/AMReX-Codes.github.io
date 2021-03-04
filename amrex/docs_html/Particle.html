@@ -249,7 +249,7 @@ named methods. For the “extra” real and integer data, you can use the
 
 <span class="c1">// and likewise for p.idata(0);</span>
 <span class="n">p</span><span class="p">.</span><span class="n">idata</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">=</span> <span class="mi">17</span><span class="p">;</span>
-<span class="n">p</span><span class="p">.</span><span class="n">idata</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">-64</span><span class="p">;</span>
+<span class="n">p</span><span class="p">.</span><span class="n">idata</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mi">64</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -365,7 +365,7 @@ once.</p>
 container. They can be reassigned by calling the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Redistribute</span></span><span class="punctuation"><span class="pre">()</span></span></code> method
 of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code>.  After calling this method, all the particles will
 be moved to their proper places in the container, and all invalid particles
-(particles with id set to <code class="code cpp c++ docutils literal notranslate"><span class="literal number integer"><span class="pre">-1</span></span></code>) will be removed. All the MPI communication
+(particles with id set to <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">-</span></span><span class="literal number integer"><span class="pre">1</span></span></code>) will be removed. All the MPI communication
 needed to do this happens automatically.</p>
 <p>Application codes will likely want to create their own derived
 ParticleContainer class that specializes the template parameters and adds
@@ -500,8 +500,8 @@ possible to pass a grid or tile worth of particles into fortran routines for
 processing, instead of iterating over them in C++. You can also define a
 Fortran derived type that is equivalent to C struct used for the particles. For
 example:</p>
-<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span> <span class="k">only</span><span class="p">:</span> <span class="n">amrex_particle_real</span>
-<span class="k">use </span><span class="nb">iso_c_binding</span> <span class="p">,</span>    <span class="k">only</span><span class="p">:</span> <span class="kt">c_int</span>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">amrex_fort_module</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">amrex_particle_real</span>
+<span class="k">use </span><span class="nb">iso_c_binding</span> <span class="p">,</span>    <span class="n">only</span><span class="p">:</span> <span class="kt">c_int</span>
 
 <span class="k">type</span><span class="p">,</span> <span class="k">bind</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">particle_t</span>
    <span class="kt">real</span><span class="p">(</span><span class="n">amrex_particle_real</span><span class="p">)</span> <span class="kd">::</span> <span class="n">pos</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
