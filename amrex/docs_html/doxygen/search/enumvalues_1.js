@@ -5,6 +5,7 @@ var searchData=
   ['bicgcg',['bicgcg',['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4a17ae71b06faf01831e130c5f94157064',1,'amrex']]],
   ['bicgstab',['BiCGStab',['../classamrex_1_1MLCGSolver.html#ac7b947856c5f3a21769938261be5d521a17f477cd947340d28b9a4d6f49c1e43b',1,'amrex::MLCGSolver::BiCGStab()'],['../namespaceamrex.html#a9303c93b47b7839de8ce552cb7cb21c4ae123b37d2b5fd373237e049a1e68ca13',1,'amrex::bicgstab()']]],
   ['binvalidminmax',['BINVALIDMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9a970c9283c08d1ad380beb8cb5fbcfcb0',1,'amrex::Amrvis']]],
+  ['bndryreg',['bndryReg',['../structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feba15f56c267485f29a6a84bcfce877f804',1,'amrex::BATransformer']]],
   ['bnumberofminmax',['BNUMBEROFMINMAX',['../namespaceamrex_1_1Amrvis.html#a980486554a98baf8ebf8e560734f2bf9ae30e7b84e8b143de05b852dde1174bb3',1,'amrex::Amrvis']]],
   ['bottom_5ftime',['bottom_time',['../classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001accea4ad3befe3a4c0c996cacbc4b1fb3',1,'amrex::MLMG']]],
   ['box',['BOX',['../classamrex_1_1AMRErrorTag.html#addadf02bf9152fc1767831cd86b163d5adfb583e59961c24f25757b0750fb66f9',1,'amrex::AMRErrorTag']]],

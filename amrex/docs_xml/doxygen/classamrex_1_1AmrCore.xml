@@ -208,7 +208,7 @@
           <declname>time</declname>
         </param>
         <briefdescription>
-<para>Initialize BoxArray, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and data from scratch. Calling this function requires the derive class implement its own MakeNewLevelFromScratch to allocate and intialize data. Also note usually one needs to average the fine data down to coarse level after this. </para>        </briefdescription>
+<para>Initialize <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>, <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and data from scratch. Calling this function requires the derive class implement its own MakeNewLevelFromScratch to allocate and intialize data. Also note usually one needs to average the fine data down to coarse level after this. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -316,7 +316,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -326,7 +326,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Make a new level from scratch using provided BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. Only used during initialization. </para>        </detaileddescription>
+<para>Make a new level from scratch using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref>. Only used during initialization. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrCore.H" line="75" column="1"/>
@@ -346,7 +346,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -354,7 +354,7 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
-<para>Make a new level using provided BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with interpolated coarse level data. </para>        </briefdescription>
+<para>Make a new level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with interpolated coarse level data. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -376,7 +376,7 @@
           <declname>time</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -384,7 +384,7 @@
           <declname>dm</declname>
         </param>
         <briefdescription>
-<para>Remake an existing level using provided BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with existing fine and coarse data. </para>        </briefdescription>
+<para>Remake an existing level using provided <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> and fill with existing fine and coarse data. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -454,6 +454,9 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="61">
+        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
+      </node>
       <node id="57">
         <label>Real</label>
       </node>
@@ -466,25 +469,25 @@
         <childnode refid="53" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="60">
+      <node id="58">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="61" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="61">
+      <node id="59">
         <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
       </node>
       <node id="55">
         <label>amrex::Vector&lt; amrex::IntVect &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="56" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="58">
-        <label>amrex::Vector&lt; BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="59" relation="public-inheritance">
         </childnode>
       </node>
       <node id="54">
@@ -499,9 +502,6 @@
         <childnode refid="57" relation="usage">
           <edgelabel>grid_eff</edgelabel>
         </childnode>
-      </node>
-      <node id="59">
-        <label>std::vector&lt; BoxArray, std::allocator&lt; BoxArray &gt; &gt;</label>
       </node>
       <node id="56">
         <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
@@ -518,10 +518,10 @@
         <childnode refid="54" relation="protected-inheritance">
         </childnode>
         <childnode refid="58" relation="usage">
-          <edgelabel>grids</edgelabel>
+          <edgelabel>dmap</edgelabel>
         </childnode>
         <childnode refid="60" relation="usage">
-          <edgelabel>dmap</edgelabel>
+          <edgelabel>grids</edgelabel>
         </childnode>
         <childnode refid="62" relation="usage">
           <edgelabel>geom</edgelabel>

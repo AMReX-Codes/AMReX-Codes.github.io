@@ -18,7 +18,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="54" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ParticleBufferMap_1a97b3de417e81c1776fe44e33ef9923d2" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; BoxArray &gt;</type>
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt;</type>
         <definition>Vector&lt;BoxArray&gt; amrex::ParticleBufferMap::m_ba</definition>
         <argsstring></argsstring>
         <name>m_ba</name>
@@ -441,33 +441,39 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4136">
+      <node id="5010">
+        <label>std::vector&lt; amrex::BoxArray, std::allocator&lt; amrex::BoxArray &gt; &gt;</label>
+      </node>
+      <node id="5005">
         <label>amrex::Vector&lt; amrex::DistributionMapping &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4137" relation="public-inheritance">
+        <childnode refid="5006" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4138">
+      <node id="5007">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4139" relation="public-inheritance">
+        <childnode refid="5008" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4131">
+      <node id="5009">
+        <label>amrex::Vector&lt; amrex::BoxArray &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5010" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5002">
         <label>amrex::ParticleBufferMap</label>
         <link refid="classamrex_1_1ParticleBufferMap"/>
-        <childnode refid="4132" relation="usage">
-          <edgelabel>m_ba</edgelabel>
-        </childnode>
-        <childnode refid="4134" relation="usage">
+        <childnode refid="5003" relation="usage">
           <edgelabel>d_lev_offsets</edgelabel>
           <edgelabel>d_lev_gid_to_bucket</edgelabel>
           <edgelabel>d_bucket_to_pid</edgelabel>
         </childnode>
-        <childnode refid="4136" relation="usage">
+        <childnode refid="5005" relation="usage">
           <edgelabel>m_dm</edgelabel>
         </childnode>
-        <childnode refid="4138" relation="usage">
+        <childnode refid="5007" relation="usage">
           <edgelabel>m_lev_offsets</edgelabel>
           <edgelabel>m_proc_box_offsets</edgelabel>
           <edgelabel>m_bucket_to_pid</edgelabel>
@@ -476,30 +482,24 @@
           <edgelabel>m_lev_gid_to_bucket</edgelabel>
           <edgelabel>m_proc_box_counts</edgelabel>
         </childnode>
+        <childnode refid="5009" relation="usage">
+          <edgelabel>m_ba</edgelabel>
+        </childnode>
       </node>
-      <node id="4137">
+      <node id="5006">
         <label>std::vector&lt; amrex::DistributionMapping, std::allocator&lt; amrex::DistributionMapping &gt; &gt;</label>
       </node>
-      <node id="4139">
+      <node id="5008">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="4132">
-        <label>amrex::Vector&lt; BoxArray &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4133" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="4134">
+      <node id="5003">
         <label>amrex::PODVector&lt; int &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="4135" relation="public-inheritance">
+        <childnode refid="5004" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4135">
+      <node id="5004">
         <label>std::allocator&lt; int &gt;</label>
-      </node>
-      <node id="4133">
-        <label>std::vector&lt; BoxArray, std::allocator&lt; BoxArray &gt; &gt;</label>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" line="53" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H" bodystart="52" bodyend="160"/>

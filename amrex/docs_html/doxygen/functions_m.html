@@ -74,6 +74,9 @@ $(function() {
 <li>m_abeclap
 : <a class="el" href="classamrex_1_1MacProjector.html#a6bbf0668ee0f491ae7917f308d2b393a">amrex::MacProjector</a>
 </li>
+<li>m_abox
+: <a class="el" href="structamrex_1_1BARef.html#aaa1d0e47191bce43137f9aeecf529f64">amrex::BARef</a>
+</li>
 <li>m_actually_used
 : <a class="el" href="classamrex_1_1CArena.html#af3edc78581fb20c7273fbf74494e0c48">amrex::CArena</a>
 </li>
@@ -153,6 +156,12 @@ $(function() {
 <li>m_baseptr
 : <a class="el" href="classamrex_1_1DArena.html#a60dde49130e2e6672c0f70a63a5fde2c">amrex::DArena</a>
 </li>
+<li>m_bat
+: <a class="el" href="classamrex_1_1BoxArray.html#a416da5b2620e5c9cad12ab2fd73d349b">amrex::BoxArray</a>
+</li>
+<li>m_bat_type
+: <a class="el" href="structamrex_1_1BATransformer.html#addbc01e0e2621532efa04d4f28e3f305">amrex::BATransformer</a>
+</li>
 <li>m_bc_hi
 : <a class="el" href="classamrex_1_1NodalProjector.html#a9629028ba382b2d9b32852f1ac88c982">amrex::NodalProjector</a>
 </li>
@@ -231,6 +240,9 @@ $(function() {
 <li>m_bndrynorm
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#a863477aadc907e1abeb83c666168ccc4">amrex::EB2::Level</a>
 , <a class="el" href="classamrex_1_1EBDataCollection.html#a586018b239d0fd75d2a920b4e7d8fa40">amrex::EBDataCollection</a>
+</li>
+<li>m_bndryReg
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf">amrex::BATransformer::BATOp</a>
 </li>
 <li>m_bottom_comm
 : <a class="el" href="classamrex_1_1MLLinOp.html#a06ea1608702e52d38c0eceaa180bad7e">amrex::MLLinOp</a>
@@ -371,6 +383,9 @@ $(function() {
 <li>m_coarsening_strategy
 : <a class="el" href="classamrex_1_1MLNodeLinOp.html#af4d1bfea4dae502fae40e6b71fd4deae">amrex::MLNodeLinOp</a>
 </li>
+<li>m_coarsenRatio
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814">amrex::BATransformer::BATOp</a>
+</li>
 <li>m_color
 : <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a0e84c360250692ebc2e6585a33e47d41">amrex::ParallelDescriptor::ProcessTeam</a>
 </li>
@@ -422,7 +437,10 @@ $(function() {
 : <a class="el" href="classamrex_1_1YAFluxRegister.html#a6170429b80c9c95fc90120a72cf7d2b6">amrex::YAFluxRegister</a>
 </li>
 <li>m_crse_ratio
-: <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#abe82c8b83c190d9388ff8cb1f2f41cc1">amrex::FabArrayBase::FB</a>
+: <a class="el" href="structamrex_1_1BATbndryReg.html#afb3c670e0176df666a804c831a941f89">amrex::BATbndryReg</a>
+, <a class="el" href="structamrex_1_1BATcoarsenRatio.html#acaf5d98499e6ecc09cac5fe8a027a759">amrex::BATcoarsenRatio</a>
+, <a class="el" href="structamrex_1_1BATindexType__coarsenRatio.html#a596d52f9079ac3303ea362ba657f8bf0">amrex::BATindexType_coarsenRatio</a>
+, <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#abe82c8b83c190d9388ff8cb1f2f41cc1">amrex::FabArrayBase::FB</a>
 </li>
 <li>m_crse_sol_br
 : <a class="el" href="classamrex_1_1MLCellLinOp.html#aae58b75937a141dc599d98b034be7f3c">amrex::MLCellLinOp</a>
@@ -502,6 +520,12 @@ $(function() {
 </li>
 <li>m_do_team_reduce
 : <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a5de8f1503fd9c3d7fac5aad2558a3a8b">amrex::ParallelDescriptor::ProcessTeam</a>
+</li>
+<li>m_doihi
+: <a class="el" href="structamrex_1_1BATbndryReg.html#ad8ea19edcbf549f67753ecdcd6a2f32e">amrex::BATbndryReg</a>
+</li>
+<li>m_doilo
+: <a class="el" href="structamrex_1_1BATbndryReg.html#ae3b0deb00e514295c1a38e8a1cd20506">amrex::BATbndryReg</a>
 </li>
 <li>m_domain
 : <a class="el" href="structamrex_1_1AssignGrid.html#a63782cb4dceff5b3b6df900b00e1ba81">amrex::AssignGrid&lt; BinIteratorFactory &gt;</a>
@@ -603,7 +627,8 @@ $(function() {
 : <a class="el" href="classamrex_1_1FabArray.html#a7ecd52e23e86db0f9e8e99166900e63c">amrex::FabArray&lt; FAB &gt;</a>
 </li>
 <li>m_face
-: <a class="el" href="structamrex_1_1EB2_1_1Edge.html#ada71160c3d64cb7978bff2cbd0ef851f">amrex::EB2::Edge</a>
+: <a class="el" href="structamrex_1_1BATbndryReg.html#a742f179bd6167bd80a9f9aa9e561bb41">amrex::BATbndryReg</a>
+, <a class="el" href="structamrex_1_1EB2_1_1Edge.html#ada71160c3d64cb7978bff2cbd0ef851f">amrex::EB2::Edge</a>
 </li>
 <li>m_facecent
 : <a class="el" href="structamrex_1_1EB2_1_1Face.html#a0229df77d862af6df91705d19b2264e6">amrex::EB2::Face</a>
@@ -846,6 +871,9 @@ $(function() {
 <li>m_hibc
 : <a class="el" href="classamrex_1_1MLLinOp.html#a619323b7ef2de7c06f7c480c9bcdf3d2">amrex::MLLinOp</a>
 </li>
+<li>m_hishft
+: <a class="el" href="structamrex_1_1BATbndryReg.html#ae30ce7aef9fb1c29ea4b1a2708ae19eb">amrex::BATbndryReg</a>
+</li>
 <li>m_host_boxes
 : <a class="el" href="classamrex_1_1ParticleLocator.html#a67f017c8270b95e07b622e8c1ed97b6c">amrex::ParticleLocator&lt; Bins &gt;</a>
 </li>
@@ -910,6 +938,12 @@ $(function() {
 </li>
 <li>m_index_array
 : <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html#a89d87a77852f51756c34d02d92cf8656">amrex::DistributionMapping::Ref</a>
+</li>
+<li>m_indexType
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a0658b5293698992c4cc7df2062991b2a">amrex::BATransformer::BATOp</a>
+</li>
+<li>m_indexType_coarsenRatio
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360">amrex::BATransformer::BATOp</a>
 </li>
 <li>m_info
 : <a class="el" href="classamrex_1_1AMRErrorTag.html#a501d9971a3346526fae6093d6de95642">amrex::AMRErrorTag</a>
@@ -1038,6 +1072,9 @@ $(function() {
 </li>
 <li>m_LocTags
 : <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8">amrex::FabArrayBase::CommMetaData</a>
+</li>
+<li>m_loshft
+: <a class="el" href="structamrex_1_1BATbndryReg.html#a8076201cf94e0e9145160b6aa522ba26">amrex::BATbndryReg</a>
 </li>
 <li>m_map
 : <a class="el" href="classamrex_1_1FillPatchIteratorHelper.html#af0e183d350296703e8deaebb9a88f81a">amrex::FillPatchIteratorHelper</a>
@@ -1244,6 +1281,9 @@ $(function() {
 <li>m_nrcvs
 : <a class="el" href="structamrex_1_1ParticleCopyPlan.html#ac2e31e632d2856477f32757e16ba053e">amrex::ParticleCopyPlan</a>
 </li>
+<li>m_null
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39">amrex::BATransformer::BATOp</a>
+</li>
 <li>m_num_amr_levels
 : <a class="el" href="classamrex_1_1MLLinOp.html#ad6bbf49c1bdb88256721471b22b4b044">amrex::MLLinOp</a>
 </li>
@@ -1304,6 +1344,9 @@ $(function() {
 </li>
 <li>m_ok
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#acdef1c2b11c62f8e02b1a4806de74376">amrex::EB2::Level</a>
+</li>
+<li>m_op
+: <a class="el" href="structamrex_1_1BATransformer.html#ae5934f27c83bc63db5971f7d9fc6c780">amrex::BATransformer</a>
 </li>
 <li>m_out
 : <a class="el" href="classamrex_1_1ParallelContext_1_1Frame.html#a9137c45cc574cabfd0194ab8ed082116">amrex::ParallelContext::Frame</a>
@@ -1575,7 +1618,8 @@ $(function() {
 : <a class="el" href="classamrex_1_1HypreIJIface.html#ad473615875cdc97cafae5a44ca7fff27">amrex::HypreIJIface</a>
 </li>
 <li>m_ref
-: <a class="el" href="classamrex_1_1DistributionMapping.html#a66d4a4d11b9ff6a159c90448e55b6885">amrex::DistributionMapping</a>
+: <a class="el" href="classamrex_1_1BoxArray.html#aaf44041b956612401793f474280e5e2f">amrex::BoxArray</a>
+, <a class="el" href="classamrex_1_1DistributionMapping.html#a66d4a4d11b9ff6a159c90448e55b6885">amrex::DistributionMapping</a>
 </li>
 <li>m_ref_ratio
 : <a class="el" href="classamrex_1_1NodalProjector.html#a04468cb5062d59658fb98c8659379951">amrex::NodalProjector</a>
@@ -1662,6 +1706,9 @@ $(function() {
 , <a class="el" href="classamrex_1_1EB2_1_1PolynomialIF.html#ad957f17b324e9e51370e72b065d6684c">amrex::EB2::PolynomialIF</a>
 , <a class="el" href="classamrex_1_1EB2_1_1SphereIF.html#a729f1a7c0e893a62bde14d9ce2aac7e5">amrex::EB2::SphereIF</a>
 , <a class="el" href="classamrex_1_1EB2_1_1TorusIF.html#a99567ce8919aa7ae802d60b62de5d08e">amrex::EB2::TorusIF</a>
+</li>
+<li>m_simplified_list
+: <a class="el" href="classamrex_1_1BoxArray.html#a6111d0d59d47fcfe76123cc90bfa2f9c">amrex::BoxArray</a>
 </li>
 <li>m_sin_angle
 : <a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">amrex::EB2::RotationIF&lt; F &gt;</a>
@@ -1874,7 +1921,10 @@ $(function() {
 : <a class="el" href="classamrex_1_1ReduceData.html#af4154a58a8fb367004c4297cf6b8e189">amrex::ReduceData&lt; Ts &gt;</a>
 </li>
 <li>m_typ
-: <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a70a0f9e05a982b0fba0204104b794e72">amrex::FabArrayBase::FB</a>
+: <a class="el" href="structamrex_1_1BATbndryReg.html#a8e3247c949b2224196c82ab300bbfbb4">amrex::BATbndryReg</a>
+, <a class="el" href="structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8">amrex::BATindexType</a>
+, <a class="el" href="structamrex_1_1BATindexType__coarsenRatio.html#ae45a6ecaa6463cf76c6ea2edb046319f">amrex::BATindexType_coarsenRatio</a>
+, <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a70a0f9e05a982b0fba0204104b794e72">amrex::FabArrayBase::FB</a>
 </li>
 <li>m_type
 : <a class="el" href="classamrex_1_1EBCellFlagFab.html#a625c1eeed8e477ce6df628fdf55059a9">amrex::EBCellFlagFab</a>
@@ -1968,10 +2018,10 @@ $(function() {
 : <a class="el" href="structamrex_1_1VisMF_1_1Header.html#ae83557a09400cdcb97b0220b3ced8d43">amrex::VisMF::Header</a>
 </li>
 <li>MacBndry()
-: <a class="el" href="classamrex_1_1MacBndry.html#a7f8311f229addca98aca749a0e01aa2b">amrex::MacBndry</a>
+: <a class="el" href="classamrex_1_1MacBndry.html#a7adac5379d6492f57784417ec6b7b68f">amrex::MacBndry</a>
 </li>
 <li>MacProjector()
-: <a class="el" href="classamrex_1_1MacProjector.html#a38e1db6e60b6ef2a4b0681a3dd971651">amrex::MacProjector</a>
+: <a class="el" href="classamrex_1_1MacProjector.html#a941a4721005ee076273ba3bf0b80939b">amrex::MacProjector</a>
 </li>
 <li>make()
 : <a class="el" href="classamrex_1_1MLLinOp.html#af41b89817b39bbd605ee94ee5d47d72f">amrex::MLLinOp</a>
@@ -1996,13 +2046,13 @@ $(function() {
 : <a class="el" href="classBLProfStats.html#adee7586f1673d8f37da0f0b69c25fd62">BLProfStats</a>
 </li>
 <li>makeKnapSack()
-: <a class="el" href="classamrex_1_1DistributionMapping.html#ae4537c97b68ccdc4d6689c3363b2e7d9">amrex::DistributionMapping</a>
+: <a class="el" href="classamrex_1_1DistributionMapping.html#aca77d66a4ccd0c7c23843bd09d223a26">amrex::DistributionMapping</a>
 </li>
 <li>makeLoadBalanceDistributionMap()
 : <a class="el" href="classamrex_1_1Amr.html#a11440fbd79bb8db036e18692462e142f">amrex::Amr</a>
 </li>
 <li>MakeMFIter()
-: <a class="el" href="classamrex_1_1ParticleContainerBase.html#a41cb0c34d64f3d1df87d83f3b26f594b">amrex::ParticleContainerBase</a>
+: <a class="el" href="classamrex_1_1ParticleContainerBase.html#adc8bb6ea7e7d8a9596936623bc2e26ed">amrex::ParticleContainerBase</a>
 </li>
 <li>MakeNewGrids()
 : <a class="el" href="classamrex_1_1AmrMesh.html#acb422930e8e69fc386727f45607e114b">amrex::AmrMesh</a>
@@ -2041,7 +2091,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1DistributionMapping.html#a70511fca0600a56369ce74f28cbc9d99">amrex::DistributionMapping</a>
 </li>
 <li>makeSFC()
-: <a class="el" href="classamrex_1_1DistributionMapping.html#a3691234f6667de564cebb4e990a4b143">amrex::DistributionMapping</a>
+: <a class="el" href="classamrex_1_1DistributionMapping.html#a5149c43052f843c3e37014f3a3fa2e96">amrex::DistributionMapping</a>
 </li>
 <li>makeSolvable()
 : <a class="el" href="classamrex_1_1MLMG.html#ae5f98b72769ed94a44f850aa8aa1e1ba">amrex::MLMG</a>
@@ -2083,7 +2133,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1IndexType.html#a7dd088bc8e2af6141a146c161e1332f8">amrex::IndexType</a>
 </li>
 <li>Mask()
-: <a class="el" href="classamrex_1_1Mask.html#a5c614b68bcc988e86e52c106c20c5d59">amrex::Mask</a>
+: <a class="el" href="classamrex_1_1Mask.html#aa1437a1b1611cb70a4d8c6a581c7a5bf">amrex::Mask</a>
 </li>
 <li>mask
 : <a class="el" href="structArray4MaskCopyTag.html#a6cde92cde0cbad0125d0b0abaffa78e1">Array4MaskCopyTag&lt; T &gt;</a>
@@ -2120,10 +2170,10 @@ $(function() {
 </li>
 <li>max()
 : <a class="el" href="structamrex_1_1algoim_1_1BoundingBox.html#a5ddb29896fb93ee72d69b9545d3453b1">amrex::algoim::BoundingBox&lt; N &gt;</a>
-, <a class="el" href="classamrex_1_1BaseFab.html#a939ad0219e8ede03540eadef78ba7cbb">amrex::BaseFab&lt; T &gt;</a>
+, <a class="el" href="classamrex_1_1BaseFab.html#a976274fa8a099dc6ccd77fb63a3a0650">amrex::BaseFab&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1iMultiFab.html#a25af5cc2e9cd71a6079c8a8c74bd96bc">amrex::iMultiFab</a>
 , <a class="el" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">amrex::IntVect</a>
-, <a class="el" href="classamrex_1_1MultiFab.html#abb92462276ca55cd70f16507118f63ad">amrex::MultiFab</a>
+, <a class="el" href="classamrex_1_1MultiFab.html#ad26e4c97b949bcafacf6c8173d632f5f">amrex::MultiFab</a>
 , <a class="el" href="classamrex_1_1RealVect.html#a30944a8839e0dc2a873dc3fbef6b2c41">amrex::RealVect</a>
 , <a class="el" href="classamrex_1_1VisMF.html#a110072536de1d4531dcd88a766c41ac9">amrex::VisMF</a>
 </li>
@@ -2143,7 +2193,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1MLMG.html#ae4f94ee42b8da24efdafd34b023e2457">amrex::MLMG</a>
 </li>
 <li>max_lbound
-: <a class="el" href="classamrex_1_1Box.html#af6132d21295f22c35eae8362d4331585">amrex::Box</a>
+: <a class="el" href="classamrex_1_1Box.html#a97bd90cd8224ba2d6051426676ac7521">amrex::Box</a>
 </li>
 <li>max_level
 : <a class="el" href="structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93">amrex::AmrInfo</a>
@@ -2193,7 +2243,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1AmrMesh.html#a359b34414e4ab7c9b33f74b031d16af8">amrex::AmrMesh</a>
 </li>
 <li>maxIndex()
-: <a class="el" href="classamrex_1_1BaseFab.html#ac69c6e4896f54d8ea5ca9fe1114c64f6">amrex::BaseFab&lt; T &gt;</a>
+: <a class="el" href="classamrex_1_1BaseFab.html#a2d83038ff68df032038f2062af731088">amrex::BaseFab&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1iMultiFab.html#a16f57e0d929a79571e20a91253efe2d7">amrex::iMultiFab</a>
 , <a class="el" href="classamrex_1_1MultiFab.html#a642f844c834d6fb714e3e0fc6eb75e56">amrex::MultiFab</a>
 </li>
@@ -2206,13 +2256,13 @@ $(function() {
 , <a class="el" href="classamrex_1_1ParGDB.html#a8828d137d299131f4251935829bb8aa9">amrex::ParGDB</a>
 , <a class="el" href="classamrex_1_1ParGDBBase.html#a2da3b6ec6f3dff255917d3a0bfbde3d5">amrex::ParGDBBase</a>
 , <a class="el" href="classamrex_1_1ParticleContainerBase.html#ad60ba0c10f19af842fdfbeaccd02b2ed">amrex::ParticleContainerBase</a>
-, <a class="el" href="classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16">amrex::XYPlotDataList</a>
 </li>
 <li>MaxLevel()
 : <a class="el" href="classamrex_1_1XYPlotDataList.html#ae4e3613fe3bc6672fd426919f4da9aae">amrex::XYPlotDataList</a>
 </li>
 <li>maxLevel
-: <a class="el" href="classCommProfStats.html#a94641396a054d091cc6c5972397b83c9">CommProfStats</a>
+: <a class="el" href="classamrex_1_1XYPlotDataList.html#a7177bd1eb109915d763c0e51e18faf16">amrex::XYPlotDataList</a>
+, <a class="el" href="classCommProfStats.html#a94641396a054d091cc6c5972397b83c9">CommProfStats</a>
 </li>
 <li>MaxMV()
 : <a class="el" href="classamrex_1_1BaseUmap.html#a6d21767181a6e1c885fd3f3c2b44dd23">amrex::BaseUmap&lt; T &gt;</a>
@@ -2245,7 +2295,8 @@ $(function() {
 : <a class="el" href="classBLProfStats.html#a0a0a7ce2c13259d6280d6f82cb4971f7">BLProfStats</a>
 </li>
 <li>maxSize()
-: <a class="el" href="classamrex_1_1BoxList.html#a954f12195603d5493ca2251e0147c4e5">amrex::BoxList</a>
+: <a class="el" href="classamrex_1_1BoxArray.html#a59b44d438d01893bcae36064ec089cdc">amrex::BoxArray</a>
+, <a class="el" href="classamrex_1_1BoxList.html#a954f12195603d5493ca2251e0147c4e5">amrex::BoxList</a>
 </li>
 <li>maxsize
 : <a class="el" href="structamrex_1_1FabArrayBase_1_1CacheStats.html#a3ecc000d62df91bdbdd6ee43745cb2d0">amrex::FabArrayBase::CacheStats</a>
@@ -2266,7 +2317,7 @@ $(function() {
 : <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#adfbd525e82a309468044f350e3ece94e">amrex::ParallelDescriptor::ProcessTeam</a>
 </li>
 <li>MemProfiler()
-: <a class="el" href="classamrex_1_1MemProfiler.html#aa94fbdffa3b9649047f9e0d3c74221a4">amrex::MemProfiler</a>
+: <a class="el" href="classamrex_1_1MemProfiler.html#a7f665368612f734b0bd1f15aa71e517a">amrex::MemProfiler</a>
 </li>
 <li>MergeList
 : <a class="el" href="classamrex_1_1EArena.html#a4b262f8a364b67bc38f2db23df5dcc75">amrex::EArena</a>
@@ -2275,13 +2326,13 @@ $(function() {
 : <a class="el" href="structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a73392d6df8f6909a9faf79995eba567f">amrex::AmrMeshDataAdaptor::InternalsType</a>
 </li>
 <li>Message()
-: <a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#a0040976f45b1771d8ee52bc55c1b4cb8">amrex::ParallelDescriptor::Message</a>
+: <a class="el" href="classamrex_1_1ParallelDescriptor_1_1Message.html#acea647a271a17e8dca657744ea034f92">amrex::ParallelDescriptor::Message</a>
 </li>
 <li>message_int
 : <a class="el" href="classamrex_1_1Amr.html#a37d45dad31dd3b070c0a14578937365b">amrex::Amr</a>
 </li>
 <li>MFFork()
-: <a class="el" href="structamrex_1_1ForkJoin_1_1MFFork.html#a34adaed2dce7ad0a962488bee88e6589">amrex::ForkJoin::MFFork</a>
+: <a class="el" href="structamrex_1_1ForkJoin_1_1MFFork.html#a9f9fa0710f16b9dff7c3002b6b23744c">amrex::ForkJoin::MFFork</a>
 </li>
 <li>MFGhostIter
 : <a class="el" href="classamrex_1_1FabArrayBase.html#a0730c47ed240b86d1a24126a0adf6b13">amrex::FabArrayBase</a>
@@ -2292,7 +2343,7 @@ $(function() {
 </li>
 <li>MFIter
 : <a class="el" href="classamrex_1_1FabArrayBase.html#a11fd6aa3197ac10c8fb27ee5a5c96d57">amrex::FabArrayBase</a>
-, <a class="el" href="classamrex_1_1MFIter.html#ad7a19e95ba128febb94b27d2a9d97ef1">amrex::MFIter</a>
+, <a class="el" href="classamrex_1_1MFIter.html#a970e636bf6a2d744068483806ddb7944">amrex::MFIter</a>
 </li>
 <li>mfiter_tile_size
 : <a class="el" href="classamrex_1_1FabArrayBase.html#a8635aa060ab92c84d2641b61e0584052">amrex::FabArrayBase</a>
@@ -2337,25 +2388,25 @@ $(function() {
 : <a class="el" href="structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html#ae307cb5aa95e90cc014fdaab70c82873">amrex::Gpu::range_detail::range_impl&lt; T &gt;::iterator</a>
 </li>
 <li>midpoint()
-: <a class="el" href="structamrex_1_1algoim_1_1BoundingBox.html#aeb237522d3043c217b69e736554b4791">amrex::algoim::BoundingBox&lt; N &gt;</a>
+: <a class="el" href="structamrex_1_1algoim_1_1BoundingBox.html#a77b0f6867f6784ee3d987eb3de9ac2f8">amrex::algoim::BoundingBox&lt; N &gt;</a>
 </li>
 <li>min()
 : <a class="el" href="structamrex_1_1algoim_1_1BoundingBox.html#a12d172b57d7ec240c1b12600be045820">amrex::algoim::BoundingBox&lt; N &gt;</a>
 , <a class="el" href="classamrex_1_1BaseFab.html#a6a67cc88f93b200472fba8ee3ba8263c">amrex::BaseFab&lt; T &gt;</a>
-, <a class="el" href="classamrex_1_1iMultiFab.html#a6100044730dadc00e44465ec1fbad781">amrex::iMultiFab</a>
-, <a class="el" href="classamrex_1_1IntVect.html#aa105b435548bdacb7a82cb174610a4f9">amrex::IntVect</a>
+, <a class="el" href="classamrex_1_1iMultiFab.html#a3668c019d451591659bdde40d4933b92">amrex::iMultiFab</a>
+, <a class="el" href="classamrex_1_1IntVect.html#ad903f958ca90c11bcf4e67941cb3e66a">amrex::IntVect</a>
 , <a class="el" href="classamrex_1_1MultiFab.html#a540eb1714a5eece782de2a4afdd62c8e">amrex::MultiFab</a>
-, <a class="el" href="classamrex_1_1RealVect.html#a0450ba685d7fa9c493158ec2a005f792">amrex::RealVect</a>
+, <a class="el" href="classamrex_1_1RealVect.html#a7da81c75533a97e32fed875a93f6a7c8">amrex::RealVect</a>
 , <a class="el" href="classamrex_1_1VisMF.html#ae085e236dab30e007b0618d4e4ef6c2d">amrex::VisMF</a>
 </li>
 <li>min_map_end_comp
 : <a class="el" href="classamrex_1_1StateDescriptor.html#aa9eb9d029833fd52f74bcb305d5e00bd">amrex::StateDescriptor</a>
 </li>
 <li>min_ubound
-: <a class="el" href="classamrex_1_1Box.html#a490c302952ef6aed95e3cd734dd51c5f">amrex::Box</a>
+: <a class="el" href="classamrex_1_1Box.html#aee1778576c9838c081d03faa8f2d4b02">amrex::Box</a>
 </li>
-<li>minBox
-: <a class="el" href="classamrex_1_1Box.html#aae812272d2d019bfe7d3c5f049f79a0a">amrex::Box</a>
+<li>minBox()
+: <a class="el" href="classamrex_1_1Box.html#a17adc8dab1cd6ad93795fb9270a40d12">amrex::Box</a>
 , <a class="el" href="classamrex_1_1Cluster.html#ae1575a7a7ef6b42efa8ddf43f838ddac">amrex::Cluster</a>
 </li>
 <li>minDigits
@@ -2368,10 +2419,11 @@ $(function() {
 : <a class="el" href="classamrex_1_1MLMG.html#a38df331fcb36de71c4af020b2e1117ed">amrex::MLMG</a>
 </li>
 <li>minimalBox()
-: <a class="el" href="classamrex_1_1BoxList.html#acb7f8b8c07867e9a40ac51922ce07e31">amrex::BoxList</a>
+: <a class="el" href="classamrex_1_1BoxArray.html#adc6fda292fafd7aa9e93227271842a56">amrex::BoxArray</a>
+, <a class="el" href="classamrex_1_1BoxList.html#acb7f8b8c07867e9a40ac51922ce07e31">amrex::BoxList</a>
 </li>
 <li>minIndex()
-: <a class="el" href="classamrex_1_1BaseFab.html#af6d66895d4ba3fe45a6ba4705521e282">amrex::BaseFab&lt; T &gt;</a>
+: <a class="el" href="classamrex_1_1BaseFab.html#af53146ccb7317b937c89ebd12e19efd5">amrex::BaseFab&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1iMultiFab.html#a6bd72fe6018116558b2863f32622755a">amrex::iMultiFab</a>
 , <a class="el" href="classamrex_1_1MultiFab.html#ab351d9250414508cf086635f54e2e2ce">amrex::MultiFab</a>
 </li>
@@ -2382,7 +2434,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1AmrData.html#a3ef07718be1ddcf905d4eb1aa0822cf8">amrex::AmrData</a>
 </li>
 <li>minmax()
-: <a class="el" href="classamrex_1_1BaseFab.html#a1348ff398baf6713f6bbe44bcc1115a1">amrex::BaseFab&lt; T &gt;</a>
+: <a class="el" href="classamrex_1_1BaseFab.html#aabf9a731c176ed69472b109aa42e967b">amrex::BaseFab&lt; T &gt;</a>
 </li>
 <li>MinMax()
 : <a class="el" href="classamrex_1_1DataServices.html#a1b53c93511689d13ab9adf28784078c0">amrex::DataServices</a>
@@ -2394,7 +2446,7 @@ $(function() {
 : <a class="el" href="classBLProfStats.html#ae1b239768583ca1b1f592d3527e5e36f">BLProfStats</a>
 </li>
 <li>minus()
-: <a class="el" href="classamrex_1_1BaseFab.html#a4f4c18fd897e957e12ccb7597d82764b">amrex::BaseFab&lt; T &gt;</a>
+: <a class="el" href="classamrex_1_1BaseFab.html#a2cafb2b37fd53db25b7ae67bc8e3eecd">amrex::BaseFab&lt; T &gt;</a>
 , <a class="el" href="classamrex_1_1iMultiFab.html#a7cf1d225d4d822d1a7abb2b0f2a0c531">amrex::iMultiFab</a>
 , <a class="el" href="classamrex_1_1MultiFab.html#a1bc09d7836dcd4500472fa853a8fcd22">amrex::MultiFab</a>
 </li>
@@ -2402,11 +2454,11 @@ $(function() {
 : <a class="el" href="classamrex_1_1EB2_1_1GeometryShop.html#a9619112cbd6b83ba95c41b7f8785f0c9">amrex::EB2::GeometryShop&lt; F &gt;</a>
 </li>
 <li>MLABecLaplacian()
-: <a class="el" href="classamrex_1_1MLABecLaplacian.html#abf3b9bd60c5bffecca969aae4b710744">amrex::MLABecLaplacian</a>
+: <a class="el" href="classamrex_1_1MLABecLaplacian.html#aa451e5963191f5eed1b2ebf09bae8dd8">amrex::MLABecLaplacian</a>
 , <a class="el" href="classamrex_1_1MLLinOp.html#ada5e4315ec415d41c21e9e092d0dd478">amrex::MLLinOp</a>
 </li>
 <li>MLALaplacian()
-: <a class="el" href="classamrex_1_1MLALaplacian.html#aca7f1120fec8623eb9a13c40bfa4f41b">amrex::MLALaplacian</a>
+: <a class="el" href="classamrex_1_1MLALaplacian.html#aa3cd05f57e339174a2cfc2318322e115">amrex::MLALaplacian</a>
 </li>
 <li>MLCellABecLap()
 : <a class="el" href="classamrex_1_1MLCellABecLap.html#a13b727caa58ea6b165dcc414b6c14bae">amrex::MLCellABecLap</a>
@@ -2417,7 +2469,7 @@ $(function() {
 <li>MLCGSolver
 : <a class="el" href="classamrex_1_1MLCellABecLap.html#a7b344595276c27ed17dacb3ea1fb95aa">amrex::MLCellABecLap</a>
 , <a class="el" href="classamrex_1_1MLCellLinOp.html#a7b344595276c27ed17dacb3ea1fb95aa">amrex::MLCellLinOp</a>
-, <a class="el" href="classamrex_1_1MLCGSolver.html#af0e22ed0d89dcba1fbe10f3592166a85">amrex::MLCGSolver</a>
+, <a class="el" href="classamrex_1_1MLCGSolver.html#ab03782948a095d52c81071f4926c0fff">amrex::MLCGSolver</a>
 , <a class="el" href="classamrex_1_1MLLinOp.html#a7b344595276c27ed17dacb3ea1fb95aa">amrex::MLLinOp</a>
 , <a class="el" href="classamrex_1_1MLMG.html#a7b344595276c27ed17dacb3ea1fb95aa">amrex::MLMG</a>
 , <a class="el" href="classamrex_1_1MLNodeLinOp.html#a7b344595276c27ed17dacb3ea1fb95aa">amrex::MLNodeLinOp</a>
@@ -2426,7 +2478,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1MLEBABecLap.html#afbf800c9b02dd7a3da3fc75905a53c64">amrex::MLEBABecLap</a>
 </li>
 <li>MLEBTensorOp()
-: <a class="el" href="classamrex_1_1MLEBTensorOp.html#af0d70e756af559a4082443914b134b0d">amrex::MLEBTensorOp</a>
+: <a class="el" href="classamrex_1_1MLEBTensorOp.html#a293c2afe15cf59c3114b3881cf2b7b4f">amrex::MLEBTensorOp</a>
 </li>
 <li>MLLinOp()
 : <a class="el" href="classamrex_1_1MLLinOp.html#a69fbc0ca95c18b6e954c53abb41c885c">amrex::MLLinOp</a>
@@ -2444,7 +2496,7 @@ $(function() {
 , <a class="el" href="classamrex_1_1MLNodeLinOp.html#a1b4821805159b0595b6b7b1e0135b54f">amrex::MLNodeLinOp</a>
 </li>
 <li>MLMGBndry()
-: <a class="el" href="classamrex_1_1MLMGBndry.html#a25293b479f35c3e76661aa9ac6833d61">amrex::MLMGBndry</a>
+: <a class="el" href="classamrex_1_1MLMGBndry.html#aa3d8c964cb965c1870744aea5d2b8d61">amrex::MLMGBndry</a>
 </li>
 <li>MLNodeLaplacian()
 : <a class="el" href="classamrex_1_1MLNodeLaplacian.html#a9b935f6c3fd7cdb7d702502ffbabc275">amrex::MLNodeLaplacian</a>
@@ -2457,7 +2509,7 @@ $(function() {
 </li>
 <li>MLPoisson
 : <a class="el" href="classamrex_1_1MLLinOp.html#a6b8679aecd5dee44bee1b262c40e8f8f">amrex::MLLinOp</a>
-, <a class="el" href="classamrex_1_1MLPoisson.html#ad86b607cb6313b21110a23ca8688e8a2">amrex::MLPoisson</a>
+, <a class="el" href="classamrex_1_1MLPoisson.html#a2ba1ef47a809b4631767eb37887cbc94">amrex::MLPoisson</a>
 </li>
 <li>MLResNormInf()
 : <a class="el" href="classamrex_1_1MLMG.html#aa86c7015c1ee9cfde217cef76c1a55a5">amrex::MLMG</a>
@@ -2466,7 +2518,7 @@ $(function() {
 : <a class="el" href="classamrex_1_1MLMG.html#a2f0fcfb202fff08a11c25408b72dd505">amrex::MLMG</a>
 </li>
 <li>MLTensorOp()
-: <a class="el" href="classamrex_1_1MLTensorOp.html#a2cf6f2e2ef6c4cceed3f3a67cf4e1201">amrex::MLTensorOp</a>
+: <a class="el" href="classamrex_1_1MLTensorOp.html#aec0e97a4db88c3f6c19526090d051853">amrex::MLTensorOp</a>
 </li>
 <li>mn
 : <a class="el" href="structamrex_1_1MemProfiler_1_1Builds.html#a2756a5fbf45d016bd03416184543526b">amrex::MemProfiler::Builds</a>
@@ -2485,10 +2537,10 @@ $(function() {
 : <a class="el" href="classRegionsProfStats.html#ae7b5e31a9fc2540ebcced76270cd6dbb">RegionsProfStats</a>
 </li>
 <li>mult()
-: <a class="el" href="classamrex_1_1BaseFab.html#a72337bc09214fce473bf77e724ef9e93">amrex::BaseFab&lt; T &gt;</a>
-, <a class="el" href="classamrex_1_1FabArray.html#aabc2fcb2d3b6c12974d49d5aff23ef5d">amrex::FabArray&lt; FAB &gt;</a>
-, <a class="el" href="classamrex_1_1iMultiFab.html#af5406410d32043523bbf1731020585f1">amrex::iMultiFab</a>
-, <a class="el" href="classamrex_1_1MultiFab.html#a75e0a3256784cedf410454d5bd9674e8">amrex::MultiFab</a>
+: <a class="el" href="classamrex_1_1BaseFab.html#a7df0d47826c9b346e9a5df0ff0a32666">amrex::BaseFab&lt; T &gt;</a>
+, <a class="el" href="classamrex_1_1FabArray.html#a179ad441a231e9d09ffebfbc7ad674fb">amrex::FabArray&lt; FAB &gt;</a>
+, <a class="el" href="classamrex_1_1iMultiFab.html#a20f88cb636e58141aff41e1ce56a7932">amrex::iMultiFab</a>
+, <a class="el" href="classamrex_1_1MultiFab.html#a3f3d92f9f07cf43431b03744b50edbdb">amrex::MultiFab</a>
 </li>
 <li>multi_valued_bits
 : <a class="el" href="classamrex_1_1EBCellFlag.html#a8fe56028eeb58ef0718c19c6855f6bcb">amrex::EBCellFlag</a>
@@ -2497,13 +2549,13 @@ $(function() {
 : <a class="el" href="classamrex_1_1MultiCutFab.html#a13683ad147676d968ba83b1c7a1ce09b">amrex::MultiCutFab</a>
 </li>
 <li>MultiFab()
-: <a class="el" href="classamrex_1_1MultiFab.html#ab61f9da32d4aad58172e8871dc992e45">amrex::MultiFab</a>
+: <a class="el" href="classamrex_1_1MultiFab.html#ae5d26ea953fbc273c65f7c489511f656">amrex::MultiFab</a>
 </li>
 <li>MultiFabCopyDescriptor()
 : <a class="el" href="classamrex_1_1MultiFabCopyDescriptor.html#aae458eefaa948665af2dfefd5bffe686">amrex::MultiFabCopyDescriptor</a>
 </li>
 <li>MultiGFab()
-: <a class="el" href="classamrex_1_1EB2_1_1MultiGFab.html#a031d7609d94c881c63e75be491d9dafe">amrex::EB2::MultiGFab</a>
+: <a class="el" href="classamrex_1_1EB2_1_1MultiGFab.html#a499a6d7b2b720aca806b92cdb1e23382">amrex::EB2::MultiGFab</a>
 </li>
 <li>MultiMask()
 : <a class="el" href="classamrex_1_1MultiMask.html#a17295aabe1cef5654de77c7133bea544">amrex::MultiMask</a>

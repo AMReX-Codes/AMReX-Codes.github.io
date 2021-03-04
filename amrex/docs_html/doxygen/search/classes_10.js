@@ -20,7 +20,7 @@ var searchData=
   ['reductionentry',['ReductionEntry',['../structCommProfStats_1_1ReductionEntry.html',1,'CommProfStats']]],
   ['ref',['Ref',['../structamrex_1_1DistributionMapping_1_1Ref.html',1,'amrex::DistributionMapping']]],
   ['ref_5fwrapper',['ref_wrapper',['../classamrex_1_1ref__wrapper.html',1,'amrex']]],
-  ['refid',['RefID',['../structamrex_1_1DistributionMapping_1_1RefID.html',1,'amrex::DistributionMapping']]],
+  ['refid',['RefID',['../structamrex_1_1BoxArray_1_1RefID.html',1,'amrex::BoxArray::RefID'],['../structamrex_1_1DistributionMapping_1_1RefID.html',1,'amrex::DistributionMapping::RefID']]],
   ['regionsprofstats',['RegionsProfStats',['../classRegionsProfStats.html',1,'']]],
   ['regiontag',['RegionTag',['../structamrex_1_1FabArrayBase_1_1RegionTag.html',1,'amrex::FabArrayBase']]],
   ['rotate180fn',['Rotate180Fn',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html',1,'amrex::NonLocalBC']]],

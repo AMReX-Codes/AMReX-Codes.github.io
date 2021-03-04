@@ -9,6 +9,7 @@ var searchData=
   ['barriernames',['barrierNames',['../classCommProfStats.html#ae8a2403290796125e47b6b85b70a0d69',1,'CommProfStats']]],
   ['barriernumberstonames',['barrierNumbersToNames',['../classBLProfStats.html#a9d4b65df466fc4e6154b2c5b3af454b8',1,'BLProfStats']]],
   ['barriers',['barriers',['../structCommProfStats_1_1DataBlock.html#aa614e74a38459674fd55176f2b42e82e',1,'CommProfStats::DataBlock']]],
+  ['bbox',['bbox',['../structamrex_1_1BARef.html#a88374d21f3cf26914235a3136df641f7',1,'amrex::BARef']]],
   ['bc',['bc',['../classamrex_1_1StateDescriptor.html#a028da3417e8c939df2795b540b9b3533',1,'amrex::StateDescriptor::bc()'],['../classamrex_1_1BCRec.html#adb5fc84ac2f9e43e15f6cc05ed2216f5',1,'amrex::BCRec::bc()']]],
   ['bc_5ffunc',['bc_func',['../classamrex_1_1StateDescriptor.html#a441b52239a3fe61b2d2fa90f6174ef7a',1,'amrex::StateDescriptor']]],
   ['bc_5fpt_5fend',['bc_pt_end',['../classamrex_1_1SplineDistFcnElement2d.html#acf0af49643ea92e7bf5cddc7aa649058',1,'amrex::SplineDistFcnElement2d']]],

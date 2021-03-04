@@ -33,9 +33,16 @@
     <innerclass refid="classamrex_1_1ArrayOfStructs" prot="public">amrex::ArrayOfStructs</innerclass>
     <innerclass refid="structamrex_1_1AssignGrid" prot="public">amrex::AssignGrid</innerclass>
     <innerclass refid="classamrex_1_1BackgroundThread" prot="public">amrex::BackgroundThread</innerclass>
+    <innerclass refid="structamrex_1_1BARef" prot="public">amrex::BARef</innerclass>
     <innerclass refid="classamrex_1_1BArena" prot="public">amrex::BArena</innerclass>
     <innerclass refid="classamrex_1_1BaseFab" prot="public">amrex::BaseFab</innerclass>
     <innerclass refid="classamrex_1_1BaseUmap" prot="public">amrex::BaseUmap</innerclass>
+    <innerclass refid="structamrex_1_1BATbndryReg" prot="public">amrex::BATbndryReg</innerclass>
+    <innerclass refid="structamrex_1_1BATcoarsenRatio" prot="public">amrex::BATcoarsenRatio</innerclass>
+    <innerclass refid="structamrex_1_1BATindexType" prot="public">amrex::BATindexType</innerclass>
+    <innerclass refid="structamrex_1_1BATindexType__coarsenRatio" prot="public">amrex::BATindexType_coarsenRatio</innerclass>
+    <innerclass refid="structamrex_1_1BATnull" prot="public">amrex::BATnull</innerclass>
+    <innerclass refid="structamrex_1_1BATransformer" prot="public">amrex::BATransformer</innerclass>
     <innerclass refid="classamrex_1_1BCRec" prot="public">amrex::BCRec</innerclass>
     <innerclass refid="structamrex_1_1BinIterator" prot="public">amrex::BinIterator</innerclass>
     <innerclass refid="structamrex_1_1BLBackTrace" prot="public">amrex::BLBackTrace</innerclass>
@@ -46,6 +53,7 @@
     <innerclass refid="classamrex_1_1BndryRegister" prot="public">amrex::BndryRegister</innerclass>
     <innerclass refid="classamrex_1_1BoundCond" prot="public">amrex::BoundCond</innerclass>
     <innerclass refid="classamrex_1_1Box" prot="public">amrex::Box</innerclass>
+    <innerclass refid="classamrex_1_1BoxArray" prot="public">amrex::BoxArray</innerclass>
     <innerclass refid="classamrex_1_1BoxCommHelper" prot="public">amrex::BoxCommHelper</innerclass>
     <innerclass refid="classamrex_1_1BoxConverter" prot="public">amrex::BoxConverter</innerclass>
     <innerclass refid="classamrex_1_1BoxDomain" prot="public">amrex::BoxDomain</innerclass>
@@ -1336,6 +1344,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseUmap.H" line="32" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BaseUmap.H" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1af2ed2dc1168064ab4409c918ad0dfce6" prot="public" static="no">
+        <type><ref refid="structamrex_1_1BATransformer" kindref="compound">BATransformer</ref></type>
+        <definition>using amrex::BndryBATransformer = typedef BATransformer</definition>
+        <argsstring></argsstring>
+        <name>BndryBATransformer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" line="513" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.H" bodystart="513" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1ac3aaf3d47b0fc6e69f9405fcebcdc4fe" prot="public" static="no">
         <type>std::runtime_error</type>
@@ -7457,9 +7478,9 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" line="1731" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Box.H" bodystart="1731" bodyend="1745"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a2983da382fcac2be36927be35cbd2c10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ada7c77f7ac84c643ea21113e4ff5f2d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
-        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
+        <definition>std::ostream &amp; amrex::operator&lt;&lt;</definition>
         <argsstring>(std::ostream &amp;os, const BoxArray &amp;ba)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -7467,11 +7488,11 @@ template &lt;typename DstTile</initializer>
           <declname>os</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Write a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> to an ostream in ASCII format. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -7479,7 +7500,7 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1579" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1580" bodyend="1601"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::boxComplement</definition>
         <argsstring>(const Box &amp;b1in, const Box &amp;b2)</argsstring>
         <name>boxComplement</name>
@@ -7492,7 +7513,7 @@ template &lt;typename DstTile</initializer>
           <declname>b2</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Make a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> from the the complement of b2 in b1in. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -7500,7 +7521,7 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1604" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1604" bodyend="1608"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::complementIn</definition>
         <argsstring>(const Box &amp;b, const BoxArray &amp;ba)</argsstring>
         <name>complementIn</name>
@@ -7509,24 +7530,24 @@ template &lt;typename DstTile</initializer>
           <declname>b</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Make a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> from the complement of <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> ba in <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> b. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1611" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1611" bodyend="1615"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a412497dd4eac6d90b273f280818ca354" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+      <memberdef kind="function" id="namespaceamrex_1a31f38031bc51519297d88d3234115277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::intersect</definition>
-        <argsstring>(const BoxArray &amp;ba, const Box &amp;b, int ng)</argsstring>
+        <argsstring>(const BoxArray &amp;ba, const Box &amp;b, int ng=0)</argsstring>
         <name>intersect</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7538,7 +7559,7 @@ template &lt;typename DstTile</initializer>
           <declname>ng</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Make a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> from the intersection of <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> b and <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>(+ghostcells). </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -7546,12 +7567,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1618" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1618" bodyend="1641"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2fa5535ba8d983023e1a6bd61c9a4880" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::intersect</definition>
         <argsstring>(const BoxArray &amp;ba, const Box &amp;b, const IntVect &amp;ng)</argsstring>
         <name>intersect</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7571,20 +7592,20 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1644" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1644" bodyend="1667"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a172c409fe49ab498d9910cc19b732346" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::intersect</definition>
         <argsstring>(const BoxArray &amp;lhs, const BoxArray &amp;rhs)</argsstring>
         <name>intersect</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>lhs</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>rhs</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Make a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> from the intersection of two BoxArrays. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -7597,7 +7618,7 @@ template &lt;typename DstTile</initializer>
         <argsstring>(const BoxArray &amp;ba, const BoxList &amp;bl)</argsstring>
         <name>intersect</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7605,7 +7626,7 @@ template &lt;typename DstTile</initializer>
           <declname>bl</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Make a <ref refid="classamrex_1_1BoxList" kindref="compound">BoxList</ref> from the intersection of <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1BoxList" kindref="compound">BoxList</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -7613,12 +7634,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1683" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1683" bodyend="1692"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1af37f380f72af598af4865070235664c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::convert</definition>
         <argsstring>(const BoxArray &amp;ba, IndexType typ)</argsstring>
         <name>convert</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7634,12 +7655,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1695" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1695" bodyend="1700"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a911442fbfdd591235baf90cac01d9856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::convert</definition>
         <argsstring>(const BoxArray &amp;ba, const IntVect &amp;typ)</argsstring>
         <name>convert</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7655,12 +7676,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1703" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1703" bodyend="1708"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a22ce5ec6a27aa7bce43ca708cec77023" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::coarsen</definition>
         <argsstring>(const BoxArray &amp;ba, int ratio)</argsstring>
         <name>coarsen</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7676,12 +7697,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1711" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1711" bodyend="1716"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a255709aafea190412cf8a963f450ebc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::coarsen</definition>
         <argsstring>(const BoxArray &amp;ba, const IntVect &amp;ratio)</argsstring>
         <name>coarsen</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7697,12 +7718,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1719" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1719" bodyend="1724"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae4c03c73102c83c74769b7773fb82483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::refine</definition>
         <argsstring>(const BoxArray &amp;ba, int ratio)</argsstring>
         <name>refine</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7718,12 +7739,12 @@ template &lt;typename DstTile</initializer>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1727" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1727" bodyend="1732"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a85187c36418a08cc244643e6fc869f4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::refine</definition>
         <argsstring>(const BoxArray &amp;ba, const IntVect &amp;ratio)</argsstring>
         <name>refine</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7744,7 +7765,7 @@ template &lt;typename DstTile</initializer>
         <argsstring>(const BoxArray &amp;ba, int ngrow)</argsstring>
         <name>GetBndryCells</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7752,20 +7773,20 @@ template &lt;typename DstTile</initializer>
           <declname>ngrow</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Find the ghost cells of a given <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1743" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1743" bodyend="1797"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab69e582cef17dfd91d829e59457a28fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae634c8846124c00149fa2a0ad45f4ec4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::readBoxArray</definition>
-        <argsstring>(BoxArray &amp;ba, std::istream &amp;is, bool bReadSpecial)</argsstring>
+        <argsstring>(BoxArray &amp;ba, std::istream &amp;s, bool b=false)</argsstring>
         <name>readBoxArray</name>
         <param>
-          <type>BoxArray &amp;</type>
+          <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -7777,7 +7798,7 @@ template &lt;typename DstTile</initializer>
           <declname>bReadSpecial</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Read a <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> from a stream. If b is true, read in a special way. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -7790,24 +7811,24 @@ template &lt;typename DstTile</initializer>
         <argsstring>(const BoxArray &amp;x, const BoxArray &amp;y)</argsstring>
         <name>match</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>x</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>y</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Note that two BoxArrays that match are not necessarily equal. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" line="1830" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_BoxArray.cpp" bodystart="1830" bodyend="1841"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa34e9c1b35146df170443ce809faee80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae7f2c81407f110284eec40dface36cbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
-        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
+        <definition>std::ostream &amp; amrex::operator&lt;&lt;</definition>
         <argsstring>(std::ostream &amp;os, const BoxArray::RefID &amp;id)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
@@ -7815,7 +7836,7 @@ template &lt;typename DstTile</initializer>
           <declname>os</declname>
         </param>
         <param>
-          <type>const BoxArray::RefID &amp;</type>
+          <type>const <ref refid="structamrex_1_1BoxArray_1_1RefID" kindref="compound">BoxArray::RefID</ref> &amp;</type>
           <declname>id</declname>
         </param>
         <briefdescription>
@@ -17768,7 +17789,7 @@ template &lt;typename DstTile</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Average fine cell-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse cell-centered <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> using volume-weighting. This routine DOES NOT assume that the crse BoxArray is a coarsened version of the fine BoxArray. </para>        </detaileddescription>
+<para>Average fine cell-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse cell-centered <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> using volume-weighting. This routine DOES NOT assume that the crse <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is a coarsened version of the fine <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="254" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="254" bodyend="307"/>
@@ -17875,7 +17896,7 @@ template &lt;typename DstTile</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Average <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> without volume weighting. This routine DOES NOT assume that the crse BoxArray is a coarsened version of the fine BoxArray. Work for both cell-centered and nodal MultiFabs. </para>        </detaileddescription>
+<para>Average <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> without volume weighting. This routine DOES NOT assume that the crse <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is a coarsened version of the fine <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. Work for both cell-centered and nodal MultiFabs. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="357" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="357" bodyend="430"/>
@@ -18108,7 +18129,7 @@ template &lt;typename DstTile</initializer>
         <briefdescription>
 <para>Average fine edge-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse edge-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>        </briefdescription>
         <detaileddescription>
-<para>Average fine edge-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse edge-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. This routine assumes that the crse BoxArray is a coarsened version of the fine BoxArray. </para>        </detaileddescription>
+<para>Average fine edge-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse edge-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. This routine assumes that the crse <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is a coarsened version of the fine <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.cpp" line="532" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.cpp" bodystart="532" bodyend="539"/>
@@ -18333,7 +18354,7 @@ template &lt;typename DstTile</initializer>
         <argsstring>(const BoxArray &amp;cba, const DistributionMapping &amp;cdm, const BoxArray &amp;fba, const IntVect &amp;ratio, int crse_value, int fine_value)</argsstring>
         <name>makeFineMask</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>cba</declname>
         </param>
         <param>
@@ -18341,7 +18362,7 @@ template &lt;typename DstTile</initializer>
           <declname>cdm</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>fba</declname>
         </param>
         <param>
@@ -18379,7 +18400,7 @@ template &lt;typename DstTile</initializer>
           <declname>mask</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>fba</declname>
         </param>
         <param>
@@ -18412,7 +18433,7 @@ template &lt;typename DstTile</initializer>
         <argsstring>(const BoxArray &amp;cba, const DistributionMapping &amp;cdm, const IntVect &amp;cnghost, const BoxArray &amp;fba, const IntVect &amp;ratio, Periodicity const &amp;period, int crse_value, int fine_value)</argsstring>
         <name>makeFineMask</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>cba</declname>
         </param>
         <param>
@@ -18424,7 +18445,7 @@ template &lt;typename DstTile</initializer>
           <declname>cnghost</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>fba</declname>
         </param>
         <param>
@@ -18457,7 +18478,7 @@ template &lt;typename DstTile</initializer>
         <argsstring>(const BoxArray &amp;cba, const DistributionMapping &amp;cdm, const BoxArray &amp;fba, const IntVect &amp;ratio, Real crse_value, Real fine_value)</argsstring>
         <name>makeFineMask</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>cba</declname>
         </param>
         <param>
@@ -18465,7 +18486,7 @@ template &lt;typename DstTile</initializer>
           <declname>cdm</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>fba</declname>
         </param>
         <param>
@@ -18600,7 +18621,7 @@ template &lt;typename DstTile</initializer>
         <briefdescription>
 <para>Average fine node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse node-centered <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. </para>        </briefdescription>
         <detaileddescription>
-<para>Average fine node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. This routine assumes that the crse BoxArray is a coarsened version of the fine BoxArray. </para>        </detaileddescription>
+<para>Average fine node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> onto crse node-based <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>. This routine assumes that the crse <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> is a coarsened version of the fine <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="101" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="276" bodyend="310"/>
@@ -18620,7 +18641,7 @@ template &lt;typename DstTile</initializer>
           <declname>cmf</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>fba</declname>
         </param>
         <param>
@@ -18640,7 +18661,7 @@ template &lt;typename DstTile</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Return an <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> that has the same BoxArray and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> as the coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> cmf. Cells covered by the coarsened fine grids are set to fine_value, whereas other cells are set to crse_value. </para>        </detaileddescription>
+<para>Return an <ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref> that has the same <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> and <ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref> as the coarse <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> cmf. Cells covered by the coarsened fine grids are set to fine_value, whereas other cells are set to crse_value. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" line="151" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MultiFabUtil.H" bodystart="220" bodyend="225"/>
@@ -18660,7 +18681,7 @@ template &lt;typename DstTile</initializer>
           <declname>cmf</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>fba</declname>
         </param>
         <param>
@@ -20607,7 +20628,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>nlevels</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; BoxArray &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &gt; &amp;</type>
           <declname>bArray</declname>
         </param>
         <param>
@@ -25328,7 +25349,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>a_geom</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>a_ba</declname>
         </param>
         <param>
@@ -25361,7 +25382,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>eb_level</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>a_ba</declname>
         </param>
         <param>
@@ -25398,7 +25419,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>a_geom</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>a_ba</declname>
         </param>
         <param>
@@ -27961,7 +27982,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         <argsstring>(const BoxArray &amp;ba, const DistributionMapping &amp;dmap, const Geometry &amp;geom, const EBFArrayBoxFactory *ebf)</argsstring>
         <name>WriteEBSurface</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -27984,35 +28005,6 @@ Returns the index of the first element for which f is 0. </para>        </detail
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.cpp" line="13" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.cpp" bodystart="13" bodyend="68"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad7264613b707b22141772f8dc1ebf855" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::WriteEBSurface</definition>
-        <argsstring>(const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dmap, const amrex::Geometry &amp;geom, const amrex::EBFArrayBoxFactory *ebf)</argsstring>
-        <name>WriteEBSurface</name>
-        <param>
-          <type>const amrex::BoxArray &amp;</type>
-          <declname>ba</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1DistributionMapping" kindref="compound">amrex::DistributionMapping</ref> &amp;</type>
-          <declname>dmap</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">amrex::Geometry</ref> &amp;</type>
-          <declname>geom</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1EBFArrayBoxFactory" kindref="compound">amrex::EBFArrayBoxFactory</ref> *</type>
-          <declname>ebf</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_WriteEBSurface.H" line="12" column="1"/>
-      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a17c3385e552cf94569d659f23f73506e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
         <definition>bool amrex::Nestsets</definition>
@@ -28031,7 +28023,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
           <declname>fab</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; const BoxArray *&gt;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> *&gt;</type>
           <declname>box_arrays</declname>
         </param>
         <param>
@@ -28744,7 +28736,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, const Geometry &amp;geom, MPI_Comm comm_, Hypre::Interface interface, const iMultiFab *overset_mask)</argsstring>
         <name>makeHypre</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>grids</declname>
         </param>
         <param>
@@ -28781,7 +28773,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         <argsstring>(const BoxArray &amp;grids, const DistributionMapping &amp;dmap, const Geometry &amp;geom, MPI_Comm comm_)</argsstring>
         <name>makePetsc</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>grids</declname>
         </param>
         <param>
@@ -28827,7 +28819,7 @@ Returns the index of the first element for which f is 0. </para>        </detail
         <argsstring>(BoxArray &amp;ba)</argsstring>
         <name>SimpleRemoveOverlap</name>
         <param>
-          <type>BoxArray &amp;</type>
+          <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <briefdescription>

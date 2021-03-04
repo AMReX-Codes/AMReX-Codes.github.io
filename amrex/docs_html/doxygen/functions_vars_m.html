@@ -74,6 +74,9 @@ $(function() {
 <li>m_abeclap
 : <a class="el" href="classamrex_1_1MacProjector.html#a6bbf0668ee0f491ae7917f308d2b393a">amrex::MacProjector</a>
 </li>
+<li>m_abox
+: <a class="el" href="structamrex_1_1BARef.html#aaa1d0e47191bce43137f9aeecf529f64">amrex::BARef</a>
+</li>
 <li>m_actually_used
 : <a class="el" href="classamrex_1_1CArena.html#af3edc78581fb20c7273fbf74494e0c48">amrex::CArena</a>
 </li>
@@ -153,6 +156,12 @@ $(function() {
 <li>m_baseptr
 : <a class="el" href="classamrex_1_1DArena.html#a60dde49130e2e6672c0f70a63a5fde2c">amrex::DArena</a>
 </li>
+<li>m_bat
+: <a class="el" href="classamrex_1_1BoxArray.html#a416da5b2620e5c9cad12ab2fd73d349b">amrex::BoxArray</a>
+</li>
+<li>m_bat_type
+: <a class="el" href="structamrex_1_1BATransformer.html#addbc01e0e2621532efa04d4f28e3f305">amrex::BATransformer</a>
+</li>
 <li>m_bc_hi
 : <a class="el" href="classamrex_1_1NodalProjector.html#a9629028ba382b2d9b32852f1ac88c982">amrex::NodalProjector</a>
 </li>
@@ -231,6 +240,9 @@ $(function() {
 <li>m_bndrynorm
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#a863477aadc907e1abeb83c666168ccc4">amrex::EB2::Level</a>
 , <a class="el" href="classamrex_1_1EBDataCollection.html#a586018b239d0fd75d2a920b4e7d8fa40">amrex::EBDataCollection</a>
+</li>
+<li>m_bndryReg
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf">amrex::BATransformer::BATOp</a>
 </li>
 <li>m_bottom_comm
 : <a class="el" href="classamrex_1_1MLLinOp.html#a06ea1608702e52d38c0eceaa180bad7e">amrex::MLLinOp</a>
@@ -371,6 +383,9 @@ $(function() {
 <li>m_coarsening_strategy
 : <a class="el" href="classamrex_1_1MLNodeLinOp.html#af4d1bfea4dae502fae40e6b71fd4deae">amrex::MLNodeLinOp</a>
 </li>
+<li>m_coarsenRatio
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#af6babb4d2ad6f229b06a29b5f9d28814">amrex::BATransformer::BATOp</a>
+</li>
 <li>m_color
 : <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a0e84c360250692ebc2e6585a33e47d41">amrex::ParallelDescriptor::ProcessTeam</a>
 </li>
@@ -422,7 +437,10 @@ $(function() {
 : <a class="el" href="classamrex_1_1YAFluxRegister.html#a6170429b80c9c95fc90120a72cf7d2b6">amrex::YAFluxRegister</a>
 </li>
 <li>m_crse_ratio
-: <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#abe82c8b83c190d9388ff8cb1f2f41cc1">amrex::FabArrayBase::FB</a>
+: <a class="el" href="structamrex_1_1BATbndryReg.html#afb3c670e0176df666a804c831a941f89">amrex::BATbndryReg</a>
+, <a class="el" href="structamrex_1_1BATcoarsenRatio.html#acaf5d98499e6ecc09cac5fe8a027a759">amrex::BATcoarsenRatio</a>
+, <a class="el" href="structamrex_1_1BATindexType__coarsenRatio.html#a596d52f9079ac3303ea362ba657f8bf0">amrex::BATindexType_coarsenRatio</a>
+, <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#abe82c8b83c190d9388ff8cb1f2f41cc1">amrex::FabArrayBase::FB</a>
 </li>
 <li>m_crse_sol_br
 : <a class="el" href="classamrex_1_1MLCellLinOp.html#aae58b75937a141dc599d98b034be7f3c">amrex::MLCellLinOp</a>
@@ -502,6 +520,12 @@ $(function() {
 </li>
 <li>m_do_team_reduce
 : <a class="el" href="structamrex_1_1ParallelDescriptor_1_1ProcessTeam.html#a5de8f1503fd9c3d7fac5aad2558a3a8b">amrex::ParallelDescriptor::ProcessTeam</a>
+</li>
+<li>m_doihi
+: <a class="el" href="structamrex_1_1BATbndryReg.html#ad8ea19edcbf549f67753ecdcd6a2f32e">amrex::BATbndryReg</a>
+</li>
+<li>m_doilo
+: <a class="el" href="structamrex_1_1BATbndryReg.html#ae3b0deb00e514295c1a38e8a1cd20506">amrex::BATbndryReg</a>
 </li>
 <li>m_domain
 : <a class="el" href="structamrex_1_1AssignGrid.html#a63782cb4dceff5b3b6df900b00e1ba81">amrex::AssignGrid&lt; BinIteratorFactory &gt;</a>
@@ -603,7 +627,8 @@ $(function() {
 : <a class="el" href="classamrex_1_1FabArray.html#a7ecd52e23e86db0f9e8e99166900e63c">amrex::FabArray&lt; FAB &gt;</a>
 </li>
 <li>m_face
-: <a class="el" href="structamrex_1_1EB2_1_1Edge.html#ada71160c3d64cb7978bff2cbd0ef851f">amrex::EB2::Edge</a>
+: <a class="el" href="structamrex_1_1BATbndryReg.html#a742f179bd6167bd80a9f9aa9e561bb41">amrex::BATbndryReg</a>
+, <a class="el" href="structamrex_1_1EB2_1_1Edge.html#ada71160c3d64cb7978bff2cbd0ef851f">amrex::EB2::Edge</a>
 </li>
 <li>m_facecent
 : <a class="el" href="structamrex_1_1EB2_1_1Face.html#a0229df77d862af6df91705d19b2264e6">amrex::EB2::Face</a>
@@ -846,6 +871,9 @@ $(function() {
 <li>m_hibc
 : <a class="el" href="classamrex_1_1MLLinOp.html#a619323b7ef2de7c06f7c480c9bcdf3d2">amrex::MLLinOp</a>
 </li>
+<li>m_hishft
+: <a class="el" href="structamrex_1_1BATbndryReg.html#ae30ce7aef9fb1c29ea4b1a2708ae19eb">amrex::BATbndryReg</a>
+</li>
 <li>m_host_boxes
 : <a class="el" href="classamrex_1_1ParticleLocator.html#a67f017c8270b95e07b622e8c1ed97b6c">amrex::ParticleLocator&lt; Bins &gt;</a>
 </li>
@@ -910,6 +938,12 @@ $(function() {
 </li>
 <li>m_index_array
 : <a class="el" href="structamrex_1_1DistributionMapping_1_1Ref.html#a89d87a77852f51756c34d02d92cf8656">amrex::DistributionMapping::Ref</a>
+</li>
+<li>m_indexType
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a0658b5293698992c4cc7df2062991b2a">amrex::BATransformer::BATOp</a>
+</li>
+<li>m_indexType_coarsenRatio
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a68ef0cc603c58e0aa79d76ddc1b4c360">amrex::BATransformer::BATOp</a>
 </li>
 <li>m_info
 : <a class="el" href="classamrex_1_1AMRErrorTag.html#a501d9971a3346526fae6093d6de95642">amrex::AMRErrorTag</a>
@@ -1038,6 +1072,9 @@ $(function() {
 </li>
 <li>m_LocTags
 : <a class="el" href="structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8">amrex::FabArrayBase::CommMetaData</a>
+</li>
+<li>m_loshft
+: <a class="el" href="structamrex_1_1BATbndryReg.html#a8076201cf94e0e9145160b6aa522ba26">amrex::BATbndryReg</a>
 </li>
 <li>m_map
 : <a class="el" href="classamrex_1_1FillPatchIteratorHelper.html#af0e183d350296703e8deaebb9a88f81a">amrex::FillPatchIteratorHelper</a>
@@ -1244,6 +1281,9 @@ $(function() {
 <li>m_nrcvs
 : <a class="el" href="structamrex_1_1ParticleCopyPlan.html#ac2e31e632d2856477f32757e16ba053e">amrex::ParticleCopyPlan</a>
 </li>
+<li>m_null
+: <a class="el" href="unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39">amrex::BATransformer::BATOp</a>
+</li>
 <li>m_num_amr_levels
 : <a class="el" href="classamrex_1_1MLLinOp.html#ad6bbf49c1bdb88256721471b22b4b044">amrex::MLLinOp</a>
 </li>
@@ -1304,6 +1344,9 @@ $(function() {
 </li>
 <li>m_ok
 : <a class="el" href="classamrex_1_1EB2_1_1Level.html#acdef1c2b11c62f8e02b1a4806de74376">amrex::EB2::Level</a>
+</li>
+<li>m_op
+: <a class="el" href="structamrex_1_1BATransformer.html#ae5934f27c83bc63db5971f7d9fc6c780">amrex::BATransformer</a>
 </li>
 <li>m_out
 : <a class="el" href="classamrex_1_1ParallelContext_1_1Frame.html#a9137c45cc574cabfd0194ab8ed082116">amrex::ParallelContext::Frame</a>
@@ -1575,7 +1618,8 @@ $(function() {
 : <a class="el" href="classamrex_1_1HypreIJIface.html#ad473615875cdc97cafae5a44ca7fff27">amrex::HypreIJIface</a>
 </li>
 <li>m_ref
-: <a class="el" href="classamrex_1_1DistributionMapping.html#a66d4a4d11b9ff6a159c90448e55b6885">amrex::DistributionMapping</a>
+: <a class="el" href="classamrex_1_1BoxArray.html#aaf44041b956612401793f474280e5e2f">amrex::BoxArray</a>
+, <a class="el" href="classamrex_1_1DistributionMapping.html#a66d4a4d11b9ff6a159c90448e55b6885">amrex::DistributionMapping</a>
 </li>
 <li>m_ref_ratio
 : <a class="el" href="classamrex_1_1NodalProjector.html#a04468cb5062d59658fb98c8659379951">amrex::NodalProjector</a>
@@ -1662,6 +1706,9 @@ $(function() {
 , <a class="el" href="classamrex_1_1EB2_1_1PolynomialIF.html#ad957f17b324e9e51370e72b065d6684c">amrex::EB2::PolynomialIF</a>
 , <a class="el" href="classamrex_1_1EB2_1_1SphereIF.html#a729f1a7c0e893a62bde14d9ce2aac7e5">amrex::EB2::SphereIF</a>
 , <a class="el" href="classamrex_1_1EB2_1_1TorusIF.html#a99567ce8919aa7ae802d60b62de5d08e">amrex::EB2::TorusIF</a>
+</li>
+<li>m_simplified_list
+: <a class="el" href="classamrex_1_1BoxArray.html#a6111d0d59d47fcfe76123cc90bfa2f9c">amrex::BoxArray</a>
 </li>
 <li>m_sin_angle
 : <a class="el" href="classamrex_1_1EB2_1_1RotationIF.html#a985a4f063595d3fa4506d2b014dff877">amrex::EB2::RotationIF&lt; F &gt;</a>
@@ -1874,7 +1921,10 @@ $(function() {
 : <a class="el" href="classamrex_1_1ReduceData.html#af4154a58a8fb367004c4297cf6b8e189">amrex::ReduceData&lt; Ts &gt;</a>
 </li>
 <li>m_typ
-: <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a70a0f9e05a982b0fba0204104b794e72">amrex::FabArrayBase::FB</a>
+: <a class="el" href="structamrex_1_1BATbndryReg.html#a8e3247c949b2224196c82ab300bbfbb4">amrex::BATbndryReg</a>
+, <a class="el" href="structamrex_1_1BATindexType.html#ae87c108fe184887d8f71272d564700d8">amrex::BATindexType</a>
+, <a class="el" href="structamrex_1_1BATindexType__coarsenRatio.html#ae45a6ecaa6463cf76c6ea2edb046319f">amrex::BATindexType_coarsenRatio</a>
+, <a class="el" href="structamrex_1_1FabArrayBase_1_1FB.html#a70a0f9e05a982b0fba0204104b794e72">amrex::FabArrayBase::FB</a>
 </li>
 <li>m_type
 : <a class="el" href="classamrex_1_1EBCellFlagFab.html#a625c1eeed8e477ce6df628fdf55059a9">amrex::EBCellFlagFab</a>

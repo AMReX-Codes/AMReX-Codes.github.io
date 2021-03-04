@@ -13,6 +13,7 @@ var searchData=
   ['not_5fcovered',['not_covered',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9a54f598ca1ea830b90bd86719dd843014',1,'amrex::BndryData']]],
   ['noteambarrier',['NoTeamBarrier',['../classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14',1,'amrex::MFIter']]],
   ['ntimers',['ntimers',['../classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001ae447a282e35218ac782b215c4a1fccfc',1,'amrex::MLMG']]],
+  ['null',['null',['../structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feba37a6259cc0c1dae299a7866489dff0bd',1,'amrex::BATransformer']]],
   ['numberofminmax',['NUMBEROFMINMAX',['../namespaceamrex_1_1Amrvis.html#a215d738508df9f39360cdc84a844e98ea70e198feec9ed63c2f25d181a5dc611e',1,'amrex::Amrvis']]],
   ['numdbptypes',['NUMDBPTYPES',['../namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfaa450b2757051e567ab8eb2b39a5e077a',1,'amrex::Amrvis']]],
   ['nummaskvals',['NumMaskVals',['../classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9a22450c0e6f732b3f87827b12e1b20aa5',1,'amrex::BndryData']]]

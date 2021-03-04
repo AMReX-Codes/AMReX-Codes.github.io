@@ -4,6 +4,8 @@ var searchData=
   ['in',['in',['../classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a13b5bfe96f3e2fe411c9f66f4a582adf',1,'amrex::ForkJoin']]],
   ['includeall',['INCLUDEALL',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a54c51bf557fe09986321162dd762ddd1',1,'BLProfStats']]],
   ['includenone',['INCLUDENONE',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a4bc1d99bb527c9cfd1da7ed4e3b543a1',1,'BLProfStats']]],
+  ['indextype',['indexType',['../structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4febaa83af96ce0bc256deeb3ce660dcebacc',1,'amrex::BATransformer']]],
+  ['indextype_5fcoarsenratio',['indexType_coarsenRatio',['../structamrex_1_1BATransformer.html#a6a53c84fc58b61586d8d0d5d274b4feba3e10d52c08b4ae924eb9c9c4c42386b6',1,'amrex::BATransformer']]],
   ['inhomogeneous',['Inhomogeneous',['../classamrex_1_1MLLinOp.html#a5aa01a1ef6b0b3a471f02f65ae4b4884ae9990b3a39151b6f2175caa7621e0c4b',1,'amrex::MLLinOp']]],
   ['inout',['inout',['../classamrex_1_1ForkJoin.html#a3acf0d91b32d1d08dbe32046028f1466a54c9ccb45f5ee60133cca31fca024432',1,'amrex::ForkJoin']]],
   ['interpb',['InterpB',['../namespaceamrex.html#a2f30e076962c1c148d279b63851d80dfa9d55599aaee42c677bcd175e50bebbca',1,'amrex']]],

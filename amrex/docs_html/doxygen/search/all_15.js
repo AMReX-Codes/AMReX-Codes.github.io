@@ -11,6 +11,7 @@ var searchData=
   ['unimposeneumannbc',['unimposeNeumannBC',['../classamrex_1_1MLLinOp.html#ac62698656785dd3261f05e9dc76cd8fa',1,'amrex::MLLinOp::unimposeNeumannBC()'],['../classamrex_1_1MLNodeLaplacian.html#a2c6b0fa5629e3a7d3725c5d44206fde7',1,'amrex::MLNodeLaplacian::unimposeNeumannBC()']]],
   ['uninitializedfillnimpl',['uninitializedFillNImpl',['../namespaceamrex_1_1detail.html#a5bcec00259aa287e4fa1c57ed626d4e7',1,'amrex::detail::uninitializedFillNImpl(U *data, Size count, const Value &amp;value)'],['../namespaceamrex_1_1detail.html#a2bc955e71a20bceeaed3cc8333eb0398',1,'amrex::detail::uninitializedFillNImpl(U *data, Size count, const Value &amp;value)']]],
   ['unionif',['UnionIF',['../classamrex_1_1EB2_1_1UnionIF.html',1,'amrex::EB2']]],
+  ['uniqify',['uniqify',['../classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c',1,'amrex::BoxArray']]],
   ['uniquerandomsubset',['UniqueRandomSubset',['../namespaceamrex.html#aa2c1209819cd8dd79499c2b9f088120e',1,'amrex']]],
   ['uniquestring',['UniqueString',['../namespaceamrex.html#aebee05e08302fb03e29f4270e933239c',1,'amrex']]],
   ['unit',['Unit',['../classamrex_1_1IntVect.html#a93df7e94c6d2d07ea3eb7647500bf751',1,'amrex::IntVect::Unit()'],['../classamrex_1_1RealVect.html#a6745f136d89bdb15e57c3387ca01e973',1,'amrex::RealVect::Unit()']]],

@@ -5,6 +5,7 @@ var searchData=
   ['ungrownbox',['UngrownBox',['../classamrex_1_1FillPatchIterator.html#a7bb682831638917318e9f87fee6871af',1,'amrex::FillPatchIterator']]],
   ['unimposeneumannbc',['unimposeNeumannBC',['../classamrex_1_1MLLinOp.html#ac62698656785dd3261f05e9dc76cd8fa',1,'amrex::MLLinOp::unimposeNeumannBC()'],['../classamrex_1_1MLNodeLaplacian.html#a2c6b0fa5629e3a7d3725c5d44206fde7',1,'amrex::MLNodeLaplacian::unimposeNeumannBC()']]],
   ['uninitializedfillnimpl',['uninitializedFillNImpl',['../namespaceamrex_1_1detail.html#a5bcec00259aa287e4fa1c57ed626d4e7',1,'amrex::detail::uninitializedFillNImpl(U *data, Size count, const Value &amp;value)'],['../namespaceamrex_1_1detail.html#a2bc955e71a20bceeaed3cc8333eb0398',1,'amrex::detail::uninitializedFillNImpl(U *data, Size count, const Value &amp;value)']]],
+  ['uniqify',['uniqify',['../classamrex_1_1BoxArray.html#ae3fba31af025b800aef97da09bc4113c',1,'amrex::BoxArray']]],
   ['uniquerandomsubset',['UniqueRandomSubset',['../namespaceamrex.html#aa2c1209819cd8dd79499c2b9f088120e',1,'amrex']]],
   ['uniquestring',['UniqueString',['../namespaceamrex.html#aebee05e08302fb03e29f4270e933239c',1,'amrex']]],
   ['unit_5fadvance',['unit_advance',['../namespaceamrex__io__module.html#aac1da49324f1aed83f2bd024ec43aa5e',1,'amrex_io_module']]],

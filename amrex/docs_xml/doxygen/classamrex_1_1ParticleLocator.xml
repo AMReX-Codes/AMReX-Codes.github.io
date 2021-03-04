@@ -38,7 +38,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleLocator.H" line="172" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleLocator.H" bodystart="172" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1ParticleLocator_1a398bff4255e23b17afdbb21529343b0f" prot="protected" static="no" mutable="no">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::ParticleLocator&lt; Bins &gt;::m_ba</definition>
         <argsstring></argsstring>
         <name>m_ba</name>
@@ -175,7 +175,7 @@
         <argsstring>(const BoxArray &amp;ba, const Geometry &amp;geom)</argsstring>
         <name>build</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <param>
@@ -226,7 +226,7 @@
         <argsstring>(const BoxArray &amp;ba) const noexcept</argsstring>
         <name>isValid</name>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>ba</declname>
         </param>
         <briefdescription>
@@ -243,89 +243,174 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4244">
+      <node id="5130">
+        <label>amrex::BATindexType</label>
+        <link refid="structamrex_1_1BATindexType"/>
+        <childnode refid="5119" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="5115">
         <label>amrex::PODVector&lt; amrex::Box &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="4245" relation="public-inheritance">
+        <childnode refid="5116" relation="public-inheritance">
         </childnode>
-        <childnode refid="4246" relation="usage">
+        <childnode refid="5117" relation="usage">
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="4247">
+      <node id="5132">
+        <label>amrex::BATindexType_coarsenRatio</label>
+        <link refid="structamrex_1_1BATindexType__coarsenRatio"/>
+        <childnode refid="5118" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="5119" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="5131">
+        <label>amrex::BATnull</label>
+        <link refid="structamrex_1_1BATnull"/>
+      </node>
+      <node id="5118">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="4247" relation="usage">
+        <childnode refid="5118" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="4251">
+      <node id="5122">
         <label>Real</label>
       </node>
-      <node id="4245">
+      <node id="5116">
         <label>std::allocator&lt; amrex::Box &gt;</label>
       </node>
-      <node id="4252">
+      <node id="5128">
+        <label>amrex::Orientation</label>
+        <link refid="classamrex_1_1Orientation"/>
+      </node>
+      <node id="5125">
+        <label>amrex::BATransformer</label>
+        <link refid="structamrex_1_1BATransformer"/>
+        <childnode refid="5126" relation="usage">
+          <edgelabel>m_op</edgelabel>
+        </childnode>
+      </node>
+      <node id="5129">
+        <label>amrex::BATcoarsenRatio</label>
+        <link refid="structamrex_1_1BATcoarsenRatio"/>
+        <childnode refid="5118" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+      </node>
+      <node id="5126">
+        <label>amrex::BATransformer::BATOp</label>
+        <link refid="unionamrex_1_1BATransformer_1_1BATOp"/>
+        <childnode refid="5127" relation="usage">
+          <edgelabel>m_bndryReg</edgelabel>
+        </childnode>
+        <childnode refid="5129" relation="usage">
+          <edgelabel>m_coarsenRatio</edgelabel>
+        </childnode>
+        <childnode refid="5130" relation="usage">
+          <edgelabel>m_indexType</edgelabel>
+        </childnode>
+        <childnode refid="5131" relation="usage">
+          <edgelabel>m_null</edgelabel>
+        </childnode>
+        <childnode refid="5132" relation="usage">
+          <edgelabel>m_indexType_coarsenRatio</edgelabel>
+        </childnode>
+      </node>
+      <node id="5124">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="5125" relation="usage">
+          <edgelabel>m_bat</edgelabel>
+        </childnode>
+      </node>
+      <node id="5123">
         <label>amrex::RealBox</label>
         <link refid="classamrex_1_1RealBox"/>
-        <childnode refid="4251" relation="usage">
+        <childnode refid="5122" relation="usage">
           <edgelabel>xhi</edgelabel>
           <edgelabel>xlo</edgelabel>
         </childnode>
       </node>
-      <node id="4246">
+      <node id="5117">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="4247" relation="usage">
+        <childnode refid="5118" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="4248" relation="usage">
+        <childnode refid="5119" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="4250">
+      <node id="5121">
         <label>amrex::CoordSys</label>
         <link refid="classamrex_1_1CoordSys"/>
-        <childnode refid="4251" relation="usage">
+        <childnode refid="5122" relation="usage">
           <edgelabel>inv_dx</edgelabel>
           <edgelabel>offset</edgelabel>
           <edgelabel>dx</edgelabel>
         </childnode>
       </node>
-      <node id="4248">
+      <node id="5127">
+        <label>amrex::BATbndryReg</label>
+        <link refid="structamrex_1_1BATbndryReg"/>
+        <childnode refid="5118" relation="usage">
+          <edgelabel>m_doihi</edgelabel>
+          <edgelabel>m_doilo</edgelabel>
+          <edgelabel>m_hishft</edgelabel>
+          <edgelabel>m_crse_ratio</edgelabel>
+          <edgelabel>m_loshft</edgelabel>
+        </childnode>
+        <childnode refid="5128" relation="usage">
+          <edgelabel>m_face</edgelabel>
+        </childnode>
+        <childnode refid="5119" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="5119">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="4249">
+      <node id="5120">
         <label>amrex::Geometry</label>
         <link refid="classamrex_1_1Geometry"/>
-        <childnode refid="4250" relation="public-inheritance">
+        <childnode refid="5121" relation="public-inheritance">
         </childnode>
-        <childnode refid="4252" relation="usage">
+        <childnode refid="5123" relation="usage">
           <edgelabel>roundoff_domain</edgelabel>
           <edgelabel>prob_domain</edgelabel>
         </childnode>
-        <childnode refid="4246" relation="usage">
+        <childnode refid="5117" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
       </node>
-      <node id="4243">
+      <node id="5114">
         <label>amrex::ParticleLocator&lt; Bins &gt;</label>
         <link refid="classamrex_1_1ParticleLocator"/>
-        <childnode refid="4244" relation="usage">
+        <childnode refid="5115" relation="usage">
           <edgelabel>m_host_boxes</edgelabel>
           <edgelabel>m_device_boxes</edgelabel>
         </childnode>
-        <childnode refid="4249" relation="usage">
+        <childnode refid="5120" relation="usage">
           <edgelabel>m_geom</edgelabel>
         </childnode>
-        <childnode refid="4247" relation="usage">
+        <childnode refid="5118" relation="usage">
           <edgelabel>m_bins_hi</edgelabel>
           <edgelabel>m_bin_size</edgelabel>
           <edgelabel>m_num_bins</edgelabel>
           <edgelabel>m_bins_lo</edgelabel>
+        </childnode>
+        <childnode refid="5124" relation="usage">
+          <edgelabel>m_ba</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

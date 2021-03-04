@@ -60,7 +60,7 @@
         <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="425" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="425" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1StateData_1af7a3b275665dcd4803b3780a02e36b48" prot="private" static="no" mutable="no">
-        <type>BoxArray</type>
+        <type><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref></type>
         <definition>BoxArray amrex::StateData::grids</definition>
         <argsstring></argsstring>
         <name>grids</name>
@@ -203,7 +203,7 @@
           <declname>p_domain</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>grds</declname>
         </param>
         <param>
@@ -375,7 +375,7 @@
           <declname>p_domain</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>grds</declname>
         </param>
         <param>
@@ -1126,7 +1126,7 @@
           <declname>p_domain</declname>
         </param>
         <param>
-          <type>const BoxArray &amp;</type>
+          <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
           <declname>grds</declname>
         </param>
         <param>
@@ -1266,12 +1266,12 @@
         <location file="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" line="295" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.H" bodystart="295" bodyend="295"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1StateData_1a805fefd43e63ca5b6b0b3ddd26f8b04c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type>const BoxArray &amp;</type>
+        <type>const <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref> &amp;</type>
         <definition>const BoxArray&amp; amrex::StateData::boxArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>boxArray</name>
         <briefdescription>
-<para>Returns the BoxArray. </para>        </briefdescription>
+<para>Returns the <ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -1673,153 +1673,238 @@
     <detaileddescription>
 <para><ref refid="classamrex_1_1StateData" kindref="compound">StateData</ref> holds state data on a level for the current and previous time step. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="4627">
+      <node id="5528">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt; &gt;</label>
       </node>
-      <node id="4622">
+      <node id="5523">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="4626">
-        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4627" relation="public-inheritance">
+      <node id="5545">
+        <label>amrex::BATindexType</label>
+        <link refid="structamrex_1_1BATindexType"/>
+        <childnode refid="5534" relation="usage">
+          <edgelabel>m_typ</edgelabel>
         </childnode>
       </node>
-      <node id="4637">
+      <node id="5527">
+        <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::StateDescriptor::BndryFunc &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5528" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5547">
+        <label>amrex::BATindexType_coarsenRatio</label>
+        <link refid="structamrex_1_1BATindexType__coarsenRatio"/>
+        <childnode refid="5538" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+        <childnode refid="5534" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="5546">
+        <label>amrex::BATnull</label>
+        <link refid="structamrex_1_1BATnull"/>
+      </node>
+      <node id="5538">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="4637" relation="usage">
+        <childnode refid="5538" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="4635">
+      <node id="5536">
         <label>Real</label>
       </node>
-      <node id="4623">
+      <node id="5524">
         <label>amrex::StateDescriptor</label>
         <link refid="classamrex_1_1StateDescriptor"/>
-        <childnode refid="4624" relation="usage">
+        <childnode refid="5525" relation="usage">
           <edgelabel>mapper_comp</edgelabel>
         </childnode>
-        <childnode refid="4626" relation="usage">
+        <childnode refid="5527" relation="usage">
           <edgelabel>bc_func</edgelabel>
         </childnode>
-        <childnode refid="4628" relation="usage">
+        <childnode refid="5529" relation="usage">
           <edgelabel>bc</edgelabel>
         </childnode>
-        <childnode refid="4630" relation="usage">
+        <childnode refid="5531" relation="usage">
           <edgelabel>max_map_start_comp</edgelabel>
           <edgelabel>min_map_end_comp</edgelabel>
           <edgelabel>m_groupsize</edgelabel>
           <edgelabel>m_primary</edgelabel>
         </childnode>
-        <childnode refid="4619" relation="usage">
+        <childnode refid="5520" relation="usage">
           <edgelabel>names</edgelabel>
         </childnode>
-        <childnode refid="4632" relation="usage">
+        <childnode refid="5533" relation="usage">
           <edgelabel>mapper</edgelabel>
         </childnode>
-        <childnode refid="4633" relation="usage">
+        <childnode refid="5534" relation="usage">
           <edgelabel>type</edgelabel>
         </childnode>
       </node>
-      <node id="4620">
+      <node id="5521">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
       </node>
-      <node id="4621">
+      <node id="5522">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="4622" relation="usage">
+        <childnode refid="5523" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="4630">
+      <node id="5531">
         <label>amrex::Vector&lt; int &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4631" relation="public-inheritance">
+        <childnode refid="5532" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4629">
+      <node id="5530">
         <label>std::vector&lt; amrex::BCRec, std::allocator&lt; amrex::BCRec &gt; &gt;</label>
       </node>
-      <node id="4625">
+      <node id="5543">
+        <label>amrex::Orientation</label>
+        <link refid="classamrex_1_1Orientation"/>
+      </node>
+      <node id="5526">
         <label>std::vector&lt; amrex::Interpolater *, std::allocator&lt; amrex::Interpolater *&gt; &gt;</label>
       </node>
-      <node id="4632">
+      <node id="5540">
+        <label>amrex::BATransformer</label>
+        <link refid="structamrex_1_1BATransformer"/>
+        <childnode refid="5541" relation="usage">
+          <edgelabel>m_op</edgelabel>
+        </childnode>
+      </node>
+      <node id="5544">
+        <label>amrex::BATcoarsenRatio</label>
+        <link refid="structamrex_1_1BATcoarsenRatio"/>
+        <childnode refid="5538" relation="usage">
+          <edgelabel>m_crse_ratio</edgelabel>
+        </childnode>
+      </node>
+      <node id="5533">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
       </node>
-      <node id="4628">
-        <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4629" relation="public-inheritance">
+      <node id="5541">
+        <label>amrex::BATransformer::BATOp</label>
+        <link refid="unionamrex_1_1BATransformer_1_1BATOp"/>
+        <childnode refid="5542" relation="usage">
+          <edgelabel>m_bndryReg</edgelabel>
+        </childnode>
+        <childnode refid="5544" relation="usage">
+          <edgelabel>m_coarsenRatio</edgelabel>
+        </childnode>
+        <childnode refid="5545" relation="usage">
+          <edgelabel>m_indexType</edgelabel>
+        </childnode>
+        <childnode refid="5546" relation="usage">
+          <edgelabel>m_null</edgelabel>
+        </childnode>
+        <childnode refid="5547" relation="usage">
+          <edgelabel>m_indexType_coarsenRatio</edgelabel>
         </childnode>
       </node>
-      <node id="4631">
+      <node id="5529">
+        <label>amrex::Vector&lt; amrex::BCRec &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="5530" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5532">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
       </node>
-      <node id="4634">
+      <node id="5539">
+        <label>amrex::BoxArray</label>
+        <link refid="classamrex_1_1BoxArray"/>
+        <childnode refid="5540" relation="usage">
+          <edgelabel>m_bat</edgelabel>
+        </childnode>
+      </node>
+      <node id="5535">
         <label>amrex::StateData::TimeInterval</label>
         <link refid="structamrex_1_1StateData_1_1TimeInterval"/>
-        <childnode refid="4635" relation="usage">
+        <childnode refid="5536" relation="usage">
           <edgelabel>stop</edgelabel>
           <edgelabel>start</edgelabel>
         </childnode>
       </node>
-      <node id="4636">
+      <node id="5537">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="4637" relation="usage">
+        <childnode refid="5538" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
-        <childnode refid="4633" relation="usage">
+        <childnode refid="5534" relation="usage">
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="4633">
+      <node id="5542">
+        <label>amrex::BATbndryReg</label>
+        <link refid="structamrex_1_1BATbndryReg"/>
+        <childnode refid="5538" relation="usage">
+          <edgelabel>m_doihi</edgelabel>
+          <edgelabel>m_doilo</edgelabel>
+          <edgelabel>m_hishft</edgelabel>
+          <edgelabel>m_crse_ratio</edgelabel>
+          <edgelabel>m_loshft</edgelabel>
+        </childnode>
+        <childnode refid="5543" relation="usage">
+          <edgelabel>m_face</edgelabel>
+        </childnode>
+        <childnode refid="5534" relation="usage">
+          <edgelabel>m_typ</edgelabel>
+        </childnode>
+      </node>
+      <node id="5534">
         <label>amrex::IndexType</label>
         <link refid="classamrex_1_1IndexType"/>
       </node>
-      <node id="4619">
+      <node id="5520">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4620" relation="public-inheritance">
+        <childnode refid="5521" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4618">
+      <node id="5519">
         <label>amrex::DistributionMapping</label>
         <link refid="classamrex_1_1DistributionMapping"/>
       </node>
-      <node id="4617">
+      <node id="5518">
         <label>amrex::StateData</label>
         <link refid="classamrex_1_1StateData"/>
-        <childnode refid="4618" relation="usage">
+        <childnode refid="5519" relation="usage">
           <edgelabel>dmap</edgelabel>
         </childnode>
-        <childnode refid="4619" relation="usage">
+        <childnode refid="5520" relation="usage">
           <edgelabel>fabArrayHeaderNames</edgelabel>
         </childnode>
-        <childnode refid="4621" relation="usage">
+        <childnode refid="5522" relation="usage">
           <edgelabel>arena</edgelabel>
         </childnode>
-        <childnode refid="4623" relation="usage">
+        <childnode refid="5524" relation="usage">
           <edgelabel>desc</edgelabel>
         </childnode>
-        <childnode refid="4634" relation="usage">
+        <childnode refid="5535" relation="usage">
           <edgelabel>new_time</edgelabel>
           <edgelabel>old_time</edgelabel>
         </childnode>
-        <childnode refid="4636" relation="usage">
+        <childnode refid="5537" relation="usage">
           <edgelabel>domain</edgelabel>
         </childnode>
+        <childnode refid="5539" relation="usage">
+          <edgelabel>grids</edgelabel>
+        </childnode>
       </node>
-      <node id="4624">
+      <node id="5525">
         <label>amrex::Vector&lt; amrex::Interpolater *&gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4625" relation="public-inheritance">
+        <childnode refid="5526" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
