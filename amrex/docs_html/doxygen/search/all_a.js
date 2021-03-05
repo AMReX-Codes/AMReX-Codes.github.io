@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['j_5fhi_3273',['J_HI',['../AMReX__MLMG__2D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI():&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI():&#160;AMReX_MLMG_3D_K.H']]],
-  ['j_5findex_3274',['j_index',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#abb3db0e8e5221ee3116e277385c87bc5',1,'amrex::NonLocalBC::PolarFn::j_index()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac2d435417231ee6a45673a064745c6e0',1,'amrex::NonLocalBC::PolarFn2::j_index()']]],
-  ['j_5flo_3275',['J_LO',['../AMReX__MLMG__2D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO():&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO():&#160;AMReX_MLMG_3D_K.H']]],
-  ['join_3276',['join',['../classamrex_1_1BoxList.html#af1451e74b2d7de70b58b9979e21aeb49',1,'amrex::BoxList::join(const BoxList &amp;blist)'],['../classamrex_1_1BoxList.html#ae86c1cb2471cb633d0abf4657d080a73',1,'amrex::BoxList::join(const Vector&lt; Box &gt; &amp;barr)']]],
-  ['jstride_3277',['jstride',['../structamrex_1_1Array4.html#ac5874d9946c7fab10b8baccf17852150',1,'amrex::Array4']]]
+  ['j_5fhi_3274',['J_HI',['../AMReX__MLMG__2D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI():&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a8bbac1f8523d1fb0d17386937b2480a5',1,'J_HI():&#160;AMReX_MLMG_3D_K.H']]],
+  ['j_5findex_3275',['j_index',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#abb3db0e8e5221ee3116e277385c87bc5',1,'amrex::NonLocalBC::PolarFn::j_index()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac2d435417231ee6a45673a064745c6e0',1,'amrex::NonLocalBC::PolarFn2::j_index()']]],
+  ['j_5flo_3276',['J_LO',['../AMReX__MLMG__2D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO():&#160;AMReX_MLMG_2D_K.H'],['../AMReX__MLMG__3D__K_8H.html#a0acb2030b45d0173381b66cfdf91ceee',1,'J_LO():&#160;AMReX_MLMG_3D_K.H']]],
+  ['join_3277',['join',['../classamrex_1_1BoxList.html#af1451e74b2d7de70b58b9979e21aeb49',1,'amrex::BoxList::join(const BoxList &amp;blist)'],['../classamrex_1_1BoxList.html#ae86c1cb2471cb633d0abf4657d080a73',1,'amrex::BoxList::join(const Vector&lt; Box &gt; &amp;barr)']]],
+  ['jstride_3278',['jstride',['../structamrex_1_1Array4.html#ac5874d9946c7fab10b8baccf17852150',1,'amrex::Array4']]]
 ];

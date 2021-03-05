@@ -222,9 +222,17 @@ $(function() {
 <div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a8c2a4f7808c3093eb46278654b309fe3">  151</a></span>&#160;<span class="preprocessor">#define AMREX_FALLTHROUGH ((void)0)</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !BL_LANG_FORT */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#if !defined(AMREX_NO_NODISCARD) &amp;&amp; defined(__has_cpp_attribute) &amp;&amp; __has_cpp_attribute(nodiscard)</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#   define AMREX_NODISCARD [[nodiscard]]</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#elif !defined(AMREX_NO_NODISCARD) &amp;&amp; (defined(__GNUC__) || defined(__clang__))</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#   define AMREX_NODISCARD __attribute__ ((warn_unused_result))</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">  159</a></span>&#160;<span class="preprocessor">#   define AMREX_NODISCARD</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !BL_LANG_FORT */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
