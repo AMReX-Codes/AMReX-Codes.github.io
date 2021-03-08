@@ -26,7 +26,7 @@
         <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="76">
+      <node id="78">
         <label>AMReX_OpenMP.H</label>
         <link refid="AMReX__OpenMP_8H"/>
         <childnode refid="3" relation="include">
@@ -109,7 +109,7 @@
         <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="72">
+      <node id="74">
         <label>cstdint</label>
       </node>
       <node id="33">
@@ -159,7 +159,7 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
-        <childnode refid="73" relation="include">
+        <childnode refid="75" relation="include">
         </childnode>
       </node>
       <node id="49">
@@ -178,6 +178,10 @@
         <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="64">
@@ -248,11 +252,11 @@
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
-        <childnode refid="75" relation="include">
+        <childnode refid="77" relation="include">
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="76" relation="include">
+        <childnode refid="78" relation="include">
         </childnode>
         <childnode refid="49" relation="include">
         </childnode>
@@ -278,7 +282,7 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="75">
+      <node id="77">
         <label>AMReX_GpuError.H</label>
         <link refid="AMReX__GpuError_8H"/>
         <childnode refid="3" relation="include">
@@ -405,7 +409,7 @@
         </childnode>
         <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="72" relation="include">
+        <childnode refid="74" relation="include">
         </childnode>
       </node>
       <node id="19">
@@ -423,8 +427,12 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
       </node>
-      <node id="74">
+      <node id="76">
         <label>sys/types.h</label>
       </node>
       <node id="2">
@@ -759,15 +767,18 @@
       <node id="48">
         <label>algorithm</label>
       </node>
-      <node id="73">
+      <node id="75">
         <label>AMReX_FileSystem.H</label>
         <link refid="AMReX__FileSystem_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="74" relation="include">
+        <childnode refid="76" relation="include">
         </childnode>
+      </node>
+      <node id="72">
+        <label>curand.h</label>
       </node>
       <node id="5">
         <label>cstring</label>
@@ -788,7 +799,35 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
+      <node id="73">
+        <label>curand_kernel.h</label>
+      </node>
     </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__GpuAsyncArray_8cpp_1ad430cef5c8d738ad7c7f2d45db5fdc7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void CUDART_CB</type>
+        <definition>void CUDART_CB amrex_asyncarray_delete</definition>
+        <argsstring>(cudaStream_t, cudaError_t, void *p)</argsstring>
+        <name>amrex_asyncarray_delete</name>
+        <param>
+          <type>cudaStream_t</type>
+        </param>
+        <param>
+          <type>cudaError_t</type>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAsyncArray.cpp" line="12" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAsyncArray.cpp" bodystart="12" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -801,11 +840,11 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(AMREX_USE_DPCPP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_asyncarray_delete<sp/>(<sp/>hipStream_t<sp/></highlight><highlight class="comment">/*stream*/</highlight><highlight class="normal">,<sp/><sp/>hipError_t<sp/></highlight><highlight class="comment">/*error*/</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__GpuAsyncArray_8cpp_1ad430cef5c8d738ad7c7f2d45db5fdc7b" kindref="member">amrex_asyncarray_delete</ref><sp/>(<sp/>hipStream_t<sp/></highlight><highlight class="comment">/*stream*/</highlight><highlight class="normal">,<sp/><sp/>hipError_t<sp/></highlight><highlight class="comment">/*error*/</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/>amrex_asyncarray_delete<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/><ref refid="AMReX__GpuAsyncArray_8cpp_1ad430cef5c8d738ad7c7f2d45db5fdc7b" kindref="member">amrex_asyncarray_delete</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/>amrex_asyncarray_delete<sp/>(cudaStream_t<sp/></highlight><highlight class="comment">/*stream*/</highlight><highlight class="normal">,<sp/>cudaError_t<sp/></highlight><highlight class="comment">/*error*/</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/><ref refid="AMReX__GpuAsyncArray_8cpp_1ad430cef5c8d738ad7c7f2d45db5fdc7b" kindref="member">amrex_asyncarray_delete</ref><sp/>(cudaStream_t<sp/></highlight><highlight class="comment">/*stream*/</highlight><highlight class="normal">,<sp/>cudaError_t<sp/></highlight><highlight class="comment">/*error*/</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p)</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/><ref refid="AMReX__HypreIJIface_8cpp_1a0f759ac05320ca5b06c49fd9501b9135" kindref="member">pp</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**)p;</highlight></codeline>

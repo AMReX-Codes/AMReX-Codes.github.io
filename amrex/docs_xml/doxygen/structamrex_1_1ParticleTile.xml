@@ -28,7 +28,7 @@
         <type>template&lt; class &gt; class</type>
         <declname>Allocator</declname>
         <defname>Allocator</defname>
-        <defval><ref refid="namespaceamrex_1aa2b9c07eea8f0178a1973357cf04ea62" kindref="member">DefaultAllocator</ref></defval>
+        <defval><ref refid="namespaceamrex_1a179fafc569924202b166896b608cd5c2" kindref="member">DefaultAllocator</ref></defval>
       </param>
     </templateparamlist>
       <sectiondef kind="public-type">
@@ -857,35 +857,41 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
+      <node id="5">
         <label>amrex::PODVector&lt; const ParticleReal *, DefaultAllocator&lt; const ParticleReal * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="5" relation="public-inheritance">
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>amrex::ArrayOfStructs&lt; NStructReal, NStructInt, DefaultAllocator &gt;</label>
         <link refid="classamrex_1_1ArrayOfStructs"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="8">
-        <label>DefaultAllocator&lt; ParticleType &gt;</label>
-      </node>
       <node id="9">
+        <label>DefaultAllocator&lt; ParticleType &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
         <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
         <link refid="structamrex_1_1Particle"/>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>DefaultAllocator&lt; int * &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="14">
-        <label>DefaultAllocator&lt; int * &gt;</label>
-      </node>
-      <node id="13">
         <label>amrex::PODVector&lt; int *, DefaultAllocator&lt; int * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -894,19 +900,19 @@
         <childnode refid="2" relation="usage">
           <edgelabel>m_runtime_r_ptrs</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>m_runtime_r_cptrs</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>m_aos_tile</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>m_runtime_i_cptrs</edgelabel>
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>m_runtime_i_ptrs</edgelabel>
         </childnode>
-        <childnode refid="15" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>m_soa_tile</edgelabel>
         </childnode>
       </node>
@@ -916,35 +922,48 @@
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
+      <node id="4">
+        <label>amrex::ArenaAllocatorTraits</label>
+        <link refid="structamrex_1_1ArenaAllocatorTraits"/>
+      </node>
+      <node id="12">
         <label>amrex::PODVector&lt; const int *, DefaultAllocator&lt; const int * &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>amrex::ParticleBase&lt; ParticleReal, T_NReal, 0 &gt;</label>
         <link refid="structamrex_1_1ParticleBase"/>
       </node>
       <node id="3">
         <label>DefaultAllocator&lt; ParticleReal * &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="12">
+      <node id="13">
         <label>DefaultAllocator&lt; const int * &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="5">
+      <node id="6">
         <label>DefaultAllocator&lt; const ParticleReal * &gt;</label>
+        <link refid="classamrex_1_1ArenaAllocator"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="15">
+      <node id="16">
         <label>amrex::StructOfArrays&lt; NArrayReal, NArrayInt, DefaultAllocator &gt;</label>
         <link refid="structamrex_1_1StructOfArrays"/>
       </node>
-      <node id="7">
+      <node id="8">
         <label>amrex::PODVector&lt; ParticleType, DefaultAllocator&lt; ParticleType &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="9" relation="public-inheritance">
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>const_reference</edgelabel>
           <edgelabel>const_iterator</edgelabel>
           <edgelabel>const_pointer</edgelabel>

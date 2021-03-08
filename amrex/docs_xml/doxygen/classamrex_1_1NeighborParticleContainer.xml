@@ -9,6 +9,7 @@
     <innerclass refid="structamrex_1_1NeighborParticleContainer_1_1NeighborCommTag" prot="private">amrex::NeighborParticleContainer::NeighborCommTag</innerclass>
     <innerclass refid="structamrex_1_1NeighborParticleContainer_1_1NeighborCopyTag" prot="private">amrex::NeighborParticleContainer::NeighborCopyTag</innerclass>
     <innerclass refid="structamrex_1_1NeighborParticleContainer_1_1NeighborIndexMap" prot="private">amrex::NeighborParticleContainer::NeighborIndexMap</innerclass>
+    <innerclass refid="structamrex_1_1NeighborParticleContainer_1_1NeighborTask" prot="protected">amrex::NeighborParticleContainer::NeighborTask</innerclass>
     <templateparamlist>
       <param>
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -388,6 +389,150 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="392" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="392" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a68fedc2fd57b0e5efccdf65617f930ff" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_neighbor_mask_initialized</definition>
+        <argsstring></argsstring>
+        <name>m_neighbor_mask_initialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="424" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a0f3bc83f8fdf1b3468248103a0000a49" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1iMultiFab" kindref="compound">amrex::iMultiFab</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;amrex::iMultiFab&gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_neighbor_mask_ptr</definition>
+        <argsstring></argsstring>
+        <name>m_neighbor_mask_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="425" column="21" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a6aafab3c8c1565c5457b08400f0c7984" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, std::vector&lt; std::vector&lt; <ref refid="structamrex_1_1NeighborCode" kindref="compound">NeighborCode</ref> &gt; &gt; &gt;</type>
+        <definition>std::map&lt;int, std::vector&lt;std::vector&lt;NeighborCode&gt; &gt; &gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_grid_map</definition>
+        <argsstring></argsstring>
+        <name>m_grid_map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="426" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1adc6fa317f2580d5b4eaf5e7e156694e8" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">amrex::Gpu::DeviceVector</ref>&lt; <ref refid="structamrex_1_1NeighborCode" kindref="compound">NeighborCode</ref> &gt; &gt;</type>
+        <definition>std::map&lt;int, amrex::Gpu::DeviceVector&lt;NeighborCode&gt; &gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_code_array</definition>
+        <argsstring></argsstring>
+        <name>m_code_array</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="428" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="428" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1adc56d3fa06a368656ba30775e6af57d5" prot="protected" static="no" mutable="no">
+        <type>std::map&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">amrex::Gpu::DeviceVector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; &gt;</type>
+        <definition>std::map&lt;int, amrex::Gpu::DeviceVector&lt;int&gt; &gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::m_code_offsets</definition>
+        <argsstring></argsstring>
+        <name>m_code_offsets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="429" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="429" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a42b4110915286223007d92bbcf580d89" prot="protected" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1ParticleCopyOp" kindref="compound">ParticleCopyOp</ref></type>
+        <definition>ParticleCopyOp amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::neighbor_copy_op</definition>
+        <argsstring></argsstring>
+        <name>neighbor_copy_op</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="431" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="431" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a4057e1a1eaeca59b1c87cec0720343d6" prot="protected" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1ParticleCopyPlan" kindref="compound">ParticleCopyPlan</ref></type>
+        <definition>ParticleCopyPlan amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::neighbor_copy_plan</definition>
+        <argsstring></argsstring>
+        <name>neighbor_copy_plan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="432" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a78049454550fa714d431a49586671628" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">amrex::Gpu::DeviceVector</ref>&lt; char &gt;</type>
+        <definition>amrex::Gpu::DeviceVector&lt;char&gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::snd_buffer</definition>
+        <argsstring></argsstring>
+        <name>snd_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="434" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="434" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a2f7e6baa209278afea162548a1425bf2" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">amrex::Gpu::DeviceVector</ref>&lt; char &gt;</type>
+        <definition>amrex::Gpu::DeviceVector&lt;char&gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::rcv_buffer</definition>
+        <argsstring></argsstring>
+        <name>rcv_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="435" column="30" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="435" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a1f7704df7069ec0df0e84a649babf620" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; char &gt;</type>
+        <definition>Gpu::PinnedVector&lt;char&gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::pinned_snd_buffer</definition>
+        <argsstring></argsstring>
+        <name>pinned_snd_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="437" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="437" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a57f27a8f270653d1a738490e32dffe4b" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; char &gt;</type>
+        <definition>Gpu::PinnedVector&lt;char&gt; amrex::NeighborParticleContainer&lt; NStructReal, NStructInt, NArrayReal, NArrayInt &gt;::pinned_rcv_buffer</definition>
+        <argsstring></argsstring>
+        <name>pinned_rcv_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="438" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="438" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1NeighborParticleContainer_1a099f1647d78bdf8b431f96836f553df3" prot="protected" static="no" mutable="no">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::map&lt; std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;, <ref refid="classamrex_1_1NeighborList" kindref="compound">amrex::NeighborList</ref>&lt; <ref refid="classamrex_1_1NeighborParticleContainer_1ac5323a2b8fdbd75499432de90d1010f9" kindref="member">ParticleType</ref> &gt; &gt; &gt;</type>
@@ -942,78 +1087,44 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="291" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" bodystart="291" bodyend="299"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1aa67093443956c508eba7928ca9c43789" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a4dbc10fb057262215b756a2b4289b33c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void NeighborParticleContainer::fillNeighborsCPU</definition>
+        <definition>void NeighborParticleContainer::fillNeighborsGPU</definition>
         <argsstring>()</argsstring>
-        <name>fillNeighborsCPU</name>
+        <name>fillNeighborsGPU</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="306" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesCPUImpl.H" bodystart="8" bodyend="14"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="302" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H" bodystart="231" bodyend="246"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ab231fe12c26f5349f8c4005c8b85a170" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a4fa257e580303d39d363c459981fc10b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void NeighborParticleContainer::sumNeighborsCPU</definition>
-        <argsstring>(int real_start_comp, int real_num_comp, int int_start_comp, int int_num_comp)</argsstring>
-        <name>sumNeighborsCPU</name>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>real_start_comp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>real_num_comp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>int_start_comp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>int_num_comp</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="307" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesCPUImpl.H" bodystart="19" bodyend="101"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a82b7b32706c360ef9da4f2501f0d2ef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void NeighborParticleContainer::updateNeighborsCPU</definition>
-        <argsstring>(bool reuse_rcv_counts=true)</argsstring>
-        <name>updateNeighborsCPU</name>
-        <param>
-          <type>bool</type>
-          <declname>reuse_rcv_counts</declname>
-          <defval>true</defval>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="309" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesCPUImpl.H" bodystart="269" bodyend="407"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1ab52778d0154284955fa59e2e6bc36482" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void NeighborParticleContainer::clearNeighborsCPU</definition>
+        <definition>void NeighborParticleContainer::updateNeighborsGPU</definition>
         <argsstring>()</argsstring>
-        <name>clearNeighborsCPU</name>
+        <name>updateNeighborsGPU</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="310" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesCPUImpl.H" bodystart="412" bodyend="433"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="303" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H" bodystart="251" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1acfd5f04cd8c4ccc1624a2800908ab823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NeighborParticleContainer::clearNeighborsGPU</definition>
+        <argsstring>()</argsstring>
+        <name>clearNeighborsGPU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticles.H" line="304" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_NeighborParticlesGPUImpl.H" bodystart="288" bodyend="302"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1NeighborParticleContainer_1a9fd86ef6591da68553312d8cc6321034" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -1417,25 +1528,40 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="35">
+      <node id="48">
+        <label>std::vector&lt; MPI_Status, std::allocator&lt; MPI_Status &gt; &gt;</label>
+      </node>
+      <node id="42">
+        <label>std::allocator&lt; unsigned int &gt;</label>
+      </node>
+      <node id="37">
         <label>std::vector&lt; std::map&lt; PairIndex, int &gt;, std::allocator&lt; std::map&lt; PairIndex, int &gt; &gt; &gt;</label>
       </node>
-      <node id="29">
+      <node id="31">
         <label>std::vector&lt; std::map&lt; PairIndex, ParticleTile &gt;, std::allocator&lt; std::map&lt; PairIndex, ParticleTile &gt; &gt; &gt;</label>
       </node>
-      <node id="32">
+      <node id="34">
         <label>amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCommTag &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="33" relation="public-inheritance">
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>amrex::PODVector&lt; std::size_t &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="46" relation="public-inheritance">
         </childnode>
       </node>
       <node id="18">
         <label>std::vector&lt; Long, std::allocator&lt; Long &gt; &gt;</label>
       </node>
-      <node id="28">
+      <node id="46">
+        <label>std::allocator&lt; std::size_t &gt;</label>
+      </node>
+      <node id="30">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, ParticleTile &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="29" relation="public-inheritance">
+        <childnode refid="31" relation="public-inheritance">
         </childnode>
       </node>
       <node id="24">
@@ -1444,8 +1570,14 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="25" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="37">
+      <node id="55">
         <label>std::vector&lt; std::map&lt; PairIndex, IntVector &gt;, std::allocator&lt; std::map&lt; PairIndex, IntVector &gt; &gt; &gt;</label>
+      </node>
+      <node id="49">
+        <label>amrex::Vector&lt; MPI_Request &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="4">
         <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
@@ -1517,7 +1649,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <node id="11">
         <label>std::vector&lt; amrex::Vector&lt; Long &gt;, std::allocator&lt; amrex::Vector&lt; Long &gt; &gt; &gt;</label>
       </node>
-      <node id="39">
+      <node id="57">
         <label>std::vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt;, std::allocator&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt; &gt;</label>
       </node>
       <node id="25">
@@ -1526,16 +1658,37 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <node id="27">
         <label>std::vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt;, std::allocator&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::Vector&lt; amrex::NeighborParticleContainer::NeighborCopyTag &gt; &gt; &gt; &gt; &gt;</label>
       </node>
-      <node id="33">
+      <node id="29">
+        <label>std::allocator&lt; char &gt;</label>
+      </node>
+      <node id="52">
+        <label>amrex::Vector&lt; std::map&lt; int, amrex::PODVector&lt; amrex::IntVect &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
         <label>std::vector&lt; amrex::NeighborParticleContainer::NeighborCommTag, std::allocator&lt; amrex::NeighborParticleContainer::NeighborCommTag &gt; &gt;</label>
       </node>
       <node id="21">
         <label>std::vector&lt; ParticleLevel, std::allocator&lt; ParticleLevel &gt; &gt;</label>
       </node>
-      <node id="36">
+      <node id="41">
+        <label>amrex::PODVector&lt; unsigned int &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>amrex::Vector&lt; std::map&lt; int, amrex::PODVector&lt; int &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, IntVector &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="37" relation="public-inheritance">
+        <childnode refid="55" relation="public-inheritance">
         </childnode>
       </node>
       <node id="7">
@@ -1547,10 +1700,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="38">
+      <node id="50">
+        <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="56">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, amrex::Vector&lt; amrex::NeighborParticleContainer::InverseCopyTag &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="39" relation="public-inheritance">
+        <childnode refid="57" relation="public-inheritance">
         </childnode>
       </node>
       <node id="15">
@@ -1572,15 +1728,27 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>fr</edgelabel>
         </childnode>
       </node>
-      <node id="30">
+      <node id="32">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="31" relation="public-inheritance">
+        <childnode refid="33" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
         <label>amrex::ParticleBase&lt; ParticleReal, T_NReal, 0 &gt;</label>
         <link refid="structamrex_1_1ParticleBase"/>
+      </node>
+      <node id="47">
+        <label>amrex::Vector&lt; MPI_Status &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>amrex::PODVector&lt; char &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="17">
         <label>amrex::Vector&lt; Long &gt;</label>
@@ -1600,9 +1768,15 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>buffer_tag_cache</edgelabel>
         </childnode>
         <childnode refid="28" relation="usage">
-          <edgelabel>neighbors</edgelabel>
+          <edgelabel>snd_buffer</edgelabel>
+          <edgelabel>pinned_snd_buffer</edgelabel>
+          <edgelabel>rcv_buffer</edgelabel>
+          <edgelabel>pinned_rcv_buffer</edgelabel>
         </childnode>
         <childnode refid="30" relation="usage">
+          <edgelabel>neighbors</edgelabel>
+        </childnode>
+        <childnode refid="32" relation="usage">
           <edgelabel>mask_ptr</edgelabel>
         </childnode>
         <childnode refid="14" relation="usage">
@@ -1610,19 +1784,25 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
           <edgelabel>neighbor_procs</edgelabel>
           <edgelabel>ic</edgelabel>
         </childnode>
-        <childnode refid="32" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>local_neighbors</edgelabel>
         </childnode>
         <childnode refid="17" relation="usage">
           <edgelabel>rcvs</edgelabel>
         </childnode>
-        <childnode refid="34" relation="usage">
+        <childnode refid="36" relation="usage">
           <edgelabel>local_neighbor_sizes</edgelabel>
         </childnode>
-        <childnode refid="36" relation="usage">
+        <childnode refid="38" relation="usage">
+          <edgelabel>neighbor_copy_plan</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>neighbor_copy_op</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
           <edgelabel>neighbor_list</edgelabel>
         </childnode>
-        <childnode refid="38" relation="usage">
+        <childnode refid="56" relation="usage">
           <edgelabel>inverse_tags</edgelabel>
         </childnode>
       </node>
@@ -1630,6 +1810,21 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <label>amrex::PODVector&lt; int &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
         <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>std::vector&lt; std::map&lt; int, amrex::PODVector&lt; int &gt; &gt;, std::allocator&lt; std::map&lt; int, amrex::PODVector&lt; int &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="51">
+        <label>amrex::ParticleCopyOp</label>
+        <link refid="structamrex_1_1ParticleCopyOp"/>
+        <childnode refid="43" relation="usage">
+          <edgelabel>m_levels</edgelabel>
+          <edgelabel>m_boxes</edgelabel>
+          <edgelabel>m_src_indices</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>m_periodic_shift</edgelabel>
         </childnode>
       </node>
       <node id="9">
@@ -1641,7 +1836,10 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
         <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="31">
+      <node id="53">
+        <label>std::vector&lt; std::map&lt; int, amrex::PODVector&lt; amrex::IntVect &gt; &gt;, std::allocator&lt; std::map&lt; int, amrex::PODVector&lt; amrex::IntVect &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="33">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; &gt;</label>
       </node>
       <node id="20">
@@ -1666,10 +1864,68 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <node id="23">
         <label>std::vector&lt; amrex::Vector&lt; int &gt;, std::allocator&lt; amrex::Vector&lt; int &gt; &gt; &gt;</label>
       </node>
-      <node id="34">
+      <node id="39">
+        <label>amrex::Vector&lt; std::size_t &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
         <label>amrex::Vector&lt; std::map&lt; PairIndex, int &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="35" relation="public-inheritance">
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>std::vector&lt; std::size_t, std::allocator&lt; std::size_t &gt; &gt;</label>
+      </node>
+      <node id="38">
+        <label>amrex::ParticleCopyPlan</label>
+        <link refid="structamrex_1_1ParticleCopyPlan"/>
+        <childnode refid="39" relation="usage">
+          <edgelabel>m_snd_pad_correction_h</edgelabel>
+          <edgelabel>m_snd_offsets</edgelabel>
+          <edgelabel>m_rOffset</edgelabel>
+          <edgelabel>m_snd_counts</edgelabel>
+          <edgelabel>m_rcv_pad_correction_h</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>m_box_offsets</edgelabel>
+          <edgelabel>m_box_counts_h</edgelabel>
+          <edgelabel>m_box_counts_d</edgelabel>
+        </childnode>
+        <childnode refid="43" relation="usage">
+          <edgelabel>m_dst_indices</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>m_rcv_box_ids</edgelabel>
+          <edgelabel>m_rcv_box_counts</edgelabel>
+          <edgelabel>m_rcv_data</edgelabel>
+          <edgelabel>m_rcv_box_pids</edgelabel>
+          <edgelabel>m_rcv_box_offsets</edgelabel>
+          <edgelabel>m_rcv_box_levs</edgelabel>
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>m_snd_pad_correction_d</edgelabel>
+          <edgelabel>m_rcv_pad_correction_d</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>m_RcvProc</edgelabel>
+          <edgelabel>m_neighbor_procs</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>m_Rcvs</edgelabel>
+          <edgelabel>m_Snds</edgelabel>
+          <edgelabel>m_rcv_num_particles</edgelabel>
+          <edgelabel>m_snd_num_particles</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>m_particle_stats</edgelabel>
+          <edgelabel>m_build_stats</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>m_build_rreqs</edgelabel>
+          <edgelabel>m_particle_rreqs</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
@@ -1702,7 +1958,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1ParticleContainer_1a56a586c50e7e206bc8b6fe4e42236ab5" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>CheckpointPost</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a0e505f93fc9e92c5de2b23f240b5e8e9" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>CheckpointPre</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a287e510b67bfbb6bd4d500e5281e3329" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>clearNeighbors</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1ab52778d0154284955fa59e2e6bc36482" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>clearNeighborsCPU</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1acfd5f04cd8c4ccc1624a2800908ab823" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>clearNeighborsGPU</name></member>
       <member refid="classamrex_1_1ParticleContainer_1ae3e43a24a2d123987dff0e247386eca6" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>clearParticles</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a9ceb44fa50f3d21117cd9f180ca28eb0" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>computeRefFac</name></member>
       <member refid="classamrex_1_1ParticleContainer_1aa439adf0d7c6d4d2b0ab1e69b3f953f2" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>copyParticles</name></member>
@@ -1728,7 +1984,7 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1ParticleContainer_1aea2134948d1fb5fd85656dc6bc1cc3cd" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>EnforcePeriodicWhere</name></member>
       <member refid="classamrex_1_1ParticleContainer_1af0a6de8f8e2b2bf3ce5cdf18d906cdc4" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>filePrefixPrePost</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a2c1bf28f2552627e93d1587e977dd22a" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>fillNeighbors</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1aa67093443956c508eba7928ca9c43789" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>fillNeighborsCPU</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a4dbc10fb057262215b756a2b4289b33c" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>fillNeighborsGPU</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1af3b5f685680bc88ad15c0f2cd5ee44c8" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>fillNeighborsMPI</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1ace4a68e9536f7e36dd141825cdc04519" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>GetCommTagsBox</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a30fd89965e6fb6402876b7dcfa01f8ca" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>GetLevelDirectoriesCreated</name></member>
@@ -1774,8 +2030,13 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1NeighborParticleContainer_1a36b78bd6fa71f934871cf953892ef4f8" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>local_neighbors</name></member>
       <member refid="classamrex_1_1ParticleContainer_1afd7e9ee344396bfc602657e79be8dbe4" prot="private" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>locateParticle</name></member>
       <member refid="classamrex_1_1ParticleContainer_1acd7f0ad77ca7d383ba1c86815bc83191" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_bins</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1adc6fa317f2580d5b4eaf5e7e156694e8" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_code_array</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1adc56d3fa06a368656ba30775e6af57d5" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_code_offsets</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a6aafab3c8c1565c5457b08400f0c7984" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_grid_map</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a027a8bd9c7726edd5ab979a6ee716fa8" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_has_neighbors</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a099f1647d78bdf8b431f96836f553df3" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_neighbor_list</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a68fedc2fd57b0e5efccdf65617f930ff" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_neighbor_mask_initialized</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a0f3bc83f8fdf1b3468248103a0000a49" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_neighbor_mask_ptr</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a9c12404dedc750595ce4d68731d6fc29" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_num_neighbor_cells</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a48886f9e061ef86f4820d5ec9ced3d36" prot="private" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_num_runtime_int</name></member>
       <member refid="classamrex_1_1ParticleContainer_1ab9dcae9c6a09bc603f2044989d1ace74" prot="private" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>m_num_runtime_real</name></member>
@@ -1786,6 +2047,8 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1NeighborParticleContainer_1a4f7f3ca7bf951e7ec6fce594005694da" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>MyParIter</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a1c40700b0202582a3102befdf84451ae" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>NArrayInt</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a7f4ed428087667aa857bd631b97eb5e6" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>NArrayReal</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a42b4110915286223007d92bbcf580d89" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>neighbor_copy_op</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a4057e1a1eaeca59b1c87cec0720343d6" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>neighbor_copy_plan</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a68d92607a1d43f215ae6af8ff8d3e3af" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>neighbor_list</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a704c1b5b30612c4f5a09378f0a63b221" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>neighbor_procs</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1ae77c84d55fb9e147fc49a60bd44d42d6" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>NeighborCommMap</name></member>
@@ -1839,9 +2102,12 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1NeighborParticleContainer_1ade2385ed6d6005f38a31d3709b55fc4c" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ParticleVector</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a36651cd2e655c49f9d9c57c865223fa2" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>pdata_size</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a47f67390d8d8c825464f861df6359cb2" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>PeriodicShift</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a57f27a8f270653d1a738490e32dffe4b" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>pinned_rcv_buffer</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a1f7704df7069ec0df0e84a649babf620" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>pinned_snd_buffer</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a3dede7806e59332e21b555b6c7a20bc9" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>PrintCapacity</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1aac13e1f1c324181ce01a8f50fe3897d9" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>printNeighborList</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1abe13d10d672a558cf71e711fb838801e" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>rc</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a2f7e6baa209278afea162548a1425bf2" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>rcv_buffer</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a6d6260836577412b1a3a17c7f8d09bc4" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>rcvs</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a75cec62d0988157c36c1cad225236a9d" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ReadParticleRealData</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a5d523bd0038e70f787c268ebb638e8b2" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ReadParticles</name></member>
@@ -1874,18 +2140,18 @@ buffer&quot; that is filled with data corresponding to the particles within 1 ne
       <member refid="classamrex_1_1ParticleContainer_1ae2a1861e41d8404ce67129bb77b8ff79" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>SetUsePrePost</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a37a5b5b9403a813c8a62dae4dc47ed7f" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>SetUseUnlink</name></member>
       <member refid="classamrex_1_1ParticleContainer_1afe6dd326d79c3169d35d540f65f6d4f4" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>ShrinkToFit</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a78049454550fa714d431a49586671628" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>snd_buffer</name></member>
       <member refid="classamrex_1_1ParticleContainer_1aec513fd16f52bafcec98962f1a904d18" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>SoA</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a2ab99fc115d419fb90bc42e69f60e7d6" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>SortParticlesByBin</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a7af39cfe3a9d135aa624798a31762da7" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>SortParticlesByCell</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a881b90e85491b4c0a7bb25425cc38641" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>sumNeighbors</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1ab231fe12c26f5349f8c4005c8b85a170" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>sumNeighborsCPU</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a832b5eccef2ae5ed7bb83a92653b793e" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>sumNeighborsMPI</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a71a5c1448096fb5347f01ee164e70456" prot="private" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>superparticle_size</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a963f1148018a102d01095f71d4a0e65b" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>superParticleSize</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a1c6baf08ed7bdeb1d7a7acf30eefad52" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>SuperParticleType</name></member>
       <member refid="classamrex_1_1ParticleContainer_1ac807eaeb5b61de74bab2eddd98f763c6" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>TotalNumberOfParticles</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1add63262756c48b8f645f236c664067d0" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>updateNeighbors</name></member>
-      <member refid="classamrex_1_1NeighborParticleContainer_1a82b7b32706c360ef9da4f2501f0d2ef7" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>updateNeighborsCPU</name></member>
+      <member refid="classamrex_1_1NeighborParticleContainer_1a4fa257e580303d39d363c459981fc10b" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>updateNeighborsGPU</name></member>
       <member refid="classamrex_1_1NeighborParticleContainer_1a21bd4a08b87b0afeeb0d8889c619c86c" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>use_mask</name></member>
       <member refid="classamrex_1_1ParticleContainer_1a5379ae495140bc0763c163fac9eff177" prot="public" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>usePrePost</name></member>
       <member refid="classamrex_1_1ParticleContainer_1ada3cfea616aaa17a688c5b26884ac6ad" prot="protected" virt="non-virtual"><scope>amrex::NeighborParticleContainer</scope><name>Where</name></member>

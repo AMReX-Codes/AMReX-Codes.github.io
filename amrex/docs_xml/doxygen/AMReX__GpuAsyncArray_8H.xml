@@ -35,7 +35,7 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="75">
+      <node id="77">
         <label>AMReX_OpenMP.H</label>
         <link refid="AMReX__OpenMP_8H"/>
         <childnode refid="2" relation="include">
@@ -118,7 +118,7 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="71">
+      <node id="73">
         <label>cstdint</label>
       </node>
       <node id="32">
@@ -168,7 +168,7 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="72" relation="include">
+        <childnode refid="74" relation="include">
         </childnode>
       </node>
       <node id="48">
@@ -187,6 +187,10 @@
         <childnode refid="18" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
       <node id="63">
@@ -257,11 +261,11 @@
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="74" relation="include">
+        <childnode refid="76" relation="include">
         </childnode>
         <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="75" relation="include">
+        <childnode refid="77" relation="include">
         </childnode>
         <childnode refid="48" relation="include">
         </childnode>
@@ -287,7 +291,7 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="74">
+      <node id="76">
         <label>AMReX_GpuError.H</label>
         <link refid="AMReX__GpuError_8H"/>
         <childnode refid="2" relation="include">
@@ -414,7 +418,7 @@
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="71" relation="include">
+        <childnode refid="73" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -432,8 +436,12 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
       </node>
-      <node id="73">
+      <node id="75">
         <label>sys/types.h</label>
       </node>
       <node id="1">
@@ -762,15 +770,18 @@
       <node id="47">
         <label>algorithm</label>
       </node>
-      <node id="72">
+      <node id="74">
         <label>AMReX_FileSystem.H</label>
         <link refid="AMReX__FileSystem_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="73" relation="include">
+        <childnode refid="75" relation="include">
         </childnode>
+      </node>
+      <node id="71">
+        <label>curand.h</label>
       </node>
       <node id="4">
         <label>cstring</label>
@@ -790,6 +801,9 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
+      </node>
+      <node id="72">
+        <label>curand_kernel.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -3527,6 +3541,33 @@
     <innerclass refid="classamrex_1_1Gpu_1_1AsyncArray" prot="public">amrex::Gpu::AsyncArray</innerclass>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <innernamespace refid="namespaceamrex_1_1Gpu">amrex::Gpu</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void CUDART_CB</type>
+        <definition>void CUDART_CB amrex_asyncarray_delete</definition>
+        <argsstring>(cudaStream_t stream, cudaError_t error, void *p)</argsstring>
+        <name>amrex_asyncarray_delete</name>
+        <param>
+          <type>cudaStream_t</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>cudaError_t</type>
+          <declname>error</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAsyncArray.H" line="20" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAsyncArray.cpp" bodystart="12" bodyend="21" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuAsyncArray.H" declline="20" declcolumn="20"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -3547,11 +3588,11 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>amrex_asyncarray_delete<sp/>(<sp/>hipStream_t<sp/>stream,<sp/><sp/>hipError_t<sp/>error,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" kindref="member">amrex_asyncarray_delete</ref><sp/>(<sp/>hipStream_t<sp/>stream,<sp/><sp/>hipError_t<sp/>error,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/>amrex_asyncarray_delete<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/><ref refid="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" kindref="member">amrex_asyncarray_delete</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/>amrex_asyncarray_delete<sp/>(cudaStream_t<sp/>stream,<sp/>cudaError_t<sp/>error,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CUDART_CB<sp/><ref refid="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" kindref="member">amrex_asyncarray_delete</ref><sp/>(cudaStream_t<sp/>stream,<sp/>cudaError_t<sp/>error,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>p);</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
@@ -3570,10 +3611,10 @@
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" kindref="member">h_data</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(std::malloc(n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T)));</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a90ff215e828e9192dbd196a78cacf083" kindref="member">std::memcpy</ref>(<ref refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" kindref="member">h_data</ref>,<sp/>h_p,<sp/>n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T));</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e" kindref="member">alloc</ref>(n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T)));</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::htod_memcpy_async(<ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>,<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" kindref="member">h_data</ref>,<sp/>n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1aacefe17a39734cb2475a36199ab1370b" kindref="member">Gpu::htod_memcpy_async</ref>(<ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>,<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" kindref="member">h_data</ref>,<sp/>n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T));</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3583,7 +3624,7 @@
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(n<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">T*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a46ce2cd5cfc039cec64548b031fbde2e" kindref="member">alloc</ref>(n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T)));</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -3606,7 +3647,7 @@
 <codeline lineno="72" refid="classamrex_1_1Gpu_1_1AsyncArray_1ae4a6ff36b2cd3780d311a02bb7126e30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1ae4a6ff36b2cd3780d311a02bb7126e30" kindref="member">clear</ref><sp/>()</highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a75701478316a5d131da8097cd795118f" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref><sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
@@ -3614,20 +3655,20 @@
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[0]<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>;</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[1]<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" kindref="member">h_data</ref>;</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipStreamAddCallback(Gpu::gpuStream(),</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex_asyncarray_delete,<sp/>p,<sp/>0));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_HIP_SAFE_CALL<sp/>(<sp/>hipStreamAddCallback(<ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">Gpu::gpuStream</ref>(),</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" kindref="member">amrex_asyncarray_delete</ref>,<sp/>p,<sp/>0));</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__CUDACC__)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaLaunchHostFunc(Gpu::gpuStream(),</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex_asyncarray_delete,<sp/>p));</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaLaunchHostFunc(<ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">Gpu::gpuStream</ref>(),</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" kindref="member">amrex_asyncarray_delete</ref>,<sp/>p));</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_CUDA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AMREX_CUDA_SAFE_CALL(cudaStreamAddCallback(Gpu::gpuStream(),</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex_asyncarray_delete,<sp/>p,<sp/>0));</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1a6a8e9294d731b70d00a258e8a9d6d222" kindref="member">AMREX_CUDA_SAFE_CALL</ref>(cudaStreamAddCallback(<ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">Gpu::gpuStream</ref>(),</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuAsyncArray_8H_1a984a9765863d3bfb90f7d695178858d2" kindref="member">amrex_asyncarray_delete</ref>,<sp/>p,<sp/>0));</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_DPCPP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CODEPLAY_HOST_TASK</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pd<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>;</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ph<sp/>=<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1a4d8ff9603bf44cd72f83703f34ecb0c9" kindref="member">h_data</ref>;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>*(Gpu::gpuStream().queue);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>q<sp/>=<sp/>*(<ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">Gpu::gpuStream</ref>().queue);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q.submit([&amp;]<sp/>(sycl::handler&amp;<sp/>h)<sp/>{</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>h.codeplay_host_task([=]<sp/>()<sp/>{</highlight></codeline>
@@ -3662,7 +3703,7 @@
 <codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>)</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Gpu::dtoh_memcpy_async(h_p,<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>,<sp/>n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Gpu_1a6cb0d90b937d4749b2219ad0e9fa8277" kindref="member">Gpu::dtoh_memcpy_async</ref>(h_p,<sp/><ref refid="classamrex_1_1Gpu_1_1AsyncArray_1afcdba42d606234841dc54107bb186fb8" kindref="member">d_data</ref>,<sp/>n*</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(T));</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>

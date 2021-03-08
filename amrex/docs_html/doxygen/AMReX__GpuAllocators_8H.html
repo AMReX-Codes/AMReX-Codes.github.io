@@ -81,6 +81,9 @@ $(function() {
 <code>#include &lt;<a class="el" href="AMReX__Print_8H_source.html">AMReX_Print.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Arena_8H_source.html">AMReX_Arena.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__GpuDevice_8H_source.html">AMReX_GpuDevice.H</a>&gt;</code><br />
+<code>#include &lt;cuda.h&gt;</code><br />
+<code>#include &lt;driver_types.h&gt;</code><br />
+<code>#include &lt;cuda_runtime.h&gt;</code><br />
 </div>
 <p><a href="AMReX__GpuAllocators_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -100,6 +103,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1PolymorphicAllocator.html">amrex::PolymorphicAllocator&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html">amrex::RunOnGpu&lt; ArenaAllocator&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html">amrex::RunOnGpu&lt; DeviceArenaAllocator&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html">amrex::RunOnGpu&lt; ManagedArenaAllocator&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -108,9 +117,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aa2b9c07eea8f0178a1973357cf04ea62"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:aa2b9c07eea8f0178a1973357cf04ea62"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa2b9c07eea8f0178a1973357cf04ea62">amrex::DefaultAllocator</a> = std::allocator&lt; T &gt;</td></tr>
-<tr class="separator:aa2b9c07eea8f0178a1973357cf04ea62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179fafc569924202b166896b608cd5c2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a179fafc569924202b166896b608cd5c2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a179fafc569924202b166896b608cd5c2">amrex::DefaultAllocator</a> = <a class="el" href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a>&lt; T &gt;</td></tr>
+<tr class="separator:a179fafc569924202b166896b608cd5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -80,6 +80,8 @@ $(function() {
 <code>#include &lt;<a class="el" href="AMReX__BLassert_8H_source.html">AMReX_BLassert.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__Extension_8H_source.html">AMReX_Extension.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="AMReX__INT_8H_source.html">AMReX_INT.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__Array_8H_source.html">AMReX_Array.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__TypeTraits_8H_source.html">AMReX_TypeTraits.H</a>&gt;</code><br />
 </div>
 <p><a href="AMReX__Vector_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -116,6 +118,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a77fdd4258ec656fb99a6124a73501803"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a77fdd4258ec656fb99a6124a73501803"><td class="memTemplItemLeft" align="right" valign="top">Vector&lt; Vector&lt; T * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a77fdd4258ec656fb99a6124a73501803">amrex::GetVecOfVecOfPtrs</a> (const Vector&lt; Vector&lt; std::unique_ptr&lt; T &gt; &gt; &gt; &amp;a)</td></tr>
 <tr class="separator:a77fdd4258ec656fb99a6124a73501803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5647809cb6ec0079f7c54d6470ee09b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad5647809cb6ec0079f7c54d6470ee09b"><td class="memTemplItemLeft" align="right" valign="top">Vector&lt; std::array&lt; T *, 3 &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad5647809cb6ec0079f7c54d6470ee09b">amrex::GetVecOfArrOfPtrs</a> (const Vector&lt; std::array&lt; std::unique_ptr&lt; T &gt;, 3 &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:ad5647809cb6ec0079f7c54d6470ee09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a380adb5d20218e89a7f0bff44c9c802d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a380adb5d20218e89a7f0bff44c9c802d"><td class="memTemplItemLeft" align="right" valign="top">Vector&lt; std::array&lt; T const  *, 3 &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a380adb5d20218e89a7f0bff44c9c802d">amrex::GetVecOfArrOfPtrsConst</a> (const Vector&lt; std::array&lt; std::unique_ptr&lt; T &gt;, 3 &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:a380adb5d20218e89a7f0bff44c9c802d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a254eb8d4806bf2a6be73f5ab9a9818c1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a254eb8d4806bf2a6be73f5ab9a9818c1"><td class="memTemplItemLeft" align="right" valign="top">Vector&lt; std::array&lt; T const  *, 3 &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a254eb8d4806bf2a6be73f5ab9a9818c1">amrex::GetVecOfArrOfConstPtrs</a> (const Vector&lt; std::array&lt; std::unique_ptr&lt; T &gt;, 3 &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:a254eb8d4806bf2a6be73f5ab9a9818c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf9b597dca8afca545f525f75e895793"><td class="memTemplParams" colspan="2">template&lt;class T , typename std::enable_if&lt; IsFabArray&lt; T &gt;::value||IsBaseFab&lt; T &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:aaf9b597dca8afca545f525f75e895793"><td class="memTemplItemLeft" align="right" valign="top">Vector&lt; std::array&lt; T const  *, 3 &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aaf9b597dca8afca545f525f75e895793">amrex::GetVecOfArrOfConstPtrs</a> (const Vector&lt; std::array&lt; T, 3 &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:aaf9b597dca8afca545f525f75e895793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d811785a3df6b99dd362d937d8c1413"><td class="memTemplParams" colspan="2">template&lt;class T , typename std::enable_if&lt; IsFabArray&lt; T &gt;::value||IsBaseFab&lt; T &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:a9d811785a3df6b99dd362d937d8c1413"><td class="memTemplItemLeft" align="right" valign="top">Vector&lt; std::array&lt; T *, 3 &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a9d811785a3df6b99dd362d937d8c1413">amrex::GetVecOfArrOfPtrs</a> (Vector&lt; std::array&lt; T, 3 &gt; &gt; &amp;a)</td></tr>
+<tr class="separator:a9d811785a3df6b99dd362d937d8c1413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc637934b6fa1a7b0664ad3b61f0f69"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:aabc637934b6fa1a7b0664ad3b61f0f69"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aabc637934b6fa1a7b0664ad3b61f0f69">amrex::FillNull</a> (Vector&lt; T * &gt; &amp;a)</td></tr>
 <tr class="separator:aabc637934b6fa1a7b0664ad3b61f0f69"><td class="memSeparator" colspan="2">&#160;</td></tr>

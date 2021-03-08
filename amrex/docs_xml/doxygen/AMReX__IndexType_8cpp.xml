@@ -93,6 +93,10 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
       </node>
       <node id="36">
         <label>AMReX_GpuTypes.H</label>
@@ -291,7 +295,7 @@
         <childnode refid="39" relation="include">
         </childnode>
       </node>
-      <node id="43">
+      <node id="44">
         <label>climits</label>
       </node>
       <node id="8">
@@ -327,7 +331,7 @@
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="40" relation="include">
         </childnode>
@@ -366,6 +370,16 @@
       <node id="10">
         <label>inttypes.h</label>
       </node>
+      <node id="43">
+        <label>AMReX_TypeTraits.H</label>
+        <link refid="AMReX__TypeTraits_8H"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
     </incdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
       <sectiondef kind="define">
@@ -399,7 +413,7 @@
 <codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IndexType&amp;<sp/>it)</highlight></codeline>
 <codeline lineno="12"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>AMREX_D_TERM(<sp/>(it.test(0)?</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">:</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(<sp/>(it.test(0)?</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">:</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">),</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(it.test(1)?</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">:</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">),</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>(it.test(2)?</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">:</highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal">))<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::flush;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
@@ -418,13 +432,13 @@
 <codeline lineno="30"><highlight class="normal"><ref refid="namespaceamrex_1aac7b44499bc56506bcf5ed89ec42bc09" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/>is,</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IndexType&amp;<sp/><sp/><sp/><sp/>it)</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a8de829410ed15dbc56e4dafc9bc6ea69a68b0c60ae4f5670ee8d0ad5dda84d0fd" kindref="member">AMREX_D_DECL</ref>(t0,t1,t2);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(t0,t1,t2);</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_D_EXPR(<sp/>is.ignore(<ref refid="AMReX__IndexType_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t0,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a3d7a88e405c623653f18afe8061c4a4f" kindref="member">AMREX_D_EXPR</ref>(<sp/>is.ignore(<ref refid="AMReX__IndexType_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t0,</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IndexType_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t1,</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IndexType_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">)<sp/>&gt;&gt;<sp/>t2);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>is.ignore(<ref refid="AMReX__IndexType_8cpp_1a93b4a56e5a8af340d43839230b94843c" kindref="member">BL_IGNORE_MAX</ref>,<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>AMREX_D_TERM(</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t0<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t0<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);<sp/>t0==</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">?it.set(0):it.unset(0);<sp/>,</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t1<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t1<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);<sp/>t1==</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">?it.set(1):it.unset(1);<sp/>,</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(t2<sp/>==<sp/></highlight><highlight class="charliteral">&apos;C&apos;</highlight><highlight class="normal"><sp/>||<sp/>t2<sp/>==<sp/></highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">);<sp/>t2==</highlight><highlight class="charliteral">&apos;N&apos;</highlight><highlight class="normal">?it.set(2):it.unset(2));</highlight></codeline>

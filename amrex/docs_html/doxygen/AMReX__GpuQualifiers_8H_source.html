@@ -79,35 +79,35 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;hip/hip_runtime.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST __host__</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE __device__</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL __global__</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE __host__ __device__</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT __constant__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">   11</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST __host__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">   12</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE __device__</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">   13</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL __global__</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">   14</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE __host__ __device__</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aff21ae9744a0237efd27fd1b8cbc16f1">   15</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT __constant__</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_HIP) &amp;&amp; !defined(AMREX_USE_CUDA)</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED __device__</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED __device__</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define AMREX_GPU_EXTERNAL __attribute__((weak))</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED __managed__</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED __device__ __managed__</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define AMREX_GPU_EXTERNAL</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a75280e866b52a64be26a4e332f00e845">   22</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED __managed__</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af6046c971c96ea0d02afe9ff80426144">   23</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED __device__ __managed__</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a0f98b338ae374935436589280ddeddd4">   24</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_EXTERNAL</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af7feff7858c7b1d3557509d883c46674">   29</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">   30</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">   31</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">   32</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#aff21ae9744a0237efd27fd1b8cbc16f1">   33</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a75280e866b52a64be26a4e332f00e845">   34</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#af6046c971c96ea0d02afe9ff80426144">   35</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define AMREX_GPU_GLOBAL</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define AMREX_GPU_HOST_DEVICE</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define AMREX_GPU_CONSTANT</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define AMREX_GPU_MANAGED</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define AMREX_GPU_DEVICE_MANAGED</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define AMREX_GPU_EXTERNAL SYCL_EXTERNAL</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="AMReX__GpuQualifiers_8H.html#a0f98b338ae374935436589280ddeddd4">   39</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_EXTERNAL</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define AMREX_GPU_EXTERNAL</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>

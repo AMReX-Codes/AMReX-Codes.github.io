@@ -94,9 +94,9 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    constexpr dim3 (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> x_, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> y_=1, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> z_=1) : x(x_),y(y_),z(z_) {}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">struct </span>gpuStream_t {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">struct </span><a class="code" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    sycl::queue* queue = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> operator== (gpuStream_t <span class="keyword">const</span>&amp; rhs) noexcept { <span class="keywordflow">return</span> queue == rhs.queue; }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> operator== (<a class="code" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> <span class="keyword">const</span>&amp; rhs) noexcept { <span class="keywordflow">return</span> queue == rhs.queue; }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -112,14 +112,14 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">struct </span>Handler</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    Handler (sycl::nd_item&lt;1&gt; <span class="keyword">const</span>* a_item = <span class="keyword">nullptr</span>, <span class="keywordtype">void</span>* a_local = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6">Handler</a> (sycl::nd_item&lt;1&gt; <span class="keyword">const</span>* a_item = <span class="keyword">nullptr</span>, <span class="keywordtype">void</span>* a_local = <span class="keyword">nullptr</span>,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             <span class="keywordtype">int</span> a_n_active_threds = -1)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        : item(a_item), local(a_local), numActiveThreads(a_n_active_threds) {}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        : item(a_item), local(a_local), <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a>(a_n_active_threds) {}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> isFullBlock ()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> (numActiveThreads &gt;= <span class="keywordtype">int</span>(item-&gt;get_local_range(0)) ||</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                numActiveThreads &lt;= 0);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6">isFullBlock</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a> &gt;= <span class="keywordtype">int</span>(item-&gt;get_local_range(0)) ||</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a> &lt;= 0);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::size_t globalIdx ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> item-&gt;get_global_linear_id(); }</div>
@@ -144,28 +144,28 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    sycl::nd_item&lt;1&gt; <span class="keyword">const</span>* item;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span>* local; <span class="comment">// DPC++ local memory</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> numActiveThreads;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_GPU)</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">struct </span>Handler</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Handler.html">   81</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Handler</a></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr Handler (<span class="keywordtype">int</span> n_active_threads = -1)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        : numActiveThreads(n_active_threads) {}</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6">   83</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> constexpr <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6">Handler</a> (<span class="keywordtype">int</span> n_active_threads = -1)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        : <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a>(n_active_threads) {}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> isFullBlock ()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> (numActiveThreads &gt;= (<span class="keywordtype">int</span>)blockDim.x ||</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                numActiveThreads &lt;= 0);</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6">   87</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6">isFullBlock</a> ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a> &gt;= (<span class="keywordtype">int</span>)blockDim.x ||</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a> &lt;= 0);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> numActiveThreads;</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">   92</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">numActiveThreads</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structamrex_1_1Gpu_1_1Handler.html">   97</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Handler</a> {};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">struct </span><a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Handler</a> {};</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
@@ -173,12 +173,16 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:32</div></div>
+<div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:14</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:110</div></div>
+<div class="ttc" id="anamespaceamrex_html_a3e08759747455ff96c8f68e8673c2b19"><div class="ttname"><a href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">amrex::gpuStream_t</a></div><div class="ttdeci">cudaStream_t gpuStream_t</div><div class="ttdef"><b>Definition:</b> AMReX_GpuControl.H:75</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">amrex::RunOn::Gpu</a></div><div class="ttdeci">@ Gpu</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html_afaca0e51ba536dc7520dfaded38d38e6"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html#afaca0e51ba536dc7520dfaded38d38e6">amrex::Gpu::Handler::isFullBlock</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool isFullBlock() const</div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:87</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:51</div></div>
-<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html">amrex::Gpu::Handler</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:97</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html_a277a46596f8e67342709552121787bc5"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html#a277a46596f8e67342709552121787bc5">amrex::Gpu::Handler::numActiveThreads</a></div><div class="ttdeci">int numActiveThreads</div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:92</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html_aa01988bcbc809db7ebce06f5a0c90ae6"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html#aa01988bcbc809db7ebce06f5a0c90ae6">amrex::Gpu::Handler::Handler</a></div><div class="ttdeci">constexpr AMREX_GPU_HOST_DEVICE Handler(int n_active_threads=-1)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:83</div></div>
+<div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html">amrex::Gpu::Handler</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:81</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

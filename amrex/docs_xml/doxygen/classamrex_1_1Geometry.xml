@@ -5,10 +5,10 @@
     <basecompoundref refid="classamrex_1_1CoordSys" prot="public" virt="non-virtual">amrex::CoordSys</basecompoundref>
     <includes refid="AMReX__Geometry_8H" local="no">AMReX_Geometry.H</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1Geometry_1a84b1ad3fef8594c10d9ff2000505b20a" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1Geometry_1a3dee6d474bb3415f1db543249d91894f" prot="private" static="no" mutable="no">
         <type>bool</type>
-        <definition>bool amrex::Geometry::is_periodic[AMREX_SPACEDIM]</definition>
-        <argsstring>[AMREX_SPACEDIM]</argsstring>
+        <definition>bool amrex::Geometry::is_periodic[3]</definition>
+        <argsstring>[3]</argsstring>
         <name>is_periodic</name>
         <initializer>= {AMREX_D_DECL(false,false,false)}</initializer>
         <briefdescription>
@@ -107,10 +107,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="77" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.cpp" bodystart="54" bodyend="58"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a7ba1318caf7c0f051bc33126789c4e94" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a0bd9ae0c6464cfcce2b3ea46b2f1c336" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::Geometry::Geometry</definition>
-        <argsstring>(const Box &amp;dom, const RealBox &amp;rb, int coord, Array&lt; int, AMREX_SPACEDIM &gt; const &amp;is_per) noexcept</argsstring>
+        <argsstring>(const Box &amp;dom, const RealBox &amp;rb, int coord, Array&lt; int, 3 &gt; const &amp;is_per) noexcept</argsstring>
         <name>Geometry</name>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
@@ -125,7 +125,7 @@
           <declname>coord</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
           <declname>is_per</declname>
         </param>
         <briefdescription>
@@ -264,10 +264,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="104" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.cpp" bodystart="74" bodyend="107"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a1b38d6eb6c35983b8569d5acafad944b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a5bf28e9a45d2eb947f5389ae309f6a8c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::Geometry::define</definition>
-        <argsstring>(const Box &amp;dom, const RealBox &amp;rb, int coord, Array&lt; int, AMREX_SPACEDIM &gt; const &amp;is_per) noexcept</argsstring>
+        <argsstring>(const Box &amp;dom, const RealBox &amp;rb, int coord, Array&lt; int, 3 &gt; const &amp;is_per) noexcept</argsstring>
         <name>define</name>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
@@ -282,7 +282,7 @@
           <declname>coord</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
           <declname>is_per</declname>
         </param>
         <briefdescription>
@@ -403,9 +403,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="123" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" bodystart="123" bodyend="123"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a2cbf2a8943849597fdcb06608416d0db" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
-        <definition>GpuArray&lt;Real,AMREX_SPACEDIM&gt; amrex::Geometry::ProbLoArray</definition>
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a41d485b4a21d2b8338565cc90480832d" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
+        <definition>GpuArray&lt;Real,3&gt; amrex::Geometry::ProbLoArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>ProbLoArray</name>
         <briefdescription>
@@ -416,9 +416,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="125" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" bodystart="125" bodyend="127"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a8de19f13c63f4cb2759207cb725581ed" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
-        <definition>GpuArray&lt;Real,AMREX_SPACEDIM&gt; amrex::Geometry::ProbHiArray</definition>
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a631f63730b436244c90fb631bb990348" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
+        <definition>GpuArray&lt;Real,3&gt; amrex::Geometry::ProbHiArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>ProbHiArray</name>
         <briefdescription>
@@ -602,7 +602,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="164" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.cpp" bodystart="222" bodyend="236"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="164" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Geometry_1a5959b22b9bfa06ce43a7357c18b0124e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -739,9 +739,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="195" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" bodystart="195" bodyend="198"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a4a9c33cfb4af2e159fcf3dff841881e7" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt;</type>
-        <definition>Array&lt;int,AMREX_SPACEDIM&gt; amrex::Geometry::isPeriodic</definition>
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a3a220de8dff97b5a59e02c3fb5acd675" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>Array&lt;int,3&gt; amrex::Geometry::isPeriodic</definition>
         <argsstring>() const noexcept</argsstring>
         <name>isPeriodic</name>
         <briefdescription>
@@ -752,9 +752,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="199" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" bodystart="199" bodyend="203"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a6b21e315b7fa018c5e528e620fd554c6" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt;</type>
-        <definition>GpuArray&lt;int,AMREX_SPACEDIM&gt; amrex::Geometry::isPeriodicArray</definition>
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a1b57ab36de687f8dfc6a27a3fe02836f" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>GpuArray&lt;int,3&gt; amrex::Geometry::isPeriodicArray</definition>
         <argsstring>() const noexcept</argsstring>
         <name>isPeriodicArray</name>
         <briefdescription>
@@ -875,13 +875,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="240" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.cpp" bodystart="385" bodyend="394"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1a07025080452434734ae74c23e9f97224" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt;</type>
-        <definition>Array&lt;int,AMREX_SPACEDIM&gt; amrex::Geometry::setPeriodicity</definition>
-        <argsstring>(Array&lt; int, AMREX_SPACEDIM &gt; const &amp;period) noexcept</argsstring>
+      <memberdef kind="function" id="classamrex_1_1Geometry_1a7e91c933d2bde933b905a982a14be826" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt;</type>
+        <definition>Array&lt;int,3&gt; amrex::Geometry::setPeriodicity</definition>
+        <argsstring>(Array&lt; int, 3 &gt; const &amp;period) noexcept</argsstring>
         <name>setPeriodicity</name>
         <param>
-          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; const &amp;</type>
+          <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; const &amp;</type>
           <declname>period</declname>
         </param>
         <briefdescription>
@@ -1023,13 +1023,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.H" line="99" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Geometry.cpp" bodystart="166" bodyend="172"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Geometry_1af726da4deb561adeecf94bc4eefbf89b" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1Geometry_1aef457246cf837d0faebf2c2dfc74e807" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::Geometry::ResetDefaultPeriodicity</definition>
-        <argsstring>(const Array&lt; int, AMREX_SPACEDIM &gt; &amp;is_per) noexcept</argsstring>
+        <argsstring>(const Array&lt; int, 3 &gt; &amp;is_per) noexcept</argsstring>
         <name>ResetDefaultPeriodicity</name>
         <param>
-          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; &amp;</type>
           <declname>is_per</declname>
         </param>
         <briefdescription>
@@ -1159,7 +1159,7 @@
       <member refid="classamrex_1_1CoordSys_1a285d110b44d2e4412b27427418246fa4" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>CellIndex</name></member>
       <member refid="classamrex_1_1CoordSys_1ade9815d7413549b5bb09000f1c9ede76" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>CellSize</name></member>
       <member refid="classamrex_1_1CoordSys_1afc9b2295dec506f60239afca5e6a4a5d" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>CellSize</name></member>
-      <member refid="classamrex_1_1CoordSys_1aa352d079ec1fb2e0c971e8f5a6b077da" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>CellSizeArray</name></member>
+      <member refid="classamrex_1_1CoordSys_1a4444ef0232caac3bb7fcac9f3f2789a8" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>CellSizeArray</name></member>
       <member refid="classamrex_1_1Geometry_1a1d9c01b45625d9e6f8e0e4d1cdd4a5a6" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>coarsen</name></member>
       <member refid="classamrex_1_1Geometry_1aa9f2a9f6b90b4c58d8b870685669a398" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>computeRoundoffDomain</name></member>
       <member refid="classamrex_1_1CoordSys_1a2c36af3bfd89e3168d643c45f123cac5" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Coord</name></member>
@@ -1170,14 +1170,14 @@
       <member refid="classamrex_1_1CoordSys_1afb633344fd17c5565ce2fff188806eba" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>CoordType</name></member>
       <member refid="classamrex_1_1Geometry_1abb8b8662f077d9913f0af282f32ed415" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>data</name></member>
       <member refid="classamrex_1_1Geometry_1aeba60991848a022ff91863c7b6af0de8" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>define</name></member>
-      <member refid="classamrex_1_1Geometry_1a1b38d6eb6c35983b8569d5acafad944b" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>define</name></member>
+      <member refid="classamrex_1_1Geometry_1a5bf28e9a45d2eb947f5389ae309f6a8c" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>define</name></member>
       <member refid="classamrex_1_1Geometry_1a52477661ac7c7ccbd93f397340176c74" prot="private" virt="non-virtual"><scope>amrex::Geometry</scope><name>domain</name></member>
       <member refid="classamrex_1_1Geometry_1a94f4ddb683e381201694d644be7566f1" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Domain</name></member>
       <member refid="classamrex_1_1Geometry_1a781c6fe9c69aab1b6955f311503888bc" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Domain</name></member>
-      <member refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>dx</name></member>
+      <member refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>dx</name></member>
       <member refid="classamrex_1_1Geometry_1abe4767b2f215bc24725017610b86091d" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Geometry</name></member>
       <member refid="classamrex_1_1Geometry_1ab9cc9315f181884f554c5866cd1e68e5" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Geometry</name></member>
-      <member refid="classamrex_1_1Geometry_1a7ba1318caf7c0f051bc33126789c4e94" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Geometry</name></member>
+      <member refid="classamrex_1_1Geometry_1a0bd9ae0c6464cfcce2b3ea46b2f1c336" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Geometry</name></member>
       <member refid="classamrex_1_1Geometry_1a61c7b8c8cbb3b7a39b4db6ed8eface07" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Geometry</name></member>
       <member refid="classamrex_1_1Geometry_1a02c8a9fe2c0a14e7ca251ce48e97ee5b" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Geometry</name></member>
       <member refid="classamrex_1_1CoordSys_1a1e5bb6708a24e6df5c5d73422b637620" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>GetCellLoc</name></member>
@@ -1203,17 +1203,17 @@
       <member refid="classamrex_1_1CoordSys_1a6900764dc4dfae368296b0caf5548999" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>HiNode</name></member>
       <member refid="classamrex_1_1CoordSys_1a450803429d6c54bdfaeacaadeace5cb3" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>HiNode</name></member>
       <member refid="classamrex_1_1Geometry_1a37ed8cec1765b22e6f3db11a157bfca8" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>insideRoundoffDomain</name></member>
-      <member refid="classamrex_1_1CoordSys_1a09a58ce8c24e2ad549c98754fd2adaeb" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>inv_dx</name></member>
+      <member refid="classamrex_1_1CoordSys_1a73bd57bf0592f37ef987a37d7b3a90a4" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>inv_dx</name></member>
       <member refid="classamrex_1_1CoordSys_1ad195c96d818c1331428e90a727745304" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>InvCellSize</name></member>
       <member refid="classamrex_1_1CoordSys_1a3a9c67df49c93b825ac5378f5411b9da" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>InvCellSize</name></member>
-      <member refid="classamrex_1_1CoordSys_1ad30ea5aed12689007843a59201563409" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>InvCellSizeArray</name></member>
-      <member refid="classamrex_1_1Geometry_1a84b1ad3fef8594c10d9ff2000505b20a" prot="private" virt="non-virtual"><scope>amrex::Geometry</scope><name>is_periodic</name></member>
+      <member refid="classamrex_1_1CoordSys_1a1d6c436ca4c1af9762f296851fe59f8a" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>InvCellSizeArray</name></member>
+      <member refid="classamrex_1_1Geometry_1a3dee6d474bb3415f1db543249d91894f" prot="private" virt="non-virtual"><scope>amrex::Geometry</scope><name>is_periodic</name></member>
       <member refid="classamrex_1_1Geometry_1aecbdf44d0934d9245886228cdffb8f37" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isAllPeriodic</name></member>
       <member refid="classamrex_1_1Geometry_1a40882432c46bfa9ae6a7316a0889dc35" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isAnyPeriodic</name></member>
       <member refid="classamrex_1_1CoordSys_1a500695aa14e3fd01f3d7162fd784133e" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>IsCartesian</name></member>
       <member refid="classamrex_1_1Geometry_1aed68387cf6235047891119eb57ee878e" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isPeriodic</name></member>
-      <member refid="classamrex_1_1Geometry_1a4a9c33cfb4af2e159fcf3dff841881e7" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isPeriodic</name></member>
-      <member refid="classamrex_1_1Geometry_1a6b21e315b7fa018c5e528e620fd554c6" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isPeriodicArray</name></member>
+      <member refid="classamrex_1_1Geometry_1a3a220de8dff97b5a59e02c3fb5acd675" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isPeriodic</name></member>
+      <member refid="classamrex_1_1Geometry_1a1b57ab36de687f8dfc6a27a3fe02836f" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>isPeriodicArray</name></member>
       <member refid="classamrex_1_1CoordSys_1aff79cb7249a744e24c5b335935f20fe6" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>IsRZ</name></member>
       <member refid="classamrex_1_1CoordSys_1a87414a566bba1fff3d0185286a11ba56" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>IsSPHERICAL</name></member>
       <member refid="classamrex_1_1CoordSys_1aad8c159e97f7422f2bf45b92bf3a3002" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>LoEdge</name></member>
@@ -1223,7 +1223,7 @@
       <member refid="classamrex_1_1CoordSys_1a2b1eed19248c0b8ffc16733bbf1d6baa" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>LoNode</name></member>
       <member refid="classamrex_1_1CoordSys_1a0f2dc8592daa645225f6fbb76c7061c7" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>LoNode</name></member>
       <member refid="classamrex_1_1CoordSys_1aedba9cb3e81e6a96fd3cea8330ef0708" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>LowerIndex</name></member>
-      <member refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>offset</name></member>
+      <member refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>offset</name></member>
       <member refid="classamrex_1_1CoordSys_1a9d3eb77447b9c748b7223e271f6c9bb1" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Offset</name></member>
       <member refid="classamrex_1_1CoordSys_1aa67991fbbc479f95a966bcf04ae0e49a" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Offset</name></member>
       <member refid="classamrex_1_1CoordSys_1abee8e858b3ca22a33388275e0a2cfcbf" prot="protected" virt="non-virtual"><scope>amrex::Geometry</scope><name>ok</name></member>
@@ -1241,16 +1241,16 @@
       <member refid="classamrex_1_1Geometry_1ae68fad0b0c42fcd904bcc36c8d678ca9" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbDomain</name></member>
       <member refid="classamrex_1_1Geometry_1a9a8ebe29bfbb66ffa7d2ac47d2fb255b" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbHi</name></member>
       <member refid="classamrex_1_1Geometry_1a5fd19e6998dd24eb5156808bdabc1dae" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbHi</name></member>
-      <member refid="classamrex_1_1Geometry_1a8de19f13c63f4cb2759207cb725581ed" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbHiArray</name></member>
+      <member refid="classamrex_1_1Geometry_1a631f63730b436244c90fb631bb990348" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbHiArray</name></member>
       <member refid="classamrex_1_1Geometry_1aa957525db46a7c7c22c1371633a3f263" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbLength</name></member>
       <member refid="classamrex_1_1Geometry_1a02ef0d522174b99ca75e569def4c091c" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbLo</name></member>
       <member refid="classamrex_1_1Geometry_1a03bdebdfb4b402507aab117a78bb71b4" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbLo</name></member>
-      <member refid="classamrex_1_1Geometry_1a2cbf2a8943849597fdcb06608416d0db" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbLoArray</name></member>
+      <member refid="classamrex_1_1Geometry_1a41d485b4a21d2b8338565cc90480832d" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbLoArray</name></member>
       <member refid="classamrex_1_1Geometry_1ad215766309286d88d85b4d78f7280f4c" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ProbSize</name></member>
       <member refid="classamrex_1_1Geometry_1aa0385aea8391d0b59b6adfb910cffbf4" prot="private" virt="non-virtual"><scope>amrex::Geometry</scope><name>read_params</name></member>
       <member refid="classamrex_1_1Geometry_1a122947abb8d93a6984f26277576faad3" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>refine</name></member>
       <member refid="classamrex_1_1Geometry_1afacf607bf05ea6d4588954f09b391d37" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ResetDefaultCoord</name></member>
-      <member refid="classamrex_1_1Geometry_1af726da4deb561adeecf94bc4eefbf89b" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ResetDefaultPeriodicity</name></member>
+      <member refid="classamrex_1_1Geometry_1aef457246cf837d0faebf2c2dfc74e807" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ResetDefaultPeriodicity</name></member>
       <member refid="classamrex_1_1Geometry_1a4de5799760ae5f5831c719af01a33531" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>ResetDefaultProbDomain</name></member>
       <member refid="classamrex_1_1Geometry_1af3f7a3e4807fd7a925377b93bad4476b" prot="private" virt="non-virtual"><scope>amrex::Geometry</scope><name>roundoff_domain</name></member>
       <member refid="classamrex_1_1Geometry_1aac9cdc08bdd77d5be479b2e3e0bbf62d" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>RoundoffDomain</name></member>
@@ -1259,14 +1259,14 @@
       <member refid="classamrex_1_1CoordSys_1a06147d243439dd812a7ab5152c397ce7" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>SetDLogA</name></member>
       <member refid="classamrex_1_1CoordSys_1a3e581980fcad7874845c22fb776fdca4" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>SetFaceArea</name></member>
       <member refid="classamrex_1_1CoordSys_1aded987526da2665b805f491a3544ccd8" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>SetOffset</name></member>
-      <member refid="classamrex_1_1Geometry_1a07025080452434734ae74c23e9f97224" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>setPeriodicity</name></member>
+      <member refid="classamrex_1_1Geometry_1a7e91c933d2bde933b905a982a14be826" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>setPeriodicity</name></member>
       <member refid="classamrex_1_1Geometry_1ae6556ff88fa1aea8c8793dbb25d97873" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Setup</name></member>
       <member refid="classamrex_1_1CoordSys_1a4d0e02587d19cd5eec8675605704144e" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>SetVolume</name></member>
       <member refid="classamrex_1_1CoordSys_1afb633344fd17c5565ce2fff188806ebaaa0c55dfafca5806f988babd974f5b158" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>SPHERICAL</name></member>
       <member refid="classamrex_1_1CoordSys_1afb633344fd17c5565ce2fff188806ebaa2debcd8f37986ae0e3c488f583234ccc" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>undef</name></member>
       <member refid="classamrex_1_1CoordSys_1a74cecde9e2041a58b0d9b81b8ed00c22" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>UpperIndex</name></member>
       <member refid="classamrex_1_1CoordSys_1aba35a53907662ab238f8ad457a9c242d" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Volume</name></member>
-      <member refid="classamrex_1_1CoordSys_1a1f29329ea886494a3df45eaba9c0b2cb" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Volume</name></member>
+      <member refid="classamrex_1_1CoordSys_1a7a1698ae8e4873a5f816a1bd9e8ae2b7" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>Volume</name></member>
       <member refid="classamrex_1_1CoordSys_1a1d7e80f93fece05cfe429c16f36f9e9f" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>~CoordSys</name></member>
       <member refid="classamrex_1_1Geometry_1a064dbb1fe7f6866145fd4f18a50275ff" prot="public" virt="non-virtual"><scope>amrex::Geometry</scope><name>~Geometry</name></member>
     </listofallmembers>

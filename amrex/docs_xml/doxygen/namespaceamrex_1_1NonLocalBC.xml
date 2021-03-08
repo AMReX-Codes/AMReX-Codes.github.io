@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="namespaceamrex_1_1NonLocalBC" kind="namespace" language="C++">
     <compoundname>amrex::NonLocalBC</compoundname>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1Array4Array4Box" prot="public">amrex::NonLocalBC::Array4Array4Box</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1CommHandler" prot="public">amrex::NonLocalBC::CommHandler</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1PolarFn" prot="public">amrex::NonLocalBC::PolarFn</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1PolarFn2" prot="public">amrex::NonLocalBC::PolarFn2</innerclass>
@@ -292,6 +293,96 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="183" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="183" bodyend="213"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afae1642e6f5420357ad8e9fee8b381b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class FAB</type>
+          </param>
+          <param>
+            <type>class DTOS</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::NonLocalBC::local_copy_gpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</argsstring>
+        <name>local_copy_gpu</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> const &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="228" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="228" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1aa63bd0a11ccc0dd82233c525379507b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class FAB</type>
+          </param>
+          <param>
+            <type>class DTOS</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::NonLocalBC::unpack_recv_buffer_gpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos)</argsstring>
+        <name>unpack_recv_buffer_gpu</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; char * &gt; const &amp;</type>
+          <declname>recv_data</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; std::size_t &gt; const &amp;</type>
+          <declname>recv_size</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> const * &gt; const &amp;</type>
+          <declname>recv_cctc</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="253" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="253" bodyend="310"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a9ceb33878a763d9be662a21559d65463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -332,6 +423,51 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="331" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="331" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1af9ec0d9354978f736d6d42e6b79bfb32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class FAB</type>
+          </param>
+          <param>
+            <type>class DTOS</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::NonLocalBC::Comm_finish</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, CommHandler handler, DTOS dtos)</argsstring>
+        <name>Comm_finish</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>mf</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>scomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> const &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="417" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="417" bodyend="457"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

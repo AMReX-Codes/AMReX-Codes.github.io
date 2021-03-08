@@ -496,6 +496,9 @@
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
+      <node id="55">
+        <label>std::vector&lt; Array&lt; int, 3 &gt;, std::allocator&lt; Array&lt; int, 3 &gt; &gt; &gt;</label>
+      </node>
       <node id="19">
         <label>amrex::Vector&lt; double &gt;</label>
         <link refid="classamrex_1_1Vector"/>
@@ -510,10 +513,19 @@
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
+      <node id="53">
+        <label>std::vector&lt; Array&lt; BCType, 3 &gt;, std::allocator&lt; Array&lt; BCType, 3 &gt; &gt; &gt;</label>
+      </node>
       <node id="13">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>amrex::Vector&lt; Array&lt; BCType, 3 &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="53" relation="public-inheritance">
         </childnode>
       </node>
       <node id="29">
@@ -582,9 +594,6 @@
       <node id="4">
         <label>std::vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;, std::allocator&lt; amrex::Vector&lt; amrex::MultiFab &gt; &gt; &gt;</label>
       </node>
-      <node id="55">
-        <label>std::vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &gt;</label>
-      </node>
       <node id="41">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
       </node>
@@ -622,9 +631,6 @@
       </node>
       <node id="6">
         <label>std::vector&lt; Real, std::allocator&lt; Real &gt; &gt;</label>
-      </node>
-      <node id="51">
-        <label>std::vector&lt; Array&lt; int, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt; &gt;</label>
       </node>
       <node id="42">
         <label>amrex::Vector&lt; char * &gt;</label>
@@ -677,10 +683,10 @@
         <childnode refid="22" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="52">
+      <node id="50">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="53" relation="public-inheritance">
+        <childnode refid="51" relation="public-inheritance">
         </childnode>
       </node>
       <node id="56">
@@ -694,6 +700,12 @@
       </node>
       <node id="48">
         <label>std::vector&lt; MPI_Request, std::allocator&lt; MPI_Request &gt; &gt;</label>
+      </node>
+      <node id="54">
+        <label>amrex::Vector&lt; Array&lt; int, 3 &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="12">
         <label>std::vector&lt; int, std::allocator&lt; int &gt; &gt;</label>
@@ -725,15 +737,15 @@
           <edgelabel>m_num_mg_levels</edgelabel>
         </childnode>
         <childnode refid="50" relation="usage">
-          <edgelabel>m_hi_inhomog_neumann</edgelabel>
-          <edgelabel>m_lo_inhomog_neumann</edgelabel>
-        </childnode>
-        <childnode refid="52" relation="usage">
           <edgelabel>m_dmap</edgelabel>
         </childnode>
-        <childnode refid="54" relation="usage">
+        <childnode refid="52" relation="usage">
           <edgelabel>m_hibc</edgelabel>
           <edgelabel>m_lobc</edgelabel>
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>m_hi_inhomog_neumann</edgelabel>
+          <edgelabel>m_lo_inhomog_neumann</edgelabel>
         </childnode>
         <childnode refid="56" relation="usage">
           <edgelabel>mg_coarsen_ratio_vec</edgelabel>
@@ -757,12 +769,6 @@
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="54">
-        <label>amrex::Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="55" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="45">
         <label>amrex::Vector&lt; MPI_Status &gt;</label>
         <link refid="classamrex_1_1Vector"/>
@@ -780,12 +786,6 @@
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="41" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="50">
-        <label>amrex::Vector&lt; Array&lt; int, AMREX_SPACEDIM &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="51" relation="public-inheritance">
         </childnode>
       </node>
       <node id="20">
@@ -893,7 +893,7 @@
       <node id="36">
         <label>std::vector&lt; std::size_t, std::allocator&lt; std::size_t &gt; &gt;</label>
       </node>
-      <node id="53">
+      <node id="51">
         <label>std::vector&lt; amrex::Vector&lt; amrex::DistributionMapping &gt;, std::allocator&lt; amrex::Vector&lt; amrex::DistributionMapping &gt; &gt; &gt;</label>
       </node>
       <node id="25">

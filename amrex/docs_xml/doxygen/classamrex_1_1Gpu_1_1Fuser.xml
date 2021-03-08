@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classamrex_1_1Gpu_1_1Fuser" kind="class" language="C++" prot="public">
+    <compoundname>amrex::Gpu::Fuser</compoundname>
+    <includes refid="AMReX__GpuFuse_8H" local="no">AMReX_GpuFuse.H</includes>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a759525b45ee914b82e0285776fec9395" prot="private" static="yes" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classamrex_1_1Gpu_1_1Fuser" kindref="compound">Fuser</ref> &gt;</type>
+        <definition>std::unique_ptr&lt; Fuser &gt; amrex::Gpu::Fuser::m_instance</definition>
+        <argsstring></argsstring>
+        <name>m_instance</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="244" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a7820fc32c0495e8177eaafd8fabafde7" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* amrex::Gpu::Fuser::m_lambda_buf</definition>
+        <argsstring></argsstring>
+        <name>m_lambda_buf</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="246" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a382b8c31adae5e7313b76b175d6a8597" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::Gpu::Fuser::m_nbytes_used_lambda_buf</definition>
+        <argsstring></argsstring>
+        <name>m_nbytes_used_lambda_buf</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="247" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a640925c17a7efbc347288f2f0f52e6a2" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::Gpu::Fuser::m_nbytes_lambda_buf</definition>
+        <argsstring></argsstring>
+        <name>m_nbytes_lambda_buf</name>
+        <initializer>= 2*1024*1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="248" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1af575a83330e6694cb8aec8b8641fac0a" prot="private" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1Gpu_1_1FuseHelper" kindref="compound">FuseHelper</ref> *</type>
+        <definition>FuseHelper* amrex::Gpu::Fuser::m_helper_buf</definition>
+        <argsstring></argsstring>
+        <name>m_helper_buf</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="250" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a5ccbea40fb41ec428b8adb7b808ab5b2" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t amrex::Gpu::Fuser::m_nhelpers_buf</definition>
+        <argsstring></argsstring>
+        <name>m_nhelpers_buf</name>
+        <initializer>= 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="251" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a62db0ebdea13a4399eaedd73fee61904" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1_1Gpu_1a685d490f84cde2115741c88d9d9dbc7f" kindref="member">LambdaDtor</ref> &gt;</type>
+        <definition>Vector&lt;LambdaDtor&gt; amrex::Gpu::Fuser::m_dtor_buf</definition>
+        <argsstring></argsstring>
+        <name>m_dtor_buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="253" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Fuser_1a28018a18351b5ba29b9c9583d6caa3d2" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::Gpu::Fuser::m_nlambdas</definition>
+        <argsstring></argsstring>
+        <name>m_nlambdas</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="255" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1ae05a48edc9f3fc067d4676336d2ef840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::Fuser::Fuser</definition>
+        <argsstring>()</argsstring>
+        <name>Fuser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="196" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="24" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1abca8dcef3bbabb283310bca9e665a907" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::Fuser::~Fuser</definition>
+        <argsstring>()</argsstring>
+        <name>~Fuser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="197" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="32" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1a090d5e4cfc3febf4aa5fdd2f7951245e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>amrex::Gpu::Fuser::Fuser</definition>
+        <argsstring>(Fuser const &amp;)=delete</argsstring>
+        <name>Fuser</name>
+        <param>
+          <type><ref refid="classamrex_1_1Gpu_1_1Fuser" kindref="compound">Fuser</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="198" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1ac4c7ede60d1901f4589c1c701d74a567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Gpu_1_1Fuser" kindref="compound">Fuser</ref> &amp;</type>
+        <definition>Fuser&amp; amrex::Gpu::Fuser::operator=</definition>
+        <argsstring>(Fuser const &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classamrex_1_1Gpu_1_1Fuser" kindref="compound">Fuser</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="199" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1aa1e762f8d8f540413d58508fe3428658" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Register</definition>
+        <argsstring>(Box const &amp;bx, F &amp;&amp;f)</argsstring>
+        <name>Register</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="203" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="203" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1a1dc56b04c17eddc72702dcd691a01dc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Register</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, F &amp;&amp;f)</argsstring>
+        <name>Register</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="214" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="214" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1a8c1945e39818151718361f4b9f26b34d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+          <param>
+            <type>typename M</type>
+            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Register</definition>
+        <argsstring>(T N, F &amp;&amp;f)</argsstring>
+        <name>Register</name>
+        <param>
+          <type>T</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="225" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="225" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1ae021923e7eabc33ce7b63cf364ba10aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Launch</definition>
+        <argsstring>()</argsstring>
+        <name>Launch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="236" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="42" bodyend="192"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1a61984efd5000ee243dd8daecb8cda411" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classamrex_1_1Gpu_1_1Fuser" kindref="compound">Fuser</ref> &amp;</type>
+        <definition>Fuser &amp; amrex::Gpu::Fuser::getInstance</definition>
+        <argsstring>()</argsstring>
+        <name>getInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="238" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="220" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1abd079a2b5073976ebc67d9e60b65bbd5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Initialize</definition>
+        <argsstring>()</argsstring>
+        <name>Initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="239" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="229" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1af57efcfb7c260a50855ff2b057af4397" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Finalize</definition>
+        <argsstring>()</argsstring>
+        <name>Finalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="240" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="239" bodyend="242"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1a24edf4c1c4c03db1e7411d8b84b30cd2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::resize_lambda_buf</definition>
+        <argsstring>()</argsstring>
+        <name>resize_lambda_buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="257" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="195" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1a8c9cc050da48a9b24ea47563c9aca621" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::resize_helper_buf</definition>
+        <argsstring>()</argsstring>
+        <name>resize_helper_buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="258" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.cpp" bodystart="205" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Fuser_1af22057d293fb12effb991a74d5f3acdb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Lambda</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void amrex::Gpu::Fuser::Register_doit</definition>
+        <argsstring>(Box const &amp;bx, int ncomp, Lambda const &amp;f)</argsstring>
+        <name>Register_doit</name>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>Lambda const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="262" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="262" bodyend="286"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>amrex::Gpu::FuseHelper</label>
+        <link refid="structamrex_1_1Gpu_1_1FuseHelper"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>m_bx</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>m_fp</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::IntVect</label>
+        <link refid="classamrex_1_1IntVect"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>Unit</edgelabel>
+          <edgelabel>Zero</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; LambdaDtor, std::allocator&lt; LambdaDtor &gt; &gt;</label>
+      </node>
+      <node id="7">
+        <label>amrex::Vector&lt; LambdaDtor &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>amrex::Gpu::FuseHelper::LambdaLauncher</label>
+        <link refid="unionamrex_1_1Gpu_1_1FuseHelper_1_1LambdaLauncher"/>
+      </node>
+      <node id="3">
+        <label>amrex::Box</label>
+        <link refid="classamrex_1_1Box"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>bigend</edgelabel>
+          <edgelabel>smallend</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>btype</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::IndexType</label>
+        <link refid="classamrex_1_1IndexType"/>
+      </node>
+      <node id="1">
+        <label>amrex::Gpu::Fuser</label>
+        <link refid="classamrex_1_1Gpu_1_1Fuser"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_helper_buf</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>m_dtor_buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" line="193" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuFuse.H" bodystart="192" bodyend="287"/>
+    <listofallmembers>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1af57efcfb7c260a50855ff2b057af4397" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Finalize</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1ae05a48edc9f3fc067d4676336d2ef840" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Fuser</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a090d5e4cfc3febf4aa5fdd2f7951245e" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Fuser</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a61984efd5000ee243dd8daecb8cda411" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>getInstance</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1abd079a2b5073976ebc67d9e60b65bbd5" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Initialize</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1ae021923e7eabc33ce7b63cf364ba10aa" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Launch</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a62db0ebdea13a4399eaedd73fee61904" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_dtor_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1af575a83330e6694cb8aec8b8641fac0a" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_helper_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a759525b45ee914b82e0285776fec9395" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_instance</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a7820fc32c0495e8177eaafd8fabafde7" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_lambda_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a640925c17a7efbc347288f2f0f52e6a2" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_nbytes_lambda_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a382b8c31adae5e7313b76b175d6a8597" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_nbytes_used_lambda_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a5ccbea40fb41ec428b8adb7b808ab5b2" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_nhelpers_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a28018a18351b5ba29b9c9583d6caa3d2" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>m_nlambdas</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1ac4c7ede60d1901f4589c1c701d74a567" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>operator=</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1aa1e762f8d8f540413d58508fe3428658" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Register</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a1dc56b04c17eddc72702dcd691a01dc4" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Register</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a8c1945e39818151718361f4b9f26b34d" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Register</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1af22057d293fb12effb991a74d5f3acdb" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>Register_doit</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a8c9cc050da48a9b24ea47563c9aca621" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>resize_helper_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1a24edf4c1c4c03db1e7411d8b84b30cd2" prot="private" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>resize_lambda_buf</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Fuser_1abca8dcef3bbabb283310bca9e665a907" prot="public" virt="non-virtual"><scope>amrex::Gpu::Fuser</scope><name>~Fuser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

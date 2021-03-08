@@ -3,6 +3,7 @@
   <compounddef id="AMReX__Habec__3D__K_8H" kind="file" language="C++">
     <compoundname>AMReX_Habec_3D_K.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
+    <includedby refid="AMReX__Habec__K_8H" local="no">/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Habec_K.H</includedby>
     <incdepgraph>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Habec_3D_K.H</label>
@@ -14,6 +15,42 @@
         <label>AMReX_Config.H</label>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/PETSc/AMReX_PETSc.cpp</label>
+        <link refid="AMReX__PETSc_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Habec_K.H</label>
+        <link refid="AMReX__Habec__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Habec_3D_K.H</label>
+        <link refid="AMReX__Habec__3D__K_8H"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap3.cpp</label>
+        <link refid="AMReX__HypreABecLap3_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap2.cpp</label>
+        <link refid="AMReX__HypreABecLap2_8cpp"/>
+      </node>
+      <node id="3">
+        <label>/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_HypreABecLap.cpp</label>
+        <link refid="AMReX__HypreABecLap_8cpp"/>
+      </node>
+    </invincdepgraph>
     <innernamespace refid="namespaceamrex">amrex</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -34,7 +71,7 @@
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ae6eab02ca0a088733102a27a1b57321a" kindref="member">habec_mat</ref><sp/>(GpuArray&lt;Real,2*AMREX_SPACEDIM+1&gt;&amp;<sp/>sten,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1ad320351b26e8ec18ed40b3d0d10208da" kindref="member">habec_mat</ref><sp/>(GpuArray&lt;Real,2*AMREX_SPACEDIM+1&gt;&amp;<sp/>sten,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dim3<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>boxlo,<sp/>Dim3<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>boxhi,</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>sa,<sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a,</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>sb,<sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dx,</highlight></codeline>
@@ -135,7 +172,7 @@
 <codeline lineno="113"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="116" refid="namespaceamrex_1a2f7ea168af0d2be88edc0501fbf74032" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a26d70e1b51526ead26433b0583ffe6fd" kindref="member">habec_ijmat</ref><sp/>(<ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;Real,2*AMREX_SPACEDIM+1&gt;</ref>&amp;<sp/>sten,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;HYPRE_Int&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ncols,</highlight></codeline>
+<codeline lineno="116" refid="namespaceamrex_1a7bfa6280e92b12e8ed9b27da297cdee1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1af38b18c6e189237b8fb7c7d6076c5601" kindref="member">habec_ijmat</ref><sp/>(<ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;Real,2*AMREX_SPACEDIM+1&gt;</ref>&amp;<sp/>sten,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;HYPRE_Int&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ncols,</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>diaginv,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;HYPRE_Int const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell_id,</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>sa,<sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;Real const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a,</highlight></codeline>
@@ -236,7 +273,7 @@
 <codeline lineno="214"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/><ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref></highlight></codeline>
-<codeline lineno="217" refid="namespaceamrex_1ae77c1b86256e9e2a391a59a0cbcb1621" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abebd70eafbd522c54911f746d423884f" kindref="member">habec_cols</ref><sp/>(<ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;HYPRE_Int,2*AMREX_SPACEDIM+1&gt;</ref>&amp;<sp/>sten,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,</highlight></codeline>
+<codeline lineno="217" refid="namespaceamrex_1acbc545ab6faf9a6eac436c1bb3a6f462" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1aad9fa34a394ff6547f4c45b7d40e6d3f" kindref="member">habec_cols</ref><sp/>(<ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray&lt;HYPRE_Int,2*AMREX_SPACEDIM+1&gt;</ref>&amp;<sp/>sten,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k,</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1Array4" kindref="compound">Array4&lt;HYPRE_Int const&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cell_id)</highlight></codeline>
 <codeline lineno="219"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>sten[0]<sp/>=<sp/>cell_id(i<sp/><sp/>,j<sp/><sp/>,k<sp/><sp/>);</highlight></codeline>

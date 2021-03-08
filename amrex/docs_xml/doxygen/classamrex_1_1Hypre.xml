@@ -46,7 +46,7 @@
         <definition>constexpr HYPRE_Int amrex::Hypre::regular_stencil_size</definition>
         <argsstring></argsstring>
         <name>regular_stencil_size</name>
-        <initializer>= 2*AMREX_SPACEDIM + 1</initializer>
+        <initializer>= 2*3 + 1</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -60,7 +60,7 @@
         <definition>constexpr HYPRE_Int amrex::Hypre::eb_stencil_size</definition>
         <argsstring></argsstring>
         <name>eb_stencil_size</name>
-        <initializer>= AMREX_D_TERM(3, *3, *3)</initializer>
+        <initializer>= <ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(3, *3, *3)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -209,9 +209,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="83" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="83" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1Hypre_1a097bf586d48d127374ec0d293dd3bd41" prot="protected" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, AMREX_SPACEDIM &gt;</type>
-        <definition>Array&lt;MultiFab,AMREX_SPACEDIM&gt; amrex::Hypre::bcoefs</definition>
+      <memberdef kind="variable" id="classamrex_1_1Hypre_1a12ddb9a9e7e17a40b6f8b9cd2126384d" prot="protected" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>, 3 &gt;</type>
+        <definition>Array&lt;MultiFab,3&gt; amrex::Hypre::bcoefs</definition>
         <argsstring></argsstring>
         <name>bcoefs</name>
         <briefdescription>
@@ -615,9 +615,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="38" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="38" bodyend="41"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Hypre_1ad64dd52bc29882baff668896c2dde9cd" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; HYPRE_Int, AMREX_SPACEDIM &gt;</type>
-        <definition>static Array&lt;HYPRE_Int,AMREX_SPACEDIM&gt; amrex::Hypre::loV</definition>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1a9a0fb8a3c01982171894df588a89effa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; HYPRE_Int, 3 &gt;</type>
+        <definition>static Array&lt;HYPRE_Int,3&gt; amrex::Hypre::loV</definition>
         <argsstring>(const Box &amp;b)</argsstring>
         <name>loV</name>
         <param>
@@ -632,9 +632,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="43" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="43" bodyend="48"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1Hypre_1aac6b099395a000804880b97e43407c5b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; HYPRE_Int, AMREX_SPACEDIM &gt;</type>
-        <definition>static Array&lt;HYPRE_Int,AMREX_SPACEDIM&gt; amrex::Hypre::hiV</definition>
+      <memberdef kind="function" id="classamrex_1_1Hypre_1a8bbe35a1e57ed91e513c9fc3923d14fa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; HYPRE_Int, 3 &gt;</type>
+        <definition>static Array&lt;HYPRE_Int,3&gt; amrex::Hypre::hiV</definition>
         <argsstring>(const Box &amp;b)</argsstring>
         <name>hiV</name>
         <param>
@@ -1065,17 +1065,17 @@
     <location file="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Extern/HYPRE/AMReX_Hypre.H" bodystart="17" bodyend="94"/>
     <listofallmembers>
       <member refid="classamrex_1_1Hypre_1a1ab65d249a3254eb6540bedcc9ebf285" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>acoefs</name></member>
-      <member refid="classamrex_1_1Hypre_1a097bf586d48d127374ec0d293dd3bd41" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>bcoefs</name></member>
+      <member refid="classamrex_1_1Hypre_1a12ddb9a9e7e17a40b6f8b9cd2126384d" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>bcoefs</name></member>
       <member refid="classamrex_1_1Hypre_1a55f4b29b2291555432bbc82aa86c0931" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>comm</name></member>
       <member refid="classamrex_1_1Hypre_1a6eb22e62b62ea0d2bcfef92f18df5304" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>diaginv</name></member>
       <member refid="classamrex_1_1Hypre_1a49181827cb7d3a5b52f02540d7e82121" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>eb_stencil_size</name></member>
       <member refid="classamrex_1_1Hypre_1a97c4612c2a7f58b47c36ec710cb1b0f6" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>geom</name></member>
-      <member refid="classamrex_1_1Hypre_1aac6b099395a000804880b97e43407c5b" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>hiV</name></member>
+      <member refid="classamrex_1_1Hypre_1a8bbe35a1e57ed91e513c9fc3923d14fa" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>hiV</name></member>
       <member refid="classamrex_1_1Hypre_1afd2d6c32022a99d96f73485d03272ec9" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>Hypre</name></member>
       <member refid="classamrex_1_1Hypre_1af08fbb42b4509a32e7f20a6101dfd13f" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>Interface</name></member>
       <member refid="classamrex_1_1Hypre_1a0a7daa97b3caa6216418e78ddf2835ec" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>is_matrix_singular</name></member>
       <member refid="classamrex_1_1Hypre_1a4120c58bf9c835d8345257e836e276b5" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>ispow2</name></member>
-      <member refid="classamrex_1_1Hypre_1ad64dd52bc29882baff668896c2dde9cd" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>loV</name></member>
+      <member refid="classamrex_1_1Hypre_1a9a0fb8a3c01982171894df588a89effa" prot="public" virt="non-virtual"><scope>amrex::Hypre</scope><name>loV</name></member>
       <member refid="classamrex_1_1Hypre_1a64e1c781a5d446a7a7cc3ef1231c2218" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>m_bndry</name></member>
       <member refid="classamrex_1_1Hypre_1a88d3049d660b7e0a5fca3002d5b78916" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>m_factory</name></member>
       <member refid="classamrex_1_1Hypre_1a7b04bbe6b54d748e48516df1695bc139" prot="protected" virt="non-virtual"><scope>amrex::Hypre</scope><name>m_maxorder</name></member>

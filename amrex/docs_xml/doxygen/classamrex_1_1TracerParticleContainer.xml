@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classamrex_1_1TracerParticleContainer" kind="class" language="C++" prot="public">
     <compoundname>amrex::TracerParticleContainer</compoundname>
-    <basecompoundref refid="classamrex_1_1ParticleContainer" prot="public" virt="non-virtual">amrex::ParticleContainer&lt; AMREX_SPACEDIM &gt;</basecompoundref>
+    <basecompoundref refid="classamrex_1_1ParticleContainer" prot="public" virt="non-virtual">amrex::ParticleContainer&lt; 3 &gt;</basecompoundref>
     <derivedcompoundref refid="classamrex_1_1AmrTracerParticleContainer" prot="public" virt="non-virtual">amrex::AmrTracerParticleContainer</derivedcompoundref>
     <includes refid="AMReX__TracerParticles_8H" local="no">AMReX_TracerParticles.H</includes>
       <sectiondef kind="public-func">
@@ -151,7 +151,7 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>amrex::ParticleContainer&lt; AMREX_SPACEDIM &gt;</label>
+        <label>amrex::ParticleContainer&lt; 3 &gt;</label>
         <link refid="classamrex_1_1ParticleContainer"/>
       </node>
       <node id="1">
@@ -168,8 +168,38 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="18">
+        <label>std::vector&lt; Long, std::allocator&lt; Long &gt; &gt;</label>
+      </node>
+      <node id="4">
+        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
+        <link refid="structamrex_1_1Particle"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
+      </node>
+      <node id="22">
+        <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>amrex::Vector&lt; int &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>std::vector&lt; amrex::Vector&lt; Long &gt;, std::allocator&lt; amrex::Vector&lt; Long &gt; &gt; &gt;</label>
+      </node>
       <node id="2">
-        <label>amrex::ParticleContainer&lt; AMREX_SPACEDIM &gt;</label>
+        <label>amrex::ParticleContainer&lt; 3 &gt;</label>
         <link refid="classamrex_1_1ParticleContainer"/>
         <childnode refid="3" relation="usage">
           <edgelabel>m_bins</edgelabel>
@@ -204,36 +234,6 @@
           <edgelabel>whichPrePost</edgelabel>
           <edgelabel>countPrePost</edgelabel>
         </childnode>
-      </node>
-      <node id="18">
-        <label>std::vector&lt; Long, std::allocator&lt; Long &gt; &gt;</label>
-      </node>
-      <node id="4">
-        <label>amrex::Particle&lt; T_NReal, T_NInt &gt;</label>
-        <link refid="structamrex_1_1Particle"/>
-        <childnode refid="5" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
-      </node>
-      <node id="22">
-        <label>amrex::Vector&lt; amrex::Vector&lt; int &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="23" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>amrex::Vector&lt; int &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="15" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="16">
-        <label>string</label>
-      </node>
-      <node id="11">
-        <label>std::vector&lt; amrex::Vector&lt; Long &gt;, std::allocator&lt; amrex::Vector&lt; Long &gt; &gt; &gt;</label>
       </node>
       <node id="21">
         <label>std::vector&lt; ParticleLevel, std::allocator&lt; ParticleLevel &gt; &gt;</label>

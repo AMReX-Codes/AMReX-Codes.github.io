@@ -3,6 +3,22 @@
   <compounddef id="classamrex_1_1Gpu_1_1Device" kind="class" language="C++" prot="public">
     <compoundname>amrex::Gpu::Device</compoundname>
     <includes refid="AMReX__GpuDevice_8H" local="no">AMReX_GpuDevice.H</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1a845f8e6eb448999a6e71574eeee55926" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>constexpr int amrex::Gpu::Device::warp_size</definition>
+        <argsstring></argsstring>
+        <name>warp_size</name>
+        <initializer>= <ref refid="AMReX__GpuControl_8H_1a90c94dfad5d935d839bfd6fbe1ee3013" kindref="member">AMREX_HIP_OR_CUDA_OR_DPCPP</ref>(64,32,16)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="136" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="private-static-attrib">
       <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1adf89d2ef6829289ef4e4f9ea2bd6a648" prot="private" static="yes" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -51,7 +67,7 @@
         <definition>int amrex::Gpu::Device::max_gpu_streams</definition>
         <argsstring></argsstring>
         <name>max_gpu_streams</name>
-        <initializer>= 1</initializer>
+        <initializer>= 4</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -59,6 +75,128 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="155" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1a73de48a30b914ee4dc994e261e36be8f" prot="private" static="yes" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 amrex::Gpu::Device::numThreadsMin</definition>
+        <argsstring></argsstring>
+        <name>numThreadsMin</name>
+        <initializer>= dim3(1, 1, 1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="158" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1a728f2480b00dbe80a716bc81f42f8508" prot="private" static="yes" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 amrex::Gpu::Device::numBlocksOverride</definition>
+        <argsstring></argsstring>
+        <name>numBlocksOverride</name>
+        <initializer>= dim3(0, 0, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="159" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1a8b511fa5992f49c3e027153931c354b4" prot="private" static="yes" mutable="no">
+        <type>dim3</type>
+        <definition>dim3 amrex::Gpu::Device::numThreadsOverride</definition>
+        <argsstring></argsstring>
+        <name>numThreadsOverride</name>
+        <initializer>= dim3(0, 0, 0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="159" column="35" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1ad584078f0787df001af05bfe9c8d0356" prot="private" static="yes" mutable="no">
+        <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
+        <definition>gpuStream_t amrex::Gpu::Device::gpu_default_stream</definition>
+        <argsstring></argsstring>
+        <name>gpu_default_stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="161" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1a367f9e7d41a6be0c7822f3dc358b0e4e" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref> &gt;</type>
+        <definition>Vector&lt; gpuStream_t &gt; amrex::Gpu::Device::gpu_stream_pool</definition>
+        <argsstring></argsstring>
+        <name>gpu_stream_pool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="162" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1a44b4d2d558f0b94c682dcc9a26f7e666" prot="private" static="yes" mutable="no">
+        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref> &gt;</type>
+        <definition>Vector&lt; gpuStream_t &gt; amrex::Gpu::Device::gpu_stream</definition>
+        <argsstring></argsstring>
+        <name>gpu_stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="163" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1affe1c34bea3aec80c5dabd98aea542d4" prot="private" static="yes" mutable="no">
+        <type><ref refid="namespaceamrex_1a2235406f46755fe4275db8b042b0da92" kindref="member">gpuDeviceProp_t</ref></type>
+        <definition>gpuDeviceProp_t amrex::Gpu::Device::device_prop</definition>
+        <argsstring></argsstring>
+        <name>device_prop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="164" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1ad02a046eadc84fc6671e2eec8477421b" prot="private" static="yes" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::Gpu::Device::memory_pools_supported</definition>
+        <argsstring></argsstring>
+        <name>memory_pools_supported</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="165" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classamrex_1_1Gpu_1_1Device_1ade4fd28a778c5764f258744e57ef4f66" prot="private" static="yes" mutable="no">
+        <type>unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>unsigned int amrex::Gpu::Device::max_blocks_per_launch</definition>
+        <argsstring></argsstring>
+        <name>max_blocks_per_launch</name>
+        <initializer>= 2560</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="166" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="166" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -87,6 +225,45 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="49" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="353" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
+        <definition>static gpuStream_t amrex::Gpu::Device::gpuStream</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>gpuStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="52" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1ab63f3b80987088fbbf0a3a14e7b34f41" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
+        <definition>static gpuStream_t amrex::Gpu::Device::nullStream</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>nullStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="53" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a659a046032f304e13547b3b633e7c10a" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>cudaStream_t</type>
+        <definition>static cudaStream_t amrex::Gpu::Device::cudaStream</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>cudaStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="56" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="56" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -130,6 +307,36 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="69" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a02723429d759214d88aab6044423995e" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
+        <definition>gpuStream_t amrex::Gpu::Device::setStream</definition>
+        <argsstring>(gpuStream_t s) noexcept</argsstring>
+        <name>setStream</name>
+        <param>
+          <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="72" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="584" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a34b155286cec6772f79a8d59981a8684" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1a3e08759747455ff96c8f68e8673c2b19" kindref="member">gpuStream_t</ref></type>
+        <definition>gpuStream_t amrex::Gpu::Device::resetStream</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>resetStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="73" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="576" bodyend="581"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1aa5bf7f476f4a8c0ed917932d2cbdf9a4" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -229,6 +436,277 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="99" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="777" bodyend="796"/>
       </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a6693f142f50d3d5683ee44892c3f155a" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Device::setNumThreadsMin</definition>
+        <argsstring>(int nx, int ny, int nz) noexcept</argsstring>
+        <name>setNumThreadsMin</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>nx</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>ny</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>nz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="102" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="801" bodyend="806"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a7a6b8811fb0e015cf250057bb00e6bcd" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Device::n_threads_and_blocks</definition>
+        <argsstring>(const Long N, dim3 &amp;numBlocks, dim3 &amp;numThreads) noexcept</argsstring>
+        <name>n_threads_and_blocks</name>
+        <param>
+          <type>const Long</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numBlocks</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numThreads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="103" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="809" bodyend="813"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1ad50ffc68d86b60f6c4abea01215ecd80" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Device::c_comps_threads_and_blocks</definition>
+        <argsstring>(const int *lo, const int *hi, const int comps, dim3 &amp;numBlocks, dim3 &amp;numThreads) noexcept</argsstring>
+        <name>c_comps_threads_and_blocks</name>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>comps</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numBlocks</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numThreads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="104" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="816" bodyend="821"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a287c97156ce50cfda229da5b2d9a00a8" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Device::c_threads_and_blocks</definition>
+        <argsstring>(const int *lo, const int *hi, dim3 &amp;numBlocks, dim3 &amp;numThreads) noexcept</argsstring>
+        <name>c_threads_and_blocks</name>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>lo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *</type>
+          <declname>hi</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numBlocks</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numThreads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="106" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="824" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1ae53661945fe0e36f109401055a3d87cf" prot="public" static="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::Gpu::Device::grid_stride_threads_and_blocks</definition>
+        <argsstring>(dim3 &amp;numBlocks, dim3 &amp;numThreads) noexcept</argsstring>
+        <name>grid_stride_threads_and_blocks</name>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numBlocks</declname>
+        </param>
+        <param>
+          <type>dim3 &amp;</type>
+          <declname>numThreads</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="107" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="882" bodyend="958"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1ae43b670a2fb74049a336cf2c2fc62c5a" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>static std::size_t amrex::Gpu::Device::totalGlobalMem</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>totalGlobalMem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="109" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a919512587c63820d178daacc381ccde1" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>static std::size_t amrex::Gpu::Device::sharedMemPerBlock</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>sharedMemPerBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="110" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a5994da17716f6dc6a06e1a1cc2d88a96" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::numMultiProcessors</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>numMultiProcessors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="111" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1aa6071d88690c71e63513136982e0994f" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::maxThreadsPerMultiProcessor</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>maxThreadsPerMultiProcessor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="112" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a4b713a7c769b627678ad102635cbb798" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::maxThreadsPerBlock</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>maxThreadsPerBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="113" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="113" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1aa1bfcee1a3fc25f3c5ebca0c1530f78d" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::maxThreadsPerBlock</definition>
+        <argsstring>(int dir) noexcept</argsstring>
+        <name>maxThreadsPerBlock</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="114" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="114" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a4cfc840b226f8d1ac5f4fed24fd86bf5" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::maxBlocksPerGrid</definition>
+        <argsstring>(int dir) noexcept</argsstring>
+        <name>maxBlocksPerGrid</name>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="115" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="115" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a63664c0cdd03b7ebcc475e542c45282d" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string amrex::Gpu::Device::deviceName</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>deviceName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="116" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1aff182b0690355fc54cde1842964fc7db" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::devicePropMajor</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>devicePropMajor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="120" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a53e232320568f93d7c3dece18c9d6807" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::devicePropMinor</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>devicePropMinor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="121" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="121" bodyend="121"/>
+      </memberdef>
       <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a92efa21af9b7ae2cb3ee5710922c8bac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::size_t</type>
         <definition>std::size_t amrex::Gpu::Device::freeMemAvailable</definition>
@@ -241,6 +719,32 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="124" column="24" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp" bodystart="963" bodyend="977"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a2cde818323f46d70bd0ba7eb057fd285" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static int amrex::Gpu::Device::memoryPoolsSupported</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>memoryPoolsSupported</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="128" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1Gpu_1_1Device_1a3ac36df8a47931d90abeb1b1d1f85c15" prot="public" static="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>unsigned <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>static unsigned int amrex::Gpu::Device::maxBlocksPerLaunch</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>maxBlocksPerLaunch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="139" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="139" bodyend="139"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -262,25 +766,76 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>amrex::Gpu::Device</label>
+        <link refid="classamrex_1_1Gpu_1_1Device"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>gpu_stream_pool</edgelabel>
+          <edgelabel>gpu_stream</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>std::vector&lt; gpuStream_t, std::allocator&lt; gpuStream_t &gt; &gt;</label>
+      </node>
+      <node id="2">
+        <label>amrex::Vector&lt; gpuStream_t &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" line="44" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.H" bodystart="43" bodyend="173"/>
     <listofallmembers>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ad50ffc68d86b60f6c4abea01215ecd80" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>c_comps_threads_and_blocks</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a287c97156ce50cfda229da5b2d9a00a8" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>c_threads_and_blocks</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a659a046032f304e13547b3b633e7c10a" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>cudaStream</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1adf89d2ef6829289ef4e4f9ea2bd6a648" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>device_id</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1affe1c34bea3aec80c5dabd98aea542d4" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>device_prop</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1aa5bf7f476f4a8c0ed917932d2cbdf9a4" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>deviceId</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a63664c0cdd03b7ebcc475e542c45282d" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>deviceName</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1aff182b0690355fc54cde1842964fc7db" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>devicePropMajor</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a53e232320568f93d7c3dece18c9d6807" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>devicePropMinor</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a5bf574c7d8adff1fc0593e06d9007078" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>Finalize</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a92efa21af9b7ae2cb3ee5710922c8bac" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>freeMemAvailable</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ad584078f0787df001af05bfe9c8d0356" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>gpu_default_stream</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a44b4d2d558f0b94c682dcc9a26f7e666" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>gpu_stream</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a367f9e7d41a6be0c7822f3dc358b0e4e" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>gpu_stream_pool</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a680de321352372444327d831bb6d989f" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>gpuStream</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ae53661945fe0e36f109401055a3d87cf" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>grid_stride_threads_and_blocks</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1aea19aa89a556ee88fe67f6067c0abacd" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>Initialize</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1adccc576a72b545911c26ec7febfdd078" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>initialize_gpu</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ade4fd28a778c5764f258744e57ef4f66" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>max_blocks_per_launch</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1af5c7b1d39a27c0d83c132a6a2b39b27e" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>max_gpu_streams</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a4cfc840b226f8d1ac5f4fed24fd86bf5" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>maxBlocksPerGrid</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a3ac36df8a47931d90abeb1b1d1f85c15" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>maxBlocksPerLaunch</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a4b713a7c769b627678ad102635cbb798" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>maxThreadsPerBlock</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1aa1bfcee1a3fc25f3c5ebca0c1530f78d" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>maxThreadsPerBlock</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1aa6071d88690c71e63513136982e0994f" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>maxThreadsPerMultiProcessor</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1ae88f180144c332b3c64ce46584484b10" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>mem_advise_set_preferred</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1aa2984b48d13a570d6987968741a04741" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>mem_advise_set_readonly</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ad02a046eadc84fc6671e2eec8477421b" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>memory_pools_supported</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a2cde818323f46d70bd0ba7eb057fd285" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>memoryPoolsSupported</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a7a6b8811fb0e015cf250057bb00e6bcd" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>n_threads_and_blocks</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ab63f3b80987088fbbf0a3a14e7b34f41" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>nullStream</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a4e59c991a0de99a25c0c7c1f91667449" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>num_devices_used</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a728f2480b00dbe80a716bc81f42f8508" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>numBlocksOverride</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1aaad1273663de56c788b3809ed7537a4e" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>numDevicesUsed</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>numGpuStreams</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a5994da17716f6dc6a06e1a1cc2d88a96" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>numMultiProcessors</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a73de48a30b914ee4dc994e261e36be8f" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>numThreadsMin</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a8b511fa5992f49c3e027153931c354b4" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>numThreadsOverride</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a34b155286cec6772f79a8d59981a8684" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>resetStream</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1aae61fa0d560ee3c25d7deca229a31f60" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>resetStreamIndex</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a6693f142f50d3d5683ee44892c3f155a" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>setNumThreadsMin</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a02723429d759214d88aab6044423995e" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>setStream</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>setStreamIndex</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a919512587c63820d178daacc381ccde1" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>sharedMemPerBlock</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a67c55a7d25eb5f5fdec62ffcc9c0dccf" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>streamSynchronize</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a5ccf8e9a40fdaa00878353c79867bd04" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>synchronize</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1ae43b670a2fb74049a336cf2c2fc62c5a" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>totalGlobalMem</name></member>
       <member refid="classamrex_1_1Gpu_1_1Device_1a725fb9c29db07764d1a95c03dedf3df5" prot="private" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>verbose</name></member>
+      <member refid="classamrex_1_1Gpu_1_1Device_1a845f8e6eb448999a6e71574eeee55926" prot="public" virt="non-virtual"><scope>amrex::Gpu::Device</scope><name>warp_size</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

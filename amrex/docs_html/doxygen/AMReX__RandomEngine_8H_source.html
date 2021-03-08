@@ -110,25 +110,25 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_HIP</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">using</span> randState_t = hiprandState_t;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">randState_t</a> = hiprandState_t;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">using</span> randState_t = curandState_t;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">   44</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">randState_t</a> = curandState_t;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">extern</span> randState_t* d_states_h_ptr;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">extern</span> <a class="code" href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">randState_t</a>* <a class="code" href="namespaceamrex.html#a48e1c4e39af54e990089f1fb3500b7d2">d_states_h_ptr</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    randState_t* getRandState () { <span class="keywordflow">return</span> d_states_h_ptr; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a7e167f3e07e0a0a021294e79676891db">   50</a></span>&#160;    <a class="code" href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">randState_t</a>* <a class="code" href="namespaceamrex.html#a7e167f3e07e0a0a021294e79676891db">getRandState</a> () { <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a48e1c4e39af54e990089f1fb3500b7d2">d_states_h_ptr</a>; }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">struct </span><a class="code" href="namespaceamrex.html#ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d">RandomEngine</a> {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        randState_t* rand_state;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structamrex_1_1RandomEngine.html">   52</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structamrex_1_1RandomEngine.html">RandomEngine</a> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">   53</a></span>&#160;        <a class="code" href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">randState_t</a>* <a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structamrex_1_1RandomEngine.html">   60</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structamrex_1_1RandomEngine.html">RandomEngine</a> {}; <span class="comment">// CPU</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">struct </span><a class="code" href="structamrex_1_1RandomEngine.html">RandomEngine</a> {}; <span class="comment">// CPU</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
@@ -136,9 +136,13 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceamrex_html_a48e1c4e39af54e990089f1fb3500b7d2"><div class="ttname"><a href="namespaceamrex.html#a48e1c4e39af54e990089f1fb3500b7d2">amrex::d_states_h_ptr</a></div><div class="ttdeci">amrex::randState_t * d_states_h_ptr</div><div class="ttdef"><b>Definition:</b> AMReX_Random.cpp:34</div></div>
+<div class="ttc" id="anamespaceamrex_html_abbea0a87a768d8f4e8112b9cd673b124"><div class="ttname"><a href="namespaceamrex.html#abbea0a87a768d8f4e8112b9cd673b124">amrex::randState_t</a></div><div class="ttdeci">curandState_t randState_t</div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:44</div></div>
+<div class="ttc" id="anamespaceamrex_html_a7e167f3e07e0a0a021294e79676891db"><div class="ttname"><a href="namespaceamrex.html#a7e167f3e07e0a0a021294e79676891db">amrex::getRandState</a></div><div class="ttdeci">AMREX_FORCE_INLINE randState_t * getRandState()</div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:50</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:110</div></div>
+<div class="ttc" id="astructamrex_1_1RandomEngine_html_a75f184559414049b78efd270fdb60b3c"><div class="ttname"><a href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">amrex::RandomEngine::rand_state</a></div><div class="ttdeci">randState_t * rand_state</div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:53</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html"><div class="ttname"><a href="AMReX__Extension_8H.html">AMReX_Extension.H</a></div></div>
-<div class="ttc" id="astructamrex_1_1RandomEngine_html"><div class="ttname"><a href="structamrex_1_1RandomEngine.html">amrex::RandomEngine</a></div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:60</div></div>
+<div class="ttc" id="astructamrex_1_1RandomEngine_html"><div class="ttname"><a href="structamrex_1_1RandomEngine.html">amrex::RandomEngine</a></div><div class="ttdef"><b>Definition:</b> AMReX_RandomEngine.H:52</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:51</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d"><div class="ttname"><a href="namespaceamrex.html#ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d">amrex::RandomEngine</a></div><div class="ttdeci">RandomEngine</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:386</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html">AMReX_GpuQualifiers.H</a></div></div>

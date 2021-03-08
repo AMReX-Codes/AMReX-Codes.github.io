@@ -30,9 +30,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="195" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="195" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a2a24054122fede85ed0f3034ca56139b" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1MLCellLinOp_1_1BCTL" kindref="compound">BCTL</ref>, 2 *AMREX_SPACEDIM &gt; * &gt;</type>
-        <definition>LayoutData&lt;GpuArray&lt;BCTL,2*AMREX_SPACEDIM&gt;*&gt; amrex::MLCellLinOp::BndryCondLoc::bctl</definition>
+      <memberdef kind="variable" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a528ab0b69fb78df4682558ab510cbb4f" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1LayoutData" kindref="compound">LayoutData</ref>&lt; <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1MLCellLinOp_1_1BCTL" kindref="compound">BCTL</ref>, 2 *3 &gt; * &gt;</type>
+        <definition>LayoutData&lt;GpuArray&lt;BCTL,2*3&gt;*&gt; amrex::MLCellLinOp::BndryCondLoc::bctl</definition>
         <argsstring></argsstring>
         <name>bctl</name>
         <briefdescription>
@@ -43,9 +43,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="196" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="196" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a6fc11b838506e2666f6e165fb7a07931" prot="private" static="no" mutable="no">
-        <type><ref refid="namespaceamrex_1_1Gpu_1aa82b32772de552834254d9d74c6da13e" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1MLCellLinOp_1_1BCTL" kindref="compound">BCTL</ref>, 2 *AMREX_SPACEDIM &gt; &gt;</type>
-        <definition>Gpu::DeviceVector&lt;GpuArray&lt;BCTL,2*AMREX_SPACEDIM&gt; &gt; amrex::MLCellLinOp::BndryCondLoc::bctl_dv</definition>
+      <memberdef kind="variable" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a80c9c7d48db505a68427e3a3c32a2939" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1MLCellLinOp_1_1BCTL" kindref="compound">BCTL</ref>, 2 *3 &gt; &gt;</type>
+        <definition>Gpu::DeviceVector&lt;GpuArray&lt;BCTL,2*3&gt; &gt; amrex::MLCellLinOp::BndryCondLoc::bctl_dv</definition>
         <argsstring></argsstring>
         <name>bctl_dv</name>
         <briefdescription>
@@ -96,10 +96,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="169" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.cpp" bodystart="1139" bodyend="1153"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1ae2e9e9cd5085a60c6cede09fc5ac03db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1ab3cb851948b374565927835a6d013a6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::MLCellLinOp::BndryCondLoc::setLOBndryConds</definition>
-        <argsstring>(const Geometry &amp;geom, const Real *dx, const Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &amp;lobc, const Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &amp;hibc, int ratio, const RealVect &amp;interior_bloc, const Array&lt; Real, AMREX_SPACEDIM &gt; &amp;domain_bloc_lo, const Array&lt; Real, AMREX_SPACEDIM &gt; &amp;domain_bloc_hi)</argsstring>
+        <argsstring>(const Geometry &amp;geom, const Real *dx, const Vector&lt; Array&lt; BCType, 3 &gt; &gt; &amp;lobc, const Vector&lt; Array&lt; BCType, 3 &gt; &gt; &amp;hibc, int ratio, const RealVect &amp;interior_bloc, const Array&lt; Real, 3 &gt; &amp;domain_bloc_lo, const Array&lt; Real, 3 &gt; &amp;domain_bloc_hi)</argsstring>
         <name>setLOBndryConds</name>
         <param>
           <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
@@ -110,11 +110,11 @@
           <declname>dx</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MLLinOp_1ac2e55c34bf6b5c0ed53d0ef6a4625a3f" kindref="member">BCType</ref>, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MLLinOp_1ac2e55c34bf6b5c0ed53d0ef6a4625a3f" kindref="member">BCType</ref>, 3 &gt; &gt; &amp;</type>
           <declname>lobc</declname>
         </param>
         <param>
-          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MLLinOp_1ac2e55c34bf6b5c0ed53d0ef6a4625a3f" kindref="member">BCType</ref>, AMREX_SPACEDIM &gt; &gt; &amp;</type>
+          <type>const <ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MLLinOp_1ac2e55c34bf6b5c0ed53d0ef6a4625a3f" kindref="member">BCType</ref>, 3 &gt; &gt; &amp;</type>
           <declname>hibc</declname>
         </param>
         <param>
@@ -126,11 +126,11 @@
           <declname>interior_bloc</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, 3 &gt; &amp;</type>
           <declname>domain_bloc_lo</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; Real, 3 &gt; &amp;</type>
           <declname>domain_bloc_hi</declname>
         </param>
         <briefdescription>
@@ -217,9 +217,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" line="187" column="25" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLCellLinOp.H" bodystart="187" bodyend="189"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1acfe8375b26e879cea2fc7b4d06a9da6a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1MLCellLinOp_1_1BCTL" kindref="compound">BCTL</ref>, 2 *AMREX_SPACEDIM &gt; const  *</type>
-        <definition>GpuArray&lt;BCTL,2*AMREX_SPACEDIM&gt; const* amrex::MLCellLinOp::BndryCondLoc::getBCTLPtr</definition>
+      <memberdef kind="function" id="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a203ff7973ae7c501c43f82e5e6475145" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; <ref refid="structamrex_1_1MLCellLinOp_1_1BCTL" kindref="compound">BCTL</ref>, 2 *3 &gt; const  *</type>
+        <definition>GpuArray&lt;BCTL,2*3&gt; const* amrex::MLCellLinOp::BndryCondLoc::getBCTLPtr</definition>
         <argsstring>(const MFIter &amp;mfi) const noexcept</argsstring>
         <name>getBCTLPtr</name>
         <param>
@@ -240,107 +240,107 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="7">
-        <label>std::vector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; *, std::allocator&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; * &gt; &gt;</label>
-      </node>
-      <node id="15">
-        <label>amrex::BoundCond</label>
-        <link refid="classamrex_1_1BoundCond"/>
-      </node>
-      <node id="16">
-        <label>Real</label>
-      </node>
-      <node id="6">
-        <label>amrex::Vector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; * &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>amrex::MLCellLinOp::BndryCondLoc</label>
-        <link refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>bcloc</edgelabel>
-        </childnode>
-        <childnode refid="5" relation="usage">
-          <edgelabel>bctl</edgelabel>
-        </childnode>
-        <childnode refid="8" relation="usage">
-          <edgelabel>bcond</edgelabel>
-        </childnode>
-        <childnode refid="11" relation="usage">
-          <edgelabel>bctl_dv</edgelabel>
-        </childnode>
-      </node>
       <node id="3">
-        <label>amrex::Vector&lt; amrex::Vector&lt; RealTuple &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
+        <label>std::allocator&lt;amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt; &gt;</label>
       </node>
-      <node id="13">
-        <label>amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt;</label>
-        <link refid="structamrex_1_1GpuArray"/>
-        <childnode refid="14" relation="usage">
-          <edgelabel>arr</edgelabel>
-        </childnode>
-      </node>
-      <node id="8">
-        <label>amrex::LayoutData&lt; amrex::Vector&lt; BCTuple &gt; &gt;</label>
-        <link refid="classamrex_1_1LayoutData"/>
-        <childnode refid="9" relation="usage">
-          <edgelabel>m_data</edgelabel>
-        </childnode>
-      </node>
-      <node id="4">
-        <label>std::vector&lt; amrex::Vector&lt; RealTuple &gt;, std::allocator&lt; amrex::Vector&lt; RealTuple &gt; &gt; &gt;</label>
-      </node>
-      <node id="11">
-        <label>amrex::PODVector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; &gt;</label>
+      <node id="2">
+        <label>amrex::PODVector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt; &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="12" relation="public-inheritance">
+        <childnode refid="3" relation="public-inheritance">
         </childnode>
-        <childnode refid="13" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>const_reference</edgelabel>
           <edgelabel>const_iterator</edgelabel>
           <edgelabel>const_pointer</edgelabel>
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="10">
-        <label>std::vector&lt; amrex::Vector&lt; BCTuple &gt;, std::allocator&lt; amrex::Vector&lt; BCTuple &gt; &gt; &gt;</label>
+      <node id="6">
+        <label>amrex::BoundCond</label>
+        <link refid="classamrex_1_1BoundCond"/>
       </node>
-      <node id="2">
-        <label>amrex::LayoutData&lt; amrex::Vector&lt; RealTuple &gt; &gt;</label>
+      <node id="7">
+        <label>Real</label>
+      </node>
+      <node id="1">
+        <label>amrex::MLCellLinOp::BndryCondLoc</label>
+        <link refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bctl_dv</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>bcloc</edgelabel>
+        </childnode>
+        <childnode refid="11" relation="usage">
+          <edgelabel>bctl</edgelabel>
+        </childnode>
+        <childnode refid="14" relation="usage">
+          <edgelabel>bcond</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>amrex::LayoutData&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt; * &gt;</label>
         <link refid="classamrex_1_1LayoutData"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>m_data</edgelabel>
         </childnode>
       </node>
-      <node id="14">
-        <label>amrex::MLCellLinOp::BCTL</label>
-        <link refid="structamrex_1_1MLCellLinOp_1_1BCTL"/>
-        <childnode refid="15" relation="usage">
-          <edgelabel>type</edgelabel>
-        </childnode>
-        <childnode refid="16" relation="usage">
-          <edgelabel>location</edgelabel>
-        </childnode>
-      </node>
-      <node id="12">
-        <label>std::allocator&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; &gt;</label>
-      </node>
       <node id="9">
-        <label>amrex::Vector&lt; amrex::Vector&lt; BCTuple &gt; &gt;</label>
+        <label>amrex::Vector&lt; amrex::Vector&lt; RealTuple &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
         <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
-        <label>amrex::LayoutData&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *AMREX_SPACEDIM &gt; * &gt;</label>
+      <node id="14">
+        <label>amrex::LayoutData&lt; amrex::Vector&lt; BCTuple &gt; &gt;</label>
         <link refid="classamrex_1_1LayoutData"/>
-        <childnode refid="6" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="10">
+        <label>std::vector&lt; amrex::Vector&lt; RealTuple &gt;, std::allocator&lt; amrex::Vector&lt; RealTuple &gt; &gt; &gt;</label>
+      </node>
+      <node id="16">
+        <label>std::vector&lt; amrex::Vector&lt; BCTuple &gt;, std::allocator&lt; amrex::Vector&lt; BCTuple &gt; &gt; &gt;</label>
+      </node>
+      <node id="12">
+        <label>amrex::Vector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt; * &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>std::vector&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt; *, std::allocator&lt; amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt; * &gt; &gt;</label>
+      </node>
+      <node id="4">
+        <label>amrex::GpuArray&lt; amrex::MLCellLinOp::BCTL, 2 *3 &gt;</label>
+        <link refid="structamrex_1_1GpuArray"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>arr</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>amrex::LayoutData&lt; amrex::Vector&lt; RealTuple &gt; &gt;</label>
+        <link refid="classamrex_1_1LayoutData"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>m_data</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>amrex::MLCellLinOp::BCTL</label>
+        <link refid="structamrex_1_1MLCellLinOp_1_1BCTL"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>location</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>amrex::Vector&lt; amrex::Vector&lt; BCTuple &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="16" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -348,16 +348,16 @@
     <listofallmembers>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a6ff8aad355f631f7d119403ca460a782" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bcloc</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a141ef07902ecbdd351bb14b58ce08901" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bcond</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a2a24054122fede85ed0f3034ca56139b" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bctl</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a6fc11b838506e2666f6e165fb7a07931" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bctl_dv</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a528ab0b69fb78df4682558ab510cbb4f" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bctl</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a80c9c7d48db505a68427e3a3c32a2939" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bctl_dv</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1ae866d33d753ff22df426e18cb8ba422c" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>BndryCondLoc</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a4718c49441ffa63747c12c0e4613fe6f" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bndryConds</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a0682ebf88aa6ec77c22de7b7862f4383" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bndryConds</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a4743698695d4d5318888dde27a48f860" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bndryLocs</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1ad7781aca5acd91bc926efdfc84f05b99" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>bndryLocs</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1acfe8375b26e879cea2fc7b4d06a9da6a" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>getBCTLPtr</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a203ff7973ae7c501c43f82e5e6475145" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>getBCTLPtr</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1a17bbd9eb1d5f4d3355a31313d9b02760" prot="private" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>m_ncomp</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1ae2e9e9cd5085a60c6cede09fc5ac03db" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>setLOBndryConds</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1_1BndryCondLoc_1ab3cb851948b374565927835a6d013a6c" prot="public" virt="non-virtual"><scope>amrex::MLCellLinOp::BndryCondLoc</scope><name>setLOBndryConds</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
