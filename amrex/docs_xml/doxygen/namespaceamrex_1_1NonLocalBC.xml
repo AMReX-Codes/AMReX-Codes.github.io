@@ -2,15 +2,1739 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="namespaceamrex_1_1NonLocalBC" kind="namespace" language="C++">
     <compoundname>amrex::NonLocalBC</compoundname>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" prot="public">amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1Array4Array4Box" prot="public">amrex::NonLocalBC::Array4Array4Box</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1CommData" prot="public">amrex::NonLocalBC::CommData</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1CommHandler" prot="public">amrex::NonLocalBC::CommHandler</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1DoLocalCopy" prot="public">amrex::NonLocalBC::DoLocalCopy</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" prot="public">amrex::NonLocalBC::HasInverseMemFn</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1Identity" prot="public">amrex::NonLocalBC::Identity</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1IsDataPacking" prot="public">amrex::NonLocalBC::IsDataPacking</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" prot="public">amrex::NonLocalBC::IsFabProjection</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1IsIndexMapping" prot="public">amrex::NonLocalBC::IsIndexMapping</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1MapComponents" prot="public">amrex::NonLocalBC::MapComponents</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" prot="public">amrex::NonLocalBC::MultiBlockCommMetaData</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping" prot="public">amrex::NonLocalBC::MultiBlockIndexMapping</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1NoLocalCopy" prot="public">amrex::NonLocalBC::NoLocalCopy</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1PackComponents" prot="public">amrex::NonLocalBC::PackComponents</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1PolarFn" prot="public">amrex::NonLocalBC::PolarFn</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1PolarFn2" prot="public">amrex::NonLocalBC::PolarFn2</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate180Fn" prot="public">amrex::NonLocalBC::Rotate180Fn</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate90ClockWise" prot="public">amrex::NonLocalBC::Rotate90ClockWise</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise" prot="public">amrex::NonLocalBC::Rotate90CounterClockWise</innerclass>
     <innerclass refid="structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc" prot="public">amrex::NonLocalBC::Rotate90DstToSrc</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1SwapComponents" prot="public">amrex::NonLocalBC::SwapComponents</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4" prot="public">amrex::NonLocalBC::SwapComponents&lt; I, -1 &gt;</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4" prot="public">amrex::NonLocalBC::SwapComponents&lt;-1, -1 &gt;</innerclass>
+    <innerclass refid="structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4" prot="public">amrex::NonLocalBC::SwapComponents&lt;-1, J &gt;</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1a165fdced073fa98b961fd6aaceb213d5" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(std::declval&lt; T &gt;().Inverse(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::NonLocalBC::Inverse_t = typedef decltype(std::declval&lt;T&gt;().Inverse(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>Inverse_t</name>
+        <briefdescription>
+<para>Return type of an InverseImage class member function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1adc23e3a1b040b4f68b4429a2a40e00d6" prot="public" static="no">
+        <type><ref refid="structamrex_1_1NonLocalBC_1_1SwapComponents" kindref="compound">SwapComponents</ref>&lt;-1, -1 &gt;</type>
+        <definition>using amrex::NonLocalBC::DynamicSwapComponents = typedef SwapComponents&lt;-1, -1&gt;</definition>
+        <argsstring></argsstring>
+        <name>DynamicSwapComponents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="388" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1aa9d38898e06da05aa7e4bfab9706f1f0" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(<ref refid="namespaceamrex_1_1NonLocalBC_1a7a60288f2dd74a2f2adb38b6d5586eac" kindref="member">PrepareSendBuffers</ref>(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::NonLocalBC::PrepareSendBuffers_t = typedef decltype(PrepareSendBuffers(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>PrepareSendBuffers_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="469" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1ac352232fe0363d175aaf2615666c8439" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(<ref refid="namespaceamrex_1_1NonLocalBC_1a2e9d4fa2214539e1304ed1ad6fa243c9" kindref="member">PrepareRecvBuffers</ref>(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::NonLocalBC::PrepareRecvBuffers_t = typedef decltype(PrepareRecvBuffers(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>PrepareRecvBuffers_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="472" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1a2457a717c906cb9f086a39faea4da88d" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(<ref refid="namespaceamrex_1_1NonLocalBC_1a69daa706f0034393ac2836f7c04b99c8" kindref="member">PackSendBuffers</ref>(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::NonLocalBC::PackSendBuffers_t = typedef decltype(PackSendBuffers(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>PackSendBuffers_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="475" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="475" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1a0050536eff7fd3244ef573e961858999" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(<ref refid="namespaceamrex_1_1NonLocalBC_1a414c981dffeff68e903947287e786ed4" kindref="member">UnpackRecvBuffers</ref>(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::NonLocalBC::UnpackRecvBuffers_t = typedef decltype(UnpackRecvBuffers(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>UnpackRecvBuffers_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="478" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1NonLocalBC_1a4b44aa3d7a205826948ced4323d0be80" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(<ref refid="namespaceamrex_1_1NonLocalBC_1a0507a8842305bc6b8a8668ca8221e365" kindref="member">LocalCopy</ref>(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::NonLocalBC::LocalCopy_t = typedef decltype(LocalCopy(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>LocalCopy_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="481" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="481" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceamrex_1_1NonLocalBC_1abb7cd050d6dd1aef7603048eeccd7ded" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr <ref refid="structamrex_1_1NonLocalBC_1_1Identity" kindref="compound">Identity</ref></type>
+        <definition>constexpr Identity amrex::NonLocalBC::identity</definition>
+        <argsstring></argsstring>
+        <name>identity</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="295" column="27" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1NonLocalBC_1a618f8d1f0b1258ad4931eb6a5ae65ebc" prot="public" static="yes" constexpr="yes" mutable="no">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>I</declname>
+            <defname>I</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>J</declname>
+            <defname>J</defname>
+          </param>
+        </templateparamlist>
+        <type>constexpr <ref refid="structamrex_1_1NonLocalBC_1_1SwapComponents" kindref="compound">SwapComponents</ref>&lt; I, J &gt;</type>
+        <definition>constexpr SwapComponents&lt;I, J&gt; amrex::NonLocalBC::swap_indices</definition>
+        <argsstring></argsstring>
+        <name>swap_indices</name>
+        <initializer>{}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="390" column="47" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1NonLocalBC_1ad604544d2fd60b6d9fb7a8b75f95ffe0" prot="public" static="yes" mutable="no">
+        <type>constexpr struct <ref refid="structamrex_1_1NonLocalBC_1_1NoLocalCopy" kindref="compound">amrex::NonLocalBC::NoLocalCopy</ref></type>
+        <definition>constexpr struct amrex::NonLocalBC::NoLocalCopy amrex::NonLocalBC::no_local_copy</definition>
+        <argsstring></argsstring>
+        <name>no_local_copy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="648" column="49"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1_1NonLocalBC_1aa0174cdbe72e2968e46f0293c2ecab73" prot="public" static="yes" mutable="no">
+        <type>constexpr struct <ref refid="structamrex_1_1NonLocalBC_1_1DoLocalCopy" kindref="compound">amrex::NonLocalBC::DoLocalCopy</ref></type>
+        <definition>constexpr struct amrex::NonLocalBC::DoLocalCopy amrex::NonLocalBC::do_local_copy</definition>
+        <argsstring></argsstring>
+        <name>do_local_copy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="649" column="49"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a303b8c034244500930c9f5ead86a22bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NonLocalBC::PrepareCommBuffers</definition>
+        <argsstring>(CommData &amp;comm, const FabArrayBase::MapOfCopyComTagContainers &amp;cctc, int n_components, std::size_t object_size, std::size_t align)</argsstring>
+        <name>PrepareCommBuffers</name>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>comm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArrayBase_1a70b58356e2e49c69d54eed3850a9c231" kindref="member">FabArrayBase::MapOfCopyComTagContainers</ref> &amp;</type>
+          <declname>cctc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>n_components</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>object_size</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>align</declname>
+        </param>
+        <briefdescription>
+<para>Fill all class member variables of comm but the request and the stats vector. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="7" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="7" bodyend="69" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="443" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a34a28ebeabdd6a92596cb786799a5046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NonLocalBC::PostRecvs</definition>
+        <argsstring>(CommData &amp;comm, int mpi_tag)</argsstring>
+        <name>PostRecvs</name>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>recv</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>mpi_tag</declname>
+        </param>
+        <briefdescription>
+<para>Initiate all recvieves with MPI_Irecv calls associated with tag mpi_tag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="71" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="71" bodyend="85" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="447" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1abf909fc012a4354b2f2411d36eedc26a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::NonLocalBC::PostSends</definition>
+        <argsstring>(CommData &amp;comm, int mpi_tag)</argsstring>
+        <name>PostSends</name>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>send</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>mpi_tag</declname>
+        </param>
+        <briefdescription>
+<para>Initiate all sends with MPI_Isend calls associated with tag mpi_tag. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="87" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" bodystart="87" bodyend="101" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="450" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ac09ca9edc6d06054f9f1c62d5627c916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>template <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref></type>
+        <definition>template MultiBlockCommMetaData amrex::NonLocalBC::ParallelCopy</definition>
+        <argsstring>(FabArray&lt; FArrayBox &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FArrayBox &gt; &amp;src, int destcomp, int srccomp, int numcomp, const IntVect &amp;ngrow, MultiBlockIndexMapping, Identity)</argsstring>
+        <name>ParallelCopy</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>destbox</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>destcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>srccomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping" kindref="compound">MultiBlockIndexMapping</ref></type>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1Identity" kindref="compound">Identity</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="104" column="33" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" declline="104" declcolumn="33"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a19f8c76ecd9518c09232b2e9b0264f9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;::value, <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt;</type>
+        <definition>EnableIf_t&lt;IsCallableR&lt;Dim3, DTOS, Dim3&gt;::value, IntVect&gt; amrex::NonLocalBC::Apply</definition>
+        <argsstring>(DTOS dtos, const IntVect &amp;iv)</argsstring>
+        <name>Apply</name>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Applies the <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> to <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> mapping onto IntVects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used to map indices from the dest index space into the source index space.</para>
+<para><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> is being embedded in <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> by trailing zeros. <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> is being projected to <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> by dopping z for AMREX_SPACEDIM = 2 or z and y components for AMREX_SPACEDIM = 1.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> that lives in the destination index space.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>{dtos(<ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>{iv})} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="101" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="101" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1aab736652cc2b4ffab3b978b140c8719a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
+        <definition>EnableIf_t&lt;IsCallableR&lt;Dim3, DTOS, Dim3&gt;::value &amp;&amp; !IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::Image</definition>
+        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <name>Image</name>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <briefdescription>
+<para>Applies the <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> to <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> mapping onto Boxes but does not change the index type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes monotonicity of dtos in each component.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The box that lives the destination index space</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the smallest <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> in the source index space that contains images of Apply(dtos, box.smallEnd()) and Apply(dtos, box.bigEnd()). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="117" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="117" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad6a248d8548045b7011916ea21890355" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;::value &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
+        <definition>EnableIf_t&lt;IsCallableR&lt;Dim3, DTOS, Dim3&gt;::value &amp;&amp; IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::Image</definition>
+        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <name>Image</name>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <briefdescription>
+<para>Applies the <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> to <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> mapping onto Boxes and maps the index type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes monotonicity of dtos in each component.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The box that lives the destination index space</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the smallest <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> in the source index space that contains images of Apply(dtos, box.smallEnd()) and Apply(dtos, box.bigEnd()). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="140" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afbab6be143546f7e2b0ade819eb9fe85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" kindref="compound">HasInverseMemFn</ref>&lt; DTOS &gt;::value, <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &gt;</type>
+        <definition>EnableIf_t&lt;HasInverseMemFn&lt;DTOS&gt;::value, IntVect&gt; amrex::NonLocalBC::ApplyInverse</definition>
+        <argsstring>(DTOS dtos, const IntVect &amp;iv)</argsstring>
+        <name>ApplyInverse</name>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>iv</declname>
+        </param>
+        <briefdescription>
+<para>Applies the <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> to <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> invserse mapping onto IntVects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is used to map indices from the src index space into the dest index space.</para>
+<para><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> is being embedded in <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> by trailing zeros. <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> is being projected to <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> by dopping z for AMREX_SPACEDIM = 2 or z and y components for AMREX_SPACEDIM = 1.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">iv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> that lives in the src index space.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>{dtos.Inverse(<ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>{iv})} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="162" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a004c09f131c82ecf7250eafe92f970b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" kindref="compound">HasInverseMemFn</ref>&lt; DTOS &gt;::value &amp;&amp;!<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
+        <definition>EnableIf_t&lt;HasInverseMemFn&lt;DTOS&gt;::value &amp;&amp; !IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::InverseImage</definition>
+        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <name>InverseImage</name>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <briefdescription>
+<para>Applies the inverse <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> to <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> mapping onto Boxes without changing the index type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes monotonicity in each component.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The box that lives the source index space</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the smallest <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> in the destination index space that contains images of ApplyInverse(box.smallEnd()) and ApplyInverse(box.bigEnd()). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="177" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="177" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1acd492cf556ac73f2a7274aef054b9231" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1NonLocalBC_1_1HasInverseMemFn" kindref="compound">HasInverseMemFn</ref>&lt; DTOS &gt;::value &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>, DTOS, <ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref> &gt;::value, <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt;</type>
+        <definition>EnableIf_t&lt;HasInverseMemFn&lt;DTOS&gt;::value &amp;&amp; IsCallableR&lt;IndexType, DTOS, IndexType&gt;::value, Box&gt; amrex::NonLocalBC::InverseImage</definition>
+        <argsstring>(DTOS dtos, const Box &amp;box)</argsstring>
+        <name>InverseImage</name>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>box</declname>
+        </param>
+        <briefdescription>
+<para>Applies the inverse <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> to <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> mapping onto Boxes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function assumes monotonicity in each component.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">box</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The box that lives the source index space</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the smallest <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> in the destination index space that contains images of ApplyInverse(box.smallEnd()) and ApplyInverse(box.bigEnd()). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="192" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="192" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a0507a8842305bc6b8a8668ca8221e365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::LocalCopy</definition>
+        <argsstring>(const PackComponents &amp;components, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CopyComTagsContainer &amp;local_tags)</argsstring>
+        <name>LocalCopy</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1PackComponents" kindref="compound">PackComponents</ref> &amp;</type>
+          <declname>components</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> &amp;</type>
+          <declname>local_tags</declname>
+        </param>
+        <briefdescription>
+<para>Dispatch local copies to the default behaviour that knows no DTOS nor projection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="513" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="513" bodyend="525"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a7a60288f2dd74a2f2adb38b6d5586eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::PrepareSendBuffers</definition>
+        <argsstring>(const PackComponents &amp;components, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, CommData &amp;comm, const FabArrayBase::MapOfCopyComTagContainers &amp;cctc)</argsstring>
+        <name>PrepareSendBuffers</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1PackComponents" kindref="compound">PackComponents</ref> &amp;</type>
+          <declname>components</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>comm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArrayBase_1a70b58356e2e49c69d54eed3850a9c231" kindref="member">FabArrayBase::MapOfCopyComTagContainers</ref> &amp;</type>
+          <declname>cctc</declname>
+        </param>
+        <briefdescription>
+<para>Calls PrepareComBuffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="531" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="531" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a2e9d4fa2214539e1304ed1ad6fa243c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::PrepareRecvBuffers</definition>
+        <argsstring>(const PackComponents &amp;components, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, CommData &amp;comm, const FabArrayBase::MapOfCopyComTagContainers &amp;cctc)</argsstring>
+        <name>PrepareRecvBuffers</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1PackComponents" kindref="compound">PackComponents</ref> &amp;</type>
+          <declname>components</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>comm</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArrayBase_1a70b58356e2e49c69d54eed3850a9c231" kindref="member">FabArrayBase::MapOfCopyComTagContainers</ref> &amp;</type>
+          <declname>cctc</declname>
+        </param>
+        <briefdescription>
+<para>Calls PrepareComBuffers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="541" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="541" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a69daa706f0034393ac2836f7c04b99c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::PackSendBuffers</definition>
+        <argsstring>(const PackComponents &amp;components, const FabArray&lt; FAB &gt; &amp;src, CommData &amp;send)</argsstring>
+        <name>PackSendBuffers</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1PackComponents" kindref="compound">PackComponents</ref> &amp;</type>
+          <declname>components</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>send</declname>
+        </param>
+        <briefdescription>
+<para>Serializes FAB data without any knowledge of a DTOS nor a projection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="551" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="551" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a414c981dffeff68e903947287e786ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::UnpackRecvBuffers</definition>
+        <argsstring>(const PackComponents &amp;components, FabArray&lt; FAB &gt; &amp;dest, const CommData &amp;recv)</argsstring>
+        <name>UnpackRecvBuffers</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1PackComponents" kindref="compound">PackComponents</ref> &amp;</type>
+          <declname>components</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>recv</declname>
+        </param>
+        <briefdescription>
+<para>De-serializes FAB data without any knowledge of a DTOS nor a projection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="567" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="567" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a3c6b7b621af8b139c7c30462ba6a69a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+          <param>
+            <type>typename FabProj</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::LocalCopy</definition>
+        <argsstring>(const ApplyDtosAndProjectionOnReciever&lt; DTOS, FabProj &gt; &amp;packing, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CopyComTagsContainer &amp;local_tags)</argsstring>
+        <name>LocalCopy</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" kindref="compound">ApplyDtosAndProjectionOnReciever</ref>&lt; DTOS, FabProj &gt; &amp;</type>
+          <declname>packing</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> &amp;</type>
+          <declname>local_tags</declname>
+        </param>
+        <briefdescription>
+<para>Do local copies of FABs using DTOS and projection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="606" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="606" bodyend="619"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a4d5eebcfc32058388d6374b28b7bac21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+          </param>
+          <param>
+            <type>typename FabProj</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;::value &gt;</type>
+        <definition>amrex::EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt; amrex::NonLocalBC::UnpackRecvBuffers</definition>
+        <argsstring>(const ApplyDtosAndProjectionOnReciever&lt; DTOS, FabProj &gt; &amp;packing, FabArray&lt; FAB &gt; &amp;dest, const CommData &amp;recv)</argsstring>
+        <name>UnpackRecvBuffers</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" kindref="compound">ApplyDtosAndProjectionOnReciever</ref>&lt; DTOS, FabProj &gt; &amp;</type>
+          <declname>packing</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1NonLocalBC_1_1CommData" kindref="compound">CommData</ref> &amp;</type>
+          <declname>recv</declname>
+        </param>
+        <briefdescription>
+<para>Copy from recieved data in the buffer to destination FABs using DTOS and projection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="625" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="625" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a7bf19b06a9bab53ac6dea6bfa875af9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DataPacking</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>EnableIf_t&lt;IsDataPacking&lt;DataPacking, FAB&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" kindref="member">AMREX_NODISCARD</ref> <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+        <definition>AMREX_NODISCARD CommHandler amrex::NonLocalBC::ParallelCopy_nowait</definition>
+        <argsstring>(NoLocalCopy, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</argsstring>
+        <name>ParallelCopy_nowait</name>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1NoLocalCopy" kindref="compound">NoLocalCopy</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>const DataPacking &amp;</type>
+          <declname>data_packing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate recv and send calls for MPI and immediately return without doing any work.</para>
+<para>DataPacking is a customization point object to control the behaviour of packing and unpacking send or recv data buffers. It is used to perform interpolation or data transformations on either sender or reciever side.</para>
+<para>This function performs a data packing on sender side and we expect a call to Parallel_finish that performs data unpacking on the reciever side.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to fill the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The communication meta data object holds spatial information about FAB boxes that need to be filled and copied from.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_packing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CPO that controls behaviour of preparing buffers and packing the source data into the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref> object that owns context and memory buffers for the whole life time of the MPI transaction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="677" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="677" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a57dca62d2b38257c9da61d6a1f0ed9d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DataPacking</type>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+          </param>
+          <param>
+            <type>typename</type>
+            <defval>EnableIf_t&lt;IsDataPacking&lt;DataPacking, FAB&gt;::value&gt;</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" kindref="member">AMREX_NODISCARD</ref> <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+        <definition>AMREX_NODISCARD CommHandler amrex::NonLocalBC::ParallelCopy_nowait</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</argsstring>
+        <name>ParallelCopy_nowait</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>const DataPacking &amp;</type>
+          <declname>data_packing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initiate recv and send calls for MPI and return after doing local work.</para>
+<para>DataPacking is a customization point object to control the behaviour of packing and unpacking send or recv data buffers. It is used to perform interpolation or data transformations on either sender or reciever side.</para>
+<para>This function performs a data packing on sender side and we expect a call to Parallel_finish that performs data unpacking on the reciever side.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to fill the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The communication meta data object holds spatial information about FAB boxes that need to be filled and copied from.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_packing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CPO that controls behaviour of preparing buffers and packing the source data into the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns a <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref> object that owns context and memory buffers for the whole life time of the MPI transaction. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="738" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="738" bodyend="746"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a543ee3c92ebf4b00332dfc86a6364b87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DataPacking</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsDataPacking" kindref="compound">IsDataPacking</ref>&lt; DataPacking, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsDataPacking&lt;DataPacking, FAB&gt;)&gt; amrex::NonLocalBC::ParallelCopy_finish</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, CommHandler handler, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</argsstring>
+        <name>ParallelCopy_finish</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>const DataPacking &amp;</type>
+          <declname>data_packing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blockingly wait for all communication to be done and fill the local FABs with recieved data.</para>
+<para>This function overload performs no local copies, i.e. from this MPI process to itself. It will block the current thread until all MPI recv and send requests are done and calls the DataPacking object to unpack the recieved buffers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This object holds all data buffers that need to be kept alive as long as the data transaction is not done.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The communication meta data object holds spatial information about FAB boxes that need to be filled.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_packing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CPO that controls behaviour of unpacking the recieved buffer to the destination <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="771" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="771" bodyend="798"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a07ab87dce42365257d6f4e0e8226851b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DataPacking</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsDataPacking" kindref="compound">IsDataPacking</ref>&lt; DataPacking, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsDataPacking&lt;DataPacking, FAB&gt;)&gt; amrex::NonLocalBC::ParallelCopy_finish</definition>
+        <argsstring>(DoLocalCopy, FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, CommHandler handler, const FabArrayBase::CommMetaData &amp;cmd, const DataPacking &amp;data_packing)</argsstring>
+        <name>ParallelCopy_finish</name>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1DoLocalCopy" kindref="compound">DoLocalCopy</ref></type>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+          <declname>handler</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>const DataPacking &amp;</type>
+          <declname>data_packing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Blockingly wait for all communication to be done and fill the local FABs with recieved data.</para>
+<para>This function overload performs local copies, i.e. from this MPI process to itself. It will block the current thread until all MPI recv and send requests are done and calls the DataPacking object to unpack the recieved buffers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to get the data for the local copies from.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">handler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>This object holds all data buffers that need to be kept alive as long as the data transaction is not done.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The communication meta data object holds spatial information about FAB boxes that need to be filled.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">data_packing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A CPO that controls behaviour of unpacking the recieved data.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="824" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="824" bodyend="831"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a80e852b15ca18cfeaef8ec9b1de653b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::ParallelCopy</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, SrcComp srccomp, DestComp destcomp, NumComps numcomp, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <name>ParallelCopy</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1SrcComp" kindref="compound">SrcComp</ref></type>
+          <declname>srccomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1DestComp" kindref="compound">DestComp</ref></type>
+          <declname>destcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NumComps" kindref="compound">NumComps</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Call ParallelCopy_nowait followed by ParallelCopy_finish, strong typed version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function overload uses an already cached CommMetaData. This CommMetaData needs to be compatible with the specified DTOS and projection, otherwise undefined behaviour occurs.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to fill the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The communication meta data object holds spatial information about FAB boxes that need to be filled and copied from.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in src that will be copied to dest.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in dest that will get written by src.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of successive components that will be copied.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An index mapping that maps indices from destination space to source space and from source space to destination space.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation function that might change the data when it is being copied.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="859" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="859" bodyend="868"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a61a26a8c6abd1fb507959f9f745d9ff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::ParallelCopy</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, const FabArrayBase::CommMetaData &amp;cmd, int srccomp, int destcomp, int numcomp, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <name>ParallelCopy</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> &amp;</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>srccomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>destcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Call ParallelCopy_nowait followed by ParallelCopy_finish. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function overload uses an already cached CommMetaData. This CommMetaData needs to be compatible with the specified DTOS and projection, otherwise undefined behaviour occurs.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to fill the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The communication meta data object holds spatial information about FAB boxes that need to be filled and copied from.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in src that will be copied to dest.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in dest that will get written by src.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of successive components that will be copied.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An index mapping that maps indices from destination space to source space and from source space to destination space.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation function that might change the data when it is being copied.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="896" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="896" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a0b89d88ce09c0a99177b355166b76c1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsIndexMapping" kindref="compound">IsIndexMapping</ref>&lt; DTOS &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;), <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsIndexMapping&lt;DTOS&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;),MultiBlockCommMetaData&gt; amrex::NonLocalBC::ParallelCopy</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FAB &gt; &amp;src, SrcComp srccomp, DestComp destcomp, NumComps numcomp, const IntVect &amp;ngrow, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <name>ParallelCopy</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>destbox</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1SrcComp" kindref="compound">SrcComp</ref></type>
+          <declname>srccomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1DestComp" kindref="compound">DestComp</ref></type>
+          <declname>destcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="structamrex_1_1NumComps" kindref="compound">NumComps</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Call ParallelCopy_nowait followed by ParallelCopy_finish, strong typed version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function constructs a new MultiCommMetaData from the given DTOS, destbox and ngrow.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destbox</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index box in the destination space that will be filled by data from src. The source box that describes the dependencies will be computed by the specified DTOS.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to fill the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in src that will be copied to dest.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in dest that will get written by src.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of successive components that will be copied.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropiate ngrow that covers the amound of ghost cells that we want to copy.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An index mapping that maps indices from destination space to source space and from source space to destination space.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation function that might change the data when it is being copied.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the CommMetaData object that can be cached for future calls to ParallelCopy. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="933" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="933" bodyend="938"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad93adad52db8fb0e6c7f727ecfd8b25a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename FAB</type>
+          </param>
+          <param>
+            <type>typename DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>typename Proj</type>
+            <defval>Identity</defval>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsIndexMapping" kindref="compound">IsIndexMapping</ref>&lt; DTOS &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;), <ref refid="structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" kindref="compound">MultiBlockCommMetaData</ref> &gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsIndexMapping&lt;DTOS&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;),MultiBlockCommMetaData&gt; amrex::NonLocalBC::ParallelCopy</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FAB &gt; &amp;src, int srccomp, int destcomp, int numcomp, const IntVect &amp;ngrow, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
+        <name>ParallelCopy</name>
+        <param>
+          <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
+          <declname>destbox</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>srccomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>destcomp</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>numcomp</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>ngrow</declname>
+        </param>
+        <param>
+          <type>DTOS</type>
+          <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
+        </param>
+        <briefdescription>
+<para>Call ParallelCopy_nowait followed by ParallelCopy_finish. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function constructs a new MultiCommMetaData from the given DTOS, destbox and ngrow.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is going to be filled with recieved data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destbox</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index box in the destination space that will be filled by data from src. The source box that describes the dependencies will be computed by the specified DTOS.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Multifab that is used to fill the send buffers.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">srccomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in src that will be copied to dest.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">destcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component in dest that will get written by src.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of successive components that will be copied.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ngrow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropiate ngrow that covers the amound of ghost cells that we want to copy.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An index mapping that maps indices from destination space to source space and from source space to destination space.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation function that might change the data when it is being copied.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the CommMetaData object that can be cached for future calls to ParallelCopy. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="972" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" bodystart="972" bodyend="975"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ac572ffb29de7038f4296072c1ecfb79d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
@@ -47,7 +1771,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="462" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="462" bodyend="499" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="16" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="531" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="531" bodyend="568" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="984" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a5dcdf407a85926a26047bf2189852fad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -73,7 +1797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="503" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="503" bodyend="506" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="20" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="572" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="572" bodyend="575" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="988" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ac1490f123094d9379d2b32e133c8a067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -111,7 +1835,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="510" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="510" bodyend="532" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="27" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="579" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="579" bodyend="601" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="995" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a28488fd99dc045fee8caae1056997954" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -137,7 +1861,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="536" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="536" bodyend="539" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="31" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="605" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="605" bodyend="608" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="999" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a0a70c208adf8ed71ecbea53ddbbc8e6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -175,7 +1899,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="543" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="543" bodyend="567" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="39" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="612" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="612" bodyend="636" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1007" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a41dfffd972b20388e9e817fe9bda7b10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -201,24 +1925,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="571" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="571" bodyend="574" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="43" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="640" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="640" bodyend="643" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" declline="1011" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a16b77f1c78a9f5d6b9e6e1003f6fde83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad8e907e6aee2eda184a620f2a010a386" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
           <param>
             <type>class DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>class Proj</type>
+            <defval>Identity</defval>
           </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::NonLocalBC::local_copy_cpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</argsstring>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::local_copy_cpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
         <name>local_copy_cpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>mf</declname>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dcomp</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -229,33 +1966,114 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> const &amp;</type>
-          <declname>cmd</declname>
+          <type><ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> const &amp;</type>
+          <declname>local_tags</declname>
         </param>
         <param>
           <type>DTOS</type>
           <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
         </param>
         <briefdescription>
+<para>Perform the local copies from src to dest without doing any MPI communication. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function assumes that all destination and source boxes stored in the local copy comm tags are related by the DTOS. If this is not the case the behaviour will at best be caught as an assertion.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The destination <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> that will be filled with data.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The source <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref> where data will be taken from.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dcomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component at the destination.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">scomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first component at the srouce.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ncomp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of components that will be copied.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">local_tags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector of copy com tags that describes each local copy transaction.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dtos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dest to source index mapping that will be used in the copy function.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">proj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A FAB projection that might transform the data.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing. </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="160" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="160" bodyend="179"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="188" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="188" bodyend="206"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a2b84f3041ad542a1aa6122a626ff231b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a6c186f360eaf702c480e90fc6b60f3a9" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
           <param>
             <type>class DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>class Proj</type>
+            <defval>Identity</defval>
           </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::NonLocalBC::unpack_recv_buffer_cpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos)</argsstring>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_cpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
         <name>unpack_recv_buffer_cpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -263,7 +2081,7 @@
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>scomp</declname>
+          <declname>dcomp</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -284,31 +2102,52 @@
         <param>
           <type>DTOS</type>
           <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
         </param>
         <briefdescription>
+<para>Unpack the recieved data into the local FABs. </para>
         </briefdescription>
         <detaileddescription>
+<para>This function assumes that all destination and source boxes stored in the local copy comm tags are related by the DTOS. If this is not the case the behaviour will at best be caught as an assertion. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="183" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="183" bodyend="213"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="215" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="215" bodyend="242"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1afae1642e6f5420357ad8e9fee8b381b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a7f30fc2beb3209813124768a73377afc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
           <param>
             <type>class DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>class Proj</type>
+            <defval>Identity</defval>
           </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::NonLocalBC::local_copy_gpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</argsstring>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::local_copy_gpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</argsstring>
         <name>local_copy_gpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
-          <declname>mf</declname>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>dcomp</declname>
         </param>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -319,12 +2158,18 @@
           <declname>ncomp</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1FabArrayBase_1_1CommMetaData" kindref="compound">FabArrayBase::CommMetaData</ref> const &amp;</type>
-          <declname>cmd</declname>
+          <type><ref refid="classamrex_1_1FabArrayBase_1a1bb6a09ada00b5b7a900d8fecbf92e3c" kindref="member">FabArrayBase::CopyComTagsContainer</ref> const &amp;</type>
+          <declname>local_tags</declname>
         </param>
         <param>
           <type>DTOS</type>
           <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -332,20 +2177,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="228" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="228" bodyend="249"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="257" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="257" bodyend="276"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1aa63bd0a11ccc0dd82233c525379507b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad66eb23c232469831c3e4a3c5215223e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
           </param>
           <param>
             <type>class DTOS</type>
+            <defval>Identity</defval>
+          </param>
+          <param>
+            <type>class Proj</type>
+            <defval>Identity</defval>
           </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::NonLocalBC::unpack_recv_buffer_gpu</definition>
-        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos)</argsstring>
+        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsBaseFab" kindref="compound">IsBaseFab</ref>&lt; FAB &gt;) &amp;&amp;<ref refid="structamrex_1_1IsCallableR" kindref="compound">IsCallableR</ref>&lt; <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref>, DTOS, <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &gt;) &amp;&amp;<ref refid="structamrex_1_1NonLocalBC_1_1IsFabProjection" kindref="compound">IsFabProjection</ref>&lt; Proj, FAB &gt;)&gt;</type>
+        <definition>EnableIf_t&lt;IsBaseFab&lt;FAB&gt;) &amp;&amp; IsCallableR&lt;Dim3, DTOS, Dim3&gt;) &amp;&amp; IsFabProjection&lt;Proj, FAB&gt;)&gt; amrex::NonLocalBC::unpack_recv_buffer_gpu</definition>
+        <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{})</argsstring>
         <name>unpack_recv_buffer_gpu</name>
         <param>
           <type><ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>&lt; FAB &gt; &amp;</type>
@@ -374,6 +2224,12 @@
         <param>
           <type>DTOS</type>
           <declname>dtos</declname>
+          <defval>DTOS{}</defval>
+        </param>
+        <param>
+          <type>Proj</type>
+          <declname>proj</declname>
+          <defval>Proj{}</defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -381,9 +2237,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="253" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="253" bodyend="310"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="280" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="280" bodyend="337"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1a9ceb33878a763d9be662a21559d65463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1ad27d4e549420f04e09a0257f7bf1a061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class FAB</type>
@@ -392,8 +2248,8 @@
             <type>class DTOS</type>
           </param>
         </templateparamlist>
-        <type><ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
-        <definition>CommHandler amrex::NonLocalBC::Comm_nowait</definition>
+        <type><ref refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" kindref="member">AMREX_NODISCARD</ref> <ref refid="structamrex_1_1NonLocalBC_1_1CommHandler" kindref="compound">CommHandler</ref></type>
+        <definition>AMREX_NODISCARD CommHandler amrex::NonLocalBC::Comm_nowait</definition>
         <argsstring>(FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</argsstring>
         <name>Comm_nowait</name>
         <param>
@@ -422,7 +2278,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="331" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="331" bodyend="412"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="405" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="405" bodyend="482"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1NonLocalBC_1af9ec0d9354978f736d6d42e6b79bfb32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -467,13 +2323,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="417" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="417" bodyend="457"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" line="487" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBCImpl.H" bodystart="487" bodyend="526"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.H" line="7" column="34"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_NonLocalBC.cpp" line="4" column="20"/>
   </compounddef>
 </doxygen>

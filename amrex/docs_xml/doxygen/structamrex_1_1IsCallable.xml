@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structamrex_1_1IsCallable" kind="struct" language="C++" prot="public">
+    <compoundname>amrex::IsCallable</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">IsDetected&lt; detail::call_result_t, T, Args... &gt;</basecompoundref>
+    <includes refid="AMReX__TypeTraits_8H" local="no">AMReX_TypeTraits.H</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+<para>Test if a given type T is callable with arguments of type Args... </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This type trait is different from std::is_invocable since it only cares for the call syntax f(args...) and disregards pointers to class methods and such.</para>
+<para>For consistency we use <ref refid="structamrex_1_1IsCallable" kindref="compound">IsCallable</ref> over is_invocable since <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> relies on call syntax everywhere else. Using an equivalent function to std::invoke would increase call stacks in debug mode, add more template instantiations and will obfuscate lots of generic code that takes functions. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>IsDetected&lt; detail::call_result_t, T, Args... &gt;</label>
+      </node>
+      <node id="1">
+        <label>amrex::IsCallable&lt; T, Args &gt;</label>
+        <link refid="structamrex_1_1IsCallable"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>IsDetected&lt; detail::call_result_t, T, Args... &gt;</label>
+      </node>
+      <node id="1">
+        <label>amrex::IsCallable&lt; T, Args &gt;</label>
+        <link refid="structamrex_1_1IsCallable"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="183" column="35" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="183" bodyend="183"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

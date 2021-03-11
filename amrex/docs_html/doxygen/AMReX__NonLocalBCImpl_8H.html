@@ -73,7 +73,9 @@ $(function() {
 <div class="title">AMReX_NonLocalBCImpl.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;AMReX_Config.H&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="AMReX__NonLocalBC_8H_source.html">AMReX_NonLocalBC.H</a>&quot;</code><br />
+<code>#include &lt;AMReX_Config.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="AMReX__TypeTraits_8H_source.html">AMReX_TypeTraits.H</a>&gt;</code><br />
 </div>
 <p><a href="AMReX__NonLocalBCImpl_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,8 +95,6 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1NonLocalBC_1_1Array4Array4Box.html">amrex::NonLocalBC::Array4Array4Box&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structamrex_1_1NonLocalBC_1_1CommHandler.html">amrex::NonLocalBC::CommHandler</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -105,21 +105,23 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a16b77f1c78a9f5d6b9e6e1003f6fde83"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
-<tr class="memitem:a16b77f1c78a9f5d6b9e6e1003f6fde83"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#a16b77f1c78a9f5d6b9e6e1003f6fde83">amrex::NonLocalBC::local_copy_cpu</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</td></tr>
-<tr class="separator:a16b77f1c78a9f5d6b9e6e1003f6fde83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b84f3041ad542a1aa6122a626ff231b"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
-<tr class="memitem:a2b84f3041ad542a1aa6122a626ff231b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#a2b84f3041ad542a1aa6122a626ff231b">amrex::NonLocalBC::unpack_recv_buffer_cpu</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos)</td></tr>
-<tr class="separator:a2b84f3041ad542a1aa6122a626ff231b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae1642e6f5420357ad8e9fee8b381b4"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
-<tr class="memitem:afae1642e6f5420357ad8e9fee8b381b4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#afae1642e6f5420357ad8e9fee8b381b4">amrex::NonLocalBC::local_copy_gpu</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</td></tr>
-<tr class="separator:afae1642e6f5420357ad8e9fee8b381b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa63bd0a11ccc0dd82233c525379507b9"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
-<tr class="memitem:aa63bd0a11ccc0dd82233c525379507b9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#aa63bd0a11ccc0dd82233c525379507b9">amrex::NonLocalBC::unpack_recv_buffer_gpu</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos)</td></tr>
-<tr class="separator:aa63bd0a11ccc0dd82233c525379507b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ceb33878a763d9be662a21559d65463"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
-<tr class="memitem:a9ceb33878a763d9be662a21559d65463"><td class="memTemplItemLeft" align="right" valign="top">CommHandler&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#a9ceb33878a763d9be662a21559d65463">amrex::NonLocalBC::Comm_nowait</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</td></tr>
-<tr class="separator:a9ceb33878a763d9be662a21559d65463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e907e6aee2eda184a620f2a010a386"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS  = Identity, class Proj  = Identity&gt; </td></tr>
+<tr class="memitem:ad8e907e6aee2eda184a620f2a010a386"><td class="memTemplItemLeft" align="right" valign="top">EnableIf_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#ad8e907e6aee2eda184a620f2a010a386">amrex::NonLocalBC::local_copy_cpu</a> (FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</td></tr>
+<tr class="memdesc:ad8e907e6aee2eda184a620f2a010a386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the local copies from src to dest without doing any MPI communication.  <a href="namespaceamrex_1_1NonLocalBC.html#ad8e907e6aee2eda184a620f2a010a386">More...</a><br /></td></tr>
+<tr class="separator:ad8e907e6aee2eda184a620f2a010a386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c186f360eaf702c480e90fc6b60f3a9"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS  = Identity, class Proj  = Identity&gt; </td></tr>
+<tr class="memitem:a6c186f360eaf702c480e90fc6b60f3a9"><td class="memTemplItemLeft" align="right" valign="top">EnableIf_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#a6c186f360eaf702c480e90fc6b60f3a9">amrex::NonLocalBC::unpack_recv_buffer_cpu</a> (FabArray&lt; FAB &gt; &amp;mf, int dcomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</td></tr>
+<tr class="memdesc:a6c186f360eaf702c480e90fc6b60f3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unpack the recieved data into the local FABs.  <a href="namespaceamrex_1_1NonLocalBC.html#a6c186f360eaf702c480e90fc6b60f3a9">More...</a><br /></td></tr>
+<tr class="separator:a6c186f360eaf702c480e90fc6b60f3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f30fc2beb3209813124768a73377afc"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS  = Identity, class Proj  = Identity&gt; </td></tr>
+<tr class="memitem:a7f30fc2beb3209813124768a73377afc"><td class="memTemplItemLeft" align="right" valign="top">EnableIf_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#a7f30fc2beb3209813124768a73377afc">amrex::NonLocalBC::local_copy_gpu</a> (FabArray&lt; FAB &gt; &amp;dest, const FabArray&lt; FAB &gt; &amp;src, int dcomp, int scomp, int ncomp, FabArrayBase::CopyComTagsContainer const &amp;local_tags, DTOS dtos=DTOS{}, Proj proj=Proj{}) noexcept</td></tr>
+<tr class="separator:a7f30fc2beb3209813124768a73377afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66eb23c232469831c3e4a3c5215223e"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS  = Identity, class Proj  = Identity&gt; </td></tr>
+<tr class="memitem:ad66eb23c232469831c3e4a3c5215223e"><td class="memTemplItemLeft" align="right" valign="top">EnableIf_t&lt; IsBaseFab&lt; FAB &gt;) &amp;&amp;IsCallableR&lt; Dim3, DTOS, Dim3 &gt;) &amp;&amp;IsFabProjection&lt; Proj, FAB &gt;)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#ad66eb23c232469831c3e4a3c5215223e">amrex::NonLocalBC::unpack_recv_buffer_gpu</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, Vector&lt; char * &gt; const &amp;recv_data, Vector&lt; std::size_t &gt; const &amp;recv_size, Vector&lt; FabArrayBase::CopyComTagsContainer const * &gt; const &amp;recv_cctc, DTOS dtos=DTOS{}, Proj proj=Proj{})</td></tr>
+<tr class="separator:ad66eb23c232469831c3e4a3c5215223e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27d4e549420f04e09a0257f7bf1a061"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
+<tr class="memitem:ad27d4e549420f04e09a0257f7bf1a061"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__Extension_8H.html#a8cfb0291f150c6676f99a0b6c4578717">AMREX_NODISCARD</a> CommHandler&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#ad27d4e549420f04e09a0257f7bf1a061">amrex::NonLocalBC::Comm_nowait</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, DTOS dtos)</td></tr>
+<tr class="separator:ad27d4e549420f04e09a0257f7bf1a061"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9ec0d9354978f736d6d42e6b79bfb32"><td class="memTemplParams" colspan="2">template&lt;class FAB , class DTOS &gt; </td></tr>
 <tr class="memitem:af9ec0d9354978f736d6d42e6b79bfb32"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#af9ec0d9354978f736d6d42e6b79bfb32">amrex::NonLocalBC::Comm_finish</a> (FabArray&lt; FAB &gt; &amp;mf, int scomp, int ncomp, FabArrayBase::CommMetaData const &amp;cmd, CommHandler handler, DTOS dtos)</td></tr>
 <tr class="separator:af9ec0d9354978f736d6d42e6b79bfb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,6 +143,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a41dfffd972b20388e9e817fe9bda7b10"><td class="memTemplParams" colspan="2">template&lt;class FAB &gt; </td></tr>
 <tr class="memitem:a41dfffd972b20388e9e817fe9bda7b10"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a>&lt; IsBaseFab&lt; FAB &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#a41dfffd972b20388e9e817fe9bda7b10">amrex::NonLocalBC::FillPolar</a> (FabArray&lt; FAB &gt; &amp;mf, Box const &amp;domain)</td></tr>
 <tr class="separator:a41dfffd972b20388e9e817fe9bda7b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09ca9edc6d06054f9f1c62d5627c916"><td class="memItemLeft" align="right" valign="top">template MultiBlockCommMetaData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1NonLocalBC.html#ac09ca9edc6d06054f9f1c62d5627c916">amrex::NonLocalBC::ParallelCopy</a> (FabArray&lt; FArrayBox &gt; &amp;dest, const Box &amp;destbox, const FabArray&lt; FArrayBox &gt; &amp;src, int destcomp, int srccomp, int numcomp, const IntVect &amp;ngrow, MultiBlockIndexMapping, Identity)</td></tr>
+<tr class="separator:ac09ca9edc6d06054f9f1c62d5627c916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

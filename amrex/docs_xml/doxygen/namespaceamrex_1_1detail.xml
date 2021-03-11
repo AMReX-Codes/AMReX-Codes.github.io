@@ -4,12 +4,15 @@
     <compoundname>amrex::detail</compoundname>
     <innerclass refid="structamrex_1_1detail_1_1apply__result" prot="public">amrex::detail::apply_result</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1apply__result_3_01F_00_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" prot="public">amrex::detail::apply_result&lt; F, GpuTuple&lt; Ts... &gt; &gt;</innerclass>
+    <innerclass refid="structamrex_1_1detail_1_1Detector" prot="public">amrex::detail::Detector</innerclass>
+    <innerclass refid="structamrex_1_1detail_1_1Detector_3_01Default_00_01Void__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4" prot="public">amrex::detail::Detector&lt; Default, Void_t&lt; Op&lt; Args... &gt; &gt;, Op, Args... &gt;</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1gpu__tuple__element" prot="public">amrex::detail::gpu_tuple_element</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1gpu__tuple__impl" prot="public">amrex::detail::gpu_tuple_impl</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_01_4" prot="public">amrex::detail::gpu_tuple_impl&lt; I, Head &gt;</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1gpu__tuple__impl_3_01I_00_01Head_00_01Tail_8_8_8_01_4" prot="public">amrex::detail::gpu_tuple_impl&lt; I, Head, Tail... &gt;</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1invoke__result" prot="public">amrex::detail::invoke_result</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1invoke__result_3_01decltype_07void_07INVOKE_07std_1_1declval_3_01F_01_49dd63e63d8c4c4c6d40ab44a59ce8a5b" prot="public">amrex::detail::invoke_result&lt; decltype(void(INVOKE(std::declval&lt; F &gt;(), std::declval&lt; Args &gt;()...))), F, Args... &gt;</innerclass>
+    <innerclass refid="structamrex_1_1detail_1_1Nonesuch" prot="public">amrex::detail::Nonesuch</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1tuple__cat__result" prot="public">amrex::detail::tuple_cat_result</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01T1s_8_8_8_01_4_00_01GpuTuple_3_01T2e7f956a9a5fbb5ccc01506013b6ed802" prot="public">amrex::detail::tuple_cat_result&lt; GpuTuple&lt; T1s... &gt;, GpuTuple&lt; T2s... &gt;, TPs... &gt;</innerclass>
     <innerclass refid="structamrex_1_1detail_1_1tuple__cat__result_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4" prot="public">amrex::detail::tuple_cat_result&lt; GpuTuple&lt; Ts... &gt; &gt;</innerclass>
@@ -82,6 +85,47 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" line="245" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Tuple.H" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1detail_1a1fbad5ff9cc23fcc37c363d9d3bc0d94" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>using amrex::detail::Void_t = typedef void</definition>
+        <argsstring></argsstring>
+        <name>Void_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="130" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceamrex_1_1detail_1ad9ffd55042a6573c492b8fc107951d12" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>decltype(std::declval&lt; T &gt;()(std::declval&lt; Args &gt;()...))</type>
+        <definition>using amrex::detail::call_result_t = typedef decltype(std::declval&lt;T&gt;()(std::declval&lt;Args&gt;()...))</definition>
+        <argsstring></argsstring>
+        <name>call_result_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="170" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="170" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">

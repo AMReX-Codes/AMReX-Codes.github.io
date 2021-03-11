@@ -105,6 +105,7 @@ var menudata={children:[
 {text:"Typedefs",url:"namespacemembers_type.html",children:[
 {text:"a",url:"namespacemembers_type.html#index_a"},
 {text:"b",url:"namespacemembers_type.html#index_b"},
+{text:"c",url:"namespacemembers_type.html#index_c"},
 {text:"d",url:"namespacemembers_type.html#index_d"},
 {text:"e",url:"namespacemembers_type.html#index_e"},
 {text:"f",url:"namespacemembers_type.html#index_f"},
@@ -114,6 +115,7 @@ var menudata={children:[
 {text:"k",url:"namespacemembers_type.html#index_k"},
 {text:"l",url:"namespacemembers_type.html#index_l"},
 {text:"m",url:"namespacemembers_type.html#index_m"},
+{text:"n",url:"namespacemembers_type.html#index_n"},
 {text:"p",url:"namespacemembers_type.html#index_p"},
 {text:"r",url:"namespacemembers_type.html#index_r"},
 {text:"t",url:"namespacemembers_type.html#index_t"},
