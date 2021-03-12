@@ -80,7 +80,7 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5132aad64609e805be6bd7fe440396f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1AsyncArray.html#a5132aad64609e805be6bd7fe440396f6">AsyncArray</a> (T const *h_p, const std::size_t n)</td></tr>
 <tr class="separator:a5132aad64609e805be6bd7fe440396f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a293682071d4e5741d0229e7b75f8a8e2"><td class="memTemplParams" colspan="2">template&lt;typename U  = T, typename std::enable_if&lt; std::is_pod&lt; U &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:a293682071d4e5741d0229e7b75f8a8e2"><td class="memTemplParams" colspan="2">template&lt;typename U  = T, typename std::enable_if&lt; std::is_standard_layout&lt; U &gt;::value &amp;&amp;std::is_trivial&lt; U &gt;::value, int &gt;::type  = 0&gt; </td></tr>
 <tr class="memitem:a293682071d4e5741d0229e7b75f8a8e2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1AsyncArray.html#a293682071d4e5741d0229e7b75f8a8e2">AsyncArray</a> (const std::size_t n)</td></tr>
 <tr class="separator:a293682071d4e5741d0229e7b75f8a8e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b729323da571ece4ca18364dcd2d8d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Gpu_1_1AsyncArray.html#a2b729323da571ece4ca18364dcd2d8d8">~AsyncArray</a> ()</td></tr>
@@ -156,7 +156,7 @@ template&lt;typename T , typename std::enable_if&lt; AMREX_IS_TRIVIALLY_COPYABLE
 <div class="memtemplate">
 template&lt;typename T , typename std::enable_if&lt; AMREX_IS_TRIVIALLY_COPYABLE(T), int &gt;::type  = 0&gt; </div>
 <div class="memtemplate">
-template&lt;typename U  = T, typename std::enable_if&lt; std::is_pod&lt; U &gt;::value, int &gt;::type  = 0&gt; </div>
+template&lt;typename U  = T, typename std::enable_if&lt; std::is_standard_layout&lt; U &gt;::value &amp;&amp;std::is_trivial&lt; U &gt;::value, int &gt;::type  = 0&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
