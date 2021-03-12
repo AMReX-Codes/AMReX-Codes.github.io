@@ -150,7 +150,7 @@ var searchData=
   ['plot_5fper_5157',['plot_per',['../classamrex_1_1Amr.html#af097e0455a9da7e8e6a9dc131d1b96f2',1,'amrex::Amr']]],
   ['plotfiledata_5158',['PlotFileData',['../classamrex_1_1PlotFileData.html',1,'amrex::PlotFileData'],['../classamrex_1_1PlotFileData.html#a6006d7b7736ddff7fda093ec7a633570',1,'amrex::PlotFileData::PlotFileData()']]],
   ['plotfiledataimpl_5159',['PlotFileDataImpl',['../classamrex_1_1PlotFileDataImpl.html',1,'amrex::PlotFileDataImpl'],['../classamrex_1_1PlotFileDataImpl.html#a77e164e48c0363b8f87c3879a509ad23',1,'amrex::PlotFileDataImpl::PlotFileDataImpl()']]],
-  ['plotfileversion_5160',['plotFileVersion',['../classamrex_1_1AmrData.html#a0355e0d8aae31aeef78ea04e30b59fc2',1,'amrex::AmrData::plotFileVersion()'],['../classamrex_1_1AmrData.html#a26d68fe71e20c27310e8ce80c4988c43',1,'amrex::AmrData::PlotFileVersion() const']]],
+  ['plotfileversion_5160',['PlotFileVersion',['../classamrex_1_1AmrData.html#a26d68fe71e20c27310e8ce80c4988c43',1,'amrex::AmrData::PlotFileVersion() const'],['../classamrex_1_1AmrData.html#a0355e0d8aae31aeef78ea04e30b59fc2',1,'amrex::AmrData::plotFileVersion()']]],
   ['plotint_5161',['plotInt',['../classamrex_1_1Amr.html#a6b328e1464fc914bea4ea6da8a067c57',1,'amrex::Amr']]],
   ['plotlogper_5162',['plotLogPer',['../classamrex_1_1Amr.html#a3a98ce23547463e17b55901b8818f0fc',1,'amrex::Amr']]],
   ['plotper_5163',['plotPer',['../classamrex_1_1Amr.html#a5a931bcdf3440fa41801f73a87f417ef',1,'amrex::Amr']]],
