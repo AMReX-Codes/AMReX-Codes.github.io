@@ -482,7 +482,7 @@ $(function() {
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( apx(i,j,k) == 1 &amp;&amp; (cvol(i,j,k) == 1 &amp;&amp; cvol(i-1,j,k) == 1) )</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;      {</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;          edg_x(i,j,k,n) = 0.5 * ( phi(i,j,k,n) + phi(i-1,j,k,n) );</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;      } </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;      }</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apx(i,j,k) == 1 &amp;&amp; (<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(ccent(i,j,k,1)-ccent(i-1,j,k,1)) &lt; 1.e-8) )</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;      {</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;          Real d0 = 0.5 + ccent(i  ,j,k,0);                               <span class="comment">// distance in x-dir from centroid(i  ,j) to face(i,j)</span></div>
@@ -490,8 +490,8 @@ $(function() {
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;          Real a0 = d1 / (d0 + d1);                                       <span class="comment">// coefficient of phi(i  ,j,k,n)</span></div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;          Real a1 = d0 / (d0 + d1);                                       <span class="comment">// coefficient of phi(i-1,j,k,n)</span></div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;          edg_x(i,j,k,n) = a0*phi(i,j,k,n) + a1*phi(i-1,j,k,n);           <span class="comment">// interpolation of phi in x-direction</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      } </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;      <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;      }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;      {</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;          <span class="keywordtype">int</span> ii = i - 1;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;          <span class="keywordtype">int</span> jj;</div>
@@ -523,8 +523,8 @@ $(function() {
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;          Real phi01_jj = a0_jj *   phi(i,jj,k,n)  + a1_jj *   phi(ii,jj,k,n); <span class="comment">// interpolation of phi   in x-direction</span></div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;          Real y01_jj   = a0_jj * ccent(i,jj,k,1)  + a1_jj * ccent(ii,jj,k,1); <span class="comment">// interpolation of y-loc in x-direction</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;          </div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;          edg_x(i,j,k,n) = ( (     fcx(i,j,k) - y01   ) * phi01_jj + </div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;          edg_x(i,j,k,n) = ( (     fcx(i,j,k) - y01   ) * phi01_jj +</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                             (1. - fcx(i,j,k) + y01_jj) * phi01    ) / (1. - y01 + y01_jj);</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;      }</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;  });</div>
@@ -569,8 +569,8 @@ $(function() {
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;          Real a0 = d1 / (d0 + d1);                                        <span class="comment">// coefficient of phi(i,j  ,k,n)</span></div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;          Real a1 = d0 / (d0 + d1);                                        <span class="comment">// coefficient of phi(i,j-1,k,n)</span></div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;          edg_y(i,j,k,n) = a0*phi(i,j,k,n) + a1*phi(i,j-1,k,n);            <span class="comment">// interpolation of phi in y-direction</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;      } </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;      <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;      }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;      <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;      {</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;          <span class="keywordtype">int</span> jj = j - 1;</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;          <span class="keywordtype">int</span> ii;</div>
@@ -604,8 +604,8 @@ $(function() {
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;          Real phi01_ii = a0_ii *   phi(ii,j,k,n)  + a1_ii *   phi(ii,jj,k,n); <span class="comment">// interpolation of phi   in y-direction</span></div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;          Real x01_ii   = a0_ii * ccent(ii,j,k,0)  + a1_ii * ccent(ii,jj,k,0); <span class="comment">// interpolation of x-loc in y-direction</span></div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;          </div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;          edg_y(i,j,k,n) = ( (     fcy(i,j,k) - x01   ) * phi01_ii + </div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;          edg_y(i,j,k,n) = ( (     fcy(i,j,k) - x01   ) * phi01_ii +</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                             (1. - fcy(i,j,k) + x01_ii) * phi01    ) / (1. - x01 + x01_ii);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        }</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    });</div>
@@ -634,7 +634,7 @@ $(function() {
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        {</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;          edg_x(i,j,k,n) = 0.5 * ( phi(i,j,k,n) + phi(i-1,j,k,n) );</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        } </div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        }</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    });</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;}</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>

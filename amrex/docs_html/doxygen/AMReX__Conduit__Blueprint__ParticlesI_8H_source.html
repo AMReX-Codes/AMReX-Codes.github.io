@@ -263,7 +263,7 @@ $(function() {
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">// Converts a AMReX Particle Container into a Conduit Mesh Blueprint Hierarchy.</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//---------------------------------------------------------------------------//</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NStructReal, <span class="keywordtype">int</span> NStructInt, <span class="keywordtype">int</span> NArrayReal, <span class="keywordtype">int</span> NArrayInt&gt;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">void</span> </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="namespaceamrex.html#acbd817ae9ca1a59105be27f3bcc2d1fd">  198</a></span>&#160;<a class="code" href="namespaceamrex.html#acbd817ae9ca1a59105be27f3bcc2d1fd">ParticleContainerToBlueprint</a>(<span class="keyword">const</span> <a class="code" href="classamrex_1_1ParticleContainer.html">ParticleContainer</a>&lt;NStructReal,</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                     NStructInt,</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                                     NArrayReal,</div>
@@ -274,7 +274,7 @@ $(function() {
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                             <span class="keyword">const</span> std::string &amp;topology_name)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;ParticleContainerToBlueprint()&quot;</span>);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// validate varnames, which are used to provide field names</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// for user defined aos and soa values.</span></div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
@@ -288,7 +288,7 @@ $(function() {
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">int</span> rank   = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>();</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">int</span> nprocs = <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#aa191723b5d24ceaf64e9d49f542cfcc2">ParallelDescriptor::NProcs</a>();</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keyword">using</span> MyParConstIter = <a class="code" href="classamrex_1_1ParConstIter.html">ParConstIter&lt;NStructReal, NStructInt, NArrayReal, NArrayInt&gt;</a>;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">//</span></div>
@@ -299,7 +299,7 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// to generate unique domain ids, we use a counting loop to</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// calculate a per-level, per-rank offset</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// this holds our unique offset for each level for the current rank</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    std::vector&lt;int&gt; my_lvl_offsets;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    my_lvl_offsets.resize(num_levels);</div>
@@ -311,7 +311,7 @@ $(function() {
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    within_lvl_offsets.resize(nprocs);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordtype">int</span> total_num_domains = 0;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; num_levels; ++lev) </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; num_levels; ++lev)</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    {</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="comment">// count how many tiles this mpi task has</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordtype">long</span> level_num_domains = 0;</div>
@@ -326,13 +326,13 @@ $(function() {
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            within_lvl_counts[rank_idx]  = 0;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            within_lvl_offsets[rank_idx] = 0;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// set number of domains for current rank at current level</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        within_lvl_counts[rank] = level_num_domains;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">// mpi sum reduce to get all rank&#39;s counts for this level</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a132abb9498b1ed2f491583c1f7719afb">ParallelDescriptor::ReduceIntSum</a>(&amp;within_lvl_counts[0],</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                         nprocs);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordtype">long</span> level_total_num_domains = 0;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="comment">// scan to calc offset and total number of domains</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> rank_idx = 0; rank_idx &lt; nprocs ; rank_idx++)</div>
@@ -341,14 +341,14 @@ $(function() {
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            level_total_num_domains += within_lvl_counts[rank_idx];</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">// the offset for this rank at this level is the current </span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="comment">// the offset for this rank at this level is the current</span></div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="comment">// total number of domains + the offset for this level</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        my_lvl_offsets[lev] = within_lvl_offsets[rank] + total_num_domains;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        total_num_domains += level_num_domains;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; num_levels; ++lev) </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; num_levels; ++lev)</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="comment">// get our unique global offset for this rank at this level</span></div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordtype">int</span> lvl_offset = my_lvl_offsets[lev];</div>
@@ -377,7 +377,7 @@ $(function() {
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    conduit::Node info;</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// blueprint verify makes sure we conform to whats expected</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// for a multi-domain mesh </span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// for a multi-domain mesh</span></div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">if</span>(!conduit::blueprint::mesh::verify(res,info))</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    {</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">// ERROR -- doesn&#39;t conform to the mesh blueprint</span></div>

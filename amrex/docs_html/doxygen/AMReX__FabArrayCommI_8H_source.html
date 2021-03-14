@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classamrex_1_1FabArray.html#a0e0073142d1598838048317216fa6d12">    8</a></span>&#160;<a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::FBEP_nowait</a> (<span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp, <span class="keyword">const</span> <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>&amp; nghost,</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Periodicity.html">Periodicity</a>&amp; period, <span class="keywordtype">bool</span> cross,</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                <span class="keywordtype">bool</span> enforce_periodicity_only)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                            <span class="keywordtype">bool</span> enforce_periodicity_only)</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    fb_cross = cross;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    fb_epo   = enforce_periodicity_only;</div>
@@ -91,9 +91,9 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> work_to_do;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (enforce_periodicity_only) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    work_to_do = period.<a class="code" href="classamrex_1_1Periodicity.html#a6f3139a13faee557751404e44ab09042">isAnyPeriodic</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        work_to_do = period.<a class="code" href="classamrex_1_1Periodicity.html#a6f3139a13faee557751404e44ab09042">isAnyPeriodic</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    work_to_do = nghost.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>() &gt; 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        work_to_do = nghost.<a class="code" href="classamrex_1_1IntVect.html#afc4d5734d3a85d47e406637bfdc4573d">max</a>() &gt; 0;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (!work_to_do) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
@@ -104,7 +104,7 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// There can only be local work to do.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> N_locs = (*TheFB.m_LocTags).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> N_locs = (*TheFB.m_LocTags).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
@@ -220,7 +220,7 @@ $(function() {
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            FB_local_copy_cpu(TheFB, scomp, ncomp);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        FillBoundary_test();</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
@@ -248,7 +248,7 @@ $(function() {
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">if</span> (N_rcvs &gt; 0)</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;const CopyComTagsContainer*&gt;</a> recv_cctc(N_rcvs,<span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; k++) </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; N_rcvs; k++)</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="keywordflow">if</span> (fb_recv_size[k] &gt; 0)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            {</div>
@@ -368,7 +368,7 @@ $(function() {
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span> ((src.boxArray().ixType().cellCentered() || op == FabArrayBase::COPY) &amp;&amp;</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        (boxarray == src.boxarray &amp;&amp; distributionMap == src.distributionMap) &amp;&amp;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    snghost == IntVect::TheZeroVector() &amp;&amp;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        snghost == IntVect::TheZeroVector() &amp;&amp;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        dnghost == IntVect::TheZeroVector() &amp;&amp;</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        !period.isAnyPeriodic())</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    {</div>
@@ -385,21 +385,21 @@ $(function() {
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="keyword">const</span> Box&amp; bx = fai.tilebox();</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="comment">// avoid self copy or plus</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;src) {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;src) {</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span> sfab = src.array(fai);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="keyword">auto</span>       dfab = this-&gt;array(fai);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (op == FabArrayBase::COPY) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordflow">if</span> (op == FabArrayBase::COPY) {</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <a class="code" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    {</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        dfab(i,j,k,dcomp+n) = sfab(i,j,k,scomp+n);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                    });</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                    <a class="code" href="AMReX__GpuLaunch_8H.html#afd60f7bb161794f08fe97f8f36e1f52d">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</a> ( bx, ncomp, i, j, k, n,</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    {</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                        dfab(i,j,k,dcomp+n) += sfab(i,j,k,scomp+n);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    });</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            }</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        }</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        pc_finished = <span class="keyword">true</span>;</div>
@@ -414,7 +414,7 @@ $(function() {
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="comment">// There can only be local work to do.</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordtype">int</span> N_locs = (*thecpc.m_LocTags).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keywordtype">int</span> N_locs = (*thecpc.m_LocTags).<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>();</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">if</span> (N_locs == 0) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
@@ -473,22 +473,22 @@ $(function() {
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        pc_the_recv_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        pc_actual_n_rcvs = 0;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">if</span> (N_rcvs &gt; 0) {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">if</span> (N_rcvs &gt; 0) {</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            PostRcvs(*thecpc.m_RcvTags, pc_the_recv_data,</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                     pc_recv_data, pc_recv_size, pc_recv_from, pc_recv_reqs, pc_NC, pc_tag);</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            pc_actual_n_rcvs = N_rcvs - std::count(pc_recv_size.begin(), pc_recv_size.end(), 0);</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">// Post send&#39;s</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    Vector&lt;char*&gt;                       send_data;</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    Vector&lt;std::size_t&gt;                 send_size;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    Vector&lt;int&gt;                         send_rank;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    Vector&lt;const CopyComTagsContainer*&gt; send_cctc;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="comment">// Post send&#39;s</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        Vector&lt;char*&gt;                       send_data;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        Vector&lt;std::size_t&gt;                 send_size;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        Vector&lt;int&gt;                         send_rank;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        Vector&lt;const CopyComTagsContainer*&gt; send_cctc;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordflow">if</span> (N_snds &gt; 0)</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">if</span> (N_snds &gt; 0)</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            src.PrepareSendBuffers(*thecpc.m_SndTags, pc_the_send_data, send_data, send_size,</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                                   send_rank, pc_send_reqs, send_cctc, pc_NC);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
@@ -505,13 +505,13 @@ $(function() {
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(pc_send_reqs.size() == N_snds);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            FabArray&lt;FAB&gt;::PostSnds(send_data, send_size, send_rank, pc_send_reqs, pc_tag);</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        }</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="comment">// Do the local work.  Hope for a bit of communication/computation overlap.</span></div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">if</span> (N_locs &gt; 0)</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        {</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1Gpu.html#a7a05369cacb826ba5546b4dd507c49dd">Gpu::inLaunchRegion</a>())</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            {</div>
@@ -605,7 +605,7 @@ $(function() {
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <span class="keywordflow">if</span> (! thecpc.m_SndTags-&gt;empty()) {</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            <a class="code" href="classamrex_1_1Vector.html">Vector&lt;MPI_Status&gt;</a> stats(pc_send_reqs.size());</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a63d04588d41cd108e9255c231e2562d9">ParallelDescriptor::Waitall</a>(pc_send_reqs, stats);</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    }</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        }</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <a class="code" href="namespaceamrex.html#ad2ec28e533d93f8d4103d67a4402f00b">amrex::The_FA_Arena</a>()-&gt;<a class="code" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">free</a>(pc_the_send_data);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        pc_the_send_data = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    }</div>
@@ -618,11 +618,11 @@ $(function() {
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> FAB&gt;</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;<a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;::copyTo</a> (<a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp;       dest,</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;               <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; subbox,</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;               <span class="keywordtype">int</span>        scomp,</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;               <span class="keywordtype">int</span>        dcomp,</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;               <span class="keywordtype">int</span>        ncomp,</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;               <span class="keywordtype">int</span>        nghost)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                       <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; subbox,</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                       <span class="keywordtype">int</span>        scomp,</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                       <span class="keywordtype">int</span>        dcomp,</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                       <span class="keywordtype">int</span>        ncomp,</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                       <span class="keywordtype">int</span>        nghost)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FabArray::copy(fab)&quot;</span>);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
@@ -633,9 +633,9 @@ $(function() {
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    {</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0, N = <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>(); j &lt; N; ++j)</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        {</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(boxarray[j],nghost);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; destbox = bx &amp; subbox;</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        <span class="keywordflow">if</span> (destbox.<a class="code" href="classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97">ok</a>())</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(boxarray[j],nghost);</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; destbox = bx &amp; subbox;</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <span class="keywordflow">if</span> (destbox.<a class="code" href="classamrex_1_1Box.html#a615de7e44f8ba7f007be244af31b5a97">ok</a>())</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            {</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                dest.template copy&lt;RunOn::Host&gt;(<a class="code" href="namespaceamrex.html#a55b45d61c6e18c31d787042cf9169385">get</a>(j),destbox,scomp,destbox,dcomp,ncomp);</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            }</div>
@@ -649,10 +649,10 @@ $(function() {
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="preprocessor">#ifdef AMREX_DEBUG</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    {</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    BoxCommHelper bch(subbox);  </div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9e67de311d5153ce34e743c7792de733">ParallelDescriptor::Bcast</a>(bch.data(), bch.size(), 0, <a class="code" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keyword">const</span> Box&amp; bx0 = bch.make_box();</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(subbox == bx0);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        BoxCommHelper bch(subbox);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9e67de311d5153ce34e743c7792de733">ParallelDescriptor::Bcast</a>(bch.data(), bch.size(), 0, <a class="code" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <span class="keyword">const</span> Box&amp; bx0 = bch.make_box();</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(subbox == bx0);</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    }</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
@@ -663,23 +663,23 @@ $(function() {
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0, M = isects.size(); j &lt; M; ++j)</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    {</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>  k  = isects[j].first;</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="keyword">const</span> Box&amp; bx = isects[j].second;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>  k  = isects[j].first;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <span class="keyword">const</span> Box&amp; bx = isects[j].second;</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    ovlp.resize(bx,ncomp);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        ovlp.resize(bx,ncomp);</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>() == distributionMap[k])</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    {</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        ovlp.template copy&lt;RunOn::Host&gt;(<a class="code" href="namespaceamrex.html#a55b45d61c6e18c31d787042cf9169385">get</a>(k),bx,scomp,bx,0,ncomp);</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    }</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>() == distributionMap[k])</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        {</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            ovlp.template copy&lt;RunOn::Host&gt;(<a class="code" href="namespaceamrex.html#a55b45d61c6e18c31d787042cf9169385">get</a>(k),bx,scomp,bx,0,ncomp);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        }</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> N = bx.numPts()*ncomp;</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> N = bx.numPts()*ncomp;</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9e67de311d5153ce34e743c7792de733">ParallelDescriptor::Bcast</a>(ovlp.dataPtr(),N,</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a9e67de311d5153ce34e743c7792de733">ParallelDescriptor::Bcast</a>(ovlp.dataPtr(),N,</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                                  <a class="code" href="namespaceamrex_1_1ParallelContext.html#aa0f73d99c17e1ccedb7f2e66a660f274">ParallelContext::global_to_local_rank</a>(distributionMap[k]),</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                                  <a class="code" href="namespaceamrex_1_1ParallelContext.html#a3735bb2b55dab8f232227611c6d25bb8">ParallelContext::CommunicatorSub</a>());</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    dest.template copy&lt;RunOn::Host&gt;(ovlp,bx,0,bx,dcomp,ncomp);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        dest.template copy&lt;RunOn::Host&gt;(ovlp,bx,0,bx,dcomp,ncomp);</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;}</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>

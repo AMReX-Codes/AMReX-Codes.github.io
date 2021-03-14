@@ -307,7 +307,7 @@ $(function() {
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">if</span> (idir == 2) {</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        Real cl = fine(2*i  ,2*j,k) + fine(2*i  ,2*j+1,k);</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        Real cr = fine(2*i+1,2*j,k) + fine(2*i+1,2*j+1,k);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        crse(i,j,k) = cl*cr/(cl+cr);    </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        crse(i,j,k) = cl*cr/(cl+cr);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idir == 1) {</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        Real cl = fine(2*i  ,j,2*k) + fine(2*i  ,j,2*k+1);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        Real cr = fine(2*i+1,j,2*k) + fine(2*i+1,j,2*k+1);</div>
@@ -1468,23 +1468,23 @@ $(function() {
 <div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;    Array1D&lt;Real,0,31&gt; a_ls,b_ls,c_ls,u_ls,r_ls,gam;</div>
 <div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160; </div>
 <div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160; </div>
-<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    <span class="keywordflow">if</span> ( idir == 2 ) </div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;    <span class="keywordflow">if</span> ( idir == 2 )</div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;    {</div>
-<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) </div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j)</div>
 <div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;        {</div>
 <div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i)</div>
 <div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;            {</div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k)</div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;                {</div>
-<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                    <span class="keywordflow">if</span> (msk(i,j,k)) </div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                    <span class="keywordflow">if</span> (msk(i,j,k))</div>
 <div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;                    {</div>
 <div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;                        a_ls(k-lo.z) = Real(0.);</div>
 <div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;                        b_ls(k-lo.z) = Real(1.);</div>
 <div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;                        c_ls(k-lo.z) = Real(0.);</div>
 <div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;                        u_ls(k-lo.z) = Real(0.);</div>
 <div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;                        r_ls(k-lo.z) = Real(0.);</div>
-<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;                    } </div>
-<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;                    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;                    }</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;                    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;                    {</div>
 <div class="line"><a name="l01418"></a><span class="lineno"> 1418</span>&#160;                        Real s0 = Real(-4.0)*fxyz*(sig(i-1,j-1,k-1)+sig(i,j-1,k-1)+sig(i-1,j,k-1)+sig(i,j,k-1)</div>
 <div class="line"><a name="l01419"></a><span class="lineno"> 1419</span>&#160;                                                 + sig(i-1,j-1,k  )+sig(i,j-1,k  )+sig(i-1,j,k  )+sig(i,j,k  ));</div>
@@ -1524,7 +1524,7 @@ $(function() {
 <div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;                <a class="code" href="namespaceamrex.html#a018951602c1fef6c43136b743a0a3a2a">tridiagonal_solve</a>(a_ls, b_ls, c_ls, r_ls, u_ls, gam, ilen);</div>
 <div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160; </div>
 <div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo.z; k &lt;= hi.z; ++k)</div>
-<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;                {  </div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;                {</div>
 <div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;                    sol(i,j,k) = u_ls(k-lo.z);</div>
 <div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;                }</div>
 <div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;            }</div>
@@ -1544,7 +1544,7 @@ $(function() {
 <div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;                        c_ls(j-lo.y) = Real(0.);</div>
 <div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;                        u_ls(j-lo.y) = Real(0.);</div>
 <div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;                        r_ls(j-lo.y) = Real(0.);</div>
-<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;                    } </div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;                    }</div>
 <div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;                    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;                    {</div>
 <div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;                        Real s0 = Real(-4.0)*fxyz*(sig(i-1,j-1,k-1)+sig(i,j-1,k-1)+sig(i-1,j,k-1)+sig(i,j,k-1)</div>
@@ -1591,8 +1591,8 @@ $(function() {
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;                }</div>
 <div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;            }</div>
 <div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;        }</div>
-<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;    } </div>
-<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idir == 0) </div>
+<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;    }</div>
+<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idir == 0)</div>
 <div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;    {</div>
 <div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j)</div>
 <div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;        {</div>
@@ -1600,7 +1600,7 @@ $(function() {
 <div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;            {</div>
 <div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i)</div>
 <div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160;                {</div>
-<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;                    <span class="keywordflow">if</span> (msk(i,j,k)) </div>
+<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;                    <span class="keywordflow">if</span> (msk(i,j,k))</div>
 <div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;                    {</div>
 <div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;                        a_ls(i-lo.x) = Real(0.);</div>
 <div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;                        b_ls(i-lo.x) = Real(1.);</div>
@@ -1653,11 +1653,11 @@ $(function() {
 <div class="line"><a name="l01582"></a><span class="lineno"> 1582</span>&#160;                }</div>
 <div class="line"><a name="l01583"></a><span class="lineno"> 1583</span>&#160;            }</div>
 <div class="line"><a name="l01584"></a><span class="lineno"> 1584</span>&#160;        }</div>
-<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;    } </div>
+<div class="line"><a name="l01585"></a><span class="lineno"> 1585</span>&#160;    }</div>
 <div class="line"><a name="l01586"></a><span class="lineno"> 1586</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01587"></a><span class="lineno"> 1587</span>&#160;    {</div>
-<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;mlndlap_gauss_seidel_with_line_solve_aa is wrong direction.&quot;</span>);    </div>
-<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;    } </div>
+<div class="line"><a name="l01588"></a><span class="lineno"> 1588</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;mlndlap_gauss_seidel_with_line_solve_aa is wrong direction.&quot;</span>);</div>
+<div class="line"><a name="l01589"></a><span class="lineno"> 1589</span>&#160;    }</div>
 <div class="line"><a name="l01590"></a><span class="lineno"> 1590</span>&#160;}</div>
 <div class="line"><a name="l01591"></a><span class="lineno"> 1591</span>&#160; </div>
 <div class="line"><a name="l01592"></a><span class="lineno"> 1592</span>&#160;<span class="comment">//</span></div>
@@ -1747,27 +1747,27 @@ $(function() {
 <div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a739c61caa42304fdafed256192d5b3ae">mlndlap_semi_restriction</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; crse,</div>
 <div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;                               Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; fine, Array4&lt;int const&gt; <span class="keyword">const</span>&amp; msk, <span class="keywordtype">int</span> idir) noexcept</div>
 <div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;{</div>
-<div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;    <span class="keywordflow">if</span> (idir == 2) </div>
+<div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160;    <span class="keywordflow">if</span> (idir == 2)</div>
 <div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;    {</div>
 <div class="line"><a name="l01681"></a><span class="lineno"> 1681</span>&#160;        <span class="keywordtype">int</span> ii = i*2;</div>
 <div class="line"><a name="l01682"></a><span class="lineno"> 1682</span>&#160;        <span class="keywordtype">int</span> jj = j*2;</div>
 <div class="line"><a name="l01683"></a><span class="lineno"> 1683</span>&#160;        <span class="keywordtype">int</span> kk = k;</div>
 <div class="line"><a name="l01684"></a><span class="lineno"> 1684</span>&#160;        <span class="keywordflow">if</span> (msk(ii,jj,kk)) {</div>
 <div class="line"><a name="l01685"></a><span class="lineno"> 1685</span>&#160;            crse(i,j,k) = Real(0.0);</div>
-<div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// use 2-D formula </span></div>
+<div class="line"><a name="l01686"></a><span class="lineno"> 1686</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// use 2-D formula</span></div>
 <div class="line"><a name="l01687"></a><span class="lineno"> 1687</span>&#160;            crse(i,j,k) = Real(1./16.)*(fine(ii-1,jj-1,kk) + Real(2.)*fine(ii  ,jj-1,kk) +          fine(ii+1,jj-1,kk)</div>
 <div class="line"><a name="l01688"></a><span class="lineno"> 1688</span>&#160;                             + Real(2.)*fine(ii-1,jj  ,kk) + Real(4.)*fine(ii  ,jj  ,kk) + Real(2.)*fine(ii+1,jj  ,kk)</div>
 <div class="line"><a name="l01689"></a><span class="lineno"> 1689</span>&#160;                                      + fine(ii-1,jj+1,kk) + Real(2.)*fine(ii  ,jj+1,kk) +          fine(ii+1,jj+1,kk));</div>
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;        }</div>
-<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;    } </div>
-<div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idir == 1) </div>
+<div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;    }</div>
+<div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idir == 1)</div>
 <div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;    {</div>
 <div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;        <span class="keywordtype">int</span> ii = i*2;</div>
 <div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;        <span class="keywordtype">int</span> jj = j;</div>
 <div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;        <span class="keywordtype">int</span> kk = k*2;</div>
 <div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160;        <span class="keywordflow">if</span> (msk(ii,jj,kk)) {</div>
 <div class="line"><a name="l01698"></a><span class="lineno"> 1698</span>&#160;            crse(i,j,k) = Real(0.0);</div>
-<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// use 2-D formula </span></div>
+<div class="line"><a name="l01699"></a><span class="lineno"> 1699</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// use 2-D formula</span></div>
 <div class="line"><a name="l01700"></a><span class="lineno"> 1700</span>&#160;            crse(i,j,k) = Real(1./16.)*(fine(ii-1,jj,kk-1) + Real(2.)*fine(ii  ,jj,kk-1) +          fine(ii+1,jj,kk-1)</div>
 <div class="line"><a name="l01701"></a><span class="lineno"> 1701</span>&#160;                             + Real(2.)*fine(ii-1,jj  ,kk) + Real(4.)*fine(ii  ,jj,kk  ) + Real(2.)*fine(ii+1,jj,kk  )</div>
 <div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;                                      + fine(ii-1,jj,kk+1) + Real(2.)*fine(ii  ,jj,kk+1) +          fine(ii+1,jj,kk+1));</div>
@@ -1780,13 +1780,13 @@ $(function() {
 <div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;        <span class="keywordtype">int</span> kk = k*2;</div>
 <div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;        <span class="keywordflow">if</span> (msk(ii,jj,kk)) {</div>
 <div class="line"><a name="l01711"></a><span class="lineno"> 1711</span>&#160;            crse(i,j,k) = Real(0.0);</div>
-<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// use 2-D formula </span></div>
+<div class="line"><a name="l01712"></a><span class="lineno"> 1712</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// use 2-D formula</span></div>
 <div class="line"><a name="l01713"></a><span class="lineno"> 1713</span>&#160;            crse(i,j,k) = Real(1./16.)*(fine(ii,jj-1,kk-1) + Real(2.)*fine(ii  ,jj,kk-1) +          fine(ii,jj+1,kk-1)</div>
 <div class="line"><a name="l01714"></a><span class="lineno"> 1714</span>&#160;                             + Real(2.)*fine(ii,jj-1  ,kk) + Real(4.)*fine(ii  ,jj,kk  ) + Real(2.)*fine(ii,jj+1,kk  )</div>
 <div class="line"><a name="l01715"></a><span class="lineno"> 1715</span>&#160;                                      + fine(ii,jj-1,kk+1) + Real(2.)*fine(ii  ,jj,kk+1) +          fine(ii,jj+1,kk+1));</div>
 <div class="line"><a name="l01716"></a><span class="lineno"> 1716</span>&#160;        }</div>
 <div class="line"><a name="l01717"></a><span class="lineno"> 1717</span>&#160;    }</div>
-<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l01718"></a><span class="lineno"> 1718</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l01719"></a><span class="lineno"> 1719</span>&#160;    {</div>
 <div class="line"><a name="l01720"></a><span class="lineno"> 1720</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;mlndlap_semi_restriction semi direction wrong semi-direction. &quot;</span>);</div>
 <div class="line"><a name="l01721"></a><span class="lineno"> 1721</span>&#160;    }</div>
@@ -1975,7 +1975,7 @@ $(function() {
 <div class="line"><a name="l01904"></a><span class="lineno"> 1904</span>&#160;                           Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; crse, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; sig,</div>
 <div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160;                           Array4&lt;int const&gt; <span class="keyword">const</span>&amp; msk, <span class="keywordtype">int</span> idir) noexcept</div>
 <div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;{</div>
-<div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;    <span class="keywordflow">if</span> (idir == 2 ) </div>
+<div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;    <span class="keywordflow">if</span> (idir == 2 )</div>
 <div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;    {</div>
 <div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;        <span class="keywordflow">if</span> (!msk(i,j,k)) {</div>
 <div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;            <span class="keywordtype">int</span> ic = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(i,2);</div>
@@ -1994,10 +1994,10 @@ $(function() {
 <div class="line"><a name="l01923"></a><span class="lineno"> 1923</span>&#160;                <span class="comment">// Node on Y line</span></div>
 <div class="line"><a name="l01924"></a><span class="lineno"> 1924</span>&#160;                fine(i,j,k) += aa_interp_line_y(crse,sig,i,j,k,ic,jc,kc);</div>
 <div class="line"><a name="l01925"></a><span class="lineno"> 1925</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01926"></a><span class="lineno"> 1926</span>&#160;                <span class="comment">// Node coincident with coarse node </span></div>
+<div class="line"><a name="l01926"></a><span class="lineno"> 1926</span>&#160;                <span class="comment">// Node coincident with coarse node</span></div>
 <div class="line"><a name="l01927"></a><span class="lineno"> 1927</span>&#160;                fine(i,j,k) += crse(ic,jc,kc);</div>
 <div class="line"><a name="l01928"></a><span class="lineno"> 1928</span>&#160;            }</div>
-<div class="line"><a name="l01929"></a><span class="lineno"> 1929</span>&#160;    }</div>
+<div class="line"><a name="l01929"></a><span class="lineno"> 1929</span>&#160;        }</div>
 <div class="line"><a name="l01930"></a><span class="lineno"> 1930</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idir ==1 ){</div>
 <div class="line"><a name="l01931"></a><span class="lineno"> 1931</span>&#160;        <span class="keywordflow">if</span> (!msk(i,j,k)) {</div>
 <div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160;            <span class="keywordtype">int</span> ic = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(i,2);</div>
@@ -2008,7 +2008,7 @@ $(function() {
 <div class="line"><a name="l01937"></a><span class="lineno"> 1937</span>&#160; </div>
 <div class="line"><a name="l01938"></a><span class="lineno"> 1938</span>&#160;            <span class="keywordflow">if</span> (i_is_odd &amp;&amp; k_is_odd) {</div>
 <div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160;                <span class="comment">// Node on a X-Z face</span></div>
-<div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160;            fine(i,j,k) += aa_interp_face_xz(crse,sig,i,j,k,ic,jc,kc);</div>
+<div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160;                fine(i,j,k) += aa_interp_face_xz(crse,sig,i,j,k,ic,jc,kc);</div>
 <div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i_is_odd) {</div>
 <div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160;                <span class="comment">// Node on X line</span></div>
 <div class="line"><a name="l01943"></a><span class="lineno"> 1943</span>&#160;                fine(i,j,k) += aa_interp_line_x(crse,sig,i,j,k,ic,jc,kc);</div>
@@ -2042,7 +2042,7 @@ $(function() {
 <div class="line"><a name="l01971"></a><span class="lineno"> 1971</span>&#160;                fine(i,j,k) += crse(ic,jc,kc);</div>
 <div class="line"><a name="l01972"></a><span class="lineno"> 1972</span>&#160;            }</div>
 <div class="line"><a name="l01973"></a><span class="lineno"> 1973</span>&#160;        }</div>
-<div class="line"><a name="l01974"></a><span class="lineno"> 1974</span>&#160;    } <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l01974"></a><span class="lineno"> 1974</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01975"></a><span class="lineno"> 1975</span>&#160;        <a class="code" href="namespaceamrex.html#ad26f2328bf66aa9678347a6055a25431">amrex::Abort</a>(<span class="stringliteral">&quot;mlndlap_semi_interpolation semi direction wrong semi-direction. &quot;</span>);</div>
 <div class="line"><a name="l01976"></a><span class="lineno"> 1976</span>&#160;    }</div>
 <div class="line"><a name="l01977"></a><span class="lineno"> 1977</span>&#160;}</div>
@@ -6952,7 +6952,7 @@ $(function() {
 <div class="line"><a name="l06881"></a><span class="lineno"> 6881</span>&#160;                                           Real(0.5)*intg(i,j,k,<a class="code" href="namespaceamrex_1_1algoim.html#aa393d743c81287bc86ed10b61b86013d">i_S_z</a>  )*dpp_yz +</div>
 <div class="line"><a name="l06882"></a><span class="lineno"> 6882</span>&#160;                                                     intg(i,j,k,<a class="code" href="namespaceamrex_1_1algoim.html#a319d09e3fac406d5c7435495783c51da">i_S_x_z</a>)*dpp_xyz );</div>
 <div class="line"><a name="l06883"></a><span class="lineno"> 6883</span>&#160;        u(i,j,k,2) -= sig*dxinv[2]*(dpdz + Real(0.5)*intg(i,j,k,<a class="code" href="namespaceamrex_1_1algoim.html#a83f836cfcb795ee2e7cf5f031f4e33a5">i_S_x</a>  )*dpp_xz +</div>
-<div class="line"><a name="l06884"></a><span class="lineno"> 6884</span>&#160;                           Real(0.5)*intg(i,j,k,<a class="code" href="namespaceamrex_1_1algoim.html#a26347d2ffb8ae0e55a261293b75aae80">i_S_y</a>  )*dpp_yz +</div>
+<div class="line"><a name="l06884"></a><span class="lineno"> 6884</span>&#160;                                           Real(0.5)*intg(i,j,k,<a class="code" href="namespaceamrex_1_1algoim.html#a26347d2ffb8ae0e55a261293b75aae80">i_S_y</a>  )*dpp_yz +</div>
 <div class="line"><a name="l06885"></a><span class="lineno"> 6885</span>&#160;                                                     intg(i,j,k,<a class="code" href="namespaceamrex_1_1algoim.html#a1563d162ff7c724b049f407982b9376a">i_S_x_y</a>)*dpp_xyz );</div>
 <div class="line"><a name="l06886"></a><span class="lineno"> 6886</span>&#160;    }</div>
 <div class="line"><a name="l06887"></a><span class="lineno"> 6887</span>&#160;}</div>

@@ -111,16 +111,16 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">struct </span>CallStats {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      CallStats() : callStackDepth(-2), csFNameNumber(-2),</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    nCSCalls(0), totalTime(0.0),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            stackTime(0.0), callTime(0.0)  { }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    stackTime(0.0), callTime(0.0)  { }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      CallStats(<span class="keywordtype">int</span> depth, <span class="keywordtype">int</span> fnamenumber) : callStackDepth(depth),</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                              csFNameNumber(fnamenumber),</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                              nCSCalls(0), totalTime(0.0),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                          stackTime(0.0), callTime(0.0)  { }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                              stackTime(0.0), callTime(0.0)  { }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      CallStats(<span class="keywordtype">int</span> depth, <span class="keywordtype">int</span> fnamenumber, <span class="keywordtype">int</span> ncalls, Real totaltime,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                Real stacktime, Real calltime) : callStackDepth(depth),</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                                 csFNameNumber(fnamenumber),</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                 nCSCalls(ncalls), totalTime(totaltime),</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                             stackTime(stacktime), callTime(calltime)  { }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                 stackTime(stacktime), callTime(calltime)  { }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="keywordtype">int</span> callStackDepth, csFNameNumber;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      Long nCSCalls;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      Real totalTime, stackTime, callTime;</div>
@@ -255,7 +255,7 @@ $(function() {
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> AddCommStat(<span class="keyword">const</span> CommFuncType cft, <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">size</a>,</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span> pid, <span class="keyword">const</span> <span class="keywordtype">int</span> tag);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> AddWait(<span class="keyword">const</span> CommFuncType cft, <span class="keyword">const</span> <a class="code" href="AMReX__ccse-mpi_8H.html#a240e9d13a157e03c75e42306b13cd8d8">MPI_Request</a> &amp;reqs,</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keyword">const</span> <a class="code" href="structMPI__Status.html">MPI_Status</a> &amp;status, <span class="keyword">const</span> <span class="keywordtype">bool</span> bc);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                        <span class="keyword">const</span> <a class="code" href="structMPI__Status.html">MPI_Status</a> &amp;status, <span class="keyword">const</span> <span class="keywordtype">bool</span> bc);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> AddWaitsome(<span class="keyword">const</span> CommFuncType cft, <span class="keyword">const</span> Vector&lt;MPI_Request&gt; &amp;reqs,</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span> completed, <span class="keyword">const</span> Vector&lt;MPI_Status&gt; &amp;status,</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">bool</span> bc);</div>
@@ -392,14 +392,14 @@ $(function() {
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  <span class="keywordtype">void</span> WriteRow(std::ostream &amp;os, <span class="keyword">const</span> std::string &amp;fname,</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="keyword">const</span> BLProfiler::ProfStats &amp;pstats, <span class="keyword">const</span> Real percent,</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> colWidth, <span class="keyword">const</span> Real maxlen,</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> bwriteavg);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> colWidth, <span class="keyword">const</span> Real maxlen,</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> bwriteavg);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  <span class="keywordtype">void</span> WriteStats(std::ostream &amp;os,</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                  <span class="keyword">const</span> std::map&lt;std::string, BLProfiler::ProfStats&gt; &amp;mpStats,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;          <span class="keyword">const</span> std::map&lt;std::string, int&gt; &amp;fnameNumbers,</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;          <span class="keyword">const</span> Vector&lt;BLProfiler::CallStats&gt; &amp;callTraces,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;          <span class="keywordtype">bool</span> bwriteavg = <span class="keyword">false</span>, <span class="keywordtype">bool</span> bwriteinclusivetimes = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                  <span class="keyword">const</span> std::map&lt;std::string, int&gt; &amp;fnameNumbers,</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                  <span class="keyword">const</span> Vector&lt;BLProfiler::CallStats&gt; &amp;callTraces,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                  <span class="keywordtype">bool</span> bwriteavg = <span class="keyword">false</span>, <span class="keywordtype">bool</span> bwriteinclusivetimes = <span class="keyword">false</span>);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>

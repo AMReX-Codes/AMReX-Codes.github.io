@@ -301,7 +301,7 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    Real dhx = beta*dxinv[0]*dxinv[0];</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    Real dhy = beta*dxinv[1]*dxinv[1];</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    Real dhz = beta*dxinv[2]*dxinv[2];</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">bool</span> beta_on_center = !(beta_on_centroid);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">bool</span>  phi_on_center = !( phi_on_centroid);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
@@ -351,7 +351,7 @@ $(function() {
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                               fracz *(1.0-fracy)*(x(i, j,kk,n)-x(i-1, j,kk,n)) +</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                               fracy *     fracz *(x(i,jj,kk,n)-x(i-1,jj,kk,n));</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    fxm *= bX(i,j,k,n);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                } </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                }</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            }</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            Real fxp = bX(i+1,j,k,n)*(x(i+1,j,k,n) - x(i,j,k,n));</div>
@@ -662,7 +662,7 @@ $(function() {
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;            {</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                Real cf0 = (i == vlo.x &amp;&amp; m0(vlo.x-1,j,k) &gt; 0)</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                    ? f0(vlo.x,j,k,n) : 0.0;</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                Real cf1 = (j == vlo.y &amp;&amp; m1(i,vlo.y-1,k) &gt; 0) </div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                Real cf1 = (j == vlo.y &amp;&amp; m1(i,vlo.y-1,k) &gt; 0)</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                    ? f1(i,vlo.y,k,n) : 0.0;</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                Real cf2 = (k == vlo.z &amp;&amp; m2(i,j,vlo.z-1) &gt; 0)</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                    ? f2(i,j,vlo.z,n) : 0.0;</div>
@@ -688,7 +688,7 @@ $(function() {
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                                    bZ(i  ,j  ,k  ,n)*phi(i  ,j  ,k-1,n));</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160; </div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                    Real delta = dhx*(bX(i,j,k,n)*cf0 + bX(i+1,j,k,n)*cf3)</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                        +        dhy*(bY(i,j,k,n)*cf1 + bY(i,j+1,k,n)*cf4) </div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                        +        dhy*(bY(i,j,k,n)*cf1 + bY(i,j+1,k,n)*cf4)</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                        +        dhz*(bZ(i,j,k,n)*cf2 + bZ(i,j,k+1,n)*cf5);</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                    Real res = rhs(i,j,k,n) - (gamma*phi(i,j,k,n) - rho);</div>
@@ -723,7 +723,7 @@ $(function() {
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                        }</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                        {</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                            fxm = (1.0-fracy)*(1.0-fracz)*(              -phi(i-1, j, k,n)) </div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                            fxm = (1.0-fracy)*(1.0-fracz)*(              -phi(i-1, j, k,n))</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                                 +     fracy *(1.0-fracz)*(phi(i,jj,k ,n)-phi(i-1,jj, k,n))</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                                 +(1.0-fracy)*     fracz *(phi(i,j ,kk,n)-phi(i-1, j,kk,n))</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                                 +     fracy *     fracz *(phi(i,jj,kk,n)-phi(i-1,jj,kk,n));</div>
@@ -807,14 +807,14 @@ $(function() {
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                            ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j+1,k,1)) : 0.0;</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                        <span class="keywordflow">if</span> (!beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                        {</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                            fyp = (1.0-fracx)*(1.0-fracz)*fyp </div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                            fyp = (1.0-fracx)*(1.0-fracz)*fyp</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                                +      fracx *(1.0-fracz)*bY(ii,j+1,k ,n)*(phi(ii,j+1,k ,n)-phi(ii,j,k ,n))</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                + (1.0-fracx)*     fracz *bY(i ,j+1,kk,n)*(phi(i ,j+1,kk,n)-phi(i ,j,kk,n))</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                                +      fracx *     fracz *bY(ii,j+1,kk,n)*(phi(ii,j+1,kk,n)-phi(ii,j,kk,n));</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                        }</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                        {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                            fyp = (1.0-fracx)*(1.0-fracz)*(phi( i,j+1, k,n)               ) </div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                            fyp = (1.0-fracx)*(1.0-fracz)*(phi( i,j+1, k,n)               )</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                                +      fracx *(1.0-fracz)*(phi(ii,j+1, k,n)-phi(ii,j, k,n))</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                                + (1.0-fracx)*     fracz *(phi( i,j+1,kk,n)-phi( i,j,kk,n))</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                                +      fracx *     fracz *(phi(ii,j+1,kk,n)-phi(ii,j,kk,n));</div>
@@ -867,7 +867,7 @@ $(function() {
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                            ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcz(i,j,k+1,1)) : 0.0;</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                        <span class="keywordflow">if</span> (!beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                        {</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                            fzp = (1.0-fracx)*(1.0-fracy)*fzp </div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                            fzp = (1.0-fracx)*(1.0-fracy)*fzp</div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                                +      fracx *(1.0-fracy)*bZ(ii,j ,k+1,n)*(phi(ii,j ,k+1,n)-phi(ii,j ,k,n))</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                                + (1.0-fracx)*     fracy *bZ(i ,jj,k+1,n)*(phi(i ,jj,k+1,n)-phi(i ,jj,k,n))</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                                +      fracx *     fracy *bZ(ii,jj,k+1,n)*(phi(ii,jj,k+1,n)-phi(ii,jj,k,n));</div>
@@ -891,14 +891,14 @@ $(function() {
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                         dhy*(apym*sym-apyp*syp) +</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                         dhz*(apzm*szm-apzp*szp));</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                    Real rho = -vfrcinv *  </div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                        (dhx*(apxm*fxm-apxp*fxp) + </div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                         dhy*(apym*fym-apyp*fyp) + </div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                    Real rho = -vfrcinv *</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                        (dhx*(apxm*fxm-apxp*fxp) +</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                         dhy*(apym*fym-apyp*fyp) +</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                         dhz*(apzm*fzm-apzp*fzp));</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                    Real delta = -vfrcinv *  </div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                        (dhx*(apxm*oxm-apxp*oxp) + </div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                         dhy*(apym*oym-apyp*oyp) + </div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                    Real delta = -vfrcinv *</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                        (dhx*(apxm*oxm-apxp*oxp) +</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                         dhy*(apym*oym-apyp*oyp) +</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                         dhz*(apzm*ozm-apzp*ozp));</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                    <span class="keywordflow">if</span> (is_dirichlet) {</div>
@@ -988,7 +988,7 @@ $(function() {
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;                               fracy *(1.0-fracz)*bX(i,jj,k ,n)*(sol(i,jj,k ,n)-sol(i-1,jj,k ,n)) +</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                               fracz *(1.0-fracy)*bX(i,j ,kk,n)*(sol(i,j ,kk,n)-sol(i-1,j ,kk,n)) +</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                               fracy*      fracz *bX(i,jj,kk,n)*(sol(i,jj,kk,n)-sol(i-1,jj,kk,n));</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                } </div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                }</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                {</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                    fxm = (1.0-fracy)*(1.0-fracz)*(sol(i, j, k,n)-sol(i-1, j, k,n)) +</div>
@@ -1032,7 +1032,7 @@ $(function() {
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                               fracx *(1.0-fracz)*bY(ii,j,k ,n)*(sol(ii,j,k ,n)-sol(ii,j-1,k ,n)) +</div>
 <div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                               fracz *(1.0-fracx)*bY(i ,j,kk,n)*(sol(i ,j,kk,n)-sol(i ,j-1,kk,n)) +</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                               fracx *     fracz *bY(ii,j,kk,n)*(sol(ii,j,kk,n)-sol(ii,j-1,kk,n));</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                } </div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                }</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                {</div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                    fym = (1.0-fracx)*(1.0-fracz)*(sol( i,j, k,n)-sol( i,j-1, k,n)) +</div>
@@ -1076,7 +1076,7 @@ $(function() {
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                        fracx*(1.0-fracy)*bZ(ii,j ,k,n)*(sol(ii,j ,k,n)-sol(ii,j ,k-1,n)) +</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;                        fracy*(1.0-fracx)*bZ(i ,jj,k,n)*(sol(i ,jj,k,n)-sol(i ,jj,k-1,n)) +</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;                        fracx*     fracy *bZ(ii,jj,k,n)*(sol(ii,jj,k,n)-sol(ii,jj,k-1,n));</div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;                } </div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;                }</div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (beta_on_centroid &amp;&amp; !phi_on_centroid)</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;                {</div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                    fzm = (1.0-fracx)*(1.0-fracy)*(sol( i, j,k,n)-sol( i, j,k-1,n)) +</div>
@@ -1153,7 +1153,7 @@ $(function() {
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a6d4b0999f5e5f95628d6dde683d92b75">mlebabeclap_grad_x</a> (Box <span class="keyword">const</span>&amp; box, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; gx, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; sol,</div>
 <div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                         Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; apx, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; fcx,</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;                         Array4&lt;int const&gt; <span class="keyword">const</span>&amp; ccm, </div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;                         Array4&lt;int const&gt; <span class="keyword">const</span>&amp; ccm,</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;                         Real dxi, <span class="keywordtype">int</span> ncomp, <span class="keywordtype">bool</span> phi_on_centroid) noexcept</div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;{</div>
 <div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    <a class="code" href="namespaceamrex.html#a0ae2c3cb59e9cd9a180504ebc4d75546">amrex::LoopConcurrent</a>(box, ncomp, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>

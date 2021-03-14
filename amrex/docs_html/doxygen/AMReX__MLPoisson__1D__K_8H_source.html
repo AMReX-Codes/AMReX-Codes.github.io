@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> i = lo.x;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Real re = (probxlo + i*dx) * (probxlo + i*dx);    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Real re = (probxlo + i*dx) * (probxlo + i*dx);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    fx(i,0,0) = dxinv*re*(sol(i,0,0)-sol(i-1,0,0));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    i += xlen;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    re = (probxlo + i*dx) * (probxlo + i*dx);</div>
@@ -258,7 +258,7 @@ $(function() {
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            Real res = rhs(i,0,0) - gamma*phi(i,0,0)</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                - dhx*(rel*phi(i-1,0,0) + rer*phi(i+1,0,0));</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;       </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            phi(i,0,0) = phi(i,0,0) + res /g_m_d;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        }</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>

@@ -88,10 +88,10 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a></div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a85834858fef1f795cc16048cc80025ae">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a85834858fef1f795cc16048cc80025ae">cic_interpolate</a> (<span class="keyword">const</span> P&amp; p,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; plo,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxi,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;              <span class="keyword">const</span> <a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a> &amp;  uccarr,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;              amrex::ParticleReal * val, <span class="keywordtype">int</span> M)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; plo,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxi,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                      <span class="keyword">const</span> <a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a> &amp;  uccarr,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                      amrex::ParticleReal * val, <span class="keywordtype">int</span> M)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(val != <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
@@ -109,7 +109,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        val[d] = ParticleReal(0.0);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii&lt;=1; ++ii)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            val[d] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>(sx[ii]*uccarr(i+ii,0,0,d));</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
@@ -133,9 +133,9 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        val[d] = ParticleReal(0.0);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;          {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;          {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;              {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                  val[d] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>(sx[ii]*sy[jj]*uccarr(i+ii,j+jj,0,d));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;              }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          }</div>
@@ -163,7 +163,7 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        val[d] = ParticleReal(0.0);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk&lt;=1; ++kk)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii)</div>
@@ -179,10 +179,10 @@ $(function() {
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a></div>
 <div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a1fede60bc2018b5d5387ce9d190426ab">  110</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a85834858fef1f795cc16048cc80025ae">cic_interpolate</a> (<span class="keyword">const</span> P&amp; p,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; plo,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxi,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;              <span class="keyword">const</span> <a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a> &amp;  uccarr,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;              amrex::ParticleReal * val)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; plo,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxi,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                      <span class="keyword">const</span> <a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a> &amp;  uccarr,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                      amrex::ParticleReal * val)</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="namespaceamrex.html#a85834858fef1f795cc16048cc80025ae">cic_interpolate</a>(p, plo, dxi, uccarr, val, AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
@@ -190,10 +190,10 @@ $(function() {
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a></div>
 <div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a1bb259a33f78a1488b32451bbf15e909">  121</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a1bb259a33f78a1488b32451bbf15e909">mac_interpolate</a> (<span class="keyword">const</span> P&amp; p,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; plo,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxi,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;              <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray</a>&lt;<a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; p_uccarr,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;              amrex::ParticleReal * val)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; plo,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxi,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                      <a class="code" href="structamrex_1_1GpuArray.html">amrex::GpuArray</a>&lt;<a class="code" href="structamrex_1_1Array4.html">amrex::Array4&lt;amrex::Real const&gt;</a>,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; p_uccarr,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                      amrex::ParticleReal * val)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
@@ -264,11 +264,11 @@ $(function() {
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      val[d] = ParticleReal(0.0);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;=1; ++kk)</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;          {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii)</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;              {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          val[d] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>((p_uccarr[d])(i+ii, j+jj, k+kk ,0)*sx[ii]*sy[jj]*sz[kk]);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                  val[d] += <span class="keyword">static_cast&lt;</span>ParticleReal<span class="keyword">&gt;</span>((p_uccarr[d])(i+ii, j+jj, k+kk ,0)*sx[ii]*sy[jj]*sz[kk]);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;              }</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;          }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      }</div>

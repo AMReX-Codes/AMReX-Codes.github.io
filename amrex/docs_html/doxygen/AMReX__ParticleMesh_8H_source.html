@@ -84,9 +84,9 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a41ca38bddc951482a20d3dd4dfa5e40e">   13</a></span>&#160;<a class="code" href="namespaceamrex.html#a41ca38bddc951482a20d3dd4dfa5e40e">ParticleToMesh</a> (PC <span class="keyword">const</span>&amp; pc, MF&amp; mf, <span class="keywordtype">int</span> lev, F&amp;&amp; f)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;amrex::ParticleToMesh&quot;</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>* mf_pointer = pc.OnSameGrids(lev, mf) ?</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        &amp;mf : <span class="keyword">new</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>(pc.ParticleBoxArray(lev), </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        &amp;mf : <span class="keyword">new</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>(pc.ParticleBoxArray(lev),</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                           pc.ParticleDistributionMap(lev),</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                           mf.nComp(), mf.nGrowVect());</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArray.html#a9235d60131ff0d5f81450896420fe691">setVal</a>(0.);</div>
@@ -101,11 +101,11 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tile = pti.<a class="code" href="classamrex_1_1ParIterBase.html#a118abe9490a5ad60844d3880904c125d">GetParticleTile</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = tile.GetArrayOfStructs();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> pstruct = aos().dataPtr();        </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> pstruct = aos().dataPtr();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = (*mf_pointer)[pti];</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">auto</span> fabarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                f(pstruct[i], fabarr);</div>
@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tile = pti.GetParticleTile();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = tile.GetArrayOfStructs();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> pstruct = aos().<a class="code" href="classamrex_1_1BaseFab.html#a5c99c1592a80ba46ab6faf9929773f8d">dataPtr</a>();        </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> pstruct = aos().<a class="code" href="classamrex_1_1BaseFab.html#a5c99c1592a80ba46ab6faf9929773f8d">dataPtr</a>();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = (*mf_pointer)[pti];</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -134,12 +134,12 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                local_fab.<a class="code" href="classamrex_1_1FArrayBox.html#ae32a072e143825062dac1ee2e9c24f79">resize</a>(tile_box,mf_pointer-&gt;nComp());</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                local_fab.<a class="code" href="classamrex_1_1BaseFab.html#afe4c37ad8df44d218528981fa43bcbe2">setVal</a>&lt;<a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2">RunOn::Host</a>&gt;(0.0);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keyword">auto</span> fabarr = local_fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    f(pstruct[i], fabarr);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                });</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                fab.<a class="code" href="classamrex_1_1BaseFab.html#ac207e54e7824190b984a17f3bbeaa40b">atomicAdd</a>&lt;<a class="code" href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2ac2ca16d048ec66e04bca283eab048ec2">RunOn::Host</a>&gt;(local_fab, tile_box, tile_box, 0, 0, mf_pointer-&gt;nComp());</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
@@ -161,12 +161,12 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;amrex::MeshToParticle&quot;</span>);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>* mf_pointer = pc.OnSameGrids(lev, mf) ?</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const_cast&lt;</span><a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>*<span class="keyword">&gt;</span>(&amp;mf) : <span class="keyword">new</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>(pc.ParticleBoxArray(lev), </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const_cast&lt;</span><a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>*<span class="keyword">&gt;</span>(&amp;mf) : <span class="keyword">new</span> <a class="code" href="classamrex_1_1MultiFab.html">MultiFab</a>(pc.ParticleBoxArray(lev),</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                  pc.ParticleDistributionMap(lev),</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                  mf.nComp(), mf.nGrowVect());</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (mf_pointer != &amp;mf) mf_pointer-&gt;<a class="code" href="classamrex_1_1FabArray.html#ad5437f2b6689074e7e4e2abc25662daa">copy</a>(mf,0,0,mf.nComp(),mf.nGrowVect(),mf.nGrowVect());</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">auto</span>&amp; plevel = pc.GetParticles(lev);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">using</span> <a class="code" href="classamrex_1_1ParIter.html">ParIter</a> = <span class="keyword">typename</span> PC::ParIterType;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
@@ -177,10 +177,10 @@ $(function() {
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">auto</span>&amp; tile = pti.<a class="code" href="classamrex_1_1ParIterBase.html#a118abe9490a5ad60844d3880904c125d">GetParticleTile</a>();</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">auto</span>&amp; aos = tile.GetArrayOfStructs();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">auto</span> pstruct = aos().dataPtr();        </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">auto</span> pstruct = aos().dataPtr();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1FArrayBox.html">FArrayBox</a>&amp; fab = (*mf_pointer)[pti];</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">auto</span> fabarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();        </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">auto</span> fabarr = fab.<a class="code" href="classamrex_1_1BaseFab.html#a757e00b16f837e3d092aeb625a9dfa6a">array</a>();</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="AMReX__GpuLaunch_8H.html#a39a4c246c2c105435c9df228aa98c2a6">AMREX_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>

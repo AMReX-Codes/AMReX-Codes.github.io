@@ -589,7 +589,7 @@ $(function() {
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        }</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    }</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;}</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;  </div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00523"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa74b3da05a93f5e1083d1a40ea371ebb">  523</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#aa74b3da05a93f5e1083d1a40ea371ebb">mltensor_fill_edges</a> (<span class="keywordtype">int</span> iedge, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; vbox, <span class="comment">// vbox: the valid box</span></div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                          <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; vel,</div>
@@ -607,7 +607,7 @@ $(function() {
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                          <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; bcvalzhi,</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                          <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;BoundCond,2*AMREX_SPACEDIM*AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bct,</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                          <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,2*AMREX_SPACEDIM*AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; bcl,</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;              <span class="keywordtype">int</span> inhomog, <span class="keywordtype">int</span> maxorder,</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                          <span class="keywordtype">int</span> inhomog, <span class="keywordtype">int</span> maxorder,</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                          <a class="code" href="structamrex_1_1GpuArray.html">GpuArray&lt;Real,AMREX_SPACEDIM&gt;</a> <span class="keyword">const</span>&amp; dxinv, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; domain) noexcept</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;{</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    constexpr <span class="keywordtype">int</span> oxlo = 0;</div>
@@ -1219,7 +1219,7 @@ $(function() {
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;                fz(i,j,k,2) = -mun*(-twoThirds*divu) - xif*divu;</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;            }</div>
 <div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        }</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    } </div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    }</div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;}</div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160; </div>
 <div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
@@ -1308,19 +1308,19 @@ $(function() {
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;            <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;              </div>
+<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160; </div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;                Real dudx = (vel(i,j,k,0) - vel(i-1,j,k,0))*dxi;</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;                Real dvdx = (vel(i,j,k,1) - vel(i-1,j,k,1))*dxi;</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;                Real dwdx = (vel(i,j,k,2) - vel(i-1,j,k,2))*dxi;</div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;              </div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160; </div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;                Real dudy = (vel(i,j+1,k,0)+vel(i-1,j+1,k,0)-vel(i,j-1,k,0)-vel(i-1,j-1,k,0))*(Real(0.25)*dyi);</div>
 <div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;                Real dvdy = (vel(i,j+1,k,1)+vel(i-1,j+1,k,1)-vel(i,j-1,k,1)-vel(i-1,j-1,k,1))*(Real(0.25)*dyi);</div>
 <div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;                Real dwdy = (vel(i,j+1,k,2)+vel(i-1,j+1,k,2)-vel(i,j-1,k,2)-vel(i-1,j-1,k,2))*(Real(0.25)*dyi);</div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;                </div>
+<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160; </div>
 <div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;                Real dudz = (vel(i,j,k+1,0)+vel(i-1,j,k+1,0)-vel(i,j,k-1,0)-vel(i-1,j,k-1,0))*(Real(0.25)*dzi);</div>
 <div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;                Real dvdz = (vel(i,j,k+1,1)+vel(i-1,j,k+1,1)-vel(i,j,k-1,1)-vel(i-1,j,k-1,1))*(Real(0.25)*dzi);</div>
 <div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;                Real dwdz = (vel(i,j,k+1,2)+vel(i-1,j,k+1,2)-vel(i,j,k-1,2)-vel(i-1,j,k-1,2))*(Real(0.25)*dzi);</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;                </div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160; </div>
 <div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;                fx(i,j,k,0) = dudx;</div>
 <div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;                fx(i,j,k,1) = dvdx;</div>
 <div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;                fx(i,j,k,2) = dwdx;</div>
@@ -1330,7 +1330,7 @@ $(function() {
 <div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;                fx(i,j,k,6) = dudz;</div>
 <div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;                fx(i,j,k,7) = dvdz;</div>
 <div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;                fx(i,j,k,8) = dwdz;</div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;                </div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160; </div>
 <div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;            }</div>
 <div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;        }</div>
 <div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    }</div>
@@ -1351,19 +1351,19 @@ $(function() {
 <div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;            <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;              </div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160; </div>
 <div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;                Real dudx = (vel(i+1,j,k,0)+vel(i+1,j-1,k,0)-vel(i-1,j,k,0)-vel(i-1,j-1,k,0))*(Real(0.25)*dxi);</div>
 <div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;                Real dvdx = (vel(i+1,j,k,1)+vel(i+1,j-1,k,1)-vel(i-1,j,k,1)-vel(i-1,j-1,k,1))*(Real(0.25)*dxi);</div>
 <div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;                Real dwdx = (vel(i+1,j,k,2)+vel(i+1,j-1,k,2)-vel(i-1,j,k,2)-vel(i-1,j-1,k,2))*(Real(0.25)*dxi);</div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;                </div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160; </div>
 <div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;                Real dudy = (vel(i,j,k,0) - vel(i,j-1,k,0))*dyi;</div>
 <div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;                Real dvdy = (vel(i,j,k,1) - vel(i,j-1,k,1))*dyi;</div>
 <div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;                Real dwdy = (vel(i,j,k,2) - vel(i,j-1,k,2))*dyi;</div>
-<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;                </div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160; </div>
 <div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;                Real dudz = (vel(i,j,k+1,0)+vel(i,j-1,k+1,0)-vel(i,j,k-1,0)-vel(i,j-1,k-1,0))*(Real(0.25)*dzi);</div>
 <div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;                Real dvdz = (vel(i,j,k+1,1)+vel(i,j-1,k+1,1)-vel(i,j,k-1,1)-vel(i,j-1,k-1,1))*(Real(0.25)*dzi);</div>
 <div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;                Real dwdz = (vel(i,j,k+1,2)+vel(i,j-1,k+1,2)-vel(i,j,k-1,2)-vel(i,j-1,k-1,2))*(Real(0.25)*dzi);</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;                </div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160; </div>
 <div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;                fy(i,j,k,0) = dudx;</div>
 <div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;                fy(i,j,k,1) = dvdx;</div>
 <div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;                fy(i,j,k,2) = dwdx;</div>
@@ -1394,19 +1394,19 @@ $(function() {
 <div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;        <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;              </div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160; </div>
 <div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                Real dudx = (vel(i+1,j,k,0)+vel(i+1,j,k-1,0)-vel(i-1,j,k,0)-vel(i-1,j,k-1,0))*(Real(0.25)*dxi);</div>
 <div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                Real dvdx = (vel(i+1,j,k,1)+vel(i+1,j,k-1,1)-vel(i-1,j,k,1)-vel(i-1,j,k-1,1))*(Real(0.25)*dxi);</div>
 <div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                Real dwdx = (vel(i+1,j,k,2)+vel(i+1,j,k-1,2)-vel(i-1,j,k,2)-vel(i-1,j,k-1,2))*(Real(0.25)*dxi);</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;                </div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160; </div>
 <div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;                Real dudy = (vel(i,j+1,k,0)+vel(i,j+1,k-1,0)-vel(i,j-1,k,0)-vel(i,j-1,k-1,0))*(Real(0.25)*dyi);</div>
 <div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;                Real dvdy = (vel(i,j+1,k,1)+vel(i,j+1,k-1,1)-vel(i,j-1,k,1)-vel(i,j-1,k-1,1))*(Real(0.25)*dyi);</div>
 <div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;                Real dwdy = (vel(i,j+1,k,2)+vel(i,j+1,k-1,2)-vel(i,j-1,k,2)-vel(i,j-1,k-1,2))*(Real(0.25)*dyi);</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;                </div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160; </div>
 <div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;                Real dudz = (vel(i,j,k,0) - vel(i,j,k-1,0))*dzi;</div>
 <div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;                Real dvdz = (vel(i,j,k,1) - vel(i,j,k-1,1))*dzi;</div>
 <div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;                Real dwdz = (vel(i,j,k,2) - vel(i,j,k-1,2))*dzi;</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;                </div>
+<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160; </div>
 <div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;                fz(i,j,k,0) = dudx;</div>
 <div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;                fz(i,j,k,1) = dvdx;</div>
 <div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;                fz(i,j,k,2) = dwdx;</div>
@@ -1419,7 +1419,7 @@ $(function() {
 <div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160; </div>
 <div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;            }</div>
 <div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;        }</div>
-<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    } </div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;    }</div>
 <div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;}</div>
 <div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160; </div>
 <div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;}</div>

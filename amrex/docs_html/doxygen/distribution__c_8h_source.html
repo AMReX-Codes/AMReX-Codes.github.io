@@ -113,8 +113,8 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> * *****************************************************************************</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *                                DISCLAIMER</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> * THE SOFTWARE IS SUPPLIED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND. NEITHER THE</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * UNITED STATES GOVERNMENT, NOR THE UNITED STATES DEPARTMENT OF ENERGY, NOR </span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * UCHICAGO ARGONNE, LLC, NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY, </span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> * UNITED STATES GOVERNMENT, NOR THE UNITED STATES DEPARTMENT OF ENERGY, NOR</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> * UCHICAGO ARGONNE, LLC, NOR ANY OF THEIR EMPLOYEES, MAKES ANY WARRANTY,</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> * EXPRESS OR IMPLIED, OR ASSUMES ANY LEGAL LIABILITY OR RESPONSIBILITY FOR THE</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> * ACCURARY, COMPLETENESS, OR USEFULNESS OF ANY INFORMATION, DATA, APPARATUS,</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> * PRODUCT, OR PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE</span></div>
@@ -180,12 +180,12 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">//   Ndims  3d process grid (3 element array: x, y, z)</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">//   rmap   pointer to grid-&gt;rank map</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">//   debug  debugging output</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="distribution__c_8h.html#aded4467e42dceba52684818433848ae8">distribution_init</a>(<a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm, </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span> n[], </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="distribution__c_8h.html#aded4467e42dceba52684818433848ae8">distribution_init</a>(<a class="code" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a> comm,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> n[],</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span> Ndims[],</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;               <a class="code" href="structdistribution__t.html">distribution_t</a> *d, </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                       <a class="code" href="structdistribution__t.html">distribution_t</a> *d,</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">int</span>* rmap,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;               <span class="keywordtype">bool</span> debug);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                       <span class="keywordtype">bool</span> debug);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">// create 1-, 2- and 3-d cartesian data distributions with explicitly</span></div>
@@ -243,8 +243,8 @@ $(function() {
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">//   d    distribution descriptor</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="distribution__c_8h.html#afc2e25bc33f0263abbac9ef713b67345">distribution_2_to_3</a>(<span class="keyword">const</span> <a class="code" href="complex-type_8h.html#a1275c0d3f53bdea128eba884da7fb08b">complex_t</a> *a,</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                         <a class="code" href="complex-type_8h.html#a1275c0d3f53bdea128eba884da7fb08b">complex_t</a> *b,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                         <a class="code" href="structdistribution__t.html">distribution_t</a> *d, </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;             <span class="keywordtype">int</span> dim_z);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                         <a class="code" href="structdistribution__t.html">distribution_t</a> *d,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                         <span class="keywordtype">int</span> dim_z);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">// redistribute a 3-d to a 2-d data distribution</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">//   a    input</span></div>
@@ -252,8 +252,8 @@ $(function() {
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">//   d    distribution descriptor</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment"></span><span class="keywordtype">void</span> <a class="code" href="distribution__c_8h.html#acc77f58b1ba7d13fc8665f42c3ba8910">distribution_3_to_2</a>(<span class="keyword">const</span> <a class="code" href="complex-type_8h.html#a1275c0d3f53bdea128eba884da7fb08b">complex_t</a> *a,</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                         <a class="code" href="complex-type_8h.html#a1275c0d3f53bdea128eba884da7fb08b">complex_t</a> *b,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                         <a class="code" href="structdistribution__t.html">distribution_t</a> *d, </div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;             <span class="keywordtype">int</span> dim_z);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                         <a class="code" href="structdistribution__t.html">distribution_t</a> *d,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                         <span class="keywordtype">int</span> dim_z);</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">// Some accessor functions</span></div>

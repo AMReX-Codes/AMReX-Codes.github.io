@@ -252,7 +252,7 @@ $(function() {
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                      <span class="keywordtype">int</span>&gt;::type = 0&gt;</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    MF make_mf_crse_patch (FabArrayBase::FPinfo <span class="keyword">const</span>&amp; fpc, <span class="keywordtype">int</span> ncomp, IndexType idx_type)</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        MF mf_crse_patch(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fpc.ba_crse_patch, idx_type), fpc.dm_patch, </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        MF mf_crse_patch(<a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fpc.ba_crse_patch, idx_type), fpc.dm_patch,</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                         ncomp, 0, MFInfo(), *fpc.fact_crse_patch);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">return</span> mf_crse_patch;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
@@ -429,7 +429,7 @@ $(function() {
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                        <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp; sfab = mf_crse_patch[mfi];</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                        <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a>&amp; dfab = mf_fine_patch[mfi];</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                        <span class="keyword">const</span> Box&amp; dbx = dfab.box();</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keyword">const</span> Box&amp; sbx = sfab.box();</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                        <span class="keyword">const</span> Box&amp; sbx = sfab.box();</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                        <a class="code" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a>(sbx,cdomain,bcscomp,0,ncomp,bcs,bcr);</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
@@ -443,8 +443,8 @@ $(function() {
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                }</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                mf.ParallelCopy(mf_fine_patch, 0, dcomp, ncomp, IntVect{0}, nghost);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        }</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <a class="code" href="namespaceamrex.html#acc805fd48b46564aee791ca8dced18fe">FillPatchSingleLevel</a>(mf, nghost, time, fmf, ft, scomp, dcomp, ncomp,</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                             fgeom, fbc, fbccomp);</div>
@@ -466,7 +466,7 @@ $(function() {
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                             <span class="keyword">const</span> PostInterpHook&amp; post_interp,</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                             EB2::IndexSpace <span class="keyword">const</span>* index_space)</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    {</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FillPatchTwoLevels (Array&lt;MF*&gt;)&quot;</span>);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;FillPatchTwoLevels (Array&lt;MF*&gt;)&quot;</span>);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keyword">using</span> <a class="code" href="namespaceamrex_1_1Amrvis.html#abfcccc9773d8b5535441ca5b3cc4f0cfae23a0946829f4ea99f1d5045c64e5390">FAB</a> = <span class="keyword">typename</span> MF::FABType::value_type;</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keyword">using</span> iFAB = <span class="keyword">typename</span> iMultiFab::FABType::value_type;</div>
@@ -488,9 +488,9 @@ $(function() {
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="comment">// Test all of them?</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">if</span> (nghost.max() &gt; 0 || mf[0]-&gt;getBDKey() != fmf[0][0]-&gt;getBDKey())</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> InterpolaterBoxCoarsener&amp; coarsener = mapper-&gt;BoxCoarsener(ratio);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">if</span> (nghost.max() &gt; 0 || mf[0]-&gt;getBDKey() != fmf[0][0]-&gt;getBDKey())</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <span class="keyword">const</span> InterpolaterBoxCoarsener&amp; coarsener = mapper-&gt;BoxCoarsener(ratio);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="comment">// Convert to cell-centered MF meta-data for FPInfo.</span></div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            MF mf_cc_dummy( <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(mf[0]-&gt;boxArray(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>()),</div>
@@ -498,15 +498,15 @@ $(function() {
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            MF fmf_cc_dummy( <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(fmf[0][0]-&gt;boxArray(), <a class="code" href="classamrex_1_1IntVect.html#ac4331f56298c56a0ff01a011c3702c3a">IntVect::TheZeroVector</a>()),</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                             fmf[0][0]-&gt;DistributionMap(), ncomp, nghost, MFInfo().SetAlloc(<span class="keyword">false</span>) );</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keyword">const</span> FabArrayBase::FPinfo&amp; fpc = <a class="code" href="classamrex_1_1FabArrayBase.html#ac2344224d72849f0e7fe1888d150a550">FabArrayBase::TheFPinfo</a>(fmf_cc_dummy, mf_cc_dummy,</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="keyword">const</span> FabArrayBase::FPinfo&amp; fpc = <a class="code" href="classamrex_1_1FabArrayBase.html#ac2344224d72849f0e7fe1888d150a550">FabArrayBase::TheFPinfo</a>(fmf_cc_dummy, mf_cc_dummy,</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                                                                      nghost,</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                                                                      coarsener,</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                                                                      fgeom,</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                                                      cgeom,</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                                                      index_space);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">if</span> ( !fpc.ba_crse_patch.empty() )</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <span class="keywordflow">if</span> ( !fpc.ba_crse_patch.empty() )</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            {</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                Array&lt;MF, AMREX_SPACEDIM&gt; mf_crse_patch;</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                Array&lt;MF, AMREX_SPACEDIM&gt; mf_refined_patch;</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                Array&lt;iMultiFab, AMREX_SPACEDIM&gt; solve_mask;</div>
@@ -595,8 +595,8 @@ $(function() {
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                    mf[d]-&gt;ParallelCopy(mf_refined_patch[d], 0, dcomp, ncomp, IntVect{0}, nghost);</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                }</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        }</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    }</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            }</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        }</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d=0; d&lt;AMREX_SPACEDIM; ++d)</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        {</div>
@@ -877,7 +877,7 @@ $(function() {
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            dfab_bx.<a class="code" href="classamrex_1_1Box.html#ab6232053a39e1b010d0d9a1b269f53ff">grow</a>(nghost-mf.nGrowVect());</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; dbx = dfab_bx &amp; fdomain_g;</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <a class="code" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a>(sbx,cdomain,bcscomp,0,ncomp,bcs,bcr);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            <a class="code" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a>(sbx,cdomain,bcscomp,0,ncomp,bcs,bcr);</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            pre_interp(sfab, sfab.box(), 0, ncomp);</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
@@ -1021,7 +1021,7 @@ $(function() {
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;                <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> bcr_d(ncomp);</div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160; </div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;                <a class="code" href="namespaceamrex.html#ac58ae562e33ec29796418c84ad3d07dc">amrex::setBC</a>(sfab[d]-&gt;box(),</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;                 <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(cgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(), sfab[d]-&gt;box().<a class="code" href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">ixType</a>()),</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;                             <a class="code" href="namespaceamrex.html#a314545dbd77212eb64c3a248c754eda6">amrex::convert</a>(cgeom.<a class="code" href="classamrex_1_1Geometry.html#a94f4ddb683e381201694d644be7566f1">Domain</a>(), sfab[d]-&gt;box().<a class="code" href="classamrex_1_1Box.html#a23dbfc6bba6b19b28a0d893bb760494c">ixType</a>()),</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;                             bcscomp,0,ncomp,bcs[d],bcr_d);</div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;ncomp; ++n)</div>

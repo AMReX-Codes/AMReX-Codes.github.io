@@ -230,11 +230,11 @@ $(function() {
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                ? f0(vlo.x,0,0) : Real(0.0);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            Real cf1 = (i == vhi.x &amp;&amp; m1(vhi.x+1,0,0) &gt; 0)</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                ? f1(vhi.x,0,0) : Real(0.0);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            Real delta = dhx*(cf0+cf1);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            Real gamma = alpha*a(i,0,0) + dhx*Real(2.0);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            Real rho = dhx*(phi(i-1,0,0) + phi(i+1,0,0));</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            phi(i,0,0) = (rhs(i,0,0) + rho - phi(i,0,0)*delta)</div>
@@ -268,11 +268,11 @@ $(function() {
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            Real rel = (probxlo + i   *dx) * (probxlo + i   *dx);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            Real rer = (probxlo +(i+1)*dx) * (probxlo +(i+1)*dx);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            Real rc  = (probxlo +(i+Real(.5))*dx) * (probxlo +(i+Real(.5))*dx);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            Real delta = dhx*(rel*cf0 + rer*cf1);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            Real gamma = alpha*a(i,0,0)*rc + dhx*(rel+rer);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            Real rho = dhx*(rel*phi(i-1,0,0) + rer*phi(i+1,0,0));</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            phi(i,0,0) = (rhs(i,0,0) + rho - phi(i,0,0)*delta)</div>

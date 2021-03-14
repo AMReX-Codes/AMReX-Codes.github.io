@@ -364,7 +364,7 @@ $(function() {
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_CUDA</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">if</span> (__all_sync(0xffffffff, msk == 0)) {  <span class="comment">// 0 means lock acquired</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#elif defined(AMREX_USE_HIP)</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordflow">if</span> (__all(msk == 0)) { </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordflow">if</span> (__all(msk == 0)) {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <span class="keywordflow">break</span>; <span class="comment">// all threads have acquired.</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -637,7 +637,7 @@ $(function() {
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="keywordflow">if</span> ( !(TheFB.m_localCopy.ready()) )</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    {</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_localCopy.resize(N_locs);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    </div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <span class="comment">// Record the graph.</span></div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*<span class="keyword">this</span>, MFItInfo().DisableDeviceSync()); mfi.isValid(); ++mfi)</div>
@@ -646,7 +646,7 @@ $(function() {
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                                                     <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_localCopy.getHostPtr(0),</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                                                     (TheFB).m_localCopy.getDevicePtr(0),</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                                                     std::size_t(<span class="keyword">sizeof</span>(CopyMemory)*N_locs) );</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    </div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tags = loc_copy_tags[mfi];</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : tags)</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            {</div>
@@ -662,7 +662,7 @@ $(function() {
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                    }</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                });</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            }</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    </div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            <span class="keywordtype">bool</span> last_iter = mfi.LocalIndex() == (this-&gt;local_size()-1);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            cudaGraphExec_t graphExec = amrex::Gpu::Device::stopGraphRecording(last_iter);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            <span class="keywordflow">if</span> (last_iter) { <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_localCopy.setGraph( graphExec ); }</div>
@@ -671,7 +671,7 @@ $(function() {
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="comment">// Setup Launch Parameters</span></div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">// This is perfectly threadable, right?</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// Additional optimization -&gt; Check to see whether values need to be reset? </span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// Additional optimization -&gt; Check to see whether values need to be reset?</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">// Can then remove this setup and memcpy from CudaGraph::executeGraph.</span></div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<span class="keyword">this</span>); mfi.isValid(); ++mfi)</div>
@@ -685,7 +685,7 @@ $(function() {
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                                                                               scomp, ncomp));</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        }</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    }</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;     </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">// Launch Graph</span></div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    TheFB.m_localCopy.executeGraph();</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;}</div>
@@ -705,7 +705,7 @@ $(function() {
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0653e205c26f3961aa756292d5f8dbc4">ParallelDescriptor::sameTeam</a>(distributionMap[tag.dstIndex]));</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(<a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a0653e205c26f3961aa756292d5f8dbc4">ParallelDescriptor::sameTeam</a>(distributionMap[tag.srcIndex]));</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        </div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="keywordflow">if</span> (distributionMap[tag.dstIndex] == <a class="code" href="namespaceamrex_1_1ParallelDescriptor.html#a33162ef233c092e9e6fd75ab291b9b29">ParallelDescriptor::MyProc</a>())</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        {</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            loc_copy_tags[tag.dstIndex].push_back</div>
@@ -713,13 +713,13 @@ $(function() {
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            launches++;</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        }</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    }</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                </div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    FillBoundary_test();</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordflow">if</span> ( !(TheFB.m_localCopy.ready()) )</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    {</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_localCopy.resize(launches);</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    </div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        <span class="keywordtype">int</span> cuda_stream = 0;</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*<span class="keyword">this</span>, MFItInfo().DisableDeviceSync()); mfi.isValid(); ++mfi)</div>
@@ -735,7 +735,7 @@ $(function() {
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160; </div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tag = tags[t];</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                <span class="keyword">const</span> Dim3 offset = tag.offset.dim3();</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    </div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                CopyMemory* cmem = TheFB.m_localCopy.getDevicePtr(idx++);</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                <a class="code" href="AMReX__GpuLaunch_8H.html#af98b03b7b3a87691d2e944fcd96c5a84">AMREX_HOST_DEVICE_FOR_3D</a>(tag.dbox, i, j, k,</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                {</div>
@@ -752,22 +752,22 @@ $(function() {
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;            }</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        }</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    }</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                </div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="comment">// Setup Launch Parameters</span></div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="comment">// This is perfectly threadable, right?</span></div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<span class="keyword">this</span>); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    {</div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dst_array = this-&gt;array(mfi);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tags = loc_copy_tags[mfi]; </div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tags = loc_copy_tags[mfi];</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : tags)</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        {</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_localCopy.setParams(idx++, makeCopyMemory(tag.sfab-&gt;array(),</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                                                                               dst_array,</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                                                                               scomp, ncomp)); </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                                                                               scomp, ncomp));</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        }</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    }</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    </div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// Launch Graph without synch. Local work is entirely independent.</span></div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    TheFB.m_localCopy.executeGraph(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;}</div>
@@ -804,7 +804,7 @@ $(function() {
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            }</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        }</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_copyToBuffer.resize(launches);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    </div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="comment">// Record the graph.</span></div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="keywordflow">for</span> (Gpu::StreamIter sit(N_snds,Gpu::StreamItInfo().DisableDeviceSync());</div>
@@ -857,14 +857,14 @@ $(function() {
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                                                                                                         tag.sbox,</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                                                                                                         ncomp),</div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                                                                                       scomp, ncomp));</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                </div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                dptr += (tag.sbox.numPts() * ncomp * <span class="keyword">sizeof</span>(value_type));</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            }</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(send_size);</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= send_data[j] + send_size[j]);</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        }</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    }</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="comment">// Launch Graph synched, so copyToBuffer is complete prior to posting sends.</span></div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    TheFB.m_copyToBuffer.executeGraph();</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;}</div>
@@ -898,11 +898,11 @@ $(function() {
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>(dptr &lt;= recv_data[k] + recv_size[k]);</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        }</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    }</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;  </div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    <span class="keywordflow">if</span> ( !(TheFB.m_copyFromBuffer.ready()) )</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    {</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_copyFromBuffer.resize(launches);</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;   </div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160; </div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*<span class="keyword">this</span>, MFItInfo().DisableDeviceSync()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        {</div>
@@ -910,7 +910,7 @@ $(function() {
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                                                     <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_copyFromBuffer.getHostPtr(0),</div>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                                                     (TheFB).m_copyFromBuffer.getDevicePtr(0),</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                                                     std::size_t(<span class="keyword">sizeof</span>(CopyMemory)*launches) );</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    </div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tags = recv_copy_tags[mfi];</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp; tag : tags)</div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            {</div>
@@ -925,14 +925,14 @@ $(function() {
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                    }</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                });</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            }</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    </div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            <span class="keywordtype">bool</span> last_iter = mfi.LocalIndex() == (this-&gt;local_size()-1);</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;            cudaGraphExec_t graphExec = amrex::Gpu::Device::stopGraphRecording(last_iter);</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            <span class="keywordflow">if</span> (last_iter) { <span class="keyword">const_cast&lt;</span>FB&amp;<span class="keyword">&gt;</span>(TheFB).m_copyFromBuffer.setGraph( graphExec ); }</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        }</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    }</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    <span class="comment">// Setup graph.   </span></div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    <span class="comment">// Setup graph.</span></div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    <span class="keywordtype">int</span> idx = 0;</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<span class="keyword">this</span>); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    {</div>
@@ -947,7 +947,7 @@ $(function() {
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                                                                                    dcomp, ncomp));</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        }</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    }</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    </div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <span class="comment">// Launch Graph - synced because next action is freeing recv buffer.</span></div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    TheFB.m_copyFromBuffer.executeGraph();</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;}</div>

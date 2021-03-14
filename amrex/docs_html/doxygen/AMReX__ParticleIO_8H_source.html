@@ -738,9 +738,9 @@ $(function() {
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="keyword">typename</span> <a class="code" href="structamrex_1_1Particle.html#a1741c5c21aaba8fd767c2f86e911ad26">ParticleType::RealType</a>* rptr = rstuff.<a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a>();</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; tile_map[grid].size(); i++) {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;            <span class="keyword">auto</span> ptile_index = std::make_pair(grid, tile_map[grid][i]);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                        <span class="keyword">auto</span> ptile_index = std::make_pair(grid, tile_map[grid][i]);</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pbox = m_particles[lev].at(ptile_index);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pflags = particle_io_flags[lev].at(ptile_index);</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pflags = particle_io_flags[lev].at(ptile_index);</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> pindex = 0; pindex &lt; pbox.GetArrayOfStructs().numParticles(); ++pindex) {</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = pbox.GetArrayOfStructs();</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; p = aos[pindex];</div>
@@ -1128,56 +1128,56 @@ $(function() {
 <div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160; </div>
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;        locateParticle(p, pld, 0, finestLevel(), 0);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160; </div>
-<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    std::pair&lt;int, int&gt; ind(grd, pld.<a class="code" href="structamrex_1_1ParticleLocData.html#a963b4d0da43b9378de88dc4956581e83">m_tile</a>);</div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;        std::pair&lt;int, int&gt; ind(grd, pld.<a class="code" href="structamrex_1_1ParticleLocData.html#a963b4d0da43b9378de88dc4956581e83">m_tile</a>);</div>
 <div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160; </div>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;        host_real_attribs[lev][ind].resize(NumRealComps());</div>
 <div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;        host_int_attribs[lev][ind].resize(NumIntComps());</div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;    <span class="comment">// add the struct</span></div>
-<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    host_particles[lev][ind].push_back(p);</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        <span class="comment">// add the struct</span></div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;        host_particles[lev][ind].push_back(p);</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
-<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    <span class="comment">// add the real...</span></div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumRealComps(); icomp++) {</div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;        <span class="comment">// add the real...</span></div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumRealComps(); icomp++) {</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;            host_real_attribs[lev][ind][icomp].push_back(ParticleReal(*rptr));</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;            ++rptr;</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    }</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        }</div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160; </div>
-<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    <span class="comment">// ... and int array data</span></div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumIntComps(); icomp++) {</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;        <span class="comment">// ... and int array data</span></div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; NumIntComps(); icomp++) {</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;            host_int_attribs[lev][ind][icomp].push_back(*iptr);</div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;            ++iptr;</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    }</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;        }</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    }</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160; </div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> host_lev = 0; host_lev &lt; static_cast&lt;int&gt;(host_particles.<a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a>()); ++host_lev)</div>
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;      {</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; kv : host_particles[host_lev]) {</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;      <span class="keyword">auto</span> grid = kv.first.first;</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;      <span class="keyword">auto</span> tile = kv.first.second;</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_tile = kv.second;</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; kv : host_particles[host_lev]) {</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;          <span class="keyword">auto</span> grid = kv.first.first;</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;          <span class="keyword">auto</span> tile = kv.first.second;</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;          <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_tile = kv.second;</div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160; </div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;      <span class="keyword">auto</span>&amp; dst_tile = DefineAndReturnParticleTile(host_lev, grid, tile);</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;      <span class="keyword">auto</span> old_size = dst_tile.GetArrayOfStructs().size();</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;      <span class="keyword">auto</span> new_size = old_size + src_tile.size();</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;      dst_tile.resize(new_size);</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;          <span class="keyword">auto</span>&amp; dst_tile = DefineAndReturnParticleTile(host_lev, grid, tile);</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;          <span class="keyword">auto</span> old_size = dst_tile.GetArrayOfStructs().size();</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;          <span class="keyword">auto</span> new_size = old_size + src_tile.size();</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;          dst_tile.resize(new_size);</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160; </div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;      <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>, src_tile.begin(), src_tile.end(),</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;          <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>, src_tile.begin(), src_tile.end(),</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;                    dst_tile.GetArrayOfStructs().begin() + old_size);</div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160; </div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumRealComps(); ++i) {</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumRealComps(); ++i) {</div>
 <div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;                        host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
 <div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;                        host_real_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
 <div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;                        dst_tile.GetStructOfArrays().GetRealData(i).begin() + old_size);</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;      }</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;          }</div>
 <div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160; </div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumIntComps(); ++i) {</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; NumIntComps(); ++i) {</div>
 <div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;              <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4ffc2b3090d34803c0b78ee6f53d22a9">Gpu::hostToDevice</a>,</div>
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;                        host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>(),</div>
 <div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                        host_int_attribs[host_lev][std::make_pair(grid,tile)][i].<a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>(),</div>
 <div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                        dst_tile.GetStructOfArrays().GetIntData(i).begin() + old_size);</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;      }</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    }</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;          }</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;        }</div>
 <div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;      }</div>
 <div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160; </div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a67a618504ee5fb94bd65a5d393e344b4">Gpu::streamSynchronize</a>();</div>
@@ -1202,11 +1202,11 @@ $(function() {
 <div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;        <span class="keyword">auto</span>&amp; pmap = m_particles[lev];</div>
 <div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : pmap) {</div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = kv.second.GetArrayOfStructs();</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;        <span class="keyword">auto</span> np = aos.numParticles();</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        <a class="code" href="classamrex_1_1PODVector.html">Gpu::HostVector&lt;ParticleType&gt;</a> host_aos(np);</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, aos.begin(), aos.begin() + np, host_aos.<a class="code" href="classamrex_1_1PODVector.html#a688bc1525c5bcb7456f6423383540666">begin</a>());</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; np; ++k) {</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;            <span class="keyword">const</span> <a class="code" href="structamrex_1_1Particle.html">ParticleType</a>&amp; p = host_aos[k];</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;            <span class="keyword">auto</span> np = aos.numParticles();</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;            <a class="code" href="classamrex_1_1PODVector.html">Gpu::HostVector&lt;ParticleType&gt;</a> host_aos(np);</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, aos.begin(), aos.begin() + np, host_aos.<a class="code" href="classamrex_1_1PODVector.html#a688bc1525c5bcb7456f6423383540666">begin</a>());</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; np; ++k) {</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;                <span class="keyword">const</span> <a class="code" href="structamrex_1_1Particle.html">ParticleType</a>&amp; p = host_aos[k];</div>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                <span class="keywordflow">if</span> (p.<a class="code" href="structamrex_1_1Particle.html#a801e1732b89fd4c71632cf38a7dfcab5">id</a>() &gt; 0)</div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;                    <span class="comment">//</span></div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;                    <span class="comment">// Only count (and checkpoint) valid particles.</span></div>
@@ -1271,19 +1271,19 @@ $(function() {
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;            <span class="keywordflow">if</span> (!File.good())</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;                <a class="code" href="namespaceamrex.html#ac40a8be1926370de761ddd49c765d971">amrex::FileOpenFailed</a>(filename);</div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160; </div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; m_particles.size();  lev++) {</div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;          <span class="keyword">auto</span>&amp; pmap = m_particles[lev];</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : pmap) {</div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt; m_particles.size();  lev++) {</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;              <span class="keyword">auto</span>&amp; pmap = m_particles[lev];</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;              <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : pmap) {</div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; aos = kv.second.GetArrayOfStructs();</div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; soa = kv.second.GetStructOfArrays();</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160; </div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;        <span class="keyword">auto</span> np = aos.numParticles();</div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;        <a class="code" href="classamrex_1_1PODVector.html">Gpu::HostVector&lt;ParticleType&gt;</a> host_aos(np);</div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, aos.begin(), aos.end(), host_aos.<a class="code" href="classamrex_1_1PODVector.html#a688bc1525c5bcb7456f6423383540666">begin</a>());</div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;                <span class="keyword">auto</span> np = aos.numParticles();</div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;                <a class="code" href="classamrex_1_1PODVector.html">Gpu::HostVector&lt;ParticleType&gt;</a> host_aos(np);</div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;                <a class="code" href="namespaceamrex_1_1Gpu.html#a2c1110b22670288daa9e2a01cbb70fbb">Gpu::copy</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, aos.begin(), aos.end(), host_aos.<a class="code" href="classamrex_1_1PODVector.html#a688bc1525c5bcb7456f6423383540666">begin</a>());</div>
 <div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160; </div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; np; ++index) {</div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            <span class="keyword">const</span> <a class="code" href="structamrex_1_1Particle.html">ParticleType</a>* it = &amp;host_aos[index];</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            <span class="keywordflow">if</span> (it-&gt;<a class="code" href="structamrex_1_1Particle.html#a801e1732b89fd4c71632cf38a7dfcab5">id</a>() &gt; 0) {</div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; np; ++index) {</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;                    <span class="keyword">const</span> <a class="code" href="structamrex_1_1Particle.html">ParticleType</a>* it = &amp;host_aos[index];</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;                    <span class="keywordflow">if</span> (it-&gt;<a class="code" href="structamrex_1_1Particle.html#a801e1732b89fd4c71632cf38a7dfcab5">id</a>() &gt; 0) {</div>
 <div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160; </div>
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;                        <span class="comment">// write out the particle struct first...</span></div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;                        <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(File &lt;&lt; it-&gt;<a class="code" href="structamrex_1_1Particle.html#aa2de40d8448837bccd5c66e977d70f90">pos</a>(0) &lt;&lt; <span class="charliteral">&#39; &#39;</span>,</div>

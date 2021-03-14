@@ -63568,8 +63568,7 @@ template&lt;class PC , class Buffer , class UnpackPolicy , EnableIf_t&lt; IsPart
 
 <p>Creates the specified directories. path may be either a full pathname or a relative pathname. It will create all the directories in the pathname, if they don't already exist, so that on successful return the pathname refers to an existing directory. Returns true or false depending upon whether or not it was successful. Also returns true if path is NULL or "/". mode is the mode passed to mkdir() for any directories that must be created (for example: 0755). verbose will print out the directory creation steps. </p>
 <p>For example, if it is passed the string "/a/b/c/d/e/f/g", it will return successfully when all the directories in the pathname exist; i.e. when the full pathname is a valid directory.</p>
-<p>In a Windows environment, the path separator is a '\', so that if using the example given above you must pass the string <br  />
- "\\a\\b\\c\\d\\e\\f\\g" (Note that you must escape the backslash in a character string),</p>
+<p>In a Windows environment, the path separator is a '\', so that if using the example given above you must pass the string "\\a\\b\\c\\d\\e\\f\\g" (Note that you must escape the backslash in a character string),</p>
 <p>Only the last mkdir return value is checked for success as errno may not be set to EEXIST if a directory exists but mkdir has other reasons to fail such as part of the path being a read-only filesystem (EROFS). If this function fails, it will print out an error stack. </p>
 
 </div>
@@ -65251,8 +65250,7 @@ template&lt;typename To , typename From &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Write Real data to the ostream. The arguments are a pointer to data to write, the size of the data buffer, the ostream, and an optional <a class="el" href="classamrex_1_1RealDescriptor.html" title="This class is meant to hold all information needed to completely describe the &quot;Real&quot; floating-point t...">RealDescriptor</a> that describes the data format to use for writing. If no <a class="el" href="classamrex_1_1RealDescriptor.html" title="This class is meant to hold all information needed to completely describe the &quot;Real&quot; floating-point t...">RealDescriptor</a> is provided, the data will be written using the native format for your machine. <br  />
- </p>
+<p>Write Real data to the ostream. The arguments are a pointer to data to write, the size of the data buffer, the ostream, and an optional <a class="el" href="classamrex_1_1RealDescriptor.html" title="This class is meant to hold all information needed to completely describe the &quot;Real&quot; floating-point t...">RealDescriptor</a> that describes the data format to use for writing. If no <a class="el" href="classamrex_1_1RealDescriptor.html" title="This class is meant to hold all information needed to completely describe the &quot;Real&quot; floating-point t...">RealDescriptor</a> is provided, the data will be written using the native format for your machine. </p>
 
 </div>
 </div>
@@ -65869,10 +65867,10 @@ template&lt;typename To , typename From &gt; </div>
 <div class="line"> </div>
 <div class="line">    Index last_mask, last_offset;</div>
 <div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div>
-<div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);    </div>
+<div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">auto</span> p_offsets = offsets.dataPtr();</div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div>
 <div class="line">          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div>
 <div class="line"> </div>
@@ -65885,7 +65883,7 @@ template&lt;typename To , typename From &gt; </div>
 <div class="line">    <span class="keywordflow">return</span> last_mask + last_offset;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> DstTile</div>
 </div><!-- fragment -->
 </div>

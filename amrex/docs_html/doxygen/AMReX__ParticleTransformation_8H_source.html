@@ -125,8 +125,8 @@ $(function() {
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">int</span> NSR, <span class="keywordtype">int</span> NSI, <span class="keywordtype">int</span> NAR, <span class="keywordtype">int</span> NAI&gt;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#aeb09e10bb31cfaa6b8928520c9041df9">AMREX_INLINE</a></div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a5e761a0c1a6d048bd220a97be10b2f36">   99</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a5e761a0c1a6d048bd220a97be10b2f36">swapParticle</a> (<span class="keyword">const</span> <a class="code" href="structamrex_1_1ParticleTileData.html">ParticleTileData&lt;NSR, NSI, NAR, NAI&gt;</a>&amp; dst, </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                   <span class="keyword">const</span> <a class="code" href="structamrex_1_1ParticleTileData.html">ParticleTileData&lt;NSR, NSI, NAR, NAI&gt;</a>&amp; src, </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a5e761a0c1a6d048bd220a97be10b2f36">   99</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a5e761a0c1a6d048bd220a97be10b2f36">swapParticle</a> (<span class="keyword">const</span> <a class="code" href="structamrex_1_1ParticleTileData.html">ParticleTileData&lt;NSR, NSI, NAR, NAI&gt;</a>&amp; dst,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                   <span class="keyword">const</span> <a class="code" href="structamrex_1_1ParticleTileData.html">ParticleTileData&lt;NSR, NSI, NAR, NAI&gt;</a>&amp; src,</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                   <span class="keywordtype">int</span> src_i, <span class="keywordtype">int</span> dst_i) noexcept</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(dst.m_num_runtime_real == src.m_num_runtime_real);</div>
@@ -220,7 +220,7 @@ $(function() {
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a86fc8a08b6a63681e7751ac0b20bd96b">filterParticles</a>(dst, src, mask, 0, 0, src.numParticles());</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> DstTile, <span class="keyword">typename</span> <a class="code" href="namespaceamrex.html#acc23406c7dfc89ca51a4c37a6430bdea">SrcTile</a>, <span class="keyword">typename</span> Index, <span class="keyword">typename</span> N,</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;          <a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;Index&gt;::value</a>, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00321"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a0484051ab2f4dc9ebed16cb4f0ca2817">  321</a></span>&#160;Index <a class="code" href="namespaceamrex.html#a86fc8a08b6a63681e7751ac0b20bd96b">filterParticles</a> (DstTile&amp; dst, <span class="keyword">const</span> <a class="code" href="namespaceamrex.html#acc23406c7dfc89ca51a4c37a6430bdea">SrcTile</a>&amp; src, <span class="keyword">const</span> Index* mask,</div>
@@ -232,16 +232,16 @@ $(function() {
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    Index last_mask=0, last_offset=0;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np-1, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np, &amp;last_offset);    </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np-1, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np, &amp;last_offset);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keyword">auto</span> p_offsets = offsets.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( n, i,</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">if</span> (mask[src_start+i]) <a class="code" href="namespaceamrex.html#a14f61ebac9d7c0ea8b108bad4f0947c5">copyParticle</a>(dst_data, src_data, src_start+i, </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">if</span> (mask[src_start+i]) <a class="code" href="namespaceamrex.html#a14f61ebac9d7c0ea8b108bad4f0947c5">copyParticle</a>(dst_data, src_data, src_start+i,</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                            dst_start+p_offsets[src_start+i]);</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    });</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
@@ -286,10 +286,10 @@ $(function() {
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    Index last_mask, last_offset;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np-1, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np, &amp;last_offset);    </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np-1, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np, &amp;last_offset);</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">auto</span> p_offsets = offsets.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    </div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
@@ -333,10 +333,10 @@ $(function() {
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    Index last_mask, last_offset;</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np-1, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np, &amp;last_offset);    </div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np-1, offsets.<a class="code" href="classamrex_1_1PODVector.html#a52a678e008fab2346394fcad18bc90c4">data</a>()+np, &amp;last_offset);</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="keyword">auto</span> p_offsets = offsets.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>();</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> src_data  = src.getConstParticleTileData();</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;          <span class="keyword">auto</span> dst_data1 = dst1.getParticleTileData();</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;          <span class="keyword">auto</span> dst_data2 = dst2.getParticleTileData();</div>
@@ -370,14 +370,14 @@ $(function() {
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#a01d74f2f8ceb510c07cb44c266569781">filterAndTransformParticles</a>(dst1, dst2, src, mask.<a class="code" href="classamrex_1_1PODVector.html#aed3e37de016bb3a5bdeef31fe0f8b4e0">dataPtr</a>(), std::forward&lt;F&gt;(f));</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;}</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> PTile, <span class="keyword">typename</span> N, <span class="keyword">typename</span> Index,</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;          <a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;Index&gt;::value</a>, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00580"></a><span class="lineno"><a class="line" href="namespaceamrex.html#ab75c7a4946d605a7072d64407df6a6d8">  580</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ab75c7a4946d605a7072d64407df6a6d8">gatherParticles</a> (PTile&amp; dst, <span class="keyword">const</span> PTile&amp; src, N np, <span class="keyword">const</span> Index* inds)</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;{</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;          </div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    {</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        <a class="code" href="namespaceamrex.html#a14f61ebac9d7c0ea8b108bad4f0947c5">copyParticle</a>(dst_data, src_data, inds[i], i);</div>
@@ -392,7 +392,7 @@ $(function() {
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;{</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> src_data = src.getConstParticleTileData();</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;          <span class="keyword">auto</span> dst_data = dst.getParticleTileData();</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;          </div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8H.html#a98b67baa1382f64a8b07abb4c2edbf92">AMREX_HOST_DEVICE_FOR_1D</a>( np, i,</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    {</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        <a class="code" href="namespaceamrex.html#a14f61ebac9d7c0ea8b108bad4f0947c5">copyParticle</a>(dst_data, src_data, i, inds[i]);</div>

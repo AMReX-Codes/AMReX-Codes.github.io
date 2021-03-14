@@ -1498,21 +1498,21 @@ $(function() {
 <div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;    {</div>
 <div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;        <span class="keyword">const</span> <a class="code" href="classamrex_1_1Box.html">Box</a>&amp; bx = <a class="code" href="namespaceamrex.html#aedb1ce8af83d1d6323271203b7168bcc">amrex::grow</a>(mfi.validbox(), ng);</div>
 <div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;        <span class="keywordflow">if</span> (bx.<a class="code" href="classamrex_1_1Box.html#a0b71343932dcc55cb16d1b2b95973114">contains</a>(cell)) {</div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;        <span class="keywordflow">if</span> (comp &gt;= 0) {</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            <span class="keywordflow">if</span> (comp &gt;= 0) {</div>
 <div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;                <a class="code" href="classamrex_1_1AllPrint.html">amrex::AllPrint</a>().<a class="code" href="classamrex_1_1Print.html#a7c4b1f95c46cd9f3e0435d36b25af7ca">SetPrecision</a>(17) &lt;&lt; <span class="stringliteral">&quot; At cell &quot;</span> &lt;&lt; cell &lt;&lt; <span class="stringliteral">&quot; in Box &quot;</span> &lt;&lt; bx</div>
 <div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;                                                   &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; mf[mfi](cell, comp) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;                std::ostringstream ss;</div>
 <div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;                ss.precision(17);</div>
 <div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
 <div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ncomp-1; ++i)</div>
-<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;        {</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;                {</div>
 <div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;                    ss &lt;&lt; mf[mfi](cell,i) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;        }</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;                }</div>
 <div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;                ss &lt;&lt; mf[mfi](cell,ncomp-1);</div>
 <div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;                <a class="code" href="classamrex_1_1AllPrint.html">amrex::AllPrint</a>() &lt;&lt; <span class="stringliteral">&quot; At cell &quot;</span> &lt;&lt; cell &lt;&lt; <span class="stringliteral">&quot; in Box &quot;</span> &lt;&lt; bx</div>
 <div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;                                  &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; ss.str() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;        }</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;            }</div>
 <div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;        }</div>
 <div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;    }</div>
 <div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;}</div>
@@ -1745,7 +1745,7 @@ $(function() {
 <div class="line"><a name="l01674"></a><span class="lineno"> 1674</span>&#160;    <a class="code" href="AMReX__BLProfiler_8H.html#a548fbd9b2cd72a927f463003f4adb0b1">BL_PROFILE</a>(<span class="stringliteral">&quot;OverrideSync()&quot;</span>);</div>
 <div class="line"><a name="l01675"></a><span class="lineno"> 1675</span>&#160; </div>
 <div class="line"><a name="l01676"></a><span class="lineno"> 1676</span>&#160;    <span class="keywordflow">if</span> (fa.ixType().cellCentered()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160;    </div>
+<div class="line"><a name="l01677"></a><span class="lineno"> 1677</span>&#160; </div>
 <div class="line"><a name="l01678"></a><span class="lineno"> 1678</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = fa.nComp();</div>
 <div class="line"><a name="l01679"></a><span class="lineno"> 1679</span>&#160; </div>
 <div class="line"><a name="l01680"></a><span class="lineno"> 1680</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_OMP</span></div>
@@ -1761,7 +1761,7 @@ $(function() {
 <div class="line"><a name="l01690"></a><span class="lineno"> 1690</span>&#160;            <span class="keywordflow">if</span> (!ifab(i,j,k)) fab(i,j,k,n) = 0;</div>
 <div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;        });</div>
 <div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;    }</div>
-<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160;    </div>
+<div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160; </div>
 <div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;    <a class="code" href="classamrex_1_1FabArray.html">FabArray&lt;FAB&gt;</a> tmpmf(fa.boxArray(), fa.DistributionMap(), ncomp, 0,</div>
 <div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160;                        <a class="code" href="structamrex_1_1MFInfo.html">MFInfo</a>(), fa.<a class="code" href="classamrex_1_1FabArray.html#a362cb84f113b8019a6f8b03129d1cf48">Factory</a>());</div>
 <div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;    tmpmf.<a class="code" href="classamrex_1_1FabArray.html#a9235d60131ff0d5f81450896420fe691">setVal</a>(0);</div>

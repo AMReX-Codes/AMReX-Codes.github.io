@@ -118,7 +118,7 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                        +(vel(i-1,jlop,0,0)-vel(i-1,jlom,0,0))*wlo);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                Real dvdy = (0.5*dyi) * ((vel(i  ,jhip,0,1)-vel(i  ,jhim,0,1))*whi</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        +(vel(i-1,jlop,0,1)-vel(i-1,jlom,0,1))*wlo);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        Real divu = dvdy;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                Real divu = dvdy;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Real xif = kapx(i,j,0);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                Real mun = 0.75*(etax(i,j,0,0)-xif);  <span class="comment">// restore the original eta</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                Real mut =       etax(i,j,0,1);</div>
@@ -164,7 +164,7 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                Real dvdx = (0.5*dxi) * ((vel(ihip,j  ,0,1)-vel(ihim,j  ,0,1))*whi</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                        +(vel(ilop,j-1,0,1)-vel(ilom,j-1,0,1))*wlo);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        Real divu = dudx;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                Real divu = dudx;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                Real xif = kapy(i,j,0);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                Real mun = 0.75*(etay(i,j,0,1)-xif);  <span class="comment">// restore the original eta</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                Real mut =       etay(i,j,0,0);</div>
@@ -328,10 +328,10 @@ $(function() {
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="namespaceamrex.html#acef8c44712bfa040cb9408c2d61b5319">  259</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#acef8c44712bfa040cb9408c2d61b5319">mlebtensor_flux_0</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box,</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; Ax,</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fx,</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; ap,</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            Real bscalar) noexcept</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; Ax,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fx,</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; ap,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                        Real bscalar) noexcept</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lo = <a class="code" href="namespaceamrex.html#a71600c8a528e0f1863154e4cf0183cbc">amrex::lbound</a>(box);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> hi = <a class="code" href="namespaceamrex.html#a6ce6b4176121c2c23327903a8139af0c">amrex::ubound</a>(box);</div>
@@ -340,78 +340,78 @@ $(function() {
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">for</span>     (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="AMReX__Extension_8H.html#a8c414106ab987031039a0ad05bb2519b">AMREX_PRAGMA_SIMD</a></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      <span class="keywordflow">if</span> (ap(i,j,k) != 0.0) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;AMREX_SPACEDIM; n++)</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;          Ax(i,j,k,n) += bscalar*fx(i,j,k,n);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      <span class="comment">//else MLEBABec::compFlux already set Ax = 0</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;          <span class="keywordflow">if</span> (ap(i,j,k) != 0.0) {</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;AMREX_SPACEDIM; n++)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                  Ax(i,j,k,n) += bscalar*fx(i,j,k,n);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;          }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;          <span class="comment">//else MLEBABec::compFlux already set Ax = 0</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        }</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa196b29d490603bb92e78f1e56593846">  283</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#aa196b29d490603bb92e78f1e56593846">mlebtensor_flux_x</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; Ax,</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fx, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; apx,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fcx,</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            Real <span class="keyword">const</span> bscalar, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; ccm,</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordtype">int</span> face_only, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; xbox) noexcept</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fx, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; apx,</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fcx,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        Real <span class="keyword">const</span> bscalar, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; ccm,</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                        <span class="keywordtype">int</span> face_only, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; xbox) noexcept</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;{</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordtype">int</span> lof = xbox.smallEnd(0);</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">int</span> hif = xbox.bigEnd(0);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="namespaceamrex.html#a0ae2c3cb59e9cd9a180504ebc4d75546">amrex::LoopConcurrent</a>(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">if</span> (!face_only || lof == i || hif == i) {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      <span class="keywordflow">if</span> (apx(i,j,k) == 1.0) {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;AMREX_SPACEDIM; n++)</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            Ax(i,j,k,n) += bscalar*fx(i,j,k,n);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apx(i,j,k) != 0.) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;          <span class="keywordflow">if</span> (apx(i,j,k) == 1.0) {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;AMREX_SPACEDIM; n++)</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                Ax(i,j,k,n) += bscalar*fx(i,j,k,n);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apx(i,j,k) != 0.) {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                Real fxm_0 = fx(i,j,0,0);</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                Real fxm_1 = fx(i,j,0,1);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordtype">int</span> jj = j + (fcx(i,j,0,0) &gt;= 0.0 ? 1 : -1);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        Real fracy = (ccm(i-1,jj,0) || ccm(i,jj,0)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i,j,0,0)) : 0.0;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        fxm_0 = (1.0-fracy)*fxm_0 + fracy*fx(i,jj,0,0);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        fxm_1 = (1.0-fracy)*fxm_1 + fracy*fx(i,jj,0,1);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="keywordtype">int</span> jj = j + (fcx(i,j,0,0) &gt;= 0.0 ? 1 : -1);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                Real fracy = (ccm(i-1,jj,0) || ccm(i,jj,0)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcx(i,j,0,0)) : 0.0;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                fxm_0 = (1.0-fracy)*fxm_0 + fracy*fx(i,jj,0,0);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                fxm_1 = (1.0-fracy)*fxm_1 + fracy*fx(i,jj,0,1);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                Ax(i,j,k,0) += bscalar*fxm_0;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        Ax(i,j,k,1) += bscalar*fxm_1;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;      }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      <span class="comment">//else MLEBABec::compFlux already set Ax = 0</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                Ax(i,j,k,1) += bscalar*fxm_1;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;          }</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;          <span class="comment">//else MLEBABec::compFlux already set Ax = 0</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        }</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    });</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
 <div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a52689abb9ae7e544a779a4e9092deac7">  316</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a52689abb9ae7e544a779a4e9092deac7">mlebtensor_flux_y</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real&gt;</a> <span class="keyword">const</span>&amp; Ay,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fy, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; apy,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fcy,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            Real <span class="keyword">const</span> bscalar, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; ccm,</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordtype">int</span> face_only, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; ybox) noexcept</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fy, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; apy,</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; fcy,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                        Real <span class="keyword">const</span> bscalar, <a class="code" href="structamrex_1_1Array4.html">Array4&lt;int const&gt;</a> <span class="keyword">const</span>&amp; ccm,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        <span class="keywordtype">int</span> face_only, <a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; ybox) noexcept</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">int</span> lof = ybox.smallEnd(1);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">int</span> hif = ybox.bigEnd(1);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="namespaceamrex.html#a0ae2c3cb59e9cd9a180504ebc4d75546">amrex::LoopConcurrent</a>(box, [=] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    {</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">if</span> (!face_only || lof == j || hif == j) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      <span class="keywordflow">if</span> (apy(i,j,k) == 1.0) {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;AMREX_SPACEDIM; n++)</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            Ay(i,j,k,n) += bscalar*fy(i,j,k,n);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apy(i,j,k) != 0.) {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;          <span class="keywordflow">if</span> (apy(i,j,k) == 1.0) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;AMREX_SPACEDIM; n++)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                Ay(i,j,k,n) += bscalar*fy(i,j,k,n);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;          }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (apy(i,j,k) != 0.) {</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                Real fym_0 = fy(i,j,0,0);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                Real fym_1 = fy(i,j,0,1);</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordtype">int</span> ii = i + (fcy(i,j,0,0) &gt;= 0.0 ? 1 : -1);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        Real fracx = (ccm(ii,j-1,0) || ccm(ii,j,0)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j,0,0)) : 0.0;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        fym_0 = (1.0-fracx)*fym_0 + fracx*fy(ii,j,0,0);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        fym_1 = (1.0-fracx)*fym_1 + fracx*fy(ii,j,0,1);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                <span class="keywordtype">int</span> ii = i + (fcy(i,j,0,0) &gt;= 0.0 ? 1 : -1);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                Real fracx = (ccm(ii,j-1,0) || ccm(ii,j,0)) ? <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(fcy(i,j,0,0)) : 0.0;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                fym_0 = (1.0-fracx)*fym_0 + fracx*fy(ii,j,0,0);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                fym_1 = (1.0-fracx)*fym_1 + fracx*fy(ii,j,0,1);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                Ay(i,j,k,0) += bscalar*fym_0;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        Ay(i,j,k,1) += bscalar*fym_1;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="comment">//else MLEBABec::compFlux already set Ay = 0</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                Ay(i,j,k,1) += bscalar*fym_1;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;          }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;          <span class="comment">//else MLEBABec::compFlux already set Ay = 0</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        }</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    });</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}</div>

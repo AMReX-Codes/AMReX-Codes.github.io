@@ -98,13 +98,13 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classamrex_1_1Vector.html#a21762c932d02442c5b633ed8f9245644">   33</a></span>&#160;    T&amp; <a class="code" href="classamrex_1_1Vector.html#a21762c932d02442c5b633ed8f9245644">operator[] </a>(size_type i) noexcept</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>( i &lt; (this-&gt;<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">std::vector&lt;T, Allocator&gt;::size</a>()) );</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> this-&gt;std::vector&lt;T, Allocator&gt;::operator[](i);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> this-&gt;std::vector&lt;T, Allocator&gt;::operator[](i);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classamrex_1_1Vector.html#a386c8f4b57c4b34a5b0b34809554f89e">   39</a></span>&#160;    <span class="keyword">const</span> T&amp; <a class="code" href="classamrex_1_1Vector.html#a21762c932d02442c5b633ed8f9245644">operator[] </a>(size_type i) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="AMReX__BLassert_8H.html#a53ebc8b227de416f458800faa44c619e">BL_ASSERT</a>( i &lt; (this-&gt;<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">std::vector&lt;T, Allocator&gt;::size</a>()) );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> this-&gt;std::vector&lt;T, Allocator&gt;::operator[](i);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> this-&gt;std::vector&lt;T, Allocator&gt;::operator[](i);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">   46</a></span>&#160;    T* <a class="code" href="classamrex_1_1Vector.html#ab7e27d7251f3583037eee2d3333f53dd">dataPtr</a> () noexcept { <span class="keywordflow">return</span> this-&gt;data(); }</div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">   50</a></span>&#160;    Long <a class="code" href="classamrex_1_1Vector.html#a58c24fe05cc91d42ebe7151c398f0c58">size</a> () const noexcept {<span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(<a class="code" href="namespaceamrex_1_1Gpu_1_1range__detail.html#a57949ca6008ad4fe7edb4e00741b1906">std::vector&lt;T, Allocator&gt;::size</a>());}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a></div>
@@ -220,12 +220,12 @@ $(function() {
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                               IsBaseFab&lt;T&gt;::value,</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                               <span class="keywordtype">int</span>&gt;::type = 0 &gt;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    Vector&lt;std::array&lt;T*, AMREX_SPACEDIM&gt; &gt;</div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9d811785a3df6b99dd362d937d8c1413">  164</a></span>&#160;    <a class="code" href="namespaceamrex.html#ad5647809cb6ec0079f7c54d6470ee09b">GetVecOfArrOfPtrs</a>(<a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;std::array&lt;T, AMREX_SPACEDIM&gt; &gt;&amp; a) </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9d811785a3df6b99dd362d937d8c1413">  164</a></span>&#160;    <a class="code" href="namespaceamrex.html#ad5647809cb6ec0079f7c54d6470ee09b">GetVecOfArrOfPtrs</a>(<a class="code" href="classamrex_1_1Vector.html">Vector</a>&lt;std::array&lt;T, AMREX_SPACEDIM&gt; &gt;&amp; a)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::array&lt;T*, AMREX_SPACEDIM&gt;</a> &gt; r; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        r.reserve(a.size()); </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;x: a) r.push_back(<a class="code" href="namespaceamrex.html#a970fb024b86520986b94f4f4d6c6d4c9">GetArrOfPtrs</a>(x)); </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> r; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="classamrex_1_1Vector.html">Vector&lt;std::array&lt;T*, AMREX_SPACEDIM&gt;</a> &gt; r;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        r.reserve(a.size());</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;x: a) r.push_back(<a class="code" href="namespaceamrex.html#a970fb024b86520986b94f4f4d6c6d4c9">GetArrOfPtrs</a>(x));</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
@@ -243,7 +243,7 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">  190</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#adc731523d4241d981e7279b29c5d7a6d">RemoveDuplicates</a> (<a class="code" href="classamrex_1_1Vector.html">Vector&lt;T&gt;</a>&amp; vec) {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        std::sort(vec.begin(), vec.end());</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">auto</span> it = std::unique(vec.begin(), vec.end());</div>

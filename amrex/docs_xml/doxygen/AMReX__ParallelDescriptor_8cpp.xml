@@ -1128,19 +1128,19 @@
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>call,</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>status)</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>1024;</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[N];</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>status<sp/>)</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snprintf(buf,<sp/>N,<sp/></highlight><highlight class="stringliteral">&quot;AMReX<sp/>MPI<sp/>Error:<sp/>File<sp/>%s,<sp/>line<sp/>%d,<sp/>%s:<sp/>%s&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>1024;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buf[N];</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>status<sp/>)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snprintf(buf,<sp/>N,<sp/></highlight><highlight class="stringliteral">&quot;AMReX<sp/>MPI<sp/>Error:<sp/>File<sp/>%s,<sp/>line<sp/>%d,<sp/>%s:<sp/>%s&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file,<sp/>line,<sp/>call,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a568bbd4bb8f719b9c0ba1950c10678ef" kindref="member">ParallelDescriptor::ErrorString</ref>(status));</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snprintf(buf,<sp/>N,<sp/></highlight><highlight class="stringliteral">&quot;AMReX<sp/>MPI<sp/>Error:<sp/>File<sp/>%s,<sp/>line<sp/>%d,<sp/>%s&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>snprintf(buf,<sp/>N,<sp/></highlight><highlight class="stringliteral">&quot;AMReX<sp/>MPI<sp/>Error:<sp/>File<sp/>%s,<sp/>line<sp/>%d,<sp/>%s&quot;</highlight><highlight class="normal">,</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file,<sp/>line,<sp/>call);</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>buf;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>buf;</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"></highlight></codeline>
 <codeline lineno="194"><highlight class="normal">}</highlight></codeline>
@@ -1155,9 +1155,9 @@
 <codeline lineno="203"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1ae6927a6804e22fedb86c1fe19d6567fc" kindref="member">Abort</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errorcode,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>backtrace)</highlight></codeline>
 <codeline lineno="204"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(backtrace<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1system_1a795aa5887c4cdd0f1af9818d45442826" kindref="member">amrex::system::signal_handling</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BLBackTrace_1a24b1c852ff2149fe973fad9501e2b5ec" kindref="member">BLBackTrace::handler</ref>(errorcode);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BLBackTrace_1a24b1c852ff2149fe973fad9501e2b5ec" kindref="member">BLBackTrace::handler</ref>(errorcode);</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Abort(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">Communicator</ref>(),<sp/>errorcode);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Abort(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">Communicator</ref>(),<sp/>errorcode);</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="210"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight></codeline>
@@ -1236,7 +1236,7 @@
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>provided<sp/>=<sp/>-1;</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight></codeline>
 <codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Init_thread(argc,<sp/>argv,<sp/>requested,<sp/>&amp;provided);</highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/>//<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/>//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Init(argc,<sp/>argv);</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="290"><highlight class="normal"></highlight></codeline>
@@ -1359,7 +1359,7 @@
 <codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Comm_compare(comm,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">Communicator</ref>(),<sp/>&amp;r);</highlight></codeline>
 <codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>MPI_IDENT)</highlight></codeline>
-<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Lazy_1a0a2dd2d6e19976b8eaebb9d81a65718a" kindref="member">Lazy::EvalReduction</ref>();</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Lazy_1a0a2dd2d6e19976b8eaebb9d81a65718a" kindref="member">Lazy::EvalReduction</ref>();</highlight></codeline>
 <codeline lineno="411"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="412"><highlight class="normal"></highlight></codeline>
 <codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1aa38dba23144882885e93ed3ddce946ae" kindref="member">BL_PROFILE_S</ref>(</highlight><highlight class="stringliteral">&quot;ParallelDescriptor::Barrier(comm)&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -1386,7 +1386,7 @@
 <codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a240e9d13a157e03c75e42306b13cd8d8" kindref="member">MPI_Request</ref><sp/>req;</highlight></codeline>
 <codeline lineno="435"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Ibarrier(comm,<sp/>&amp;req)<sp/>);</highlight></codeline>
 <codeline lineno="436"><highlight class="normal"></highlight></codeline>
-<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Message(req,<sp/><ref refid="AMReX__ccse-mpi_8H_1aaeb65c6a10733707cec88e9cd3e3271e" kindref="member">MPI_DATATYPE_NULL</ref>);<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Message(req,<sp/><ref refid="AMReX__ccse-mpi_8H_1aaeb65c6a10733707cec88e9cd3e3271e" kindref="member">MPI_DATATYPE_NULL</ref>);</highlight></codeline>
 <codeline lineno="438"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="439"><highlight class="normal"></highlight></codeline>
 <codeline lineno="440"><highlight class="normal"></highlight></codeline>
@@ -2016,7 +2016,7 @@
 <codeline lineno="1064"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="1065"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Comm_compare(comm,<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">Communicator</ref>(),<sp/>&amp;r);</highlight></codeline>
 <codeline lineno="1066"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r<sp/>==<sp/>MPI_IDENT)</highlight></codeline>
-<codeline lineno="1067"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Lazy_1a0a2dd2d6e19976b8eaebb9d81a65718a" kindref="member">Lazy::EvalReduction</ref>();</highlight></codeline>
+<codeline lineno="1067"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1Lazy_1a0a2dd2d6e19976b8eaebb9d81a65718a" kindref="member">Lazy::EvalReduction</ref>();</highlight></codeline>
 <codeline lineno="1068"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1069"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1070"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1aa38dba23144882885e93ed3ddce946ae" kindref="member">BL_PROFILE_S</ref>(</highlight><highlight class="stringliteral">&quot;ParallelDescriptor::Bcast(viMiM)&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -2075,9 +2075,9 @@
 <codeline lineno="1124"><highlight class="normal"><ref refid="namespaceamrex_1_1ParallelDescriptor_1ae6927a6804e22fedb86c1fe19d6567fc" kindref="member">Abort</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>backtrace)</highlight></codeline>
 <codeline lineno="1125"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(backtrace<sp/>&amp;&amp;<sp/><ref refid="namespaceamrex_1_1system_1a795aa5887c4cdd0f1af9818d45442826" kindref="member">amrex::system::signal_handling</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BLBackTrace_1a24b1c852ff2149fe973fad9501e2b5ec" kindref="member">BLBackTrace::handler</ref>(s);</highlight></codeline>
+<codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1BLBackTrace_1a24b1c852ff2149fe973fad9501e2b5ec" kindref="member">BLBackTrace::handler</ref>(s);</highlight></codeline>
 <codeline lineno="1128"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/>std::_Exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::_Exit(EXIT_FAILURE);</highlight></codeline>
 <codeline lineno="1130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1131"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1132"><highlight class="normal"></highlight></codeline>
@@ -2266,10 +2266,10 @@
 <codeline lineno="1315"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>mpi_type_intvect<sp/>==<sp/><ref refid="AMReX__ccse-mpi_8H_1aaeb65c6a10733707cec88e9cd3e3271e" kindref="member">MPI_DATATYPE_NULL</ref><sp/>)</highlight></codeline>
 <codeline lineno="1317"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1318"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>types[]<sp/>=<sp/>{<sp/>MPI_INT<sp/>};</highlight></codeline>
-<codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocklens[]<sp/>=<sp/>{<sp/>AMREX_SPACEDIM<sp/>};</highlight></codeline>
-<codeline lineno="1320"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Aint<sp/>disp[]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
-<codeline lineno="1321"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_struct(1,<sp/>blocklens,<sp/>disp,<sp/>types,<sp/>&amp;mpi_type_intvect)<sp/>);</highlight></codeline>
+<codeline lineno="1318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>types[]<sp/>=<sp/>{<sp/>MPI_INT<sp/>};</highlight></codeline>
+<codeline lineno="1319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocklens[]<sp/>=<sp/>{<sp/>AMREX_SPACEDIM<sp/>};</highlight></codeline>
+<codeline lineno="1320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Aint<sp/>disp[]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="1321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_struct(1,<sp/>blocklens,<sp/>disp,<sp/>types,<sp/>&amp;mpi_type_intvect)<sp/>);</highlight></codeline>
 <codeline lineno="1322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Aint<sp/>lb,<sp/>extent;</highlight></codeline>
 <codeline lineno="1323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_get_extent(mpi_type_intvect,<sp/>&amp;lb,<sp/>&amp;extent)<sp/>);</highlight></codeline>
 <codeline lineno="1324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(extent<sp/>!=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>))<sp/>{</highlight></codeline>
@@ -2277,7 +2277,7 @@
 <codeline lineno="1326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_resized(tmp,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref>),<sp/>&amp;mpi_type_intvect)<sp/>);</highlight></codeline>
 <codeline lineno="1327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_free(&amp;tmp)<sp/>);</highlight></codeline>
 <codeline lineno="1328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_intvect<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="1329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_intvect<sp/>)<sp/>);</highlight></codeline>
 <codeline lineno="1330"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mpi_type_intvect;</highlight></codeline>
 <codeline lineno="1332"><highlight class="normal">}</highlight></codeline>
@@ -2289,9 +2289,9 @@
 <codeline lineno="1338"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>mpi_type_indextype<sp/>==<sp/><ref refid="AMReX__ccse-mpi_8H_1aaeb65c6a10733707cec88e9cd3e3271e" kindref="member">MPI_DATATYPE_NULL</ref><sp/>)</highlight></codeline>
 <codeline lineno="1340"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>types[]<sp/>=<sp/>{<sp/>MPI_UNSIGNED<sp/>};</highlight></codeline>
-<codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocklens[]<sp/>=<sp/>{<sp/>1<sp/>};</highlight></codeline>
-<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Aint<sp/>disp[]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
+<codeline lineno="1341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>types[]<sp/>=<sp/>{<sp/>MPI_UNSIGNED<sp/>};</highlight></codeline>
+<codeline lineno="1342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocklens[]<sp/>=<sp/>{<sp/>1<sp/>};</highlight></codeline>
+<codeline lineno="1343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Aint<sp/>disp[]<sp/>=<sp/>{<sp/>0<sp/>};</highlight></codeline>
 <codeline lineno="1344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_struct(1,<sp/>blocklens,<sp/>disp,<sp/>types,<sp/>&amp;mpi_type_indextype)<sp/>);</highlight></codeline>
 <codeline lineno="1345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Aint<sp/>lb,<sp/>extent;</highlight></codeline>
 <codeline lineno="1346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_get_extent(mpi_type_indextype,<sp/>&amp;lb,<sp/>&amp;extent)<sp/>);</highlight></codeline>
@@ -2300,7 +2300,7 @@
 <codeline lineno="1349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_resized(tmp,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="classamrex_1_1IndexType" kindref="compound">IndexType</ref>),<sp/>&amp;mpi_type_indextype)<sp/>);</highlight></codeline>
 <codeline lineno="1350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_free(&amp;tmp)<sp/>);</highlight></codeline>
 <codeline lineno="1351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_indextype<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="1352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_indextype<sp/>)<sp/>);</highlight></codeline>
 <codeline lineno="1353"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mpi_type_indextype;</highlight></codeline>
 <codeline lineno="1355"><highlight class="normal">}</highlight></codeline>
@@ -2312,17 +2312,17 @@
 <codeline lineno="1361"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>mpi_type_box<sp/>==<sp/><ref refid="AMReX__ccse-mpi_8H_1aaeb65c6a10733707cec88e9cd3e3271e" kindref="member">MPI_DATATYPE_NULL</ref><sp/>)</highlight></codeline>
 <codeline lineno="1363"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>bx[2];</highlight></codeline>
-<codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>types[]<sp/>=<sp/>{</highlight></codeline>
-<codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">Mpi_typemap&lt;IntVect&gt;::type</ref>(),</highlight></codeline>
-<codeline lineno="1367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">Mpi_typemap&lt;IntVect&gt;::type</ref>(),</highlight></codeline>
-<codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">Mpi_typemap&lt;IndexType&gt;::type</ref>(),</highlight></codeline>
+<codeline lineno="1364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/>bx[2];</highlight></codeline>
+<codeline lineno="1365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1affc17fe964f9f670fb06e09d6134b4ff" kindref="member">MPI_Datatype</ref><sp/>types[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="1366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">Mpi_typemap&lt;IntVect&gt;::type</ref>(),</highlight></codeline>
+<codeline lineno="1367"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">Mpi_typemap&lt;IntVect&gt;::type</ref>(),</highlight></codeline>
+<codeline lineno="1368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1ParallelDescriptor_1_1Mpi__typemap_1a178254a5520c3ee1ea23f47987392468" kindref="member">Mpi_typemap&lt;IndexType&gt;::type</ref>(),</highlight></codeline>
 <codeline lineno="1369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="1370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocklens[]<sp/>=<sp/>{<sp/>1,<sp/>1,<sp/>1<sp/>};</highlight></codeline>
-<codeline lineno="1371"><highlight class="normal"><sp/><sp/><sp/><sp/>MPI_Aint<sp/>disp[3];</highlight></codeline>
-<codeline lineno="1372"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Get_address(&amp;bx[0].smallend,<sp/>&amp;disp[0])<sp/>);</highlight></codeline>
-<codeline lineno="1373"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Get_address(&amp;bx[0].bigend,<sp/><sp/><sp/>&amp;disp[1])<sp/>);</highlight></codeline>
-<codeline lineno="1374"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Get_address(&amp;bx[0].btype,<sp/><sp/><sp/><sp/>&amp;disp[2])<sp/>);</highlight></codeline>
+<codeline lineno="1370"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blocklens[]<sp/>=<sp/>{<sp/>1,<sp/>1,<sp/>1<sp/>};</highlight></codeline>
+<codeline lineno="1371"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MPI_Aint<sp/>disp[3];</highlight></codeline>
+<codeline lineno="1372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Get_address(&amp;bx[0].smallend,<sp/>&amp;disp[0])<sp/>);</highlight></codeline>
+<codeline lineno="1373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Get_address(&amp;bx[0].bigend,<sp/><sp/><sp/>&amp;disp[1])<sp/>);</highlight></codeline>
+<codeline lineno="1374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Get_address(&amp;bx[0].btype,<sp/><sp/><sp/><sp/>&amp;disp[2])<sp/>);</highlight></codeline>
 <codeline lineno="1375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp[2]<sp/>-=<sp/>disp[0];</highlight></codeline>
 <codeline lineno="1376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp[1]<sp/>-=<sp/>disp[0];</highlight></codeline>
 <codeline lineno="1377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disp[0]<sp/>=<sp/>0;</highlight></codeline>
@@ -2334,7 +2334,7 @@
 <codeline lineno="1383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_create_resized(tmp,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(bx[0]),<sp/>&amp;mpi_type_box)<sp/>);</highlight></codeline>
 <codeline lineno="1384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_free(&amp;tmp)<sp/>);</highlight></codeline>
 <codeline lineno="1385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_box<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Type_commit(<sp/>&amp;mpi_type_box<sp/>)<sp/>);</highlight></codeline>
 <codeline lineno="1387"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mpi_type_box;</highlight></codeline>
 <codeline lineno="1389"><highlight class="normal">}</highlight></codeline>
@@ -2362,16 +2362,16 @@
 <codeline lineno="1411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iss.rdbuf()-&gt;pubsetbuf(io_buffer.dataPtr(),<sp/>io_buffer.size());</highlight></codeline>
 <codeline lineno="1412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iss.open(filename.c_str(),<sp/>std::ios::in);</highlight></codeline>
 <codeline lineno="1413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<sp/>iss.good())<sp/>{</highlight></codeline>
-<codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bExitOnError)<sp/>{</highlight></codeline>
+<codeline lineno="1414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bExitOnError)<sp/>{</highlight></codeline>
 <codeline lineno="1415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac40a8be1926370de761ddd49c765d971" kindref="member">amrex::FileOpenFailed</ref>(filename);</highlight></codeline>
-<codeline lineno="1416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="1416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileLength<sp/>=<sp/>-1;</highlight></codeline>
-<codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="1420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iss.seekg(0,<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::ios::end</ref>);</highlight></codeline>
 <codeline lineno="1421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileLength<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::streamoff</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(iss.tellg());</highlight></codeline>
 <codeline lineno="1422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iss.seekg(0,<sp/>std::ios::beg);</highlight></codeline>
-<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1424"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1425"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9e67de311d5153ce34e743c7792de733" kindref="member">ParallelDescriptor::Bcast</ref>(&amp;fileLength,<sp/>1,</highlight></codeline>
 <codeline lineno="1426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1ab734a5d614e753d28d03865ee6e4039a" kindref="member">ParallelDescriptor::IOProcessorNumber</ref>(),<sp/>comm);</highlight></codeline>
@@ -2428,7 +2428,7 @@
 <codeline lineno="1477"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rank<sp/><sp/><sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
 <codeline lineno="1478"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nprocs<sp/>%<sp/>team_size<sp/>!=<sp/>0)</highlight></codeline>
-<codeline lineno="1480"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>processes<sp/>not<sp/>divisible<sp/>by<sp/>team<sp/>size&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="1480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad26f2328bf66aa9678347a6055a25431" kindref="member">amrex::Abort</ref>(</highlight><highlight class="stringliteral">&quot;Number<sp/>of<sp/>processes<sp/>not<sp/>divisible<sp/>by<sp/>team<sp/>size&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1481"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1482"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1a665b0b12d8aadf1fe4050650f79c880f" kindref="member">m_numTeams</ref><sp/><sp/><sp/><sp/>=<sp/>nprocs<sp/>/<sp/>team_size;</highlight></codeline>
 <codeline lineno="1483"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1a3a15d388a4307d1a6af319e8244b7d1e" kindref="member">m_size</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>team_size;</highlight></codeline>
@@ -2440,23 +2440,23 @@
 <codeline lineno="1489"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1490"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(BL_USE_MPI3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1491"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1492"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a2e7770334e9e65834ce3c95dd0c3a50f" kindref="member">MPI_Group</ref><sp/>grp,<sp/>team_grp,<sp/>lead_grp;</highlight></codeline>
-<codeline lineno="1493"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Comm_group(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),<sp/>&amp;grp)<sp/>);</highlight></codeline>
-<codeline lineno="1494"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>team_ranks[team_size];</highlight></codeline>
-<codeline lineno="1495"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>team_size;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>team_ranks[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a564fb3e90a09a47e8213cdd2de4a2634" kindref="member">MyTeamLead</ref>()<sp/>+<sp/>i;</highlight></codeline>
-<codeline lineno="1497"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1498"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Group_incl(grp,<sp/>team_size,<sp/>team_ranks,<sp/>&amp;team_grp)<sp/>);</highlight></codeline>
-<codeline lineno="1499"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Comm_create(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),</highlight></codeline>
-<codeline lineno="1500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>team_grp,<sp/>&amp;<ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1a69bbcf1d147ce2786b6c5c4f166b2b1e" kindref="member">m_team_comm</ref>)<sp/>);</highlight></codeline>
+<codeline lineno="1492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__ccse-mpi_8H_1a2e7770334e9e65834ce3c95dd0c3a50f" kindref="member">MPI_Group</ref><sp/>grp,<sp/>team_grp,<sp/>lead_grp;</highlight></codeline>
+<codeline lineno="1493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Comm_group(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),<sp/>&amp;grp)<sp/>);</highlight></codeline>
+<codeline lineno="1494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>team_ranks[team_size];</highlight></codeline>
+<codeline lineno="1495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>team_size;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>team_ranks[i]<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a564fb3e90a09a47e8213cdd2de4a2634" kindref="member">MyTeamLead</ref>()<sp/>+<sp/>i;</highlight></codeline>
+<codeline lineno="1497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Group_incl(grp,<sp/>team_size,<sp/>team_ranks,<sp/>&amp;team_grp)<sp/>);</highlight></codeline>
+<codeline lineno="1499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Comm_create(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),</highlight></codeline>
+<codeline lineno="1500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>team_grp,<sp/>&amp;<ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1a69bbcf1d147ce2786b6c5c4f166b2b1e" kindref="member">m_team_comm</ref>)<sp/>);</highlight></codeline>
 <codeline lineno="1501"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1502"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;lead_ranks(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1a665b0b12d8aadf1fe4050650f79c880f" kindref="member">m_numTeams</ref>);</highlight></codeline>
-<codeline lineno="1503"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>lead_ranks.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="1504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lead_ranks[i]<sp/>=<sp/>i<sp/>*<sp/>team_size;</highlight></codeline>
-<codeline lineno="1505"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1506"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Group_incl(grp,<sp/>lead_ranks.size(),<sp/>&amp;lead_ranks[0],<sp/>&amp;lead_grp)<sp/>);</highlight></codeline>
-<codeline lineno="1507"><highlight class="normal"><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Comm_create(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),</highlight></codeline>
-<codeline lineno="1508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lead_grp,<sp/>&amp;<ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1aa79a14d32c85df7c2912b7cac38f4416" kindref="member">m_lead_comm</ref>)<sp/>);</highlight></codeline>
+<codeline lineno="1502"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;lead_ranks(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1a665b0b12d8aadf1fe4050650f79c880f" kindref="member">m_numTeams</ref>);</highlight></codeline>
+<codeline lineno="1503"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>lead_ranks.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lead_ranks[i]<sp/>=<sp/>i<sp/>*<sp/>team_size;</highlight></codeline>
+<codeline lineno="1505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="1506"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Group_incl(grp,<sp/>lead_ranks.size(),<sp/>&amp;lead_ranks[0],<sp/>&amp;lead_grp)<sp/>);</highlight></codeline>
+<codeline lineno="1507"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Comm_create(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a0f53686fc6a6b7dca69c230fd1336e44" kindref="member">ParallelDescriptor::Communicator</ref>(),</highlight></codeline>
+<codeline lineno="1508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lead_grp,<sp/>&amp;<ref refid="namespaceamrex_1_1ParallelDescriptor_1a9a80b6d86037c06fed7ef5fb0d2a8d28" kindref="member">m_Team</ref>.<ref refid="structamrex_1_1ParallelDescriptor_1_1ProcessTeam_1aa79a14d32c85df7c2912b7cac38f4416" kindref="member">m_lead_comm</ref>)<sp/>);</highlight></codeline>
 <codeline lineno="1509"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1510"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Group_free(&amp;grp)<sp/>);</highlight></codeline>
 <codeline lineno="1511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BL_MPI_REQUIRE(<sp/>MPI_Group_free(&amp;team_grp)<sp/>);</highlight></codeline>

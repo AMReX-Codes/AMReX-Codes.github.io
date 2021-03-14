@@ -88,20 +88,20 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    amrex::Real lx = (p.pos(0) - plo[0]) * dxi[0] + 0.5;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lx));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    amrex::Real xint = lx - i;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    amrex::Real sx[2] = {Real(1.0) - xint, xint};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) { </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, 0, 0, 0), <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(sx[ii]*p.rdata(0)));</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=1; comp &lt; nc; ++comp) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) { </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, 0, 0, comp), </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, 0, 0, comp),</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                    <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(sx[ii]*p.rdata(0)*p.rdata(comp)));</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
@@ -118,16 +118,16 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    amrex::Real sx[2] = {Real(1.0) - xint, xint};</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    amrex::Real sy[2] = {Real(1.0) - yint, yint};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) { </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) { </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, j+jj-1, 0, 0),</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                    <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(sx[ii]*sy[jj]*p.rdata(0)));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=1; comp &lt; nc; ++comp) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) { </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {                 </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, j+jj-1, 0, comp),</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                        <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(sx[ii]*sy[jj]*p.rdata(0)*p.rdata(comp)));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
@@ -150,9 +150,9 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::Real sx[] = {Real(1.0) - xint, xint};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    amrex::Real sy[] = {Real(1.0) - yint, yint};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    amrex::Real sz[] = {Real(1.0) - zint, zint};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) { </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) { </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, j+jj-1, k+kk-1, 0),</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                        <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(sx[ii]*sy[jj]*sz[kk]*p.rdata(0)));</div>
@@ -161,8 +161,8 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=1; comp &lt; nc; ++comp) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) { </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) { </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i+ii-1, j+jj-1, k+kk-1, comp),</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                            <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(sx[ii]*sy[jj]*sz[kk]*p.rdata(0)*p.rdata(comp)));</div>
@@ -192,11 +192,11 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">int</span> lo_x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lx));</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> hi_x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(hx));</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo_x; i &lt;= hi_x; ++i) {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (i &lt; rho.begin.x || i &gt;= rho.<a class="code" href="structamrex_1_1Array4.html#ae3e6ea18e90f4b382a90da961a93d8e9">end</a>.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        amrex::Real wx = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(hx - i, amrex::Real(1.0)) - <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(lx - i, amrex::Real(0.0));</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        amrex::Real weight = wx*factor;                </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        amrex::Real weight = wx*factor;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i, 0, 0, 0), <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(weight*p.rdata(0)));</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
@@ -204,7 +204,7 @@ $(function() {
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo_x; i &lt;= hi_x; ++i) {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">if</span> (i &lt; rho.begin.x || i &gt;= rho.<a class="code" href="structamrex_1_1Array4.html#ae3e6ea18e90f4b382a90da961a93d8e9">end</a>.<a class="code" href="structamrex_1_1Dim3.html#a090510e5e79fd6c75d96c906cd9250e1">x</a>) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            amrex::Real wx = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(hx - i, amrex::Real(1.0)) - <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(lx - i, amrex::Real(0.0));            </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            amrex::Real wx = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(hx - i, amrex::Real(1.0)) - <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(lx - i, amrex::Real(0.0));</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            amrex::Real weight = wx*factor;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">amrex::Gpu::Atomic::AddNoRet</a>(&amp;rho(i, 0, 0, comp), <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(weight*p.rdata(0)*p.rdata(comp)));</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
@@ -251,23 +251,23 @@ $(function() {
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 3)</span></div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    amrex::Real factor = (pdxi[0]/dxi[0])*(pdxi[1]/dxi[1])*(pdxi[2]/dxi[2]);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    amrex::Real lx = (p.pos(0) - plo[0] - 0.5/pdxi[0]) * dxi[0];</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    amrex::Real ly = (p.pos(1) - plo[1] - 0.5/pdxi[1]) * dxi[1];</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    amrex::Real lz = (p.pos(2) - plo[2] - 0.5/pdxi[2]) * dxi[2];</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    amrex::Real hx = (p.pos(0) - plo[0] + 0.5/pdxi[0]) * dxi[0];</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    amrex::Real hy = (p.pos(1) - plo[1] + 0.5/pdxi[1]) * dxi[1];</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    amrex::Real hz = (p.pos(2) - plo[2] + 0.5/pdxi[2]) * dxi[2];</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">int</span> lo_x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lx));</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">int</span> lo_y = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(ly));</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">int</span> lo_z = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lz));</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">int</span> hi_x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(hx));</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">int</span> hi_y = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(hy));</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">int</span> hi_z = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(hz));</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = lo_z; k &lt;= hi_z; ++k) {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (k &lt; rho.begin.z || k &gt;= rho.<a class="code" href="structamrex_1_1Array4.html#ae3e6ea18e90f4b382a90da961a93d8e9">end</a>.<a class="code" href="structamrex_1_1Dim3.html#a301b8be615c36e302d8510be17c63e90">z</a>) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        amrex::Real wz = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(hz - k, amrex::Real(1.0)) - <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(lz - k, amrex::Real(0.0));</div>
@@ -312,15 +312,15 @@ $(function() {
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#if (AMREX_SPACEDIM == 1)</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    amrex::Real lx = (p.pos(0) - plo[0]) * dxi[0] + 0.5;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lx));</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    amrex::Real xint = lx - i;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    amrex::Real sx[] = {Real(1.0)-xint, xint};</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=0; comp &lt; nc; ++comp) {    </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) { </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=0; comp &lt; nc; ++comp) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            amrex::Real acceleration = sx[ii]*acc(i+ii-1,0,0,comp);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(acceleration);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
@@ -328,19 +328,19 @@ $(function() {
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#elif (AMREX_SPACEDIM == 2)</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    amrex::Real lx = (p.pos(0) - plo[0]) * dxi[0] + 0.5;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    amrex::Real ly = (p.pos(1) - plo[1]) * dxi[1] + 0.5;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lx));</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(ly));</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    amrex::Real xint = lx - i;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    amrex::Real yint = ly - j;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    amrex::Real sx[] = {Real(1.0)-xint, xint};</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    amrex::Real sy[] = {Real(1.0)-yint, yint};</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=0; comp &lt; nc; ++comp) {    </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) { </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) { </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=0; comp &lt; nc; ++comp) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                amrex::Real acceleration = sx[ii]*sy[jj]*acc(i+ii-1,j+jj-1,0,comp);</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(acceleration);</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            }</div>
@@ -350,22 +350,22 @@ $(function() {
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    amrex::Real lx = (p.pos(0) - plo[0]) * dxi[0] + 0.5;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    amrex::Real ly = (p.pos(1) - plo[1]) * dxi[1] + 0.5;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    amrex::Real lz = (p.pos(2) - plo[2]) * dxi[2] + 0.5;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lx));</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(ly));</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">int</span> k = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(amrex::Math::floor(lz));</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    amrex::Real xint = lx - i;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    amrex::Real yint = ly - j;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    amrex::Real zint = lz - k;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    amrex::Real sx[] = {Real(1.0)-xint, xint};</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    amrex::Real sy[] = {Real(1.0)-yint, yint};</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    amrex::Real sz[] = {Real(1.0)-zint, zint};</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=0; comp &lt; nc; ++comp) {                    </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) { </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) { </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> comp=0; comp &lt; nc; ++comp) {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt;= 1; ++kk) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = 0; jj &lt;= 1; ++jj) {</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = 0; ii &lt;= 1; ++ii) {</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    amrex::Real acceleration = sx[ii]*sy[jj]*sz[kk]*acc(i+ii-1,j+jj-1,k+kk-1,comp);</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(acceleration);</div>

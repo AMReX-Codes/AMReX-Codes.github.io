@@ -2534,10 +2534,10 @@ Index <ref refid="namespaceamrex_1a01d74f2f8ceb510c07cb44c266569781" kindref="me
 
     Index last_mask, last_offset;
     <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, mask+np-1, mask + np, &amp;last_mask);
-    <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);    
+    <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);
 
     auto p_offsets = offsets.dataPtr();
-    
+
     const auto src_data = src.getConstParticleTileData();
           auto dst_data = dst.getParticleTileData();
 
@@ -2550,7 +2550,7 @@ Index <ref refid="namespaceamrex_1a01d74f2f8ceb510c07cb44c266569781" kindref="me
     return last_mask + last_offset;
 }
 
-    
+
 template &lt;typename DstTile</initializer>
         <briefdescription>
         </briefdescription>
@@ -23152,8 +23152,7 @@ Returns the index of the first element for which f is 0. </para>
         </briefdescription>
         <detaileddescription>
 <para>For example, if it is passed the string &quot;/a/b/c/d/e/f/g&quot;, it will return successfully when all the directories in the pathname exist; i.e. when the full pathname is a valid directory.</para>
-<para>In a Windows environment, the path separator is a &apos;\&apos;, so that if using the example given above you must pass the string <linebreak/>
- &quot;\\a\\b\\c\\d\\e\\f\\g&quot; (Note that you must escape the backslash in a character string),</para>
+<para>In a Windows environment, the path separator is a &apos;\&apos;, so that if using the example given above you must pass the string &quot;\\a\\b\\c\\d\\e\\f\\g&quot; (Note that you must escape the backslash in a character string),</para>
 <para>Only the last mkdir return value is checked for success as errno may not be set to EEXIST if a directory exists but mkdir has other reasons to fail such as part of the path being a read-only filesystem (EROFS). If this function fails, it will print out an error stack. </para>
         </detaileddescription>
         <inbodydescription>
@@ -24223,8 +24222,7 @@ Returns the index of the first element for which f is 0. </para>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Write Real data to the ostream. The arguments are a pointer to data to write, the size of the data buffer, the ostream, and an optional <ref refid="classamrex_1_1RealDescriptor" kindref="compound">RealDescriptor</ref> that describes the data format to use for writing. If no <ref refid="classamrex_1_1RealDescriptor" kindref="compound">RealDescriptor</ref> is provided, the data will be written using the native format for your machine. <linebreak/>
- </para>
+<para>Write Real data to the ostream. The arguments are a pointer to data to write, the size of the data buffer, the ostream, and an optional <ref refid="classamrex_1_1RealDescriptor" kindref="compound">RealDescriptor</ref> that describes the data format to use for writing. If no <ref refid="classamrex_1_1RealDescriptor" kindref="compound">RealDescriptor</ref> is provided, the data will be written using the native format for your machine. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
