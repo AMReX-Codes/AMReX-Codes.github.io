@@ -70,6 +70,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classamrex_1_1CArena-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -115,6 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56528182c07ceb5d08fce7f674f62991"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a56528182c07ceb5d08fce7f674f62991">free</a> (void *ap) override final</td></tr>
 <tr class="memdesc:a56528182c07ceb5d08fce7f674f62991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free up allocated memory. Merge neighboring free memory chunks into largest possible chunk.  <a href="classamrex_1_1CArena.html#a56528182c07ceb5d08fce7f674f62991">More...</a><br /></td></tr>
 <tr class="separator:a56528182c07ceb5d08fce7f674f62991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1452ccfc21b50919047fdaf5c3a5497f"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a1452ccfc21b50919047fdaf5c3a5497f">freeUnused</a> () override final</td></tr>
+<tr class="memdesc:a1452ccfc21b50919047fdaf5c3a5497f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free unused memory back to the sytem. Return value is the amount memory freed.  <a href="classamrex_1_1CArena.html#a1452ccfc21b50919047fdaf5c3a5497f">More...</a><br /></td></tr>
+<tr class="separator:a1452ccfc21b50919047fdaf5c3a5497f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f5de3e5518c0f5bcc71a6a2b4076a3f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f">heap_space_used</a> () const noexcept</td></tr>
 <tr class="memdesc:a5f5de3e5518c0f5bcc71a6a2b4076a3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current amount of heap space used by the <a class="el" href="classamrex_1_1CArena.html" title="A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager....">CArena</a> object.  <a href="classamrex_1_1CArena.html#a5f5de3e5518c0f5bcc71a6a2b4076a3f">More...</a><br /></td></tr>
 <tr class="separator:a5f5de3e5518c0f5bcc71a6a2b4076a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +162,16 @@ Protected Types</h2></td></tr>
 <tr class="memdesc:a9e8adf2bef58badafbefa442d69db64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of our freelist and blocklist. We use a set sorted from lo to hi memory addresses.  <a href="classamrex_1_1CArena.html#a9e8adf2bef58badafbefa442d69db64b">More...</a><br /></td></tr>
 <tr class="separator:a9e8adf2bef58badafbefa442d69db64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5d453f5a9a96ede674a4ef4d8a40382c"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#a5d453f5a9a96ede674a4ef4d8a40382c">freeUnused_protected</a> () override final</td></tr>
+<tr class="separator:a5d453f5a9a96ede674a4ef4d8a40382c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
+<tr class="memitem:afc721e195430f79b2d1b287c490ef0fb inherit pro_methods_classamrex_1_1Arena"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb">allocate_system</a> (std::size_t nbytes)</td></tr>
+<tr class="separator:afc721e195430f79b2d1b287c490ef0fb inherit pro_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07ba8cda253cddee3cab1168ac65694 inherit pro_methods_classamrex_1_1Arena"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694">deallocate_system</a> (void *p, std::size_t nbytes)</td></tr>
+<tr class="separator:ac07ba8cda253cddee3cab1168ac65694 inherit pro_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ad1b240a0437cfcaee6788096d93a1674"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; void *, std::size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1CArena.html#ad1b240a0437cfcaee6788096d93a1674">m_alloc</a></td></tr>
@@ -196,11 +210,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a506a68384da30629323d0839f13812c2 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06dd6197d2081d7dd4c1bed308edd387 inherit pub_static_methods_classamrex_1_1Arena"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#a06dd6197d2081d7dd4c1bed308edd387">Finalize</a> ()</td></tr>
 <tr class="separator:a06dd6197d2081d7dd4c1bed308edd387 inherit pub_static_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classamrex_1_1Arena"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classamrex_1_1Arena')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classamrex_1_1Arena.html">amrex::Arena</a></td></tr>
-<tr class="memitem:afc721e195430f79b2d1b287c490ef0fb inherit pro_methods_classamrex_1_1Arena"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#afc721e195430f79b2d1b287c490ef0fb">allocate_system</a> (std::size_t nbytes)</td></tr>
-<tr class="separator:afc721e195430f79b2d1b287c490ef0fb inherit pro_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac07ba8cda253cddee3cab1168ac65694 inherit pro_methods_classamrex_1_1Arena"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1Arena.html#ac07ba8cda253cddee3cab1168ac65694">deallocate_system</a> (void *p, std::size_t nbytes)</td></tr>
-<tr class="separator:ac07ba8cda253cddee3cab1168ac65694 inherit pro_methods_classamrex_1_1Arena"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A Concrete Class for Dynamic Memory Management using first fit. This is a coalescing memory manager. It allocates (possibly) large chunks of heap space and apportions it out as requested. It merges together neighboring chunks on each <a class="el" href="classamrex_1_1CArena.html#a56528182c07ceb5d08fce7f674f62991" title="Free up allocated memory. Merge neighboring free memory chunks into largest possible chunk.">free()</a>. </p>
@@ -371,6 +380,62 @@ Additional Inherited Members</h2></td></tr>
 <p>Free up allocated memory. Merge neighboring free memory chunks into largest possible chunk. </p>
 
 <p>Implements <a class="el" href="classamrex_1_1Arena.html#a0c7e0730574c98febb6ddca2712cb515">amrex::Arena</a>.</p>
+
+</div>
+</div>
+<a id="a1452ccfc21b50919047fdaf5c3a5497f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1452ccfc21b50919047fdaf5c3a5497f">&#9670;&nbsp;</a></span>freeUnused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t amrex::CArena::freeUnused </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Free unused memory back to the sytem. Return value is the amount memory freed. </p>
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#ae58dbb9ab6bb4e8d980b384b0d8804e5">amrex::Arena</a>.</p>
+
+</div>
+</div>
+<a id="a5d453f5a9a96ede674a4ef4d8a40382c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d453f5a9a96ede674a4ef4d8a40382c">&#9670;&nbsp;</a></span>freeUnused_protected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t amrex::CArena::freeUnused_protected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classamrex_1_1Arena.html#a881f97d5676c4784f52d6f4c702da696">amrex::Arena</a>.</p>
 
 </div>
 </div>
