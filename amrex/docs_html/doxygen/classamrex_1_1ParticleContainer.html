@@ -4059,10 +4059,10 @@ template&lt;int T_NStructReal, int T_NStructInt = 0, int T_NArrayReal = 0, int T
 <p>The local flag controls whether this is <code>local</code> or <code>global</code> Redistribute. In a local Redistribute, particles can only have moved a certain distance since the last time <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> was called. Thus, communication only needs to happen between neighboring ranks. In a global Redistribute, the particles can potentially go from any rank to any rank. This usually happens after initialiation or when doing dynamic load balancing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lev_min</td><td></td></tr>
-    <tr><td class="paramname">lev_max</td><td></td></tr>
-    <tr><td class="paramname">nGrow</td><td></td></tr>
-    <tr><td class="paramname">local</td><td></td></tr>
+    <tr><td class="paramname">lev_min</td><td>The minimum level consider. Particles on levels less than this will not be touched, and particles on finer levels will not be assigned to levels less than this, either. Default: 0. </td></tr>
+    <tr><td class="paramname">lev_max</td><td>The maximum level consider. Particles on levels greater than this will not be touched, and particles on coarser levels will not be assigned to levels greater than this, either. If negative, will use the finest level in the hierarchy. Default: -1. </td></tr>
+    <tr><td class="paramname">nGrow</td><td>If particles are within nGrow cells of their current box, they will not moved. This is useful for subcycling methods, when fine level particles need to be redistributed but are not neccessarily at the same time as those on the coarse level. Default: 0 </td></tr>
+    <tr><td class="paramname">local</td><td>If 0, this will be a non-local redistribute, meaning that particle can potentially go to any other box in the simulation. If &gt; 0, this is the maximum number of cells a particle can have moved since the last <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> call. Knowing this number allows an optimized MPI communication pattern to be used. </td></tr>
   </table>
   </dd>
 </dl>

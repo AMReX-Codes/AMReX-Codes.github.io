@@ -599,8 +599,8 @@ $(function() {
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        std::vector&lt;int&gt; sizes;</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        std::vector&lt;PTile*&gt; tiles;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a688bba8ba5f6445403254ab976e17130">m_rcv_box_counts</a>.size(); ++i)</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;          {</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a688bba8ba5f6445403254ab976e17130">m_rcv_box_counts</a>.size(); i &lt; N; ++i)</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        {</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <span class="keywordtype">int</span> copy_size = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a688bba8ba5f6445403254ab976e17130">m_rcv_box_counts</a>[i];</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            <span class="keywordtype">int</span> lev = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a6bea1df063b160fa8cd2bb83f9ea6062">m_rcv_box_levs</a>[i];</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            <span class="keywordtype">int</span> gid = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a904274abbb6f2df42bb024021bc940e7">m_rcv_box_ids</a>[i];</div>
@@ -615,8 +615,8 @@ $(function() {
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <a class="code" href="classamrex_1_1Gpu_1_1Device.html#a5ccf8e9a40fdaa00878353c79867bd04">Gpu::Device::synchronize</a>();</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <span class="keywordtype">int</span> uindex = 0;</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        <span class="keywordtype">int</span> procindex = 0, rproc = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a563a9fd94be463d592f88478a720d6b0">m_rcv_box_pids</a>[0];</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a688bba8ba5f6445403254ab976e17130">m_rcv_box_counts</a>.size(); ++i)</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;          {</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0, N = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a688bba8ba5f6445403254ab976e17130">m_rcv_box_counts</a>.size(); i &lt; N; ++i)</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        {</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            <span class="keywordtype">int</span> lev = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a6bea1df063b160fa8cd2bb83f9ea6062">m_rcv_box_levs</a>[i];</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            <span class="keywordtype">int</span> gid = plan.<a class="code" href="structamrex_1_1ParticleCopyPlan.html#a904274abbb6f2df42bb024021bc940e7">m_rcv_box_ids</a>[i];</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;            <span class="keywordtype">int</span> tid = 0;</div>
@@ -645,7 +645,7 @@ $(function() {
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;              });</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            <a class="code" href="namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25">Gpu::synchronize</a>();</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;          }</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        }</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    }</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <a class="code" href="namespaceamrex.html#a95b1159ba3a5494abd49dc9b3d34eacf">amrex::ignore_unused</a>(pc,plan,rcv_buffer,policy);</div>
