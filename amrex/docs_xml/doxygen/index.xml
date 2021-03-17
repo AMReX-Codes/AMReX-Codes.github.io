@@ -5976,7 +5976,9 @@
     <member refid="classamrex_1_1MLABecLaplacian_1a850f02af43a26190e332319b9ddb8942" kind="function"><name>averageDownCoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a9f80d265602f986fc8e4a4255ff3a525" kind="function"><name>averageDownCoeffsToCoarseAmrLevel</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a4c648c8c2131afb622bc29f4aed80f8a" kind="function"><name>applyMetricTermsCoeffs</name></member>
+    <member refid="classamrex_1_1MLABecLaplacian_1ad7c506fd80192a8f76dcbac6c60f6935" kind="function"><name>applyRobinBCTermsCoeffs</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a4c9827ea2b870b6ab0bb0f770e4499f9" kind="function"><name>FFlux</name></member>
+    <member refid="classamrex_1_1MLABecLaplacian_1a9d739e672638ca44112f3c6729ffc23e" kind="function"><name>supportRobinBC</name></member>
     <member refid="classamrex_1_1MLABecLaplacian_1a283853eeb0e1f06102254ba76a76c7cc" kind="function"><name>define_ab_coeffs</name></member>
   </compound>
   <compound refid="classamrex_1_1MLALaplacian" kind="class"><name>amrex::MLALaplacian</name>
@@ -6034,6 +6036,7 @@
     <member refid="classamrex_1_1MLCellABecLap_1a050ddd816353730b1eb526829514b1c2" kind="function"><name>getBCoeffs</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1a576364fc5fcadf5eb1b23a7a693fa3ba" kind="function"><name>applyInhomogNeumannTerm</name></member>
     <member refid="classamrex_1_1MLCellABecLap_1ad9c4081306f2882750345d3161ca2261" kind="function"><name>applyOverset</name></member>
+    <member refid="classamrex_1_1MLCellABecLap_1ade6948bc20dfcd07ac886cee8b072c9b" kind="function"><name>supportInhomogNeumannBC</name></member>
   </compound>
   <compound refid="classamrex_1_1MLCellLinOp" kind="class"><name>amrex::MLCellLinOp</name>
     <member refid="classamrex_1_1MLCellLinOp_1ae233eeb511516448492f38fe53fa9cd9" kind="typedef"><name>RealTuple</name></member>
@@ -6046,6 +6049,7 @@
     <member refid="classamrex_1_1MLCellLinOp_1a60785819fb0c997419c7ee7b007e4bb3" kind="variable"><name>m_bndry_cor</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a871355473b2744ad7dd29d691e72e9ee" kind="variable"><name>m_crse_cor_br</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a20a2d5349510243c481d2b6ce1992f5c" kind="variable"><name>m_bcondloc</name></member>
+    <member refid="classamrex_1_1MLCellLinOp_1a920175d896857c64b3544cd0f6c80288" kind="variable"><name>m_robin_bcval</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a2ffd8d47358983d3c013b8012eeb1b8e" kind="variable"><name>m_undrrelxr</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a4c34af07271b2f0b7f9efdaffa6920d0" kind="variable"><name>m_maskvals</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1aeabff149eec600743faac7295cd509d2" kind="variable"><name>m_fluxreg</name></member>
@@ -6056,7 +6060,7 @@
     <member refid="classamrex_1_1MLCellLinOp_1a87fd042ed7a3004a39f75564f24264ca" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a4be43b4a29bd4f7092aa870804870ae2" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a55d205f42d99658c7cce9005b7388b8e" kind="function"><name>define</name></member>
-    <member refid="classamrex_1_1MLCellLinOp_1a2da9b07a1fb449ee9ffd1250cce4b74d" kind="function"><name>setLevelBC</name></member>
+    <member refid="classamrex_1_1MLCellLinOp_1a17b29b5c93f25181f34313b42b795a9e" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a0073d05770099d89c87a60e25ab3cc47" kind="function"><name>needsUpdate</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1a6de98ea7f86803972368acd05180431d" kind="function"><name>update</name></member>
     <member refid="classamrex_1_1MLCellLinOp_1af6f760fa4c14171371737ac10d0e2c02" kind="function"><name>isCrossStencil</name></member>
@@ -6265,8 +6269,8 @@
     <member refid="classamrex_1_1MLLinOp_1a2faeb23bc1e93e2b0cd693cb94a18d08" kind="variable"><name>m_raii_comm</name></member>
     <member refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kind="variable"><name>m_lobc</name></member>
     <member refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kind="variable"><name>m_hibc</name></member>
-    <member refid="classamrex_1_1MLLinOp_1a2abf602650eb691704a41721f51ab4dd" kind="variable"><name>m_lo_inhomog_neumann</name></member>
-    <member refid="classamrex_1_1MLLinOp_1aed9fe64f05bd57f416b38b0136ab9a30" kind="variable"><name>m_hi_inhomog_neumann</name></member>
+    <member refid="classamrex_1_1MLLinOp_1adc90c319d9f918dac74fe5c500cc2fc4" kind="variable"><name>m_lobc_orig</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a187bf73f893ba53dc2ee3e70c8f8811f" kind="variable"><name>m_hibc_orig</name></member>
     <member refid="classamrex_1_1MLLinOp_1a62d8b5644f8ca07d5e27a4d33cc9528f" kind="variable"><name>m_domain_bloc_lo</name></member>
     <member refid="classamrex_1_1MLLinOp_1a77492a5974990e96061d11c681ceb55d" kind="variable"><name>m_domain_bloc_hi</name></member>
     <member refid="classamrex_1_1MLLinOp_1aa53a765aea0ed0c4e7410d147380079f" kind="variable"><name>m_needs_coarse_data_for_bc</name></member>
@@ -6288,7 +6292,7 @@
     <member refid="classamrex_1_1MLLinOp_1a46abcf3897135febcc172d96e03b7603" kind="function"><name>setDomainBCLoc</name></member>
     <member refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" kind="function"><name>needsCoarseDataForBC</name></member>
     <member refid="classamrex_1_1MLLinOp_1ac161f1d53e925b82ba5defeb9b0efe70" kind="function"><name>setCoarseFineBC</name></member>
-    <member refid="classamrex_1_1MLLinOp_1a52d97117bad0d48c8e73546e7092e7dc" kind="function"><name>setLevelBC</name></member>
+    <member refid="classamrex_1_1MLLinOp_1abef28e40052b37dfd16370e2db45f06f" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLLinOp_1a4d96a0475759eef80d096851fdedd411" kind="function"><name>setVerbose</name></member>
     <member refid="classamrex_1_1MLLinOp_1a45b72169ccf285c17f439c4e990c0f58" kind="function"><name>setMaxOrder</name></member>
     <member refid="classamrex_1_1MLLinOp_1a1189e4016e7757083343a93649f102aa" kind="function"><name>getMaxOrder</name></member>
@@ -6333,6 +6337,10 @@
     <member refid="classamrex_1_1MLLinOp_1a0eb75c39ff8e715b524d79442b83a3fb" kind="function"><name>Factory</name></member>
     <member refid="classamrex_1_1MLLinOp_1a1ac509d7066244935918fdff0326ca95" kind="function"><name>LoBC</name></member>
     <member refid="classamrex_1_1MLLinOp_1a458383f5dc4aba88329db715fd027d7a" kind="function"><name>HiBC</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a4910f22e3c63b572ef364cdf8177e392" kind="function"><name>hasInhomogNeumannBC</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a4b2636d8115debeeefa38b4b34186ecc" kind="function"><name>hasRobinBC</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a01c4cbbbf82530a8d3523d07ad3a9e9f" kind="function"><name>supportRobinBC</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a638713cd5f8bf8cb703eca1ed94da5dc" kind="function"><name>supportInhomogNeumannBC</name></member>
     <member refid="classamrex_1_1MLLinOp_1aa1c6883eef4d4dc55d3a5fe5c921113a" kind="function"><name>isBottomActive</name></member>
     <member refid="classamrex_1_1MLLinOp_1a77b33530b316399f5fb5314a846d9b7e" kind="function"><name>BottomCommunicator</name></member>
     <member refid="classamrex_1_1MLLinOp_1a941ddfa6ec11cbd0a1c835007494b057" kind="function"><name>Communicator</name></member>
@@ -6561,7 +6569,7 @@
     <member refid="classamrex_1_1MLNodeLinOp_1a1f11eab31e2487056a5befd79c8a22a0" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a8dcf3f92d3ef1932e03ad470e29d1517" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1ab98fdadedd74d8601f0da56bde60b23b" kind="function"><name>define</name></member>
-    <member refid="classamrex_1_1MLNodeLinOp_1a2fec2bf43b5e2f8b4717b8ca53e87e2c" kind="function"><name>setLevelBC</name></member>
+    <member refid="classamrex_1_1MLNodeLinOp_1a9c212333d250c722b7c8ff2d21f19073" kind="function"><name>setLevelBC</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a3bcbe4767274ef89df6f5eaaacded060" kind="function"><name>apply</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1ae280045164562bc4e371043d97d73d2e" kind="function"><name>smooth</name></member>
     <member refid="classamrex_1_1MLNodeLinOp_1a9577a87ff76e6c9406e3cbe716d26746" kind="function"><name>solutionResidual</name></member>
@@ -13247,6 +13255,7 @@
     <member refid="AMReX__LO__BCTYPES_8H_1acb24c91365aea47c8c5e66ef6a3d32be" kind="define"><name>AMREX_LO_SANCHEZ_POMRANING</name></member>
     <member refid="AMReX__LO__BCTYPES_8H_1abb28e2063a5f29dd10f42d856e8c6af6" kind="define"><name>AMREX_LO_INFLOW</name></member>
     <member refid="AMReX__LO__BCTYPES_8H_1a873f2ffbe89507cff0a0c11b6f1a48ae" kind="define"><name>AMREX_LO_INHOMOG_NEUMANN</name></member>
+    <member refid="AMReX__LO__BCTYPES_8H_1adad7113c509303a8c8da66ef2f1c786d" kind="define"><name>AMREX_LO_ROBIN</name></member>
     <member refid="AMReX__LO__BCTYPES_8H_1a70e18776a02a5caf3faea16632d60a6c" kind="define"><name>AMREX_LO_PERIODIC</name></member>
     <member refid="AMReX__LO__BCTYPES_8H_1a969fe17351200623de86808d7d02de1a" kind="define"><name>AMREX_LO_BOGUS</name></member>
   </compound>

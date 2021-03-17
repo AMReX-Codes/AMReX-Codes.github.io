@@ -328,11 +328,14 @@ If the coarse grid bc’s for the solve are identically zero, <code class="code 
 can be passed instead of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">crse</span></span></code>.</p>
 <p>3) Cell-centered solvers only:
 before the solve one must always call the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MLLinOp</span></span></code> member function</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setLevelBC</span> <span class="p">(</span><span class="kt">int</span> <span class="n">amrlev</span><span class="p">,</span> <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">levelbcdata</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_a</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_b</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">MultiFab</span><span class="o">*</span> <span class="n">robinbc_f</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>If we want to supply any inhomogeneous Dirichlet or Neumann boundary
-conditions at the domain boundaries, we must supply those values
+<p>If we want to supply an inhomogeneous Dirichlet, inhomogeneous Neumann, or
+Robin boundary conditions at the domain boundaries, we must supply those values
 in <code class="docutils literal notranslate"><span class="pre">MultiFab*</span> <span class="pre">levelbcdata</span></code>, which must have at least one ghost cell.
 Note that the argument <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrlev</span></span></code> is relative to the solve, not
 necessarily the full AMR hierarchy; amrlev = 0 refers to the coarsest
