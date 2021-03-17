@@ -569,317 +569,332 @@ $(function() {
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;              <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            }</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            <span class="keywordflow">if</span> ( !phi.<a class="code" href="structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49">contains</a>(ii,jj,k) )</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;               <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-im));</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;= a_ind &amp;&amp; a_ind &lt;= 8);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;            <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;            {</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="comment">// This shifts the x-offset by a normalized half-dx so that</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                <span class="comment">// x=0 is the x-coordinate of the FACE centroid.</span></div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i) + 0.5;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,k) != 1.0 || vfrac(ii+2,jj,k) != 1.0) )</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,k) != 1.0 || vfrac(ii-2,jj,k) != 1.0))</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                }</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,k) != 1.0 || vfrac(ii,jj+2,k) != 1.0) )</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,k) != 1.0 || vfrac(ii,jj-2,k) != 1.0) )</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                }</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,k,0);</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,k,1) - yloc_on_xface;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                Amatrix(a_ind,3) = Amatrix(a_ind,1) * Amatrix(a_ind,1);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                Amatrix(a_ind,4) = Amatrix(a_ind,1) * Amatrix(a_ind,2);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                Amatrix(a_ind,5) = Amatrix(a_ind,2) * Amatrix(a_ind,2);</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                <span class="comment">// Add in information about the location of the EB. Exclude</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                <span class="comment">// EBs that are outside the domain.</span></div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                    domlo_x &lt;= ii &amp;&amp; ii &lt;= domhi_x &amp;&amp;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y)</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                {</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                    <span class="keywordtype">int</span> a_ind_eb  = a_ind + 9;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(9&lt;= a_ind_eb &amp;&amp; a_ind_eb &lt;= 17);</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                    Amatrix(a_ind_eb,0) = 1.0;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                    Amatrix(a_ind_eb,1) = x_off + bcent(ii,jj,k,0);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                    Amatrix(a_ind_eb,2) = y_off + bcent(ii,jj,k,1) - yloc_on_xface;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                    Amatrix(a_ind_eb,3) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,1);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                    Amatrix(a_ind_eb,4) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,2);</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                    Amatrix(a_ind_eb,5) = Amatrix(a_ind_eb,2) * Amatrix(a_ind_eb,2);</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                }</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            }</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;        }</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 6; irow++)</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    {</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        rhs(irow) = 0.; <span class="comment">// Only non-zero when inhomogeneous Dirichlet</span></div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-im; ii &lt;= i+ip; ii++)  <span class="comment">// Normal to face</span></div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j+1; jj++)  <span class="comment">// Tangential to face</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            {</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                {</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                    <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-im));</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;=a_ind &amp;&amp; a_ind &lt;9);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                    Real phi_val = Amatrix(a_ind,0) * phi(ii,jj,k,n);</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    rhs(irow) += Amatrix(a_ind  ,irow)*phi_val;</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                        is_eb_dirichlet &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow) != 0.0)</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                            rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                }</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            }</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    }</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <a class="code" href="namespaceamrex.html#a26c0f53345a1e21e212dcd85a501a019">cholsol_for_eb</a>(Amatrix, rhs);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordflow">return</span> rhs(1);</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;}</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00581"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aadaa422c5855785fcc975c32809700fb">  581</a></span>&#160;Real <a class="code" href="namespaceamrex.html#aadaa422c5855785fcc975c32809700fb">grad_y_of_phi_on_centroids_extdir</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j,<span class="keywordtype">int</span> k,<span class="keywordtype">int</span> n,</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phi,</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phieb,</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;EBCellFlag const&gt;</a> <span class="keyword">const</span>&amp; flag,</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; ccent,</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; bcent,</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; vfrac,</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                                       Real&amp; xloc_on_yface,</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                                       <span class="keywordtype">bool</span> is_eb_dirichlet, <span class="keywordtype">bool</span> is_eb_inhomog,</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">bool</span> on_x_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_x, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_x,</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">bool</span> on_y_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_y, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_y)</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;{</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(is_eb_dirichlet);</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <a class="code" href="structamrex_1_1Array2D.html">Array2D&lt;Real,0,17,0,5&gt;</a> Amatrix;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;Real,0, 5    &gt;</a> rhs;</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// Order of column -- first  six are cell centroids: (i-1,j) (i,j) (i+1,j) (i-1,j-1) (i,j-1) (i+1,j-1)</span></div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// Order of column -- second six are   EB centroids: (i-1,j) (i,j) (i+1,j) (i-1,j-1) (i,j-1) (i+1,j-1)</span></div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 18; irow++)</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 6; icol++)</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jm = (j &gt; domhi_y) ? 2 : 1;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jp = 2 - jm;</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="comment">// Columns: [e x y x*x x*y y*y]</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-jm; jj &lt;= j+jp; jj++) <span class="comment">// Normal to face</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++)  <span class="comment">// Tangential to face</span></div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        {</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;            <span class="comment">// Don&#39;t include corner cells.</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;            <span class="keywordflow">if</span> (((on_x_face &amp;&amp; ii &lt; domlo_x) &amp;&amp; (on_y_face &amp;&amp; jj &lt; domlo_y)) ||</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                ((on_x_face &amp;&amp; ii &gt; domhi_x) &amp;&amp; (on_y_face &amp;&amp; jj &gt; domhi_y)) ||</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                ((on_x_face &amp;&amp; ii &lt; domlo_x) &amp;&amp; (on_y_face &amp;&amp; jj &gt; domhi_y)) ||</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                ((on_x_face &amp;&amp; ii &gt; domhi_x) &amp;&amp; (on_y_face &amp;&amp; jj &lt; domlo_y))) {</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;              <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;            }</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;            <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            {</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordtype">int</span> a_ind  = (ii-(i-1)) + 3*(jj-(j-jm));</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;= a_ind &amp;&amp; a_ind &lt;= 8);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) + 0.5;</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,k) != 1.0 || vfrac(ii+2,jj,k) != 1.0) )</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,k) != 1.0 || vfrac(ii-2,jj,k) != 1.0))</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                }</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,k) != 1.0 || vfrac(ii,jj+2,k) != 1.0) )</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,k) != 1.0 || vfrac(ii,jj-2,k) != 1.0) )</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-im));</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;= a_ind &amp;&amp; a_ind &lt;= 8);</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                <span class="comment">// This shifts the x-offset by a normalized half-dx so that</span></div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                <span class="comment">// x=0 is the x-coordinate of the FACE centroid.</span></div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i) + 0.5;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,k) != 1.0 || vfrac(ii+2,jj,k) != 1.0) )</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,k) != 1.0 || vfrac(ii-2,jj,k) != 1.0))</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                }</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,k) != 1.0 || vfrac(ii,jj+2,k) != 1.0) )</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,k) != 1.0 || vfrac(ii,jj-2,k) != 1.0) )</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                }</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,k,0);</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,k,1) - yloc_on_xface;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                Amatrix(a_ind,3) = Amatrix(a_ind,1) * Amatrix(a_ind,1);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                Amatrix(a_ind,4) = Amatrix(a_ind,1) * Amatrix(a_ind,2);</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                Amatrix(a_ind,5) = Amatrix(a_ind,2) * Amatrix(a_ind,2);</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160; </div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                <span class="comment">// Add in information about the location of the EB. Exclude</span></div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                <span class="comment">// EBs that are outside the domain.</span></div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                    domlo_x &lt;= ii &amp;&amp; ii &lt;= domhi_x &amp;&amp;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y)</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                {</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                    <span class="keywordtype">int</span> a_ind_eb  = a_ind + 9;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(9&lt;= a_ind_eb &amp;&amp; a_ind_eb &lt;= 17);</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                    Amatrix(a_ind_eb,0) = 1.0;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                    Amatrix(a_ind_eb,1) = x_off + bcent(ii,jj,k,0);</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                    Amatrix(a_ind_eb,2) = y_off + bcent(ii,jj,k,1) - yloc_on_xface;</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                    Amatrix(a_ind_eb,3) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,1);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                    Amatrix(a_ind_eb,4) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,2);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                    Amatrix(a_ind_eb,5) = Amatrix(a_ind_eb,2) * Amatrix(a_ind_eb,2);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            }</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        }</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 6; irow++)</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    {</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        rhs(irow) = 0.; <span class="comment">// Only non-zero when inhomogeneous Dirichlet</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-im; ii &lt;= i+ip; ii++)  <span class="comment">// Normal to face</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j+1; jj++)  <span class="comment">// Tangential to face</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            {</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                <span class="keywordflow">if</span> ( !phi.<a class="code" href="structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49">contains</a>(ii,jj,k) )</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                   <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                {</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-im));</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;=a_ind &amp;&amp; a_ind &lt;9);</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                    Real phi_val = Amatrix(a_ind,0) * phi(ii,jj,k,n);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                    rhs(irow) += Amatrix(a_ind  ,irow)*phi_val;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                        is_eb_dirichlet &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow) != 0.0)</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                            rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                }</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            }</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    }</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <a class="code" href="namespaceamrex.html#a26c0f53345a1e21e212dcd85a501a019">cholsol_for_eb</a>(Amatrix, rhs);</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keywordflow">return</span> rhs(1);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;}</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00587"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aadaa422c5855785fcc975c32809700fb">  587</a></span>&#160;Real <a class="code" href="namespaceamrex.html#aadaa422c5855785fcc975c32809700fb">grad_y_of_phi_on_centroids_extdir</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j,<span class="keywordtype">int</span> k,<span class="keywordtype">int</span> n,</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phi,</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phieb,</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;EBCellFlag const&gt;</a> <span class="keyword">const</span>&amp; flag,</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; ccent,</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; bcent,</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                                       <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; vfrac,</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                                       Real&amp; xloc_on_yface,</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                                       <span class="keywordtype">bool</span> is_eb_dirichlet, <span class="keywordtype">bool</span> is_eb_inhomog,</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">bool</span> on_x_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_x, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_x,</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">bool</span> on_y_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_y, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_y)</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;{</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <a class="code" href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a>(is_eb_dirichlet);</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <a class="code" href="structamrex_1_1Array2D.html">Array2D&lt;Real,0,17,0,5&gt;</a> Amatrix;</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;Real,0, 5    &gt;</a> rhs;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// Order of column -- first  six are cell centroids: (i-1,j) (i,j) (i+1,j) (i-1,j-1) (i,j-1) (i+1,j-1)</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">// Order of column -- second six are   EB centroids: (i-1,j) (i,j) (i+1,j) (i-1,j-1) (i,j-1) (i+1,j-1)</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 18; irow++)</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 6; icol++)</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jm = (j &gt; domhi_y) ? 2 : 1;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jp = 2 - jm;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="comment">// Columns: [e x y x*x x*y y*y]</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-jm; jj &lt;= j+jp; jj++) <span class="comment">// Normal to face</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++)  <span class="comment">// Tangential to face</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        {</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;            <span class="comment">// Don&#39;t include corner cells.</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            <span class="keywordflow">if</span> (((on_x_face &amp;&amp; ii &lt; domlo_x) &amp;&amp; (on_y_face &amp;&amp; jj &lt; domlo_y)) ||</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                ((on_x_face &amp;&amp; ii &gt; domhi_x) &amp;&amp; (on_y_face &amp;&amp; jj &gt; domhi_y)) ||</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                ((on_x_face &amp;&amp; ii &lt; domlo_x) &amp;&amp; (on_y_face &amp;&amp; jj &gt; domhi_y)) ||</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                ((on_x_face &amp;&amp; ii &gt; domhi_x) &amp;&amp; (on_y_face &amp;&amp; jj &lt; domlo_y))) {</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;              <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            }</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="keywordflow">if</span> ( !phi.<a class="code" href="structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49">contains</a>(ii,jj,k) )</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;               <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            {</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                <span class="keywordtype">int</span> a_ind  = (ii-(i-1)) + 3*(jj-(j-jm));</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;= a_ind &amp;&amp; a_ind &lt;= 8);</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j) + 0.5;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,k) != 1.0 || vfrac(ii+2,jj,k) != 1.0) )</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                }</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,k,0) - xloc_on_yface;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,k,1);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                Amatrix(a_ind,3) = Amatrix(a_ind,1) * Amatrix(a_ind,1);</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                Amatrix(a_ind,4) = Amatrix(a_ind,1) * Amatrix(a_ind,2);</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                Amatrix(a_ind,5) = Amatrix(a_ind,2) * Amatrix(a_ind,2);</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                    domlo_x &lt;= ii &amp;&amp; ii &lt;= domhi_x &amp;&amp;</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y)</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                {</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                    <span class="keywordtype">int</span> a_ind_eb  = a_ind + 9;</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(9&lt;= a_ind_eb &amp;&amp; a_ind_eb &lt;= 17);</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                    Amatrix(a_ind_eb,0) = 1.0;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                    Amatrix(a_ind_eb,1) = x_off + bcent(ii,jj,k,0) - xloc_on_yface;</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                    Amatrix(a_ind_eb,2) = y_off + bcent(ii,jj,k,1);</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                    Amatrix(a_ind_eb,3) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,1);</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                    Amatrix(a_ind_eb,4) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,2);</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    Amatrix(a_ind_eb,5) = Amatrix(a_ind_eb,2) * Amatrix(a_ind_eb,2);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                }</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            }</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        }</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="comment">// Make the RHS = A^T v</span></div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 6; irow++)</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    {</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        rhs(irow) = 0.; <span class="comment">// Only non-zero when inhomogeneous Dirichlet</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-jm; jj &lt;= j+jp; jj++) <span class="comment">// Normal to face</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++) <span class="comment">// Tangential to face</span></div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                {</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                    <span class="keywordtype">int</span> a_ind  = (ii-(i-1)) + 3*(jj-(j-jm));</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;=irow &amp;&amp; irow &lt; 9);</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                    Real phi_val = Amatrix(a_ind,0)*phi(ii,jj,k,n);</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,k) != 1.0 || vfrac(ii-2,jj,k) != 1.0))</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                }</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,k) != 1.0 || vfrac(ii,jj+2,k) != 1.0) )</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,k) != 1.0 || vfrac(ii,jj-2,k) != 1.0) )</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                }</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                Amatrix(a_ind,1) = x_off + ccent(ii,jj,k,0) - xloc_on_yface;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                Amatrix(a_ind,2) = y_off + ccent(ii,jj,k,1);</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                Amatrix(a_ind,3) = Amatrix(a_ind,1) * Amatrix(a_ind,1);</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                Amatrix(a_ind,4) = Amatrix(a_ind,1) * Amatrix(a_ind,2);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                Amatrix(a_ind,5) = Amatrix(a_ind,2) * Amatrix(a_ind,2);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                    domlo_x &lt;= ii &amp;&amp; ii &lt;= domhi_x &amp;&amp;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                    domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y)</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                {</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                    <span class="keywordtype">int</span> a_ind_eb  = a_ind + 9;</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(9&lt;= a_ind_eb &amp;&amp; a_ind_eb &lt;= 17);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                    Amatrix(a_ind_eb,0) = 1.0;</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                    Amatrix(a_ind_eb,1) = x_off + bcent(ii,jj,k,0) - xloc_on_yface;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                    Amatrix(a_ind_eb,2) = y_off + bcent(ii,jj,k,1);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                    Amatrix(a_ind_eb,3) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,1);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                    Amatrix(a_ind_eb,4) = Amatrix(a_ind_eb,1) * Amatrix(a_ind_eb,2);</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                    Amatrix(a_ind_eb,5) = Amatrix(a_ind_eb,2) * Amatrix(a_ind_eb,2);</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                }</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            }</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        }</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="comment">// Make the RHS = A^T v</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 6; irow++)</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    {</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        rhs(irow) = 0.; <span class="comment">// Only non-zero when inhomogeneous Dirichlet</span></div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*phi_val;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                        is_eb_dirichlet &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow)){</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                      rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                    }</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                }</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    }</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <a class="code" href="namespaceamrex.html#a26c0f53345a1e21e212dcd85a501a019">cholsol_for_eb</a>(Amatrix, rhs);</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="keywordflow">return</span> rhs(2);</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;}</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a95554f1cdc48c66065e7e3cb9a54ee93">  698</a></span>&#160;Real <a class="code" href="namespaceamrex.html#a95554f1cdc48c66065e7e3cb9a54ee93">grad_eb_of_phi_on_centroids_extdir</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j,<span class="keywordtype">int</span> k,<span class="keywordtype">int</span> n,</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phi,</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phieb,</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;EBCellFlag const&gt;</a> <span class="keyword">const</span>&amp; flag,</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; ccent,</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; bcent,</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; vfrac,</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                                        Real&amp; nrmx, Real&amp; nrmy,</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                                        <span class="keywordtype">bool</span> is_eb_inhomog,</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">bool</span> on_x_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_x, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_x,</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">bool</span> on_y_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_y, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_y)</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;{</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <a class="code" href="structamrex_1_1Array2D.html">Array2D&lt;Real,0,17,0,5&gt;</a> Amatrix;</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;Real,0, 5    &gt;</a> rhs;</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">// Order of column -- first 9 are cell centroids, next 9 are EB centroids</span></div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 18; irow++)</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 6; icol++)</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="comment">//  Column 0-2: [e x y]</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++)</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j+1; jj++)</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        {</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            <span class="comment">// This is likely overkill for EB grads.</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="comment">// Don&#39;t include corner cells. Could make this even more strict</span></div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            <span class="comment">// by removing the on_?_face restrictions.</span></div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            <span class="keywordflow">if</span> (((on_x_face &amp;&amp; ii &lt; domlo_x) &amp;&amp; (on_y_face &amp;&amp; jj &lt; domlo_y)) ||</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                ((on_x_face &amp;&amp; ii &gt; domhi_x) &amp;&amp; (on_y_face &amp;&amp; jj &gt; domhi_y))){</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;              <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            }</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            {</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-1));</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,k) != 1.0 || vfrac(ii+2,jj,k) != 1.0) )</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,k) != 1.0 || vfrac(ii-2,jj,k) != 1.0))</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                }</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,k) != 1.0 || vfrac(ii,jj+2,k) != 1.0) )</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,k) != 1.0 || vfrac(ii,jj-2,k) != 1.0) )</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                }</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160; </div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                <span class="keywordflow">if</span> (flag(i,j,k).isConnected((ii-i),(jj-j),0))</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                {</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                   Amatrix(a_ind,0) = 1.0;</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                   Amatrix(a_ind,1) = x_off + ccent(ii,jj,k,0) - bcent(i,j,k,0);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                   Amatrix(a_ind,2) = y_off + ccent(ii,jj,k,1) - bcent(i,j,k,1);</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                <span class="comment">// Include information from the EB unless it is outside the domain</span></div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                <span class="keywordflow">if</span> (flag(i,j,k).isConnected((ii-i),(jj-j),0) &amp;&amp; flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                    domlo_x &lt;= ii &amp;&amp; ii &lt;= domhi_x &amp;&amp; domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y)</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                {</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                    Amatrix(a_ind+9,0) = 1.0;</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                    Amatrix(a_ind+9,1) = x_off + bcent(ii,jj,k,0) - bcent(i,j,k,0);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                    Amatrix(a_ind+9,2) = y_off + bcent(ii,jj,k,1) - bcent(i,j,k,1);</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                }</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            }</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        }</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160; </div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="comment">// Columns 3 : [x*x  x*y  y*y]</span></div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 18; irow++)</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;       Amatrix(irow,3) =  Amatrix(irow,1) * Amatrix(irow,1);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;       Amatrix(irow,4) =  Amatrix(irow,1) * Amatrix(irow,2);</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;       Amatrix(irow,5) =  Amatrix(irow,2) * Amatrix(irow,2);</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    }</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="comment">// Make the RHS = A^T v</span></div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 6; irow++)</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    {</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        rhs(irow) = 0.;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-jm; jj &lt;= j+jp; jj++) <span class="comment">// Normal to face</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++) {<span class="comment">// Tangential to face</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                <span class="keywordflow">if</span> ( !phi.<a class="code" href="structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49">contains</a>(ii,jj,k) )</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                   <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                    <span class="keywordtype">int</span> a_ind  = (ii-(i-1)) + 3*(jj-(j-jm));</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;=irow &amp;&amp; irow &lt; 9);</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                    Real phi_val = Amatrix(a_ind,0)*phi(ii,jj,k,n);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow)*phi_val;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                        is_eb_dirichlet &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow)){</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                      rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    }</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                }</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            }</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    }</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <a class="code" href="namespaceamrex.html#a26c0f53345a1e21e212dcd85a501a019">cholsol_for_eb</a>(Amatrix, rhs);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keywordflow">return</span> rhs(2);</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;}</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00710"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a95554f1cdc48c66065e7e3cb9a54ee93">  710</a></span>&#160;Real <a class="code" href="namespaceamrex.html#a95554f1cdc48c66065e7e3cb9a54ee93">grad_eb_of_phi_on_centroids_extdir</a>(<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j,<span class="keywordtype">int</span> k,<span class="keywordtype">int</span> n,</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phi,</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; phieb,</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;EBCellFlag const&gt;</a> <span class="keyword">const</span>&amp; flag,</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; ccent,</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; bcent,</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                                        <a class="code" href="structamrex_1_1Array4.html">Array4&lt;Real const&gt;</a> <span class="keyword">const</span>&amp; vfrac,</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                                        Real&amp; nrmx, Real&amp; nrmy,</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                                        <span class="keywordtype">bool</span> is_eb_inhomog,</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">bool</span> on_x_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_x, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_x,</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                                        <span class="keyword">const</span> <span class="keywordtype">bool</span> on_y_face, <span class="keyword">const</span> <span class="keywordtype">int</span> domlo_y, <span class="keyword">const</span> <span class="keywordtype">int</span> domhi_y)</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;{</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <a class="code" href="structamrex_1_1Array2D.html">Array2D&lt;Real,0,17,0,5&gt;</a> Amatrix;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="structamrex_1_1Array1D.html">Array1D&lt;Real,0, 5    &gt;</a> rhs;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="comment">// Order of column -- first 9 are cell centroids, next 9 are EB centroids</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 18; irow++)</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol = 0; icol &lt; 6; icol++)</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            Amatrix(irow,icol) =  0.0;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="comment">//  Column 0-2: [e x y]</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++)</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j+1; jj++)</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        {</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="comment">// This is likely overkill for EB grads.</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="comment">// Don&#39;t include corner cells. Could make this even more strict</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            <span class="comment">// by removing the on_?_face restrictions.</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            <span class="keywordflow">if</span> (((on_x_face &amp;&amp; ii &lt; domlo_x) &amp;&amp; (on_y_face &amp;&amp; jj &lt; domlo_y)) ||</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                ((on_x_face &amp;&amp; ii &gt; domhi_x) &amp;&amp; (on_y_face &amp;&amp; jj &gt; domhi_y))){</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;              <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            }</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            {</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-1));</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                Real x_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(ii-i);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                Real y_off = <span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(jj-j);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <span class="keywordflow">if</span>(on_x_face){</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                    <span class="keywordflow">if</span> (ii &lt; domlo_x &amp;&amp; (vfrac(ii+1,jj,k) != 1.0 || vfrac(ii+2,jj,k) != 1.0) )</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    <span class="keywordflow">if</span> (ii &gt; domhi_x &amp;&amp; (vfrac(ii-1,jj,k) != 1.0 || vfrac(ii-2,jj,k) != 1.0))</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                }</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <span class="keywordflow">if</span>(on_y_face){</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                    <span class="keywordflow">if</span> (jj &lt; domlo_y &amp;&amp; (vfrac(ii,jj+1,k) != 1.0 || vfrac(ii,jj+2,k) != 1.0) )</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                    <span class="keywordflow">if</span> (jj &gt; domhi_y &amp;&amp; (vfrac(ii,jj-1,k) != 1.0 || vfrac(ii,jj-2,k) != 1.0) )</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                }</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                <span class="keywordflow">if</span> (flag(i,j,k).isConnected((ii-i),(jj-j),0))</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                {</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                   Amatrix(a_ind,0) = 1.0;</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                   Amatrix(a_ind,1) = x_off + ccent(ii,jj,k,0) - bcent(i,j,k,0);</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                   Amatrix(a_ind,2) = y_off + ccent(ii,jj,k,1) - bcent(i,j,k,1);</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                }</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                <span class="comment">// Include information from the EB unless it is outside the domain</span></div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                <span class="keywordflow">if</span> (flag(i,j,k).isConnected((ii-i),(jj-j),0) &amp;&amp; flag(ii,jj,k).isSingleValued() &amp;&amp;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    domlo_x &lt;= ii &amp;&amp; ii &lt;= domhi_x &amp;&amp; domlo_y &lt;= jj &amp;&amp; jj &lt;= domhi_y)</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                    Amatrix(a_ind+9,0) = 1.0;</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                    Amatrix(a_ind+9,1) = x_off + bcent(ii,jj,k,0) - bcent(i,j,k,0);</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                    Amatrix(a_ind+9,2) = y_off + bcent(ii,jj,k,1) - bcent(i,j,k,1);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                }</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            }</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        }</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="comment">// Columns 3 : [x*x  x*y  y*y]</span></div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++)</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j+1; jj++)</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                {</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-1));</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;=a_ind &amp;&amp; a_ind &lt;9);</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 18; irow++)</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    {</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;       Amatrix(irow,3) =  Amatrix(irow,1) * Amatrix(irow,1);</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;       Amatrix(irow,4) =  Amatrix(irow,1) * Amatrix(irow,2);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;       Amatrix(irow,5) =  Amatrix(irow,2) * Amatrix(irow,2);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    }</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                    <span class="comment">// A(a_ind,0) is 1 or 0. Use it to mask phi.</span></div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                    Real phi_val = Amatrix(a_ind,0)*phi(ii,jj,k,n);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow) * phi_val;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    <span class="comment">// Make the RHS = A^T v</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> irow = 0; irow &lt; 6; irow++)</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    {</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        rhs(irow) = 0.;</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow) != 0.0)</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                        rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                }</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    }</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <a class="code" href="namespaceamrex.html#a26c0f53345a1e21e212dcd85a501a019">cholsol_for_eb</a>(Amatrix, rhs);</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    Real dphidn = rhs(1)*nrmx + rhs(2)*nrmy;</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordflow">return</span> dphidn;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;}</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;}</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ii = i-1; ii &lt;= i+1; ii++)</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jj = j-1; jj &lt;= j+1; jj++) {</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                <span class="keywordflow">if</span> ( !phi.<a class="code" href="structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49">contains</a>(ii,jj,k) )</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                   <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                <span class="keywordflow">if</span> (!flag(ii,jj,k).isCovered())</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                {</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                    <span class="keywordtype">int</span> a_ind  = (jj-(j-1)) + 3*(ii-(i-1));</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    <a class="code" href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a>(0&lt;=a_ind &amp;&amp; a_ind &lt;9);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                    <span class="comment">// A(a_ind,0) is 1 or 0. Use it to mask phi.</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    Real phi_val = Amatrix(a_ind,0)*phi(ii,jj,k,n);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160; </div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                    rhs(irow) += Amatrix(a_ind,irow) * phi_val;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                    <span class="keywordflow">if</span> (flag(ii,jj,k).isSingleValued() &amp;&amp; is_eb_inhomog &amp;&amp; Amatrix(a_ind+9,irow) != 0.0)</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                        rhs(irow) += Amatrix(a_ind+9,irow)*phieb(ii,jj,k,n);</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                }</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            }</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    }</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <a class="code" href="namespaceamrex.html#a26c0f53345a1e21e212dcd85a501a019">cholsol_for_eb</a>(Amatrix, rhs);</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    Real dphidn = rhs(1)*nrmx + rhs(2)*nrmy;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    <span class="keywordflow">return</span> dphidn;</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;}</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;}</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceamrex_html_acf9c618e150988aaad39352da8a136b2"><div class="ttname"><a href="namespaceamrex.html#acf9c618e150988aaad39352da8a136b2">amrex::cholsol_np6</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void cholsol_np6(Array2D&lt; Real, 0, 11, 0, 5 &gt; &amp;Amatrix, Array1D&lt; Real, 0, 5 &gt; &amp;b)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:63</div></div>
 <div class="ttc" id="anamespaceamrex_html_afe1175c09892da177b5f5ecaf36936ab"><div class="ttname"><a href="namespaceamrex.html#afe1175c09892da177b5f5ecaf36936ab">amrex::sqrt</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE GpuComplex&lt; T &gt; sqrt(const GpuComplex&lt; T &gt; &amp;a_z) noexcept</div><div class="ttdoc">Return the square root of a complex number.</div><div class="ttdef"><b>Definition:</b> AMReX_GpuComplex.H:370</div></div>
@@ -891,13 +906,14 @@ $(function() {
 <div class="ttc" id="astructamrex_1_1Array2D_html"><div class="ttname"><a href="structamrex_1_1Array2D.html">amrex::Array2D</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:101</div></div>
 <div class="ttc" id="aAMReX__EBCellFlag_8H_html"><div class="ttname"><a href="AMReX__EBCellFlag_8H.html">AMReX_EBCellFlag.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
-<div class="ttc" id="anamespaceamrex_html_aadaa422c5855785fcc975c32809700fb"><div class="ttname"><a href="namespaceamrex.html#aadaa422c5855785fcc975c32809700fb">amrex::grad_y_of_phi_on_centroids_extdir</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real grad_y_of_phi_on_centroids_extdir(int i, int j, int k, int n, Array4&lt; Real const &gt; const &amp;phi, Array4&lt; Real const &gt; const &amp;phieb, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; Real const &gt; const &amp;bcent, Array4&lt; Real const &gt; const &amp;vfrac, Real &amp;xloc_on_yface, bool is_eb_dirichlet, bool is_eb_inhomog, const bool on_x_face, const int domlo_x, const int domhi_x, const bool on_y_face, const int domlo_y, const int domhi_y)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:581</div></div>
+<div class="ttc" id="anamespaceamrex_html_aadaa422c5855785fcc975c32809700fb"><div class="ttname"><a href="namespaceamrex.html#aadaa422c5855785fcc975c32809700fb">amrex::grad_y_of_phi_on_centroids_extdir</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real grad_y_of_phi_on_centroids_extdir(int i, int j, int k, int n, Array4&lt; Real const &gt; const &amp;phi, Array4&lt; Real const &gt; const &amp;phieb, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; Real const &gt; const &amp;bcent, Array4&lt; Real const &gt; const &amp;vfrac, Real &amp;xloc_on_yface, bool is_eb_dirichlet, bool is_eb_inhomog, const bool on_x_face, const int domlo_x, const int domhi_x, const bool on_y_face, const int domlo_y, const int domhi_y)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:587</div></div>
+<div class="ttc" id="astructamrex_1_1Array4_html_afffb83a576c2e90e22fa03b27057ac49"><div class="ttname"><a href="structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49">amrex::Array4::contains</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool contains(int i, int j, int k) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:179</div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_aad6450907585a147153aef621fdc6007"><div class="ttname"><a href="AMReX__BLassert_8H.html#aad6450907585a147153aef621fdc6007">AMREX_ASSERT</a></div><div class="ttdeci">#define AMREX_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:38</div></div>
 <div class="ttc" id="anamespaceamrex_html_a32d409e89c5f589f2e729130898b6d8b"><div class="ttname"><a href="namespaceamrex.html#a32d409e89c5f589f2e729130898b6d8b">amrex::decomp_chol_np6</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void decomp_chol_np6(Array2D&lt; Real, 0, 5, 0, 5 &gt; &amp;aa)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:10</div></div>
 <div class="ttc" id="anamespaceamrex_html_af17d01dca64353fec04867549fdfb24d"><div class="ttname"><a href="namespaceamrex.html#af17d01dca64353fec04867549fdfb24d">amrex::grad_x_of_phi_on_centroids</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real grad_x_of_phi_on_centroids(int i, int j, int k, int n, Array4&lt; Real const &gt; const &amp;phi, Array4&lt; Real const &gt; const &amp;phieb, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; Real const &gt; const &amp;bcent, Real &amp;yloc_on_xface, bool is_eb_dirichlet, bool is_eb_inhomog)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:229</div></div>
 <div class="ttc" id="astructamrex_1_1Array4_html"><div class="ttname"><a href="structamrex_1_1Array4.html">amrex::Array4</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:12</div></div>
 <div class="ttc" id="anamespaceamrex_html_a28ed48dd78cb4c109095bf87d44b7f1b"><div class="ttname"><a href="namespaceamrex.html#a28ed48dd78cb4c109095bf87d44b7f1b">amrex::grad_eb_of_phi_on_centroids</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real grad_eb_of_phi_on_centroids(int i, int j, int k, int n, Array4&lt; Real const &gt; const &amp;phi, Array4&lt; Real const &gt; const &amp;phieb, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; Real const &gt; const &amp;bcent, Real &amp;nrmx, Real &amp;nrmy, bool is_eb_inhomog)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:384</div></div>
-<div class="ttc" id="anamespaceamrex_html_a95554f1cdc48c66065e7e3cb9a54ee93"><div class="ttname"><a href="namespaceamrex.html#a95554f1cdc48c66065e7e3cb9a54ee93">amrex::grad_eb_of_phi_on_centroids_extdir</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real grad_eb_of_phi_on_centroids_extdir(int i, int j, int k, int n, Array4&lt; Real const &gt; const &amp;phi, Array4&lt; Real const &gt; const &amp;phieb, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; Real const &gt; const &amp;bcent, Array4&lt; Real const &gt; const &amp;vfrac, Real &amp;nrmx, Real &amp;nrmy, bool is_eb_inhomog, const bool on_x_face, const int domlo_x, const int domhi_x, const bool on_y_face, const int domlo_y, const int domhi_y)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:698</div></div>
+<div class="ttc" id="anamespaceamrex_html_a95554f1cdc48c66065e7e3cb9a54ee93"><div class="ttname"><a href="namespaceamrex.html#a95554f1cdc48c66065e7e3cb9a54ee93">amrex::grad_eb_of_phi_on_centroids_extdir</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real grad_eb_of_phi_on_centroids_extdir(int i, int j, int k, int n, Array4&lt; Real const &gt; const &amp;phi, Array4&lt; Real const &gt; const &amp;phieb, Array4&lt; EBCellFlag const &gt; const &amp;flag, Array4&lt; Real const &gt; const &amp;ccent, Array4&lt; Real const &gt; const &amp;bcent, Array4&lt; Real const &gt; const &amp;vfrac, Real &amp;nrmx, Real &amp;nrmy, bool is_eb_inhomog, const bool on_x_face, const int domlo_x, const int domhi_x, const bool on_y_face, const int domlo_y, const int domhi_y)</div><div class="ttdef"><b>Definition:</b> AMReX_EB_LeastSquares_2D_K.H:710</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:51</div></div>
 <div class="ttc" id="astructamrex_1_1Array1D_html"><div class="ttname"><a href="structamrex_1_1Array1D.html">amrex::Array1D</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:82</div></div>
 <!-- start footer part -->
