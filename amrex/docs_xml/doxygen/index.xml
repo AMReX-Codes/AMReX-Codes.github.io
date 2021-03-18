@@ -2024,9 +2024,11 @@
     <member refid="classamrex_1_1Box_1a53d83ec5f84f2ce300c4f4d54a3dd020" kind="function"><name>coarsen</name></member>
     <member refid="classamrex_1_1Box_1ae1d96674d204c3f81e931cbbd4d9c1aa" kind="function"><name>next</name></member>
     <member refid="classamrex_1_1Box_1afd87b7a11b5e3c17d51a21a4f9703a47" kind="function"><name>isSquare</name></member>
+    <member refid="classamrex_1_1Box_1ae21bfb6075d5baa204b0b6647c31c409" kind="function"><name>coarsenable</name></member>
     <member refid="classamrex_1_1Box_1a070f165f75c13a62698801be7dc96ae8" kind="function"><name>coarsenable</name></member>
     <member refid="classamrex_1_1Box_1aa415d612aa70bf4a6a2189a477732f3f" kind="function"><name>coarsenable</name></member>
     <member refid="classamrex_1_1Box_1a3a0dbad72cb07371f6600d70ffb6d4cf" kind="function"><name>normalize</name></member>
+    <member refid="classamrex_1_1Box_1a2654197a010a7c531c68fa9851160c65" kind="function"><name>makeSlab</name></member>
     <member refid="classamrex_1_1Box_1a706adbfbd33e0269b3c2688ba5b36959" kind="function"><name>TheUnitBox</name></member>
   </compound>
   <compound refid="classamrex_1_1BoxArray" kind="class"><name>amrex::BoxArray</name>
@@ -2073,6 +2075,7 @@
     <member refid="classamrex_1_1BoxArray_1ab905a7751a6378467cf96c78c1ac880d" kind="function"><name>coarsen</name></member>
     <member refid="classamrex_1_1BoxArray_1a7398fc2b3ae449dfcec355e071bc16ce" kind="function"><name>coarsenable</name></member>
     <member refid="classamrex_1_1BoxArray_1af7f2342f51c3bc2de5e8a195d6955d9f" kind="function"><name>coarsenable</name></member>
+    <member refid="classamrex_1_1BoxArray_1aa502788789ab808e34a3a4b5b940a928" kind="function"><name>coarsenable</name></member>
     <member refid="classamrex_1_1BoxArray_1aa6e0639e937b32bdcf265a67fa4074c4" kind="function"><name>coarsen</name></member>
     <member refid="classamrex_1_1BoxArray_1a39dc6acfc5027b83d4e788e378990b57" kind="function"><name>growcoarsen</name></member>
     <member refid="classamrex_1_1BoxArray_1a5d1e1381e0bcaf2becd4dbfece949ecf" kind="function"><name>growcoarsen</name></member>
@@ -5649,6 +5652,7 @@
     <member refid="structamrex_1_1LPInfo_1a1a95ec842c01374719d2b8929d54f17b" kind="variable"><name>has_metric_term</name></member>
     <member refid="structamrex_1_1LPInfo_1ab29d5c837ce5f103103e6babf71e5d2e" kind="variable"><name>max_coarsening_level</name></member>
     <member refid="structamrex_1_1LPInfo_1a44bed45a637286c1feb801cacf3e72cc" kind="variable"><name>max_semicoarsening_level</name></member>
+    <member refid="structamrex_1_1LPInfo_1acbd4630a533152de976660cbd0c16310" kind="variable"><name>hidden_direction</name></member>
     <member refid="structamrex_1_1LPInfo_1a5969085705dd33f4ed532326141d4c78" kind="function"><name>setAgglomeration</name></member>
     <member refid="structamrex_1_1LPInfo_1aae20ea49f949562cc31d87eb8e02cec1" kind="function"><name>setConsolidation</name></member>
     <member refid="structamrex_1_1LPInfo_1a45b2ff9402b86070a36448a89c4e6e8a" kind="function"><name>setSemicoarsening</name></member>
@@ -5657,6 +5661,8 @@
     <member refid="structamrex_1_1LPInfo_1ad52d1c9d3214bf62a03f3a41ca82a34c" kind="function"><name>setMetricTerm</name></member>
     <member refid="structamrex_1_1LPInfo_1a4a7b1b85ca071370a9a98488be7dd5dc" kind="function"><name>setMaxCoarseningLevel</name></member>
     <member refid="structamrex_1_1LPInfo_1ab79eab223be7acae5356f6a9e1fdb0fc" kind="function"><name>setMaxSemicoarseningLevel</name></member>
+    <member refid="structamrex_1_1LPInfo_1a9c3339a35d018641c2d340cee364755e" kind="function"><name>setHiddenDirection</name></member>
+    <member refid="structamrex_1_1LPInfo_1a454072adea5f89687df38b5ebe03abad" kind="function"><name>hasHiddenDimension</name></member>
     <member refid="structamrex_1_1LPInfo_1ac63fdecd955455e1608496793c45e578" kind="function"><name>getDefaultAgglomerationGridSize</name></member>
     <member refid="structamrex_1_1LPInfo_1aa03ac62b9591746b85f0591485a25335" kind="function"><name>getDefaultConsolidationGridSize</name></member>
   </compound>
@@ -6351,8 +6357,14 @@
     <member refid="classamrex_1_1MLLinOp_1a79f98e0cf06f695dbad6052c5d53e00b" kind="function"><name>doConsolidation</name></member>
     <member refid="classamrex_1_1MLLinOp_1ae920d0e3602dd26d57876b6d6a6843e4" kind="function"><name>doSemicoarsening</name></member>
     <member refid="classamrex_1_1MLLinOp_1aa42fd2dfa3b0133f2b20a99026549900" kind="function"><name>isCellCentered</name></member>
-    <member refid="classamrex_1_1MLLinOp_1af41b89817b39bbd605ee94ee5d47d72f" kind="function"><name>make</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a02f3afbdee5598f2cae332d7946a5a70" kind="function"><name>make</name></member>
     <member refid="classamrex_1_1MLLinOp_1ac31926ba837b440475e0715a8fa4b87b" kind="function"><name>makeFactory</name></member>
+    <member refid="classamrex_1_1MLLinOp_1a6d7b1e0e21fd61d71bbe342df0f1a5d4" kind="function"><name>hasHiddenDimension</name></member>
+    <member refid="classamrex_1_1MLLinOp_1af0793198f529f4474139fa9366b2e1aa" kind="function"><name>hiddenDirection</name></member>
+    <member refid="classamrex_1_1MLLinOp_1af37726771c106055867bf88ade1f65d7" kind="function"><name>compactify</name></member>
+    <member refid="classamrex_1_1MLLinOp_1ae3dae2320c8c9e64274e8d41131187dc" kind="function"><name>compactify</name></member>
+    <member refid="classamrex_1_1MLLinOp_1aa429808b0b8d8a9efcf3380620f6263a" kind="function"><name>get_d0</name></member>
+    <member refid="classamrex_1_1MLLinOp_1ad16cb6cbf7bcb78cc0d0af59611ae00a" kind="function"><name>get_d1</name></member>
     <member refid="classamrex_1_1MLLinOp_1a07740ce5e26ee8f463d6176b157fe06a" kind="function"><name>defineGrids</name></member>
     <member refid="classamrex_1_1MLLinOp_1ae772fff45d8190c7c2c694931858b834" kind="function"><name>defineAuxData</name></member>
     <member refid="classamrex_1_1MLLinOp_1a9288d1d0123d4e3d8097fd568a706a15" kind="function"><name>defineBC</name></member>
@@ -10037,6 +10049,7 @@
     <member refid="namespaceamrex_1a358893f9ba4e2d3c7cd837cfd6d4cb76" kind="function"><name>getIndexBounds</name></member>
     <member refid="namespaceamrex_1a462904ee55045e5ef05d55ec7d4b2254" kind="function"><name>getIndexBounds</name></member>
     <member refid="namespaceamrex_1acaf1644c0e71ab419cdf9495cd29a030" kind="function"><name>getCell</name></member>
+    <member refid="namespaceamrex_1a0fd13ebbd8053059b57a7e2010704b07" kind="function"><name>makeSlab</name></member>
     <member refid="namespaceamrex_1ada7c77f7ac84c643ea21113e4ff5f2d0" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="namespaceamrex_1af4b25f1a81ffa836ed7356d6da7e814e" kind="function"><name>boxComplement</name></member>
     <member refid="namespaceamrex_1a8c00ae57393c9f6665f88b80e3cdfb2c" kind="function"><name>complementIn</name></member>
@@ -10747,11 +10760,7 @@
     <member refid="namespaceamrex_1aeafc3c613476058bd1bc153a14f0f35f" kind="function"><name>mlalap_gsrb</name></member>
     <member refid="namespaceamrex_1a96f49a315eadd3ec9e8304c9da3be550" kind="function"><name>mlalap_gsrb_m</name></member>
     <member refid="namespaceamrex_1a043c8e8911fabb2e414a873d9e5dd360" kind="function"><name>mlalap_flux_y</name></member>
-    <member refid="namespaceamrex_1a2e517c8b88d7661bb882f3c63e17e3ca" kind="function"><name>mlalap_flux_y_m</name></member>
     <member refid="namespaceamrex_1a6e6257e23cf7d67472b6032352c91ba1" kind="function"><name>mlalap_flux_yface</name></member>
-    <member refid="namespaceamrex_1a68541df85e90cff68fcaa6c51ae0bfe6" kind="function"><name>mlalap_flux_yface_m</name></member>
-    <member refid="namespaceamrex_1a6961b6ffa168a57251a2c624853bcdf8" kind="function"><name>mlalap_gsrb</name></member>
-    <member refid="namespaceamrex_1ac66dd1a360aba81784ce91914dd248ee" kind="function"><name>mlalap_gsrb_m</name></member>
     <member refid="namespaceamrex_1aff4a4759886d0d815c4d1266415eb937" kind="function"><name>mlalap_flux_z</name></member>
     <member refid="namespaceamrex_1a13449831c24c814a0e3046686b305a3c" kind="function"><name>mlalap_flux_zface</name></member>
     <member refid="namespaceamrex_1a3cea40e415a6811dcdd4c34c86e09961" kind="function"><name>mlalap_gsrb</name></member>
@@ -10913,19 +10922,10 @@
     <member refid="namespaceamrex_1a954e965a2e06fba0e287d8c1a1822c89" kind="function"><name>mlpoisson_gsrb_os</name></member>
     <member refid="namespaceamrex_1a261c24cd159286029b2b2af54420ddad" kind="function"><name>mlpoisson_gsrb_m</name></member>
     <member refid="namespaceamrex_1a47691dcd355d36f18e28ba82fcb6647a" kind="function"><name>mlpoisson_normalize</name></member>
-    <member refid="namespaceamrex_1aaa58299b8256905558b53614ea14bce9" kind="function"><name>mlpoisson_adotx</name></member>
-    <member refid="namespaceamrex_1a6fee66c50a523f872dced1aba8495060" kind="function"><name>mlpoisson_adotx_os</name></member>
-    <member refid="namespaceamrex_1ae0e4f18dc5b9fca27eacbd2a352460f6" kind="function"><name>mlpoisson_adotx_m</name></member>
-    <member refid="namespaceamrex_1a9c04ad40a40ba94759ffe585de26e9eb" kind="function"><name>mlpoisson_flux_y</name></member>
-    <member refid="namespaceamrex_1adf14ae5ac2a3a1f682c05fd260879fc7" kind="function"><name>mlpoisson_flux_y_m</name></member>
-    <member refid="namespaceamrex_1a1d974391e6e3fc76bda835895aab3595" kind="function"><name>mlpoisson_flux_yface</name></member>
-    <member refid="namespaceamrex_1ac1504453e08e93328b8c5a33530d1a86" kind="function"><name>mlpoisson_flux_yface_m</name></member>
-    <member refid="namespaceamrex_1aa36c66dee8f21fdfa1bf03fde370fffa" kind="function"><name>mlpoisson_gsrb</name></member>
-    <member refid="namespaceamrex_1afeababf5371467b3dcfb891aa3c54e22" kind="function"><name>mlpoisson_gsrb_os</name></member>
-    <member refid="namespaceamrex_1a8976671c5958750e293ee7943197a1b1" kind="function"><name>mlpoisson_gsrb_m</name></member>
-    <member refid="namespaceamrex_1ad53e940efdcb589e6c501ebe5c2319b4" kind="function"><name>mlpoisson_normalize</name></member>
     <member refid="namespaceamrex_1a2a22a8a7a11608e621a4fadfb7948e18" kind="function"><name>mlpoisson_adotx</name></member>
     <member refid="namespaceamrex_1a740f034b6536c7f9aeb95bb46f26fda5" kind="function"><name>mlpoisson_adotx_os</name></member>
+    <member refid="namespaceamrex_1a9c04ad40a40ba94759ffe585de26e9eb" kind="function"><name>mlpoisson_flux_y</name></member>
+    <member refid="namespaceamrex_1a1d974391e6e3fc76bda835895aab3595" kind="function"><name>mlpoisson_flux_yface</name></member>
     <member refid="namespaceamrex_1aaeacbae13092acb976061d0c07392ee1" kind="function"><name>mlpoisson_flux_z</name></member>
     <member refid="namespaceamrex_1a0e3a9d3a8577165f8859b201b3825806" kind="function"><name>mlpoisson_flux_zface</name></member>
     <member refid="namespaceamrex_1a3af5435c1fe72b5f4894af1b43381a66" kind="function"><name>mlpoisson_gsrb</name></member>
@@ -11943,6 +11943,41 @@
     <member refid="namespaceamrex_1_1tri__geom__ops_1a70a3555a7869b306a0efd22a29fcb570" kind="function"><name>triangle_area</name></member>
     <member refid="namespaceamrex_1_1tri__geom__ops_1aa0a2cbd90712fbd72e58a110971ff695" kind="function"><name>find_intersection_point</name></member>
     <member refid="namespaceamrex_1_1tri__geom__ops_1a3ab1370ee2778b840c9976bec576a66e" kind="function"><name>lineseg_tri_intersect</name></member>
+  </compound>
+  <compound refid="namespaceamrex_1_1TwoD" kind="namespace"><name>amrex::TwoD</name>
+    <member refid="namespaceamrex_1_1TwoD_1a621627cf03e331fa5957019410d55deb" kind="function"><name>mlalap_adotx</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1acb5404e63c50f1d88cf91f23552ced8b" kind="function"><name>mlalap_adotx_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a62a1d04d4c6b9817ad971a9a8fccc18f" kind="function"><name>mlalap_normalize</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1ab2d0856afa1d3e5d6009b7362dbdcfe5" kind="function"><name>mlalap_normalize_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1ab74919469fafb9c096121764c71fb18e" kind="function"><name>mlalap_flux_x</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1ae7854dec883b939010a9a98f4f1d2f31" kind="function"><name>mlalap_flux_x_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a03e4688f49b8bed9182372039095de04" kind="function"><name>mlalap_flux_xface</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1ae80a5781c732456cd64bc76495998058" kind="function"><name>mlalap_flux_xface_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a209145e5c52d63b75d29839f8615dbd8" kind="function"><name>mlalap_flux_y</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1aeb1ca8d9a07d6829451a05cb6b2b5bad" kind="function"><name>mlalap_flux_y_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a0d7843eb08fc333f9b70b2a8deaaf368" kind="function"><name>mlalap_flux_yface</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a43937de373fddeb010f23ac221cad2fb" kind="function"><name>mlalap_flux_yface_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1adc7cff6a548e6c0cf374da4b0494d549" kind="function"><name>mlalap_gsrb</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a6235109774e2d8b76a1e27ce24109d00" kind="function"><name>mlalap_gsrb_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a53ac28d7fcb903d3250356d60446fa86" kind="function"><name>mlmg_lin_cc_interp_r2</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a0f65ba3b3292f2d2588519e02226a83f" kind="function"><name>mlmg_lin_cc_interp_r4</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a14c611e46a8a2519c1fae959422183e8" kind="function"><name>mlmg_lin_nd_interp_r2</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1aca956cf281a6212168377ba9b833c159" kind="function"><name>mlmg_lin_nd_interp_r4</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a761892863c1170f1b208fdafa7bfa91b" kind="function"><name>mlpoisson_adotx</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a2a204c90cbc244db78c4b9841151e400" kind="function"><name>mlpoisson_adotx_os</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a2cd57f5a7ab4c4d365dae5e4c354283b" kind="function"><name>mlpoisson_adotx_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1af8c6f5b8b4f4aadedc5117e11307d081" kind="function"><name>mlpoisson_flux_x</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a74f5bbbd0c954f2a427b8ff873a4d435" kind="function"><name>mlpoisson_flux_x_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a4d606f0d80352373a66023a03c041ec8" kind="function"><name>mlpoisson_flux_xface</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a176a07715cca8ff70fc412ca78a8b7ed" kind="function"><name>mlpoisson_flux_xface_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a56aa8e14ac865dc7bc146933efd78654" kind="function"><name>mlpoisson_flux_y</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a63a58087be8a6baecfbcac0429b6061c" kind="function"><name>mlpoisson_flux_y_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a0dcf0ef001800b03b64cc1221507ebf8" kind="function"><name>mlpoisson_flux_yface</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1aeca4b2ad75a8fda6e8abf6f03ad0200f" kind="function"><name>mlpoisson_flux_yface_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1afd3ce576b519e19af892033034e631b1" kind="function"><name>mlpoisson_gsrb</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a13499c2f964512fac0992c6f9941eb6a" kind="function"><name>mlpoisson_gsrb_os</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a589021ffc80a3c2fb217cea848607005" kind="function"><name>mlpoisson_gsrb_m</name></member>
+    <member refid="namespaceamrex_1_1TwoD_1a60e4df68a8d8f3c6eabfa6b4c704cbd4" kind="function"><name>mlpoisson_normalize</name></member>
   </compound>
   <compound refid="namespaceamrex__acc__module" kind="namespace"><name>amrex_acc_module</name>
     <member refid="namespaceamrex__acc__module_1aafbf079c34c708eb6c38b72a05c77249" kind="variable"><name>acc_stream</name></member>

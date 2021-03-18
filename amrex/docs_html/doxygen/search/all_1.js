@@ -1180,6 +1180,7 @@ var searchData=
   ['scan_1184',['Scan',['../namespaceamrex_1_1Scan.html',1,'amrex']]],
   ['system_1185',['system',['../namespaceamrex_1_1system.html',1,'amrex']]],
   ['tri_5fgeom_5fops_1186',['tri_geom_ops',['../namespaceamrex_1_1tri__geom__ops.html',1,'amrex']]],
-  ['type_1187',['Type',['../namespaceamrex_1_1EB2_1_1Type.html',1,'amrex::EB2']]],
-  ['uif_5fdetail_1188',['UIF_detail',['../namespaceamrex_1_1EB2_1_1UIF__detail.html',1,'amrex::EB2']]]
+  ['twod_1187',['TwoD',['../namespaceamrex_1_1TwoD.html',1,'amrex']]],
+  ['type_1188',['Type',['../namespaceamrex_1_1EB2_1_1Type.html',1,'amrex::EB2']]],
+  ['uif_5fdetail_1189',['UIF_detail',['../namespaceamrex_1_1EB2_1_1UIF__detail.html',1,'amrex::EB2']]]
 ];

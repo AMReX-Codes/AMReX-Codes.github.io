@@ -145,21 +145,21 @@
         <link refid="AMReX__BoxArray_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="56" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
-        </childnode>
-        <childnode refid="57" relation="include">
-        </childnode>
         <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="56" relation="include">
         </childnode>
         <childnode refid="39" relation="include">
         </childnode>
         <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
         </childnode>
       </node>
       <node id="121">
@@ -578,7 +578,7 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
@@ -633,7 +633,7 @@
       <node id="62">
         <label>fstream</label>
       </node>
-      <node id="58">
+      <node id="56">
         <label>AMReX_BoxList.H</label>
         <link refid="AMReX__BoxList_8H"/>
         <childnode refid="3" relation="include">
@@ -830,7 +830,7 @@
         <link refid="AMReX__GpuAsyncArray_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="97" relation="include">
         </childnode>
@@ -903,7 +903,7 @@
         </childnode>
         <childnode refid="82" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="84" relation="include">
         </childnode>
@@ -952,7 +952,7 @@
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
@@ -1062,7 +1062,7 @@
         <link refid="AMReX__RealVect_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
@@ -1143,8 +1143,6 @@
         <link refid="AMReX__Box_8H"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
         <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="50" relation="include">
@@ -1169,6 +1167,8 @@
         </childnode>
         <childnode refid="41" relation="include">
         </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
       </node>
       <node id="128">
         <label>AMReX_BoxDomain.H</label>
@@ -1183,7 +1183,7 @@
         </childnode>
         <childnode refid="51" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="56" relation="include">
         </childnode>
       </node>
       <node id="30">
@@ -1275,7 +1275,7 @@
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
         <childnode refid="37" relation="include">
         </childnode>
@@ -1415,7 +1415,7 @@
         </childnode>
         <childnode refid="80" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="56" relation="include">
         </childnode>
         <childnode refid="81" relation="include">
         </childnode>
@@ -1513,7 +1513,7 @@
         <childnode refid="45" relation="include">
         </childnode>
       </node>
-      <node id="56">
+      <node id="57">
         <label>cstddef</label>
       </node>
       <node id="104">
@@ -1550,7 +1550,7 @@
         <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="57">
+      <node id="58">
         <label>unordered_map</label>
       </node>
       <node id="105">
@@ -2191,8 +2191,8 @@
 <codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm<sp/>=<sp/>sol.DistributionMap();</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>factory<sp/>=<sp/>sol.Factory();</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>ph(ba,<sp/>dm,<sp/>ncomp,<sp/>sol.nGrow(),<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>sh(ba,<sp/>dm,<sp/>ncomp,<sp/>sol.nGrow(),<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>ph(ba,<sp/>dm,<sp/>ncomp,<sp/>sol.nGrowVect(),<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>sh(ba,<sp/>dm,<sp/>ncomp,<sp/>sol.nGrowVect(),<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>ph.setVal(0.0);</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>sh.setVal(0.0);</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
@@ -2375,7 +2375,7 @@
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm<sp/>=<sp/>sol.DistributionMap();</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>factory<sp/>=<sp/>sol.Factory();</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"></highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>p(ba,<sp/>dm,<sp/>ncomp,<sp/>sol.nGrow(),<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>p(ba,<sp/>dm,<sp/>ncomp,<sp/>sol.nGrowVect(),<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>p.setVal(0.0);</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"></highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>sorig(ba,<sp/>dm,<sp/>ncomp,<sp/><ref refid="classamrex_1_1MLCGSolver_1a34ae0aafa5090a14b99247b75d58878e" kindref="member">nghost</ref>,<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
