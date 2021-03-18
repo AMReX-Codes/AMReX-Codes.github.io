@@ -132,7 +132,7 @@ var searchData=
   ['regridint_11125',['regridInt',['../classamrex_1_1Amr.html#a6c0f2e73f58bdff46fc5692ed85611f5',1,'amrex::Amr']]],
   ['regridonly_11126',['RegridOnly',['../classamrex_1_1Amr.html#a6254e512f37656c89acb1e19162d26b8',1,'amrex::Amr']]],
   ['regridonrestart_11127',['RegridOnRestart',['../classamrex_1_1Amr.html#a9fa95998903f721c41e3d677c4894d47',1,'amrex::Amr']]],
-  ['release_11128',['release',['../classamrex_1_1BaseFab.html#a4390286fe2327bd5f0561a75ee14499b',1,'amrex::BaseFab']]],
+  ['release_11128',['release',['../classamrex_1_1BaseFab.html#a4390286fe2327bd5f0561a75ee14499b',1,'amrex::BaseFab::release()'],['../classamrex_1_1FabArray.html#a4782a3068c5950a1838e1018f8ff69f5',1,'amrex::FabArray::release(int K)'],['../classamrex_1_1FabArray.html#a4750acee26c62d569535b66ec2957bca',1,'amrex::FabArray::release(const MFIter &amp;mfi)']]],
   ['releasedata_11129',['ReleaseData',['../classamrex_1_1AmrDataAdaptor.html#a7f983048f1e70348b58c381f0e104ae3',1,'amrex::AmrDataAdaptor::ReleaseData()'],['../classamrex_1_1AmrMeshDataAdaptor.html#a9aa101ee90b944010548ed7461cb7a8a',1,'amrex::AmrMeshDataAdaptor::ReleaseData()']]],
   ['remakelevel_11130',['RemakeLevel',['../classamrex_1_1Amr.html#a068668005a432a854ee2e98ccac4ac73',1,'amrex::Amr::RemakeLevel()'],['../classamrex_1_1AmrCore.html#a89b690a6f834d76bf96f8f1facc356c4',1,'amrex::AmrCore::RemakeLevel()']]],
   ['remapneighborhoods_11131',['remapNeighborhoods',['../classamrex_1_1MLLinOp.html#a62f7495893309fa4f4805bbea9b59b3b',1,'amrex::MLLinOp']]],

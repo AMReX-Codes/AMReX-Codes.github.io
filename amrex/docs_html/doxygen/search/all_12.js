@@ -200,7 +200,7 @@ var searchData=
   ['regular_5fstencil_5fsize_5580',['regular_stencil_size',['../classamrex_1_1Hypre.html#abff4c8fa7e9790d9408099ffa9c57934',1,'amrex::Hypre::regular_stencil_size()'],['../classamrex_1_1PETScABecLap.html#aecf6271b785a92eee2bcd891ba3111e5',1,'amrex::PETScABecLap::regular_stencil_size()']]],
   ['relax_5forder_5581',['relax_order',['../classamrex_1_1Hypre.html#aa602c05ea8f16fa5aa95d79b372cffa8',1,'amrex::Hypre']]],
   ['relax_5ftype_5582',['relax_type',['../classamrex_1_1Hypre.html#aa9e67a6e299266afaff8157d33dcfbec',1,'amrex::Hypre']]],
-  ['release_5583',['release',['../classamrex_1_1BaseFab.html#a4390286fe2327bd5f0561a75ee14499b',1,'amrex::BaseFab']]],
+  ['release_5583',['release',['../classamrex_1_1BaseFab.html#a4390286fe2327bd5f0561a75ee14499b',1,'amrex::BaseFab::release()'],['../classamrex_1_1FabArray.html#a4782a3068c5950a1838e1018f8ff69f5',1,'amrex::FabArray::release(int K)'],['../classamrex_1_1FabArray.html#a4750acee26c62d569535b66ec2957bca',1,'amrex::FabArray::release(const MFIter &amp;mfi)']]],
   ['release_5fthreshold_5584',['release_threshold',['../structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc',1,'amrex::ArenaInfo']]],
   ['releasedata_5585',['ReleaseData',['../classamrex_1_1AmrDataAdaptor.html#a7f983048f1e70348b58c381f0e104ae3',1,'amrex::AmrDataAdaptor::ReleaseData()'],['../classamrex_1_1AmrMeshDataAdaptor.html#a9aa101ee90b944010548ed7461cb7a8a',1,'amrex::AmrMeshDataAdaptor::ReleaseData()']]],
   ['remainingwriters_5586',['remainingWriters',['../classamrex_1_1NFilesIter.html#ae13a47d2ead798be8070c16227694412',1,'amrex::NFilesIter']]],
