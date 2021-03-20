@@ -5379,7 +5379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" line="178" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" bodystart="178" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" line="176" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__Extension_8H_1a4239dc930ea8f47a20ebf1aca31dc602" prot="public" static="no">
         <name>AMREX_NO_UNIQUE_ADDRESS</name>
@@ -5389,7 +5389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" line="190" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" bodystart="190" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" line="188" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H" bodystart="188" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -5568,30 +5568,28 @@
 <codeline lineno="169" refid="AMReX__Extension_8H_1a8c2a4f7808c3093eb46278654b309fe3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_FALLTHROUGH<sp/>((void)0)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CI<sp/>uses<sp/>-Werror<sp/>-Wc++17-extentsion,<sp/>thus<sp/>we<sp/>need<sp/>to<sp/>add<sp/>the<sp/>__cplusplus<sp/>clause</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CI<sp/>uses<sp/>-Werror<sp/>-Wc++17-extension,<sp/>thus<sp/>we<sp/>need<sp/>to<sp/>add<sp/>the<sp/>__cplusplus<sp/>clause</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(AMREX_NO_NODISCARD)<sp/>&amp;&amp;<sp/>defined(__has_cpp_attribute)<sp/>&amp;&amp;<sp/>__has_cpp_attribute(nodiscard)<sp/>&amp;&amp;<sp/>__cplusplus<sp/>&gt;=<sp/>201603L</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NODISCARD<sp/>[[nodiscard]]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>!defined(AMREX_NO_NODISCARD)<sp/>&amp;&amp;<sp/>(defined(__GNUC__)<sp/>||<sp/>defined(__clang__))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NODISCARD<sp/>__attribute__<sp/>((warn_unused_result))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="178" refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NODISCARD</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Note:<sp/>following<sp/>compilers<sp/>support<sp/>[[no_unique_address]]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>-<sp/>Clang<sp/>&gt;=<sp/>9.0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>-<sp/>GCC<sp/>&gt;=<sp/>9.0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>-<sp/>MSVC<sp/>&gt;=<sp/>19.26</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="185"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Using<sp/>no<sp/>unique<sp/>address<sp/>makes<sp/>empty<sp/>base<sp/>class<sp/>optimization<sp/>for<sp/>multiple<sp/>policies<sp/>much<sp/>easier</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(AMREX_NO_NO_UNIQUE_ADDRESS)<sp/>&amp;&amp;<sp/>defined(__has_cpp_attribute)<sp/>&amp;&amp;<sp/>__has_cpp_attribute(no_unique_address)<sp/>&amp;&amp;<sp/>__cpluspus<sp/>&gt;=<sp/>201803L</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NO_UNIQUE_ADDRESS<sp/>[[no_unique_address]]</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_HAS_NO_UNIQUE_ADDRESS<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="190" refid="AMReX__Extension_8H_1a4239dc930ea8f47a20ebf1aca31dc602" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NO_UNIQUE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NODISCARD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Note:<sp/>following<sp/>compilers<sp/>support<sp/>[[no_unique_address]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>-<sp/>Clang<sp/>&gt;=<sp/>9.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>-<sp/>GCC<sp/>&gt;=<sp/>9.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>-<sp/>MSVC<sp/>&gt;=<sp/>19.26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Using<sp/>no<sp/>unique<sp/>address<sp/>makes<sp/>empty<sp/>base<sp/>class<sp/>optimization<sp/>for<sp/>multiple<sp/>policies<sp/>much<sp/>easier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(AMREX_NO_NO_UNIQUE_ADDRESS)<sp/>&amp;&amp;<sp/>defined(__has_cpp_attribute)<sp/>&amp;&amp;<sp/>__has_cpp_attribute(no_unique_address)<sp/>&amp;&amp;<sp/>__cpluspus<sp/>&gt;=<sp/>201803L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NO_UNIQUE_ADDRESS<sp/>[[no_unique_address]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_HAS_NO_UNIQUE_ADDRESS<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="AMReX__Extension_8H_1a4239dc930ea8f47a20ebf1aca31dc602" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>define<sp/>AMREX_NO_UNIQUE_ADDRESS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!BL_LANG_FORT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Extension.H"/>
   </compounddef>
