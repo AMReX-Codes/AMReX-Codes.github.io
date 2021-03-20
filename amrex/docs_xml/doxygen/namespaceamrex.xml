@@ -89,7 +89,7 @@
     <innerclass refid="classamrex_1_1DataServices" prot="public">amrex::DataServices</innerclass>
     <innerclass refid="classamrex_1_1DefaultFabFactory" prot="public">amrex::DefaultFabFactory</innerclass>
     <innerclass refid="structamrex_1_1DefinitelyNotHostRunnable" prot="public">amrex::DefinitelyNotHostRunnable</innerclass>
-    <innerclass refid="structamrex_1_1DefinitelyNotHostRunnable_3_01T_00_01amrex_1_1EnableIf__t_3_01____nv__is__extende2b6ea5967b18ebd0ac35ac62d80bc70c" prot="public">amrex::DefinitelyNotHostRunnable&lt; T, amrex::EnableIf_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;</innerclass>
+    <innerclass refid="structamrex_1_1DefinitelyNotHostRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extendecedf017524586c3f34ab1174adfd1f3d" prot="public">amrex::DefinitelyNotHostRunnable&lt; T, std::enable_if_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;</innerclass>
     <innerclass refid="structamrex_1_1DenseBinIteratorFactory" prot="public">amrex::DenseBinIteratorFactory</innerclass>
     <innerclass refid="classamrex_1_1DenseBins" prot="public">amrex::DenseBins</innerclass>
     <innerclass refid="classamrex_1_1DeriveList" prot="public">amrex::DeriveList</innerclass>
@@ -200,7 +200,7 @@
     <innerclass refid="classamrex_1_1Mask" prot="public">amrex::Mask</innerclass>
     <innerclass refid="structamrex_1_1MaybeDeviceRunnable" prot="public">amrex::MaybeDeviceRunnable</innerclass>
     <innerclass refid="structamrex_1_1MaybeHostDeviceRunnable" prot="public">amrex::MaybeHostDeviceRunnable</innerclass>
-    <innerclass refid="structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01amrex_1_1EnableIf__t_3_01____nv__is__extended_efa4571b1840cf48b228462fd5f55f96" prot="public">amrex::MaybeHostDeviceRunnable&lt; T, amrex::EnableIf_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;</innerclass>
+    <innerclass refid="structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extended_ac548a468bcc64242955fc23b2d496e6" prot="public">amrex::MaybeHostDeviceRunnable&lt; T, std::enable_if_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;</innerclass>
     <innerclass refid="classamrex_1_1MemProfiler" prot="public">amrex::MemProfiler</innerclass>
     <innerclass refid="classamrex_1_1MFGhostIter" prot="public">amrex::MFGhostIter</innerclass>
     <innerclass refid="structamrex_1_1MFInfo" prot="public">amrex::MFInfo</innerclass>
@@ -2512,7 +2512,7 @@
 
 
 template &lt;typename DstTile, typename <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref>, typename Index, typename F,
-          <ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;Index&gt;::value</initializer>
+          std::enable_if_t&lt;std::is_integral&lt;Index&gt;::value</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -3094,7 +3094,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="10" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="10" bodyend="34" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="36" declcolumn="10"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1acc805fd48b46564aee791ca8dced18fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a3cf973090fa613c635340a08df7ecd38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3103,8 +3103,8 @@ template &lt;typename DstTile</initializer>
             <type>typename BC</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchSingleLevel</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchSingleLevel</definition>
         <argsstring>(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</argsstring>
         <name>FillPatchSingleLevel</name>
         <param>
@@ -3159,7 +3159,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="50" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="50" bodyend="161" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="41" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1abc9c1eb46a11472181b3900867ca27f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a05934ee478017afcd9908667de64a79c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3168,8 +3168,8 @@ template &lt;typename DstTile</initializer>
             <type>typename BC</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchSingleLevel</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchSingleLevel</definition>
         <argsstring>(MF &amp;mf, Real time, const Vector&lt; MF * &gt; &amp;smf, const Vector&lt; Real &gt; &amp;stime, int scomp, int dcomp, int ncomp, const Geometry &amp;geom, BC &amp;physbcf, int bcfcomp)</argsstring>
         <name>FillPatchSingleLevel</name>
         <param>
@@ -3220,7 +3220,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="38" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="38" bodyend="46" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="49" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa03842fd8f93a2d78fc48b4c0b1a008b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a5b5440802e0895fcba37e6b295116585" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3240,8 +3240,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
         <argsstring>(MF &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>FillPatchTwoLevels</name>
         <param>
@@ -3342,7 +3342,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="545" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="545" bodyend="567" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="59" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab5912272e25ee4eb358289fcbde251d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a3f8f5f13146586dfaa0fb8d082132f12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3362,8 +3362,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
         <argsstring>(MF &amp;mf, Real time, const Vector&lt; MF * &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; MF * &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>FillPatchTwoLevels</name>
         <param>
@@ -3460,7 +3460,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="571" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="571" bodyend="594" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="76" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a70079a29614229567ee196dcbbe271d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a390894d7b417899ef5b5ac5554e9ba01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3480,8 +3480,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
         <argsstring>(Array&lt; MF *, 3 &gt; const &amp;mf, IntVect const &amp;nghost, Real time, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>FillPatchTwoLevels</name>
         <param>
@@ -3582,7 +3582,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="598" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="598" bodyend="621" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="93" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a888b7bb6d8cf58a7b68bbd35fb38fabb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a594916b2bbff20fc573a8e94386cbfb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3602,8 +3602,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::FillPatchTwoLevels</definition>
         <argsstring>(Array&lt; MF *, 3 &gt; const &amp;mf, Real time, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;cmf, const Vector&lt; Real &gt; &amp;ct, const Vector&lt; Array&lt; MF *, 3 &gt; &gt; &amp;fmf, const Vector&lt; Real &gt; &amp;ft, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>FillPatchTwoLevels</name>
         <param>
@@ -3700,7 +3700,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="625" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="625" bodyend="648" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="110" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a11360ea60c2b1db7e9ce603c239a07d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a6fa430e1648835f9dea38b7568d79506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3720,8 +3720,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
         <argsstring>(MF &amp;mf, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>InterpFromCoarseLevel</name>
         <param>
@@ -3806,7 +3806,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="698" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="698" bodyend="712" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="161" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a00c2ef83d0cc5d4ffd7bf85678be67e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa081e015e8252796d1f7675189020446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3826,8 +3826,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
         <argsstring>(MF &amp;mf, IntVect const &amp;nghost, Real time, const MF &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, BC &amp;cbc, int cbccomp, BC &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Vector&lt; BCRec &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>InterpFromCoarseLevel</name>
         <param>
@@ -3916,7 +3916,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="734" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="734" bodyend="830" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="176" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1af292a4c2fd692edb78a85428cc2d5f41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a4416974d946e9527aa91936144873a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -3936,8 +3936,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
         <argsstring>(Array&lt; MF *, 3 &gt; const &amp;mf, Real time, const Array&lt; MF *, 3 &gt; &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>InterpFromCoarseLevel</name>
         <param>
@@ -4022,7 +4022,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" line="716" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil_I.H" bodystart="716" bodyend="730" declfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H" declline="191" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a12fbb4a9b841328c4d034944c2ba9e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af3c3186e1ed40653258d9ce5b6a6645d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -4042,8 +4042,8 @@ template &lt;typename DstTile</initializer>
             <defval>NullInterpHook&lt;typename MF::FABType::value_type&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">EnableIf_t</ref>&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
-        <definition>EnableIf_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::InterpFromCoarseLevel</definition>
         <argsstring>(Array&lt; MF *, 3 &gt; const &amp;mf, IntVect const &amp;nghost, Real time, const Array&lt; MF *, 3 &gt; &amp;cmf, int scomp, int dcomp, int ncomp, const Geometry &amp;cgeom, const Geometry &amp;fgeom, Array&lt; BC, 3 &gt; &amp;cbc, int cbccomp, Array&lt; BC, 3 &gt; &amp;fbc, int fbccomp, const IntVect &amp;ratio, Interp *mapper, const Array&lt; Vector&lt; BCRec &gt;, 3 &gt; &amp;bcs, int bcscomp, const PreInterpHook &amp;pre_interp={}, const PostInterpHook &amp;post_interp={})</argsstring>
         <name>InterpFromCoarseLevel</name>
         <param>
@@ -9262,7 +9262,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB::value_type</type>
@@ -9299,7 +9299,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB::value_type</type>
@@ -9339,7 +9339,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9383,7 +9383,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9430,7 +9430,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9481,7 +9481,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9526,7 +9526,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB::value_type</type>
@@ -9563,7 +9563,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB::value_type</type>
@@ -9603,7 +9603,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9647,7 +9647,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9694,7 +9694,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9745,7 +9745,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9790,7 +9790,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB::value_type</type>
@@ -9827,7 +9827,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB::value_type</type>
@@ -9867,7 +9867,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9911,7 +9911,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -9958,7 +9958,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -10009,7 +10009,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>FAB1::value_type</type>
@@ -10054,7 +10054,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10091,7 +10091,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10131,7 +10131,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10175,7 +10175,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10216,7 +10216,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10253,7 +10253,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10293,7 +10293,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10337,7 +10337,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB1&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>bool</type>
@@ -10375,7 +10375,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10415,7 +10415,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10461,7 +10461,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10507,7 +10507,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10553,7 +10553,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10599,7 +10599,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10645,7 +10645,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10691,7 +10691,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10737,7 +10737,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10783,7 +10783,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10829,7 +10829,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10875,7 +10875,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10913,7 +10913,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10951,7 +10951,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -10982,7 +10982,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -11016,7 +11016,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class bar</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value                                                               &amp;&amp; IsBaseFab&lt;IFAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value                                                               &amp;&amp; IsBaseFab&lt;IFAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -11050,7 +11050,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class foo</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -11092,7 +11092,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class foo</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -11122,7 +11122,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class foo</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -11164,7 +11164,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class foo</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -11194,7 +11194,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>class foo</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
@@ -12841,7 +12841,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -12874,7 +12874,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -12911,7 +12911,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -12944,7 +12944,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13091,7 +13091,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13128,7 +13128,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13169,7 +13169,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13206,7 +13206,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13430,11 +13430,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13489,11 +13489,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13558,15 +13558,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13639,15 +13639,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13894,11 +13894,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -13953,11 +13953,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14021,15 +14021,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14102,15 +14102,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14180,7 +14180,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14279,7 +14279,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14324,7 +14324,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14383,7 +14383,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14511,11 +14511,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14576,15 +14576,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14645,7 +14645,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14704,7 +14704,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14832,11 +14832,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14897,15 +14897,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -14966,7 +14966,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15031,7 +15031,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15168,11 +15168,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15236,15 +15236,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15308,7 +15308,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15375,7 +15375,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15515,11 +15515,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15584,15 +15584,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15657,7 +15657,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15716,7 +15716,7 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
         <type>void</type>
@@ -15870,7 +15870,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="847" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="847" bodyend="858"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad411e7926ae6751ea3dabe64167bee9a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a9fd3d4ba7e1ae49a7fb2709cdb5ae180" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -15880,11 +15880,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, T n, L &amp;&amp;f) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -15907,14 +15907,14 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="912" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="912" bodyend="933"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a1bcec6d48338476959117b14facc7368" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a22a969435bd17eae3a9bbea9568a4682" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box, L &amp;&amp;f) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -15937,7 +15937,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="937" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="937" bodyend="968"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1adbfb2297d04a71bbc7119a6706d73ba7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1abc92f4da47f85cb0ef50fe2f956703a1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -15947,11 +15947,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -15978,7 +15978,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="972" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="972" bodyend="1002"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a37999a74566dc30db74f780d2fb20065" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a465161b6646618dfe09f35c3f24af0db" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -15988,11 +15988,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
         <argsstring>(T n, L &amp;&amp;f) noexcept</argsstring>
         <name>ParallelForRNG</name>
         <param>
@@ -16011,14 +16011,14 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1006" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1006" bodyend="1021"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3e8e41bceaa94ec7e7b6408ddc2f4c7d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a37d48cb27c9e40565e6cf1b9e6803d71" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
         <argsstring>(Box const &amp;box, L &amp;&amp;f) noexcept</argsstring>
         <name>ParallelForRNG</name>
         <param>
@@ -16037,7 +16037,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1025" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1025" bodyend="1049"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1abafdba3f3086387e6c891c0a6744c136" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a10a0a44076df5d4ee6e9cec9297876b8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -16047,11 +16047,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L&gt;::value&gt; amrex::ParallelForRNG</definition>
         <argsstring>(Box const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
         <name>ParallelForRNG</name>
         <param>
@@ -16074,7 +16074,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1053" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1053" bodyend="1079"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a88ba75f55e74c851888862cef34129cd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a016a778ec6968a95683733be8c893be3" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L1</type>
@@ -16083,8 +16083,8 @@ template &lt;typename DstTile</initializer>
             <type>typename L2</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, Box const &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -16115,7 +16115,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1083" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1083" bodyend="1129"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3857288e1f9edee6b8f487552493068b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a97c81791e4904e18f8fff9ce48c07180" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L1</type>
@@ -16127,8 +16127,8 @@ template &lt;typename DstTile</initializer>
             <type>typename L3</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L3&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L3&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, Box const &amp;box2, Box const &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -16167,7 +16167,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1133" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1133" bodyend="1193"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a750fccdef6a841f3b2ba7268217bbae8" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae4c377121da61c17bdaafa33935c3cbc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T1</type>
@@ -16183,15 +16183,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, Box const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -16230,7 +16230,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1199" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1199" bodyend="1250"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a0d6be978f77f09040c48c8216aa0f461" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af7b08639ec098664cd764cef5f1fe2e2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T1</type>
@@ -16252,19 +16252,19 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L3&gt;::value&gt; amrex::ParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L3&gt;::value&gt; amrex::ParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, Box const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, Box const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</argsstring>
         <name>ParallelFor</name>
         <param>
@@ -16315,7 +16315,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1257" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1257" bodyend="1324"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad18be84cd190d36378e4bba1f0b8dcca" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a09ea6d5ccf6695c1e424a01055979221" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -16327,8 +16327,8 @@ template &lt;typename DstTile</initializer>
             <type>typename L2</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::FabReduce</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::FabReduce</definition>
         <argsstring>(Box const &amp;box, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>FabReduce</name>
         <param>
@@ -16355,7 +16355,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1328" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1328" bodyend="1352"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aef8676584d286e607f65ace8fa1069f0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a3b6843a336093bdba06760a7ef1a8587" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename N</type>
@@ -16371,11 +16371,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::FabReduce</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::FabReduce</definition>
         <argsstring>(Box const &amp;box, N ncomp, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>FabReduce</name>
         <param>
@@ -16406,7 +16406,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1357" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1357" bodyend="1383"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab977376753fa9f03360aa0de50f7cf36" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a642123627a5e585a728190b4f8279a72" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename N</type>
@@ -16422,11 +16422,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::VecReduce</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeDeviceRunnable" kindref="compound">MaybeDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeDeviceRunnable&lt;L2&gt;::value&gt; amrex::VecReduce</definition>
         <argsstring>(N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>VecReduce</name>
         <param>
@@ -16475,7 +16475,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1408" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1408" bodyend="1411"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa4cf3c75a27fc2260835ebc8fc0c6b22" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ab3863817bfa1ca3b9a76d4fc953d7e4c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -16485,11 +16485,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, T n, L &amp;&amp;f) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16512,7 +16512,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1581" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1581" bodyend="1589"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aaf3a6e20d26cc2510d4883b5ce603393" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1af9136e401cc189dee737565c20612e59" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -16522,11 +16522,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(T n, L &amp;&amp;f) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16545,14 +16545,14 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1593" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1593" bodyend="1596"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a3e7140d01a3069aaf23524b0e2ba4a4a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae335e0393a0ab3b72d5c030aeb7fe463" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box, L &amp;&amp;f) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16575,7 +16575,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1600" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1600" bodyend="1607"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1aa9ae3294d0b8e59263313243942b35de" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a8d997b9240e7bfffe880ebae18626799" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -16585,11 +16585,11 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box, T ncomp, L &amp;&amp;f) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16616,7 +16616,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1611" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1611" bodyend="1618"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a15a2f12a09035843df6d96741da34b88" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ac4927489611da112fb9566b475ce7e2b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L1</type>
@@ -16625,8 +16625,8 @@ template &lt;typename DstTile</initializer>
             <type>typename L2</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, Box const &amp;box2, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16657,7 +16657,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1622" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1622" bodyend="1631"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a88c5392837930b063ba3057315e8136b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aab94450e77d0755cada273158f5373d4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename L1</type>
@@ -16669,8 +16669,8 @@ template &lt;typename DstTile</initializer>
             <type>typename L3</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L3&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L3&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, Box const &amp;box2, Box const &amp;box3, L1 &amp;&amp;f1, L2 &amp;&amp;f2, L3 &amp;&amp;f3) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16709,7 +16709,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1635" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1635" bodyend="1647"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a389d9a1a2a659a0a47b5eaed02855324" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a592727ba0dc1149c659488f962afcad7" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T1</type>
@@ -16725,15 +16725,15 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, Box const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -16772,7 +16772,7 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="1653" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="1653" bodyend="1663"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a90503a6f97a876f238344849a86de629" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1aa0e2291d95cafe7bfafbc9d93f4289b0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T1</type>
@@ -16794,19 +16794,19 @@ template &lt;typename DstTile</initializer>
           </param>
           <param>
             <type>typename M1</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M2</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;</defval>
           </param>
           <param>
             <type>typename M3</type>
-            <defval><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;</defval>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L3&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L1 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L2 &gt;::value &amp;&amp;<ref refid="structamrex_1_1MaybeHostDeviceRunnable" kindref="compound">MaybeHostDeviceRunnable</ref>&lt; L3 &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;MaybeHostDeviceRunnable&lt;L1&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L2&gt;::value &amp;&amp; MaybeHostDeviceRunnable&lt;L3&gt;::value&gt; amrex::HostDeviceParallelFor</definition>
         <argsstring>(Gpu::KernelInfo const &amp;info, Box const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, Box const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, Box const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</argsstring>
         <name>HostDeviceParallelFor</name>
         <param>
@@ -42871,7 +42871,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class Buffer</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -42917,7 +42917,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class UnpackPolicy</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -42960,7 +42960,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class Buffer</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43023,7 +43023,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class UnpackPolicy</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43069,7 +43069,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43115,7 +43115,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43233,7 +43233,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43306,7 +43306,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43391,7 +43391,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43488,7 +43488,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43561,7 +43561,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43646,7 +43646,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43743,7 +43743,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43816,7 +43816,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43901,7 +43901,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -43998,7 +43998,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -44071,7 +44071,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -44156,7 +44156,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -44253,7 +44253,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -44326,7 +44326,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -44411,7 +44411,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class F</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -44944,7 +44944,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename N</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -45164,7 +45164,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename F</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -45422,7 +45422,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename F</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -45595,7 +45595,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename N</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -45692,7 +45692,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename N</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46075,7 +46075,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename F</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46351,7 +46351,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename Index</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46457,7 +46457,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>typename Index</type>
           </param>
           <param>
-            <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46603,7 +46603,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class Iterator</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleIterator&lt; Iterator &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleIterator&lt; Iterator &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46663,7 +46663,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class Iterator</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleIterator&lt; Iterator &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleIterator&lt; Iterator &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46723,7 +46723,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class PC</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46784,7 +46784,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class PC</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46845,7 +46845,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class PC</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>
@@ -46930,7 +46930,7 @@ Returns the index of the first element for which f is 0. </para>
             <type>class PC</type>
           </param>
           <param>
-            <type>EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
             <declname>foo</declname>
             <defname>foo</defname>
             <defval>0</defval>

@@ -212,12 +212,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a366e33622f264a58b5ceae6cd79e3b64"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, typename... Ts&gt; </td></tr>
 <tr class="memitem:a366e33622f264a58b5ceae6cd79e3b64"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a366e33622f264a58b5ceae6cd79e3b64">get_impl</a> (<a class="el" href="structamrex_1_1detail_1_1gpu__tuple__element.html">detail::gpu_tuple_element</a>&lt; I, typename <a class="el" href="structamrex_1_1GpuTupleElement.html">GpuTupleElement</a>&lt; I, <a class="el" href="classamrex_1_1GpuTuple.html">GpuTuple</a>&lt; Ts... &gt; &gt;::type &gt; &amp;&amp;te) noexcept</td></tr>
 <tr class="separator:a366e33622f264a58b5ceae6cd79e3b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf5761b3201f222f4415dec1b481ccbf"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </td></tr>
-<tr class="memitem:acf5761b3201f222f4415dec1b481ccbf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a>&lt;(I&lt; N-1), void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#acf5761b3201f222f4415dec1b481ccbf">tuple_copy</a> (TP1 &amp;a, TP2 &amp;&amp;b)</td></tr>
-<tr class="separator:acf5761b3201f222f4415dec1b481ccbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a6605ef64715ec8e0ba99fa9d975cf"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </td></tr>
-<tr class="memitem:a68a6605ef64715ec8e0ba99fa9d975cf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a>&lt; I==N-1, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a68a6605ef64715ec8e0ba99fa9d975cf">tuple_copy</a> (TP1 &amp;a, TP2 &amp;&amp;b)</td></tr>
-<tr class="separator:a68a6605ef64715ec8e0ba99fa9d975cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813577e3d9b0ad5b7795dd9351160f9a"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </td></tr>
+<tr class="memitem:a813577e3d9b0ad5b7795dd9351160f9a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> std::enable_if_t&lt;(I&lt; N-1), void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a813577e3d9b0ad5b7795dd9351160f9a">tuple_copy</a> (TP1 &amp;a, TP2 &amp;&amp;b)</td></tr>
+<tr class="separator:a813577e3d9b0ad5b7795dd9351160f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796da28b12c3448559ad1af823e855af"><td class="memTemplParams" colspan="2">template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </td></tr>
+<tr class="memitem:a796da28b12c3448559ad1af823e855af"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> std::enable_if_t&lt; I==N-1, void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a796da28b12c3448559ad1af823e855af">tuple_copy</a> (TP1 &amp;a, TP2 &amp;&amp;b)</td></tr>
+<tr class="separator:a796da28b12c3448559ad1af823e855af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35137e1f8abca5b3e0c970302d006b6f"><td class="memTemplParams" colspan="2">template&lt;typename R , typename TP1 , typename TP2 , std::size_t... N1, std::size_t... N2&gt; </td></tr>
 <tr class="memitem:a35137e1f8abca5b3e0c970302d006b6f"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> R&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a35137e1f8abca5b3e0c970302d006b6f">make_tuple</a> (TP1 &amp;&amp;a, TP2 &amp;&amp;b, <a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N1... &gt; const &amp;, <a class="el" href="structamrex_1_1IndexSequence.html">IndexSequence</a>&lt; N2... &gt; const &amp;)</td></tr>
 <tr class="separator:a35137e1f8abca5b3e0c970302d006b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1580,8 +1580,8 @@ template&lt;class T , class H &gt; </div>
 
 </div>
 </div>
-<a id="acf5761b3201f222f4415dec1b481ccbf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf5761b3201f222f4415dec1b481ccbf">&#9670;&nbsp;</a></span>tuple_copy() <span class="overload">[1/2]</span></h2>
+<a id="a813577e3d9b0ad5b7795dd9351160f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813577e3d9b0ad5b7795dd9351160f9a">&#9670;&nbsp;</a></span>tuple_copy() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1589,7 +1589,7 @@ template&lt;class T , class H &gt; </div>
 template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a>&lt;(I&lt;N-1),void&gt; amrex::detail::tuple_copy </td>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> std::enable_if_t&lt;(I&lt;N-1),void&gt; amrex::detail::tuple_copy </td>
           <td>(</td>
           <td class="paramtype">TP1 &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -1610,8 +1610,8 @@ template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </div
 
 </div>
 </div>
-<a id="a68a6605ef64715ec8e0ba99fa9d975cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68a6605ef64715ec8e0ba99fa9d975cf">&#9670;&nbsp;</a></span>tuple_copy() <span class="overload">[2/2]</span></h2>
+<a id="a796da28b12c3448559ad1af823e855af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a796da28b12c3448559ad1af823e855af">&#9670;&nbsp;</a></span>tuple_copy() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1619,7 +1619,7 @@ template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </div
 template&lt;std::size_t I, std::size_t N, typename TP1 , typename TP2 &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a>&lt;I==N-1,void&gt; amrex::detail::tuple_copy </td>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> std::enable_if_t&lt;I==N-1,void&gt; amrex::detail::tuple_copy </td>
           <td>(</td>
           <td class="paramtype">TP1 &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>

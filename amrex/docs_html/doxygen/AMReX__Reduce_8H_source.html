@@ -417,7 +417,7 @@ $(function() {
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;              <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classamrex_1_1ReduceOps.html#a0b2c2b761a373ac5a95273721a8ae1fd">  350</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1ReduceOps.html#a0b2c2b761a373ac5a95273721a8ae1fd">eval</a> (<a class="code" href="classamrex_1_1Box.html">Box</a> <span class="keyword">const</span>&amp; box, N ncomp, D &amp; reduce_data, F&amp;&amp; f)</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    {</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> <a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">D::Type</a>;</div>
@@ -472,7 +472,7 @@ $(function() {
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    }</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;              <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00405"></a><span class="lineno"><a class="line" href="classamrex_1_1ReduceOps.html#a65284f038ea29beb80b99c1a5f246f04">  405</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1ReduceOps.html#a65284f038ea29beb80b99c1a5f246f04">eval</a> (N n, D &amp; reduce_data, F&amp;&amp; f)</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    {</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> <a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">D::Type</a>;</div>
@@ -510,7 +510,7 @@ $(function() {
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1detail.html#a2d9a622392a0eee879ac8180cb2371e6">Reduce</a> {</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00443"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">  443</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a> (N n, U <span class="keyword">const</span>* v, T init_val, BOP bop)</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;{</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1LaunchSafeGuard.html">Gpu::LaunchSafeGuard</a> lsg(<span class="keyword">true</span>);</div>
@@ -535,14 +535,14 @@ $(function() {
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordflow">return</span> ds.<a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a3a557860f06c4da68f57b6c2e6222fca">dataValue</a>();</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;}</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00468"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#afac1250d786b98bab8d8d2cf5c06411e">  468</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a> (N n, T <span class="keyword">const</span>* v, T init_val = 0)</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;{</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Reduce::Sum</a>(n, v, init_val, <a class="code" href="structamrex_1_1Plus.html">amrex::Plus&lt;T&gt;</a>());</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;}</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00475"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a4f32ecfd40118417b8bb81078aa24c40">  475</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a> (N n, F&amp;&amp; f, T init_val = 0)</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;{</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpSum&gt;</a> reduce_op;</div>
@@ -552,7 +552,7 @@ $(function() {
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keywordflow">return</span> amrex::get&lt;0&gt;(reduce_data.<a class="code" href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">value</a>()) + init_val;</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;}</div>
 <div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00485"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">  485</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, U <span class="keyword">const</span>* v, T init_val, BOP bop)</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;{</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1LaunchSafeGuard.html">Gpu::LaunchSafeGuard</a> lsg(<span class="keyword">true</span>);</div>
@@ -577,14 +577,14 @@ $(function() {
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordflow">return</span> ds.<a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a3a557860f06c4da68f57b6c2e6222fca">dataValue</a>();</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;}</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00510"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a07365bcdfaa9fe246330e8d91f71ecc0">  510</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, T <span class="keyword">const</span>* v, T init_val = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;T&gt;::max</a>())</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;{</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Reduce::Min</a>(n, v, init_val, <a class="code" href="structamrex_1_1Less.html">amrex::Less&lt;T&gt;</a>());</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;}</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00517"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a7da96d3ec8efffe9ebeae62d5c3fb710">  517</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, F&amp;&amp; f, T init_val = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;T&gt;::max</a>())</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;{</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMin&gt;</a> reduce_op;</div>
@@ -595,7 +595,7 @@ $(function() {
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">std::min</a>(tmp,init_val);</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;}</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00528"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">  528</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Max</a> (N n, U <span class="keyword">const</span>* v, T init_val, BOP bop)</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;{</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1LaunchSafeGuard.html">Gpu::LaunchSafeGuard</a> lsg(<span class="keyword">true</span>);</div>
@@ -620,14 +620,14 @@ $(function() {
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordflow">return</span> ds.<a class="code" href="structamrex_1_1Gpu_1_1DeviceScalar.html#a3a557860f06c4da68f57b6c2e6222fca">dataValue</a>();</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;}</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00553"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a7ac8075282193aef5024b3a7092a0f3c">  553</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Max</a> (N n, T <span class="keyword">const</span>* v, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;{</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Reduce::Max</a>(n, v, init_val, <a class="code" href="structamrex_1_1Greater.html">amrex::Greater&lt;T&gt;</a>());</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;}</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00560"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a3cea6f37705bcc227603bf4c75507b94">  560</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Max</a> (N n, F&amp;&amp; f, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;{</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMax&gt;</a> reduce_op;</div>
@@ -638,7 +638,7 @@ $(function() {
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::max</a>(tmp,init_val);</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;}</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;template &lt;typename T, typename N, typename U, typename MINOP, typename MAXOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;template &lt;typename T, typename N, typename U, typename MINOP, typename MAXOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00571"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a407e04992fad29e568b551872b7343f2">  571</a></span>&#160;std::pair&lt;T,T&gt; <a class="code" href="namespaceamrex_1_1Reduce.html#a407e04992fad29e568b551872b7343f2">MinMax</a> (N n, U <span class="keyword">const</span>* v, MINOP minop, MAXOP maxop)</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;{</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1LaunchSafeGuard.html">Gpu::LaunchSafeGuard</a> lsg(<span class="keyword">true</span>);</div>
@@ -670,14 +670,14 @@ $(function() {
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keywordflow">return</span> std::make_pair(hv[0],hv[1]);</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;}</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00603"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#a17b6d6ef1df2c2803c3f460b51ddd012">  603</a></span>&#160;std::pair&lt;T,T&gt; <a class="code" href="namespaceamrex_1_1Reduce.html#a407e04992fad29e568b551872b7343f2">MinMax</a> (N n, T <span class="keyword">const</span>* v)</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;{</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keywordflow">return</span> Reduce::MinMax&lt;T&gt;(n, v, <a class="code" href="structamrex_1_1Less.html">amrex::Less&lt;T&gt;</a>(), <a class="code" href="structamrex_1_1Greater.html">amrex::Greater&lt;T&gt;</a>());</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;}</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00610"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#aa222fe966c90523082b2cc7ecdf695c4">  610</a></span>&#160;std::pair&lt;T,T&gt; <a class="code" href="namespaceamrex_1_1Reduce.html#a407e04992fad29e568b551872b7343f2">MinMax</a> (N n, F&amp;&amp; f)</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;{</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMin,ReduceOpMax&gt;</a> reduce_op;</div>
@@ -691,7 +691,7 @@ $(function() {
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="keywordflow">return</span> std::make_pair(amrex::get&lt;0&gt;(hv), amrex::get&lt;1&gt;(hv));</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;}</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;template &lt;typename T, typename N, typename P, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;template &lt;typename T, typename N, typename P, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00624"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Reduce.html#ada14c45ee9673665c1c3df6749ede80f">  624</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceamrex_1_1Reduce.html#ada14c45ee9673665c1c3df6749ede80f">AnyOf</a> (N n, T <span class="keyword">const</span>* v, P&amp;&amp; pred)</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;{</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="structamrex_1_1Gpu_1_1LaunchSafeGuard.html">Gpu::LaunchSafeGuard</a> lsg(<span class="keyword">true</span>);</div>
@@ -892,7 +892,7 @@ $(function() {
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    }</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;              <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1ReduceOps.html#a6bed424b9a455d76e42d8061aef71b3e">eval</a> (Box <span class="keyword">const</span>&amp; box, N ncomp, D &amp; reduce_data, F&amp;&amp; f)</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    {</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> <a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">D::Type</a>;</div>
@@ -912,7 +912,7 @@ $(function() {
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;    }</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
 <div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> N, <span class="keyword">typename</span> D, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;              <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;              <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classamrex_1_1ReduceOps.html#a6bed424b9a455d76e42d8061aef71b3e">eval</a> (N n, D &amp; reduce_data, F&amp;&amp; f)</div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    {</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> <a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">D::Type</a>;</div>
@@ -929,7 +929,7 @@ $(function() {
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex_1_1detail.html#a2d9a622392a0eee879ac8180cb2371e6">Reduce</a> {</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a> (N n, U <span class="keyword">const</span>* v, T init_val, BOP bop)</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;{</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;    T <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569dadb62579be9a4f3141fb640a655f49f52">sum</a> = init_val;</div>
@@ -947,7 +947,7 @@ $(function() {
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;}</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a> (N n, F&amp;&amp; f, T init_val = 0)</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;{</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;    T r = init_val;</div>
@@ -960,13 +960,13 @@ $(function() {
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;    <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;}</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a> (N n, T <span class="keyword">const</span>* v, T init_val = 0)</div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;{</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Reduce.html#a3a1bf2418459469b609d213560f4a8da">Sum</a>(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;}</div>
 <div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160; </div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, U <span class="keyword">const</span>* v, T init_val, BOP bop)</div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;{</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;    T mn = init_val;</div>
@@ -984,7 +984,7 @@ $(function() {
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;}</div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, F&amp;&amp; f, T init_val = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;T&gt;::max</a>())</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;{</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    T r = init_val;</div>
@@ -997,13 +997,13 @@ $(function() {
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;    <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;}</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160; </div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, T <span class="keyword">const</span>* v, T init_val = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;T&gt;::max</a>())</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;{</div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Reduce::Min</a>(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;}</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160; </div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;template &lt;typename T, typename N, typename U, typename BOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Max</a> (N n, U <span class="keyword">const</span>* v, T init_val, BOP bop)</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;{</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    T mx = init_val;</div>
@@ -1021,7 +1021,7 @@ $(function() {
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;}</div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160; </div>
 <div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Max</a> (N n, F&amp;&amp; f, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;{</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    T r = init_val;</div>
@@ -1034,13 +1034,13 @@ $(function() {
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;    <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;}</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160; </div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;T <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Max</a> (N n, T <span class="keyword">const</span>* v, T init_val = std::numeric_limits&lt;T&gt;::lowest())</div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;{</div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Reduce.html#ab3af21594fb654c6c051cdc49536bf35">Reduce::Max</a>(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; }, init_val);</div>
 <div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;}</div>
 <div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160; </div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;template &lt;typename T, typename N, typename U, typename MINOP, typename MAXOP, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;template &lt;typename T, typename N, typename U, typename MINOP, typename MAXOP, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;std::pair&lt;T,T&gt; <a class="code" href="namespaceamrex_1_1Reduce.html#a407e04992fad29e568b551872b7343f2">MinMax</a> (N n, U <span class="keyword">const</span>* v, MINOP minop, MAXOP maxop)</div>
 <div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;{</div>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    Array&lt;T,2&gt; hv{<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;T&gt;::max</a>(), std::numeric_limits&lt;T&gt;::lowest()};</div>
@@ -1061,7 +1061,7 @@ $(function() {
 <div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;}</div>
 <div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160; </div>
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> F,</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;std::pair&lt;T,T&gt; <a class="code" href="namespaceamrex_1_1Reduce.html#aa9002a6dc16f2e87ac519151c6d8a7df">Min</a> (N n, F&amp;&amp; f)</div>
 <div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;{</div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    T r_min = <a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;T&gt;::max</a>();</div>
@@ -1077,13 +1077,13 @@ $(function() {
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;    <span class="keywordflow">return</span> std::make_pair(r_min,r_max);</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;}</div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160; </div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;template &lt;typename T, typename N, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;template &lt;typename T, typename N, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;std::pair&lt;T,T&gt; <a class="code" href="namespaceamrex_1_1Reduce.html#a407e04992fad29e568b551872b7343f2">MinMax</a> (N n, T <span class="keyword">const</span>* v)</div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;{</div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;    <span class="keywordflow">return</span> Reduce::MinMax&lt;T&gt;(n, [=] (N i) -&gt; T { <span class="keywordflow">return</span> v[i]; });</div>
 <div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;}</div>
 <div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160; </div>
-<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;template &lt;typename T, typename N, typename P, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;template &lt;typename T, typename N, typename P, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceamrex_1_1Reduce.html#ada14c45ee9673665c1c3df6749ede80f">AnyOf</a> (N n, T <span class="keyword">const</span>* v, P&amp;&amp; pred)</div>
 <div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;{</div>
 <div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;    <span class="keywordflow">return</span> std::any_of(v, v+n, pred);</div>
@@ -1145,7 +1145,6 @@ $(function() {
 <div class="ttc" id="astructamrex_1_1Greater_html"><div class="ttname"><a href="structamrex_1_1Greater.html">amrex::Greater</a></div><div class="ttdef"><b>Definition:</b> AMReX_Functional.H:28</div></div>
 <div class="ttc" id="astructamrex_1_1ReduceOpMax_html_a1cd819d660aa4d2c651f8151e38c3e78"><div class="ttname"><a href="structamrex_1_1ReduceOpMax.html#a1cd819d660aa4d2c651f8151e38c3e78">amrex::ReduceOpMax::init</a></div><div class="ttdeci">void init(T &amp;t) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:137</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_af20a431607165ffa2cdb5b38b5778177"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#af20a431607165ffa2cdb5b38b5778177">amrex::Gpu::deviceReduceSum_full</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void deviceReduceSum_full(T *dest, T source) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuReduce.H:256</div></div>
-<div class="ttc" id="anamespaceamrex_html_a8690d4c6386d001b328b07257fe628a0"><div class="ttname"><a href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a></div><div class="ttdeci">typename std::enable_if&lt; B, T &gt;::type EnableIf_t</div><div class="ttdef"><b>Definition:</b> AMReX_TypeTraits.H:40</div></div>
 <div class="ttc" id="astructamrex_1_1ReduceOpMax_html_a4d882050c4554f4f6857b3443a8fd2fa"><div class="ttname"><a href="structamrex_1_1ReduceOpMax.html#a4d882050c4554f4f6857b3443a8fd2fa">amrex::ReduceOpMax::parallel_update</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void parallel_update(T &amp;d, T const &amp;s) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:129</div></div>
 <div class="ttc" id="astructamrex_1_1ReduceOpLogicalAnd_html_a644182e552bf0d1f5cca4d18a7e6ebaf"><div class="ttname"><a href="structamrex_1_1ReduceOpLogicalAnd.html#a644182e552bf0d1f5cca4d18a7e6ebaf">amrex::ReduceOpLogicalAnd::parallel_update</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void parallel_update(int &amp;d, int s) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:149</div></div>
 <div class="ttc" id="astructamrex_1_1ReduceOpLogicalAnd_html_ab5ad43412cb40defe985c30b5a8c5f66"><div class="ttname"><a href="structamrex_1_1ReduceOpLogicalAnd.html#ab5ad43412cb40defe985c30b5a8c5f66">amrex::ReduceOpLogicalAnd::local_update</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void local_update(int &amp;d, int s) const noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:153</div></div>

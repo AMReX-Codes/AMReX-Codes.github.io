@@ -232,7 +232,7 @@ $(function() {
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_DPCPP)</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a05b72974d9e9255663231d85a5ddfbea">PrefixSum</a> (N n, FIN &amp;&amp; fin, FOUT &amp;&amp; fout, <a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a> type)</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 0) <span class="keywordflow">return</span> 0;</div>
@@ -460,7 +460,7 @@ $(function() {
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> N, <span class="keyword">typename</span> FIN, <span class="keyword">typename</span> FOUT,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;          <span class="keyword">typename</span> M=<a class="code" href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value</a>&gt; &gt;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;          <span class="keyword">typename</span> M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00393"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Scan.html#a05b72974d9e9255663231d85a5ddfbea">  393</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a05b72974d9e9255663231d85a5ddfbea">PrefixSum</a> (N n, FIN &amp;&amp; fin, FOUT &amp;&amp; fout, <a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a> type)</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;{</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 0) <span class="keywordflow">return</span> 0;</div>
@@ -699,7 +699,7 @@ $(function() {
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;<span class="comment">// The return value is the total sum.</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;template &lt;typename N, typename T, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00632"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Scan.html#a6c7995e76bd6422d20db6f336f64989d">  632</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a6c7995e76bd6422d20db6f336f64989d">InclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out)</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;{</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(n) &lt;= <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;int&gt;::max</a>())) {</div>
@@ -716,7 +716,7 @@ $(function() {
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;}</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">// The return value is the total sum.</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;template &lt;typename N, typename T, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00649"></a><span class="lineno"><a class="line" href="namespaceamrex_1_1Scan.html#a3d89941c9d430b31054150e45dbde440">  649</a></span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a3d89941c9d430b31054150e45dbde440">ExclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out)</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;{</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(n) &lt;= <span class="keyword">static_cast&lt;</span>Long<span class="keyword">&gt;</span>(<a class="code" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da86cadfc48eb8f9dd4a2e4a3980a6b265">std::numeric_limits&lt;int&gt;::max</a>())) {</div>
@@ -735,7 +735,7 @@ $(function() {
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="comment">// The return value is the total sum.</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;template &lt;typename N, typename T, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a6c7995e76bd6422d20db6f336f64989d">InclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out)</div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;{</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    std::partial_sum(in, in+n, out);</div>
@@ -743,7 +743,7 @@ $(function() {
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;}</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="comment">// The return value is the total sum.</span></div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;template &lt;typename N, typename T, typename M=amrex::EnableIf_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a3d89941c9d430b31054150e45dbde440">ExclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out)</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;{</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">if</span> (n &gt; 0) {</div>
@@ -819,7 +819,6 @@ $(function() {
 <div class="ttc" id="anamespaceamrex_html_ada73ee47d1c3a0d63725ce77e1334257"><div class="ttname"><a href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a></div><div class="ttdeci">void launch(T const &amp;n, L &amp;&amp;f, std::size_t=0) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsC.H:58</div></div>
 <div class="ttc" id="astructamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4_html_aa0e103be8fb2a7e42cecf5a2522d3267"><div class="ttname"><a href="structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#aa0e103be8fb2a7e42cecf5a2522d3267">amrex::Scan::detail::BlockStatus&lt; T, false &gt;::status</a></div><div class="ttdeci">char status</div><div class="ttdef"><b>Definition:</b> AMReX_Scan.H:100</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1SharedMemory_html_a15f96d78196939452c41efcf8889420c"><div class="ttname"><a href="structamrex_1_1Gpu_1_1SharedMemory.html#a15f96d78196939452c41efcf8889420c">amrex::Gpu::SharedMemory::dataPtr</a></div><div class="ttdeci">AMREX_GPU_DEVICE T * dataPtr() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuMemory.H:127</div></div>
-<div class="ttc" id="anamespaceamrex_html_a8690d4c6386d001b328b07257fe628a0"><div class="ttname"><a href="namespaceamrex.html#a8690d4c6386d001b328b07257fe628a0">amrex::EnableIf_t</a></div><div class="ttdeci">typename std::enable_if&lt; B, T &gt;::type EnableIf_t</div><div class="ttdef"><b>Definition:</b> AMReX_TypeTraits.H:40</div></div>
 <div class="ttc" id="aAMReX__Arena_8H_html"><div class="ttname"><a href="AMReX__Arena_8H.html">AMReX_Arena.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Scan_html_a6c7995e76bd6422d20db6f336f64989d"><div class="ttname"><a href="namespaceamrex_1_1Scan.html#a6c7995e76bd6422d20db6f336f64989d">amrex::Scan::InclusiveSum</a></div><div class="ttdeci">T InclusiveSum(N n, T const *in, T *out)</div><div class="ttdef"><b>Definition:</b> AMReX_Scan.H:632</div></div>

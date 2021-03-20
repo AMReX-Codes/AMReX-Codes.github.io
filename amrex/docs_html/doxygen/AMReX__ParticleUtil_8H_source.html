@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;template &lt;class Iterator, EnableIf_t&lt;IsParticleIterator&lt;Iterator&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;template &lt;class Iterator, std::enable_if_t&lt;IsParticleIterator&lt;Iterator&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">   70</a></span>&#160;<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (Iterator <span class="keyword">const</span>&amp; pti, <span class="keywordtype">int</span> nGrow)</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
@@ -134,7 +134,7 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                  <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(nGrow, nGrow, nGrow)));</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;template &lt;class Iterator, EnableIf_t&lt;IsParticleIterator&lt;Iterator&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;template &lt;class Iterator, std::enable_if_t&lt;IsParticleIterator&lt;Iterator&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a76c9efa7ebf0969d1986d57f86c1882b">   88</a></span>&#160;<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (Iterator <span class="keyword">const</span>&amp; pti, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nGrow)</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
@@ -173,21 +173,21 @@ $(function() {
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> hv;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;template &lt;class PC, EnableIf_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;template &lt;class PC, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a9624cde7b9ad11a1692714a8a2cf4d5c">  139</a></span>&#160;<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> nGrow)</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a>(pc, 0, pc.finestLevel(), nGrow);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;template &lt;class PC, EnableIf_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;template &lt;class PC, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a16b2ad610aeda065996254dcb64e1210">  158</a></span>&#160;<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (PC <span class="keyword">const</span>&amp; pc, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nGrow)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a>(pc, 0, pc.finestLevel(), nGrow);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;template &lt;class PC, EnableIf_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;template &lt;class PC, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af026262a284dc45b1a535e1d2c3da3d5">  179</a></span>&#160;<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, <span class="keywordtype">int</span> nGrow)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
@@ -197,7 +197,7 @@ $(function() {
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                  <a class="code" href="classamrex_1_1IntVect.html">IntVect</a>(<a class="code" href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a>(nGrow, nGrow, nGrow)));</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;template &lt;class PC, EnableIf_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;template &lt;class PC, std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">int</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa69e2d3ab61d58e37142f8ca2607da7c">  203</a></span>&#160;<a class="code" href="namespaceamrex.html#acad483c5f0e30f9cd471ad05e1920320">numParticlesOutOfRange</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, <a class="code" href="classamrex_1_1IntVect.html">IntVect</a> nGrow)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>

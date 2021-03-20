@@ -11,7 +11,7 @@ var searchData=
   ['maskcomps_7432',['MaskComps',['../structamrex_1_1NeighborParticleContainer_1_1MaskComps.html',1,'amrex::NeighborParticleContainer']]],
   ['maybedevicerunnable_7433',['MaybeDeviceRunnable',['../structamrex_1_1MaybeDeviceRunnable.html',1,'amrex']]],
   ['maybehostdevicerunnable_7434',['MaybeHostDeviceRunnable',['../structamrex_1_1MaybeHostDeviceRunnable.html',1,'amrex']]],
-  ['maybehostdevicerunnable_3c_20t_2c_20amrex_3a_3aenableif_5ft_3c_20_5f_5fnv_5fis_5fextended_5fdevice_5flambda_5fclosure_5ftype_28t_29_3e_20_3e_7435',['MaybeHostDeviceRunnable&lt; T, amrex::EnableIf_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;',['../structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01amrex_1_1EnableIf__t_3_01____nv__is__extended_efa4571b1840cf48b228462fd5f55f96.html',1,'amrex']]],
+  ['maybehostdevicerunnable_3c_20t_2c_20std_3a_3aenable_5fif_5ft_3c_20_5f_5fnv_5fis_5fextended_5fdevice_5flambda_5fclosure_5ftype_28t_29_3e_20_3e_7435',['MaybeHostDeviceRunnable&lt; T, std::enable_if_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;',['../structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extended_ac548a468bcc64242955fc23b2d496e6.html',1,'amrex']]],
   ['meminfo_7436',['MemInfo',['../structamrex_1_1MemProfiler_1_1MemInfo.html',1,'amrex::MemProfiler::MemInfo'],['../structamrex_1_1FabArrayBase_1_1meminfo.html',1,'amrex::FabArrayBase::meminfo']]],
   ['memprofiler_7437',['MemProfiler',['../classamrex_1_1MemProfiler.html',1,'amrex']]],
   ['meshstatemap_7438',['MeshStateMap',['../classamrex_1_1InSituUtils_1_1MeshStateMap.html',1,'amrex::InSituUtils']]],

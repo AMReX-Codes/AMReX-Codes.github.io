@@ -14,7 +14,7 @@ var searchData=
   ['dataservices_7183',['DataServices',['../classamrex_1_1DataServices.html',1,'amrex']]],
   ['defaultfabfactory_7184',['DefaultFabFactory',['../classamrex_1_1DefaultFabFactory.html',1,'amrex']]],
   ['definitelynothostrunnable_7185',['DefinitelyNotHostRunnable',['../structamrex_1_1DefinitelyNotHostRunnable.html',1,'amrex']]],
-  ['definitelynothostrunnable_3c_20t_2c_20amrex_3a_3aenableif_5ft_3c_20_5f_5fnv_5fis_5fextended_5fdevice_5flambda_5fclosure_5ftype_28t_29_3e_20_3e_7186',['DefinitelyNotHostRunnable&lt; T, amrex::EnableIf_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;',['../structamrex_1_1DefinitelyNotHostRunnable_3_01T_00_01amrex_1_1EnableIf__t_3_01____nv__is__extende2b6ea5967b18ebd0ac35ac62d80bc70c.html',1,'amrex']]],
+  ['definitelynothostrunnable_3c_20t_2c_20std_3a_3aenable_5fif_5ft_3c_20_5f_5fnv_5fis_5fextended_5fdevice_5flambda_5fclosure_5ftype_28t_29_3e_20_3e_7186',['DefinitelyNotHostRunnable&lt; T, std::enable_if_t&lt; __nv_is_extended_device_lambda_closure_type(T)&gt; &gt;',['../structamrex_1_1DefinitelyNotHostRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extendecedf017524586c3f34ab1174adfd1f3d.html',1,'amrex']]],
   ['deleter_7187',['Deleter',['../structamrex_1_1Gpu_1_1Deleter.html',1,'amrex::Gpu']]],
   ['densebiniteratorfactory_7188',['DenseBinIteratorFactory',['../structamrex_1_1DenseBinIteratorFactory.html',1,'amrex']]],
   ['densebins_7189',['DenseBins',['../classamrex_1_1DenseBins.html',1,'amrex']]],

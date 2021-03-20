@@ -89,10 +89,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aa3d0ac105508dfb23bcca6c5100faa5a"><td class="memTemplParams" colspan="2">template&lt;typename ParticleReal &gt; </td></tr>
 <tr class="memitem:aa3d0ac105508dfb23bcca6c5100faa5a"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__WriteBinaryParticleData_8H.html#aa3d0ac105508dfb23bcca6c5100faa5a">PSizeInFile</a> (const Vector&lt; int &gt; &amp;wrc, const Vector&lt; int &gt; &amp;wic)</td></tr>
 <tr class="separator:aa3d0ac105508dfb23bcca6c5100faa5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a856d819dcad423902da588200ce20a96"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a856d819dcad423902da588200ce20a96"><td class="memTemplParams" colspan="2">template&lt;class PC , class F , std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a856d819dcad423902da588200ce20a96"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__WriteBinaryParticleData_8H.html#a856d819dcad423902da588200ce20a96">WriteBinaryParticleDataSync</a> (PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f)</td></tr>
 <tr class="separator:a856d819dcad423902da588200ce20a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08ed7f65d7bd308974da547953f67f82"><td class="memTemplParams" colspan="2">template&lt;class PC , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a08ed7f65d7bd308974da547953f67f82"><td class="memTemplParams" colspan="2">template&lt;class PC , std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </td></tr>
 <tr class="memitem:a08ed7f65d7bd308974da547953f67f82"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="AMReX__WriteBinaryParticleData_8H.html#a08ed7f65d7bd308974da547953f67f82">WriteBinaryParticleDataAsync</a> (PC const &amp;pc, const std::string &amp;dir, const std::string &amp;name, const Vector&lt; int &gt; &amp;write_real_comp, const Vector&lt; int &gt; &amp;write_int_comp, const Vector&lt; std::string &gt; &amp;real_comp_names, const Vector&lt; std::string &gt; &amp;int_comp_names)</td></tr>
 <tr class="separator:a08ed7f65d7bd308974da547953f67f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -133,7 +133,7 @@ template&lt;typename ParticleReal &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
+template&lt;class PC , std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void WriteBinaryParticleDataAsync </td>
@@ -193,7 +193,7 @@ template&lt;class PC , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, in
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class PC , class F , EnableIf_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
+template&lt;class PC , class F , std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt; foo = 0&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void WriteBinaryParticleDataSync </td>

@@ -16,7 +16,7 @@ var searchData=
   ['vcartgrid_6544',['vCartGrid',['../classamrex_1_1AmrData.html#a93d8a8d179bc25e308d12760514402c3',1,'amrex::AmrData']]],
   ['vcommstats_6545',['vCommStats',['../structCommProfStats_1_1DataBlock.html#a2616da0635b25290247f80c3cfb6ee32',1,'CommProfStats::DataBlock']]],
   ['vec_6546',['vec',['../classamrex_1_1ErrorList.html#a4c7fb1c88f200101a80a1e254e7d446e',1,'amrex::ErrorList']]],
-  ['vecreduce_6547',['VecReduce',['../namespaceamrex.html#aa97bf4be56f176e3af5b90f5b5955a04',1,'amrex::VecReduce(N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2, std::size_t=0) noexcept'],['../namespaceamrex.html#ab977376753fa9f03360aa0de50f7cf36',1,'amrex::VecReduce(N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept']]],
+  ['vecreduce_6547',['VecReduce',['../namespaceamrex.html#aa97bf4be56f176e3af5b90f5b5955a04',1,'amrex::VecReduce(N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2, std::size_t=0) noexcept'],['../namespaceamrex.html#a642123627a5e585a728190b4f8279a72',1,'amrex::VecReduce(N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept']]],
   ['vect_6548',['vect',['../classamrex_1_1IntVect.html#af6f27b885df1ab2fc906a81036859fd2',1,'amrex::IntVect::vect()'],['../classamrex_1_1RealVect.html#a0f0b7286c21b06ba0eea3a31c09cf2f1',1,'amrex::RealVect::vect()'],['../classamrex_1_1BCRec.html#a3f3f037321264e2087ac849e7940d63f',1,'amrex::BCRec::vect() const &amp;noexcept'],['../classamrex_1_1BCRec.html#adfdfaa53c102691ab684e97bcb51e188',1,'amrex::BCRec::vect() &amp;&amp;=delete']]],
   ['vector_6549',['Vector',['../classamrex_1_1Vector.html',1,'amrex']]],
   ['vector_3c_20amrex_3a_3abcrec_20_3e_6550',['Vector&lt; amrex::BCRec &gt;',['../classamrex_1_1Vector.html',1,'amrex']]],

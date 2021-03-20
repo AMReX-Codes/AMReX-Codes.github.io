@@ -3819,7 +3819,7 @@
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PutLambda4DLauncher&lt;Lambda&gt;(<ref refid="classamrex_1_1Gpu_1_1Fuser_1af575a83330e6694cb8aec8b8641fac0a" kindref="member">m_helper_buf</ref>+(<ref refid="classamrex_1_1Gpu_1_1Fuser_1a28018a18351b5ba29b9c9583d6caa3d2" kindref="member">m_nlambdas</ref>-1),<sp/>f);</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"></highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>template<sp/>&lt;typename<sp/>T,<sp/>typename<sp/>F,<sp/>typename<sp/>M=amrex::EnableIf_t&lt;std::is_integral&lt;T&gt;::value&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>template<sp/>&lt;typename<sp/>T,<sp/>typename<sp/>F,<sp/>typename<sp/>M=std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;<sp/>&gt;</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="225" refid="classamrex_1_1Gpu_1_1Fuser_1a8c1945e39818151718361f4b9f26b34d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Fuser_1a8c1945e39818151718361f4b9f26b34d" kindref="member">Register</ref><sp/>(T<sp/>N,<sp/>F&amp;&amp;f)</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3899,7 +3899,7 @@
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Fuser_1a61984efd5000ee243dd8daecb8cda411" kindref="member">Fuser::getInstance</ref>().<ref refid="classamrex_1_1Gpu_1_1Fuser_1aa1e762f8d8f540413d58508fe3428658" kindref="member">Register</ref>(bx,<sp/>ncomp,<sp/>std::forward&lt;F&gt;(f));</highlight></codeline>
 <codeline lineno="301"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"></highlight></codeline>
-<codeline lineno="303"><highlight class="normal">template<sp/>&lt;typename<sp/>T,<sp/>typename<sp/>F,<sp/>typename<sp/>M=amrex::EnableIf_t&lt;std::is_integral&lt;T&gt;::value&gt;<sp/>&gt;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">template<sp/>&lt;typename<sp/>T,<sp/>typename<sp/>F,<sp/>typename<sp/>M=std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;<sp/>&gt;</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="305" refid="namespaceamrex_1_1Gpu_1a6aa8248d38bd618364319dbb83009f1b" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1Gpu_1a331a870e4a829ef2d8e547f35eb86ae3" kindref="member">Register</ref><sp/>(T<sp/>N,<sp/>F&amp;&amp;f)</highlight></codeline>
 <codeline lineno="306"><highlight class="normal">{</highlight></codeline>

@@ -1575,14 +1575,14 @@
     </invincdepgraph>
     <innernamespace refid="namespacedetail">detail</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="AMReX__FabArrayCommI_8H_1a22cb62658d0c596ced295d894398e145" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__FabArrayCommI_8H_1a986a3259b1e339f5652dd4c3d896cc45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class MF</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;IsFabArray&lt;MF&gt;::value&gt; FillBoundary</definition>
+        <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt; FillBoundary</definition>
         <argsstring>(Vector&lt; MF * &gt; const &amp;mf, Vector&lt; int &gt; const &amp;scomp, Vector&lt; int &gt; const &amp;ncomp, Vector&lt; IntVect &gt; const &amp;nghost, Vector&lt; Periodicity &gt; const &amp;period, Vector&lt; int &gt; const &amp;cross={})</argsstring>
         <name>FillBoundary</name>
         <param>
@@ -1618,14 +1618,14 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" line="889" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H" bodystart="889" bodyend="1139"/>
       </memberdef>
-      <memberdef kind="function" id="AMReX__FabArrayCommI_8H_1a0c305f110c7e8be731e5e30975805a25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="AMReX__FabArrayCommI_8H_1a14c7b15f5a13002f6d8d0c40fd46f255" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>class MF</type>
           </param>
         </templateparamlist>
-        <type><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t</ref>&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
-        <definition>amrex::EnableIf_t&lt;IsFabArray&lt;MF&gt;::value&gt; FillBoundary</definition>
+        <type>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt; FillBoundary</definition>
         <argsstring>(Vector&lt; MF * &gt; const &amp;mf, const Periodicity &amp;a_period=Periodicity::NonPeriodic())</argsstring>
         <name>FillBoundary</name>
         <param>
@@ -1752,7 +1752,7 @@
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(N_snds<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a7a60288f2dd74a2f2adb38b6d5586eac" kindref="member">PrepareSendBuffers</ref>(*TheFB.m_SndTags,<sp/>the_send_data,<sp/>send_data,<sp/>send_size,<sp/>send_rank,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a5e37435a999c0eb51e29139501d7ca49" kindref="member">PrepareSendBuffers</ref>(*TheFB.m_SndTags,<sp/>the_send_data,<sp/>send_data,<sp/>send_size,<sp/>send_rank,</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_reqs,<sp/>send_cctc,<sp/>ncomp);</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
@@ -1866,14 +1866,14 @@
 <codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="214"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a24bd6dfd551e6eee47f7ad726e4ffb1b" kindref="member">unpack_recv_buffer_gpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>fb_scomp,<sp/>fb_ncomp,<sp/>fb_recv_data,<sp/>fb_recv_size,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a0e58b7f692a3fb61a4083b73150d4093" kindref="member">unpack_recv_buffer_gpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>fb_scomp,<sp/>fb_ncomp,<sp/>fb_recv_data,<sp/>fb_recv_size,</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_cctc,<sp/>FabArrayBase::COPY,<sp/>is_thread_safe);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a23f3445cf782b71d8dd29e0451163167" kindref="member">unpack_recv_buffer_cpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>fb_scomp,<sp/>fb_ncomp,<sp/>fb_recv_data,<sp/>fb_recv_size,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a107c83b3af2c582af205743dff872465" kindref="member">unpack_recv_buffer_cpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>fb_scomp,<sp/>fb_ncomp,<sp/>fb_recv_data,<sp/>fb_recv_size,</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_cctc,<sp/>FabArrayBase::COPY,<sp/>is_thread_safe);</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"></highlight></codeline>
@@ -1909,7 +1909,7 @@
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArray::ParallelCopy()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"></highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a7bf19b06a9bab53ac6dea6bfa875af9d" kindref="member">ParallelCopy_nowait</ref>(src,<sp/>scomp,<sp/>dcomp,<sp/>ncomp,<sp/>snghost,<sp/>dnghost,<sp/>period,<sp/>op,<sp/>a_cpc);</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a543ee3c92ebf4b00332dfc86a6364b87" kindref="member">ParallelCopy_finish</ref>();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a51fb0add78ab242015474585b0f7207e" kindref="member">ParallelCopy_finish</ref>();</highlight></codeline>
 <codeline lineno="260"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight></codeline>
 <codeline lineno="262"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>FAB&gt;</highlight></codeline>
@@ -2108,7 +2108,7 @@
 <codeline lineno="455"><highlight class="normal"></highlight></codeline>
 <codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!last_iter)</highlight></codeline>
 <codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a543ee3c92ebf4b00332dfc86a6364b87" kindref="member">ParallelCopy_finish</ref>();</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a51fb0add78ab242015474585b0f7207e" kindref="member">ParallelCopy_finish</ref>();</highlight></codeline>
 <codeline lineno="459"><highlight class="normal"></highlight></codeline>
 <codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc_SC<sp/>+=<sp/>pc_NC;</highlight></codeline>
 <codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pc_DC<sp/>+=<sp/>pc_NC;</highlight></codeline>
@@ -2125,7 +2125,7 @@
 <codeline lineno="472"><highlight class="normal"></highlight></codeline>
 <codeline lineno="473"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>FAB&gt;</highlight></codeline>
 <codeline lineno="474"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="475" refid="classamrex_1_1FabArray_1a066e3ab046b92e144075c8f9df4aaf04" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1NonLocalBC_1a543ee3c92ebf4b00332dfc86a6364b87" kindref="member">FabArray&lt;FAB&gt;::ParallelCopy_finish</ref><sp/>()</highlight></codeline>
+<codeline lineno="475" refid="classamrex_1_1FabArray_1a066e3ab046b92e144075c8f9df4aaf04" refkind="member"><highlight class="normal"><ref refid="namespaceamrex_1_1NonLocalBC_1a51fb0add78ab242015474585b0f7207e" kindref="member">FabArray&lt;FAB&gt;::ParallelCopy_finish</ref><sp/>()</highlight></codeline>
 <codeline lineno="476"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArray::ParallelCopy_finish()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="478"><highlight class="normal"></highlight></codeline>
@@ -2166,13 +2166,13 @@
 <codeline lineno="513"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
 <codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a24bd6dfd551e6eee47f7ad726e4ffb1b" kindref="member">unpack_recv_buffer_gpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>pc_DC,<sp/>pc_NC,<sp/>pc_recv_data,<sp/>pc_recv_size,</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a0e58b7f692a3fb61a4083b73150d4093" kindref="member">unpack_recv_buffer_gpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>pc_DC,<sp/>pc_NC,<sp/>pc_recv_data,<sp/>pc_recv_size,</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_cctc,<sp/>pc_op,<sp/>is_thread_safe);</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="520"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a23f3445cf782b71d8dd29e0451163167" kindref="member">unpack_recv_buffer_cpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>pc_DC,<sp/>pc_NC,<sp/>pc_recv_data,<sp/>pc_recv_size,</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a107c83b3af2c582af205743dff872465" kindref="member">unpack_recv_buffer_cpu</ref>(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>pc_DC,<sp/>pc_NC,<sp/>pc_recv_data,<sp/>pc_recv_size,</highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recv_cctc,<sp/>pc_op,<sp/>is_thread_safe);</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"></highlight></codeline>
@@ -2269,7 +2269,7 @@
 <codeline lineno="616"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_MPI</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="617"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>FAB&gt;</highlight></codeline>
 <codeline lineno="618"><highlight class="normal"><ref refid="AMReX__Extension_8H_1a8cfb0291f150c6676f99a0b6c4578717" kindref="member">AMREX_NODISCARD</ref><sp/><ref refid="namespaceamrex_1a2081a3d338ad899832ab632c44a12eb5" kindref="member">TheFaArenaPointer</ref></highlight></codeline>
-<codeline lineno="619"><highlight class="normal"><ref refid="namespaceamrex_1_1NonLocalBC_1a7a60288f2dd74a2f2adb38b6d5586eac" kindref="member">FabArray&lt;FAB&gt;::PrepareSendBuffers</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MapOfCopyComTagContainers&amp;<sp/><sp/><sp/><sp/><sp/>SndTags,</highlight></codeline>
+<codeline lineno="619"><highlight class="normal"><ref refid="namespaceamrex_1_1NonLocalBC_1a5e37435a999c0eb51e29139501d7ca49" kindref="member">FabArray&lt;FAB&gt;::PrepareSendBuffers</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MapOfCopyComTagContainers&amp;<sp/><sp/><sp/><sp/><sp/>SndTags,</highlight></codeline>
 <codeline lineno="620"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;char*&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_data,</highlight></codeline>
 <codeline lineno="621"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;std::size_t&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_size,</highlight></codeline>
 <codeline lineno="622"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_rank,</highlight></codeline>
@@ -2278,13 +2278,13 @@
 <codeline lineno="625"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="626"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="627"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pointer<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a7a60288f2dd74a2f2adb38b6d5586eac" kindref="member">PrepareSendBuffers</ref>(SndTags,<sp/>pointer,<sp/>send_data,<sp/>send_size,<sp/>send_rank,<sp/>send_reqs,<sp/>send_cctc,<sp/>ncomp);</highlight></codeline>
+<codeline lineno="628"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1NonLocalBC_1a5e37435a999c0eb51e29139501d7ca49" kindref="member">PrepareSendBuffers</ref>(SndTags,<sp/>pointer,<sp/>send_data,<sp/>send_size,<sp/>send_rank,<sp/>send_reqs,<sp/>send_cctc,<sp/>ncomp);</highlight></codeline>
 <codeline lineno="629"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2081a3d338ad899832ab632c44a12eb5" kindref="member">TheFaArenaPointer</ref>(pointer);</highlight></codeline>
 <codeline lineno="630"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="631"><highlight class="normal"></highlight></codeline>
 <codeline lineno="632"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>FAB&gt;</highlight></codeline>
 <codeline lineno="633"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="634"><highlight class="normal"><ref refid="namespaceamrex_1_1NonLocalBC_1a7a60288f2dd74a2f2adb38b6d5586eac" kindref="member">FabArray&lt;FAB&gt;::PrepareSendBuffers</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MapOfCopyComTagContainers&amp;<sp/><sp/><sp/><sp/><sp/>SndTags,</highlight></codeline>
+<codeline lineno="634"><highlight class="normal"><ref refid="namespaceamrex_1_1NonLocalBC_1a5e37435a999c0eb51e29139501d7ca49" kindref="member">FabArray&lt;FAB&gt;::PrepareSendBuffers</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MapOfCopyComTagContainers&amp;<sp/><sp/><sp/><sp/><sp/>SndTags,</highlight></codeline>
 <codeline lineno="635"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_send_data,</highlight></codeline>
 <codeline lineno="636"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;char*&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_data,</highlight></codeline>
 <codeline lineno="637"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;std::size_t&gt;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send_size,</highlight></codeline>
@@ -2538,8 +2538,8 @@
 <codeline lineno="885"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="886"><highlight class="normal"></highlight></codeline>
 <codeline lineno="887"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
-<codeline lineno="888"><highlight class="normal"><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t&lt;IsFabArray&lt;MF&gt;::value</ref>&gt;</highlight></codeline>
-<codeline lineno="889" refid="AMReX__FabArrayCommI_8H_1a22cb62658d0c596ced295d894398e145" refkind="member"><highlight class="normal"><ref refid="AMReX__FabArrayCommI_8H_1a22cb62658d0c596ced295d894398e145" kindref="member">FillBoundary</ref><sp/>(Vector&lt;MF*&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mf,<sp/>Vector&lt;int&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>scomp,</highlight></codeline>
+<codeline lineno="888"><highlight class="normal">std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</highlight></codeline>
+<codeline lineno="889" refid="AMReX__FabArrayCommI_8H_1a986a3259b1e339f5652dd4c3d896cc45" refkind="member"><highlight class="normal"><ref refid="AMReX__FabArrayCommI_8H_1a986a3259b1e339f5652dd4c3d896cc45" kindref="member">FillBoundary</ref><sp/>(Vector&lt;MF*&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mf,<sp/>Vector&lt;int&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>scomp,</highlight></codeline>
 <codeline lineno="890"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ncomp,<sp/>Vector&lt;IntVect&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>nghost,</highlight></codeline>
 <codeline lineno="891"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;Periodicity&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>period,<sp/>Vector&lt;int&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cross<sp/>=<sp/>{})</highlight></codeline>
 <codeline lineno="892"><highlight class="normal">{</highlight></codeline>
@@ -2792,8 +2792,8 @@
 <codeline lineno="1139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1141"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>MF&gt;</highlight></codeline>
-<codeline lineno="1142"><highlight class="normal"><ref refid="namespaceamrex_1a8690d4c6386d001b328b07257fe628a0" kindref="member">amrex::EnableIf_t&lt;IsFabArray&lt;MF&gt;::value</ref>&gt;</highlight></codeline>
-<codeline lineno="1143" refid="AMReX__FabArrayCommI_8H_1a0c305f110c7e8be731e5e30975805a25" refkind="member"><highlight class="normal"><ref refid="AMReX__FabArrayCommI_8H_1a22cb62658d0c596ced295d894398e145" kindref="member">FillBoundary</ref><sp/>(Vector&lt;MF*&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>a_period<sp/>=<sp/>Periodicity::NonPeriodic())</highlight></codeline>
+<codeline lineno="1142"><highlight class="normal">std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt;</highlight></codeline>
+<codeline lineno="1143" refid="AMReX__FabArrayCommI_8H_1a14c7b15f5a13002f6d8d0c40fd46f255" refkind="member"><highlight class="normal"><ref refid="AMReX__FabArrayCommI_8H_1a986a3259b1e339f5652dd4c3d896cc45" kindref="member">FillBoundary</ref><sp/>(Vector&lt;MF*&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>mf,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Periodicity&amp;<sp/>a_period<sp/>=<sp/>Periodicity::NonPeriodic())</highlight></codeline>
 <codeline lineno="1144"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1145"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>scomp(mf.size(),<sp/>0);</highlight></codeline>
 <codeline lineno="1146"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>ncomp;</highlight></codeline>
@@ -2805,7 +2805,7 @@
 <codeline lineno="1152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncomp.push_back(x-&gt;nComp());</highlight></codeline>
 <codeline lineno="1153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nghost.push_back(x-&gt;nGrowVect());</highlight></codeline>
 <codeline lineno="1154"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__FabArrayCommI_8H_1a22cb62658d0c596ced295d894398e145" kindref="member">FillBoundary</ref>(mf,<sp/>scomp,<sp/>ncomp,<sp/>nghost,<sp/>period);</highlight></codeline>
+<codeline lineno="1155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__FabArrayCommI_8H_1a986a3259b1e339f5652dd4c3d896cc45" kindref="member">FillBoundary</ref>(mf,<sp/>scomp,<sp/>ncomp,<sp/>nghost,<sp/>period);</highlight></codeline>
 <codeline lineno="1156"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayCommI.H"/>
