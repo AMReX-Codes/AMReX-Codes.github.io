@@ -3,42 +3,42 @@
   <compounddef id="AMReX__TinyProfiler_8H" kind="file" language="C++">
     <compoundname>AMReX_TinyProfiler.H</compoundname>
     <includes local="no">AMReX_Config.H</includes>
-    <includes local="no">string</includes>
-    <includes local="no">deque</includes>
-    <includes local="no">map</includes>
-    <includes local="no">vector</includes>
-    <includes local="no">tuple</includes>
-    <includes local="no">utility</includes>
-    <includes local="no">limits</includes>
-    <includes local="no">iostream</includes>
     <includes refid="AMReX__INT_8H" local="no">AMReX_INT.H</includes>
     <includes refid="AMReX__REAL_8H" local="no">AMReX_REAL.H</includes>
     <includes local="yes">nvToolsExt.h</includes>
+    <includes local="no">deque</includes>
+    <includes local="no">iosfwd</includes>
+    <includes local="no">limits</includes>
+    <includes local="no">map</includes>
+    <includes local="no">string</includes>
+    <includes local="no">tuple</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">vector</includes>
     <includedby refid="AMReX__TinyProfiler_8cpp" local="no">/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.cpp</includedby>
     <incdepgraph>
-      <node id="9">
+      <node id="11">
         <label>limits</label>
       </node>
-      <node id="15">
+      <node id="7">
         <label>float.h</label>
       </node>
-      <node id="13">
+      <node id="5">
         <label>AMReX_REAL.H</label>
         <link refid="AMReX__REAL_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="3">
+      <node id="13">
         <label>string</label>
       </node>
-      <node id="5">
+      <node id="12">
         <label>map</label>
       </node>
-      <node id="14">
+      <node id="6">
         <label>AMReX_Extension.H</label>
         <link refid="AMReX__Extension_8H"/>
         <childnode refid="2" relation="include">
@@ -47,22 +47,25 @@
       <node id="2">
         <label>AMReX_Config.H</label>
       </node>
-      <node id="7">
+      <node id="14">
         <label>tuple</label>
       </node>
-      <node id="6">
+      <node id="16">
         <label>vector</label>
       </node>
-      <node id="8">
+      <node id="15">
         <label>utility</label>
       </node>
-      <node id="11">
+      <node id="3">
         <label>AMReX_INT.H</label>
         <link refid="AMReX__INT_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="4" relation="include">
         </childnode>
+      </node>
+      <node id="10">
+        <label>iosfwd</label>
       </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_TinyProfiler.H</label>
@@ -71,13 +74,7 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
@@ -87,21 +84,24 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
         <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>iostream</label>
-      </node>
-      <node id="4">
+      <node id="9">
         <label>deque</label>
       </node>
-      <node id="16">
+      <node id="8">
         <label>nvToolsExt.h</label>
       </node>
-      <node id="12">
+      <node id="4">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>
@@ -131,21 +131,21 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_TINY_PROFILER_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;AMReX_Config.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tuple&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__INT_8H" kindref="compound">AMReX_INT.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__REAL_8H" kindref="compound">AMReX_REAL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nvToolsExt.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__INT_8H" kindref="compound">AMReX_INT.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__REAL_8H" kindref="compound">AMReX_REAL.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nvToolsExt.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;deque&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iosfwd&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tuple&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceamrex" kindref="compound">amrex</ref><sp/>{</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>

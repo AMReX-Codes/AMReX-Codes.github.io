@@ -73,13 +73,13 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AMREX_HYPREIJIFACE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;AMReX_Config.H&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__MultiFab_8H.html">AMReX_MultiFab.H</a>&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__MultiFab_8H.html">AMReX_MultiFab.H</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;HYPRE.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;HYPRE_parcsr_ls.h&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;HYPRE_parcsr_mv.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;HYPRE.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;HYPRE_parcsr_ls.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;HYPRE_parcsr_mv.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
@@ -250,7 +250,7 @@ $(function() {
 <div class="ttc" id="aclassamrex_1_1HypreIJIface_html_a2b706d04a2952ad586d31f26184b927b"><div class="ttname"><a href="classamrex_1_1HypreIJIface.html#a2b706d04a2952ad586d31f26184b927b">amrex::HypreIJIface::parse_inputs</a></div><div class="ttdeci">void parse_inputs(const std::string &amp;prefix=&quot;hypre&quot;)</div><div class="ttdef"><b>Definition:</b> AMReX_HypreIJIface.cpp:149</div></div>
 <div class="ttc" id="aclassamrex_1_1HypreIJIface_html_afd785510c002ae90c0406adea27abb4e"><div class="ttname"><a href="classamrex_1_1HypreIJIface.html#afd785510c002ae90c0406adea27abb4e">amrex::HypreIJIface::init_preconditioner</a></div><div class="ttdeci">void init_preconditioner(const std::string &amp;prefix, const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> AMReX_HypreIJIface.cpp:175</div></div>
 <div class="ttc" id="aclassamrex_1_1HypreIJIface_html_a6bb23759218b92724ea79d95bb57ec99"><div class="ttname"><a href="classamrex_1_1HypreIJIface.html#a6bb23759218b92724ea79d95bb57ec99">amrex::HypreIJIface::m_solver</a></div><div class="ttdeci">HYPRE_Solver m_solver</div><div class="ttdef"><b>Definition:</b> AMReX_HypreIJIface.H:76</div></div>
-<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:51</div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:50</div></div>
 <div class="ttc" id="aclassamrex_1_1HypreIJIface_html_aa522c8c20c2af637e3a539ba0a879ff7"><div class="ttname"><a href="classamrex_1_1HypreIJIface.html#aa522c8c20c2af637e3a539ba0a879ff7">amrex::HypreIJIface::getFinalResidualNorm</a></div><div class="ttdeci">HypreRealType getFinalResidualNorm() const</div><div class="ttdoc">Final residual norm after a linear solve.</div><div class="ttdef"><b>Definition:</b> AMReX_HypreIJIface.H:43</div></div>
 <div class="ttc" id="aclassamrex_1_1HypreIJIface_html_a8958d5be73e22ee0220a2ec5bceddaab"><div class="ttname"><a href="classamrex_1_1HypreIJIface.html#a8958d5be73e22ee0220a2ec5bceddaab">amrex::HypreIJIface::m_solverSetTolPtr</a></div><div class="ttdeci">HypreIntType(* m_solverSetTolPtr)(HYPRE_Solver, double)</div><div class="ttdef"><b>Definition:</b> AMReX_HypreIJIface.H:96</div></div>
 <div class="ttc" id="aAMReX__ccse-mpi_8H_html_a9c299ed1c4c5eaa48a6446c85fb2d689"><div class="ttname"><a href="AMReX__ccse-mpi_8H.html#a9c299ed1c4c5eaa48a6446c85fb2d689">MPI_COMM_NULL</a></div><div class="ttdeci">const int MPI_COMM_NULL</div><div class="ttdef"><b>Definition:</b> AMReX_ccse-mpi.H:57</div></div>

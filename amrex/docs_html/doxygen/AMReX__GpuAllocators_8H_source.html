@@ -73,21 +73,21 @@ $(function() {
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define AMREX_GPUALLOCATORS_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;AMReX_Config.H&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__Print_8H.html">AMReX_Print.H</a>&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__Arena_8H.html">AMReX_Arena.H</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuDevice_8H.html">AMReX_GpuDevice.H</a>&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__Print_8H.html">AMReX_Print.H</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__Arena_8H.html">AMReX_Arena.H</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AMReX__GpuDevice_8H.html">AMReX_GpuDevice.H</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_CUDA</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;cuda.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;driver_types.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cuda_runtime.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif // AMREX_USE_CUDA</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_CUDA</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;cuda.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;driver_types.h&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;cuda_runtime.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif // AMREX_USE_CUDA</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceamrex.html">amrex</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
@@ -266,7 +266,7 @@ $(function() {
 <div class="ttc" id="aclassamrex_1_1PinnedArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1PinnedArenaAllocator.html">amrex::PinnedArenaAllocator</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:76</div></div>
 <div class="ttc" id="aAMReX__GpuDevice_8H_html"><div class="ttname"><a href="AMReX__GpuDevice_8H.html">AMReX_GpuDevice.H</a></div></div>
 <div class="ttc" id="aclassamrex_1_1ManagedArenaAllocator_html_a9833726cef563b59b1d494273c697be1"><div class="ttname"><a href="classamrex_1_1ManagedArenaAllocator.html#a9833726cef563b59b1d494273c697be1">amrex::ManagedArenaAllocator::value_type</a></div><div class="ttdeci">T value_type</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:102</div></div>
-<div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a3e62b2c32fa5036fc1bb1dff1d819de6"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6">amrex::ParallelDescriptor::UseGpuAwareMpi</a></div><div class="ttdeci">bool UseGpuAwareMpi()</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:117</div></div>
+<div class="ttc" id="anamespaceamrex_1_1ParallelDescriptor_html_a3e62b2c32fa5036fc1bb1dff1d819de6"><div class="ttname"><a href="namespaceamrex_1_1ParallelDescriptor.html#a3e62b2c32fa5036fc1bb1dff1d819de6">amrex::ParallelDescriptor::UseGpuAwareMpi</a></div><div class="ttdeci">bool UseGpuAwareMpi()</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelDescriptor.H:113</div></div>
 <div class="ttc" id="aclassamrex_1_1ArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ArenaAllocator.html">amrex::ArenaAllocator</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:34</div></div>
 <div class="ttc" id="aclassamrex_1_1ManagedArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1ManagedArenaAllocator.html">amrex::ManagedArenaAllocator</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:97</div></div>
 <div class="ttc" id="astructamrex_1_1ArenaAllocatorTraits_html_a7c21ffe5ae786795e9792884b68c3c3d"><div class="ttname"><a href="structamrex_1_1ArenaAllocatorTraits.html#a7c21ffe5ae786795e9792884b68c3c3d">amrex::ArenaAllocatorTraits::propagate_on_container_move_assignment</a></div><div class="ttdeci">std::true_type propagate_on_container_move_assignment</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:28</div></div>
@@ -294,7 +294,7 @@ $(function() {
 <div class="ttc" id="aclassamrex_1_1Arena_html_a46ce2cd5cfc039cec64548b031fbde2e"><div class="ttname"><a href="classamrex_1_1Arena.html#a46ce2cd5cfc039cec64548b031fbde2e">amrex::Arena::alloc</a></div><div class="ttdeci">virtual void * alloc(std::size_t sz)=0</div></div>
 <div class="ttc" id="astructamrex_1_1ArenaAllocatorTraits_html_a9a6140da2b4714f332dd0f10d74e3ac0"><div class="ttname"><a href="structamrex_1_1ArenaAllocatorTraits.html#a9a6140da2b4714f332dd0f10d74e3ac0">amrex::ArenaAllocatorTraits::propagate_on_container_swap</a></div><div class="ttdeci">std::true_type propagate_on_container_swap</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:29</div></div>
 <div class="ttc" id="aclassamrex_1_1PinnedArenaAllocator_html_a27cd3eb6e443faa574407c4f7ee5dc50"><div class="ttname"><a href="classamrex_1_1PinnedArenaAllocator.html#a27cd3eb6e443faa574407c4f7ee5dc50">amrex::PinnedArenaAllocator::deallocate</a></div><div class="ttdeci">void deallocate(value_type *ptr, std::size_t)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:90</div></div>
-<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:51</div></div>
+<div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:50</div></div>
 <div class="ttc" id="aclassamrex_1_1PinnedArenaAllocator_html_ac69e6e7fe296c776cda4f655591199d2"><div class="ttname"><a href="classamrex_1_1PinnedArenaAllocator.html#ac69e6e7fe296c776cda4f655591199d2">amrex::PinnedArenaAllocator::allocate</a></div><div class="ttdeci">value_type * allocate(std::size_t n)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:83</div></div>
 <div class="ttc" id="aclassamrex_1_1DeviceArenaAllocator_html"><div class="ttname"><a href="classamrex_1_1DeviceArenaAllocator.html">amrex::DeviceArenaAllocator</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:55</div></div>
 <div class="ttc" id="astructamrex_1_1ArenaAllocatorTraits_html_a087cedc0c534a729f06566c2787234c3"><div class="ttname"><a href="structamrex_1_1ArenaAllocatorTraits.html#a087cedc0c534a729f06566c2787234c3">amrex::ArenaAllocatorTraits::is_always_equal</a></div><div class="ttdeci">std::true_type is_always_equal</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAllocators.H:30</div></div>
