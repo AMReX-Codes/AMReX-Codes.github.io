@@ -106,7 +106,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#building-libamrex">Building libamrex</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-with-cmake">Building with CMake</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#customization-options">Customization options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#building-tutorials">Building Tutorials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmake-and-macos">CMake and macOS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#importing-amrex-into-your-cmake-project">Importing AMReX into your CMake project</a></li>
 </ul>
@@ -767,27 +766,22 @@ The list of available options is reported in the <a class="reference internal" h
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_BUILD_TUTORIALS</p></td>
-<td><p>Build tutorials</p></td>
-<td><p>NO</p></td>
-<td><p>YES, NO</p></td>
-</tr>
-<tr class="row-even"><td><p>AMReX_ENABLE_TESTS</p></td>
+<tr class="row-odd"><td><p>AMReX_ENABLE_TESTS</p></td>
 <td><p>Enable CTest suite</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
+<tr class="row-even"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
 <td><p>Allow an app to use a different compiler</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_INSTALL</p></td>
+<tr class="row-odd"><td><p>AMReX_INSTALL</p></td>
 <td><p>Generate Install Targets</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PROBINIT</p></td>
+<tr class="row-even"><td><p>AMReX_PROBINIT</p></td>
 <td><p>Enable support for probin file</p></td>
 <td><p>Platform dependent</p></td>
 <td><p>YES, NO</p></td>
@@ -807,25 +801,6 @@ they will be initialized with the value of the environmental variables <code cla
 <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code>. If neither <code class="docutils literal notranslate"><span class="pre">FFLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CXXFLAGS</span></code> nor <code class="docutils literal notranslate"><span class="pre">CMAKE_Fortran_FLAGS</span></code>/ <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>
 are defined, AMReX default flags are used.</p>
 <p>For a detailed explanation of GPU support in AMReX CMake, refer to section <a class="reference internal" href="GPU.html#sec-gpu-build"><span class="std std-ref">Building GPU Support</span></a>.</p>
-</div>
-<div class="section" id="building-tutorials">
-<h2>Building Tutorials<a class="headerlink" href="#building-tutorials" title="Permalink to this headline">¶</a></h2>
-<p>In order to build the tutorials provided in <code class="docutils literal notranslate"><span class="pre">Tutorials/</span></code> alongside the AMReX library,
-follows these steps:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir /path/to/builddir</span>
-<span class="go">cd    /path/to/builddir</span>
-<span class="go">cmake [options]  -DAMReX_BUILD_TUTORIALS=YES  /path/to/amrex</span>
-<span class="go">make</span>
-</pre></div>
-</div>
-<p>Note that only the tutorials compatible with <code class="docutils literal notranslate"><span class="pre">[options]</span></code> will be built.
-To run one of the tutorials, do:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd  /path/to/builddir/Tutorials/group/name</span>
-<span class="go">./Tutorial_group_name [input_file]</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">[input_file]</span></code> is any of the input files required by the tutorials and located in
-<code class="docutils literal notranslate"><span class="pre">/path/to/builddir/Tutorials/group/name/</span></code></p>
 </div>
 <div class="section" id="cmake-and-macos">
 <h2>CMake and macOS<a class="headerlink" href="#cmake-and-macos" title="Permalink to this headline">¶</a></h2>
