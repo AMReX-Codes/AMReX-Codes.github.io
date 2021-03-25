@@ -137,7 +137,7 @@ var searchData=
   ['exp_2338',['exp',['../namespaceamrex.html#ad7188a3015dcffc0938b6cb74def1c7f',1,'amrex']]],
   ['expect_2339',['expect',['../classamrex_1_1expect.html',1,'amrex::expect'],['../classamrex_1_1expect.html#a2136ece586212ef73074aaab29247505',1,'amrex::expect::expect(const std::string &amp;str_)'],['../classamrex_1_1expect.html#a29077faf3a3650e3eeb67285023d7e5e',1,'amrex::expect::expect(const char *istr_)'],['../classamrex_1_1expect.html#a76c80085267c42ef73ed0e63c65af898',1,'amrex::expect::expect(char c)']]],
   ['ext_5fdir_2340',['EXT_DIR',['../AMReX__BC__TYPES_8H.html#aab37e552c88a7ebe4df8c39cbd04b8f7',1,'AMReX_BC_TYPES.H']]],
-  ['extend_5fdomain_5fface_2341',['extend_domain_face',['../namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715',1,'amrex::EB2']]],
+  ['extend_5fdomain_5fface_2341',['extend_domain_face',['../namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7',1,'amrex::EB2']]],
   ['extenddomainface_2342',['ExtendDomainFace',['../namespaceamrex_1_1EB2.html#a2258b3042676370ae01a2968e6962765',1,'amrex::EB2']]],
   ['extent_2343',['extent',['../structamrex_1_1algoim_1_1BoundingBox.html#af29ddffe552640cdadd8dec27b352074',1,'amrex::algoim::BoundingBox']]],
   ['exteriorcell_2344',['EXTERIORCELL',['../namespaceamrex_1_1InSituUtils.html#a7c36b2f21774c997bbc295eb09a36530a73c2a5939fde880dfb3256a3ea552d0f',1,'amrex::InSituUtils']]],

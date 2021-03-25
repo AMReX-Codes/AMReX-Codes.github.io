@@ -27,5 +27,5 @@ var searchData=
   ['error_5fhandler_12380',['error_handler',['../namespaceamrex_1_1system.html#a2ba7b9cd7c50a0eccdb6d825cc026da3',1,'amrex::system']]],
   ['excludeset_12381',['excludeSet',['../classBLProfStats.html#ae52d1496a02ab9f40df9ae0ece20fc51',1,'BLProfStats']]],
   ['exename_12382',['exename',['../namespaceamrex_1_1system.html#aa338ee7ebd729e662154160b02022599',1,'amrex::system']]],
-  ['extend_5fdomain_5fface_12383',['extend_domain_face',['../namespaceamrex_1_1EB2.html#aacfb27dff7f9916a9ff6b261672ca715',1,'amrex::EB2']]]
+  ['extend_5fdomain_5fface_12383',['extend_domain_face',['../namespaceamrex_1_1EB2.html#a900c8b65fe13dca2d107ec8ae396b7b7',1,'amrex::EB2']]]
 ];
