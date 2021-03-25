@@ -606,7 +606,7 @@ var searchData=
   ['max_5fefficiency_13254',['max_efficiency',['../namespaceamrex.html#a0dc972d04970bb21c8988fb02790526c',1,'amrex']]],
   ['max_5ffmg_5fiters_13255',['max_fmg_iters',['../classamrex_1_1MLMG.html#aefc9d57def6cdc2851da4d26e38e092f',1,'amrex::MLMG']]],
   ['max_5fgpu_5fstreams_13256',['max_gpu_streams',['../classamrex_1_1Gpu_1_1Device.html#af5c7b1d39a27c0d83c132a6a2b39b27e',1,'amrex::Gpu::Device']]],
-  ['max_5fgrid_5fsize_13257',['max_grid_size',['../structamrex_1_1AmrInfo.html#ad3142cf009fdd8667c2352c39fb2c522',1,'amrex::AmrInfo::max_grid_size()'],['../namespaceamrex_1_1EB2.html#a6a03e6a896276bd89190ad6eee9566e1',1,'amrex::EB2::max_grid_size()']]],
+  ['max_5fgrid_5fsize_13257',['max_grid_size',['../structamrex_1_1AmrInfo.html#ad3142cf009fdd8667c2352c39fb2c522',1,'amrex::AmrInfo::max_grid_size()'],['../namespaceamrex_1_1EB2.html#a0e86c3c8bf9f242ddba11fbe8db60e66',1,'amrex::EB2::max_grid_size()']]],
   ['max_5fiters_13258',['max_iters',['../classamrex_1_1MLMG.html#ae4f94ee42b8da24efdafd34b023e2457',1,'amrex::MLMG']]],
   ['max_5flevel_13259',['max_level',['../structamrex_1_1AmrInfo.html#abcb6f6baf4e1ecd3d143d7d8cb6a2a93',1,'amrex::AmrInfo']]],
   ['max_5fmap_5fstart_5fcomp_13260',['max_map_start_comp',['../classamrex_1_1StateDescriptor.html#a8cfce27efc0fb16d60e975f0f55b39f5',1,'amrex::StateDescriptor']]],
