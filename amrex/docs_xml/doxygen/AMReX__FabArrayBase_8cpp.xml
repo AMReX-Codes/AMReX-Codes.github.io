@@ -2133,9 +2133,9 @@
 <codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba_dst.size()<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>ba_src.size()<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba_dst.ixType()<sp/>==<sp/>ba_src.ixType());</highlight></codeline>
 <codeline lineno="343"><highlight class="normal"></highlight></codeline>
-<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::CopyComTagsContainer);</highlight></codeline>
-<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::CopyComTagsContainer&gt;();</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"></highlight></codeline>
 <codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(imap_dst.empty()<sp/>&amp;&amp;<sp/>imap_src.empty()))</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2277,9 +2277,9 @@
 <codeline lineno="485"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ba.size()<sp/>&gt;<sp/>0);</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::CopyComTagsContainer);</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
-<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
+<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::CopyComTagsContainer&gt;();</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
 <codeline lineno="491"><highlight class="normal"></highlight></codeline>
 <codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"></highlight></codeline>
@@ -2432,9 +2432,9 @@
 <codeline lineno="640"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="641"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArrayBase::FB::FB()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="642"><highlight class="normal"></highlight></codeline>
-<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::CopyComTagsContainer);</highlight></codeline>
-<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
-<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
+<codeline lineno="643"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::CopyComTagsContainer&gt;();</highlight></codeline>
+<codeline lineno="644"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
+<codeline lineno="645"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
 <codeline lineno="646"><highlight class="normal"></highlight></codeline>
 <codeline lineno="647"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fa.IndexArray().empty())<sp/>{</highlight></codeline>
 <codeline lineno="648"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(enforce_periodicity_only)<sp/>{</highlight></codeline>
@@ -2914,9 +2914,9 @@
 <codeline lineno="1122"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArrayBase::RB90::RB90()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1125"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::CopyComTagsContainer);</highlight></codeline>
-<codeline lineno="1126"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
-<codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
+<codeline lineno="1125"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::CopyComTagsContainer&gt;();</highlight></codeline>
+<codeline lineno="1126"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
+<codeline lineno="1127"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
 <codeline lineno="1128"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fa.IndexArray().empty())<sp/>{</highlight></codeline>
 <codeline lineno="1130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>define(fa);</highlight></codeline>
@@ -3100,9 +3100,9 @@
 <codeline lineno="1308"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1309"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArrayBase::RB180::RB180()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1310"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1311"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::CopyComTagsContainer);</highlight></codeline>
-<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
-<codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
+<codeline lineno="1311"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::CopyComTagsContainer&gt;();</highlight></codeline>
+<codeline lineno="1312"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
+<codeline lineno="1313"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
 <codeline lineno="1314"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fa.IndexArray().empty())<sp/>{</highlight></codeline>
 <codeline lineno="1316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>define(fa);</highlight></codeline>
@@ -3263,9 +3263,9 @@
 <codeline lineno="1471"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="1472"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;FabArrayBase::PolarB::PolarB()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="1473"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1474"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::CopyComTagsContainer);</highlight></codeline>
-<codeline lineno="1475"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
-<codeline lineno="1476"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CopyComTag::MapOfCopyComTagContainers);</highlight></codeline>
+<codeline lineno="1474"><highlight class="normal"><sp/><sp/><sp/><sp/>m_LocTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::CopyComTagsContainer&gt;();</highlight></codeline>
+<codeline lineno="1475"><highlight class="normal"><sp/><sp/><sp/><sp/>m_SndTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
+<codeline lineno="1476"><highlight class="normal"><sp/><sp/><sp/><sp/>m_RcvTags<sp/>=<sp/>std::make_unique&lt;CopyComTag::MapOfCopyComTagContainers&gt;();</highlight></codeline>
 <codeline lineno="1477"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1478"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fa.IndexArray().empty())<sp/>{</highlight></codeline>
 <codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>define(fa);</highlight></codeline>
@@ -3605,8 +3605,8 @@
 <codeline lineno="1813"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1814"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="1815"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fact_crse_patch.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abda821661019fb0a77eb3a9706dc7330" kindref="member">FArrayBoxFactory</ref>());</highlight></codeline>
-<codeline lineno="1817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fact_fine_patch.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1abda821661019fb0a77eb3a9706dc7330" kindref="member">FArrayBoxFactory</ref>());</highlight></codeline>
+<codeline lineno="1816"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fact_crse_patch<sp/>=<sp/>std::make_unique&lt;FArrayBoxFactory&gt;();</highlight></codeline>
+<codeline lineno="1817"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fact_fine_patch<sp/>=<sp/>std::make_unique&lt;FArrayBoxFactory&gt;();</highlight></codeline>
 <codeline lineno="1818"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1819"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1820"><highlight class="normal"></highlight></codeline>

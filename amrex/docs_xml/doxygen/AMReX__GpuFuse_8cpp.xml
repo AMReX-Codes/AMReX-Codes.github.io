@@ -1524,7 +1524,7 @@
 <codeline lineno="220"><highlight class="normal">Fuser::getInstance<sp/>()</highlight></codeline>
 <codeline lineno="221"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_instance<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_instance.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Fuser());</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_instance<sp/>=<sp/>std::make_unique&lt;Fuser&gt;();</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*m_instance;</highlight></codeline>
 <codeline lineno="226"><highlight class="normal">}</highlight></codeline>

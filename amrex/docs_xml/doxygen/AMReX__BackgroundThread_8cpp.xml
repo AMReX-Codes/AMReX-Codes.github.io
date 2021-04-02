@@ -67,7 +67,7 @@
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"><ref refid="classamrex_1_1BackgroundThread_1a276804e5d463c6c46c248701f73f18c7" kindref="member">BackgroundThread::BackgroundThread</ref><sp/>()</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1a3093fd845f22fd2dd628aca6a442851f" kindref="member">m_thread</ref>.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>std::thread(&amp;<ref refid="classamrex_1_1BackgroundThread_1a7ef8784994644d4a4fa8a46205610b2b" kindref="member">BackgroundThread::do_job</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BackgroundThread_1a3093fd845f22fd2dd628aca6a442851f" kindref="member">m_thread</ref><sp/>=<sp/>std::make_unique&lt;std::thread&gt;(&amp;<ref refid="classamrex_1_1BackgroundThread_1a7ef8784994644d4a4fa8a46205610b2b" kindref="member">BackgroundThread::do_job</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="8"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><ref refid="classamrex_1_1BackgroundThread_1ab5ad8734e492ca7784f7fa8af2d4c29e" kindref="member">BackgroundThread::~BackgroundThread</ref><sp/>()</highlight></codeline>

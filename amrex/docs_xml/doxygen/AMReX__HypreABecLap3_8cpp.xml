@@ -2244,7 +2244,7 @@
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_Int<sp/>ilower<sp/>=<sp/>proc_begin;</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>HYPRE_Int<sp/>iupper<sp/>=<sp/>proc_end-1;</highlight></codeline>
 <codeline lineno="205"><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_ij.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>HypreIJIface(comm,<sp/>ilower,<sp/>iupper,<sp/><ref refid="namespaceamrex_1adf03962600e13b4ecd73531bd77d0cf5" kindref="member">verbose</ref>));</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_ij<sp/>=<sp/>std::make_unique&lt;HypreIJIface&gt;(comm,<sp/>ilower,<sp/>iupper,<sp/><ref refid="namespaceamrex_1adf03962600e13b4ecd73531bd77d0cf5" kindref="member">verbose</ref>);</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_ij-&gt;parse_inputs(options_namespace);</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"></highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Obtain<sp/>non-owning<sp/>references<sp/>to<sp/>the<sp/>matrix,<sp/>rhs,<sp/>and<sp/>solution<sp/>data</highlight><highlight class="normal"></highlight></codeline>

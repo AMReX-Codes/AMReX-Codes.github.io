@@ -1807,7 +1807,7 @@
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><ref refid="classamrex_1_1MFIter_1aac055187a5b4d7200fc77827dc28a76c" kindref="member">MFIter::MFIter</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>flags_)</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(new<sp/>FabArrayBase(ba,dm,1,0)),</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(std::make_unique&lt;FabArrayBase&gt;(ba,dm,1,0)),</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>fabArray(*m_fa),</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>tile_size((flags_<sp/>&amp;<sp/>Tiling)<sp/>?<sp/>FabArrayBase::mfiter_tile_size<sp/>:<sp/>IntVect::TheZeroVector()),</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>flags(flags_),</highlight></codeline>
@@ -1831,7 +1831,7 @@
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><ref refid="classamrex_1_1MFIter_1aac055187a5b4d7200fc77827dc28a76c" kindref="member">MFIter::MFIter</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>do_tiling_)</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(new<sp/>FabArrayBase(ba,dm,1,0)),</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(std::make_unique&lt;FabArrayBase&gt;(ba,dm,1,0)),</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>fabArray(*m_fa),</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>tile_size((do_tiling_)<sp/>?<sp/>FabArrayBase::mfiter_tile_size<sp/>:<sp/>IntVect::TheZeroVector()),</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>flags(do_tiling_<sp/>?<sp/>Tiling<sp/>:<sp/>0),</highlight></codeline>
@@ -1857,7 +1857,7 @@
 <codeline lineno="124"><highlight class="normal"><ref refid="classamrex_1_1MFIter_1aac055187a5b4d7200fc77827dc28a76c" kindref="member">MFIter::MFIter</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm,</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>tilesize_,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>flags_)</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(new<sp/>FabArrayBase(ba,dm,1,0)),</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(std::make_unique&lt;FabArrayBase&gt;(ba,dm,1,0)),</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>fabArray(*m_fa),</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>tile_size(tilesize_),</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>flags(flags_<sp/>|<sp/>Tiling),</highlight></codeline>
@@ -1882,7 +1882,7 @@
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><ref refid="classamrex_1_1MFIter_1aac055187a5b4d7200fc77827dc28a76c" kindref="member">MFIter::MFIter</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MFItInfo&amp;<sp/>info)</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>:</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(new<sp/>FabArrayBase(ba,<sp/>dm,<sp/>1,<sp/>0)),</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fa(std::make_unique&lt;FabArrayBase&gt;(ba,<sp/>dm,<sp/>1,<sp/>0)),</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>fabArray(*m_fa),</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>tile_size(info.tilesize),</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>flags(info.do_tiling<sp/>?<sp/>Tiling<sp/>:<sp/>0),</highlight></codeline>
@@ -2076,7 +2076,7 @@
 <codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kindref="member">Gpu::Device::setStreamIndex</ref>((<ref refid="classamrex_1_1MFIter_1a6387ff79e8fcfbfdcfbc7dd8d8e78621" kindref="member">streams</ref><sp/>&gt;<sp/>0)<sp/>?<sp/><ref refid="classamrex_1_1MFIter_1abfba09b9f27138141e9758d1a8ea2e4b" kindref="member">currentIndex</ref>%<ref refid="classamrex_1_1MFIter_1a6387ff79e8fcfbfdcfbc7dd8d8e78621" kindref="member">streams</ref><sp/>:<sp/>-1);</highlight></codeline>
 <codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="namespaceamrex_1_1OpenMP_1ac4d826cf1b5dd7b16d2e1d54a73ff935" kindref="member">OpenMP::in_parallel</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MFIter_1ac482cbbf5ecee6f2593a3e4437623082" kindref="member">index_map</ref>-&gt;<ref refid="classamrex_1_1Vector_1a58c24fe05cc91d42ebe7151c398f0c58" kindref="member">size</ref>()<sp/>&gt;=<sp/><ref refid="namespaceamrex_1_1Gpu_1a5360a46f14a3ed052777eb1eed45cf56" kindref="member">Gpu::getFuseNumKernelsThreshold</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MFIter_1a8287b68401c494c261f0ad45f9b6b5ed" kindref="member">gpu_fsg</ref>.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Gpu::FuseSafeGuard(</highlight><highlight class="keyword">true</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MFIter_1a8287b68401c494c261f0ad45f9b6b5ed" kindref="member">gpu_fsg</ref><sp/>=<sp/>std::make_unique&lt;Gpu::FuseSafeGuard&gt;(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="349"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>

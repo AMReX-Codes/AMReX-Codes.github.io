@@ -3041,7 +3041,7 @@
 <codeline lineno="1220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoxArray&amp;<sp/>ba<sp/>=<sp/>boxArray();</highlight></codeline>
 <codeline lineno="1221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>DistributionMapping&amp;<sp/>dm<sp/>=<sp/>DistributionMap();</highlight></codeline>
 <codeline lineno="1222"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;MultiFab&gt;<sp/>p{</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>MultiFab(ba,dm,1,0,<sp/>MFInfo(),<sp/>Factory())};</highlight></codeline>
+<codeline lineno="1223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p<sp/>=<sp/>std::make_unique&lt;MultiFab&gt;(ba,dm,1,0,<sp/>MFInfo(),<sp/>Factory());</highlight></codeline>
 <codeline lineno="1224"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;IntVect&gt;&amp;<sp/>pshifts<sp/>=<sp/>period.shiftIntVect();</highlight></codeline>
 <codeline lineno="1226"><highlight class="normal"></highlight></codeline>

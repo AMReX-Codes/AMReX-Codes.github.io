@@ -163,7 +163,7 @@
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref>&amp;<sp/>geom<sp/>=<sp/>this-&gt;Geom(lev);</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mask_ptr[lev].reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref>(ba,<sp/>dmap,<sp/>num_mask_comps,<sp/>m_num_neighbor_cells));</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mask_ptr[lev]<sp/>=<sp/>std::make_unique&lt;iMultiFab&gt;(ba,<sp/>dmap,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">(num_mask_comps),<sp/>m_num_neighbor_cells);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mask_ptr[lev]-&gt;setVal(-1,<sp/>m_num_neighbor_cells);</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>

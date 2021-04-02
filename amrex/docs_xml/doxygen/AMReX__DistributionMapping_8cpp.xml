@@ -2531,7 +2531,7 @@
 <codeline lineno="600"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;std::unique_ptr&lt;Vector&lt;WeightedBox&gt;<sp/>&gt;<sp/>&gt;<sp/>raii_vwb(nprocs);</highlight></codeline>
 <codeline lineno="601"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/><sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>nprocs;<sp/>++i)</highlight></codeline>
 <codeline lineno="602"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>raii_vwb[i].reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Vector&lt;WeightedBox&gt;);</highlight></codeline>
+<codeline lineno="603"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>raii_vwb[i]<sp/>=<sp/>std::make_unique&lt;Vector&lt;WeightedBox&gt;<sp/>&gt;();</highlight></codeline>
 <codeline lineno="604"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wblq.push(WeightedBoxList(raii_vwb[i].<ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">get</ref>()));</highlight></codeline>
 <codeline lineno="605"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="606"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;WeightedBoxList&gt;<sp/>wblv;</highlight></codeline>

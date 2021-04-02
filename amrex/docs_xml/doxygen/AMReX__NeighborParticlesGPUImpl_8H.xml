@@ -99,7 +99,7 @@
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>BoxArray::SameRefs(m_neighbor_mask_ptr-&gt;boxArray(),<sp/>ba)<sp/>||</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!<sp/>DistributionMapping::SameRefs(m_neighbor_mask_ptr-&gt;DistributionMap(),<sp/>dmap))</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_mask_ptr.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1iMultiFab" kindref="compound">iMultiFab</ref>(ba,<sp/>dmap,<sp/>1,<sp/>0));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_mask_ptr<sp/>=<sp/>std::make_unique&lt;iMultiFab&gt;(ba,<sp/>dmap,<sp/>1,<sp/>0);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_neighbor_mask_ptr-&gt;setVal(-1);</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Periodicity" kindref="compound">Periodicity</ref>&amp;<sp/>periodicity<sp/>=<sp/>geom.<ref refid="classamrex_1_1Geometry_1a7b365b1560bb9a31cf49cd55668085cf" kindref="member">periodicity</ref>();</highlight></codeline>
