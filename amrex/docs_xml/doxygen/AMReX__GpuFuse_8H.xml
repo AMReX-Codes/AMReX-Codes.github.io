@@ -3631,7 +3631,7 @@
 <codeline lineno="36" refid="structamrex_1_1Gpu_1_1FuseHelper_1a601d39001c1b417e61237cf3169a2eab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1Gpu_1_1FuseHelper_1a601d39001c1b417e61237cf3169a2eab" kindref="member">m_N</ref>;</highlight></codeline>
 <codeline lineno="37"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal">static_assert(<ref refid="AMReX__TypeTraits_8H_1adc50ea9983407ec975c6c594c92bae5d" kindref="member">AMREX_IS_TRIVIALLY_COPYABLE</ref>(<ref refid="structamrex_1_1Gpu_1_1FuseHelper" kindref="compound">FuseHelper</ref>),</highlight><highlight class="stringliteral">&quot;FuseHelper<sp/>is<sp/>not<sp/>trivially<sp/>copyable&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">static_assert(std::is_trivially_copyable&lt;FuseHelper&gt;(),</highlight><highlight class="stringliteral">&quot;FuseHelper<sp/>is<sp/>not<sp/>trivially<sp/>copyable&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>Lambda&gt;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref></highlight></codeline>

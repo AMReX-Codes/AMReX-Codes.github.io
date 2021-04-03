@@ -8,14 +8,14 @@
         <type>class T</type>
       </param>
       <param>
-        <type>typename std::enable_if&lt; <ref refid="AMReX__TypeTraits_8H_1adc50ea9983407ec975c6c594c92bae5d" kindref="member">AMREX_IS_TRIVIALLY_COPYABLE</ref>(T), <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;::type</type>
+        <type>std::enable_if_t&lt; std::is_trivially_copyable&lt; T &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
         <defval>0</defval>
       </param>
     </templateparamlist>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="structamrex_1_1Gpu_1_1DeviceScalar_1acec02fcbe3ecb7ea76b4021b6688cc17" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="structamrex_1_1Gpu_1_1DeviceScalar_1aef9ccbc50e8c6d02eda1902423d91f02" prot="private" static="no" mutable="no">
         <type>T *</type>
-        <definition>T* amrex::Gpu::DeviceScalar&lt; T, type &gt;::dp</definition>
+        <definition>T* amrex::Gpu::DeviceScalar&lt; T, &gt;::dp</definition>
         <argsstring></argsstring>
         <name>dp</name>
         <briefdescription>
@@ -28,9 +28,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a8b99ac457d4bfca3c079e994e753575b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a22ee1039a5affe922974db84c8753e9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::DeviceScalar&lt; T, type &gt;::DeviceScalar</definition>
+        <definition>amrex::Gpu::DeviceScalar&lt; T, &gt;::DeviceScalar</definition>
         <argsstring>(DeviceScalar const &amp;)=delete</argsstring>
         <name>DeviceScalar</name>
         <param>
@@ -44,9 +44,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="58" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1ad4d0986a7fc50af5a5e9effe5b16c7f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1aad0f00e8321544217083503dd9cc0b9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::DeviceScalar&lt; T, type &gt;::DeviceScalar</definition>
+        <definition>amrex::Gpu::DeviceScalar&lt; T, &gt;::DeviceScalar</definition>
         <argsstring>(DeviceScalar &amp;&amp;)=delete</argsstring>
         <name>DeviceScalar</name>
         <param>
@@ -60,9 +60,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="59" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a43c12caf52ae75b1b84f6aae76760cc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a1ea24985de3f4264b68f8c5f55611178" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::Gpu::DeviceScalar&lt; T, type &gt;::operator=</definition>
+        <definition>void amrex::Gpu::DeviceScalar&lt; T, &gt;::operator=</definition>
         <argsstring>(DeviceScalar const &amp;)=delete</argsstring>
         <name>operator=</name>
         <param>
@@ -76,9 +76,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="60" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1ae9143db2f06789fa77eac6db1f78638e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a09ce14e97aa618c00bcc778e9337fd4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void amrex::Gpu::DeviceScalar&lt; T, type &gt;::operator=</definition>
+        <definition>void amrex::Gpu::DeviceScalar&lt; T, &gt;::operator=</definition>
         <argsstring>(DeviceScalar &amp;&amp;)=delete</argsstring>
         <name>operator=</name>
         <param>
@@ -92,9 +92,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="61" column="10"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a02ba6754708f4d56196f0e221aca8e90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a041e21c03012c74793a6baf0d916e587" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::DeviceScalar&lt; T, type &gt;::DeviceScalar</definition>
+        <definition>amrex::Gpu::DeviceScalar&lt; T, &gt;::DeviceScalar</definition>
         <argsstring>()</argsstring>
         <name>DeviceScalar</name>
         <briefdescription>
@@ -105,9 +105,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="65" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" bodystart="65" bodyend="71"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a68b30221dbfd66a1d496c03af10c6c61" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1adb2f941325add1703b7369f68060c2bb" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::DeviceScalar&lt; T, type &gt;::DeviceScalar</definition>
+        <definition>amrex::Gpu::DeviceScalar&lt; T, &gt;::DeviceScalar</definition>
         <argsstring>(T init_val)</argsstring>
         <name>DeviceScalar</name>
         <param>
@@ -122,9 +122,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="73" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" bodystart="73" bodyend="81"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1adc44c4f760a09682152b593a0a8158c5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1ae203fe8c3032a05c2f06c38b8638308c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>amrex::Gpu::DeviceScalar&lt; T, type &gt;::~DeviceScalar</definition>
+        <definition>amrex::Gpu::DeviceScalar&lt; T, &gt;::~DeviceScalar</definition>
         <argsstring>()</argsstring>
         <name>~DeviceScalar</name>
         <briefdescription>
@@ -135,9 +135,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="83" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" bodystart="83" bodyend="89"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a91b5b8012de7320f5b6af0684caffab9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a3a4fecbe5bb784d58b047fa09d73c504" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>T *</type>
-        <definition>T* amrex::Gpu::DeviceScalar&lt; T, type &gt;::dataPtr</definition>
+        <definition>T* amrex::Gpu::DeviceScalar&lt; T, &gt;::dataPtr</definition>
         <argsstring>()</argsstring>
         <name>dataPtr</name>
         <briefdescription>
@@ -148,9 +148,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="91" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" bodystart="91" bodyend="91"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a65321edb44d3a11855d85be6f9afedb8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1ac7995253d4db738ff6283ab41aaf67c8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T const  *</type>
-        <definition>T const* amrex::Gpu::DeviceScalar&lt; T, type &gt;::dataPtr</definition>
+        <definition>T const* amrex::Gpu::DeviceScalar&lt; T, &gt;::dataPtr</definition>
         <argsstring>() const</argsstring>
         <name>dataPtr</name>
         <briefdescription>
@@ -161,9 +161,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="92" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" bodystart="92" bodyend="92"/>
       </memberdef>
-      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a3a557860f06c4da68f57b6c2e6222fca" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1Gpu_1_1DeviceScalar_1a14f5716ceb831c094aabcf9cf8cba989" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>T</type>
-        <definition>T amrex::Gpu::DeviceScalar&lt; T, type &gt;::dataValue</definition>
+        <definition>T amrex::Gpu::DeviceScalar&lt; T, &gt;::dataValue</definition>
         <argsstring>() const</argsstring>
         <name>dataValue</name>
         <briefdescription>
@@ -181,17 +181,17 @@
     </detaileddescription>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" line="57" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuMemory.H" bodystart="56" bodyend="120"/>
     <listofallmembers>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a91b5b8012de7320f5b6af0684caffab9" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dataPtr</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a65321edb44d3a11855d85be6f9afedb8" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dataPtr</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a3a557860f06c4da68f57b6c2e6222fca" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dataValue</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a8b99ac457d4bfca3c079e994e753575b" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1ad4d0986a7fc50af5a5e9effe5b16c7f7" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a02ba6754708f4d56196f0e221aca8e90" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a68b30221dbfd66a1d496c03af10c6c61" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1acec02fcbe3ecb7ea76b4021b6688cc17" prot="private" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dp</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a43c12caf52ae75b1b84f6aae76760cc4" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>operator=</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1ae9143db2f06789fa77eac6db1f78638e" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>operator=</name></member>
-      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1adc44c4f760a09682152b593a0a8158c5" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>~DeviceScalar</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a3a4fecbe5bb784d58b047fa09d73c504" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dataPtr</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1ac7995253d4db738ff6283ab41aaf67c8" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dataPtr</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a14f5716ceb831c094aabcf9cf8cba989" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dataValue</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a22ee1039a5affe922974db84c8753e9e" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1aad0f00e8321544217083503dd9cc0b9c" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a041e21c03012c74793a6baf0d916e587" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1adb2f941325add1703b7369f68060c2bb" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>DeviceScalar</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1aef9ccbc50e8c6d02eda1902423d91f02" prot="private" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>dp</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a1ea24985de3f4264b68f8c5f55611178" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1a09ce14e97aa618c00bcc778e9337fd4f" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>operator=</name></member>
+      <member refid="structamrex_1_1Gpu_1_1DeviceScalar_1ae203fe8c3032a05c2f06c38b8638308c" prot="public" virt="non-virtual"><scope>amrex::Gpu::DeviceScalar</scope><name>~DeviceScalar</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

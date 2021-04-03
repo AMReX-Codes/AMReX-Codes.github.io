@@ -1304,12 +1304,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a73fec27a7206dd9a1eb9cb593936f784"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_arithmetic&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">placementNew</a> (T *const, Long)</td></tr>
 <tr class="memdesc:a73fec27a7206dd9a1eb9cb593936f784"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Fortran Array-like Object <a class="el" href="classamrex_1_1BaseFab.html">BaseFab</a> emulates the Fortran array concept. Useful operations can be performed upon BaseFabs in C++, and they provide a convenient interface to Fortran when it is necessary to retreat into that language.  <a href="namespaceamrex.html#a73fec27a7206dd9a1eb9cb593936f784">More...</a><br /></td></tr>
 <tr class="separator:a73fec27a7206dd9a1eb9cb593936f784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfe468a1156e462d70f8f4a39143ce70"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:adfe468a1156e462d70f8f4a39143ce70"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; <a class="el" href="AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b">AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE</a>(T) &amp;&amp;!std::is_arithmetic&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#adfe468a1156e462d70f8f4a39143ce70">placementNew</a> (T *const ptr, Long n)</td></tr>
-<tr class="separator:adfe468a1156e462d70f8f4a39143ce70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c16bb3b63e640a67dd4784d6d64bd34"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2c16bb3b63e640a67dd4784d6d64bd34"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!<a class="el" href="AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b">AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE</a>(T)&gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2c16bb3b63e640a67dd4784d6d64bd34">placementNew</a> (T *const ptr, Long n)</td></tr>
-<tr class="separator:a2c16bb3b63e640a67dd4784d6d64bd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01561352ac771218ab7ba04e356a044d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a01561352ac771218ab7ba04e356a044d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_trivially_default_constructible&lt; T &gt;::value &amp;&amp;!std::is_arithmetic&lt; T &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a01561352ac771218ab7ba04e356a044d">placementNew</a> (T *const ptr, Long n)</td></tr>
+<tr class="separator:a01561352ac771218ab7ba04e356a044d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad9c01992bb029868be5de579b7317ad"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aad9c01992bb029868be5de579b7317ad"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;!std::is_trivially_default_constructible&lt; T &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aad9c01992bb029868be5de579b7317ad">placementNew</a> (T *const ptr, Long n)</td></tr>
+<tr class="separator:aad9c01992bb029868be5de579b7317ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee305735e81ee2d836ea3043c2e5baa1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aee305735e81ee2d836ea3043c2e5baa1"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_trivially_destructible&lt; T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aee305735e81ee2d836ea3043c2e5baa1">placementDelete</a> (T *const, Long)</td></tr>
 <tr class="separator:aee305735e81ee2d836ea3043c2e5baa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -55767,8 +55767,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="adfe468a1156e462d70f8f4a39143ce70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfe468a1156e462d70f8f4a39143ce70">&#9670;&nbsp;</a></span>placementNew() <span class="overload">[1/3]</span></h2>
+<a id="a01561352ac771218ab7ba04e356a044d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01561352ac771218ab7ba04e356a044d">&#9670;&nbsp;</a></span>placementNew() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -55776,7 +55776,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt; <a class="el" href="AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b">AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE</a>(T) &amp;&amp; !std::is_arithmetic&lt;T&gt;::value &gt;::type amrex::placementNew </td>
+          <td class="memname">std::enable_if_t&lt;std::is_trivially_default_constructible&lt;T&gt;::value &amp;&amp; !std::is_arithmetic&lt;T&gt;::value&gt; amrex::placementNew </td>
           <td>(</td>
           <td class="paramtype">T *const&#160;</td>
           <td class="paramname"><em>ptr</em>, </td>
@@ -55797,8 +55797,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a2c16bb3b63e640a67dd4784d6d64bd34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c16bb3b63e640a67dd4784d6d64bd34">&#9670;&nbsp;</a></span>placementNew() <span class="overload">[2/3]</span></h2>
+<a id="aad9c01992bb029868be5de579b7317ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad9c01992bb029868be5de579b7317ad">&#9670;&nbsp;</a></span>placementNew() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -55806,7 +55806,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::enable_if&lt;!<a class="el" href="AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b">AMREX_IS_TRIVIALLY_DEFAULT_CONSTRUCTIBLE</a>(T)&gt;::type amrex::placementNew </td>
+          <td class="memname">std::enable_if_t&lt;!std::is_trivially_default_constructible&lt;T&gt;::value&gt; amrex::placementNew </td>
           <td>(</td>
           <td class="paramtype">T *const&#160;</td>
           <td class="paramname"><em>ptr</em>, </td>

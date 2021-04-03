@@ -2,7 +2,7 @@ var searchData=
 [
   ['h_5fcommunicate_5fint_5fcomp_12508',['h_communicate_int_comp',['../classamrex_1_1ParticleContainer.html#a8b8559f9912f624258ef591158eaf115',1,'amrex::ParticleContainer']]],
   ['h_5fcommunicate_5freal_5fcomp_12509',['h_communicate_real_comp',['../classamrex_1_1ParticleContainer.html#a839b2b309c4894661911e0c22726cb20',1,'amrex::ParticleContainer']]],
-  ['h_5fdata_12510',['h_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#a4d8ff9603bf44cd72f83703f34ecb0c9',1,'amrex::Gpu::AsyncArray::h_data()'],['../classamrex_1_1Gpu_1_1Buffer.html#a4c3ae2310639d3ddf9641e7534f463c2',1,'amrex::Gpu::Buffer::h_data()']]],
+  ['h_5fdata_12510',['h_data',['../classamrex_1_1Gpu_1_1AsyncArray.html#a51d329542fc90dfadcbe838a312a5470',1,'amrex::Gpu::AsyncArray::h_data()'],['../classamrex_1_1Gpu_1_1Buffer.html#af613bc8ff56b5c8e598e90cd8c61f6b0',1,'amrex::Gpu::Buffer::h_data()']]],
   ['half_12511',['half',['../namespaceamrex__constants__module.html#a0054397f5649f24a3da0cb5933162018',1,'amrex_constants_module']]],
   ['has_5fhashmap_12512',['has_hashmap',['../structamrex_1_1BARef.html#aa7702554a15d6a73ffa7a16ee2e017bc',1,'amrex::BARef']]],
   ['has_5fmetric_5fterm_12513',['has_metric_term',['../structamrex_1_1LPInfo.html#a1a95ec842c01374719d2b8929d54f17b',1,'amrex::LPInfo']]],
