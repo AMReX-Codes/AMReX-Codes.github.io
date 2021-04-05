@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Getting Started &mdash; amrex 21.05-dev documentation</title>
@@ -90,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
@@ -188,7 +189,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="getting-started">
+  <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <p>We have discussed AMReX’s build systems in the chapter on
 <a class="reference internal" href="BuildingAMReX_Chapter.html#chap-buildingamrex"><span class="std std-ref">Building AMReX</span></a>.  To build with GNU Make, we need to include the
@@ -219,8 +220,8 @@ modules, amrex_base_module for the basics functionalities
 (Section <a class="reference external" href="#sec:fi:basics">2</a>), amrex_amrcore_module for AMR
 support (Section <a class="reference external" href="#sec:fi:amrcore">3</a>) and amrex_octree_module
 for octree style AMR (Section <a class="reference external" href="#sec:fi:octree">4</a>).</p>
-</div>
-<div class="section" id="the-basics">
+</section>
+<section id="the-basics">
 <span id="sec-fi-basics"></span><h1>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h1>
 <p>Module <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">amrex_base_module</span></span></code> is a collection of various Fortran modules
 providing interfaces to most of the basics of AMReX C++ library (see the
@@ -426,8 +427,8 @@ example,</p>
 exchanging the data.</p>
 <p>AMReX also provides <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">amrex_plotfile_module</span></span></code> for writing plotfiles. The
 interface is similar to the C++ versions.</p>
-</div>
-<div class="section" id="amr-core-infrastructure">
+</section>
+<section id="amr-core-infrastructure">
 <span id="sec-fi-amrcore"></span><h1>Amr Core Infrastructure<a class="headerlink" href="#amr-core-infrastructure" title="Permalink to this headline">¶</a></h1>
 <p>The module <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">amrex_amr_module</span></span></code> provides interfaces to AMR core
 infrastructure. With AMR, the main program might look like below,</p>
@@ -511,8 +512,8 @@ Tutorials/Amr/Advection_F/Source/fillpatch_mod.F90 for an example.</p>
 <p>Module <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">amrex_fluxregister_module</span></span></code> provides interface to
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FluxRegister</span></span></code> (see the section on <a class="reference internal" href="AmrCore.html#sec-amrcore-fluxreg"><span class="std std-ref">Using FluxRegisters</span></a>). Its usage
 is demonstrated in the tutorial at Tutorials/Amr/Advection_F/.</p>
-</div>
-<div class="section" id="octree">
+</section>
+<section id="octree">
 <span id="sec-fi-octree"></span><h1>Octree<a class="headerlink" href="#octree" title="Permalink to this headline">¶</a></h1>
 <p>In AMReX, the union of fine level grids is properly contained within the union
 of coarse level grids. There are no required direct parent-child connections
@@ -559,7 +560,7 @@ be used to iterate over leaves of octree. For example,</p>
 <span class="k">call </span><span class="n">amrex_octree_iter_destroy</span><span class="p">(</span><span class="n">oti</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
            </div>

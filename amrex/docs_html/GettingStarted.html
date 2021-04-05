@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Downloading the Code &mdash; amrex 21.05-dev documentation</title>
@@ -90,7 +91,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a><ul class="current">
@@ -196,7 +197,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="downloading-the-code">
+  <section id="downloading-the-code">
 <h1>Downloading the Code<a class="headerlink" href="#downloading-the-code" title="Permalink to this headline">¶</a></h1>
 <p>The source code is available at <a class="reference external" href="https://github.com/AMReX-Codes/amrex">https://github.com/AMReX-Codes/amrex</a>. The
 GitHub repo is our central repo for development. The development branch
@@ -206,8 +207,8 @@ version is incremented every month, and the YY part every year.  Bug fix
 releases are tagged with YY.MM.patch (e.g., 17.04.1).</p>
 <p>AMReX can also be obtained using spack (<a class="reference external" href="https://spack.io/">https://spack.io/</a>).  Assuming
 you have spack installed, simply type “spack install amrex”.</p>
-</div>
-<div class="section" id="example-hello-world">
+</section>
+<section id="example-hello-world">
 <h1>Example: Hello World<a class="headerlink" href="#example-hello-world" title="Permalink to this headline">¶</a></h1>
 <p>The source code of this example is at <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/</span></code>
 and is also shown below.</p>
@@ -231,7 +232,7 @@ string that includes the AMReX version returned by the <code class="code cpp c++
 function. The example code includes two AMReX header files. Note that the name
 of all AMReX header files starts with <code class="docutils literal notranslate"><span class="pre">AMReX_</span></code> (or just AMReX in the case of
 AMReX.H). All AMReX C++ functions are in the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span></code> namespace.</p>
-<div class="section" id="building-the-code">
+<section id="building-the-code">
 <h2>Building the Code<a class="headerlink" href="#building-the-code" title="Permalink to this headline">¶</a></h2>
 <p>You build the code in the <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/</span></code> directory.
 Typing <code class="docutils literal notranslate"><span class="pre">make</span></code> will start the compilation process and result in an executable
@@ -241,8 +242,8 @@ options set by AMReX is used.  It also shows that the executable is built for
 does matter for all non-trivial examples. The build process can be adjusted by
 modifying the <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/GNUmakefile</span></code> file.  More
 details on how to build AMReX can be found in <a class="reference internal" href="BuildingAMReX_Chapter.html#chap-buildingamrex"><span class="std std-ref">Building AMReX</span></a>.</p>
-</div>
-<div class="section" id="running-the-code">
+</section>
+<section id="running-the-code">
 <h2>Running the Code<a class="headerlink" href="#running-the-code" title="Permalink to this headline">¶</a></h2>
 <p>The example code can be run as follows,</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./main3d.gnu.DEBUG.ex</span>
@@ -262,8 +263,8 @@ changes).</p>
 code with more error checking), dimensionality, compiler type, and flags to
 enable MPI and/or OpenMP parallelism.  If there are multiple instances of a
 parameter, the last instance takes precedence.</p>
-</div>
-<div class="section" id="parallelization">
+</section>
+<section id="parallelization">
 <h2>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h2>
 <p>Now let’s build with MPI by typing <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">USE_MPI=TRUE</span></code> (alternatively you can
 set <code class="docutils literal notranslate"><span class="pre">USE_MPI=TRUE</span></code> in the GNUmakefile). This should make an executable named
@@ -312,9 +313,9 @@ can then run,</p>
 <span class="go">AMReX (17.05-30-g5775aed933c4-dirty) finalized</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="example-heat-equation-solver">
+</section>
+</section>
+<section id="example-heat-equation-solver">
 <span id="sec-heat-equation"></span><h1>Example: Heat Equation Solver<a class="headerlink" href="#example-heat-equation-solver" title="Permalink to this headline">¶</a></h1>
 <p>We now look at a more complicated example at
 <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX1_C</span></code> and show how simulation results
@@ -334,7 +335,7 @@ spatially discretize the PDE by first constructing (negative) fluxes on cell fac
 <p>The implementation details of the code are discussed in section
 <a class="reference internal" href="Basics.html#sec-basics-heat1"><span class="std std-ref">Example: HeatEquation_EX1_C</span></a>.  For now let’s just build and run the code, and
 visualizae the results.</p>
-<div class="section" id="building-and-running-the-code">
+<section id="building-and-running-the-code">
 <h2>Building and Running the Code<a class="headerlink" href="#building-and-running-the-code" title="Permalink to this headline">¶</a></h2>
 <p>To build a 2D executable, go to
 <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX1_C/Exec</span></code> and type <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">DIM=2</span></code>. This
@@ -349,9 +350,9 @@ run finishes, you will have a number of plotfiles, <code class="docutils literal
 in the directory where you are running.  You can control runtime parameters
 such as how many time steps to run and how often to write plotfiles by setting
 them in <code class="docutils literal notranslate"><span class="pre">inputs_2d.</span></code></p>
-</div>
-</div>
-<div class="section" id="visualization">
+</section>
+</section>
+<section id="visualization">
 <h1>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h1>
 <p>There are several visualization tools that can be used for AMReX plotfiles.
 One standard tool used within the AMReX-community is Amrvis, a package
@@ -361,7 +362,7 @@ also be used to visualize performance data; see the <a class="reference internal
 using the VisIt, ParaView, and yt packages.  Particle data can be viewed using
 ParaView.  Refer to Chapter on <a class="reference internal" href="Visualization_Chapter.html#chap-visualization"><span class="std std-ref">Visualization</span></a> for how to use each of
 these tools.</p>
-</div>
+</section>
 
 
            </div>
