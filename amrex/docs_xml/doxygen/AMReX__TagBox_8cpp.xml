@@ -2265,7 +2265,7 @@
 <codeline lineno="359"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="360"><highlight class="normal"></highlight></codeline>
 <codeline lineno="361"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="362"><highlight class="normal"><ref refid="classamrex_1_1TagBoxArray_1aae83fb3881046f814e201fd62f07d23f" kindref="member">TagBoxArray::local_collate_cpu</ref><sp/>(Vector&lt;IntVect&gt;&amp;<sp/>v)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><ref refid="classamrex_1_1TagBoxArray_1a62994a11c6b9211c7d459571caf99d56" kindref="member">TagBoxArray::local_collate_cpu</ref><sp/>(Gpu::PinnedVector&lt;IntVect&gt;&amp;<sp/>v)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="363"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;local_size()<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="365"><highlight class="normal"></highlight></codeline>
@@ -2314,7 +2314,7 @@
 <codeline lineno="408"><highlight class="normal"></highlight></codeline>
 <codeline lineno="409"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="410"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="411"><highlight class="normal"><ref refid="classamrex_1_1TagBoxArray_1ac6ca16bbff0585e9cfea7c8bf015cf9e" kindref="member">TagBoxArray::local_collate_gpu</ref><sp/>(Vector&lt;IntVect&gt;&amp;<sp/>v)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><ref refid="classamrex_1_1TagBoxArray_1ae151c3feb479bcc695e279915e2a068c" kindref="member">TagBoxArray::local_collate_gpu</ref><sp/>(Gpu::PinnedVector&lt;IntVect&gt;&amp;<sp/>v)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="412"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nfabs<sp/>=<sp/>this-&gt;local_size();</highlight></codeline>
 <codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nfabs<sp/>==<sp/>0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
@@ -2481,18 +2481,18 @@
 <codeline lineno="575"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="576"><highlight class="normal"></highlight></codeline>
 <codeline lineno="577"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="578"><highlight class="normal"><ref refid="classamrex_1_1TagBoxArray_1a53e5359418ebb44a61c268c59e9a9c0d" kindref="member">TagBoxArray::collate</ref><sp/>(Vector&lt;IntVect&gt;&amp;<sp/>TheGlobalCollateSpace)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><ref refid="classamrex_1_1TagBoxArray_1a758d51e6e915561d03a0f9cdf1ce026f" kindref="member">TagBoxArray::collate</ref><sp/>(Gpu::PinnedVector&lt;IntVect&gt;&amp;<sp/>TheGlobalCollateSpace)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="579"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="580"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;TagBoxArray::collate()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="581"><highlight class="normal"></highlight></codeline>
-<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;IntVect&gt;<sp/>TheLocalCollateSpace;</highlight></codeline>
+<codeline lineno="582"><highlight class="normal"><sp/><sp/><sp/><sp/>Gpu::PinnedVector&lt;IntVect&gt;<sp/>TheLocalCollateSpace;</highlight></codeline>
 <codeline lineno="583"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="584"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TagBoxArray_1ac6ca16bbff0585e9cfea7c8bf015cf9e" kindref="member">local_collate_gpu</ref>(TheLocalCollateSpace);</highlight></codeline>
+<codeline lineno="585"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TagBoxArray_1ae151c3feb479bcc695e279915e2a068c" kindref="member">local_collate_gpu</ref>(TheLocalCollateSpace);</highlight></codeline>
 <codeline lineno="586"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="587"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="588"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TagBoxArray_1aae83fb3881046f814e201fd62f07d23f" kindref="member">local_collate_cpu</ref>(TheLocalCollateSpace);</highlight></codeline>
+<codeline lineno="589"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1TagBoxArray_1a62994a11c6b9211c7d459571caf99d56" kindref="member">local_collate_cpu</ref>(TheLocalCollateSpace);</highlight></codeline>
 <codeline lineno="590"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="591"><highlight class="normal"></highlight></codeline>
 <codeline lineno="592"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>count<sp/>=<sp/>TheLocalCollateSpace.size();</highlight></codeline>
@@ -2670,7 +2670,6 @@
 <codeline lineno="764"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="765"><highlight class="normal"></highlight></codeline>
 <codeline lineno="766"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="767"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp"/>
   </compounddef>

@@ -4,9 +4,9 @@
     <compoundname>amrex::STLtools</compoundname>
     <includes refid="AMReX__EB__STL__utils_8H" local="no">AMReX_EB_STL_utils.H</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a1cc9d4cb7146991653bb3336b87d6de5" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt;</type>
-        <definition>Vector&lt;Real&gt; amrex::STLtools::m_tri_pts_h</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1a5d7194fb3dbe6dc7065d997d1d96d41a" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; Real &gt;</type>
+        <definition>Gpu::PinnedVector&lt;Real&gt; amrex::STLtools::m_tri_pts_h</definition>
         <argsstring></argsstring>
         <name>m_tri_pts_h</name>
         <briefdescription>
@@ -15,11 +15,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="21" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="21" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="21" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="21" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classamrex_1_1STLtools_1a13420f0ec03a60affbd19bdb7b423517" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Real &gt;</type>
-        <definition>Vector&lt;Real&gt; amrex::STLtools::m_tri_normals_h</definition>
+      <memberdef kind="variable" id="classamrex_1_1STLtools_1a2c7d4b0ae4c2b28e342e7120325eb927" prot="private" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1_1Gpu_1a6e76d121ad2e1030d86ccbc9a47f6fde" kindref="member">Gpu::PinnedVector</ref>&lt; Real &gt;</type>
+        <definition>Gpu::PinnedVector&lt;Real&gt; amrex::STLtools::m_tri_normals_h</definition>
         <argsstring></argsstring>
         <name>m_tri_normals_h</name>
         <briefdescription>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="22" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="22" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="22" column="31" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1STLtools_1aa06aeb8518099faec116425d0da8d4c5" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; amrex::Real &gt;</type>
@@ -190,16 +190,16 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6">
-        <label>Real</label>
-      </node>
       <node id="3">
-        <label>std::vector&lt; Real, std::allocator&lt; Real &gt; &gt;</label>
+        <label>std::allocator&lt; Real &gt;</label>
       </node>
       <node id="4">
+        <label>Real</label>
+      </node>
+      <node id="5">
         <label>amrex::PODVector&lt; amrex::Real &gt;</label>
         <link refid="classamrex_1_1PODVector"/>
-        <childnode refid="5" relation="public-inheritance">
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -209,23 +209,29 @@
           <edgelabel>m_tri_pts_h</edgelabel>
           <edgelabel>m_tri_normals_h</edgelabel>
         </childnode>
-        <childnode refid="4" relation="usage">
+        <childnode refid="5" relation="usage">
           <edgelabel>m_tri_pts_d</edgelabel>
           <edgelabel>m_tri_normals_d</edgelabel>
         </childnode>
-        <childnode refid="6" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>m_inside</edgelabel>
           <edgelabel>m_outside</edgelabel>
         </childnode>
       </node>
+      <node id="6">
+        <label>std::allocator&lt; amrex::Real &gt;</label>
+      </node>
       <node id="2">
-        <label>amrex::Vector&lt; Real &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
+        <label>amrex::PODVector&lt; Real &gt;</label>
+        <link refid="classamrex_1_1PODVector"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="5">
-        <label>std::allocator&lt; amrex::Real &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>const_reference</edgelabel>
+          <edgelabel>const_iterator</edgelabel>
+          <edgelabel>const_pointer</edgelabel>
+          <edgelabel>m_data</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" line="17" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB_STL_utils.H" bodystart="16" bodyend="42"/>
@@ -237,9 +243,9 @@
       <member refid="classamrex_1_1STLtools_1a02713b3bdf5197301486a78cca290534" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_num_tri</name></member>
       <member refid="classamrex_1_1STLtools_1acfbab6be00333025dd5c9c2de279fdeb" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_outside</name></member>
       <member refid="classamrex_1_1STLtools_1a0ab5ffb5e73a4e47293d27e9dd0ee8d2" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_normals_d</name></member>
-      <member refid="classamrex_1_1STLtools_1a13420f0ec03a60affbd19bdb7b423517" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_normals_h</name></member>
+      <member refid="classamrex_1_1STLtools_1a2c7d4b0ae4c2b28e342e7120325eb927" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_normals_h</name></member>
       <member refid="classamrex_1_1STLtools_1aa06aeb8518099faec116425d0da8d4c5" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_d</name></member>
-      <member refid="classamrex_1_1STLtools_1a1cc9d4cb7146991653bb3336b87d6de5" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_h</name></member>
+      <member refid="classamrex_1_1STLtools_1a5d7194fb3dbe6dc7065d997d1d96d41a" prot="private" virt="non-virtual"><scope>amrex::STLtools</scope><name>m_tri_pts_h</name></member>
       <member refid="classamrex_1_1STLtools_1a140c630969931c24e52ecc0f07b3267a" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>read_ascii_stl_file</name></member>
       <member refid="classamrex_1_1STLtools_1aaffd99fa9a6b2e0199925fb2999faa2d" prot="public" virt="non-virtual"><scope>amrex::STLtools</scope><name>stl_to_markerfab</name></member>
     </listofallmembers>

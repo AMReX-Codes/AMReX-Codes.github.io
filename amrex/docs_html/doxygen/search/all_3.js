@@ -159,7 +159,7 @@ var searchData=
   ['coarsetimestepdt_1668',['coarseTimeStepDt',['../classamrex_1_1Amr.html#a2f3c0b9d3f8f7d2eb05319ce4754ac8c',1,'amrex::Amr']]],
   ['coef_1669',['coef',['../classamrex_1_1EB2_1_1PolyTerm.html#a6dc84f6fbab25f3b4c48b9bea8dd15bc',1,'amrex::EB2::PolyTerm']]],
   ['cogmres_5fsolver_5fconfigure_1670',['cogmres_solver_configure',['../classamrex_1_1HypreIJIface.html#a83a673d85745391688b653887ebc51a8',1,'amrex::HypreIJIface']]],
-  ['collate_1671',['collate',['../classamrex_1_1TagBoxArray.html#a53e5359418ebb44a61c268c59e9a9c0d',1,'amrex::TagBoxArray']]],
+  ['collate_1671',['collate',['../classamrex_1_1TagBoxArray.html#a758d51e6e915561d03a0f9cdf1ce026f',1,'amrex::TagBoxArray']]],
   ['collectdata_1672',['CollectData',['../classamrex_1_1FabArrayCopyDescriptor.html#a6702b3562050e933b50c54d55cfa4caa',1,'amrex::FabArrayCopyDescriptor']]],
   ['collectfuncstats_1673',['CollectFuncStats',['../classBLProfStats.html#ac538df4b2ca012677d2f4c63a7a17eb6',1,'BLProfStats::CollectFuncStats()'],['../classRegionsProfStats.html#aac44ade120289132d039d3301a618e71',1,'RegionsProfStats::CollectFuncStats()']]],
   ['collectmprofstats_1674',['CollectMProfStats',['../namespaceamrex.html#abf61acca5a480f47841ff87d3fc31536',1,'amrex']]],
