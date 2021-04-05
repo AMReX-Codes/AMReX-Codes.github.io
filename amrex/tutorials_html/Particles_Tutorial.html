@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Tutorials/Particles &mdash; amrex 21.04-dev documentation</title>
+  <title>Tutorials/Particles &mdash; amrex 21.05-dev documentation</title>
   
 
   
@@ -64,7 +65,7 @@
             
             
               <div class="version">
-                21.04-dev
+                21.05-dev
               </div>
             
           
@@ -89,7 +90,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="AMR_Tutorial.html">Tutorials/Amr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Basic_Tutorial.html">Tutorials/Basic</a></li>
@@ -176,11 +177,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tutorials-particles">
+  <section id="tutorials-particles">
 <h1>Tutorials/Particles<a class="headerlink" href="#tutorials-particles" title="Permalink to this headline">¶</a></h1>
 <p>There are several tutorials in amrex/Tutorials/Particles that demonstrate the basic usage of
 AMReX’s particle data structures.</p>
-<div class="section" id="electrostaticpic">
+<section id="electrostaticpic">
 <h2><strong>ElectrostaticPIC</strong><a class="headerlink" href="#electrostaticpic" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial demonstrates how to perform an electrostatic Particle-in-Cell calculation
 using AMReX. The code initializes a single particle in a conducting box (i.e. Dirichlet
@@ -195,8 +196,8 @@ performing charge deposition, field gathering, and the particle push are all def
 real components to store the particle weight, velocity, and the electric field interpolated
 to the particle position. To see how to set up such a particle container, see
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ElectrostaticParticleContainer</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">H</span></span></code>.</p>
-</div>
-<div class="section" id="electromagneticpic">
+</section>
+<section id="electromagneticpic">
 <h2><strong>ElectromagneticPIC</strong><a class="headerlink" href="#electromagneticpic" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial shows how to perform an electromagnetic particle-in-cell calculation
 using AMReX. Essentially, this is a mini-app version of the WarpX application code.
@@ -212,8 +213,8 @@ perfectly load balanced problem setup that is useful for performance testing. Ch
 the Langmuir wave problem will automatically compare the simulated fields to the exact
 solution.</p>
 <p>Currently, this tutorial does not use mesh refinement.</p>
-</div>
-<div class="section" id="neighborlist">
+</section>
+<section id="neighborlist">
 <h2><strong>NeighborList</strong><a class="headerlink" href="#neighborlist" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial demonstrates how to have AMReX’s particles undergo short-range collisions
 with each other. To facilite this, a neighbor list data structure is created, in which
@@ -228,8 +229,8 @@ particle reaches the domain boundary, it is specularly reflected back into the d
 see how the particle data structures are set up, see <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborListParticleContainer</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">cpp</span></span></code>.</p>
 <p>The file called <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span></code> can be used to run this tutorial with a single level, and
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">inputs</span></span><span class="punctuation"><span class="pre">.</span></span><span class="name"><span class="pre">mr</span></span></code> sets up a run with static mesh refinement.</p>
-</div>
-<div class="section" id="cellsortedparticles">
+</section>
+<section id="cellsortedparticles">
 <h2><strong>CellSortedParticles</strong><a class="headerlink" href="#cellsortedparticles" title="Permalink to this headline">¶</a></h2>
 <p>Sometimes, it’s useful to sort particles at a finer granularity than grids or tiles. In this
 Tutorial, each cell contains a list of particle indices that tell you which particles belong to
@@ -240,8 +241,8 @@ call Redistribute() as normal, and then insert the unsorted particles into the p
 taken so that, if the Redistribute call changes the order of the particles in the Container, the indices
 in the cell lists are updated accordingly.</p>
 <p>This Tutorial is currently single-level only.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
