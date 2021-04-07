@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae">single_task</a> (<a class="code" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> stream, L&amp;&amp; f) noexcept</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919">single_task</a> (<a class="code" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> stream, L&amp;&amp; f) noexcept</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span> (Gpu::onNullStream(stream)) Gpu::nonNullStreamSynchronize();</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">auto</span>&amp; q = *(stream.queue);</div>
@@ -892,7 +892,7 @@ $(function() {
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;<span class="comment">// CUDA or HIP</span></div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>
-<div class="line"><a name="l00824"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae">  824</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919">single_task</a> (<a class="code" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> stream, L&amp;&amp; f) noexcept</div>
+<div class="line"><a name="l00824"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae">  824</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae">single_task</a> (<a class="code" href="namespaceamrex.html#a3e08759747455ff96c8f68e8673c2b19">gpuStream_t</a> stream, L&amp;&amp; f) noexcept</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;{</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    <a class="code" href="AMReX__GpuLaunch_8H.html#a5e16b51a0139af0f65fc463c7d37e0f6">AMREX_LAUNCH_KERNEL</a>(1, 1, 0, stream,</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () noexcept {f();});</div>
@@ -1476,9 +1476,9 @@ $(function() {
 <div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160; </div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> L&gt;</div>
-<div class="line"><a name="l01408"></a><span class="lineno"><a class="line" href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919"> 1408</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919">single_task</a> (L&amp;&amp; f) noexcept</div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae">single_task</a> (L&amp;&amp; f) noexcept</div>
 <div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;{</div>
-<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    <a class="code" href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919">single_task</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(), std::forward&lt;L&gt;(f));</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;    <a class="code" href="namespaceamrex.html#a3bddb069b268576e6fa712be45c218ae">single_task</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(), std::forward&lt;L&gt;(f));</div>
 <div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;}</div>
 <div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160; </div>
 <div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;template &lt;typename T, typename L, typename M=std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt; &gt;</div>
@@ -1917,7 +1917,7 @@ $(function() {
 <div class="ttc" id="aAMReX__GpuLaunch_8H_html_a5e16b51a0139af0f65fc463c7d37e0f6"><div class="ttname"><a href="AMReX__GpuLaunch_8H.html#a5e16b51a0139af0f65fc463c7d37e0f6">AMREX_LAUNCH_KERNEL</a></div><div class="ttdeci">#define AMREX_LAUNCH_KERNEL(blocks, threads, sharedMem, stream,...)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:34</div></div>
 <div class="ttc" id="anamespaceamrex_html_ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d"><div class="ttname"><a href="namespaceamrex.html#ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d">amrex::RandomEngine</a></div><div class="ttdeci">RandomEngine</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:386</div></div>
 <div class="ttc" id="astructamrex_1_1Gpu_1_1Handler_html"><div class="ttname"><a href="structamrex_1_1Gpu_1_1Handler.html">amrex::Gpu::Handler</a></div><div class="ttdef"><b>Definition:</b> AMReX_GpuTypes.H:81</div></div>
-<div class="ttc" id="anamespaceamrex_html_aa785b3b07c24c864604e8de72a0bb919"><div class="ttname"><a href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919">amrex::single_task</a></div><div class="ttdeci">void single_task(L &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsG.H:1408</div></div>
+<div class="ttc" id="anamespaceamrex_html_aa785b3b07c24c864604e8de72a0bb919"><div class="ttname"><a href="namespaceamrex.html#aa785b3b07c24c864604e8de72a0bb919">amrex::single_task</a></div><div class="ttdeci">void single_task(L &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsC.H:617</div></div>
 <div class="ttc" id="aclassamrex_1_1Box_html"><div class="ttname"><a href="classamrex_1_1Box.html">amrex::Box</a></div><div class="ttdoc">A Rectangular Domain on an Integer Lattice.</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:37</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
