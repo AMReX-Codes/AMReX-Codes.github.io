@@ -1703,9 +1703,9 @@
 <codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::size_t<sp/>chunk<sp/>=<sp/>512*1024*1024;</highlight></codeline>
 <codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buddy_allocator_size<sp/>=<sp/>(buddy_allocator_size/chunk)<sp/>*<sp/>chunk;</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(the_arena_is_managed)<sp/>{</highlight></codeline>
-<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>DArena(buddy_allocator_size,<sp/>512,<sp/>ArenaInfo().SetPreferred());</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>DArena(buddy_allocator_size,<sp/>512,<sp/>ArenaInfo{}.SetPreferred());</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>DArena(buddy_allocator_size,<sp/>512,<sp/>ArenaInfo().SetDeviceMemory());</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>DArena(buddy_allocator_size,<sp/>512,<sp/>ArenaInfo{}.SetDeviceMemory());</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
@@ -1731,20 +1731,20 @@
 <codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/>the_async_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>PArena(the_async_arena_release_threshold);</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"></highlight></codeline>
 <codeline lineno="281"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>the_device_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo().SetDeviceMemory().SetReleaseThreshold(the_device_arena_release_threshold));</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>the_device_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo{}.SetDeviceMemory().SetReleaseThreshold(the_device_arena_release_threshold));</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>the_device_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>BArena;</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="286"><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>the_managed_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo().SetReleaseThreshold(the_managed_arena_release_threshold));</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>the_managed_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo{}.SetReleaseThreshold(the_managed_arena_release_threshold));</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>the_managed_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>BArena;</highlight></codeline>
 <codeline lineno="291"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="292"><highlight class="normal"></highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>USE_CUDA=FALSE,<sp/>we<sp/>call<sp/>mlock<sp/>to<sp/>pin<sp/>the<sp/>cpu<sp/>memory.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>When<sp/>USE_CUDA=TRUE,<sp/>we<sp/>call<sp/>cudaHostAlloc<sp/>to<sp/>pin<sp/>the<sp/>host<sp/>memory.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>the_pinned_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo().SetHostAlloc().SetReleaseThreshold(the_pinned_arena_release_threshold));</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>the_pinned_arena<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>CArena(0,<sp/>ArenaInfo{}.SetHostAlloc().SetReleaseThreshold(the_pinned_arena_release_threshold));</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"></highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>N<sp/>=<sp/>1024UL*1024UL*8UL;</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"></highlight></codeline>
