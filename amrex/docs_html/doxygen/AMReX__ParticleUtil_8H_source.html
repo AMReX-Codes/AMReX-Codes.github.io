@@ -429,9 +429,9 @@ $(function() {
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                {</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    <span class="keyword">auto</span> p_prime = p;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                    <a class="code" href="namespaceamrex.html#a0f476ccd0e295fa75562689b1be6b481">enforcePeriodic</a>(p_prime, plo, phi, is_per);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    <span class="keyword">auto</span> tup = ploc(p_prime, lev_min, lev_max, nGrow);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    assigned_grid = amrex::get&lt;0&gt;(tup);</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    assigned_lev  = amrex::get&lt;1&gt;(tup);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    <span class="keyword">auto</span> tup_prime = ploc(p_prime, lev_min, lev_max, nGrow);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    assigned_grid = amrex::get&lt;0&gt;(tup_prime);</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                    assigned_lev  = amrex::get&lt;1&gt;(tup_prime);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                    <span class="keywordflow">if</span> (assigned_grid &gt;= 0)</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                      <a class="code" href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a>(p.pos(0) = p_prime.pos(0);,</div>
