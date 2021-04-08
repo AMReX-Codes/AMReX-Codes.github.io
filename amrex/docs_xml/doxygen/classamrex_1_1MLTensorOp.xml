@@ -975,6 +975,9 @@
         <childnode refid="55" relation="usage">
           <edgelabel>m_overset_mask</edgelabel>
         </childnode>
+        <childnode refid="40" relation="usage">
+          <edgelabel>m_lpinfo_arg</edgelabel>
+        </childnode>
       </node>
       <node id="24">
         <label>amrex::Vector&lt; std::string &gt;</label>
@@ -1128,6 +1131,7 @@
       <member refid="classamrex_1_1MLTensorOp_1afc224385a1c1ff2cbb76b653c25db6b5" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>compFlux</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a785f80cd00edad055cfaeabfd17cea0d" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>compGrad</name></member>
       <member refid="classamrex_1_1MLTensorOp_1ab92172dfad529fe024f29baab9e5ba6a" prot="public" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>compVelGrad</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1a6e2d3bd2582d97baffe5204f5867c2a3" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>copyNSolveSolution</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a3c1832912375e08e8bd38775b6b532b3" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>correctionResidual</name></member>
       <member refid="classamrex_1_1MLTensorOp_1a4aa37d8953aeb1df96051653df3769c6" prot="public" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>define</name></member>
       <member refid="classamrex_1_1MLTensorOp_1a32da39624352ed60dc69765cd9fa3643" prot="public" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>define</name></member>
@@ -1214,6 +1218,7 @@
       <member refid="classamrex_1_1MLTensorOp_1a9fddd167fd6e53c0efd035e159ad36d4" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_kappa</name></member>
       <member refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_lobc</name></member>
       <member refid="classamrex_1_1MLLinOp_1adc90c319d9f918dac74fe5c500cc2fc4" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_lobc_orig</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1acb34071cea72aa5efd3a25700903e9c1" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_lpinfo_arg</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a4c34af07271b2f0b7f9efdaffa6920d0" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_maskvals</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1a0aadcd1e0c7015d491b5a3d04cbd1e1a" prot="private" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_ncomp</name></member>
       <member refid="classamrex_1_1MLLinOp_1aa53a765aea0ed0c4e7410d147380079f" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>m_needs_coarse_data_for_bc</name></member>
@@ -1230,7 +1235,7 @@
       <member refid="classamrex_1_1MLLinOp_1aafd84fa947e45627503861e5707201dd" prot="private" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>makeConsolidatedDMap</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac31926ba837b440475e0715a8fa4b87b" prot="protected" virt="virtual"><scope>amrex::MLTensorOp</scope><name>makeFactory</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a3bbfff6e733b7883fffacffb363569aa" prot="public" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>makeNGrids</name></member>
-      <member refid="classamrex_1_1MLABecLaplacian_1a6c29c456c300b9376e44182204234ffa" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>makeNLinOp</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1afe42320f6ba8574d18aefce6492ee6b5" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>makeNLinOp</name></member>
       <member refid="classamrex_1_1MLLinOp_1a0aa88871d9875a2436ed23ff882516e4" prot="private" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>makeSubCommunicator</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>maxorder</name></member>
       <member refid="classamrex_1_1MLLinOp_1ae871a991ef83c33044a22db383c76dcd" prot="protected" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>mg_box_min_width</name></member>
@@ -1301,6 +1306,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1ab18841d6aec78590a56eeaed61fe4345" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>solutionResidual</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1f2821b4a51da49d862dae1e757bb8c3" prot="public" virt="non-virtual"><scope>amrex::MLTensorOp</scope><name>StateMode</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1ade6948bc20dfcd07ac886cee8b072c9b" prot="protected" virt="virtual"><scope>amrex::MLTensorOp</scope><name>supportInhomogNeumannBC</name></member>
+      <member refid="classamrex_1_1MLABecLaplacian_1ab8725018ab20ba9130eccd4b9eb82e17" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>supportNSolve</name></member>
       <member refid="classamrex_1_1MLABecLaplacian_1a9d739e672638ca44112f3c6729ffc23e" prot="protected" virt="virtual"><scope>amrex::MLTensorOp</scope><name>supportRobinBC</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a4ee573102053163e673153f3334153fe" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>unapplyMetricTerm</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac62698656785dd3261f05e9dc76cd8fa" prot="public" virt="virtual"><scope>amrex::MLTensorOp</scope><name>unimposeNeumannBC</name></member>

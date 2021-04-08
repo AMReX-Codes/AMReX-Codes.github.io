@@ -260,6 +260,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8f43837a5a495425a72840dc811fc230 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7992c664d65948c99e3661e6d23a646 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classamrex_1_1MLLinOp.html">MLLinOp</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#af7992c664d65948c99e3661e6d23a646">makeNLinOp</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> grid_size) const =0</td></tr>
 <tr class="separator:af7992c664d65948c99e3661e6d23a646 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d05943073d4f01c9a6d03c2ec9f0602 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#a9d05943073d4f01c9a6d03c2ec9f0602">supportNSolve</a> () const</td></tr>
+<tr class="separator:a9d05943073d4f01c9a6d03c2ec9f0602 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1b5ba7a45c7e320550f99f88984301 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLLinOp.html#aff1b5ba7a45c7e320550f99f88984301">copyNSolveSolution</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> &amp;, <a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;) const</td></tr>
+<tr class="separator:aff1b5ba7a45c7e320550f99f88984301 inherit pub_methods_classamrex_1_1MLLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -329,6 +333,8 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aeee38af8d207ad6bc70087b4c6ec4215"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::unique_ptr&lt; <a class="el" href="classamrex_1_1iMultiFab.html">iMultiFab</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLap.html#aeee38af8d207ad6bc70087b4c6ec4215">m_overset_mask</a></td></tr>
 <tr class="separator:aeee38af8d207ad6bc70087b4c6ec4215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb34071cea72aa5efd3a25700903e9c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellABecLap.html#acb34071cea72aa5efd3a25700903e9c1">m_lpinfo_arg</a></td></tr>
+<tr class="separator:acb34071cea72aa5efd3a25700903e9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classamrex_1_1MLCellLinOp"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classamrex_1_1MLCellLinOp')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classamrex_1_1MLCellLinOp.html">amrex::MLCellLinOp</a></td></tr>
 <tr class="memitem:a9d6cdade5abfabf340b180cba282c3c1 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MLCellLinOp.html#a9d6cdade5abfabf340b180cba282c3c1">m_has_metric_term</a> = false</td></tr>
 <tr class="separator:a9d6cdade5abfabf340b180cba282c3c1 inherit pro_attribs_classamrex_1_1MLCellLinOp"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1189,6 +1195,28 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="acb34071cea72aa5efd3a25700903e9c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb34071cea72aa5efd3a25700903e9c1">&#9670;&nbsp;</a></span>m_lpinfo_arg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structamrex_1_1LPInfo.html">LPInfo</a> amrex::MLCellABecLap::m_lpinfo_arg</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aeee38af8d207ad6bc70087b4c6ec4215"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeee38af8d207ad6bc70087b4c6ec4215">&#9670;&nbsp;</a></span>m_overset_mask</h2>
 
