@@ -4,33 +4,7 @@
     <compoundname>amrex::Scan</compoundname>
     <innerclass refid="structamrex_1_1Scan_1_1RetSum" prot="public">amrex::Scan::RetSum</innerclass>
     <innernamespace refid="namespaceamrex_1_1Scan_1_1detail">amrex::Scan::detail</innernamespace>
-      <sectiondef kind="enum">
-      <memberdef kind="enum" id="namespaceamrex_1_1Scan_1ab3da97b6daa0ec034fd4cff697b38f69" prot="public" static="no" strong="yes">
-        <type></type>
-        <name>Type</name>
-        <enumvalue id="namespaceamrex_1_1Scan_1ab3da97b6daa0ec034fd4cff697b38f69a62628cfd1cdd77d02c32812f048bada3" prot="public">
-          <name>inclusive</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="namespaceamrex_1_1Scan_1ab3da97b6daa0ec034fd4cff697b38f69aa4293995cfbfa9ce60ce71ade2ff75f7" prot="public">
-          <name>exclusive</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="27" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="27" bodyend="27"/>
-      </memberdef>
-      </sectiondef>
+    <innernamespace refid="namespaceamrex_1_1Scan_1_1Type">amrex::Scan::Type</innernamespace>
       <sectiondef kind="var">
       <memberdef kind="variable" id="namespaceamrex_1_1Scan_1a86dfa385e0f0d6f8597f8225a6db63d9" prot="public" static="yes" constexpr="yes" mutable="no">
         <type>constexpr <ref refid="structamrex_1_1Scan_1_1RetSum" kindref="compound">RetSum</ref></type>
@@ -62,7 +36,7 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1Scan_1a07ad23afb76c053ce20cae82e0e212ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1Scan_1afc7e9101fe11ee3baf011241d6f28364" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename T</type>
@@ -77,13 +51,16 @@
             <type>typename FOUT</type>
           </param>
           <param>
+            <type>typename TYPE</type>
+          </param>
+          <param>
             <type>typename M</type>
-            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;</defval>
+            <defval>std::enable_if_t&lt;std::is_integral&lt;N&gt;::value &amp;&amp;                                      (std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Inclusive&gt;::value ||                                       std::is_same&lt;std::decay_t&lt;TYPE&gt;,Type::Exclusive&gt;::value)&gt;</defval>
           </param>
         </templateparamlist>
         <type>T</type>
         <definition>T amrex::Scan::PrefixSum</definition>
-        <argsstring>(N n, FIN &amp;&amp;fin, FOUT &amp;&amp;fout, Type type, RetSum a_ret_sum=retSum)</argsstring>
+        <argsstring>(N n, FIN &amp;&amp;fin, FOUT &amp;&amp;fout, TYPE, RetSum a_ret_sum=retSum)</argsstring>
         <name>PrefixSum</name>
         <param>
           <type>N</type>
@@ -98,8 +75,7 @@
           <declname>fout</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1_1Scan_1ab3da97b6daa0ec034fd4cff697b38f69" kindref="member">Type</ref></type>
-          <declname>type</declname>
+          <type>TYPE</type>
         </param>
         <param>
           <type><ref refid="structamrex_1_1Scan_1_1RetSum" kindref="compound">RetSum</ref></type>
@@ -112,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="408" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="408" bodyend="642"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="559" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="559" bodyend="793"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Scan_1a252adc550a6d7b6ff5e31b6be3b2f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -154,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="648" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="648" bodyend="695"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="799" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="799" bodyend="846"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1Scan_1a375a3f04c8c0b11c577d168dbff3c9fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -196,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="699" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="699" bodyend="748"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" line="850" column="3" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Scan.H" bodystart="850" bodyend="899"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

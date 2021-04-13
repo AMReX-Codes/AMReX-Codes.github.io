@@ -19,7 +19,8 @@ var searchData=
   ['errorfunc2_7252',['ErrorFunc2',['../classamrex_1_1ErrorRec_1_1ErrorFunc2.html',1,'amrex::ErrorRec']]],
   ['errorlist_7253',['ErrorList',['../classamrex_1_1ErrorList.html',1,'amrex']]],
   ['errorrec_7254',['ErrorRec',['../classamrex_1_1ErrorRec.html',1,'amrex']]],
-  ['executionconfig_7255',['ExecutionConfig',['../structamrex_1_1Gpu_1_1ExecutionConfig.html',1,'amrex::Gpu']]],
-  ['expect_7256',['expect',['../classamrex_1_1expect.html',1,'amrex']]],
-  ['extrusionif_7257',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html',1,'amrex::EB2']]]
+  ['exclusive_7255',['Exclusive',['../structamrex_1_1Scan_1_1Type_1_1Exclusive.html',1,'amrex::Scan::Type']]],
+  ['executionconfig_7256',['ExecutionConfig',['../structamrex_1_1Gpu_1_1ExecutionConfig.html',1,'amrex::Gpu']]],
+  ['expect_7257',['expect',['../classamrex_1_1expect.html',1,'amrex']]],
+  ['extrusionif_7258',['ExtrusionIF',['../classamrex_1_1EB2_1_1ExtrusionIF.html',1,'amrex::EB2']]]
 ];

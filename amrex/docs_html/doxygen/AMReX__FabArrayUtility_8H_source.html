@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpSum&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
@@ -230,7 +230,7 @@ $(function() {
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpSum&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="structamrex_1_1Gpu_1_1FuseReductionSafeGuard.html">Gpu::FuseReductionSafeGuard</a> rsg(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        {</div>
@@ -342,7 +342,7 @@ $(function() {
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpSum&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        {</div>
@@ -451,7 +451,7 @@ $(function() {
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    {</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMin&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        {</div>
@@ -558,7 +558,7 @@ $(function() {
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    {</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMin&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        {</div>
@@ -672,7 +672,7 @@ $(function() {
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    {</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMin&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        {</div>
@@ -782,7 +782,7 @@ $(function() {
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    {</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMax&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        {</div>
@@ -889,7 +889,7 @@ $(function() {
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    {</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMax&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        {</div>
@@ -1003,7 +1003,7 @@ $(function() {
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    {</div>
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpMax&gt;</a> reduce_op;</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;value_type&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160; </div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        {</div>
@@ -1109,7 +1109,7 @@ $(function() {
 <div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;    {</div>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpLogicalAnd&gt;</a> reduce_op;</div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;int&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160; </div>
 <div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;        {</div>
@@ -1214,7 +1214,7 @@ $(function() {
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    {</div>
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpLogicalAnd&gt;</a> reduce_op;</div>
 <div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;int&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160; </div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;        {</div>
@@ -1320,7 +1320,7 @@ $(function() {
 <div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;    {</div>
 <div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpLogicalOr&gt;</a> reduce_op;</div>
 <div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;int&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160; </div>
 <div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160;        {</div>
@@ -1425,7 +1425,7 @@ $(function() {
 <div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;    {</div>
 <div class="line"><a name="l01355"></a><span class="lineno"> 1355</span>&#160;        <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps&lt;ReduceOpLogicalOr&gt;</a> reduce_op;</div>
 <div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        <a class="code" href="classamrex_1_1ReduceData.html">ReduceData&lt;int&gt;</a> reduce_data(reduce_op);</div>
-<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::<a class="code" href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">Type</a>;</div>
+<div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;        <span class="keyword">using</span> ReduceTuple = <span class="keyword">typename</span> decltype(reduce_data)::Type;</div>
 <div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160; </div>
 <div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1MFIter.html">MFIter</a> mfi(fa1); mfi.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++mfi)</div>
 <div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;        {</div>
@@ -1987,7 +1987,6 @@ $(function() {
 <div class="ttc" id="anamespaceamrex_1_1fudetail_html_a7d979b16fd84d1c691f6763c846775fc"><div class="ttname"><a href="namespaceamrex_1_1fudetail.html#a7d979b16fd84d1c691f6763c846775fc">amrex::fudetail::ReduceMax_host_wrapper</a></div><div class="ttdeci">std::enable_if_t&lt;!amrex::DefinitelyNotHostRunnable&lt; F &gt;::value, typename FAB::value_type &gt; ReduceMax_host_wrapper(FabArray&lt; FAB &gt; const &amp;fa, IntVect const &amp;nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:736</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html"><div class="ttname"><a href="classamrex_1_1MFIter.html">amrex::MFIter</a></div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:67</div></div>
 <div class="ttc" id="anamespaceamrex_1_1fudetail_html_a93761229ca33c3035e2ad7721aae1541"><div class="ttname"><a href="namespaceamrex_1_1fudetail.html#a93761229ca33c3035e2ad7721aae1541">amrex::fudetail::ReduceMin_device</a></div><div class="ttdeci">FAB::value_type ReduceMin_device(FabArray&lt; FAB &gt; const &amp;fa, IntVect const &amp;nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:374</div></div>
-<div class="ttc" id="anamespaceamrex_1_1Scan_html_ab3da97b6daa0ec034fd4cff697b38f69"><div class="ttname"><a href="namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69">amrex::Scan::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> AMReX_Scan.H:27</div></div>
 <div class="ttc" id="aclassamrex_1_1ReduceData_html_a2d7733b7adfa9401fdc90202486d2b54"><div class="ttname"><a href="classamrex_1_1ReduceData.html#a2d7733b7adfa9401fdc90202486d2b54">amrex::ReduceData::value</a></div><div class="ttdeci">Type value()</div><div class="ttdef"><b>Definition:</b> AMReX_Reduce.H:239</div></div>
 <div class="ttc" id="aAMReX__LayoutData_8H_html"><div class="ttname"><a href="AMReX__LayoutData_8H.html">AMReX_LayoutData.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html_a5821b989454c54f92dd1f2312e95b5b6"><div class="ttname"><a href="namespaceamrex.html#a5821b989454c54f92dd1f2312e95b5b6">amrex::OverrideSync</a></div><div class="ttdeci">void OverrideSync(FabArray&lt; FAB &gt; &amp;fa, FabArray&lt; IFAB &gt; const &amp;msk, const Periodicity &amp;period)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:1672</div></div>

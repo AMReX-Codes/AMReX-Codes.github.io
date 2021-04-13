@@ -60,7 +60,7 @@ var searchData=
   ['includeall_3217',['INCLUDEALL',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a54c51bf557fe09986321162dd762ddd1',1,'BLProfStats']]],
   ['includenone_3218',['INCLUDENONE',['../classBLProfStats.html#ababb4629f7a4f662fdd590b9e857f2f4a4bc1d99bb527c9cfd1da7ed4e3b543a1',1,'BLProfStats']]],
   ['includeset_3219',['includeSet',['../classBLProfStats.html#a2cf8abcd7afbb8e5e307c8420255c061',1,'BLProfStats']]],
-  ['inclusive_3220',['inclusive',['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#a027e4f65499e79da7007b5f9507c4e4a',1,'amrex::Scan::detail::BlockStatus&lt; T, false &gt;::inclusive()'],['../namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69a62628cfd1cdd77d02c32812f048bada3',1,'amrex::Scan::inclusive()']]],
+  ['inclusive_3220',['Inclusive',['../structamrex_1_1Scan_1_1Type_1_1Inclusive.html',1,'amrex::Scan::Type::Inclusive'],['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01false_01_4.html#a027e4f65499e79da7007b5f9507c4e4a',1,'amrex::Scan::detail::BlockStatus&lt; T, false &gt;::inclusive()'],['../namespaceamrex_1_1Scan_1_1Type.html#adc276b3550668e305c5bc5b482db0c4f',1,'amrex::Scan::Type::inclusive()']]],
   ['inclusive_5fscan_3221',['inclusive_scan',['../namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129',1,'amrex::Gpu']]],
   ['inclusivesum_3222',['InclusiveSum',['../namespaceamrex_1_1Scan.html#a252adc550a6d7b6ff5e31b6be3b2f12f',1,'amrex::Scan']]],
   ['increment_3223',['Increment',['../classamrex_1_1ParticleContainer.html#a4ca25205b38289b99635bca7322ec408',1,'amrex::ParticleContainer']]],

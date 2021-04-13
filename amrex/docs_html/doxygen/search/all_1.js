@@ -1186,6 +1186,6 @@ var searchData=
   ['system_1190',['system',['../namespaceamrex_1_1system.html',1,'amrex']]],
   ['tri_5fgeom_5fops_1191',['tri_geom_ops',['../namespaceamrex_1_1tri__geom__ops.html',1,'amrex']]],
   ['twod_1192',['TwoD',['../namespaceamrex_1_1TwoD.html',1,'amrex']]],
-  ['type_1193',['Type',['../namespaceamrex_1_1EB2_1_1Type.html',1,'amrex::EB2']]],
+  ['type_1193',['Type',['../namespaceamrex_1_1EB2_1_1Type.html',1,'amrex::EB2::Type'],['../namespaceamrex_1_1Scan_1_1Type.html',1,'amrex::Scan::Type']]],
   ['uif_5fdetail_1194',['UIF_detail',['../namespaceamrex_1_1EB2_1_1UIF__detail.html',1,'amrex::EB2']]]
 ];

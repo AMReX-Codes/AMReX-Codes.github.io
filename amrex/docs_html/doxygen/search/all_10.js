@@ -233,7 +233,7 @@ var searchData=
   ['prefetchtodevice_5270',['prefetchToDevice',['../classamrex_1_1BaseFab.html#acc3fa2566c4bf2de3e6f0773e3b0601b',1,'amrex::BaseFab::prefetchToDevice()'],['../classamrex_1_1FabArray.html#a1ad78902f6ce66d7f4d0557de26ee971',1,'amrex::FabArray::prefetchToDevice()'],['../namespaceamrex.html#a4db8bcd1f50c790aba6b81860143cc96',1,'amrex::prefetchToDevice()']]],
   ['prefetchtohost_5271',['prefetchToHost',['../classamrex_1_1BaseFab.html#aea7b9b15c8959be232fa8d0b14b2b507',1,'amrex::BaseFab::prefetchToHost()'],['../classamrex_1_1FabArray.html#ae803504d641d86a8ba9e4b58e81f136b',1,'amrex::FabArray::prefetchToHost()'],['../namespaceamrex.html#ab02b05e2eb3282f8df33e5cbc655b2a3',1,'amrex::prefetchToHost()']]],
   ['prefixedname_5272',['prefixedName',['../classamrex_1_1ParmParse.html#ac36e075e146f5636b0b0c52c2c95b2e9',1,'amrex::ParmParse']]],
-  ['prefixsum_5273',['PrefixSum',['../namespaceamrex_1_1Scan.html#a07ad23afb76c053ce20cae82e0e212ee',1,'amrex::Scan']]],
+  ['prefixsum_5273',['PrefixSum',['../namespaceamrex_1_1Scan.html#afc7e9101fe11ee3baf011241d6f28364',1,'amrex::Scan']]],
   ['preparecommbuffers_5274',['PrepareCommBuffers',['../namespaceamrex_1_1NonLocalBC.html#a303b8c034244500930c9f5ead86a22bf',1,'amrex::NonLocalBC']]],
   ['prepareforcoarsening_5275',['prepareForCoarsening',['../classamrex_1_1EB2_1_1Level.html#ac040458ac6f5ac51b303915a6dd66eb5',1,'amrex::EB2::Level']]],
   ['preparefornsolve_5276',['prepareForNSolve',['../classamrex_1_1MLMG.html#a955977f98a355020f4808fd4acefe76f',1,'amrex::MLMG']]],

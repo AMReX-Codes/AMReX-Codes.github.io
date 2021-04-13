@@ -124,7 +124,7 @@ var searchData=
   ['evalreduction_2329',['EvalReduction',['../namespaceamrex_1_1Lazy.html#a0a2dd2d6e19976b8eaebb9d81a65718a',1,'amrex::Lazy']]],
   ['exch_2330',['Exch',['../namespaceamrex_1_1Gpu_1_1Atomic.html#aead1011333d0e8605985cd0ab8c163bf',1,'amrex::Gpu::Atomic']]],
   ['excludeset_2331',['excludeSet',['../classBLProfStats.html#ae52d1496a02ab9f40df9ae0ece20fc51',1,'BLProfStats']]],
-  ['exclusive_2332',['exclusive',['../namespaceamrex_1_1Scan.html#ab3da97b6daa0ec034fd4cff697b38f69aa4293995cfbfa9ce60ce71ade2ff75f7',1,'amrex::Scan']]],
+  ['exclusive_2332',['Exclusive',['../structamrex_1_1Scan_1_1Type_1_1Exclusive.html',1,'amrex::Scan::Type::Exclusive'],['../namespaceamrex_1_1Scan_1_1Type.html#acbaa9eb7d8b3af7b3df2832a75b43afc',1,'amrex::Scan::Type::exclusive()']]],
   ['exclusive_5fscan_2333',['exclusive_scan',['../namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c',1,'amrex::Gpu']]],
   ['exclusivesum_2334',['ExclusiveSum',['../namespaceamrex_1_1Scan.html#a375a3f04c8c0b11c577d168dbff3c9fd',1,'amrex::Scan']]],
   ['execonfinalize_2335',['ExecOnFinalize',['../namespaceamrex.html#aec8ceac1148bd8331f3a51572068f8a0',1,'amrex']]],
