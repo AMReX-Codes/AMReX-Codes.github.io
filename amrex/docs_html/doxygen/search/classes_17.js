@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['yafluxregister_7831',['YAFluxRegister',['../classamrex_1_1YAFluxRegister.html',1,'amrex']]]
+  ['yafluxregister_7806',['YAFluxRegister',['../classamrex_1_1YAFluxRegister.html',1,'amrex']]]
 ];
