@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c5cdfe01aa0372001178bc376795e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBox.html#a4c5cdfe01aa0372001178bc376795e47">coarsen</a> (const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, const <a class="el" href="classamrex_1_1Box.html">Box</a> &amp;cbox) noexcept</td></tr>
 <tr class="memdesc:a4c5cdfe01aa0372001178bc376795e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct and return a new tagbox in which the coarsened cell is tagged of any of the corresponding fine cells are tagged.  <a href="classamrex_1_1TagBox.html#a4c5cdfe01aa0372001178bc376795e47">More...</a><br /></td></tr>
 <tr class="separator:a4c5cdfe01aa0372001178bc376795e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af77914a97d01da57fc8e01e515b4c744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBox.html#af77914a97d01da57fc8e01e515b4c744">buffer</a> (const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nbuf) noexcept</td></tr>
-<tr class="memdesc:af77914a97d01da57fc8e01e515b4c744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark neighbors of every tagged cell a distance nbuff away.  <a href="classamrex_1_1TagBox.html#af77914a97d01da57fc8e01e515b4c744">More...</a><br /></td></tr>
-<tr class="separator:af77914a97d01da57fc8e01e515b4c744"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6324edaf14ada2c319e1a5c92062331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBox.html#aa6324edaf14ada2c319e1a5c92062331">buffer</a> (const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nbuf, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;nwid) noexcept</td></tr>
+<tr class="memdesc:aa6324edaf14ada2c319e1a5c92062331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark neighbors of every tagged cell a distance nbuff away only search interior for initial tagged points where nwid is given as the width of the bndry region.  <a href="classamrex_1_1TagBox.html#aa6324edaf14ada2c319e1a5c92062331">More...</a><br /></td></tr>
+<tr class="separator:aa6324edaf14ada2c319e1a5c92062331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9023e58bfadedd84fa003f9b10712949"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1TagBox.html#a9023e58bfadedd84fa003f9b10712949">tags</a> () const noexcept</td></tr>
 <tr class="memdesc:a9023e58bfadedd84fa003f9b10712949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classamrex_1_1Vector.html" title="This class is a thin wrapper around std::vector. Unlike vector, Vector::operator[] provides bound che...">Vector</a>&lt;int&gt; of size domain.numPts() suitable for calling Fortran, with positions set to same value as in the <a class="el" href="classamrex_1_1TagBox.html">TagBox</a> <a class="el" href="classamrex_1_1BaseFab.html#a5c99c1592a80ba46ab6faf9929773f8d" title="Returns a pointer to an object of type T that is the value of the Nth component associated with the c...">dataPtr()</a>.  <a href="classamrex_1_1TagBox.html#a9023e58bfadedd84fa003f9b10712949">More...</a><br /></td></tr>
 <tr class="separator:a9023e58bfadedd84fa003f9b10712949"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -979,8 +979,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af77914a97d01da57fc8e01e515b4c744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af77914a97d01da57fc8e01e515b4c744">&#9670;&nbsp;</a></span>buffer()</h2>
+<a id="aa6324edaf14ada2c319e1a5c92062331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6324edaf14ada2c319e1a5c92062331">&#9670;&nbsp;</a></span>buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,8 +992,18 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">void amrex::TagBox::buffer </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
-          <td class="paramname"><em>nbuf</em></td><td>)</td>
+          <td class="paramname"><em>nbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;&#160;</td>
+          <td class="paramname"><em>nwid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1003,10 +1013,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Mark neighbors of every tagged cell a distance nbuff away. </p>
+<p>Mark neighbors of every tagged cell a distance nbuff away only search interior for initial tagged points where nwid is given as the width of the bndry region. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">nbuff</td><td></td></tr>
+    <tr><td class="paramname">nwid</td><td></td></tr>
   </table>
   </dd>
 </dl>

@@ -279,17 +279,21 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="62" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="35" bodyend="75"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1TagBox_1af77914a97d01da57fc8e01e515b4c744" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1TagBox_1aa6324edaf14ada2c319e1a5c92062331" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::TagBox::buffer</definition>
-        <argsstring>(const IntVect &amp;nbuf) noexcept</argsstring>
+        <argsstring>(const IntVect &amp;nbuf, const IntVect &amp;nwid) noexcept</argsstring>
         <name>buffer</name>
         <param>
           <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
           <declname>nbuf</declname>
         </param>
+        <param>
+          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
+          <declname>nwid</declname>
+        </param>
         <briefdescription>
-<para>Mark neighbors of every tagged cell a distance nbuff away. </para>
+<para>Mark neighbors of every tagged cell a distance nbuff away only search interior for initial tagged points where nwid is given as the width of the bndry region. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -300,12 +304,20 @@
 <para></para>
 </parameterdescription>
 </parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nwid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
 </parameterlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="69" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="78" bodyend="102"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="72" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="78" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1TagBox_1a9023e58bfadedd84fa003f9b10712949" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
@@ -319,7 +331,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="79" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="106" bodyend="120"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="82" column="12" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="127" bodyend="141"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1TagBox_1a43dbc9ccdad55205e4a95d7ccf6f3691" prot="public" static="no" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -359,7 +371,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="92" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="163" bodyend="199"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="95" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="184" bodyend="220"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1TagBox_1a194d49c2adb475dabf1de3a7bc717b7a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -387,7 +399,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="103" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="126" bodyend="138"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="106" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="147" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1TagBox_1af03179052f9fb5a076f95d2bb33e94e2" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -415,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="114" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="144" bodyend="156"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="117" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="165" bodyend="177"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1TagBox_1a4e225aa2595e49382cb2db00df813d8c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -455,7 +467,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="126" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="205" bodyend="233"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="129" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="226" bodyend="254"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1TagBox_1abbc0728a20e92cbaf06b19a0b9cff0cd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -495,7 +507,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="138" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="239" bodyend="267"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="141" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.cpp" bodystart="260" bodyend="288"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -578,7 +590,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="29" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" bodystart="26" bodyend="139"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" line="29" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_TagBox.H" bodystart="26" bodyend="142"/>
     <listofallmembers>
       <member refid="classamrex_1_1BaseFab_1af827e9a5df2baf21d45239e49567f4c6" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>abs</name></member>
       <member refid="classamrex_1_1BaseFab_1ae730734f6c370cc53bdfb51efe618033" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>abs</name></member>
@@ -613,7 +625,7 @@
       <member refid="classamrex_1_1BaseFab_1acdde994980673c595f2348d982aeb70e" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>bigEnd</name></member>
       <member refid="classamrex_1_1BaseFab_1aa288a917ca5613e3e984c58a7975a89d" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>box</name></member>
       <member refid="classamrex_1_1TagBox_1ac8c350e6c62e1f2fd736b52d1b7caffaa5c2d81c416e8ee0e1bd9d475e73d31cf" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>BUF</name></member>
-      <member refid="classamrex_1_1TagBox_1af77914a97d01da57fc8e01e515b4c744" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>buffer</name></member>
+      <member refid="classamrex_1_1TagBox_1aa6324edaf14ada2c319e1a5c92062331" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>buffer</name></member>
       <member refid="classamrex_1_1TagBox_1ac8c350e6c62e1f2fd736b52d1b7caffaa4711806dfba8eb0c37ad5bb4abde7814" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>CLEAR</name></member>
       <member refid="classamrex_1_1BaseFab_1ae428e6a2645141dd817c288331575f26" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>clear</name></member>
       <member refid="classamrex_1_1TagBox_1a4c5cdfe01aa0372001178bc376795e47" prot="public" virt="non-virtual"><scope>amrex::TagBox</scope><name>coarsen</name></member>
