@@ -3130,6 +3130,7 @@
     <member refid="classamrex_1_1Gpu_1_1Device_1a1bc8d3f83c8bce5e14d50e06667d28ce" kind="function"><name>numGpuStreams</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1aabba82abbe1e452cf3b9e204e98952a6" kind="function"><name>setStreamIndex</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1aae61fa0d560ee3c25d7deca229a31f60" kind="function"><name>resetStreamIndex</name></member>
+    <member refid="classamrex_1_1Gpu_1_1Device_1a049b80f650443158297dbc0fb19c304e" kind="function"><name>streamIndex</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a02723429d759214d88aab6044423995e" kind="function"><name>setStream</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1a34b155286cec6772f79a8d59981a8684" kind="function"><name>resetStream</name></member>
     <member refid="classamrex_1_1Gpu_1_1Device_1aa5bf7f476f4a8c0ed917932d2cbdf9a4" kind="function"><name>deviceId</name></member>
@@ -4835,7 +4836,7 @@
     <member refid="structamrex_1_1GpuComplex_1a3b27edee0d47b21f23f1d8640dbaa2e6" kind="friend"><name>operator&lt;&lt;</name></member>
   </compound>
   <compound refid="classamrex_1_1GpuTuple" kind="class"><name>amrex::GpuTuple</name>
-    <member refid="classamrex_1_1GpuTuple_1a9b4a022c99f88d3df5c4c68ab494b9ab" kind="function"><name>GpuTuple</name></member>
+    <member refid="classamrex_1_1GpuTuple_1af067ea86f5cbc6b718a934e6be193538" kind="function"><name>GpuTuple</name></member>
     <member refid="classamrex_1_1GpuTuple_1aaa9ed202ceb2122e08523b1b17e68b2a" kind="function"><name>GpuTuple</name></member>
     <member refid="classamrex_1_1GpuTuple_1a4fbb6462763e67abd37e85e9dd3a00ab" kind="function"><name>GpuTuple</name></member>
     <member refid="classamrex_1_1GpuTuple_1ac3cf15112d4e0b7b33d884fcfd3f558b" kind="function"><name>operator=</name></member>
@@ -8695,47 +8696,56 @@
   </compound>
   <compound refid="classamrex_1_1ReduceData" kind="class"><name>amrex::ReduceData</name>
     <member refid="classamrex_1_1ReduceData_1a61d113644b72c6bda6b1221a9079fe8c" kind="typedef"><name>Type</name></member>
-    <member refid="classamrex_1_1ReduceData_1ad6891dd77dc71a831382042d30405d4e" kind="variable"><name>m_host_tuple</name></member>
+    <member refid="classamrex_1_1ReduceData_1a45d8b95de17a37ca2b1a02df500f2035" kind="variable"><name>m_host_tuple</name></member>
     <member refid="classamrex_1_1ReduceData_1acdd88eae26f790899fa6d061102875d0" kind="variable"><name>m_device_tuple</name></member>
-    <member refid="classamrex_1_1ReduceData_1a71efff73cd20652eb13d1a087e22f14a" kind="function"><name>ReduceData</name></member>
+    <member refid="classamrex_1_1ReduceData_1a95441a0edc24955aa9f0c83e21c34cad" kind="variable"><name>m_max_blocks</name></member>
+    <member refid="classamrex_1_1ReduceData_1a88088cca6d2dd4f7e752e3d5fec5f7d7" kind="variable"><name>m_nblocks</name></member>
+    <member refid="classamrex_1_1ReduceData_1ae683e1c583e7cf07816bca2d45bb3044" kind="variable"><name>m_fn_value</name></member>
+    <member refid="classamrex_1_1ReduceData_1a71bbfd3ca387af546ab718418a3d8521" kind="function"><name>ReduceData</name></member>
     <member refid="classamrex_1_1ReduceData_1a0fc76fd07dedd99b36524e3ce362f962" kind="function"><name>~ReduceData</name></member>
     <member refid="classamrex_1_1ReduceData_1ad9b6892476ee0222229ebc178fb0089f" kind="function"><name>ReduceData</name></member>
     <member refid="classamrex_1_1ReduceData_1aeee26c66dbe6bda07476f5f1997ac833" kind="function"><name>ReduceData</name></member>
     <member refid="classamrex_1_1ReduceData_1a44cea26614b1b5af1ff9729f554d94c3" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1ReduceData_1af9d4fe0e27411855af7fc9f1c5da7f14" kind="function"><name>operator=</name></member>
     <member refid="classamrex_1_1ReduceData_1a2d7733b7adfa9401fdc90202486d2b54" kind="function"><name>value</name></member>
+    <member refid="classamrex_1_1ReduceData_1ab375ddfc635376587d621e83a8daa746" kind="function"><name>value</name></member>
     <member refid="classamrex_1_1ReduceData_1a7d9d45224655edf3da07cab63c4389ec" kind="function"><name>devicePtr</name></member>
-    <member refid="classamrex_1_1ReduceData_1a5b99d4782b4df2ed0c6482f0183c9ec6" kind="function"><name>hostRef</name></member>
+    <member refid="classamrex_1_1ReduceData_1a1a2f10f97f0ff50897c92cd0a49e292a" kind="function"><name>devicePtr</name></member>
+    <member refid="classamrex_1_1ReduceData_1a8758fc9b8484f68cf9dbd7b7961d9db9" kind="function"><name>hostPtr</name></member>
+    <member refid="classamrex_1_1ReduceData_1a456be903d61bfe308de88e4c392b95d5" kind="function"><name>nBlocks</name></member>
+    <member refid="classamrex_1_1ReduceData_1aa7ac26fc429cbaf9db787e3400d11d08" kind="function"><name>nBlocks</name></member>
+    <member refid="classamrex_1_1ReduceData_1ae76a0d3958366cbcd739d85648a6701b" kind="function"><name>maxBlocks</name></member>
   </compound>
   <compound refid="structamrex_1_1ReduceOpLogicalAnd" kind="struct"><name>amrex::ReduceOpLogicalAnd</name>
     <member refid="structamrex_1_1ReduceOpLogicalAnd_1a644182e552bf0d1f5cca4d18a7e6ebaf" kind="function"><name>parallel_update</name></member>
     <member refid="structamrex_1_1ReduceOpLogicalAnd_1ab5ad43412cb40defe985c30b5a8c5f66" kind="function"><name>local_update</name></member>
-    <member refid="structamrex_1_1ReduceOpLogicalAnd_1ac51ef2fddec1f919efb83e5a465ceb11" kind="function"><name>init</name></member>
+    <member refid="structamrex_1_1ReduceOpLogicalAnd_1ae649455f23c3eb76a5ee36c17fb13630" kind="function"><name>init</name></member>
   </compound>
   <compound refid="structamrex_1_1ReduceOpLogicalOr" kind="struct"><name>amrex::ReduceOpLogicalOr</name>
     <member refid="structamrex_1_1ReduceOpLogicalOr_1ad19c4ce20b731bda3b28de6a16a02f0f" kind="function"><name>parallel_update</name></member>
     <member refid="structamrex_1_1ReduceOpLogicalOr_1a64f0f965254ae420bbb827d8d60f1289" kind="function"><name>local_update</name></member>
-    <member refid="structamrex_1_1ReduceOpLogicalOr_1a24e7036b20e02de2a2439d4f3e3fbb5f" kind="function"><name>init</name></member>
+    <member refid="structamrex_1_1ReduceOpLogicalOr_1a6436f4945aedfeba32a756669ca01dba" kind="function"><name>init</name></member>
   </compound>
   <compound refid="structamrex_1_1ReduceOpMax" kind="struct"><name>amrex::ReduceOpMax</name>
     <member refid="structamrex_1_1ReduceOpMax_1a4d882050c4554f4f6857b3443a8fd2fa" kind="function"><name>parallel_update</name></member>
     <member refid="structamrex_1_1ReduceOpMax_1a30f832fb9453829363682efa1b829c68" kind="function"><name>local_update</name></member>
-    <member refid="structamrex_1_1ReduceOpMax_1a1cd819d660aa4d2c651f8151e38c3e78" kind="function"><name>init</name></member>
+    <member refid="structamrex_1_1ReduceOpMax_1ab4c33ab5f39267d3f8fb801e5443d665" kind="function"><name>init</name></member>
   </compound>
   <compound refid="structamrex_1_1ReduceOpMin" kind="struct"><name>amrex::ReduceOpMin</name>
     <member refid="structamrex_1_1ReduceOpMin_1a2c9649866c48c03653b4066d1e58a613" kind="function"><name>parallel_update</name></member>
     <member refid="structamrex_1_1ReduceOpMin_1abffc8f7180874e6c85c54cc670b4e12c" kind="function"><name>local_update</name></member>
-    <member refid="structamrex_1_1ReduceOpMin_1adc49fc2eed8ae4e2dd244f22e66ef073" kind="function"><name>init</name></member>
+    <member refid="structamrex_1_1ReduceOpMin_1ae13dcd823cac6012dd2e665c0f93650e" kind="function"><name>init</name></member>
   </compound>
   <compound refid="classamrex_1_1ReduceOps" kind="class"><name>amrex::ReduceOps</name>
     <member refid="classamrex_1_1ReduceOps_1a6bed424b9a455d76e42d8061aef71b3e" kind="function"><name>eval</name></member>
     <member refid="classamrex_1_1ReduceOps_1a0b2c2b761a373ac5a95273721a8ae1fd" kind="function"><name>eval</name></member>
     <member refid="classamrex_1_1ReduceOps_1a65284f038ea29beb80b99c1a5f246f04" kind="function"><name>eval</name></member>
+    <member refid="classamrex_1_1ReduceOps_1a05d9d8beb406be38812442c318e5d434" kind="function"><name>value</name></member>
   </compound>
   <compound refid="structamrex_1_1ReduceOpSum" kind="struct"><name>amrex::ReduceOpSum</name>
     <member refid="structamrex_1_1ReduceOpSum_1acc3c648eb08f68c0d72d0bcca9534927" kind="function"><name>parallel_update</name></member>
     <member refid="structamrex_1_1ReduceOpSum_1a8a57daa2e7672e9a16e824dd2ea6048f" kind="function"><name>local_update</name></member>
-    <member refid="structamrex_1_1ReduceOpSum_1a4258529c10bd8433cd569a5b45500b92" kind="function"><name>init</name></member>
+    <member refid="structamrex_1_1ReduceOpSum_1af18e050e03babd636f9b492f8776a4df" kind="function"><name>init</name></member>
   </compound>
   <compound refid="structCommProfStats_1_1ReductionEntry" kind="struct"><name>CommProfStats::ReductionEntry</name>
     <member refid="structCommProfStats_1_1ReductionEntry_1a7d0d09150f2cd432ef20826516728351" kind="variable"><name>number</name></member>
@@ -11504,10 +11514,21 @@
     <member refid="namespaceamrex_1_1Gpu_1ad4d778287a96f6d710a69b41027bb9b8" kind="function"><name>deviceReduceLogicalOr</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a06351ce8c083138d26fa7653a0c63d7b" kind="function"><name>blockReduce</name></member>
     <member refid="namespaceamrex_1_1Gpu_1ab9a50b1a64ebde8610e71103d50c9ff4" kind="function"><name>blockReduce_partial</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a486219b28139a9445f213969c5324167" kind="function"><name>blockReduceSum</name></member>
     <member refid="namespaceamrex_1_1Gpu_1af20a431607165ffa2cdb5b38b5778177" kind="function"><name>deviceReduceSum_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a6535e02b29e8d7bcf706a29480625a46" kind="function"><name>blockReduceSum</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1aa5c5b55bc0c81fe8ea8c1c7de585b587" kind="function"><name>deviceReduceSum_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a4c26ead15b942c1c4a0195ca7483a315" kind="function"><name>blockReduceMin</name></member>
     <member refid="namespaceamrex_1_1Gpu_1af7ce0529fa55b62f17b7ac817c6b720b" kind="function"><name>deviceReduceMin_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a5f398c68426376a50cd0a17af032a904" kind="function"><name>blockReduceMin</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1ada5796ab4657995b946c1b428b373eb3" kind="function"><name>deviceReduceMin_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a60fd190b91e286384cf13808993fea3d" kind="function"><name>blockReduceMax</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a611afa3380635b22c50e0c48d1a9e127" kind="function"><name>deviceReduceMax_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a132c08cd6614796306908e0155ac58b2" kind="function"><name>blockReduceMax</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1af096e2dfeb5f9147533c89f9eb5419d2" kind="function"><name>deviceReduceMax_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a9d303e8d4c4f5f7fdc350859ba35290c" kind="function"><name>blockReduceLogicalAnd</name></member>
     <member refid="namespaceamrex_1_1Gpu_1ab90f69b2a8ec9aa94b9e027dd5103199" kind="function"><name>deviceReduceLogicalAnd_full</name></member>
+    <member refid="namespaceamrex_1_1Gpu_1a4fee724d8cd082aa45374fb9cfd23f10" kind="function"><name>blockReduceLogicalOr</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a7843a9785d842d4761411a33281629a5" kind="function"><name>deviceReduceLogicalOr_full</name></member>
     <member refid="namespaceamrex_1_1Gpu_1a568da598ec8829dff901c81d530db976" kind="function"><name>LDG</name></member>
     <member refid="namespaceamrex_1_1Gpu_1ae595b27ab79b81cdbddf1a1e0fef31ea" kind="function"><name>LDG</name></member>
@@ -11916,11 +11937,10 @@
   <compound refid="namespaceamrex_1_1Reduce_1_1detail" kind="namespace"><name>amrex::Reduce::detail</name>
     <member refid="namespaceamrex_1_1Reduce_1_1detail_1a084c624b29326e43e50a5dbe65db8b50" kind="function"><name>for_each_parallel</name></member>
     <member refid="namespaceamrex_1_1Reduce_1_1detail_1ad1214261e6fd754f2e41e878533756a4" kind="function"><name>for_each_parallel</name></member>
-    <member refid="namespaceamrex_1_1Reduce_1_1detail_1ad02f83351a56bf7abc3fc3ae5807ebce" kind="function"><name>for_each_local</name></member>
-    <member refid="namespaceamrex_1_1Reduce_1_1detail_1af7250b0d542b5bed0a2c068b4b43085c" kind="function"><name>for_each_local</name></member>
-    <member refid="namespaceamrex_1_1Reduce_1_1detail_1aa49407a52dbde68233cb025e571b8e0a" kind="function"><name>for_each_init</name></member>
-    <member refid="namespaceamrex_1_1Reduce_1_1detail_1a87cd8d506ca082d704c64124129d5eab" kind="function"><name>for_each_init</name></member>
-    <member refid="namespaceamrex_1_1Reduce_1_1detail_1a657c3b2475e8ffbfce61ccabe81834d8" kind="function"><name>init_tuple_on_device</name></member>
+    <member refid="namespaceamrex_1_1Reduce_1_1detail_1a242e910c5ee2822f806976b939ee12cc" kind="function"><name>for_each_local</name></member>
+    <member refid="namespaceamrex_1_1Reduce_1_1detail_1a87e0dc777fadd857a66ec153719591d4" kind="function"><name>for_each_local</name></member>
+    <member refid="namespaceamrex_1_1Reduce_1_1detail_1ad82ab05b8695a7b69b6328d38f5f909d" kind="function"><name>for_each_init</name></member>
+    <member refid="namespaceamrex_1_1Reduce_1_1detail_1acde9058e17834da4bdc5080d3bb7f727" kind="function"><name>for_each_init</name></member>
     <member refid="namespaceamrex_1_1Reduce_1_1detail_1a598f60a4f8120754f446e6f256db6a75" kind="function"><name>call_f</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1Scan" kind="namespace"><name>amrex::Scan</name>
@@ -12835,6 +12855,7 @@
   <compound refid="AMReX__GpuDevice_8cpp" kind="file"><name>AMReX_GpuDevice.cpp</name>
   </compound>
   <compound refid="AMReX__GpuDevice_8H" kind="file"><name>AMReX_GpuDevice.H</name>
+    <member refid="AMReX__GpuDevice_8H_1a81556578d460ebcebf8baf3163a36949" kind="define"><name>AMREX_GPU_MAX_STREAMS</name></member>
   </compound>
   <compound refid="AMReX__GpuElixir_8cpp" kind="file"><name>AMReX_GpuElixir.cpp</name>
   </compound>
