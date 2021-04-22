@@ -81,12 +81,17 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// We cannot take rvalue lambdas.</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> L&gt;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a8fd1cb48ab79898f1f480c55c433113a">   12</a></span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">AMREX_GPU_GLOBAL</a> <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#af6334d58395d4bec0257d18060918ab0">launch_global</a> (L f0) { f0(); }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">int</span> amrex_launch_bounds_max_threads, <span class="keyword">class</span> L&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a4a765bc79483affb715df32cc1d6d121">   15</a></span>&#160;    <a class="code" href="namespaceamrex.html#a4a765bc79483affb715df32cc1d6d121">__launch_bounds__</a>(amrex_launch_bounds_max_threads)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">AMREX_GPU_GLOBAL</a> <span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#af6334d58395d4bec0257d18060918ab0">launch_global</a> (L f0) { f0(); }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceamrex_html_a4a765bc79483affb715df32cc1d6d121"><div class="ttname"><a href="namespaceamrex.html#a4a765bc79483affb715df32cc1d6d121">amrex::__launch_bounds__</a></div><div class="ttdeci">__launch_bounds__(amrex_launch_bounds_max_threads) AMREX_GPU_GLOBAL void launch_global(L f0)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchGlobal.H:15</div></div>
 <div class="ttc" id="anamespaceamrex_html_af6334d58395d4bec0257d18060918ab0"><div class="ttname"><a href="namespaceamrex.html#af6334d58395d4bec0257d18060918ab0">amrex::launch_global</a></div><div class="ttdeci">AMREX_GPU_GLOBAL void launch_global(L f0, Lambdas... fs)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunch.H:50</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a3d3f711243a9a5a973dd44a2174e1529"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a3d3f711243a9a5a973dd44a2174e1529">AMREX_GPU_GLOBAL</a></div><div class="ttdeci">#define AMREX_GPU_GLOBAL</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:13</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:50</div></div>
