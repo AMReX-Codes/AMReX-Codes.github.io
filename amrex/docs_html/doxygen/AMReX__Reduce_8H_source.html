@@ -578,7 +578,7 @@ $(function() {
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_DPCPP</span></div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        <span class="comment">// device reduce needs local(i.e., shared) memory</span></div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        constexpr std::size_t shared_mem_bytes = <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long)*<a class="code" href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">Gpu::Device::warp_size</a>;</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(1, <a class="code" href="AMReX__GpuControl_8H.html#a2e7fcf2342ee5da11b271a774cf65388">AMREX_GPU_MAX_THREADS</a>, shared_mem_bytes, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(1, <a class="code" href="AMReX__GpuControl_8H.html#a2e7fcf2342ee5da11b271a774cf65388">AMREX_GPU_MAX_THREADS</a>, shared_mem_bytes, stream,</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<a class="code" href="structamrex_1_1Gpu_1_1Handler.html">Gpu::Handler</a> <span class="keyword">const</span>&amp; gh) noexcept</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        {</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            ReduceTuple r;</div>
@@ -595,7 +595,7 @@ $(function() {
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            <span class="keywordflow">if</span> (gh.threadIdx() == 0) { *hp = dst; }</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        });</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(1, <a class="code" href="AMReX__GpuControl_8H.html#a2e7fcf2342ee5da11b271a774cf65388">AMREX_GPU_MAX_THREADS</a>, 0, <a class="code" href="namespaceamrex_1_1Gpu.html#ae1a0966ad8daf3a49564123b8dbdb3fa">Gpu::gpuStream</a>(),</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <a class="code" href="namespaceamrex.html#ada73ee47d1c3a0d63725ce77e1334257">amrex::launch</a>(1, <a class="code" href="AMReX__GpuControl_8H.html#a2e7fcf2342ee5da11b271a774cf65388">AMREX_GPU_MAX_THREADS</a>, 0, stream,</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> () noexcept</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        {</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            ReduceTuple r;</div>
