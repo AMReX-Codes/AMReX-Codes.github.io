@@ -79,7 +79,7 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html">   13</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html">SymmetricGhost</a> {</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">   14</a></span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structamrex_1_1MFUtil_1_1SymmetricGhost.html#aa8f8f59b8584105f5e5d317b6ac7efe9">copy</a> (T &amp; target, <span class="keyword">const</span> T &amp; source, <span class="keywordtype">int</span> nc, <span class="keywordtype">int</span> ng) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                target.copy(source, 0, 0, nc, ng, ng);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                target.ParallelCopy(source, 0, 0, nc, ng, ng);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        };</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">// T can be either MultiFab or iMultiFab</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html">   24</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html">AsymmetricGhost</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">   25</a></span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structamrex_1_1MFUtil_1_1AsymmetricGhost.html#ae14758bcc9f0460aa024c1ca702d24b6">copy</a> (T &amp; target, <span class="keyword">const</span> T &amp; source, <span class="keywordtype">int</span> nc, <span class="keywordtype">int</span> ng) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                target.copy(source, 0, 0, nc, 0, ng);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                target.ParallelCopy(source, 0, 0, nc, 0, ng);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        };</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>

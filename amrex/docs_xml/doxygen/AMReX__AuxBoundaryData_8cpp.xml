@@ -1816,7 +1816,7 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(src_comp<sp/>+<sp/>num_comp<sp/>&lt;=<sp/>src.m_fabs.nComp());</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(dst_comp<sp/>+<sp/>num_comp<sp/>&lt;=<sp/>m_fabs.nComp());</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fabs.copy(src.m_fabs,src_comp,dst_comp,num_comp);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fabs.ParallelCopy(src.m_fabs,src_comp,dst_comp,num_comp);</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal">AuxBoundaryData::AuxBoundaryData<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>AuxBoundaryData&amp;<sp/>rhs)</highlight></codeline>
@@ -1825,7 +1825,7 @@
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFInfo(),<sp/><ref refid="namespaceamrex_1abda821661019fb0a77eb3a9706dc7330" kindref="member">FArrayBoxFactory</ref>()),</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>m_ngrow(rhs.m_ngrow)</highlight></codeline>
 <codeline lineno="50"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fabs.copy(rhs.m_fabs,0,0,rhs.m_fabs.nComp());</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>m_fabs.ParallelCopy(rhs.m_fabs,0,0,rhs.m_fabs.nComp());</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>m_empty<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>m_initialized<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal">}</highlight></codeline>
@@ -1911,7 +1911,7 @@
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_empty<sp/>&amp;&amp;<sp/>mf.size()<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf.copy(m_fabs,src_comp,dst_comp,num_comp,0,mf.nGrow());</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf.ParallelCopy(m_fabs,src_comp,dst_comp,num_comp,0,mf.nGrow());</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="139"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
@@ -1926,7 +1926,7 @@
 <codeline lineno="149"><highlight class="normal"></highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_empty<sp/>&amp;&amp;<sp/>mf.size()<sp/>&gt;<sp/>0)</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_fabs.copy(mf,src_comp,dst_comp,num_comp,src_ng,0);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_fabs.ParallelCopy(mf,src_comp,dst_comp,num_comp,src_ng,0);</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="154"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"></highlight></codeline>

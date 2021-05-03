@@ -4119,7 +4119,7 @@
 <codeline lineno="2196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>b.<ref refid="classamrex_1_1Box_1acb8c130ea6c22e18e4e239320eff1c05" kindref="member">setBig</ref>(<ref refid="namespaceamrex_1_1Amrvis_1aa48460f2fc5e49659b1494852de45964" kindref="member">XDIR</ref>,<sp/>iX);</highlight></codeline>
 <codeline lineno="2197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BoxArray" kindref="compound">BoxArray</ref><sp/>bA(b);</highlight></codeline>
 <codeline lineno="2198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref><sp/>mfLine(bA,<sp/>dmapOneProc,<sp/>1,<sp/>0);</highlight></codeline>
-<codeline lineno="2199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>mfLine.copy(sendMF);</highlight></codeline>
+<codeline lineno="2199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>mfLine.ParallelCopy(sendMF);</highlight></codeline>
 <codeline lineno="2200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>value(0.0);</highlight></codeline>
 <codeline lineno="2201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(bIOP)<sp/>{</highlight></codeline>
 <codeline lineno="2202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iLine(0);<sp/>iLine<sp/>&lt;<sp/>b.<ref refid="classamrex_1_1Box_1a6a6733882a425dd6a062cce99c224421" kindref="member">length</ref>(<ref refid="namespaceamrex_1_1Amrvis_1a3e880279ad4fb97535a0415f652dfc9d" kindref="member">YDIR</ref>);<sp/>++iLine)<sp/>{</highlight></codeline>
@@ -4181,7 +4181,7 @@
 <codeline lineno="2258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref><sp/>sqDM(sqBA);</highlight></codeline>
 <codeline lineno="2259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].define(sqBA,<sp/>sqDM,<sp/>numState,<sp/>nGrow);</highlight></codeline>
 <codeline lineno="2260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].setVal(0.0);</highlight></codeline>
-<codeline lineno="2261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].copy(state[i]);</highlight></codeline>
+<codeline lineno="2261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].ParallelCopy(state[i]);</highlight></codeline>
 <codeline lineno="2262"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2264"><highlight class="normal"></highlight></codeline>
@@ -4456,7 +4456,7 @@
 <codeline lineno="2533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1DistributionMapping" kindref="compound">DistributionMapping</ref><sp/>sqDM(sqBA);</highlight></codeline>
 <codeline lineno="2534"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].define(sqBA,<sp/>sqDM,<sp/>numState,<sp/>nGrow);</highlight></codeline>
 <codeline lineno="2535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].setVal(0.0);</highlight></codeline>
-<codeline lineno="2536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].copy(state[i]);</highlight></codeline>
+<codeline lineno="2536"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].ParallelCopy(state[i]);</highlight></codeline>
 <codeline lineno="2537"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2538"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2539"><highlight class="normal"></highlight></codeline>
@@ -4817,7 +4817,7 @@
 <codeline lineno="2894"><highlight class="normal"><sp/><sp/><sp/><sp/>state[finestLevel].define(dnpBoxArray,<sp/>dnpDM,<sp/>numState,<sp/>nGrow);</highlight></codeline>
 <codeline lineno="2895"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref><sp/>&amp;fLMF<sp/>=<sp/>state[finestLevel];</highlight></codeline>
 <codeline lineno="2896"><highlight class="normal"><sp/><sp/><sp/><sp/>fLMF.<ref refid="classamrex_1_1FabArray_1a9235d60131ff0d5f81450896420fe691" kindref="member">setVal</ref>(0.0);</highlight></codeline>
-<codeline lineno="2897"><highlight class="normal"><sp/><sp/><sp/><sp/>fLMF.<ref refid="classamrex_1_1FabArray_1ad5437f2b6689074e7e4e2abc25662daa" kindref="member">copy</ref>(mfWFN);</highlight></codeline>
+<codeline lineno="2897"><highlight class="normal"><sp/><sp/><sp/><sp/>fLMF.<ref refid="classamrex_1_1FabArray_1a4d5c152276e1e70438c9d7072cb7c6f0" kindref="member">ParallelCopy</ref>(mfWFN);</highlight></codeline>
 <codeline lineno="2898"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2899"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>----<sp/>make<sp/>an<sp/>xgraph<sp/>of<sp/>coefficient<sp/>of<sp/>variation<sp/>for<sp/>each<sp/>call</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2900"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;Real&gt;</ref><sp/>coeffVar(whichFuncNCalls,<sp/>0.0);</highlight></codeline>
@@ -4899,7 +4899,7 @@
 <codeline lineno="2976"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqBA.maxSize(sqMG);</highlight></codeline>
 <codeline lineno="2977"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].define(sqBA,<sp/>sqDM,<sp/>numState,<sp/>nGrow);</highlight></codeline>
 <codeline lineno="2978"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].setVal(0.0);</highlight></codeline>
-<codeline lineno="2979"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].copy(state[i]);</highlight></codeline>
+<codeline lineno="2979"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sqState[i].ParallelCopy(state[i]);</highlight></codeline>
 <codeline lineno="2980"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2981"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2982"><highlight class="normal"></highlight></codeline>

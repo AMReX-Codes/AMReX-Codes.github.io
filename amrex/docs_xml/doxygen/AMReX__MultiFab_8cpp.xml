@@ -3026,7 +3026,7 @@
 <codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>tmp(boxArray(),<sp/>DistributionMap(),<sp/>ncomp,<sp/>n_grow,<sp/>MFInfo(),<sp/>Factory());</highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1036d99710a96586826f090a3266f5da" kindref="member">MultiFab::Copy</ref>(tmp,<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>scomp,<sp/>0,<sp/>ncomp,<sp/>n_grow);</highlight></codeline>
 <codeline lineno="1199"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;setVal(0.0,<sp/>scomp,<sp/>ncomp,<sp/>nghost);</highlight></codeline>
-<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="namespaceamrex_1_1Gpu_1a2c1110b22670288daa9e2a01cbb70fbb" kindref="member">copy</ref>(tmp,0,scomp,ncomp,n_grow,nghost,period,FabArrayBase::ADD);</highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="namespaceamrex_1_1NonLocalBC_1ac09ca9edc6d06054f9f1c62d5627c916" kindref="member">ParallelCopy</ref>(tmp,0,scomp,ncomp,n_grow,nghost,period,FabArrayBase::ADD);</highlight></codeline>
 <codeline lineno="1201"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="1202"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1203"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
