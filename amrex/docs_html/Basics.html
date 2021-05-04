@@ -1359,6 +1359,32 @@ variants, in which the periodicity and operation type are also optional.</p>
 <p>Here the number of ghost cells involved is zero, and the copy is performed on
 all components if unspecified (assuming the two MultiFabs have the same number
 of components).</p>
+<p>Both <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelCopy</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FillBoundary</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> are blocking calls. They
+will only return when the communication is completed and the destination MultiFab is
+guaranteed to be properly updated.  AMReX also provides non-blocking versions of
+these calls to allow users to overlap communication with calculation and potentially
+improve overall application performance.</p>
+<p>The non-blocking calls are used by calling the <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">***</span></span><span class="name"><span class="pre">_nowait</span></span><span class="punctuation"><span class="pre">(…)</span></span></code> function
+to begin the comm operation, followed by the <code class="code cpp c++ docutils literal notranslate"><span class="operator"><span class="pre">***</span></span><span class="name"><span class="pre">_finish</span></span><span class="punctuation"><span class="pre">()</span></span></code> function at a later
+time to complete it. For example:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">mfA</span><span class="p">.</span><span class="n">ParallelCopy_nowait</span><span class="p">(</span><span class="n">mfsrc</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">op</span><span class="p">);</span>
+
+<span class="c1">// ... Any overlapping calc work here on other data, e.g.</span>
+<span class="n">mfB</span><span class="p">.</span><span class="n">setVal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">);</span>
+
+<span class="n">mfA</span><span class="p">.</span><span class="n">ParallelCopy_finish</span><span class="p">();</span>
+
+<span class="n">mfB</span><span class="p">.</span><span class="n">FillBoundary_nowait</span><span class="p">(</span><span class="n">period</span><span class="p">);</span>
+<span class="c1">// ... Overlapping work here</span>
+<span class="n">mfB</span><span class="p">.</span><span class="n">FillBoundary_finish</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>All function signatures of the blocking calls are also available in the non-blocking
+calls and should be used in the <cite>nowait</cite> function.  The <cite>finish</cite> functions take no
+parameters, as the required data is stored during <cite>nowait</cite> and retrieved.  Users that
+choose to use non-blocking calls must ensure the calls are properly used to avoid race
+conditions, which typically means not interacting with the MultiFab between the
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">_nowait</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">_finish</span></span></code> calls.</p>
 </div>
 <div class="section" id="mfiter-and-tiling">
 <span id="sec-basics-mfiter"></span><h1>MFIter and Tiling<a class="headerlink" href="#mfiter-and-tiling" title="Permalink to this headline">¶</a></h1>
