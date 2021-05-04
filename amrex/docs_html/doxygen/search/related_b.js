@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ubound_14364',['ubound',['../classamrex_1_1Box.html#a031934b6cad9ff387f032bffd6b0dfbb',1,'amrex::Box']]]
+  ['scale_14363',['scale',['../classamrex_1_1RealVect.html#aced393e91058fd9dcf46321c5f8f1eef',1,'amrex::RealVect']]],
+  ['statedataphysbcfunct_14364',['StateDataPhysBCFunct',['../classamrex_1_1StateData.html#a51a3670e2ed07485744ef6462ebfd6ce',1,'amrex::StateData']]]
 ];
