@@ -5985,17 +5985,22 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="40" column="42" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="40" bodyend="43"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a0ad0b517fda31e425393aed97af293ad" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE Dim3 amrex::elemwiseMin</definition>
-        <argsstring>(Dim3 const &amp;a, Dim3 const &amp;b) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1ae4bfe8e79990e6c03cf02379c2b883a8" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE T amrex::elemwiseMin</definition>
+        <argsstring>(T const &amp;a, T const &amp;b) noexcept</argsstring>
         <name>elemwiseMin</name>
         <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <type>T const &amp;</type>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <type>T const &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -6004,19 +6009,59 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="46" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="46" bodyend="48"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="47" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="47" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a8b543212b1d62ee641df275c81c7b5ce" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref></type>
-        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE Dim3 amrex::elemwiseMax</definition>
-        <argsstring>(Dim3 const &amp;a, Dim3 const &amp;b) noexcept</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1a596c8bdb575a0bb55727422ca467ca83" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE T amrex::elemwiseMin</definition>
+        <argsstring>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</argsstring>
+        <name>elemwiseMin</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const Ts &amp;...</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="53" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a93a16e30ea4ae11d5478b61bc66508be" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE T amrex::elemwiseMax</definition>
+        <argsstring>(T const &amp;a, T const &amp;b) noexcept</argsstring>
         <name>elemwiseMax</name>
         <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <type>T const &amp;</type>
           <declname>a</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> const &amp;</type>
+          <type>T const &amp;</type>
           <declname>b</declname>
         </param>
         <briefdescription>
@@ -6025,7 +6070,42 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="51" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="51" bodyend="53"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="60" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a0ca24d0cad7a50b4e33d7e1cf2d62cf4" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+          <param>
+            <type>class ...</type>
+            <declname>Ts</declname>
+            <defname>Ts</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> constexpr <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> T</type>
+        <definition>AMREX_GPU_HOST_DEVICE constexpr AMREX_FORCE_INLINE T amrex::elemwiseMax</definition>
+        <argsstring>(const T &amp;a, const T &amp;b, const Ts &amp;... c) noexcept</argsstring>
+        <name>elemwiseMax</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>const Ts &amp;...</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="66" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="66" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a5311a5775a3f24d73376bdc6268b7a3d" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -6051,7 +6131,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="57" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="57" bodyend="62"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="73" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="73" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ade77dcb5e477e7ac0e7e969c51dfcdd2" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6081,7 +6161,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="66" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="66" bodyend="69"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="82" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="82" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a9314c1849b946e44ddd246d9c0562e72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6112,7 +6192,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="75" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="75" bodyend="82"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="91" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="91" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a6d6b1086f3f7b77f820cac8d8005ac38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -6161,7 +6241,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="87" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="87" bodyend="120"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" line="103" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Algorithm.H" bodystart="103" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1Arena" kindref="compound">Arena</ref> *</type>
