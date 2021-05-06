@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['animdirection_14069',['AnimDirection',['../namespaceamrex_1_1Amrvis.html#a599af4a9a7801ab18cba2c51f52a5120',1,'amrex::Amrvis']]]
+  ['animdirection_14067',['AnimDirection',['../namespaceamrex_1_1Amrvis.html#a599af4a9a7801ab18cba2c51f52a5120',1,'amrex::Amrvis']]]
 ];

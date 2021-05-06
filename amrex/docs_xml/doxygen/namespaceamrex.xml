@@ -9177,17 +9177,26 @@ template &lt;typename DstTile</initializer>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_COORDSYS_2D_C.H" line="146" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_COORDSYS_2D_C.H" bodystart="146" bodyend="210"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a7354afd0673e5383180c1577fc619a28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a542e598352208488d6049caf539dd073" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename std::enable_if&lt; std::is_same&lt; T, Dim3 &gt;::value||std::is_same&lt; T, XDim3 &gt;::value &gt;::type *</type>
+            <defval>nullptr</defval>
+          </param>
+        </templateparamlist>
         <type>std::ostream &amp;</type>
-        <definition>std::ostream &amp; amrex::operator&lt;&lt;</definition>
-        <argsstring>(std::ostream &amp;os, const Dim3 &amp;d)</argsstring>
+        <definition>std::ostream&amp; amrex::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;os, const T &amp;d)</argsstring>
         <name>operator&lt;&lt;</name>
         <param>
           <type>std::ostream &amp;</type>
           <declname>os</declname>
         </param>
         <param>
-          <type>const <ref refid="structamrex_1_1Dim3" kindref="compound">Dim3</ref> &amp;</type>
+          <type>const T &amp;</type>
           <declname>d</declname>
         </param>
         <briefdescription>
@@ -9196,7 +9205,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Dim3.cpp" line="7" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Dim3.cpp" bodystart="7" bodyend="11" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Dim3.H" declline="15" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Dim3.H" line="18" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Dim3.H" bodystart="18" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7c149cd13c0bd6bcd97464f0406a600b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
