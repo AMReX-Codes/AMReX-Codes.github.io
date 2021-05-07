@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceamrex_1_1Morton" kind="namespace" language="C++">
+    <compoundname>amrex::Morton</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceamrex_1_1Morton_1ab09eae83b5060972f2f437bd7dba115a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::uint32_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint32_t amrex::Morton::makeSpace</definition>
+        <argsstring>(std::uint32_t x) noexcept</argsstring>
+        <name>makeSpace</name>
+        <param>
+          <type>std::uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>This makes space in the input 32-bit integer by splitting the bits so they can be interleaved. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In 3D, the lowest 10 bits of x are assumed filled, with the next 22 0. On output, x has been &quot;stretched&quot; to 30 bits, with each input bit followed by two interleaving bits set to 0.</para>
+<para>In 2D, it is the same except the lowest 16 bits on x are filled, and there is only one interleaving bit.</para>
+<para>In 1D no interleaving is needed and x is just returned.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>unsigned int holding the input to be split </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="32" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" bodystart="32" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Morton_1ae3e56c34dacdffe240410a3f6a7a9252" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::uint32_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint32_t amrex::Morton::toUInt10</definition>
+        <argsstring>(amrex::Real x, amrex::Real xmin, amrex::Real xmax) noexcept</argsstring>
+        <name>toUInt10</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>xmin</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>xmax</declname>
+        </param>
+        <briefdescription>
+<para>Convert a Real to a uint32, keeping only 10 significant bits. This puts the first 10 bits of x into retval with the 22 highest bits set to 0. It is assumed that xmin &lt;= x &lt; xmax. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is useful in 3D, because you can interleave the bits of 3 10-bit numbers and store the result in one 32-bit integer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the coordinate to convert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the low end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the high end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="98" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Morton_1a9b7572e0a75bb2c5274809e9e1edffba" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::uint32_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint32_t amrex::Morton::toUInt16</definition>
+        <argsstring>(amrex::Real x, amrex::Real xmin, amrex::Real xmax) noexcept</argsstring>
+        <name>toUInt16</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>xmin</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>xmax</declname>
+        </param>
+        <briefdescription>
+<para>Convert a Real to a uint32, keeping only 16 significant bits. This puts the first 16 bits of x into retval with the 16 highest bits set to 0. It is assumed that xmin &lt;= x &lt; xmax. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is useful in 2D, because you can interleave the bits of two 16-bit numbers and store the result in one 32-bit integer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the coordinate to convert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the low end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the high end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="118" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" bodystart="118" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Morton_1a16988bc3300f11fdee381c8ef8bc80f6" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::uint32_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint32_t amrex::Morton::toUInt32</definition>
+        <argsstring>(amrex::Real x, amrex::Real xmin, amrex::Real xmax) noexcept</argsstring>
+        <name>toUInt32</name>
+        <param>
+          <type>amrex::Real</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>xmin</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>xmax</declname>
+        </param>
+        <briefdescription>
+<para>Convert a Real to a uint32, keeping all significant bits. It is assumed that xmin &lt;= x &lt; xmax. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is useful in 1D, because no interleaving is needed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the coordinate to convert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the low end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmax</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the high end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="136" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" bodystart="136" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Morton_1a8abd721ea4f9ef2ce4e004df163733b1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::uint32_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint32_t amrex::Morton::get32BitCode</definition>
+        <argsstring>(AMREX_D_DECL(Real x, Real y, Real z), const GpuArray&lt; amrex::Real, 3 &gt; &amp;plo, const GpuArray&lt; amrex::Real, 3 &gt; &amp;phi) noexcept</argsstring>
+        <name>get32BitCode</name>
+        <param>
+          <type>AMREX_D_DECL(Real x, Real y, Real z)</type>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; amrex::Real, 3 &gt; &amp;</type>
+          <declname>plo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; amrex::Real, 3 &gt; &amp;</type>
+          <declname>phi</declname>
+        </param>
+        <briefdescription>
+<para>Given a 3D real-space coordinate, returns a <ref refid="namespaceamrex_1_1Morton" kindref="compound">Morton</ref> code stored in an unsigned 32 bit integer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>In 3D, this works by converting the coordinate to a 10-bit nonnegative integer in each direction and then interleaving the bits.</para>
+<para>In 2D, it is same except the lowest 16 bits of of the coordinates are kept.</para>
+<para>It is assumed that plo &lt;= p &lt; phi has already been enforced.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+<parametername>y</parametername>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the coordinates to convert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the low end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the high end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="159" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" bodystart="159" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1Morton_1aee554c0b36dd1befffea1ea611222e09" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> std::uint32_t</type>
+        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE std::uint32_t amrex::Morton::get32BitCode</definition>
+        <argsstring>(const XDim3 &amp;p, const GpuArray&lt; amrex::Real, 3 &gt; &amp;plo, const GpuArray&lt; amrex::Real, 3 &gt; &amp;phi) noexcept</argsstring>
+        <name>get32BitCode</name>
+        <param>
+          <type>const <ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref> &amp;</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; amrex::Real, 3 &gt; &amp;</type>
+          <declname>plo</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; amrex::Real, 3 &gt; &amp;</type>
+          <declname>phi</declname>
+        </param>
+        <briefdescription>
+<para>Given a 3D real-space coordinate, returns a <ref refid="namespaceamrex_1_1Morton" kindref="compound">Morton</ref> code stored in an unsigned 32 bit integer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structamrex_1_1Same" kindref="compound">Same</ref> as the above, except takes an <ref refid="structamrex_1_1XDim3" kindref="compound">XDim3</ref>. Assumes 3D.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the coordinate to convert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>plo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the low end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>phi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the high end of the domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="188" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" bodystart="188" bodyend="192"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Morton.H" line="13" column="16"/>
+  </compounddef>
+</doxygen>
