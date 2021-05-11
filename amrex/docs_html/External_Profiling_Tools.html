@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>CrayPat &mdash; amrex 21.06-dev documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
 
   
@@ -30,6 +33,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
@@ -205,7 +209,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="craypat">
+  <section id="craypat">
 <h1>CrayPat<a class="headerlink" href="#craypat" title="Permalink to this headline">¶</a></h1>
 <p>The profiling suite available on Cray XC systems is Cray Performance
 Measurement and Analysis Tools (“CrayPat”) <a class="footnote-reference brackets" href="#id6" id="id1">1</a>.  Most CrayPat functionality is
@@ -216,7 +220,7 @@ CCE <a class="footnote-reference brackets" href="#id7" id="id2">2</a> <a class="
 <p>CrayPat supports both high-level profiling tools, as well as fine-grained
 performance analysis, such as reading hardware counters. The default behavior
 uses sampling to identify the most time-consuming functions in an application.</p>
-<div class="section" id="high-level-application-profiling">
+<section id="high-level-application-profiling">
 <h2>High-level application profiling<a class="headerlink" href="#high-level-application-profiling" title="Permalink to this headline">¶</a></h2>
 <p>The simplest way to obtain a high-level overview of an application’s
 performance consists of the following steps:</p>
@@ -287,9 +291,9 @@ to pipe the output to a pager or a file. A portion of the output from
 </div>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="ipm-cross-platform-integrated-performance-monitoring">
+</section>
+</section>
+<section id="ipm-cross-platform-integrated-performance-monitoring">
 <h1>IPM - Cross-Platform Integrated Performance Monitoring<a class="headerlink" href="#ipm-cross-platform-integrated-performance-monitoring" title="Permalink to this headline">¶</a></h1>
 <p>IPM provides portable profiling capabilities across HPC platforms, including
 support on selected Cray and IBM machines (cori and (TODO: verify it works on)
@@ -297,7 +301,7 @@ summit). Running an IPM instrumented binary generates a summary of number of
 calls and time spent on MPI communication library functions. In addition,
 hardware performance counters can also be collected through PAPI.</p>
 <p>Detailed instructions can be found at  <a class="footnote-reference brackets" href="#id9" id="id4">4</a> and <a class="footnote-reference brackets" href="#id10" id="id5">5</a>.</p>
-<div class="section" id="building-with-ipm-on-cori">
+<section id="building-with-ipm-on-cori">
 <h2>Building with IPM on cori<a class="headerlink" href="#building-with-ipm-on-cori" title="Permalink to this headline">¶</a></h2>
 <p>Steps:</p>
 <ol class="arabic simple">
@@ -305,16 +309,16 @@ hardware performance counters can also be collected through PAPI.</p>
 <li><p>Build code as normal with make.</p></li>
 <li><p>Re-run the link command (e.g. cut-and-paste) with <code class="docutils literal notranslate"><span class="pre">$IPM</span></code> added to the end of the line.</p></li>
 </ol>
-</div>
-<div class="section" id="running-with-ipm-on-cori">
+</section>
+<section id="running-with-ipm-on-cori">
 <h2>Running with IPM on cori<a class="headerlink" href="#running-with-ipm-on-cori" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Set environment variables: <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">IPM_REPORT=full</span> <span class="pre">IPM_LOG=full</span> <span class="pre">IPM_LOGDIR=</span> <span class="pre">&lt;dir&gt;</span></code></p></li>
 <li><p>Results will be printed to stdout and an xml file generated in the directory specified by <code class="docutils literal notranslate"><span class="pre">IPM_LOGDIR</span></code>.</p></li>
 <li><p>Post-process the xml with <code class="docutils literal notranslate"><span class="pre">ipm_parse</span> <span class="pre">-html</span> <span class="pre">&lt;xmlfile&gt;</span></code>, which produces an directory with html.</p></li>
 </ol>
-</div>
-<div class="section" id="summary-mpi-profile">
+</section>
+<section id="summary-mpi-profile">
 <h2>Summary MPI Profile<a class="headerlink" href="#summary-mpi-profile" title="Permalink to this headline">¶</a></h2>
 <p>Example MPI profile output:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span><span class="c1">#IPMv2.0.5########################################################</span>
@@ -358,8 +362,8 @@ hardware performance counters can also be collected through PAPI.</p>
 <p>The total, average, minimum, and maximum wallclock and MPI times across ranks
 is shown.  The memory footprint is also collected.  Finally, results include
 number of calls and total time spent in each type of MPI call.</p>
-</div>
-<div class="section" id="papi-performance-counters">
+</section>
+<section id="papi-performance-counters">
 <h2>PAPI Performance Counters<a class="headerlink" href="#papi-performance-counters" title="Permalink to this headline">¶</a></h2>
 <p>To collect performance counters, set <code class="docutils literal notranslate"><span class="pre">IPM_HPM=&lt;list&gt;</span></code>, where the list is a
 comma-separated list of PAPI counters. For example: <code class="docutils literal notranslate"><span class="pre">export</span>
@@ -398,19 +402,21 @@ found by running <code class="docutils literal notranslate"><span class="pre">pa
 <p>Due to hardware limitations, there is a limit to which counters can be
 collected simultaneously in a single run. Some counters may map to the same
 registers and thus cannot be collected at the same time.</p>
-</div>
-<div class="section" id="example-html-performance-summary">
+</section>
+<section id="example-html-performance-summary">
 <h2>Example HTML Performance Summary<a class="headerlink" href="#example-html-performance-summary" title="Permalink to this headline">¶</a></h2>
 <p>Running <code class="docutils literal notranslate"><span class="pre">ipm_parse</span> <span class="pre">-html</span> <span class="pre">&lt;xmlfile&gt;</span></code> on the generated xml file will produce an
 HTML document that includes summary performance numbers and automatically
 generated figures. Some examples are shown here.</p>
-<div class="figure align-default" id="id11">
+<figure class="align-default" id="id11">
 <img alt="_images/summary.png" src="_images/summary.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Sample performance summary generated by IPM</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
-<div class="figure align-default" id="fig-timings">
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Sample performance summary generated by IPM</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="fig-timings">
 <img alt="_images/timings.png" src="_images/timings.png" />
-</div>
+</figure>
 <table class="docutils align-center" id="id12">
 <caption><span class="caption-number">Table 18 </span><span class="caption-text">Example of performance graphs generated by IPM</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -467,9 +473,9 @@ generated figures. Some examples are shown here.</p>
 <dd><p><a class="reference external" href="https://www.nersc.gov/users/software/performance-and-debugging-tools/ipm/">https://www.nersc.gov/users/software/performance-and-debugging-tools/ipm/</a></p>
 </dd>
 </dl>
-</div>
-</div>
-<div class="section" id="nsight-systems">
+</section>
+</section>
+<section id="nsight-systems">
 <h1>Nsight Systems<a class="headerlink" href="#nsight-systems" title="Permalink to this headline">¶</a></h1>
 <p>The Nsight Systems tool provides a high-level overview of your code, displaying the kernel
 launches, API calls, NVTX regions and more in a timeline for a clear, visual picture of the
@@ -479,7 +485,7 @@ on Summit and Cori in a system module.</p>
 most commonly used options for AMReX users to keep track of useful flags and analysis
 patterns. For the complete details of using Nsight Systems, refer to the <a class="reference external" href="https://docs.nvidia.com/nsight-systems/index.html">Nsight Systems
 official documentation</a>.</p>
-<div class="section" id="profile-analysis">
+<section id="profile-analysis">
 <h2>Profile Analysis<a class="headerlink" href="#profile-analysis" title="Permalink to this headline">¶</a></h2>
 <p>The most common use case of Nsight Systems for AMReX users is the creation of a qdrep file
 that is viewed in the Nsight Systems GUI, typically on a local workstation or machine.</p>
@@ -533,8 +539,8 @@ Directly insert <code class="docutils literal notranslate"><span class="pre">cud
 </div>
 <p>As with NVTX regions, Nsight Systems will only profile from the first call to <code class="docutils literal notranslate"><span class="pre">cudaProfilerStart()</span></code>
 to the first call to <code class="docutils literal notranslate"><span class="pre">cudaProfilerStop()</span></code>, so be sure to add these markers appropriately.</p>
-</div>
-<div class="section" id="nsight-systems-gui-tips">
+</section>
+<section id="nsight-systems-gui-tips">
 <h2>Nsight Systems GUI Tips<a class="headerlink" href="#nsight-systems-gui-tips" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>When analyzing an AMReX application in the Nsight Systems GUI using NVTX regions or <code class="docutils literal notranslate"><span class="pre">TINY_PROFILE=TRUE</span></code>,
@@ -547,9 +553,9 @@ mangled compiler name. This will make identifying AMReX CUDA kernels in Nsight S
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Tools -&gt; Options -&gt; Environment -&gt; Rename CUDA Kernels by NVTX.</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="nsight-compute">
+</section>
+</section>
+<section id="nsight-compute">
 <h1>Nsight Compute<a class="headerlink" href="#nsight-compute" title="Permalink to this headline">¶</a></h1>
 <p>The Nsight Compute tool provides a detailed, fine-grained analysis of your CUDA kernels,
 giving details about the kernel launch, occupancy, and limitations while suggesting possible
@@ -559,7 +565,7 @@ on Summit and Cori in system modules.</p>
 most commonly used options for AMReX users, primarily to keep track of useful flags and analysis
 patterns.  For the complete details of using Nsight Compute, refer to the <a class="reference external" href="https://docs.nvidia.com/nsight-compute/index.html">Nsight compute
 official documentation</a>.</p>
-<div class="section" id="kernel-analysis">
+<section id="kernel-analysis">
 <h2>Kernel Analysis<a class="headerlink" href="#kernel-analysis" title="Permalink to this headline">¶</a></h2>
 <p>The standard way to run Nsight Compute on an AMReX application is to specify an output file
 that will be transferred to a local workstation of machine for viewing in the Nsight Compute GUI.
@@ -591,8 +597,8 @@ flag specifies the total number of kernels to be analyzed. For example:</p>
 <p>For further details on how to choose a subset of CUDA kernels to analyze, or to run a more detailed
 analysis, including CUDA hardware counters, refer to the Nsight Compute official documentation on
 <a class="reference external" href="https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html#nvtx-filtering">NVTX Filtering</a>.</p>
-</div>
-<div class="section" id="roofline">
+</section>
+<section id="roofline">
 <h2>Roofline<a class="headerlink" href="#roofline" title="Permalink to this headline">¶</a></h2>
 <p>As of version 2020.1.0, Nsight Compute has added the capability to perform roofline analyses on CUDA
 kernels to describe how well a given kernel is running on a given NVIDIA architecture.  For details
@@ -609,8 +615,8 @@ their relative performance in the file <code class="docutils literal notranslate
 overview</a>, NERSC
 <a class="reference external" href="https://docs.nersc.gov/development/performance-debugging-tools/roofline/">documentation</a> and
 <a class="reference external" href="https://www.nersc.gov/users/training/events/roofline-on-nvidia-gpus-hackathon/">tutorials</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

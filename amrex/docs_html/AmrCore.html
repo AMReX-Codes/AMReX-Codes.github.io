@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>AmrCore Source Code: Details &mdash; amrex 21.06-dev documentation</title>
@@ -13,6 +14,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
 
   
@@ -30,10 +33,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -219,10 +223,10 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="amrcore-source-code-details">
+<section id="amrcore-source-code-details">
 <span id="ss-amrcore"></span><h1>AmrCore Source Code: Details<a class="headerlink" href="#amrcore-source-code-details" title="Permalink to this headline">¶</a></h1>
 <p>Here we provide more information about the source code in <code class="docutils literal notranslate"><span class="pre">amrex/Src/AmrCore</span></code>.</p>
-<div class="section" id="amrmesh-and-amrcore">
+<section id="amrmesh-and-amrcore">
 <h2>AmrMesh and AmrCore<a class="headerlink" href="#amrmesh-and-amrcore" title="Permalink to this headline">¶</a></h2>
 <p>For single-level simulations
 (see e.g., <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HeatEquation_EX1_C/main.cpp</span></code>)
@@ -342,8 +346,8 @@ class <code class="code cpp c++ docutils literal notranslate"><span class="name"
 <p>Refer to the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span></code> class in the
 <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Amr/AmrCore_Advection/Source</span></code>
 code for a sample implementation.</p>
-</div>
-<div class="section" id="tagbox-and-cluster">
+</section>
+<section id="tagbox-and-cluster">
 <h2>TagBox, and Cluster<a class="headerlink" href="#tagbox-and-cluster" title="Permalink to this headline">¶</a></h2>
 <p>These classes are used in the grid generation process.
 The <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">TagBox</span></span></code> class is essentially a data structure that marks which
@@ -353,8 +357,8 @@ that help sort tagged cells and generate a grid structure that contains all
 the tagged cells. These classes and their member functions are largely
 hidden from any application codes through simple interfaces
 such as <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">regrid</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ErrorEst</span></span></code> (a routine for tagging cells for refinement).</p>
-</div>
-<div class="section" id="fillpatchutil-and-interpolater">
+</section>
+<section id="fillpatchutil-and-interpolater">
 <span id="sec-amrcore-fillpatch"></span><h2>FillPatchUtil and Interpolater<a class="headerlink" href="#fillpatchutil-and-interpolater" title="Permalink to this headline">¶</a></h2>
 <p>Many codes, including the Advection_AmrCore example, contain an array of MultiFabs
 (one for each level of refinement), and then use “fillpatch” operations to fill temporary
@@ -396,8 +400,8 @@ Within AMReX_Interpolater.cpp/H are the derived classes:</p>
 </ul>
 <p>The Fortran routines that perform the actual work associated with <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Interpolater</span></span></code> are
 contained in the files AMReX_INTERP_F.H and AMReX_INTERP_xD.F.</p>
-</div>
-<div class="section" id="using-fluxregisters">
+</section>
+<section id="using-fluxregisters">
 <span id="sec-amrcore-fluxreg"></span><h2>Using FluxRegisters<a class="headerlink" href="#using-fluxregisters" title="Permalink to this headline">¶</a></h2>
 <p>AMReX_FluxRegister.cpp/H contains the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FluxRegister</span></span></code>, which is
 derived from the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">BndryRegister</span></span></code> (in <code class="docutils literal notranslate"><span class="pre">amrex/Src/Boundary/AMReX_BndryRegister</span></code>).
@@ -429,8 +433,8 @@ the data in the FluxRegister using the <code class="code cpp c++ docutils litera
 <p>The Fortran routines that perform the actual floating point work associated with
 incrementing data in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">FluxRegister</span></span></code> are contained in the files
 AMReX_FLUXREG_F.H and AMReX_FLUXREG_xD.F.</p>
-</div>
-<div class="section" id="amrparticles-and-amrpargdb">
+</section>
+<section id="amrparticles-and-amrpargdb">
 <h2>AmrParticles and AmrParGDB<a class="headerlink" href="#amrparticles-and-amrpargdb" title="Permalink to this headline">¶</a></h2>
 <p>The AmrCore/ directory contains derived classes for dealing with particles
 in a multi-level framework. The description of the base classes
@@ -441,11 +445,11 @@ and <code class="code cpp c++ docutils literal notranslate"><span class="name"><
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">TracerParticleContainer</span></span></code> (in <code class="docutils literal notranslate"><span class="pre">amrex/Src/Particle/AMReX_TracerParticles</span></code>).</p>
 <p>AMReX_AmrParGDB.cpp/H contains the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrParGDB</span></span></code>, which is derived from
 the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParGDBBase</span></span></code> (in <code class="docutils literal notranslate"><span class="pre">amrex/Src/Particle/AMReX_ParGDB</span></code>).</p>
-</div>
-</div>
-<div class="section" id="example-advection-amrcore">
+</section>
+</section>
+<section id="example-advection-amrcore">
 <h1>Example: Advection_AmrCore<a class="headerlink" href="#example-advection-amrcore" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-advection-equation">
+<section id="the-advection-equation">
 <h2>The Advection Equation<a class="headerlink" href="#the-advection-equation" title="Permalink to this headline">¶</a></h2>
 <p>We seek to solve the advection equation on a multi-level, adaptive grid structure:</p>
 <div class="math notranslate nohighlight">
@@ -474,10 +478,12 @@ using space- and time-interpolated data from the grids at <span class="math notr
 </ul>
 </li>
 </ul>
-<div class="figure align-default" id="id3">
+<figure class="align-default" id="id3">
 <span id="fig-subcycling"></span><a class="reference internal image-reference" href="_images/subcycling.png"><img alt="_images/subcycling.png" src="_images/subcycling.png" style="width: 4in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Schematic of subcycling-in-time algorithm.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Schematic of subcycling-in-time algorithm.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Specifically, for a 3-level simulation, depicted graphically in the figure
 showing the <a class="reference internal" href="#fig-subcycling"><span class="std std-ref">Schematic of subcycling-in-time algorithm.</span></a> above:</p>
 <ol class="arabic simple">
@@ -511,13 +517,15 @@ The remedy is to modify the solution in the coarse cells immediately next to the
 to account for the mismatch stored in the flux register (computed by taking the coarse-level divergence of the
 flux register data).</p></li>
 </ol>
-</div>
-<div class="section" id="code-structure">
+</section>
+<section id="code-structure">
 <h2>Code Structure<a class="headerlink" href="#code-structure" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="id4">
+<figure class="align-default" id="id4">
 <span id="fig-amradvection-amrcore-flowchart"></span><a class="reference internal image-reference" href="_images/flowchart.png"><img alt="_images/flowchart.png" src="_images/flowchart.png" style="width: 4in;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Source code tree for the AmrAdvection_AmrCore example.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Source code tree for the AmrAdvection_AmrCore example.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>The figure shows the <a class="reference internal" href="#fig-amradvection-amrcore-flowchart"><span class="std std-ref">Source code tree for the AmrAdvection_AmrCore example.</span></a></p>
 <ul class="simple">
 <li><p>amrex/Src/</p>
@@ -577,14 +585,14 @@ simulation.</p></li>
     <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="the-amrcoreadv-class">
+</section>
+<section id="the-amrcoreadv-class">
 <h2>The AmrCoreAdv Class<a class="headerlink" href="#the-amrcoreadv-class" title="Permalink to this headline">¶</a></h2>
 <p>This example uses the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span></code>, which is derived from the class <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code>
 (which is derived from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrMesh</span></span></code>). The function definitions/implementations
 are given in AmrCoreAdv.H/cpp.</p>
-</div>
-<div class="section" id="fluxregisters">
+</section>
+<section id="fluxregisters">
 <h2>FluxRegisters<a class="headerlink" href="#fluxregisters" title="Permalink to this headline">¶</a></h2>
 <p>The function <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Advance</span></span><span class="punctuation"><span class="pre">()</span></span></code> calls the Fortran
 subroutine, <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">advect</span></span></code> (in <code class="docutils literal notranslate"><span class="pre">./Src_xd/Adv_xd.f90</span></code>). <code class="code fortran docutils literal notranslate"><span class="name"><span class="pre">advect</span></span></code> computes
@@ -623,8 +631,8 @@ These fluxes are used to set or increment the flux registers.</p>
 <span class="n">AverageDownTo</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span> <span class="c1">// average lev+1 down to lev</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="regridding">
+</section>
+<section id="regridding">
 <span id="ss-regridding"></span><h2>Regridding<a class="headerlink" href="#regridding" title="Permalink to this headline">¶</a></h2>
 <p>The regrid function belongs to the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code> class (it is virtual – in this
 tutorial we use the instance in <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCore</span></span></code>).</p>
@@ -773,8 +781,8 @@ is simple:</p>
 <span class="k">end subroutine </span><span class="n">state_error</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="fillpatch">
+</section>
+<section id="fillpatch">
 <span id="ss-fillpatch"></span><h2>FillPatch<a class="headerlink" href="#fillpatch" title="Permalink to this headline">¶</a></h2>
 <p>This example has two functions, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">FillPatch</span></span></code> and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">AmrCoreAdv</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">CoarseFillPatch</span></span></code>,
 that make use of functions in AmrCore/AMReX_FillPatchUtil.</p>
@@ -788,8 +796,8 @@ neighboring grids at the same level, or domain boundary conditions
 </pre></div>
 </div>
 <p>Several other calls to fillpatch routines are hidden from the user in the regridding process.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
