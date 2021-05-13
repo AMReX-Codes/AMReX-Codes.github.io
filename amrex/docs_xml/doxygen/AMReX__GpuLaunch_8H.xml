@@ -3944,7 +3944,7 @@
         <param><defname>sharedMem</defname></param>
         <param><defname>stream</defname></param>
         <param><defname>...</defname></param>
-        <initializer><ref refid="namespaceamrex_1af6334d58395d4bec0257d18060918ab0" kindref="member">amrex::launch_global</ref>&lt;&lt;&lt;blocks, threads, sharedMem, stream&gt;&gt;&gt;(__VA_ARGS__);</initializer>
+        <initializer><ref refid="namespaceamrex_1af6334d58395d4bec0257d18060918ab0" kindref="member">amrex::launch_global</ref>&lt;<ref refid="AMReX__GpuControl_8H_1a2e7fcf2342ee5da11b271a774cf65388" kindref="member">AMREX_GPU_MAX_THREADS</ref>&gt;&lt;&lt;&lt;blocks, threads, sharedMem, stream&gt;&gt;&gt;(__VA_ARGS__);</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -4606,10 +4606,10 @@
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34" refid="AMReX__GpuLaunch_8H_1a5e16b51a0139af0f65fc463c7d37e0f6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>AMREX_LAUNCH_KERNEL(blocks,<sp/>threads,<sp/>sharedMem,<sp/>stream,<sp/>...<sp/>)<sp/>\</highlight></codeline>
-<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::launch_global&lt;&lt;&lt;blocks,<sp/>threads,<sp/>sharedMem,<sp/>stream&gt;&gt;&gt;(__VA_ARGS__);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex::launch_global&lt;AMREX_GPU_MAX_THREADS&gt;&lt;&lt;&lt;blocks,<sp/>threads,<sp/>sharedMem,<sp/>stream&gt;&gt;&gt;(__VA_ARGS__);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>AMREX_LAUNCH_KERNEL(blocks,<sp/>threads,<sp/>sharedMem,<sp/>stream,<sp/>...<sp/>)<sp/>\</highlight></codeline>
-<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipLaunchKernelGGL(launch_global,<sp/>blocks,<sp/>threads,<sp/>sharedMem,<sp/>stream,<sp/>__VA_ARGS__);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hipLaunchKernelGGL(launch_global&lt;AMREX_GPU_MAX_THREADS&gt;,<sp/>blocks,<sp/>threads,<sp/>sharedMem,<sp/>stream,<sp/>__VA_ARGS__);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
