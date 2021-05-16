@@ -1452,7 +1452,7 @@
 <codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(defined(AMREX_PROFILING)<sp/>||<sp/>defined(AMREX_TINY_PROFILING))</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>nvtxRangeEnd(nvtx_init);</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaProfilerStart();</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a9b8a6a9f47a037559294546980502da1" kindref="member">profilerStart</ref>();</highlight></codeline>
 <codeline lineno="315"><highlight class="normal"></highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>())<sp/>{</highlight></codeline>
 <codeline lineno="317"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_MPI)<sp/>&amp;&amp;<sp/>(__CUDACC_VER_MAJOR__<sp/>&gt;=<sp/>10)</highlight><highlight class="normal"></highlight></codeline>
@@ -1471,7 +1471,7 @@
 <codeline lineno="330"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>AMREX_USE_MPI<sp/>&amp;&amp;<sp/>NVCC<sp/>&gt;=<sp/>10</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"></highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>cudaProfilerStart();</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Gpu_1_1Device_1a9b8a6a9f47a037559294546980502da1" kindref="member">profilerStart</ref>();</highlight></codeline>
 <codeline lineno="334"><highlight class="normal"></highlight></codeline>
 <codeline lineno="335"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(AMREX_USE_HIP)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1acafd26c0f64d958aed9ee56043c4f10e" kindref="member">amrex::Verbose</ref>())<sp/>{</highlight></codeline>
@@ -2132,7 +2132,23 @@
 <codeline lineno="991"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="992"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="993"><highlight class="normal"></highlight></codeline>
-<codeline lineno="994"><highlight class="normal">}}</highlight></codeline>
+<codeline lineno="994"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="995"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a9b8a6a9f47a037559294546980502da1" kindref="member">Device::profilerStart</ref><sp/>()</highlight></codeline>
+<codeline lineno="996"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="997"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="998"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaProfilerStart());</highlight></codeline>
+<codeline lineno="999"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1000"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1001"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1002"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1003"><highlight class="normal"><ref refid="classamrex_1_1Gpu_1_1Device_1a7961d112520b04459e1eb566e2c6ee71" kindref="member">Device::profilerStop</ref><sp/>()</highlight></codeline>
+<codeline lineno="1004"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="1005"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_CUDA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1006"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuError_8H_1af0d8b69cc9585ca09e00607a8ead0f31" kindref="member">AMREX_GPU_SAFE_CALL</ref>(cudaProfilerStop());</highlight></codeline>
+<codeline lineno="1007"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1008"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="1009"><highlight class="normal"></highlight></codeline>
+<codeline lineno="1010"><highlight class="normal">}}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuDevice.cpp"/>
   </compounddef>
