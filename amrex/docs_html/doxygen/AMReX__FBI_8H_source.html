@@ -336,7 +336,7 @@ $(function() {
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">if</span> (sycl::ONEAPI::any_of(item.get_sub_group(), msk &gt; mypriority)) {</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <span class="keywordflow">if</span> (m) *m = 0; <span class="comment">// yield</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    item.mem_fence(); <span class="comment">// xxxxx DPCPP todo: This is block level, but needs to be device level fence, which is currently a PR in intel/llvm</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    item.mem_fence(sycl::access::fence_space::global_and_local);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    to_try = 1;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    to_try = (msk &gt; 0); <span class="comment">// hold on to my lock</span></div>
