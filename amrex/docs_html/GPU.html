@@ -553,6 +553,7 @@ for example <code class="docutils literal notranslate"><span class="pre">CMAKE_C
 yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">hipcc</span></code> or <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">AMReX_AMD_ARCH</span></code> to the target architecture you are building for.
 Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP</strong>.
+We again read also an <em>environment variable</em>: <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps).
 Below is an example configuration for HIP on Tulip:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which hipcc) -DAMReX_AMD_ARCH=&quot;gfx906,gfx908&quot;  [other options] /path/to/amrex/source</span>
 </pre></div>
