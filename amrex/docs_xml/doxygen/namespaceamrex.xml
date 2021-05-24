@@ -2327,7 +2327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="31" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="31" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="33" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1ae58ed08a7ada5774ab9f0a1cc892113c" prot="public" static="yes" mutable="no">
         <type>std::string</type>
@@ -21109,7 +21109,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="111" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="112" bodyend="128" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" declline="1017" declcolumn="1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="113" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="114" bodyend="130" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.H" declline="1021" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0d4c71dff64b8653b9f679f934b66290" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -21131,7 +21131,7 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="1015" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1015" bodyend="1048"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="1017" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1017" bodyend="1050"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a8975f518b8ac91d8cc884e26a18d7849" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -21152,16 +21152,16 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="1052" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1052" bodyend="1076"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="1054" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1054" bodyend="1078"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a50beb771dd448d1f1d1677a42cde54d6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1a4120ab2c1782a28ee17b3f77463c9a2e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>static void amrex::get_unused_inputs</definition>
-        <argsstring>(std::vector&lt; std::string &gt; &amp;unused, const ParmParse::Table &amp;table, const std::string &amp;prefix)</argsstring>
-        <name>get_unused_inputs</name>
+        <definition>static void amrex::get_entries_under_prefix</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;found_entries, const ParmParse::Table &amp;table, const std::string &amp;prefix, const bool only_unused=false, const bool add_values=false)</argsstring>
+        <name>get_entries_under_prefix</name>
         <param>
           <type>std::vector&lt; std::string &gt; &amp;</type>
-          <declname>unused</declname>
+          <declname>found_entries</declname>
         </param>
         <param>
           <type>const <ref refid="classamrex_1_1ParmParse_1a328b966e328a476f04a86c758c9bc6c1" kindref="member">ParmParse::Table</ref> &amp;</type>
@@ -21171,13 +21171,23 @@ template &lt;typename DstTile</initializer>
           <type>const std::string &amp;</type>
           <declname>prefix</declname>
         </param>
+        <param>
+          <type>const bool</type>
+          <declname>only_unused</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>add_values</declname>
+          <defval>false</defval>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="1115" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1115" bodyend="1134"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" line="1117" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_ParmParse.cpp" bodystart="1117" bodyend="1143"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a0035099661e1f92bc5de9ca2b58c0384" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
