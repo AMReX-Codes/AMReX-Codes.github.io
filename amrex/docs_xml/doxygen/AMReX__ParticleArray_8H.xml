@@ -13,7 +13,7 @@
       <node id="20">
         <label>functional</label>
       </node>
-      <node id="30">
+      <node id="28">
         <label>AMReX_Functional.H</label>
         <link refid="AMReX__Functional_8H"/>
         <childnode refid="2" relation="include">
@@ -41,19 +41,17 @@
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="29" relation="include">
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -146,16 +144,16 @@
       <node id="6">
         <label>cstdio</label>
       </node>
-      <node id="32">
+      <node id="30">
         <label>tuple</label>
       </node>
       <node id="24">
         <label>vector</label>
       </node>
-      <node id="29">
+      <node id="31">
         <label>utility</label>
       </node>
-      <node id="31">
+      <node id="29">
         <label>array</label>
       </node>
       <node id="13">
@@ -179,21 +177,13 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="30" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
       </node>
       <node id="19">
         <label>cstdlib</label>
-      </node>
-      <node id="28">
-        <label>AMReX_IndexSequence.H</label>
-        <link refid="AMReX__IndexSequence_8H"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
       </node>
       <node id="21">
         <label>iostream</label>
@@ -365,19 +355,19 @@
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
 <codeline lineno="131" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ad5ea4cf2a80d6956f8b98b3cf50e1cbb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">raw_type</ref><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ad5ea4cf2a80d6956f8b98b3cf50e1cbb" kindref="member">get_raw_data</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container)</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>get_raw_data_impl(a_container,<sp/><ref refid="namespaceamrex_1ad9f3a92c061d8ad8de35370ed5ce28b8" kindref="member">amrex::makeIndexSequence</ref>&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>get_raw_data_impl(a_container,<sp/>std::make_index_sequence&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
 <codeline lineno="136" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a66c45539cf7812458e59c1a15db632b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a66c45539cf7812458e59c1a15db632b6" kindref="member">resize</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,<sp/>std::size_t<sp/>a_size)</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resize_impl(a_container,<sp/>a_size,<sp/><ref refid="namespaceamrex_1ad9f3a92c061d8ad8de35370ed5ce28b8" kindref="member">amrex::makeIndexSequence</ref>&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>resize_impl(a_container,<sp/>a_size,<sp/>std::make_index_sequence&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
 <codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ValueType&gt;</highlight></codeline>
 <codeline lineno="142" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ab721332e7d5f36770a7a3f944857825a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ab721332e7d5f36770a7a3f944857825a" kindref="member">push_back</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,<sp/>ValueType&amp;&amp;<sp/>a_value)</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>push_back_impl(a_container,<sp/>std::forward&lt;ValueType&gt;(a_value),</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad9f3a92c061d8ad8de35370ed5ce28b8" kindref="member">amrex::makeIndexSequence</ref>&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::make_index_sequence&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
 <codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight></codeline>
 <codeline lineno="148" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a7e8276dde25976588d90281777c5a96c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>constexpr<sp/>std::size_t<sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a7e8276dde25976588d90281777c5a96c" kindref="member">size</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container)</highlight></codeline>
@@ -388,23 +378,23 @@
 <codeline lineno="153"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;std::size_t...<sp/>Is&gt;</highlight></codeline>
-<codeline lineno="156" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ae3c5a859596ab437e12c7e03029ef233" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ae3c5a859596ab437e12c7e03029ef233" kindref="member">get_raw_data_impl</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1IndexSequence" kindref="compound">amrex::IndexSequence&lt;Is...&gt;</ref>)</highlight></codeline>
+<codeline lineno="156" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1afae6be410a1c1fb2ca8a44f4474b30da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1afae6be410a1c1fb2ca8a44f4474b30da" kindref="member">get_raw_data_impl</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::index_sequence&lt;Is...&gt;)</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1GpuTuple" kindref="compound">raw_type</ref>{</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">Types*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(&amp;std::get&lt;Is&gt;(a_container)[0])...<sp/>};</highlight></codeline>
 <codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;std::size_t...<sp/>Is&gt;</highlight></codeline>
-<codeline lineno="163" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1af39d38ffa741b1327c2b09d5ade9befd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1af39d38ffa741b1327c2b09d5ade9befd" kindref="member">resize_impl</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,<sp/>std::size_t<sp/>a_size,</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1IndexSequence" kindref="compound">amrex::IndexSequence&lt;Is...&gt;</ref>)</highlight></codeline>
+<codeline lineno="163" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ae4353e245aea999df7d5b84482d96045" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ae4353e245aea999df7d5b84482d96045" kindref="member">resize_impl</ref><sp/>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,<sp/>std::size_t<sp/>a_size,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::index_sequence&lt;Is...&gt;)</highlight></codeline>
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>expander<sp/>=<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[];</highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)<sp/>expander{<sp/>0,<sp/>(std::get&lt;Is&gt;(a_container).resize(a_size),<sp/>0)...<sp/>};</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"></highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>ValueType,<sp/>std::size_t...<sp/>Is&gt;</highlight></codeline>
-<codeline lineno="171" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a74e1771a5c50aa120508ca71def1224d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a74e1771a5c50aa120508ca71def1224d" kindref="member">push_back_impl</ref>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,<sp/>ValueType&amp;&amp;<sp/>a_value,</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1IndexSequence" kindref="compound">amrex::IndexSequence&lt;Is...&gt;</ref>)</highlight></codeline>
+<codeline lineno="171" refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1acec2f30f8a1442343e173e8b286ce526" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1acec2f30f8a1442343e173e8b286ce526" kindref="member">push_back_impl</ref>(<ref refid="structamrex_1_1DataLayoutPolicy_3_01ContainerType_00_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a83fde477aa6104bcc887473e4804f35f" kindref="member">container_type</ref>&amp;<sp/>a_container,<sp/>ValueType&amp;&amp;<sp/>a_value,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::index_sequence&lt;Is...&gt;)</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>expander<sp/>=<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">[];</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(void)<sp/>expander{<sp/>0,<sp/>(std::get&lt;Is&gt;(a_container).push_back(</highlight></codeline>
@@ -420,15 +410,15 @@
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
 <codeline lineno="189" refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a84441b8d48f67d4f5106cbdf7285b313" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1aee9e9e8e6778816545b4523b1bb0056e" kindref="member">value_type</ref><sp/><ref refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a84441b8d48f67d4f5106cbdf7285b313" kindref="member">get</ref><sp/>(<ref refid="classamrex_1_1GpuTuple" kindref="compound">raw_type</ref>&amp;<sp/>a_tuple,<sp/>std::size_t<sp/>a_index)</highlight></codeline>
 <codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1detail_1ac058d02c07c2b74e83e50b33b90197e5" kindref="member">get_impl</ref>(a_tuple,<sp/>a_index,<sp/><ref refid="namespaceamrex_1ad9f3a92c061d8ad8de35370ed5ce28b8" kindref="member">amrex::makeIndexSequence</ref>&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1_1detail_1ac058d02c07c2b74e83e50b33b90197e5" kindref="member">get_impl</ref>(a_tuple,<sp/>a_index,<sp/>std::make_index_sequence&lt;</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">...(Types)&gt;());</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="193"><highlight class="normal"></highlight></codeline>
 <codeline lineno="194"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;std::size_t...<sp/>Is&gt;</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></highlight></codeline>
-<codeline lineno="198" refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a1a927ce372623fee6aefa07660e17160" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1a1a927ce372623fee6aefa07660e17160" kindref="member">get_impl</ref><sp/>(<ref refid="classamrex_1_1GpuTuple" kindref="compound">raw_type</ref>&amp;<sp/>a_tuple,<sp/>std::size_t<sp/>a_index,</highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1IndexSequence" kindref="compound">amrex::IndexSequence&lt;Is...&gt;</ref>)</highlight></codeline>
+<codeline lineno="198" refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ae48835f2fbfcbba19274be723a428aa8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1ae48835f2fbfcbba19274be723a428aa8" kindref="member">get_impl</ref><sp/>(<ref refid="classamrex_1_1GpuTuple" kindref="compound">raw_type</ref>&amp;<sp/>a_tuple,<sp/>std::size_t<sp/>a_index,</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::index_sequence&lt;Is...&gt;)</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4_1aee9e9e8e6778816545b4523b1bb0056e" kindref="member">value_type</ref>{<ref refid="classamrex_1_1ref__wrapper" kindref="compound">ref_wrapper&lt;Types&gt;</ref>(amrex::get&lt;Is&gt;(a_tuple)[a_index])...<sp/>};</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
