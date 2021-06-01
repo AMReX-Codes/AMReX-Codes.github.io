@@ -303,6 +303,10 @@ or detected</p></td>
 <td><p>none if the
 machine is unknown</p></td>
 </tr>
+<tr class="row-odd"><td><p>USE_GPU_RDC</p></td>
+<td><p>TRUE or FALSE</p></td>
+<td><p>TRUE</p></td>
+</tr>
 </tbody>
 </table>
 <p>At the beginning of <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Basic/HelloWorld_C/GNUmakefile</span></code>,
@@ -665,152 +669,157 @@ The list of available options is reported in the <a class="reference internal" h
 <td><p>NONE</p></td>
 <td><p>NONE, SYCL, HIP, CUDA</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_FORTRAN_INTERFACES</p></td>
+<tr class="row-even"><td><p>AMReX_GPU_RDC</p></td>
+<td><p>Build with GPU RDC support</p></td>
+<td><p>YES</p></td>
+<td><p>YES, NO</p></td>
+</tr>
+<tr class="row-odd"><td><p>AMReX_FORTRAN_INTERFACES</p></td>
 <td><p>Build Fortran API</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_LINEAR_SOLVERS</p></td>
+<tr class="row-even"><td><p>AMReX_LINEAR_SOLVERS</p></td>
 <td><p>Build AMReX linear solvers</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_AMRDATA</p></td>
+<tr class="row-odd"><td><p>AMReX_AMRDATA</p></td>
 <td><p>Build data services</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_AMRLEVEL</p></td>
+<tr class="row-even"><td><p>AMReX_AMRLEVEL</p></td>
 <td><p>Build AmrLevel class</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_EB</p></td>
+<tr class="row-odd"><td><p>AMReX_EB</p></td>
 <td><p>Build Embedded Boundary support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PARTICLES</p></td>
+<tr class="row-even"><td><p>AMReX_PARTICLES</p></td>
 <td><p>Build particle classes</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PARTICLES_PRECISION</p></td>
+<tr class="row-odd"><td><p>AMReX_PARTICLES_PRECISION</p></td>
 <td><p>Set reals precision in particle classes</p></td>
 <td><p>Same as AMReX_PRECISION</p></td>
 <td><p>DOUBLE, SINGLE</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_BASE_PROFILE</p></td>
+<tr class="row-even"><td><p>AMReX_BASE_PROFILE</p></td>
 <td><p>Build with basic profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_TINY_PROFILE</p></td>
+<tr class="row-odd"><td><p>AMReX_TINY_PROFILE</p></td>
 <td><p>Build with tiny profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_TRACE_PROFILE</p></td>
+<tr class="row-even"><td><p>AMReX_TRACE_PROFILE</p></td>
 <td><p>Build with trace-profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_COMM_PROFILE</p></td>
+<tr class="row-odd"><td><p>AMReX_COMM_PROFILE</p></td>
 <td><p>Build with comm-profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_MEM_PROFILE</p></td>
+<tr class="row-even"><td><p>AMReX_MEM_PROFILE</p></td>
 <td><p>Build with memory-profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_MPI_THREAD_MULTIPLE</p></td>
+<tr class="row-odd"><td><p>AMReX_MPI_THREAD_MULTIPLE</p></td>
 <td><p>Concurrent MPI calls from multiple threads</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PROFPARSER</p></td>
+<tr class="row-even"><td><p>AMReX_PROFPARSER</p></td>
 <td><p>Build with profile parser support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_ROCTX</p></td>
+<tr class="row-odd"><td><p>AMReX_ROCTX</p></td>
 <td><p>Build with roctx markup profiling support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_FPE</p></td>
+<tr class="row-even"><td><p>AMReX_FPE</p></td>
 <td><p>Build with Floating Point Exceptions checks</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_ASSERTIONS</p></td>
+<tr class="row-odd"><td><p>AMReX_ASSERTIONS</p></td>
 <td><p>Build with assertions turned on</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_BOUND_CHECK</p></td>
+<tr class="row-even"><td><p>AMReX_BOUND_CHECK</p></td>
 <td><p>Enable bound checking in Array4 class</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_SENSEI</p></td>
+<tr class="row-odd"><td><p>AMReX_SENSEI</p></td>
 <td><p>Enable SENSEI_IN_SITU infrastucture</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_CONDUIT</p></td>
+<tr class="row-even"><td><p>AMReX_CONDUIT</p></td>
 <td><p>Enable Conduit support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_ASCENT</p></td>
+<tr class="row-odd"><td><p>AMReX_ASCENT</p></td>
 <td><p>Enable Ascent support</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_HYPRE</p></td>
+<tr class="row-even"><td><p>AMReX_HYPRE</p></td>
 <td><p>Enable HYPRE interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_PETSC</p></td>
+<tr class="row-odd"><td><p>AMReX_PETSC</p></td>
 <td><p>Enable PETSc interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_SUNDIALS</p></td>
+<tr class="row-even"><td><p>AMReX_SUNDIALS</p></td>
 <td><p>Enable SUNDIALS interfaces</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_HDF5</p></td>
+<tr class="row-odd"><td><p>AMReX_HDF5</p></td>
 <td><p>Enable HDF5-based I/O</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PLOTFILE_TOOLS</p></td>
+<tr class="row-even"><td><p>AMReX_PLOTFILE_TOOLS</p></td>
 <td><p>Build and install plotfile postprocessing tools</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_ENABLE_TESTS</p></td>
+<tr class="row-odd"><td><p>AMReX_ENABLE_TESTS</p></td>
 <td><p>Enable CTest suite</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
+<tr class="row-even"><td><p>AMReX_DIFFERENT_COMPILER</p></td>
 <td><p>Allow an app to use a different compiler</p></td>
 <td><p>NO</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-even"><td><p>AMReX_INSTALL</p></td>
+<tr class="row-odd"><td><p>AMReX_INSTALL</p></td>
 <td><p>Generate Install Targets</p></td>
 <td><p>YES</p></td>
 <td><p>YES, NO</p></td>
 </tr>
-<tr class="row-odd"><td><p>AMReX_PROBINIT</p></td>
+<tr class="row-even"><td><p>AMReX_PROBINIT</p></td>
 <td><p>Enable support for probin file</p></td>
 <td><p>Platform dependent</p></td>
 <td><p>YES, NO</p></td>
