@@ -688,7 +688,14 @@ This allows application codes to develop their GPU capability
 gradually.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Managed_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> is a separate pool of
 managed memory, that is distinguished from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> for
 performance reasons.  If you want to print out the current memory usage
-of the Arenas, you can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Arena</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">PrintUsage</span></span><span class="punctuation"><span class="pre">()</span></span></code>.</p>
+of the Arenas, you can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Arena</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">PrintUsage</span></span><span class="punctuation"><span class="pre">()</span></span></code>.
+When AMReX is built with SUNDIALS turned on, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">sundials</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">The_SUNMemory_Helper</span></span><span class="punctuation"><span class="pre">()</span></span></code>
+can be provided to SUNDIALS data structures so that they use the appropriate
+Arena object when allocating memory. For example, it can be provided to the
+SUNDIALS CUDA vector:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">N_Vector</span> <span class="n">x</span> <span class="o">=</span> <span class="n">N_VNewWithMemHelp_Cuda</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">use_managed_memory</span><span class="p">,</span> <span class="o">*</span><span class="n">The_SUNMemory_Helper</span><span class="p">());</span>
+</pre></div>
+</div>
 </section>
 <section id="gpu-safe-classes-and-functions">
 <span id="sec-gpu-classes"></span><h1>GPU Safe Classes and Functions<a class="headerlink" href="#gpu-safe-classes-and-functions" title="Permalink to this headline">¶</a></h1>
