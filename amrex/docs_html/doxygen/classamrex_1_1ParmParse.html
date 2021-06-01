@@ -462,7 +462,10 @@ Friends</h2></td></tr>
 <p>bigarray = 1 2 3 4 5 6 7 8 </p><pre class="fragment">       9 10 11 12
 </pre><p>aBox = ((0,0) (5,5))</p>
 <p>test = apple "boy blue" 10 20 30 40</p>
-<p>FILE = prob_file </p>
+<p>FILE = prob_file</p>
+<p>Preprocessing of AMREX_SPACEDIM is supported. It supports #if, #elif, #else, and #endif. The condition must be <code>AMREX_SPACEDIM op D</code>, where op is &gt;, &lt;, &gt;=, &lt;=, or ==, and D is 1, 2, or 3. The parentheses around the condition are optional. Some examples are shown below.</p>
+<p>#if (AMREX_SPACEDIM == 1) n_cell = 256 #elif (AMREX_SPACEDIM == 2) n_cell = 128 128 #else n_cell = 64 64 64 #endif</p>
+<p>#if AMREX_SPACEDIM &gt;= 2 t = 0.5 #else t = 1.5 #endif </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a328b966e328a476f04a86c758c9bc6c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a328b966e328a476f04a86c758c9bc6c1">&#9670;&nbsp;</a></span>Table</h2>
