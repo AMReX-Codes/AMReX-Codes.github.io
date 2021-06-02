@@ -417,7 +417,7 @@ $(function() {
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pmap = pc.GetParticles(lev);</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; kv : pmap)</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        {</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            Gpu::DeviceVector&lt;int&gt;&amp; flags = particle_io_flags[lev][kv.first];</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keyword">auto</span>&amp; flags = particle_io_flags[lev][kv.first];</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <a class="code" href="namespaceparticle__detail.html#ac8fa5307957d3b3b7ebea9e83b344da8">particle_detail::fillFlags</a>(flags, kv.second, std::forward&lt;F&gt;(f));</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        }</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
