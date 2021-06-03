@@ -125,8 +125,8 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">            block \</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">        } \</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">    }}}</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || (defined(AMREX_USE_HIP) &amp;&amp; defined(AMREX_HIP_INDIRECT_FUNCTION))</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="AMReX__GpuLaunchMacrosG_8H.html#a0f9d9e4529f11a83425671e42423da1e">   58</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE(TN,TI,block) \</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_GPU_RDC) &amp;&amp; (defined(AMREX_USE_CUDA) || (defined(AMREX_USE_HIP) &amp;&amp; defined(AMREX_HIP_INDIRECT_FUNCTION)))</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE(TN,TI,block) \</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">    { auto const&amp; amrex_i_tn = TN; \</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">    if (!amrex::isEmpty(amrex_i_tn)) { \</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    if (amrex::Gpu::inLaunchRegion()) \</span></div>
@@ -234,8 +234,8 @@ $(function() {
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">            block2 \</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">        } \</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">    }}}</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || (defined(AMREX_USE_HIP) &amp;&amp; defined(AMREX_HIP_INDIRECT_FUNCTION))</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="AMReX__GpuLaunchMacrosG_8H.html#ae875344019f719b043550e3dc27fc094">  167</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2) \</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_GPU_RDC) &amp;&amp; (defined(AMREX_USE_CUDA) || (defined(AMREX_USE_HIP) &amp;&amp; defined(AMREX_HIP_INDIRECT_FUNCTION)))</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#define AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2) \</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">    { auto const&amp; amrex_i_tn1 = TN1; auto const&amp; amrex_i_tn2 = TN2; \</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">    if (!amrex::isEmpty(amrex_i_tn1) || !amrex::isEmpty(amrex_i_tn2)) { \</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">    if (amrex::Gpu::inLaunchRegion()) \</span></div>
@@ -378,8 +378,8 @@ $(function() {
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">            block3 \</span></div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">        } \</span></div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">    }}}</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_CUDA) || (defined(AMREX_USE_HIP) &amp;&amp; defined(AMREX_HIP_INDIRECT_FUNCTION))</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="AMReX__GpuLaunchMacrosG_8H.html#aa1fa5a67b2251f2f342cc5978a66b820">  311</a></span>&#160;<span class="preprocessor">#define AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3) \</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#if defined(AMREX_USE_GPU_RDC) &amp;&amp; (defined(AMREX_USE_CUDA) || (defined(AMREX_USE_HIP) &amp;&amp; defined(AMREX_HIP_INDIRECT_FUNCTION)))</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#define AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3) \</span></div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">    { auto const&amp; amrex_i_tn1 = TN1; auto const&amp; amrex_i_tn2 = TN2; auto const&amp; amrex_i_tn3 = TN3; \</span></div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">    if (!amrex::isEmpty(amrex_i_tn1) || !amrex::isEmpty(amrex_i_tn2) || !amrex::isEmpty(amrex_i_tn3)) { \</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">    if (amrex::Gpu::inLaunchRegion()) \</span></div>

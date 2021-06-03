@@ -2907,44 +2907,6 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="38" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="38" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1a0f9d9e4529f11a83425671e42423da1e" prot="public" static="no">
-        <name>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE</name>
-        <param><defname>TN</defname></param>
-        <param><defname>TI</defname></param>
-        <param><defname>block</defname></param>
-        <initializer>    { auto const&amp; amrex_i_tn = TN; \
-    if (!<ref refid="namespaceamrex_1a923303ed68b75a5a2e65f20876e25a7a" kindref="member">amrex::isEmpty</ref>(amrex_i_tn)) { \
-    if (<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">amrex::Gpu::inLaunchRegion</ref>()) \
-    { \
-      const auto amrex_i_ec = <ref refid="structamrex_1_1Gpu_1_1ExecutionConfig" kindref="compound">amrex::Gpu::ExecutionConfig</ref>(amrex_i_tn); \
-      if (<ref refid="namespaceamrex_1_1Gpu_1af614b8f52fe47771d8a10fca4f6ecdbc" kindref="member">amrex::Gpu::inFuseRegion</ref>() &amp;&amp; amrex_i_ec.numBlocks.x*amrex_i_ec.numThreads.x &lt;= <ref refid="namespaceamrex_1_1Gpu_1a32537a2939d34eb996e90f7d8bb7f509" kindref="member">amrex::Gpu::getFuseSizeThreshold</ref>()) { \
-        <ref refid="namespaceamrex_1_1Gpu_1a331a870e4a829ef2d8e547f35eb86ae3" kindref="member">amrex::Gpu::Register</ref>(amrex_i_tn, [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (int i, int j, int k) noexcept { \
-            <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> TI{<ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k)),<ref refid="classamrex_1_1IntVect" kindref="compound">amrex::IntVect</ref>(<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(i,j,k))}; \
-            block \
-        }); \
-      } else { \
-        <ref refid="AMReX__GpuLaunch_8H_1a5e16b51a0139af0f65fc463c7d37e0f6" kindref="member">AMREX_LAUNCH_KERNEL</ref>(amrex_i_ec.numBlocks, amrex_i_ec.numThreads, amrex_i_ec.sharedMem, <ref refid="namespaceamrex_1_1Gpu_1ae1a0966ad8daf3a49564123b8dbdb3fa" kindref="member">amrex::Gpu::gpuStream</ref>(), \
-        [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> () noexcept { \
-            for (auto const TI : <ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn)) { \
-                block \
-            } \
-        }); \
-        <ref refid="AMReX__GpuError_8H_1aff2d29ad26ba217734430c3d36f42dd1" kindref="member">AMREX_GPU_ERROR_CHECK</ref>(); \
-      } \
-    } \
-    else { \
-        for (auto const TI : <ref refid="namespaceamrex_1_1Gpu_1a5a7e65f26ef2a8d356ebef518f007aaf" kindref="member">amrex::Gpu::Range</ref>(amrex_i_tn)) { \
-            block \
-        } \
-    }}}</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="58" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="58" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1ad1f3024e42b239e08da4610129518d1b" prot="public" static="no">
         <name>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_2</name>
         <param><defname>TN1</defname></param>
@@ -2960,22 +2922,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="134" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="134" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1ae875344019f719b043550e3dc27fc094" prot="public" static="no">
-        <name>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_2</name>
-        <param><defname>TN1</defname></param>
-        <param><defname>TI1</defname></param>
-        <param><defname>block1</defname></param>
-        <param><defname>TN2</defname></param>
-        <param><defname>TI2</defname></param>
-        <param><defname>block2</defname></param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="167" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="167" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1a85943be0d705485c46b55c8442846c61" prot="public" static="no">
         <name>AMREX_GPU_LAUNCH_HOST_DEVICE_LAMBDA_RANGE_3</name>
@@ -2995,25 +2941,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="269" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="269" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1aa1fa5a67b2251f2f342cc5978a66b820" prot="public" static="no">
-        <name>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_3</name>
-        <param><defname>TN1</defname></param>
-        <param><defname>TI1</defname></param>
-        <param><defname>block1</defname></param>
-        <param><defname>TN2</defname></param>
-        <param><defname>TI2</defname></param>
-        <param><defname>block2</defname></param>
-        <param><defname>TN3</defname></param>
-        <param><defname>TI3</defname></param>
-        <param><defname>block3</defname></param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" line="311" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchMacrosG.H" bodystart="311" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="AMReX__GpuLaunchMacrosG_8H_1a475e84abbd9698afb9147ac67a49bdaa" prot="public" static="no">
         <name>AMREX_GPU_LAUNCH_DEVICE_LAMBDA_RANGE</name>
@@ -3440,8 +3367,8 @@
 <codeline lineno="54"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block<sp/>\</highlight></codeline>
 <codeline lineno="55"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="56"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58" refid="AMReX__GpuLaunchMacrosG_8H_1a0f9d9e4529f11a83425671e42423da1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE(TN,TI,block)<sp/>\</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU_RDC)<sp/>&amp;&amp;<sp/>(defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE(TN,TI,block)<sp/>\</highlight></codeline>
 <codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn<sp/>=<sp/>TN;<sp/>\</highlight></codeline>
 <codeline lineno="60"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn))<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="61"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(amrex::Gpu::inLaunchRegion())<sp/>\</highlight></codeline>
@@ -3549,8 +3476,8 @@
 <codeline lineno="163"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block2<sp/>\</highlight></codeline>
 <codeline lineno="164"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="165"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="167" refid="AMReX__GpuLaunchMacrosG_8H_1ae875344019f719b043550e3dc27fc094" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2)<sp/>\</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU_RDC)<sp/>&amp;&amp;<sp/>(defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_2(TN1,TI1,block1,TN2,TI2,block2)<sp/>\</highlight></codeline>
 <codeline lineno="168"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>\</highlight></codeline>
 <codeline lineno="169"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2))<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="170"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(amrex::Gpu::inLaunchRegion())<sp/>\</highlight></codeline>
@@ -3693,8 +3620,8 @@
 <codeline lineno="307"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>block3<sp/>\</highlight></codeline>
 <codeline lineno="308"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>\</highlight></codeline>
 <codeline lineno="309"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}}}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="310"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="311" refid="AMReX__GpuLaunchMacrosG_8H_1aa1fa5a67b2251f2f342cc5978a66b820" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3)<sp/>\</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_GPU_RDC)<sp/>&amp;&amp;<sp/>(defined(AMREX_USE_CUDA)<sp/>||<sp/>(defined(AMREX_USE_HIP)<sp/>&amp;&amp;<sp/>defined(AMREX_HIP_INDIRECT_FUNCTION)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AMREX_GPU_LAUNCH_HOST_DEVICE_FUSIBLE_LAMBDA_RANGE_3(TN1,TI1,block1,TN2,TI2,block2,TN3,TI3,block3)<sp/>\</highlight></codeline>
 <codeline lineno="312"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn1<sp/>=<sp/>TN1;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn2<sp/>=<sp/>TN2;<sp/>auto<sp/>const&amp;<sp/>amrex_i_tn3<sp/>=<sp/>TN3;<sp/>\</highlight></codeline>
 <codeline lineno="313"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(!amrex::isEmpty(amrex_i_tn1)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn2)<sp/>||<sp/>!amrex::isEmpty(amrex_i_tn3))<sp/>{<sp/>\</highlight></codeline>
 <codeline lineno="314"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(amrex::Gpu::inLaunchRegion())<sp/>\</highlight></codeline>
