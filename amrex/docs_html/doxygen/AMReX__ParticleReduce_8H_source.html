@@ -415,14 +415,57 @@ $(function() {
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">return</span> r;</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;}</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;}</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>RD, <span class="keyword">class </span>PC, <span class="keyword">class </span>F, <span class="keyword">class </span>ReduceOps,</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;          std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="keyword">typename</span> RD::Type</div>
+<div class="line"><a name="l00672"></a><span class="lineno"><a class="line" href="namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da">  672</a></span>&#160;<a class="code" href="namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da">ParticleReduce</a> (PC <span class="keyword">const</span>&amp; pc, F&amp;&amp; f, <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&amp; reduce_ops)</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;{</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="keywordflow">return</span> ParticleReduce&lt;RD&gt;(pc, 0, pc.finestLevel(), std::forward&lt;F&gt;(f), reduce_ops);</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;}</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>RD, <span class="keyword">class </span>PC, <span class="keyword">class </span>F, <span class="keyword">class </span>ReduceOps,</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;          std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="keyword">typename</span> RD::Type</div>
+<div class="line"><a name="l00717"></a><span class="lineno"><a class="line" href="namespaceamrex.html#af42436c4813e6fedd6dd7a5c73581b63">  717</a></span>&#160;<a class="code" href="namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da">ParticleReduce</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> lev, F&amp;&amp; f, <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&amp; reduce_ops)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;{</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordflow">return</span> ParticleReduce&lt;RD&gt;(pc, lev, lev, std::forward&lt;F&gt;(f), reduce_ops);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;}</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>RD, <span class="keyword">class </span>PC, <span class="keyword">class </span>F, <span class="keyword">class </span>ReduceOps,</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;          std::enable_if_t&lt;IsParticleContainer&lt;PC&gt;::value, <span class="keywordtype">int</span>&gt; <a class="code" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">foo</a> = 0&gt;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;<span class="keyword">typename</span> RD::Type</div>
+<div class="line"><a name="l00763"></a><span class="lineno"><a class="line" href="namespaceamrex.html#abd99345bb2a77ab8b210256686079d4b">  763</a></span>&#160;<a class="code" href="namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da">ParticleReduce</a> (PC <span class="keyword">const</span>&amp; pc, <span class="keywordtype">int</span> lev_min, <span class="keywordtype">int</span> lev_max, F&amp;&amp; f, <a class="code" href="classamrex_1_1ReduceOps.html">ReduceOps</a>&amp; reduce_ops)</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;{</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    RD reduce_data(reduce_ops);</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keyword">using</span> <a class="code" href="classamrex_1_1ParIter.html">ParIter</a> = <span class="keyword">typename</span> PC::ParConstIterType;</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="preprocessor">#if !defined(AMREX_USE_GPU) &amp;&amp; defined(AMREX_USE_OMP)</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;<span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = lev_min; lev &lt;= lev_max; ++lev) {</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classamrex_1_1ParIter.html">ParIter</a> pti(pc, lev); pti.<a class="code" href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">isValid</a>(); ++pti) {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tile = pti.<a class="code" href="classamrex_1_1ParIterBase.html#a118abe9490a5ad60844d3880904c125d">GetParticleTile</a>();</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> np = tile.numParticles();</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> ptd = tile.getConstParticleTileData();</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;            reduce_ops.<a class="code" href="classamrex_1_1ReduceOps.html#a6bed424b9a455d76e42d8061aef71b3e">eval</a>(np, reduce_data,</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                            [=] <a class="code" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> i) noexcept</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                            {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                                <span class="keywordflow">return</span> f(ptd.getSuperParticle(i));</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                            });</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        }</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    }</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keywordflow">return</span> reduce_data.value(reduce_ops);</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;}</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;}</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aAMReX__Gpu_8H_html"><div class="ttname"><a href="AMReX__Gpu_8H.html">AMReX_Gpu.H</a></div></div>
 <div class="ttc" id="aAMReX__TypeTraits_8H_html"><div class="ttname"><a href="AMReX__TypeTraits_8H.html">AMReX_TypeTraits.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html_aee63624c66220385d3ab86b7f68ae1c4"><div class="ttname"><a href="namespaceamrex.html#aee63624c66220385d3ab86b7f68ae1c4">amrex::ReduceSum</a></div><div class="ttdeci">FAB::value_type ReduceSum(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:15</div></div>
 <div class="ttc" id="aclassamrex_1_1MFIter_html_a61b9a1d5eda39765d1db9b9b936558c7"><div class="ttname"><a href="classamrex_1_1MFIter.html#a61b9a1d5eda39765d1db9b9b936558c7">amrex::MFIter::isValid</a></div><div class="ttdeci">bool isValid() const noexcept</div><div class="ttdoc">Is the iterator valid i.e. is it associated with a FAB?</div><div class="ttdef"><b>Definition:</b> AMReX_MFIter.H:151</div></div>
+<div class="ttc" id="aclassamrex_1_1ParIterBase_html_a118abe9490a5ad60844d3880904c125d"><div class="ttname"><a href="classamrex_1_1ParIterBase.html#a118abe9490a5ad60844d3880904c125d">amrex::ParIterBase::GetParticleTile</a></div><div class="ttdeci">ParticleTileRef GetParticleTile() const</div><div class="ttdef"><b>Definition:</b> AMReX_ParIter.H:70</div></div>
 <div class="ttc" id="aAMReX__Print_8H_html"><div class="ttname"><a href="AMReX__Print_8H.html">AMReX_Print.H</a></div></div>
+<div class="ttc" id="anamespaceamrex_html_a8d32380d1bccbedf1b24bd2c1bb7a1da"><div class="ttname"><a href="namespaceamrex.html#a8d32380d1bccbedf1b24bd2c1bb7a1da">amrex::ParticleReduce</a></div><div class="ttdeci">RD::Type ParticleReduce(PC const &amp;pc, F &amp;&amp;f, ReduceOps &amp;reduce_ops)</div><div class="ttdoc">A general reduction method for the particles in a ParticleContainer that can run on either CPUs or GP...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleReduce.H:672</div></div>
 <div class="ttc" id="anamespaceamrex_html_a3866c459fc8c798d5a19fa747a3500b5"><div class="ttname"><a href="namespaceamrex.html#a3866c459fc8c798d5a19fa747a3500b5">amrex::ReduceLogicalAnd</a></div><div class="ttdeci">bool ReduceLogicalAnd(FabArray&lt; FAB &gt; const &amp;fa, int nghost, F &amp;&amp;f)</div><div class="ttdef"><b>Definition:</b> AMReX_FabArrayUtility.H:1002</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0"><div class="ttname"><a href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0">amrex::detail::min</a></div><div class="ttdeci">@ min</div><div class="ttdef"><b>Definition:</b> AMReX_ParallelReduce.H:17</div></div>

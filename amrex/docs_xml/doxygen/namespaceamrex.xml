@@ -44715,6 +44715,366 @@ Returns the index of the first element for which f is 0. </para>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="583" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="583" bodyend="631"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class RD</type>
+          </param>
+          <param>
+            <type>class PC</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class ReduceOps</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>RD::Type</type>
+        <definition>RD::Type amrex::ParticleReduce</definition>
+        <argsstring>(PC const &amp;pc, F &amp;&amp;f, ReduceOps &amp;reduce_ops)</argsstring>
+        <name>ParticleReduce</name>
+        <param>
+          <type>PC const &amp;</type>
+          <declname>pc</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref> &amp;</type>
+          <declname>reduce_ops</declname>
+        </param>
+        <briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates over all particles on all levels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version can operate on a <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> worth of data at once. It also takes an arbitrary tuple of reduction operators.</para>
+<para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para>
+<para>Unlike the other reduction functions in this file, this version does not respect the Gpu::launchRegion flag. If <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> is built with GPU support, this reduction will always be done on the device.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>RD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="classamrex_1_1ReduceData" kindref="compound">amrex::ReduceData</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref> type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns a tuple of values to be reduced over all particles. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reduce_ops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specifies the reduction operations for each tuple element</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops); </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="672" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="672" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1af42436c4813e6fedd6dd7a5c73581b63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class RD</type>
+          </param>
+          <param>
+            <type>class PC</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class ReduceOps</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>RD::Type</type>
+        <definition>RD::Type amrex::ParticleReduce</definition>
+        <argsstring>(PC const &amp;pc, int lev, F &amp;&amp;f, ReduceOps &amp;reduce_ops)</argsstring>
+        <name>ParticleReduce</name>
+        <param>
+          <type>PC const &amp;</type>
+          <declname>pc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref> &amp;</type>
+          <declname>reduce_ops</declname>
+        </param>
+        <briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates only on the specified level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version can operate on a <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> worth of data at once. It also takes an arbitrary tuple of reduction operators.</para>
+<para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para>
+<para>Unlike the other reduction functions in this file, this version does not respect the Gpu::launchRegion flag. If <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> is built with GPU support, this reduction will always be done on the device.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>RD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="classamrex_1_1ReduceData" kindref="compound">amrex::ReduceData</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref> type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the level to operate on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns a tuple of values to be reduced over all particles. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reduce_ops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specifies the reduction operations for each tuple element</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, 0, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops); </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="717" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="717" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1abd99345bb2a77ab8b210256686079d4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class RD</type>
+          </param>
+          <param>
+            <type>class PC</type>
+          </param>
+          <param>
+            <type>class F</type>
+          </param>
+          <param>
+            <type>class ReduceOps</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; IsParticleContainer&lt; PC &gt;::value, int &gt;</type>
+            <declname>foo</declname>
+            <defname>foo</defname>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>RD::Type</type>
+        <definition>RD::Type amrex::ParticleReduce</definition>
+        <argsstring>(PC const &amp;pc, int lev_min, int lev_max, F &amp;&amp;f, ReduceOps &amp;reduce_ops)</argsstring>
+        <name>ParticleReduce</name>
+        <param>
+          <type>PC const &amp;</type>
+          <declname>pc</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev_min</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>lev_max</declname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref> &amp;</type>
+          <declname>reduce_ops</declname>
+        </param>
+        <briefdescription>
+<para>A general reduction method for the particles in a <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> that can run on either CPUs or GPUs. This version operates from the specified lev_min to lev_max. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version can operate on a <ref refid="classamrex_1_1GpuTuple" kindref="compound">GpuTuple</ref> worth of data at once. It also takes an arbitrary tuple of reduction operators.</para>
+<para>Note that there is no MPI reduction performed at the end of this operation. Users should manually call the MPI reduction operations described in <ref refid="namespaceamrex_1_1ParallelDescriptor" kindref="compound">ParallelDescriptor</ref> if they want that behavior.</para>
+<para>Unlike the other reduction functions in this file, this version does not respect the Gpu::launchRegion flag. If <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> is built with GPU support, this reduction will always be done on the device.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>RD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an <ref refid="classamrex_1_1ReduceData" kindref="compound">amrex::ReduceData</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername><ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a <ref refid="classamrex_1_1ReduceOps" kindref="compound">ReduceOps</ref> type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the <ref refid="classamrex_1_1ParticleContainer" kindref="compound">ParticleContainer</ref> to operate on </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_min</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the minimum level to include </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lev_max</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the maximum level to include </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that takes a &quot;superparticle&quot; and returns a tuple of values to be reduced over all particles. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reduce_ops</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specifies the reduction operations for each tuple element</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; reduce_ops; auto r = <ref refid="namespaceamrex_1a8d32380d1bccbedf1b24bd2c1bb7a1da" kindref="member">amrex::ParticleReduce</ref>&lt;ReduceData&lt;amrex::Real, amrex::Real,int&gt;&gt; ( pc, 0, 1, [=] AMREX_GPU_DEVICE (const PType&amp; p) noexcept -&gt; amrex::GpuTuple&lt;amrex::Real,amrex::Real,int&gt; { const amrex::Real a = p.rdata(1); const amrex::Real b = p.rdata(2); const int c = p.idata(1); return {a, b, c}; }, reduce_ops); </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" line="763" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleReduce.H" bodystart="763" bodyend="783"/>
+      </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a14f61ebac9d7c0ea8b108bad4f0947c5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
