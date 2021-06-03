@@ -164,6 +164,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a08c410256fef4294c96d5d39a8bd7623"><td class="memTemplParams" colspan="2">template&lt;typename F , typename T &gt; </td></tr>
 <tr class="memitem:a08c410256fef4294c96d5d39a8bd7623"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a08c410256fef4294c96d5d39a8bd7623">call_f</a> (F const &amp;f, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> i, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> j, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> k, T ncomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>) noexcept -&gt; decltype(f(0, 0, 0, 0))</td></tr>
 <tr class="separator:a08c410256fef4294c96d5d39a8bd7623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d74c2cdf84d6bbcf30ad8aaebc4070"><td class="memTemplParams" colspan="2">template&lt;typename MF , typename F &gt; </td></tr>
+<tr class="memitem:a27d74c2cdf84d6bbcf30ad8aaebc4070"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a27d74c2cdf84d6bbcf30ad8aaebc4070">ParallelFor_doit</a> (MF const &amp;, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;, F &amp;&amp;)</td></tr>
+<tr class="separator:a27d74c2cdf84d6bbcf30ad8aaebc4070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dcf1ceb61c55d8d7ae73acb097ccf64"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a3dcf1ceb61c55d8d7ae73acb097ccf64">build_par_for_nblocks</a> (<a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Long &gt; const &amp;ncells)</td></tr>
+<tr class="separator:a3dcf1ceb61c55d8d7ae73acb097ccf64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9698fcec2214e5cc1f6f241ca764337"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#ad9698fcec2214e5cc1f6f241ca764337">destroy_par_for_nblocks</a> (std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> * &gt; const &amp;<a class="el" href="AMReX__HypreIJIface_8cpp.html#a0f759ac05320ca5b06c49fd9501b9135">pp</a>)</td></tr>
+<tr class="separator:ad9698fcec2214e5cc1f6f241ca764337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9a622392a0eee879ac8180cb2371e6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2d9a622392a0eee879ac8180cb2371e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1detail.html#a2d9a622392a0eee879ac8180cb2371e6">Reduce</a> (<a class="el" href="namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569d">ReduceOp</a>, T *, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>, <a class="el" href="AMReX__ccse-mpi_8H.html#a68c509d4adb3f4a1d6fe3a9b0b87c7b9">MPI_Comm</a>)</td></tr>
 <tr class="separator:a2d9a622392a0eee879ac8180cb2371e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -432,6 +439,32 @@ template&lt;typename F , typename TP , std::size_t... N&gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3dcf1ceb61c55d8d7ae73acb097ccf64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcf1ceb61c55d8d7ae73acb097ccf64">&#9670;&nbsp;</a></span>build_par_for_nblocks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>*,<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>*&gt; amrex::detail::build_par_for_nblocks </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; Long &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>ncells</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -898,6 +931,32 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9698fcec2214e5cc1f6f241ca764337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9698fcec2214e5cc1f6f241ca764337">&#9670;&nbsp;</a></span>destroy_par_for_nblocks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void amrex::detail::destroy_par_for_nblocks </td>
+          <td>(</td>
+          <td class="paramtype">std::pair&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> *, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> * &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>pp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -1485,6 +1544,42 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype">T &amp;&#160;</td>
           <td class="paramname"><em>allocator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27d74c2cdf84d6bbcf30ad8aaebc4070"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d74c2cdf84d6bbcf30ad8aaebc4070">&#9670;&nbsp;</a></span>ParallelFor_doit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename MF , typename F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt; <a class="el" href="structamrex_1_1IsFabArray.html">IsFabArray</a>&lt; MF &gt;::value &gt; amrex::detail::ParallelFor_doit </td>
+          <td>(</td>
+          <td class="paramtype">MF const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const &amp;&#160;</td>
+          <td class="paramname"><em>nghost</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

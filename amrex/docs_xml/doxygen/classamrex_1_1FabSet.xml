@@ -856,30 +856,66 @@
 <para>FabSets are used primarily as a data storage mechanism, and are manipulated by more sophisticated control classes. </para>
     </detaileddescription>
     <collaborationgraph>
-      <node id="6">
+      <node id="9">
         <label>amrex::ArenaInfo</label>
         <link refid="structamrex_1_1ArenaInfo"/>
       </node>
-      <node id="4">
+      <node id="13">
+        <label>amrex::MultiArray4&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1MultiArray4"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>hp</edgelabel>
+          <edgelabel>dp</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
         <label>amrex::DataAllocator</label>
         <link refid="structamrex_1_1DataAllocator"/>
-        <childnode refid="5" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>m_arena</edgelabel>
         </childnode>
       </node>
-      <node id="8">
+      <node id="11">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
       </node>
-      <node id="5">
+      <node id="4">
+        <label>amrex::MultiArray4&lt; value_type const &gt;</label>
+        <link refid="structamrex_1_1MultiArray4"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>hp</edgelabel>
+          <edgelabel>dp</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>amrex::Array4&lt; value_type &gt;</label>
+        <link refid="structamrex_1_1Array4"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
         <label>amrex::Arena</label>
         <link refid="classamrex_1_1Arena"/>
-        <childnode refid="6" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>arena_info</edgelabel>
         </childnode>
       </node>
-      <node id="9">
+      <node id="12">
         <label>amrex::FabArray&lt; FAB &gt;::ShMem</label>
         <link refid="structamrex_1_1FabArray_1_1ShMem"/>
+      </node>
+      <node id="6">
+        <label>amrex::Dim3</label>
+        <link refid="structamrex_1_1Dim3"/>
+      </node>
+      <node id="5">
+        <label>amrex::Array4&lt; value_type const &gt;</label>
+        <link refid="structamrex_1_1Array4"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
       </node>
       <node id="1">
         <label>amrex::FabSet</label>
@@ -888,10 +924,10 @@
           <edgelabel>m_mf</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="10">
         <label>amrex::Vector&lt; std::string &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="8" relation="public-inheritance">
+        <childnode refid="11" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -904,13 +940,19 @@
         <label>amrex::FabArray&lt; FArrayBox &gt;</label>
         <link refid="classamrex_1_1FabArray"/>
         <childnode refid="4" relation="usage">
-          <edgelabel>m_dallocator</edgelabel>
+          <edgelabel>m_const_arrays</edgelabel>
         </childnode>
         <childnode refid="7" relation="usage">
+          <edgelabel>m_dallocator</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
           <edgelabel>m_tags</edgelabel>
         </childnode>
-        <childnode refid="9" relation="usage">
+        <childnode refid="12" relation="usage">
           <edgelabel>shmem</edgelabel>
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>m_arrays</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

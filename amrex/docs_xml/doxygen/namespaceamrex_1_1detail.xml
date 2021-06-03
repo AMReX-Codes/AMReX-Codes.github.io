@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="125" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="125" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="128" column="20" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1_1detail_1ad9ffd55042a6573c492b8fc107951d12" prot="public" static="no">
         <templateparamlist>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="165" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="165" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" line="168" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_TypeTraits.H" bodystart="168" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -377,6 +377,73 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="895" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="895" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a27d74c2cdf84d6bbcf30ad8aaebc4070" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename MF</type>
+          </param>
+          <param>
+            <type>typename F</type>
+          </param>
+        </templateparamlist>
+        <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
+        <definition>std::enable_if_t&lt; IsFabArray&lt; MF &gt;::value &gt; amrex::detail::ParallelFor_doit</definition>
+        <argsstring>(MF const &amp;, IntVect const &amp;, F &amp;&amp;)</argsstring>
+        <name>ParallelFor_doit</name>
+        <param>
+          <type>MF const &amp;</type>
+          <defname>mf</defname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+          <defname>nghost</defname>
+        </param>
+        <param>
+          <type>F &amp;&amp;</type>
+          <defname>f</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="80" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="80" bodyend="143" declfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" declline="19" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1a3dcf1ceb61c55d8d7ae73acb097ccf64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt;</type>
+        <definition>std::pair&lt;int*,int*&gt; amrex::detail::build_par_for_nblocks</definition>
+        <argsstring>(Vector&lt; Long &gt; const &amp;ncells)</argsstring>
+        <name>build_par_for_nblocks</name>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Long &gt; const &amp;</type>
+          <declname>ncells</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="44" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="44" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad9698fcec2214e5cc1f6f241ca764337" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::detail::destroy_par_for_nblocks</definition>
+        <argsstring>(std::pair&lt; int *, int * &gt; const &amp;pp)</argsstring>
+        <name>destroy_par_for_nblocks</name>
+        <param>
+          <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt; const &amp;</type>
+          <declname>pp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="72" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="72" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a2d9a622392a0eee879ac8180cb2371e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
