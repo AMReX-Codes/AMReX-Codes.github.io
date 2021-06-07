@@ -1238,6 +1238,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6d6b1086f3f7b77f820cac8d8005ac38"><td class="memTemplParams" colspan="2">template&lt;class T , class F , typename std::enable_if&lt; std::is_floating_point&lt; T &gt;::value, int &gt;::type FOO = 0&gt; </td></tr>
 <tr class="memitem:a6d6b1086f3f7b77f820cac8d8005ac38"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6d6b1086f3f7b77f820cac8d8005ac38">bisect</a> (T lo, T hi, F f, T tol=1e-12, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> max_iter=100)</td></tr>
 <tr class="separator:a6d6b1086f3f7b77f820cac8d8005ac38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae028ac7f5c3bea125e9525c505ceefd2"><td class="memTemplParams" colspan="2">template&lt;typename T , typename I , typename std::enable_if&lt; std::is_integral&lt; I &gt;::value, int &gt;::type  = 0&gt; </td></tr>
+<tr class="memitem:ae028ac7f5c3bea125e9525c505ceefd2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> I&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae028ac7f5c3bea125e9525c505ceefd2">bisect</a> (T const *d, I lo, I hi, T const &amp;v)</td></tr>
+<tr class="separator:ae028ac7f5c3bea125e9525c505ceefd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48b44d4cce9eeb8129350d8a67e5a0e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a48b44d4cce9eeb8129350d8a67e5a0e9">clz</a> (std::uint8_t x) noexcept</td></tr>
 <tr class="separator:a48b44d4cce9eeb8129350d8a67e5a0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a73225ef0f2ce085713ceba42e899c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7a73225ef0f2ce085713ceba42e899c8">clz</a> (std::uint16_t x) noexcept</td></tr>
@@ -1992,15 +1995,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a410d6b1d4212f6b2cd1166ab26a693c6"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , typename M1  = std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;, typename M2  = std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;, typename M3  = std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a410d6b1d4212f6b2cd1166ab26a693c6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a410d6b1d4212f6b2cd1166ab26a693c6">ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;, <a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, <a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="separator:a410d6b1d4212f6b2cd1166ab26a693c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a1395d7a528a4346d3abbbf457bf078"><td class="memTemplParams" colspan="2">template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a5a1395d7a528a4346d3abbbf457bf078"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a5a1395d7a528a4346d3abbbf457bf078">FabReduce</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box, N ncomp, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2, std::size_t=0) noexcept</td></tr>
-<tr class="separator:a5a1395d7a528a4346d3abbbf457bf078"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fbc9ce751f84cb6447998a0ef18da98"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L1 , typename L2 &gt; </td></tr>
-<tr class="memitem:a6fbc9ce751f84cb6447998a0ef18da98"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6fbc9ce751f84cb6447998a0ef18da98">FabReduce</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2, std::size_t=0) noexcept</td></tr>
-<tr class="separator:a6fbc9ce751f84cb6447998a0ef18da98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa97bf4be56f176e3af5b90f5b5955a04"><td class="memTemplParams" colspan="2">template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:aa97bf4be56f176e3af5b90f5b5955a04"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aa97bf4be56f176e3af5b90f5b5955a04">VecReduce</a> (N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2, std::size_t=0) noexcept</td></tr>
-<tr class="separator:aa97bf4be56f176e3af5b90f5b5955a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fbd6b37b492537aed607bfd14595409"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a8fbd6b37b492537aed607bfd14595409"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a8fbd6b37b492537aed607bfd14595409">HostDeviceParallelFor</a> (T n, L &amp;&amp;f) noexcept</td></tr>
 <tr class="separator:a8fbd6b37b492537aed607bfd14595409"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2139,15 +2133,6 @@ Functions</h2></td></tr>
 <tr class="memitem:af7b08639ec098664cd764cef5f1fe2e2"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 , typename T3 , typename L1 , typename L2 , typename L3 , typename M1  = std::enable_if_t&lt;std::is_integral&lt;T1&gt;::value&gt;, typename M2  = std::enable_if_t&lt;std::is_integral&lt;T2&gt;::value&gt;, typename M3  = std::enable_if_t&lt;std::is_integral&lt;T3&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:af7b08639ec098664cd764cef5f1fe2e2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L3 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af7b08639ec098664cd764cef5f1fe2e2">ParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, <a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box1, T1 ncomp1, L1 &amp;&amp;f1, <a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box2, T2 ncomp2, L2 &amp;&amp;f2, <a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box3, T3 ncomp3, L3 &amp;&amp;f3) noexcept</td></tr>
 <tr class="separator:af7b08639ec098664cd764cef5f1fe2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09ea6d5ccf6695c1e424a01055979221"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L1 , typename L2 &gt; </td></tr>
-<tr class="memitem:a09ea6d5ccf6695c1e424a01055979221"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a09ea6d5ccf6695c1e424a01055979221">FabReduce</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
-<tr class="separator:a09ea6d5ccf6695c1e424a01055979221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b6843a336093bdba06760a7ef1a8587"><td class="memTemplParams" colspan="2">template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a3b6843a336093bdba06760a7ef1a8587"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a3b6843a336093bdba06760a7ef1a8587">FabReduce</a> (<a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;box, N ncomp, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
-<tr class="separator:a3b6843a336093bdba06760a7ef1a8587"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a642123627a5e585a728190b4f8279a72"><td class="memTemplParams" colspan="2">template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a642123627a5e585a728190b4f8279a72"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L1 &gt;::value &amp;&amp;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt; L2 &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a642123627a5e585a728190b4f8279a72">VecReduce</a> (N n, T const &amp;init_val, L1 &amp;&amp;f1, L2 &amp;&amp;f2) noexcept</td></tr>
-<tr class="separator:a642123627a5e585a728190b4f8279a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3863817bfa1ca3b9a76d4fc953d7e4c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename L , typename M  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:ab3863817bfa1ca3b9a76d4fc953d7e4c"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="structamrex_1_1MaybeHostDeviceRunnable.html">MaybeHostDeviceRunnable</a>&lt; L &gt;::value &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ab3863817bfa1ca3b9a76d4fc953d7e4c">HostDeviceParallelFor</a> (<a class="el" href="classamrex_1_1Gpu_1_1KernelInfo.html">Gpu::KernelInfo</a> const &amp;info, T n, L &amp;&amp;f) noexcept</td></tr>
 <tr class="separator:ab3863817bfa1ca3b9a76d4fc953d7e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -11368,8 +11353,50 @@ template&lt;typename FAB &gt; </div>
 
 </div>
 </div>
+<a id="ae028ac7f5c3bea125e9525c505ceefd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae028ac7f5c3bea125e9525c505ceefd2">&#9670;&nbsp;</a></span>bisect() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename I , typename std::enable_if&lt; std::is_integral&lt; I &gt;::value, int &gt;::type  = 0&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> I amrex::bisect </td>
+          <td>(</td>
+          <td class="paramtype">T const *&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">I&#160;</td>
+          <td class="paramname"><em>lo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">I&#160;</td>
+          <td class="paramname"><em>hi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const &amp;&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a6d6b1086f3f7b77f820cac8d8005ac38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d6b1086f3f7b77f820cac8d8005ac38">&#9670;&nbsp;</a></span>bisect()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d6b1086f3f7b77f820cac8d8005ac38">&#9670;&nbsp;</a></span>bisect() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -18780,230 +18807,6 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3b6843a336093bdba06760a7ef1a8587"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b6843a336093bdba06760a7ef1a8587">&#9670;&nbsp;</a></span>FabReduce() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt;L1&gt;::value &amp;&amp; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt;L2&gt;::value&gt; amrex::FabReduce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>box</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">N&#160;</td>
-          <td class="paramname"><em>ncomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>init_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L1 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L2 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5a1395d7a528a4346d3abbbf457bf078"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a1395d7a528a4346d3abbbf457bf078">&#9670;&nbsp;</a></span>FabReduce() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::FabReduce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>box</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">N&#160;</td>
-          <td class="paramname"><em>ncomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>init_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L1 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L2 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a09ea6d5ccf6695c1e424a01055979221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09ea6d5ccf6695c1e424a01055979221">&#9670;&nbsp;</a></span>FabReduce() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename L1 , typename L2 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt;L1&gt;::value &amp;&amp; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt;L2&gt;::value&gt; amrex::FabReduce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>box</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>init_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L1 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L2 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6fbc9ce751f84cb6447998a0ef18da98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fbc9ce751f84cb6447998a0ef18da98">&#9670;&nbsp;</a></span>FabReduce() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T , typename L1 , typename L2 &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::FabReduce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
-          <td class="paramname"><em>box</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>init_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L1 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L2 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -63053,112 +62856,6 @@ template&lt;class PC , class Buffer , class UnpackPolicy , std::enable_if_t&lt; 
 
 </div>
 </div>
-<a id="a642123627a5e585a728190b4f8279a72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a642123627a5e585a728190b4f8279a72">&#9670;&nbsp;</a></span>VecReduce() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::enable_if_t&lt;<a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt;L1&gt;::value &amp;&amp; <a class="el" href="structamrex_1_1MaybeDeviceRunnable.html">MaybeDeviceRunnable</a>&lt;L2&gt;::value&gt; amrex::VecReduce </td>
-          <td>(</td>
-          <td class="paramtype">N&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>init_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L1 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L2 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa97bf4be56f176e3af5b90f5b5955a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa97bf4be56f176e3af5b90f5b5955a04">&#9670;&nbsp;</a></span>VecReduce() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename N , typename T , typename L1 , typename L2 , typename M  = std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void amrex::VecReduce </td>
-          <td>(</td>
-          <td class="paramtype">N&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T const &amp;&#160;</td>
-          <td class="paramname"><em>init_val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L1 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">L2 &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="acafd26c0f64d958aed9ee56043c4f10e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acafd26c0f64d958aed9ee56043c4f10e">&#9670;&nbsp;</a></span>Verbose()</h2>
 
@@ -65888,7 +65585,7 @@ template&lt;typename To , typename From &gt; </div>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespaceamrex_html_a2de21a574a15104cfa7e94e52dd6ab67"><div class="ttname"><a href="namespaceamrex.html#a2de21a574a15104cfa7e94e52dd6ab67">amrex::ParallelForRNG</a></div><div class="ttdeci">void ParallelForRNG(T n, L &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsC.H:583</div></div>
+<div class="ttc" id="anamespaceamrex_html_a2de21a574a15104cfa7e94e52dd6ab67"><div class="ttname"><a href="namespaceamrex.html#a2de21a574a15104cfa7e94e52dd6ab67">amrex::ParallelForRNG</a></div><div class="ttdeci">void ParallelForRNG(T n, L &amp;&amp;f) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsC.H:538</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a0040af3e7783b853140a6e13c755fc25"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a0040af3e7783b853140a6e13c755fc25">amrex::Gpu::synchronize</a></div><div class="ttdeci">void synchronize() noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:207</div></div>
 <div class="ttc" id="anamespaceamrex_1_1detail_html_aca3a36a75e09011d483bcaaa6f9ee7f5"><div class="ttname"><a href="namespaceamrex_1_1detail.html#aca3a36a75e09011d483bcaaa6f9ee7f5">amrex::detail::call_f</a></div><div class="ttdeci">AMREX_GPU_DEVICE auto call_f(F const &amp;f, N i) noexcept -&gt; decltype(f(0))</div><div class="ttdef"><b>Definition:</b> AMReX_GpuLaunchFunctsC.H:10</div></div>
 <div class="ttc" id="anamespaceamrex_html_a7939d1b7f76204c7b70ea282174f89c0"><div class="ttname"><a href="namespaceamrex.html#a7939d1b7f76204c7b70ea282174f89c0">amrex::filterAndTransformParticles</a></div><div class="ttdeci">auto filterAndTransformParticles(DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</div><div class="ttdoc">Conditionally copy particles from src to dst1 and dst2 based on a predicate. A transformation will al...</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:543</div></div>
