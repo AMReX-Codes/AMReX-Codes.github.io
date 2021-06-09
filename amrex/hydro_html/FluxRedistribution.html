@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Flux Redistribution &mdash; amrex 21.07-dev documentation</title>
+  <title>Flux Redistribution &mdash; amrex-hydro 21.07-dev documentation</title>
   
 
   
@@ -59,7 +59,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> amrex
+            <a href="index.html" class="icon icon-home"> amrex-hydro
           
 
           
@@ -122,7 +122,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">amrex</a>
+          <a href="index.html">amrex-hydro</a>
         
       </nav>
 
@@ -184,17 +184,19 @@
 <div class="math notranslate nohighlight">
 \[( \phi)_t + \nabla \cdot ( \phi u) = RHS\]</div>
 <p>For each valid cell in the domain, compute the conservative divergence, <span class="math notranslate nohighlight">\((\nabla \cdot F)^c\)</span> ,
-of the convective fluxes, <span class="math notranslate nohighlight">\(\vec{F}\)</span></p>
+of the convective fluxes, <span class="math notranslate nohighlight">\(F\)</span></p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}(\nabla \cdot {F})^c_i = \dfrac{1}{\mathcal{V}_i} \sum_{f=1}^{N_f} ({F}_f\cdot{n}_f) A_f\\where :math:`N_f` is the number of faces of cell :math:`i`,
-:math:`\vec{n}_f` and :math:`A_f` are the unit normal and area of the :math:`f` -th face respectively,
-and :math:`\mathcal{V}_i` is the volume of cell :math:`i` given by\end{aligned}\end{align} \]</div>
+\[(\nabla \cdot {F})^c_i = \dfrac{1}{\mathcal{V}_i} \sum_{f=1}^{N_f} ({F}_f\cdot{n}_f) A_f\]</div>
+<p>Here <span class="math notranslate nohighlight">\(N_f\)</span> is the number of faces of cell <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\vec{n}_f\)</span> and <span class="math notranslate nohighlight">\(A_f\)</span>
+are the unit normal and area of the <span class="math notranslate nohighlight">\(f\)</span> -th face respectively,
+and <span class="math notranslate nohighlight">\(\mathcal{V}_i\)</span> is the volume of cell <span class="math notranslate nohighlight">\(i\)</span> given by</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}mathcal{V}_i = (\Delta x \Delta y \Delta z)\cdot \mathcal{K}_i\\\where :math:`\mathcal{K}_i` is the volume fraction of cell :math:`i`.\end{aligned}\end{align} \]</div>
+\[mathcal{V}_i = (\Delta x \Delta y \Delta z)\cdot \mathcal{K}_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{K}_i\)</span> is the volume fraction of cell <span class="math notranslate nohighlight">\(i\)</span> .</p>
 <p>Now, a conservative update can be written as</p>
 <div class="math notranslate nohighlight">
 \[\frac{ \rho^{n+1} \phi^{n+1} - \rho^{n} \phi^{n} }{\Delta t} = - \nabla \cdot{F}^c\]</div>
-<p>For each cell cut by the EB geometry, compute the non-conservative update, <span class="math notranslate nohighlight">\(\nabla \cdot {F}^{nc}\)</span>,</p>
+<p>For each cell cut by the EB geometry, compute the non-conservative update, <span class="math notranslate nohighlight">\(\nabla \cdot {F}^{nc}\)</span> ,</p>
 <div class="math notranslate nohighlight">
 \[\nabla\cdot{F}^{nc}_i = \dfrac{\sum\limits_{j\in N(i) } \mathcal{K}_j\nabla \cdot {F}^c_j} {\sum\limits_{j\in N(i) } \nabla \cdot{K}_j}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N(i)\)</span> is the index set of cell <span class="math notranslate nohighlight">\(i\)</span> and its neighbors.</p>
@@ -203,14 +205,16 @@ and :math:`\mathcal{V}_i` is the volume of cell :math:`i` given by\end{aligned}\
 </div></blockquote>
 <div class="math notranslate nohighlight">
 \[\nabla \cdot{F}^{EB}_i = \mathcal{K}_i\nabla \cdot{F}^{c}_i +(1-\mathcal{K}_i)\mathcal{F}^{nc}_i\]</div>
-<p>For each cell cut by the EB geometry, redistribute its mass loss, <span class="math notranslate nohighlight">\(\delta M_i\)</span>, to its neighbors:</p>
+<p>For each cell cut by the EB geometry, redistribute its mass loss, <span class="math notranslate nohighlight">\(\delta M_i\)</span> , to its neighbors:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\nabla \cdot {F}^{EB}_j :=   \nabla \cdot {F}^{EB}_j + w_{ij}\delta M_i\, \qquad \forall j\in N(i)\setminus i\\where the mass loss in cell :math:`i`, :math:`\delta M_i`, is given by\end{aligned}\end{align} \]</div>
+\[\nabla \cdot {F}^{EB}_j :=   \nabla \cdot {F}^{EB}_j + w_{ij}\delta M_i\, \qquad \forall j\in N(i)\setminus i\]</div>
+<p>where the mass loss in cell <span class="math notranslate nohighlight">\(i\)</span> , <span class="math notranslate nohighlight">\(\delta M_i\)</span> , is given by</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\delta M_i =  \mathcal{K}_i(1- \mathcal{K}_i)[ \nabla \cdot {F}^c_i-  \nabla \cdot {F}^{nc}_i]\\and the weights, :math:`w_{ij}`, are\end{aligned}\end{align} \]</div>
+\[\delta M_i =  \mathcal{K}_i(1- \mathcal{K}_i)[ \nabla \cdot {F}^c_i-  \nabla \cdot {F}^{nc}_i]\]</div>
+<p>and the weights, <span class="math notranslate nohighlight">\(w_{ij}\)</span> , are</p>
 <div class="math notranslate nohighlight">
 \[w_{ij} = \dfrac{1}{\sum\limits_{j\in N(i)\setminus i}  \mathcal{K}_j}\]</div>
-<p>Note that <span class="math notranslate nohighlight">\(\nabla \cdot{F}_i^{EB}\)</span> gives an update for <span class="math notranslate nohighlight">\(\rho \phi\)</span>; i.e.,</p>
+<p>Note that <span class="math notranslate nohighlight">\(\nabla \cdot{F}_i^{EB}\)</span> gives an update for <span class="math notranslate nohighlight">\(\rho \phi\)</span> ; i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\frac{\phi_i^{n+1} - \phi_i^{n} }{\Delta t} = - \nabla \cdot{F}^{EB}_i\]</div>
 </section>
@@ -229,7 +233,7 @@ and :math:`\mathcal{V}_i` is the volume of cell :math:`i` given by\end{aligned}\
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2017-2018, AMReX Team.
+        &#169; Copyright 2017-2018, AMReX-Hydro Team.
 
     </p>
   </div>
