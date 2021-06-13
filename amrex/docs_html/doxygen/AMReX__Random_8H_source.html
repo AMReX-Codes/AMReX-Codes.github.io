@@ -162,7 +162,7 @@ $(function() {
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        mkl::rng::device::uniform&lt;unsigned int&gt; distr(0,n);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> mkl::rng::device::generate(distr, *random_engine.engine);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">int</span> rand;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> rand;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> RAND_M = 4294967295; <span class="comment">// 2**32-1</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">do</span> {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941">AMREX_HIP_OR_CUDA</a>( rand = hiprand(random_engine.<a class="code" href="structamrex_1_1RandomEngine.html#a75f184559414049b78efd270fdb60b3c">rand_state</a>);,</div>

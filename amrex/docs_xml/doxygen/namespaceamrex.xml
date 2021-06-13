@@ -2536,7 +2536,7 @@ Index <ref refid="namespaceamrex_1a01d74f2f8ceb510c07cb44c266569781" kindref="me
     <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt;Index&gt; offsets(np);
     <ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">Gpu::exclusive_scan</ref>(mask, mask+np, offsets.begin());
 
-    Index last_mask, last_offset;
+    Index last_mask=0, last_offset=0;
     <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, mask+np-1, mask + np, &amp;last_mask);
     <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);
 

@@ -64970,7 +64970,7 @@ template&lt;class FAB &gt; </div>
 <div class="line">    Gpu::DeviceVector&lt;Index&gt; offsets(np);</div>
 <div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">Gpu::exclusive_scan</a>(mask, mask+np, offsets.begin());</div>
 <div class="line"> </div>
-<div class="line">    Index last_mask, last_offset;</div>
+<div class="line">    Index last_mask=0, last_offset=0;</div>
 <div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, mask+np-1, mask + np, &amp;last_mask);</div>
 <div class="line">    <a class="code" href="namespaceamrex_1_1Gpu.html#a39c6894dcdb993d9e4455d7d418947b9">Gpu::copyAsync</a>(<a class="code" href="namespaceamrex_1_1Gpu.html#a4cb810463e0c04bdea932a011e77b548">Gpu::deviceToHost</a>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);</div>
 <div class="line"> </div>
