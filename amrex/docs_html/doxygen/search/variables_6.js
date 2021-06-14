@@ -2,7 +2,7 @@ var searchData=
 [
   ['f_12436',['f',['../structamrex_1_1algoim_1_1ImplicitIntegral.html#a8e63fff308a2667a803639c70fce0b3b',1,'amrex::algoim::ImplicitIntegral::f()'],['../classSDCstruct.html#a5a011f47199f9e9fef68cdba47a1f7f7',1,'SDCstruct::f()']]],
   ['f_5fuser_12437',['f_user',['../classamrex_1_1CpuBndryFuncFab.html#a44a9eb954199def1d1965689f79c0801',1,'amrex::CpuBndryFuncFab']]],
-  ['fabarray_12438',['fabArray',['../classamrex_1_1MFIter.html#a198baf9d7f4a208f217569a0c6f02183',1,'amrex::MFIter::fabArray()'],['../namespaceamrex.html#aa808a9eed6fa88bb20092d24c654ca02',1,'amrex::FabArray()']]],
+  ['fabarray_12438',['fabArray',['../classamrex_1_1MFIter.html#a198baf9d7f4a208f217569a0c6f02183',1,'amrex::MFIter']]],
   ['fabarrayheadernames_12439',['fabArrayHeaderNames',['../classamrex_1_1StateData.html#af35f43aa012590a264cbb08405ff5c1f',1,'amrex::StateData']]],
   ['fabarrayid_12440',['fabArrayId',['../structamrex_1_1FabArrayBase_1_1FabComTag.html#a5c3201e1c74a8355f405987ac3c77678',1,'amrex::FabArrayBase::FabComTag::fabArrayId()'],['../classamrex_1_1FabArrayId.html#ac86d7f6e763db160a5513aa471565145',1,'amrex::FabArrayId::fabArrayId()']]],
   ['fabarrays_12441',['fabArrays',['../classamrex_1_1FabArrayCopyDescriptor.html#a1764312fbade7558351c245b234605e2',1,'amrex::FabArrayCopyDescriptor']]],

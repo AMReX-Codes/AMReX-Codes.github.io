@@ -15,7 +15,7 @@ var searchData=
   ['neighborunpackpolicy_7511',['NeighborUnpackPolicy',['../structamrex_1_1NeighborUnpackPolicy.html',1,'amrex']]],
   ['nfilesiter_7512',['NFilesIter',['../classamrex_1_1NFilesIter.html',1,'amrex']]],
   ['nodalprojector_7513',['NodalProjector',['../classamrex_1_1NodalProjector.html',1,'amrex']]],
-  ['node_7514',['Node',['../classamrex_1_1CArena_1_1Node.html',1,'amrex::CArena::Node'],['../structamrex_1_1EArena_1_1Node.html',1,'amrex::EArena::Node'],['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html',1,'amrex::algoim::QuadratureRule::Node']]],
+  ['node_7514',['Node',['../structamrex_1_1EArena_1_1Node.html',1,'amrex::EArena::Node'],['../classamrex_1_1CArena_1_1Node.html',1,'amrex::CArena::Node'],['../structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html',1,'amrex::algoim::QuadratureRule::Node']]],
   ['nodebilinear_7515',['NodeBilinear',['../classamrex_1_1NodeBilinear.html',1,'amrex']]],
   ['nolocalcopy_7516',['NoLocalCopy',['../structamrex_1_1NonLocalBC_1_1NoLocalCopy.html',1,'amrex::NonLocalBC']]],
   ['nonesuch_7517',['Nonesuch',['../structamrex_1_1detail_1_1Nonesuch.html',1,'amrex::detail']]],
