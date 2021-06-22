@@ -2453,7 +2453,7 @@
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;DatasetClient.H&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_SENSEI_INSITU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="AMReX__AmrInSituBridge_8H" kindref="compound">AMReX_AmrInSituBridge.H</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
@@ -2484,7 +2484,7 @@
 <codeline lineno="60"><highlight class="normal"><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BoxArray&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1a49468e4d346f32d97ab09f48f4ff9dd2" kindref="member">Amr::initial_ba</ref>;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BoxArray&gt;</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1ad17547793e589e382cafaea103a01637" kindref="member">Amr::regrid_ba</ref>;</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1a9f1bea870dda8d846c53e5302e9d4941" kindref="member">Amr::compute_new_dt_on_regrid</ref>;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_SENSEI_INSITU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><ref refid="classamrex_1_1AmrInSituBridge" kindref="compound">AmrInSituBridge</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Amr::insitu_bridge;</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
@@ -2551,7 +2551,7 @@
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>prereadFAHeaders<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>plot_headerversion<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54dad8a8b7451642ebbf0f06d98d6aec42c5" kindref="member">VisMF::Header::Version_v1</ref>;</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>checkpoint_headerversion<sp/>=<sp/><ref refid="structamrex_1_1VisMF_1_1Header_1aa4469030a55d4e3be552189f7d06b54dad8a8b7451642ebbf0f06d98d6aec42c5" kindref="member">VisMF::Header::Version_v1</ref>;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_SENSEI_INSITU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>insitu_bridge<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aec8ceac1148bd8331f3a51572068f8a0" kindref="member">amrex::ExecOnFinalize</ref>(<ref refid="classamrex_1_1Amr_1adce93d1ef45e49e692f62ee9fa8ac48f" kindref="member">Amr::Finalize</ref>);</highlight></codeline>
@@ -2669,7 +2669,7 @@
 <codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1ab443c219d9056c789db6475acb78ea7b" kindref="member">record_run_info_terse</ref><sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1a0275a70b67bcded29bdf03229bea8edb" kindref="member">bUserStopRequest</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Amr_1a37d45dad31dd3b070c0a14578937365b" kindref="member">message_int</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_SENSEI_INSITU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>insitu_bridge<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight></codeline>
@@ -2928,7 +2928,7 @@
 <codeline lineno="504"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="505"><highlight class="normal"><ref refid="classamrex_1_1Amr_1a983258693a263cd6121c36a664f97565" kindref="member">Amr::initInSitu</ref>()</highlight></codeline>
 <codeline lineno="506"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="507"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(BL_USE_SENSEI_INSITU)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/>insitu_bridge<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1AmrInSituBridge" kindref="compound">AmrInSituBridge</ref>;</highlight></codeline>
 <codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(insitu_bridge-&gt;initialize())</highlight></codeline>
 <codeline lineno="510"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2942,7 +2942,7 @@
 <codeline lineno="518"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><ref refid="classamrex_1_1Amr_1a8a6cfcdb14e8d28779382ac6406ab2ca" kindref="member">Amr::updateInSitu</ref>()</highlight></codeline>
 <codeline lineno="520"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="521"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(BL_USE_SENSEI_INSITU)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="521"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(insitu_bridge<sp/>&amp;&amp;<sp/>insitu_bridge-&gt;update(</highlight><highlight class="keyword">this</highlight><highlight class="normal">))</highlight></codeline>
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1e213ab52cdac41e691ab49370b30a34" kindref="member">amrex::ErrorStream</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Amr::updateInSitu<sp/>:<sp/>Failed<sp/>to<sp/>update.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
@@ -2955,7 +2955,7 @@
 <codeline lineno="531"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="532"><highlight class="normal"><ref refid="classamrex_1_1Amr_1a566aa710514e53eb2193e7bbd4e5ff8d" kindref="member">Amr::finalizeInSitu</ref>()</highlight></codeline>
 <codeline lineno="533"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="534"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(BL_USE_SENSEI_INSITU)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(AMREX_USE_SENSEI_INSITU)<sp/>&amp;&amp;<sp/>!defined(AMREX_NO_SENSEI_AMR_INST)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(insitu_bridge)</highlight></codeline>
 <codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(insitu_bridge-&gt;finalize())</highlight></codeline>
