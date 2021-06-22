@@ -374,7 +374,6 @@ can run it and that will generate results like:</p>
 <span class="go">Total GPU global memory (MB): 6069</span>
 <span class="go">Free  GPU global memory (MB): 5896</span>
 <span class="go">[The         Arena] space (MB): 4552</span>
-<span class="go">[The  Device Arena] space (MB): 8</span>
 <span class="go">[The Managed Arena] space (MB): 8</span>
 <span class="go">[The  Pinned Arena] space (MB): 8</span>
 <span class="go">AMReX (19.06-404-g0455b168b69c-dirty) finalized</span>
@@ -662,13 +661,10 @@ specific type of GPU memory:</p>
 <tr class="row-even"><td><p>The_Arena()</p></td>
 <td><p>managed or device memory</p></td>
 </tr>
-<tr class="row-odd"><td><p>The_Device_Arena()</p></td>
-<td><p>device memory</p></td>
-</tr>
-<tr class="row-even"><td><p>The_Managed_Arena()</p></td>
+<tr class="row-odd"><td><p>The_Managed_Arena()</p></td>
 <td><p>managed memory</p></td>
 </tr>
-<tr class="row-odd"><td><p>The_Pinned_Arena()</p></td>
+<tr class="row-even"><td><p>The_Pinned_Arena()</p></td>
 <td><p>pinned memory</p></td>
 </tr>
 </tbody>
@@ -685,9 +681,12 @@ a boolean runtime parameter <code class="docutils literal notranslate"><span cla
 Therefore the data in a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MultiFab</span></span></code> is placed in
 managed memory by default and is accessible from both CPU host and GPU device.
 This allows application codes to develop their GPU capability
-gradually.  <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Managed_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> is a separate pool of
-managed memory, that is distinguished from <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> for
-performance reasons.  If you want to print out the current memory usage
+gradually. The behavior of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Managed_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> likewise depends on the
+<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed</span></code> parameter. If <code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed=0</span></code>,
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Managed_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> is a separate pool of managed memory. If
+<code class="docutils literal notranslate"><span class="pre">amrex.the_arena_is_managed=1</span></code>, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Managed_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> is simply aliased
+to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">The_Arena</span></span><span class="punctuation"><span class="pre">()</span></span></code> to reduce memory fragmentation.</p>
+<p>If you want to print out the current memory usage
 of the Arenas, you can call <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Arena</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">PrintUsage</span></span><span class="punctuation"><span class="pre">()</span></span></code>.
 When AMReX is built with SUNDIALS turned on, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">sundials</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">The_SUNMemory_Helper</span></span><span class="punctuation"><span class="pre">()</span></span></code>
 can be provided to SUNDIALS data structures so that they use the appropriate
@@ -804,20 +803,18 @@ allocations and deallocations when (for example) resizing vectors.</p>
 <td><p>The_Arena()</p></td>
 </tr>
 <tr class="row-odd"><td><p>HostVector</p></td>
-<td><p>None</p></td>
+<td><p>The_Pinned_Arena()</p></td>
 </tr>
 <tr class="row-even"><td><p>ManagedVector</p></td>
 <td><p>The_Managed_Arena()</p></td>
-</tr>
-<tr class="row-odd"><td><p>PinnedVector</p></td>
-<td><p>The_Pinned_Arena()</p></td>
 </tr>
 </tbody>
 </table>
 <p>These classes behave identically to an
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Vector</span></span></code>, (see <a class="reference internal" href="Basics.html#sec-basics-vecandarr"><span class="std std-ref">Vector, Array, GpuArray, Array1D, Array2D, and Array3D</span></a>), except that they
 can only hold “plain-old-data” objects (e.g. Reals, integers, amrex Particles,
-etc… ).</p>
+etc… ). If you want a resizable vector that doesn’t use a memory Arena,
+simply use <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Vector</span></span></code>.</p>
 <p>Note that, even if the data in the vector is  managed and available on GPUs,
 the member functions of e.g. <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Gpu</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">ManagedVector</span></span></code> are not.
 To use the data on the GPU, it is necessary to pass the underlying data pointer
