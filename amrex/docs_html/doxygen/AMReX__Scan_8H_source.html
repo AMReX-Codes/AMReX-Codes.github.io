@@ -1172,7 +1172,7 @@ $(function() {
 <div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;template &lt;typename N, typename T, typename M=std::enable_if_t&lt;std::is_integral&lt;N&gt;::value&gt; &gt;</div>
 <div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;T <a class="code" href="namespaceamrex_1_1Scan.html#a252adc550a6d7b6ff5e31b6be3b2f12f">InclusiveSum</a> (N n, T <span class="keyword">const</span>* in, T * out, RetSum <span class="comment">/*a_ret_sum*/</span> = <a class="code" href="namespaceamrex_1_1Scan.html#a86dfa385e0f0d6f8597f8225a6db63d9">retSum</a>)</div>
 <div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;{</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(AMREX_CXX_GCC) || __GNUC__ &gt;= 10)</span></div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;    <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
 <div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129">std::inclusive_scan</a>(in, in+n, out);</div>
 <div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;<span class="preprocessor">#else</span></div>
@@ -1188,7 +1188,7 @@ $(function() {
 <div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <span class="keywordflow">if</span> (n &lt;= 0) <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160; </div>
 <div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keyword">auto</span> in_last = in[n-1];</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(AMREX_CXX_GCC) || __GNUC__ &gt;= 10)</span></div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;<span class="preprocessor">#if (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <a class="code" href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">std::exclusive_scan</a>(in, in+n, out, 0);</div>
 <div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;<span class="preprocessor">#else</span></div>
@@ -1213,7 +1213,7 @@ $(function() {
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;        OutIter result_end = result;</div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;        std::advance(result_end, N);</div>
 <div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;        <span class="keywordflow">return</span> result_end;</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;<span class="preprocessor">#elif (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(AMREX_CXX_GCC) || __GNUC__ &gt;= 10)</span></div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;<span class="preprocessor">#elif (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
 <div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;        <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Gpu.html#ab4e0fa80e6873e53208d917854f37129">std::inclusive_scan</a>(<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, <a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>, result);</div>
 <div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;<span class="preprocessor">#else</span></div>
@@ -1230,7 +1230,7 @@ $(function() {
 <div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;        OutIter result_end = result;</div>
 <div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        std::advance(result_end, N);</div>
 <div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;        <span class="keywordflow">return</span> result_end;</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;<span class="preprocessor">#elif (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(AMREX_CXX_GCC) || __GNUC__ &gt;= 10)</span></div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;<span class="preprocessor">#elif (__cplusplus &gt;= 201703L) &amp;&amp; (!defined(_GLIBCXX_RELEASE) || _GLIBCXX_RELEASE &gt;= 10)</span></div>
 <div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;        <span class="comment">// GCC&#39;s __cplusplus is not a reliable indication for C++17 support</span></div>
 <div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceamrex_1_1Gpu.html#a3f116832e254a3422729b3455b22f18c">std::exclusive_scan</a>(<a class="code" href="namespaceamrex.html#a43103621a410a27f2e8b9607f4ae6f34">begin</a>, <a class="code" href="namespaceamrex.html#a199ea36f687fd4271b73c72b56fd3279">end</a>, result, 0);</div>
 <div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;<span class="preprocessor">#else</span></div>
