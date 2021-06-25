@@ -108,6 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#parallelcontext">ParallelContext</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#print">Print</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#parmparse">ParmParse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parser">Parser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initialize-and-finalize">Initialize and Finalize</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#sharing-the-command-line">Sharing the Command Line</a></li>
 </ul>
@@ -474,6 +475,52 @@ to false if it hasn’t already been set in the inputs file.</p>
 </div>
 <p>This value replaces the current default value of true in AMReX itself, but
 can still be over-written by setting a value in the inputs file.</p>
+</section>
+<section id="parser">
+<span id="sec-basics-parser"></span><h1>Parser<a class="headerlink" href="#parser" title="Permalink to this headline">¶</a></h1>
+<p>AMReX provides a parser that can be used at runtime to evaluate mathematical
+expressions given in the form of string.  It supports <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>,
+<code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code> (power), <code class="docutils literal notranslate"><span class="pre">^</span></code> (power), <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">log10</span></code>,
+<code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">tan</span></code>, <code class="docutils literal notranslate"><span class="pre">asin</span></code>, <code class="docutils literal notranslate"><span class="pre">acos</span></code>, <code class="docutils literal notranslate"><span class="pre">atan</span></code>, <code class="docutils literal notranslate"><span class="pre">sinh</span></code>, <code class="docutils literal notranslate"><span class="pre">cosh</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tanh</span></code>, and <code class="docutils literal notranslate"><span class="pre">abs</span></code>.  The minimum and maximum of two numbers can be
+computed with <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code>, respectively.  It supports the Heaviside
+step function, <code class="docutils literal notranslate"><span class="pre">heaviside(x1,x2)</span></code> that gives <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, for
+<code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">=</span> <span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">x1</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, respectively.  There is <code class="docutils literal notranslate"><span class="pre">if(a,b,c)</span></code>
+that gives <code class="docutils literal notranslate"><span class="pre">b</span></code> or <code class="docutils literal notranslate"><span class="pre">c</span></code> depending on the value of <code class="docutils literal notranslate"><span class="pre">a</span></code>.  A number of
+comparison operators are supported, including <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.  The Boolean results from comparison can be combined by
+<code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>, and they hold the value <code class="docutils literal notranslate"><span class="pre">1</span></code> for true and <code class="docutils literal notranslate"><span class="pre">0</span></code> for
+false.  The precedence of the operators follows the convention of the C and
+C++ programming languages.  Here is an example of using the parser.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span> <span class="nf">parser</span><span class="p">(</span><span class="s">&quot;if(x&gt;a and x&lt;b, sin(x)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">*</span><span class="k">if</span><span class="p">(</span><span class="n">z</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)),</span> <span class="mf">.3</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="s">&quot;)</span><span class="p">;</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;z&quot;</span><span class="p">});</span>
+<span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// 3 because there are three variables.</span>
+
+<span class="c1">// f can be used in both host and device code.  It takes 3 arguments in</span>
+<span class="c1">// this example.  The parser object must be alive for f to be valid.</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">...)</span> <span class="p">{</span>
+      <span class="n">a</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dx</span><span class="p">,</span> <span class="n">j</span><span class="o">*</span><span class="n">dy</span><span class="p">,</span> <span class="n">k</span><span class="o">*</span><span class="n">dz</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Local automatic variables can be defined in the expression.  For example,</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Parser</span> <span class="n">parser</span><span class="p">(</span><span class="s">&quot;r2=x*x+y*y; r=sqrt(r2); cos(a+r2)*log(r)&quot;</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">setConstant</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">...);</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">registerVariables</span><span class="p">({</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">});</span>
+<span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">compile</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">();</span>  <span class="c1">// 2 because there are two variables.</span>
+</pre></div>
+</div>
+<p>Note that an assignment to an automatic variable must be terminated with
+<code class="docutils literal notranslate"><span class="pre">;</span></code>, and one should avoid name conflict between the local variables and
+the constants set by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setConstant</span></span></code> and the variables registered by
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">registerVariables</span></span></code>.</p>
 </section>
 <section id="initialize-and-finalize">
 <span id="sec-basics-initialize"></span><h1>Initialize and Finalize<a class="headerlink" href="#initialize-and-finalize" title="Permalink to this headline">¶</a></h1>

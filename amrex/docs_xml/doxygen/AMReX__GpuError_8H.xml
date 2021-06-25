@@ -1678,6 +1678,8 @@
         </childnode>
         <childnode refid="360" relation="include">
         </childnode>
+        <childnode refid="361" relation="include">
+        </childnode>
         <childnode refid="69" relation="include">
         </childnode>
       </node>
@@ -1816,7 +1818,7 @@
         </childnode>
         <childnode refid="354" relation="include">
         </childnode>
-        <childnode refid="361" relation="include">
+        <childnode refid="363" relation="include">
         </childnode>
       </node>
       <node id="320">
@@ -2027,7 +2029,7 @@
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_PlotFileDataImpl.cpp</label>
         <link refid="AMReX__PlotFileDataImpl_8cpp"/>
       </node>
-      <node id="361">
+      <node id="363">
         <label>/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuRange.H</label>
         <link refid="AMReX__GpuRange_8H"/>
         <childnode refid="2" relation="include">
@@ -2268,6 +2270,12 @@
       <node id="54">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian_misc.cpp</label>
         <link refid="AMReX__MLNodeLaplacian__misc_8cpp"/>
+      </node>
+      <node id="361">
+        <label>/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.H</label>
+        <link refid="AMReX__Parser_8H"/>
+        <childnode refid="362" relation="include">
+        </childnode>
       </node>
       <node id="191">
         <label>/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleBufferMap.H</label>
@@ -2942,6 +2950,10 @@
       <node id="187">
         <label>/home/runner/work/amrex/amrex/Src/Extern/ProfParser/AMReX_RegionsProfStats.cpp</label>
         <link refid="AMReX__RegionsProfStats_8cpp"/>
+      </node>
+      <node id="362">
+        <label>/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_Parser.cpp</label>
+        <link refid="AMReX__Parser_8cpp"/>
       </node>
       <node id="267">
         <label>/home/runner/work/amrex/amrex/Src/Extern/amrdata/AMReX_XYPlotDataList.H</label>
@@ -3728,7 +3740,7 @@
         <param><defname>call</defname></param>
         <initializer>    { \
     <ref refid="namespaceamrex_1a98a85f350a96eb36272d756d5a9c9a05" kindref="member">amrex::gpuError_t</ref> amrex_i_err = call;          \
-    if (<ref refid="namespaceamrex_1ad449c6a61a817b311238986b4ef19e38" kindref="member">amrex::gpuSuccess</ref> != amrex_i_err) { \
+    <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (<ref refid="namespaceamrex_1ad449c6a61a817b311238986b4ef19e38" kindref="member">amrex::gpuSuccess</ref> != amrex_i_err) { \
         std::string errStr(std::string(&quot;GPU error in file &quot;) + __FILE__ \
                            + &quot; line &quot; + std::to_string(__LINE__) \
                            + &quot; &quot; + <ref refid="namespaceamrex_1a884f63b4c32929437cf596c59b26c311" kindref="member">amrex::gpuGetErrorString</ref>(amrex_i_err)); \
@@ -3747,7 +3759,7 @@
         <param><defname>call</defname></param>
         <initializer>    { \
     cudaError_t amrex_i_err = call;          \
-    if (cudaSuccess != amrex_i_err) { \
+    <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (cudaSuccess != amrex_i_err) { \
         std::string errStr(std::string(&quot;CUDA error &quot;) + std::to_string(amrex_i_err) \
                            + std::string(&quot; in file &quot;) + __FILE__ \
                            + &quot; line &quot; + std::to_string(__LINE__) \
