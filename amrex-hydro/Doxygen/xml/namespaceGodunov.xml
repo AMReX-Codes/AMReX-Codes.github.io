@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceGodunov" kind="namespace" language="C++">
+    <compoundname>Godunov</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceGodunov_1a4a51a30be0f1916b4253c8201edcf5d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Godunov::ComputeAofs</definition>
+        <argsstring>(amrex::MultiFab &amp;aofs, const int aofs_comp, const int ncomp, amrex::MultiFab const &amp;state, const int state_comp, AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac), AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge), const int edge_comp, const bool known_edgestate, AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes), int fluxes_comp, amrex::MultiFab const &amp;fq, const int fq_comp, amrex::MultiFab const &amp;divu, amrex::BCRec const *d_bc, amrex::Geometry const &amp;geom, amrex::Gpu::DeviceVector&lt; int &gt; &amp;iconserv, const amrex::Real dt, const bool use_ppm, const bool use_forces_in_trans, const bool is_velocity)</argsstring>
+        <name>ComputeAofs</name>
+        <param>
+          <type>amrex::MultiFab &amp;</type>
+          <declname>aofs</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>aofs_comp</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>state_comp</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge)</type>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>edge_comp</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>known_edgestate</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fluxes_comp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>fq</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>fq_comp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>divu</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bc</declname>
+        </param>
+        <param>
+          <type>amrex::Geometry const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>amrex::Gpu::DeviceVector&lt; int &gt; &amp;</type>
+          <declname>iconserv</declname>
+        </param>
+        <param>
+          <type>const amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>use_ppm</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>use_forces_in_trans</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>is_velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Godunov/hydro_godunov.H" line="10" column="6" declfile="Godunov/hydro_godunov.H" declline="10" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceGodunov_1a247270eeafbb48a02c1362a7eb609c72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Godunov::ComputeSyncAofs</definition>
+        <argsstring>(amrex::MultiFab &amp;aofs, const int aofs_comp, const int ncomp, amrex::MultiFab const &amp;state, const int state_comp, AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac), AMREX_D_DECL(amrex::MultiFab const &amp;ucorr, amrex::MultiFab const &amp;vcorr, amrex::MultiFab const &amp;wcorr), AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge), const int edge_comp, const bool known_edgestate, AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes), int fluxes_comp, amrex::MultiFab const &amp;fq, const int fq_comp, amrex::MultiFab const &amp;divu, amrex::BCRec const *d_bc, amrex::Geometry const &amp;geom, amrex::Gpu::DeviceVector&lt; int &gt; &amp;iconserv, const amrex::Real dt, const bool use_ppm, const bool use_forces_in_trans, const bool is_velocity)</argsstring>
+        <name>ComputeSyncAofs</name>
+        <param>
+          <type>amrex::MultiFab &amp;</type>
+          <declname>aofs</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>aofs_comp</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>state_comp</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab const &amp;ucorr, amrex::MultiFab const &amp;vcorr, amrex::MultiFab const &amp;wcorr)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge)</type>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>edge_comp</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>known_edgestate</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fluxes_comp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>fq</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>fq_comp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>divu</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bc</declname>
+        </param>
+        <param>
+          <type>amrex::Geometry const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>amrex::Gpu::DeviceVector&lt; int &gt; &amp;</type>
+          <declname>iconserv</declname>
+        </param>
+        <param>
+          <type>const amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>use_ppm</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>use_forces_in_trans</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>is_velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Godunov/hydro_godunov.H" line="35" column="6" declfile="Godunov/hydro_godunov.H" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceGodunov_1a1c1dcedd6781260bd8322588e1290d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Godunov::ExtrapVelToFaces</definition>
+        <argsstring>(amrex::MultiFab const &amp;a_vel, amrex::MultiFab const &amp;a_forces, AMREX_D_DECL(amrex::MultiFab &amp;a_umac, amrex::MultiFab &amp;a_vmac, amrex::MultiFab &amp;a_wmac), const amrex::Vector&lt; amrex::BCRec &gt; &amp;h_bcrec, const amrex::BCRec *d_bcrec, const amrex::Geometry &amp;geom, amrex::Real l_dt, bool use_ppm, bool use_forces_in_trans)</argsstring>
+        <name>ExtrapVelToFaces</name>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>a_vel</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>a_forces</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;a_umac, amrex::MultiFab &amp;a_vmac, amrex::MultiFab &amp;a_wmac)</type>
+        </param>
+        <param>
+          <type>const amrex::Vector&lt; amrex::BCRec &gt; &amp;</type>
+          <declname>h_bcrec</declname>
+        </param>
+        <param>
+          <type>const amrex::BCRec *</type>
+          <declname>d_bcrec</declname>
+        </param>
+        <param>
+          <type>const amrex::Geometry &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>l_dt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_ppm</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_forces_in_trans</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Godunov/hydro_godunov.H" line="63" column="6" declfile="Godunov/hydro_godunov.H" declline="63" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceGodunov_1aea3d7e45ff84f43669b4c624673291c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Godunov::ComputeAdvectiveVel</definition>
+        <argsstring>(AMREX_D_DECL(amrex::Box const &amp;xbx, amrex::Box const &amp;ybx, amrex::Box const &amp;zbx), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;u_ad, amrex::Array4&lt; amrex::Real &gt; const &amp;v_ad, amrex::Array4&lt; amrex::Real &gt; const &amp;w_ad), AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;Imx, amrex::Array4&lt; amrex::Real const &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real const &gt; const &amp;Imz), AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;Ipx, amrex::Array4&lt; amrex::Real const &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real const &gt; const &amp;Ipz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vel, amrex::Array4&lt; amrex::Real const &gt; const &amp;f, const amrex::Box &amp;domain, amrex::Real dt, amrex::BCRec const *d_bcrec, bool use_forces_in_trans)</argsstring>
+        <name>ComputeAdvectiveVel</name>
+        <param>
+          <type>AMREX_D_DECL(amrex::Box const &amp;xbx, amrex::Box const &amp;ybx, amrex::Box const &amp;zbx)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;u_ad, amrex::Array4&lt; amrex::Real &gt; const &amp;v_ad, amrex::Array4&lt; amrex::Real &gt; const &amp;w_ad)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;Imx, amrex::Array4&lt; amrex::Real const &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real const &gt; const &amp;Imz)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;Ipx, amrex::Array4&lt; amrex::Real const &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real const &gt; const &amp;Ipz)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>vel</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const amrex::Box &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bcrec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_forces_in_trans</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Godunov/hydro_godunov.H" line="73" column="6" declfile="Godunov/hydro_godunov.H" declline="73" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceGodunov_1a02f769e2d602c99c8a459d594bf5b55e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Godunov::ExtrapVelToFacesOnBox</definition>
+        <argsstring>(amrex::Box const &amp;bx, int ncomp, AMREX_D_DECL(amrex::Box const &amp;xbx, amrex::Box const &amp;ybx, amrex::Box const &amp;zbx), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;qx, amrex::Array4&lt; amrex::Real &gt; const &amp;qy, amrex::Array4&lt; amrex::Real &gt; const &amp;qz), amrex::Array4&lt; amrex::Real const &gt; const &amp;q, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;u_ad, amrex::Array4&lt; amrex::Real const &gt; const &amp;v_ad, amrex::Array4&lt; amrex::Real const &gt; const &amp;w_ad), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;Imx, amrex::Array4&lt; amrex::Real &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real &gt; const &amp;Imz), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;Ipx, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipz), amrex::Array4&lt; amrex::Real const &gt; const &amp;f, const amrex::Box &amp;domain, const amrex::Real *dx, amrex::Real dt, amrex::BCRec const *d_bcrec, bool use_forces_in_trans, amrex::Real *p)</argsstring>
+        <name>ExtrapVelToFacesOnBox</name>
+        <param>
+          <type>amrex::Box const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Box const &amp;xbx, amrex::Box const &amp;ybx, amrex::Box const &amp;zbx)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;qx, amrex::Array4&lt; amrex::Real &gt; const &amp;qy, amrex::Array4&lt; amrex::Real &gt; const &amp;qz)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;u_ad, amrex::Array4&lt; amrex::Real const &gt; const &amp;v_ad, amrex::Array4&lt; amrex::Real const &gt; const &amp;w_ad)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;Imx, amrex::Array4&lt; amrex::Real &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real &gt; const &amp;Imz)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;Ipx, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipz)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const amrex::Box &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>const amrex::Real *</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bcrec</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>use_forces_in_trans</declname>
+        </param>
+        <param>
+          <type>amrex::Real *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Godunov/hydro_godunov.H" line="92" column="6" declfile="Godunov/hydro_godunov.H" declline="92" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceGodunov_1addea54945ce554f8b4e28dabc1c74222" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Godunov::ComputeEdgeState</definition>
+        <argsstring>(amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xedge, amrex::Array4&lt; amrex::Real &gt; const &amp;yedge, amrex::Array4&lt; amrex::Real &gt; const &amp;zedge), AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac), amrex::Array4&lt; amrex::Real const &gt; const &amp;divu, amrex::Array4&lt; amrex::Real const &gt; const &amp;fq, amrex::Geometry geom, amrex::Real dt, amrex::BCRec const *d_bcrec, int const *iconserv, const bool use_ppm, bool is_velocity, const bool use_forces_in_trans)</argsstring>
+        <name>ComputeEdgeState</name>
+        <param>
+          <type>amrex::Box const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xedge, amrex::Array4&lt; amrex::Real &gt; const &amp;yedge, amrex::Array4&lt; amrex::Real &gt; const &amp;zedge)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>divu</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>fq</declname>
+        </param>
+        <param>
+          <type>amrex::Geometry</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bcrec</declname>
+        </param>
+        <param>
+          <type>int const *</type>
+          <declname>iconserv</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>use_ppm</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>is_velocity</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>use_forces_in_trans</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Godunov/hydro_godunov.H" line="117" column="6" declfile="Godunov/hydro_godunov.H" declline="117" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Godunov/hydro_godunov.H" line="7" column="1"/>
+  </compounddef>
+</doxygen>
