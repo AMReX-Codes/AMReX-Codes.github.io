@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespaceEBMOL" kind="namespace" language="C++">
+    <compoundname>EBMOL</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceEBMOL_1aba44b59f6a3b433b34884a7265a7d575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EBMOL::ComputeAofs</definition>
+        <argsstring>(amrex::MultiFab &amp;aofs, int aofs_comp, int ncomp, amrex::MultiFab const &amp;state, int state_comp, AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac), AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge), int edge_comp, bool known_edgestate, AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes), int fluxes_comp, amrex::MultiFab const &amp;divu, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs, amrex::BCRec const *d_bcrec_ptr, amrex::Gpu::DeviceVector&lt; int &gt; &amp;iconserv, amrex::Geometry const &amp;geom, const amrex::Real dt, const bool is_velocity, std::string redistribution_type)</argsstring>
+        <name>ComputeAofs</name>
+        <param>
+          <type>amrex::MultiFab &amp;</type>
+          <declname>aofs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aofs_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>state_comp</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>edge_comp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>known_edgestate</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fluxes_comp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>divu</declname>
+        </param>
+        <param>
+          <type>amrex::Vector&lt; amrex::BCRec &gt; const &amp;</type>
+          <declname>bcs</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type>amrex::Gpu::DeviceVector&lt; int &gt; &amp;</type>
+          <declname>iconserv</declname>
+        </param>
+        <param>
+          <type>amrex::Geometry const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>const amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>is_velocity</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>redistribution_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EBMOL/hydro_ebmol.H" line="9" column="6" declfile="EBMOL/hydro_ebmol.H" declline="9" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceEBMOL_1ac54f6704caf6ebfd145eb45c6e341eff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EBMOL::ComputeSyncAofs</definition>
+        <argsstring>(amrex::MultiFab &amp;aofs, int aofs_comp, int ncomp, amrex::MultiFab const &amp;state, int state_comp, AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac), AMREX_D_DECL(amrex::MultiFab const &amp;ucorr, amrex::MultiFab const &amp;vcorr, amrex::MultiFab const &amp;wcorr), AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge), int edge_comp, bool known_edgestate, AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes), int fluxes_comp, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs, amrex::BCRec const *d_bcrec_ptr, amrex::Geometry const &amp;geom, const amrex::Real dt, const bool is_velocity, std::string redistribution_type)</argsstring>
+        <name>ComputeSyncAofs</name>
+        <param>
+          <type>amrex::MultiFab &amp;</type>
+          <declname>aofs</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>aofs_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>amrex::MultiFab const &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>state_comp</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab const &amp;ucorr, amrex::MultiFab const &amp;vcorr, amrex::MultiFab const &amp;wcorr)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>edge_comp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>known_edgestate</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes)</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fluxes_comp</declname>
+        </param>
+        <param>
+          <type>amrex::Vector&lt; amrex::BCRec &gt; const &amp;</type>
+          <declname>bcs</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type>amrex::Geometry const &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>const amrex::Real</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>is_velocity</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>redistribution_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EBMOL/hydro_ebmol.H" line="32" column="6" declfile="EBMOL/hydro_ebmol.H" declline="32" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceEBMOL_1a94df1b279b45eac5141dfe0dff0a79bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EBMOL::ComputeEdgeState</definition>
+        <argsstring>(amrex::Box const &amp;bx, AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xedge, amrex::Array4&lt; amrex::Real &gt; const &amp;yedge, amrex::Array4&lt; amrex::Real &gt; const &amp;zedge), amrex::Array4&lt; amrex::Real const &gt; const &amp;q, const int ncomp, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac), amrex::Box const &amp;domain, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs, amrex::BCRec const *d_bcrec_ptr, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccc, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, const bool is_velocity)</argsstring>
+        <name>ComputeEdgeState</name>
+        <param>
+          <type>amrex::Box const &amp;</type>
+          <declname>bx</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xedge, amrex::Array4&lt; amrex::Real &gt; const &amp;yedge, amrex::Array4&lt; amrex::Real &gt; const &amp;zedge)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>q</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>ncomp</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac)</type>
+        </param>
+        <param>
+          <type>amrex::Box const &amp;</type>
+          <declname>domain</declname>
+        </param>
+        <param>
+          <type>amrex::Vector&lt; amrex::BCRec &gt; const &amp;</type>
+          <declname>bcs</declname>
+        </param>
+        <param>
+          <type>amrex::BCRec const *</type>
+          <declname>d_bcrec_ptr</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>ccc</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>is_velocity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EBMOL/hydro_ebmol.H" line="56" column="6" declfile="EBMOL/hydro_ebmol.H" declline="56" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceEBMOL_1a7add53a153ade9c5cb83e79a61ad1929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EBMOL::ExtrapVelToFaces</definition>
+        <argsstring>(const amrex::MultiFab &amp;vel, AMREX_D_DECL(amrex::MultiFab &amp;umac, amrex::MultiFab &amp;vmac, amrex::MultiFab &amp;wmac), const amrex::Geometry &amp;a_geom, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, const amrex::BCRec *d_bcrec)</argsstring>
+        <name>ExtrapVelToFaces</name>
+        <param>
+          <type>const amrex::MultiFab &amp;</type>
+          <declname>vel</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::MultiFab &amp;umac, amrex::MultiFab &amp;vmac, amrex::MultiFab &amp;wmac)</type>
+        </param>
+        <param>
+          <type>const amrex::Geometry &amp;</type>
+          <declname>a_geom</declname>
+        </param>
+        <param>
+          <type>amrex::Vector&lt; amrex::BCRec &gt; const &amp;</type>
+          <declname>h_bcrec</declname>
+        </param>
+        <param>
+          <type>const amrex::BCRec *</type>
+          <declname>d_bcrec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EBMOL/hydro_ebmol.H" line="76" column="6" declfile="EBMOL/hydro_ebmol.H" declline="76" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceEBMOL_1a11b5b3fa29c007fd465a4bba443c433f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EBMOL::ExtrapVelToFacesBox</definition>
+        <argsstring>(AMREX_D_DECL(amrex::Box const &amp;ubx, amrex::Box const &amp;vbx, amrex::Box const &amp;wbx), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;u, amrex::Array4&lt; amrex::Real &gt; const &amp;v, amrex::Array4&lt; amrex::Real &gt; const &amp;w), amrex::Array4&lt; amrex::Real const &gt; const &amp;vcc, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccc, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, const amrex::BCRec *d_bcrec)</argsstring>
+        <name>ExtrapVelToFacesBox</name>
+        <param>
+          <type>AMREX_D_DECL(amrex::Box const &amp;ubx, amrex::Box const &amp;vbx, amrex::Box const &amp;wbx)</type>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;u, amrex::Array4&lt; amrex::Real &gt; const &amp;v, amrex::Array4&lt; amrex::Real &gt; const &amp;w)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>vcc</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz)</type>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>ccc</declname>
+        </param>
+        <param>
+          <type>amrex::Array4&lt; amrex::Real const &gt; const &amp;</type>
+          <declname>vfrac</declname>
+        </param>
+        <param>
+          <type>const amrex::Geometry &amp;</type>
+          <declname>geom</declname>
+        </param>
+        <param>
+          <type>amrex::Vector&lt; amrex::BCRec &gt; const &amp;</type>
+          <declname>h_bcrec</declname>
+        </param>
+        <param>
+          <type>const amrex::BCRec *</type>
+          <declname>d_bcrec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="EBMOL/hydro_ebmol.H" line="84" column="6" declfile="EBMOL/hydro_ebmol.H" declline="84" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="EBMOL/hydro_ebmol.H" line="7" column="1"/>
+  </compounddef>
+</doxygen>
