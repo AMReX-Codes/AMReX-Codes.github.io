@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['godunov_101',['Godunov',['../namespaceGodunov.html',1,'']]]
+  ['ebgodunov_152',['EBGodunov',['../namespaceEBGodunov.html',1,'']]],
+  ['ebmol_153',['EBMOL',['../namespaceEBMOL.html',1,'']]],
+  ['ebplm_154',['EBPLM',['../namespaceEBPLM.html',1,'']]]
 ];
