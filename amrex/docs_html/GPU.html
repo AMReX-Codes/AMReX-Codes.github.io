@@ -544,17 +544,22 @@ we provide the helper function <code class="docutils literal notranslate"><span 
 <h3>Enabling HIP support (experimental)<a class="headerlink" href="#enabling-hip-support-experimental" title="Permalink to this headline">¶</a></h3>
 <p>To build AMReX with HIP support in CMake, add
 <code class="docutils literal notranslate"><span class="pre">-DAMReX_GPU_BACKEND=HIP</span> <span class="pre">-DAMReX_AMD_ARCH=&lt;target-arch&gt;</span> <span class="pre">-DCMAKE_CXX_COMPILER=&lt;your-hip-compiler&gt;</span></code>
-to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.</p>
+to the <code class="docutils literal notranslate"><span class="pre">cmake</span></code> invocation.
+If you don’t need Fortran features (<code class="docutils literal notranslate"><span class="pre">AMReX_FORTRAN=OFF</span></code>), it is recomended to use AMD’s <code class="docutils literal notranslate"><span class="pre">clang++</span></code> as the HIP compiler.
+(Please see these issues for reference in rocm/HIP &lt;= 4.2.0
+<a class="reference external" href="https://github.com/ROCm-Developer-Tools/HIP/issues/2275">[1]</a>
+<a class="reference external" href="https://github.com/AMReX-Codes/amrex/pull/2031">[2]</a>.)</p>
 <p>In AMReX CMake, the HIP compiler is treated as a special C++ compiler and therefore
 the standard CMake variables used to customize the compilation process for C++,
 for example <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_FLAGS</span></code>, can be used for HIP as well.</p>
 <p>Since CMake does not support autodetection of HIP compilers/target architectures
-yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">hipcc</span></code> or <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>,
+yet, <code class="docutils literal notranslate"><span class="pre">CMAKE_CXX_COMPILER</span></code> must be set to a valid HIP compiler, i.e. <code class="docutils literal notranslate"><span class="pre">clang++</span></code> or <code class="docutils literal notranslate"><span class="pre">hipcc</span></code> or <code class="docutils literal notranslate"><span class="pre">nvcc</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">AMReX_AMD_ARCH</span></code> to the target architecture you are building for.
 Thus <strong>AMReX_AMD_ARCH and CMAKE_CXX_COMPILER are required user-inputs when AMReX_GPU_BACKEND=HIP</strong>.
-We again read also an <em>environment variable</em>: <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps).
+We again read also an <em>environment variable</em>: <code class="docutils literal notranslate"><span class="pre">AMREX_AMD_ARCH</span></code> (note: all caps) and the C++ compiler can be hinted as always, e.g. with <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CXX=$(which</span> <span class="pre">clang++)</span></code>.
 Below is an example configuration for HIP on Tulip:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which hipcc) -DAMReX_AMD_ARCH=&quot;gfx906,gfx908&quot;  [other options] /path/to/amrex/source</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cmake -S . -B build -DAMReX_GPU_BACKEND=HIP -DCMAKE_CXX_COMPILER=$(which clang++) -DAMReX_AMD_ARCH=&quot;gfx906;gfx908&quot;  # [other options]</span>
+<span class="go">cmake --build build -j 6</span>
 </pre></div>
 </div>
 </section>
