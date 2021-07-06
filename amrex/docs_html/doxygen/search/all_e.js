@@ -235,7 +235,7 @@ var searchData=
   ['numberofparticlesatlevel_4993',['NumberOfParticlesAtLevel',['../classamrex_1_1ParticleContainer.html#a12fd544079a9f16e65a4de296b5c2f14',1,'amrex::ParticleContainer']]],
   ['numberofparticlesingrid_4994',['NumberOfParticlesInGrid',['../classamrex_1_1ParticleContainer.html#a2829099beff606681731396ac7481f08',1,'amrex::ParticleContainer']]],
   ['numberofusers_4995',['numberOfUsers',['../classamrex_1_1DataServices.html#a5d6e7ac64333750926f2175ea5f237ad',1,'amrex::DataServices']]],
-  ['numberstofname_4996',['NumbersToFName',['../classRegionsProfStats.html#aa09149b400a4bae78fc4f423b31da1d5',1,'RegionsProfStats::NumbersToFName() const'],['../classRegionsProfStats.html#a61cecba43f39a2a189ee2aaf9949f2df',1,'RegionsProfStats::numbersToFName()']]],
+  ['numberstofname_4996',['numbersToFName',['../classRegionsProfStats.html#a61cecba43f39a2a189ee2aaf9949f2df',1,'RegionsProfStats::numbersToFName()'],['../classRegionsProfStats.html#aa09149b400a4bae78fc4f423b31da1d5',1,'RegionsProfStats::NumbersToFName() const']]],
   ['numbins_4997',['numBins',['../classamrex_1_1DenseBins.html#af98199a3fd0f724083761ddea28e4606',1,'amrex::DenseBins::numBins()'],['../classamrex_1_1SparseBins.html#aacee8f0ffcd3fbd6c14e58c08460d232',1,'amrex::SparseBins::numBins()']]],
   ['numblocks_4998',['numBlocks',['../structamrex_1_1Gpu_1_1GridSize.html#a6c6f30d2bbabe2960fa682d624e70659',1,'amrex::Gpu::GridSize::numBlocks()'],['../structamrex_1_1Gpu_1_1ExecutionConfig.html#a383b070cb13bc99de64062941d521149',1,'amrex::Gpu::ExecutionConfig::numBlocks()']]],
   ['numblocksoverride_4999',['numBlocksOverride',['../classamrex_1_1Gpu_1_1Device.html#a728f2480b00dbe80a716bc81f42f8508',1,'amrex::Gpu::Device']]],
