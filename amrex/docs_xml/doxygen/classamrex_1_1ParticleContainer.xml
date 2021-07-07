@@ -275,7 +275,7 @@
         <name>NStructReal</name>
         <initializer>= T_NStructReal</initializer>
         <briefdescription>
-<para>number of extra Real components in the particle struct </para>
+<para>Number of extra Real components in the particle struct. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -290,7 +290,7 @@
         <name>NStructInt</name>
         <initializer>= T_NStructInt</initializer>
         <briefdescription>
-<para>number of extra integer components in the particle struct </para>
+<para>Number of extra integer components in the particle struct. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -305,7 +305,7 @@
         <name>NArrayReal</name>
         <initializer>= T_NArrayReal</initializer>
         <briefdescription>
-<para>number of extra Real components stored in struct-of-array form </para>
+<para>Number of extra Real components stored in struct-of-array form. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -320,7 +320,7 @@
         <name>NArrayInt</name>
         <initializer>= T_NArrayInt</initializer>
         <briefdescription>
-<para>number of extra integer components stored in struct-of-array form </para>
+<para>Number of extra integer components stored in struct-of-array form. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -430,7 +430,7 @@
         <argsstring></argsstring>
         <name>levelDirectoriesCreated</name>
         <briefdescription>
-<para>-<mdash/> variables for i/o optimization saved for pre and post checkpoint </para>
+<para>Variables for i/o optimization saved for pre and post checkpoint. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -509,7 +509,6 @@
         <argsstring></argsstring>
         <name>nParticlesAtLevelPrePost</name>
         <briefdescription>
-<para>-<mdash/> [level] </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -523,7 +522,6 @@
         <argsstring></argsstring>
         <name>whichPrePost</name>
         <briefdescription>
-<para>-<mdash/> [level] </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -537,7 +535,6 @@
         <argsstring></argsstring>
         <name>countPrePost</name>
         <briefdescription>
-<para>-<mdash/> [level] </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -551,7 +548,6 @@
         <argsstring></argsstring>
         <name>wherePrePost</name>
         <briefdescription>
-<para>-<mdash/> [level] </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1644,8 +1640,7 @@
 <para>Sort the particles on each tile by groups of cells, given an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> bin_size. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>   If bin_size is the zero vector, this operation is a no-op.
-</verbatim> </para>
+<para>If bin_size is the zero vector, this operation is a no-op. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -2717,9 +2712,16 @@
 <para>Writes particle data to disk in the <ref refid="classamrex_1_1AMReX" kindref="compound">AMReX</ref> native format. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim>\tparam F function type
-</verbatim></para>
-<para><parameterlist kind="param"><parameteritem>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dir</parametername>
 </parameternamelist>
@@ -3184,9 +3186,9 @@
           <declname>real_comp_names</declname>
         </param>
         <briefdescription>
+<para>This version of WritePlotFile writes all components and allows the user to specify the names of the components. </para>
         </briefdescription>
         <detaileddescription>
-<para>This version of WritePlotFile writes all components and allows the user to specify the names of the components.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dir</parametername>
@@ -3249,9 +3251,9 @@
           <declname>f</declname>
         </param>
         <briefdescription>
+<para>This version of WritePlotFile writes all components and allows the user to specify the names of the components. </para>
         </briefdescription>
         <detaileddescription>
-<para>This version of WritePlotFile writes all components and allows the user to specify the names of the components.</para>
 <para>This version also lets you pass in a functor to toggle whether each particle gets output.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -3323,9 +3325,9 @@
           <declname>write_int_comp</declname>
         </param>
         <briefdescription>
+<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specfic components. </para>
         </briefdescription>
         <detaileddescription>
-<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specfic components.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dir</parametername>
@@ -3396,9 +3398,9 @@
           <declname>f</declname>
         </param>
         <briefdescription>
+<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specfic components. </para>
         </briefdescription>
         <detaileddescription>
-<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specfic components.</para>
 <para>This version also lets you pass in a functor to toggle whether each particle gets output.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -3586,11 +3588,17 @@
 <para>This is the most general version of WritePlotFile, which takes component names and flags for whether to write each variable as components. Note that the user should pass in vectors containing names of all the components, whether they are written or not. </para>
         </briefdescription>
         <detaileddescription>
-<para><verbatim> This version also lets you pass in a functor to toggle whether each particle gets output.
-
-\tparam F function type
-</verbatim></para>
-<para><parameterlist kind="param"><parameteritem>
+<para>This version also lets you pass in a functor to toggle whether each particle gets output.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>function type</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>dir</parametername>
 </parameternamelist>
