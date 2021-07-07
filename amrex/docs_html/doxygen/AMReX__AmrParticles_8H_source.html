@@ -273,7 +273,7 @@ $(function() {
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// configure this to do a no-op at the physical boundaries.</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">int</span> lo_bc[] = {BCType::int_dir, BCType::int_dir, BCType::int_dir};</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">int</span> hi_bc[] = {BCType::int_dir, BCType::int_dir, BCType::int_dir};</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> bcs(1, <a class="code" href="classamrex_1_1BCRec.html">BCRec</a>(lo_bc, hi_bc));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="classamrex_1_1Vector.html">Vector&lt;BCRec&gt;</a> bcs(mf_part[lev_min].nComp(), <a class="code" href="classamrex_1_1BCRec.html">BCRec</a>(lo_bc, hi_bc));</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classamrex_1_1PCInterp.html">PCInterp</a> mapper;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = lev_min; lev &lt;= lev_max; ++lev)</div>
