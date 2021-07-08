@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['extrapveltofaces_175',['ExtrapVelToFaces',['../namespaceEBMOL.html#a7add53a153ade9c5cb83e79a61ad1929',1,'EBMOL::ExtrapVelToFaces()'],['../namespaceEBGodunov.html#abea06da38cd7e2c6a6ed94d761c4e996',1,'EBGodunov::ExtrapVelToFaces()'],['../namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748',1,'MOL::ExtrapVelToFaces()'],['../namespaceGodunov.html#a1c1dcedd6781260bd8322588e1290d94',1,'Godunov::ExtrapVelToFaces()'],['../namespaceHydroUtils.html#a56e04be6f4744620d42f9f3bda0b4c6b',1,'HydroUtils::ExtrapVelToFaces()']]],
-  ['extrapveltofacesbox_176',['ExtrapVelToFacesBox',['../namespaceEBMOL.html#a11b5b3fa29c007fd465a4bba443c433f',1,'EBMOL::ExtrapVelToFacesBox()'],['../namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad',1,'MOL::ExtrapVelToFacesBox()']]],
-  ['extrapveltofacesonbox_177',['ExtrapVelToFacesOnBox',['../namespaceEBGodunov.html#ac184b3ba8058a5c138c754520a9d78e8',1,'EBGodunov::ExtrapVelToFacesOnBox()'],['../namespaceGodunov.html#a02f769e2d602c99c8a459d594bf5b55e',1,'Godunov::ExtrapVelToFacesOnBox()']]]
+  ['setxedgebcs_50',['SetXEdgeBCs',['../namespaceanonymous__namespace_02hydro__bcs__K_8H_03.html#ac687a0a46c7878e7f4a88ae92c7f3388',1,'anonymous_namespace{hydro_bcs_K.H}']]],
+  ['setyedgebcs_51',['SetYEdgeBCs',['../namespaceanonymous__namespace_02hydro__bcs__K_8H_03.html#af26d17e7f0f0b72e647388134283d2c8',1,'anonymous_namespace{hydro_bcs_K.H}']]]
 ];

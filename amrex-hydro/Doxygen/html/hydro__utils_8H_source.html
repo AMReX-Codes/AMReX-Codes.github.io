@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="title">hydro_utils.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="hydro__utils_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HYDRO_UTILS_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HYDRO_UTILS_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HYDRO_UTILS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFabUtil.H&gt;</span></div>
@@ -107,10 +107,10 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;AMReX_EBMultiFabUtil.H&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceHydroUtils.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceHydroUtils.html">HydroUtils</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>HydroUtils {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="namespaceHydroUtils.html#a7e89c7d05b0b38b2829c82c198cdf052">ComputeFluxesOnBoxFromState</a> ( amrex::Box <span class="keyword">const</span>&amp; bx, <span class="keywordtype">int</span> ncomp, amrex::MFIter&amp; mfi,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;ComputeFluxesOnBoxFromState ( amrex::Box <span class="keyword">const</span>&amp; bx, <span class="keywordtype">int</span> ncomp, amrex::MFIter&amp; mfi,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                             amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; q,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                             AMREX_D_DECL(amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; flux_x,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                          amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; flux_y,</div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                             std::string&amp; advection_type);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="namespaceHydroUtils.html#a56e04be6f4744620d42f9f3bda0b4c6b">ExtrapVelToFaces</a> ( amrex::MultiFab <span class="keyword">const</span>&amp; vel,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<a class="code" href="namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">ExtrapVelToFaces</a> ( amrex::MultiFab <span class="keyword">const</span>&amp; vel,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   amrex::MultiFab <span class="keyword">const</span>&amp; vel_forces,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                   AMREX_D_DECL(amrex::MultiFab&amp; u_mac,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                amrex::MultiFab&amp; v_mac,</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                   <span class="keywordtype">bool</span> godunov_use_ppm, <span class="keywordtype">bool</span> godunov_use_forces_in_trans,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   std::string advection_type);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a> ( amrex::Box <span class="keyword">const</span>&amp; bx,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> ComputeFluxes ( amrex::Box <span class="keyword">const</span>&amp; bx,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                     AMREX_D_DECL( amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; flux_x,</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                   amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; flux_y,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                   amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; flux_z),</div>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                     amrex::Geometry <span class="keyword">const</span>&amp; geom, <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp,</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     <span class="keywordtype">bool</span> fluxes_are_area_weighted);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceHydroUtils.html#a0f59801cda64952e4b63910b1f42c455">ComputeDivergence</a> ( amrex::Box <span class="keyword">const</span>&amp; bx,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> ComputeDivergence ( amrex::Box <span class="keyword">const</span>&amp; bx,</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; div,</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                         AMREX_D_DECL( amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; flux_x,</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                       amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; flux_y,</div>
@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<a class="code" href="namespaceHydroUtils.html#aca84dcab64939bcf8ebf0fc65a262f5d">create_umac_grown</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> nGrow, amrex::BoxArray&amp; fine_grids, </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;create_umac_grown (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> nGrow, amrex::BoxArray&amp; fine_grids, </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                   <span class="keyword">const</span> amrex::Geometry&amp; fine_geom,</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                   <span class="keyword">const</span> amrex::Array&lt;amrex::MultiFab*,AMREX_SPACEDIM&gt; u_mac_crse,</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                   <span class="keyword">const</span> amrex::Array&lt;amrex::MultiFab*,AMREX_SPACEDIM&gt; u_mac_fine,</div>
@@ -241,16 +241,12 @@ $(document).ready(function(){initNavTree('hydro__utils_8H_source.html',''); init
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceHydroUtils_html"><div class="ttname"><a href="namespaceHydroUtils.html">HydroUtils</a></div><div class="ttdef"><b>Definition:</b> hydro_utils.H:12</div></div>
-<div class="ttc" id="anamespaceHydroUtils_html_ab70f040557a658e70ba076c9d105bab7"><div class="ttname"><a href="namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">HydroUtils::ComputeFluxes</a></div><div class="ttdeci">void ComputeFluxes(amrex::Box const &amp;bx, AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;flux_x, amrex::Array4&lt; amrex::Real &gt; const &amp;flux_y, amrex::Array4&lt; amrex::Real &gt; const &amp;flux_z), AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac), AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;xface, amrex::Array4&lt; amrex::Real const &gt; const &amp;yface, amrex::Array4&lt; amrex::Real const &gt; const &amp;zface), amrex::Geometry const &amp;geom, const int ncomp, bool fluxes_are_area_weighted)</div></div>
-<div class="ttc" id="anamespaceHydroUtils_html_a0f59801cda64952e4b63910b1f42c455"><div class="ttname"><a href="namespaceHydroUtils.html#a0f59801cda64952e4b63910b1f42c455">HydroUtils::ComputeDivergence</a></div><div class="ttdeci">void ComputeDivergence(amrex::Box const &amp;bx, amrex::Array4&lt; amrex::Real &gt; const &amp;div, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;flux_x, amrex::Array4&lt; amrex::Real const &gt; const &amp;flux_y, amrex::Array4&lt; amrex::Real const &gt; const &amp;flux_z), const int ncomp, amrex::Geometry const &amp;geom, const amrex::Real mult, bool fluxes_are_area_weighted)</div></div>
-<div class="ttc" id="anamespaceHydroUtils_html_a56e04be6f4744620d42f9f3bda0b4c6b"><div class="ttname"><a href="namespaceHydroUtils.html#a56e04be6f4744620d42f9f3bda0b4c6b">HydroUtils::ExtrapVelToFaces</a></div><div class="ttdeci">void ExtrapVelToFaces(amrex::MultiFab const &amp;vel, amrex::MultiFab const &amp;vel_forces, AMREX_D_DECL(amrex::MultiFab &amp;u_mac, amrex::MultiFab &amp;v_mac, amrex::MultiFab &amp;w_mac), amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec, amrex::Geometry &amp;geom, amrex::Real l_dt, bool godunov_use_ppm, bool godunov_use_forces_in_trans, std::string advection_type)</div><div class="ttdef"><b>Definition:</b> hydro_extrap_vel_to_faces.cpp:13</div></div>
-<div class="ttc" id="anamespaceHydroUtils_html_aca84dcab64939bcf8ebf0fc65a262f5d"><div class="ttname"><a href="namespaceHydroUtils.html#aca84dcab64939bcf8ebf0fc65a262f5d">HydroUtils::create_umac_grown</a></div><div class="ttdeci">void create_umac_grown(int lev, int nGrow, amrex::BoxArray &amp;fine_grids, const amrex::Geometry &amp;fine_geom, const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; u_mac_crse, const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; u_mac_fine, const amrex::IntVect &amp;crse_ratio)</div></div>
-<div class="ttc" id="anamespaceHydroUtils_html_a7e89c7d05b0b38b2829c82c198cdf052"><div class="ttname"><a href="namespaceHydroUtils.html#a7e89c7d05b0b38b2829c82c198cdf052">HydroUtils::ComputeFluxesOnBoxFromState</a></div><div class="ttdeci">void ComputeFluxesOnBoxFromState(amrex::Box const &amp;bx, int ncomp, amrex::MFIter &amp;mfi, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;flux_x, amrex::Array4&lt; amrex::Real &gt; const &amp;flux_y, amrex::Array4&lt; amrex::Real &gt; const &amp;flux_z), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xface, amrex::Array4&lt; amrex::Real &gt; const &amp;yface, amrex::Array4&lt; amrex::Real &gt; const &amp;zface), AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac), amrex::Array4&lt; amrex::Real const &gt; const &amp;divu, amrex::Array4&lt; amrex::Real const &gt; const &amp;fq, amrex::Geometry geom, amrex::Real l_dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, const amrex::BCRec *d_bcrec, int const *iconserv, bool godunov_use_ppm, bool godunov_use_forces_in_trans, bool is_velocity, bool fluxes_are_area_weighted, std::string &amp;advection_type)</div></div>
+<div class="ttc" id="ahydro__mol_8H_html"><div class="ttname"><a href="hydro__mol_8H.html">hydro_mol.H</a></div><div class="ttdoc">A documented file.</div></div>
+<div class="ttc" id="anamespaceMOL_html_acdde2acf756048b8ef0bca332e4bf748"><div class="ttname"><a href="namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">MOL::ExtrapVelToFaces</a></div><div class="ttdeci">void ExtrapVelToFaces(const amrex::MultiFab &amp;vel, AMREX_D_DECL(amrex::MultiFab &amp;umac, amrex::MultiFab &amp;vmac, amrex::MultiFab &amp;wmac), const amrex::Geometry &amp;a_geom, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, const amrex::BCRec *d_bcrec)</div><div class="ttdoc">Compute upwinded FC velocities by extrapolating CC values in SPACE ONLY.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_0a824aa1f70ce3b829ef378253b085da.html">Utils</a></li><li class="navelem"><a class="el" href="hydro__utils_8H.html">hydro_utils.H</a></li>
+    <li class="navelem"><a class="el" href="dir_0a824aa1f70ce3b829ef378253b085da.html">Utils</a></li><li class="navelem"><b>hydro_utils.H</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

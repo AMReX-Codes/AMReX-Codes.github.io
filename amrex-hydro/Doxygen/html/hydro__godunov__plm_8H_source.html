@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="title">hydro_godunov_plm.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="hydro__godunov__plm_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HYDRO_PLM_GODUNOV_H</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HYDRO_PLM_GODUNOV_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HYDRO_PLM_GODUNOV_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;AMReX_Slopes_K.H&gt;</span></div>
@@ -106,11 +106,11 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;AMReX_BC_TYPES.H&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;AMReX_Array.H&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="hydro__constants_8H.html">hydro_constants.H</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;hydro_constants.H&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacePLM.html">   13</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacePLM.html">PLM</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>PLM {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacePLM.html#ad2856cbb4c67bc257b75340044ae7229">PredictVelOnXFace</a> ( amrex::Box <span class="keyword">const</span>&amp; bx, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> PredictVelOnXFace ( amrex::Box <span class="keyword">const</span>&amp; bx, <span class="keywordtype">int</span> ncomp,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; Imx, amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; Ipx,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                         amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; q,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                         amrex::Array4&lt;amrex::Real  const&gt; <span class="keyword">const</span>&amp; vcc,</div>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                         amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; h_bcrec,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                         amrex::BCRec <span class="keyword">const</span>* d_bcrec );</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacePLM.html#ad7beaa3659e4fc3ea1dc0f3a97d025f7">PredictVelOnYFace</a> ( amrex::Box <span class="keyword">const</span>&amp; bx, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> PredictVelOnYFace ( amrex::Box <span class="keyword">const</span>&amp; bx, <span class="keywordtype">int</span> ncomp,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; Imy, amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; Ipy,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                         amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; q,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                         amrex::Array4&lt;amrex::Real  const&gt; <span class="keyword">const</span>&amp; vcc,</div>
@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacePLM.html#a27d3106050ecc051c39cd1702f6615a7">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacePLM.html#a27d3106050ecc051c39cd1702f6615a7">PredictStateOnXFace</a> ( <span class="keyword">const</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">int</span> j, <span class="keyword">const</span> <span class="keywordtype">int</span> k, <span class="keyword">const</span> <span class="keywordtype">int</span> n,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> PredictStateOnXFace ( <span class="keyword">const</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">int</span> j, <span class="keyword">const</span> <span class="keywordtype">int</span> k, <span class="keyword">const</span> <span class="keywordtype">int</span> n,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                           <span class="keyword">const</span> amrex::Real dt, <span class="keyword">const</span> amrex::Real dx,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                           amrex::Real&amp; Im, amrex::Real&amp; Ip,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                           <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; &amp;S,</div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            umns = S(i-1,j,k,n);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> ( n==<a class="code" href="hydro__constants_8H.html#abd88b7e5e752e92713211c3184d3a5ae">XVEL</a> &amp;&amp; is_velocity )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> ( n==XVEL &amp;&amp; is_velocity )</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;              upls = S(i-1,j,k,n);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            upls = S(i  ,j,k,n);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> ( n==<a class="code" href="hydro__constants_8H.html#abd88b7e5e752e92713211c3184d3a5ae">XVEL</a> &amp;&amp; is_velocity )</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> ( n==XVEL &amp;&amp; is_velocity )</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                umns = S(i,j,k,n);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="namespacePLM.html#a1107e8578e71e86ef2d86c10729baa34">  113</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacePLM.html#a1107e8578e71e86ef2d86c10729baa34">PredictStateOnYFace</a> ( <span class="keyword">const</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">int</span> j, <span class="keyword">const</span> <span class="keywordtype">int</span> k, <span class="keyword">const</span> <span class="keywordtype">int</span> n,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">void</span> PredictStateOnYFace ( <span class="keyword">const</span> <span class="keywordtype">int</span> i, <span class="keyword">const</span> <span class="keywordtype">int</span> j, <span class="keyword">const</span> <span class="keywordtype">int</span> k, <span class="keyword">const</span> <span class="keywordtype">int</span> n,</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                           <span class="keyword">const</span> amrex::Real dt, <span class="keyword">const</span> amrex::Real dy,</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                           amrex::Real&amp; Im, amrex::Real&amp; Ip,</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                           <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt; &amp;S,</div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span> (j == domain_jlo &amp;&amp; (bc.lo(1) == BCType::ext_dir))</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            vmns = S(i,j-1,k,n);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">if</span> ( n==<a class="code" href="hydro__constants_8H.html#a17d5f6d34047cd913543b43d73f2ce9a">YVEL</a> &amp;&amp; is_velocity )</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">if</span> ( n==YVEL &amp;&amp; is_velocity )</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            {</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                vpls = S(i,j-1,k,n);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
@@ -244,7 +244,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (j == domain_jhi+1 &amp;&amp; (bc.hi(1) == BCType::ext_dir))</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            vpls = S(i,j  ,k,n);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span> ( n==<a class="code" href="hydro__constants_8H.html#a17d5f6d34047cd913543b43d73f2ce9a">YVEL</a> &amp;&amp; is_velocity )</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span> ( n==YVEL &amp;&amp; is_velocity )</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                vmns = S(i,j  ,k,n);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            }</div>
@@ -296,7 +296,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">if</span> (k == domain_klo &amp;&amp; (bc.lo(2) == BCType::ext_dir))</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            wmns = S(i,j,k-1,n);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">if</span> ( n == <a class="code" href="hydro__constants_8H.html#acd4c2357fa827bdc6b058736a689df22">ZVEL</a> &amp;&amp; is_velocity )</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordflow">if</span> ( n == ZVEL &amp;&amp; is_velocity )</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            {</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                wpls = S(i,j,k-1,n);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
@@ -309,7 +309,7 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k == domain_khi+1 &amp;&amp; (bc.hi(2) == BCType::ext_dir))</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            wpls = S(i,j,k  ,n);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">if</span> ( n == <a class="code" href="hydro__constants_8H.html#acd4c2357fa827bdc6b058736a689df22">ZVEL</a> &amp;&amp; is_velocity )</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">if</span> ( n == ZVEL &amp;&amp; is_velocity )</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                wmns = S(i,j,k  ,n);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            }</div>
@@ -340,19 +340,10 @@ $(document).ready(function(){initNavTree('hydro__godunov__plm_8H_source.html',''
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ahydro__constants_8H_html"><div class="ttname"><a href="hydro__constants_8H.html">hydro_constants.H</a></div></div>
-<div class="ttc" id="anamespacePLM_html_ad2856cbb4c67bc257b75340044ae7229"><div class="ttname"><a href="namespacePLM.html#ad2856cbb4c67bc257b75340044ae7229">PLM::PredictVelOnXFace</a></div><div class="ttdeci">void PredictVelOnXFace(amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;Imx, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipx, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vcc, const amrex::Geometry &amp;geom, amrex::Real dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec)</div></div>
-<div class="ttc" id="anamespacePLM_html_ad7beaa3659e4fc3ea1dc0f3a97d025f7"><div class="ttname"><a href="namespacePLM.html#ad7beaa3659e4fc3ea1dc0f3a97d025f7">PLM::PredictVelOnYFace</a></div><div class="ttdeci">void PredictVelOnYFace(amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vcc, const amrex::Geometry &amp;geom, amrex::Real dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec)</div></div>
-<div class="ttc" id="ahydro__constants_8H_html_a17d5f6d34047cd913543b43d73f2ce9a"><div class="ttname"><a href="hydro__constants_8H.html#a17d5f6d34047cd913543b43d73f2ce9a">YVEL</a></div><div class="ttdeci">#define YVEL</div><div class="ttdef"><b>Definition:</b> hydro_constants.H:9</div></div>
-<div class="ttc" id="anamespacePLM_html_a1107e8578e71e86ef2d86c10729baa34"><div class="ttname"><a href="namespacePLM.html#a1107e8578e71e86ef2d86c10729baa34">PLM::PredictStateOnYFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void PredictStateOnYFace(const int i, const int j, const int k, const int n, const amrex::Real dt, const amrex::Real dy, amrex::Real &amp;Im, amrex::Real &amp;Ip, const amrex::Array4&lt; const amrex::Real &gt; &amp;S, const amrex::Real &amp;vmac, const amrex::BCRec bc, const int domain_jlo, const int domain_jhi, const bool is_velocity)</div><div class="ttdef"><b>Definition:</b> hydro_godunov_plm.H:113</div></div>
-<div class="ttc" id="anamespacePLM_html"><div class="ttname"><a href="namespacePLM.html">PLM</a></div><div class="ttdef"><b>Definition:</b> hydro_godunov_plm.H:13</div></div>
-<div class="ttc" id="ahydro__constants_8H_html_acd4c2357fa827bdc6b058736a689df22"><div class="ttname"><a href="hydro__constants_8H.html#acd4c2357fa827bdc6b058736a689df22">ZVEL</a></div><div class="ttdeci">#define ZVEL</div><div class="ttdef"><b>Definition:</b> hydro_constants.H:10</div></div>
-<div class="ttc" id="ahydro__constants_8H_html_abd88b7e5e752e92713211c3184d3a5ae"><div class="ttname"><a href="hydro__constants_8H.html#abd88b7e5e752e92713211c3184d3a5ae">XVEL</a></div><div class="ttdeci">#define XVEL</div><div class="ttdef"><b>Definition:</b> hydro_constants.H:8</div></div>
-<div class="ttc" id="anamespacePLM_html_a27d3106050ecc051c39cd1702f6615a7"><div class="ttname"><a href="namespacePLM.html#a27d3106050ecc051c39cd1702f6615a7">PLM::PredictStateOnXFace</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void PredictStateOnXFace(const int i, const int j, const int k, const int n, const amrex::Real dt, const amrex::Real dx, amrex::Real &amp;Im, amrex::Real &amp;Ip, const amrex::Array4&lt; const amrex::Real &gt; &amp;S, const amrex::Real &amp;umac, const amrex::BCRec bc, const int domain_ilo, const int domain_ihi, const bool is_velocity)</div><div class="ttdef"><b>Definition:</b> hydro_godunov_plm.H:46</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_cffaad549c21f3a63de5e8faf3ce5224.html">Godunov</a></li><li class="navelem"><a class="el" href="hydro__godunov__plm_8H.html">hydro_godunov_plm.H</a></li>
+    <li class="navelem"><a class="el" href="dir_cffaad549c21f3a63de5e8faf3ce5224.html">Godunov</a></li><li class="navelem"><b>hydro_godunov_plm.H</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

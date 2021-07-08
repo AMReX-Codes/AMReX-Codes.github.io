@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['apply_161',['Apply',['../namespaceRedistribution.html#a10c2cd83ad245d4e000158bf648992db',1,'Redistribution']]],
-  ['applytoinitialdata_162',['ApplyToInitialData',['../namespaceRedistribution.html#adbc6390fa5c740584f57214e95996c12',1,'Redistribution']]]
+  ['computeaofs_45',['ComputeAofs',['../namespaceMOL.html#a5faadc1a35e816f7acc88eb769edbb55',1,'MOL']]],
+  ['computesyncaofs_46',['ComputeSyncAofs',['../namespaceMOL.html#a7d498da8117ccbcbb7860d0d0b8ecf85',1,'MOL']]]
 ];
