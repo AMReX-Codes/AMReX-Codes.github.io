@@ -1,0 +1,28 @@
+var namespaceamrex_1_1NonLocalBC =
+[
+    [ "ApplyDtosAndProjectionOnReciever", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever" ],
+    [ "Array4Array4Box", "structamrex_1_1NonLocalBC_1_1Array4Array4Box.html", "structamrex_1_1NonLocalBC_1_1Array4Array4Box" ],
+    [ "CommData", "structamrex_1_1NonLocalBC_1_1CommData.html", "structamrex_1_1NonLocalBC_1_1CommData" ],
+    [ "CommHandler", "structamrex_1_1NonLocalBC_1_1CommHandler.html", "structamrex_1_1NonLocalBC_1_1CommHandler" ],
+    [ "DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
+    [ "HasInverseMemFn", "structamrex_1_1NonLocalBC_1_1HasInverseMemFn.html", null ],
+    [ "Identity", "structamrex_1_1NonLocalBC_1_1Identity.html", "structamrex_1_1NonLocalBC_1_1Identity" ],
+    [ "IsDataPacking", "structamrex_1_1NonLocalBC_1_1IsDataPacking.html", null ],
+    [ "IsFabProjection", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ],
+    [ "IsIndexMapping", "structamrex_1_1NonLocalBC_1_1IsIndexMapping.html", null ],
+    [ "MapComponents", "structamrex_1_1NonLocalBC_1_1MapComponents.html", "structamrex_1_1NonLocalBC_1_1MapComponents" ],
+    [ "MultiBlockCommMetaData", "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData.html", "structamrex_1_1NonLocalBC_1_1MultiBlockCommMetaData" ],
+    [ "MultiBlockIndexMapping", "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping.html", "structamrex_1_1NonLocalBC_1_1MultiBlockIndexMapping" ],
+    [ "NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
+    [ "PackComponents", "structamrex_1_1NonLocalBC_1_1PackComponents.html", "structamrex_1_1NonLocalBC_1_1PackComponents" ],
+    [ "PolarFn", "structamrex_1_1NonLocalBC_1_1PolarFn.html", "structamrex_1_1NonLocalBC_1_1PolarFn" ],
+    [ "PolarFn2", "structamrex_1_1NonLocalBC_1_1PolarFn2.html", "structamrex_1_1NonLocalBC_1_1PolarFn2" ],
+    [ "Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", "structamrex_1_1NonLocalBC_1_1Rotate180Fn" ],
+    [ "Rotate90ClockWise", "structamrex_1_1NonLocalBC_1_1Rotate90ClockWise.html", "structamrex_1_1NonLocalBC_1_1Rotate90ClockWise" ],
+    [ "Rotate90CounterClockWise", "structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise.html", "structamrex_1_1NonLocalBC_1_1Rotate90CounterClockWise" ],
+    [ "Rotate90DstToSrc", "structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc.html", "structamrex_1_1NonLocalBC_1_1Rotate90DstToSrc" ],
+    [ "SwapComponents", "structamrex_1_1NonLocalBC_1_1SwapComponents.html", "structamrex_1_1NonLocalBC_1_1SwapComponents" ],
+    [ "SwapComponents< I, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3_01I_00_01-1_01_4" ],
+    [ "SwapComponents<-1, -1 >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01-1_01_4" ],
+    [ "SwapComponents<-1, J >", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4.html", "structamrex_1_1NonLocalBC_1_1SwapComponents_3-1_00_01J_01_4" ]
+];

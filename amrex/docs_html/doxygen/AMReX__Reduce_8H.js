@@ -1,0 +1,28 @@
+var AMReX__Reduce_8H =
+[
+    [ "ReduceOpSum", "structamrex_1_1ReduceOpSum.html", "structamrex_1_1ReduceOpSum" ],
+    [ "ReduceOpMin", "structamrex_1_1ReduceOpMin.html", "structamrex_1_1ReduceOpMin" ],
+    [ "ReduceOpMax", "structamrex_1_1ReduceOpMax.html", "structamrex_1_1ReduceOpMax" ],
+    [ "ReduceOpLogicalAnd", "structamrex_1_1ReduceOpLogicalAnd.html", "structamrex_1_1ReduceOpLogicalAnd" ],
+    [ "ReduceOpLogicalOr", "structamrex_1_1ReduceOpLogicalOr.html", "structamrex_1_1ReduceOpLogicalOr" ],
+    [ "ReduceOps", "classamrex_1_1ReduceOps.html", "classamrex_1_1ReduceOps" ],
+    [ "ReduceData", "classamrex_1_1ReduceData.html", "classamrex_1_1ReduceData" ],
+    [ "ReduceOps", "classamrex_1_1ReduceOps.html", "classamrex_1_1ReduceOps" ],
+    [ "AnyOf", "AMReX__Reduce_8H.html#a7cabd7f1db3095d4896d075cc936f0e0", null ],
+    [ "AnyOf", "AMReX__Reduce_8H.html#ada14c45ee9673665c1c3df6749ede80f", null ],
+    [ "call_f", "AMReX__Reduce_8H.html#a598f60a4f8120754f446e6f256db6a75", null ],
+    [ "for_each_init", "AMReX__Reduce_8H.html#ad82ab05b8695a7b69b6328d38f5f909d", null ],
+    [ "for_each_init", "AMReX__Reduce_8H.html#acde9058e17834da4bdc5080d3bb7f727", null ],
+    [ "for_each_local", "AMReX__Reduce_8H.html#a242e910c5ee2822f806976b939ee12cc", null ],
+    [ "for_each_local", "AMReX__Reduce_8H.html#a87e0dc777fadd857a66ec153719591d4", null ],
+    [ "for_each_parallel", "AMReX__Reduce_8H.html#a084c624b29326e43e50a5dbe65db8b50", null ],
+    [ "for_each_parallel", "AMReX__Reduce_8H.html#ad1214261e6fd754f2e41e878533756a4", null ],
+    [ "Max", "AMReX__Reduce_8H.html#a3cea6f37705bcc227603bf4c75507b94", null ],
+    [ "Max", "AMReX__Reduce_8H.html#a7ac8075282193aef5024b3a7092a0f3c", null ],
+    [ "Min", "AMReX__Reduce_8H.html#a7da96d3ec8efffe9ebeae62d5c3fb710", null ],
+    [ "Min", "AMReX__Reduce_8H.html#a07365bcdfaa9fe246330e8d91f71ecc0", null ],
+    [ "MinMax", "AMReX__Reduce_8H.html#aa222fe966c90523082b2cc7ecdf695c4", null ],
+    [ "MinMax", "AMReX__Reduce_8H.html#a17b6d6ef1df2c2803c3f460b51ddd012", null ],
+    [ "Sum", "AMReX__Reduce_8H.html#a4f32ecfd40118417b8bb81078aa24c40", null ],
+    [ "Sum", "AMReX__Reduce_8H.html#afac1250d786b98bab8d8d2cf5c06411e", null ]
+];

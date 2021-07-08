@@ -1,0 +1,28 @@
+var classamrex_1_1ParallelContext_1_1Frame =
+[
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#ad61cafd4a0e7503e8cd29810f57736e9", null ],
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#a390e863e597de7ee5742e950baa2544e", null ],
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#a84ed11cec20f015349e7edd5fe0bccf4", null ],
+    [ "Frame", "classamrex_1_1ParallelContext_1_1Frame.html#ac3367d337ca17031766061b36fac376b", null ],
+    [ "~Frame", "classamrex_1_1ParallelContext_1_1Frame.html#a7a812b3ef64087f0bcc566deaffbcb16", null ],
+    [ "get_inc_mpi_tag", "classamrex_1_1ParallelContext_1_1Frame.html#ac7e3ccd77b7a012c1c66b7c3bbdf6509", null ],
+    [ "get_ofs_ptr", "classamrex_1_1ParallelContext_1_1Frame.html#abf278a69530b55db1c0156e40db89e0c", null ],
+    [ "global_to_local_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a556aaa1857e6eeb17b2bcc1df80689c6", null ],
+    [ "global_to_local_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a9437922e6e608eb67b151436eead9c89", null ],
+    [ "IOProc", "classamrex_1_1ParallelContext_1_1Frame.html#a21e190c33a495b59fa05c1cee0e4e60a", null ],
+    [ "local_to_global_rank", "classamrex_1_1ParallelContext_1_1Frame.html#af6020c73c104e3e55890bc462643488c", null ],
+    [ "local_to_global_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a86074250e27dde353d4fc80c8d246ede", null ],
+    [ "MyID", "classamrex_1_1ParallelContext_1_1Frame.html#afc192eadbbc8aaafa7ff32cacdc8488b", null ],
+    [ "MyProc", "classamrex_1_1ParallelContext_1_1Frame.html#a2fe4785cdf596f485e0087fcdf771579", null ],
+    [ "NProcs", "classamrex_1_1ParallelContext_1_1Frame.html#a9b529bc7c103b596cb3c24ce70c28e93", null ],
+    [ "set_ofs_name", "classamrex_1_1ParallelContext_1_1Frame.html#a1bc1579142503db5584556389166c169", null ],
+    [ "comm", "classamrex_1_1ParallelContext_1_1Frame.html#a00076c4be0a8a1fa1a56d8d9c3fdfa2f", null ],
+    [ "group", "classamrex_1_1ParallelContext_1_1Frame.html#a2cb41a80f7a3c545e1e537bf84acbbc9", null ],
+    [ "m_id", "classamrex_1_1ParallelContext_1_1Frame.html#a72eda643c9080e17e52e8aea8756cd35", null ],
+    [ "m_io_rank", "classamrex_1_1ParallelContext_1_1Frame.html#a2b4c46fb1ac3129d8c997f52241de7a1", null ],
+    [ "m_mpi_tag", "classamrex_1_1ParallelContext_1_1Frame.html#a0c03450ec8650e511181fb540b42e880", null ],
+    [ "m_nranks", "classamrex_1_1ParallelContext_1_1Frame.html#a31bfd44f2e4c7e7fe623b14eb62b81c6", null ],
+    [ "m_out", "classamrex_1_1ParallelContext_1_1Frame.html#a9137c45cc574cabfd0194ab8ed082116", null ],
+    [ "m_out_filename", "classamrex_1_1ParallelContext_1_1Frame.html#a3ae9cdc97369e2f1381f095af24e497e", null ],
+    [ "m_rank_me", "classamrex_1_1ParallelContext_1_1Frame.html#aa5b185e14618f1bef2f4a7bbd9be3f35", null ]
+];

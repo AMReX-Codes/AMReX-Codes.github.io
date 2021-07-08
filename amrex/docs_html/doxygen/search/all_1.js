@@ -1239,7 +1239,7 @@ var searchData=
   ['gpu_1244',['Gpu',['../namespaceamrex_1_1Gpu.html',1,'amrex']]],
   ['hostdevice_1245',['HostDevice',['../namespaceamrex_1_1HostDevice.html',1,'amrex']]],
   ['iif_5fdetail_1246',['IIF_detail',['../namespaceamrex_1_1EB2_1_1IIF__detail.html',1,'amrex::EB2']]],
-  ['amrex_3a_20block_2dstructured_20amr_20framework_1247',['AMReX: Block-Structured AMR Framework',['../index.html',1,'']]],
+  ['amrex_3a_20technical_20reference_1247',['AMReX: Technical Reference',['../index.html',1,'']]],
   ['insituutils_1248',['InSituUtils',['../namespaceamrex_1_1InSituUtils.html',1,'amrex']]],
   ['lazy_1249',['Lazy',['../namespaceamrex_1_1Lazy.html',1,'amrex']]],
   ['machine_1250',['machine',['../namespaceamrex_1_1machine.html',1,'amrex']]],

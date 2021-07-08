@@ -1,0 +1,28 @@
+var AMReX__SDCquadrature_8F90 =
+[
+    [ "poly_eval", "interfacesdcquadrature__mod_1_1poly__eval.html", "interfacesdcquadrature__mod_1_1poly__eval" ],
+    [ "not_proper", "AMReX__SDCquadrature_8F90.html#a36963c5b419723010d58909d4528c0dc", null ],
+    [ "poly_diff", "AMReX__SDCquadrature_8F90.html#ae2185088b6449f7811b072576236dabd", null ],
+    [ "poly_eval", "AMReX__SDCquadrature_8F90.html#a19abe9c6ef21541b666b72dd131373b3", null ],
+    [ "poly_eval_complex", "AMReX__SDCquadrature_8F90.html#a507876cf6308356bcab599968824c4a9", null ],
+    [ "poly_int", "AMReX__SDCquadrature_8F90.html#a0ffbe7bf11e56b416c5631c0b38321b6", null ],
+    [ "poly_legendre", "AMReX__SDCquadrature_8F90.html#a874a5cd63196132c18272439ac22d430", null ],
+    [ "poly_roots", "AMReX__SDCquadrature_8F90.html#ac65c67a741f829888ad21000351c137b", null ],
+    [ "qsort", "AMReX__SDCquadrature_8F90.html#aca9a2cd134b3750fabf403d738255f79", null ],
+    [ "qsort_partition", "AMReX__SDCquadrature_8F90.html#a48ed5f48f95b69c47de925a1a865a89c", null ],
+    [ "sdc_qmats", "AMReX__SDCquadrature_8F90.html#af9d037887b4d9c8c4156bcab10d93e2a", null ],
+    [ "sdc_qnodes", "AMReX__SDCquadrature_8F90.html#a45feaecc2f3ca60142ec3cbdcc49c288", null ],
+    [ "sdc_quadrature", "AMReX__SDCquadrature_8F90.html#a17b1ea9c614020de45d57d3014ce8837", null ],
+    [ "amrex_real", "AMReX__SDCquadrature_8F90.html#a857950373cee003a6d5ead3236e70584", null ],
+    [ "dp", "AMReX__SDCquadrature_8F90.html#a8e53936d3fd7c9e7c1870a499156cd87", null ],
+    [ "eps", "AMReX__SDCquadrature_8F90.html#a5996afecb06f0cfbc667e1fc7eff3f08", null ],
+    [ "qp", "AMReX__SDCquadrature_8F90.html#a3b6ebab50bdb3680467e36128f5e4f53", null ],
+    [ "sdc_clenshaw_curtis", "AMReX__SDCquadrature_8F90.html#aca3c8a3144793139f180db29ce39153c", null ],
+    [ "sdc_composite_nodes", "AMReX__SDCquadrature_8F90.html#ab0462ece2c230549e39bb8d8b7cd205c", null ],
+    [ "sdc_gauss_legendre", "AMReX__SDCquadrature_8F90.html#a62cfff98d5899c5934e7b29264eaaeef", null ],
+    [ "sdc_gauss_lobatto", "AMReX__SDCquadrature_8F90.html#aa7cccac0d6dc3b28a4dc2a329214a698", null ],
+    [ "sdc_gauss_radau", "AMReX__SDCquadrature_8F90.html#a7b8799c586d6a5def7cb8f3c517b5e7b", null ],
+    [ "sdc_no_left", "AMReX__SDCquadrature_8F90.html#a95aa940d0fc9d580c3facf460de23d21", null ],
+    [ "sdc_proper_nodes", "AMReX__SDCquadrature_8F90.html#a8926569834e03ad73326955f04c8f3eb", null ],
+    [ "sdc_uniform", "AMReX__SDCquadrature_8F90.html#aac87ed7a643061e124406a48d5ac55c1", null ]
+];

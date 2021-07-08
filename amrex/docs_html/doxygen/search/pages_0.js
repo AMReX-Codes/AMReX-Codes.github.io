@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['amrex_3a_20block_2dstructured_20amr_20framework_15835',['AMReX: Block-Structured AMR Framework',['../index.html',1,'']]]
+  ['amrex_3a_20technical_20reference_15835',['AMReX: Technical Reference',['../index.html',1,'']]]
 ];

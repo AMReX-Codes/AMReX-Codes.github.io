@@ -1,0 +1,28 @@
+var structamrex_1_1Array4 =
+[
+    [ "Array4", "structamrex_1_1Array4.html#aa9104074135ab3db54cf3224f7dcc4aa", null ],
+    [ "Array4", "structamrex_1_1Array4.html#a68895c23f542effc10e2a36ef80fcf37", null ],
+    [ "Array4", "structamrex_1_1Array4.html#aadaa817898bc6aaee36f54e294c94d6d", null ],
+    [ "Array4", "structamrex_1_1Array4.html#a8ce3c58d917a4c14dce99d84097756cd", null ],
+    [ "Array4", "structamrex_1_1Array4.html#addc632464912cc3a4db197cb3eb831b1", null ],
+    [ "contains", "structamrex_1_1Array4.html#afffb83a576c2e90e22fa03b27057ac49", null ],
+    [ "dataPtr", "structamrex_1_1Array4.html#a92996beac4532d45d7ac4be41b1ff439", null ],
+    [ "nComp", "structamrex_1_1Array4.html#a7c005d65913452a3aa2b0e2e4d6ffd22", null ],
+    [ "operator bool", "structamrex_1_1Array4.html#ae71e941fe0aaf1a422e09ac5aa031a4c", null ],
+    [ "operator()", "structamrex_1_1Array4.html#ae42098cbe246650094884bee0aa75c84", null ],
+    [ "operator()", "structamrex_1_1Array4.html#a3ced076d0c7749962476bc53b35209ef", null ],
+    [ "operator()", "structamrex_1_1Array4.html#a4d10b2bc8e84c54a971e9a72b5eb760c", null ],
+    [ "operator()", "structamrex_1_1Array4.html#a646dba54267ac369c499b16c68cd7b51", null ],
+    [ "ptr", "structamrex_1_1Array4.html#a0951dd1a1e6d5b4f5a41c4cae335f6f1", null ],
+    [ "ptr", "structamrex_1_1Array4.html#a4348b8093dd5bd53b0094f2db00bd643", null ],
+    [ "ptr", "structamrex_1_1Array4.html#a6ca368fd14b6a0393e41dd72c0d3b48f", null ],
+    [ "ptr", "structamrex_1_1Array4.html#a2e9026521a8eb804b7822ee594358322", null ],
+    [ "size", "structamrex_1_1Array4.html#a80b7a0c3a54daeee59f711fc97011a83", null ],
+    [ "begin", "structamrex_1_1Array4.html#a866f2c12eb3e3d6a26399866f355e088", null ],
+    [ "end", "structamrex_1_1Array4.html#ae3e6ea18e90f4b382a90da961a93d8e9", null ],
+    [ "jstride", "structamrex_1_1Array4.html#ac5874d9946c7fab10b8baccf17852150", null ],
+    [ "kstride", "structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e", null ],
+    [ "ncomp", "structamrex_1_1Array4.html#a58a49cd7aec26094f9a5dda9ee795cca", null ],
+    [ "nstride", "structamrex_1_1Array4.html#af34de268f8d40135be4374144dd2b34a", null ],
+    [ "p", "structamrex_1_1Array4.html#afc65a955f06b484f0ff95fa6ca5579e8", null ]
+];

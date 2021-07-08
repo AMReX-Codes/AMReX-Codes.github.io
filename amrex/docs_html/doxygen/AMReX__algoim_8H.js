@@ -1,0 +1,25 @@
+var AMReX__algoim_8H =
+[
+    [ "compute_integrals", "AMReX__algoim_8H.html#a6784c63be461e49a81c5c587605674e4", null ],
+    [ "compute_integrals", "AMReX__algoim_8H.html#a3ccdff6c18c04f2fb7aa460f885333ba", null ],
+    [ "i_S_x", "AMReX__algoim_8H.html#a83f836cfcb795ee2e7cf5f031f4e33a5", null ],
+    [ "i_S_x2", "AMReX__algoim_8H.html#a07474818cba158a836bada961168c817", null ],
+    [ "i_S_x2_y", "AMReX__algoim_8H.html#a90a6f014a413b05f96c519b9dcab59dd", null ],
+    [ "i_S_x2_y2", "AMReX__algoim_8H.html#a7b7ee4491a1bc96aef205aec9d4a3ccc", null ],
+    [ "i_S_x2_z", "AMReX__algoim_8H.html#ad88812a86b6d79fee7ad18f445312126", null ],
+    [ "i_S_x2_z2", "AMReX__algoim_8H.html#a82ccbc9a6ef0f35640533a4432e150a7", null ],
+    [ "i_S_x_y", "AMReX__algoim_8H.html#a1563d162ff7c724b049f407982b9376a", null ],
+    [ "i_S_x_y2", "AMReX__algoim_8H.html#a59d00e52a1182ccb7556e0b34969d082", null ],
+    [ "i_S_x_z", "AMReX__algoim_8H.html#a319d09e3fac406d5c7435495783c51da", null ],
+    [ "i_S_x_z2", "AMReX__algoim_8H.html#ad4374cfcd9fd0dcc582d0b7221c7d699", null ],
+    [ "i_S_xyz", "AMReX__algoim_8H.html#a5b751a5f2c300635c47ad31a24157604", null ],
+    [ "i_S_y", "AMReX__algoim_8H.html#a26347d2ffb8ae0e55a261293b75aae80", null ],
+    [ "i_S_y2", "AMReX__algoim_8H.html#ae9b79e8e177e12c5d430231f4fa56cee", null ],
+    [ "i_S_y2_z", "AMReX__algoim_8H.html#a906f3ea1a1f5abffc2ce63a2f18c3097", null ],
+    [ "i_S_y2_z2", "AMReX__algoim_8H.html#a6dedc899a72f47e8eed563d439589b34", null ],
+    [ "i_S_y_z", "AMReX__algoim_8H.html#a035ca724de0232c06fb8f932f48dfb5b", null ],
+    [ "i_S_y_z2", "AMReX__algoim_8H.html#a028434e66d37788b7c7aa354d73ed4b3", null ],
+    [ "i_S_z", "AMReX__algoim_8H.html#aa393d743c81287bc86ed10b61b86013d", null ],
+    [ "i_S_z2", "AMReX__algoim_8H.html#ad07a32fe98faf4bf2b079e31d5a63fc2", null ],
+    [ "numIntgs", "AMReX__algoim_8H.html#a856a505f1340baf94d02a7585b467e1a", null ]
+];

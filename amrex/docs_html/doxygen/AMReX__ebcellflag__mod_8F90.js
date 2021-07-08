@@ -1,0 +1,28 @@
+var AMReX__ebcellflag__mod_8F90 =
+[
+    [ "get_neighbor_cells", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells.html", "interfaceamrex__ebcellflag__module_1_1get__neighbor__cells" ],
+    [ "clear_allneighbors", "AMReX__ebcellflag__mod_8F90.html#a81e54bd33c97780b54376e8b462612c6", null ],
+    [ "clear_neighbor", "AMReX__ebcellflag__mod_8F90.html#a7d30f95878f595d82cb984b91bd3a766", null ],
+    [ "get_cell_type", "AMReX__ebcellflag__mod_8F90.html#a4e837dbfa10cc1075d4c603eddcda32a", null ],
+    [ "get_neighbor_cells_int", "AMReX__ebcellflag__mod_8F90.html#a042a1d5bee97b5d90c352a09ffc13956", null ],
+    [ "get_neighbor_cells_int_single", "AMReX__ebcellflag__mod_8F90.html#a5f10bb6cffaf7551730ef8bd3e73b6f1", null ],
+    [ "get_neighbor_cells_real", "AMReX__ebcellflag__mod_8F90.html#a4060baeae84dd42b4c8941cde84ceaee", null ],
+    [ "is_covered_cell", "AMReX__ebcellflag__mod_8F90.html#aa1f07716bba711910bffed1b9d861155", null ],
+    [ "is_multi_valued_cell", "AMReX__ebcellflag__mod_8F90.html#ac1b245f048fe2b31717a124049739d02", null ],
+    [ "is_neighbor", "AMReX__ebcellflag__mod_8F90.html#a94fd726efde06cd88152ae586400d5ec", null ],
+    [ "is_regular_cell", "AMReX__ebcellflag__mod_8F90.html#a6bfc43005eb226bc2f194fd9d1ddd480", null ],
+    [ "is_single_valued_cell", "AMReX__ebcellflag__mod_8F90.html#a4734800da1613de79878005a47689862", null ],
+    [ "num_neighbor_cells", "AMReX__ebcellflag__mod_8F90.html#a6fa46fba286ea97c6408222d70ad589d", null ],
+    [ "set_covered_cell", "AMReX__ebcellflag__mod_8F90.html#a8b548f4c7a7bf3d667af5b6059fb6255", null ],
+    [ "set_neighbor", "AMReX__ebcellflag__mod_8F90.html#afe2a626f0efaee2b68a1c1b08225638e", null ],
+    [ "set_regular_cell", "AMReX__ebcellflag__mod_8F90.html#aa93549be8be197b8f44bf7918636c9f0", null ],
+    [ "set_single_valued_cell", "AMReX__ebcellflag__mod_8F90.html#af1a98ee57e3c07abebae3e337d7895e7", null ],
+    [ "covered", "AMReX__ebcellflag__mod_8F90.html#a60377c7710b1b811e651e3acc8ad6f66", null ],
+    [ "multi_valued", "AMReX__ebcellflag__mod_8F90.html#ad0031001816fff176a885f73100062a8", null ],
+    [ "pos_ngbr", "AMReX__ebcellflag__mod_8F90.html#aca7539805fceab9d25e2b15de2c1529e", null ],
+    [ "pos_numvofs", "AMReX__ebcellflag__mod_8F90.html#ae273e014cf970934c7683d5b8ab34c08", null ],
+    [ "regular", "AMReX__ebcellflag__mod_8F90.html#adb0a0516e63c6b90231902627fd51da1", null ],
+    [ "single_valued", "AMReX__ebcellflag__mod_8F90.html#a34d542ffa101be3b08b45ad08a1aa41e", null ],
+    [ "w_numvofs", "AMReX__ebcellflag__mod_8F90.html#a2610316e2634c6510e9511a17e425c39", null ],
+    [ "w_type", "AMReX__ebcellflag__mod_8F90.html#a796a0d50302dc72114c9cf2999849084", null ]
+];

@@ -1,0 +1,27 @@
+var namespaces_dup =
+[
+    [ "amrex", "namespaceamrex.html", "namespaceamrex" ],
+    [ "amrex_acc_module", "namespaceamrex__acc__module.html", null ],
+    [ "amrex_bc_types_module", "namespaceamrex__bc__types__module.html", null ],
+    [ "amrex_constants_module", "namespaceamrex__constants__module.html", null ],
+    [ "amrex_eb_flux_reg_nd_module", "namespaceamrex__eb__flux__reg__nd__module.html", null ],
+    [ "amrex_ebcellflag_module", "namespaceamrex__ebcellflag__module.html", null ],
+    [ "amrex_error_module", "namespaceamrex__error__module.html", null ],
+    [ "amrex_filcc_module", "namespaceamrex__filcc__module.html", null ],
+    [ "amrex_fort_module", "namespaceamrex__fort__module.html", null ],
+    [ "amrex_interp_module", "namespaceamrex__interp__module.html", null ],
+    [ "amrex_io_module", "namespaceamrex__io__module.html", null ],
+    [ "amrex_lo_bctypes_module", "namespaceamrex__lo__bctypes__module.html", null ],
+    [ "amrex_lo_util_module", "namespaceamrex__lo__util__module.html", null ],
+    [ "amrex_mempool_module", "namespaceamrex__mempool__module.html", null ],
+    [ "amrex_mllinop_nd_module", "namespaceamrex__mllinop__nd__module.html", null ],
+    [ "amrex_omp_module", "namespaceamrex__omp__module.html", null ],
+    [ "amrex_paralleldescriptor_module", "namespaceamrex__paralleldescriptor__module.html", null ],
+    [ "amrex_parmparse_module", "namespaceamrex__parmparse__module.html", null ],
+    [ "amrex_string_module", "namespaceamrex__string__module.html", null ],
+    [ "baseumap_nd_module", "namespacebaseumap__nd__module.html", null ],
+    [ "detail", "namespacedetail.html", null ],
+    [ "hacc", "namespacehacc.html", null ],
+    [ "particle_detail", "namespaceparticle__detail.html", null ],
+    [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", null ]
+];
