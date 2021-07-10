@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['d_13318',['d',['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4.html#a6950160b2030b297124a1571626a19c2',1,'amrex::Scan::detail::BlockStatus&lt; T, true &gt;::d()'],['../unionAMREX__IPARSERSTYPE.html#ac48b057f41120f01148091d4dabe428f',1,'AMREX_IPARSERSTYPE::d()'],['../unionAMREX__PARSERSTYPE.html#a0da6ab2a2803561f3da37b256176e274',1,'AMREX_PARSERSTYPE::d()'],['../classhacc_1_1Dfft.html#a5cd500fbad261878702ef0cfc4756e26',1,'hacc::Dfft::d()']]],
+  ['d_13318',['d',['../structamrex_1_1Scan_1_1detail_1_1BlockStatus_3_01T_00_01true_01_4.html#a6950160b2030b297124a1571626a19c2',1,'amrex::Scan::detail::BlockStatus&lt; T, true &gt;::d()'],['../unionAMREX__IPARSERSTYPE.html#ac48b057f41120f01148091d4dabe428f',1,'AMREX_IPARSERSTYPE::d()'],['../unionAMREX__PARSERSTYPE.html#a9d33634c4393856708a688f9cdae7052',1,'AMREX_PARSERSTYPE::d()'],['../classhacc_1_1Dfft.html#a5cd500fbad261878702ef0cfc4756e26',1,'hacc::Dfft::d()']]],
   ['d2_5fchunk_13319',['d2_chunk',['../structdistribution__t.html#a957bdfca24a116d7bb5f7bcbde3a93fa',1,'distribution_t']]],
   ['d3_5fchunk_13320',['d3_chunk',['../structdistribution__t.html#a971ee0fe2ddf42e0669273a5ebda1512',1,'distribution_t']]],
   ['d_5fbucket_5fto_5fpid_13321',['d_bucket_to_pid',['../classamrex_1_1ParticleBufferMap.html#aa7c6792f4a3209b8404f8ea41cd48a15',1,'amrex::ParticleBufferMap']]],
