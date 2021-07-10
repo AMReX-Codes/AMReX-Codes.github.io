@@ -12,6 +12,7 @@ var annotated_dup =
     [ "detail", "namespacedetail.html", "namespacedetail" ],
     [ "hacc", "namespacehacc.html", "namespacehacc" ],
     [ "sdcquadrature_mod", "namespacesdcquadrature__mod.html", "namespacesdcquadrature__mod" ],
+    [ "AMREX_IPARSERSTYPE", "unionAMREX__IPARSERSTYPE.html", "unionAMREX__IPARSERSTYPE" ],
     [ "AMREX_PARSERSTYPE", "unionAMREX__PARSERSTYPE.html", "unionAMREX__PARSERSTYPE" ],
     [ "Array4BoxTag", "structArray4BoxTag.html", "structArray4BoxTag" ],
     [ "Array4BoxValTag", "structArray4BoxValTag.html", "structArray4BoxValTag" ],

@@ -521,6 +521,12 @@ C++ programming languages.  Here is an example of using the parser.</p>
 <code class="docutils literal notranslate"><span class="pre">;</span></code>, and one should avoid name conflict between the local variables and
 the constants set by <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">setConstant</span></span></code> and the variables registered by
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">registerVariables</span></span></code>.</p>
+<p>Besides <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">Parser</span></span></code> for floating point numbers, AMReX also provides
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">amrex</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">IParser</span></span></code> for integers.  The two parsers have a lot of
+similarity, but floating point number specific functions (e.g., <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>,
+<code class="docutils literal notranslate"><span class="pre">sin</span></code>, etc.) are not supported in <code class="docutils literal notranslate"><span class="pre">IParser</span></code>.  In addition to <code class="docutils literal notranslate"><span class="pre">/</span></code> whose
+result truncates towards zero, the integer parser also supports <code class="docutils literal notranslate"><span class="pre">//</span></code> whose
+result truncates towards negative infinity.</p>
 </section>
 <section id="initialize-and-finalize">
 <span id="sec-basics-initialize"></span><h1>Initialize and Finalize<a class="headerlink" href="#initialize-and-finalize" title="Permalink to this headline">¶</a></h1>
