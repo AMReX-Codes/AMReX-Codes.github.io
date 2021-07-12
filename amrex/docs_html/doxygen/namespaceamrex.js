@@ -264,7 +264,6 @@ var namespaceamrex =
     [ "MaybeHostDeviceRunnable", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
     [ "MaybeHostDeviceRunnable< T, std::enable_if_t< __nv_is_extended_device_lambda_closure_type(T)> >", "structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extended_ac548a468bcc64242955fc23b2d496e6.html", null ],
     [ "MemProfiler", "classamrex_1_1MemProfiler.html", "classamrex_1_1MemProfiler" ],
-    [ "MFGhostIter", "classamrex_1_1MFGhostIter.html", "classamrex_1_1MFGhostIter" ],
     [ "MFInfo", "structamrex_1_1MFInfo.html", "structamrex_1_1MFInfo" ],
     [ "MFIter", "classamrex_1_1MFIter.html", "classamrex_1_1MFIter" ],
     [ "MFItInfo", "structamrex_1_1MFItInfo.html", "structamrex_1_1MFItInfo" ],

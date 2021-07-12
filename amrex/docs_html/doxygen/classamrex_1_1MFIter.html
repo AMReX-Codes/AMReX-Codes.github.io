@@ -118,13 +118,12 @@ Inheritance diagram for amrex::MFIter:</div>
   <map id="amrex::MFIter_map" name="amrex::MFIter_map">
 <area href="classamrex_1_1FabSetIter.html" alt="amrex::FabSetIter" shape="rect" coords="0,56,528,80"/>
 <area href="classamrex_1_1FillPatchIterator.html" alt="amrex::FillPatchIterator" shape="rect" coords="538,56,1066,80"/>
-<area href="classamrex_1_1MFGhostIter.html" title="Iterate over ghost cells. Lots of MFIter functions do not work." alt="amrex::MFGhostIter" shape="rect" coords="1076,56,1604,80"/>
-<area href="classamrex_1_1MultiMaskIter.html" alt="amrex::MultiMaskIter" shape="rect" coords="1614,56,2142,80"/>
-<area href="classamrex_1_1ParIterBase.html" alt="amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;" shape="rect" coords="2152,56,2680,80"/>
-<area href="classamrex_1_1ParIterBase.html" alt="amrex::ParIterBase&lt; false, NStructReal, 0, 0, 0, DefaultAllocator &gt;" shape="rect" coords="2690,56,3218,80"/>
-<area href="classamrex_1_1ParIterBase.html" alt="amrex::ParIterBase&lt; true, NStructReal, 0, 0, 0, DefaultAllocator &gt;" shape="rect" coords="3228,56,3756,80"/>
-<area href="classamrex_1_1ParIter.html" alt="amrex::ParIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;" shape="rect" coords="2690,112,3218,136"/>
-<area href="classamrex_1_1ParConstIter.html" alt="amrex::ParConstIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;" shape="rect" coords="3228,112,3756,136"/>
+<area href="classamrex_1_1MultiMaskIter.html" alt="amrex::MultiMaskIter" shape="rect" coords="1076,56,1604,80"/>
+<area href="classamrex_1_1ParIterBase.html" alt="amrex::ParIterBase&lt; is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;" shape="rect" coords="1614,56,2142,80"/>
+<area href="classamrex_1_1ParIterBase.html" alt="amrex::ParIterBase&lt; false, NStructReal, 0, 0, 0, DefaultAllocator &gt;" shape="rect" coords="2152,56,2680,80"/>
+<area href="classamrex_1_1ParIterBase.html" alt="amrex::ParIterBase&lt; true, NStructReal, 0, 0, 0, DefaultAllocator &gt;" shape="rect" coords="2690,56,3218,80"/>
+<area href="classamrex_1_1ParIter.html" alt="amrex::ParIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;" shape="rect" coords="2152,112,2680,136"/>
+<area href="classamrex_1_1ParConstIter.html" alt="amrex::ParConstIter&lt; NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator &gt;" shape="rect" coords="2690,112,3218,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -137,8 +136,7 @@ Classes</h2></td></tr>
 Public Types</h2></td></tr>
 <tr class="memitem:af5cf94bce73f6da744dd94acc46cdf38"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38">Flags</a> { <a class="el" href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a1db74b1bbdeb756077e4bc33e25a2740">Tiling</a> = 0x01, 
 <a class="el" href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a96650cf6d7f0f21d0f4b118ae897d008">AllBoxes</a> = 0x02, 
-<a class="el" href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14">NoTeamBarrier</a> = 0x04, 
-<a class="el" href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a30a84aa6392dc4536c6761c0cf72b097">SkipInit</a> = 0x08
+<a class="el" href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14">NoTeamBarrier</a> = 0x04
  }</td></tr>
 <tr class="memdesc:af5cf94bce73f6da744dd94acc46cdf38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags that specify tiling modes. All these flags are off by default.  <a href="classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38">More...</a><br /></td></tr>
 <tr class="separator:af5cf94bce73f6da744dd94acc46cdf38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,8 +300,6 @@ Static Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="af5cf94bce73f6da744dd94acc46cdf38a96650cf6d7f0f21d0f4b118ae897d008"></a>AllBoxes&#160;</td><td class="fielddoc"><p>AllBoxes: If on, all threads/workers loop over all boxes without tiling. This essentially loops over indexMap. Note that many functions won't work with this. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14"></a>NoTeamBarrier&#160;</td><td class="fielddoc"><p>NoTeamBarrier: This option is for Team only. If on, there is no barrier in <a class="el" href="classamrex_1_1MFIter.html">MFIter</a> dtor. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af5cf94bce73f6da744dd94acc46cdf38a30a84aa6392dc4536c6761c0cf72b097"></a>SkipInit&#160;</td><td class="fielddoc"><p>SkipInit: Used by <a class="el" href="classamrex_1_1MFGhostIter.html" title="Iterate over ghost cells. Lots of MFIter functions do not work.">MFGhostIter</a>. </p>
 </td></tr>
 </table>
 

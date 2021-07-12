@@ -591,7 +591,6 @@ var hierarchy =
     [ "amrex::MFIter", "classamrex_1_1MFIter.html", [
       [ "amrex::FabSetIter", "classamrex_1_1FabSetIter.html", null ],
       [ "amrex::FillPatchIterator", "classamrex_1_1FillPatchIterator.html", null ],
-      [ "amrex::MFGhostIter", "classamrex_1_1MFGhostIter.html", null ],
       [ "amrex::MultiMaskIter", "classamrex_1_1MultiMaskIter.html", null ],
       [ "amrex::ParIterBase< is_const, NStructReal, NStructInt, NArrayReal, NArrayInt, Allocator >", "classamrex_1_1ParIterBase.html", null ],
       [ "amrex::ParIterBase< false, NStructReal, 0, 0, 0, DefaultAllocator >", "classamrex_1_1ParIterBase.html", [
@@ -644,8 +643,8 @@ var hierarchy =
     [ "amrex::NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::NodalProjector", "classamrex_1_1NodalProjector.html", null ],
-    [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
+    [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::EArena::Node", "structamrex_1_1EArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],

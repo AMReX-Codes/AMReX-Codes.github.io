@@ -128,8 +128,7 @@ var searchData=
   ['lp_3944',['Lp',['../classamrex_1_1MLCGSolver.html#a6545d114e5d595327ffd94ac69f22170',1,'amrex::MLCGSolver']]],
   ['lpinfo_3945',['LPInfo',['../structamrex_1_1LPInfo.html',1,'amrex']]],
   ['lst_3946',['lst',['../classamrex_1_1DeriveList.html#ace36f314eae21bef0f4f97e17ba3982a',1,'amrex::DeriveList::lst()'],['../classamrex_1_1ClusterList.html#a27c46e812840379455b46b092f2e6732',1,'amrex::ClusterList::lst()']]],
-  ['lta_3947',['lta',['../classamrex_1_1MFGhostIter.html#ac0f73b4439a279cfaf8e200a2739abf4',1,'amrex::MFGhostIter']]],
-  ['lvp_3948',['lvp',['../structamrex_1_1iparser__node.html#abbf396f19865fa20d59aa8d2353cea53',1,'amrex::iparser_node::lvp()'],['../structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0',1,'amrex::parser_node::lvp()']]],
-  ['lx_3949',['Lx',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a4f21d05f161053497b9f34dc212821b5',1,'amrex::NonLocalBC::PolarFn::Lx()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a647f7f2f14eb12e2e9230804fefa9529',1,'amrex::NonLocalBC::PolarFn2::Lx()']]],
-  ['ly_3950',['Ly',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e',1,'amrex::NonLocalBC::Rotate180Fn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a1d0e35f2f99a8af476ad46075de03441',1,'amrex::NonLocalBC::PolarFn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8',1,'amrex::NonLocalBC::PolarFn2::Ly()']]]
+  ['lvp_3947',['lvp',['../structamrex_1_1iparser__node.html#abbf396f19865fa20d59aa8d2353cea53',1,'amrex::iparser_node::lvp()'],['../structamrex_1_1parser__node.html#af02e29c27584db3f2ada32290be4bbe0',1,'amrex::parser_node::lvp()']]],
+  ['lx_3948',['Lx',['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a4f21d05f161053497b9f34dc212821b5',1,'amrex::NonLocalBC::PolarFn::Lx()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a647f7f2f14eb12e2e9230804fefa9529',1,'amrex::NonLocalBC::PolarFn2::Lx()']]],
+  ['ly_3949',['Ly',['../structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e',1,'amrex::NonLocalBC::Rotate180Fn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn.html#a1d0e35f2f99a8af476ad46075de03441',1,'amrex::NonLocalBC::PolarFn::Ly()'],['../structamrex_1_1NonLocalBC_1_1PolarFn2.html#a4d0155733153cd8512e1206098f038c8',1,'amrex::NonLocalBC::PolarFn2::Ly()']]]
 ];

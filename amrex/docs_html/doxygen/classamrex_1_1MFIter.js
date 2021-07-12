@@ -4,8 +4,7 @@ var classamrex_1_1MFIter =
     [ "Flags", "classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38", [
       [ "Tiling", "classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a1db74b1bbdeb756077e4bc33e25a2740", null ],
       [ "AllBoxes", "classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a96650cf6d7f0f21d0f4b118ae897d008", null ],
-      [ "NoTeamBarrier", "classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14", null ],
-      [ "SkipInit", "classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38a30a84aa6392dc4536c6761c0cf72b097", null ]
+      [ "NoTeamBarrier", "classamrex_1_1MFIter.html#af5cf94bce73f6da744dd94acc46cdf38af1e51da50b24860035a3665786fe9d14", null ]
     ] ],
     [ "MFIter", "classamrex_1_1MFIter.html#aac055187a5b4d7200fc77827dc28a76c", null ],
     [ "MFIter", "classamrex_1_1MFIter.html#ae7623281ac9e772db1fc5085a64aeeca", null ],
