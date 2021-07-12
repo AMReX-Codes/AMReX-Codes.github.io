@@ -94,7 +94,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
@@ -834,7 +834,7 @@ following examples.</p>
 <span class="k">struct</span> <span class="n">XDim3</span> <span class="p">{</span> <span class="n">Real</span> <span class="n">x</span><span class="p">;</span> <span class="n">Real</span> <span class="n">y</span><span class="p">;</span> <span class="n">Real</span> <span class="n">z</span><span class="p">;</span> <span class="p">};</span>
 </pre></div>
 </div>
-<p>One can covert an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVect</span></span></code> to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Dim3</span></span></code>,</p>
+<p>One can convert an <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">IntVect</span></span></code> to <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Dim3</span></span></code>,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">IntVect</span> <span class="nf">iv</span><span class="p">(...);</span>
 <span class="n">Dim3</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">iv</span><span class="p">.</span><span class="n">dim3</span><span class="p">();</span>
 </pre></div>
@@ -1690,7 +1690,7 @@ tiling flag is on. One can change the default size using <code class="code cpp c
 <div class="line"><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code> may overlap with points in the other</div>
 <div class="line"><code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">Box</span></span></code>. However, the memory locations for</div>
 <div class="line">storing floating point data of those points do</div>
-<div class="line">not overlap, because they belong to seperate</div>
+<div class="line">not overlap, because they belong to separate</div>
 <div class="line">FArrayBoxes.</div>
 </div>
 </td>
@@ -2103,7 +2103,7 @@ works with and without GPU support.  When AMReX is built with GPU support,
 AMREX_GPU_DEVICE indicates that the lambda function is a device
 function and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> launches a GPU kernel to do the work.
 When it is built without GPU support, AMREX_GPU_DEVICE has no effects
-whatsoever.  More details on <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParalleFor</span></span></code> will be presented in
+whatsoever.  More details on <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> will be presented in
 section <a class="reference internal" href="GPU.html#sec-gpu-for"><span class="std std-ref">Launching C++ nested loops</span></a>.  It should be emphasized that
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code> does not start an OpenMP parallel region.  The OpenMP parallel
 region will be started by the pragma above the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">MFIter</span></span></code> loop if it is
@@ -2111,7 +2111,7 @@ built with OpenMP and without enabling GPU.  Tiling is turned off if
 GPU is enabled so that more parallelism is exposed to GPU kernels.
 Also note that when tiling is off, <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">tilbox</span></span></code> returns
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">validbox</span></span></code>.</p>
-<p>There are other versions of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParalleFor</span></span></code>,</p>
+<p>There are other versions of <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParallelFor</span></span></code>,</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">// 1D for loop</span>
 <span class="n">ParallelFor</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="p">[</span><span class="o">=</span><span class="p">]</span> <span class="n">AMREX_GPU_DEVICE</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
 
@@ -2233,7 +2233,7 @@ callable object like below.</p>
 whatsoever, whereas for the GPU build, this marks the operator as a GPU
 device function.</p>
 </li>
-<li><p>It is the user’s responsibility to have a consisent definition of
+<li><p>It is the user’s responsibility to have a consistent definition of
 what the ghost cells represent. A common option used in AMReX codes is to
 fill the domain ghost cells with the value that lies on the boundary (as
 opposed to another common option where the value in the ghost cell represents
@@ -2508,7 +2508,7 @@ and ghost cells associated with each grid:</p>
 <span class="c1">// Ncomp = number of components for each array</span>
 <span class="kt">int</span> <span class="n">Ncomp</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-<span class="c1">// How Boxes are distrubuted among MPI processes</span>
+<span class="c1">// How Boxes are distributed among MPI processes</span>
 <span class="n">DistributionMapping</span> <span class="nf">dm</span><span class="p">(</span><span class="n">ba</span><span class="p">);</span>
 
 <span class="c1">// we allocate two phi multifabs; one will store the old state, the other the new.</span>

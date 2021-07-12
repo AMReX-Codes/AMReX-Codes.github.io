@@ -94,7 +94,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduction.html">AMReX Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GettingStarted_Chapter.html">Getting Started</a></li>
@@ -201,7 +201,7 @@
 <h2>Pencil Redistribution<a class="headerlink" href="#pencil-redistribution" title="Permalink to this headline">¶</a></h2>
 <p>As input, SWFFT takes three-dimensional arrays of data distributed across block-structured grids, and redistributes the data into “pencil” grids in <span class="math notranslate nohighlight">\(z, x,\)</span> and then <span class="math notranslate nohighlight">\(y\)</span>, belonging to different MPI processes. After each pencil conversion, a 1D FFT is performed on the data along the pencil direction using calls to the FFTW <a class="footnote-reference brackets" href="#id8" id="id3">3</a> library. The <code class="docutils literal notranslate"><span class="pre">README</span></code> files in the tutorial directories specify the relationship between the number of grids and the number of MPI processes that should be used. The <code class="docutils literal notranslate"><span class="pre">hacc/SWFFT</span></code> <code class="docutils literal notranslate"><span class="pre">README</span></code> document by Adrian Pope et al. explains restrictions on grid dimensions in relation to the number of MPI processes <a class="footnote-reference brackets" href="#id6" id="id4">1</a>  <a class="footnote-reference brackets" href="#id7" id="id5">2</a>:</p>
 <blockquote>
-<div><p>[…] A rule of thumb is that [SWFFT] generally works when the number of vertexes along
+<div><p>[…] A rule of thumb is that [SWFFT] generally works when the number of vertices along
 one side of the global 3D grid (“ng”) can be factored into small primes, and
 when the number of MPI ranks can also be factored into small primes.
 I believe that all of the unique prime factors of the number of MPI ranks

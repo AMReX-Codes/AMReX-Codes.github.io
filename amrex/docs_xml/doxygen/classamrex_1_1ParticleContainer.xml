@@ -1573,7 +1573,7 @@
 <para>Assigns particles to the levels, grids, and tiles that contain their current positions. If periodic boundary conditions are used, those will be enforced here.</para>
 <para>If Redistribute is called with default arguments, all particles will be placed on the finest level that covers their current positions.</para>
 <para>The lev_min, lev_max, and nGrow flags are used to do proper checking for subcycling particles. The default values are fine for non-subcycling methods</para>
-<para>The local flag controls whether this is <computeroutput>local</computeroutput> or <computeroutput>global</computeroutput> Redistribute. In a local Redistribute, particles can only have moved a certain distance since the last time <ref refid="classamrex_1_1ParticleContainer_1aea99ce62b897124161c455fb9c6e9e99" kindref="member">Redistribute()</ref> was called. Thus, communication only needs to happen between neighboring ranks. In a global Redistribute, the particles can potentially go from any rank to any rank. This usually happens after initialiation or when doing dynamic load balancing.</para>
+<para>The local flag controls whether this is <computeroutput>local</computeroutput> or <computeroutput>global</computeroutput> Redistribute. In a local Redistribute, particles can only have moved a certain distance since the last time <ref refid="classamrex_1_1ParticleContainer_1aea99ce62b897124161c455fb9c6e9e99" kindref="member">Redistribute()</ref> was called. Thus, communication only needs to happen between neighboring ranks. In a global Redistribute, the particles can potentially go from any rank to any rank. This usually happens after initialization or when doing dynamic load balancing.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>lev_min</parametername>
@@ -1595,7 +1595,7 @@
 <parametername>nGrow</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>If particles are within nGrow cells of their current box, they will not moved. This is useful for subcycling methods, when fine level particles need to be redistributed but are not neccessarily at the same time as those on the coarse level. Default: 0 </para>
+<para>If particles are within nGrow cells of their current box, they will not moved. This is useful for subcycling methods, when fine level particles need to be redistributed but are not necessarily at the same time as those on the coarse level. Default: 0 </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -3325,7 +3325,7 @@
           <declname>write_int_comp</declname>
         </param>
         <briefdescription>
-<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specfic components. </para>
+<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specific components. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -3398,7 +3398,7 @@
           <declname>f</declname>
         </param>
         <briefdescription>
-<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specfic components. </para>
+<para>This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specific components. </para>
         </briefdescription>
         <detaileddescription>
 <para>This version also lets you pass in a functor to toggle whether each particle gets output.</para>
@@ -5417,7 +5417,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured AMR hierarachy. </para>
+<para>A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured AMR hierarchy. </para>
     </briefdescription>
     <detaileddescription>
 <para>The data layout on a single tile is determined by the value of the following template parameters:</para>

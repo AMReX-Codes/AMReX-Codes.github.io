@@ -688,7 +688,7 @@
 <parametername direction="in">scomp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The first component at the srouce.</para>
+<para>The first component at the source.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -785,7 +785,7 @@
           <defval>Proj{}</defval>
         </param>
         <briefdescription>
-<para>Unpack the recieved data into the local FABs. </para>
+<para>Unpack the received data into the local FABs. </para>
         </briefdescription>
         <detaileddescription>
 <para>This function assumes that all destination and source boxes stored in the local copy comm tags are related by the DTOS. If this is not the case the behaviour will at best be caught as an assertion. </para>
@@ -1159,7 +1159,7 @@
           <declname>recv</declname>
         </param>
         <briefdescription>
-<para>Copy from recieved data in the buffer to destination FABs using DTOS and projection. </para>
+<para>Copy from received data in the buffer to destination FABs using DTOS and projection. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -1211,14 +1211,14 @@
         </briefdescription>
         <detaileddescription>
 <para>Initiate recv and send calls for MPI and immediately return without doing any work.</para>
-<para>DataPacking is a customization point object to control the behaviour of packing and unpacking send or recv data buffers. It is used to perform interpolation or data transformations on either sender or reciever side.</para>
-<para>This function performs a data packing on sender side and we expect a call to Parallel_finish that performs data unpacking on the reciever side.</para>
+<para>DataPacking is a customization point object to control the behaviour of packing and unpacking send or recv data buffers. It is used to perform interpolation or data transformations on either sender or receiver side.</para>
+<para>This function performs a data packing on sender side and we expect a call to Parallel_finish that performs data unpacking on the receiver side.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1295,14 +1295,14 @@
         </briefdescription>
         <detaileddescription>
 <para>Initiate recv and send calls for MPI and return after doing local work.</para>
-<para>DataPacking is a customization point object to control the behaviour of packing and unpacking send or recv data buffers. It is used to perform interpolation or data transformations on either sender or reciever side.</para>
-<para>This function performs a data packing on sender side and we expect a call to Parallel_finish that performs data unpacking on the reciever side.</para>
+<para>DataPacking is a customization point object to control the behaviour of packing and unpacking send or recv data buffers. It is used to perform interpolation or data transformations on either sender or receiver side.</para>
+<para>This function performs a data packing on sender side and we expect a call to Parallel_finish that performs data unpacking on the receiver side.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1370,14 +1370,14 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Blockingly wait for all communication to be done and fill the local FABs with recieved data.</para>
-<para>This function overload performs no local copies, i.e. from this MPI process to itself. It will block the current thread until all MPI recv and send requests are done and calls the DataPacking object to unpack the recieved buffers.</para>
+<para>Blockingly wait for all communication to be done and fill the local FABs with received data.</para>
+<para>This function overload performs no local copies, i.e. from this MPI process to itself. It will block the current thread until all MPI recv and send requests are done and calls the DataPacking object to unpack the received buffers.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1401,7 +1401,7 @@
 <parametername direction="in">data_packing</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A CPO that controls behaviour of unpacking the recieved buffer to the destination <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>.</para>
+<para>A CPO that controls behaviour of unpacking the received buffer to the destination <ref refid="classamrex_1_1FabArray" kindref="compound">FabArray</ref>.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -1452,14 +1452,14 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Blockingly wait for all communication to be done and fill the local FABs with recieved data.</para>
-<para>This function overload performs local copies, i.e. from this MPI process to itself. It will block the current thread until all MPI recv and send requests are done and calls the DataPacking object to unpack the recieved buffers.</para>
+<para>Blockingly wait for all communication to be done and fill the local FABs with received data.</para>
+<para>This function overload performs local copies, i.e. from this MPI process to itself. It will block the current thread until all MPI recv and send requests are done and calls the DataPacking object to unpack the received buffers.</para>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1491,7 +1491,7 @@
 <parametername direction="in">data_packing</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A CPO that controls behaviour of unpacking the recieved data.</para>
+<para>A CPO that controls behaviour of unpacking the received data.</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -1565,7 +1565,7 @@
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1695,7 +1695,7 @@
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1829,7 +1829,7 @@
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1877,7 +1877,7 @@
 <parametername direction="in">ngrow</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropiate ngrow that covers the amound of ghost cells that we want to copy.</para>
+<para>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropriate ngrow that covers the amount of ghost cells that we want to copy.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -1971,7 +1971,7 @@
 <parametername direction="out">dest</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The Multifab that is going to be filled with recieved data.</para>
+<para>The Multifab that is going to be filled with received data.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -2019,7 +2019,7 @@
 <parametername direction="in">ngrow</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropiate ngrow that covers the amound of ghost cells that we want to copy.</para>
+<para>The amount of ghost cells that will be taking into consideration. Note, even if destbox contains indices outside the domain we need to specify an appropriate ngrow that covers the amount of ghost cells that we want to copy.</para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
