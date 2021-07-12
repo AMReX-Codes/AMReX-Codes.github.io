@@ -8,7 +8,7 @@ var classamrex_1_1ParmParse =
     [ "FIRST", "classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6a0f0d0333ed203bc31cd4c28900c2d77c", null ],
     [ "ALL", "classamrex_1_1ParmParse.html#aab7d9931789f57c8612f4b55f457a0c6aa7f34dde2e3de7cf5daa245b61e9b329", null ],
     [ "ParmParse", "classamrex_1_1ParmParse.html#a852480777e43313f1ae4b2180ff7c648", null ],
-    [ "ParmParse", "classamrex_1_1ParmParse.html#a2a48f59481766df708eac16332b9e7a2", null ],
+    [ "ParmParse", "classamrex_1_1ParmParse.html#a4d5321a39b63146a3e7c4777010901ca", null ],
     [ "add", "classamrex_1_1ParmParse.html#a370bca8ac17e25198c845b9882d80e70", null ],
     [ "add", "classamrex_1_1ParmParse.html#a6ec39cadf536be90cdf7bf66c00ca164", null ],
     [ "add", "classamrex_1_1ParmParse.html#a221601db98f0e218f68065ce218fdcc3", null ],
@@ -114,10 +114,11 @@ var classamrex_1_1ParmParse =
     [ "queryktharr", "classamrex_1_1ParmParse.html#a40e347b786c7023a58e8441d39be89b7", null ],
     [ "queryktharr", "classamrex_1_1ParmParse.html#a6e6c42c0329b3346c6fd85f1af871e91", null ],
     [ "QueryUnusedInputs", "classamrex_1_1ParmParse.html#a821d000e2b1d1aa6dc9e18d0b54e0df7", null ],
+    [ "remove", "classamrex_1_1ParmParse.html#a6657f8c789a5b37f79bc4219dd6e3a81", null ],
     [ "setPrefix", "classamrex_1_1ParmParse.html#a97b7fee85e0a5c10246c53379b7f44df", null ],
     [ "table", "classamrex_1_1ParmParse.html#ab4f43a6024e50a1c5f9110d29ae42904", null ],
     [ "Frame", "classamrex_1_1ParmParse.html#aee3a66b0ddf3b769f015c89b610db0c7", null ],
     [ "Record", "classamrex_1_1ParmParse.html#a697483987cfb91e205b5be2a8f6752c7", null ],
     [ "m_pstack", "classamrex_1_1ParmParse.html#a51bb715c245488837311920be49f0050", null ],
-    [ "m_table", "classamrex_1_1ParmParse.html#a2c878464639af635e4915b22aa627e9f", null ]
+    [ "m_table", "classamrex_1_1ParmParse.html#afd60a9babe2b089ffab414eac025a14e", null ]
 ];
