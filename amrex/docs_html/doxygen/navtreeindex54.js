@@ -1,5 +1,15 @@
 var NAVTREEINDEX54 =
 {
+"structBLProfStats_1_1TimeRangeCompare.html":[2,0,18,4],
+"structBLProfStats_1_1TimeRangeCompare.html#a9773758cbd910ac77b995b586462c0ce":[2,0,18,4,0],
+"structCommProfStats_1_1BarrierEntry.html":[2,0,19,0],
+"structCommProfStats_1_1BarrierEntry.html#a1330c7cc1ff74140f7a408663d21b537":[2,0,19,0,0],
+"structCommProfStats_1_1BarrierEntry.html#a14d594f7a0f3360a1efbe5621869d37e":[2,0,19,0,3],
+"structCommProfStats_1_1BarrierEntry.html#a44cad8e418f7be7c01a8d8fb75f90865":[2,0,19,0,5],
+"structCommProfStats_1_1BarrierEntry.html#a8323a9d1128d230d3cd3ec5d448f7577":[2,0,19,0,1],
+"structCommProfStats_1_1BarrierEntry.html#aa4edfb42a1c77e953234b83e0f87ce6f":[2,0,19,0,4],
+"structCommProfStats_1_1BarrierEntry.html#ab15687c13dfc4641ab7ce30d42d8c560":[2,0,19,0,6],
+"structCommProfStats_1_1BarrierEntry.html#ac26275b15424e584ebe7f5a89c23e4c7":[2,0,19,0,2],
 "structCommProfStats_1_1DataBlock.html":[2,0,19,1],
 "structCommProfStats_1_1DataBlock.html#a0e6da7295f52dca99d4abf096c1bed81":[2,0,19,1,15],
 "structCommProfStats_1_1DataBlock.html#a13d897811c92d1e7088cb5d11623f636":[2,0,19,1,13],
@@ -139,8 +149,8 @@ var NAVTREEINDEX54 =
 "structamrex_1_1Array2D.html":[2,0,0,43],
 "structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,43,2],
 "structamrex_1_1Array2D.html#a8cae9876b2158d16359202ee47da38aa":[2,0,0,43,3],
-"structamrex_1_1Array2D.html#acdf33ec733b645a48eea51ae3d53a011":[2,0,0,43,0],
 "structamrex_1_1Array2D.html#acdf33ec733b645a48eea51ae3d53a011":[2,0,0,43,1],
+"structamrex_1_1Array2D.html#acdf33ec733b645a48eea51ae3d53a011":[2,0,0,43,0],
 "structamrex_1_1Array2D.html#ad663a1d8bd1165b26303ff63b0cfafbe":[2,0,0,43,4],
 "structamrex_1_1Array3D.html":[2,0,0,44],
 "structamrex_1_1Array3D.html#a8434ec94124e414497999f2bbf293ae0":[2,0,0,44,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX54 =
 "structamrex_1_1BATbndryReg.html#ae3b0deb00e514295c1a38e8a1cd20506":[2,0,0,53,10],
 "structamrex_1_1BATbndryReg.html#afb3c670e0176df666a804c831a941f89":[2,0,0,53,8],
 "structamrex_1_1BATcoarsenRatio.html":[2,0,0,54],
-"structamrex_1_1BATcoarsenRatio.html#a02b6c9046695228f048fca5ea92a11db":[2,0,0,54,0],
-"structamrex_1_1BATcoarsenRatio.html#a1c3ccf9a3b2b4aa86a75f5c9c3dc2a90":[2,0,0,54,1],
-"structamrex_1_1BATcoarsenRatio.html#a9ee5a7064ed3ffd2f2d2e46b905eb6be":[2,0,0,54,3],
-"structamrex_1_1BATcoarsenRatio.html#abbe5efdde257d3e3cfb56dafc48a5787":[2,0,0,54,4],
-"structamrex_1_1BATcoarsenRatio.html#abde72f467ef4eaa2df2f34c83ed089bd":[2,0,0,54,5],
-"structamrex_1_1BATcoarsenRatio.html#acaf5d98499e6ecc09cac5fe8a027a759":[2,0,0,54,7],
-"structamrex_1_1BATcoarsenRatio.html#accb0f22d726742557c190e09002329bd":[2,0,0,54,6],
-"structamrex_1_1BATcoarsenRatio.html#acfcb2e2b086e18b7a8fc355d0179dbcf":[2,0,0,54,2],
-"structamrex_1_1BATindexType.html":[2,0,0,55],
-"structamrex_1_1BATindexType.html#a086015ecd607ba04a09a6bf0f98293b3":[2,0,0,55,2],
-"structamrex_1_1BATindexType.html#a276c46d26f6db6df336883ccc6ada8db":[2,0,0,55,3]
+"structamrex_1_1BATcoarsenRatio.html#a02b6c9046695228f048fca5ea92a11db":[2,0,0,54,0]
 };

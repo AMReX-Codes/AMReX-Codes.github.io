@@ -1,5 +1,14 @@
 var NAVTREEINDEX37 =
 {
+"classamrex_1_1Gpu_1_1Device.html#a919512587c63820d178daacc381ccde1":[2,0,0,5,11,33],
+"classamrex_1_1Gpu_1_1Device.html#a92efa21af9b7ae2cb3ee5710922c8bac":[2,0,0,5,11,8],
+"classamrex_1_1Gpu_1_1Device.html#a9b8a6a9f47a037559294546980502da1":[2,0,0,5,11,26],
+"classamrex_1_1Gpu_1_1Device.html#aa1bfcee1a3fc25f3c5ebca0c1530f78d":[2,0,0,5,11,16],
+"classamrex_1_1Gpu_1_1Device.html#aa2984b48d13a570d6987968741a04741":[2,0,0,5,11,19],
+"classamrex_1_1Gpu_1_1Device.html#aa5bf7f476f4a8c0ed917932d2cbdf9a4":[2,0,0,5,11,3],
+"classamrex_1_1Gpu_1_1Device.html#aa6071d88690c71e63513136982e0994f":[2,0,0,5,11,17],
+"classamrex_1_1Gpu_1_1Device.html#aaad1273663de56c788b3809ed7537a4e":[2,0,0,5,11,23],
+"classamrex_1_1Gpu_1_1Device.html#aabba82abbe1e452cf3b9e204e98952a6":[2,0,0,5,11,32],
 "classamrex_1_1Gpu_1_1Device.html#aae61fa0d560ee3c25d7deca229a31f60":[2,0,0,5,11,29],
 "classamrex_1_1Gpu_1_1Device.html#ab63f3b80987088fbbf0a3a14e7b34f41":[2,0,0,5,11,22],
 "classamrex_1_1Gpu_1_1Device.html#ad02a046eadc84fc6671e2eec8477421b":[2,0,0,5,11,45],
@@ -240,14 +249,5 @@ var NAVTREEINDEX37 =
 "classamrex_1_1IArrayBox.html#a327721932b527771972aaa456541b04d":[2,0,0,185,3],
 "classamrex_1_1IArrayBox.html#a565d48e5cc50e17ec5cd4af6b8d65e63":[2,0,0,185,0],
 "classamrex_1_1IArrayBox.html#a684c32bf8f70f624272652284da549c4":[2,0,0,185,15],
-"classamrex_1_1IArrayBox.html#a6bf69fa044d83c02e7a48394be20c5c1":[2,0,0,185,2],
-"classamrex_1_1IArrayBox.html#a775df7bf092a1173c172bd7ec7dd3f37":[2,0,0,185,18],
-"classamrex_1_1IArrayBox.html#a78deba39f37dd25e757951d9a0383ca0":[2,0,0,185,7],
-"classamrex_1_1IArrayBox.html#a9fe8b1d3b2da351d3701dd7c44ca1139":[2,0,0,185,12],
-"classamrex_1_1IArrayBox.html#aa3b1edf0b241a6c722dea0ceced6b102":[2,0,0,185,17],
-"classamrex_1_1IArrayBox.html#aa6443cdd8817b08654330d67beba5c54":[2,0,0,185,8],
-"classamrex_1_1IArrayBox.html#aa94e7b72db1dbbccb037e5b4e38d23ab":[2,0,0,185,4],
-"classamrex_1_1IArrayBox.html#ab55bcfe89e71d591a08d66ef5ac0c15c":[2,0,0,185,6],
-"classamrex_1_1IArrayBox.html#add7c1bf9f8d14a79da42d1950b55c5bf":[2,0,0,185,9],
-"classamrex_1_1IArrayBox.html#ae3e9c14ff7beff49a8368e57736b69b9":[2,0,0,185,5]
+"classamrex_1_1IArrayBox.html#a6bf69fa044d83c02e7a48394be20c5c1":[2,0,0,185,2]
 };
