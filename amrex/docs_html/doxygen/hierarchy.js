@@ -616,6 +616,7 @@ var hierarchy =
         ] ]
       ] ],
       [ "amrex::MLNodeLinOp", "classamrex_1_1MLNodeLinOp.html", [
+        [ "amrex::MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", null ],
         [ "amrex::MLNodeLaplacian", "classamrex_1_1MLNodeLaplacian.html", null ],
         [ "amrex::MLNodeTensorLaplacian", "classamrex_1_1MLNodeTensorLaplacian.html", null ]
       ] ]

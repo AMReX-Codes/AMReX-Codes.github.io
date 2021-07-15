@@ -42,6 +42,13 @@ var dir_25d7822c1b649e6df029ec2b7597a2a5 =
     [ "AMReX_MLEBABecLap_3D_K.H", "AMReX__MLEBABecLap__3D__K_8H.html", "AMReX__MLEBABecLap__3D__K_8H" ],
     [ "AMReX_MLEBABecLap_F.cpp", "AMReX__MLEBABecLap__F_8cpp.html", null ],
     [ "AMReX_MLEBABecLap_K.H", "AMReX__MLEBABecLap__K_8H.html", "AMReX__MLEBABecLap__K_8H" ],
+    [ "AMReX_MLEBNodeFDLap_2D_K.H", "AMReX__MLEBNodeFDLap__2D__K_8H.html", "AMReX__MLEBNodeFDLap__2D__K_8H" ],
+    [ "AMReX_MLEBNodeFDLap_3D_K.H", "AMReX__MLEBNodeFDLap__3D__K_8H.html", "AMReX__MLEBNodeFDLap__3D__K_8H" ],
+    [ "AMReX_MLEBNodeFDLap_K.H", "AMReX__MLEBNodeFDLap__K_8H.html", null ],
+    [ "AMReX_MLEBNodeFDLaplacian.cpp", "AMReX__MLEBNodeFDLaplacian_8cpp.html", null ],
+    [ "AMReX_MLEBNodeFDLaplacian.H", "AMReX__MLEBNodeFDLaplacian_8H.html", [
+      [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", "classamrex_1_1MLEBNodeFDLaplacian" ]
+    ] ],
     [ "AMReX_MLEBTensor_2D_K.H", "AMReX__MLEBTensor__2D__K_8H.html", "AMReX__MLEBTensor__2D__K_8H" ],
     [ "AMReX_MLEBTensor_3D_K.H", "AMReX__MLEBTensor__3D__K_8H.html", "AMReX__MLEBTensor__3D__K_8H" ],
     [ "AMReX_MLEBTensor_K.H", "AMReX__MLEBTensor__K_8H.html", null ],

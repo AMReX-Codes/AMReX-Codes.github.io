@@ -11,6 +11,7 @@ var classamrex_1_1EBDataCollection =
     [ "getCentroid", "classamrex_1_1EBDataCollection.html#a1607508139d564d5f6293d6c68f4a953", null ],
     [ "getEdgeCent", "classamrex_1_1EBDataCollection.html#a18fa630931ad847127e7417e66136183", null ],
     [ "getFaceCent", "classamrex_1_1EBDataCollection.html#a68bb82c690793fb0e1f72eb1b7ef137a", null ],
+    [ "getLevelSet", "classamrex_1_1EBDataCollection.html#a778401df04db53fd5851aab6bcf1f76b", null ],
     [ "getMultiEBCellFlagFab", "classamrex_1_1EBDataCollection.html#acce2adceaba115a5c56167ec8cf3eb79", null ],
     [ "getVolFrac", "classamrex_1_1EBDataCollection.html#a9cfca800c4df32f884205e7b0cfa5b4f", null ],
     [ "operator=", "classamrex_1_1EBDataCollection.html#aab5a65341ff21329cc732af1bfb4f004", null ],
@@ -24,6 +25,7 @@ var classamrex_1_1EBDataCollection =
     [ "m_edgecent", "classamrex_1_1EBDataCollection.html#a8f84274dfda311f0e685de8889fe4140", null ],
     [ "m_facecent", "classamrex_1_1EBDataCollection.html#a8ae044a5a36f5193689e860e3d403f23", null ],
     [ "m_geom", "classamrex_1_1EBDataCollection.html#a4e9d5ca2618309d4445ac8fa75fafc1f", null ],
+    [ "m_levelset", "classamrex_1_1EBDataCollection.html#ab3e6789efd39bd7d39bd01cf97c85b07", null ],
     [ "m_ngrow", "classamrex_1_1EBDataCollection.html#a8c1e66f34abde299d2379f0261cfcb53", null ],
     [ "m_support", "classamrex_1_1EBDataCollection.html#a9d7fc23809662b01ce10290962d272e8", null ],
     [ "m_volfrac", "classamrex_1_1EBDataCollection.html#ab87f9babcf2b30b23ea7a36ee621538e", null ]

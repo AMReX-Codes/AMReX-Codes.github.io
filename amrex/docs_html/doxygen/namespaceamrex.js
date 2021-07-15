@@ -273,6 +273,7 @@ var namespaceamrex =
     [ "MLCellLinOp", "classamrex_1_1MLCellLinOp.html", "classamrex_1_1MLCellLinOp" ],
     [ "MLCGSolver", "classamrex_1_1MLCGSolver.html", "classamrex_1_1MLCGSolver" ],
     [ "MLEBABecLap", "classamrex_1_1MLEBABecLap.html", "classamrex_1_1MLEBABecLap" ],
+    [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html", "classamrex_1_1MLEBNodeFDLaplacian" ],
     [ "MLEBTensorOp", "classamrex_1_1MLEBTensorOp.html", "classamrex_1_1MLEBTensorOp" ],
     [ "MLLinOp", "classamrex_1_1MLLinOp.html", "classamrex_1_1MLLinOp" ],
     [ "MLMG", "classamrex_1_1MLMG.html", "classamrex_1_1MLMG" ],

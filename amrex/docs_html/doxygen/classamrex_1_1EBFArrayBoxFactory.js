@@ -21,6 +21,7 @@ var classamrex_1_1EBFArrayBoxFactory =
     [ "getEBLevel", "classamrex_1_1EBFArrayBoxFactory.html#a706b6b91efaa582b01395c767d7e791c", null ],
     [ "getEdgeCent", "classamrex_1_1EBFArrayBoxFactory.html#a1bdc6bf907a195d1e9f839caaaf8d80b", null ],
     [ "getFaceCent", "classamrex_1_1EBFArrayBoxFactory.html#a6b930de215bb73ac16eee685daa12f07", null ],
+    [ "getLevelSet", "classamrex_1_1EBFArrayBoxFactory.html#a9cd06cc502ad4b697b90fa36e7f55a2d", null ],
     [ "getMultiEBCellFlagFab", "classamrex_1_1EBFArrayBoxFactory.html#a9d7547c89b9cee01aec4519d7729aa11", null ],
     [ "getVolFrac", "classamrex_1_1EBFArrayBoxFactory.html#ab54137d22701f507d34d3732e3f712fc", null ],
     [ "isAllRegular", "classamrex_1_1EBFArrayBoxFactory.html#a5e556ff4f588a983a2992c01629e961f", null ],
