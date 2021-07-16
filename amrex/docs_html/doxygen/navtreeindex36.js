@@ -1,5 +1,13 @@
 var NAVTREEINDEX36 =
 {
+"classamrex_1_1FillPatchIterator.html#a4f431029cd9fd851184dbe10107ff273":[2,0,0,149,4],
+"classamrex_1_1FillPatchIterator.html#a4f7ab2de501c939a837ce864ec0cb513":[2,0,0,149,3],
+"classamrex_1_1FillPatchIterator.html#a7614b1bf508cfb79fd233bf3c7527b00":[2,0,0,149,16],
+"classamrex_1_1FillPatchIterator.html#a7bb682831638917318e9f87fee6871af":[2,0,0,149,11],
+"classamrex_1_1FillPatchIterator.html#aa65703406becd33b424efc5a298d7f64":[2,0,0,149,10],
+"classamrex_1_1FillPatchIterator.html#aadd026240dc35d11a31ed27a8044f4e0":[2,0,0,149,1],
+"classamrex_1_1FillPatchIterator.html#ab816646d06cbb8bde38ec73d3cad1303":[2,0,0,149,14],
+"classamrex_1_1FillPatchIterator.html#ac1229b67deb9f544baff571f5d76593f":[2,0,0,149,6],
 "classamrex_1_1FillPatchIterator.html#ad4440122fa2d2e2f66a50fba97d62586":[2,0,0,149,15],
 "classamrex_1_1FillPatchIterator.html#ade3e9c0f92befd31e9f3991e09e56ea4":[2,0,0,149,12],
 "classamrex_1_1FillPatchIterator.html#aebdca878a23ab164decbcdd3bc1a9a20":[2,0,0,149,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX36 =
 "classamrex_1_1Gpu_1_1Device.html#a63664c0cdd03b7ebcc475e542c45282d":[2,0,0,5,11,4],
 "classamrex_1_1Gpu_1_1Device.html#a659a046032f304e13547b3b633e7c10a":[2,0,0,5,11,2],
 "classamrex_1_1Gpu_1_1Device.html#a6693f142f50d3d5683ee44892c3f155a":[2,0,0,5,11,30],
-"classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf":[2,0,0,5,11,35],
-"classamrex_1_1Gpu_1_1Device.html#a680de321352372444327d831bb6d989f":[2,0,0,5,11,9],
-"classamrex_1_1Gpu_1_1Device.html#a725fb9c29db07764d1a95c03dedf3df5":[2,0,0,5,11,50],
-"classamrex_1_1Gpu_1_1Device.html#a728f2480b00dbe80a716bc81f42f8508":[2,0,0,5,11,47],
-"classamrex_1_1Gpu_1_1Device.html#a73de48a30b914ee4dc994e261e36be8f":[2,0,0,5,11,48],
-"classamrex_1_1Gpu_1_1Device.html#a7961d112520b04459e1eb566e2c6ee71":[2,0,0,5,11,27],
-"classamrex_1_1Gpu_1_1Device.html#a7a6b8811fb0e015cf250057bb00e6bcd":[2,0,0,5,11,21],
-"classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926":[2,0,0,5,11,51],
-"classamrex_1_1Gpu_1_1Device.html#a8b511fa5992f49c3e027153931c354b4":[2,0,0,5,11,49]
+"classamrex_1_1Gpu_1_1Device.html#a67c55a7d25eb5f5fdec62ffcc9c0dccf":[2,0,0,5,11,35]
 };

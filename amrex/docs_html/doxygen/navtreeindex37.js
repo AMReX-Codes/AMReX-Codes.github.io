@@ -1,5 +1,13 @@
 var NAVTREEINDEX37 =
 {
+"classamrex_1_1Gpu_1_1Device.html#a680de321352372444327d831bb6d989f":[2,0,0,5,11,9],
+"classamrex_1_1Gpu_1_1Device.html#a725fb9c29db07764d1a95c03dedf3df5":[2,0,0,5,11,50],
+"classamrex_1_1Gpu_1_1Device.html#a728f2480b00dbe80a716bc81f42f8508":[2,0,0,5,11,47],
+"classamrex_1_1Gpu_1_1Device.html#a73de48a30b914ee4dc994e261e36be8f":[2,0,0,5,11,48],
+"classamrex_1_1Gpu_1_1Device.html#a7961d112520b04459e1eb566e2c6ee71":[2,0,0,5,11,27],
+"classamrex_1_1Gpu_1_1Device.html#a7a6b8811fb0e015cf250057bb00e6bcd":[2,0,0,5,11,21],
+"classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926":[2,0,0,5,11,51],
+"classamrex_1_1Gpu_1_1Device.html#a8b511fa5992f49c3e027153931c354b4":[2,0,0,5,11,49],
 "classamrex_1_1Gpu_1_1Device.html#a919512587c63820d178daacc381ccde1":[2,0,0,5,11,33],
 "classamrex_1_1Gpu_1_1Device.html#a92efa21af9b7ae2cb3ee5710922c8bac":[2,0,0,5,11,8],
 "classamrex_1_1Gpu_1_1Device.html#a9b8a6a9f47a037559294546980502da1":[2,0,0,5,11,26],
@@ -241,13 +249,5 @@ var NAVTREEINDEX37 =
 "classamrex_1_1HypreNodeLap.html#ae0af71a571c9aa2ae19cac29ee7deb4a":[2,0,0,184,16],
 "classamrex_1_1HypreNodeLap.html#ae800380bfc5755081f9387bd4b9d098b":[2,0,0,184,26],
 "classamrex_1_1HypreNodeLap.html#af11e3c7489ef57cc0b55dd79d2a355ea":[2,0,0,184,4],
-"classamrex_1_1HypreNodeLap.html#af32f270916e5ac3077cad9d15792033e":[2,0,0,184,32],
-"classamrex_1_1IArrayBox.html":[2,0,0,185],
-"classamrex_1_1IArrayBox.html#a1f15c661d9fa23250901595a7e7e2179":[2,0,0,185,14],
-"classamrex_1_1IArrayBox.html#a1fbfd1676ed945234f965e4c44a8823c":[2,0,0,185,16],
-"classamrex_1_1IArrayBox.html#a2d392519e9ba2d0c847e4d0005edb1e3":[2,0,0,185,11],
-"classamrex_1_1IArrayBox.html#a327721932b527771972aaa456541b04d":[2,0,0,185,3],
-"classamrex_1_1IArrayBox.html#a565d48e5cc50e17ec5cd4af6b8d65e63":[2,0,0,185,0],
-"classamrex_1_1IArrayBox.html#a684c32bf8f70f624272652284da549c4":[2,0,0,185,15],
-"classamrex_1_1IArrayBox.html#a6bf69fa044d83c02e7a48394be20c5c1":[2,0,0,185,2]
+"classamrex_1_1HypreNodeLap.html#af32f270916e5ac3077cad9d15792033e":[2,0,0,184,32]
 };
