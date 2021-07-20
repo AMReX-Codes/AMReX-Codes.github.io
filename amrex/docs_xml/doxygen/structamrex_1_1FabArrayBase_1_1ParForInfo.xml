@@ -30,6 +30,32 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="662" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="662" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1FabArrayBase_1_1ParForInfo_1aa6a101ddf89df501b82f6fcc9e91ebd7" prot="public" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
+        <definition>IntVect amrex::FabArrayBase::ParForInfo::m_ng</definition>
+        <argsstring></argsstring>
+        <name>m_ng</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="663" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="663" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structamrex_1_1FabArrayBase_1_1ParForInfo_1a42964fcfc71605c366a9881334b4b44e" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::FabArrayBase::ParForInfo::m_nthreads</definition>
+        <argsstring></argsstring>
+        <name>m_nthreads</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="664" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="664" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="structamrex_1_1FabArrayBase_1_1ParForInfo_1ab8a2eebe5390786a4fd677cae1cb498f" prot="public" static="no" mutable="no">
         <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt;</type>
         <definition>std::pair&lt;int*,int*&gt; amrex::FabArrayBase::ParForInfo::m_nblocks_x</definition>
@@ -41,14 +67,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="663" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="663" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="665" column="19" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="665" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structamrex_1_1FabArrayBase_1_1ParForInfo_1a98d095ce41b1efaa09597831dc70101f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="structamrex_1_1FabArrayBase_1_1ParForInfo_1aecad54aa11e76f8bd774ca2d2c4580c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::FabArrayBase::ParForInfo::ParForInfo</definition>
-        <argsstring>(const FabArrayBase &amp;fa, const IntVect &amp;nghost)</argsstring>
+        <argsstring>(const FabArrayBase &amp;fa, const IntVect &amp;nghost, int nthreads)</argsstring>
         <name>ParForInfo</name>
         <param>
           <type>const <ref refid="classamrex_1_1FabArrayBase" kindref="compound">FabArrayBase</ref> &amp;</type>
@@ -57,6 +83,10 @@
         <param>
           <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
           <declname>nghost</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+          <declname>nthreads</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -188,6 +218,7 @@
         <label>amrex::FabArrayBase::ParForInfo</label>
         <link refid="structamrex_1_1FabArrayBase_1_1ParForInfo"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>m_ng</edgelabel>
           <edgelabel>m_crse_ratio</edgelabel>
         </childnode>
         <childnode refid="3" relation="usage">
@@ -199,15 +230,17 @@
         <link refid="classamrex_1_1IndexType"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="649" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="648" bodyend="664"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" line="649" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FabArrayBase.H" bodystart="648" bodyend="666"/>
     <listofallmembers>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a1c4d1455e703ecd30a9fa2317ad46864" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>getBlocks</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a981dc47643b5d9a4dff3ee9485005d5b" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>m_crse_ratio</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1ab8a2eebe5390786a4fd677cae1cb498f" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>m_nblocks_x</name></member>
+      <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1aa6a101ddf89df501b82f6fcc9e91ebd7" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>m_ng</name></member>
+      <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a42964fcfc71605c366a9881334b4b44e" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>m_nthreads</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1affbe2c289594f992d44abf46129e2a0e" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>m_typ</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a75e2960ee0458eb71dd4fd91ca728fa6" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>operator=</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1ac7f708582ac16f85339579a6b67776de" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>operator=</name></member>
-      <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a98d095ce41b1efaa09597831dc70101f" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>ParForInfo</name></member>
+      <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1aecad54aa11e76f8bd774ca2d2c4580c7" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>ParForInfo</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a58d5f8040e66a5f6e09e5687f68eb4ec" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>ParForInfo</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a0724d01468d2b2a8482208f62e4e1147" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>ParForInfo</name></member>
       <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a2f438dd87f9734ba850f88dbec26795c" prot="public" virt="non-virtual"><scope>amrex::FabArrayBase::ParForInfo</scope><name>ParForInfo</name></member>
