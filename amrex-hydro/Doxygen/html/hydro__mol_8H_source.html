@@ -97,101 +97,102 @@ $(document).ready(function(){initNavTree('hydro__mol_8H_source.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <a href="hydro__mol_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef HYDRO_MOL_H_</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define HYDRO_MOL_H_</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFab.H&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;AMReX_BCRec.H&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceMOL.html">MOL</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#a5faadc1a35e816f7acc88eb769edbb55">ComputeAofs</a> ( amrex::MultiFab&amp; aofs, <span class="keywordtype">int</span> aofs_comp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   amrex::MultiFab <span class="keyword">const</span>&amp; state, <span class="keywordtype">int</span> state_comp,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                   AMREX_D_DECL( amrex::MultiFab <span class="keyword">const</span>&amp; umac,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                 amrex::MultiFab <span class="keyword">const</span>&amp; vmac,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 amrex::MultiFab <span class="keyword">const</span>&amp; wmac),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                   AMREX_D_DECL( amrex::MultiFab&amp; xedge,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                 amrex::MultiFab&amp; yedge,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                 amrex::MultiFab&amp; zedge),</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                   <span class="keywordtype">int</span>  edge_comp,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                   <span class="keywordtype">bool</span> known_edgestate,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                   AMREX_D_DECL( amrex::MultiFab&amp; xfluxes,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                 amrex::MultiFab&amp; yfluxes,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                 amrex::MultiFab&amp; zfluxes),</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                   <span class="keywordtype">int</span> fluxes_comp,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                   amrex::MultiFab <span class="keyword">const</span>&amp; divu,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                   amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                   amrex::BCRec  <span class="keyword">const</span>* d_bcrec_ptr,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                   amrex::Gpu::DeviceVector&lt;int&gt;&amp; iconserv,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                   amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                   <span class="keywordtype">bool</span> is_velocity);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#a7d498da8117ccbcbb7860d0d0b8ecf85">ComputeSyncAofs</a> ( amrex::MultiFab&amp; aofs, <span class="keywordtype">int</span> aofs_comp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                       amrex::MultiFab <span class="keyword">const</span>&amp; state, <span class="keywordtype">int</span> state_comp,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                       AMREX_D_DECL( amrex::MultiFab <span class="keyword">const</span>&amp; umac,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; vmac,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; wmac),</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                       AMREX_D_DECL( amrex::MultiFab <span class="keyword">const</span>&amp; ucorr,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; vcorr,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; wcorr),</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                       AMREX_D_DECL( amrex::MultiFab&amp; xedge,</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                     amrex::MultiFab&amp; yedge,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                     amrex::MultiFab&amp; zedge),</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                       <span class="keywordtype">int</span>  edge_comp,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                       <span class="keywordtype">bool</span> known_edgestate,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                       AMREX_D_DECL( amrex::MultiFab&amp; xfluxes,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                     amrex::MultiFab&amp; yfluxes,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                     amrex::MultiFab&amp; zfluxes),</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                       <span class="keywordtype">int</span> fluxes_comp,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                       amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                       amrex::BCRec  <span class="keyword">const</span>* d_bcrec_ptr,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                       amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                       <span class="keywordtype">bool</span> is_velocity);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> *  Adding the \cond and \endcond commands tells Doxygen not</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"> *  to include a block of code.</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"> *  </span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">void</span> ComputeEdgeState (amrex::Box <span class="keyword">const</span>&amp; a_bx,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                       AMREX_D_DECL( amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; xedge,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                     amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; yedge,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                                     amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; zedge),</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                       amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; q,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                       AMREX_D_DECL( amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; umac,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                     amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; vmac,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                     amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; wmac),</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                       amrex::Box <span class="keyword">const</span>&amp;       domain,</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                       amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                       amrex::BCRec  <span class="keyword">const</span>* d_bcrec_ptr,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                       <span class="keywordtype">bool</span> is_velocity);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">ExtrapVelToFaces</a> ( <span class="keyword">const</span> amrex::MultiFab&amp;  vel,</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                        AMREX_D_DECL(amrex::MultiFab&amp; umac,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                     amrex::MultiFab&amp; vmac,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                     amrex::MultiFab&amp; wmac ),</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        <span class="keyword">const</span> amrex::Geometry&amp;  a_geom,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; h_bcrec,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                        <span class="keyword">const</span> amrex::BCRec* d_bcrec );</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad">ExtrapVelToFacesBox</a> ( AMREX_D_DECL( amrex::Box <span class="keyword">const</span>&amp; ubx,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                         amrex::Box <span class="keyword">const</span>&amp; vbx,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                         amrex::Box <span class="keyword">const</span>&amp; wbx ),</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                           AMREX_D_DECL( amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; u,</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; v,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; w ),</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                           amrex::Array4&lt;amrex::Real const &gt; <span class="keyword">const</span>&amp; vcc,</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                           <span class="keyword">const</span> amrex::Geometry&amp;  geom,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                           amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; h_bcrec,</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                           <span class="keyword">const</span> amrex::BCRec* d_bcrec );</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;} </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef HYDRO_MOL_H_</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define HYDRO_MOL_H_</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFab.H&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;AMReX_BCRec.H&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceMOL.html">MOL</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#a5faadc1a35e816f7acc88eb769edbb55">ComputeAofs</a> ( amrex::MultiFab&amp; aofs, <span class="keywordtype">int</span> aofs_comp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                   amrex::MultiFab <span class="keyword">const</span>&amp; state, <span class="keywordtype">int</span> state_comp,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                   AMREX_D_DECL( amrex::MultiFab <span class="keyword">const</span>&amp; umac,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                 amrex::MultiFab <span class="keyword">const</span>&amp; vmac,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                 amrex::MultiFab <span class="keyword">const</span>&amp; wmac),</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                   AMREX_D_DECL( amrex::MultiFab&amp; xedge,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                 amrex::MultiFab&amp; yedge,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                 amrex::MultiFab&amp; zedge),</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                   <span class="keywordtype">int</span>  edge_comp,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                   <span class="keywordtype">bool</span> known_edgestate,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                   AMREX_D_DECL( amrex::MultiFab&amp; xfluxes,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                 amrex::MultiFab&amp; yfluxes,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                 amrex::MultiFab&amp; zfluxes),</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                   <span class="keywordtype">int</span> fluxes_comp,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                   amrex::MultiFab <span class="keyword">const</span>&amp; divu,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                   amrex::BCRec  <span class="keyword">const</span>* d_bcrec_ptr,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   amrex::Gpu::DeviceVector&lt;int&gt;&amp; iconserv,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                   amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                   <span class="keywordtype">bool</span> is_velocity);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#a7d498da8117ccbcbb7860d0d0b8ecf85">ComputeSyncAofs</a> ( amrex::MultiFab&amp; aofs, <span class="keywordtype">int</span> aofs_comp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                       amrex::MultiFab <span class="keyword">const</span>&amp; state, <span class="keywordtype">int</span> state_comp,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                       AMREX_D_DECL( amrex::MultiFab <span class="keyword">const</span>&amp; umac,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; vmac,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; wmac),</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                       AMREX_D_DECL( amrex::MultiFab <span class="keyword">const</span>&amp; ucorr,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; vcorr,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                     amrex::MultiFab <span class="keyword">const</span>&amp; wcorr),</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                       AMREX_D_DECL( amrex::MultiFab&amp; xedge,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                     amrex::MultiFab&amp; yedge,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                     amrex::MultiFab&amp; zedge),</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                       <span class="keywordtype">int</span>  edge_comp,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                       <span class="keywordtype">bool</span> known_edgestate,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                       AMREX_D_DECL( amrex::MultiFab&amp; xfluxes,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                     amrex::MultiFab&amp; yfluxes,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                     amrex::MultiFab&amp; zfluxes),</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                       <span class="keywordtype">int</span> fluxes_comp,</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                       amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                       amrex::BCRec  <span class="keyword">const</span>* d_bcrec_ptr,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                       amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                       <span class="keywordtype">bool</span> is_velocity);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"> *  Adding the \cond and \endcond commands tells Doxygen not</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"> *  to include a block of code.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment"> *  </span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keywordtype">void</span> ComputeEdgeState (amrex::Box <span class="keyword">const</span>&amp; a_bx,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                       AMREX_D_DECL( amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; xedge,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                     amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; yedge,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                     amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; zedge),</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                       amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; q,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                       AMREX_D_DECL( amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; umac,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                     amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; vmac,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                     amrex::Array4&lt;amrex::Real const&gt; <span class="keyword">const</span>&amp; wmac),</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                       amrex::Box <span class="keyword">const</span>&amp;       domain,</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                       amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; bcs,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                       amrex::BCRec  <span class="keyword">const</span>* d_bcrec_ptr,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                       <span class="keywordtype">bool</span> is_velocity);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">ExtrapVelToFaces</a> ( <span class="keyword">const</span> amrex::MultiFab&amp;  vel,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        AMREX_D_DECL(amrex::MultiFab&amp; umac,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                     amrex::MultiFab&amp; vmac,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                     amrex::MultiFab&amp; wmac ),</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                        <span class="keyword">const</span> amrex::Geometry&amp;  a_geom,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; h_bcrec,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        <span class="keyword">const</span> amrex::BCRec* d_bcrec );</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad">ExtrapVelToFacesBox</a> ( AMREX_D_DECL( amrex::Box <span class="keyword">const</span>&amp; ubx,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                         amrex::Box <span class="keyword">const</span>&amp; vbx,</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                         amrex::Box <span class="keyword">const</span>&amp; wbx ),</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                           AMREX_D_DECL( amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; u,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; v,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                         amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; w ),</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                           amrex::Array4&lt;amrex::Real const &gt; <span class="keyword">const</span>&amp; vcc,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                           <span class="keyword">const</span> amrex::Geometry&amp;  geom,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                           amrex::Vector&lt;amrex::BCRec&gt; <span class="keyword">const</span>&amp; h_bcrec,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                           <span class="keyword">const</span> amrex::BCRec* d_bcrec );</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;} </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceMOL_html_a5faadc1a35e816f7acc88eb769edbb55"><div class="ttname"><a href="namespaceMOL.html#a5faadc1a35e816f7acc88eb769edbb55">MOL::ComputeAofs</a></div><div class="ttdeci">void ComputeAofs(amrex::MultiFab &amp;aofs, int aofs_comp, int ncomp, amrex::MultiFab const &amp;state, int state_comp, AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac), AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge), int edge_comp, bool known_edgestate, AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes), int fluxes_comp, amrex::MultiFab const &amp;divu, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs, amrex::BCRec const *d_bcrec_ptr, amrex::Gpu::DeviceVector&lt; int &gt; &amp;iconserv, amrex::Geometry const &amp;geom, bool is_velocity)</div><div class="ttdoc">Example documentation.</div></div>

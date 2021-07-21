@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['extrapveltofaces_48',['ExtrapVelToFaces',['../namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748',1,'MOL']]],
-  ['extrapveltofacesbox_49',['ExtrapVelToFacesBox',['../namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad',1,'MOL']]]
+  ['setxedgebcs_125',['SetXEdgeBCs',['../namespaceanonymous__namespace_02hydro__bcs__K_8H_03.html#ac687a0a46c7878e7f4a88ae92c7f3388',1,'anonymous_namespace{hydro_bcs_K.H}']]],
+  ['setyedgebcs_126',['SetYEdgeBCs',['../namespaceanonymous__namespace_02hydro__bcs__K_8H_03.html#af26d17e7f0f0b72e647388134283d2c8',1,'anonymous_namespace{hydro_bcs_K.H}']]]
 ];
