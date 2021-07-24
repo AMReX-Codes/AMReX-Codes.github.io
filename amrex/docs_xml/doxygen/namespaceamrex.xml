@@ -2728,7 +2728,7 @@
             <defname>N</defname>
           </param>
         </templateparamlist>
-        <type>std::array&lt; T, N &gt;</type>
+        <type>std::array&lt; T, <ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref> &gt;</type>
         <definition>using amrex::Array = typedef std::array&lt;T,N&gt;</definition>
         <argsstring></argsstring>
         <name>Array</name>
@@ -3799,31 +3799,29 @@
         <name>RandomEngine</name>
         <initializer>{}))
 {
-    auto np = src.numParticles();
-    <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt;Index&gt; mask(np);
+    <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt;<ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref>&gt; mask(n);
 
     auto p_mask = mask.dataPtr();
     const auto src_data = src.getConstParticleTileData();
 
-    <ref refid="namespaceamrex_1a2de21a574a15104cfa7e94e52dd6ab67" kindref="member">amrex::ParallelForRNG</ref>(np,
+    <ref refid="namespaceamrex_1a2de21a574a15104cfa7e94e52dd6ab67" kindref="member">amrex::ParallelForRNG</ref>(n,
     [=] <ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> (<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> i, <ref refid="structamrex_1_1RandomEngine" kindref="compound">amrex::RandomEngine</ref> const&amp; engine) noexcept
     {
-        p_mask[i] = <ref refid="namespaceamrex_1_1particle__detail_1aeefdb393afef57732439f230e1b53578" kindref="member">particle_detail::call_f</ref>(p, src_data, i, engine);
+        p_mask[i] = <ref refid="namespaceamrex_1_1particle__detail_1aeefdb393afef57732439f230e1b53578" kindref="member">particle_detail::call_f</ref>(p, src_data, src_start+i, engine);
     });
-
     return <ref refid="namespaceamrex_1a86fc8a08b6a63681e7751ac0b20bd96b" kindref="member">filterParticles</ref>(dst, src, mask.dataPtr(), src_start, dst_start, n);
 }
 
 
-template &lt;typename DstTile, typename <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref>, typename Index, typename F,
-          std::enable_if_t&lt;std::is_integral&lt;Index&gt;::value</initializer>
+template &lt;typename DstTile, typename <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref>, typename <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref>, typename <ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref>,
+          std::enable_if_t&lt;std::is_integral&lt;<ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref>&gt;::value</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="386" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="386" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="384" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="384" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespaceamrex_1a403cfbd1297211846d8daf45b3d0b440" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -3831,13 +3829,14 @@ template &lt;typename DstTile, typename <ref refid="namespaceamrex_1acc23406c7df
         <argsstring></argsstring>
         <name>foo</name>
         <initializer>= 0&gt;
-Index <ref refid="namespaceamrex_1a01d74f2f8ceb510c07cb44c266569781" kindref="member">filterAndTransformParticles</ref> (DstTile&amp; dst, const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref>&amp; src, Index* mask, F&amp;&amp; f) noexcept
+<ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> <ref refid="namespaceamrex_1a580332ae4f0f88b800d35591e7f6832c" kindref="member">filterAndTransformParticles</ref> (DstTile&amp; dst, const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref>&amp; src, <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref>* mask, <ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref>&amp;&amp; f,
+                                   <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> src_start, <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> dst_start) noexcept
 {
     auto np = src.numParticles();
-    <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt;Index&gt; offsets(np);
+    <ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt;<ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref>&gt; offsets(np);
     <ref refid="namespaceamrex_1_1Gpu_1a3f116832e254a3422729b3455b22f18c" kindref="member">Gpu::exclusive_scan</ref>(mask, mask+np, offsets.begin());
 
-    Index last_mask=0, last_offset=0;
+    <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> last_mask=0, last_offset=0;
     <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, mask+np-1, mask + np, &amp;last_mask);
     <ref refid="namespaceamrex_1_1Gpu_1a39c6894dcdb993d9e4455d7d418947b9" kindref="member">Gpu::copyAsync</ref>(<ref refid="namespaceamrex_1_1Gpu_1a4cb810463e0c04bdea932a011e77b548" kindref="member">Gpu::deviceToHost</ref>, offsets.data()+np-1, offsets.data()+np, &amp;last_offset);
 
@@ -3848,7 +3847,8 @@ Index <ref refid="namespaceamrex_1a01d74f2f8ceb510c07cb44c266569781" kindref="me
 
     <ref refid="AMReX__GpuLaunch_8H_1a98b67baa1382f64a8b07abb4c2edbf92" kindref="member">AMREX_HOST_DEVICE_FOR_1D</ref>( np, i,
     {
-        <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (mask[i]) f(dst_data, src_data, i, p_offsets[i]);
+        <ref refid="amrex__parser_8lex_8cpp_1ad4a65b873df5c05570846b5413b41dfd" kindref="member">if</ref> (mask[i]) f(dst_data, src_data, src_start+i,
+                                           dst_start+p_offsets[src_start+i]);
     });
 
     <ref refid="namespaceamrex_1_1Gpu_1a0040af3e7783b853140a6e13c755fc25" kindref="member">Gpu::synchronize</ref>();
@@ -3863,11 +3863,11 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="419" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="419" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="415" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="415" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::SrcTile</definition>
+        <definition>int std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; amrex::SrcTile</definition>
         <argsstring></argsstring>
         <name>SrcTile</name>
         <briefdescription>
@@ -3876,11 +3876,37 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="459" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="459" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="457" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="457" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="namespaceamrex_1a59bab8395877af29702be242c212c88e" prot="public" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::Pred</definition>
+        <definition>int amrex::Index</definition>
+        <argsstring></argsstring>
+        <name>Index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="457" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a926ac59546412d68022500242da6077a" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::F</definition>
+        <argsstring></argsstring>
+        <name>F</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="457" column="43" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="457" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1a156f860975ae63591f0500aa9bb80305" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> std::enable_if_t&lt; std::is_integral&lt; <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt;</type>
+        <definition>int std::enable_if_t&lt;std::is_integral&lt;Index&gt;::value, int&gt; amrex::Pred</definition>
         <argsstring></argsstring>
         <name>Pred</name>
         <briefdescription>
@@ -3889,7 +3915,20 @@ template &lt;typename DstTile</initializer>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="459" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="459" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="479" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="479" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" prot="public" static="no" mutable="no">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="653" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="653" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -4103,7 +4142,7 @@ template &lt;typename DstTile</initializer>
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -7476,7 +7515,7 @@ template &lt;typename DstTile</initializer>
           <declname>hi</declname>
         </param>
         <param>
-          <type>F</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref></type>
           <declname>f</declname>
         </param>
         <param>
@@ -8372,7 +8411,7 @@ template &lt;typename DstTile</initializer>
           <declname>aos_fab</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -10882,7 +10921,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -10919,7 +10958,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -10963,7 +11002,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11007,7 +11046,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11058,7 +11097,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11109,7 +11148,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11146,7 +11185,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11183,7 +11222,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11227,7 +11266,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11271,7 +11310,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11322,7 +11361,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11373,7 +11412,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11410,7 +11449,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11447,7 +11486,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11491,7 +11530,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11535,7 +11574,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11586,7 +11625,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11637,7 +11676,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11674,7 +11713,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11711,7 +11750,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11755,7 +11794,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11799,7 +11838,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11836,7 +11875,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11873,7 +11912,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11917,7 +11956,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -11961,7 +12000,7 @@ template &lt;typename DstTile</initializer>
           <declname>nghost</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -18846,7 +18885,7 @@ template &lt;typename DstTile</initializer>
           <declname>hi</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -18880,7 +18919,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -18910,7 +18949,7 @@ template &lt;typename DstTile</initializer>
           <declname>hi</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -18944,7 +18983,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -18970,7 +19009,7 @@ template &lt;typename DstTile</initializer>
           <declname>bx</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19000,7 +19039,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19026,7 +19065,7 @@ template &lt;typename DstTile</initializer>
           <declname>bx</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19056,7 +19095,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19086,7 +19125,7 @@ template &lt;typename DstTile</initializer>
           <declname>hi</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19120,7 +19159,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19150,7 +19189,7 @@ template &lt;typename DstTile</initializer>
           <declname>hi</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19184,7 +19223,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19210,7 +19249,7 @@ template &lt;typename DstTile</initializer>
           <declname>bx</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19240,7 +19279,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19266,7 +19305,7 @@ template &lt;typename DstTile</initializer>
           <declname>bx</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -19296,7 +19335,7 @@ template &lt;typename DstTile</initializer>
           <declname>ncomp</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -22269,7 +22308,7 @@ template &lt;typename DstTile</initializer>
           <declname>end</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -22356,7 +22395,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>n</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -22431,7 +22470,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>v</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -22506,7 +22545,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>end</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -22593,7 +22632,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>n</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -22668,7 +22707,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>v</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -24165,7 +24204,7 @@ Returns the index of the first element for which f is 0. </para>
         <argsstring>(F &amp;&amp;f, TP &amp;&amp;t) -&gt; typename detail::apply_result&lt; F, detail::tuple_decay_t&lt; TP &gt; &gt;::type</argsstring>
         <name>Apply</name>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -38495,7 +38534,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ecy</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>xeb</declname>
         </param>
         <param>
@@ -38834,7 +38873,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ecz</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>xeb</declname>
         </param>
         <param>
@@ -39201,7 +39240,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ecx</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>phieb</declname>
         </param>
         <param>
@@ -39255,7 +39294,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ecy</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>phieb</declname>
         </param>
         <param>
@@ -39309,7 +39348,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>ecz</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>phieb</declname>
         </param>
         <param>
@@ -47183,7 +47222,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -47234,7 +47273,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47344,7 +47383,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>pc</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47421,7 +47460,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47510,7 +47549,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47599,7 +47638,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>pc</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47676,7 +47715,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47765,7 +47804,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47854,7 +47893,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>pc</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -47931,7 +47970,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48020,7 +48059,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48109,7 +48148,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>pc</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48186,7 +48225,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48275,7 +48314,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48364,7 +48403,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>pc</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48441,7 +48480,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48530,7 +48569,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -48625,7 +48664,7 @@ Returns the index of the first element for which f is 0. </para>
           <declname>pc</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -48737,7 +48776,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>lev</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -48861,7 +48900,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>lev_max</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <param>
@@ -49330,7 +49369,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <briefdescription>
@@ -49415,19 +49454,19 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>src_start</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>dst_start</declname>
         </param>
         <param>
-          <type>N</type>
+          <type><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -49535,11 +49574,11 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -49635,23 +49674,23 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>src_start</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>dst_start</declname>
         </param>
         <param>
-          <type>N</type>
+          <type><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref></type>
           <declname>n</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -49774,11 +49813,11 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -49897,27 +49936,27 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>src_start</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>dst1_start</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>dst2_start</declname>
         </param>
         <param>
-          <type>N</type>
+          <type><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref></type>
           <declname>n</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -50057,7 +50096,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type>Index</type>
+        <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
         <definition>Index amrex::filterParticles</definition>
         <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, const Index *mask) noexcept</argsstring>
         <name>filterParticles</name>
@@ -50066,11 +50105,11 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>const Index *</type>
+          <type>const <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> *</type>
           <declname>mask</declname>
         </param>
         <briefdescription>
@@ -50154,7 +50193,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type>Index</type>
+        <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
         <definition>Index amrex::filterParticles</definition>
         <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, const Index *mask, Index src_start, Index dst_start, N n) noexcept</argsstring>
         <name>filterParticles</name>
@@ -50163,23 +50202,23 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>const Index *</type>
+          <type>const <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> *</type>
           <declname>mask</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>src_start</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>dst_start</declname>
         </param>
         <param>
-          <type>N</type>
+          <type><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -50264,7 +50303,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="321" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="321" bodyend="345"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="321" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="321" bodyend="343"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a2a5a940585a53e1b932fcda995db9840" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -50287,11 +50326,11 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a156f860975ae63591f0500aa9bb80305" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <briefdescription>
@@ -50352,7 +50391,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="360" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="360" bodyend="364"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="358" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="358" bodyend="362"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a76a6050b761f9fcee872722bcec7d2c4" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -50381,23 +50420,23 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a156f860975ae63591f0500aa9bb80305" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>src_start</declname>
         </param>
         <param>
-          <type>Index</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
           <declname>dst_start</declname>
         </param>
         <param>
-          <type>N</type>
+          <type><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref></type>
           <declname>n</declname>
         </param>
         <briefdescription>
@@ -50482,11 +50521,11 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="384" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="384" bodyend="386"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="382" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="382" bodyend="384"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1a01d74f2f8ceb510c07cb44c266569781" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
-        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> F auto</type>
-        <definition>int F auto amrex::filterAndTransformParticles</definition>
+      <memberdef kind="function" id="namespaceamrex_1a580332ae4f0f88b800d35591e7f6832c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> std::enable_if_t&lt; std::is_integral&lt; <ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> &gt;::value, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &gt; <ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> auto</type>
+        <definition>int std::enable_if_t&lt;std::is_integral&lt;Index&gt;::value, int&gt; F auto amrex::filterAndTransformParticles</definition>
         <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</argsstring>
         <name>filterAndTransformParticles</name>
         <param>
@@ -50494,15 +50533,15 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a156f860975ae63591f0500aa9bb80305" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -50511,7 +50550,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="460" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="460" bodyend="477"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="480" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="480" bodyend="484"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a326a3d72298cd5b976db9b5f3d92fba5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -50537,7 +50576,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
             <defval>0</defval>
           </param>
         </templateparamlist>
-        <type>Index</type>
+        <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
         <definition>Index amrex::filterAndTransformParticles</definition>
         <argsstring>(DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Index *mask, F &amp;&amp;f) noexcept</argsstring>
         <name>filterAndTransformParticles</name>
@@ -50550,15 +50589,15 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>Index *</type>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref> *</type>
           <declname>mask</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -50651,7 +50690,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="498" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="498" bodyend="522"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="505" column="7" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="505" bodyend="529"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a7939d1b7f76204c7b70ea282174f89c0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -50684,15 +50723,15 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
           <declname>dst2</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1acc23406c7dfc89ca51a4c37a6430bdea" kindref="member">SrcTile</ref> &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type><ref refid="namespaceamrex_1a046a45c38572313e76a5278418ad94d6" kindref="member">Pred</ref> &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a156f860975ae63591f0500aa9bb80305" kindref="member">Pred</ref> &amp;&amp;</type>
           <declname>p</declname>
         </param>
         <param>
-          <type>F &amp;&amp;</type>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
           <declname>f</declname>
         </param>
         <briefdescription>
@@ -50793,72 +50832,80 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="543" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="543" bodyend="561"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="550" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="550" bodyend="567"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ab75c7a4946d605a7072d64407df6a6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1ae2e08f4e135868c9536f7e4070fb589b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename PTile</type>
+            <type>typename DstTile</type>
           </param>
           <param>
-            <type>typename N</type>
+            <type>typename SrcTile</type>
+          </param>
+          <param>
+            <type>typename Pred</type>
+          </param>
+          <param>
+            <type>typename F</type>
           </param>
           <param>
             <type>typename Index</type>
           </param>
-          <param>
-            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
-            <declname>foo</declname>
-            <defname>foo</defname>
-            <defval>0</defval>
-          </param>
         </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::gatherParticles</definition>
-        <argsstring>(PTile &amp;dst, const PTile &amp;src, N np, const Index *inds)</argsstring>
-        <name>gatherParticles</name>
+        <type>auto</type>
+        <definition>auto amrex::filterAndTransformParticles</definition>
+        <argsstring>(DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f, Index src_start, Index dst_start) noexcept -&gt; decltype(particle_detail::call_f(p, typename SrcTile::ConstParticleTileDataType(), int</argsstring>
+        <name>filterAndTransformParticles</name>
         <param>
-          <type>PTile &amp;</type>
+          <type>DstTile &amp;</type>
           <declname>dst</declname>
         </param>
         <param>
-          <type>const PTile &amp;</type>
+          <type>const <ref refid="namespaceamrex_1a7e796e89cd3d003e84200dccdfb41506" kindref="member">SrcTile</ref> &amp;</type>
           <declname>src</declname>
         </param>
         <param>
-          <type>N</type>
-          <declname>np</declname>
+          <type><ref refid="namespaceamrex_1a156f860975ae63591f0500aa9bb80305" kindref="member">Pred</ref> &amp;&amp;</type>
+          <declname>p</declname>
         </param>
         <param>
-          <type>const Index *</type>
-          <declname>inds</declname>
+          <type><ref refid="namespaceamrex_1a926ac59546412d68022500242da6077a" kindref="member">F</ref> &amp;&amp;</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
+          <declname>src_start</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1a59bab8395877af29702be242c212c88e" kindref="member">Index</ref></type>
+          <declname>dst_start</declname>
         </param>
         <briefdescription>
-<para>Gather particles copies particles into contiguous order from an arbitrary order. Specifically, the particle at the index inds[i] in src will be copied to the index i in dst. </para>
+<para>Conditionally copy particles from src to dst based on a predicate. This version conditionally copies n particles starting at index src_start, writing the result starting at dst_start. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>PTile</parametername>
+<parametername>DstTile</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the particle tile type </para>
+<para>the dst particle tile type </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>N</parametername>
+<parametername>SrcTile</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the size type, e.g. Long </para>
+<para>the src particle tile type </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>Index</parametername>
+<parametername>Pred</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the index type, e.g. unsigned int</para>
+<para>a function object</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -50880,18 +50927,34 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>np</parametername>
+<parametername>p</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>the number of particles </para>
+<para>predicate function - particles will be copied if p returns true </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>inds</parametername>
+<parametername>src_start</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>pointer to the permutation array </para>
+<para>the offset at which to start reading particles from src </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dst_start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the offset at which to start writing particles to dst </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of particles to apply the operation to </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -50899,113 +50962,7 @@ Example usage: amrex::ReduceOps&lt;ReduceOpSum, ReduceOpMin, ReduceOpMax&gt; red
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="580" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="580" bodyend="591"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ae05ffbbcc005cc8c081b859226222c78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>typename PTile</type>
-          </param>
-          <param>
-            <type>typename N</type>
-          </param>
-          <param>
-            <type>typename Index</type>
-          </param>
-          <param>
-            <type>std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;</type>
-            <declname>foo</declname>
-            <defname>foo</defname>
-            <defval>0</defval>
-          </param>
-        </templateparamlist>
-        <type>void</type>
-        <definition>void amrex::scatterParticles</definition>
-        <argsstring>(PTile &amp;dst, const PTile &amp;src, N np, const Index *inds)</argsstring>
-        <name>scatterParticles</name>
-        <param>
-          <type>PTile &amp;</type>
-          <declname>dst</declname>
-        </param>
-        <param>
-          <type>const PTile &amp;</type>
-          <declname>src</declname>
-        </param>
-        <param>
-          <type>N</type>
-          <declname>np</declname>
-        </param>
-        <param>
-          <type>const Index *</type>
-          <declname>inds</declname>
-        </param>
-        <briefdescription>
-<para>Scatter particles copies particles from contiguous order into an arbitrary order. Specifically, the particle at the index i in src will be copied to the index inds[i] in dst. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>PTile</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the particle tile type </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>N</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the size type, e.g. Long </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>Index</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the index type, e.g. unsigned int</para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-<parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>dst</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the destination tile </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>src</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the source tile </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>np</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>the number of particles </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>inds</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>pointer to the permutation array </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="610" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="610" bodyend="621"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" line="589" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleTransformation.H" bodystart="589" bodyend="591"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1ad2e9cbb8f28bbbba7378ec7bf4654b89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>

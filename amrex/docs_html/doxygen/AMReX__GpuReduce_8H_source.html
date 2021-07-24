@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset = warpSize/2; offset &gt; 0; offset /= 2) {</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            T y = sg.shuffle_down(x, offset);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            x = F()(x,y);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            x = <a class="code" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a>()(x,y);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> x;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
@@ -359,7 +359,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset = warpSize/2; offset &gt; 0; offset /= 2) {</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <a class="code" href="AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941">AMREX_HIP_OR_CUDA</a>(T y = __shfl_down(x, offset);,</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                              T y = __shfl_down_sync(0xffffffff, x, offset); )</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            x = F()(x,y);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            x = <a class="code" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a>()(x,y);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">return</span> x;</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
@@ -859,6 +859,7 @@ $(document).ready(function(){initNavTree('AMReX__GpuReduce_8H_source.html',''); 
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a18d6ae36f6f894265b771b9d33717041"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a18d6ae36f6f894265b771b9d33717041">amrex::Gpu::deviceReduceLogicalAnd</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void deviceReduceLogicalAnd(int *dest, int source, Gpu::Handler const &amp;h) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuReduce.H:606</div></div>
 <div class="ttc" id="aAMReX__GpuControl_8H_html_a0008c69fc4b1c0dff4da75ec778f4941"><div class="ttname"><a href="AMReX__GpuControl_8H.html#a0008c69fc4b1c0dff4da75ec778f4941">AMREX_HIP_OR_CUDA</a></div><div class="ttdeci">#define AMREX_HIP_OR_CUDA(a, b)</div><div class="ttdef"><b>Definition:</b> AMReX_GpuControl.H:19</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_1_1Atomic_html_a766ff7e5ed9d78fb3a0d5eaffec9c2ea"><div class="ttname"><a href="namespaceamrex_1_1Gpu_1_1Atomic.html#a766ff7e5ed9d78fb3a0d5eaffec9c2ea">amrex::Gpu::Atomic::LogicalAnd</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int LogicalAnd(int *const m, int const value) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuAtomic.H:321</div></div>
+<div class="ttc" id="anamespaceamrex_html_a926ac59546412d68022500242da6077a"><div class="ttname"><a href="namespaceamrex.html#a926ac59546412d68022500242da6077a">amrex::F</a></div><div class="ttdeci">int F</div><div class="ttdef"><b>Definition:</b> AMReX_ParticleTransformation.H:457</div></div>
 <div class="ttc" id="anamespaceamrex_html_a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38"><div class="ttname"><a href="namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38">amrex::RunOn::Gpu</a></div><div class="ttdeci">@ Gpu</div></div>
 <div class="ttc" id="anamespaceamrex_1_1Gpu_html_a4bca2075ddd39a12c54ef72d6ab6982c"><div class="ttname"><a href="namespaceamrex_1_1Gpu.html#a4bca2075ddd39a12c54ef72d6ab6982c">amrex::Gpu::deviceReduceMax</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void deviceReduceMax(T *dest, T source, Gpu::Handler const &amp;h) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_GpuReduce.H:588</div></div>
 <div class="ttc" id="aclassamrex_1_1Gpu_1_1Device_html_a845f8e6eb448999a6e71574eeee55926"><div class="ttname"><a href="classamrex_1_1Gpu_1_1Device.html#a845f8e6eb448999a6e71574eeee55926">amrex::Gpu::Device::warp_size</a></div><div class="ttdeci">static constexpr int warp_size</div><div class="ttdef"><b>Definition:</b> AMReX_GpuDevice.H:145</div></div>

@@ -878,20 +878,20 @@
 <codeline lineno="151"><highlight class="normal"></highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="153"><highlight class="normal">std::size_t</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><ref refid="namespaceamrex_1aa04d33642e47699eedfa904aa011b199" kindref="member">parser_aligned_size</ref><sp/>(std::size_t<sp/>N)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><ref refid="namespaceamrex_1aa04d33642e47699eedfa904aa011b199" kindref="member">parser_aligned_size</ref><sp/>(std::size_t<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>)</highlight></codeline>
 <codeline lineno="155"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>align_size<sp/>=<sp/>16;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>x<sp/>=<sp/>N<sp/>+<sp/>(align_size-1);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>x<sp/>=<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>+<sp/>(align_size-1);</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>-=<sp/>x<sp/>&amp;<sp/>(align_size-1);</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
 <codeline lineno="160"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><ref refid="namespaceamrex_1a9ec644ecf6ca85c38caddcdca5543c99" kindref="member">parser_allocate</ref><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>amrex_parser*<sp/>my_parser,<sp/>std::size_t<sp/>N)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><ref refid="namespaceamrex_1a9ec644ecf6ca85c38caddcdca5543c99" kindref="member">parser_allocate</ref><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>amrex_parser*<sp/>my_parser,<sp/>std::size_t<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>)</highlight></codeline>
 <codeline lineno="165"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>r<sp/>=<sp/>my_parser-&gt;p_free;</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>my_parser-&gt;p_free<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)r<sp/>+<sp/><ref refid="namespaceamrex_1aa04d33642e47699eedfa904aa011b199" kindref="member">parser_aligned_size</ref>(N);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>my_parser-&gt;p_free<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)r<sp/>+<sp/><ref refid="namespaceamrex_1aa04d33642e47699eedfa904aa011b199" kindref="member">parser_aligned_size</ref>(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
 <codeline lineno="169"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>

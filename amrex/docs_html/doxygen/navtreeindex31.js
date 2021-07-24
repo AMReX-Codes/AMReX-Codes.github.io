@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"classamrex_1_1DenseBins.html#a8c1a462b3aaa2193672c14d26a56601a":[2,0,0,107,4],
+"classamrex_1_1DenseBins.html#a8f49f54a25549e053bb63d0e72d751e1":[2,0,0,107,9],
 "classamrex_1_1DenseBins.html#a9bc32ea181687bc997cb145606c436b4":[2,0,0,107,13],
 "classamrex_1_1DenseBins.html#ab50df3946feebe789f41c7d01762a30b":[2,0,0,107,10],
 "classamrex_1_1DenseBins.html#ace91724777a08f267ca7515117ebe620":[2,0,0,107,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "classamrex_1_1EB2_1_1ExtrusionIF.html#a1741255351846bea7ccc07037280d668":[2,0,0,3,8,4],
 "classamrex_1_1EB2_1_1ExtrusionIF.html#a49964e862f3d060b0558c400898ff6d8":[2,0,0,3,8,3],
 "classamrex_1_1EB2_1_1ExtrusionIF.html#a652bae528078d2236e2644f54630974a":[2,0,0,3,8,2],
-"classamrex_1_1EB2_1_1ExtrusionIF.html#a8d0b86fe0458f8d27a31ed322f7dc73d":[2,0,0,3,8,5],
-"classamrex_1_1EB2_1_1ExtrusionIF.html#aa230623413b7fc4ff5e42479ca962a51":[2,0,0,3,8,0],
-"classamrex_1_1EB2_1_1ExtrusionIF.html#aaf16d236003b96546fb354e9d07f2941":[2,0,0,3,8,7]
+"classamrex_1_1EB2_1_1ExtrusionIF.html#a8d0b86fe0458f8d27a31ed322f7dc73d":[2,0,0,3,8,5]
 };
