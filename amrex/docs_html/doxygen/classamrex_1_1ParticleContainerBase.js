@@ -18,6 +18,7 @@ var classamrex_1_1ParticleContainerBase =
     [ "Geom", "classamrex_1_1ParticleContainerBase.html#a9ae9a37898b7fb6929b598194c8bca61", null ],
     [ "GetParGDB", "classamrex_1_1ParticleContainerBase.html#adafb217d391165d8afaf21b38912e068", null ],
     [ "GetParGDB", "classamrex_1_1ParticleContainerBase.html#a0e42065282e0589082794401db6d2247", null ],
+    [ "isDefined", "classamrex_1_1ParticleContainerBase.html#a0fef888a5370f9723f2ab2df2fe32266", null ],
     [ "MakeMFIter", "classamrex_1_1ParticleContainerBase.html#a41cb0c34d64f3d1df87d83f3b26f594b", null ],
     [ "MakeMFIter", "classamrex_1_1ParticleContainerBase.html#a30a608b14352a5cd5bfed79f69f98011", null ],
     [ "MakeMFIter", "classamrex_1_1ParticleContainerBase.html#adc8bb6ea7e7d8a9596936623bc2e26ed", null ],

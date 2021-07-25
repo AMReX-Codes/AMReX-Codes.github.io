@@ -1,5 +1,7 @@
 var NAVTREEINDEX62 =
 {
+"structamrex_1_1TinyProfiler_1_1Stats.html":[2,0,0,417,1],
+"structamrex_1_1TinyProfiler_1_1Stats.html#a1985c5975c675b3fb1d9746ee5f016c7":[2,0,0,417,1,0],
 "structamrex_1_1TinyProfiler_1_1Stats.html#a23fedc6778a6f6a72862b3a659494231":[2,0,0,417,1,4],
 "structamrex_1_1TinyProfiler_1_1Stats.html#a4a677c6dd0af7d407604a642c4371c5c":[2,0,0,417,1,6],
 "structamrex_1_1TinyProfiler_1_1Stats.html#a9fc076452eebe7a8e37d2820b05f2dad":[2,0,0,417,1,1],
@@ -77,8 +79,8 @@ var NAVTREEINDEX62 =
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#a8e63fff308a2667a803639c70fce0b3b":[2,0,0,0,2,6],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aa572c858d18a32a5834232222e0de86c":[2,0,0,0,2,13],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ab0b0d21b0436db3368df308ac574a8ec":[2,0,0,0,2,2],
-"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,0],
+"structamrex_1_1algoim_1_1ImplicitIntegral.html#abb1c9678e4c3ccbfd40cf746536e57a4":[2,0,0,0,2,1],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#ac3aa0501b0844da98bbe89d033795500":[2,0,0,0,2,10],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#afeff1f944e669f66896bdc7b76eccc88":[2,0,0,0,2,9],
 "structamrex_1_1algoim_1_1ImplicitIntegral.html#aff95bdf7c30770f6021900c9eedaad6b":[2,0,0,0,2,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX62 =
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a939cd8c93d4cdbee4165f9b5923b2978":[2,0,7,2,9],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#aa816750df0bdca4542b913fccbb3cdf7":[2,0,7,2,8],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#ab9997ef40c49a9721423e8bec4f30e14":[2,0,7,2,10],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#ab9c4e4255bdd7cbfe4e9decb095d1bcc":[2,0,7,2,30],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#abfcfeabda256c79024069aef558469b2":[2,0,7,2,15],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#ac0d76e840454ccdf657b39a423876e5a":[2,0,7,2,19]
+"structamrex__parmparse__module_1_1amrex__parmparse.html#ab9c4e4255bdd7cbfe4e9decb095d1bcc":[2,0,7,2,30]
 };

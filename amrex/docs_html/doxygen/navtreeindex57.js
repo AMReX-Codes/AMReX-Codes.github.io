@@ -1,5 +1,7 @@
 var NAVTREEINDEX57 =
 {
+"structamrex_1_1FabArrayBase_1_1PolarB.html#ad805ea2e85456aeee7173714da9e0167":[2,0,0,132,12,0],
+"structamrex_1_1FabArrayBase_1_1PolarB.html#ae7d84e3daa0f3502f2ce6369dcb42f60":[2,0,0,132,12,4],
 "structamrex_1_1FabArrayBase_1_1RB180.html":[2,0,0,132,13],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a4360be0f4e9ec5c667242a08008f8fe6":[2,0,0,132,13,2],
 "structamrex_1_1FabArrayBase_1_1RB180.html#a586875a69a8c7797c4b3a306dd1d175b":[2,0,0,132,13,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1Gpu_1_1SharedMemory_3_01float_01_4.html":[2,0,0,5,33],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01float_01_4.html#aeaf677a93736435c1a8cc3f8a6fc55eb":[2,0,0,5,33,0],
 "structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html":[2,0,0,5,34],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html#adf1cbc849f80773f973e946780f42b33":[2,0,0,5,34,0],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html":[2,0,0,5,35],
-"structamrex_1_1Gpu_1_1SharedMemory_3_01long_01_4.html#ace849c44029f0051637b1ac9ab1eb28d":[2,0,0,5,35,0]
+"structamrex_1_1Gpu_1_1SharedMemory_3_01int_01_4.html#adf1cbc849f80773f973e946780f42b33":[2,0,0,5,34,0]
 };
