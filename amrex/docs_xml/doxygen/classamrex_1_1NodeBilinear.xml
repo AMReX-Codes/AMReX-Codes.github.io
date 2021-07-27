@@ -17,14 +17,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="175" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="67" bodyend="67"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="143" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="48" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1NodeBilinear_1a12700b2249901dc280e6ab13e7c560f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
         <definition>Box amrex::NodeBilinear::CoarseBox</definition>
         <argsstring>(const Box &amp;fine, int ratio) override</argsstring>
         <name>CoarseBox</name>
-        <reimplements refid="classamrex_1_1Interpolater_1aa19cea2a6579112e6cf2fa2fb52ba6b6">CoarseBox</reimplements>
+        <reimplements refid="classamrex_1_1InterpBase_1a7120153e965f22098f7cd888274f5c6b">CoarseBox</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
           <declname>fine</declname>
@@ -58,14 +58,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="183" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="70" bodyend="87"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="151" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="51" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1NodeBilinear_1ae2cd41e25c41c44dda1330f58f6a55e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
         <definition>Box amrex::NodeBilinear::CoarseBox</definition>
         <argsstring>(const Box &amp;fine, const IntVect &amp;ratio) override</argsstring>
         <name>CoarseBox</name>
-        <reimplements refid="classamrex_1_1Interpolater_1a8afbd6f779bee1ec37defb7c0f03deb5">CoarseBox</reimplements>
+        <reimplements refid="classamrex_1_1InterpBase_1a684e90cd5708cc5746e653c6decc75d1">CoarseBox</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
           <declname>fine</declname>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="192" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="90" bodyend="107"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="159" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="71" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1NodeBilinear_1a8c39f3181c42681018f52786727f517e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -264,7 +264,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="211" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="110" bodyend="147"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="177" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="91" bodyend="128"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -274,6 +274,10 @@
 <para>Bilinear interpolation on node centered data. </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
       <node id="1">
         <label>amrex::NodeBilinear</label>
         <link refid="classamrex_1_1NodeBilinear"/>
@@ -283,9 +287,15 @@
       <node id="2">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="3">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
       <node id="1">
         <label>amrex::NodeBilinear</label>
         <link refid="classamrex_1_1NodeBilinear"/>
@@ -295,18 +305,21 @@
       <node id="2">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="169" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="166" bodyend="224"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="137" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="134" bodyend="190"/>
     <listofallmembers>
-      <member refid="classamrex_1_1Interpolater_1a076d83ba84b125ee187a18aa8d60ee3e" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>BoxCoarsener</name></member>
+      <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::NodeBilinear</scope><name>BoxCoarsener</name></member>
       <member refid="classamrex_1_1NodeBilinear_1a12700b2249901dc280e6ab13e7c560f2" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>CoarseBox</name></member>
       <member refid="classamrex_1_1NodeBilinear_1ae2cd41e25c41c44dda1330f58f6a55e3" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>CoarseBox</name></member>
-      <member refid="classamrex_1_1Interpolater_1aa2f8d685993329ef439ea2925bee9cc7" prot="public" virt="non-virtual"><scope>amrex::NodeBilinear</scope><name>GetBCArray</name></member>
+      <member refid="classamrex_1_1InterpBase_1ad9523dae9903f59fc43bb7df17e2250e" prot="public" virt="non-virtual"><scope>amrex::NodeBilinear</scope><name>GetBCArray</name></member>
       <member refid="classamrex_1_1NodeBilinear_1a8c39f3181c42681018f52786727f517e" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>interp</name></member>
       <member refid="classamrex_1_1Interpolater_1a78550a1ab625c31eb7d5172bc7ff006a" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>interp_arr</name></member>
       <member refid="classamrex_1_1Interpolater_1aee6fb8b99ca4282e5f9e9122b9b37cf1" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>protect</name></member>
-      <member refid="classamrex_1_1Interpolater_1ad53e63eaa9b2b9b140c98f73969f2164" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>~Interpolater</name></member>
+      <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>~InterpBase</name></member>
+      <member refid="classamrex_1_1Interpolater_1a48000082339f7edb658f96bc4e558eca" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>~Interpolater</name></member>
       <member refid="classamrex_1_1NodeBilinear_1a6420242043deed007eccffb7f763f226" prot="public" virt="virtual"><scope>amrex::NodeBilinear</scope><name>~NodeBilinear</name></member>
     </listofallmembers>
   </compounddef>

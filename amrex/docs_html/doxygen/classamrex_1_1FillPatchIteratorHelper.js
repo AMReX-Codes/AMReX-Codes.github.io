@@ -1,12 +1,12 @@
 var classamrex_1_1FillPatchIteratorHelper =
 [
     [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html#a10439c4fa30c39a2f12ba939498ab887", null ],
-    [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html#a89aee65d44395bf8969b6ec3da5bd5d1", null ],
+    [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html#a6fd71c4a217879fa148edeec6047387a", null ],
     [ "~FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html#ab0e6743c4dbe5632040213a1c6616510", null ],
     [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html#ae4075b85a37079586a0717c6223de190", null ],
     [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html#aae84913534a102443b326a934fb332fc", null ],
     [ "fill", "classamrex_1_1FillPatchIteratorHelper.html#a9cf2d33e663f0311539a96633ff7560d", null ],
-    [ "Initialize", "classamrex_1_1FillPatchIteratorHelper.html#af634eccf2d0d201220687d5b8bfe50fd", null ],
+    [ "Initialize", "classamrex_1_1FillPatchIteratorHelper.html#a00a3d1a0dac25563dbf55a563c24a18f", null ],
     [ "operator=", "classamrex_1_1FillPatchIteratorHelper.html#a1dea2e7280c98e94f9efd74d445f884e", null ],
     [ "FillPatchIterator", "classamrex_1_1FillPatchIteratorHelper.html#a39d92a4048c0af0c7b1737d5c4e0c334", null ],
     [ "m_amrlevel", "classamrex_1_1FillPatchIteratorHelper.html#a5ca572ea2e2269cf1173bb0240f3c544", null ],

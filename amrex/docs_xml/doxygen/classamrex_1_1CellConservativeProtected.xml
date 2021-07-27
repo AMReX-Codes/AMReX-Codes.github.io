@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="classamrex_1_1CellConservativeProtected" kind="class" language="C++" prot="public">
     <compoundname>amrex::CellConservativeProtected</compoundname>
-    <basecompoundref refid="classamrex_1_1Interpolater" prot="public" virt="non-virtual">amrex::Interpolater</basecompoundref>
+    <basecompoundref refid="classamrex_1_1CellConservativeLinear" prot="public" virt="non-virtual">amrex::CellConservativeLinear</basecompoundref>
     <includes refid="AMReX__Interpolater_8H" local="no">AMReX_Interpolater.H</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1aced526a1e706c7fce0c1b715639f2270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="385" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="679" bodyend="679"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="347" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="666" bodyend="667"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1a87a2026365c83b9f2014bd5df9f4b96d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -31,254 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="390" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="681" bodyend="681"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1a4f7eb5ba7fb671882f36ee30f4550fc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
-        <definition>Box amrex::CellConservativeProtected::CoarseBox</definition>
-        <argsstring>(const Box &amp;fine, int ratio) override</argsstring>
-        <name>CoarseBox</name>
-        <reimplements refid="classamrex_1_1Interpolater_1aa19cea2a6579112e6cf2fa2fb52ba6b6">CoarseBox</reimplements>
-        <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
-          <declname>fine</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>ratio</declname>
-        </param>
-        <briefdescription>
-<para>Returns coarsened box given fine box and refinement ratio. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fine</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ratio</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="398" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="693" bodyend="699"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1aeff3c15e21d4b54bc1e4e514178e7e3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
-        <definition>Box amrex::CellConservativeProtected::CoarseBox</definition>
-        <argsstring>(const Box &amp;fine, const IntVect &amp;ratio) override</argsstring>
-        <name>CoarseBox</name>
-        <reimplements refid="classamrex_1_1Interpolater_1a8afbd6f779bee1ec37defb7c0f03deb5">CoarseBox</reimplements>
-        <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
-          <declname>fine</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>ratio</declname>
-        </param>
-        <briefdescription>
-<para>Returns coarsened box given fine box and refinement ratio. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fine</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ratio</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="407" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="684" bodyend="690"/>
-      </memberdef>
-      <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1a563e6340c8ed5b150a5e8be428e894c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>void</type>
-        <definition>void amrex::CellConservativeProtected::interp</definition>
-        <argsstring>(const FArrayBox &amp;crse, int crse_comp, FArrayBox &amp;fine, int fine_comp, int ncomp, const Box &amp;fine_region, const IntVect &amp;ratio, const Geometry &amp;crse_geom, const Geometry &amp;fine_geom, Vector&lt; BCRec &gt; const &amp;bcr, int actual_comp, int actual_state, RunOn gpu_or_cpu) override</argsstring>
-        <name>interp</name>
-        <reimplements refid="classamrex_1_1Interpolater_1ab7e7a9cccec912ca707efd4fe1653da1">interp</reimplements>
-        <param>
-          <type>const <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
-          <declname>crse</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>crse_comp</declname>
-        </param>
-        <param>
-          <type><ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> &amp;</type>
-          <declname>fine</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>fine_comp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>ncomp</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
-          <declname>fine_region</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>ratio</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
-          <declname>crse_geom</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref> &amp;</type>
-          <declname>fine_geom</declname>
-        </param>
-        <param>
-          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> &gt; const &amp;</type>
-          <declname>bcr</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>actual_comp</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>actual_state</declname>
-        </param>
-        <param>
-          <type><ref refid="namespaceamrex_1a33bef6ea796972dbf046ba79277795d2" kindref="member">RunOn</ref></type>
-          <declname>gpu_or_cpu</declname>
-        </param>
-        <briefdescription>
-<para>Coarse to fine interpolation in space. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>crse</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>crse_comp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fine</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fine_comp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ncomp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fine_region</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>ratio</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>crse_geom</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>fine_geom</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>bcr</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>actual_comp</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>actual_state</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="426" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="702" bodyend="761"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="352" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="669" bodyend="669"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CellConservativeProtected_1a5e016fbb584d8be19d11e1963fe361ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -443,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="457" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="764" bodyend="863"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="370" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="672" bodyend="771"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -459,9 +212,21 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
+      <node id="4">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
+      <node id="3">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::CellConservativeLinear</label>
+        <link refid="classamrex_1_1CellConservativeLinear"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -471,23 +236,39 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="2">
+      <node id="4">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
+      <node id="3">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>amrex::CellConservativeLinear</label>
+        <link refid="classamrex_1_1CellConservativeLinear"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="379" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="376" bodyend="470"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="341" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="338" bodyend="383"/>
     <listofallmembers>
-      <member refid="classamrex_1_1Interpolater_1a076d83ba84b125ee187a18aa8d60ee3e" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>BoxCoarsener</name></member>
+      <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>BoxCoarsener</name></member>
+      <member refid="classamrex_1_1CellConservativeLinear_1a47aef6594f54746b09c4230b68f4e978" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>CellConservativeLinear</name></member>
       <member refid="classamrex_1_1CellConservativeProtected_1aced526a1e706c7fce0c1b715639f2270" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>CellConservativeProtected</name></member>
-      <member refid="classamrex_1_1CellConservativeProtected_1a4f7eb5ba7fb671882f36ee30f4550fc8" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>CoarseBox</name></member>
-      <member refid="classamrex_1_1CellConservativeProtected_1aeff3c15e21d4b54bc1e4e514178e7e3e" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>CoarseBox</name></member>
-      <member refid="classamrex_1_1Interpolater_1aa2f8d685993329ef439ea2925bee9cc7" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>GetBCArray</name></member>
-      <member refid="classamrex_1_1CellConservativeProtected_1a563e6340c8ed5b150a5e8be428e894c1" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>interp</name></member>
+      <member refid="classamrex_1_1CellConservativeLinear_1aeec138a1454f98de65aa6ec019a1cdc4" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>CoarseBox</name></member>
+      <member refid="classamrex_1_1CellConservativeLinear_1ac9afd317e78f1c6d5581c251a9afe819" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>CoarseBox</name></member>
+      <member refid="classamrex_1_1CellConservativeLinear_1a7817252503faedf1d87fcbdcc89c3509" prot="protected" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>do_linear_limiting</name></member>
+      <member refid="classamrex_1_1InterpBase_1ad9523dae9903f59fc43bb7df17e2250e" prot="public" virt="non-virtual"><scope>amrex::CellConservativeProtected</scope><name>GetBCArray</name></member>
+      <member refid="classamrex_1_1CellConservativeLinear_1a13a7efe51d0c733078c1a313bcfa4efe" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>interp</name></member>
       <member refid="classamrex_1_1Interpolater_1a78550a1ab625c31eb7d5172bc7ff006a" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>interp_arr</name></member>
       <member refid="classamrex_1_1CellConservativeProtected_1a5e016fbb584d8be19d11e1963fe361ea" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>protect</name></member>
+      <member refid="classamrex_1_1CellConservativeLinear_1a6d6fcd6f8a4397afacebc3e357fa70e4" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>~CellConservativeLinear</name></member>
       <member refid="classamrex_1_1CellConservativeProtected_1a87a2026365c83b9f2014bd5df9f4b96d" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>~CellConservativeProtected</name></member>
-      <member refid="classamrex_1_1Interpolater_1ad53e63eaa9b2b9b140c98f73969f2164" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>~Interpolater</name></member>
+      <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>~InterpBase</name></member>
+      <member refid="classamrex_1_1Interpolater_1a48000082339f7edb658f96bc4e558eca" prot="public" virt="virtual"><scope>amrex::CellConservativeProtected</scope><name>~Interpolater</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

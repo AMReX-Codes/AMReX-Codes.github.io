@@ -17,14 +17,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="243" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="285" bodyend="285"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="209" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="266" bodyend="266"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CellBilinear_1a445fff6a6e918e4b4a60392ecef5844c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
         <definition>Box amrex::CellBilinear::CoarseBox</definition>
         <argsstring>(const Box &amp;fine, int ratio) override</argsstring>
         <name>CoarseBox</name>
-        <reimplements refid="classamrex_1_1Interpolater_1aa19cea2a6579112e6cf2fa2fb52ba6b6">CoarseBox</reimplements>
+        <reimplements refid="classamrex_1_1InterpBase_1a7120153e965f22098f7cd888274f5c6b">CoarseBox</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
           <declname>fine</declname>
@@ -58,14 +58,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="251" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="288" bodyend="292"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="217" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="269" bodyend="273"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CellBilinear_1adcc32c2aaefbaa1bb23f0b87cbdd5265" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
         <definition>Box amrex::CellBilinear::CoarseBox</definition>
         <argsstring>(const Box &amp;fine, const IntVect &amp;ratio) override</argsstring>
         <name>CoarseBox</name>
-        <reimplements refid="classamrex_1_1Interpolater_1a8afbd6f779bee1ec37defb7c0f03deb5">CoarseBox</reimplements>
+        <reimplements refid="classamrex_1_1InterpBase_1a684e90cd5708cc5746e653c6decc75d1">CoarseBox</reimplements>
         <param>
           <type>const <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &amp;</type>
           <declname>fine</declname>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="260" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="295" bodyend="315"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="225" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="276" bodyend="296"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1CellBilinear_1a5420f98e42bfbf8002f455341e69ffcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -264,7 +264,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="279" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="318" bodyend="364"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="243" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="299" bodyend="345"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -274,6 +274,10 @@
 <para>Bilinear interpolation on cell centered data. </para>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
       <node id="1">
         <label>amrex::CellBilinear</label>
         <link refid="classamrex_1_1CellBilinear"/>
@@ -283,9 +287,15 @@
       <node id="2">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="3">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
       <node id="1">
         <label>amrex::CellBilinear</label>
         <link refid="classamrex_1_1CellBilinear"/>
@@ -295,19 +305,22 @@
       <node id="2">
         <label>amrex::Interpolater</label>
         <link refid="classamrex_1_1Interpolater"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="237" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="234" bodyend="292"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="203" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="200" bodyend="256"/>
     <listofallmembers>
-      <member refid="classamrex_1_1Interpolater_1a076d83ba84b125ee187a18aa8d60ee3e" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>BoxCoarsener</name></member>
+      <member refid="classamrex_1_1InterpBase_1ab2961b67ebd3fabbf32afe103267ad59" prot="public" virt="non-virtual"><scope>amrex::CellBilinear</scope><name>BoxCoarsener</name></member>
       <member refid="classamrex_1_1CellBilinear_1a445fff6a6e918e4b4a60392ecef5844c" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>CoarseBox</name></member>
       <member refid="classamrex_1_1CellBilinear_1adcc32c2aaefbaa1bb23f0b87cbdd5265" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>CoarseBox</name></member>
-      <member refid="classamrex_1_1Interpolater_1aa2f8d685993329ef439ea2925bee9cc7" prot="public" virt="non-virtual"><scope>amrex::CellBilinear</scope><name>GetBCArray</name></member>
+      <member refid="classamrex_1_1InterpBase_1ad9523dae9903f59fc43bb7df17e2250e" prot="public" virt="non-virtual"><scope>amrex::CellBilinear</scope><name>GetBCArray</name></member>
       <member refid="classamrex_1_1CellBilinear_1a5420f98e42bfbf8002f455341e69ffcc" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>interp</name></member>
       <member refid="classamrex_1_1Interpolater_1a78550a1ab625c31eb7d5172bc7ff006a" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>interp_arr</name></member>
       <member refid="classamrex_1_1Interpolater_1aee6fb8b99ca4282e5f9e9122b9b37cf1" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>protect</name></member>
       <member refid="classamrex_1_1CellBilinear_1a6029864465ef31a538c6a57504a5bcb1" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>~CellBilinear</name></member>
-      <member refid="classamrex_1_1Interpolater_1ad53e63eaa9b2b9b140c98f73969f2164" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>~Interpolater</name></member>
+      <member refid="classamrex_1_1InterpBase_1a73cb181d9364c6005abfcfdb54037291" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>~InterpBase</name></member>
+      <member refid="classamrex_1_1Interpolater_1a48000082339f7edb658f96bc4e558eca" prot="public" virt="virtual"><scope>amrex::CellBilinear</scope><name>~Interpolater</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

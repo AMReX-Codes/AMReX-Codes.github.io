@@ -449,8 +449,8 @@ var hierarchy =
     [ "amrex::Greater< T >", "structamrex_1_1Greater.html", null ],
     [ "amrex::Gpu::GridSize", "structamrex_1_1Gpu_1_1GridSize.html", null ],
     [ "amrex::Gpu::Handler", "structamrex_1_1Gpu_1_1Handler.html", null ],
-    [ "amrex::CArena::Node::hash", "structamrex_1_1CArena_1_1Node_1_1hash.html", null ],
     [ "amrex::EArena::Node::hash", "structamrex_1_1EArena_1_1Node_1_1hash.html", null ],
+    [ "amrex::CArena::Node::hash", "structamrex_1_1CArena_1_1Node_1_1hash.html", null ],
     [ "amrex::VisMF::Header", "structamrex_1_1VisMF_1_1Header.html", null ],
     [ "amrex::Gpu::HostToDevice", "structamrex_1_1Gpu_1_1HostToDevice.html", null ],
     [ "amrex::Hypre", "classamrex_1_1Hypre.html", [
@@ -479,18 +479,23 @@ var hierarchy =
     ] ],
     [ "amrex::AmrDataAdaptor::InternalsType", "structamrex_1_1AmrDataAdaptor_1_1InternalsType.html", null ],
     [ "amrex::AmrMeshDataAdaptor::InternalsType", "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html", null ],
-    [ "amrex::Interpolater", "classamrex_1_1Interpolater.html", [
-      [ "amrex::CellBilinear", "classamrex_1_1CellBilinear.html", null ],
-      [ "amrex::CellConservativeLinear", "classamrex_1_1CellConservativeLinear.html", [
-        [ "amrex::EBCellConservativeLinear", "classamrex_1_1EBCellConservativeLinear.html", null ]
+    [ "amrex::InterpBase", "classamrex_1_1InterpBase.html", [
+      [ "amrex::Interpolater", "classamrex_1_1Interpolater.html", [
+        [ "amrex::CellBilinear", "classamrex_1_1CellBilinear.html", null ],
+        [ "amrex::CellConservativeLinear", "classamrex_1_1CellConservativeLinear.html", [
+          [ "amrex::CellConservativeProtected", "classamrex_1_1CellConservativeProtected.html", null ],
+          [ "amrex::EBCellConservativeLinear", "classamrex_1_1EBCellConservativeLinear.html", null ]
+        ] ],
+        [ "amrex::CellConservativeQuartic", "classamrex_1_1CellConservativeQuartic.html", null ],
+        [ "amrex::CellQuadratic", "classamrex_1_1CellQuadratic.html", null ],
+        [ "amrex::FaceDivFree", "classamrex_1_1FaceDivFree.html", null ],
+        [ "amrex::FaceLinear", "classamrex_1_1FaceLinear.html", null ],
+        [ "amrex::NodeBilinear", "classamrex_1_1NodeBilinear.html", null ],
+        [ "amrex::PCInterp", "classamrex_1_1PCInterp.html", null ]
       ] ],
-      [ "amrex::CellConservativeProtected", "classamrex_1_1CellConservativeProtected.html", null ],
-      [ "amrex::CellConservativeQuartic", "classamrex_1_1CellConservativeQuartic.html", null ],
-      [ "amrex::CellQuadratic", "classamrex_1_1CellQuadratic.html", null ],
-      [ "amrex::FaceDivFree", "classamrex_1_1FaceDivFree.html", null ],
-      [ "amrex::FaceLinear", "classamrex_1_1FaceLinear.html", null ],
-      [ "amrex::NodeBilinear", "classamrex_1_1NodeBilinear.html", null ],
-      [ "amrex::PCInterp", "classamrex_1_1PCInterp.html", null ]
+      [ "amrex::MFInterpolater", "classamrex_1_1MFInterpolater.html", [
+        [ "amrex::MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", null ]
+      ] ]
     ] ],
     [ "amrex::algoim::Interval", "structamrex_1_1algoim_1_1Interval.html", null ],
     [ "amrex::IntVect", "classamrex_1_1IntVect.html", null ],
@@ -648,9 +653,9 @@ var hierarchy =
     [ "amrex::NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::NodalProjector", "classamrex_1_1NodalProjector.html", null ],
+    [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::EArena::Node", "structamrex_1_1EArena_1_1Node.html", null ],
-    [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],
     [ "amrex::NullInterpHook< FAB >", "structamrex_1_1NullInterpHook.html", null ],
@@ -924,7 +929,7 @@ var hierarchy =
       [ "amrex::Vector< amrex::ForkJoin::ComponentSet >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::Geometry >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::GpuArray< amrex::MLCellLinOp::BCTL, 2 *3 > * >", "classamrex_1_1Vector.html", null ],
-      [ "amrex::Vector< amrex::Interpolater * >", "classamrex_1_1Vector.html", null ],
+      [ "amrex::Vector< amrex::InterpBase * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::IntVect >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::MultiFab * >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< amrex::MultiFab >", "classamrex_1_1Vector.html", null ],

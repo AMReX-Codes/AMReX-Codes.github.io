@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
-  <compounddef id="classamrex_1_1InterpolaterBoxCoarsener" kind="class" language="C++" prot="public">
+  <compounddef id="classamrex_1_1InterpolaterBoxCoarsener" kind="class" language="C++" prot="public" final="yes">
     <compoundname>amrex::InterpolaterBoxCoarsener</compoundname>
     <basecompoundref refid="classamrex_1_1BoxConverter" prot="public" virt="non-virtual">amrex::BoxConverter</basecompoundref>
-    <includes refid="AMReX__Interpolater_8H" local="no">AMReX_Interpolater.H</includes>
+    <includes refid="AMReX__InterpBase_8H" local="no">AMReX_InterpBase.H</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1InterpolaterBoxCoarsener_1a09f94a205cf0233f2b94c82505449ebd" prot="private" static="no" mutable="no">
-        <type><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref> *</type>
-        <definition>Interpolater* amrex::InterpolaterBoxCoarsener::mapper</definition>
+      <memberdef kind="variable" id="classamrex_1_1InterpolaterBoxCoarsener_1ad3e56481c923c022bd9cfca822473ea6" prot="private" static="no" mutable="no">
+        <type><ref refid="classamrex_1_1InterpBase" kindref="compound">InterpBase</ref> *</type>
+        <definition>InterpBase* amrex::InterpolaterBoxCoarsener::mapper</definition>
         <argsstring></argsstring>
         <name>mapper</name>
         <briefdescription>
@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="920" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="920" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="22" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1InterpolaterBoxCoarsener_1a38dd7e762f41ec784b5dfd70109bb3a8" prot="private" static="no" mutable="no">
         <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref></type>
@@ -29,17 +29,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="921" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="921" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="23" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classamrex_1_1InterpolaterBoxCoarsener_1a1e97f18d49b2df1321f821488c980c7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1InterpolaterBoxCoarsener_1ae476a5ba50fe4213159eb44a6796a2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>amrex::InterpolaterBoxCoarsener::InterpolaterBoxCoarsener</definition>
-        <argsstring>(Interpolater *mapper_, const IntVect &amp;ratio_)</argsstring>
+        <argsstring>(InterpBase *mapper_, const IntVect &amp;ratio_)</argsstring>
         <name>InterpolaterBoxCoarsener</name>
         <param>
-          <type><ref refid="classamrex_1_1Interpolater" kindref="compound">Interpolater</ref> *</type>
+          <type><ref refid="classamrex_1_1InterpBase" kindref="compound">InterpBase</ref> *</type>
           <declname>mapper_</declname>
         </param>
         <param>
@@ -52,7 +52,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="910" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="910" bodyend="911"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="17" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classamrex_1_1InterpolaterBoxCoarsener_1a24454d806dd271c0003bb90db56badb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>amrex::InterpolaterBoxCoarsener::~InterpolaterBoxCoarsener</definition>
+        <argsstring>()</argsstring>
+        <name>~InterpolaterBoxCoarsener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="18" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.cpp" bodystart="9" bodyend="9"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1InterpolaterBoxCoarsener_1a7ebac92d32c9d7157c6bc47c0c8eb33c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref></type>
@@ -67,20 +80,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>fine</parametername>
-</parameternamelist>
-<parameterdescription>
-<para></para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="917" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="56" bodyend="59"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="19" column="17" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.cpp" bodystart="12" bodyend="15"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1InterpolaterBoxCoarsener_1a09cd1665562b5bbe4c181214470a66ea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="classamrex_1_1BoxConverter" kindref="compound">BoxConverter</ref> *</type>
@@ -94,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="918" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.cpp" bodystart="62" bodyend="65"/>
+        <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="20" column="26" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.cpp" bodystart="18" bodyend="21"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -114,6 +117,10 @@
       </node>
     </inheritancegraph>
     <collaborationgraph>
+      <node id="4">
+        <label>amrex::InterpBase</label>
+        <link refid="classamrex_1_1InterpBase"/>
+      </node>
       <node id="3">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
@@ -121,10 +128,6 @@
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
-      </node>
-      <node id="4">
-        <label>amrex::Interpolater</label>
-        <link refid="classamrex_1_1Interpolater"/>
       </node>
       <node id="2">
         <label>amrex::BoxConverter</label>
@@ -143,14 +146,15 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" line="908" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_Interpolater.H" bodystart="906" bodyend="922"/>
+    <location file="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" line="15" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_InterpBase.H" bodystart="13" bodyend="24"/>
     <listofallmembers>
       <member refid="classamrex_1_1InterpolaterBoxCoarsener_1a09cd1665562b5bbe4c181214470a66ea" prot="public" virt="virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>clone</name></member>
       <member refid="classamrex_1_1InterpolaterBoxCoarsener_1a7ebac92d32c9d7157c6bc47c0c8eb33c" prot="public" virt="virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>doit</name></member>
-      <member refid="classamrex_1_1InterpolaterBoxCoarsener_1a1e97f18d49b2df1321f821488c980c7d" prot="public" virt="non-virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>InterpolaterBoxCoarsener</name></member>
-      <member refid="classamrex_1_1InterpolaterBoxCoarsener_1a09f94a205cf0233f2b94c82505449ebd" prot="private" virt="non-virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>mapper</name></member>
+      <member refid="classamrex_1_1InterpolaterBoxCoarsener_1ae476a5ba50fe4213159eb44a6796a2a3" prot="public" virt="non-virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>InterpolaterBoxCoarsener</name></member>
+      <member refid="classamrex_1_1InterpolaterBoxCoarsener_1ad3e56481c923c022bd9cfca822473ea6" prot="private" virt="non-virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>mapper</name></member>
       <member refid="classamrex_1_1InterpolaterBoxCoarsener_1a38dd7e762f41ec784b5dfd70109bb3a8" prot="private" virt="non-virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>ratio</name></member>
       <member refid="classamrex_1_1BoxConverter_1ac8cf3b117a120af92b38b5e9d25fcf23" prot="public" virt="pure-virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>~BoxConverter</name></member>
+      <member refid="classamrex_1_1InterpolaterBoxCoarsener_1a24454d806dd271c0003bb90db56badb6" prot="public" virt="virtual"><scope>amrex::InterpolaterBoxCoarsener</scope><name>~InterpolaterBoxCoarsener</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>
