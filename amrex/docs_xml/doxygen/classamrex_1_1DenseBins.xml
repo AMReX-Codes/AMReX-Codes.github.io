@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="191" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="191" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="182" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="182" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1DenseBins_1a623ca19d23cde1c4b8a7de8c685f43db" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> &gt;</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="193" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="193" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="184" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="184" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> &gt;</type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="194" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="194" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="185" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> &gt;</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="195" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="195" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="186" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classamrex_1_1DenseBins_1ad40e15a5e019a0a7afa527c6226e7675" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1_1Gpu_1a99e1f048890efc1c275606cb9bdc41c7" kindref="member">Gpu::DeviceVector</ref>&lt; <ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> &gt;</type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="196" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="196" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="187" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="187" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -138,6 +138,7 @@
         </briefdescription>
         <detaileddescription>
 <para>The algorithm is similar to a counting sort. First, we count the number of items in each bin. Then, we perform a prefix sum on the resulting counts. Finally, the set of partial sums is incremented in parallel using atomicInc, which results in a permutation array that places the items in bin-sorted order.</para>
+<para>This version uses a 3D box to specificy the index space over which the bins are defined.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>N</parametername>
@@ -192,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="77" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="77" bodyend="124"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="80" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="80" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1a4c7d40c3975acb725e9d2b5e76f4d2d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -224,12 +225,66 @@
           <declname>f</declname>
         </param>
         <briefdescription>
+<para>Populate the bins with a set of items. </para>
         </briefdescription>
         <detaileddescription>
+<para>The algorithm is similar to a counting sort. First, we count the number of items in each bin. Then, we perform a prefix sum on the resulting counts. Finally, the set of partial sums is incremented in parallel using atomicInc, which results in a permutation array that places the items in bin-sorted order.</para>
+<para>This version uses a 1D index space for the set of bins.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the &apos;size&apos; type that can enumerate all the items </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>F</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function that maps items to <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> bins</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nitems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of items to put in the bins </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the start of the items </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nbins</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of bins to use </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a function object that maps items to bins </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="127" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="127" bodyend="163"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="118" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="118" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1ad79436d29055a095ee8a8ffab36475d3" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>Long</type>
@@ -243,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="166" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="166" bodyend="166"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="157" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="157" bodyend="157"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1af98199a3fd0f724083761ddea28e4606" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>Long</type>
@@ -257,7 +312,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="169" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="169" bodyend="169"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="160" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="160" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1ab50df3946feebe789f41c7d01762a30b" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> *</type>
@@ -271,7 +326,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="172" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="172" bodyend="172"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="163" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="163" bodyend="163"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1a3448e9a533b211d486f42f06f9736218" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> *</type>
@@ -285,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="175" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="175" bodyend="175"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="166" column="16" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="166" bodyend="166"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1a8f49f54a25549e053bb63d0e72d751e1" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> *</type>
@@ -299,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="178" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="178" bodyend="178"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="169" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="169" bodyend="169"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1a594a9ba943cde14aeec576817d575b6a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type>const <ref refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kindref="member">index_type</ref> *</type>
@@ -313,7 +368,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="181" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="181" bodyend="181"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="172" column="22" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="172" bodyend="172"/>
       </memberdef>
       <memberdef kind="function" id="classamrex_1_1DenseBins_1a8c1a462b3aaa2193672c14d26a56601a" prot="public" static="no" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="structamrex_1_1DenseBinIteratorFactory" kindref="compound">DenseBinIteratorFactory</ref>&lt; T &gt;</type>
@@ -327,7 +382,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="184" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="184" bodyend="187"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="175" column="29" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="175" bodyend="178"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -335,7 +390,7 @@
     </briefdescription>
     <detaileddescription>
 <para>The underlying data structure is an array of size nitems defining a permutation of the items in the container that puts them in bin-sorted order, plus an array of size nbins+1 that stores the offsets into the permutation array where each bin starts.</para>
-<para>The storage for the bins is &quot;dense&quot; in the sense that users pass in a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> that defines the space over which the bins will be defined, and empty bins will still take up space.</para>
+<para>The storage for the bins is &quot;dense&quot; in the sense that users pass in either a <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> or an integer that defines the space over which the bins will be defined, and empty bins will still take up space.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>The</parametername>
@@ -368,7 +423,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="54" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="53" bodyend="197"/>
+    <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" line="54" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_DenseBins.H" bodystart="53" bodyend="188"/>
     <listofallmembers>
       <member refid="classamrex_1_1DenseBins_1ae914634726f075979b5e855a5fda0924" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>BinIteratorFactory</name></member>
       <member refid="classamrex_1_1DenseBins_1a5eb07c849d5749bf5aa71d0d2727201d" prot="public" virt="non-virtual"><scope>amrex::DenseBins</scope><name>build</name></member>

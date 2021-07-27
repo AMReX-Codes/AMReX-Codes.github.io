@@ -125,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5eb07c849d5749bf5aa71d0d2727201d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="memTemplParams" colspan="2">template&lt;typename N , typename F &gt; </td></tr>
 <tr class="memitem:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#a4c7d40c3975acb725e9d2b5e76f4d2d1">build</a> (<a class="el" href="namespaceamrex.html#af1a6e68ce22e31df053e21b069ecdcfb">N</a> nitems, T const *v, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> nbins, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f)</td></tr>
+<tr class="memdesc:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the bins with a set of items.  <a href="classamrex_1_1DenseBins.html#a4c7d40c3975acb725e9d2b5e76f4d2d1">More...</a><br /></td></tr>
 <tr class="separator:a4c7d40c3975acb725e9d2b5e76f4d2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad79436d29055a095ee8a8ffab36475d3"><td class="memItemLeft" align="right" valign="top">Long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3">numItems</a> () const noexcept</td></tr>
 <tr class="memdesc:ad79436d29055a095ee8a8ffab36475d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of items in the container  <a href="classamrex_1_1DenseBins.html#ad79436d29055a095ee8a8ffab36475d3">More...</a><br /></td></tr>
@@ -167,7 +168,7 @@ class amrex::DenseBins&lt; T &gt;</h3>
 
 <p>A container for storing items in a set of bins. </p>
 <p>The underlying data structure is an array of size nitems defining a permutation of the items in the container that puts them in bin-sorted order, plus an array of size nbins+1 that stores the offsets into the permutation array where each bin starts.</p>
-<p>The storage for the bins is "dense" in the sense that users pass in a <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a> that defines the space over which the bins will be defined, and empty bins will still take up space.</p>
+<p>The storage for the bins is "dense" in the sense that users pass in either a <a class="el" href="classamrex_1_1Box.html" title="A Rectangular Domain on an Integer Lattice.">Box</a> or an integer that defines the space over which the bins will be defined, and empty bins will still take up space.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">The</td><td>type of items we hold </td></tr>
@@ -260,6 +261,7 @@ template&lt;typename N , typename F &gt; </div>
 
 <p>Populate the bins with a set of items. </p>
 <p>The algorithm is similar to a counting sort. First, we count the number of items in each bin. Then, we perform a prefix sum on the resulting counts. Finally, the set of partial sums is incremented in parallel using atomicInc, which results in a permutation array that places the items in bin-sorted order.</p>
+<p>This version uses a 3D box to specificy the index space over which the bins are defined.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">N</td><td>the 'size' type that can enumerate all the items </td></tr>
@@ -328,6 +330,26 @@ template&lt;typename N , typename F &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Populate the bins with a set of items. </p>
+<p>The algorithm is similar to a counting sort. First, we count the number of items in each bin. Then, we perform a prefix sum on the resulting counts. Finally, the set of partial sums is incremented in parallel using atomicInc, which results in a permutation array that places the items in bin-sorted order.</p>
+<p>This version uses a 1D index space for the set of bins.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">N</td><td>the 'size' type that can enumerate all the items </td></tr>
+    <tr><td class="paramname">F</td><td>a function that maps items to <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> bins</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nitems</td><td>the number of items to put in the bins </td></tr>
+    <tr><td class="paramname">v</td><td>pointer to the start of the items </td></tr>
+    <tr><td class="paramname">nbins</td><td>the number of bins to use </td></tr>
+    <tr><td class="paramname">f</td><td>a function object that maps items to bins </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
