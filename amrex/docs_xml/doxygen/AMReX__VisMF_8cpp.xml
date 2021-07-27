@@ -2077,11 +2077,11 @@
 <codeline lineno="149"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;VisMF::FabOnDisk&gt;&amp;<sp/>fa)</highlight></codeline>
 <codeline lineno="151"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(fa.size());</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/>N(fa.size());</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>N<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>fa[i]<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="159"><highlight class="normal"></highlight></codeline>
@@ -2096,14 +2096,14 @@
 <codeline lineno="168"><highlight class="normal"><ref refid="namespaceamrex_1aac7b44499bc56506bcf5ed89ec42bc09" kindref="member">operator&gt;&gt; </ref>(std::istream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is,</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;VisMF::FabOnDisk&gt;&amp;<sp/>fa)</highlight></codeline>
 <codeline lineno="170"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/>N;</highlight></codeline>
 <codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>&gt;=<sp/>0);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>N;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(N<sp/>&gt;=<sp/>0);</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>fa.resize(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>fa.resize(N);</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>fa[i];</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
@@ -2119,11 +2119,11 @@
 <codeline lineno="191"><highlight class="normal"><ref refid="namespaceamrex_1ae4eb9d3fef37595defb201fde203bae6" kindref="member">operator&lt;&lt; </ref>(std::ostream&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os,</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;<sp/>Vector&lt;Real&gt;<sp/>&gt;&amp;<sp/>ar)</highlight></codeline>
 <codeline lineno="193"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(ar.size()),<sp/>M<sp/>=<sp/>(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>==<sp/>0)<sp/>?<sp/>0<sp/>:<sp/>ar[0].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/>N(ar.size()),<sp/>M<sp/>=<sp/>(N<sp/>==<sp/>0)<sp/>?<sp/>0<sp/>:<sp/>ar[0].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>();</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>M<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>os<sp/>&lt;&lt;<sp/>N<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>M<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="197"><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1a53ebc8b227de416f458800faa44c619e" kindref="member">BL_ASSERT</ref>(ar[i].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>()<sp/>==<sp/>M);</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(Long<sp/>j(0);<sp/>j<sp/>&lt;<sp/>M;<sp/>++j)<sp/>{</highlight></codeline>
@@ -2145,14 +2145,14 @@
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;<sp/>Vector&lt;Real&gt;<sp/>&gt;&amp;<sp/>ar)</highlight></codeline>
 <codeline lineno="218"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ch;</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>,<sp/>M;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>Long<sp/>i(0),<sp/>N,<sp/>M;</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BL_USE_FLOAT</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dtemp;</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>&gt;&gt;<sp/>ch<sp/>&gt;&gt;<sp/>M;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>is<sp/>&gt;&gt;<sp/>N<sp/>&gt;&gt;<sp/>ch<sp/>&gt;&gt;<sp/>M;</highlight></codeline>
 <codeline lineno="226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>&lt;<sp/>0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>N<sp/>&lt;<sp/>0<sp/>)<sp/>{</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;Expected<sp/>a<sp/>positive<sp/>integer,<sp/>N,<sp/>got<sp/>something<sp/>else&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>M<sp/>&lt;<sp/>0<sp/>)<sp/>{</highlight></codeline>
@@ -2162,9 +2162,9 @@
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aaa5d048f7bf7386b6976b10001a5f8b4" kindref="member">amrex::Error</ref>(</highlight><highlight class="stringliteral">&quot;Expected<sp/>a<sp/>&apos;,&apos;<sp/>got<sp/>something<sp/>else&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"></highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>ar.resize(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>ar.resize(N);</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"></highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ar[i].resize(M);</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"></highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(Long<sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>M;<sp/>++j)<sp/>{</highlight></codeline>
@@ -2665,18 +2665,18 @@
 <codeline lineno="737"><highlight class="normal"></highlight></codeline>
 <codeline lineno="738"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;<sp/>&amp;pmap<sp/>=<sp/>mf.DistributionMap().ProcessorMap();</highlight></codeline>
 <codeline lineno="739"><highlight class="normal"></highlight></codeline>
-<codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>=<sp/>mf.size();<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/>N<sp/>=<sp/>mf.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++nmtags[pmap[i]];</highlight></codeline>
 <codeline lineno="742"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="743"><highlight class="normal"></highlight></codeline>
-<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(nmtags.size());<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/>N(nmtags.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="745"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="746"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Each<sp/>Fab<sp/>corresponds<sp/>to<sp/>2*m_ncomp<sp/>Reals.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="747"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="748"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nmtags[i]<sp/>*=<sp/>2*m_ncomp;</highlight></codeline>
 <codeline lineno="749"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="750"><highlight class="normal"></highlight></codeline>
-<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(1),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(offset.size());<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="751"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(1),<sp/>N(offset.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="752"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>nmtags[i-1];</highlight></codeline>
 <codeline lineno="753"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="754"><highlight class="normal"></highlight></codeline>
@@ -2721,14 +2721,14 @@
 <codeline lineno="793"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>(comm),<sp/>BLProfiler::AfterCall());</highlight></codeline>
 <codeline lineno="794"><highlight class="normal"></highlight></codeline>
 <codeline lineno="795"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>(comm)<sp/>==<sp/>procToWrite)<sp/>{</highlight></codeline>
-<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(mf.size());<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="796"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/>N(mf.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="797"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pmap[i]<sp/>!=<sp/>procToWrite)<sp/>{</highlight></codeline>
 <codeline lineno="798"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_min[i].resize(m_ncomp);</highlight></codeline>
 <codeline lineno="799"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_max[i].resize(m_ncomp);</highlight></codeline>
 <codeline lineno="800"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="801"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="802"><highlight class="normal"></highlight></codeline>
-<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(mf.size());<sp/>j<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="803"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j(0),<sp/>N(mf.size());<sp/>j<sp/>&lt;<sp/>N;<sp/>++j)<sp/>{</highlight></codeline>
 <codeline lineno="804"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pmap[j]<sp/>!=<sp/>procToWrite)<sp/>{</highlight></codeline>
 <codeline lineno="805"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k(0);<sp/>k<sp/>&lt;<sp/>m_ncomp;<sp/>++k)<sp/>{</highlight></codeline>
 <codeline lineno="806"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_min[j][k]<sp/>=<sp/>recvdata[offset[pmap[j]]+k];</highlight></codeline>
@@ -3121,11 +3121,11 @@
 <codeline lineno="1193"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;int&gt;<sp/>&amp;pmap<sp/>=<sp/>mf.DistributionMap().ProcessorMap();</highlight></codeline>
 <codeline lineno="1195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(mf.size());<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(0),<sp/>N(mf.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="1197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++nmtags[pmap[i]];</highlight></codeline>
 <codeline lineno="1198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1199"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(1),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(offset.size());<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="1200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(1),<sp/>N(offset.size());<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="1201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>offset[i]<sp/>=<sp/>offset[i-1]<sp/>+<sp/>nmtags[i-1];</highlight></codeline>
 <codeline lineno="1202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1203"><highlight class="normal"></highlight></codeline>
@@ -3165,7 +3165,7 @@
 <codeline lineno="1237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(myProc<sp/>==<sp/>coordinatorProc)<sp/>{</highlight></codeline>
 <codeline lineno="1238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>cnt(nProcs,0);</highlight></codeline>
 <codeline lineno="1239"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(mf.size());<sp/>j<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++j)<sp/>{</highlight></codeline>
+<codeline lineno="1240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j(0),<sp/>N(mf.size());<sp/>j<sp/>&lt;<sp/>N;<sp/>++j)<sp/>{</highlight></codeline>
 <codeline lineno="1241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i(pmap[j]);</highlight></codeline>
 <codeline lineno="1242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hdr.m_fod[j].m_head<sp/>=<sp/>recvdata[offset[i]+cnt[i]];</highlight></codeline>
 <codeline lineno="1243"><highlight class="normal"></highlight></codeline>
@@ -3313,7 +3313,7 @@
 <codeline lineno="1385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n(0);<sp/>n<sp/>&lt;<sp/>m_pa.size();<sp/>++n)<sp/>{</highlight></codeline>
 <codeline lineno="1386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pa[n].resize(m_hdr.m_ba.size());</highlight></codeline>
 <codeline lineno="1387"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(m_pa[n].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>());<sp/>ii<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++ii)<sp/>{</highlight></codeline>
+<codeline lineno="1388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ii(0),<sp/>N(m_pa[n].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>());<sp/>ii<sp/>&lt;<sp/>N;<sp/>++ii)<sp/>{</highlight></codeline>
 <codeline lineno="1389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pa[n][ii]<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="1390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="1391"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -4063,7 +4063,7 @@
 <codeline lineno="2135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2136"><highlight class="normal">VisMF::clear<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex)</highlight></codeline>
 <codeline lineno="2137"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(m_pa.size());<sp/>ncomp<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++ncomp)<sp/>{</highlight></codeline>
+<codeline lineno="2138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp(0),<sp/>N(m_pa.size());<sp/>ncomp<sp/>&lt;<sp/>N;<sp/>++ncomp)<sp/>{</highlight></codeline>
 <codeline lineno="2139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear(ncomp,<sp/>fabIndex);</highlight></codeline>
 <codeline lineno="2140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2141"><highlight class="normal">}</highlight></codeline>
@@ -4071,7 +4071,7 @@
 <codeline lineno="2143"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2144"><highlight class="normal">VisMF::clear<sp/>()</highlight></codeline>
 <codeline lineno="2145"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="2146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp(0),<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>(m_pa.size());<sp/>ncomp<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++ncomp)<sp/>{</highlight></codeline>
+<codeline lineno="2146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp(0),<sp/>N(m_pa.size());<sp/>ncomp<sp/>&lt;<sp/>N;<sp/>++ncomp)<sp/>{</highlight></codeline>
 <codeline lineno="2147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fabIndex(0),<sp/>M(m_pa[ncomp].<ref refid="namespaceamrex_1_1Gpu_1_1range__detail_1a57949ca6008ad4fe7edb4e00741b1906" kindref="member">size</ref>());<sp/>fabIndex<sp/>&lt;<sp/>M;<sp/>++fabIndex)<sp/>{</highlight></codeline>
 <codeline lineno="2148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clear(ncomp,<sp/>fabIndex);</highlight></codeline>
 <codeline lineno="2149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>

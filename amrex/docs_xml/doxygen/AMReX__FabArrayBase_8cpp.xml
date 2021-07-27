@@ -2307,7 +2307,7 @@
 <codeline lineno="492"><highlight class="normal"></highlight></codeline>
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
 <codeline lineno="494"><highlight class="normal"></highlight></codeline>
-<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>=<sp/>ba.size();<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>ba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>src_owner<sp/>=<sp/>srcdm[i];</highlight></codeline>
 <codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dst_owner<sp/>=<sp/>dstdm[i];</highlight></codeline>
@@ -3773,7 +3773,7 @@
 <codeline lineno="1958"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;int&gt;<sp/>iprocs;</highlight></codeline>
 <codeline lineno="1959"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>myproc<sp/>=<sp/><ref refid="namespaceamrex_1_1ParallelDescriptor_1a33162ef233c092e9e6fd75ab291b9b29" kindref="member">ParallelDescriptor::MyProc</ref>();</highlight></codeline>
 <codeline lineno="1960"><highlight class="normal"></highlight></codeline>
-<codeline lineno="1961"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>=<sp/>fba.size();<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)</highlight></codeline>
+<codeline lineno="1961"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0,<sp/>N<sp/>=<sp/>fba.size();<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="1962"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1963"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bx<sp/>=<sp/>fba[i];</highlight></codeline>
 <codeline lineno="1964"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx.grow(m_ng);</highlight></codeline>
@@ -3965,11 +3965,11 @@
 <codeline lineno="2150"><highlight class="normal">FabArrayBase::buildTileArray<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>IntVect&amp;<sp/>tileSize,<sp/>TileArray&amp;<sp/>ta)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="2151"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="2152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Note<sp/>that<sp/>we<sp/>store<sp/>Tiles<sp/>always<sp/>as<sp/>cell-centered<sp/>boxes,<sp/>even<sp/>if<sp/>the<sp/>boxarray<sp/>is<sp/>nodal.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>=<sp/>indexArray.size();</highlight></codeline>
+<codeline lineno="2153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>indexArray.size();</highlight></codeline>
 <codeline lineno="2154"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tileSize<sp/>==<sp/>IntVect::TheZeroVector())</highlight></codeline>
 <codeline lineno="2156"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="2157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>;<sp/>++i)</highlight></codeline>
+<codeline lineno="2157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>N;<sp/>++i)</highlight></codeline>
 <codeline lineno="2158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="2159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isOwner(i))</highlight></codeline>
 <codeline lineno="2160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -3985,7 +3985,7 @@
 <codeline lineno="2170"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2172"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="2173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>local_idxs(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>);</highlight></codeline>
+<codeline lineno="2173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>local_idxs(N);</highlight></codeline>
 <codeline lineno="2174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::iota(<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">std::begin</ref>(local_idxs),<sp/><ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">std::end</ref>(local_idxs),<sp/>0);</highlight></codeline>
 <codeline lineno="2175"><highlight class="normal"></highlight></codeline>
 <codeline lineno="2176"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(BL_USE_TEAM)</highlight><highlight class="normal"></highlight></codeline>
@@ -4307,13 +4307,13 @@
 <codeline lineno="2492"><highlight class="normal"><sp/><sp/><sp/><sp/>Vector&lt;Long&gt;<sp/>ncells;</highlight></codeline>
 <codeline lineno="2493"><highlight class="normal"><sp/><sp/><sp/><sp/>ncells.reserve(fa.indexArray.size());</highlight></codeline>
 <codeline lineno="2494"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>K<sp/>:<sp/>fa.indexArray)<sp/>{</highlight></codeline>
-<codeline lineno="2495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="2495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Long<sp/>N<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="2496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>b<sp/>=<sp/>fa.box(K);</highlight></codeline>
 <codeline lineno="2497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b.ok())<sp/>{</highlight></codeline>
 <codeline lineno="2498"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>b.grow(nghost);</highlight></codeline>
-<codeline lineno="2499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref><sp/>=<sp/>b.numPts();</highlight></codeline>
+<codeline lineno="2499"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>N<sp/>=<sp/>b.numPts();</highlight></codeline>
 <codeline lineno="2500"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="2501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncells.push_back(<ref refid="namespaceamrex_1af1a6e68ce22e31df053e21b069ecdcfb" kindref="member">N</ref>);</highlight></codeline>
+<codeline lineno="2501"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ncells.push_back(N);</highlight></codeline>
 <codeline lineno="2502"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="2503"><highlight class="normal"><sp/><sp/><sp/><sp/>m_nblocks_x<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1afe147dcb3e9fb406b058de4966a1b231" kindref="member">detail::build_par_for_nblocks</ref>(ncells,<sp/>nthreads);</highlight></codeline>
 <codeline lineno="2504"><highlight class="normal">}</highlight></codeline>

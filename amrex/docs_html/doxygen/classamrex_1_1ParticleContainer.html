@@ -284,11 +284,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a15a0822c8e9ab7e6e1c81fd57945b2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. local controls whether or not to call Redistribute after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#a15a0822c8e9ab7e6e1c81fd57945b2e1">More...</a><br /></td></tr>
 <tr class="separator:a15a0822c8e9ab7e6e1c81fd57945b2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </td></tr>
-<tr class="memitem:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0c78636f51794b4a1278b7ec2fb228d4">copyParticles</a> (const PCType &amp;other, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f, bool local=false)</td></tr>
+<tr class="memitem:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0c78636f51794b4a1278b7ec2fb228d4">copyParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local=false)</td></tr>
 <tr class="memdesc:a0c78636f51794b4a1278b7ec2fb228d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. Will clear all the particles from this container first. local controls whether or not to call <a class="el" href="classamrex_1_1ParticleContainer.html#aea99ce62b897124161c455fb9c6e9e99" title="Redistribute puts all the particles back in the right places (for some value of right)">Redistribute()</a> after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#a0c78636f51794b4a1278b7ec2fb228d4">More...</a><br /></td></tr>
 <tr class="separator:a0c78636f51794b4a1278b7ec2fb228d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a690524574f10b59f9171c7c71f9f0896"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo = 0, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar = 0&gt; </td></tr>
-<tr class="memitem:a690524574f10b59f9171c7c71f9f0896"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a690524574f10b59f9171c7c71f9f0896">addParticles</a> (const PCType &amp;other, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f, bool local=false)</td></tr>
+<tr class="memitem:a690524574f10b59f9171c7c71f9f0896"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a690524574f10b59f9171c7c71f9f0896">addParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local=false)</td></tr>
 <tr class="memdesc:a690524574f10b59f9171c7c71f9f0896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add particles from other to this <a class="el" href="classamrex_1_1ParticleContainer.html" title="A distributed container for Particles sorted onto the levels, grids, and tiles of a block-structured ...">ParticleContainer</a>. local controls whether or not to call Redistribute after adding the particles.  <a href="classamrex_1_1ParticleContainer.html#a690524574f10b59f9171c7c71f9f0896">More...</a><br /></td></tr>
 <tr class="separator:a690524574f10b59f9171c7c71f9f0896"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab73a81949960df2b97ddffaec46491b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ab73a81949960df2b97ddffaec46491b7">WriteParticleRealData</a> (void *data, size_t size, std::ostream &amp;os) const</td></tr>
@@ -304,7 +304,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5df9334c2851642312c784c5e218c2b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a particle checkpoint to file, suitable for restarting.  <a href="classamrex_1_1ParticleContainer.html#a5df9334c2851642312c784c5e218c2b6">More...</a><br /></td></tr>
 <tr class="separator:a5df9334c2851642312c784c5e218c2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adacc66ae3b2c6986650a1545249d939c"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:adacc66ae3b2c6986650a1545249d939c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#adacc66ae3b2c6986650a1545249d939c">WriteBinaryParticleData</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:adacc66ae3b2c6986650a1545249d939c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#adacc66ae3b2c6986650a1545249d939c">WriteBinaryParticleData</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:adacc66ae3b2c6986650a1545249d939c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes particle data to disk in the <a class="el" href="classamrex_1_1AMReX.html">AMReX</a> native format.  <a href="classamrex_1_1ParticleContainer.html#adacc66ae3b2c6986650a1545249d939c">More...</a><br /></td></tr>
 <tr class="separator:adacc66ae3b2c6986650a1545249d939c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e505f93fc9e92c5de2b23f240b5e8e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0e505f93fc9e92c5de2b23f240b5e8e9">CheckpointPre</a> ()</td></tr>
@@ -321,35 +321,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a03f7777b10381a804dec6ebfd4d80539"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and assigns component names.  <a href="classamrex_1_1ParticleContainer.html#a03f7777b10381a804dec6ebfd4d80539">More...</a><br /></td></tr>
 <tr class="separator:a03f7777b10381a804dec6ebfd4d80539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </td></tr>
-<tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a1d348d13ab6055c04952389e33274fe9">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a1d348d13ab6055c04952389e33274fe9">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:a1d348d13ab6055c04952389e33274fe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and assigns component names.  <a href="classamrex_1_1ParticleContainer.html#a1d348d13ab6055c04952389e33274fe9">More...</a><br /></td></tr>
 <tr class="separator:a1d348d13ab6055c04952389e33274fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6b5ae78b3e63e7e8437e4ac42126b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ae6b5ae78b3e63e7e8437e4ac42126b2e">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names) const</td></tr>
 <tr class="memdesc:ae6b5ae78b3e63e7e8437e4ac42126b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="classamrex_1_1ParticleContainer.html#ae6b5ae78b3e63e7e8437e4ac42126b2e">More...</a><br /></td></tr>
 <tr class="separator:ae6b5ae78b3e63e7e8437e4ac42126b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac70a5d6f4a511c728e61c1c0e0f825eb">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac70a5d6f4a511c728e61c1c0e0f825eb">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="classamrex_1_1ParticleContainer.html#ac70a5d6f4a511c728e61c1c0e0f825eb">More...</a><br /></td></tr>
 <tr class="separator:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfff4f76c09775c81000065854225590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#adfff4f76c09775c81000065854225590">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names) const</td></tr>
 <tr class="memdesc:adfff4f76c09775c81000065854225590"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="classamrex_1_1ParticleContainer.html#adfff4f76c09775c81000065854225590">More...</a><br /></td></tr>
 <tr class="separator:adfff4f76c09775c81000065854225590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4486888245ce148040c6ba2c063b9727"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type *  = nullptr&gt; </td></tr>
-<tr class="memitem:a4486888245ce148040c6ba2c063b9727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:a4486888245ce148040c6ba2c063b9727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:a4486888245ce148040c6ba2c063b9727"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile writes all components and allows the user to specify the names of the components.  <a href="classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727">More...</a><br /></td></tr>
 <tr class="separator:a4486888245ce148040c6ba2c063b9727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6179b66026582beae80c33be1c9cac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#af6179b66026582beae80c33be1c9cac5">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp) const</td></tr>
 <tr class="memdesc:af6179b66026582beae80c33be1c9cac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specific components.  <a href="classamrex_1_1ParticleContainer.html#af6179b66026582beae80c33be1c9cac5">More...</a><br /></td></tr>
 <tr class="separator:af6179b66026582beae80c33be1c9cac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0cd1371544e14d13f7ec3055354b1ddd">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0cd1371544e14d13f7ec3055354b1ddd">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:a0cd1371544e14d13f7ec3055354b1ddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This version of WritePlotFile assigns component names, but allows the user to pass in a vector of ints that toggle on / off the writing of specific components.  <a href="classamrex_1_1ParticleContainer.html#a0cd1371544e14d13f7ec3055354b1ddd">More...</a><br /></td></tr>
 <tr class="separator:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10396d3ecdfb69e187092d6c5043fa2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a10396d3ecdfb69e187092d6c5043fa2b">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names) const</td></tr>
 <tr class="memdesc:a10396d3ecdfb69e187092d6c5043fa2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the most general version of WritePlotFile, which takes component names and flags for whether to write each variable as components. Note that the user should pass in vectors containing names of all the components, whether they are written or not.  <a href="classamrex_1_1ParticleContainer.html#a10396d3ecdfb69e187092d6c5043fa2b">More...</a><br /></td></tr>
 <tr class="separator:a10396d3ecdfb69e187092d6c5043fa2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac36c77d73a87b5523fb5b33e7edfeef0">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac36c77d73a87b5523fb5b33e7edfeef0">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="memdesc:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the most general version of WritePlotFile, which takes component names and flags for whether to write each variable as components. Note that the user should pass in vectors containing names of all the components, whether they are written or not.  <a href="classamrex_1_1ParticleContainer.html#ac36c77d73a87b5523fb5b33e7edfeef0">More...</a><br /></td></tr>
 <tr class="separator:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2a7013064975d755dfca3ae72ab4504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#af2a7013064975d755dfca3ae72ab4504">WritePlotFilePre</a> ()</td></tr>
@@ -450,28 +450,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7b7f0e1b59f64943f3fbb57642b027f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac7b7f0e1b59f64943f3fbb57642b027f">addParticles</a> (const PCType &amp;other, bool local)</td></tr>
 <tr class="separator:ac7b7f0e1b59f64943f3fbb57642b027f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a997ff34394c4e94d45f35a8d096ad68c"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </td></tr>
-<tr class="memitem:a997ff34394c4e94d45f35a8d096ad68c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a997ff34394c4e94d45f35a8d096ad68c">copyParticles</a> (const PCType &amp;other, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f, bool local)</td></tr>
+<tr class="memitem:a997ff34394c4e94d45f35a8d096ad68c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a997ff34394c4e94d45f35a8d096ad68c">copyParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local)</td></tr>
 <tr class="separator:a997ff34394c4e94d45f35a8d096ad68c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memTemplParams" colspan="2">template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt; PCType &gt;::value, int &gt; foo, std::enable_if_t&lt;! std::is_integral&lt; F &gt;::value, int &gt; bar&gt; </td></tr>
-<tr class="memitem:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a579c73fe0e3815a17b0cb7136a5d3788">addParticles</a> (const PCType &amp;other, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f, bool local)</td></tr>
+<tr class="memitem:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a579c73fe0e3815a17b0cb7136a5d3788">addParticles</a> (const PCType &amp;other, F &amp;&amp;f, bool local)</td></tr>
 <tr class="separator:a579c73fe0e3815a17b0cb7136a5d3788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type * &gt; </td></tr>
-<tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a1d348d13ab6055c04952389e33274fe9">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:a1d348d13ab6055c04952389e33274fe9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a1d348d13ab6055c04952389e33274fe9">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a1d348d13ab6055c04952389e33274fe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac70a5d6f4a511c728e61c1c0e0f825eb">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac70a5d6f4a511c728e61c1c0e0f825eb">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="separator:ac70a5d6f4a511c728e61c1c0e0f825eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4486888245ce148040c6ba2c063b9727"><td class="memTemplParams" colspan="2">template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt; std::string &gt;&gt;::value &gt;::type * &gt; </td></tr>
-<tr class="memitem:a4486888245ce148040c6ba2c063b9727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:a4486888245ce148040c6ba2c063b9727"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a4486888245ce148040c6ba2c063b9727">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a4486888245ce148040c6ba2c063b9727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0cd1371544e14d13f7ec3055354b1ddd">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a0cd1371544e14d13f7ec3055354b1ddd">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, F &amp;&amp;f) const</td></tr>
 <tr class="separator:a0cd1371544e14d13f7ec3055354b1ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac36c77d73a87b5523fb5b33e7edfeef0">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#ac36c77d73a87b5523fb5b33e7edfeef0">WritePlotFile</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="separator:ac36c77d73a87b5523fb5b33e7edfeef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adacc66ae3b2c6986650a1545249d939c"><td class="memTemplParams" colspan="2">template&lt;class F &gt; </td></tr>
-<tr class="memitem:adacc66ae3b2c6986650a1545249d939c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#adacc66ae3b2c6986650a1545249d939c">WriteBinaryParticleData</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, <a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;f) const</td></tr>
+<tr class="memitem:adacc66ae3b2c6986650a1545249d939c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#adacc66ae3b2c6986650a1545249d939c">WriteBinaryParticleData</a> (const std::string &amp;dir, const std::string &amp;name, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_real_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> &gt; &amp;write_int_comp, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;real_comp_names, const <a class="el" href="classamrex_1_1Vector.html">Vector</a>&lt; std::string &gt; &amp;int_comp_names, F &amp;&amp;f) const</td></tr>
 <tr class="separator:adacc66ae3b2c6986650a1545249d939c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d523bd0038e70f787c268ebb638e8b2"><td class="memTemplParams" colspan="2">template&lt;class RTYPE &gt; </td></tr>
 <tr class="memitem:a5d523bd0038e70f787c268ebb638e8b2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classamrex_1_1ParticleContainer.html#a5d523bd0038e70f787c268ebb638e8b2">ReadParticles</a> (<a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> cnt, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> grd, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> lev, std::ifstream &amp;ifs, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> finest_level_in_file)</td></tr>
@@ -1336,7 +1336,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -1374,7 +1374,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -1906,7 +1906,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -1944,7 +1944,7 @@ template&lt;class F , class PCType , std::enable_if_t&lt; IsParticleContainer&lt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>, </td>
         </tr>
         <tr>
@@ -4930,7 +4930,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -4992,7 +4992,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5351,7 +5351,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5413,7 +5413,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5484,7 +5484,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5534,7 +5534,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5702,7 +5702,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5752,7 +5752,7 @@ template&lt;class F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5815,7 +5815,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5859,7 +5859,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5915,7 +5915,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -5953,7 +5953,7 @@ template&lt;class F , typename std::enable_if&lt;!std::is_same&lt; F, Vector&lt;
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">F</a> &amp;&amp;&#160;</td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>

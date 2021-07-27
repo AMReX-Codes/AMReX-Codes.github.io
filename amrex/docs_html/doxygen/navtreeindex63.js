@@ -1,16 +1,5 @@
 var NAVTREEINDEX63 =
 {
-"structamrex_1_1parser__symbol.html#a99f7da0f4633b6fc68df7cf4f0d9d398":[2,0,0,319,0],
-"structamrex__parmparse__module_1_1amrex__parmparse.html":[2,0,7,2],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a00b3414ab27018ecee235594b89ee675":[2,0,7,2,0],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a0546d6b0c985419b4c1f4db2df4238cc":[2,0,7,2,18],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a0c550ea9b94a0f755aad8d4b82eb7c49":[2,0,7,2,17],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a0fe403153388ffa22847e362231c0db3":[2,0,7,2,16],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a184eeffd6ff61b5148958083446b81a9":[2,0,7,2,1],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a1b8984787dd6a07f9a79bbae19c51316":[2,0,7,2,29],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a341e69f6e3bc1c30de317f47b67b67c0":[2,0,7,2,21],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a382f89d2f2f2d88e292677472eb44312":[2,0,7,2,23],
-"structamrex__parmparse__module_1_1amrex__parmparse.html#a49000c613ca825c9a110712f80d846f3":[2,0,7,2,26],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a4a92e6cbf9b620c1eebc0b5d81615c75":[2,0,7,2,5],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a4e9428e27996d192ffbb496cb009abd3":[2,0,7,2,20],
 "structamrex__parmparse__module_1_1amrex__parmparse.html#a50c2401baa8b23657d0cea5a280bfcac":[2,0,7,2,7],

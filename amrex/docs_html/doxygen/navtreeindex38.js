@@ -1,16 +1,5 @@
 var NAVTREEINDEX38 =
 {
-"classamrex_1_1HypreNodeLap.html#a4dd726a8a74759ab3f68d1849d0cdf6d":[2,0,0,184,7],
-"classamrex_1_1HypreNodeLap.html#a55bfff3929ed41ec8c5f707f22cc392d":[2,0,0,184,1],
-"classamrex_1_1HypreNodeLap.html#a572e669336638bfcd32956674cea5b07":[2,0,0,184,22],
-"classamrex_1_1HypreNodeLap.html#a58381f405245d3ca27aed91c4197bee6":[2,0,0,184,9],
-"classamrex_1_1HypreNodeLap.html#a82145850435b74caa01b3322229a059b":[2,0,0,184,28],
-"classamrex_1_1HypreNodeLap.html#a8454e30c3a460081f89df8154babd952":[2,0,0,184,20],
-"classamrex_1_1HypreNodeLap.html#a84f23ccfc81e4068d4b59ff219dfdd17":[2,0,0,184,13],
-"classamrex_1_1HypreNodeLap.html#a8ab7840824ff1afad30c2adc35584bd3":[2,0,0,184,12],
-"classamrex_1_1HypreNodeLap.html#a8bf1aff14a4fff3cc12887bac7c96620":[2,0,0,184,14],
-"classamrex_1_1HypreNodeLap.html#a9a4132962fea0f9ec7e1566e1aa6254e":[2,0,0,184,10],
-"classamrex_1_1HypreNodeLap.html#a9c2f378636a2b4fbc0fba818719bace7":[2,0,0,184,17],
 "classamrex_1_1HypreNodeLap.html#a9edf6830b04060921e5fcd8c3b95ab79":[2,0,0,184,21],
 "classamrex_1_1HypreNodeLap.html#a9f80d1c81a4fc95cd42b3741dbccbacd":[2,0,0,184,11],
 "classamrex_1_1HypreNodeLap.html#aad970086d1f98c702bcb5528a2299e1c":[2,0,0,184,8],
@@ -249,5 +238,16 @@ var NAVTREEINDEX38 =
 "classamrex_1_1InterpolaterBoxCoarsener.html#a38dd7e762f41ec784b5dfd70109bb3a8":[2,0,0,193,5],
 "classamrex_1_1InterpolaterBoxCoarsener.html#a7ebac92d32c9d7157c6bc47c0c8eb33c":[2,0,0,193,3],
 "classamrex_1_1InterpolaterBoxCoarsener.html#ad3e56481c923c022bd9cfca822473ea6":[2,0,0,193,4],
-"classamrex_1_1InterpolaterBoxCoarsener.html#ae476a5ba50fe4213159eb44a6796a2a3":[2,0,0,193,0]
+"classamrex_1_1InterpolaterBoxCoarsener.html#ae476a5ba50fe4213159eb44a6796a2a3":[2,0,0,193,0],
+"classamrex_1_1LayoutData.html":[2,0,0,248],
+"classamrex_1_1LayoutData.html#a036d306adc873de2e4dfd248ede5e8ee":[2,0,0,248,11],
+"classamrex_1_1LayoutData.html#a1fa987ab9141d88d6b23063c4bfdd38d":[2,0,0,248,4],
+"classamrex_1_1LayoutData.html#a3f97242387a9bccf0cb2aaeb5dbbfe5a":[2,0,0,248,12],
+"classamrex_1_1LayoutData.html#a442eca7b5bcd7984d38f7bd3ad9240b6":[2,0,0,248,13],
+"classamrex_1_1LayoutData.html#a447a15fede8b1a8a998dfcae0aac1507":[2,0,0,248,0],
+"classamrex_1_1LayoutData.html#a8156da55f8f06b067f10e3636fe78334":[2,0,0,248,10],
+"classamrex_1_1LayoutData.html#a9214bb32356bf3443aa0383b54bbb195":[2,0,0,248,2],
+"classamrex_1_1LayoutData.html#a9f32a3b5b38c4c245fa07f4af9f818bf":[2,0,0,248,3],
+"classamrex_1_1LayoutData.html#ab2c16d427664cbb04b36d69463eaf1e2":[2,0,0,248,5],
+"classamrex_1_1LayoutData.html#ae2491de2ca6d6444c53257bb6a52e52e":[2,0,0,248,6]
 };

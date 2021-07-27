@@ -97,8 +97,7 @@ $(document).ready(function(){initNavTree('AMReX__ParticleTransformation_8H.html'
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">AMReX_ParticleTransformation.H File Reference</div>  </div>
 </div><!--header-->
@@ -164,45 +163,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a0484051ab2f4dc9ebed16cb4f0ca2817"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a0484051ab2f4dc9ebed16cb4f0ca2817">amrex::filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, const Index *mask, Index src_start, Index dst_start, N n) noexcept</td></tr>
 <tr class="memdesc:a0484051ab2f4dc9ebed16cb4f0ca2817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on the value of mask. This version conditionally copies n particles starting at index src_start, writing the result starting at dst_start.  <a href="namespaceamrex.html#a0484051ab2f4dc9ebed16cb4f0ca2817">More...</a><br /></td></tr>
 <tr class="separator:a0484051ab2f4dc9ebed16cb4f0ca2817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a5a940585a53e1b932fcda995db9840"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Pred &gt; </td></tr>
-<tr class="memitem:a2a5a940585a53e1b932fcda995db9840"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a2a5a940585a53e1b932fcda995db9840">amrex::filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p) noexcept -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</td></tr>
-<tr class="memdesc:a2a5a940585a53e1b932fcda995db9840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate.  <a href="namespaceamrex.html#a2a5a940585a53e1b932fcda995db9840">More...</a><br /></td></tr>
-<tr class="separator:a2a5a940585a53e1b932fcda995db9840"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a6050b761f9fcee872722bcec7d2c4"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Pred , typename Index , typename N &gt; </td></tr>
-<tr class="memitem:a76a6050b761f9fcee872722bcec7d2c4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a76a6050b761f9fcee872722bcec7d2c4">amrex::filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, Index src_start, Index dst_start, N n) noexcept -&gt; decltype(particle_detail::call_f(p, typename SrcTile::ConstParticleTileDataType(), int</td></tr>
-<tr class="memdesc:a76a6050b761f9fcee872722bcec7d2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate. This version conditionally copies n particles starting at index src_start, writing the result starting at dst_start.  <a href="namespaceamrex.html#a76a6050b761f9fcee872722bcec7d2c4">More...</a><br /></td></tr>
-<tr class="separator:a76a6050b761f9fcee872722bcec7d2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a580332ae4f0f88b800d35591e7f6832c"><td class="memItemLeft" align="right" valign="top">int std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; F auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a580332ae4f0f88b800d35591e7f6832c">amrex::filterAndTransformParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</td></tr>
-<tr class="separator:a580332ae4f0f88b800d35591e7f6832c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a326a3d72298cd5b976db9b5f3d92fba5"><td class="memTemplParams" colspan="2">template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Index , typename F , std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt; foo = 0&gt; </td></tr>
-<tr class="memitem:a326a3d72298cd5b976db9b5f3d92fba5"><td class="memTemplItemLeft" align="right" valign="top">Index&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a326a3d72298cd5b976db9b5f3d92fba5">amrex::filterAndTransformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Index *mask, F &amp;&amp;f) noexcept</td></tr>
-<tr class="memdesc:a326a3d72298cd5b976db9b5f3d92fba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst1 and dst2 based on the value of mask. A transformation will also be applied to the particles on copy.  <a href="namespaceamrex.html#a326a3d72298cd5b976db9b5f3d92fba5">More...</a><br /></td></tr>
-<tr class="separator:a326a3d72298cd5b976db9b5f3d92fba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7939d1b7f76204c7b70ea282174f89c0"><td class="memTemplParams" colspan="2">template&lt;typename DstTile1 , typename DstTile2 , typename SrcTile , typename Pred , typename F &gt; </td></tr>
-<tr class="memitem:a7939d1b7f76204c7b70ea282174f89c0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7939d1b7f76204c7b70ea282174f89c0">amrex::filterAndTransformParticles</a> (DstTile1 &amp;dst1, DstTile2 &amp;dst2, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f) noexcept -&gt; decltype(p(typename SrcTile::ConstParticleTileDataType(), 0))</td></tr>
-<tr class="memdesc:a7939d1b7f76204c7b70ea282174f89c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst1 and dst2 based on a predicate. A transformation will also be applied to the particles on copy.  <a href="namespaceamrex.html#a7939d1b7f76204c7b70ea282174f89c0">More...</a><br /></td></tr>
-<tr class="separator:a7939d1b7f76204c7b70ea282174f89c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e08f4e135868c9536f7e4070fb589b"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Pred , typename F , typename Index &gt; </td></tr>
-<tr class="memitem:ae2e08f4e135868c9536f7e4070fb589b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ae2e08f4e135868c9536f7e4070fb589b">amrex::filterAndTransformParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, F &amp;&amp;f, Index src_start, Index dst_start) noexcept -&gt; decltype(particle_detail::call_f(p, typename SrcTile::ConstParticleTileDataType(), int</td></tr>
-<tr class="memdesc:ae2e08f4e135868c9536f7e4070fb589b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate. This version conditionally copies n particles starting at index src_start, writing the result starting at dst_start.  <a href="namespaceamrex.html#ae2e08f4e135868c9536f7e4070fb589b">More...</a><br /></td></tr>
-<tr class="separator:ae2e08f4e135868c9536f7e4070fb589b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d">amrex::RandomEngine</a></td></tr>
-<tr class="separator:ad7cd3ebdfa6fa592b0fd8f9d3b75ad0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a403cfbd1297211846d8daf45b3d0b440"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a403cfbd1297211846d8daf45b3d0b440">amrex::foo</a></td></tr>
-<tr class="separator:a403cfbd1297211846d8daf45b3d0b440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e796e89cd3d003e84200dccdfb41506"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a7e796e89cd3d003e84200dccdfb41506">amrex::SrcTile</a></td></tr>
-<tr class="separator:a7e796e89cd3d003e84200dccdfb41506"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59bab8395877af29702be242c212c88e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a59bab8395877af29702be242c212c88e">amrex::Index</a></td></tr>
-<tr class="separator:a59bab8395877af29702be242c212c88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926ac59546412d68022500242da6077a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a926ac59546412d68022500242da6077a">amrex::F</a></td></tr>
-<tr class="separator:a926ac59546412d68022500242da6077a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a156f860975ae63591f0500aa9bb80305"><td class="memItemLeft" align="right" valign="top">int std::enable_if_t&lt; std::is_integral&lt; Index &gt;::value, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a156f860975ae63591f0500aa9bb80305">amrex::Pred</a></td></tr>
-<tr class="separator:a156f860975ae63591f0500aa9bb80305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1a6e68ce22e31df053e21b069ecdcfb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#af1a6e68ce22e31df053e21b069ecdcfb">amrex::N</a></td></tr>
-<tr class="separator:af1a6e68ce22e31df053e21b069ecdcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76b4c1f109d3d88013b6c85d8a3f40e8"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Pred &gt; </td></tr>
+<tr class="memitem:a76b4c1f109d3d88013b6c85d8a3f40e8"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a76b4c1f109d3d88013b6c85d8a3f40e8">amrex::filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p) noexcept</td></tr>
+<tr class="memdesc:a76b4c1f109d3d88013b6c85d8a3f40e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate.  <a href="namespaceamrex.html#a76b4c1f109d3d88013b6c85d8a3f40e8">More...</a><br /></td></tr>
+<tr class="separator:a76b4c1f109d3d88013b6c85d8a3f40e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e4087334edb7a63acaa6eec972b2c16"><td class="memTemplParams" colspan="2">template&lt;typename DstTile , typename SrcTile , typename Pred , typename Index , typename N &gt; </td></tr>
+<tr class="memitem:a6e4087334edb7a63acaa6eec972b2c16"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a6e4087334edb7a63acaa6eec972b2c16">amrex::filterParticles</a> (DstTile &amp;dst, const SrcTile &amp;src, Pred &amp;&amp;p, Index src_start, Index dst_start, N n) noexcept -&gt; decltype(Index(particle_detail::call_f(p, typename SrcTile::ConstParticleTileDataType(), int</td></tr>
+<tr class="memdesc:a6e4087334edb7a63acaa6eec972b2c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally copy particles from src to dst based on a predicate. This version conditionally copies n particles starting at index src_start, writing the result starting at dst_start.  <a href="namespaceamrex.html#a6e4087334edb7a63acaa6eec972b2c16">More...</a><br /></td></tr>
+<tr class="separator:a6e4087334edb7a63acaa6eec972b2c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

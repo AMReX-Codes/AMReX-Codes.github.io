@@ -1,16 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"structamrex_1_1Order_1_1F.html":[2,0,0,10,1],
-"structamrex_1_1PCData.html":[2,0,0,373],
-"structamrex_1_1PCData.html#a0dc2ad0aabd8037f621c34347101d234":[2,0,0,373,0],
-"structamrex_1_1PCData.html#a116ad8730e2b89913a13c064ebe03787":[2,0,0,373,10],
-"structamrex_1_1PCData.html#a24757491eab52e06ff0c97c79b91380c":[2,0,0,373,2],
-"structamrex_1_1PCData.html#a344a5b7546f3348236d0c452d1331102":[2,0,0,373,6],
-"structamrex_1_1PCData.html#a368734d8d36ffaacd72126c054c33f5c":[2,0,0,373,3],
-"structamrex_1_1PCData.html#a3bdae5df3d248131a52ab1d0f65603fb":[2,0,0,373,12],
-"structamrex_1_1PCData.html#a3d9d2fe62bbf3d6d228fb14bbe04eb34":[2,0,0,373,15],
-"structamrex_1_1PCData.html#a45bf31bfbfe4a36b332561392e77a997":[2,0,0,373,14],
-"structamrex_1_1PCData.html#a4685b9db726b95a19ccbe2b6ee33a433":[2,0,0,373,16],
 "structamrex_1_1PCData.html#a5076dc32f6165ffc8296650d895a2b6f":[2,0,0,373,5],
 "structamrex_1_1PCData.html#a7b15255a2524406fc7cb4810c128608e":[2,0,0,373,9],
 "structamrex_1_1PCData.html#a8dee05ab1688d643feb6d74e82a15bf3":[2,0,0,373,17],
@@ -249,5 +238,16 @@ var NAVTREEINDEX60 =
 "structamrex_1_1ParticleCPUWrapper.html#ad13d555c23dc09a19f05fa10518807e6":[2,0,0,366,1],
 "structamrex_1_1ParticleCPUWrapper.html#aee3e19031ec6e1adbaaaf08c5da52186":[2,0,0,366,4],
 "structamrex_1_1ParticleCPUWrapper.html#af456e0632ceb42b240d4d2608325fa66":[2,0,0,366,0],
-"structamrex_1_1ParticleCPUWrapper.html#af9ef300a76f9e5e44bb0fbb67b0d715d":[2,0,0,366,2]
+"structamrex_1_1ParticleCPUWrapper.html#af9ef300a76f9e5e44bb0fbb67b0d715d":[2,0,0,366,2],
+"structamrex_1_1ParticleCommData.html":[2,0,0,361],
+"structamrex_1_1ParticleCommData.html#a06a10b263e213213d0bbdd398267b9ed":[2,0,0,361,2],
+"structamrex_1_1ParticleCommData.html#a2b4f1e35053c6eff621312f08820c58f":[2,0,0,361,3],
+"structamrex_1_1ParticleCommData.html#a6f106a94f894a5236b1207f4f0862e67":[2,0,0,361,1],
+"structamrex_1_1ParticleCommData.html#abbdc95b6c7ad4a5990ee08971e53b0d1":[2,0,0,361,0],
+"structamrex_1_1ParticleCommData.html#ac8c0956840e85e64e1a2ff8d9bf1fa34":[2,0,0,361,4],
+"structamrex_1_1ParticleCopyOp.html":[2,0,0,364],
+"structamrex_1_1ParticleCopyOp.html#a069c7556dbda11100b395bd699005513":[2,0,0,364,3],
+"structamrex_1_1ParticleCopyOp.html#a2a29dbb728926b7a93d64cfd79deae89":[2,0,0,364,0],
+"structamrex_1_1ParticleCopyOp.html#a3486942c2721d9199b20c57461b5d31a":[2,0,0,364,6],
+"structamrex_1_1ParticleCopyOp.html#a5fbf90399c57c4fb121c1aac5ac825d7":[2,0,0,364,4]
 };
