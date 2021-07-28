@@ -2,6 +2,7 @@ var namespaceamrex =
 [
     [ "algoim", "namespaceamrex_1_1algoim.html", "namespaceamrex_1_1algoim" ],
     [ "AsyncOut", "namespaceamrex_1_1AsyncOut.html", "namespaceamrex_1_1AsyncOut" ],
+    [ "BinPolicy", "namespaceamrex_1_1BinPolicy.html", "namespaceamrex_1_1BinPolicy" ],
     [ "detail", "namespaceamrex_1_1detail.html", "namespaceamrex_1_1detail" ],
     [ "EB2", "namespaceamrex_1_1EB2.html", "namespaceamrex_1_1EB2" ],
     [ "experimental", "namespaceamrex_1_1experimental.html", "namespaceamrex_1_1experimental" ],

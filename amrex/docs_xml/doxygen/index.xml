@@ -3080,18 +3080,26 @@
     <member refid="classamrex_1_1DenseBins_1ae914634726f075979b5e855a5fda0924" kind="typedef"><name>BinIteratorFactory</name></member>
     <member refid="classamrex_1_1DenseBins_1ace91724777a08f267ca7515117ebe620" kind="typedef"><name>index_type</name></member>
     <member refid="classamrex_1_1DenseBins_1a9bc32ea181687bc997cb145606c436b4" kind="variable"><name>m_items</name></member>
-    <member refid="classamrex_1_1DenseBins_1a623ca19d23cde1c4b8a7de8c685f43db" kind="variable"><name>m_cells</name></member>
+    <member refid="classamrex_1_1DenseBins_1af1561b37e307d49631e3fc2ee1b68212" kind="variable"><name>m_bins</name></member>
     <member refid="classamrex_1_1DenseBins_1af113e9e077a9aed3c6696adabcefa899" kind="variable"><name>m_counts</name></member>
     <member refid="classamrex_1_1DenseBins_1ad70b443fd8e65a368e1fed776614b0e4" kind="variable"><name>m_offsets</name></member>
     <member refid="classamrex_1_1DenseBins_1ad40e15a5e019a0a7afa527c6226e7675" kind="variable"><name>m_perm</name></member>
     <member refid="classamrex_1_1DenseBins_1a5eb07c849d5749bf5aa71d0d2727201d" kind="function"><name>build</name></member>
     <member refid="classamrex_1_1DenseBins_1a4c7d40c3975acb725e9d2b5e76f4d2d1" kind="function"><name>build</name></member>
+    <member refid="classamrex_1_1DenseBins_1a08beb00572b86651df5290b918b19240" kind="function"><name>build</name></member>
+    <member refid="classamrex_1_1DenseBins_1ab28a3e8f7569e2dfc18a2c69af9afe44" kind="function"><name>build</name></member>
+    <member refid="classamrex_1_1DenseBins_1a9fd4ade6aaa0628cf93d6e86d04d7cd8" kind="function"><name>build</name></member>
+    <member refid="classamrex_1_1DenseBins_1aa058b5fdee9f062c4a784998e5d0ea93" kind="function"><name>build</name></member>
+    <member refid="classamrex_1_1DenseBins_1a89b1078bcd237f29a2eca69b27fddf1c" kind="function"><name>build</name></member>
+    <member refid="classamrex_1_1DenseBins_1ae22149562ebf6d21084204d8baf90711" kind="function"><name>build</name></member>
     <member refid="classamrex_1_1DenseBins_1ad79436d29055a095ee8a8ffab36475d3" kind="function"><name>numItems</name></member>
     <member refid="classamrex_1_1DenseBins_1af98199a3fd0f724083761ddea28e4606" kind="function"><name>numBins</name></member>
     <member refid="classamrex_1_1DenseBins_1ab50df3946feebe789f41c7d01762a30b" kind="function"><name>permutationPtr</name></member>
     <member refid="classamrex_1_1DenseBins_1a3448e9a533b211d486f42f06f9736218" kind="function"><name>offsetsPtr</name></member>
+    <member refid="classamrex_1_1DenseBins_1a1c13238822cee328b27603d0a467f981" kind="function"><name>binsPtr</name></member>
     <member refid="classamrex_1_1DenseBins_1a8f49f54a25549e053bb63d0e72d751e1" kind="function"><name>permutationPtr</name></member>
     <member refid="classamrex_1_1DenseBins_1a594a9ba943cde14aeec576817d575b6a" kind="function"><name>offsetsPtr</name></member>
+    <member refid="classamrex_1_1DenseBins_1abf1111e33d2e88edb6bb0654024b33df" kind="function"><name>binsPtr</name></member>
     <member refid="classamrex_1_1DenseBins_1a8c1a462b3aaa2193672c14d26a56601a" kind="function"><name>getBinIteratorFactory</name></member>
   </compound>
   <compound refid="classamrex_1_1DeriveList" kind="class"><name>amrex::DeriveList</name>
@@ -4880,6 +4888,8 @@
     <member refid="structamrex_1_1GpuArray_1a951117a4478e02af22153fb41a75f002" kind="function"><name>begin</name></member>
     <member refid="structamrex_1_1GpuArray_1a79159efea84c4002316373347f4c8327" kind="function"><name>end</name></member>
     <member refid="structamrex_1_1GpuArray_1a97ff8440a348593899d51c5996ded371" kind="function"><name>fill</name></member>
+  </compound>
+  <compound refid="structamrex_1_1BinPolicy_1_1GPUBinPolicy" kind="struct"><name>amrex::BinPolicy::GPUBinPolicy</name>
   </compound>
   <compound refid="classamrex_1_1GpuBndryFuncFab" kind="class"><name>amrex::GpuBndryFuncFab</name>
     <member refid="classamrex_1_1GpuBndryFuncFab_1aac214cf749cf15c34ae0cdda7b16a292" kind="variable"><name>m_user_f</name></member>
@@ -7564,12 +7574,6 @@
     <member refid="classamrex_1_1NodalProjector_1a9ddd5a26176c300c6191ebc8a4c4f2ed" kind="function"><name>define</name></member>
     <member refid="classamrex_1_1NodalProjector_1a09e3fe505727d0cec4c6e41648e39121" kind="function"><name>printInfo</name></member>
   </compound>
-  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
-    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
-  </compound>
   <compound refid="classamrex_1_1CArena_1_1Node" kind="class"><name>amrex::CArena::Node</name>
     <member refid="classamrex_1_1CArena_1_1Node_1a999ce0f54f3eae13c2533caabe5acc89" kind="variable"><name>m_block</name></member>
     <member refid="classamrex_1_1CArena_1_1Node_1a8d1a994928ff734df597327f22db12dd" kind="variable"><name>m_owner</name></member>
@@ -7583,6 +7587,12 @@
     <member refid="classamrex_1_1CArena_1_1Node_1a736fe7c725b517fece9136f39e983765" kind="function"><name>size</name></member>
     <member refid="classamrex_1_1CArena_1_1Node_1abef15ce1cbccdaa8dc7aa6a6bb4a0609" kind="function"><name>owner</name></member>
     <member refid="classamrex_1_1CArena_1_1Node_1a9d48386ac6a4c17d1e2b4eb8ad13e221" kind="function"><name>coalescable</name></member>
+  </compound>
+  <compound refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node" kind="struct"><name>amrex::algoim::QuadratureRule::Node</name>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1aec5bde519720bd162ca02815d84c4b7b" kind="variable"><name>x</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1ac09c0b155c27d48d0efcf8d70277894a" kind="variable"><name>y</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a5f9f48bbbd30d20b1b08061b621b46e6" kind="variable"><name>z</name></member>
+    <member refid="structamrex_1_1algoim_1_1QuadratureRule_1_1Node_1a34f5a91f16a2303f0ed25ae611894455" kind="variable"><name>w</name></member>
   </compound>
   <compound refid="structamrex_1_1EArena_1_1Node" kind="struct"><name>amrex::EArena::Node</name>
     <member refid="structamrex_1_1EArena_1_1Node_1af098a20a26f8c6450ac2751d8f02a263" kind="variable"><name>m_block</name></member>
@@ -7612,6 +7622,8 @@
   <compound refid="structamrex_1_1NumComps" kind="struct"><name>amrex::NumComps</name>
     <member refid="structamrex_1_1NumComps_1a51d8b50d57ee8a52833c414ae13a5381" kind="variable"><name>n</name></member>
     <member refid="structamrex_1_1NumComps_1a810ccab9fa653cd2a504f2539eaa4c1f" kind="function"><name>NumComps</name></member>
+  </compound>
+  <compound refid="structamrex_1_1BinPolicy_1_1OpenMPBinPolicy" kind="struct"><name>amrex::BinPolicy::OpenMPBinPolicy</name>
   </compound>
   <compound refid="classamrex_1_1OrderedBoxes" kind="class"><name>amrex::OrderedBoxes</name>
     <member refid="classamrex_1_1OrderedBoxes_1a6aa1a7ff2985929f15519ad00aa2a550" kind="variable"><name>iLevel</name></member>
@@ -9554,6 +9566,8 @@
   <compound refid="structCommProfStats_1_1SendRecvPairUnpaired" kind="struct"><name>CommProfStats::SendRecvPairUnpaired</name>
     <member refid="structCommProfStats_1_1SendRecvPairUnpaired_1af8626cf71af203407435c096f88c1c3c" kind="variable"><name>unmatchedCFType</name></member>
     <member refid="structCommProfStats_1_1SendRecvPairUnpaired_1af217ccce1eb0268f1a9e39f81fe19480" kind="function"><name>SendRecvPairUnpaired</name></member>
+  </compound>
+  <compound refid="structamrex_1_1BinPolicy_1_1SerialBinPolicy" kind="struct"><name>amrex::BinPolicy::SerialBinPolicy</name>
   </compound>
   <compound refid="structamrex_1_1Gpu_1_1SharedMemory" kind="struct"><name>amrex::Gpu::SharedMemory</name>
     <member refid="structamrex_1_1Gpu_1_1SharedMemory_1a15f96d78196939452c41efcf8889420c" kind="function"><name>dataPtr</name></member>
@@ -12125,6 +12139,12 @@
     <member refid="namespaceamrex_1_1AsyncOut_1a9b651e401d0a75620501243cc1171a63" kind="function"><name>Notify</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1AsyncOut_1_1_0d68" kind="namespace"><name>amrex::AsyncOut::@68</name>
+  </compound>
+  <compound refid="namespaceamrex_1_1BinPolicy" kind="namespace"><name>amrex::BinPolicy</name>
+    <member refid="namespaceamrex_1_1BinPolicy_1afa152e4ccd5f35d821d3fa5ec76d6c78" kind="variable"><name>GPU</name></member>
+    <member refid="namespaceamrex_1_1BinPolicy_1a3e36e7c8384f469a1817ae7f2ddd069b" kind="variable"><name>OpenMP</name></member>
+    <member refid="namespaceamrex_1_1BinPolicy_1a78f596e766995fe79e9feefa86af852b" kind="variable"><name>Serial</name></member>
+    <member refid="namespaceamrex_1_1BinPolicy_1a6820b8950a17c3d037ffb8f94fed298b" kind="variable"><name>Default</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1Cuda" kind="namespace"><name>amrex::Cuda</name>
   </compound>
