@@ -868,6 +868,7 @@ var hierarchy =
     [ "amrex::TinyProfiler", "classamrex_1_1TinyProfiler.html", null ],
     [ "amrex::TinyProfileRegion", "classamrex_1_1TinyProfileRegion.html", null ],
     [ "TransformerGhost", "structTransformerGhost.html", null ],
+    [ "TransformerVirt", "structTransformerVirt.html", null ],
     [ "amrex::EB2::TranslationIF< F >", "classamrex_1_1EB2_1_1TranslationIF.html", null ],
     [ "true_type", null, [
       [ "amrex::Conjunction<... >", "structamrex_1_1Conjunction.html", null ],

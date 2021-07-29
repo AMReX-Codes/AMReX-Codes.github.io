@@ -54,6 +54,7 @@ var dir_678e78232f51bebdca12cae3de73223b =
       [ "ParticleContainerBase", "classamrex_1_1ParticleContainerBase.html", "classamrex_1_1ParticleContainerBase" ]
     ] ],
     [ "AMReX_ParticleContainerI.H", "AMReX__ParticleContainerI_8H.html", [
+      [ "TransformerVirt", "structTransformerVirt.html", "structTransformerVirt" ],
       [ "AssignGridFilter", "structAssignGridFilter.html", "structAssignGridFilter" ],
       [ "TransformerGhost", "structTransformerGhost.html", "structTransformerGhost" ]
     ] ],
