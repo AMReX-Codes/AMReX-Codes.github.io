@@ -285,19 +285,21 @@ number of files is <code class="docutils literal notranslate"><span class="pre">
 files, THREAD_MULTIPLE must be turned on by adding
 <code class="docutils literal notranslate"><span class="pre">MPI_THREAD_MULTIPLE=TRUE</span></code> to the GNUMakefile. Otherwise, AMReX
 will throw an error.</p>
-<p>Async Output works for a wide range of AMReX calls, including:
-* amrex::WriteSingleLevelPlotfile()
-* amrex::WriteMultiLevelPlotfile()
-* amrex::WriteMLMF()
-* VisMF::AsyncWrite()
-* ParticleContainer::Checkpoint()
-* ParticleContainer::WritePlotFile()
-* Amr::writePlotFile()
-* Amr::writeSmallPlotFile()
-* Amr::checkpoint()
-* AmrLevel::writePlotFile()
-* StateData::checkPoint()
-* FabSet::write()</p>
+<p>Async Output works for a wide range of AMReX calls, including:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">amrex::WriteSingleLevelPlotfile()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amrex::WriteMultiLevelPlotfile()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">amrex::WriteMLMF()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VisMF::AsyncWrite()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ParticleContainer::Checkpoint()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ParticleContainer::WritePlotFile()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Amr::writePlotFile()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Amr::writeSmallPlotFile()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Amr::checkpoint()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AmrLevel::writePlotFile()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">StateData::checkPoint()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FabSet::write()</span></code></p></li>
+</ul>
 <p>Be aware: when using Async Output, a thread is spawned and exclusively used
 to perform output throughout the runtime.  As such, you may oversubscribe
 resources if you launch an AMReX application that assigns all available
