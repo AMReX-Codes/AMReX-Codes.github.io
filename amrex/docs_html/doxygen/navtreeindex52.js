@@ -1,5 +1,10 @@
 var NAVTREEINDEX52 =
 {
+"functions_func_u.html":[2,3,1,20],
+"functions_func_v.html":[2,3,1,21],
+"functions_func_w.html":[2,3,1,22],
+"functions_func_x.html":[2,3,1,23],
+"functions_func_y.html":[2,3,1,24],
 "functions_func_~.html":[2,3,1,25],
 "functions_g.html":[2,3,0,7],
 "functions_h.html":[2,3,0,8],
@@ -16,8 +21,8 @@ var NAVTREEINDEX52 =
 "functions_rela.html":[2,3,6],
 "functions_s.html":[2,3,0,19],
 "functions_t.html":[2,3,0,20],
-"functions_type.html":[2,3,3,0],
 "functions_type.html":[2,3,3],
+"functions_type.html":[2,3,3,0],
 "functions_type_b.html":[2,3,3,1],
 "functions_type_c.html":[2,3,3,2],
 "functions_type_d.html":[2,3,3,3],
@@ -35,8 +40,8 @@ var NAVTREEINDEX52 =
 "functions_type_v.html":[2,3,3,15],
 "functions_u.html":[2,3,0,21],
 "functions_v.html":[2,3,0,22],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX52 =
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html":[2,0,6,5],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__fi__pd__wtime.html#a0e54240aedd2202434b50c5b107a41ed":[2,0,6,5,0],
 "interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html":[2,0,6,6],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a0950705752a3ec1defbb7701ac28a32b":[2,0,6,6,2],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a0dc4f5ab19e59b9eef022747ac0d6f3f":[2,0,6,6,0],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a2f2085463e4f7381decb0edc764b9df6":[2,0,6,6,3],
-"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#ac483180176741214ea0f2ef611b77263":[2,0,6,6,1],
-"interfaceamrex__parmparse__module_1_1amrex__delete__parmparse.html":[2,0,7,0],
-"interfaceamrex__parmparse__module_1_1amrex__delete__parmparse.html#a35b2283a5bb6463094f49b874b125bb7":[2,0,7,0,0]
+"interfaceamrex__paralleldescriptor__module_1_1amrex__pd__bcast.html#a0950705752a3ec1defbb7701ac28a32b":[2,0,6,6,2]
 };

@@ -97,6 +97,7 @@ var hierarchy =
         [ "amrex::PODVector< ParticleReal *, DefaultAllocator< ParticleReal * > >", "classamrex_1_1PODVector.html", null ],
         [ "amrex::PODVector< ParticleType, DefaultAllocator< ParticleType > >", "classamrex_1_1PODVector.html", null ]
       ] ],
+      [ "amrex::AsyncArenaAllocator< T >", "classamrex_1_1AsyncArenaAllocator.html", null ],
       [ "amrex::DeviceArenaAllocator< T >", "classamrex_1_1DeviceArenaAllocator.html", null ],
       [ "amrex::ManagedArenaAllocator< T >", "classamrex_1_1ManagedArenaAllocator.html", null ],
       [ "amrex::PinnedArenaAllocator< T >", "classamrex_1_1PinnedArenaAllocator.html", null ]
@@ -654,8 +655,8 @@ var hierarchy =
     [ "amrex::NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::NodalProjector", "classamrex_1_1NodalProjector.html", null ],
-    [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
+    [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
     [ "amrex::EArena::Node", "structamrex_1_1EArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],
@@ -896,6 +897,7 @@ var hierarchy =
       [ "amrex::MaybeDeviceRunnable< T, Enable >", "structamrex_1_1MaybeDeviceRunnable.html", null ],
       [ "amrex::MaybeHostDeviceRunnable< T, Enable >", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
       [ "amrex::RunOnGpu< ArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ArenaAllocator_3_01T_01_4_01_4.html", null ],
+      [ "amrex::RunOnGpu< AsyncArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01AsyncArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::RunOnGpu< DeviceArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01DeviceArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::RunOnGpu< ManagedArenaAllocator< T > >", "structamrex_1_1RunOnGpu_3_01ManagedArenaAllocator_3_01T_01_4_01_4.html", null ],
       [ "amrex::Conjunction< IsCallableR< Dim3, IndexMap &, const Dim3 & >, HasInverseMemFn< const IndexMap & > >", "structamrex_1_1Conjunction.html", [
