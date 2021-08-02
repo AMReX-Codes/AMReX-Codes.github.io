@@ -111,6 +111,10 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_EBInterpolater.H", "AMReX__EBInterpolater_8H.html", [
       [ "EBCellConservativeLinear", "classamrex_1_1EBCellConservativeLinear.html", "classamrex_1_1EBCellConservativeLinear" ]
     ] ],
+    [ "AMReX_EBMFInterpolater.cpp", "AMReX__EBMFInterpolater_8cpp.html", "AMReX__EBMFInterpolater_8cpp" ],
+    [ "AMReX_EBMFInterpolater.H", "AMReX__EBMFInterpolater_8H.html", [
+      [ "EBMFCellConsLinInterp", "classamrex_1_1EBMFCellConsLinInterp.html", "classamrex_1_1EBMFCellConsLinInterp" ]
+    ] ],
     [ "AMReX_EBMultiFabUtil.cpp", "AMReX__EBMultiFabUtil_8cpp.html", "AMReX__EBMultiFabUtil_8cpp" ],
     [ "AMReX_EBMultiFabUtil.H", "AMReX__EBMultiFabUtil_8H.html", "AMReX__EBMultiFabUtil_8H" ],
     [ "AMReX_EBMultiFabUtil_2D_C.H", "AMReX__EBMultiFabUtil__2D__C_8H.html", "AMReX__EBMultiFabUtil__2D__C_8H" ],

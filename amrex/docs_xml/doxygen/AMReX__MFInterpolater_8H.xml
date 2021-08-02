@@ -8,6 +8,7 @@
     <includedby refid="AMReX__StateDescriptor_8H" local="no">/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateDescriptor.H</includedby>
     <includedby refid="AMReX__FillPatchUtil_8H" local="no">/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_FillPatchUtil.H</includedby>
     <includedby refid="AMReX__MFInterpolater_8cpp" local="no">/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_MFInterpolater.cpp</includedby>
+    <includedby refid="AMReX__EBMFInterpolater_8H" local="no">/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H</includedby>
     <incdepgraph>
       <node id="7">
         <label>AMReX_Algorithm.H</label>
@@ -506,6 +507,8 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
       <node id="13">
         <label>/home/runner/work/amrex/amrex/Src/AmrCore/AMReX_AmrParticles.H</label>
@@ -519,9 +522,19 @@
         <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_StateData.cpp</label>
         <link refid="AMReX__StateData_8cpp"/>
       </node>
+      <node id="17">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.cpp</label>
+        <link refid="AMReX__EBMFInterpolater_8cpp"/>
+      </node>
       <node id="4">
         <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_Amr.cpp</label>
         <link refid="AMReX__Amr_8cpp"/>
+      </node>
+      <node id="16">
+        <label>/home/runner/work/amrex/amrex/Src/EB/AMReX_EBMFInterpolater.H</label>
+        <link refid="AMReX__EBMFInterpolater_8H"/>
+        <childnode refid="17" relation="include">
+        </childnode>
       </node>
       <node id="6">
         <label>/home/runner/work/amrex/amrex/Src/Amr/AMReX_LevelBld.H</label>
@@ -623,7 +636,7 @@
 <codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BCRec&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcscomp);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53" refid="classamrex_1_1MFCellConsLinInterp" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1MFCellConsLinInterp" kindref="compound">MFCellConsLinInterp</ref><sp/>final</highlight></codeline>
+<codeline lineno="53" refid="classamrex_1_1MFCellConsLinInterp" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classamrex_1_1MFCellConsLinInterp" kindref="compound">MFCellConsLinInterp</ref></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MFInterpolater" kindref="compound">MFInterpolater</ref></highlight></codeline>
 <codeline lineno="55"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
@@ -632,13 +645,13 @@
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1a12fc644c56b404fb262fe306024804d5" kindref="member">~MFCellConsLinInterp</ref><sp/>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1afc948e3b491c48247aa4fd5edb3899ca" kindref="member">CoarseBox</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1afc948e3b491c48247aa4fd5edb3899ca" kindref="member">CoarseBox</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ratio);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1a74654ff59b479f8515f47d0104c5d44c" kindref="member">CoarseBox</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ratio)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1a74654ff59b479f8515f47d0104c5d44c" kindref="member">CoarseBox</ref><sp/>(<ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ratio)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1aad4c2932dab4fb764d1346ff29d31780" kindref="member">interp</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crsemf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ccomp,<sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>finemf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1acbb3de375a7d2c73c0b3f9b9326de4a8" kindref="member">interp</ref><sp/>(<ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crsemf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ccomp,<sp/><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref>&amp;<sp/>finemf,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ncomp,</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ng,<sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>cgeom,<sp/><ref refid="classamrex_1_1Geometry" kindref="compound">Geometry</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fgeom,</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Box" kindref="compound">Box</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dest_domain,<sp/><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ratio,</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BCRec&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcscomp);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1Vector" kindref="compound">Vector&lt;BCRec&gt;</ref><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcs,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bcscomp)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="70" refid="classamrex_1_1MFCellConsLinInterp_1a91c24df4c8841c52503e3ce919f6a223" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1MFCellConsLinInterp_1a91c24df4c8841c52503e3ce919f6a223" kindref="member">do_linear_limiting</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal">};</highlight></codeline>

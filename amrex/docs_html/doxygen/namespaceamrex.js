@@ -129,6 +129,7 @@ var namespaceamrex =
     [ "EBFArrayBox", "classamrex_1_1EBFArrayBox.html", "classamrex_1_1EBFArrayBox" ],
     [ "EBFArrayBoxFactory", "classamrex_1_1EBFArrayBoxFactory.html", "classamrex_1_1EBFArrayBoxFactory" ],
     [ "EBFluxRegister", "classamrex_1_1EBFluxRegister.html", "classamrex_1_1EBFluxRegister" ],
+    [ "EBMFCellConsLinInterp", "classamrex_1_1EBMFCellConsLinInterp.html", "classamrex_1_1EBMFCellConsLinInterp" ],
     [ "EBToPVD", "classamrex_1_1EBToPVD.html", "classamrex_1_1EBToPVD" ],
     [ "ErrorList", "classamrex_1_1ErrorList.html", "classamrex_1_1ErrorList" ],
     [ "ErrorRec", "classamrex_1_1ErrorRec.html", "classamrex_1_1ErrorRec" ],

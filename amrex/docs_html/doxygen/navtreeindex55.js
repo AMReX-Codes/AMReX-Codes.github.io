@@ -1,5 +1,14 @@
 var NAVTREEINDEX55 =
 {
+"structamrex_1_1Array4.html":[2,0,0,46],
+"structamrex_1_1Array4.html#a0951dd1a1e6d5b4f5a41c4cae335f6f1":[2,0,0,46,13],
+"structamrex_1_1Array4.html#a2e9026521a8eb804b7822ee594358322":[2,0,0,46,16],
+"structamrex_1_1Array4.html#a2f847bb967235ec601258fe8726ec83e":[2,0,0,46,21],
+"structamrex_1_1Array4.html#a3ced076d0c7749962476bc53b35209ef":[2,0,0,46,10],
+"structamrex_1_1Array4.html#a4348b8093dd5bd53b0094f2db00bd643":[2,0,0,46,14],
+"structamrex_1_1Array4.html#a4d10b2bc8e84c54a971e9a72b5eb760c":[2,0,0,46,11],
+"structamrex_1_1Array4.html#a58a49cd7aec26094f9a5dda9ee795cca":[2,0,0,46,22],
+"structamrex_1_1Array4.html#a646dba54267ac369c499b16c68cd7b51":[2,0,0,46,12],
 "structamrex_1_1Array4.html#a68895c23f542effc10e2a36ef80fcf37":[2,0,0,46,1],
 "structamrex_1_1Array4.html#a6ca368fd14b6a0393e41dd72c0d3b48f":[2,0,0,46,15],
 "structamrex_1_1Array4.html#a7c005d65913452a3aa2b0e2e4d6ffd22":[2,0,0,46,7],
@@ -240,14 +249,5 @@ var NAVTREEINDEX55 =
 "structamrex_1_1DataDeleter.html":[2,0,0,97],
 "structamrex_1_1DataDeleter.html#a0d66db706137406cce85fd27fa47cb03":[2,0,0,97,3],
 "structamrex_1_1DataDeleter.html#a2d435760333c6f0326e928c0f9481a24":[2,0,0,97,1],
-"structamrex_1_1DataDeleter.html#a3daee94cbf63696956b6e349478448dc":[2,0,0,97,2],
-"structamrex_1_1DataDeleter.html#a3f56660ebd06ba11f5c873d99b3e899f":[2,0,0,97,4],
-"structamrex_1_1DataDeleter.html#a6538f3e7403c1630f1f101ce2b8a6e16":[2,0,0,97,0],
-"structamrex_1_1DataLayoutPolicy.html":[2,0,0,98],
-"structamrex_1_1DataLayoutPolicyRaw.html":[2,0,0,101],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html":[2,0,0,102],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a4cea01ca1b107d8585be77870f2da12f":[2,0,0,102,0],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#a913ff82076d8ba44b1368ee651f235b4":[2,0,0,102,1],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1AoS_01_4.html#ad7ea515268941e1794cac2cb63c710c4":[2,0,0,102,2],
-"structamrex_1_1DataLayoutPolicyRaw_3_01ParticleType_3_01Types_8_8_8_01_4_00_01DataLayout_1_1SoA_01_4.html":[2,0,0,103]
+"structamrex_1_1DataDeleter.html#a3daee94cbf63696956b6e349478448dc":[2,0,0,97,2]
 };
