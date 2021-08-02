@@ -124,130 +124,123 @@ $(document).ready(function(){initNavTree('AMReX__MFInterp__3D__C_8H_source.html'
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        sx = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sx,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (dc != Real(0.0)) {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            sfx = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sfx, sx / dc);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            sfx = Real(0.0);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// y-direction</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        dc = mf_compute_slopes_y(i, j, k, u, nu, domain, bc[ns]);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        df = Real(2.0) * (u(i,j+1,k,nu) - u(i,j  ,k,nu));</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        db = Real(2.0) * (u(i,j  ,k,nu) - u(i,j-1,k,nu));</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Real sy = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        sy = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sy,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (dc != Real(0.0)) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            sfy = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sfy, sy / dc);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            sfy = Real(0.0);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// z-direction</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        dc = mf_compute_slopes_z(i, j, k, u, nu, domain, bc[ns]);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        df = Real(2.0) * (u(i,j,k+1,nu) - u(i,j,k  ,nu));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        db = Real(2.0) * (u(i,j,k  ,nu) - u(i,j,k-1,nu));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Real sz = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        sz = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sz,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (dc != Real(0.0)) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            sfz = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sfz, sz / dc);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            sfz = Real(0.0);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        slope(i,j,k,ns        ) = sx;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        slope(i,j,k,ns+  ncomp) = sy;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        slope(i,j,k,ns+2*ncomp) = sz;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        slope(i,j,k,ns        ) = dc;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// y-direction</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        dc = mf_compute_slopes_y(i, j, k, u, nu, domain, bc[ns]);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        df = Real(2.0) * (u(i,j+1,k,nu) - u(i,j  ,k,nu));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        db = Real(2.0) * (u(i,j  ,k,nu) - u(i,j-1,k,nu));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        Real sy = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        sy = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sy,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (dc != Real(0.0)) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            sfy = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sfy, sy / dc);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        slope(i,j,k,ns+  ncomp) = dc;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// z-direction</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        dc = mf_compute_slopes_z(i, j, k, u, nu, domain, bc[ns]);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        df = Real(2.0) * (u(i,j,k+1,nu) - u(i,j,k  ,nu));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        db = Real(2.0) * (u(i,j,k  ,nu) - u(i,j,k-1,nu));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        Real sz = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        sz = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sz,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (dc != Real(0.0)) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            sfz = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sfz, sz / dc);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        slope(i,j,k,ns+2*ncomp) = dc;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ns = 0; ns &lt; ncomp; ++ns) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        slope(i,j,k,ns        ) *= sfx;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        slope(i,j,k,ns+  ncomp) *= sfy;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        slope(i,j,k,ns+2*ncomp) *= sfz;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ns = 0; ns &lt; ncomp; ++ns) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        slope(i,j,k,ns        ) *= sfx;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        slope(i,j,k,ns+  ncomp) *= sfy;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        slope(i,j,k,ns+2*ncomp) *= sfz;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ae0968fbdec9c18ba927fe7e055136974">mf_cell_cons_lin_interp_mcslope</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> ns, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; slope,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                      Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; u, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                      Box <span class="keyword">const</span>&amp; domain, IntVect <span class="keyword">const</span>&amp; ratio,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                      BCRec <span class="keyword">const</span>* bc) noexcept</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> nu = ns + scomp;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#ae0968fbdec9c18ba927fe7e055136974">mf_cell_cons_lin_interp_mcslope</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> ns, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; slope,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                      Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; u, <span class="keywordtype">int</span> scomp, <span class="keywordtype">int</span> ncomp,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                      Box <span class="keyword">const</span>&amp; domain, IntVect <span class="keyword">const</span>&amp; ratio,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                      BCRec <span class="keyword">const</span>* bc) noexcept</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> nu = ns + scomp;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// x-direction</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Real dc = mf_compute_slopes_x(i, j, k, u, nu, domain, bc[ns]);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Real df = Real(2.0) * (u(i+1,j,k,nu) - u(i  ,j,k,nu));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    Real db = Real(2.0) * (u(i  ,j,k,nu) - u(i-1,j,k,nu));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    Real sx = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    sx = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sx,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// x-direction</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Real dc = mf_compute_slopes_x(i, j, k, u, nu, domain, bc[ns]);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Real df = Real(2.0) * (u(i+1,j,k,nu) - u(i  ,j,k,nu));</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Real db = Real(2.0) * (u(i  ,j,k,nu) - u(i-1,j,k,nu));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Real sx = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    sx = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sx,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// y-direction</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    dc = mf_compute_slopes_y(i, j, k, u, nu, domain, bc[ns]);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    df = Real(2.0) * (u(i,j+1,k,nu) - u(i,j  ,k,nu));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    db = Real(2.0) * (u(i,j  ,k,nu) - u(i,j-1,k,nu));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Real sy = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    sy = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sy,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// y-direction</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    dc = mf_compute_slopes_y(i, j, k, u, nu, domain, bc[ns]);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    df = Real(2.0) * (u(i,j+1,k,nu) - u(i,j  ,k,nu));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    db = Real(2.0) * (u(i,j  ,k,nu) - u(i,j-1,k,nu));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    Real sy = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    sy = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sy,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// z-direction</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    dc = mf_compute_slopes_z(i, j, k, u, nu, domain, bc[ns]);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    df = Real(2.0) * (u(i,j,k+1,nu) - u(i,j,k  ,nu));</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    db = Real(2.0) * (u(i,j,k  ,nu) - u(i,j,k-1,nu));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    Real sz = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    sz = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sz,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// z-direction</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    dc = mf_compute_slopes_z(i, j, k, u, nu, domain, bc[ns]);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    df = Real(2.0) * (u(i,j,k+1,nu) - u(i,j,k  ,nu));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    db = Real(2.0) * (u(i,j,k  ,nu) - u(i,j,k-1,nu));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Real sz = (df*db &gt;= Real(0.0)) ? <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(df),<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(db)) : Real(0.);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    sz = amrex::Math::copysign(Real(1.),dc)*<a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(sz,<a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(dc));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    Real alpha = 1.0;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (sx != Real(0.0) || sy != Real(0.0) || sz != Real(0.0)) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        Real dumax = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(sx) * Real(ratio[0]-1)/Real(2*ratio[0])</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            +        <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(sy) * Real(ratio[1]-1)/Real(2*ratio[1])</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            +        <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(sz) * Real(ratio[2]-1)/Real(2*ratio[2]);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        Real umax = u(i,j,k,nu);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        Real umin = u(i,j,k,nu);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> koff = -1; koff &lt;= 1; ++koff) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> joff = -1; joff &lt;= 1; ++joff) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ioff = -1; ioff &lt;= 1; ++ioff) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            umin = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(umin, u(i+ioff,j+joff,k+koff,nu));</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            umax = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(umax, u(i+ioff,j+joff,k+koff,nu));</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }}}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (dumax * alpha &gt; (umax - u(i,j,k,nu))) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            alpha = (umax - u(i,j,k,nu)) / dumax;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (dumax * alpha &gt; (u(i,j,k,nu) - umin)) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            alpha = (u(i,j,k,nu) - umin) / dumax;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    slope(i,j,k,ns        ) = sx * alpha;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    slope(i,j,k,ns+  ncomp) = sy * alpha;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    slope(i,j,k,ns+2*ncomp) = sz * alpha;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a0f184035b5712d52d0fc53e7bd7c5241">mf_cell_cons_lin_interp</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> ns, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fine, <span class="keywordtype">int</span> fcomp,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                              Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; slope, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; crse,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                              <span class="keywordtype">int</span> ccomp, <span class="keywordtype">int</span> ncomp, IntVect <span class="keyword">const</span>&amp; ratio) noexcept</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ic = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(i, ratio[0]);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jc = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(j, ratio[1]);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> kc = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(k, ratio[2]);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">const</span> Real xoff = (i - ic*ratio[0] + Real(0.5)) / Real(ratio[0]) - Real(0.5);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">const</span> Real yoff = (j - jc*ratio[1] + Real(0.5)) / Real(ratio[1]) - Real(0.5);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keyword">const</span> Real zoff = (k - kc*ratio[2] + Real(0.5)) / Real(ratio[2]) - Real(0.5);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    fine(i,j,k,fcomp+ns) = crse(ic,jc,kc,ccomp+ns)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        + xoff * slope(ic,jc,kc,ns)</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        + yoff * slope(ic,jc,kc,ns+ncomp)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        + zoff * slope(ic,jc,kc,ns+ncomp*2);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    Real alpha = 1.0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span> (sx != Real(0.0) || sy != Real(0.0) || sz != Real(0.0)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Real dumax = <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(sx) * Real(ratio[0]-1)/Real(2*ratio[0])</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            +        <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(sy) * Real(ratio[1]-1)/Real(2*ratio[1])</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            +        <a class="code" href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">amrex::Math::abs</a>(sz) * Real(ratio[2]-1)/Real(2*ratio[2]);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        Real umax = u(i,j,k,nu);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        Real umin = u(i,j,k,nu);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> koff = -1; koff &lt;= 1; ++koff) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> joff = -1; joff &lt;= 1; ++joff) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ioff = -1; ioff &lt;= 1; ++ioff) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            umin = <a class="code" href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a>(umin, u(i+ioff,j+joff,k+koff,nu));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            umax = <a class="code" href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a>(umax, u(i+ioff,j+joff,k+koff,nu));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }}}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (dumax * alpha &gt; (umax - u(i,j,k,nu))) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            alpha = (umax - u(i,j,k,nu)) / dumax;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (dumax * alpha &gt; (u(i,j,k,nu) - umin)) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            alpha = (u(i,j,k,nu) - umin) / dumax;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    slope(i,j,k,ns        ) = sx * alpha;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    slope(i,j,k,ns+  ncomp) = sy * alpha;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    slope(i,j,k,ns+2*ncomp) = sz * alpha;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a0f184035b5712d52d0fc53e7bd7c5241">mf_cell_cons_lin_interp</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> ns, Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fine, <span class="keywordtype">int</span> fcomp,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                              Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; slope, Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; crse,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                              <span class="keywordtype">int</span> ccomp, <span class="keywordtype">int</span> ncomp, IntVect <span class="keyword">const</span>&amp; ratio) noexcept</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ic = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(i, ratio[0]);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> jc = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(j, ratio[1]);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> kc = <a class="code" href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a>(k, ratio[2]);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">const</span> Real xoff = (i - ic*ratio[0] + Real(0.5)) / Real(ratio[0]) - Real(0.5);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">const</span> Real yoff = (j - jc*ratio[1] + Real(0.5)) / Real(ratio[1]) - Real(0.5);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">const</span> Real zoff = (k - kc*ratio[2] + Real(0.5)) / Real(ratio[2]) - Real(0.5);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    fine(i,j,k,fcomp+ns) = crse(ic,jc,kc,ccomp+ns)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        + xoff * slope(ic,jc,kc,ns)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        + yoff * slope(ic,jc,kc,ns+ncomp)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        + zoff * slope(ic,jc,kc,ns+ncomp*2);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceamrex_html_a2d2bb7bdafe91906c966d8e75d540bea"><div class="ttname"><a href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:21</div></div>
-<div class="ttc" id="anamespaceamrex_html_ae0968fbdec9c18ba927fe7e055136974"><div class="ttname"><a href="namespaceamrex.html#ae0968fbdec9c18ba927fe7e055136974">amrex::mf_cell_cons_lin_interp_mcslope</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mf_cell_cons_lin_interp_mcslope(int i, int, int, int ns, Array4&lt; Real &gt; const &amp;slope, Array4&lt; Real const &gt; const &amp;u, int scomp, int ncomp, Box const &amp;domain, IntVect const &amp;ratio, BCRec const *bc) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MFInterp_1D_C.H:37</div></div>
+<div class="ttc" id="anamespaceamrex_html_ae0968fbdec9c18ba927fe7e055136974"><div class="ttname"><a href="namespaceamrex.html#ae0968fbdec9c18ba927fe7e055136974">amrex::mf_cell_cons_lin_interp_mcslope</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mf_cell_cons_lin_interp_mcslope(int i, int, int, int ns, Array4&lt; Real &gt; const &amp;slope, Array4&lt; Real const &gt; const &amp;u, int scomp, int ncomp, Box const &amp;domain, IntVect const &amp;ratio, BCRec const *bc) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MFInterp_1D_C.H:34</div></div>
 <div class="ttc" id="anamespaceamrex_html_a9fb6c36ab72dfe92709f0ea89baa4824"><div class="ttname"><a href="namespaceamrex.html#a9fb6c36ab72dfe92709f0ea89baa4824">amrex::coarsen</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Box coarsen(const Box &amp;b, int ref_ratio) noexcept</div><div class="ttdoc">Coarsen Box by given (positive) refinement ratio. NOTE: if type(dir) = CELL centered: lo &lt;- lo/ratio ...</div><div class="ttdef"><b>Definition:</b> AMReX_Box.H:1210</div></div>
 <div class="ttc" id="anamespaceamrex_html_a72d8b9352d99ebca0a7eba07dadbdfa5"><div class="ttname"><a href="namespaceamrex.html#a72d8b9352d99ebca0a7eba07dadbdfa5">amrex::max</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; max(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:35</div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_aac52ee54727d35b2d0033b119a991618"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_HOST_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:14</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:110</div></div>
-<div class="ttc" id="anamespaceamrex_html_a0f184035b5712d52d0fc53e7bd7c5241"><div class="ttname"><a href="namespaceamrex.html#a0f184035b5712d52d0fc53e7bd7c5241">amrex::mf_cell_cons_lin_interp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mf_cell_cons_lin_interp(int i, int, int, int ns, Array4&lt; Real &gt; const &amp;fine, int fcomp, Array4&lt; Real const &gt; const &amp;slope, Array4&lt; Real const &gt; const &amp;crse, int ccomp, int ncomp, IntVect const &amp;ratio) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MFInterp_1D_C.H:73</div></div>
+<div class="ttc" id="anamespaceamrex_html_a0f184035b5712d52d0fc53e7bd7c5241"><div class="ttname"><a href="namespaceamrex.html#a0f184035b5712d52d0fc53e7bd7c5241">amrex::mf_cell_cons_lin_interp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mf_cell_cons_lin_interp(int i, int, int, int ns, Array4&lt; Real &gt; const &amp;fine, int fcomp, Array4&lt; Real const &gt; const &amp;slope, Array4&lt; Real const &gt; const &amp;crse, int ccomp, int ncomp, IntVect const &amp;ratio) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MFInterp_1D_C.H:70</div></div>
 <div class="ttc" id="acomplex-type_8h_html_a3aa069ac3980707dae1e0530f50d59e4"><div class="ttname"><a href="complex-type_8h.html#a3aa069ac3980707dae1e0530f50d59e4">abs</a></div><div class="ttdeci">#define abs(x)</div><div class="ttdef"><b>Definition:</b> complex-type.h:85</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> AMReX_Amr.cpp:49</div></div>
 <div class="ttc" id="anamespaceamrex_html_a589b224d06c74e31215a36825605ba04"><div class="ttname"><a href="namespaceamrex.html#a589b224d06c74e31215a36825605ba04">amrex::mf_cell_cons_lin_interp_llslope</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void mf_cell_cons_lin_interp_llslope(int i, int, int, Array4&lt; Real &gt; const &amp;slope, Array4&lt; Real const &gt; const &amp;u, int scomp, int ncomp, Box const &amp;domain, BCRec const *bc) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MFInterp_1D_C.H:7</div></div>
