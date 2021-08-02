@@ -496,7 +496,8 @@ var hierarchy =
         [ "amrex::PCInterp", "classamrex_1_1PCInterp.html", null ]
       ] ],
       [ "amrex::MFInterpolater", "classamrex_1_1MFInterpolater.html", [
-        [ "amrex::MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", null ]
+        [ "amrex::MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", null ],
+        [ "amrex::MFPCInterp", "classamrex_1_1MFPCInterp.html", null ]
       ] ]
     ] ],
     [ "amrex::algoim::Interval", "structamrex_1_1algoim_1_1Interval.html", null ],
@@ -800,8 +801,8 @@ var hierarchy =
     [ "CommProfStats::ReductionEntry", "structCommProfStats_1_1ReductionEntry.html", null ],
     [ "amrex::DistributionMapping::Ref", "structamrex_1_1DistributionMapping_1_1Ref.html", null ],
     [ "amrex::ref_wrapper< T >", "classamrex_1_1ref__wrapper.html", null ],
-    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::DistributionMapping::RefID", "structamrex_1_1DistributionMapping_1_1RefID.html", null ],
+    [ "amrex::BoxArray::RefID", "structamrex_1_1BoxArray_1_1RefID.html", null ],
     [ "amrex::FabArrayBase::RegionTag", "structamrex_1_1FabArrayBase_1_1RegionTag.html", null ],
     [ "amrex::Scan::RetSum", "structamrex_1_1Scan_1_1RetSum.html", null ],
     [ "amrex::NonLocalBC::Rotate180Fn", "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html", null ],

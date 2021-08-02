@@ -66,6 +66,7 @@ var dir_55eec958e272d6cfff0ea35b0f5787ca =
     [ "AMReX_MFInterpolater.cpp", "AMReX__MFInterpolater_8cpp.html", "AMReX__MFInterpolater_8cpp" ],
     [ "AMReX_MFInterpolater.H", "AMReX__MFInterpolater_8H.html", [
       [ "MFInterpolater", "classamrex_1_1MFInterpolater.html", "classamrex_1_1MFInterpolater" ],
+      [ "MFPCInterp", "classamrex_1_1MFPCInterp.html", "classamrex_1_1MFPCInterp" ],
       [ "MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", "classamrex_1_1MFCellConsLinInterp" ]
     ] ],
     [ "AMReX_TagBox.cpp", "AMReX__TagBox_8cpp.html", null ],

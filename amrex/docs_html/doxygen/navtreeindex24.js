@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classRegionsProfStats.html#afe23b7a85cbdc57134ace7e6e2c99765":[2,0,26,2],
 "classSDCstruct.html":[2,0,27],
 "classSDCstruct.html#a31a4078930e156dc28589750c88b7fb3":[2,0,27,15],
 "classSDCstruct.html#a3c3082e11f568453735e5716a4ba7b52":[2,0,27,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classamrex_1_1Amr.html#ae22e90398efa6b78ca3d1a68e0839a31":[2,0,0,19,123],
 "classamrex_1_1Amr.html#ae33c3da2142bfd379d08bad3b4104562":[2,0,0,19,18],
 "classamrex_1_1Amr.html#ae63754ca7b99b0ebc7dca496b4689bc4":[2,0,0,19,103],
-"classamrex_1_1Amr.html#ae93d8da97d0a049f5da23bea33ed2fe1":[2,0,0,19,115],
-"classamrex_1_1Amr.html#aebb7e0750e8e5f5a9ae59c4b048e0974":[2,0,0,19,51]
+"classamrex_1_1Amr.html#ae93d8da97d0a049f5da23bea33ed2fe1":[2,0,0,19,115]
 };

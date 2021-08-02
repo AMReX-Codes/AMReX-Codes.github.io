@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"classamrex_1_1EB2_1_1DifferenceIF.html#ac25ccdc405c9a5dc9e22c69b172fa459":[2,0,0,4,5,8],
 "classamrex_1_1EB2_1_1DifferenceIF.html#ac539cfc235111a39d7fc283e0d92c4e7":[2,0,0,4,5,7],
 "classamrex_1_1EB2_1_1DifferenceIF.html#ae287196d92d12f93665e324a9d0bdc43":[2,0,0,4,5,0],
 "classamrex_1_1EB2_1_1DifferenceIF.html#aeffcadc6fa14d7acfdb3d46aaead9e0e":[2,0,0,4,5,2],
@@ -52,8 +53,8 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1GeometryShop.html#a1ae5ec19a6ac23d6aee924e0e628a5eb":[2,0,0,4,10,13],
 "classamrex_1_1EB2_1_1GeometryShop.html#a21626bdeb656074c2e675969aec678bb":[2,0,0,4,10,9],
 "classamrex_1_1EB2_1_1GeometryShop.html#a2e356da2badc30adacbc98d1e04cff97":[2,0,0,4,10,4],
-"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,18],
 "classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,17],
+"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,18],
 "classamrex_1_1EB2_1_1GeometryShop.html#a3e0822600d48fac2177a0b93671e868a":[2,0,0,4,10,23],
 "classamrex_1_1EB2_1_1GeometryShop.html#a4743c337de07fcbcad184ec6242ad0e1":[2,0,0,4,10,21],
 "classamrex_1_1EB2_1_1GeometryShop.html#a4f0ec1939369d98bc8f8c34ee391e221":[2,0,0,4,10,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1ScaleIF.html#ad8ccb09585cf3742c35ad7aca5dac6c5":[2,0,0,4,39,3],
 "classamrex_1_1EB2_1_1SphereIF.html":[2,0,0,4,40],
 "classamrex_1_1EB2_1_1SphereIF.html#a2db0e61abd7b74cd08262e3ba77313a7":[2,0,0,4,40,1],
-"classamrex_1_1EB2_1_1SphereIF.html#a3824095808843e69354b448ae713aabb":[2,0,0,4,40,3],
-"classamrex_1_1EB2_1_1SphereIF.html#a3de3a558f56392c6c36976d0a8f21813":[2,0,0,4,40,8]
+"classamrex_1_1EB2_1_1SphereIF.html#a3824095808843e69354b448ae713aabb":[2,0,0,4,40,3]
 };

@@ -272,6 +272,7 @@ var namespaceamrex =
     [ "MFInterpolater", "classamrex_1_1MFInterpolater.html", "classamrex_1_1MFInterpolater" ],
     [ "MFIter", "classamrex_1_1MFIter.html", "classamrex_1_1MFIter" ],
     [ "MFItInfo", "structamrex_1_1MFItInfo.html", "structamrex_1_1MFItInfo" ],
+    [ "MFPCInterp", "classamrex_1_1MFPCInterp.html", "classamrex_1_1MFPCInterp" ],
     [ "MLABecLaplacian", "classamrex_1_1MLABecLaplacian.html", "classamrex_1_1MLABecLaplacian" ],
     [ "MLALaplacian", "classamrex_1_1MLALaplacian.html", "classamrex_1_1MLALaplacian" ],
     [ "MLCellABecLap", "classamrex_1_1MLCellABecLap.html", "classamrex_1_1MLCellABecLap" ],

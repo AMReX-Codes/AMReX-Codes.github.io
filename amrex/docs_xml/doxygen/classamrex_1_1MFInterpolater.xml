@@ -4,6 +4,7 @@
     <compoundname>amrex::MFInterpolater</compoundname>
     <basecompoundref refid="classamrex_1_1InterpBase" prot="public" virt="non-virtual">amrex::InterpBase</basecompoundref>
     <derivedcompoundref refid="classamrex_1_1MFCellConsLinInterp" prot="public" virt="non-virtual">amrex::MFCellConsLinInterp</derivedcompoundref>
+    <derivedcompoundref refid="classamrex_1_1MFPCInterp" prot="public" virt="non-virtual">amrex::MFPCInterp</derivedcompoundref>
     <includes refid="AMReX__MFInterpolater_8H" local="no">AMReX_MFInterpolater.H</includes>
       <sectiondef kind="public-func">
       <memberdef kind="function" id="classamrex_1_1MFInterpolater_1afd25250d30fb2d1d605bdb7b6b0e1a4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
@@ -24,6 +25,7 @@
         <definition>virtual void amrex::MFInterpolater::interp</definition>
         <argsstring>(MultiFab const &amp;crsemf, int ccomp, MultiFab &amp;finemf, int fcomp, int ncomp, IntVect const &amp;ng, Geometry const &amp;cgeom, Geometry const &amp;fgeom, Box const &amp;dest_domain, IntVect const &amp;ratio, Vector&lt; BCRec &gt; const &amp;bcs, int bcscomp)=0</argsstring>
         <name>interp</name>
+        <reimplementedby refid="classamrex_1_1MFPCInterp_1a52fb097cb521620e73dfcca243edd2dd">interp</reimplementedby>
         <reimplementedby refid="classamrex_1_1MFCellConsLinInterp_1aad4c2932dab4fb764d1346ff29d31780">interp</reimplementedby>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const &amp;</type>
@@ -95,6 +97,12 @@
         <label>amrex::MFInterpolater</label>
         <link refid="classamrex_1_1MFInterpolater"/>
         <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>amrex::MFPCInterp</label>
+        <link refid="classamrex_1_1MFPCInterp"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
