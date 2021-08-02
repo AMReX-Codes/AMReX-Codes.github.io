@@ -32,6 +32,7 @@ var AMReX__MultiFabUtil_8cpp =
     [ "periodicShift", "AMReX__MultiFabUtil_8cpp.html#a48b0e0bc9bd17bdcba18aa237718737f", null ],
     [ "print_state", "AMReX__MultiFabUtil_8cpp.html#af9853b376b9431740468fdf9e549553d", null ],
     [ "sum_fine_to_coarse", "AMReX__MultiFabUtil_8cpp.html#ab67331acff75bf2840f409750b1ada66", null ],
+    [ "sumToLine", "AMReX__MultiFabUtil_8cpp.html#a882a700cf7fab66ee3ce8de37de3ef73", null ],
     [ "ToLongMultiFab", "AMReX__MultiFabUtil_8cpp.html#ae062fb7f904c1f39327797d8c3fea414", null ],
     [ "ToMultiFab", "AMReX__MultiFabUtil_8cpp.html#a6ca286511a003d2770dba9c37ab53c94", null ],
     [ "writeFabs", "AMReX__MultiFabUtil_8cpp.html#a78ee47545ca66e809f4f680e7513cbd5", null ],

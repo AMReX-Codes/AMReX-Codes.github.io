@@ -1,5 +1,7 @@
 var NAVTREEINDEX33 =
 {
+"classamrex_1_1EB2_1_1SphereIF.html#a2db0e61abd7b74cd08262e3ba77313a7":[2,0,0,4,40,1],
+"classamrex_1_1EB2_1_1SphereIF.html#a3824095808843e69354b448ae713aabb":[2,0,0,4,40,3],
 "classamrex_1_1EB2_1_1SphereIF.html#a3de3a558f56392c6c36976d0a8f21813":[2,0,0,4,40,8],
 "classamrex_1_1EB2_1_1SphereIF.html#a43d80b03741314b72b14c9be08206eed":[2,0,0,4,40,7],
 "classamrex_1_1EB2_1_1SphereIF.html#a4f5cad08cb5e198a941e1a0c4691fabf":[2,0,0,4,40,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX33 =
 "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a041dd769021cf3326b1ca4c491551a36":[2,0,0,131,0,6],
 "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a13339314e8d87bdcbc26fbc4d74c270a":[2,0,0,131,0,4],
 "classamrex_1_1ErrorRec_1_1ErrorFunc.html#a1a7a3ff62c2702366d99b2492fe905af":[2,0,0,131,0,3],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#a3f1699d51a9cf12c7d8e928687db32cb":[2,0,0,131,0,2],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#a3f792e96b23993415bd7d9bba649aa31":[2,0,0,131,0,1],
-"classamrex_1_1ErrorRec_1_1ErrorFunc.html#a598f453d141e3c4a494e3e66d0f6aa37":[2,0,0,131,0,8]
+"classamrex_1_1ErrorRec_1_1ErrorFunc.html#a3f1699d51a9cf12c7d8e928687db32cb":[2,0,0,131,0,2]
 };

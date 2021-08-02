@@ -2863,6 +2863,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a48b0e0bc9bd17bdcba18aa237718737f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a48b0e0bc9bd17bdcba18aa237718737f">periodicShift</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const  &amp;mf, <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> const  &amp;offset, <a class="el" href="classamrex_1_1Periodicity.html">Periodicity</a> const  &amp;period)</td></tr>
 <tr class="memdesc:a48b0e0bc9bd17bdcba18aa237718737f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodic shift <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a>.  <a href="namespaceamrex.html#a48b0e0bc9bd17bdcba18aa237718737f">More...</a><br /></td></tr>
 <tr class="separator:a48b0e0bc9bd17bdcba18aa237718737f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882a700cf7fab66ee3ce8de37de3ef73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceamrex_1_1Gpu.html#a337aceb06d1f93486e6593ff058c0a93">Gpu::HostVector</a>&lt; Real &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#a882a700cf7fab66ee3ce8de37de3ef73">sumToLine</a> (<a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const  &amp;mf, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> icomp, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ncomp, <a class="el" href="classamrex_1_1Box.html">Box</a> const  &amp;domain, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> direction, bool local=false)</td></tr>
+<tr class="memdesc:a882a700cf7fab66ee3ce8de37de3ef73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sum <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> data to line.  <a href="namespaceamrex.html#a882a700cf7fab66ee3ce8de37de3ef73">More...</a><br /></td></tr>
+<tr class="separator:a882a700cf7fab66ee3ce8de37de3ef73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff7bc26e4e82b323802d4b6d546101fc"><td class="memTemplParams" colspan="2">template&lt;typename FAB &gt; </td></tr>
 <tr class="memitem:aff7bc26e4e82b323802d4b6d546101fc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex.html#aff7bc26e4e82b323802d4b6d546101fc">average_down_nodal</a> (const <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;S_fine, <a class="el" href="classamrex_1_1FabArray.html">FabArray</a>&lt; FAB &gt; &amp;S_crse, const <a class="el" href="classamrex_1_1IntVect.html">IntVect</a> &amp;ratio, <a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a> ngcrse=0, bool mfiter_is_definitely_safe=false)</td></tr>
 <tr class="memdesc:aff7bc26e4e82b323802d4b6d546101fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Average fine node-based <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> onto crse node-centered <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a>.  <a href="namespaceamrex.html#aff7bc26e4e82b323802d4b6d546101fc">More...</a><br /></td></tr>
@@ -66183,6 +66186,72 @@ template&lt;class FAB , class bar  = std::enable_if_t&lt;IsBaseFab&lt;FAB&gt;::v
       </table>
 </div><div class="memdoc">
 <p>Add a coarsened version of the data contained in the S_fine <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> to S_crse, including ghost cells. </p>
+
+</div>
+</div>
+<a id="a882a700cf7fab66ee3ce8de37de3ef73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882a700cf7fab66ee3ce8de37de3ef73">&#9670;&nbsp;</a></span>sumToLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceamrex_1_1Gpu.html#a337aceb06d1f93486e6593ff058c0a93">Gpu::HostVector</a>&lt; Real &gt; amrex::sumToLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1MultiFab.html">MultiFab</a> const &amp;&#160;</td>
+          <td class="paramname"><em>mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>icomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classamrex_1_1Box.html">Box</a> const &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceamrex.html#ad2e8127753e9be0ebf531435c6511937">int</a>&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>local</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sum <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> data to line. </p>
+<p>Return a HostVector that contains the sum of the given <a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> data in the plane with the given normal direction. The size of the vector is domain.length(direction) x ncomp. The vector is actually a 2D array, where the element for component icomp at spatial index k is at [icomp*ncomp+k].</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mf</td><td><a class="el" href="classamrex_1_1MultiFab.html" title="A collection (stored as an array) of FArrayBox objects. This class is useful for storing floating poi...">MultiFab</a> data for summing </td></tr>
+    <tr><td class="paramname">icomp</td><td>starting component </td></tr>
+    <tr><td class="paramname">ncomp</td><td>number of components </td></tr>
+    <tr><td class="paramname">domain</td><td>the domain </td></tr>
+    <tr><td class="paramname">direction</td><td>the direction of the line </td></tr>
+    <tr><td class="paramname">local</td><td>If false, reduce across MPI processes. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
