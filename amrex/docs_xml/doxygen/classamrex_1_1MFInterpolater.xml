@@ -3,6 +3,7 @@
   <compounddef id="classamrex_1_1MFInterpolater" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>amrex::MFInterpolater</compoundname>
     <basecompoundref refid="classamrex_1_1InterpBase" prot="public" virt="non-virtual">amrex::InterpBase</basecompoundref>
+    <derivedcompoundref refid="classamrex_1_1MFCellBilinear" prot="public" virt="non-virtual">amrex::MFCellBilinear</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1MFCellConsLinInterp" prot="public" virt="non-virtual">amrex::MFCellConsLinInterp</derivedcompoundref>
     <derivedcompoundref refid="classamrex_1_1MFPCInterp" prot="public" virt="non-virtual">amrex::MFPCInterp</derivedcompoundref>
     <includes refid="AMReX__MFInterpolater_8H" local="no">AMReX_MFInterpolater.H</includes>
@@ -27,6 +28,7 @@
         <name>interp</name>
         <reimplementedby refid="classamrex_1_1MFPCInterp_1a52fb097cb521620e73dfcca243edd2dd">interp</reimplementedby>
         <reimplementedby refid="classamrex_1_1MFCellConsLinInterp_1aad4c2932dab4fb764d1346ff29d31780">interp</reimplementedby>
+        <reimplementedby refid="classamrex_1_1MFCellBilinear_1a73a4cee6d8761bbd2529f3846b4f5431">interp</reimplementedby>
         <param>
           <type><ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const &amp;</type>
           <declname>crsemf</declname>
@@ -99,13 +101,19 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>amrex::MFPCInterp</label>
         <link refid="classamrex_1_1MFPCInterp"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
+        <label>amrex::MFCellBilinear</label>
+        <link refid="classamrex_1_1MFCellBilinear"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
         <label>amrex::MFCellConsLinInterp</label>
         <link refid="classamrex_1_1MFCellConsLinInterp"/>
         <childnode refid="1" relation="public-inheritance">

@@ -6163,6 +6163,12 @@
     <member refid="classamrex_1_1ParallelDescriptor_1_1Message_1a3dd73a745e975beb885a19b708190cbe" kind="function"><name>req</name></member>
     <member refid="classamrex_1_1ParallelDescriptor_1_1Message_1a8b8c3ca768ba6333bad5d0fbe023e804" kind="function"><name>stat</name></member>
   </compound>
+  <compound refid="classamrex_1_1MFCellBilinear" kind="class"><name>amrex::MFCellBilinear</name>
+    <member refid="classamrex_1_1MFCellBilinear_1a8fa87be4e8a6aa1c243a44efbdfafb50" kind="function"><name>~MFCellBilinear</name></member>
+    <member refid="classamrex_1_1MFCellBilinear_1a46a32a44b4f600e8d7b0e8158b261a52" kind="function"><name>CoarseBox</name></member>
+    <member refid="classamrex_1_1MFCellBilinear_1acf8b59c368759689bc86678c7cc358fc" kind="function"><name>CoarseBox</name></member>
+    <member refid="classamrex_1_1MFCellBilinear_1a73a4cee6d8761bbd2529f3846b4f5431" kind="function"><name>interp</name></member>
+  </compound>
   <compound refid="classamrex_1_1MFCellConsLinInterp" kind="class"><name>amrex::MFCellConsLinInterp</name>
     <member refid="classamrex_1_1MFCellConsLinInterp_1a91c24df4c8841c52503e3ce919f6a223" kind="variable"><name>do_linear_limiting</name></member>
     <member refid="classamrex_1_1MFCellConsLinInterp_1a3143da788fef06af1498167b5d05a065" kind="function"><name>MFCellConsLinInterp</name></member>
@@ -10710,6 +10716,7 @@
     <member refid="namespaceamrex_1a087f815fd67c6ce36f943ad7dea6abc9" kind="variable"><name>mf_pc_interp</name></member>
     <member refid="namespaceamrex_1a6e7419b7a3f25db35c9f9593b8636468" kind="variable"><name>mf_cell_cons_interp</name></member>
     <member refid="namespaceamrex_1ae32a7a1de294616e18b781af0bc3fa5e" kind="variable"><name>mf_lincc_interp</name></member>
+    <member refid="namespaceamrex_1a3860e634d51288cfb742504b741a5dfd" kind="variable"><name>mf_cell_bilinear_interp</name></member>
     <member refid="namespaceamrex_1a9a502210430a0780c1ee189758385a60" kind="variable"><name>atomic_total_bytes_allocated_in_fabs</name></member>
     <member refid="namespaceamrex_1a05893af4b8f7c472a5f0d5afe9fddcde" kind="variable"><name>atomic_total_bytes_allocated_in_fabs_hwm</name></member>
     <member refid="namespaceamrex_1aaff9d22bb4535133682d1608e85655e0" kind="variable"><name>atomic_total_cells_allocated_in_fabs</name></member>
@@ -10790,6 +10797,7 @@
     <member refid="namespaceamrex_1a0f184035b5712d52d0fc53e7bd7c5241" kind="function"><name>mf_cell_cons_lin_interp</name></member>
     <member refid="namespaceamrex_1a4391ee48ff8080b4e43398bd9acd9437" kind="function"><name>mf_cell_cons_lin_interp_mcslope_sph</name></member>
     <member refid="namespaceamrex_1a7d4c20d57793de44c82d8fc523b09d56" kind="function"><name>mf_cell_cons_lin_interp_sph</name></member>
+    <member refid="namespaceamrex_1a3f8215c5f372412b96b4497e5e0e9b88" kind="function"><name>mf_cell_bilin_interp</name></member>
     <member refid="namespaceamrex_1a134da8efe3158b98d26a191f52797d00" kind="function"><name>mf_cell_cons_lin_interp_mcslope_rz</name></member>
     <member refid="namespaceamrex_1aaa6a0345d98d3b7b583194f1143472c3" kind="function"><name>mf_cell_cons_lin_interp_rz</name></member>
     <member refid="namespaceamrex_1ad4158723bb78d3d5f19e396a20c0ce2d" kind="function"><name>Version</name></member>
@@ -13084,13 +13092,10 @@
     <member refid="namespaceamrex__fort__module_1af33857a3158504d538c42ff09a23fc6c" kind="function"><name>amrex_coarsen_intvect</name></member>
   </compound>
   <compound refid="namespaceamrex__interp__module" kind="namespace"><name>amrex_interp_module</name>
-    <member refid="namespaceamrex__interp__module_1a7da944617000885ccdd7116ed00bd94b" kind="function"><name>amrex_cbinterp</name></member>
     <member refid="namespaceamrex__interp__module_1a1f89cf16355879c386408d13ee1719cc" kind="function"><name>amrex_quartinterp</name></member>
-    <member refid="namespaceamrex__interp__module_1a57ca327685de33eec1574d1b2c166cf4" kind="function"><name>amrex_cbinterp</name></member>
     <member refid="namespaceamrex__interp__module_1aaf3d9970480daafd81edbb9466818cc9" kind="function"><name>amrex_cqinterp</name></member>
     <member refid="namespaceamrex__interp__module_1a132715d4710e8b5fcaa81a6200cd6c12" kind="function"><name>amrex_protect_interp</name></member>
     <member refid="namespaceamrex__interp__module_1a39edd991c0557b357937a7c002aa0173" kind="function"><name>amrex_quartinterp</name></member>
-    <member refid="namespaceamrex__interp__module_1aa9797b026345814af68fc7988db99f4b" kind="function"><name>amrex_cbinterp</name></member>
     <member refid="namespaceamrex__interp__module_1a20f5344231cb5ae810d6c5ad74797e63" kind="function"><name>amrex_cqinterp</name></member>
     <member refid="namespaceamrex__interp__module_1adbdcedc419c9cacb5c5c6ee510fee749" kind="function"><name>amrex_protect_interp</name></member>
     <member refid="namespaceamrex__interp__module_1a750b18eb2a0b889444aad2f27a54019d" kind="function"><name>amrex_quartinterp</name></member>
@@ -13376,10 +13381,6 @@
   <compound refid="AMReX__FluxRegister_8H" kind="file"><name>AMReX_FluxRegister.H</name>
   </compound>
   <compound refid="AMReX__INTERP__1D_8F90" kind="file"><name>AMReX_INTERP_1D.F90</name>
-    <member refid="AMReX__INTERP__1D_8F90_1ac6d456c82be9ffbed6023148a80674ae" kind="define"><name>IX_PROJ</name></member>
-    <member refid="AMReX__INTERP__1D_8F90_1a0e2e2226dc8d3bcd49b34e7656cdd4f6" kind="define"><name>SLX</name></member>
-    <member refid="AMReX__INTERP__1D_8F90_1a5c28b0e34556d1c30ea0c017a208248b" kind="define"><name>SLY</name></member>
-    <member refid="AMReX__INTERP__1D_8F90_1a3765cb3d3da2b7aa5cbc9967a162bf88" kind="define"><name>SLXY</name></member>
   </compound>
   <compound refid="AMReX__Interp__1D__C_8H" kind="file"><name>AMReX_Interp_1D_C.H</name>
   </compound>
@@ -13391,7 +13392,6 @@
   <compound refid="AMReX__Interp__2D__C_8H" kind="file"><name>AMReX_Interp_2D_C.H</name>
   </compound>
   <compound refid="AMReX__INTERP__3D_8F90" kind="file"><name>AMReX_INTERP_3D.F90</name>
-    <member refid="AMReX__INTERP__3D_8F90_1ac6d456c82be9ffbed6023148a80674ae" kind="define"><name>IX_PROJ</name></member>
   </compound>
   <compound refid="AMReX__Interp__3D__C_8H" kind="file"><name>AMReX_Interp_3D_C.H</name>
   </compound>

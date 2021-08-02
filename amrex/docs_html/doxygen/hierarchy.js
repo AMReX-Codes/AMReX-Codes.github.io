@@ -496,6 +496,7 @@ var hierarchy =
         [ "amrex::PCInterp", "classamrex_1_1PCInterp.html", null ]
       ] ],
       [ "amrex::MFInterpolater", "classamrex_1_1MFInterpolater.html", [
+        [ "amrex::MFCellBilinear", "classamrex_1_1MFCellBilinear.html", null ],
         [ "amrex::MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", null ],
         [ "amrex::MFPCInterp", "classamrex_1_1MFPCInterp.html", null ]
       ] ]

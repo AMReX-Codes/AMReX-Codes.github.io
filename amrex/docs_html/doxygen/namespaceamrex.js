@@ -267,6 +267,7 @@ var namespaceamrex =
     [ "MaybeHostDeviceRunnable", "structamrex_1_1MaybeHostDeviceRunnable.html", null ],
     [ "MaybeHostDeviceRunnable< T, std::enable_if_t< __nv_is_extended_device_lambda_closure_type(T)> >", "structamrex_1_1MaybeHostDeviceRunnable_3_01T_00_01std_1_1enable__if__t_3_01____nv__is__extended_ac548a468bcc64242955fc23b2d496e6.html", null ],
     [ "MemProfiler", "classamrex_1_1MemProfiler.html", "classamrex_1_1MemProfiler" ],
+    [ "MFCellBilinear", "classamrex_1_1MFCellBilinear.html", "classamrex_1_1MFCellBilinear" ],
     [ "MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", "classamrex_1_1MFCellConsLinInterp" ],
     [ "MFInfo", "structamrex_1_1MFInfo.html", "structamrex_1_1MFInfo" ],
     [ "MFInterpolater", "classamrex_1_1MFInterpolater.html", "classamrex_1_1MFInterpolater" ],
