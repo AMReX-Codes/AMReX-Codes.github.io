@@ -101,28 +101,515 @@ $(document).ready(function(){initNavTree('namespaceRedistribution.html',''); ini
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a496336a7f843ce35f36ddb8be3aa68ba"><td class="memItemLeft" align="right" valign="top"><a id="a496336a7f843ce35f36ddb8be3aa68ba"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Apply</b> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_out, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_in, amrex::Array4&lt; amrex::Real const &gt; const &amp;U_in, amrex::Array4&lt; amrex::Real &gt; const &amp;scratch, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, amrex::Geometry const &amp;geom, amrex::Real dt, std::string redistribution_type, amrex::Real target_volfrac=0.5)</td></tr>
+<tr class="memitem:a496336a7f843ce35f36ddb8be3aa68ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRedistribution.html#a496336a7f843ce35f36ddb8be3aa68ba">Apply</a> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_out, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_in, amrex::Array4&lt; amrex::Real const &gt; const &amp;U_in, amrex::Array4&lt; amrex::Real &gt; const &amp;scratch, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, amrex::Geometry const &amp;geom, amrex::Real dt, std::string redistribution_type, amrex::Real target_volfrac=0.5)</td></tr>
 <tr class="separator:a496336a7f843ce35f36ddb8be3aa68ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a563d1cc650b816911ba0c00e17e07d09"><td class="memItemLeft" align="right" valign="top"><a id="a563d1cc650b816911ba0c00e17e07d09"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ApplyToInitialData</b> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;U_out, amrex::Array4&lt; amrex::Real &gt; const &amp;U_in, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, amrex::Geometry &amp;geom, std::string redistribution_type, amrex::Real target_volfrac=0.5)</td></tr>
+<tr class="memitem:a563d1cc650b816911ba0c00e17e07d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRedistribution.html#a563d1cc650b816911ba0c00e17e07d09">ApplyToInitialData</a> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;U_out, amrex::Array4&lt; amrex::Real &gt; const &amp;U_in, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, amrex::Geometry &amp;geom, std::string redistribution_type, amrex::Real target_volfrac=0.5)</td></tr>
 <tr class="separator:a563d1cc650b816911ba0c00e17e07d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5449c76971ae85339614a3aa9375b02"><td class="memItemLeft" align="right" valign="top"><a id="ae5449c76971ae85339614a3aa9375b02"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>FluxRedistribute</b> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_out, amrex::Array4&lt; amrex::Real const &gt; const &amp;dUdt_in, amrex::Array4&lt; amrex::Real &gt; const &amp;scratch, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Geometry const &amp;geom)</td></tr>
+<tr class="memitem:ae5449c76971ae85339614a3aa9375b02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRedistribution.html#ae5449c76971ae85339614a3aa9375b02">FluxRedistribute</a> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_out, amrex::Array4&lt; amrex::Real const &gt; const &amp;dUdt_in, amrex::Array4&lt; amrex::Real &gt; const &amp;scratch, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Geometry const &amp;geom)</td></tr>
 <tr class="separator:ae5449c76971ae85339614a3aa9375b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a026ee49b3fcf1ce9266af274abe4cb72"><td class="memItemLeft" align="right" valign="top"><a id="a026ee49b3fcf1ce9266af274abe4cb72"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>StateRedistribute</b> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_out, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_in, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, amrex::Array4&lt; int const &gt; const &amp;itracker, amrex::Array4&lt; amrex::Real const &gt; const &amp;nrs, amrex::Array4&lt; amrex::Real const &gt; const &amp;nbhd_vol, amrex::Array4&lt; amrex::Real const &gt; const &amp;cent_hat, amrex::Geometry const &amp;geom)</td></tr>
+<tr class="memitem:a026ee49b3fcf1ce9266af274abe4cb72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRedistribution.html#a026ee49b3fcf1ce9266af274abe4cb72">StateRedistribute</a> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_out, amrex::Array4&lt; amrex::Real &gt; const &amp;dUdt_in, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::BCRec const *d_bcrec_ptr, amrex::Array4&lt; int const &gt; const &amp;itracker, amrex::Array4&lt; amrex::Real const &gt; const &amp;nrs, amrex::Array4&lt; amrex::Real const &gt; const &amp;nbhd_vol, amrex::Array4&lt; amrex::Real const &gt; const &amp;cent_hat, amrex::Geometry const &amp;geom)</td></tr>
 <tr class="separator:a026ee49b3fcf1ce9266af274abe4cb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47f4f1398827a0c29d31346ba81df974"><td class="memItemLeft" align="right" valign="top"><a id="a47f4f1398827a0c29d31346ba81df974"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MakeITracker</b> (amrex::Box const &amp;bx, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; int &gt; const &amp;itracker, amrex::Geometry const &amp;geom, amrex::Real target_volfrac)</td></tr>
+<tr class="memitem:a47f4f1398827a0c29d31346ba81df974"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRedistribution.html#a47f4f1398827a0c29d31346ba81df974">MakeITracker</a> (amrex::Box const &amp;bx, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz), amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; int &gt; const &amp;itracker, amrex::Geometry const &amp;geom, amrex::Real target_volfrac)</td></tr>
 <tr class="separator:a47f4f1398827a0c29d31346ba81df974"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82d5abc9a27469c7cde9a05b83ed09d0"><td class="memItemLeft" align="right" valign="top"><a id="a82d5abc9a27469c7cde9a05b83ed09d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>MakeStateRedistUtils</b> (amrex::Box const &amp;bx, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::Array4&lt; int const &gt; const &amp;itracker, amrex::Array4&lt; amrex::Real &gt; const &amp;nrs, amrex::Array4&lt; amrex::Real &gt; const &amp;nbhd_vol, amrex::Array4&lt; amrex::Real &gt; const &amp;cent_hat, amrex::Geometry const &amp;geom)</td></tr>
+<tr class="memitem:a82d5abc9a27469c7cde9a05b83ed09d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRedistribution.html#a82d5abc9a27469c7cde9a05b83ed09d0">MakeStateRedistUtils</a> (amrex::Box const &amp;bx, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::Array4&lt; int const &gt; const &amp;itracker, amrex::Array4&lt; amrex::Real &gt; const &amp;nrs, amrex::Array4&lt; amrex::Real &gt; const &amp;nbhd_vol, amrex::Array4&lt; amrex::Real &gt; const &amp;cent_hat, amrex::Geometry const &amp;geom)</td></tr>
 <tr class="separator:a82d5abc9a27469c7cde9a05b83ed09d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Placeholder description of <a class="el" href="namespaceRedistribution.html">Redistribution</a> namespace. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a496336a7f843ce35f36ddb8be3aa68ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496336a7f843ce35f36ddb8be3aa68ba">&#9670;&nbsp;</a></span>Apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Redistribution::Apply </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dUdt_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dUdt_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>U_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>scratch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>ccent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *&#160;</td>
+          <td class="paramname"><em>d_bcrec_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>redistribution_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>target_volfrac</em> = <code>0.5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a563d1cc650b816911ba0c00e17e07d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563d1cc650b816911ba0c00e17e07d09">&#9670;&nbsp;</a></span>ApplyToInitialData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Redistribution::ApplyToInitialData </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>U_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>U_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>ccent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *&#160;</td>
+          <td class="paramname"><em>d_bcrec_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>redistribution_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>target_volfrac</em> = <code>0.5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5449c76971ae85339614a3aa9375b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5449c76971ae85339614a3aa9375b02">&#9670;&nbsp;</a></span>FluxRedistribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Redistribution::FluxRedistribute </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dUdt_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dUdt_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>scratch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a47f4f1398827a0c29d31346ba81df974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f4f1398827a0c29d31346ba81df974">&#9670;&nbsp;</a></span>MakeITracker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Redistribution::MakeITracker </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;apx, amrex::Array4&lt; amrex::Real const &gt; const &amp;apy, amrex::Array4&lt; amrex::Real const &gt; const &amp;apz)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; int &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>itracker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>target_volfrac</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82d5abc9a27469c7cde9a05b83ed09d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82d5abc9a27469c7cde9a05b83ed09d0">&#9670;&nbsp;</a></span>MakeStateRedistUtils()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Redistribution::MakeStateRedistUtils </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>ccent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; int const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>itracker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>nrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>nbhd_vol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>cent_hat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a026ee49b3fcf1ce9266af274abe4cb72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a026ee49b3fcf1ce9266af274abe4cb72">&#9670;&nbsp;</a></span>StateRedistribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Redistribution::StateRedistribute </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dUdt_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dUdt_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vfrac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>ccent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *&#160;</td>
+          <td class="paramname"><em>d_bcrec_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; int const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>itracker</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>nrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>nbhd_vol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>cent_hat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Geometry const &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

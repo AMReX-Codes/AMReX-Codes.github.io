@@ -96,7 +96,13 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="title">hydro_ebgodunov_transverse_2D_K.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="hydro__ebgodunov__transverse__2D__K_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="hydro__ebgodunov__transverse__2D__K_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * \file hydro_ebgodunov_transverse_2D_K.H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * \addtogroup EBGodunov</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @{</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef _TRANSVERSE_2D_K_H_</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define _TRANSVERSE_2D_K_H_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
@@ -104,7 +110,7 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_INLINE</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;Real</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;linear_interp (Real xout,</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">   15</a></span>&#160;<a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a> (Real xout,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;               Real x1, Real val1,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;               Real x2, Real val2)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
@@ -112,7 +118,7 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_INLINE</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> create_transverse_terms_for_xface(<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="group__EBGodunov.html#gad7d46d081056fa40712f58cb0ebe1d84">   23</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__EBGodunov.html#gad7d46d081056fa40712f58cb0ebe1d84">create_transverse_terms_for_xface</a>(<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                       Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; v_ad,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                       Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; yhat,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                       Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; apy,</div>
@@ -136,8 +142,8 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">int</span> ii    = (fcy(ic,jc,k,0) &lt;= 0.0) ? ic-1 : ic+1;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Real xoff = (fcy(ic,jc,k,0) &lt;= 0.0) ?  -1. : 1.;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        v_tmp_j = linear_interp(0.0, fcy(ic,jc,k), v_ad(ic,jc,k), (xoff+fcy(ii,jc,k)), v_ad(ii,jc,k));</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        y_hat_j = linear_interp(0.0, fcy(ic,jc,k), yhat(ic,jc,k), (xoff+fcy(ii,jc,k)), yhat(ii,jc,k));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        v_tmp_j = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcy(ic,jc,k), v_ad(ic,jc,k), (xoff+fcy(ii,jc,k)), v_ad(ii,jc,k));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        y_hat_j = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcy(ic,jc,k), yhat(ic,jc,k), (xoff+fcy(ii,jc,k)), yhat(ii,jc,k));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Tangential extrapolation in the x-direction at j+1/2</span></div>
@@ -153,15 +159,15 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordtype">int</span> ii    = (fcy(ic,jc,k,0) &lt;= 0.0) ? ic-1 : ic+1;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        Real xoff = (fcy(ic,jc,k,0) &lt;= 0.0) ?  -1. : 1.;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        v_tmp_jp1 = linear_interp(0.0, fcy(ic,jc,k), v_ad(ic,jc,k), (xoff+fcy(ii,jc,k)), v_ad(ii,jc,k));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        y_hat_jp1 = linear_interp(0.0, fcy(ic,jc,k), yhat(ic,jc,k), (xoff+fcy(ii,jc,k)), yhat(ii,jc,k));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        v_tmp_jp1 = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcy(ic,jc,k), v_ad(ic,jc,k), (xoff+fcy(ii,jc,k)), v_ad(ii,jc,k));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        y_hat_jp1 = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcy(ic,jc,k), yhat(ic,jc,k), (xoff+fcy(ii,jc,k)), yhat(ii,jc,k));</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    trans_y = 0.5 * (v_tmp_jp1 + v_tmp_j) * (y_hat_jp1 - y_hat_j) / dy;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_INLINE</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> create_transverse_terms_for_yface(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> jc, <span class="keywordtype">int</span> k,</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__EBGodunov.html#gabe9cd3f0f2f0198aaa5a812d630feef6">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__EBGodunov.html#gabe9cd3f0f2f0198aaa5a812d630feef6">create_transverse_terms_for_yface</a>(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> jc, <span class="keywordtype">int</span> k,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                       Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; u_ad,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                       Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; xhat,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                       Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; apx,</div>
@@ -185,8 +191,8 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">int</span> jj    = (fcx(ic,jc,k,0) &lt;= 0.0) ? jc-1 : jc+1;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        Real yoff = (fcx(ic,jc,k,0) &lt;= 0.0) ?  -1. : 1.;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        u_tmp_i = linear_interp(0.0, fcx(ic,jc,k), u_ad(ic,jc,k), (yoff+fcx(ic,jj,k)), u_ad(ic,jj,k));</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        x_hat_i = linear_interp(0.0, fcx(ic,jc,k), xhat(ic,jc,k), (yoff+fcx(ic,jj,k)), xhat(ic,jj,k));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        u_tmp_i = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcx(ic,jc,k), u_ad(ic,jc,k), (yoff+fcx(ic,jj,k)), u_ad(ic,jj,k));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        x_hat_i = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcx(ic,jc,k), xhat(ic,jc,k), (yoff+fcx(ic,jj,k)), xhat(ic,jj,k));</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Tangential extrapolation in the x-direction at i+1/2</span></div>
@@ -202,18 +208,24 @@ $(document).ready(function(){initNavTree('hydro__ebgodunov__transverse__2D__K_8H
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">int</span> jj = (fcx(ic,jc,k,0) &lt;= 0.0) ? jc-1 : jc+1;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        Real yoff = (fcx(ic,jc,k,0) &lt;= 0.0) ?  -1. : 1.;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        u_tmp_ip1 = linear_interp(0.0, fcx(ic,jc,k), u_ad(ic,jc,k), (yoff+fcx(ic,jj,k)), u_ad(ic,jj,k));</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        x_hat_ip1 = linear_interp(0.0, fcx(ic,jc,k), xhat(ic,jc,k), (yoff+fcx(ic,jj,k)), xhat(ic,jj,k));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        u_tmp_ip1 = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcx(ic,jc,k), u_ad(ic,jc,k), (yoff+fcx(ic,jj,k)), u_ad(ic,jj,k));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        x_hat_ip1 = <a class="code" href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a>(0.0, fcx(ic,jc,k), xhat(ic,jc,k), (yoff+fcx(ic,jj,k)), xhat(ic,jj,k));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    trans_x = 0.5 * (u_tmp_ip1 + u_tmp_i) * (x_hat_ip1 - x_hat_i) / dx;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/** @} */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespaceEBPLM_html_a63b73cfa3470b0c640b959f07b7e3378"><div class="ttname"><a href="namespaceEBPLM.html#a63b73cfa3470b0c640b959f07b7e3378">EBPLM::PredictStateOnYFace</a></div><div class="ttdeci">void PredictStateOnYFace(amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccc, amrex::Geometry const &amp;geom, amrex::Real dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec, bool is_velocity)</div></div>
+<div class="ttc" id="anamespaceEBPLM_html_a080aa9e4283250cfec3727983eae5376"><div class="ttname"><a href="namespaceEBPLM.html#a080aa9e4283250cfec3727983eae5376">EBPLM::PredictStateOnXFace</a></div><div class="ttdeci">void PredictStateOnXFace(amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;Imx, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipx, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag, amrex::Array4&lt; amrex::Real const &gt; const &amp;vfrac, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;fcx, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcy, amrex::Array4&lt; amrex::Real const &gt; const &amp;fcz), amrex::Array4&lt; amrex::Real const &gt; const &amp;ccc, amrex::Geometry const &amp;geom, amrex::Real dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec, bool is_velocity)</div></div>
+<div class="ttc" id="anamespaceanonymous__namespace_02hydro__ebgodunov__plm__fpu_8cpp_03_html_addf71c36095a0159856c9875e3a978e3"><div class="ttname"><a href="namespaceanonymous__namespace_02hydro__ebgodunov__plm__fpu_8cpp_03.html#addf71c36095a0159856c9875e3a978e3">anonymous_namespace{hydro_ebgodunov_plm_fpu.cpp}::has_extdir_or_ho</a></div><div class="ttdeci">std::pair&lt; bool, bool &gt; has_extdir_or_ho(BCRec const *bcrec, int ncomp, int dir)</div><div class="ttdef"><b>Definition:</b> hydro_ebgodunov_plm_fpu.cpp:15</div></div>
 <div class="ttc" id="ahydro__ebgodunov__plm_8H_html"><div class="ttname"><a href="hydro__ebgodunov__plm_8H.html">hydro_ebgodunov_plm.H</a></div></div>
+<div class="ttc" id="agroup__EBGodunov_html_gad7d46d081056fa40712f58cb0ebe1d84"><div class="ttname"><a href="group__EBGodunov.html#gad7d46d081056fa40712f58cb0ebe1d84">create_transverse_terms_for_xface</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_INLINE void create_transverse_terms_for_xface(int ic, int j, int k, Array4&lt; Real const &gt; const &amp;v_ad, Array4&lt; Real const &gt; const &amp;yhat, Array4&lt; Real const &gt; const &amp;apy, Array4&lt; Real const &gt; const &amp;fcy, Real &amp;trans_y, const Real dy)</div><div class="ttdef"><b>Definition:</b> hydro_ebgodunov_transverse_2D_K.H:23</div></div>
+<div class="ttc" id="agroup__EBGodunov_html_gae7fb5657f6312ba192f0ad3a3652f4a8"><div class="ttname"><a href="group__EBGodunov.html#gae7fb5657f6312ba192f0ad3a3652f4a8">linear_interp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_INLINE Real linear_interp(Real xout, Real x1, Real val1, Real x2, Real val2)</div><div class="ttdef"><b>Definition:</b> hydro_ebgodunov_transverse_2D_K.H:15</div></div>
+<div class="ttc" id="agroup__EBGodunov_html_gabe9cd3f0f2f0198aaa5a812d630feef6"><div class="ttname"><a href="group__EBGodunov.html#gabe9cd3f0f2f0198aaa5a812d630feef6">create_transverse_terms_for_yface</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_INLINE void create_transverse_terms_for_yface(int i, int jc, int k, Array4&lt; Real const &gt; const &amp;u_ad, Array4&lt; Real const &gt; const &amp;xhat, Array4&lt; Real const &gt; const &amp;apx, Array4&lt; Real const &gt; const &amp;fcx, Real &amp;trans_x, const Real dx)</div><div class="ttdef"><b>Definition:</b> hydro_ebgodunov_transverse_2D_K.H:72</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
