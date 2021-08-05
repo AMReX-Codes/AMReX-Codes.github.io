@@ -1,5 +1,7 @@
 var NAVTREEINDEX57 =
 {
+"structamrex_1_1FabArrayBase_1_1FPinfo.html#a189905997fd17cf4f8a1e19d7f6a714a":[2,0,0,135,9,1],
+"structamrex_1_1FabArrayBase_1_1FPinfo.html#a2028b1d14f841dd6c9e47646c2e8d33a":[2,0,0,135,9,13],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#a60b3d32706607b5ab04d00f255382f81":[2,0,0,135,9,2],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#a6b1f18981c96f45dcf49c05987770548":[2,0,0,135,9,3],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#a8754fd4dda86c92795899a42b97f547c":[2,0,0,135,9,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[2,0,0,6,12,3],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,6,12,4],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[2,0,0,6,12,10],
-"structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,6,13],
-"structamrex_1_1Gpu_1_1DeviceToHost.html":[2,0,0,6,14],
-"structamrex_1_1Gpu_1_1ExecutionConfig.html":[2,0,0,6,16]
+"structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,6,13]
 };

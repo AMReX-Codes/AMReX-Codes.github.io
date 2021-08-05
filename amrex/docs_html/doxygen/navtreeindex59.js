@@ -1,5 +1,7 @@
 var NAVTREEINDEX59 =
 {
+"structamrex_1_1LPInfo.html#a44bed45a637286c1feb801cacf3e72cc":[2,0,0,257,20],
+"structamrex_1_1LPInfo.html#a454072adea5f89687df38b5ebe03abad":[2,0,0,257,2],
 "structamrex_1_1LPInfo.html#a45b2ff9402b86070a36448a89c4e6e8a":[2,0,0,257,11],
 "structamrex_1_1LPInfo.html#a4a7b1b85ca071370a9a98488be7dd5dc":[2,0,0,257,8],
 "structamrex_1_1LPInfo.html#a50655cba9bb48a63c7f0913e0ba8e21a":[2,0,0,257,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX59 =
 "structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac2d435417231ee6a45673a064745c6e0":[2,0,0,10,16,1],
 "structamrex_1_1NonLocalBC_1_1PolarFn2.html#ac5e141b423187ca40c97d0c5d79b20dd":[2,0,0,10,16,2],
 "structamrex_1_1NonLocalBC_1_1Rotate180Fn.html":[2,0,0,10,17],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e":[2,0,0,10,17,3],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#ab250f91a5a4edccafa2f02ac39803fb2":[2,0,0,10,17,2],
-"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#ae44bd6a19203f44e230332c21a8c6d2d":[2,0,0,10,17,0]
+"structamrex_1_1NonLocalBC_1_1Rotate180Fn.html#a0179da4db5af27ac788d6f213e7d792e":[2,0,0,10,17,3]
 };
