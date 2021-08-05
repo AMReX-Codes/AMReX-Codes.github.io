@@ -381,6 +381,7 @@ var hierarchy =
     [ "amrex::FBData< FAB >", "structamrex_1_1FBData.html", null ],
     [ "amrex::FillBoxId", "classamrex_1_1FillBoxId.html", null ],
     [ "amrex::FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html", null ],
+    [ "FilterVirt", "structFilterVirt.html", null ],
     [ "amrex::ForkJoin", "classamrex_1_1ForkJoin.html", null ],
     [ "amrex::FPC", "classamrex_1_1FPC.html", null ],
     [ "amrex::FabArrayBase::FPinfo", "structamrex_1_1FabArrayBase_1_1FPinfo.html", null ],

@@ -23,6 +23,7 @@ var annotated_dup =
     [ "CommProfStats", "classCommProfStats.html", "classCommProfStats" ],
     [ "distribution_t", "structdistribution__t.html", "structdistribution__t" ],
     [ "FabCopyTag", "structFabCopyTag.html", "structFabCopyTag" ],
+    [ "FilterVirt", "structFilterVirt.html", "structFilterVirt" ],
     [ "KeepValidFilter", "structKeepValidFilter.html", "structKeepValidFilter" ],
     [ "MPI_Status", "structMPI__Status.html", null ],
     [ "process_topology_t", "structprocess__topology__t.html", "structprocess__topology__t" ],

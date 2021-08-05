@@ -1,5 +1,12 @@
 var NAVTREEINDEX57 =
 {
+"structamrex_1_1FabArrayBase_1_1FB.html#a80294b3b23ece6729eca66ec2b75dcad":[2,0,0,135,8,11],
+"structamrex_1_1FabArrayBase_1_1FB.html#aa8992473f3d960f9f118c57122a349ea":[2,0,0,135,8,7],
+"structamrex_1_1FabArrayBase_1_1FB.html#ab1e6815433ad5db1d020151544628a0d":[2,0,0,135,8,0],
+"structamrex_1_1FabArrayBase_1_1FB.html#abe82c8b83c190d9388ff8cb1f2f41cc1":[2,0,0,135,8,6],
+"structamrex_1_1FabArrayBase_1_1FPinfo.html":[2,0,0,135,9],
+"structamrex_1_1FabArrayBase_1_1FPinfo.html#a09b8fcc80fd25192f68c5ee368097317":[2,0,0,135,9,6],
+"structamrex_1_1FabArrayBase_1_1FPinfo.html#a15a4200a7d7cf4f2fa85ce1bef2bf3b3":[2,0,0,135,9,5],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#a189905997fd17cf4f8a1e19d7f6a714a":[2,0,0,135,9,1],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#a2028b1d14f841dd6c9e47646c2e8d33a":[2,0,0,135,9,13],
 "structamrex_1_1FabArrayBase_1_1FPinfo.html#a60b3d32706607b5ab04d00f255382f81":[2,0,0,135,9,2],
@@ -242,12 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a09ce14e97aa618c00bcc778e9337fd4f":[2,0,0,6,12,8],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a14f5716ceb831c094aabcf9cf8cba989":[2,0,0,6,12,7],
 "structamrex_1_1Gpu_1_1DeviceScalar.html#a1ea24985de3f4264b68f8c5f55611178":[2,0,0,6,12,9],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[2,0,0,6,12,0],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#a3a4fecbe5bb784d58b047fa09d73c504":[2,0,0,6,12,5],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aad0f00e8321544217083503dd9cc0b9c":[2,0,0,6,12,1],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ac7995253d4db738ff6283ab41aaf67c8":[2,0,0,6,12,6],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#adb2f941325add1703b7369f68060c2bb":[2,0,0,6,12,3],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#ae203fe8c3032a05c2f06c38b8638308c":[2,0,0,6,12,4],
-"structamrex_1_1Gpu_1_1DeviceScalar.html#aef9ccbc50e8c6d02eda1902423d91f02":[2,0,0,6,12,10],
-"structamrex_1_1Gpu_1_1DeviceToDevice.html":[2,0,0,6,13]
+"structamrex_1_1Gpu_1_1DeviceScalar.html#a22ee1039a5affe922974db84c8753e9e":[2,0,0,6,12,0]
 };
