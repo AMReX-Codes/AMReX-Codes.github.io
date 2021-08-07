@@ -324,10 +324,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" line="101" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2.H" bodystart="101" bodyend="112"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a15297b25343f946e37d273f4be58f8ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::EB2::build_faces</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Real const &gt; const &amp;levset, Array4&lt; Real const &gt; const &amp;interx, Array4&lt; Real const &gt; const &amp;intery, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;fcx, Array4&lt; Real &gt; const &amp;fcy, GpuArray&lt; Real, 3 &gt; const &amp;dx, GpuArray&lt; Real, 3 &gt; const &amp;problo)</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a25e49cfe6ccebea7989af6d788dac2ee" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::EB2::build_faces</definition>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Real const &gt; const &amp;levset, Array4&lt; Real const &gt; const &amp;interx, Array4&lt; Real const &gt; const &amp;intery, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;fcx, Array4&lt; Real &gt; const &amp;fcy, GpuArray&lt; Real, 3 &gt; const &amp;dx, GpuArray&lt; Real, 3 &gt; const &amp;problo, bool cover_multiple_cuts) noexcept</argsstring>
         <name>build_faces</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -381,18 +381,22 @@
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt; const &amp;</type>
           <declname>problo</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>cover_multiple_cuts</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" line="129" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" bodystart="129" bodyend="239"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" line="166" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" bodystart="166" bodyend="289"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a24604c39cf5cdeeb0c1f472aa4778836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a8657bbc9716937bceeb228dd5dc58cd1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::build_cells</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Real small_volfrac, Geometry const &amp;geom, bool extend_domain_face)</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Array4&lt; Real &gt; const &amp;levset, Real small_volfrac, Geometry const &amp;geom, bool extend_domain_face, int &amp;nsmallcells, int const nmulticuts) noexcept</argsstring>
         <name>build_cells</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -439,6 +443,10 @@
           <declname>bnorm</declname>
         </param>
         <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>levset</declname>
+        </param>
+        <param>
           <type>Real</type>
           <declname>small_volfrac</declname>
         </param>
@@ -450,13 +458,21 @@
           <type>bool</type>
           <declname>extend_domain_face</declname>
         </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <declname>nsmallcells</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> const</type>
+          <declname>nmulticuts</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" line="241" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" bodystart="241" bodyend="414"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" line="291" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.cpp" bodystart="291" bodyend="430"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1aefdb7b36e49b26a7d9d6c13f381bf5ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -680,10 +696,10 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.H" line="258" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_2D_C.H" bodystart="258" bodyend="296"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a28eb683b684b07f782d2eb123592bf9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void amrex::EB2::build_faces</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Type_t const &gt; const &amp;ex, Array4&lt; Type_t const &gt; const &amp;ey, Array4&lt; Type_t const &gt; const &amp;ez, Array4&lt; Real const &gt; const &amp;levset, Array4&lt; Real const &gt; const &amp;interx, Array4&lt; Real const &gt; const &amp;intery, Array4&lt; Real const &gt; const &amp;interz, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;apz, Array4&lt; Real &gt; const &amp;fcx, Array4&lt; Real &gt; const &amp;fcy, Array4&lt; Real &gt; const &amp;fcz, Array4&lt; Real &gt; const &amp;m2x, Array4&lt; Real &gt; const &amp;m2y, Array4&lt; Real &gt; const &amp;m2z, GpuArray&lt; Real, 3 &gt; const &amp;dx, GpuArray&lt; Real, 3 &gt; const &amp;problo)</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a29f0349cafbc751e242c4c8f52016531" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
+        <definition>int amrex::EB2::build_faces</definition>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Type_t const &gt; const &amp;ex, Array4&lt; Type_t const &gt; const &amp;ey, Array4&lt; Type_t const &gt; const &amp;ez, Array4&lt; Real &gt; const &amp;levset, Array4&lt; Real const &gt; const &amp;interx, Array4&lt; Real const &gt; const &amp;intery, Array4&lt; Real const &gt; const &amp;interz, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;apz, Array4&lt; Real &gt; const &amp;fcx, Array4&lt; Real &gt; const &amp;fcy, Array4&lt; Real &gt; const &amp;fcz, Array4&lt; Real &gt; const &amp;m2x, Array4&lt; Real &gt; const &amp;m2y, Array4&lt; Real &gt; const &amp;m2z, GpuArray&lt; Real, 3 &gt; const &amp;dx, GpuArray&lt; Real, 3 &gt; const &amp;problo, bool cover_multiple_cuts) noexcept</argsstring>
         <name>build_faces</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -718,7 +734,7 @@
           <declname>ez</declname>
         </param>
         <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
           <declname>levset</declname>
         </param>
         <param>
@@ -777,18 +793,22 @@
           <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt; const &amp;</type>
           <declname>problo</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>cover_multiple_cuts</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="262" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="262" bodyend="621" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H" declline="39" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="320" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="320" bodyend="745" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H" declline="41" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a0684268c8ef7dfc42c8ed0e15ca42b4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a59797158a927c845d25e376431b795ee" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::build_cells</definition>
-        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;apz, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;m2x, Array4&lt; Real const &gt; const &amp;m2y, Array4&lt; Real const &gt; const &amp;m2z, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Array4&lt; EBCellFlag &gt; const &amp;ctmp, Real small_volfrac, Geometry const &amp;geom, bool extend_domain_face)</argsstring>
+        <argsstring>(Box const &amp;bx, Array4&lt; EBCellFlag &gt; const &amp;cell, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Real &gt; const &amp;apx, Array4&lt; Real &gt; const &amp;apy, Array4&lt; Real &gt; const &amp;apz, Array4&lt; Real const &gt; const &amp;fcx, Array4&lt; Real const &gt; const &amp;fcy, Array4&lt; Real const &gt; const &amp;fcz, Array4&lt; Real const &gt; const &amp;m2x, Array4&lt; Real const &gt; const &amp;m2y, Array4&lt; Real const &gt; const &amp;m2z, Array4&lt; Real &gt; const &amp;vfrac, Array4&lt; Real &gt; const &amp;vcent, Array4&lt; Real &gt; const &amp;barea, Array4&lt; Real &gt; const &amp;bcent, Array4&lt; Real &gt; const &amp;bnorm, Array4&lt; EBCellFlag &gt; const &amp;ctmp, Array4&lt; Real &gt; const &amp;levset, Real small_volfrac, Geometry const &amp;geom, bool extend_domain_face, bool cover_multiple_cuts, int &amp;nsmallcells, int &amp;nmulticuts) noexcept</argsstring>
         <name>build_cells</name>
         <param>
           <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
@@ -871,6 +891,10 @@
           <declname>ctmp</declname>
         </param>
         <param>
+          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
+          <declname>levset</declname>
+        </param>
+        <param>
           <type>Real</type>
           <declname>small_volfrac</declname>
         </param>
@@ -882,13 +906,25 @@
           <type>bool</type>
           <declname>extend_domain_face</declname>
         </param>
+        <param>
+          <type>bool</type>
+          <declname>cover_multiple_cuts</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <declname>nsmallcells</declname>
+        </param>
+        <param>
+          <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> &amp;</type>
+          <declname>nmulticuts</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="623" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="623" bodyend="988" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H" declline="53" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" line="747" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.cpp" bodystart="747" bodyend="1110" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H" declline="56" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a202c73f9ebfcb787c75aad17804f9490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -942,55 +978,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" line="9" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" bodystart="9" bodyend="160"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1ae93581911f41d4733ba8b1815aabdeea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
-        <definition>AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void amrex::EB2::amrex_eb2_cover_multiple_cuts</definition>
-        <argsstring>(Box const &amp;tbx, Box const &amp;bxg2, Array4&lt; Real const &gt; const &amp;s, Array4&lt; Type_t &gt; const &amp;fx, Array4&lt; Type_t &gt; const &amp;fy, Array4&lt; Type_t &gt; const &amp;fz, Array4&lt; Type_t &gt; const &amp;ex, Array4&lt; Type_t &gt; const &amp;ey, Array4&lt; Type_t &gt; const &amp;ez)</argsstring>
-        <name>amrex_eb2_cover_multiple_cuts</name>
-        <param>
-          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
-          <declname>tbx</declname>
-        </param>
-        <param>
-          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> const &amp;</type>
-          <declname>bxg2</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real const &gt; const &amp;</type>
-          <declname>s</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt; const &amp;</type>
-          <declname>fx</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt; const &amp;</type>
-          <declname>fy</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt; const &amp;</type>
-          <declname>fz</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt; const &amp;</type>
-          <declname>ex</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt; const &amp;</type>
-          <declname>ey</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; <ref refid="namespaceamrex_1_1EB2_1ad5118c9d34449d5fcba10d141751b0d6" kindref="member">Type_t</ref> &gt; const &amp;</type>
-          <declname>ez</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" line="197" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" bodystart="197" bodyend="294"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1ae3a379167092afad59e2ece6617e7e46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
@@ -1143,7 +1130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" line="457" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" bodystart="457" bodyend="777"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" line="323" column="5" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" bodystart="323" bodyend="643"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1ad4baf361d00889173d59e758d4db781a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref> <ref refid="AMReX__Extension_8H_1a90cf7b81cd61799c87306cad156cc317" kindref="member">AMREX_FORCE_INLINE</ref> void</type>
@@ -1184,12 +1171,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" line="780" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" bodystart="780" bodyend="896"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" line="646" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_3D_C.H" bodystart="646" bodyend="762"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1EB2_1ad2727793dd4bac933bc9a6178acc08ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1EB2_1a3b268f011568048a5dc1fa427b23381a" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::EB2::intercept_to_edge_centroid</definition>
-        <argsstring>(AMREX_D_DECL(Array4&lt; Real &gt; const &amp;excent, Array4&lt; Real &gt; const &amp;eycent, Array4&lt; Real &gt; const &amp;ezcent), AMREX_D_DECL(Array4&lt; Type_t const &gt; const &amp;fx, Array4&lt; Type_t const &gt; const &amp;fy, Array4&lt; Type_t const &gt; const &amp;fz), Array4&lt; Real const &gt; const &amp;levset, GpuArray&lt; Real, 3 &gt; const &amp;dx, GpuArray&lt; Real, 3 &gt; const &amp;problo)</argsstring>
+        <argsstring>(AMREX_D_DECL(Array4&lt; Real &gt; const &amp;excent, Array4&lt; Real &gt; const &amp;eycent, Array4&lt; Real &gt; const &amp;ezcent), AMREX_D_DECL(Array4&lt; Type_t const &gt; const &amp;fx, Array4&lt; Type_t const &gt; const &amp;fy, Array4&lt; Type_t const &gt; const &amp;fz), Array4&lt; Real const &gt; const &amp;levset, GpuArray&lt; Real, 3 &gt; const &amp;dx, GpuArray&lt; Real, 3 &gt; const &amp;problo) noexcept</argsstring>
         <name>intercept_to_edge_centroid</name>
         <param>
           <type>AMREX_D_DECL(<ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;excent, <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;eycent, <ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;ezcent)</type>
@@ -1215,7 +1202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_ND_C.cpp" line="5" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_ND_C.cpp" bodystart="5" bodyend="65" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H" declline="68" declcolumn="6"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_ND_C.cpp" line="5" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_ND_C.cpp" bodystart="5" bodyend="65" declfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_C.H" declline="72" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a6a1bc773b763a05bab7852cdbd2248dd" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <templateparamlist>
@@ -1303,7 +1290,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="428" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="428" bodyend="431"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="465" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="465" bodyend="468"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a776834bcd184c08736ed55f7fb2e3ddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
@@ -1332,7 +1319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="435" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="435" bodyend="440"/>
+        <location file="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" line="472" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/EB/AMReX_EB2_GeometryShop.H" bodystart="472" bodyend="477"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1EB2_1a6689939adc9cd129828b1246501c2ddc" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>

@@ -21,6 +21,7 @@ var classamrex_1_1EB2_1_1GeometryShop =
     [ "isGPUable", "classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c", null ],
     [ "operator=", "classamrex_1_1EB2_1_1GeometryShop.html#ae177340a3e2de66f2106af9b08ce2ee9", null ],
     [ "operator=", "classamrex_1_1EB2_1_1GeometryShop.html#afcbc72c2e7366ca14073765433e29282", null ],
+    [ "updateIntercept", "classamrex_1_1EB2_1_1GeometryShop.html#af1e5d5017f47a2b248326e6d946fb8ce", null ],
     [ "allcovered", "classamrex_1_1EB2_1_1GeometryShop.html#a4743c337de07fcbcad184ec6242ad0e1", null ],
     [ "allregular", "classamrex_1_1EB2_1_1GeometryShop.html#ad0c200b86624e027898eca991f5ded1c", null ],
     [ "in_body", "classamrex_1_1EB2_1_1GeometryShop.html#a3e0822600d48fac2177a0b93671e868a", null ],

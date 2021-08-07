@@ -10,7 +10,7 @@ var classamrex_1_1Gpu_1_1Buffer =
     [ "data", "classamrex_1_1Gpu_1_1Buffer.html#a3c1a6f7fdd37b0efeabc75f9f2375a1f", null ],
     [ "data", "classamrex_1_1Gpu_1_1Buffer.html#ab2a42ebf52c9f805e2936c17ffb8297a", null ],
     [ "hostData", "classamrex_1_1Gpu_1_1Buffer.html#a9efbbaef8b00982c3e56b0e557d4f739", null ],
-    [ "hostDatat", "classamrex_1_1Gpu_1_1Buffer.html#a8edbc3f4187d605c4de61826b3d6b66d", null ],
+    [ "hostData", "classamrex_1_1Gpu_1_1Buffer.html#a3619c31c38650efcce3486506434cd08", null ],
     [ "operator=", "classamrex_1_1Gpu_1_1Buffer.html#abca1f758989aa579fa68900a014619fe", null ],
     [ "operator=", "classamrex_1_1Gpu_1_1Buffer.html#a08731a4a086f5a19ce8b0303d73b38f5", null ],
     [ "size", "classamrex_1_1Gpu_1_1Buffer.html#aca5acc3051c0c94e3668e5e5b5f17c17", null ],
