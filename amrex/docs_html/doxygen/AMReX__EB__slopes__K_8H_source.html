@@ -767,8 +767,8 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;           <span class="comment">// Compute max and min values in a 3x2 stencil</span></div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(0); jj&lt;=1; jj++){</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;               <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++){</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                    <span class="keywordflow">if</span>( flag(i,j,k).isConnected(ii,jj,kk) and</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                    not (ii==0 and jj==0 and kk==0)) {</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                    <span class="keywordflow">if</span> ( flag(i,j,k).isConnected(ii,jj,kk) and</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                    not (ii==0 and jj==0) ) {</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                        <span class="keywordflow">if</span> (state(i+ii,j+jj,k+kk,n) &gt; q_max) q_max = state(i+ii,j+jj,k+kk,n);</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                        <span class="keywordflow">if</span> (state(i+ii,j+jj,k+kk,n) &lt; q_min) q_min = state(i+ii,j+jj,k+kk,n);</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                }</div>
@@ -791,8 +791,8 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;           <span class="comment">// Compute max and min values in a 3x2 stencil</span></div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=0; jj++){</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;               <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++){</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    <span class="keywordflow">if</span>( flag(i,j,k).isConnected(ii,jj,kk) and</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    not (ii==0 and jj==0 and kk==0)) {</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    <span class="keywordflow">if</span> ( flag(i,j,k).isConnected(ii,jj,kk) and</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    not (ii==0 and jj==0) ) {</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                        <span class="keywordflow">if</span> (state(i+ii,j+jj,k+kk,n) &gt; q_max) q_max = state(i+ii,j+jj,k+kk,n);</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                        <span class="keywordflow">if</span> (state(i+ii,j+jj,k+kk,n) &lt; q_min) q_min = state(i+ii,j+jj,k+kk,n);</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                }</div>
@@ -812,10 +812,10 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;           amrex::Real q_min = state(i,j,k,n);</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;           amrex::Real q_max = state(i,j,k,n);</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(0); jj&lt;=1; jj++){</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++){</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;               <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(0); ii&lt;=1; ii++){</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                    <span class="keywordflow">if</span>( flag(i,j,k).isConnected(ii,jj,kk) and</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                    not (ii==0 and jj==0 and kk==0)) {</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                    <span class="keywordflow">if</span> ( flag(i,j,k).isConnected(ii,jj,kk) and</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                    not (ii==0 and jj==0) ) {</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                        <span class="keywordflow">if</span> (state(i+ii,j+jj,k+kk,n) &gt; q_max) q_max = state(i+ii,j+jj,k+kk,n);</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                        <span class="keywordflow">if</span> (state(i+ii,j+jj,k+kk,n) &lt; q_min) q_min = state(i+ii,j+jj,k+kk,n);</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                }</div>
