@@ -947,98 +947,103 @@
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>f<sp/>=<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_expression<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structyy__buffer__state" kindref="compound">YY_BUFFER_STATE</ref><sp/>buffer<sp/>=<sp/>amrex_iparser_scan_string(f.c_str());</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8tab_8h_1a066fb448277a383e0edafcfebe6c452f" kindref="member">amrex_iparserparse</ref>();</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser<sp/>=<sp/><ref refid="namespaceamrex_1a414ba7de5a008178d4fa0953a6e69073" kindref="member">amrex_iparser_new</ref>();</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex_iparser_delete_buffer(buffer);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a2dd658850f05ff557e46d2e40d2ca04c" kindref="member">IParser::~IParser</ref><sp/>()</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">{}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><ref refid="structamrex_1_1IParser_1_1Data_1a7ba706756f6d9f4806511c613a16596f" kindref="member">IParser::Data::~Data</ref><sp/>()</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1IParser_1_1Data_1ad236fd077460097e96f55779fc18350b" kindref="member">m_expression</ref>.clear();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1IParser_1_1Data_1ae2e79afe3f2835ee854cfbe074879d97" kindref="member">m_iparser</ref>)<sp/>{<sp/><ref refid="namespaceamrex_1a79e084d7248e50fe5cd9f6037db2b2e1" kindref="member">amrex_iparser_delete</ref>(<ref refid="structamrex_1_1IParser_1_1Data_1ae2e79afe3f2835ee854cfbe074879d97" kindref="member">m_iparser</ref>);<sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1IParser_1_1Data_1ad58fe278866bfbcb5cb3390140b72344" kindref="member">m_host_executor</ref>)<sp/>{<sp/><ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(<ref refid="structamrex_1_1IParser_1_1Data_1ad58fe278866bfbcb5cb3390140b72344" kindref="member">m_host_executor</ref>);<sp/>}</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1IParser_1_1Data_1a95c3dd2ed3fc298cef334c1b2cae7df7" kindref="member">m_device_executor</ref>)<sp/>{<sp/><ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(<ref refid="structamrex_1_1IParser_1_1Data_1a95c3dd2ed3fc298cef334c1b2cae7df7" kindref="member">m_device_executor</ref>);<sp/>}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal">IParser::operator<sp/>bool<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="50"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="amrex__iparser_8tab_8h_1a066fb448277a383e0edafcfebe6c452f" kindref="member">amrex_iparserparse</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::runtime_error&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::runtime_error(std::string(e.what())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>in<sp/>IParser<sp/>expression<sp/>\&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_expression<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser<sp/>=<sp/><ref refid="namespaceamrex_1a414ba7de5a008178d4fa0953a6e69073" kindref="member">amrex_iparser_new</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>amrex_iparser_delete_buffer(buffer);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a2dd658850f05ff557e46d2e40d2ca04c" kindref="member">IParser::~IParser</ref><sp/>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="structamrex_1_1IParser_1_1Data_1a7ba706756f6d9f4806511c613a16596f" kindref="member">IParser::Data::~Data</ref><sp/>()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structamrex_1_1IParser_1_1Data_1ad236fd077460097e96f55779fc18350b" kindref="member">m_expression</ref>.clear();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1IParser_1_1Data_1ae2e79afe3f2835ee854cfbe074879d97" kindref="member">m_iparser</ref>)<sp/>{<sp/><ref refid="namespaceamrex_1a79e084d7248e50fe5cd9f6037db2b2e1" kindref="member">amrex_iparser_delete</ref>(<ref refid="structamrex_1_1IParser_1_1Data_1ae2e79afe3f2835ee854cfbe074879d97" kindref="member">m_iparser</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1IParser_1_1Data_1ad58fe278866bfbcb5cb3390140b72344" kindref="member">m_host_executor</ref>)<sp/>{<sp/><ref refid="namespaceamrex_1aba0258410952c3ccfe405a462ef2d887" kindref="member">The_Pinned_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(<ref refid="structamrex_1_1IParser_1_1Data_1ad58fe278866bfbcb5cb3390140b72344" kindref="member">m_host_executor</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structamrex_1_1IParser_1_1Data_1a95c3dd2ed3fc298cef334c1b2cae7df7" kindref="member">m_device_executor</ref>)<sp/>{<sp/><ref refid="namespaceamrex_1ae3d1414946b992f39ca41f135f12a0d1" kindref="member">The_Arena</ref>()-&gt;<ref refid="classamrex_1_1Arena_1a0c7e0730574c98febb6ddca2712cb515" kindref="member">free</ref>(<ref refid="structamrex_1_1IParser_1_1Data_1a95c3dd2ed3fc298cef334c1b2cae7df7" kindref="member">m_device_executor</ref>);<sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="52"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a6d61eb854dfc00ac0c9671572873ffdc" kindref="member">IParser::setConstant</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c)</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8352463db302787dc5251fbaac3ad1bd" kindref="member">iparser_setconst</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser,<sp/>name.c_str(),<sp/>c);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a800553a4a96fee85528a07f4cdec4c3e" kindref="member">IParser::registerVariables</ref><sp/>(Vector&lt;std::string&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vars)</highlight></codeline>
-<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_nvars<sp/>=<sp/>vars.size();</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_nvars;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6886a6d87a263d5db6152fe44c96c82" kindref="member">iparser_regvar</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser,<sp/>vars[i].c_str(),<sp/>i);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a0e00f4a1a90b536068669ad8ed9c5b80" kindref="member">IParser::print</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="75"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a28e7f8ece961d58ec22229b2396fbc65" kindref="member">iparser_print</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a83c2c6f433576ffb3e36dc221fbb230d" kindref="member">IParser::depth</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="83"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1acb6b901b917abe69e9bcc985016b7de6" kindref="member">iparser_depth</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><ref refid="classamrex_1_1IParser_1ac7dbdbff476753fbfa9fdb49e27fb9f6" kindref="member">IParser::maxStackSize</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="93"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_max_stack_size;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal">std::string</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a52ec8f4544dd1e6875dff68e3d35a491" kindref="member">IParser::expr</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="103"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_expression;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string{};</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal">std::set&lt;std::string&gt;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a26e093287bc4437907d8762fa40bbaaa" kindref="member">IParser::symbols</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="113"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2f629d5b7394b73cda3c7cee2e05c42b" kindref="member">iparser_get_symbols</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::set&lt;std::string&gt;{};</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">IParser::operator<sp/>bool<sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="55"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a6d61eb854dfc00ac0c9671572873ffdc" kindref="member">IParser::setConstant</ref><sp/>(std::string<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a8352463db302787dc5251fbaac3ad1bd" kindref="member">iparser_setconst</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser,<sp/>name.c_str(),<sp/>c);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a800553a4a96fee85528a07f4cdec4c3e" kindref="member">IParser::registerVariables</ref><sp/>(Vector&lt;std::string&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>vars)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_nvars<sp/>=<sp/>vars.size();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_nvars;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aa6886a6d87a263d5db6152fe44c96c82" kindref="member">iparser_regvar</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser,<sp/>vars[i].c_str(),<sp/>i);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a0e00f4a1a90b536068669ad8ed9c5b80" kindref="member">IParser::print</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="80"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a28e7f8ece961d58ec22229b2396fbc65" kindref="member">iparser_print</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a83c2c6f433576ffb3e36dc221fbb230d" kindref="member">IParser::depth</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="88"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1acb6b901b917abe69e9bcc985016b7de6" kindref="member">iparser_depth</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><ref refid="classamrex_1_1IParser_1ac7dbdbff476753fbfa9fdb49e27fb9f6" kindref="member">IParser::maxStackSize</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="98"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_max_stack_size;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">std::string</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a52ec8f4544dd1e6875dff68e3d35a491" kindref="member">IParser::expr</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="108"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_expression;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string{};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">std::set&lt;std::string&gt;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="classamrex_1_1IParser_1a26e093287bc4437907d8762fa40bbaaa" kindref="member">IParser::symbols</ref><sp/>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="118"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref><sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespaceamrex_1a2f629d5b7394b73cda3c7cee2e05c42b" kindref="member">iparser_get_symbols</ref>(<ref refid="classamrex_1_1IParser_1aa09937d7246ba1774e216bf9c1367332" kindref="member">m_data</ref>-&gt;m_iparser);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::set&lt;std::string&gt;{};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/Parser/AMReX_IParser.cpp"/>
   </compounddef>
