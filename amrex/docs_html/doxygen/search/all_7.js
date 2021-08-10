@@ -303,7 +303,7 @@ var searchData=
   ['glsizemap_3144',['glSizeMap',['../classCommProfStats.html#ab58dec894c1338d3e1691e0770507811',1,'CommProfStats::glSizeMap()'],['../classCommProfStats.html#a0e56e7a8c3e51ab493d8a9b55472d761',1,'CommProfStats::GLSizeMap() const']]],
   ['gmres_5fsolver_5fconfigure_3145',['gmres_solver_configure',['../classamrex_1_1HypreIJIface.html#a27bb5a9047943afd18cf194c141d20ea',1,'amrex::HypreIJIface']]],
   ['gpercent_3146',['gPercent',['../classBLProfStats.html#aa9cbfb5bc0b3ad413e06060864eed0f8',1,'BLProfStats']]],
-  ['gpu_3147',['GPU',['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU()'],['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu()']]],
+  ['gpu_3147',['Gpu',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2a3432ca64f06615abf07ab44c10cada38',1,'amrex::Gpu()'],['../namespaceamrex_1_1BinPolicy.html#afa152e4ccd5f35d821d3fa5ec76d6c78',1,'amrex::BinPolicy::GPU()']]],
   ['gpu_5fdefault_5fstream_3148',['gpu_default_stream',['../classamrex_1_1Gpu_1_1Device.html#ad584078f0787df001af05bfe9c8d0356',1,'amrex::Gpu::Device']]],
   ['gpu_5ffsg_3149',['gpu_fsg',['../classamrex_1_1MFIter.html#a8287b68401c494c261f0ad45f9b6b5ed',1,'amrex::MFIter']]],
   ['gpu_5frand_5fstate_3150',['gpu_rand_state',['../namespaceamrex.html#ae5aa4a92b1c9940d028c38628ec7a866',1,'amrex']]],
