@@ -501,6 +501,7 @@ var hierarchy =
         [ "amrex::MFCellConsLinInterp", "classamrex_1_1MFCellConsLinInterp.html", [
           [ "amrex::EBMFCellConsLinInterp", "classamrex_1_1EBMFCellConsLinInterp.html", null ]
         ] ],
+        [ "amrex::MFNodeBilinear", "classamrex_1_1MFNodeBilinear.html", null ],
         [ "amrex::MFPCInterp", "classamrex_1_1MFPCInterp.html", null ]
       ] ]
     ] ],
@@ -660,9 +661,9 @@ var hierarchy =
     [ "amrex::NeighborUnpackPolicy", "structamrex_1_1NeighborUnpackPolicy.html", null ],
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::NodalProjector", "classamrex_1_1NodalProjector.html", null ],
+    [ "amrex::EArena::Node", "structamrex_1_1EArena_1_1Node.html", null ],
     [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
-    [ "amrex::EArena::Node", "structamrex_1_1EArena_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],
     [ "amrex::NullInterpHook< FAB >", "structamrex_1_1NullInterpHook.html", null ],

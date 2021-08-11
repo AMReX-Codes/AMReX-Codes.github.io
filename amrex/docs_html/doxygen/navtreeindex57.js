@@ -1,5 +1,14 @@
 var NAVTREEINDEX57 =
 {
+"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a8a30e2336976ffe878c2c6558ecce70d":[2,0,0,135,3,1],
+"structamrex_1_1FabArrayBase_1_1CommMetaData.html#a9faedeb4a7bf786a1143c2f4264369a0":[2,0,0,135,3,2],
+"structamrex_1_1FabArrayBase_1_1CommMetaData.html#ac9cf38f68949932d8e7815a7caffc7c8":[2,0,0,135,3,0],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html":[2,0,0,135,4],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a1c8df51daf5ac3a9d20522cfdb6ab004":[2,0,0,135,4,7],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a22b27afdd73db7d58998e29160dbf54f":[2,0,0,135,4,2],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#a8b3953bf7e65f41e79d25acef114bde7":[2,0,0,135,4,4],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa03667cd08814ea67d8fc2170a93a07c":[2,0,0,135,4,8],
+"structamrex_1_1FabArrayBase_1_1CopyComTag.html#aa4ad873f80c114d0041fd4c30d9fbe94":[2,0,0,135,4,5],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#aad1bcd5a45514f9dffbeaa327d3aa880":[2,0,0,135,4,0],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#abc0d662cdc63c3e99f4c114dc3ac266f":[2,0,0,135,4,6],
 "structamrex_1_1FabArrayBase_1_1CopyComTag.html#ac93e9be5fadb2a282072412f8801a271":[2,0,0,135,4,1],
@@ -240,14 +249,5 @@ var NAVTREEINDEX57 =
 "structamrex_1_1GpuTupleElement_3_01I_00_01GpuTuple_3_01Head_00_01Tail_8_8_8_01_4_01_4.html":[2,0,0,170],
 "structamrex_1_1GpuTupleSize.html":[2,0,0,171],
 "structamrex_1_1GpuTupleSize_3_01GpuTuple_3_01Ts_8_8_8_01_4_01_4.html":[2,0,0,172],
-"structamrex_1_1Gpu_1_1AtomicAdd.html":[2,0,0,6,3],
-"structamrex_1_1Gpu_1_1AtomicAdd.html#af25b1aed5bb341d32acee92134d70fc1":[2,0,0,6,3,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html":[2,0,0,6,4],
-"structamrex_1_1Gpu_1_1AtomicLogicalAnd.html#a40fb56ba67334eaa96d9384c9c0bee7c":[2,0,0,6,4,0],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html":[2,0,0,6,5],
-"structamrex_1_1Gpu_1_1AtomicLogicalOr.html#ac07d5f44c06a1cc91aaadf6182504ffc":[2,0,0,6,5,0],
-"structamrex_1_1Gpu_1_1AtomicMax.html":[2,0,0,6,6],
-"structamrex_1_1Gpu_1_1AtomicMax.html#a3652266a0f587ab6652566b40ce86a2f":[2,0,0,6,6,0],
-"structamrex_1_1Gpu_1_1AtomicMin.html":[2,0,0,6,7],
-"structamrex_1_1Gpu_1_1AtomicMin.html#a57fa34f46bd220567f9aa55376e8dd01":[2,0,0,6,7,0]
+"structamrex_1_1Gpu_1_1AtomicAdd.html":[2,0,0,6,3]
 };

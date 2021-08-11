@@ -1,5 +1,14 @@
 var NAVTREEINDEX54 =
 {
+"namespacemembers_g.html":[1,1,0,7],
+"namespacemembers_h.html":[1,1,0,8],
+"namespacemembers_i.html":[1,1,0,9],
+"namespacemembers_k.html":[1,1,0,10],
+"namespacemembers_l.html":[1,1,0,11],
+"namespacemembers_m.html":[1,1,0,12],
+"namespacemembers_n.html":[1,1,0,13],
+"namespacemembers_o.html":[1,1,0,14],
+"namespacemembers_p.html":[1,1,0,15],
 "namespacemembers_q.html":[1,1,0,16],
 "namespacemembers_r.html":[1,1,0,17],
 "namespacemembers_s.html":[1,1,0,18],
@@ -38,8 +47,8 @@ var NAVTREEINDEX54 =
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,22],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[1,0,23],
 "namespacesdcquadrature__mod.html":[2,0,11],
+"namespacesdcquadrature__mod.html":[1,0,23],
 "pages.html":[],
 "structArray4BoxTag.html":[2,0,14],
 "structArray4BoxTag.html#a5592c4d8acb7598662e58037846c899f":[2,0,14,2],
@@ -240,14 +249,5 @@ var NAVTREEINDEX54 =
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#abe1c7c360d280567e6b307120f51a7ae":[2,0,0,33,0,4],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#afe1955be77ad98e82b431d7b6eb5aeb8":[2,0,0,33,0,1],
 "structamrex_1_1ArenaAllocatorTraits.html":[2,0,0,41],
-"structamrex_1_1ArenaAllocatorTraits.html#a087cedc0c534a729f06566c2787234c3":[2,0,0,41,0],
-"structamrex_1_1ArenaAllocatorTraits.html#a7c21ffe5ae786795e9792884b68c3c3d":[2,0,0,41,2],
-"structamrex_1_1ArenaAllocatorTraits.html#a877662d4bb47c6680edf92709420599b":[2,0,0,41,1],
-"structamrex_1_1ArenaAllocatorTraits.html#a9a6140da2b4714f332dd0f10d74e3ac0":[2,0,0,41,3],
-"structamrex_1_1ArenaInfo.html":[2,0,0,42],
-"structamrex_1_1ArenaInfo.html#a0ab972913e7e764d7f0c88097ce1c619":[2,0,0,42,6],
-"structamrex_1_1ArenaInfo.html#a106f4ef6d447922447c63d296583e917":[2,0,0,42,7],
-"structamrex_1_1ArenaInfo.html#a17188b136da5e99440f925f648366292":[2,0,0,42,4],
-"structamrex_1_1ArenaInfo.html#a18ad35d706eda3be6347c90f86d68e81":[2,0,0,42,8],
-"structamrex_1_1ArenaInfo.html#a3e4fb9cf84bc98cccf0d32e99ecd4ccc":[2,0,0,42,10]
+"structamrex_1_1ArenaAllocatorTraits.html#a087cedc0c534a729f06566c2787234c3":[2,0,0,41,0]
 };

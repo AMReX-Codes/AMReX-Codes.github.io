@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"AMReX__distFcnElement_8cpp.html":[3,0,0,4,3],
+"AMReX__ebcellflag__mod_8F90.html":[3,0,0,4,53],
+"AMReX__ebcellflag__mod_8F90.html#a042a1d5bee97b5d90c352a09ffc13956":[3,0,0,4,53,4],
+"AMReX__ebcellflag__mod_8F90.html#a2610316e2634c6510e9511a17e425c39":[3,0,0,4,53,23],
 "AMReX__ebcellflag__mod_8F90.html#a34d542ffa101be3b08b45ad08a1aa41e":[3,0,0,4,53,22],
 "AMReX__ebcellflag__mod_8F90.html#a4060baeae84dd42b4c8941cde84ceaee":[3,0,0,4,53,6],
 "AMReX__ebcellflag__mod_8F90.html#a4734800da1613de79878005a47689862":[3,0,0,4,53,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX18 =
 "Dfft_8H.html":[3,0,0,5,8,3],
 "Dfft_8H.html#a68b901258fcc3a1c0ebf5c0efa756b0d":[3,0,0,5,8,3,2],
 "Dfft_8H.html#ae6567dcb005bd62f046f163d6ba90d51":[3,0,0,5,8,3,1],
-"Dfft_8H_source.html":[3,0,0,5,8,3],
-"DistributionC_8cpp.html":[3,0,0,5,8,8],
-"DistributionC_8cpp.html#a3cf79a54db8b84004b4a2df366db3c50":[3,0,0,5,8,8,2],
-"DistributionC_8cpp.html#aeec859fd88ba3b4a7fc18047436a74db":[3,0,0,5,8,8,0],
-"DistributionC_8cpp.html#af3d40ecaadcb7a71ad8edd77ff4a5e51":[3,0,0,5,8,8,1]
+"Dfft_8H_source.html":[3,0,0,5,8,3]
 };
