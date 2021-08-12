@@ -299,6 +299,7 @@ var hierarchy =
     [ "distribution_t", "structdistribution__t.html", null ],
     [ "amrex::DistributionMapping", "classamrex_1_1DistributionMapping.html", null ],
     [ "amrex::NonLocalBC::DoLocalCopy", "structamrex_1_1NonLocalBC_1_1DoLocalCopy.html", null ],
+    [ "amrex::DynamicTiling", "structamrex_1_1DynamicTiling.html", null ],
     [ "amrex::EBCellFlag", "classamrex_1_1EBCellFlag.html", null ],
     [ "amrex::EBDataCollection", "classamrex_1_1EBDataCollection.html", null ],
     [ "amrex::algoim::EBPlane", "structamrex_1_1algoim_1_1EBPlane.html", null ],
@@ -677,7 +678,6 @@ var hierarchy =
       [ "amrex::NonLocalBC::ApplyDtosAndProjectionOnReciever< DTOS, FabProj >", "structamrex_1_1NonLocalBC_1_1ApplyDtosAndProjectionOnReciever.html", null ]
     ] ],
     [ "amrex::FabArrayBase::ParForInfo", "structamrex_1_1FabArrayBase_1_1ParForInfo.html", null ],
-    [ "amrex::experimental::ParForMFTileSize", "structamrex_1_1experimental_1_1ParForMFTileSize.html", null ],
     [ "amrex::ParGDBBase", "classamrex_1_1ParGDBBase.html", [
       [ "amrex::AmrParGDB", "classamrex_1_1AmrParGDB.html", null ],
       [ "amrex::ParGDB", "classamrex_1_1ParGDB.html", null ]
@@ -869,6 +869,7 @@ var hierarchy =
     [ "amrex::MFUtil::SymmetricGhost< T >", "structamrex_1_1MFUtil_1_1SymmetricGhost.html", null ],
     [ "amrex::TheFaArenaDeleter", "structamrex_1_1TheFaArenaDeleter.html", null ],
     [ "amrex::FabArrayBase::TileArray", "structamrex_1_1FabArrayBase_1_1TileArray.html", null ],
+    [ "amrex::TileSize", "structamrex_1_1TileSize.html", null ],
     [ "amrex::StateData::TimeInterval", "structamrex_1_1StateData_1_1TimeInterval.html", null ],
     [ "BLProfStats::TimeRange", "structBLProfStats_1_1TimeRange.html", null ],
     [ "BLProfStats::TimeRangeCompare", "structBLProfStats_1_1TimeRangeCompare.html", null ],

@@ -3556,6 +3556,10 @@
   </compound>
   <compound refid="structamrex_1_1NonLocalBC_1_1DoLocalCopy" kind="struct"><name>amrex::NonLocalBC::DoLocalCopy</name>
   </compound>
+  <compound refid="structamrex_1_1DynamicTiling" kind="struct"><name>amrex::DynamicTiling</name>
+    <member refid="structamrex_1_1DynamicTiling_1ada6090f6c7ce7cb692304ca36611204e" kind="variable"><name>dynamic</name></member>
+    <member refid="structamrex_1_1DynamicTiling_1a9b6c938ca6b52d48ecf4baba551ecc64" kind="function"><name>DynamicTiling</name></member>
+  </compound>
   <compound refid="classamrex_1_1EArena" kind="class"><name>amrex::EArena</name>
     <member refid="classamrex_1_1EArena_1a62a6459912f2dee99fb7dc6dfe60d851" kind="typedef"><name>FreeList</name></member>
     <member refid="classamrex_1_1EArena_1a4b262f8a364b67bc38f2db23df5dcc75" kind="typedef"><name>MergeList</name></member>
@@ -7807,10 +7811,6 @@
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1a75e2960ee0458eb71dd4fd91ca728fa6" kind="function"><name>operator=</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1ParForInfo_1ac7f708582ac16f85339579a6b67776de" kind="function"><name>operator=</name></member>
   </compound>
-  <compound refid="structamrex_1_1experimental_1_1ParForMFTileSize" kind="struct"><name>amrex::experimental::ParForMFTileSize</name>
-    <member refid="structamrex_1_1experimental_1_1ParForMFTileSize_1accaf1d0ad65277bcc6beb43b62b71358" kind="variable"><name>tile_size</name></member>
-    <member refid="structamrex_1_1experimental_1_1ParForMFTileSize_1a77687558ce11b7cbe57d927fd727feec" kind="function"><name>ParForMFTileSize</name></member>
-  </compound>
   <compound refid="classamrex_1_1ParGDB" kind="class"><name>amrex::ParGDB</name>
     <member refid="classamrex_1_1ParGDB_1aa9edba29f53ceff7a4fcfb3c05e555ea" kind="variable"><name>m_geom</name></member>
     <member refid="classamrex_1_1ParGDB_1ad4ddadbe875a0706319f20b55cbc42fd" kind="variable"><name>m_dmap</name></member>
@@ -10111,6 +10111,10 @@
     <member refid="structamrex_1_1FabArrayBase_1_1TileArray_1a390a8c2b67ca14939fc0cc58ea72ece2" kind="function"><name>TileArray</name></member>
     <member refid="structamrex_1_1FabArrayBase_1_1TileArray_1a6dfaf13cb2e2e2c8e57d0ef3451e6b84" kind="function"><name>bytes</name></member>
   </compound>
+  <compound refid="structamrex_1_1TileSize" kind="struct"><name>amrex::TileSize</name>
+    <member refid="structamrex_1_1TileSize_1a8daad07261e670c91e3d6788f152f668" kind="variable"><name>tile_size</name></member>
+    <member refid="structamrex_1_1TileSize_1a0fd1080269de0184755a627c3ce1875d" kind="function"><name>TileSize</name></member>
+  </compound>
   <compound refid="structamrex_1_1StateData_1_1TimeInterval" kind="struct"><name>amrex::StateData::TimeInterval</name>
     <member refid="structamrex_1_1StateData_1_1TimeInterval_1a93562832d8584826a1f57b96049a788c" kind="variable"><name>start</name></member>
     <member refid="structamrex_1_1StateData_1_1TimeInterval_1add8128cb7af0fe0a981329a09e5fee37" kind="variable"><name>stop</name></member>
@@ -12396,19 +12400,23 @@
     <member refid="namespaceamrex_1_1experimental_1aea5414a582da2cdfa5cdc1a8fbd21526" kind="function"><name>ParallelFor</name></member>
     <member refid="namespaceamrex_1_1experimental_1a58d3c38e4e5089d8c59298686a6ea601" kind="function"><name>ParallelFor</name></member>
     <member refid="namespaceamrex_1_1experimental_1a936d1ab3c6ad4beccb1257838f81ed52" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1acfec8d55a426a8683c3cb5f2be5ab21c" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1a90c07dca83d8222e5bba43a32bbbd37a" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1a34b89e101e1ffff6509075e9f3f38611" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1a5de70f553b2c71f7168844297bfc0a2e" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1aac7d219eb66705a850d308d43798f813" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1a51dc408ed30a34c270f34faa59051ef1" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1a2dda2da7b2516dee53765ed64a64cdcb" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1a38d294934bdc2359fc880a5b65f07e3b" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1adc7223f52b21184b5f94cb7a31793c31" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a16d8fa0d591646088a51d04231b33e02" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a8bffa0012acdc4bc3a84b6a814c22312" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1aa205157a164414e21e2a682ed66a8c5c" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1ae366685ac2b3b1e4a202af9964ca2326" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a55ed52f4ab6527ae6cb755b42a9fd06d" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1ae165e70b88ac0d6c683db44eb113e2f4" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a0057b5ee6f8da3859c3b1c74b38c7537" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a51b957516bc2e5c4236e69f1ce29b836" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a0de1a6f8c5b59164435a7c9eb908d225" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a55fbde0addc05eaf26fb370984ee105b" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1a2b489bda31e9845469d5717cefd22332" kind="function"><name>ParallelFor</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1experimental_1_1detail" kind="namespace"><name>amrex::experimental::detail</name>
-    <member refid="namespaceamrex_1_1experimental_1_1detail_1a7e07750dc724b06939f148ba11e62c95" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1_1detail_1ab2051404a3c9d7338fc8ef81ec3b68d3" kind="function"><name>ParallelFor</name></member>
-    <member refid="namespaceamrex_1_1experimental_1_1detail_1a79de26bf87b3b6b3aa078ac33e691421" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1_1detail_1aa032bed37e0e46307269b7fe2f82031b" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1_1detail_1a949c0aacfa23b08a5a25ccd78a6e4ba3" kind="function"><name>ParallelFor</name></member>
+    <member refid="namespaceamrex_1_1experimental_1_1detail_1af4b1a1ece0c298c4e109283a8a515289" kind="function"><name>ParallelFor</name></member>
   </compound>
   <compound refid="namespaceamrex_1_1experimental_1_1detail_1_1parfor__mf__detail" kind="namespace"><name>amrex::experimental::detail::parfor_mf_detail</name>
     <member refid="namespaceamrex_1_1experimental_1_1detail_1_1parfor__mf__detail_1a9322d98e60ba8a07a577cc1140b5e733" kind="function"><name>call_f</name></member>

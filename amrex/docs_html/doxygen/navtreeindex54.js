@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"namespacemembers_func_t.html":[1,1,1,19],
+"namespacemembers_func_u.html":[1,1,1,20],
+"namespacemembers_func_v.html":[1,1,1,21],
+"namespacemembers_func_w.html":[1,1,1,22],
 "namespacemembers_func_y.html":[1,1,1,23],
 "namespacemembers_g.html":[1,1,0,7],
 "namespacemembers_h.html":[1,1,0,8],
@@ -48,8 +52,8 @@ var NAVTREEINDEX54 =
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,22],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[1,0,23],
 "namespacesdcquadrature__mod.html":[2,0,11],
+"namespacesdcquadrature__mod.html":[1,0,23],
 "pages.html":[],
 "structArray4BoxTag.html":[2,0,14],
 "structArray4BoxTag.html#a5592c4d8acb7598662e58037846c899f":[2,0,14,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a0765f0ebcbf2472c5229c18dc941432d":[2,0,0,33,0,6],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a73392d6df8f6909a9faf79995eba567f":[2,0,0,33,0,2],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a786f177417b2aff2c65612249af325af":[2,0,0,33,0,5],
-"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a835100974c4782de657f7f852cb8d2c3":[2,0,0,33,0,3],
-"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a93efc600bd13297ea7536362a1181858":[2,0,0,33,0,0],
-"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#abe1c7c360d280567e6b307120f51a7ae":[2,0,0,33,0,4],
-"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#afe1955be77ad98e82b431d7b6eb5aeb8":[2,0,0,33,0,1],
-"structamrex_1_1ArenaAllocatorTraits.html":[2,0,0,41]
+"structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a835100974c4782de657f7f852cb8d2c3":[2,0,0,33,0,3]
 };

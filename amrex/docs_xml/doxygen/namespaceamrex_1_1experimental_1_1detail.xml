@@ -4,7 +4,7 @@
     <compoundname>amrex::experimental::detail</compoundname>
     <innernamespace refid="namespaceamrex_1_1experimental_1_1detail_1_1parfor__mf__detail">amrex::experimental::detail::parfor_mf_detail</innernamespace>
       <sectiondef kind="func">
-      <memberdef kind="function" id="namespaceamrex_1_1experimental_1_1detail_1a7e07750dc724b06939f148ba11e62c95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1experimental_1_1detail_1aa032bed37e0e46307269b7fe2f82031b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -20,7 +20,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
         <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt; amrex::experimental::detail::ParallelFor</definition>
-        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, IntVect const &amp;, F &amp;&amp;f)</argsstring>
+        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, IntVect const &amp;, bool, F &amp;&amp;f)</argsstring>
         <name>ParallelFor</name>
         <param>
           <type>MF const &amp;</type>
@@ -36,6 +36,9 @@
         </param>
         <param>
           <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
         </param>
         <param>
           <type>F &amp;&amp;</type>
@@ -49,7 +52,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="73" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="73" bodyend="145"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1experimental_1_1detail_1ab2051404a3c9d7338fc8ef81ec3b68d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1experimental_1_1detail_1a949c0aacfa23b08a5a25ccd78a6e4ba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -60,7 +63,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
         <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt; amrex::experimental::detail::ParallelFor</definition>
-        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, IntVect const &amp;ts, F &amp;&amp;f)</argsstring>
+        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, int ncomp, IntVect const &amp;ts, bool dynamic, F &amp;&amp;f)</argsstring>
         <name>ParallelFor</name>
         <param>
           <type>MF const &amp;</type>
@@ -79,6 +82,10 @@
           <declname>ts</declname>
         </param>
         <param>
+          <type>bool</type>
+          <declname>dynamic</declname>
+        </param>
+        <param>
           <type>F &amp;&amp;</type>
           <declname>f</declname>
         </param>
@@ -90,7 +97,7 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="149" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="149" bodyend="152"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1experimental_1_1detail_1a79de26bf87b3b6b3aa078ac33e691421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1experimental_1_1detail_1af4b1a1ece0c298c4e109283a8a515289" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename MF</type>
@@ -101,7 +108,7 @@
         </templateparamlist>
         <type>std::enable_if_t&lt; <ref refid="structamrex_1_1IsFabArray" kindref="compound">IsFabArray</ref>&lt; MF &gt;::value &gt;</type>
         <definition>std::enable_if_t&lt;IsFabArray&lt;MF&gt;::value&gt; amrex::experimental::detail::ParallelFor</definition>
-        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, IntVect const &amp;ts, F &amp;&amp;f)</argsstring>
+        <argsstring>(MF const &amp;mf, IntVect const &amp;nghost, IntVect const &amp;ts, bool dynamic, F &amp;&amp;f)</argsstring>
         <name>ParallelFor</name>
         <param>
           <type>MF const &amp;</type>
@@ -114,6 +121,10 @@
         <param>
           <type><ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> const &amp;</type>
           <declname>ts</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>dynamic</declname>
         </param>
         <param>
           <type>F &amp;&amp;</type>
