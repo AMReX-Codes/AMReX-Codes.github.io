@@ -1,7 +1,7 @@
 var group__Utilities =
 [
     [ "hydro_bcs_K", "namespacehydro__bcs__K.html", null ],
-    [ "anonymous_namespace{hydro_bcs_K.H}", "namespaceanonymous__namespace_02hydro__bcs__K_8H_03.html", null ],
+    [ "HydroBCs", "namespaceHydroBCs.html", null ],
     [ "HydroUtils", "namespaceHydroUtils.html", null ],
     [ "XVEL", "group__Utilities.html#gabd88b7e5e752e92713211c3184d3a5ae", null ],
     [ "YVEL", "group__Utilities.html#ga17d5f6d34047cd913543b43d73f2ce9a", null ],
