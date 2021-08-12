@@ -52,6 +52,6 @@ var searchData=
   ['hydro_5futils_2ecpp_74',['hydro_utils.cpp',['../hydro__utils_8cpp.html',1,'']]],
   ['hydro_5futils_2eh_75',['hydro_utils.H',['../hydro__utils_8H.html',1,'']]],
   ['hydro_5futils_5fk_2eh_76',['hydro_utils_K.H',['../hydro__utils__K_8H.html',1,'']]],
-  ['hydrobcs_77',['HydroBCs',['../namespaceHydroBCs.html',1,'']]],
+  ['hydrobc_77',['HydroBC',['../namespaceHydroBC.html',1,'']]],
   ['hydroutils_78',['HydroUtils',['../namespaceHydroUtils.html',1,'']]]
 ];
