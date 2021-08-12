@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"namespacemembers_func_y.html":[1,1,1,23],
 "namespacemembers_g.html":[1,1,0,7],
 "namespacemembers_h.html":[1,1,0,8],
 "namespacemembers_i.html":[1,1,0,9],
@@ -16,8 +17,8 @@ var NAVTREEINDEX54 =
 "namespacemembers_type.html":[1,1,3],
 "namespacemembers_u.html":[1,1,0,20],
 "namespacemembers_v.html":[1,1,0,21],
-"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars.html":[1,1,2],
+"namespacemembers_vars.html":[1,1,2,0],
 "namespacemembers_vars_b.html":[1,1,2,1],
 "namespacemembers_vars_c.html":[1,1,2,2],
 "namespacemembers_vars_d.html":[1,1,2,3],
@@ -47,8 +48,8 @@ var NAVTREEINDEX54 =
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,22],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[2,0,11],
 "namespacesdcquadrature__mod.html":[1,0,23],
+"namespacesdcquadrature__mod.html":[2,0,11],
 "pages.html":[],
 "structArray4BoxTag.html":[2,0,14],
 "structArray4BoxTag.html#a5592c4d8acb7598662e58037846c899f":[2,0,14,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#a93efc600bd13297ea7536362a1181858":[2,0,0,33,0,0],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#abe1c7c360d280567e6b307120f51a7ae":[2,0,0,33,0,4],
 "structamrex_1_1AmrMeshDataAdaptor_1_1InternalsType.html#afe1955be77ad98e82b431d7b6eb5aeb8":[2,0,0,33,0,1],
-"structamrex_1_1ArenaAllocatorTraits.html":[2,0,0,41],
-"structamrex_1_1ArenaAllocatorTraits.html#a087cedc0c534a729f06566c2787234c3":[2,0,0,41,0]
+"structamrex_1_1ArenaAllocatorTraits.html":[2,0,0,41]
 };
