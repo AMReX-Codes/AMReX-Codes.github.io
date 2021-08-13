@@ -113,6 +113,14 @@ Functions</h2></td></tr>
 <tr class="memitem:acc57b4333f30b9e781ad5c8974b05aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad">ExtrapVelToFacesBox</a> (AMREX_D_DECL(amrex::Box const &amp;ubx, amrex::Box const &amp;vbx, amrex::Box const &amp;wbx), AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;u, amrex::Array4&lt; amrex::Real &gt; const &amp;v, amrex::Array4&lt; amrex::Real &gt; const &amp;w), amrex::Array4&lt; amrex::Real const &gt; const &amp;vcc, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, const amrex::BCRec *d_bcrec)</td></tr>
 <tr class="memdesc:acc57b4333f30b9e781ad5c8974b05aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">For Computing the pre-MAC edge states to be MAC-projected.  <a href="namespaceMOL.html#acc57b4333f30b9e781ad5c8974b05aad">More...</a><br /></td></tr>
 <tr class="separator:acc57b4333f30b9e781ad5c8974b05aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb1fa9334dbb23a3fe2f8b3f8f4087e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a7eb1fa9334dbb23a3fe2f8b3f8f4087e">hydro_mol_xedge_state_extdir</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
+<tr class="separator:a7eb1fa9334dbb23a3fe2f8b3f8f4087e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af7e22f67c73814e7968b5bd6e02e8a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a0af7e22f67c73814e7968b5bd6e02e8a">hydro_mol_xedge_state</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
+<tr class="separator:a0af7e22f67c73814e7968b5bd6e02e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e5b6599e866b0386d608e59dabb37ce"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a4e5b6599e866b0386d608e59dabb37ce">hydro_mol_yedge_state_extdir</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
+<tr class="separator:a4e5b6599e866b0386d608e59dabb37ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df4bf00c86eb57634b4bff1d4d3d89b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a5df4bf00c86eb57634b4bff1d4d3d89b">hydro_mol_yedge_state</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
+<tr class="separator:a5df4bf00c86eb57634b4bff1d4d3d89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The procedures for computing MAC velocities and edge states with <a class="el" href="namespaceMOL.html">MOL</a> does not involve time derivatives. All slope computations use second-order limited slopes as described in <a href="https://amrex-codes.github.io/amrex/hydro_html/MOL.html#sec:slopes">[sec:slopes]</a>. </p>
@@ -495,6 +503,378 @@ Here is the caller graph for this function:</div>
 
 <p>For Computing the pre-MAC edge states to be MAC-projected. </p>
 <p>For detailed info on the algorithm, see <a href="https://amrex-codes.github.io/amrex/hydro_html/MOL.html#pre-mac-mol-extrapveltofacesbox">MOL</a>. </p>
+
+</div>
+</div>
+<a id="a0af7e22f67c73814e7968b5bd6e02e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af7e22f67c73814e7968b5bd6e02e8a">&#9670;&nbsp;</a></span>hydro_mol_xedge_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real MOL::hydro_mol_xedge_state </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>umac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *const&#160;</td>
+          <td class="paramname"><em>d_bcrec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMOL_a0af7e22f67c73814e7968b5bd6e02e8a_cgraph.png" border="0" usemap="#namespaceMOL_a0af7e22f67c73814e7968b5bd6e02e8a_cgraph" alt=""/></div>
+<map name="namespaceMOL_a0af7e22f67c73814e7968b5bd6e02e8a_cgraph" id="namespaceMOL_a0af7e22f67c73814e7968b5bd6e02e8a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a" title="Boundary condition effects." alt="" coords="228,13,403,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7eb1fa9334dbb23a3fe2f8b3f8f4087e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb1fa9334dbb23a3fe2f8b3f8f4087e">&#9670;&nbsp;</a></span>hydro_mol_xedge_state_extdir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real MOL::hydro_mol_xedge_state_extdir </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>umac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *const&#160;</td>
+          <td class="paramname"><em>d_bcrec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMOL_a7eb1fa9334dbb23a3fe2f8b3f8f4087e_cgraph.png" border="0" usemap="#namespaceMOL_a7eb1fa9334dbb23a3fe2f8b3f8f4087e_cgraph" alt=""/></div>
+<map name="namespaceMOL_a7eb1fa9334dbb23a3fe2f8b3f8f4087e_cgraph" id="namespaceMOL_a7eb1fa9334dbb23a3fe2f8b3f8f4087e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a" title="Boundary condition effects." alt="" coords="228,13,403,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5df4bf00c86eb57634b4bff1d4d3d89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df4bf00c86eb57634b4bff1d4d3d89b">&#9670;&nbsp;</a></span>hydro_mol_yedge_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real MOL::hydro_mol_yedge_state </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vmac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *const&#160;</td>
+          <td class="paramname"><em>d_bcrec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMOL_a5df4bf00c86eb57634b4bff1d4d3d89b_cgraph.png" border="0" usemap="#namespaceMOL_a5df4bf00c86eb57634b4bff1d4d3d89b_cgraph" alt=""/></div>
+<map name="namespaceMOL_a5df4bf00c86eb57634b4bff1d4d3d89b_cgraph" id="namespaceMOL_a5df4bf00c86eb57634b4bff1d4d3d89b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab" title=" " alt="" coords="228,13,401,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4e5b6599e866b0386d608e59dabb37ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e5b6599e866b0386d608e59dabb37ce">&#9670;&nbsp;</a></span>hydro_mol_yedge_state_extdir()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real MOL::hydro_mol_yedge_state_extdir </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>vmac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *const&#160;</td>
+          <td class="paramname"><em>d_bcrec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domlo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>domhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMOL_a4e5b6599e866b0386d608e59dabb37ce_cgraph.png" border="0" usemap="#namespaceMOL_a4e5b6599e866b0386d608e59dabb37ce_cgraph" alt=""/></div>
+<map name="namespaceMOL_a4e5b6599e866b0386d608e59dabb37ce_cgraph" id="namespaceMOL_a4e5b6599e866b0386d608e59dabb37ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab" title=" " alt="" coords="228,13,401,39"/>
+</map>
+</div>
 
 </div>
 </div>
