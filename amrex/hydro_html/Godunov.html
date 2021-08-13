@@ -98,7 +98,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EBMOL.html">EBMOL</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Godunov</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Godunov</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-mac-godunov-extrapveltofacesbox">Pre-MAC (Godunov::ExtrapVelToFacesBox )</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#post-mac">Post-MAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#constructing-the-update">Constructing the update</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="MOL.html">MOL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a></li>
 </ul>
@@ -170,62 +178,108 @@
             
   <section id="godunov">
 <h1>Godunov<a class="headerlink" href="#godunov" title="Permalink to this headline">¶</a></h1>
-<p>To create the normal velocities on faces, we first extrapolate from the cell centers on each side using the
-slopes as computed earlier, and upwind the face value to define  <span class="math notranslate nohighlight">\(U^{pred}\)</span></p>
-<p>.  To compute the x-velocity on the x-faces of regular (ie not cut) cells, we call</p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>AMREX_CUDA_HOST_DEVICE_FOR_3D<span class="o">(</span>ubx, i, j, k,
- <span class="o">{</span>
-     // X-faces
-     Real <span class="nv">upls</span>     <span class="o">=</span> ccvel_fab<span class="o">(</span>i  ,j,k,0<span class="o">)</span> - <span class="m">0</span>.5 * xslopes_fab<span class="o">(</span>i  ,j,k,0<span class="o">)</span><span class="p">;</span>
-     Real <span class="nv">umns</span>     <span class="o">=</span> ccvel_fab<span class="o">(</span>i-1,j,k,0<span class="o">)</span> + <span class="m">0</span>.5 * xslopes_fab<span class="o">(</span>i-1,j,k,0<span class="o">)</span><span class="p">;</span>
-     <span class="k">if</span> <span class="o">(</span> umns &lt; <span class="m">0</span>.0 <span class="o">&amp;&amp;</span> upls &gt; <span class="m">0</span>.0 <span class="o">)</span> <span class="o">{</span>
-        umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> <span class="m">0</span>.0<span class="p">;</span>
-     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-        Real <span class="nv">avg</span> <span class="o">=</span> <span class="m">0</span>.5 * <span class="o">(</span> upls + umns <span class="o">)</span><span class="p">;</span>
-        <span class="k">if</span> <span class="o">(</span> std::abs<span class="o">(</span>avg<span class="o">)</span> &lt;  small_vel<span class="o">)</span> <span class="o">{</span> umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> <span class="m">0</span>.0<span class="p">;</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span>avg &gt;<span class="o">=</span> <span class="m">0</span><span class="o">)</span>             <span class="o">{</span> umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> umns<span class="p">;</span>
-        <span class="o">}</span> <span class="k">else</span>                           <span class="o">{</span> umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> upls<span class="p">;</span>
-        <span class="o">}</span>
-     <span class="o">}</span>
- <span class="o">})</span><span class="p">;</span>
-</pre></div>
+<p>All slope computations use second-order limited slopes as described in
+<a class="reference external" href="#sec:slopes">[sec:slopes]</a>.</p>
+<p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <strong>Utils / hydro_constants.H</strong></p>
+<section id="pre-mac-godunov-extrapveltofacesbox">
+<h2>Pre-MAC (Godunov::ExtrapVelToFacesBox )<a class="headerlink" href="#pre-mac-godunov-extrapveltofacesbox" title="Permalink to this headline">¶</a></h2>
+<p>For computing the pre-MAC edge states to be MAC-projected, we define on
+every x-face:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+u_L &amp;=&amp; u_{i-1,j,k} + \frac{\Delta x}{2} {u_x}_{i-1,j,k} + \frac{\Delta t}{2} {u_t}_{i-1,j,k} , \\
+u_R &amp;=&amp; u_{i,j,k}   - \frac{\Delta x}{2} {u_x}_{i,j,k} +  \frac{\Delta t}{2} {u_t}_{i,j,k} , \end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_x\)</span> are the (limited) slopes in the x-direction and we will discuss
+<span class="math notranslate nohighlight">\(u_t\)</span> below.</p>
+<p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_{i-\frac{1}{2},j,k} =
+\begin{cases}
+0, &amp; \mathrm{if} \; u_L &lt; 0 \;\; \mathrm{and} \;\; u_R &gt; 0 \; \mathrm{else} \\
+u_L, &amp; \mathrm{if} \; u_L + u_R \ge  \varepsilon  \; \mathrm{else} \\
+u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
+0
+\end{cases}\end{split}\]</div>
+<p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
+<span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
+<section id="effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">
+<h3>Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h" title="Permalink to this headline">¶</a></h3>
+<p>Domain boundary conditions affect the above in three ways.</p>
+<p>(1) First, they potentially impact the slope computation in cells
+adjacent to the domain boundary (see <a class="reference external" href="#sec:slopes">[sec:slopes]</a>).</p>
+<p>(2) Second, if the face is on a domain boundary and the boundary
+condition type is extdir, we set both <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span> to the
+boundary value. If the boundary condition type is foextrap, hoextrap, or
+reflecteven on the low side of the domain,
+we set <span class="math notranslate nohighlight">\(u_L = u_R.\)</span> (If on the high side then we
+set <span class="math notranslate nohighlight">\(u_R = u_L.\)</span>) If the boundary condition type is reflectodd , we set
+<span class="math notranslate nohighlight">\(u_L = u_R = 0.\)</span></p>
+<p>(3) In addition, if the domain boundary condition on the low side is foextrap
+or hoextrap, we set <span class="math notranslate nohighlight">\(u_L = u_R = \min (u_R, 0).\)</span> If the domain boundary
+condition on the high side is foextrap or hoextrap, we set
+<span class="math notranslate nohighlight">\(u_L = u_R = \max (u_L, 0).\)</span> This has the effect of not allowing
+the velocity at an outflow face to flow back into the domain.</p>
+<p>Note that the boundary conditions are imposed before the upwinding
+described above.</p>
+</section>
+</section>
+<section id="post-mac">
+<h2>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this headline">¶</a></h2>
+<p>Once we have the MAC-projected velocities, we project all quantities to
+faces as above:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+s_L &amp;=&amp; s^{i-1,j,k} + \frac{\Delta x}{2} {s^x}_{i-1,j,k} + \frac{\Delta t}{2} {s_t}_{i-1,j,k} , \\
+s_R &amp;=&amp; s^{i,j,k}   - \frac{\Delta x}{2} {s^x}_{i,j,k} + \frac{\Delta t}{2} {s_t}_{i,j,k} ,   \end{aligned}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(s^x\)</span> are the (limited) slopes in the x-direction.</p>
+<p>The domain boundary conditions affect the solution as described above in
+(1) and (2) for the pre-MAC step. We do not impose the
+no-outflow-at-inflow condition quite as described in (3); instead we
+impose that if, on the low side, <span class="math notranslate nohighlight">\(u^{MAC}\ge 0\)</span> (i.e the flow is
+coming in at an outflow face) and <span class="math notranslate nohighlight">\(s\)</span> is the x-velocity, then
+<span class="math notranslate nohighlight">\(s_L = s_R = \min(s_R,0).\)</span> On the high side, if
+<span class="math notranslate nohighlight">\(u^{MAC}&lt;= 0\)</span> on the domain face, then
+<span class="math notranslate nohighlight">\(s_L = s_R = \max(s_L,0).\)</span> This enforces that if <span class="math notranslate nohighlight">\(u^{MAC}\)</span>
+on an outflow face is inflowing, the normal velocity component must be
+outflowing or zero.</p>
+<p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u^{MAC}_{i-\frac{1}{2},j,k}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_{i-\frac{1}{2},j,k} =
+\begin{cases}
+s_L, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \ge  \; \varepsilon  \; \mathrm{else} \\
+s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \; \mathrm{else} \\
+\frac{1}{2}(s_L + s_R),
+\end{cases}\end{split}\]</div>
+</section>
+<section id="constructing-the-update">
+<h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
+<p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, we construct</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\nabla \cdot ({\bf u}s) &amp;=&amp; (u^{MAC}_{i+\frac{1}{2},j,k}\; s_{i+\frac{1}{2},j,k} - u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}) \\
+                     &amp;+&amp; (v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j+\frac{1}{2},k} - v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j-\frac{1}{2},k} ) \\
+                     &amp;+&amp; (w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k+\frac{1}{2}} - w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}) \end{aligned}\end{split}\]</div>
+<p>while if <span class="math notranslate nohighlight">\(s\)</span> is to be updated in convective form, we construct</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+({\bf u}\cdot \nabla s) &amp;=&amp; (u^{MAC}_{i+\frac{1}{2},j,k}\; s_{i+\frac{1}{2},j,k} - u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}) \\
+                    &amp;+&amp; (v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j+\frac{1}{2},k} - v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j-\frac{1}{2},k} ) \\
+                    &amp;+&amp; (w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k+\frac{1}{2}} - w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}) \\
+                    &amp;-&amp; s_{i,j,k} \; (DU)^{MAC}\end{aligned}\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+(DU)^{MAC}  &amp;=&amp; (u^{MAC}_{i+\frac{1}{2},j,k}- u^{MAC}_{i-\frac{1}{2},j,k}) \\
+            &amp;+&amp; (v^{MAC}_{i,j-\frac{1}{2},k}- v^{MAC}_{i,j-\frac{1}{2},k}) \\
+            &amp;+&amp; (w^{MAC}_{i,j,k-\frac{1}{2}}- w^{MAC}_{i,j,k-\frac{1}{2}}) \\\end{aligned}\end{split}\]</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
 </div>
-</div></blockquote>
-<p>For cut cells we test on whether the area fraction is non-zero:</p>
-<blockquote>
-<div><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>AMREX_CUDA_HOST_DEVICE_FOR_3D<span class="o">(</span>ubx, i, j, k,
-<span class="o">{</span>
-    // X-faces
-    <span class="k">if</span> <span class="o">(</span>ax_fab<span class="o">(</span>i,j,k<span class="o">)</span> &gt; <span class="m">0</span>.0<span class="o">)</span>
-    <span class="o">{</span>
-       Real <span class="nv">upls</span>     <span class="o">=</span> ccvel_fab<span class="o">(</span>i  ,j,k,0<span class="o">)</span> - <span class="m">0</span>.5 * xslopes_fab<span class="o">(</span>i  ,j,k,0<span class="o">)</span><span class="p">;</span>
-       Real <span class="nv">umns</span>     <span class="o">=</span> ccvel_fab<span class="o">(</span>i-1,j,k,0<span class="o">)</span> + <span class="m">0</span>.5 * xslopes_fab<span class="o">(</span>i-1,j,k,0<span class="o">)</span><span class="p">;</span>
-       <span class="k">if</span> <span class="o">(</span> umns &lt; <span class="m">0</span>.0 <span class="o">&amp;&amp;</span> upls &gt; <span class="m">0</span>.0 <span class="o">)</span> <span class="o">{</span>
-          umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> <span class="m">0</span>.0<span class="p">;</span>
-       <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-          Real <span class="nv">avg</span> <span class="o">=</span> <span class="m">0</span>.5 * <span class="o">(</span> upls + umns <span class="o">)</span><span class="p">;</span>
-          <span class="k">if</span> <span class="o">(</span> std::abs<span class="o">(</span>avg<span class="o">)</span> &lt;  small_vel<span class="o">)</span> <span class="o">{</span> umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> <span class="m">0</span>.0<span class="p">;</span>
-          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span>avg &gt;<span class="o">=</span> <span class="m">0</span><span class="o">)</span>             <span class="o">{</span> umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> umns<span class="p">;</span>
-          <span class="o">}</span> <span class="k">else</span>                           <span class="o">{</span> umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> upls<span class="p">;</span>
-          <span class="o">}</span>
-       <span class="o">}</span>
-    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-          umac_fab<span class="o">(</span>i,j,k<span class="o">)</span> <span class="o">=</span> huge_vel<span class="p">;</span>
-    <span class="o">}</span>
-<span class="o">})</span><span class="p">;</span>
-</pre></div>
-</div>
-</div></blockquote>
-<p>We then perform a MAC projection on the face-centered velocities to enforce that they satisfy</p>
-<div class="math notranslate nohighlight">
-\[\nabla \cdot (U^{MAC})  = 0\]</div>
-<p>We do this by solving</p>
-<div class="math notranslate nohighlight">
-\[\nabla \cdot \frac{1}{\rho} \nabla \phi^{MAC} = \nabla \cdot \left(U^{pred} \right)\]</div>
-<p>then defining</p>
-<div class="math notranslate nohighlight">
-\[U^{MAC} = U^{pred} - \frac{1}{\rho} \nabla \phi^{MAC}\]</div>
+<p>These alogrithms are applied in the Godunov namespace. For API documentation, see
+<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceGodunov.html">Doxygen: Godunov Namespace</a>.</p>
+</section>
 </section>
 
 
