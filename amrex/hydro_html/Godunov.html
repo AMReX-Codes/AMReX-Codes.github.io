@@ -183,25 +183,93 @@
 <p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <strong>Utils / hydro_constants.H</strong></p>
 <section id="pre-mac-godunov-extrapveltofacesbox">
 <h2>Pre-MAC (Godunov::ExtrapVelToFacesBox )<a class="headerlink" href="#pre-mac-godunov-extrapveltofacesbox" title="Permalink to this headline">¶</a></h2>
-<p>For computing the pre-MAC edge states to be MAC-projected, we define on
-every x-face:</p>
+<p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
+in space and time. For each face with a non-zero area fraction, we extrapolate the normal velocity
+component from the centroids of the cells on either side to the face centroid, creating left (L)
+and right (R) states. For face <span class="math notranslate nohighlight">\((i+1/2,j,k)\)</span> this gives</p>
+<div class="math notranslate nohighlight" id="equation-eq1">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq1" title="Permalink to this equation">¶</a></span>\[\begin{split}\tilde{u}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx u_{i,j,k}^n + \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
+ &amp; = u_{i,j,k}^n + \left( \frac{dx}{2} - u^n_{i,j,k} \frac{dt}{2} \right) (u_x^{n,lim})_{i,j,k} \\
+ &amp; + \frac{dt}{2} (-(\widehat{v u_y})_{i,j,k} - (\widehat{w u_z})_{i,j,k} + f_{x,i,j,k}^n)\end{split}\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, and</p>
+<div class="math notranslate nohighlight" id="equation-eq2">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq2" title="Permalink to this equation">¶</a></span>\[\begin{split} \tilde{u}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx u_{i+1,j,k}^n - \frac{dx}{2} u_x + \frac{dt}{2} u_t \\
+ &amp; = u_{i+1,j,k}^n - \left( \frac{dx}{2} + u^n_{i+1,j,k} \frac{dt}{2} \right)(u^{n,lim}_x)_{i+1,j,k} \\
+ &amp; + \frac{dt}{2} (-(\widehat{v u_y})_{i+1,j,k} - (\widehat{w u_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\end{split}\]</div>
+<p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
+<p>In evaluating these terms the first derivatives normal to the face (in this
+case <span class="math notranslate nohighlight">\(u_x^{n,lim}\)</span>) are evaluated using a monotonicity-limited fourth-order
+slope approximation. The limiting is done on each component of the velocity at time <span class="math notranslate nohighlight">\(n\)</span> individually. When one of the cells on either side is a cut cell, we
+instead use a least squares fit centered on <span class="math notranslate nohighlight">\((i,j,k)\)</span> that uses
+all regular and cut-cell neighbors, compute slopes in all three coordinate directions. We then define the left and right states by extrapolating from the cell centroid to the face centroid using slopes in all three coordinate directions
+as necessary.</p>
+<p>The transverse derivative terms (<span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and
+<span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
+are evaluated by first extrapolating all velocity components
+to the transverse faces from the cell centers on either side,
+then choosing between these states using the upwinding procedure
+defined below.  In particular, in the <span class="math notranslate nohighlight">\(y\)</span> direction we define</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-u_L &amp;=&amp; u_{i-1,j,k} + \frac{\Delta x}{2} {u_x}_{i-1,j,k} + \frac{\Delta t}{2} {u_t}_{i-1,j,k} , \\
-u_R &amp;=&amp; u_{i,j,k}   - \frac{\Delta x}{2} {u_x}_{i,j,k} +  \frac{\Delta t}{2} {u_t}_{i,j,k} , \end{aligned}\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(u_x\)</span> are the (limited) slopes in the x-direction and we will discuss
-<span class="math notranslate nohighlight">\(u_t\)</span> below.</p>
-<p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span></p>
+\[\hat{\boldsymbol{U}}^F_{i,j+\frac{1}{2},k} =  \boldsymbol{U}_{i,j,k}^n +
+\left( \frac{dy}{2} - \frac{dt}{2} v_{i,j,k}^n \right)
+(\boldsymbol{U}^{n,lim}_y)_{i,j,k}  \;\;\;\]</div>
 <div class="math notranslate nohighlight">
-\[\begin{split}u_{i-\frac{1}{2},j,k} =
-\begin{cases}
-0, &amp; \mathrm{if} \; u_L &lt; 0 \;\; \mathrm{and} \;\; u_R &gt; 0 \; \mathrm{else} \\
-u_L, &amp; \mathrm{if} \; u_L + u_R \ge  \varepsilon  \; \mathrm{else} \\
-u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
-0
-\end{cases}\end{split}\]</div>
-<p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
-<span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
+\[\hat{\boldsymbol{U}}^B_{i,j+\frac{1}{2},k} =  \boldsymbol{U}_{i,j+1,k}^n -
+\left( \frac{dy}{2} + \frac{dt}{2} v_{i,j+1,k}^n \right)
+(\boldsymbol{U}^{n,lim}_y)_{i,j+1,k} \;\;\;\]</div>
+<p>Values are similarly traced from <span class="math notranslate nohighlight">\((i,j,k)\)</span> and <span class="math notranslate nohighlight">\((i,j,k+1)\)</span>
+to the <span class="math notranslate nohighlight">\((i,j,k+\frac{1}{2})\)</span> faces to define
+<span class="math notranslate nohighlight">\(\hat{\boldsymbol{U}}^D_{i,j,k+\frac{1}{2}}\)</span> and
+<span class="math notranslate nohighlight">\(\hat{\boldsymbol{U}}^{U}_{i,j,k+\frac{1}{2}}\)</span>, respectively.</p>
+<p>In this upwinding procedure we first define a normal advective
+velocity on the face
+(suppressing the <span class="math notranslate nohighlight">\(({i,j+\frac{1}{2},k})\)</span> spatial indices on front and back
+states here and in the next equation):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\widehat{v}^{adv}_{{i,j+\frac{1}{2},k}} = \left\{\begin{array}{lll}
+ \widehat{v}^F &amp; \mbox{if $\widehat{v}^F &gt; 0, \;\; \widehat{v}^F + \widehat{v}^B
+ &gt; 0$} \\
+ 0   &amp; \mbox{if $\widehat{v}^F \leq 0, \widehat{v}^B \geq  0$ or
+$\widehat{v}^F + \widehat{v}^B = 0$ } \\
+ \widehat{v}^B &amp; \mbox{if $\widehat{v}^B &lt; 0, \;\; \widehat{v}^F + \widehat{v}^B
+ &lt; 0$ .} \end{array} \right.\end{split}\]</div>
+<p>We now upwind <span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}\)</span> based on <span class="math notranslate nohighlight">\(\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\widehat{\boldsymbol{U}}_{{i,j+\frac{1}{2},k}} = \left\{\begin{array}{lll}
+ \widehat{\boldsymbol{U}}^F &amp; \mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} &gt; 0$} \\
+\frac{1}{2} (\widehat{\boldsymbol{U}}^F + \widehat{\boldsymbol{U}}^B)  &amp; \mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} = 0
+$} \\
+ \widehat{\boldsymbol{U}}^B &amp;
+\mbox{if $\widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} &lt; 0$} \end{array} \right.\end{split}\]</div>
+<p>After constructing <span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}_{{i,j-\frac{1}{2},k}}, \widehat{\boldsymbol{U}}_{i,j,k+\frac{1}{2}}\)</span>
+and <span class="math notranslate nohighlight">\(\widehat{\boldsymbol{U}}_{i,j,k-\frac{1}{2}}\)</span> in a similar manner,
+we use these upwind values to form the transverse derivatives in
+Eqs. <a class="reference internal" href="#equation-eq1">(3)</a> and <a class="reference internal" href="#equation-eq2">(4)</a> :</p>
+<div class="math notranslate nohighlight">
+\[(\widehat{v u_y})_{i,j,k} = \frac{1}{2dy} ( \widehat{v}_{{i,j+\frac{1}{2},k}}^{adv} +
+\widehat{v}_{{i,j-\frac{1}{2},k}}^{adv} ) ( \widehat{u}_{{i,j+\frac{1}{2},k}} - \widehat{u}_{{i,j-\frac{1}{2},k}} )\]</div>
+<div class="math notranslate nohighlight">
+\[(\widehat{w u_z})_{i,j,k} = \frac{1}{2dz} (\widehat{w}_{i,j,k+\frac{1}{2}}^{adv} +
+\widehat{w}_{i,j,k-\frac{1}{2}}^{adv} ) ( \widehat{u}_{i,j,k+\frac{1}{2}} - \widehat{u}_{i,j,k-\frac{1}{2}} )\]</div>
+<p>The normal velocity at each face is then determined by an upwinding procedure
+based on the states predicted from the cell centers on either side.  The
+procedure is similar to that described above, i.e.
+(suppressing the (<span class="math notranslate nohighlight">\(i+\frac{1}{2},j,k\)</span>) indices)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{u}^{n+\frac{1}{2}}_{{i+\frac{1}{2},j,k}} = \left\{\begin{array}{lll}
+\tilde{u}^{L,n+\frac{1}{2}}
+&amp; \mbox{if $\tilde{u}^{L,n+\frac{1}{2}} &gt; 0$ and $ \tilde{u}^{L,n+\frac{1}{2}} +
+\tilde{u}^{R,n+\frac{1}{2}} &gt; 0$} \\
+0 &amp; \mbox{if $\tilde{u}^{L,n+\frac{1}{2}} \leq 0, \tilde{u}^{R,n+\frac{1}{2}} \geq  0$ or
+$\tilde{u}^{L,n+\frac{1}{2}} + \tilde{u}^{R,n+\frac{1}{2}} = 0$ } \\
+\tilde{u}^{R,n+\frac{1}{2}}
+&amp; \mbox{if $\tilde{u}^{R,n+\frac{1}{2}} &lt; 0$ and $\tilde{u}^{L,n+\frac{1}{2}}
++ \tilde{u}^{R,n+\frac{1}{2}} &lt; 0$}
+\end{array} \right.\end{split}\]</div>
+<p>We follow a similar
+procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n+\frac{1}{2}}_{i,j+\frac{1}{2},k}\)</span>
+and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to this unique value of
+normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
 <section id="effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">
 <h3>Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h" title="Permalink to this headline">¶</a></h3>
 <p>Domain boundary conditions affect the above in three ways.</p>
