@@ -2148,12 +2148,14 @@
 <codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev<sp/>=<sp/>0;<sp/>amrlev<sp/>&lt;<sp/><ref refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" kindref="member">m_num_amr_levels</ref>;<sp/>++amrlev)</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1a6784c63be461e49a81c5c587605674e4" kindref="member">amrex::algoim::compute_integrals</ref>(*m_integral[amrlev]);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="normal">EBFArrayBoxFactory<sp/>const*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(<ref refid="classamrex_1_1MLLinOp_1aca26a5ef5d68cae3dcabea0a5d8c2493" kindref="member">m_factory</ref>[amrlev][0].<ref refid="namespaceamrex_1a55b45d61c6e18c31d787042cf9169385" kindref="member">get</ref>()))<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1_1algoim_1a6784c63be461e49a81c5c587605674e4" kindref="member">amrex::algoim::compute_integrals</ref>(*m_integral[amrlev]);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLNodeLaplacian_eb.cpp"/>
   </compounddef>
