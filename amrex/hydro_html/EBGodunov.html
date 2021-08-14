@@ -98,7 +98,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EBGodunov</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#pre-mac-extrapveltofaces">Pre-MAC (<cite>ExtrapVelToFaces</cite>)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">Effect of boundary conditions (SetXEdgeBCs, SetYEdgeBCs, SetZEdgeBCs)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#post-mac">Post-MAC</a></li>
@@ -199,10 +199,12 @@ and right (R) states. For face <span class="math notranslate nohighlight">\((i+1
 <p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
 <p>In evaluating these terms the first derivatives normal to the face (in this
 case <span class="math notranslate nohighlight">\(u_x^{n,lim}\)</span>) are evaluated using a monotonicity-limited fourth-order
-slope approximation. The limiting is done on each component of the velocity at time <span class="math notranslate nohighlight">\(n\)</span> individually. When one of the cells on either side is a cut cell, we
-instead use a least squares fit centered on <span class="math notranslate nohighlight">\((i,j,k)\)</span> that uses
-all regular and cut-cell neighbors, compute slopes in all three coordinate directions. We then define the left and right states by extrapolating from the cell centroid to the face centroid using slopes in all three coordinate directions
-as necessary.</p>
+slope approximation for cells where the stencil would not include any cut or covered cells.
+The limiting is done on each component of the velocity at time <span class="math notranslate nohighlight">\(n\)</span> individually.</p>
+<p>When one or more cells on either side is a cut cell, we instead use a least squares fit centered on <span class="math notranslate nohighlight">\((i,j,k)\)</span> that uses
+all regular and cut-cell neighbors, compute slopes in all three coordinate directions.
+We then define the left and right states by extrapolating from the cell centroid to the
+face centroid using slopes in all three coordinate directions as necessary.</p>
 <p>The transverse derivative terms (<span class="math notranslate nohighlight">\(\widehat{v u_y}\)</span> and
 <span class="math notranslate nohighlight">\(\widehat{w u_z}\)</span> in this case)
 are evaluated by first extrapolating all velocity components
@@ -270,9 +272,9 @@ $\tilde{u}^{L,n+\frac{1}{2}} + \tilde{u}^{R,n+\frac{1}{2}} = 0$ } \\
 procedure to construct <span class="math notranslate nohighlight">\(\tilde{v}^{n+\frac{1}{2}}_{i,j+\frac{1}{2},k}\)</span>
 and <span class="math notranslate nohighlight">\(\tilde{w}^{n+\frac{1}{2}}_{i,j,k+\frac{1}{2}}\)</span>. We refer to this unique value of
 normal velocity on each face as <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>.</p>
-<section id="effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">
-<h3>Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h" title="Permalink to this headline">¶</a></h3>
-<p>Domain boundary conditions affect the above in three ways.</p>
+<section id="effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">
+<h3>Effect of boundary conditions (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a">SetXEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab">SetYEdgeBCs</a>, <a class="reference internal" href="#setzedgebcs">SetZEdgeBCs</a>)<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs" title="Permalink to this headline">¶</a></h3>
+<p id="setzedgebcs">Domain boundary conditions affect the above in three ways.</p>
 <p>(1) First, they potentially impact the slope computation in cells
 adjacent to the domain boundary (see <a class="reference external" href="#sec:slopes">[sec:slopes]</a>).</p>
 <p>(2) Second, if the face is on a domain boundary and the boundary
