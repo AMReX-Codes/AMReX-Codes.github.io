@@ -99,7 +99,7 @@
 <li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="EBMOL.html">EBMOL</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Godunov</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#pre-mac-godunov-extrapveltofacesbox">Pre-MAC (Godunov::ExtrapVelToFacesBox )</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pre-mac-extrapveltofaces">Pre-MAC (<cite>ExtrapVelToFaces</cite>)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )</a></li>
 </ul>
 </li>
@@ -181,8 +181,8 @@
 <p>All slope computations use second-order limited slopes as described in
 <a class="reference external" href="#sec:slopes">[sec:slopes]</a>.</p>
 <p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <strong>Utils / hydro_constants.H</strong></p>
-<section id="pre-mac-godunov-extrapveltofacesbox">
-<h2>Pre-MAC (Godunov::ExtrapVelToFacesBox )<a class="headerlink" href="#pre-mac-godunov-extrapveltofacesbox" title="Permalink to this headline">¶</a></h2>
+<section id="pre-mac-extrapveltofaces">
+<h2>Pre-MAC (<cite>ExtrapVelToFaces</cite>)<a class="headerlink" href="#pre-mac-extrapveltofaces" title="Permalink to this headline">¶</a></h2>
 <p>We extrapolate the normal velocities to cell faces using a second-order Taylor series expansion
 in space and time. For each face with a non-zero area fraction, we extrapolate the normal velocity
 component from the centroids of the cells on either side to the face centroid, creating left (L)
