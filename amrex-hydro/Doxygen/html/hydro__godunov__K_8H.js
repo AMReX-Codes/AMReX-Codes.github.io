@@ -1,5 +1,5 @@
 var hydro__godunov__K_8H =
 [
-    [ "SetTransTermXBCs", "hydro__godunov__K_8H.html#afbe7d88e046ae0181c752ac89c9c32b0", null ],
-    [ "SetTransTermYBCs", "hydro__godunov__K_8H.html#a00f3d81bcbd080106e41fd4164b5358e", null ]
+    [ "SetTransTermXBCs", "hydro__godunov__K_8H.html#ad1d1c84bdcd9788ec367c1ed785f4718", null ],
+    [ "SetTransTermYBCs", "hydro__godunov__K_8H.html#ad68ded92e84089c0b7617590b2c0bc0d", null ]
 ];

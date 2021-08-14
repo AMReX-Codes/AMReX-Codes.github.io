@@ -4,6 +4,7 @@ var namespaces_dup =
     [ "EBMOL", "namespaceEBMOL.html", null ],
     [ "EBPLM", "namespaceEBPLM.html", null ],
     [ "Godunov", "namespaceGodunov.html", null ],
+    [ "GodunovTransBC", "namespaceGodunovTransBC.html", null ],
     [ "hydro_bcs_K", "namespacehydro__bcs__K.html", null ],
     [ "HydroBC", "namespaceHydroBC.html", null ],
     [ "HydroUtils", "namespaceHydroUtils.html", null ],
