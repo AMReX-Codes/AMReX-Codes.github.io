@@ -107,6 +107,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7d498da8117ccbcbb7860d0d0b8ecf85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a7d498da8117ccbcbb7860d0d0b8ecf85">ComputeSyncAofs</a> (amrex::MultiFab &amp;aofs, int aofs_comp, int ncomp, amrex::MultiFab const &amp;state, int state_comp, AMREX_D_DECL(amrex::MultiFab const &amp;umac, amrex::MultiFab const &amp;vmac, amrex::MultiFab const &amp;wmac), AMREX_D_DECL(amrex::MultiFab const &amp;ucorr, amrex::MultiFab const &amp;vcorr, amrex::MultiFab const &amp;wcorr), AMREX_D_DECL(amrex::MultiFab &amp;xedge, amrex::MultiFab &amp;yedge, amrex::MultiFab &amp;zedge), int edge_comp, bool known_edgestate, AMREX_D_DECL(amrex::MultiFab &amp;xfluxes, amrex::MultiFab &amp;yfluxes, amrex::MultiFab &amp;zfluxes), int fluxes_comp, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs, amrex::BCRec const *d_bcrec_ptr, amrex::Geometry const &amp;geom, bool is_velocity)</td></tr>
 <tr class="memdesc:a7d498da8117ccbcbb7860d0d0b8ecf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Example documentation.  <a href="namespaceMOL.html#a7d498da8117ccbcbb7860d0d0b8ecf85">More...</a><br /></td></tr>
 <tr class="separator:a7d498da8117ccbcbb7860d0d0b8ecf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c37e57c6f658058bac4bc5232824fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a52c37e57c6f658058bac4bc5232824fa">ComputeEdgeState</a> (amrex::Box const &amp;a_bx, AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xedge, amrex::Array4&lt; amrex::Real &gt; const &amp;yedge, amrex::Array4&lt; amrex::Real &gt; const &amp;zedge), amrex::Array4&lt; amrex::Real const &gt; const &amp;q, const int ncomp, AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac), amrex::Box const &amp;domain, amrex::Vector&lt; amrex::BCRec &gt; const &amp;bcs, amrex::BCRec const *d_bcrec_ptr, bool is_velocity)</td></tr>
+<tr class="memdesc:a52c37e57c6f658058bac4bc5232824fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">ComputeEdgeState description.  <a href="namespaceMOL.html#a52c37e57c6f658058bac4bc5232824fa">More...</a><br /></td></tr>
+<tr class="separator:a52c37e57c6f658058bac4bc5232824fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdde2acf756048b8ef0bca332e4bf748"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">ExtrapVelToFaces</a> (const amrex::MultiFab &amp;vel, AMREX_D_DECL(amrex::MultiFab &amp;umac, amrex::MultiFab &amp;vmac, amrex::MultiFab &amp;wmac), const amrex::Geometry &amp;a_geom, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, const amrex::BCRec *d_bcrec)</td></tr>
 <tr class="memdesc:acdde2acf756048b8ef0bca332e4bf748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute upwinded FC velocities by extrapolating CC values in SPACE ONLY.  <a href="namespaceMOL.html#acdde2acf756048b8ef0bca332e4bf748">More...</a><br /></td></tr>
 <tr class="separator:acdde2acf756048b8ef0bca332e4bf748"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -250,6 +253,78 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Doxygen demo docs. </p>
+
+</div>
+</div>
+<a id="a52c37e57c6f658058bac4bc5232824fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c37e57c6f658058bac4bc5232824fa">&#9670;&nbsp;</a></span>ComputeEdgeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MOL::ComputeEdgeState </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>a_bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real &gt; const &amp;xedge, amrex::Array4&lt; amrex::Real &gt; const &amp;yedge, amrex::Array4&lt; amrex::Real &gt; const &amp;zedge)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>q</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ncomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AMREX_D_DECL(amrex::Array4&lt; amrex::Real const &gt; const &amp;umac, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Box const &amp;&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::BCRec &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BCRec const *&#160;</td>
+          <td class="paramname"><em>d_bcrec_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ComputeEdgeState description. </p>
 
 </div>
 </div>
@@ -426,7 +501,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Compute upwinded FC velocities by extrapolating CC values in SPACE ONLY. </p>
-<p>commands tells Doxygen not to include a block of code. &lt; </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vel</td><td>The cell-centered velocity field </td></tr>
     <tr><td class="paramname">umac</td><td>x-component of velocity on centroid of x-face </td></tr>
