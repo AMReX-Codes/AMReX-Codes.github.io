@@ -101,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Godunov.html">Godunov</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">MOL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#pre-mac-mol-extrapveltofacesbox">Pre-MAC (MOL::ExtrapVelToFacesBox )</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">Effect of boundary conditions (SetXEdgeBCs, SetYEdgeBCs, SetZEdgeBCs)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#post-mac">Post-MAC</a></li>
@@ -203,8 +203,8 @@ u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
 \end{cases}\end{split}\]</div>
 <p>We similarly compute <span class="math notranslate nohighlight">\(v_{i,j-\frac{1}{2},k}\)</span> on y-faces and
 <span class="math notranslate nohighlight">\(w_{i,j,k-\frac{1}{2}}\)</span> on z-faces.</p>
-<section id="effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">
-<h3>Effect of boundary conditions (SetXEdgeBCs in Utils / hydro_bcs_K.H )<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h" title="Permalink to this headline">¶</a></h3>
+<section id="effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">
+<h3>Effect of boundary conditions (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a">SetXEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab">SetYEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/HydroBC__namespace_02hydro__bcs__K_8H_03.html#SetZEdgeBCs">SetZEdgeBCs</a>)<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs" title="Permalink to this headline">¶</a></h3>
 <p>Domain boundary conditions affect the above in three ways.</p>
 <p>(1) First, they potentially impact the slope computation in cells
 adjacent to the domain boundary (see <a class="reference external" href="#sec:slopes">[sec:slopes]</a>).</p>
