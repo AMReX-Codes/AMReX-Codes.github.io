@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"AMReX__PlotFileUtil_8H.html#ab16f5968ad28ec7664abd985a11e9c20":[3,0,0,2,216,8],
 "AMReX__PlotFileUtil_8H.html#ab4ba0c733501dc74a5d254dac0bfc47d":[3,0,0,2,216,4],
 "AMReX__PlotFileUtil_8H.html#ace783f22796d80958dc5a14440a432fb":[3,0,0,2,216,9],
 "AMReX__PlotFileUtil_8H.html#aeaa559cd77a4c889c84b144f59a6e35c":[3,0,0,2,216,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b":[3,0,0,2,236,35],
 "AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[3,0,0,2,236,43],
 "AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa":[3,0,0,2,236,42],
-"AMReX__TypeTraits_8H.html#a4c98b791b1f6442671e5cfa546a3df4f":[3,0,0,2,236,37],
-"AMReX__TypeTraits_8H.html#a8690d4c6386d001b328b07257fe628a0":[3,0,0,2,236,39]
+"AMReX__TypeTraits_8H.html#a4c98b791b1f6442671e5cfa546a3df4f":[3,0,0,2,236,37]
 };

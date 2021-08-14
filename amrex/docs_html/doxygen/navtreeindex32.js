@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"classamrex_1_1EB2_1_1ComplementIF.html#aa9c921b677ba98d1bb5018c7b069b6e4":[2,0,0,4,3,2],
 "classamrex_1_1EB2_1_1ComplementIF.html#ac114241000abc43b7c9d00e98603b6f9":[2,0,0,4,3,4],
 "classamrex_1_1EB2_1_1ComplementIF.html#acff65bc20cd6254b106f5a32f535d440":[2,0,0,4,3,3],
 "classamrex_1_1EB2_1_1ComplementIF.html#ae26d05d519a6d3d29a26ae0923343e47":[2,0,0,4,3,1],
@@ -77,8 +78,8 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1GeometryShop.html#a1ae5ec19a6ac23d6aee924e0e628a5eb":[2,0,0,4,10,13],
 "classamrex_1_1EB2_1_1GeometryShop.html#a21626bdeb656074c2e675969aec678bb":[2,0,0,4,10,9],
 "classamrex_1_1EB2_1_1GeometryShop.html#a2e356da2badc30adacbc98d1e04cff97":[2,0,0,4,10,4],
-"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,18],
 "classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,17],
+"classamrex_1_1EB2_1_1GeometryShop.html#a34a660820434819b33dffd4982dc2c0c":[2,0,0,4,10,18],
 "classamrex_1_1EB2_1_1GeometryShop.html#a3e0822600d48fac2177a0b93671e868a":[2,0,0,4,10,24],
 "classamrex_1_1EB2_1_1GeometryShop.html#a4743c337de07fcbcad184ec6242ad0e1":[2,0,0,4,10,22],
 "classamrex_1_1EB2_1_1GeometryShop.html#a4f0ec1939369d98bc8f8c34ee391e221":[2,0,0,4,10,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "classamrex_1_1EB2_1_1PolynomialIF.html#adb20f13a740421e91b3b1eb3e95672b1":[2,0,0,4,36,7],
 "classamrex_1_1EB2_1_1PolynomialIF.html#aded08a08d53e73aa84431822f8b76374":[2,0,0,4,36,0],
 "classamrex_1_1EB2_1_1PolynomialIF.html#ae8b070201e27ab25f01a5378a671e4aa":[2,0,0,4,36,6],
-"classamrex_1_1EB2_1_1RotationIF.html":[2,0,0,4,38],
-"classamrex_1_1EB2_1_1RotationIF.html#a082ac57bb039fceb99b3e48c5346398e":[2,0,0,4,38,7]
+"classamrex_1_1EB2_1_1RotationIF.html":[2,0,0,4,38]
 };

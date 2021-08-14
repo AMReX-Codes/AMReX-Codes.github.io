@@ -2,6 +2,7 @@ var AMReX__ParticleUtil_8H =
 [
     [ "GetParticleBin", "structamrex_1_1GetParticleBin.html", "structamrex_1_1GetParticleBin" ],
     [ "call_f", "AMReX__ParticleUtil_8H.html#aeefdb393afef57732439f230e1b53578", null ],
+    [ "clearEmptyEntries", "AMReX__ParticleUtil_8H.html#aece8b1e2716e84a5261e988b9e9b1ef2", null ],
     [ "computeNeighborProcs", "AMReX__ParticleUtil_8H.html#ac6d35da48f520c8ae3f429aee03601c9", null ],
     [ "computeRefFac", "AMReX__ParticleUtil_8H.html#ad2e9cbb8f28bbbba7378ec7bf4654b89", null ],
     [ "enforcePeriodic", "AMReX__ParticleUtil_8H.html#a0f476ccd0e295fa75562689b1be6b481", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"classamrex_1_1ManagedArenaAllocator.html":[2,0,0,261],
 "classamrex_1_1ManagedArenaAllocator.html#a70abcf89cdc2c54a0b93f939a26fec14":[2,0,0,261,1],
 "classamrex_1_1ManagedArenaAllocator.html#a9833726cef563b59b1d494273c697be1":[2,0,0,261,0],
 "classamrex_1_1ManagedArenaAllocator.html#adb788f18c122780c2d29f125ed70d0aa":[2,0,0,261,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "classamrex_1_1NFilesIter.html#ac8060f9d60b3f7dff21c1f8a826302d3":[2,0,0,303,49],
 "classamrex_1_1NFilesIter.html#ac9b6223bf489ebe24b22ae01e1c16652":[2,0,0,303,44],
 "classamrex_1_1NFilesIter.html#ad05e5285d1e34ab3e64e20f5e87c32c6":[2,0,0,303,7],
-"classamrex_1_1NFilesIter.html#ad9233c5996de29b80cfb5c0ac02e8214":[2,0,0,303,13],
-"classamrex_1_1NFilesIter.html#adbf2559963632d8d8e286065e081205c":[2,0,0,303,50]
+"classamrex_1_1NFilesIter.html#ad9233c5996de29b80cfb5c0ac02e8214":[2,0,0,303,13]
 };
