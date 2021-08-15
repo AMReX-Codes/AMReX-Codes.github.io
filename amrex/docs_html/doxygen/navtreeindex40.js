@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"classamrex_1_1MLCGSolver.html#a34ae0aafa5090a14b99247b75d58878e":[2,0,0,279,24],
 "classamrex_1_1MLCGSolver.html#a34f8c9907a6c25ecbb3d52a3ad09f6e2":[2,0,0,279,11],
 "classamrex_1_1MLCGSolver.html#a351c3fd9af99a8b2f2bad292bedb9c67":[2,0,0,279,12],
 "classamrex_1_1MLCGSolver.html#a4ca8e6c5517dedd10c97e3dae250427f":[2,0,0,279,25],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "classamrex_1_1MLEBTensorOp.html#af91981f116ef858b2bc4778b53fc575f":[2,0,0,282,35],
 "classamrex_1_1MLLinOp.html":[2,0,0,283],
 "classamrex_1_1MLLinOp.html#a01c4cbbbf82530a8d3523d07ad3a9e9f":[2,0,0,283,90],
-"classamrex_1_1MLLinOp.html#a01cdaaf631b81b52be1ffaf606d8f9e1":[2,0,0,283,11],
-"classamrex_1_1MLLinOp.html#a02f3afbdee5598f2cae332d7946a5a70":[2,0,0,283,58]
+"classamrex_1_1MLLinOp.html#a01cdaaf631b81b52be1ffaf606d8f9e1":[2,0,0,283,11]
 };

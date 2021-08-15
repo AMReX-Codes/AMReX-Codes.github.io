@@ -87,6 +87,7 @@ var classamrex_1_1FabArrayBase =
     [ "is_cell_centered", "classamrex_1_1FabArrayBase.html#a60aa58517fd2a7d6976e114df171df25", null ],
     [ "is_nodal", "classamrex_1_1FabArrayBase.html#a641ffe22574cc57f3544687b3e23d174", null ],
     [ "is_nodal", "classamrex_1_1FabArrayBase.html#a90447f2e6d22e5e0e06a538fd37063d5", null ],
+    [ "isFusingCandidate", "classamrex_1_1FabArrayBase.html#a5f85b5648838d8d7cf103fbbeaec76be", null ],
     [ "isOwner", "classamrex_1_1FabArrayBase.html#a6512ea611a6c04b5710334d9d9bfbb4e", null ],
     [ "ixType", "classamrex_1_1FabArrayBase.html#a682fdf86619f6028fea2805d9693ae22", null ],
     [ "local_size", "classamrex_1_1FabArrayBase.html#aabf6dbff99d8524f9c9d082302afdd5e", null ],
