@@ -189,6 +189,12 @@ var NAVTREEINDEX16 =
 "AMReX__Scan_8H.html#afc7e9101fe11ee3baf011241d6f28364":[3,0,0,2,228,12],
 "AMReX__Scan_8H_source.html":[3,0,0,2,228],
 "AMReX__Slopes__K_8H.html":[3,0,0,2,229],
+"AMReX__Slopes__K_8H.html#a046b534fdf7d008ea95b2eecda2dc008":[3,0,0,2,229,4],
+"AMReX__Slopes__K_8H.html#a0f3356d467d4ad6c58d7c0a3a29689ac":[3,0,0,2,229,5],
+"AMReX__Slopes__K_8H.html#a147f251f83a5f9c022d66a1595f7cb0b":[3,0,0,2,229,3],
+"AMReX__Slopes__K_8H.html#a43724c1f3c9745b893de6823b5bfef51":[3,0,0,2,229,2],
+"AMReX__Slopes__K_8H.html#a89f81b000b34e7c57e481ba09a2f77eb":[3,0,0,2,229,1],
+"AMReX__Slopes__K_8H.html#aba62b0734dec9b69bdc82781f4e87151":[3,0,0,2,229,0],
 "AMReX__Slopes__K_8H_source.html":[3,0,0,2,229],
 "AMReX__SparseBins_8H.html":[3,0,0,7,33],
 "AMReX__SparseBins_8H_source.html":[3,0,0,7,33],
@@ -243,11 +249,5 @@ var NAVTREEINDEX16 =
 "AMReX__Tuple_8H.html#af2cf176de6238efb234749dec71b4a0f":[3,0,0,2,235,37],
 "AMReX__Tuple_8H.html#af2dd4ad4f928e269d1bc2dce24f48b92":[3,0,0,2,235,30],
 "AMReX__Tuple_8H.html#af2e078bf57389f3da2ad75a53aca0771":[3,0,0,2,235,26],
-"AMReX__Tuple_8H.html#afdc7b3879a8b9ccc7982c0781deb74ea":[3,0,0,2,235,36],
-"AMReX__Tuple_8H_source.html":[3,0,0,2,235],
-"AMReX__TypeTraits_8H.html":[3,0,0,2,236],
-"AMReX__TypeTraits_8H.html#a0eff68a0533ea2aa13ab568ac932c60b":[3,0,0,2,236,35],
-"AMReX__TypeTraits_8H.html#a1fbad5ff9cc23fcc37c363d9d3bc0d94":[3,0,0,2,236,43],
-"AMReX__TypeTraits_8H.html#a3d7af06ef9ce2e0a696e5c73f3e460aa":[3,0,0,2,236,42],
-"AMReX__TypeTraits_8H.html#a4c98b791b1f6442671e5cfa546a3df4f":[3,0,0,2,236,37]
+"AMReX__Tuple_8H.html#afdc7b3879a8b9ccc7982c0781deb74ea":[3,0,0,2,235,36]
 };

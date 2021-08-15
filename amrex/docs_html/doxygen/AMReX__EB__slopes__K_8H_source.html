@@ -377,14 +377,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                              vfrac(i+1,j,k) == 1. &amp;&amp; vfrac(i+2,j,k) == 1.)</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    {</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordtype">int</span> order = 4;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        xslope = amrex_calc_xslope(i,j,k,n,order,state);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        xslope = <a class="code" href="namespaceamrex.html#aba62b0734dec9b69bdc82781f4e87151">amrex_calc_xslope</a>(i,j,k,n,order,state);</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    }</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">// We have enough cells in the x-direction to do 2nd order slopes</span></div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// centered on (i,j,k) with all values at cell centers</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order &gt; 0 &amp;&amp; vfrac(i,j,k) == 1. &amp;&amp; vfrac(i-1,j,k) == 1. &amp;&amp; vfrac(i+1,j,k) == 1.)</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordtype">int</span> order = 2;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        xslope = amrex_calc_xslope(i,j,k,n,order,state);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        xslope = <a class="code" href="namespaceamrex.html#aba62b0734dec9b69bdc82781f4e87151">amrex_calc_xslope</a>(i,j,k,n,order,state);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order == 0) {</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        xslope = 0.;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
@@ -396,14 +396,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                  vfrac(i,j+1,k) == 1. &amp;&amp; vfrac(i,j+2,k) == 1.)</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordtype">int</span> order = 4;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        yslope = amrex_calc_yslope(i,j,k,n,order,state);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        yslope = <a class="code" href="namespaceamrex.html#a43724c1f3c9745b893de6823b5bfef51">amrex_calc_yslope</a>(i,j,k,n,order,state);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// We have enough cells in the y-direction to do 2nd order slopes</span></div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="comment">// centered on (i,j,k) with all values at cell centers</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order &gt; 0 &amp;&amp; vfrac(i,j,k) == 1. &amp;&amp; vfrac(i,j-1,k) == 1. &amp;&amp; vfrac(i,j+1,k) == 1.)</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    {</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordtype">int</span> order = 2;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        yslope = amrex_calc_yslope(i,j,k,n,order,state);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        yslope = <a class="code" href="namespaceamrex.html#a43724c1f3c9745b893de6823b5bfef51">amrex_calc_yslope</a>(i,j,k,n,order,state);</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order == 0) {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        yslope = 0.;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
@@ -416,14 +416,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                  vfrac(i,j,k+1) == 1. &amp;&amp; vfrac(i,j,k+2) == 1.)</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    {</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordtype">int</span> order = 4;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        zslope = amrex_calc_zslope(i,j,k,n,order,state);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        zslope = <a class="code" href="namespaceamrex.html#a046b534fdf7d008ea95b2eecda2dc008">amrex_calc_zslope</a>(i,j,k,n,order,state);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="comment">// We have enough cells in the z-direction to do 2nd order slopes</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="comment">// centered on (i,j,k) with all values at cell centers</span></div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order &gt; 0 &amp;&amp; vfrac(i,j,k) == 1. &amp;&amp; vfrac(i,j,k-1) == 1. &amp;&amp; vfrac(i,j,k+1) == 1.)</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordtype">int</span> order = 2;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        zslope = amrex_calc_zslope(i,j,k,n,order,state);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        zslope = <a class="code" href="namespaceamrex.html#a046b534fdf7d008ea95b2eecda2dc008">amrex_calc_zslope</a>(i,j,k,n,order,state);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order == 0) {</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        zslope = 0.;</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
@@ -624,14 +624,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                                  vfrac(i+1,j,k) == 1. &amp;&amp; vfrac(i+2,j,k) == 1.)</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordtype">int</span> order = 4;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        xslope = amrex_calc_xslope_extdir(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        xslope = <a class="code" href="namespaceamrex.html#a89f81b000b34e7c57e481ba09a2f77eb">amrex_calc_xslope_extdir</a>(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    }</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">// We have enough cells in the x-direction to do 2nd order slopes</span></div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="comment">// centered on (i,j,k) with all values at cell centers</span></div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order &gt; 0 &amp;&amp; vfrac(i,j,k) == 1. &amp;&amp; vfrac(i-1,j,k) == 1. &amp;&amp; vfrac(i+1,j,k) == 1.)</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    {</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <span class="keywordtype">int</span> order = 2;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        xslope = amrex_calc_xslope_extdir(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        xslope = <a class="code" href="namespaceamrex.html#a89f81b000b34e7c57e481ba09a2f77eb">amrex_calc_xslope_extdir</a>(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order == 0) {</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        xslope = 0.;</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    }</div>
@@ -643,14 +643,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                                  vfrac(i,j+1,k) == 1. &amp;&amp; vfrac(i,j+2,k) == 1.)</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    {</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordtype">int</span> order = 4;</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        yslope = amrex_calc_yslope_extdir(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        yslope = <a class="code" href="namespaceamrex.html#a147f251f83a5f9c022d66a1595f7cb0b">amrex_calc_yslope_extdir</a>(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="comment">// We have enough cells in the y-direction to do 2nd order slopes</span></div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="comment">// centered on (i,j,k) with all values at cell centers</span></div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order &gt; 0 &amp;&amp; vfrac(i,j,k) == 1. &amp;&amp; vfrac(i,j-1,k) == 1. &amp;&amp; vfrac(i,j+1,k) == 1.)</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    {</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keywordtype">int</span> order = 2;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        yslope = amrex_calc_yslope_extdir(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        yslope = <a class="code" href="namespaceamrex.html#a147f251f83a5f9c022d66a1595f7cb0b">amrex_calc_yslope_extdir</a>(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order == 0) {</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        yslope = 0.;</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    }</div>
@@ -663,14 +663,14 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                                  vfrac(i,j,k+1) == 1. &amp;&amp; vfrac(i,j,k+2) == 1.)</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    {</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="keywordtype">int</span> order = 4;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        zslope = amrex_calc_zslope_extdir(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        zslope = <a class="code" href="namespaceamrex.html#a0f3356d467d4ad6c58d7c0a3a29689ac">amrex_calc_zslope_extdir</a>(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    }</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="comment">// We have enough cells in the z-direction to do 2nd order slopes</span></div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="comment">// centered on (i,j,k) with all values at cell centers</span></div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order &gt; 0 &amp;&amp; vfrac(i,j,k) == 1. &amp;&amp; vfrac(i,j,k-1) == 1. &amp;&amp; vfrac(i,j,k+1) == 1.)</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    {</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <span class="keywordtype">int</span> order = 2;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        zslope = amrex_calc_zslope_extdir(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        zslope = <a class="code" href="namespaceamrex.html#a0f3356d467d4ad6c58d7c0a3a29689ac">amrex_calc_zslope_extdir</a>(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (max_order == 0) {</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        zslope = 0.;</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    }</div>
@@ -1171,16 +1171,22 @@ $(document).ready(function(){initNavTree('AMReX__EB__slopes__K_8H_source.html','
 </div><!-- doc-content -->
 <div class="ttc" id="aAMReX__FArrayBox_8H_html"><div class="ttname"><a href="AMReX__FArrayBox_8H.html">AMReX_FArrayBox.H</a></div></div>
 <div class="ttc" id="anamespaceamrex_html_a2d2bb7bdafe91906c966d8e75d540bea"><div class="ttname"><a href="namespaceamrex.html#a2d2bb7bdafe91906c966d8e75d540bea">amrex::min</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE constexpr const AMREX_FORCE_INLINE T &amp; min(const T &amp;a, const T &amp;b) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Algorithm.H:21</div></div>
+<div class="ttc" id="anamespaceamrex_html_a0f3356d467d4ad6c58d7c0a3a29689ac"><div class="ttname"><a href="namespaceamrex.html#a0f3356d467d4ad6c58d7c0a3a29689ac">amrex::amrex_calc_zslope_extdir</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex_calc_zslope_extdir(int i, int j, int k, int n, int order, amrex::Array4&lt; Real const &gt; const &amp;q, bool edlo, bool edhi, int domlo, int domhi) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Slopes_K.H:344</div></div>
+<div class="ttc" id="anamespaceamrex_html_a43724c1f3c9745b893de6823b5bfef51"><div class="ttname"><a href="namespaceamrex.html#a43724c1f3c9745b893de6823b5bfef51">amrex::amrex_calc_yslope</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex_calc_yslope(int i, int j, int k, int n, int order, amrex::Array4&lt; Real const &gt; const &amp;q) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Slopes_K.H:157</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_a4f563a3cac0e56caccff5ba7be3d49a4"><div class="ttname"><a href="AMReX__SPACE_8H.html#a4f563a3cac0e56caccff5ba7be3d49a4">AMREX_D_TERM</a></div><div class="ttdeci">#define AMREX_D_TERM(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:152</div></div>
 <div class="ttc" id="aAMReX__EBFArrayBox_8H_html"><div class="ttname"><a href="AMReX__EBFArrayBox_8H.html">AMReX_EBFArrayBox.H</a></div></div>
 <div class="ttc" id="aAMReX__GpuQualifiers_8H_html_a4e626ebf06898d71a9e0790877f1694f"><div class="ttname"><a href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a></div><div class="ttdeci">#define AMREX_GPU_DEVICE</div><div class="ttdef"><b>Definition:</b> AMReX_GpuQualifiers.H:12</div></div>
+<div class="ttc" id="anamespaceamrex_html_a046b534fdf7d008ea95b2eecda2dc008"><div class="ttname"><a href="namespaceamrex.html#a046b534fdf7d008ea95b2eecda2dc008">amrex::amrex_calc_zslope</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex_calc_zslope(int i, int j, int k, int n, int order, amrex::Array4&lt; Real const &gt; const &amp;q) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Slopes_K.H:295</div></div>
 <div class="ttc" id="aAMReX__Extension_8H_html_a90cf7b81cd61799c87306cad156cc317"><div class="ttname"><a href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div><div class="ttdeci">#define AMREX_FORCE_INLINE</div><div class="ttdef"><b>Definition:</b> AMReX_Extension.H:110</div></div>
+<div class="ttc" id="anamespaceamrex_html_aba62b0734dec9b69bdc82781f4e87151"><div class="ttname"><a href="namespaceamrex.html#aba62b0734dec9b69bdc82781f4e87151">amrex::amrex_calc_xslope</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex_calc_xslope(int i, int j, int k, int n, int order, amrex::Array4&lt; Real const &gt; const &amp;q) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Slopes_K.H:16</div></div>
 <div class="ttc" id="aAMReX__EBCellFlag_8H_html"><div class="ttname"><a href="AMReX__EBCellFlag_8H.html">AMReX_EBCellFlag.H</a></div></div>
 <div class="ttc" id="aAMReX__BLassert_8H_html_abd471ebf6086189835e778f06c053833"><div class="ttname"><a href="AMReX__BLassert_8H.html#abd471ebf6086189835e778f06c053833">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">#define AMREX_ALWAYS_ASSERT(EX)</div><div class="ttdef"><b>Definition:</b> AMReX_BLassert.H:50</div></div>
+<div class="ttc" id="anamespaceamrex_html_a89f81b000b34e7c57e481ba09a2f77eb"><div class="ttname"><a href="namespaceamrex.html#a89f81b000b34e7c57e481ba09a2f77eb">amrex::amrex_calc_xslope_extdir</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex_calc_xslope_extdir(int i, int j, int k, int n, int order, amrex::Array4&lt; Real const &gt; const &amp;q, bool edlo, bool edhi, int domlo, int domhi) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Slopes_K.H:66</div></div>
 <div class="ttc" id="astructamrex_1_1GpuArray_html"><div class="ttname"><a href="structamrex_1_1GpuArray.html">amrex::GpuArray</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array.H:32</div></div>
 <div class="ttc" id="astructamrex_1_1Array4_html"><div class="ttname"><a href="structamrex_1_1Array4.html">amrex::Array4</a></div><div class="ttdef"><b>Definition:</b> AMReX_Array4.H:15</div></div>
 <div class="ttc" id="aAMReX__SPACE_8H_html_af5ea8082b66e48cdbea53d08cdfca9a0"><div class="ttname"><a href="AMReX__SPACE_8H.html#af5ea8082b66e48cdbea53d08cdfca9a0">AMREX_D_DECL</a></div><div class="ttdeci">#define AMREX_D_DECL(a, b, c)</div><div class="ttdef"><b>Definition:</b> AMReX_SPACE.H:151</div></div>
 <div class="ttc" id="aAMReX__Slopes__K_8H_html"><div class="ttname"><a href="AMReX__Slopes__K_8H.html">AMReX_Slopes_K.H</a></div></div>
+<div class="ttc" id="anamespaceamrex_html_a147f251f83a5f9c022d66a1595f7cb0b"><div class="ttname"><a href="namespaceamrex.html#a147f251f83a5f9c022d66a1595f7cb0b">amrex::amrex_calc_yslope_extdir</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE Real amrex_calc_yslope_extdir(int i, int j, int k, int n, int order, amrex::Array4&lt; Real const &gt; const &amp;q, bool edlo, bool edhi, int domlo, int domhi) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_Slopes_K.H:206</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

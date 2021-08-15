@@ -1,5 +1,11 @@
 var NAVTREEINDEX63 =
 {
+"structamrex_1_1algoim_1_1QuadratureRule.html#af7ae531fe1e05325b891c107d2276c12":[2,0,0,0,6,4],
+"structamrex_1_1algoim_1_1QuadratureRule.html#aff9ac4f971a67e107e2cf55dd95fad21":[2,0,0,0,6,5],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html":[2,0,0,0,6,0],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a34f5a91f16a2303f0ed25ae611894455":[2,0,0,0,6,0,0],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#a5f9f48bbbd30d20b1b08061b621b46e6":[2,0,0,0,6,0,3],
+"structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#ac09c0b155c27d48d0efcf8d70277894a":[2,0,0,0,6,0,2],
 "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html#aec5bde519720bd162ca02815d84c4b7b":[2,0,0,0,6,0,1],
 "structamrex_1_1amrex__iparser.html":[2,0,0,27],
 "structamrex_1_1amrex__iparser.html#a0d09cecd3bd399d8e8527f093b722a9b":[2,0,0,27,0],

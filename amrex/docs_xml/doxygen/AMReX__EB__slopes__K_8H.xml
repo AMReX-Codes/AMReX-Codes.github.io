@@ -485,9 +485,17 @@
         <link refid="AMReX__Slopes__K_8H"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
       <node id="94">
@@ -1731,14 +1739,14 @@
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i+1,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i+2,j,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/>amrex_calc_xslope(i,j,k,n,order,state);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/><ref refid="namespaceamrex_1aba62b0734dec9b69bdc82781f4e87151" kindref="member">amrex_calc_xslope</ref>(i,j,k,n,order,state);</highlight></codeline>
 <codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>enough<sp/>cells<sp/>in<sp/>the<sp/>x-direction<sp/>to<sp/>do<sp/>2nd<sp/>order<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>centered<sp/>on<sp/>(i,j,k)<sp/>with<sp/>all<sp/>values<sp/>at<sp/>cell<sp/>centers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>vfrac(i,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i-1,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i+1,j,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/>amrex_calc_xslope(i,j,k,n,order,state);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/><ref refid="namespaceamrex_1aba62b0734dec9b69bdc82781f4e87151" kindref="member">amrex_calc_xslope</ref>(i,j,k,n,order,state);</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/>0.;</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1750,14 +1758,14 @@
 <codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i,j+1,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j+2,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/>amrex_calc_yslope(i,j,k,n,order,state);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/><ref refid="namespaceamrex_1a43724c1f3c9745b893de6823b5bfef51" kindref="member">amrex_calc_yslope</ref>(i,j,k,n,order,state);</highlight></codeline>
 <codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>enough<sp/>cells<sp/>in<sp/>the<sp/>y-direction<sp/>to<sp/>do<sp/>2nd<sp/>order<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>centered<sp/>on<sp/>(i,j,k)<sp/>with<sp/>all<sp/>values<sp/>at<sp/>cell<sp/>centers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>vfrac(i,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j-1,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j+1,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/>amrex_calc_yslope(i,j,k,n,order,state);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/><ref refid="namespaceamrex_1a43724c1f3c9745b893de6823b5bfef51" kindref="member">amrex_calc_yslope</ref>(i,j,k,n,order,state);</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/>0.;</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1770,14 +1778,14 @@
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i,j,k+1)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j,k+2)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/>amrex_calc_zslope(i,j,k,n,order,state);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/><ref refid="namespaceamrex_1a046b534fdf7d008ea95b2eecda2dc008" kindref="member">amrex_calc_zslope</ref>(i,j,k,n,order,state);</highlight></codeline>
 <codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>enough<sp/>cells<sp/>in<sp/>the<sp/>z-direction<sp/>to<sp/>do<sp/>2nd<sp/>order<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>centered<sp/>on<sp/>(i,j,k)<sp/>with<sp/>all<sp/>values<sp/>at<sp/>cell<sp/>centers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>vfrac(i,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j,k-1)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j,k+1)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/>amrex_calc_zslope(i,j,k,n,order,state);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/><ref refid="namespaceamrex_1a046b534fdf7d008ea95b2eecda2dc008" kindref="member">amrex_calc_zslope</ref>(i,j,k,n,order,state);</highlight></codeline>
 <codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/>0.;</highlight></codeline>
 <codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1978,14 +1986,14 @@
 <codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i+1,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i+2,j,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/>amrex_calc_xslope_extdir(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/><ref refid="namespaceamrex_1a89f81b000b34e7c57e481ba09a2f77eb" kindref="member">amrex_calc_xslope_extdir</ref>(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</highlight></codeline>
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>enough<sp/>cells<sp/>in<sp/>the<sp/>x-direction<sp/>to<sp/>do<sp/>2nd<sp/>order<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>centered<sp/>on<sp/>(i,j,k)<sp/>with<sp/>all<sp/>values<sp/>at<sp/>cell<sp/>centers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>vfrac(i,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i-1,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i+1,j,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/>amrex_calc_xslope_extdir(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/><ref refid="namespaceamrex_1a89f81b000b34e7c57e481ba09a2f77eb" kindref="member">amrex_calc_xslope_extdir</ref>(i,j,k,n,order,state,edlo_x,edhi_x,domlo_x,domhi_x);</highlight></codeline>
 <codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslope<sp/>=<sp/>0.;</highlight></codeline>
 <codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -1997,14 +2005,14 @@
 <codeline lineno="542"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i,j+1,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j+2,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/>amrex_calc_yslope_extdir(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/><ref refid="namespaceamrex_1a147f251f83a5f9c022d66a1595f7cb0b" kindref="member">amrex_calc_yslope_extdir</ref>(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</highlight></codeline>
 <codeline lineno="546"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="547"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>enough<sp/>cells<sp/>in<sp/>the<sp/>y-direction<sp/>to<sp/>do<sp/>2nd<sp/>order<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="548"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>centered<sp/>on<sp/>(i,j,k)<sp/>with<sp/>all<sp/>values<sp/>at<sp/>cell<sp/>centers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>vfrac(i,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j-1,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j+1,k)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="551"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/>amrex_calc_yslope_extdir(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</highlight></codeline>
+<codeline lineno="552"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/><ref refid="namespaceamrex_1a147f251f83a5f9c022d66a1595f7cb0b" kindref="member">amrex_calc_yslope_extdir</ref>(i,j,k,n,order,state,edlo_y,edhi_y,domlo_y,domhi_y);</highlight></codeline>
 <codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yslope<sp/>=<sp/>0.;</highlight></codeline>
 <codeline lineno="555"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2017,14 +2025,14 @@
 <codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vfrac(i,j,k+1)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j,k+2)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="563"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="564"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/>amrex_calc_zslope_extdir(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</highlight></codeline>
+<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/><ref refid="namespaceamrex_1a0f3356d467d4ad6c58d7c0a3a29689ac" kindref="member">amrex_calc_zslope_extdir</ref>(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</highlight></codeline>
 <codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="567"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>enough<sp/>cells<sp/>in<sp/>the<sp/>z-direction<sp/>to<sp/>do<sp/>2nd<sp/>order<sp/>slopes</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="568"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>centered<sp/>on<sp/>(i,j,k)<sp/>with<sp/>all<sp/>values<sp/>at<sp/>cell<sp/>centers</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="569"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>vfrac(i,j,k)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j,k-1)<sp/>==<sp/>1.<sp/>&amp;&amp;<sp/>vfrac(i,j,k+1)<sp/>==<sp/>1.)</highlight></codeline>
 <codeline lineno="570"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="571"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>order<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/>amrex_calc_zslope_extdir(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</highlight></codeline>
+<codeline lineno="572"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/><ref refid="namespaceamrex_1a0f3356d467d4ad6c58d7c0a3a29689ac" kindref="member">amrex_calc_zslope_extdir</ref>(i,j,k,n,order,state,edlo_z,edhi_z,domlo_z,domhi_z);</highlight></codeline>
 <codeline lineno="573"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="574"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zslope<sp/>=<sp/>0.;</highlight></codeline>
 <codeline lineno="575"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
