@@ -297,15 +297,15 @@ described above.</p>
 <h2>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this headline">¶</a></h2>
 <p>Once we have the MAC-projected velocities, we project all quantities to
 faces as above:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}:label: eq1\\\begin{split}\tilde{s}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx s_{i,j,k}^n + \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
+<div class="math notranslate nohighlight" id="equation-eq3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq3" title="Permalink to this equation">¶</a></span>\[\begin{split}\tilde{s}_{i+\frac{1}{2},j,k}^{L,{n+\frac{1}{2}}} &amp; \approx s_{i,j,k}^n + \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
  &amp; = s_{i,j,k}^n + \left( \frac{dx}{2} - s^n_{i,j,k} \frac{dt}{2} \right) (s_x^{n,lim})_{i,j,k} \\
- &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\end{split}\end{aligned}\end{align} \]</div>
+ &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i,j,k} - (\widehat{w s_z})_{i,j,k} + f_{x,i,j,k}^n)\end{split}\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i,j,k)\)</span>, and</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}:label: eq2\\\begin{split} \tilde{s}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx s_{i+1,j,k}^n - \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
+<div class="math notranslate nohighlight" id="equation-eq4">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq4" title="Permalink to this equation">¶</a></span>\[\begin{split} \tilde{s}_{i+\frac{1}{2},j,k}^{R,{n+\frac{1}{2}}} &amp; \approx s_{i+1,j,k}^n - \frac{dx}{2} s_x + \frac{dt}{2} s_t \\
  &amp; = s_{i+1,j,k}^n - \left( \frac{dx}{2} + s^n_{i+1,j,k} \frac{dt}{2} \right)(s^{n,lim}_x)_{i+1,j,k} \\
- &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\end{split}\end{aligned}\end{align} \]</div>
+ &amp; + \frac{dt}{2} (-(\widehat{v s_y})_{i+1,j,k} - (\widehat{w s_z})_{i+1,j,k} + f_{x,i+1,j,k}^n)\end{split}\]</div>
 <p>extrapolated from <span class="math notranslate nohighlight">\((i+1,j,k).\)</span> Here, <span class="math notranslate nohighlight">\(f\)</span> is the sum of external forces, discussed later.</p>
 <p>where <span class="math notranslate nohighlight">\(s^x\)</span> are the (limited) slopes in the x-direction.</p>
 <p>The domain boundary conditions affect the solution as described above in
