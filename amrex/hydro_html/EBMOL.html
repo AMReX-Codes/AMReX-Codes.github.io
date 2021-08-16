@@ -103,10 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">Boundary conditions (SetXEdgeBCs, SetYEdgeBCs, SetZEdgeBCs)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#post-mac">Post-MAC</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Boundary conditions (SetXEdgeBCs, SetYEdgeBCs, SetZEdgeBCs)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#post-mac">Post-MAC</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#constructing-the-update">Constructing the update</a></li>
 </ul>
 </li>
@@ -253,8 +250,6 @@ s_R &amp;=&amp; s_{i,j,k}   - \delta x \; {s^x}_{i,j,k}   - \delta y \; {s^y}_{i
 as described in <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>,
 and <span class="math notranslate nohighlight">\(\delta_x\)</span>, <span class="math notranslate nohighlight">\(\delta_y\)</span>, and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from
 the cell centroid to the face centroid of the face at <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k).\)</span></p>
-<section id="id1">
-<h3>Boundary conditions (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a">SetXEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab">SetYEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a19ddc5ac50e9a6b9a98bc17f3815a62e">SetZEdgeBCs</a>)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The domain boundary conditions affect the solution as described above in
 (1) and (2) for the pre-MAC step. We do not impose the
 no-outflow-at-inflow condition quite as described in (3); instead we
@@ -274,13 +269,12 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 \frac{1}{2}(s_L + s_R),
 \end{cases}\end{split}\]</div>
 </section>
-</section>
 <section id="constructing-the-update">
 <h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
 <p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, on all cells with <span class="math notranslate nohighlight">\(V_{i,j,k} &gt; 0\)</span> we construct</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-\nabla \cdot ({\bf u}s) &amp;=&amp; (
+\nabla \cdot ({\bf u}s) &amp;=&amp; ( \\
                         &amp; &amp; (a_{i+\frac{1}{2},j,k} \; u^{MAC}_{i+\frac{1}{2},j,k}\; s_{i+\frac{1}{2},j,k}
                            - a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}) \\
                         &amp;+&amp; (a_{i,j+\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j+\frac{1}{2},k}
@@ -293,7 +287,7 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
-(DU)^{MAC}  &amp;=&amp; (
+(DU)^{MAC}  &amp;=&amp; (  \\
             &amp; &amp; (a_{i+\frac{1}{2},j,k} u^{MAC}_{i+\frac{1}{2},j,k}- a_{i-\frac{1}{2},j,k} u^{MAC}_{i-\frac{1}{2},j,k}) \\
             &amp;+&amp; (a_{i,j+\frac{1}{2},k} v^{MAC}_{i,j-\frac{1}{2},k}- a_{i,j-\frac{1}{2},k} v^{MAC}_{i,j-\frac{1}{2},k}) \\
             &amp;+&amp; (a_{i,j,k+\frac{1}{2}} w^{MAC}_{i,j,k-\frac{1}{2}}- a_{i,j,k-\frac{1}{2}} w^{MAC}_{i,j,k-\frac{1}{2}}) ) / V_{i,j,k} \\\end{aligned}\end{split}\]</div>
