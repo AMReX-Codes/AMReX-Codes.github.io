@@ -98,6 +98,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">EBMOL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#notation">Notation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pre-mac-extrapveltofaces">Pre-MAC (ExtrapVelToFaces)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs">Boundary conditions (SetXEdgeBCs, SetYEdgeBCs, SetZEdgeBCs)</a></li>
 </ul>
@@ -192,10 +193,15 @@ are not cut cells), the EBMOL methodology will return exactly the same answer (t
 precision) as the MOL methodology.</p>
 </div>
 <p>We define <span class="math notranslate nohighlight">\(\varepsilon = 1.e-8\)</span> in <strong>Utils / hydro_constants.H</strong></p>
+<section id="notation">
+<h2>Notation<a class="headerlink" href="#notation" title="Permalink to this headline">¶</a></h2>
+<p>For every cut cell we define <span class="math notranslate nohighlight">\(a_x\)</span>, <span class="math notranslate nohighlight">\(a_y,\)</span> and <span class="math notranslate nohighlight">\(a_z\)</span> to be the area fractions of the faces
+and <span class="math notranslate nohighlight">\(V\)</span> is the volume fraction of the cell.  All area and volume fractions are greater than or equal to zero
+and less than or equal to 1.</p>
+</section>
 <section id="pre-mac-extrapveltofaces">
 <h2>Pre-MAC (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceEBMOL.html#a7add53a153ade9c5cb83e79a61ad1929">ExtrapVelToFaces</a>)<a class="headerlink" href="#pre-mac-extrapveltofaces" title="Permalink to this headline">¶</a></h2>
-<p>For computing the pre-MAC edge states to be MAC-projected, we define on
-every x-face:</p>
+<p>For computing the pre-MAC edge states to be MAC-projected, we define on every x-face with <span class="math notranslate nohighlight">\(a_x &gt; 0\)</span> :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 u_L &amp;=&amp; u_{i-1,j,k} + \delta x \; {u^x}_{i-1,j,k} + \delta y \; {u^y}_{i-1,j,k} + \delta z \; {u^z}_{i-1,j,k} , \\
@@ -238,8 +244,7 @@ described above.</p>
 </section>
 <section id="post-mac">
 <h2>Post-MAC<a class="headerlink" href="#post-mac" title="Permalink to this headline">¶</a></h2>
-<p>Once we have the MAC-projected velocities, we project all quantities to
-faces as above:</p>
+<p>Once we have the MAC-projected velocities, we predict all quantities to faces with non-zero area fractions as above:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 s_L &amp;=&amp; s_{i-1,j,k} + \delta x \; {s^x}_{i-1,j,k} + \delta y \; {s^y}_{i-1,j,k} + \delta z \; {s^z}_{i-1,j,k} , \\
@@ -272,7 +277,7 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 </section>
 <section id="constructing-the-update">
 <h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
-<p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, we construct</p>
+<p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, on all cells with <span class="math notranslate nohighlight">\(V_{i,j,k} &gt; 0\)</span> we construct</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \nabla \cdot ({\bf u}s) &amp;=&amp; ( (a_{i+\frac{1}{2},j,k} \; u^{MAC}_{i+\frac{1}{2},j,k}\; s_{i+\frac{1}{2},j,k}
@@ -283,16 +288,13 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
                            - a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}) ) / V_{i,j,k} \\\end{aligned}\end{split}\]</div>
 <p>while if <span class="math notranslate nohighlight">\(s\)</span> is to be updated in convective form, we construct</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-({\bf u}\cdot \nabla s) &amp;= \nabla \cdot ({\bf u}s) &amp;- s_{i,j,k} (DU)^{MAC}
-\end{aligned}  //\]</div>
+\[({\bf u}\cdot \nabla s) &amp;= \nabla \cdot ({\bf u}s) - s_{i,j,k} (DU)^{MAC}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 (DU)^{MAC}  &amp;=&amp; ( (a_{i+\frac{1}{2},j,k} u^{MAC}_{i+\frac{1}{2},j,k}- a_{i-\frac{1}{2},j,k} u^{MAC}_{i-\frac{1}{2},j,k}) \\
             &amp;+&amp;   (a_{i,j+\frac{1}{2},k} v^{MAC}_{i,j-\frac{1}{2},k}- a_{i,j-\frac{1}{2},k} v^{MAC}_{i,j-\frac{1}{2},k}) \\
             &amp;+&amp;   (a_{i,j,k+\frac{1}{2}} w^{MAC}_{i,j,k-\frac{1}{2}}- a_{i,j,k-\frac{1}{2}} w^{MAC}_{i,j,k-\frac{1}{2}}) ) / V_{i,j,k} \\\end{aligned}\end{split}\]</div>
-<p>and <span class="math notranslate nohighlight">\(a_x\)</span>, <span class="math notranslate nohighlight">\(a_y,\)</span> and <span class="math notranslate nohighlight">\(a_z\)</span> are the area fractions of the faces and <span class="math notranslate nohighlight">\(V\)</span> is the volume fraction of the cell.</p>
 </section>
 </section>
 
