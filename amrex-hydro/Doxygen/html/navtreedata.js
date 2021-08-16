@@ -23,6 +23,13 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "AMReX-Hydro", "index.html", [
+    [ "AMReX-Hydro: Technical Reference", "index.html", [
+      [ "Welcome to AMReX-Hydro's Technical Reference", "index.html#welcome", [
+        [ "Overview", "index.html#overview", null ],
+        [ "User Guide", "index.html#user_guide", null ],
+        [ "GitHub Repository", "index.html#github", null ]
+      ] ]
+    ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
