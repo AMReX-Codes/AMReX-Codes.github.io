@@ -184,7 +184,7 @@
 <p>The procedure for computing MAC velocities and edge states with EB-aware MOL
 does not involve any time derivatives. All slope computations use
 second-order limited slopes as described in
-<a class="reference external" href="#sec:slopes">[sec:slopes]</a>.</p>
+<a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Note: if a cell and all of its immediate neighbors have volume fraction of 1 (i.e. they
@@ -201,7 +201,7 @@ every x-face:</p>
 u_L &amp;=&amp; u_{i-1,j,k} + \delta x \; {u^x}_{i-1,j,k} + \delta y \; {u^y}_{i-1,j,k} + \delta z \; {u^z}_{i-1,j,k} , \\
 u_R &amp;=&amp; u_{i,j,k}   - \delta x \; {u^x}_{i,j,k}   - \delta y \; {u^y}_{i,j,k}   - \delta z \; {u^z}_{i,j,k} ,\end{aligned}\end{split}\]</div>
 <p>where we calculate <span class="math notranslate nohighlight">\(u^x\)</span>, <span class="math notranslate nohighlight">\(u^y\)</span> and <span class="math notranslate nohighlight">\(u^z\)</span> simultaneously using a least squares approach,
-as described in <a class="reference external" href="#sec:slopes">[sec:slopes]</a>,
+as described in <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>,
 and <span class="math notranslate nohighlight">\(\delta_x\)</span>, <span class="math notranslate nohighlight">\(\delta_y\)</span>, and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from
 the cell centroid to the face centroid of the face at <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k).\)</span></p>
 <p>At each face we then upwind based on <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span></p>
@@ -219,7 +219,7 @@ u_R, &amp; \mathrm{if} \; u_L + u_R \le  -\varepsilon  \; \mathrm{else} \\
 <h3>Effect of boundary conditions (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#ab90f8ce229a7ebbc521dc27d65f2db9a">SetXEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab">SetYEdgeBCs</a>, <a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroBC.html#a19ddc5ac50e9a6b9a98bc17f3815a62e">SetZEdgeBCs</a>)<a class="headerlink" href="#effect-of-boundary-conditions-setxedgebcs-setyedgebcs-setzedgebcs" title="Permalink to this headline">¶</a></h3>
 <p>Domain boundary conditions affect the above in three ways.</p>
 <p>(1) First, they potentially impact the slope computation in cells
-adjacent to the domain boundary (see <a class="reference external" href="#sec:slopes">[sec:slopes]</a>).</p>
+adjacent to the domain boundary (see <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>).</p>
 <p>(2) Second, if the face is on a domain boundary and the boundary
 condition type is extdir, we set both <span class="math notranslate nohighlight">\(u_L\)</span> and <span class="math notranslate nohighlight">\(u_R\)</span> to the
 boundary value. If the boundary condition type is foextrap, hoextrap, or
@@ -245,7 +245,7 @@ faces as above:</p>
 s_L &amp;=&amp; s_{i-1,j,k} + \delta x \; {s^x}_{i-1,j,k} + \delta y \; {s^y}_{i-1,j,k} + \delta z \; {s^z}_{i-1,j,k} , \\
 s_R &amp;=&amp; s_{i,j,k}   - \delta x \; {s^x}_{i,j,k}   - \delta y \; {s^y}_{i,j,k}   - \delta z \; {s^z}_{i,j,k} ,\end{aligned}\end{split}\]</div>
 <p>where we calculate <span class="math notranslate nohighlight">\(s^x\)</span>, <span class="math notranslate nohighlight">\(s^y\)</span> and <span class="math notranslate nohighlight">\(s^z\)</span> simultaneously using a least squares approach,
-as described in <a class="reference external" href="#sec:slopes">[sec:slopes]</a>,
+as described in <a class="reference external" href="https://amrex-codes.github.io/amrex/hydro_html/Slopes.html">Slopes</a>,
 and <span class="math notranslate nohighlight">\(\delta_x\)</span>, <span class="math notranslate nohighlight">\(\delta_y\)</span>, and <span class="math notranslate nohighlight">\(\delta_z\)</span> are the components of the distance vector from
 the cell centroid to the face centroid of the face at <span class="math notranslate nohighlight">\((i-\frac{1}{2},j,k).\)</span></p>
 <section id="effect-of-boundary-conditions-setxedgebcs-in-utils-hydro-bcs-k-h">
