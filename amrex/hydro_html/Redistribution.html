@@ -37,6 +37,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -102,6 +103,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Redistribution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="FluxRedistribution.html">Flux Redistribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="StateRedistribution.html">State Redistribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finite-volume-discretizations">Finite Volume Discretizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#small-cells-and-stability">Small Cells And Stability</a></li>
 </ul>
 </li>
 </ul>
@@ -181,6 +184,121 @@
 <li class="toctree-l1"><a class="reference internal" href="StateRedistribution.html">State Redistribution</a></li>
 </ul>
 </div>
+<section id="finite-volume-discretizations">
+<h2>Finite Volume Discretizations<a class="headerlink" href="#finite-volume-discretizations" title="Permalink to this headline">¶</a></h2>
+<p>Consider a system of PDEs to advance a conserved quantity <span class="math notranslate nohighlight">\(U\)</span> with fluxes
+<span class="math notranslate nohighlight">\(F\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eqn-hypsys">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-hypsys" title="Permalink to this equation">¶</a></span>\[\frac{\partial U}{\partial t} + \nabla \cdot F = 0.\]</div>
+<p>A conservative, finite volume discretization starts with the divergence theorm</p>
+<div class="math notranslate nohighlight">
+\[\int_V \nabla \cdot F dV = \int_{\partial V} F \cdot n dA.\]</div>
+<p>In an embedded boundary cell, the “conservative divergence” is discretized (as
+<span class="math notranslate nohighlight">\(D^c(F)\)</span>) as follows</p>
+<div class="math notranslate nohighlight" id="equation-eqn-ebdiv">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eqn-ebdiv" title="Permalink to this equation">¶</a></span>\[ D^c(F) = \frac{1}{\kappa h} \left( \sum^D_{d = 1}
+   (F_{d, \mathrm{hi}} \, \alpha_{d, \mathrm{hi}} - F_{d, \mathrm{lo}}\, \alpha_{d, \mathrm{lo}})
+   + F^{EB} \alpha^{EB} \right).\]</div>
+<p>Geometry is discretely represented by volumes (<span class="math notranslate nohighlight">\(V = \kappa h^d\)</span>) and
+apertures (<span class="math notranslate nohighlight">\(A= \alpha h^{d-1}\)</span>), where <span class="math notranslate nohighlight">\(h\)</span> is the (uniform) mesh
+spacing at that AMR level, <span class="math notranslate nohighlight">\(\kappa\)</span> is the volume fraction and
+<span class="math notranslate nohighlight">\(\alpha\)</span> are the area fractions. Without multivalued cells the volume
+fractions, area fractions and cell and face centroids (see
+<a class="reference internal" href="#fig-volume"><span class="std std-numref">Table 1</span></a>) are the only geometric information needed to compute
+second-order fluxes centered at the face centroids, and to infer the
+connectivity of the cells. Cells are connected if adjacent on the Cartesian
+mesh, and only via coordinate-aligned faces on the mesh. If an aperture,
+<span class="math notranslate nohighlight">\(\alpha = 0\)</span>, between two cells, they are not directly connected to each
+other.</p>
+<span id="fig-volume"></span><table class="docutils align-center" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Illustration of embedded boundary cutting a two-dimensional cell.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_images/areas_and_volumes.png"><img alt="a" src="_images/areas_and_volumes.png" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="_images/eb_fluxes.png"><img alt="b" src="_images/eb_fluxes.png" style="width: 100%;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">A typical two-dimensional uniform cell that is</div>
+<div class="line">cut by the embedded boundary. The grey area</div>
+<div class="line">represents the region excluded from the</div>
+<div class="line">calculation. The portion of the cell faces</div>
+<div class="line">faces (labelled with A) through which fluxes</div>
+<div class="line">flow are the “uncovered” regions of the full</div>
+<div class="line">cell faces. The volume (labelled V) is the</div>
+<div class="line">uncovered region of the interior.</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">Fluxes in a cut cell.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="small-cells-and-stability">
+<h2>Small Cells And Stability<a class="headerlink" href="#small-cells-and-stability" title="Permalink to this headline">¶</a></h2>
+<p>In the context of time-explicit advance methods for, say hyperbolic
+conservation laws, a naive discretization in time of <a class="reference internal" href="#equation-eqn-hypsys">(5)</a> using
+<a class="reference internal" href="#equation-eqn-ebdiv">(6)</a>,</p>
+<div class="math notranslate nohighlight">
+\[U^{n+1} = U^{n} - \delta t D^c(F)\]</div>
+<p>would have a time step constraint <span class="math notranslate nohighlight">\(\delta t \sim h \kappa^{1/D}/V_m\)</span>,
+which goes to zero as the size of the smallest volume fraction <span class="math notranslate nohighlight">\(\kappa\)</span> in
+the calculation. Since EB volume fractions can be arbitrarily small, this is an
+unacceptable constraint. One way to remedy this is to create “non-conservative”
+approximation to the divergence <span class="math notranslate nohighlight">\(D^{nc}\)</span>, which at a cell <span class="math notranslate nohighlight">\({\bf i}\)</span>,
+can be formed as an average of the conservative divergences in the neighborhood,
+<span class="math notranslate nohighlight">\(N_{\bf i}\)</span>, of <span class="math notranslate nohighlight">\({\bf i}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[D^{nc}(F)_{\bf i}= \frac{\sum_{{\bf j}\in N_{\bf i}}\kappa_{\bf j}D(F)_{\bf j}}{\sum_{{\bf j}\in N_{\bf i}}\kappa_{\bf j}}\]</div>
+<p>Incorporating this form, the solution can be updated using a <em>hybrid
+divergence</em>, <span class="math notranslate nohighlight">\(D^H(F) = \kappa D^c(F) + (1-\kappa)D^{nc}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[U^{n+1,*} = U^n - \delta t D^H(F)\]</div>
+<p>However, we would like our finite-volume scheme to strictly conserve the field
+quantities over the domain. To enforce this, we calculate <span class="math notranslate nohighlight">\(\delta M\)</span>, the
+mass gained or lost by not using <span class="math notranslate nohighlight">\(D^c\)</span> directly,</p>
+<div class="math notranslate nohighlight">
+\[\delta M_{\bf i}= \kappa (1-\kappa)(D^c(F)_{\bf i}- D^{nc}(F)_{\bf i})\]</div>
+<p>This “excess material” (mass, if <span class="math notranslate nohighlight">\(U=\rho\)</span>) can be <em>redistributed</em> in a
+time-explicit fashion to neighboring cells, <span class="math notranslate nohighlight">\({\bf j}\in N_{\bf i}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\delta M_{\bf i}= \sum_{{\bf j}\in N_{\bf i}} \delta M_{{\bf j}, {\bf i}}.\]</div>
+<p>in order to preserve strict conservation over <span class="math notranslate nohighlight">\(N_{\bf i}\)</span>.</p>
+<p>Note that the physics at hand may impact the optimal choice of precisely how the
+excess mass is distributed in this fashion. We introduce a weighting for
+redistribution, <span class="math notranslate nohighlight">\(W\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-massweight">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eqn-massweight" title="Permalink to this equation">¶</a></span>\[ \delta M_{{\bf j}, {\bf i}} =  \frac{\delta M_{\bf i}\kappa_{\bf j}
+   W_{\bf j}}{\sum_{{\bf k}\in N_{\bf i}} \kappa_{\bf k}W_{\bf k}}\]</div>
+<p>For all <span class="math notranslate nohighlight">\({\bf j}\in N_{\bf i}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[U^{n+1}_{\bf j}= U^{n+1,*}_{\bf j}+
+ \frac{\delta M_{\bf i}
+  W_{\bf j}}{\sum_{{\bf k}\in N_{\bf i}} \kappa_{\bf k}W_{\bf k}}.\]</div>
+<p>Typically, the redistribution neighborhood for each cell is one that can be
+reached via a monotonic path in each coordinate direction of unit length (see,
+e.g., <a class="reference internal" href="#fig-redistribution"><span class="std std-numref">Fig. 1</span></a>)</p>
+<figure class="align-default" id="id2">
+<span id="fig-redistribution"></span><a class="reference internal image-reference" href="_images/redist.png"><img alt="_images/redist.png" src="_images/redist.png" style="width: 50.0%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">: Redistribution illustration. Excess mass due to using a hybrid divergence
+<span class="math notranslate nohighlight">\(D^H\)</span> instead of the conservative divergence <span class="math notranslate nohighlight">\(D^C\)</span> is
+distributed to neighbor cells.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
 
