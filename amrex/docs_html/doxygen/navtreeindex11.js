@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"AMReX__MLNodeLap__1D__K_8H.html#ab59ea974c0be0c3f0c976f988ffad20e":[3,0,0,6,0,52,13],
+"AMReX__MLNodeLap__1D__K_8H.html#ab727d4d055b37cfc647dd73d9a2be0eb":[3,0,0,6,0,52,32],
+"AMReX__MLNodeLap__1D__K_8H.html#abbc08d7a4ddb6bdcfb49f58ae62d87d9":[3,0,0,6,0,52,11],
+"AMReX__MLNodeLap__1D__K_8H.html#ad8023d85badaeebe85e41fb1714083ca":[3,0,0,6,0,52,39],
+"AMReX__MLNodeLap__1D__K_8H.html#adc4d3c3a4889fa37244bf76015bc6ba5":[3,0,0,6,0,52,38],
 "AMReX__MLNodeLap__1D__K_8H.html#adce0f812bb61661ea0dd6d708ac0c402":[3,0,0,6,0,52,12],
 "AMReX__MLNodeLap__1D__K_8H.html#aea6fbee6638a575caec8ac30d8a177d8":[3,0,0,6,0,52,44],
 "AMReX__MLNodeLap__1D__K_8H.html#aeb305780def1f6842fdde70599dff49a":[3,0,0,6,0,52,30],
@@ -239,15 +244,10 @@ var NAVTREEINDEX11 =
 "AMReX__MacProjector_8H.html":[3,0,0,6,1,1],
 "AMReX__MacProjector_8H_source.html":[3,0,0,6,1,1],
 "AMReX__MacProjector_8cpp.html":[3,0,0,6,1,0],
-"AMReX__Machine_8H.html":[3,0,0,2,158],
-"AMReX__Machine_8H.html#a42a34e9b2688dfa4616c06781fe06d83":[3,0,0,2,158,2],
-"AMReX__Machine_8H.html#a80498796973f6b853437e50ba873a6d1":[3,0,0,2,158,0],
-"AMReX__Machine_8H.html#afa7cf247ac1fb3972693835d136c00f1":[3,0,0,2,158,1],
-"AMReX__Machine_8H_source.html":[3,0,0,2,158],
-"AMReX__Machine_8cpp.html":[3,0,0,2,157],
-"AMReX__Machine_8cpp.html#a42a34e9b2688dfa4616c06781fe06d83":[3,0,0,2,157,2],
-"AMReX__Machine_8cpp.html#a80498796973f6b853437e50ba873a6d1":[3,0,0,2,157,0],
-"AMReX__Machine_8cpp.html#afa7cf247ac1fb3972693835d136c00f1":[3,0,0,2,157,1],
-"AMReX__MakeType_8H.html":[3,0,0,2,159],
-"AMReX__MakeType_8H.html#a0a36c65d0681a832330b2812f16786a6":[3,0,0,2,159,0]
+"AMReX__Machine_8H.html":[3,0,0,2,162],
+"AMReX__Machine_8H.html#a42a34e9b2688dfa4616c06781fe06d83":[3,0,0,2,162,2],
+"AMReX__Machine_8H.html#a80498796973f6b853437e50ba873a6d1":[3,0,0,2,162,0],
+"AMReX__Machine_8H.html#afa7cf247ac1fb3972693835d136c00f1":[3,0,0,2,162,1],
+"AMReX__Machine_8H_source.html":[3,0,0,2,162],
+"AMReX__Machine_8cpp.html":[3,0,0,2,161]
 };

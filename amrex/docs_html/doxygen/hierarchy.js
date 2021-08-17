@@ -380,6 +380,8 @@ var hierarchy =
       ] ]
     ] ],
     [ "amrex::FBData< FAB >", "structamrex_1_1FBData.html", null ],
+    [ "amrex::FilccCell", "structamrex_1_1FilccCell.html", null ],
+    [ "amrex::FilfcFace", "structamrex_1_1FilfcFace.html", null ],
     [ "amrex::FillBoxId", "classamrex_1_1FillBoxId.html", null ],
     [ "amrex::FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html", null ],
     [ "FilterVirt", "structFilterVirt.html", null ],
@@ -565,9 +567,9 @@ var hierarchy =
         [ "amrex::NonLocalBC::IsFabProjection< P, FAB >", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ]
       ] ]
     ] ],
+    [ "amrex::Gpu::range_detail::range_impl< T >::iterator", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html", null ],
     [ "amrex::BinIterator< T >::iterator", "structamrex_1_1BinIterator_1_1iterator.html", null ],
     [ "amrex::Neighbors< ParticleType >::iterator", "structamrex_1_1Neighbors_1_1iterator.html", null ],
-    [ "amrex::Gpu::range_detail::range_impl< T >::iterator", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html", null ],
     [ "KeepValidFilter", "structKeepValidFilter.html", null ],
     [ "amrex::Gpu::KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", null ],
     [ "amrex::EB2::LatheIF< F >", "classamrex_1_1EB2_1_1LatheIF.html", null ],
@@ -663,8 +665,8 @@ var hierarchy =
     [ "amrex::NFilesIter", "classamrex_1_1NFilesIter.html", null ],
     [ "amrex::NodalProjector", "classamrex_1_1NodalProjector.html", null ],
     [ "amrex::EArena::Node", "structamrex_1_1EArena_1_1Node.html", null ],
-    [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::CArena::Node", "classamrex_1_1CArena_1_1Node.html", null ],
+    [ "amrex::algoim::QuadratureRule::Node", "structamrex_1_1algoim_1_1QuadratureRule_1_1Node.html", null ],
     [ "amrex::NonLocalBC::NoLocalCopy", "structamrex_1_1NonLocalBC_1_1NoLocalCopy.html", null ],
     [ "amrex::detail::Nonesuch", "structamrex_1_1detail_1_1Nonesuch.html", null ],
     [ "amrex::NullInterpHook< FAB >", "structamrex_1_1NullInterpHook.html", null ],

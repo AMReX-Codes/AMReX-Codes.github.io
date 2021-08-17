@@ -137,6 +137,8 @@
     <innerclass refid="classamrex_1_1FaceLinear" prot="public">amrex::FaceLinear</innerclass>
     <innerclass refid="classamrex_1_1FArrayBox" prot="public">amrex::FArrayBox</innerclass>
     <innerclass refid="structamrex_1_1FBData" prot="public">amrex::FBData</innerclass>
+    <innerclass refid="structamrex_1_1FilccCell" prot="public">amrex::FilccCell</innerclass>
+    <innerclass refid="structamrex_1_1FilfcFace" prot="public">amrex::FilfcFace</innerclass>
     <innerclass refid="classamrex_1_1FillBoxId" prot="public">amrex::FillBoxId</innerclass>
     <innerclass refid="classamrex_1_1FillPatchIterator" prot="public">amrex::FillPatchIterator</innerclass>
     <innerclass refid="classamrex_1_1FillPatchIteratorHelper" prot="public">amrex::FillPatchIteratorHelper</innerclass>
@@ -2924,7 +2926,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="17" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="17" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="18" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1ab0cdf132a72bb586fa96bbdc53a19149" prot="public" static="no">
         <type>void(*</type>
@@ -2937,7 +2939,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="21" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="21" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="22" column="13" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1a88dd51c88bb54ed73ede55336a7519c3" prot="public" static="no">
         <type>void(*</type>
@@ -2950,7 +2952,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="27" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="27" bodyend="-1"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" line="28" column="9" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_PhysBCFunct.H" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceamrex_1abbea0a87a768d8f4e8112b9cd673b124" prot="public" static="no">
         <type>curandState_t</type>
@@ -13743,54 +13745,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FArrayBox.cpp" line="994" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FArrayBox.cpp" bodystart="994" bodyend="1011"/>
-      </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1ad6108ad28798d6aa4e7cf1c2f7e72b3a" prot="public" static="no" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type><ref refid="AMReX__GpuQualifiers_8H_1a4e626ebf06898d71a9e0790877f1694f" kindref="member">AMREX_GPU_DEVICE</ref> void</type>
-        <definition>AMREX_GPU_DEVICE void amrex::filcc_cell</definition>
-        <argsstring>(const IntVect &amp;iv, Array4&lt; Real &gt; const &amp;q, const int dcomp, const int numcomp, GeometryData const &amp;geom, const Real, const BCRec *bcr, const int bcomp, const int) noexcept</argsstring>
-        <name>filcc_cell</name>
-        <param>
-          <type>const <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> &amp;</type>
-          <declname>iv</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1Array4" kindref="compound">Array4</ref>&lt; Real &gt; const &amp;</type>
-          <declname>q</declname>
-        </param>
-        <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>dcomp</declname>
-        </param>
-        <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>numcomp</declname>
-        </param>
-        <param>
-          <type><ref refid="structamrex_1_1GeometryData" kindref="compound">GeometryData</ref> const &amp;</type>
-          <declname>geom</declname>
-        </param>
-        <param>
-          <type>const</type>
-          <declname>Real</declname>
-        </param>
-        <param>
-          <type>const <ref refid="classamrex_1_1BCRec" kindref="compound">BCRec</ref> *</type>
-          <declname>bcr</declname>
-        </param>
-        <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-          <declname>bcomp</declname>
-        </param>
-        <param>
-          <type>const <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_FilCC_1D_C.H" line="14" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_FilCC_1D_C.H" bodystart="14" bodyend="119"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1a30ee6a24a0b0fd18d710278879681aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

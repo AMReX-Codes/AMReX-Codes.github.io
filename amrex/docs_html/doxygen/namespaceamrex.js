@@ -152,6 +152,8 @@ var namespaceamrex =
     [ "FaceLinear", "classamrex_1_1FaceLinear.html", "classamrex_1_1FaceLinear" ],
     [ "FArrayBox", "classamrex_1_1FArrayBox.html", "classamrex_1_1FArrayBox" ],
     [ "FBData", "structamrex_1_1FBData.html", "structamrex_1_1FBData" ],
+    [ "FilccCell", "structamrex_1_1FilccCell.html", "structamrex_1_1FilccCell" ],
+    [ "FilfcFace", "structamrex_1_1FilfcFace.html", "structamrex_1_1FilfcFace" ],
     [ "FillBoxId", "classamrex_1_1FillBoxId.html", "classamrex_1_1FillBoxId" ],
     [ "FillPatchIterator", "classamrex_1_1FillPatchIterator.html", "classamrex_1_1FillPatchIterator" ],
     [ "FillPatchIteratorHelper", "classamrex_1_1FillPatchIteratorHelper.html", "classamrex_1_1FillPatchIteratorHelper" ],
