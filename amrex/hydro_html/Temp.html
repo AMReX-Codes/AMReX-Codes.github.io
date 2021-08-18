@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Temp &mdash; amrex-hydro 21.09-dev documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> amrex-hydro
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                21.09-dev
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="EBGodunov.html">EBGodunov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EBMOL.html">EBMOL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Godunov.html">Godunov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MOL.html">MOL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Redistribution.html">Redistribution</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">amrex-hydro</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Temp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Temp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="temp">
+<h1>Temp<a class="headerlink" href="#temp" title="Permalink to this headline">¶</a></h1>
+<p>Temporary holding document.</p>
+<section id="computing-the-fluxes">
+<h2>Computing the Fluxes<a class="headerlink" href="#computing-the-fluxes" title="Permalink to this headline">¶</a></h2>
+<p>Now let <span class="math notranslate nohighlight">\(S =\{\boldsymbol{U}_g,\rho,c\}\)</span>.
+Time-centered values <span class="math notranslate nohighlight">\(\tilde{S}^{n+\frac{1}{2}}\)</span> at each face
+(i.e., <span class="math notranslate nohighlight">\(\tilde{\rho}^{n+\frac{1}{2}}\)</span>, <span class="math notranslate nohighlight">\(\tilde{c}^{n+\frac{1}{2}}\)</span>, and <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC,*}\)</span>
+including the normal velocity component)
+are determined by upwinding using <span class="math notranslate nohighlight">\(\boldsymbol{U}^{MAC}\)</span>, as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{S}^{L} \approx
+&amp; S_{i,j,k} + \frac{dx}{2} (S_x^{lim})_{i,j,k} - \frac{dt}{2} \left( u^{MAC}_{i-\frac{1}{2},j,k}(S_x^{lim})_{i,j,k} \right) \\
+&amp; - \frac{dt}{2dx(V_{i,j,k})} (S_{i,j,k}) (au^{MAC}_x)_{i-\frac{1}{2},j,k} \\
+&amp; - \frac{dt}{2dy(V_{i,j,k})} (aS_{x|y}v^{MAC})_{y,i,j-\frac{1}{2},k} \\
+&amp; - \frac{dt}{2dz(V_{i,j,k})} (aS_{x|z}w^{MAC})_{z,i,j,k-\frac{1}{2}} \\
+&amp; -\frac{dt}{2} (f_{x,i,j,k})\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{S}^{R} \approx
+&amp; S_{i+1,j,k} + \frac{dx}{2} (S_x^{lim})_{i+1,j,k} - \frac{dt}{2} \left( u^{MAC}_{i+\frac{1}{2},j,k}(S_x^{lim})_{i+1,j,k} \right) \\
+&amp; - \frac{dt}{2dx(V_{i+1,j,k})} (S_{i+1,j,k}) (au^{MAC}_x)_{i+\frac{1}{2},j,k} \\
+&amp; - \frac{dt}{2dy(V_{i+1,j,k})} (aS_{x|y}v^{MAC})_{y,i+1,j-\frac{1}{2},k} \\
+&amp; - \frac{dt}{2dz(V_{i+1,j,k})} (aS_{x|z}w^{MAC})_{z,i+1,j,k-\frac{1}{2}} \\
+&amp; -\frac{dt}{2} (f_{x,i+1,j,k})\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(a\)</span> is the area fraction normal to the face of the cell,
+<span class="math notranslate nohighlight">\(V\)</span> is the volume fraction, and <span class="math notranslate nohighlight">\(S_{x|y}, S_{x|z}\)</span> are the
+transverse terms.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde{S}_{i+\frac{1}{2},j,k} = \left\{\begin{array}{lll}
+ \tilde{S}^L
+&amp; \mbox{if $u_{i+\frac{1}{2},j,k}^{MAC} &gt; 0$} \\
+\frac{1}{2} (\tilde{S}^L + \tilde{S}^R)
+&amp; \mbox{if $u_{i+\frac{1}{2},j,k}^{MAC} = 0$} \\
+ \tilde{S}^R
+&amp; \mbox{if $u_{i+\frac{1}{2},j,k}^{MAC} &lt; 0$} \end{array} \right.\end{split}\]</div>
+<p>We multiply <span class="math notranslate nohighlight">\(\epsilon^n_g \tilde{S}^{n+\frac{1}{2}}\)</span> by <span class="math notranslate nohighlight">\(\boldsymbol{U}_g^{MAC}\)</span> using the interpolated <span class="math notranslate nohighlight">\(\epsilon^n_g\)</span>,
+to construct the fluxes for the momentum equation.</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{F}^{adv}_S = \epsilon_g^n \boldsymbol{U}_g^{MAC} \tilde{S}^{n+\frac{1}{2}}\]</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2017-2018, AMReX-Hydro Team.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
