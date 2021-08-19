@@ -5,6 +5,7 @@ var hydro__utils_8H =
     [ "ComputeFluxes", "hydro__utils_8H.html#ab70f040557a658e70ba076c9d105bab7", null ],
     [ "ComputeFluxesOnBoxFromState", "hydro__utils_8H.html#a5ea257babd77dae8ee7a6ae43662fba1", null ],
     [ "ComputeFluxesRZ", "hydro__utils_8H.html#a4da1d65cd9c1fba5910cdbeae6770297", null ],
+    [ "create_constrained_umac_grown", "hydro__utils_8H.html#a05a5360d1cb9ecb9e74fcb70e8f4112e", null ],
     [ "create_umac_grown", "hydro__utils_8H.html#aca84dcab64939bcf8ebf0fc65a262f5d", null ],
     [ "EB_ComputeDivergence", "hydro__utils_8H.html#a019346342650e4b3df31f74776febb07", null ],
     [ "EB_ComputeFluxes", "hydro__utils_8H.html#aa412966361a4cfc5970a5091e59dceda", null ],

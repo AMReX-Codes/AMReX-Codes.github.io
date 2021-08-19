@@ -120,6 +120,8 @@ Functions</h2></td></tr>
 <tr class="separator:a019346342650e4b3df31f74776febb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca84dcab64939bcf8ebf0fc65a262f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHydroUtils.html#aca84dcab64939bcf8ebf0fc65a262f5d">create_umac_grown</a> (int lev, int nGrow, amrex::BoxArray &amp;fine_grids, const amrex::Geometry &amp;fine_geom, const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; u_mac_crse, const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; u_mac_fine, const amrex::IntVect &amp;crse_ratio)</td></tr>
 <tr class="separator:aca84dcab64939bcf8ebf0fc65a262f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a5360d1cb9ecb9e74fcb70e8f4112e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHydroUtils.html#a05a5360d1cb9ecb9e74fcb70e8f4112e">create_constrained_umac_grown</a> (int lev, int nGrow, amrex::BoxArray &amp;fine_grids, const amrex::Geometry *crse_geom, const amrex::Geometry *fine_geom, const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; u_mac_crse, const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt; u_mac_fine, const amrex::MultiFab *divu, const amrex::IntVect &amp;crse_ratio)</td></tr>
+<tr class="separator:a05a5360d1cb9ecb9e74fcb70e8f4112e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Collection of hydro utility functions </p>
@@ -513,6 +515,76 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>fluxes_are_area_weighted</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a05a5360d1cb9ecb9e74fcb70e8f4112e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a5360d1cb9ecb9e74fcb70e8f4112e">&#9670;&nbsp;</a></span>create_constrained_umac_grown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HydroUtils::create_constrained_umac_grown </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nGrow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::BoxArray &amp;&#160;</td>
+          <td class="paramname"><em>fine_grids</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry *&#160;</td>
+          <td class="paramname"><em>crse_geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry *&#160;</td>
+          <td class="paramname"><em>fine_geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramname"><em>u_mac_crse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array&lt; amrex::MultiFab *, AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramname"><em>u_mac_fine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab *&#160;</td>
+          <td class="paramname"><em>divu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::IntVect &amp;&#160;</td>
+          <td class="paramname"><em>crse_ratio</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
