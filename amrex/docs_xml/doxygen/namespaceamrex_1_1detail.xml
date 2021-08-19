@@ -378,11 +378,31 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" line="806" column="10" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_GpuLaunchFunctsG.H" bodystart="806" bodyend="810"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1afe147dcb3e9fb406b058de4966a1b231" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt;</type>
-        <definition>std::pair&lt;int*,int*&gt; amrex::detail::build_par_for_nblocks</definition>
-        <argsstring>(Vector&lt; Long &gt; const &amp;ncells, int nthreads)</argsstring>
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad2a58bfacc6c0c5c71c5af8f54270061" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void amrex::detail::build_par_for_nblocks</definition>
+        <argsstring>(char *&amp;a_hp, char *&amp;a_dp, std::pair&lt; int *, int * &gt; &amp;blocks_x, Box *&amp;pboxes, Vector&lt; Box &gt; const &amp;boxes, Vector&lt; Long &gt; const &amp;ncells, int nthreads)</argsstring>
         <name>build_par_for_nblocks</name>
+        <param>
+          <type>char *&amp;</type>
+          <declname>a_hp</declname>
+        </param>
+        <param>
+          <type>char *&amp;</type>
+          <declname>a_dp</declname>
+        </param>
+        <param>
+          <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt; &amp;</type>
+          <declname>blocks_x</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Box" kindref="compound">Box</ref> *&amp;</type>
+          <declname>pboxes</declname>
+        </param>
+        <param>
+          <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">Box</ref> &gt; const &amp;</type>
+          <declname>boxes</declname>
+        </param>
         <param>
           <type><ref refid="classamrex_1_1Vector" kindref="compound">Vector</ref>&lt; Long &gt; const &amp;</type>
           <declname>ncells</declname>
@@ -397,16 +417,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="15" column="11" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="15" bodyend="40"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="15" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="15" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad9698fcec2214e5cc1f6f241ca764337" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="namespaceamrex_1_1detail_1ad7264c9be2687016a1fb029841f127e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void amrex::detail::destroy_par_for_nblocks</definition>
-        <argsstring>(std::pair&lt; int *, int * &gt; const &amp;pp)</argsstring>
+        <argsstring>(char *hp, char *dp)</argsstring>
         <name>destroy_par_for_nblocks</name>
         <param>
-          <type>std::pair&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> *, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> * &gt; const &amp;</type>
-          <declname>pp</declname>
+          <type>char *</type>
+          <declname>hp</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dp</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -414,7 +438,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="43" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="43" bodyend="47"/>
+        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" line="50" column="6" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_MFParallelForG.H" bodystart="50" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="namespaceamrex_1_1detail_1a2d9a622392a0eee879ac8180cb2371e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
