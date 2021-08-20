@@ -2421,7 +2421,7 @@
 <codeline lineno="487"><highlight class="normal"></highlight></codeline>
 <codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/>MultiFab<sp/>rhs_diag(rhs.boxArray(),<sp/>rhs.DistributionMap(),<sp/>1,<sp/>0);</highlight></codeline>
 <codeline lineno="489"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="490"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>paralle<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="491"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(rhs_diag,<ref refid="namespaceamrex_1ab482b500359e03b77389d42f968c46fe" kindref="member">TilingIfNotGPU</ref>());<sp/>mfi.isValid();<sp/>++mfi)</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

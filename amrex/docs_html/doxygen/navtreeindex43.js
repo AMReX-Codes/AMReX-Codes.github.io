@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"classamrex_1_1MacProjector.html#a5687d73a10dab418a054993dd8c45ab7":[2,0,0,262,39],
+"classamrex_1_1MacProjector.html#a5ab769019b47a957e6450c8753593a08":[2,0,0,262,5],
 "classamrex_1_1MacProjector.html#a6ba419c928377e65d1520d5c0fed1a59":[2,0,0,262,18],
 "classamrex_1_1MacProjector.html#a6bbf0668ee0f491ae7917f308d2b393a":[2,0,0,262,24],
 "classamrex_1_1MacProjector.html#a6ccf3ca5f871f3815fc0e385afba0c8d":[2,0,0,262,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX43 =
 "classamrex_1_1NFilesIter.html#a56f719e4f91d3d0ffbe3ec791236585f":[2,0,0,305,9],
 "classamrex_1_1NFilesIter.html#a5a0e5e8e0bd5503f9246b4d4c714a4a1":[2,0,0,305,54],
 "classamrex_1_1NFilesIter.html#a5aaa489ed5f07c1d0111647857d2f72f":[2,0,0,305,38],
-"classamrex_1_1NFilesIter.html#a5ee82bc72ab839617286472e64131009":[2,0,0,305,33],
-"classamrex_1_1NFilesIter.html#a64d2a6da3e2847bc9601352409d79ceb":[2,0,0,305,32],
-"classamrex_1_1NFilesIter.html#a66c78163b811ad78cb91330d0100cc54":[2,0,0,305,22]
+"classamrex_1_1NFilesIter.html#a5ee82bc72ab839617286472e64131009":[2,0,0,305,33]
 };

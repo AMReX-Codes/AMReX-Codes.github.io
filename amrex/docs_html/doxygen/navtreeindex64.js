@@ -1,5 +1,7 @@
 var NAVTREEINDEX64 =
 {
+"unionamrex_1_1BATransformer_1_1BATOp.html#a08b7befe0d3be3fd7cec0fc17832f89a":[2,0,0,60,0,1],
+"unionamrex_1_1BATransformer_1_1BATOp.html#a221948cf931ebf7ae97fd6cbc80a7d61":[2,0,0,60,0,0],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a3834e9c9445ec289b6d868f29f4ebfd4":[2,0,0,60,0,2],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a4847995282bbe72acece1c294025df39":[2,0,0,60,0,9],
 "unionamrex_1_1BATransformer_1_1BATOp.html#a48eb0ed0866edb7e35185a585d68e8bf":[2,0,0,60,0,5],

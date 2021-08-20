@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"classamrex_1_1MLMG.html#abc8a02638fb38ec33c9567569a501317":[2,0,0,286,106],
+"classamrex_1_1MLMG.html#abfda726f45d63f473cacf3cab3a5b063":[2,0,0,286,94],
 "classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001":[2,0,0,286,4],
 "classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001a9806779ed6ebcc94ecd07dbb3ff6acca":[2,0,0,286,4,0],
 "classamrex_1_1MLMG.html#ac0602b6cac3018c66c89819127043001accea4ad3befe3a4c0c996cacbc4b1fb3":[2,0,0,286,4,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "classamrex_1_1MacProjector.html#a3a18de5928d83658cfdac540eb69eefa":[2,0,0,262,19],
 "classamrex_1_1MacProjector.html#a4c073f9ccd86eb0e34270fe4dda6b799":[2,0,0,262,10],
 "classamrex_1_1MacProjector.html#a52c7002139721e36ea18c4f76093e5a2":[2,0,0,262,23],
-"classamrex_1_1MacProjector.html#a54112712441fa4a6dd9f2de78b744d0d":[2,0,0,262,33],
-"classamrex_1_1MacProjector.html#a5687d73a10dab418a054993dd8c45ab7":[2,0,0,262,39],
-"classamrex_1_1MacProjector.html#a5ab769019b47a957e6450c8753593a08":[2,0,0,262,5]
+"classamrex_1_1MacProjector.html#a54112712441fa4a6dd9f2de78b744d0d":[2,0,0,262,33]
 };

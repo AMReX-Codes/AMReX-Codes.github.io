@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"namespacemembers_eval_n.html":[1,1,5,11],
+"namespacemembers_eval_p.html":[1,1,5,12],
 "namespacemembers_eval_r.html":[1,1,5,13],
 "namespacemembers_eval_s.html":[1,1,5,14],
 "namespacemembers_eval_u.html":[1,1,5,15],
@@ -77,8 +79,8 @@ var NAVTREEINDEX54 =
 "namespacemembers_z.html":[1,1,0,25],
 "namespaceparticle__detail.html":[1,0,22],
 "namespaces.html":[1,0],
-"namespacesdcquadrature__mod.html":[1,0,23],
 "namespacesdcquadrature__mod.html":[2,0,11],
+"namespacesdcquadrature__mod.html":[1,0,23],
 "pages.html":[],
 "structArray4BoxTag.html":[2,0,14],
 "structArray4BoxTag.html#a5592c4d8acb7598662e58037846c899f":[2,0,14,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "structamrex_1_1AmrAssignGrid.html#a34d743ea0713f912d08dec0a20cdaa38":[2,0,0,20,3],
 "structamrex_1_1AmrAssignGrid.html#a3c5745e3fb6016f3be7777b00c7a458f":[2,0,0,20,0],
 "structamrex_1_1AmrAssignGrid.html#a89b80b8bcfbde11575362e5c6f6ea420":[2,0,0,20,2],
-"structamrex_1_1AmrAssignGrid.html#aeeb70bfe8962e6d51abe7422d22cd4f5":[2,0,0,20,1],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html":[2,0,0,23,0],
-"structamrex_1_1AmrDataAdaptor_1_1InternalsType.html#a036873b2f2c1d06f877458c6e3369f13":[2,0,0,23,0,0]
+"structamrex_1_1AmrAssignGrid.html#aeeb70bfe8962e6d51abe7422d22cd4f5":[2,0,0,20,1]
 };
