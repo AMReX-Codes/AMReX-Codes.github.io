@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"AMReX__Partition_8H_source.html":[3,0,0,2,211],
+"AMReX__Periodicity_8H.html":[3,0,0,2,214],
+"AMReX__Periodicity_8H_source.html":[3,0,0,2,214],
 "AMReX__Periodicity_8cpp.html":[3,0,0,2,213],
 "AMReX__PhysBCFunct_8H.html":[3,0,0,2,216],
 "AMReX__PhysBCFunct_8H.html#a395b6c263aecc344bf7648fe2d8d75cf":[3,0,0,2,216,6],
@@ -130,8 +133,8 @@ var NAVTREEINDEX16 =
 "AMReX__RegionsProfStats_8cpp.html":[3,0,0,5,5,13],
 "AMReX__RegionsProfStats_8cpp.html#a02b76a92a17338752cdd29335caaa60d":[3,0,0,5,5,13,9],
 "AMReX__RegionsProfStats_8cpp.html#a0b54508652b2932ee5c008a007ac1b1d":[3,0,0,5,5,13,10],
-"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[3,0,0,5,5,13,1],
 "AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[3,0,0,5,5,13,2],
+"AMReX__RegionsProfStats_8cpp.html#a135bd2d9565d0592c998a6457d5c5dc5":[3,0,0,5,5,13,1],
 "AMReX__RegionsProfStats_8cpp.html#a253100cadb934fc9292ae389be9b48f3":[3,0,0,5,5,13,7],
 "AMReX__RegionsProfStats_8cpp.html#a2587ebcf4e0d6a093b8c88db7a83cadf":[3,0,0,5,5,13,5],
 "AMReX__RegionsProfStats_8cpp.html#a2ae7e4605ef004b80257a95621e5cc12":[3,0,0,5,5,13,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "AMReX__TracerParticles_8H.html#a9a10bcdea714489a34f5d28bc127c936":[3,0,0,7,37,1],
 "AMReX__TracerParticles_8H_source.html":[3,0,0,7,37],
 "AMReX__TracerParticles_8cpp.html":[3,0,0,7,36],
-"AMReX__Tuple_8H.html":[3,0,0,2,239],
-"AMReX__Tuple_8H.html#a00604a127d1bcc6545bea88e8aa906c8":[3,0,0,2,239,19],
-"AMReX__Tuple_8H.html#a241b30447206d0b8029fac3bd5c9d1c6":[3,0,0,2,239,38],
-"AMReX__Tuple_8H.html#a366e33622f264a58b5ceae6cd79e3b64":[3,0,0,2,239,27]
+"AMReX__Tuple_8H.html":[3,0,0,2,239]
 };

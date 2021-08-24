@@ -126,9 +126,21 @@ $(document).ready(function(){initNavTree('AMReX__MLCellABecLap__2D__K_8H_source.
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> nerrors;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="code" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceamrex.html#a078658f433f21a921eaee99b9bb2423f">coarsen_overset_mask</a> (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>, Array4&lt;int&gt; <span class="keyword">const</span>&amp; cmsk,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                           Array4&lt;int const&gt; <span class="keyword">const</span>&amp; fmsk) noexcept</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> ii = 2*i;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> jj = 2*j;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    cmsk(i,j,0) = fmsk(ii,jj,0) + fmsk(ii+1,jj,0) + fmsk(ii,jj+1,0) + fmsk(ii+1,jj+1,0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (cmsk(i,j,0) == 4) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        cmsk(i,j,0) = 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceamrex_html_a078658f433f21a921eaee99b9bb2423f"><div class="ttname"><a href="namespaceamrex.html#a078658f433f21a921eaee99b9bb2423f">amrex::coarsen_overset_mask</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int coarsen_overset_mask(Box const &amp;bx, Array4&lt; int &gt; const &amp;cmsk, Array4&lt; int const &gt; const &amp;fmsk) noexcept</div><div class="ttdef"><b>Definition:</b> AMReX_MLCellABecLap_1D_K.H:8</div></div>

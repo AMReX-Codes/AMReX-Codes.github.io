@@ -1,5 +1,15 @@
 var NAVTREEINDEX49 =
 {
+"classamrex_1_1ReduceData.html#aeee26c66dbe6bda07476f5f1997ac833":[2,0,0,402,4],
+"classamrex_1_1ReduceData.html#af9d4fe0e27411855af7fc9f1c5da7f14":[2,0,0,402,11],
+"classamrex_1_1ReduceOps.html":[2,0,0,407],
+"classamrex_1_1ReduceOps.html#a05d9d8beb406be38812442c318e5d434":[2,0,0,407,3],
+"classamrex_1_1ReduceOps.html#a0b2c2b761a373ac5a95273721a8ae1fd":[2,0,0,407,1],
+"classamrex_1_1ReduceOps.html#a65284f038ea29beb80b99c1a5f246f04":[2,0,0,407,2],
+"classamrex_1_1ReduceOps.html#a6bed424b9a455d76e42d8061aef71b3e":[2,0,0,407,0],
+"classamrex_1_1STLtools.html":[2,0,0,424],
+"classamrex_1_1STLtools.html#a02713b3bdf5197301486a78cca290534":[2,0,0,424,6],
+"classamrex_1_1STLtools.html#a0ab5ffb5e73a4e47293d27e9dd0ee8d2":[2,0,0,424,8],
 "classamrex_1_1STLtools.html#a140c630969931c24e52ecc0f07b3267a":[2,0,0,424,0],
 "classamrex_1_1STLtools.html#a1f2bd89c58a57b3469a3a1c9413a73e3":[2,0,0,424,3],
 "classamrex_1_1STLtools.html#a2c7d4b0ae4c2b28e342e7120325eb927":[2,0,0,424,9],
@@ -239,15 +249,5 @@ var NAVTREEINDEX49 =
 "classamrex_1_1TagBox.html#af03179052f9fb5a076f95d2bb33e94e2":[2,0,0,427,18],
 "classamrex_1_1TagBox.html#af21d06fbdc2ccecc175efd767684610b":[2,0,0,427,14],
 "classamrex_1_1TagBoxArray.html":[2,0,0,428],
-"classamrex_1_1TagBoxArray.html#a1b2dcd181de443438540b7b107aadd04":[2,0,0,428,13],
-"classamrex_1_1TagBoxArray.html#a1b309c4b244d311888eb013b34693620":[2,0,0,428,5],
-"classamrex_1_1TagBoxArray.html#a1eb204c4fb9cbe4d9660d642a7a0ee13":[2,0,0,428,14],
-"classamrex_1_1TagBoxArray.html#a3173610e281bd7542514a433a704cd9a":[2,0,0,428,12],
-"classamrex_1_1TagBoxArray.html#a62994a11c6b9211c7d459571caf99d56":[2,0,0,428,10],
-"classamrex_1_1TagBoxArray.html#a6c6aeca9f57fbbdab3eb907b9b495bd4":[2,0,0,428,15],
-"classamrex_1_1TagBoxArray.html#a758d51e6e915561d03a0f9cdf1ce026f":[2,0,0,428,8],
-"classamrex_1_1TagBoxArray.html#a7f8015bb7729283383dd0d3b0265e0ea":[2,0,0,428,2],
-"classamrex_1_1TagBoxArray.html#a904fcd1905c4871508426269dd4cc14d":[2,0,0,428,1],
-"classamrex_1_1TagBoxArray.html#a9a0e6af06afa677b79adf8cc2a2f763c":[2,0,0,428,9],
-"classamrex_1_1TagBoxArray.html#aa39754ad9270741af7aa6f6278cf8229":[2,0,0,428,3]
+"classamrex_1_1TagBoxArray.html#a1b2dcd181de443438540b7b107aadd04":[2,0,0,428,13]
 };
