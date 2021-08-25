@@ -4,8 +4,6 @@ var classamrex_1_1EB2_1_1RotationIF =
     [ "RotationIF", "classamrex_1_1EB2_1_1RotationIF.html#a4264d3bf59ed9ffe7fe680e1ce8389cf", null ],
     [ "RotationIF", "classamrex_1_1EB2_1_1RotationIF.html#abf21723948891388f7be5aea67737816", null ],
     [ "RotationIF", "classamrex_1_1EB2_1_1RotationIF.html#a1d83a6489a3409450d5dac0e967aa4c6", null ],
-    [ "operator()", "classamrex_1_1EB2_1_1RotationIF.html#a16396f5bbe7fdd5524e031d31017ea7a", null ],
-    [ "operator()", "classamrex_1_1EB2_1_1RotationIF.html#abd036e398a58ad0aa6478cc372ac889e", null ],
     [ "operator=", "classamrex_1_1EB2_1_1RotationIF.html#af238f5cf54c7ae1b0806dbe0ad69f7e6", null ],
     [ "operator=", "classamrex_1_1EB2_1_1RotationIF.html#a082ac57bb039fceb99b3e48c5346398e", null ],
     [ "m_cos_angle", "classamrex_1_1EB2_1_1RotationIF.html#ab51c69319d7d35dc43124c3692af67ee", null ],

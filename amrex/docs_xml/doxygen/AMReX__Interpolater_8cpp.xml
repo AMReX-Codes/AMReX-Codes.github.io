@@ -180,6 +180,10 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
+      <node id="134">
+        <label>AMReX_MFInterp_1D_C.H</label>
+        <link refid="AMReX__MFInterp__1D__C_8H"/>
+      </node>
       <node id="10">
         <label>float.h</label>
       </node>
@@ -494,18 +498,6 @@
         <label>AMReX_GpuQualifiers.H</label>
         <link refid="AMReX__GpuQualifiers_8H"/>
         <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="132">
-        <label>AMReX_Interp_3D_C.H</label>
-        <link refid="AMReX__Interp__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="129" relation="include">
-        </childnode>
-        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="82">
@@ -1050,10 +1042,6 @@
       <node id="41">
         <label>array</label>
       </node>
-      <node id="134">
-        <label>AMReX_MFInterp_3D_C.H</label>
-        <link refid="AMReX__MFInterp__3D__C_8H"/>
-      </node>
       <node id="108">
         <label>AMReX_GpuElixir.H</label>
         <link refid="AMReX__GpuElixir_8H"/>
@@ -1381,6 +1369,20 @@
       </node>
       <node id="32">
         <label>climits</label>
+      </node>
+      <node id="132">
+        <label>AMReX_Interp_1D_C.H</label>
+        <link refid="AMReX__Interp__1D__C_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
       </node>
       <node id="58">
         <label>mutex</label>
@@ -1851,7 +1853,7 @@
 <codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="179"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FaceLinear_1aef3f7b31659cee4720214d87bde4ff58" kindref="member">FaceLinear::interp_arr</ref><sp/>(Array&lt;FArrayBox*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classamrex_1_1FaceLinear_1af1290278f6b68d36599ec7cf9cb6b4d6" kindref="member">FaceLinear::interp_arr</ref><sp/>(Array&lt;FArrayBox*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse,</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse_comp,</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array&lt;FArrayBox*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine_comp,</highlight></codeline>
@@ -1883,7 +1885,7 @@
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine_arr[d]<sp/>=<sp/>fine[d]-&gt;array(fine_comp);</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"></highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a29211288d4a6c55e269471e8ca79239c" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM_FLAG</ref>(runon,</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a9dfe2a0e3d87e1c42d9c758679b9f9f9" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM_FLAG</ref>(runon,</highlight></codeline>
 <codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(fine_region,types[0]),<sp/>bx0,</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" kindref="member">AMREX_LOOP_3D</ref>(bx0,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
@@ -2538,7 +2540,7 @@
 <codeline lineno="865"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="866"><highlight class="normal"></highlight></codeline>
 <codeline lineno="867"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="868"><highlight class="normal"><ref refid="classamrex_1_1FaceDivFree_1a2da2f9730de2ad77d1c41b26179dd1a4" kindref="member">FaceDivFree::interp_arr</ref><sp/>(Array&lt;FArrayBox*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse,</highlight></codeline>
+<codeline lineno="868"><highlight class="normal"><ref refid="classamrex_1_1FaceDivFree_1aefff4b32a7d4d09e3e81ec5d2cdb85e7" kindref="member">FaceDivFree::interp_arr</ref><sp/>(Array&lt;FArrayBox*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse,</highlight></codeline>
 <codeline lineno="869"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>crse_comp,</highlight></codeline>
 <codeline lineno="870"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array&lt;FArrayBox*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fine,</highlight></codeline>
 <codeline lineno="871"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fine_comp,</highlight></codeline>
@@ -2577,7 +2579,7 @@
 <codeline lineno="904"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="905"><highlight class="normal"></highlight></codeline>
 <codeline lineno="906"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fuse<sp/>the<sp/>launches,<sp/>1<sp/>for<sp/>each<sp/>dimension,<sp/>into<sp/>a<sp/>single<sp/>launch.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a29211288d4a6c55e269471e8ca79239c" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM_FLAG</ref>(runon,</highlight></codeline>
+<codeline lineno="907"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a9dfe2a0e3d87e1c42d9c758679b9f9f9" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM_FLAG</ref>(runon,</highlight></codeline>
 <codeline lineno="908"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(c_fine_region,types[0]),<sp/>bx0,</highlight></codeline>
 <codeline lineno="909"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="910"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__Loop_8H_1a03b436b41a98f86757c053a372a7947f" kindref="member">AMREX_LOOP_3D</ref>(bx0,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>

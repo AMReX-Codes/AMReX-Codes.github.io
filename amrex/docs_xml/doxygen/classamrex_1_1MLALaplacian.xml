@@ -448,12 +448,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALaplacian.H" line="50" column="18" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALaplacian.cpp" bodystart="297" bodyend="476"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLALaplacian_1a18d4928d3d9c76771d64844543914dad" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
+      <memberdef kind="function" id="classamrex_1_1MLALaplacian_1a7166ec107d9a949e0d3aa2ce4b75a4af" prot="public" static="no" const="yes" explicit="no" inline="no" final="yes" virt="virtual">
         <type>void</type>
         <definition>void amrex::MLALaplacian::FFlux</definition>
-        <argsstring>(int amrlev, const MFIter &amp;mfi, const Array&lt; FArrayBox *, 3 &gt; &amp;flux, const FArrayBox &amp;sol, Location, const int face_only=0) const final override</argsstring>
+        <argsstring>(int amrlev, const MFIter &amp;mfi, const Array&lt; FArrayBox *, AMREX_SPACEDIM &gt; &amp;flux, const FArrayBox &amp;sol, Location, const int face_only=0) const final override</argsstring>
         <name>FFlux</name>
-        <reimplements refid="classamrex_1_1MLCellLinOp_1a0d7f30ef14efee1d322d67d892794a42">FFlux</reimplements>
+        <reimplements refid="classamrex_1_1MLCellLinOp_1a984719ccb019be3050750f57138557b0">FFlux</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
           <declname>amrlev</declname>
@@ -463,7 +463,7 @@
           <declname>mfi</declname>
         </param>
         <param>
-          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, 3 &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1FArrayBox" kindref="compound">FArrayBox</ref> *, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>flux</declname>
         </param>
         <param>
@@ -562,12 +562,12 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALaplacian.H" line="60" column="28" bodyfile="/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLALaplacian.H" bodystart="60" bodyend="61"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1MLALaplacian_1a2f2feaed997c19b6db74085145595713" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
-        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const  *, 3 &gt;</type>
-        <definition>virtual Array&lt;MultiFab const*,3&gt; amrex::MLALaplacian::getBCoeffs</definition>
+      <memberdef kind="function" id="classamrex_1_1MLALaplacian_1af8d966d653ce6b27e5d12dd70aedbdb6" prot="public" static="no" const="yes" explicit="no" inline="yes" final="yes" virt="virtual">
+        <type><ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="classamrex_1_1MultiFab" kindref="compound">MultiFab</ref> const  *, AMREX_SPACEDIM &gt;</type>
+        <definition>virtual Array&lt;MultiFab const*,AMREX_SPACEDIM&gt; amrex::MLALaplacian::getBCoeffs</definition>
         <argsstring>(int, int) const final override</argsstring>
         <name>getBCoeffs</name>
-        <reimplements refid="classamrex_1_1MLCellABecLap_1a050ddd816353730b1eb526829514b1c2">getBCoeffs</reimplements>
+        <reimplements refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e">getBCoeffs</reimplements>
         <param>
           <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
         </param>
@@ -723,32 +723,14 @@
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="32">
-        <label>std::vector&lt; Array&lt; BCType, 3 &gt;, std::allocator&lt; Array&lt; BCType, 3 &gt; &gt; &gt;</label>
-      </node>
-      <node id="42">
+      <node id="40">
         <label>amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="43" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="31">
-        <label>amrex::Vector&lt; Array&lt; BCType, 3 &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="32" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="36">
-        <label>amrex::Vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *3 &gt; &gt; &gt;</label>
-        <link refid="classamrex_1_1Vector"/>
-        <childnode refid="37" relation="public-inheritance">
+        <childnode refid="41" relation="public-inheritance">
         </childnode>
       </node>
       <node id="10">
         <label>Real</label>
-      </node>
-      <node id="37">
-        <label>std::vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *3 &gt; &gt;, std::allocator&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *3 &gt; &gt; &gt; &gt;</label>
       </node>
       <node id="25">
         <label>amrex::MultiArray4&lt; value_type &gt;</label>
@@ -767,6 +749,9 @@
       </node>
       <node id="53">
         <label>std::vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;, std::allocator&lt; amrex::Vector&lt; amrex::MultiFab &gt; &gt; &gt;</label>
+      </node>
+      <node id="32">
+        <label>std::vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt;, std::allocator&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt; &gt;</label>
       </node>
       <node id="23">
         <label>std::vector&lt; std::string, std::allocator&lt; std::string &gt; &gt;</label>
@@ -809,13 +794,13 @@
         <childnode refid="28" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="44">
+      <node id="42">
         <label>amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MLCellLinOp::BndryCondLoc &gt; &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="45" relation="public-inheritance">
+        <childnode refid="43" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="45">
+      <node id="43">
         <label>std::vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MLCellLinOp::BndryCondLoc &gt; &gt;, std::allocator&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MLCellLinOp::BndryCondLoc &gt; &gt; &gt; &gt;</label>
       </node>
       <node id="5">
@@ -840,10 +825,10 @@
         <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="38">
+      <node id="36">
         <label>amrex::Vector&lt; amrex::Vector&lt; amrex::BndryRegister &gt; &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="39" relation="public-inheritance">
+        <childnode refid="37" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
@@ -861,10 +846,10 @@
         <label>amrex::Dim3</label>
         <link refid="structamrex_1_1Dim3"/>
       </node>
-      <node id="40">
+      <node id="38">
         <label>amrex::Vector&lt; amrex::YAFluxRegister &gt;</label>
         <link refid="classamrex_1_1Vector"/>
-        <childnode refid="41" relation="public-inheritance">
+        <childnode refid="39" relation="public-inheritance">
         </childnode>
       </node>
       <node id="29">
@@ -873,7 +858,7 @@
         <childnode refid="30" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="41">
+      <node id="39">
         <label>std::vector&lt; amrex::YAFluxRegister, std::allocator&lt; amrex::YAFluxRegister &gt; &gt;</label>
       </node>
       <node id="33">
@@ -882,7 +867,7 @@
         <childnode refid="34" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="43">
+      <node id="41">
         <label>std::vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;, std::allocator&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt;</label>
       </node>
       <node id="28">
@@ -953,6 +938,15 @@
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
+      <node id="45">
+        <label>std::vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *AMREX_SPACEDIM &gt; &gt;, std::allocator&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *AMREX_SPACEDIM &gt; &gt; &gt; &gt;</label>
+      </node>
+      <node id="31">
+        <label>amrex::Vector&lt; Array&lt; BCType, AMREX_SPACEDIM &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="35">
         <label>amrex::LPInfo</label>
         <link refid="structamrex_1_1LPInfo"/>
@@ -987,13 +981,19 @@
       <node id="34">
         <label>std::vector&lt; amrex::IntVect, std::allocator&lt; amrex::IntVect &gt; &gt;</label>
       </node>
+      <node id="44">
+        <label>amrex::Vector&lt; amrex::Vector&lt; Array&lt; amrex::MultiMask, 2 *AMREX_SPACEDIM &gt; &gt; &gt;</label>
+        <link refid="classamrex_1_1Vector"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="14">
         <label>amrex::MultiFab</label>
         <link refid="classamrex_1_1MultiFab"/>
         <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="39">
+      <node id="37">
         <label>std::vector&lt; amrex::Vector&lt; amrex::BndryRegister &gt;, std::allocator&lt; amrex::Vector&lt; amrex::BndryRegister &gt; &gt; &gt;</label>
       </node>
       <node id="3">
@@ -1002,19 +1002,19 @@
         <childnode refid="4" relation="public-inheritance">
         </childnode>
         <childnode refid="36" relation="usage">
-          <edgelabel>m_maskvals</edgelabel>
-        </childnode>
-        <childnode refid="38" relation="usage">
           <edgelabel>m_undrrelxr</edgelabel>
         </childnode>
-        <childnode refid="40" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>m_fluxreg</edgelabel>
         </childnode>
-        <childnode refid="42" relation="usage">
+        <childnode refid="40" relation="usage">
           <edgelabel>m_robin_bcval</edgelabel>
         </childnode>
-        <childnode refid="44" relation="usage">
+        <childnode refid="42" relation="usage">
           <edgelabel>m_bcondloc</edgelabel>
+        </childnode>
+        <childnode refid="44" relation="usage">
+          <edgelabel>m_maskvals</edgelabel>
         </childnode>
         <childnode refid="46" relation="usage">
           <edgelabel>m_crse_sol_br</edgelabel>
@@ -1081,8 +1081,8 @@
       <member refid="classamrex_1_1MLLinOp_1a941ddfa6ec11cbd0a1c835007494b057" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>Communicator</name></member>
       <member refid="classamrex_1_1MLLinOp_1af37726771c106055867bf88ade1f65d7" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>compactify</name></member>
       <member refid="classamrex_1_1MLLinOp_1ae3dae2320c8c9e64274e8d41131187dc" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>compactify</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1ac3c3b7b4ee2a2c235cfed06d40db2949" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>compFlux</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1a785f80cd00edad055cfaeabfd17cea0d" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>compGrad</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1acd6c78c0e6307234b1539ba81caadb9c" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>compFlux</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1aead98967987fb3826008fc69f3270247" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>compGrad</name></member>
       <member refid="classamrex_1_1MLLinOp_1aff1b5ba7a45c7e320550f99f88984301" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>copyNSolveSolution</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a3c1832912375e08e8bd38775b6b532b3" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>correctionResidual</name></member>
       <member refid="classamrex_1_1MLALaplacian_1afdc6667fb0fa97f88e6ae03838802687" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>define</name></member>
@@ -1097,7 +1097,7 @@
       <member refid="classamrex_1_1MLLinOp_1a831ab67f9a58e0f452f52b176219c1a0" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>enforceSingularSolvable</name></member>
       <member refid="classamrex_1_1MLLinOp_1a0eb75c39ff8e715b524d79442b83a3fb" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>Factory</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a1f460db8418e9e37c3918ca4af377ed6" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>Fapply</name></member>
-      <member refid="classamrex_1_1MLALaplacian_1a18d4928d3d9c76771d64844543914dad" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>FFlux</name></member>
+      <member refid="classamrex_1_1MLALaplacian_1a7166ec107d9a949e0d3aa2ce4b75a4af" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>FFlux</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a10b043a8a06133e0f36f81231a7519d9" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>fillSolutionBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1ad00407760d4927438c355ba115aaad4e" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>Finalize</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac94ee917e5350722a537af7e127984d3" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>fixUpResidualMask</name></member>
@@ -1107,11 +1107,11 @@
       <member refid="classamrex_1_1MLLinOp_1ad16cb6cbf7bcb78cc0d0af59611ae00a" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>get_d1</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a1aa3e51210ecaf0cfc94cbed52a04d86" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getACoeffs</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a4cc25067c705d1024eb99a587a4cb328" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getAScalar</name></member>
-      <member refid="classamrex_1_1MLALaplacian_1a2f2feaed997c19b6db74085145595713" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getBCoeffs</name></member>
+      <member refid="classamrex_1_1MLALaplacian_1af8d966d653ce6b27e5d12dd70aedbdb6" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getBCoeffs</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a6c707aa5edf3f247d56db7b8e8ed9f2c" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getBScalar</name></member>
       <member refid="classamrex_1_1MLLinOp_1a6d1ed393d8e089b8af021e80ead4267b" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getDefaultBottomSolver</name></member>
       <member refid="classamrex_1_1MLLinOp_1a29c32b42500a25348ee5331f44ab94ba" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>getEnforceSingularSolvable</name></member>
-      <member refid="classamrex_1_1MLCellABecLap_1ae8f4b9e81f1e5650a091fff25f2afdf9" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getFluxes</name></member>
+      <member refid="classamrex_1_1MLCellABecLap_1add88d6133181d2515575e939e3bd0aa5" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getFluxes</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1a34cb682ceb72e31c45cadb89bc2e3a9f" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getFluxes</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1189e4016e7757083343a93649f102aa" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>getMaxOrder</name></member>
       <member refid="classamrex_1_1MLALaplacian_1aa929b7d2769524dcb8144eb97f268b87" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>getNComp</name></member>
@@ -1120,7 +1120,7 @@
       <member refid="classamrex_1_1MLLinOp_1a6d7b1e0e21fd61d71bbe342df0f1a5d4" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>hasHiddenDimension</name></member>
       <member refid="classamrex_1_1MLLinOp_1a4910f22e3c63b572ef364cdf8177e392" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>hasInhomogNeumannBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1a4b2636d8115debeeefa38b4b34186ecc" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>hasRobinBC</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a458383f5dc4aba88329db715fd027d7a" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>HiBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1ac313a2de49bd67c23fad23d5c4045e70" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>HiBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1af0793198f529f4474139fa9366b2e1aa" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>hiddenDirection</name></member>
       <member refid="classamrex_1_1MLLinOp_1a85fa2f104bbfeaa73d55d589906ecd45" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>info</name></member>
       <member refid="classamrex_1_1MLLinOp_1a48b2fe73722eee0a1d50b6e0b9558174" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>Initialize</name></member>
@@ -1131,7 +1131,7 @@
       <member refid="classamrex_1_1MLCellLinOp_1af6f760fa4c14171371737ac10d0e2c02" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>isCrossStencil</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a3681713acaa645f62ab556c96ea733e5" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>isSingular</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a0152cd38e35f6a41dc3da2814b910f2b" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>isTensorOp</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a1ac509d7066244935918fdff0326ca95" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>LoBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a7ef6c8434223ac6e052359cd4f27fbe6" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>LoBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1a07cd0a7c45d6542e33a5d97aefe5bab3" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>Location</name></member>
       <member refid="classamrex_1_1MLALaplacian_1aee58cd65c0b079063c4eb55bfd14637a" prot="private" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_a_coeffs</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a9f52dcdbaab0fbc216169c6fb4405110" prot="private" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_a_scalar</name></member>
@@ -1151,22 +1151,22 @@
       <member refid="classamrex_1_1MLLinOp_1a19bf5f2d76877e5f5777e5c44d290648" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_do_agglomeration</name></member>
       <member refid="classamrex_1_1MLLinOp_1a488b6dd5c1bfecef948b543bfa7e5154" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_do_consolidation</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac5eeb189073e311245243a3292b8377d" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_do_semicoarsening</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a77492a5974990e96061d11c681ceb55d" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_domain_bloc_hi</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a62d8b5644f8ca07d5e27a4d33cc9528f" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_domain_bloc_lo</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a700409c91ec909489e19c53e601de053" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_domain_bloc_hi</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a0fd156d093aacd959e78666105ed6328" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_domain_bloc_lo</name></member>
       <member refid="classamrex_1_1MLLinOp_1aaba23614888f937956554945e6a2a5a0" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_domain_covered</name></member>
       <member refid="classamrex_1_1MLLinOp_1aca26a5ef5d68cae3dcabea0a5d8c2493" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_factory</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1aeabff149eec600743faac7295cd509d2" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_fluxreg</name></member>
       <member refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_geom</name></member>
       <member refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_grids</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a9d6cdade5abfabf340b180cba282c3c1" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_has_metric_term</name></member>
-      <member refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_hibc</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a187bf73f893ba53dc2ee3e70c8f8811f" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_hibc_orig</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_hibc</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a94066c5e255464485d5af0d1f174e1c2" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_hibc_orig</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a49ddaff7eb5d82e04c87f1d971c6be90" prot="private" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_is_singular</name></member>
       <member refid="classamrex_1_1MLLinOp_1a1422f7b22ae204247f5cdf20ab70e741" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_ixtype</name></member>
-      <member refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_lobc</name></member>
-      <member refid="classamrex_1_1MLLinOp_1adc90c319d9f918dac74fe5c500cc2fc4" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_lobc_orig</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_lobc</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aec9b82494ef69731d10e9b293b64fdd8" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_lobc_orig</name></member>
       <member refid="classamrex_1_1MLCellABecLap_1acb34071cea72aa5efd3a25700903e9c1" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_lpinfo_arg</name></member>
-      <member refid="classamrex_1_1MLCellLinOp_1a4c34af07271b2f0b7f9efdaffa6920d0" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_maskvals</name></member>
+      <member refid="classamrex_1_1MLCellLinOp_1af7504eedbd467f1237874cbc10dd6d39" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_maskvals</name></member>
       <member refid="classamrex_1_1MLALaplacian_1a0b93fb49a6b893d0cc516fe2e5041e62" prot="private" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_ncomp</name></member>
       <member refid="classamrex_1_1MLLinOp_1aa53a765aea0ed0c4e7410d147380079f" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_needs_coarse_data_for_bc</name></member>
       <member refid="classamrex_1_1MLALaplacian_1ab9f0a46a57dda4a525afbd0b9a1f0061" prot="private" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>m_needs_update</name></member>
@@ -1225,9 +1225,9 @@
       <member refid="classamrex_1_1MLALaplacian_1a8c52bf147d3c90082c2653d75c4dff42" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setACoeffs</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac161f1d53e925b82ba5defeb9b0efe70" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setCoarseFineBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1ac0c0882eb6092218dc09c5d60555ffed" prot="protected" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setCoarseFineBCLocation</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a0d2cc5acbd59af429bb23cea82e1cb4e" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setDomainBC</name></member>
-      <member refid="classamrex_1_1MLLinOp_1af86e2902f472568fc0056d403f9787ff" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setDomainBC</name></member>
-      <member refid="classamrex_1_1MLLinOp_1a46abcf3897135febcc172d96e03b7603" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setDomainBCLoc</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aa034da35bd05e1fb93b8d876a9840ce3" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setDomainBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1a2402e6343df20087a51fb653a147987d" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setDomainBC</name></member>
+      <member refid="classamrex_1_1MLLinOp_1aeb7f6e87ab86b49cc97a248b4240d600" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setDomainBCLoc</name></member>
       <member refid="classamrex_1_1MLLinOp_1a8225491c35d71e1fb7edb6355f44ac5a" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setEnforceSingularSolvable</name></member>
       <member refid="classamrex_1_1MLCellLinOp_1a17b29b5c93f25181f34313b42b795a9e" prot="public" virt="virtual"><scope>amrex::MLALaplacian</scope><name>setLevelBC</name></member>
       <member refid="classamrex_1_1MLLinOp_1a45b72169ccf285c17f439c4e990c0f58" prot="public" virt="non-virtual"><scope>amrex::MLALaplacian</scope><name>setMaxOrder</name></member>

@@ -7,12 +7,12 @@ var AMReX__Array_8H =
     [ "Array2D", "structamrex_1_1Array2D.html", "structamrex_1_1Array2D" ],
     [ "Array3D", "structamrex_1_1Array3D.html", "structamrex_1_1Array3D" ],
     [ "Array", "AMReX__Array_8H.html#afe930d74045516fece8591f173e57007", null ],
-    [ "IntArray", "AMReX__Array_8H.html#a09e5ad26a3e07988dc74fece187da7b0", null ],
-    [ "RealArray", "AMReX__Array_8H.html#aeb06fab72f85728954130adbe25c5397", null ],
-    [ "GetArrOfConstPtrs", "AMReX__Array_8H.html#ad5bf1d4acdaf924884c79486a334ee81", null ],
-    [ "GetArrOfConstPtrs", "AMReX__Array_8H.html#a5b852cc9eceb1c9fbb136e7d3d8fb1db", null ],
-    [ "GetArrOfConstPtrs", "AMReX__Array_8H.html#aa0e4c452a9691cc21bd0c62a4694686f", null ],
-    [ "GetArrOfPtrs", "AMReX__Array_8H.html#a0ec6f592b4d87ce26a39bf984105dc6d", null ],
-    [ "GetArrOfPtrs", "AMReX__Array_8H.html#a970fb024b86520986b94f4f4d6c6d4c9", null ],
-    [ "makeXDim3", "AMReX__Array_8H.html#a2fb02d7c62025643663f5a9f154a6547", null ]
+    [ "IntArray", "AMReX__Array_8H.html#a2b58b8c81ca5e47c17a861e86354eba1", null ],
+    [ "RealArray", "AMReX__Array_8H.html#a9de48c04056551924746c42f9eda3c8f", null ],
+    [ "GetArrOfConstPtrs", "AMReX__Array_8H.html#a5d3d4c8b853be1962df781e5b6ee395c", null ],
+    [ "GetArrOfConstPtrs", "AMReX__Array_8H.html#af440a21a377ce21aced4b2360d34f09d", null ],
+    [ "GetArrOfConstPtrs", "AMReX__Array_8H.html#a1c2496ecb409639e8639cf01881d0acb", null ],
+    [ "GetArrOfPtrs", "AMReX__Array_8H.html#aee80b212d35c9fafe26f01f76ce6b672", null ],
+    [ "GetArrOfPtrs", "AMReX__Array_8H.html#a3d178420751d1cce6bd2661d614fbb33", null ],
+    [ "makeXDim3", "AMReX__Array_8H.html#a8338a320488a4b26607928529d25c1a5", null ]
 ];

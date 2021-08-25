@@ -13,9 +13,9 @@ var AMReX__MultiFabUtil__2D__C_8H =
     [ "amrex_avgdown_nodes", "AMReX__MultiFabUtil__2D__C_8H.html#af571eb63b15d9531a1a6d8eb9c703785", null ],
     [ "amrex_avgdown_nodes", "AMReX__MultiFabUtil__2D__C_8H.html#a224bde3e83a662219a868442ee59f3e0", null ],
     [ "amrex_avgdown_with_vol", "AMReX__MultiFabUtil__2D__C_8H.html#a2b6f69d99069a5b71f44f83acfe3477e", null ],
-    [ "amrex_compute_convective_difference", "AMReX__MultiFabUtil__2D__C_8H.html#a213117d7aeabd101519b9e8c0a8cfb7d", null ],
-    [ "amrex_compute_divergence", "AMReX__MultiFabUtil__2D__C_8H.html#adb9eacd5d1c19b7dee16cca16f5ae0d2", null ],
+    [ "amrex_compute_convective_difference", "AMReX__MultiFabUtil__2D__C_8H.html#a4979a24456c6009e315e62d0f0d1ee66", null ],
+    [ "amrex_compute_divergence", "AMReX__MultiFabUtil__2D__C_8H.html#a7bc9df03a7f950928f84f200ea52dd33", null ],
     [ "amrex_compute_divergence_rz", "AMReX__MultiFabUtil__2D__C_8H.html#a5d1d11eba0d4b53de1431c6ad3d060be", null ],
-    [ "amrex_compute_gradient", "AMReX__MultiFabUtil__2D__C_8H.html#a07bc435e9cf8c18ad8992e10ee3b6768", null ],
+    [ "amrex_compute_gradient", "AMReX__MultiFabUtil__2D__C_8H.html#ab0e6c8420ed7a23a8f6e31d1d2d728c9", null ],
     [ "amrex_compute_gradient_rz", "AMReX__MultiFabUtil__2D__C_8H.html#a09f44c9c74cb08a19432aa259ebace65", null ]
 ];

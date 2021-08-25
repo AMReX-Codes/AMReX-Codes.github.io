@@ -161,7 +161,7 @@ var classamrex_1_1Amr =
     [ "intersect_lox", "classamrex_1_1Amr.html#a74f3b055b554426d6404985f46bc5713", null ],
     [ "intersect_loy", "classamrex_1_1Amr.html#a63e0fe7c5999847347e2959ef6d35e84", null ],
     [ "intersect_loz", "classamrex_1_1Amr.html#ac8fbee6b944ffeb46dac1abb6c4e979c", null ],
-    [ "isPeriodic", "classamrex_1_1Amr.html#a9a4ca3394b7ae8c88c80a4b332d92e31", null ],
+    [ "isPeriodic", "classamrex_1_1Amr.html#a47527266245319befc8538d55dac8bc3", null ],
     [ "last_checkpoint", "classamrex_1_1Amr.html#aedc8350798946e5e5d1d68b4861195a5", null ],
     [ "last_plotfile", "classamrex_1_1Amr.html#a8bdd58e0f251c3097ae6631621a32253", null ],
     [ "last_smallplotfile", "classamrex_1_1Amr.html#ac3c786f18b9e2b297f07f10e28852bbf", null ],

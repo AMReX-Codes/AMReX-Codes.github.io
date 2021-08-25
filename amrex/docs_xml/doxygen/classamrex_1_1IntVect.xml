@@ -52,10 +52,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classamrex_1_1IntVect_1af6f27b885df1ab2fc906a81036859fd2" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classamrex_1_1IntVect_1aa90d26b430997cad2cfb8c21f6fb2e22" prot="private" static="no" mutable="no">
         <type><ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref></type>
-        <definition>int amrex::IntVect::vect[3]</definition>
-        <argsstring>[3]</argsstring>
+        <definition>int amrex::IntVect::vect[AMREX_SPACEDIM]</definition>
+        <argsstring>[AMREX_SPACEDIM]</argsstring>
         <name>vect</name>
         <briefdescription>
         </briefdescription>
@@ -138,23 +138,6 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="88" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="88" bodyend="88"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1IntVect_1ae7f975783c41ae4e14486628b8284a98" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
-        <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
-        <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::IntVect::IntVect</definition>
-        <argsstring>(AMREX_D_DECL(int i, int j, int k)) noexcept</argsstring>
-        <name>IntVect</name>
-        <param>
-          <type>AMREX_D_DECL(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> i, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> j, <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref> k)</type>
-        </param>
-        <briefdescription>
-<para>Construct an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> given the specific values for its coordinates. AMREX_D_DECL is a macro that sets the constructor to take AMREX_SPACEDIM arguments. </para>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="97" column="15" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="97" bodyend="97"/>
-      </memberdef>
       <memberdef kind="function" id="classamrex_1_1IntVect_1a9f7286d7950a651fc45c7d51f902fee7" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type>constexpr <ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref></type>
         <definition>constexpr AMREX_GPU_HOST_DEVICE amrex::IntVect::IntVect</definition>
@@ -165,6 +148,7 @@
           <declname>i</declname>
         </param>
         <briefdescription>
+<para>Construct an <ref refid="classamrex_1_1IntVect" kindref="compound">IntVect</ref> given the specific values for its coordinates. AMREX_D_DECL is a macro that sets the constructor to take AMREX_SPACEDIM arguments. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -208,13 +192,13 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" line="115" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Base/AMReX_IntVect.H" bodystart="115" bodyend="117"/>
       </memberdef>
-      <memberdef kind="function" id="classamrex_1_1IntVect_1a62bad10560869f957caa4ec37443d245" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
+      <memberdef kind="function" id="classamrex_1_1IntVect_1addf6e967457cdc48def7f89cdd6e3423" prot="public" static="no" const="no" explicit="yes" inline="yes" noexcept="yes" virt="non-virtual">
         <type></type>
         <definition>amrex::IntVect::IntVect</definition>
-        <argsstring>(const Array&lt; int, 3 &gt; &amp;a) noexcept</argsstring>
+        <argsstring>(const Array&lt; int, AMREX_SPACEDIM &gt; &amp;a) noexcept</argsstring>
         <name>IntVect</name>
         <param>
-          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, 3 &gt; &amp;</type>
+          <type>const <ref refid="namespaceamrex_1afe930d74045516fece8591f173e57007" kindref="member">Array</ref>&lt; <ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>a</declname>
         </param>
         <briefdescription>
@@ -1292,11 +1276,10 @@
       <member refid="classamrex_1_1IntVect_1a45b033a1b6e8f6e2049cacb3e729cfbd" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>getVect</name></member>
       <member refid="classamrex_1_1IntVect_1a0da0ad772b267330594cbcc72bb48c5c" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>hasher</name></member>
       <member refid="classamrex_1_1IntVect_1a54c9d1b5040d65c9a92d9da68d80e687" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
-      <member refid="classamrex_1_1IntVect_1ae7f975783c41ae4e14486628b8284a98" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
       <member refid="classamrex_1_1IntVect_1a9f7286d7950a651fc45c7d51f902fee7" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
       <member refid="classamrex_1_1IntVect_1ae9684c0f49b86a16a696f99521290fe9" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
       <member refid="classamrex_1_1IntVect_1a964cade2a31b2c82990dcb7726dd5d1d" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
-      <member refid="classamrex_1_1IntVect_1a62bad10560869f957caa4ec37443d245" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
+      <member refid="classamrex_1_1IntVect_1addf6e967457cdc48def7f89cdd6e3423" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>IntVect</name></member>
       <member refid="classamrex_1_1IntVect_1afc4d5734d3a85d47e406637bfdc4573d" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>max</name></member>
       <member refid="classamrex_1_1IntVect_1afb31668e3b7bc7ad18ddf7453fe00557" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>max</name></member>
       <member refid="classamrex_1_1IntVect_1a8e69f16160adbdf5313e5554fae1f601" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>maxDir</name></member>
@@ -1347,7 +1330,7 @@
       <member refid="classamrex_1_1IntVect_1a5b5b7435eef0516b2313ad4894d63b1f" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>TheUnitVector</name></member>
       <member refid="classamrex_1_1IntVect_1ac4331f56298c56a0ff01a011c3702c3a" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>TheZeroVector</name></member>
       <member refid="classamrex_1_1IntVect_1a93df7e94c6d2d07ea3eb7647500bf751" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>Unit</name></member>
-      <member refid="classamrex_1_1IntVect_1af6f27b885df1ab2fc906a81036859fd2" prot="private" virt="non-virtual"><scope>amrex::IntVect</scope><name>vect</name></member>
+      <member refid="classamrex_1_1IntVect_1aa90d26b430997cad2cfb8c21f6fb2e22" prot="private" virt="non-virtual"><scope>amrex::IntVect</scope><name>vect</name></member>
       <member refid="classamrex_1_1IntVect_1a5b50f516a319513a10154ef402c2717b" prot="public" virt="non-virtual"><scope>amrex::IntVect</scope><name>Zero</name></member>
     </listofallmembers>
   </compounddef>

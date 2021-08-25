@@ -7,6 +7,6 @@ var classamrex_1_1MLMGBndry =
     [ "MLMGBndry", "classamrex_1_1MLMGBndry.html#aa3d8c964cb965c1870744aea5d2b8d61", null ],
     [ "operator=", "classamrex_1_1MLMGBndry.html#ad0563f74b1cce4dca6484ce6d27b4ae2", null ],
     [ "operator=", "classamrex_1_1MLMGBndry.html#a238168f5e306bb894cdf2a161a0cafef", null ],
-    [ "setBoxBC", "classamrex_1_1MLMGBndry.html#a885a50119b15b4f4bcf0c5b3d0cf2052", null ],
-    [ "setLOBndryConds", "classamrex_1_1MLMGBndry.html#a86eb011e0435d71afcf8c247eb78e529", null ]
+    [ "setBoxBC", "classamrex_1_1MLMGBndry.html#a02fa2ecdca85125116399e1525095055", null ],
+    [ "setLOBndryConds", "classamrex_1_1MLMGBndry.html#ad8b876eada24a27272c68dadbfaab2b9", null ]
 ];

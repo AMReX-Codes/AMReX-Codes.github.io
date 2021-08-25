@@ -465,12 +465,6 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="165">
-        <label>AMReX_MLPoisson_3D_K.H</label>
-        <link refid="AMReX__MLPoisson__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="18">
         <label>stdexcept</label>
       </node>
@@ -701,12 +695,6 @@
         <childnode refid="26" relation="include">
         </childnode>
         <childnode refid="49" relation="include">
-        </childnode>
-      </node>
-      <node id="164">
-        <label>AMReX_MLPoisson_2D_K.H</label>
-        <link refid="AMReX__MLPoisson__2D__K_8H"/>
-        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="44">
@@ -1056,7 +1044,7 @@
         <childnode refid="50" relation="include">
         </childnode>
       </node>
-      <node id="166">
+      <node id="165">
         <label>AMReX_MLALaplacian.H</label>
         <link refid="AMReX__MLALaplacian_8H"/>
         <childnode refid="3" relation="include">
@@ -1341,6 +1329,12 @@
         <childnode refid="70" relation="include">
         </childnode>
       </node>
+      <node id="164">
+        <label>AMReX_MLPoisson_1D_K.H</label>
+        <link refid="AMReX__MLPoisson__1D__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="1">
         <label>/home/runner/work/amrex/amrex/Src/LinearSolvers/MLMG/AMReX_MLPoisson.cpp</label>
         <link refid="AMReX__MLPoisson_8cpp"/>
@@ -1348,7 +1342,7 @@
         </childnode>
         <childnode refid="163" relation="include">
         </childnode>
-        <childnode refid="166" relation="include">
+        <childnode refid="165" relation="include">
         </childnode>
       </node>
       <node id="102">
@@ -1377,8 +1371,6 @@
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="164" relation="include">
-        </childnode>
-        <childnode refid="165" relation="include">
         </childnode>
       </node>
       <node id="136">
@@ -2165,9 +2157,9 @@
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLPoisson_1afffef821b522beac6e041bd1f4ca424f" kindref="member">m_is_singular</ref>.clear();</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLPoisson_1afffef821b522beac6e041bd1f4ca424f" kindref="member">m_is_singular</ref>.resize(<ref refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" kindref="member">m_num_amr_levels</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itlo<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ithi<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itlo<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>()<sp/>&amp;&amp;<sp/>ithi<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>())</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itlo<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ithi<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itlo<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>()<sp/>&amp;&amp;<sp/>ithi<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>())</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>Dirichlet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>alev<sp/>=<sp/>0;<sp/>alev<sp/>&lt;<sp/><ref refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" kindref="member">m_num_amr_levels</ref>;<sp/>++alev)</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2368,7 +2360,7 @@
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MLPoisson::Fsmooth()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>undrrelxr<sp/>=<sp/><ref refid="classamrex_1_1MLCellLinOp_1a2ffd8d47358983d3c013b8012eeb1b8e" kindref="member">m_undrrelxr</ref>[amrlev][mglev];</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>maskvals<sp/><sp/>=<sp/><ref refid="classamrex_1_1MLCellLinOp_1a4c34af07271b2f0b7f9efdaffa6920d0" kindref="member">m_maskvals</ref><sp/>[amrlev][mglev];</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>maskvals<sp/><sp/>=<sp/><ref refid="classamrex_1_1MLCellLinOp_1af7504eedbd467f1237874cbc10dd6d39" kindref="member">m_maskvals</ref><sp/>[amrlev][mglev];</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"></highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>OrientationIter<sp/>oitr;</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"></highlight></codeline>
@@ -2568,7 +2560,7 @@
 <codeline lineno="462"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="463"><highlight class="normal"></highlight></codeline>
 <codeline lineno="464"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="465"><highlight class="normal"><ref refid="classamrex_1_1MLPoisson_1a6cb776d5884fa8fe447e2b2b0694d508" kindref="member">MLPoisson::FFlux</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MFIter&amp;<sp/>mfi,</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><ref refid="classamrex_1_1MLPoisson_1ada86917688ba1183c91948846b316344" kindref="member">MLPoisson::FFlux</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MFIter&amp;<sp/>mfi,</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;FArrayBox*,AMREX_SPACEDIM&gt;&amp;<sp/>flux,</highlight></codeline>
 <codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FArrayBox&amp;<sp/>sol,<sp/>Location,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>face_only)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="468"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
@@ -2769,7 +2761,7 @@
 <codeline lineno="663"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setMaxOrder(<ref refid="classamrex_1_1MLLinOp_1ac516dba583aede117f89e339423f6114" kindref="member">maxorder</ref>);</highlight></codeline>
 <codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setVerbose(<ref refid="classamrex_1_1MLLinOp_1a0815357130e78962e01abdaba2b09c21" kindref="member">verbose</ref>);</highlight></codeline>
 <codeline lineno="665"><highlight class="normal"></highlight></codeline>
-<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setDomainBC(<ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>,<sp/><ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>);</highlight></codeline>
+<codeline lineno="666"><highlight class="normal"><sp/><sp/><sp/><sp/>nop-&gt;setDomainBC(<ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>,<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>);</highlight></codeline>
 <codeline lineno="667"><highlight class="normal"></highlight></codeline>
 <codeline lineno="668"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a0c150481b635dccaf83cfff3d38b11c7" kindref="member">needsCoarseDataForBC</ref>())</highlight></codeline>
 <codeline lineno="669"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>

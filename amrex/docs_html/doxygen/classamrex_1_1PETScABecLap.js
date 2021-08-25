@@ -13,7 +13,7 @@ var classamrex_1_1PETScABecLap =
     [ "A", "classamrex_1_1PETScABecLap.html#aa7ec19bebac9e6cde8064974b896a9f9", null ],
     [ "acoefs", "classamrex_1_1PETScABecLap.html#a0bdac13a79f515cc266c9babc14a7cc8", null ],
     [ "b", "classamrex_1_1PETScABecLap.html#a08502c245a5dfd89dbb1ac522d5563f9", null ],
-    [ "bcoefs", "classamrex_1_1PETScABecLap.html#a58e606b01690400f1da1101594e4bc84", null ],
+    [ "bcoefs", "classamrex_1_1PETScABecLap.html#ac7dbd144ec1cfc9a3c7802f0d9a76a01", null ],
     [ "cell_id", "classamrex_1_1PETScABecLap.html#a0c97a957588e229e248638455172fe75", null ],
     [ "cell_id_vec", "classamrex_1_1PETScABecLap.html#adce283edc6f4a7d4a016c19493c51418", null ],
     [ "comm", "classamrex_1_1PETScABecLap.html#a12f0bff39693de9bdefaecc8c5970e93", null ],

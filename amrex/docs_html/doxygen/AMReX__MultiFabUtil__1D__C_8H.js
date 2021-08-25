@@ -13,6 +13,6 @@ var AMReX__MultiFabUtil__1D__C_8H =
     [ "amrex_avgdown_nodes", "AMReX__MultiFabUtil__1D__C_8H.html#af571eb63b15d9531a1a6d8eb9c703785", null ],
     [ "amrex_avgdown_nodes", "AMReX__MultiFabUtil__1D__C_8H.html#a224bde3e83a662219a868442ee59f3e0", null ],
     [ "amrex_avgdown_with_vol", "AMReX__MultiFabUtil__1D__C_8H.html#a2b6f69d99069a5b71f44f83acfe3477e", null ],
-    [ "amrex_compute_divergence", "AMReX__MultiFabUtil__1D__C_8H.html#aa4a6e5eaf82258dff02c7650ef11ea1a", null ],
-    [ "amrex_compute_gradient", "AMReX__MultiFabUtil__1D__C_8H.html#a87a1f39c43e09c983b632eb4a7aae394", null ]
+    [ "amrex_compute_divergence", "AMReX__MultiFabUtil__1D__C_8H.html#aab340fe16ae43377f8c6951777d3c6e8", null ],
+    [ "amrex_compute_gradient", "AMReX__MultiFabUtil__1D__C_8H.html#afa6d2d0c832d99397a5807b2a955d64a", null ]
 ];

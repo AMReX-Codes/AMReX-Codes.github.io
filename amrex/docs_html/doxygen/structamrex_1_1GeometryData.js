@@ -11,7 +11,7 @@ var structamrex_1_1GeometryData =
     [ "ProbLo", "structamrex_1_1GeometryData.html#a3d9777846ced2fc748f213cc58ff0dfd", null ],
     [ "coord", "structamrex_1_1GeometryData.html#a68d36ab01dbd0848e0f3e43ef59b74cb", null ],
     [ "domain", "structamrex_1_1GeometryData.html#a092f48607ca49b3796425e78b96a3b68", null ],
-    [ "dx", "structamrex_1_1GeometryData.html#a292951327bd08f8c0f357087ebdabb19", null ],
-    [ "is_periodic", "structamrex_1_1GeometryData.html#a89564d1f9f4b2c8edca003f584b6d8b7", null ],
+    [ "dx", "structamrex_1_1GeometryData.html#a6ae1008fee5d826e469209d098776573", null ],
+    [ "is_periodic", "structamrex_1_1GeometryData.html#a1c153da19d61edca41192dd82233071b", null ],
     [ "prob_domain", "structamrex_1_1GeometryData.html#aee36e84e322a0ca0025338dcca8475d1", null ]
 ];

@@ -1,8 +1,8 @@
 var AMReX__MLEBABecLap__3D__K_8H =
 [
-    [ "mlebabeclap_adotx", "AMReX__MLEBABecLap__3D__K_8H.html#a03cc65134686e2f3cce20c8ee08906ac", null ],
-    [ "mlebabeclap_adotx_centroid", "AMReX__MLEBABecLap__3D__K_8H.html#a4dd0e97992a9a3b2093fd6d19d6efa37", null ],
-    [ "mlebabeclap_ebflux", "AMReX__MLEBABecLap__3D__K_8H.html#a06af67044fe147e192d172ee33dd4550", null ],
+    [ "mlebabeclap_adotx", "AMReX__MLEBABecLap__3D__K_8H.html#aff3db9e0a6ad08f9e98ff966faeb1244", null ],
+    [ "mlebabeclap_adotx_centroid", "AMReX__MLEBABecLap__3D__K_8H.html#a6afaf2de82292fd543d209306a1cfd75", null ],
+    [ "mlebabeclap_ebflux", "AMReX__MLEBABecLap__3D__K_8H.html#a4031141e7aabd2031592fa381a024c4b", null ],
     [ "mlebabeclap_flux_x", "AMReX__MLEBABecLap__3D__K_8H.html#aa4047a599fca09d24c83a32f79561ba2", null ],
     [ "mlebabeclap_flux_x_0", "AMReX__MLEBABecLap__3D__K_8H.html#a5535836b58895eb3be42a2e5ce2d85d4", null ],
     [ "mlebabeclap_flux_y", "AMReX__MLEBABecLap__3D__K_8H.html#af822987d7c096263dbeda2c40fbc231f", null ],

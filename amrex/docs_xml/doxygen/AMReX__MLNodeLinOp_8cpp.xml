@@ -330,20 +330,6 @@
         <childnode refid="140" relation="include">
         </childnode>
       </node>
-      <node id="166">
-        <label>AMReX_MultiFabUtil_3D_C.H</label>
-        <link refid="AMReX__MultiFabUtil__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="88" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="146" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-      </node>
       <node id="112">
         <label>AMReX_GpuAllocators.H</label>
         <link refid="AMReX__GpuAllocators_8H"/>
@@ -512,6 +498,12 @@
       </node>
       <node id="77">
         <label>numeric</label>
+      </node>
+      <node id="162">
+        <label>AMReX_MLNodeLap_1D_K.H</label>
+        <link refid="AMReX__MLNodeLap__1D__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="141">
         <label>AMReX_FabArrayUtility.H</label>
@@ -1361,12 +1353,6 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="162">
-        <label>AMReX_MLNodeLap_3D_K.H</label>
-        <link refid="AMReX__MLNodeLap__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="134">
         <label>AMReX_LayoutData.H</label>
         <link refid="AMReX__LayoutData_8H"/>
@@ -1391,6 +1377,22 @@
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>AMReX_MultiFabUtil_1D_C.H</label>
+        <link refid="AMReX__MultiFabUtil__1D__C_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="146" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
         </childnode>
       </node>
       <node id="48">
@@ -2334,7 +2336,7 @@
 <codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;int<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>sfab<sp/>=<sp/>omask.const_array(mfi);</highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>bx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ad8023d85badaeebe85e41fb1714083ca" kindref="member">mlndlap_set_dot_mask</ref>(tbx,<sp/>dfab,<sp/>sfab,<sp/>nddomain,<sp/>lobc,<sp/>hibc);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a9c58e1a97a7d3c0eb90d98fd9b022b05" kindref="member">mlndlap_set_dot_mask</ref>(tbx,<sp/>dfab,<sp/>sfab,<sp/>nddomain,<sp/>lobc,<sp/>hibc);</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="204"><highlight class="normal">}</highlight></codeline>
@@ -2351,15 +2353,15 @@
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a2bb5e031c87b6bdf67618f9c25dc6945" kindref="member">m_masks_built</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"></highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" kindref="member">m_is_bottom_singular</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itlo<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ithi<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itlo<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1ae74ca314ec3dcba18a97daf57896baaa" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>()<sp/>&amp;&amp;<sp/>ithi<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1afabfb801a5e93c7c2d74250dd7223aff" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>())</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itlo<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>ithi<sp/>=<sp/>std::find(<ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a43103621a410a27f2e8b9607f4ae6f34" kindref="member">begin</ref>(),<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>(),<sp/>BCType::Dirichlet);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(itlo<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1aac661e9e03991a16c7aca157ca2447b0" kindref="member">m_lobc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>()<sp/>&amp;&amp;<sp/>ithi<sp/>==<sp/><ref refid="classamrex_1_1MLLinOp_1a619323b7ef2de7c06f7c480c9bcdf3d2" kindref="member">m_hibc</ref>[0].<ref refid="namespaceamrex_1a199ea36f687fd4271b73c72b56fd3279" kindref="member">end</ref>())</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/></highlight><highlight class="comment">//<sp/>No<sp/>Dirichlet</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLNodeLinOp_1a51345471274acc0bdd0b5477285d4db1" kindref="member">m_is_bottom_singular</ref><sp/>=<sp/>(<ref refid="classamrex_1_1MLLinOp_1aaba23614888f937956554945e6a2a5a0" kindref="member">m_domain_covered</ref>[0]<sp/>&amp;&amp;<sp/>!<ref refid="classamrex_1_1MLNodeLinOp_1a7c0bb3eeb87e33f76c055d78e1e68df2" kindref="member">m_overset_dirichlet_mask</ref>);</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lobc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a1ac509d7066244935918fdff0326ca95" kindref="member">LoBC</ref>();</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>hibc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a458383f5dc4aba88329db715fd027d7a" kindref="member">HiBC</ref>();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lobc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a7ef6c8434223ac6e052359cd4f27fbe6" kindref="member">LoBC</ref>();</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>hibc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ac313a2de49bd67c23fad23d5c4045e70" kindref="member">HiBC</ref>();</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"></highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev<sp/>=<sp/>0;<sp/>amrlev<sp/>&lt;<sp/><ref refid="classamrex_1_1MLLinOp_1ad6bbf49c1bdb88256721471b22b4b044" kindref="member">m_num_amr_levels</ref>;<sp/>++amrlev)</highlight></codeline>
 <codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -2392,7 +2394,7 @@
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;int<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>ccarr<sp/>=<sp/>ccm.const_array(mfi);</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>ndbx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1adc4d3c3a4889fa37244bf76015bc6ba5" kindref="member">mlndlap_set_dirichlet_mask</ref>(tbx,<sp/>mskarr,<sp/>ccarr,<sp/>nddomain,<sp/>lobc,<sp/>hibc);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a03235199d4d7140b2b814f6ec2a91605" kindref="member">mlndlap_set_dirichlet_mask</ref>(tbx,<sp/>mskarr,<sp/>ccarr,<sp/>nddomain,<sp/>lobc,<sp/>hibc);</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2501,15 +2503,15 @@
 <codeline lineno="365"><highlight class="normal"></highlight></codeline>
 <codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLNodeLinOp_1af4d1bfea4dae502fae40e6b71fd4deae" kindref="member">m_coarsening_strategy</ref><sp/>==<sp/><ref refid="classamrex_1_1MLNodeLinOp_1a2ddc20eaca70aaa6da5935648ce06a82a827faff1bdcfe446237c4d6289abce66" kindref="member">CoarseningStrategy::Sigma</ref>)</highlight></codeline>
 <codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lobc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a1ac509d7066244935918fdff0326ca95" kindref="member">LoBC</ref>();</highlight></codeline>
-<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>hibc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a458383f5dc4aba88329db715fd027d7a" kindref="member">HiBC</ref>();</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>lobc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1a7ef6c8434223ac6e052359cd4f27fbe6" kindref="member">LoBC</ref>();</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>hibc<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ac313a2de49bd67c23fad23d5c4045e70" kindref="member">HiBC</ref>();</highlight></codeline>
 <codeline lineno="370"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="371"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(MFIter<sp/>mfi(phi);<sp/>mfi.isValid();<sp/>++mfi)</highlight></codeline>
 <codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>fab<sp/>=<sp/>phi.array(mfi);</highlight></codeline>
-<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1add255016e301c7bdbc0e011631e0f01f" kindref="member">mlndlap_applybc</ref>(mfi.validbox(),fab,nd_domain,lobc,hibc);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1acc59a603d50b00d769fdc49ed60d6cd1" kindref="member">mlndlap_applybc</ref>(mfi.validbox(),fab,nd_domain,lobc,hibc);</highlight></codeline>
 <codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="379"><highlight class="normal">}</highlight></codeline>

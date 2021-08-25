@@ -3,11 +3,10 @@ var classamrex_1_1IntVect =
     [ "shift_hasher", "classamrex_1_1IntVect_1_1shift__hasher.html", "classamrex_1_1IntVect_1_1shift__hasher" ],
     [ "hasher", "classamrex_1_1IntVect.html#a0da0ad772b267330594cbcc72bb48c5c", null ],
     [ "IntVect", "classamrex_1_1IntVect.html#a54c9d1b5040d65c9a92d9da68d80e687", null ],
-    [ "IntVect", "classamrex_1_1IntVect.html#ae7f975783c41ae4e14486628b8284a98", null ],
     [ "IntVect", "classamrex_1_1IntVect.html#a9f7286d7950a651fc45c7d51f902fee7", null ],
     [ "IntVect", "classamrex_1_1IntVect.html#ae9684c0f49b86a16a696f99521290fe9", null ],
     [ "IntVect", "classamrex_1_1IntVect.html#a964cade2a31b2c82990dcb7726dd5d1d", null ],
-    [ "IntVect", "classamrex_1_1IntVect.html#a62bad10560869f957caa4ec37443d245", null ],
+    [ "IntVect", "classamrex_1_1IntVect.html#addf6e967457cdc48def7f89cdd6e3423", null ],
     [ "allGE", "classamrex_1_1IntVect.html#ae3c7940850b880ae2d83dab12e73434a", null ],
     [ "allGT", "classamrex_1_1IntVect.html#aa2afc8258c47e63ae123d7f2edf12589", null ],
     [ "allLE", "classamrex_1_1IntVect.html#a9bfc5b4da499c3d53789bd0a3ceb2eda", null ],
@@ -73,6 +72,6 @@ var classamrex_1_1IntVect =
     [ "operator>>", "classamrex_1_1IntVect.html#a1da4bfe27f128e362972e3ed4156e6f1", null ],
     [ "ParallelDescriptor::Mpi_typemap", "classamrex_1_1IntVect.html#adccd37eeac931837d637545e8eba842e", null ],
     [ "Unit", "classamrex_1_1IntVect.html#a93df7e94c6d2d07ea3eb7647500bf751", null ],
-    [ "vect", "classamrex_1_1IntVect.html#af6f27b885df1ab2fc906a81036859fd2", null ],
+    [ "vect", "classamrex_1_1IntVect.html#aa90d26b430997cad2cfb8c21f6fb2e22", null ],
     [ "Zero", "classamrex_1_1IntVect.html#a5b50f516a319513a10154ef402c2717b", null ]
 ];

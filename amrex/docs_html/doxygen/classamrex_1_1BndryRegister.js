@@ -26,6 +26,6 @@ var classamrex_1_1BndryRegister =
     [ "setVal", "classamrex_1_1BndryRegister.html#a8a45cb99b2e11388c149bf277120fbc9", null ],
     [ "size", "classamrex_1_1BndryRegister.html#a32eadb3490dbaa29c79ebea0c0c8b8bd", null ],
     [ "write", "classamrex_1_1BndryRegister.html#aadb7c6f9bb2e6ed7be5c1c0647576615", null ],
-    [ "bndry", "classamrex_1_1BndryRegister.html#a4ae6f8b4196e51abb80fd72200269835", null ],
+    [ "bndry", "classamrex_1_1BndryRegister.html#adb20e61942a04f1783a0e82598583bc9", null ],
     [ "grids", "classamrex_1_1BndryRegister.html#ae15db9f8fcfd9583ae5907d4cf69eeb9", null ]
 ];

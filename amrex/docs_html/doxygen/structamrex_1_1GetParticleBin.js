@@ -4,6 +4,6 @@ var structamrex_1_1GetParticleBin =
     [ "bin_size", "structamrex_1_1GetParticleBin.html#a09715cba9b15ca7c87543db7a45a32b0", null ],
     [ "box", "structamrex_1_1GetParticleBin.html#abbe4e5c9824e8d9ccfaf7a524ddac32b", null ],
     [ "domain", "structamrex_1_1GetParticleBin.html#aaa23e379300a9df362fc27641c229baf", null ],
-    [ "dxi", "structamrex_1_1GetParticleBin.html#a7e5a69b6426c884ba4595da42b0d374d", null ],
-    [ "plo", "structamrex_1_1GetParticleBin.html#a0113383bf919b6f430cca11367ff1c16", null ]
+    [ "dxi", "structamrex_1_1GetParticleBin.html#a694afb5ccbf5c681f6b016e2574f69ab", null ],
+    [ "plo", "structamrex_1_1GetParticleBin.html#aeb85700e02150d77688f2f48f87a0220", null ]
 ];

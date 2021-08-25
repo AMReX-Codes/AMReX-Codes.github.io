@@ -200,6 +200,16 @@
         <childnode refid="43" relation="include">
         </childnode>
       </node>
+      <node id="151">
+        <label>AMReX_InterpBndryData_1D_K.H</label>
+        <link refid="AMReX__InterpBndryData__1D__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="152" relation="include">
+        </childnode>
+      </node>
       <node id="29">
         <label>AMReX_BLassert.H</label>
         <link refid="AMReX__BLassert_8H"/>
@@ -1258,16 +1268,6 @@
         <childnode refid="54" relation="include">
         </childnode>
       </node>
-      <node id="151">
-        <label>AMReX_InterpBndryData_3D_K.H</label>
-        <link refid="AMReX__InterpBndryData__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="56" relation="include">
-        </childnode>
-        <childnode refid="152" relation="include">
-        </childnode>
-      </node>
       <node id="99">
         <label>AMReX_GpuAtomic.H</label>
         <link refid="AMReX__GpuAtomic_8H"/>
@@ -2044,7 +2044,7 @@
 <codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Physical<sp/>bndry,<sp/>copy<sp/>from<sp/>grid.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bnd_fab<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face][mfi];</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bnd_fab<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face][mfi];</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src_fab<sp/>=<sp/>mf[mfi];</highlight></codeline>
 <codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bnd_array<sp/>=<sp/>bnd_fab.<ref refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" kindref="member">array</ref>();</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>src_array<sp/>=<sp/>src_fab.array();</highlight></codeline>
@@ -2114,7 +2114,7 @@
 <codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max_order==3<sp/>||<sp/>max_order==1)</highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab<sp/>foo(<ref refid="classamrex_1_1BndryRegister_1ae15db9f8fcfd9583ae5907d4cf69eeb9" kindref="member">grids</ref>,<ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[0].<ref refid="classamrex_1_1BndryRegister_1a543c6c7f9abadfda4cb25368007d14f8" kindref="member">DistributionMap</ref>(),<sp/>1,<sp/>0,<sp/>MFInfo().SetAlloc(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),<sp/><ref refid="namespaceamrex_1abda821661019fb0a77eb3a9706dc7330" kindref="member">FArrayBoxFactory</ref>());</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab<sp/>foo(<ref refid="classamrex_1_1BndryRegister_1ae15db9f8fcfd9583ae5907d4cf69eeb9" kindref="member">grids</ref>,<ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[0].<ref refid="classamrex_1_1BndryRegister_1a543c6c7f9abadfda4cb25368007d14f8" kindref="member">DistributionMap</ref>(),<sp/>1,<sp/>0,<sp/>MFInfo().SetAlloc(</highlight><highlight class="keyword">false</highlight><highlight class="normal">),<sp/><ref refid="namespaceamrex_1abda821661019fb0a77eb3a9706dc7330" kindref="member">FArrayBoxFactory</ref>());</highlight></codeline>
 <codeline lineno="182"><highlight class="normal"></highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MFItInfo<sp/>info;</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a8e6abda3339e4295716d7e2ff78e9603" kindref="member">Gpu::notInLaunchRegion</ref>())<sp/>info.SetDynamic(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
@@ -2137,8 +2137,8 @@
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fine_bx[face]<sp/>!=<sp/>fine_domain[face]<sp/>||<sp/><ref refid="classamrex_1_1BndryData_1a2aee61504e5cdef7ac8af1986bff5c6c" kindref="member">geom</ref>.<ref refid="classamrex_1_1Geometry_1aed68387cf6235047891119eb57ee878e" kindref="member">isPeriodic</ref>(dir))</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>crse_array<sp/>=<sp/>crse[face].array(mfi);</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bdry_array<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" kindref="member">array</ref>(mfi);</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face][mfi].box();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bdry_array<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" kindref="member">array</ref>(mfi);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>b<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face][mfi].box();</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>rr<sp/>=<sp/>ratio.dim3();</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Internal<sp/>or<sp/>periodic<sp/>edge,<sp/>interpolate<sp/>from<sp/>crse<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
@@ -2199,7 +2199,7 @@
 <codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Physical<sp/>bndry,<sp/>copy<sp/>from<sp/>ghost<sp/>region<sp/>of<sp/>corresponding<sp/>grid</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bnd_fab<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face][mfi];</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bnd_fab<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face][mfi];</highlight></codeline>
 <codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>src_fab<sp/>=<sp/>(*fine)[mfi];</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bnd_array<sp/>=<sp/>bnd_fab.<ref refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" kindref="member">array</ref>();</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>src_array<sp/>=<sp/>src_fab.array();</highlight></codeline>

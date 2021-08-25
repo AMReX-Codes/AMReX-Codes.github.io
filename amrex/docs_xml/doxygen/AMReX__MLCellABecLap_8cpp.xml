@@ -540,6 +540,12 @@
         <childnode refid="19" relation="include">
         </childnode>
       </node>
+      <node id="165">
+        <label>AMReX_MLCellABecLap_1D_K.H</label>
+        <link refid="AMReX__MLCellABecLap__1D__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="69">
         <label>map</label>
       </node>
@@ -1473,12 +1479,6 @@
         <childnode refid="46" relation="include">
         </childnode>
       </node>
-      <node id="165">
-        <label>AMReX_MLCellABecLap_3D_K.H</label>
-        <link refid="AMReX__MLCellABecLap__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="20">
         <label>iostream</label>
       </node>
@@ -2271,7 +2271,7 @@
 <codeline lineno="173"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><ref refid="classamrex_1_1MLCellABecLap_1ae8f4b9e81f1e5650a091fff25f2afdf9" kindref="member">MLCellABecLap::getFluxes</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Array&lt;MultiFab*,AMREX_SPACEDIM&gt;<sp/>&gt;&amp;<sp/>a_flux,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><ref refid="classamrex_1_1MLCellABecLap_1add88d6133181d2515575e939e3bd0aa5" kindref="member">MLCellABecLap::getFluxes</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;Array&lt;MultiFab*,AMREX_SPACEDIM&gt;<sp/>&gt;&amp;<sp/>a_flux,</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Vector&lt;MultiFab*&gt;&amp;<sp/>a_sol,</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Location<sp/>a_loc)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="179"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
@@ -2280,7 +2280,7 @@
 <codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>betainv<sp/>=<sp/>Real(1.0)<sp/>/<sp/><ref refid="classamrex_1_1MLCellABecLap_1a0e67dc87e4b048beb5f44d38b3ccebfe" kindref="member">getBScalar</ref>();</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nlevs<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1adcfe0a91f9b85388c17eee6172f02975" kindref="member">NAMRLevels</ref>();</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>alev<sp/>=<sp/>0;<sp/>alev<sp/>&lt;<sp/>nlevs;<sp/>++alev)<sp/>{</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLCellLinOp_1ac3c3b7b4ee2a2c235cfed06d40db2949" kindref="member">compFlux</ref>(alev,<sp/>a_flux[alev],<sp/>*a_sol[alev],<sp/>a_loc);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLCellLinOp_1acd6c78c0e6307234b1539ba81caadb9c" kindref="member">compFlux</ref>(alev,<sp/>a_flux[alev],<sp/>*a_sol[alev],<sp/>a_loc);</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim<sp/>=<sp/>0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++idim)<sp/>{</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLCellLinOp_1a4ee573102053163e673153f3334153fe" kindref="member">unapplyMetricTerm</ref>(alev,<sp/>0,<sp/>*a_flux[alev][idim]);</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(betainv<sp/>!=<sp/>Real(1.0))<sp/>{</highlight></codeline>
@@ -2312,11 +2312,11 @@
 <codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>domain<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[amrlev][mglev].Domain();</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>beta<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1a0e67dc87e4b048beb5f44d38b3ccebfe" kindref="member">getBScalar</ref>();</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;MultiFab<sp/>const*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcoef<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1a050ddd816353730b1eb526829514b1c2" kindref="member">getBCoeffs</ref>(amrlev,mglev);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;MultiFab<sp/>const*,<sp/>AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>bcoef<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e" kindref="member">getBCoeffs</ref>(amrlev,mglev);</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>FArrayBox<sp/>foo(Box(IntVect(0),IntVect(1)));</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>has_bcoef<sp/>=<sp/>(bcoef[0]<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>maskvals<sp/>=<sp/><ref refid="classamrex_1_1MLCellLinOp_1a4c34af07271b2f0b7f9efdaffa6920d0" kindref="member">m_maskvals</ref>[amrlev][mglev];</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>maskvals<sp/>=<sp/><ref refid="classamrex_1_1MLCellLinOp_1af7504eedbd467f1237874cbc10dd6d39" kindref="member">m_maskvals</ref>[amrlev][mglev];</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bcondloc<sp/>=<sp/>*<ref refid="classamrex_1_1MLCellLinOp_1a20a2d5349510243c481d2b6ce1992f5c" kindref="member">m_bcondloc</ref>[amrlev][mglev];</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>bndry<sp/>=<sp/>*<ref refid="classamrex_1_1MLCellLinOp_1ab8f93178ea3f02ba63da966de7796970" kindref="member">m_bndry_sol</ref>[amrlev];</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"></highlight></codeline>
@@ -2354,7 +2354,7 @@
 <codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BoundCond<sp/>bcthi<sp/>=<sp/>bdcv[icomp][ohi];</highlight></codeline>
 <codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcllo<sp/>=<sp/>bdlv[icomp][olo];</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bclhi<sp/>=<sp/>bdlv[icomp][ohi];</highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1adc90c319d9f918dac74fe5c500cc2fc4" kindref="member">m_lobc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::inhomogNeumann<sp/>&amp;&amp;<sp/>outside_domain_lo)</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1aec9b82494ef69731d10e9b293b64fdd8" kindref="member">m_lobc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::inhomogNeumann<sp/>&amp;&amp;<sp/>outside_domain_lo)</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idim<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>fac<sp/>=<sp/>beta*dxi;</highlight></codeline>
@@ -2399,7 +2399,7 @@
 <codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a187bf73f893ba53dc2ee3e70c8f8811f" kindref="member">m_hibc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::inhomogNeumann<sp/>&amp;&amp;<sp/>outside_domain_hi)</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a94066c5e255464485d5af0d1f174e1c2" kindref="member">m_hibc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::inhomogNeumann<sp/>&amp;&amp;<sp/>outside_domain_hi)</highlight></codeline>
 <codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idim<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>fac<sp/>=<sp/>beta*dxi;</highlight></codeline>
@@ -2448,7 +2448,7 @@
 <codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>Robin<sp/>BC,<sp/>see<sp/>comments<sp/>in<sp/>AMReX_MLABecLaplacian.cpp<sp/>above</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>function<sp/>applyRobinBCTermsCoeffs.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;Real<sp/>const&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>rbc<sp/>=<sp/>(*<ref refid="classamrex_1_1MLCellLinOp_1a920175d896857c64b3544cd0f6c80288" kindref="member">m_robin_bcval</ref>[amrlev])[mfi].const_array(icomp*3);</highlight></codeline>
-<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1adc90c319d9f918dac74fe5c500cc2fc4" kindref="member">m_lobc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::Robin<sp/>&amp;&amp;<sp/>outside_domain_lo)</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1aec9b82494ef69731d10e9b293b64fdd8" kindref="member">m_lobc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::Robin<sp/>&amp;&amp;<sp/>outside_domain_lo)</highlight></codeline>
 <codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idim<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>fac<sp/>=<sp/>beta*dxi*dxi;</highlight></codeline>
@@ -2476,7 +2476,7 @@
 <codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a187bf73f893ba53dc2ee3e70c8f8811f" kindref="member">m_hibc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::Robin<sp/>&amp;&amp;<sp/>outside_domain_hi)</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1MLLinOp_1a94066c5e255464485d5af0d1f174e1c2" kindref="member">m_hibc_orig</ref>[icomp][idim]<sp/>==<sp/>LinOpBCType::Robin<sp/>&amp;&amp;<sp/>outside_domain_hi)</highlight></codeline>
 <codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(idim<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/>fac<sp/>=<sp/>beta*dxi*dxi;</highlight></codeline>
@@ -2562,7 +2562,7 @@
 <codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hypre_solver-&gt;setACoeffs(alpha);</highlight></codeline>
 <codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"></highlight></codeline>
-<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bc<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1a050ddd816353730b1eb526829514b1c2" kindref="member">getBCoeffs</ref>(0,<sp/>mglev);</highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bc<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e" kindref="member">getBCoeffs</ref>(0,<sp/>mglev);</highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bc[0])</highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hypre_solver-&gt;setBCoeffs(bc);</highlight></codeline>
@@ -2576,7 +2576,7 @@
 <codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dm,<sp/>1,<sp/>0,<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
 <codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>beta[idim].setVal(1.0);</highlight></codeline>
 <codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hypre_solver-&gt;setBCoeffs(<ref refid="namespaceamrex_1aa0e4c452a9691cc21bd0c62a4694686f" kindref="member">amrex::GetArrOfConstPtrs</ref>(beta));</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hypre_solver-&gt;setBCoeffs(<ref refid="namespaceamrex_1a1c2496ecb409639e8639cf01881d0acb" kindref="member">amrex::GetArrOfConstPtrs</ref>(beta));</highlight></codeline>
 <codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/>hypre_solver-&gt;setIsMatrixSingular(this-&gt;<ref refid="classamrex_1_1MLLinOp_1aa6ff4935f1246d7c94ac38dc65c25d7d" kindref="member">isBottomSingular</ref>());</highlight></codeline>
 <codeline lineno="484"><highlight class="normal"></highlight></codeline>
@@ -2611,7 +2611,7 @@
 <codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petsc_solver-&gt;setACoeffs(alpha);</highlight></codeline>
 <codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="515"><highlight class="normal"></highlight></codeline>
-<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bc<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1a050ddd816353730b1eb526829514b1c2" kindref="member">getBCoeffs</ref>(0,<sp/>mglev);</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>bc<sp/>=<sp/><ref refid="classamrex_1_1MLCellABecLap_1aacb5d55dc92f8d82e56fa0636c9d5a3e" kindref="member">getBCoeffs</ref>(0,<sp/>mglev);</highlight></codeline>
 <codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bc[0])</highlight></codeline>
 <codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petsc_solver-&gt;setBCoeffs(bc);</highlight></codeline>
@@ -2625,7 +2625,7 @@
 <codeline lineno="527"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dm,<sp/>1,<sp/>0,<sp/>MFInfo(),<sp/>factory);</highlight></codeline>
 <codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>beta[idim].setVal(1.0);</highlight></codeline>
 <codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petsc_solver-&gt;setBCoeffs(<ref refid="namespaceamrex_1aa0e4c452a9691cc21bd0c62a4694686f" kindref="member">amrex::GetArrOfConstPtrs</ref>(beta));</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>petsc_solver-&gt;setBCoeffs(<ref refid="namespaceamrex_1a1c2496ecb409639e8639cf01881d0acb" kindref="member">amrex::GetArrOfConstPtrs</ref>(beta));</highlight></codeline>
 <codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>petsc_solver;</highlight></codeline>
 <codeline lineno="533"><highlight class="normal">}</highlight></codeline>

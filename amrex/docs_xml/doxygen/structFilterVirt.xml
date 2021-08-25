@@ -17,9 +17,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainerI.H" line="652" column="23" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainerI.H" bodystart="652" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structFilterVirt_1a03db87250f7abc43c08e94500072b303" prot="public" static="no" mutable="no">
-        <type>GpuArray&lt; Real, 3 &gt;</type>
-        <definition>GpuArray&lt;Real, 3&gt; FilterVirt::m_plo</definition>
+      <memberdef kind="variable" id="structFilterVirt_1a1dfe31cd80d8874bb9f33d3825231f1c" prot="public" static="no" mutable="no">
+        <type>GpuArray&lt; Real, AMREX_SPACEDIM &gt;</type>
+        <definition>GpuArray&lt;Real, AMREX_SPACEDIM&gt; FilterVirt::m_plo</definition>
         <argsstring></argsstring>
         <name>m_plo</name>
         <briefdescription>
@@ -30,9 +30,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainerI.H" line="653" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainerI.H" bodystart="653" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structFilterVirt_1a519f972bf81527fa50da461b82b6c3f1" prot="public" static="no" mutable="no">
-        <type>GpuArray&lt; Real, 3 &gt;</type>
-        <definition>GpuArray&lt;Real, 3&gt; FilterVirt::m_dxi</definition>
+      <memberdef kind="variable" id="structFilterVirt_1a1fc799a241e146a74f383e58b291f188" prot="public" static="no" mutable="no">
+        <type>GpuArray&lt; Real, AMREX_SPACEDIM &gt;</type>
+        <definition>GpuArray&lt;Real, AMREX_SPACEDIM&gt; FilterVirt::m_dxi</definition>
         <argsstring></argsstring>
         <name>m_dxi</name>
         <briefdescription>
@@ -58,21 +58,21 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="structFilterVirt_1a179a1306eee403ebd0f5c2a5e82588dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="structFilterVirt_1a9f3aa887f80e6e29f1eed0eab5686e31" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>FilterVirt::FilterVirt</definition>
-        <argsstring>(const amrex::AssignGrid&lt; amrex::DenseBinIteratorFactory&lt; amrex::Box &gt;&gt; assign_buffer_grid, const GpuArray&lt; Real, 3 &gt; &amp;plo, const GpuArray&lt; Real, 3 &gt; &amp;dxi, const Box &amp;domain)</argsstring>
+        <argsstring>(const amrex::AssignGrid&lt; amrex::DenseBinIteratorFactory&lt; amrex::Box &gt;&gt; assign_buffer_grid, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;plo, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxi, const Box &amp;domain)</argsstring>
         <name>FilterVirt</name>
         <param>
           <type>const <ref refid="structamrex_1_1AssignGrid" kindref="compound">amrex::AssignGrid</ref>&lt; <ref refid="structamrex_1_1DenseBinIteratorFactory" kindref="compound">amrex::DenseBinIteratorFactory</ref>&lt; <ref refid="classamrex_1_1Box" kindref="compound">amrex::Box</ref> &gt;&gt;</type>
           <declname>assign_buffer_grid</declname>
         </param>
         <param>
-          <type>const GpuArray&lt; Real, 3 &gt; &amp;</type>
+          <type>const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>plo</declname>
         </param>
         <param>
-          <type>const GpuArray&lt; Real, 3 &gt; &amp;</type>
+          <type>const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;</type>
           <declname>dxi</declname>
         </param>
         <param>
@@ -133,15 +133,15 @@
       <node id="4">
         <label>amrex::AssignGrid&lt; amrex::DenseBinIteratorFactory&lt; amrex::Box &gt; &gt;</label>
         <link refid="structamrex_1_1AssignGrid"/>
-        <childnode refid="2" relation="usage">
-          <edgelabel>m_plo</edgelabel>
-          <edgelabel>m_dxi</edgelabel>
-        </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>m_hi</edgelabel>
           <edgelabel>m_bin_size</edgelabel>
           <edgelabel>m_lo</edgelabel>
           <edgelabel>m_num_bins</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>m_plo</edgelabel>
+          <edgelabel>m_dxi</edgelabel>
         </childnode>
         <childnode refid="6" relation="usage">
           <edgelabel>m_domain</edgelabel>
@@ -184,7 +184,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>amrex::GpuArray&lt; Real, 3 &gt;</label>
+        <label>amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
         <childnode refid="3" relation="usage">
           <edgelabel>arr</edgelabel>
@@ -197,11 +197,11 @@
     </collaborationgraph>
     <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainerI.H" line="650" column="1" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleContainerI.H" bodystart="649" bodyend="668"/>
     <listofallmembers>
-      <member refid="structFilterVirt_1a179a1306eee403ebd0f5c2a5e82588dc" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>FilterVirt</name></member>
+      <member refid="structFilterVirt_1a9f3aa887f80e6e29f1eed0eab5686e31" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>FilterVirt</name></member>
       <member refid="structFilterVirt_1a0560deac64bc66d21eb1ad8f1c24c430" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>m_assign_buffer_grid</name></member>
       <member refid="structFilterVirt_1a321c610c520a56ef865cc89c0f54211b" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>m_domain</name></member>
-      <member refid="structFilterVirt_1a519f972bf81527fa50da461b82b6c3f1" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>m_dxi</name></member>
-      <member refid="structFilterVirt_1a03db87250f7abc43c08e94500072b303" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>m_plo</name></member>
+      <member refid="structFilterVirt_1a1fc799a241e146a74f383e58b291f188" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>m_dxi</name></member>
+      <member refid="structFilterVirt_1a1dfe31cd80d8874bb9f33d3825231f1c" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>m_plo</name></member>
       <member refid="structFilterVirt_1aa0dc57c35d82cef845b823c50ee367c3" prot="public" virt="non-virtual"><scope>FilterVirt</scope><name>operator()</name></member>
     </listofallmembers>
   </compounddef>

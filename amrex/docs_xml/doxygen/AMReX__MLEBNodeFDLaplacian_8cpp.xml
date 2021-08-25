@@ -474,6 +474,12 @@
       <node id="60">
         <label>numeric</label>
       </node>
+      <node id="169">
+        <label>AMReX_MLNodeLap_1D_K.H</label>
+        <link refid="AMReX__MLNodeLap__1D__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="171">
         <label>AMReX_MLNodeTensorLaplacian.H</label>
         <link refid="AMReX__MLNodeTensorLaplacian_8H"/>
@@ -593,6 +599,12 @@
         <childnode refid="72" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>AMReX_MLNodeTensorLap_1D_K.H</label>
+        <link refid="AMReX__MLNodeTensorLap__1D__K_8H"/>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -1362,12 +1374,6 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="169">
-        <label>AMReX_MLNodeLap_3D_K.H</label>
-        <link refid="AMReX__MLNodeLap__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="139">
         <label>AMReX_LayoutData.H</label>
         <link refid="AMReX__LayoutData_8H"/>
@@ -1918,12 +1924,6 @@
       <node id="33">
         <label>type_traits</label>
       </node>
-      <node id="172">
-        <label>AMReX_MLNodeTensorLap_3D_K.H</label>
-        <link refid="AMReX__MLNodeTensorLap__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="93">
         <label>set</label>
       </node>
@@ -2204,7 +2204,7 @@
 <codeline lineno="19"><highlight class="normal">{}</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1abb9ba9cd4602bb3e85b82c70284915f5" kindref="member">MLEBNodeFDLaplacian::setSigma</ref><sp/>(Array&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_sigma)<sp/>noexcept</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1ab81f654708d4756a07160c7eaa343d48" kindref="member">MLEBNodeFDLaplacian::setSigma</ref><sp/>(Array&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_sigma)<sp/>noexcept</highlight></codeline>
 <codeline lineno="23"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>++i)<sp/>{</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_sigma[i]<sp/>=<sp/>a_sigma[i];</highlight></codeline>
@@ -2387,9 +2387,9 @@
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1aa1946437fba75854321fa1b73beedd58" kindref="member">m_acoef</ref>.emplace_back(<ref refid="namespaceamrex_1a314545dbd77212eb64c3a248c754eda6" kindref="member">amrex::convert</ref>(<ref refid="classamrex_1_1MLLinOp_1a3f9b0a7c3a91ca7e13664dbfe7115eed" kindref="member">m_grids</ref>[0][0],IntVect(1)),</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLLinOp_1a80552ba3fc7cdd6bb00739c66327ae2c" kindref="member">m_dmap</ref>[0][0],<sp/>1,<sp/>0);</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dxinv<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[0][0].InvCellSizeArray();</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcx<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[0]*dxinv[0]*dxinv[0];,</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcy<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[1]*dxinv[1]*dxinv[1];,</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcz<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[2]*dxinv[2]*dxinv[2];)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcx<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[0]*dxinv[0]*dxinv[0];,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcy<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[1]*dxinv[1]*dxinv[1];,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bcz<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[2]*dxinv[2]*dxinv[2];)</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a824178034487842a323be9ae255c249c" kindref="member">m_a_huge</ref><sp/>=<sp/>1.e10<sp/>*<sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(bcx),+<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(bcy),+<ref refid="complex-type_8h_1a3aa069ac3980707dae1e0530f50d59e4" kindref="member">std::abs</ref>(bcz));</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>ahuge<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a824178034487842a323be9ae255c249c" kindref="member">m_a_huge</ref>;</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
@@ -2447,9 +2447,9 @@
 <codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MLEBNodeFDLaplacian::Fapply()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="263"><highlight class="normal"></highlight></codeline>
 <codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dxinv<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[amrlev][mglev].InvCellSizeArray();</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bx<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[0]*dxinv[0]*dxinv[0];,</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>by<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[1]*dxinv[1]*dxinv[1];,</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bz<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[2]*dxinv[2]*dxinv[2];)</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bx<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[0]*dxinv[0]*dxinv[0];,</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>by<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[1]*dxinv[1]*dxinv[1];,</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bz<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[2]*dxinv[2]*dxinv[2];)</highlight></codeline>
 <codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>phieb<sp/>=<sp/>(<ref refid="classamrex_1_1MLNodeLinOp_1a28e2b90709541cf46d64d3d382e6ade7" kindref="member">m_in_solution_mode</ref>)<sp/>?<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1ad48c24f09145f008fdbfce5f08f02351" kindref="member">m_s_phi_eb</ref><sp/>:<sp/>Real(0.0);</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"></highlight></codeline>
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dmask<sp/>=<sp/>*<ref refid="classamrex_1_1MLNodeLinOp_1aaa52abefe4405ee59158a27c112ccfa9" kindref="member">m_dirichlet_mask</ref>[amrlev][mglev];</highlight></codeline>
@@ -2516,9 +2516,9 @@
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MLEBNodeFDLaplacian::Fsmooth()&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"></highlight></codeline>
 <codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dxinv<sp/>=<sp/><ref refid="classamrex_1_1MLLinOp_1ab16551403ee1629e20ed6e6d9d4f680c" kindref="member">m_geom</ref>[amrlev][mglev].InvCellSizeArray();</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bx<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[0]*dxinv[0]*dxinv[0];,</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>by<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[1]*dxinv[1]*dxinv[1];,</highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bz<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a02fb01e3b998e41c2afb9b523a3a091d" kindref="member">m_sigma</ref>[2]*dxinv[2]*dxinv[2];)</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__SPACE_8H_1a4f563a3cac0e56caccff5ba7be3d49a4" kindref="member">AMREX_D_TERM</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bx<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[0]*dxinv[0]*dxinv[0];,</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>by<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[1]*dxinv[1]*dxinv[1];,</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>bz<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a7d8ad0e6e2657c16c753f60cc17434af" kindref="member">m_sigma</ref>[2]*dxinv[2]*dxinv[2];)</highlight></codeline>
 <codeline lineno="337"><highlight class="normal"></highlight></codeline>
 <codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>dmask<sp/>=<sp/>*<ref refid="classamrex_1_1MLNodeLinOp_1aaa52abefe4405ee59158a27c112ccfa9" kindref="member">m_dirichlet_mask</ref>[amrlev][mglev];</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"></highlight></codeline>
@@ -2610,7 +2610,7 @@
 <codeline lineno="425"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="426"><highlight class="normal"></highlight></codeline>
 <codeline lineno="427"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="428"><highlight class="normal"><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1a2f06d0dc6928f21025362f8ce8a1c4d2" kindref="member">MLEBNodeFDLaplacian::compGrad</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;MultiFab*,AMREX_SPACEDIM&gt;&amp;<sp/>grad,</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1ae749675d0ae6abd70771a049598a64dc" kindref="member">MLEBNodeFDLaplacian::compGrad</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>amrlev,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;MultiFab*,AMREX_SPACEDIM&gt;&amp;<sp/>grad,</highlight></codeline>
 <codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MultiFab&amp;<sp/>sol,<sp/>Location<sp/></highlight><highlight class="comment">/*loc*/</highlight><highlight class="normal">)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="430"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLProfiler_8H_1a548fbd9b2cd72a927f463003f4adb0b1" kindref="member">BL_PROFILE</ref>(</highlight><highlight class="stringliteral">&quot;MLEBNodeFDLaplacian::compGrad()&quot;</highlight><highlight class="normal">);</highlight></codeline>
@@ -2652,7 +2652,7 @@
 <codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>cutfab<sp/>?<sp/>edgecent[2]-&gt;const_array(mfi)<sp/>:<sp/>Array4&lt;Real<sp/>const&gt;{};)</highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(phieb<sp/>==<sp/>std::numeric_limits&lt;Real&gt;::lowest())<sp/>{</highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>phiebarr<sp/>=<sp/><ref refid="classamrex_1_1MLEBNodeFDLaplacian_1aac77fee4af067d987c117ae62a73d9ce" kindref="member">m_phi_eb</ref>[amrlev].const_array(mfi);</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a4f38814ccbf4db6e35854c6b95fdc43e" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM</ref>(</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a9abb060296f653b822875e9ad2b29074" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM</ref>(</highlight></codeline>
 <codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xbox,<sp/>txbox,</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a35dae2a69371a09a272b492d47a4e856" kindref="member">mlebndfdlap_grad_x</ref>(txbox,<sp/>gpx,<sp/>p,<sp/>dmarr,<sp/>ecx,<sp/>phiebarr,<sp/>dxi);</highlight></codeline>
@@ -2663,10 +2663,10 @@
 <codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>zbox,<sp/>tzbox,</highlight></codeline>
 <codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1e7b38a72055703bb62c1660ebb08623" kindref="member">mlebndfdlap_grad_z</ref>(tzbox,<sp/>gpz,<sp/>p,<sp/>dmarr,<sp/>ecz,<sp/>phiebarr,<sp/>dzi);</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlebndfdlap_grad_z(tzbox,<sp/>gpz,<sp/>p,<sp/>dmarr,<sp/>ecz,<sp/>phiebarr,<sp/>dzi);</highlight></codeline>
 <codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a4f38814ccbf4db6e35854c6b95fdc43e" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM</ref>(</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a9abb060296f653b822875e9ad2b29074" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA_DIM</ref>(</highlight></codeline>
 <codeline lineno="485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xbox,<sp/>txbox,</highlight></codeline>
 <codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a35dae2a69371a09a272b492d47a4e856" kindref="member">mlebndfdlap_grad_x</ref>(txbox,<sp/>gpx,<sp/>p,<sp/>dmarr,<sp/>ecx,<sp/>phieb,<sp/>dxi);</highlight></codeline>
@@ -2677,7 +2677,7 @@
 <codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>zbox,<sp/>tzbox,</highlight></codeline>
 <codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1e7b38a72055703bb62c1660ebb08623" kindref="member">mlebndfdlap_grad_z</ref>(tzbox,<sp/>gpz,<sp/>p,<sp/>dmarr,<sp/>ecz,<sp/>phieb,<sp/>dzi);</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlebndfdlap_grad_z(tzbox,<sp/>gpz,<sp/>p,<sp/>dmarr,<sp/>ecz,<sp/>phieb,<sp/>dzi);</highlight></codeline>
 <codeline lineno="496"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="498"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>

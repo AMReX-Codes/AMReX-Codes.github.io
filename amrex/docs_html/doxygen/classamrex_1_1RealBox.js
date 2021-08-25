@@ -2,7 +2,7 @@ var classamrex_1_1RealBox =
 [
     [ "RealBox", "classamrex_1_1RealBox.html#a55c5bf3adcae6114a3b58ea0141393cd", null ],
     [ "RealBox", "classamrex_1_1RealBox.html#a08455d95f7a26778ba42b5d023d16eec", null ],
-    [ "RealBox", "classamrex_1_1RealBox.html#a6f8e3f9da25574d7f1e0865c686762d2", null ],
+    [ "RealBox", "classamrex_1_1RealBox.html#a4fad8ad2d3ec608a2c1f2fb205ddda86", null ],
     [ "RealBox", "classamrex_1_1RealBox.html#ac0a2462c4b6cf7119c7946140d4ba979", null ],
     [ "RealBox", "classamrex_1_1RealBox.html#a0133f0708ca052eb1eb7a7753169bb75", null ],
     [ "contains", "classamrex_1_1RealBox.html#a6e117146678175a0d2be9d40e7873200", null ],
@@ -25,6 +25,6 @@ var classamrex_1_1RealBox =
     [ "setLo", "classamrex_1_1RealBox.html#ad513c995fcf5ff2ca68ea4a1ca78a9f7", null ],
     [ "setLo", "classamrex_1_1RealBox.html#a06a08fc2ff5eb243e5b56ad66734fd55", null ],
     [ "volume", "classamrex_1_1RealBox.html#a098e1f2357e21072c37d33fff98d9cb7", null ],
-    [ "xhi", "classamrex_1_1RealBox.html#a2a8beb0d249fef26ad726aa32563b823", null ],
-    [ "xlo", "classamrex_1_1RealBox.html#a4f9c8d6e2a72c25360195de819831fd0", null ]
+    [ "xhi", "classamrex_1_1RealBox.html#af7c8319947a6017a36027bc15c3ad065", null ],
+    [ "xlo", "classamrex_1_1RealBox.html#ae4725fce5cb9ab4e306e9cb7a9c37f3c", null ]
 ];

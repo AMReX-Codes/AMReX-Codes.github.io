@@ -6,7 +6,7 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#a4b86eda13fc31604d8ca3bf79a158902", null ],
     [ "MLEBNodeFDLaplacian", "classamrex_1_1MLEBNodeFDLaplacian.html#ac5576c35f7765ea07f41688107686ebb", null ],
     [ "averageDownSolutionRHS", "classamrex_1_1MLEBNodeFDLaplacian.html#ac78cd13e2533f566292aed726e19f7c5", null ],
-    [ "compGrad", "classamrex_1_1MLEBNodeFDLaplacian.html#a2f06d0dc6928f21025362f8ce8a1c4d2", null ],
+    [ "compGrad", "classamrex_1_1MLEBNodeFDLaplacian.html#ae749675d0ae6abd70771a049598a64dc", null ],
     [ "define", "classamrex_1_1MLEBNodeFDLaplacian.html#a8e002699c92b9ddb2d980dea04bd4311", null ],
     [ "Fapply", "classamrex_1_1MLEBNodeFDLaplacian.html#a846a760756357f5040395e50249cbe9d", null ],
     [ "fixUpResidualMask", "classamrex_1_1MLEBNodeFDLaplacian.html#ab8a56b262d500064fee4f687b293c268", null ],
@@ -23,10 +23,10 @@ var classamrex_1_1MLEBNodeFDLaplacian =
     [ "restriction", "classamrex_1_1MLEBNodeFDLaplacian.html#a79f111ea6c182c3ca749babb56729051", null ],
     [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#addd0c91c53d2097103f32918237a65b5", null ],
     [ "setEBDirichlet", "classamrex_1_1MLEBNodeFDLaplacian.html#a4620fd82574c119b58c63e9a84ecd3d1", null ],
-    [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#abb9ba9cd4602bb3e85b82c70284915f5", null ],
+    [ "setSigma", "classamrex_1_1MLEBNodeFDLaplacian.html#ab81f654708d4756a07160c7eaa343d48", null ],
     [ "m_a_huge", "classamrex_1_1MLEBNodeFDLaplacian.html#a824178034487842a323be9ae255c249c", null ],
     [ "m_acoef", "classamrex_1_1MLEBNodeFDLaplacian.html#aa1946437fba75854321fa1b73beedd58", null ],
     [ "m_phi_eb", "classamrex_1_1MLEBNodeFDLaplacian.html#aac77fee4af067d987c117ae62a73d9ce", null ],
     [ "m_s_phi_eb", "classamrex_1_1MLEBNodeFDLaplacian.html#ad48c24f09145f008fdbfce5f08f02351", null ],
-    [ "m_sigma", "classamrex_1_1MLEBNodeFDLaplacian.html#a02fb01e3b998e41c2afb9b523a3a091d", null ]
+    [ "m_sigma", "classamrex_1_1MLEBNodeFDLaplacian.html#a7d8ad0e6e2657c16c753f60cc17434af", null ]
 ];

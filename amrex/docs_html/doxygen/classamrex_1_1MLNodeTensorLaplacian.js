@@ -18,7 +18,7 @@ var classamrex_1_1MLNodeTensorLaplacian =
     [ "prepareForSolve", "classamrex_1_1MLNodeTensorLaplacian.html#af3750449862fc251b642c8105e748fc9", null ],
     [ "reflux", "classamrex_1_1MLNodeTensorLaplacian.html#a011f0b17c95908e2eb6f61483229b6f3", null ],
     [ "restriction", "classamrex_1_1MLNodeTensorLaplacian.html#a3d7d8f08d42c1958ee46caa17dde18c5", null ],
-    [ "setBeta", "classamrex_1_1MLNodeTensorLaplacian.html#a9d5df0ad6b7025d01bc743d437b76ead", null ],
+    [ "setBeta", "classamrex_1_1MLNodeTensorLaplacian.html#af850b6de810fc05e025ef44039fbc29a", null ],
     [ "setSigma", "classamrex_1_1MLNodeTensorLaplacian.html#aacdcbb450e721a927c9697c8b10e3c0c", null ],
     [ "m_sigma", "classamrex_1_1MLNodeTensorLaplacian.html#a84d4e74b64ef41514492203039ea9d31", null ],
     [ "nelems", "classamrex_1_1MLNodeTensorLaplacian.html#a0607bbf4e032f81bfd48d64cfca15cda", null ]

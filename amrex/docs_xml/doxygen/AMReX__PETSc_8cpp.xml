@@ -491,8 +491,6 @@
         </childnode>
         <childnode refid="150" relation="include">
         </childnode>
-        <childnode refid="151" relation="include">
-        </childnode>
       </node>
       <node id="12">
         <label>cassert</label>
@@ -564,12 +562,6 @@
         <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="151">
-        <label>AMReX_Habec_3D_K.H</label>
-        <link refid="AMReX__Habec__3D__K_8H"/>
-        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="68">
@@ -2031,8 +2023,8 @@
 <codeline lineno="97"><highlight class="normal"><ref refid="classamrex_1_1PETScABecLap_1ab8caebdccf7fca99b02b592379019228" kindref="member">PETScABecLap::setBCoeffs</ref><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;const<sp/>MultiFab*,<sp/>BL_SPACEDIM&gt;&amp;<sp/>beta)</highlight></codeline>
 <codeline lineno="98"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idim=0;<sp/>idim<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>idim++)<sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ng<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(<ref refid="classamrex_1_1PETScABecLap_1a58e606b01690400f1da1101594e4bc84" kindref="member">bcoefs</ref>[idim].nGrow(),<sp/>beta[idim]-&gt;nGrow());</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(<ref refid="classamrex_1_1PETScABecLap_1a58e606b01690400f1da1101594e4bc84" kindref="member">bcoefs</ref>[idim],<sp/>*beta[idim],<sp/>0,<sp/>0,<sp/>1,<sp/>ng);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ng<sp/>=<sp/><ref refid="namespaceamrex_1_1detail_1a05ef6e98eba987410d73df1617fa569da39de58104accdcd761fe01946da9a4a0" kindref="member">std::min</ref>(<ref refid="classamrex_1_1PETScABecLap_1ac7dbd144ec1cfc9a3c7802f0d9a76a01" kindref="member">bcoefs</ref>[idim].nGrow(),<sp/>beta[idim]-&gt;nGrow());</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1MultiFab_1ab70ce65ff46ae21b8cc4e0584fe26ffa" kindref="member">MultiFab::Copy</ref>(<ref refid="classamrex_1_1PETScABecLap_1ac7dbd144ec1cfc9a3c7802f0d9a76a01" kindref="member">bcoefs</ref>[idim],<sp/>*beta[idim],<sp/>0,<sp/>0,<sp/>1,<sp/>ng);</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
@@ -2370,7 +2362,7 @@
 <codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(GpuArray&lt;Real,stencil_size&gt;&amp;<sp/>sten,</highlight></codeline>
 <codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)</highlight></codeline>
 <codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1af38b18c6e189237b8fb7c7d6076c5601" kindref="member">habec_ijmat</ref>(sten,<sp/>ncols_a,<sp/>diaginvfab,<sp/>i,<sp/>j,<sp/>k,<sp/>cid_a,</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a26d70e1b51526ead26433b0583ffe6fd" kindref="member">habec_ijmat</ref>(sten,<sp/>ncols_a,<sp/>diaginvfab,<sp/>i,<sp/>j,<sp/>k,<sp/>cid_a,</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sa,<sp/>afab,<sp/>sb,<sp/>dx,<sp/>bfabs,<sp/>bctype,<sp/>bcl,<sp/>bho,</highlight></codeline>
 <codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Array4&lt;int<sp/>const&gt;());</highlight></codeline>
 <codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
@@ -2382,7 +2374,7 @@
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[=]<sp/><ref refid="AMReX__GpuQualifiers_8H_1aac52ee54727d35b2d0033b119a991618" kindref="member">AMREX_GPU_HOST_DEVICE</ref><sp/>(GpuArray&lt;PetscInt,stencil_size&gt;&amp;<sp/>sten,</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k)</highlight></codeline>
 <codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1aad9fa34a394ff6547f4c45b7d40e6d3f" kindref="member">habec_cols</ref>(sten,<sp/>i,<sp/>j,<sp/>k,<sp/>cid_a);</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1abebd70eafbd522c54911f746d423884f" kindref="member">habec_cols</ref>(sten,<sp/>i,<sp/>j,<sp/>k,<sp/>cid_a);</highlight></codeline>
 <codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="454"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_EB</highlight><highlight class="normal"></highlight></codeline>

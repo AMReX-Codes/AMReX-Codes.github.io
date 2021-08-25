@@ -4,9 +4,9 @@
     <compoundname>amrex::GetParticleBin</compoundname>
     <includes refid="AMReX__ParticleUtil_8H" local="no">AMReX_ParticleUtil.H</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structamrex_1_1GetParticleBin_1a0113383bf919b6f430cca11367ff1c16" prot="public" static="no" mutable="no">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
-        <definition>GpuArray&lt;Real,3&gt; amrex::GetParticleBin::plo</definition>
+      <memberdef kind="variable" id="structamrex_1_1GetParticleBin_1aeb85700e02150d77688f2f48f87a0220" prot="public" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
+        <definition>GpuArray&lt;Real,AMREX_SPACEDIM&gt; amrex::GetParticleBin::plo</definition>
         <argsstring></argsstring>
         <name>plo</name>
         <briefdescription>
@@ -17,9 +17,9 @@
         </inbodydescription>
         <location file="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" line="340" column="14" bodyfile="/home/runner/work/amrex/amrex/Src/Particle/AMReX_ParticleUtil.H" bodystart="340" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structamrex_1_1GetParticleBin_1a7e5a69b6426c884ba4595da42b0d374d" prot="public" static="no" mutable="no">
-        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, 3 &gt;</type>
-        <definition>GpuArray&lt;Real,3&gt; amrex::GetParticleBin::dxi</definition>
+      <memberdef kind="variable" id="structamrex_1_1GetParticleBin_1a694afb5ccbf5c681f6b016e2574f69ab" prot="public" static="no" mutable="no">
+        <type><ref refid="structamrex_1_1GpuArray" kindref="compound">GpuArray</ref>&lt; Real, AMREX_SPACEDIM &gt;</type>
+        <definition>GpuArray&lt;Real,AMREX_SPACEDIM&gt; amrex::GetParticleBin::dxi</definition>
         <argsstring></argsstring>
         <name>dxi</name>
         <briefdescription>
@@ -99,21 +99,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="4">
+      <node id="2">
         <label>amrex::IntVect</label>
         <link refid="classamrex_1_1IntVect"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="2" relation="usage">
           <edgelabel>Unit</edgelabel>
           <edgelabel>Zero</edgelabel>
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>Real</label>
       </node>
       <node id="5">
         <label>amrex::Box</label>
         <link refid="classamrex_1_1Box"/>
-        <childnode refid="4" relation="usage">
+        <childnode refid="2" relation="usage">
           <edgelabel>bigend</edgelabel>
           <edgelabel>smallend</edgelabel>
         </childnode>
@@ -121,10 +121,10 @@
           <edgelabel>btype</edgelabel>
         </childnode>
       </node>
-      <node id="2">
-        <label>amrex::GpuArray&lt; Real, 3 &gt;</label>
+      <node id="3">
+        <label>amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt;</label>
         <link refid="structamrex_1_1GpuArray"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="4" relation="usage">
           <edgelabel>arr</edgelabel>
         </childnode>
       </node>
@@ -136,11 +136,11 @@
         <label>amrex::GetParticleBin</label>
         <link refid="structamrex_1_1GetParticleBin"/>
         <childnode refid="2" relation="usage">
+          <edgelabel>bin_size</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
           <edgelabel>dxi</edgelabel>
           <edgelabel>plo</edgelabel>
-        </childnode>
-        <childnode refid="4" relation="usage">
-          <edgelabel>bin_size</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>domain</edgelabel>
@@ -153,9 +153,9 @@
       <member refid="structamrex_1_1GetParticleBin_1a09715cba9b15ca7c87543db7a45a32b0" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>bin_size</name></member>
       <member refid="structamrex_1_1GetParticleBin_1abbe4e5c9824e8d9ccfaf7a524ddac32b" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>box</name></member>
       <member refid="structamrex_1_1GetParticleBin_1aaa23e379300a9df362fc27641c229baf" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>domain</name></member>
-      <member refid="structamrex_1_1GetParticleBin_1a7e5a69b6426c884ba4595da42b0d374d" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>dxi</name></member>
+      <member refid="structamrex_1_1GetParticleBin_1a694afb5ccbf5c681f6b016e2574f69ab" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>dxi</name></member>
       <member refid="structamrex_1_1GetParticleBin_1a6dc1f8b3f8c85df7d0508d2afa62497d" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>operator()</name></member>
-      <member refid="structamrex_1_1GetParticleBin_1a0113383bf919b6f430cca11367ff1c16" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>plo</name></member>
+      <member refid="structamrex_1_1GetParticleBin_1aeb85700e02150d77688f2f48f87a0220" prot="public" virt="non-virtual"><scope>amrex::GetParticleBin</scope><name>plo</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

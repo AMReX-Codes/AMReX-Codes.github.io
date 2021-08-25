@@ -359,20 +359,6 @@
         <childnode refid="138" relation="include">
         </childnode>
       </node>
-      <node id="170">
-        <label>AMReX_MultiFabUtil_3D_C.H</label>
-        <link refid="AMReX__MultiFabUtil__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="86" relation="include">
-        </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="147" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
       <node id="163">
         <label>AMReX_MLCGSolver.H</label>
         <link refid="AMReX__MLCGSolver_8H"/>
@@ -1458,6 +1444,22 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
+      <node id="170">
+        <label>AMReX_MultiFabUtil_1D_C.H</label>
+        <link refid="AMReX__MultiFabUtil__1D__C_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
       <node id="46">
         <label>iosfwd</label>
       </node>
@@ -2419,12 +2421,12 @@
 <codeline lineno="214"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight></codeline>
 <codeline lineno="216"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="217"><highlight class="normal"><ref refid="classamrex_1_1NodalProjector_1a52c75c93376aca7961438a931f3526eb" kindref="member">NodalProjector::setDomainBC</ref><sp/>(<sp/>std::array&lt;LinOpBCType,AMREX_SPACEDIM&gt;<sp/>a_bc_lo,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><ref refid="classamrex_1_1NodalProjector_1ac0cd0325de83d09a9df891002e1cb05c" kindref="member">NodalProjector::setDomainBC</ref><sp/>(<sp/>std::array&lt;LinOpBCType,AMREX_SPACEDIM&gt;<sp/>a_bc_lo,</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::array&lt;LinOpBCType,AMREX_SPACEDIM&gt;<sp/>a_bc_hi<sp/>)</highlight></codeline>
 <codeline lineno="219"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a2f5abe2785d461261430e02fd4a51cd2" kindref="member">m_bc_lo</ref>=a_bc_lo;</highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1afc6260d0aa00b82310bf0528484838ef" kindref="member">m_bc_hi</ref>=a_bc_hi;</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a9262678045a7d04c4c2442ba89dbad97" kindref="member">m_linop</ref>-&gt;setDomainBC(<ref refid="classamrex_1_1NodalProjector_1a2f5abe2785d461261430e02fd4a51cd2" kindref="member">m_bc_lo</ref>,<ref refid="classamrex_1_1NodalProjector_1afc6260d0aa00b82310bf0528484838ef" kindref="member">m_bc_hi</ref>);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a8841a3d92d33e963007ed24bc5310d92" kindref="member">m_bc_lo</ref>=a_bc_lo;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a9629028ba382b2d9b32852f1ac88c982" kindref="member">m_bc_hi</ref>=a_bc_hi;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a9262678045a7d04c4c2442ba89dbad97" kindref="member">m_linop</ref>-&gt;setDomainBC(<ref refid="classamrex_1_1NodalProjector_1a8841a3d92d33e963007ed24bc5310d92" kindref="member">m_bc_lo</ref>,<ref refid="classamrex_1_1NodalProjector_1a9629028ba382b2d9b32852f1ac88c982" kindref="member">m_bc_hi</ref>);</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a496b8f37a8e5a63f972729ebfac31dc5" kindref="member">m_need_bcs</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="224"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"></highlight></codeline>
@@ -2648,7 +2650,7 @@
 <codeline lineno="443"><highlight class="normal"></highlight></codeline>
 <codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idir=0;<sp/>idir<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>idir++)</highlight></codeline>
 <codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1NodalProjector_1a2f5abe2785d461261430e02fd4a51cd2" kindref="member">m_bc_lo</ref>[idir]<sp/>!=<sp/>LinOpBCType::inflow<sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1NodalProjector_1afc6260d0aa00b82310bf0528484838ef" kindref="member">m_bc_hi</ref>[idir]<sp/>!=<sp/>LinOpBCType::inflow)</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1NodalProjector_1a8841a3d92d33e963007ed24bc5310d92" kindref="member">m_bc_lo</ref>[idir]<sp/>!=<sp/>LinOpBCType::inflow<sp/>&amp;&amp;<sp/><ref refid="classamrex_1_1NodalProjector_1a9629028ba382b2d9b32852f1ac88c982" kindref="member">m_bc_hi</ref>[idir]<sp/>!=<sp/>LinOpBCType::inflow)</highlight></codeline>
 <codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1NodalProjector_1a69afbcc4b70d3ba64c8795b42ec72feb" kindref="member">m_vel</ref>[0]-&gt;setBndry(0.0,<sp/>idir,<sp/>1);</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
@@ -2666,14 +2668,14 @@
 <codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bxg1<sp/>=<sp/><ref refid="namespaceamrex_1aedb1ce8af83d1d6323271203b7168bcc" kindref="member">amrex::grow</ref>(reg,1);</highlight></codeline>
 <codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BoxList<sp/>bxlist(reg);</highlight></codeline>
 <codeline lineno="463"><highlight class="normal"></highlight></codeline>
-<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1NodalProjector_1a2f5abe2785d461261430e02fd4a51cd2" kindref="member">m_bc_lo</ref>[idir]<sp/>==<sp/>LinOpBCType::inflow<sp/>&amp;&amp;<sp/>reg.smallEnd(idir)<sp/>==<sp/>domainBox.smallEnd(idir))</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1NodalProjector_1a8841a3d92d33e963007ed24bc5310d92" kindref="member">m_bc_lo</ref>[idir]<sp/>==<sp/>LinOpBCType::inflow<sp/>&amp;&amp;<sp/>reg.smallEnd(idir)<sp/>==<sp/>domainBox.smallEnd(idir))</highlight></codeline>
 <codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bx;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bx<sp/>is<sp/>the<sp/>region<sp/>we<sp/>*protect*<sp/>from<sp/>zero&apos;ing</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/><ref refid="namespaceamrex_1aae360b0fe88c8af72c293906e6e7d3c3" kindref="member">amrex::adjCellLo</ref>(reg,<sp/>idir);</highlight></codeline>
 <codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bxlist.push_back(bx);</highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="470"><highlight class="normal"></highlight></codeline>
-<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1NodalProjector_1afc6260d0aa00b82310bf0528484838ef" kindref="member">m_bc_hi</ref>[idir]<sp/>==<sp/>LinOpBCType::inflow<sp/>&amp;&amp;<sp/>reg.bigEnd(idir)<sp/>==<sp/>domainBox.bigEnd(idir))<sp/>{</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classamrex_1_1NodalProjector_1a9629028ba382b2d9b32852f1ac88c982" kindref="member">m_bc_hi</ref>[idir]<sp/>==<sp/>LinOpBCType::inflow<sp/>&amp;&amp;<sp/>reg.bigEnd(idir)<sp/>==<sp/>domainBox.bigEnd(idir))<sp/>{</highlight></codeline>
 <codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Box<sp/>bx;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>bx<sp/>is<sp/>the<sp/>region<sp/>we<sp/>*protect*<sp/>from<sp/>zero&apos;ing</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bx<sp/>=<sp/><ref refid="namespaceamrex_1a6b84705b46b7a57e78bb865c63eacab9" kindref="member">amrex::adjCellHi</ref>(reg,<sp/>idir);</highlight></codeline>
 <codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bxlist.push_back(bx);</highlight></codeline>

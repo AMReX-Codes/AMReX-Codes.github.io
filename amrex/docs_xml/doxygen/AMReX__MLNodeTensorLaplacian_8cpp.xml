@@ -331,20 +331,6 @@
         <childnode refid="141" relation="include">
         </childnode>
       </node>
-      <node id="169">
-        <label>AMReX_MultiFabUtil_3D_C.H</label>
-        <link refid="AMReX__MultiFabUtil__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="89" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="147" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
       <node id="113">
         <label>AMReX_GpuAllocators.H</label>
         <link refid="AMReX__GpuAllocators_8H"/>
@@ -514,6 +500,12 @@
       <node id="78">
         <label>numeric</label>
       </node>
+      <node id="163">
+        <label>AMReX_MLNodeLap_1D_K.H</label>
+        <link refid="AMReX__MLNodeLap__1D__K_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
       <node id="2">
         <label>AMReX_MLNodeTensorLaplacian.H</label>
         <link refid="AMReX__MLNodeTensorLaplacian_8H"/>
@@ -619,6 +611,12 @@
         <childnode refid="67" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="165">
+        <label>AMReX_MLNodeTensorLap_1D_K.H</label>
+        <link refid="AMReX__MLNodeTensorLap__1D__K_8H"/>
+        <childnode refid="3" relation="include">
         </childnode>
       </node>
       <node id="10">
@@ -1372,12 +1370,6 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="163">
-        <label>AMReX_MLNodeLap_3D_K.H</label>
-        <link refid="AMReX__MLNodeLap__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="135">
         <label>AMReX_LayoutData.H</label>
         <link refid="AMReX__LayoutData_8H"/>
@@ -1402,6 +1394,22 @@
         <childnode refid="8" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>AMReX_MultiFabUtil_1D_C.H</label>
+        <link refid="AMReX__MultiFabUtil__1D__C_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="89" relation="include">
+        </childnode>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="147" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
         </childnode>
       </node>
       <node id="49">
@@ -1896,12 +1904,6 @@
       <node id="35">
         <label>type_traits</label>
       </node>
-      <node id="165">
-        <label>AMReX_MLNodeTensorLap_3D_K.H</label>
-        <link refid="AMReX__MLNodeTensorLap__3D__K_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="61">
         <label>set</label>
       </node>
@@ -2188,7 +2190,7 @@
 <codeline lineno="23"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><ref refid="classamrex_1_1MLNodeTensorLaplacian_1a9d5df0ad6b7025d01bc743d437b76ead" kindref="member">MLNodeTensorLaplacian::setBeta</ref><sp/>(Array&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_beta)<sp/>noexcept</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="classamrex_1_1MLNodeTensorLaplacian_1af850b6de810fc05e025ef44039fbc29a" kindref="member">MLNodeTensorLaplacian::setBeta</ref><sp/>(Array&lt;Real,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>a_beta)<sp/>noexcept</highlight></codeline>
 <codeline lineno="27"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a95b1159ba3a5494abd49dc9b3d34eacf" kindref="member">amrex::ignore_unused</ref>(a_beta);</highlight></codeline>
@@ -2344,7 +2346,7 @@
 <codeline lineno="179"><highlight class="normal"></highlight></codeline>
 <codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>bx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1ac9d978dffa35634d79d9aa30cc464c9d" kindref="member">mlndtslap_adotx</ref>(tbx,yarr,xarr,s,dxinv);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a25442c3c36fff26f4ff7435468f856e4" kindref="member">mlndtslap_adotx</ref>(tbx,yarr,xarr,s,dxinv);</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="185"><highlight class="normal">}</highlight></codeline>
@@ -2370,7 +2372,7 @@
 <codeline lineno="205"><highlight class="normal"></highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>bx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1db01b57c47b1f8a53c65361a49733a2" kindref="member">mlndtslap_gauss_seidel</ref>(tbx,<sp/>solarr,<sp/>rhsarr,<sp/>dmskarr,<sp/>s,<sp/>dxinv);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a793ed31acd5f14d952eba37759273e9b" kindref="member">mlndtslap_gauss_seidel</ref>(tbx,<sp/>solarr,<sp/>rhsarr,<sp/>dmskarr,<sp/>s,<sp/>dxinv);</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight></codeline>
@@ -2401,7 +2403,7 @@
 <codeline lineno="236"><highlight class="normal"></highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>bx,<sp/>tbx,</highlight></codeline>
 <codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a6f276550147e8ada4b916b2295097eea" kindref="member">mlndtslap_normalize</ref>(tbx,<sp/>arr,<sp/>dmskarr,<sp/>s,<sp/>dxinv);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespaceamrex_1a1412469d4e1d2d9dfa24417caca5bd0e" kindref="member">mlndtslap_normalize</ref>(tbx,<sp/>arr,<sp/>dmskarr,<sp/>s,<sp/>dxinv);</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>

@@ -98,7 +98,7 @@ var classamrex_1_1AmrLevel =
     [ "derive_lst", "classamrex_1_1AmrLevel.html#a792f148ee0bb20432a4acefa1c2cac9a", null ],
     [ "desc_lst", "classamrex_1_1AmrLevel.html#acb5f9e8c8d903d3a700d2cc11be500e5", null ],
     [ "dmap", "classamrex_1_1AmrLevel.html#ab0ab7555be82910d8100d7bc3aa55d1d", null ],
-    [ "edge_grids", "classamrex_1_1AmrLevel.html#a09cad6972df92e6e8a0f9da903e64784", null ],
+    [ "edge_grids", "classamrex_1_1AmrLevel.html#a7cf2da3e3135c31924af8e09fa0c8104", null ],
     [ "fine_ratio", "classamrex_1_1AmrLevel.html#a109f988dd098fdb2a6b854a742015397", null ],
     [ "geom", "classamrex_1_1AmrLevel.html#a571b97b176d8618fba71f56c8b44a7c8", null ],
     [ "grids", "classamrex_1_1AmrLevel.html#a5ffc98d138f381698b2a61fc6cb2ce01", null ],

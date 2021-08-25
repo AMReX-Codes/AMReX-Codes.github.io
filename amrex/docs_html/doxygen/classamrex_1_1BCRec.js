@@ -19,5 +19,5 @@ var classamrex_1_1BCRec =
     [ "vect", "classamrex_1_1BCRec.html#adfdfaa53c102691ab684e97bcb51e188", null ],
     [ "vect", "classamrex_1_1BCRec.html#a3f3f037321264e2087ac849e7940d63f", null ],
     [ "operator<<", "classamrex_1_1BCRec.html#a685becdfc4b358ad1776be6a0c02fe16", null ],
-    [ "bc", "classamrex_1_1BCRec.html#acd3cc14f58d5b646f9baef5eeee57253", null ]
+    [ "bc", "classamrex_1_1BCRec.html#adb5fc84ac2f9e43e15f6cc05ed2216f5", null ]
 ];

@@ -333,20 +333,6 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="51">
-        <label>AMReX_COORDSYS_3D_C.H</label>
-        <link refid="AMReX__COORDSYS__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="113" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-      </node>
       <node id="107">
         <label>cuda_runtime.h</label>
       </node>
@@ -1093,6 +1079,20 @@
       <node id="15">
         <label>iostream</label>
       </node>
+      <node id="51">
+        <label>AMReX_COORDSYS_1D_C.H</label>
+        <link refid="AMReX__COORDSYS__1D__C_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
       <node id="21">
         <label>AMReX_Array.H</label>
         <link refid="AMReX__Array_8H"/>
@@ -1711,7 +1711,7 @@
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(region.cellCentered());</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"></highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>vol<sp/>=<sp/>a_volfab.array();</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_dx{{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[0],<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[1],<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[2])}};</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_dx{{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[0],<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[1],<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[2])}};</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"></highlight></codeline>
 <codeline lineno="211"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="classamrex_1_1CoordSys_1a500695aa14e3fd01f3d7162fd784133e" kindref="member">IsCartesian</ref>());</highlight></codeline>
@@ -1721,7 +1721,7 @@
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vol(i,j,k)<sp/>=<sp/>dv;</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_offset{{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[0],<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[1],<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[2])}};</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_offset{{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[0],<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[1],<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[2])}};</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>coord<sp/>=<sp/>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>)<sp/><ref refid="classamrex_1_1CoordSys_1a80883db17d63160073d45479d937e74b" kindref="member">c_sys</ref>;</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>region,<sp/>tbx,</highlight></codeline>
 <codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -1758,8 +1758,8 @@
 <codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dloga(i,j,k)<sp/>=<sp/>0._rt;</highlight></codeline>
 <codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_offset{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[0],<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[1],<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[2])};</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_dx<sp/><sp/><sp/><sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[0],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[1],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[2])};</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_offset{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[0],<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[1],<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[2])};</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_dx<sp/><sp/><sp/><sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[0],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[1],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[2])};</highlight></codeline>
 <codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>coord<sp/>=<sp/>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>)<sp/><ref refid="classamrex_1_1CoordSys_1a80883db17d63160073d45479d937e74b" kindref="member">c_sys</ref>;</highlight></codeline>
 <codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>region,<sp/>tbx,</highlight></codeline>
 <codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -1790,14 +1790,14 @@
 <codeline lineno="285"><highlight class="normal"></highlight></codeline>
 <codeline lineno="286"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(AMREX_SPACEDIM<sp/>==<sp/>3)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__BLassert_8H_1aad6450907585a147153aef621fdc6007" kindref="member">AMREX_ASSERT</ref>(<ref refid="classamrex_1_1CoordSys_1a500695aa14e3fd01f3d7162fd784133e" kindref="member">IsCartesian</ref>());</highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>da<sp/>=<sp/>(dir<sp/>==<sp/>0)<sp/>?<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[1]*<ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[2]<sp/>:<sp/>((dir<sp/>==<sp/>1)<sp/>?<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[0]*<ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[2]<sp/>:<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[0]*<ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[1]);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Real<sp/>da<sp/>=<sp/>(dir<sp/>==<sp/>0)<sp/>?<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[1]*<ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[2]<sp/>:<sp/>((dir<sp/>==<sp/>1)<sp/>?<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[0]*<ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[2]<sp/>:<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[0]*<ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[1]);</highlight></codeline>
 <codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a75c5025bd1ba39794c9f3ce7212ed7ae" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_3D</ref><sp/>(<sp/>region,<sp/>i,<sp/>j,<sp/>k,</highlight></codeline>
 <codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>area(i,j,k)<sp/>=<sp/>da;</highlight></codeline>
 <codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
 <codeline lineno="293"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_offset{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[0],<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[1],<ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[2])};</highlight></codeline>
-<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_dx<sp/><sp/><sp/><sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[0],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[1],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[2])};</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_offset{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[0],<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[1],<ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[2])};</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>GpuArray&lt;Real,AMREX_SPACEDIM&gt;<sp/>a_dx<sp/><sp/><sp/><sp/>{<ref refid="AMReX__SPACE_8H_1af5ea8082b66e48cdbea53d08cdfca9a0" kindref="member">AMREX_D_DECL</ref>(<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[0],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[1],<sp/><sp/><sp/><sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[2])};</highlight></codeline>
 <codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>coord<sp/>=<sp/>(<ref refid="namespaceamrex_1ad2e8127753e9be0ebf531435c6511937" kindref="member">int</ref>)<sp/><ref refid="classamrex_1_1CoordSys_1a80883db17d63160073d45479d937e74b" kindref="member">c_sys</ref>;</highlight></codeline>
 <codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1a20fce791cf3cebcb24e689bb5da837c0" kindref="member">AMREX_LAUNCH_HOST_DEVICE_LAMBDA</ref><sp/>(<sp/>region,<sp/>tbx,</highlight></codeline>
 <codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
@@ -1816,12 +1816,12 @@
 <codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo<sp/>=<sp/>region.loVect();</highlight></codeline>
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi<sp/>=<sp/>region.hiVect();</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>hi[dir]<sp/>-<sp/>lo[dir]<sp/>+<sp/>2;</highlight></codeline>
-<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>off<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[dir]<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[dir]*lo[dir];</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>off<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[dir]<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[dir]*lo[dir];</highlight></codeline>
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>loc.resize(len);</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__Extension_8H_1a8c414106ab987031039a0ad05bb2519b" kindref="member">AMREX_PRAGMA_SIMD</ref></highlight></codeline>
 <codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>len;<sp/>i++)</highlight></codeline>
 <codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loc[i]<sp/>=<sp/>off<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[dir]*i;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loc[i]<sp/>=<sp/>off<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[dir]*i;</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="321"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="322"><highlight class="normal"></highlight></codeline>
@@ -1835,12 +1835,12 @@
 <codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>lo<sp/>=<sp/>region.loVect();</highlight></codeline>
 <codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>hi<sp/>=<sp/>region.hiVect();</highlight></codeline>
 <codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>hi[dir]<sp/>-<sp/>lo[dir]<sp/>+<sp/>1;</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>off<sp/>=<sp/><ref refid="classamrex_1_1CoordSys_1a50840981870b71ae85b7c7c506df0670" kindref="member">offset</ref>[dir]<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[dir]*(0.5_rt<sp/>+<sp/>(Real)lo[dir]);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>Real<sp/>off<sp/>=<sp/><ref refid="classamrex_1_1CoordSys_1a87497b1adb83ce034ea0ab943fffc08f" kindref="member">offset</ref>[dir]<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[dir]*(0.5_rt<sp/>+<sp/>(Real)lo[dir]);</highlight></codeline>
 <codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>loc.resize(len);</highlight></codeline>
 <codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="AMReX__Extension_8H_1a8c414106ab987031039a0ad05bb2519b" kindref="member">AMREX_PRAGMA_SIMD</ref></highlight></codeline>
 <codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>len;<sp/>i++)</highlight></codeline>
 <codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loc[i]<sp/>=<sp/>off<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1aa2676bc29494b78f2dc42aeba76cf2f3" kindref="member">dx</ref>[dir]*i;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loc[i]<sp/>=<sp/>off<sp/>+<sp/><ref refid="classamrex_1_1CoordSys_1a178c38de0cae8e587e4c34541db7f45b" kindref="member">dx</ref>[dir]*i;</highlight></codeline>
 <codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="340"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="341"><highlight class="normal"></highlight></codeline>

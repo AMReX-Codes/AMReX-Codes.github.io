@@ -1,6 +1,6 @@
 var classamrex_1_1BndryData =
 [
-    [ "RealTuple", "classamrex_1_1BndryData.html#a60d8bd542c8b68cc49a7a8610b346537", null ],
+    [ "RealTuple", "classamrex_1_1BndryData.html#ab4ed85c429f2c9ba26ce7e046590aee0", null ],
     [ "MaskVal", "classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9", [
       [ "covered", "classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9a843d5274aec429fe8bea1719d6162727", null ],
       [ "not_covered", "classamrex_1_1BndryData.html#a4d31afbfcfb31a6229877bb9ad880fb9a54f598ca1ea830b90bd86719dd843014", null ],

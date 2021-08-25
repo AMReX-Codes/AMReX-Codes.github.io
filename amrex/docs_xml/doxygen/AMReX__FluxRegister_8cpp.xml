@@ -596,6 +596,14 @@
         <childnode refid="49" relation="include">
         </childnode>
       </node>
+      <node id="144">
+        <label>AMReX_FluxReg_1D_C.H</label>
+        <link refid="AMReX__FluxReg__1D__C_8H"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="60" relation="include">
+        </childnode>
+      </node>
       <node id="117">
         <label>driver_types.h</label>
       </node>
@@ -1773,14 +1781,6 @@
       <node id="82">
         <label>curand.h</label>
       </node>
-      <node id="144">
-        <label>AMReX_FluxReg_3D_C.H</label>
-        <link refid="AMReX__FluxReg__3D__C_8H"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="60" relation="include">
-        </childnode>
-      </node>
       <node id="136">
         <label>AMReX_BaseFabUtility.H</label>
         <link refid="AMReX__BaseFabUtility_8H"/>
@@ -1969,8 +1969,8 @@
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dir<sp/>=<sp/>0;<sp/>dir<sp/>&lt;<sp/>AMREX_SPACEDIM;<sp/>dir++)</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabSet&amp;<sp/>lofabs<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[Orientation(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>)<sp/>];</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabSet&amp;<sp/>hifabs<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[Orientation(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>)];</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabSet&amp;<sp/>lofabs<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[Orientation(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>)<sp/>];</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FabSet&amp;<sp/>hifabs<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[Orientation(dir,<ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>)];</highlight></codeline>
 <codeline lineno="105"><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_GPU</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceamrex_1_1Gpu_1a7a05369cacb826ba5546b4dd507c49dd" kindref="member">Gpu::inLaunchRegion</ref>())</highlight></codeline>
@@ -2067,11 +2067,11 @@
 <codeline lineno="198"><highlight class="normal"></highlight></codeline>
 <codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(op<sp/>==<sp/><ref refid="classamrex_1_1FluxRegister_1a0886ce290105f66be4dc23059aa69cc7ad52ae5c71ab1fc1193bbc006a73ab613" kindref="member">FluxRegister::COPY</ref>)</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a2f119b545c70dc14f232664bc31df5ef" kindref="member">copyFrom</ref>(mf,0,0,destcomp,numcomp);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a2f119b545c70dc14f232664bc31df5ef" kindref="member">copyFrom</ref>(mf,0,0,destcomp,numcomp);</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FabSet<sp/>fs(<ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].boxArray(),<ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1BndryRegister_1a543c6c7f9abadfda4cb25368007d14f8" kindref="member">DistributionMap</ref>(),numcomp);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FabSet<sp/>fs(<ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].boxArray(),<ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1BndryRegister_1a543c6c7f9abadfda4cb25368007d14f8" kindref="member">DistributionMap</ref>(),numcomp);</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"></highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fs.setVal(0);</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"></highlight></codeline>
@@ -2084,7 +2084,7 @@
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Box&amp;<sp/>bx<sp/>=<sp/>mfi.validbox();</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sfab<sp/>=<sp/>fs.const_array(mfi);</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dfab<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" kindref="member">array</ref>(mfi);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dfab<sp/>=<sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a87a11660735965183c22d16e9e74fc2d" kindref="member">array</ref>(mfi);</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="AMReX__GpuLaunch_8H_1afd60f7bb161794f08fe97f8f36e1f52d" kindref="member">AMREX_HOST_DEVICE_PARALLEL_FOR_4D</ref><sp/>(bx,<sp/>numcomp,<sp/>i,<sp/>j,<sp/>k,<sp/>n,</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dfab(i,j,k,n+destcomp)<sp/>+=<sp/>sfab(i,j,k,n);</highlight></codeline>
@@ -2151,7 +2151,7 @@
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pass<sp/>=<sp/>0;<sp/>pass<sp/>&lt;<sp/>2;<sp/>pass++)</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Orientation<sp/>face<sp/>=<sp/>((pass<sp/>==<sp/>0)<sp/>?<sp/>face_lo<sp/>:<sp/>face_hi);</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1abb11e15ccfd9eb9cf7b9cfc75f4bd30d" kindref="member">plusFrom</ref>(mf,0,0,destcomp,numcomp,geom.periodicity());</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1abb11e15ccfd9eb9cf7b9cfc75f4bd30d" kindref="member">plusFrom</ref>(mf,0,0,destcomp,numcomp,geom.periodicity());</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="287"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="288"><highlight class="normal"></highlight></codeline>
@@ -2422,7 +2422,7 @@
 <codeline lineno="553"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mf.DistributionMap(),<sp/>nc,<sp/>0,<sp/>MFInfo(),<sp/>mf.Factory());</highlight></codeline>
 <codeline lineno="554"><highlight class="normal"><sp/><sp/><sp/><sp/>flux.setVal(0.0);</highlight></codeline>
 <codeline lineno="555"><highlight class="normal"></highlight></codeline>
-<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a8bd01f978f8aeb1183b108396e4cd732" kindref="member">copyTo</ref>(flux,<sp/>0,<sp/>scomp,<sp/>0,<sp/>nc,<sp/>geom.periodicity());</highlight></codeline>
+<codeline lineno="556"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[face].<ref refid="classamrex_1_1FabSet_1a8bd01f978f8aeb1183b108396e4cd732" kindref="member">copyTo</ref>(flux,<sp/>0,<sp/>scomp,<sp/>0,<sp/>nc,<sp/>geom.periodicity());</highlight></codeline>
 <codeline lineno="557"><highlight class="normal"></highlight></codeline>
 <codeline lineno="558"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="559"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(Gpu::notInLaunchRegion())</highlight><highlight class="normal"></highlight></codeline>
@@ -2529,7 +2529,7 @@
 <codeline lineno="660"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="661"><highlight class="normal"></highlight></codeline>
 <codeline lineno="662"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="663"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1a6819592381055b1835c29fd336447771" kindref="member">FluxRegister::OverwriteFlux</ref><sp/>(Array&lt;MultiFab*,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse_fluxes,</highlight></codeline>
+<codeline lineno="663"><highlight class="normal"><ref refid="classamrex_1_1FluxRegister_1a4230b5a0ec42a59e2f6e48e51ca77f83" kindref="member">FluxRegister::OverwriteFlux</ref><sp/>(Array&lt;MultiFab*,AMREX_SPACEDIM&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>crse_fluxes,</highlight></codeline>
 <codeline lineno="664"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Real<sp/><ref refid="namespaceamrex_1a1a42959e8a21d09d8bcf385c75ad4ec6" kindref="member">scale</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>srccomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>destcomp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numcomp,</highlight></codeline>
 <codeline lineno="665"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Geometry&amp;<sp/>crse_geom)</highlight></codeline>
 <codeline lineno="666"><highlight class="normal">{</highlight></codeline>
@@ -2609,8 +2609,8 @@
 <codeline lineno="740"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Orientation<sp/>lo_face(idim,<sp/><ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410a20ab23ed836ba1667dddbd915ff85255" kindref="member">Orientation::low</ref>);</highlight></codeline>
 <codeline lineno="741"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Orientation<sp/>hi_face(idim,<sp/><ref refid="classamrex_1_1Orientation_1a877c697bbab9de21af4012197ba76410ae82bb2777abd5901ea82ca6721b716a8" kindref="member">Orientation::high</ref>);</highlight></codeline>
 <codeline lineno="742"><highlight class="normal"></highlight></codeline>
-<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[lo_face].<ref refid="classamrex_1_1FabSet_1a8bd01f978f8aeb1183b108396e4cd732" kindref="member">copyTo</ref>(fine_flux,<sp/>0,<sp/>srccomp,<sp/>0,<sp/>numcomp,<sp/>cperiod);</highlight></codeline>
-<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1a4ae6f8b4196e51abb80fd72200269835" kindref="member">bndry</ref>[hi_face].<ref refid="classamrex_1_1FabSet_1a481faf49fde211c6f5793947f4e84574" kindref="member">plusTo</ref>(fine_flux,<sp/>0,<sp/>srccomp,<sp/>0,<sp/>numcomp,<sp/>cperiod);</highlight></codeline>
+<codeline lineno="743"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[lo_face].<ref refid="classamrex_1_1FabSet_1a8bd01f978f8aeb1183b108396e4cd732" kindref="member">copyTo</ref>(fine_flux,<sp/>0,<sp/>srccomp,<sp/>0,<sp/>numcomp,<sp/>cperiod);</highlight></codeline>
+<codeline lineno="744"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classamrex_1_1BndryRegister_1adb20e61942a04f1783a0e82598583bc9" kindref="member">bndry</ref>[hi_face].<ref refid="classamrex_1_1FabSet_1a481faf49fde211c6f5793947f4e84574" kindref="member">plusTo</ref>(fine_flux,<sp/>0,<sp/>srccomp,<sp/>0,<sp/>numcomp,<sp/>cperiod);</highlight></codeline>
 <codeline lineno="745"><highlight class="normal"></highlight></codeline>
 <codeline lineno="746"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMREX_USE_OMP</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="747"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>if<sp/>(!run_on_gpu)</highlight><highlight class="normal"></highlight></codeline>
