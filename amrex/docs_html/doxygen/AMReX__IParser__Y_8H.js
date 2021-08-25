@@ -58,7 +58,7 @@ var AMReX__IParser__Y_8H =
     [ "amrex_iparsererror", "AMReX__IParser__Y_8H.html#accf7d387e26ee1deb890279fca0ca9b4", null ],
     [ "iparser_ast_depth", "AMReX__IParser__Y_8H.html#a5632af39a73771c9c4131e718495680f", null ],
     [ "iparser_ast_dup", "AMReX__IParser__Y_8H.html#a6d20135c80c410cae70ceca17c5fd7bf", null ],
-    [ "iparser_ast_get_symbols", "AMReX__IParser__Y_8H.html#a5cbcc81f28b4ebf7491b0e8e7995c30e", null ],
+    [ "iparser_ast_get_symbols", "AMReX__IParser__Y_8H.html#a8b3a32551ba0090abf9e5bf7578dbd3b", null ],
     [ "iparser_ast_optimize", "AMReX__IParser__Y_8H.html#a86b9b9521f3dd1de76b9815dcdc7b9d0", null ],
     [ "iparser_ast_print", "AMReX__IParser__Y_8H.html#a2e832571b607617664a8a588c69a0dc4", null ],
     [ "iparser_ast_regvar", "AMReX__IParser__Y_8H.html#acaf77a8dc997257b02f28ac1bebe36e2", null ],

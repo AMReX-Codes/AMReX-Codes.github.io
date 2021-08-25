@@ -12,7 +12,7 @@ var AMReX__IParser__Y_8cpp =
     [ "iparser_allocate", "AMReX__IParser__Y_8cpp.html#a9abdf6259c081b4f3b80eea3e8e2d45c", null ],
     [ "iparser_ast_depth", "AMReX__IParser__Y_8cpp.html#a5632af39a73771c9c4131e718495680f", null ],
     [ "iparser_ast_dup", "AMReX__IParser__Y_8cpp.html#a6d20135c80c410cae70ceca17c5fd7bf", null ],
-    [ "iparser_ast_get_symbols", "AMReX__IParser__Y_8cpp.html#a5cbcc81f28b4ebf7491b0e8e7995c30e", null ],
+    [ "iparser_ast_get_symbols", "AMReX__IParser__Y_8cpp.html#a8b3a32551ba0090abf9e5bf7578dbd3b", null ],
     [ "iparser_ast_optimize", "AMReX__IParser__Y_8cpp.html#a86b9b9521f3dd1de76b9815dcdc7b9d0", null ],
     [ "iparser_ast_print", "AMReX__IParser__Y_8cpp.html#a2e832571b607617664a8a588c69a0dc4", null ],
     [ "iparser_ast_print_f1", "AMReX__IParser__Y_8cpp.html#a89edeb0208499eb17f8a7842afc94262", null ],
