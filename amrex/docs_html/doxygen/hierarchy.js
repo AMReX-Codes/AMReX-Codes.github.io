@@ -109,14 +109,15 @@ var hierarchy =
     [ "amrex::Array4< T >", "structamrex_1_1Array4.html", [
       [ "amrex::PolymorphicArray4< T >", "structamrex_1_1PolymorphicArray4.html", null ]
     ] ],
+    [ "amrex::Array4< int >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< T const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< value_type >", "structamrex_1_1Array4.html", null ],
     [ "amrex::Array4< value_type const >", "structamrex_1_1Array4.html", null ],
     [ "amrex::NonLocalBC::Array4Array4Box< T >", "structamrex_1_1NonLocalBC_1_1Array4Array4Box.html", null ],
-    [ "Array4BoxTag< T >", "structArray4BoxTag.html", null ],
-    [ "Array4BoxValTag< T >", "structArray4BoxValTag.html", null ],
-    [ "Array4CopyTag< T >", "structArray4CopyTag.html", null ],
-    [ "Array4MaskCopyTag< T >", "structArray4MaskCopyTag.html", null ],
+    [ "amrex::Array4BoxTag< T >", "structamrex_1_1Array4BoxTag.html", null ],
+    [ "amrex::Array4BoxValTag< T >", "structamrex_1_1Array4BoxValTag.html", null ],
+    [ "amrex::Array4CopyTag< T >", "structamrex_1_1Array4CopyTag.html", null ],
+    [ "amrex::Array4MaskCopyTag< T >", "structamrex_1_1Array4MaskCopyTag.html", null ],
     [ "amrex::ArrayOfStructs< NReal, NInt, Allocator >", "classamrex_1_1ArrayOfStructs.html", null ],
     [ "amrex::ArrayOfStructs< NStructReal, NStructInt, DefaultAllocator >", "classamrex_1_1ArrayOfStructs.html", null ],
     [ "amrex::AssignGrid< BinIteratorFactory >", "structamrex_1_1AssignGrid.html", null ],
@@ -568,9 +569,9 @@ var hierarchy =
         [ "amrex::NonLocalBC::IsFabProjection< P, FAB >", "structamrex_1_1NonLocalBC_1_1IsFabProjection.html", null ]
       ] ]
     ] ],
-    [ "amrex::Gpu::range_detail::range_impl< T >::iterator", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html", null ],
     [ "amrex::BinIterator< T >::iterator", "structamrex_1_1BinIterator_1_1iterator.html", null ],
     [ "amrex::Neighbors< ParticleType >::iterator", "structamrex_1_1Neighbors_1_1iterator.html", null ],
+    [ "amrex::Gpu::range_detail::range_impl< T >::iterator", "structamrex_1_1Gpu_1_1range__detail_1_1range__impl_1_1iterator.html", null ],
     [ "KeepValidFilter", "structKeepValidFilter.html", null ],
     [ "amrex::Gpu::KernelInfo", "classamrex_1_1Gpu_1_1KernelInfo.html", null ],
     [ "amrex::EB2::LatheIF< F >", "classamrex_1_1EB2_1_1LatheIF.html", null ],
@@ -1049,6 +1050,7 @@ var hierarchy =
       [ "amrex::Vector< Vector< MultiFab > >", "classamrex_1_1Vector.html", null ],
       [ "amrex::Vector< Vector< Real > >", "classamrex_1_1Vector.html", null ]
     ] ],
+    [ "amrex::VectorTag< T >", "structamrex_1_1VectorTag.html", null ],
     [ "amrex::EB2::Vertex", "structamrex_1_1EB2_1_1Vertex.html", null ],
     [ "amrex::VisMF", "classamrex_1_1VisMF.html", null ],
     [ "VoidCopyTag", "structVoidCopyTag.html", null ],
