@@ -949,11 +949,11 @@ Each AMR level must have 2 layers of ghost nodes.
 The second (outermost) layer of nodes is treated as constant by the relaxation, essentially acting as a Dirichlet boundary.
 The first layer of nodes is evolved using the relaxation, in the same manner as the rest of the solution.
 When the residual is restricted onto the coarse level (in <code class="docutils literal notranslate"><span class="pre">reflux</span></code>) this allows the residual at the coarse-fine boundary to be interpolated using the first layer of ghost nodes.
-<a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 9</span></a> illustrates the how the coarse-fine update takes place.</p>
+<a class="reference internal" href="#fig-refluxfreecoarsefine"><span class="std std-numref">Fig. 8</span></a> illustrates the how the coarse-fine update takes place.</p>
 <figure class="align-center" id="id2">
 <span id="fig-refluxfreecoarsefine"></span><a class="reference internal image-reference" href="_images/refluxfreecoarsefine.png"><img alt="_images/refluxfreecoarsefine.png" src="_images/refluxfreecoarsefine.png" style="height: 2cm;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">: Reflux-free coarse-fine boundary update.
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">: Reflux-free coarse-fine boundary update.
 Level 2 ghost nodes (small dark blue) are interpolated from coarse boundary.
 Level 1 ghost nodes are updated during the relaxation along with all the other interior fine nodes.
 Coarse nodes (large blue) on the coarse/fine boundary are updated by restricting with interior nodes
