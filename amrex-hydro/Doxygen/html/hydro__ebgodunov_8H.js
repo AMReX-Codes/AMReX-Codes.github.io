@@ -5,5 +5,5 @@ var hydro__ebgodunov_8H =
     [ "ComputeEdgeState", "hydro__ebgodunov_8H.html#afb5b3b4bcea09a8aeeb568ddde3a46e4", null ],
     [ "ComputeSyncAofs", "hydro__ebgodunov_8H.html#a23f99047da7b06589fe28aeb2a4cc074", null ],
     [ "ExtrapVelToFaces", "hydro__ebgodunov_8H.html#abea06da38cd7e2c6a6ed94d761c4e996", null ],
-    [ "ExtrapVelToFacesOnBox", "hydro__ebgodunov_8H.html#a8858091c85ab2b71d187db40c00348fc", null ]
+    [ "ExtrapVelToFacesOnBox", "hydro__ebgodunov_8H.html#ac184b3ba8058a5c138c754520a9d78e8", null ]
 ];

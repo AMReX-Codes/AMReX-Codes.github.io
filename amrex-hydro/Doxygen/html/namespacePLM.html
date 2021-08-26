@@ -105,14 +105,10 @@ Functions</h2></td></tr>
 <tr class="separator:ad2856cbb4c67bc257b75340044ae7229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7beaa3659e4fc3ea1dc0f3a97d025f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePLM.html#ad7beaa3659e4fc3ea1dc0f3a97d025f7">PredictVelOnYFace</a> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;Imy, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipy, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vcc, const amrex::Geometry &amp;geom, amrex::Real dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec)</td></tr>
 <tr class="separator:ad7beaa3659e4fc3ea1dc0f3a97d025f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a279a86f9650920dff1feb1b6cdaa2664"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePLM.html#a279a86f9650920dff1feb1b6cdaa2664">PredictVelOnZFace</a> (amrex::Box const &amp;bx, int ncomp, amrex::Array4&lt; amrex::Real &gt; const &amp;Imz, amrex::Array4&lt; amrex::Real &gt; const &amp;Ipz, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vcc, const amrex::Geometry &amp;geom, amrex::Real dt, amrex::Vector&lt; amrex::BCRec &gt; const &amp;h_bcrec, amrex::BCRec const *d_bcrec)</td></tr>
-<tr class="separator:a279a86f9650920dff1feb1b6cdaa2664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d3106050ecc051c39cd1702f6615a7"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePLM.html#a27d3106050ecc051c39cd1702f6615a7">PredictStateOnXFace</a> (const int i, const int j, const int k, const int n, const amrex::Real dt, const amrex::Real dx, amrex::Real &amp;Im, amrex::Real &amp;Ip, const amrex::Array4&lt; const amrex::Real &gt; &amp;S, const amrex::Real &amp;umac, const amrex::BCRec bc, const int domain_ilo, const int domain_ihi, const bool is_velocity)</td></tr>
 <tr class="separator:a27d3106050ecc051c39cd1702f6615a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1107e8578e71e86ef2d86c10729baa34"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePLM.html#a1107e8578e71e86ef2d86c10729baa34">PredictStateOnYFace</a> (const int i, const int j, const int k, const int n, const amrex::Real dt, const amrex::Real dy, amrex::Real &amp;Im, amrex::Real &amp;Ip, const amrex::Array4&lt; const amrex::Real &gt; &amp;S, const amrex::Real &amp;vmac, const amrex::BCRec bc, const int domain_jlo, const int domain_jhi, const bool is_velocity)</td></tr>
 <tr class="separator:a1107e8578e71e86ef2d86c10729baa34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76a7e36662c08537fd1c31e33a8273bb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacePLM.html#a76a7e36662c08537fd1c31e33a8273bb">PredictStateOnZFace</a> (const int i, const int j, const int k, const int n, const amrex::Real dt, const amrex::Real dz, amrex::Real &amp;Im, amrex::Real &amp;Ip, const amrex::Array4&lt; const amrex::Real &gt; &amp;S, const amrex::Real &amp;wmac, const amrex::BCRec bc, const int domain_klo, const int domain_khi, const bool is_velocity)</td></tr>
-<tr class="separator:a76a7e36662c08537fd1c31e33a8273bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a27d3106050ecc051c39cd1702f6615a7"></a>
@@ -315,106 +311,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a76a7e36662c08537fd1c31e33a8273bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76a7e36662c08537fd1c31e33a8273bb">&#9670;&nbsp;</a></span>PredictStateOnZFace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void PLM::PredictStateOnZFace </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
-          <td class="paramname"><em>dz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>Im</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>Ip</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
-          <td class="paramname"><em>S</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
-          <td class="paramname"><em>wmac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::BCRec&#160;</td>
-          <td class="paramname"><em>bc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>domain_klo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>domain_khi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>is_velocity</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ad2856cbb4c67bc257b75340044ae7229"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2856cbb4c67bc257b75340044ae7229">&#9670;&nbsp;</a></span>PredictVelOnXFace()</h2>
 
@@ -520,82 +416,6 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
           <td class="paramname"><em>Ipy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>vcc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::BCRec &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>h_bcrec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::BCRec const *&#160;</td>
-          <td class="paramname"><em>d_bcrec</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a279a86f9650920dff1feb1b6cdaa2664"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a279a86f9650920dff1feb1b6cdaa2664">&#9670;&nbsp;</a></span>PredictVelOnZFace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void PLM::PredictVelOnZFace </td>
-          <td>(</td>
-          <td class="paramtype">amrex::Box const &amp;&#160;</td>
-          <td class="paramname"><em>bx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ncomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>Imz</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>Ipz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -124,10 +124,6 @@ Functions</h2></td></tr>
 <tr class="separator:a4e5b6599e866b0386d608e59dabb37ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df4bf00c86eb57634b4bff1d4d3d89b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a5df4bf00c86eb57634b4bff1d4d3d89b">hydro_mol_yedge_state</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;vmac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
 <tr class="separator:a5df4bf00c86eb57634b4bff1d4d3d89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f7f801131eb67d5eee833b18edc26a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a13f7f801131eb67d5eee833b18edc26a">hydro_mol_zedge_state_extdir</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
-<tr class="separator:a13f7f801131eb67d5eee833b18edc26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71fdff54caca8df706146221191870ff"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMOL.html#a71fdff54caca8df706146221191870ff">hydro_mol_zedge_state</a> (int i, int j, int k, int n, amrex::Array4&lt; amrex::Real const &gt; const &amp;q, amrex::Array4&lt; amrex::Real const &gt; const &amp;wmac, amrex::BCRec const *const d_bcrec, int domlo, int domhi, bool is_velocity) noexcept</td></tr>
-<tr class="separator:a71fdff54caca8df706146221191870ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The procedures for computing MAC velocities and edge states with <a class="el" href="namespaceMOL.html">MOL</a> does not involve time derivatives. All slope computations use second-order limited slopes as described in <a href="https://amrex-codes.github.io/amrex/hydro_html/MOL.html#sec:slopes">[sec:slopes]</a>. </p>
@@ -518,6 +514,15 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Compute upwinded FC velocities by extrapolating CC values in SPACE ONLY. This is NOT a <a class="el" href="namespaceGodunov.html">Godunov</a> type extrapolation: there is NO dependence on time! The resulting FC velocities are computed at the CENTROID of the face. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceMOL_acdde2acf756048b8ef0bca332e4bf748_icgraph.png" border="0" usemap="#namespaceMOL_acdde2acf756048b8ef0bca332e4bf748_icgraph" alt=""/></div>
+<map name="namespaceMOL_acdde2acf756048b8ef0bca332e4bf748_icgraph" id="namespaceMOL_acdde2acf756048b8ef0bca332e4bf748_icgraph">
+<area shape="rect" title="Compute upwinded FC velocities by extrapolating CC values in SPACE ONLY." alt="" coords="264,5,435,32"/>
+<area shape="rect" href="group__Utilities.html#ga56e04be6f4744620d42f9f3bda0b4c6b" title=" " alt="" coords="5,5,216,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -943,192 +948,6 @@ Here is the call graph for this function:</div>
 <map name="namespaceMOL_a4e5b6599e866b0386d608e59dabb37ce_cgraph" id="namespaceMOL_a4e5b6599e866b0386d608e59dabb37ce_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,180,47"/>
 <area shape="rect" href="namespaceHydroBC.html#a6865c2cfd50cc95f9b69ded1e8ac78ab" title="Boundary condition effects." alt="" coords="228,13,401,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a71fdff54caca8df706146221191870ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a71fdff54caca8df706146221191870ff">&#9670;&nbsp;</a></span>hydro_mol_zedge_state()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real MOL::hydro_mol_zedge_state </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>wmac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::BCRec const *const&#160;</td>
-          <td class="paramname"><em>d_bcrec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>domlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>domhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_velocity</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceMOL_a71fdff54caca8df706146221191870ff_cgraph.png" border="0" usemap="#namespaceMOL_a71fdff54caca8df706146221191870ff_cgraph" alt=""/></div>
-<map name="namespaceMOL_a71fdff54caca8df706146221191870ff_cgraph" id="namespaceMOL_a71fdff54caca8df706146221191870ff_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
-<area shape="rect" href="namespaceHydroBC.html#a19ddc5ac50e9a6b9a98bc17f3815a62e" title="Boundary condition effects." alt="" coords="228,13,403,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a13f7f801131eb67d5eee833b18edc26a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13f7f801131eb67d5eee833b18edc26a">&#9670;&nbsp;</a></span>hydro_mol_zedge_state_extdir()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real MOL::hydro_mol_zedge_state_extdir </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>q</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::Array4&lt; amrex::Real const &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>wmac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::BCRec const *const&#160;</td>
-          <td class="paramname"><em>d_bcrec</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>domlo</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>domhi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>is_velocity</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceMOL_a13f7f801131eb67d5eee833b18edc26a_cgraph.png" border="0" usemap="#namespaceMOL_a13f7f801131eb67d5eee833b18edc26a_cgraph" alt=""/></div>
-<map name="namespaceMOL_a13f7f801131eb67d5eee833b18edc26a_cgraph" id="namespaceMOL_a13f7f801131eb67d5eee833b18edc26a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
-<area shape="rect" href="namespaceHydroBC.html#a19ddc5ac50e9a6b9a98bc17f3815a62e" title="Boundary condition effects." alt="" coords="228,13,403,39"/>
 </map>
 </div>
 
