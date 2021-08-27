@@ -104,6 +104,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#post-mac-computeedgestate">Post-MAC (ComputeEdgeState)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#computing-the-fluxes-computefluxes">Computing the Fluxes (ComputeFluxes)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#constructing-the-update">Constructing the update</a></li>
 </ul>
 </li>
@@ -269,17 +270,29 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 \frac{1}{2}(s_L + s_R),
 \end{cases}\end{split}\]</div>
 </section>
+<section id="computing-the-fluxes-computefluxes">
+<h2>Computing the Fluxes (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>)<a class="headerlink" href="#computing-the-fluxes-computefluxes" title="Permalink to this headline">¶</a></h2>
+<p>The fluxes are computed from the edge states above by defining, e.g.
+.. math:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">^</span><span class="n">x_</span><span class="p">{</span><span class="n">i</span><span class="o">-</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">2</span><span class="p">},</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">n</span><span class="p">}</span> <span class="o">=</span> <span class="n">a_</span><span class="p">{</span><span class="n">i</span><span class="o">-</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">2</span><span class="p">},</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">}</span> \<span class="p">;</span> <span class="n">u</span><span class="o">^</span><span class="p">{</span><span class="n">MAC</span><span class="p">}</span><span class="n">_</span><span class="p">{</span><span class="n">i</span><span class="o">-</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">2</span><span class="p">},</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">}</span>\<span class="p">;</span> <span class="n">s_</span><span class="p">{</span><span class="n">i</span><span class="o">-</span>\<span class="n">frac</span><span class="p">{</span><span class="mi">1</span><span class="p">}{</span><span class="mi">2</span><span class="p">},</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">}</span><span class="o">^</span><span class="p">{</span><span class="n">n</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>on all x-faces with non-zero area fraction,</p>
+<div class="math notranslate nohighlight">
+\[F^y_{i,j-\frac{1}{2},k}^{n} = a_{i,j-\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j-\frac{1}{2},k}^{n})\]</div>
+<p>on all y-faces with non-zero area fraction, and</p>
+<div class="math notranslate nohighlight">
+\[F^z_{i,j,k-\frac{1}{2}}^{n} = a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}^{n})\]</div>
+<p>on all z-face with non-zero area fraction</p>
+</section>
 <section id="constructing-the-update">
 <h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
 <p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, on all cells with <span class="math notranslate nohighlight">\(V_{i,j,k} &gt; 0\)</span> we construct</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla \cdot ({\bf u}s)  = (
-                           &amp; (a_{i+\frac{1}{2},j,k} \; u^{MAC}_{i+\frac{1}{2},j,k}\; s_{i+\frac{1}{2},j,k}
-                            - a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}) + \\
-                           &amp; (a_{i,j+\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j+\frac{1}{2},k}
-                            - a_{i,j-\frac{1}{2},k} \; v^{MAC}_{i,j-\frac{1}{2},k}\; s_{i,j-\frac{1}{2},k}) + \\
-                           &amp; (a_{i,j,k+\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k+\frac{1}{2}}
-                            - a_{i,j,k-\frac{1}{2}} \; w^{MAC}_{i,j,k-\frac{1}{2}}\; s_{i,j,k-\frac{1}{2}}) ) / V_{i,j,k}\end{split}\]</div>
+                           &amp; (F^x_{i+\frac{1}{2},j,k} - F^x_{i-\frac{1}{2},j,k}) + \\
+                           &amp; (F^y_{i,j+\frac{1}{2},k} - F^y_{i,j-\frac{1}{2},k}) + \\
+                           &amp; (F^z_{i,j,k+\frac{1}{2}} - F^z_{i,j,k-\frac{1}{2}}) ) / V_{i,j,k}\end{split}\]</div>
 <p>while if <span class="math notranslate nohighlight">\(s\)</span> is to be updated in convective form, we construct</p>
 <div class="math notranslate nohighlight">
 \[({\bf u}\cdot \nabla s) = \nabla \cdot ({\bf u}s) - s_{i,j,k}^n (DU)^{MAC}\]</div>
