@@ -51,6 +51,7 @@ var namespaceamrex =
     [ "Array4BoxValTag", "structamrex_1_1Array4BoxValTag.html", "structamrex_1_1Array4BoxValTag" ],
     [ "Array4CopyTag", "structamrex_1_1Array4CopyTag.html", "structamrex_1_1Array4CopyTag" ],
     [ "Array4MaskCopyTag", "structamrex_1_1Array4MaskCopyTag.html", "structamrex_1_1Array4MaskCopyTag" ],
+    [ "Array4Tag", "structamrex_1_1Array4Tag.html", "structamrex_1_1Array4Tag" ],
     [ "ArrayOfStructs", "classamrex_1_1ArrayOfStructs.html", "classamrex_1_1ArrayOfStructs" ],
     [ "AssignGrid", "structamrex_1_1AssignGrid.html", "structamrex_1_1AssignGrid" ],
     [ "AsyncArenaAllocator", "classamrex_1_1AsyncArenaAllocator.html", "classamrex_1_1AsyncArenaAllocator" ],

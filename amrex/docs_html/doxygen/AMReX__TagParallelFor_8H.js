@@ -2,6 +2,7 @@ var AMReX__TagParallelFor_8H =
 [
     [ "Array4CopyTag", "structamrex_1_1Array4CopyTag.html", "structamrex_1_1Array4CopyTag" ],
     [ "Array4MaskCopyTag", "structamrex_1_1Array4MaskCopyTag.html", "structamrex_1_1Array4MaskCopyTag" ],
+    [ "Array4Tag", "structamrex_1_1Array4Tag.html", "structamrex_1_1Array4Tag" ],
     [ "Array4BoxTag", "structamrex_1_1Array4BoxTag.html", "structamrex_1_1Array4BoxTag" ],
     [ "Array4BoxValTag", "structamrex_1_1Array4BoxValTag.html", "structamrex_1_1Array4BoxValTag" ],
     [ "VectorTag", "structamrex_1_1VectorTag.html", "structamrex_1_1VectorTag" ],

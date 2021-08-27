@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reduceop_15475',['ReduceOp',['../namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569d',1,'amrex::detail']]],
-  ['runon_15476',['RunOn',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2',1,'amrex']]]
+  ['reduceop_15477',['ReduceOp',['../namespaceamrex_1_1detail.html#a05ef6e98eba987410d73df1617fa569d',1,'amrex::detail']]],
+  ['runon_15478',['RunOn',['../namespaceamrex.html#a33bef6ea796972dbf046ba79277795d2',1,'amrex']]]
 ];
