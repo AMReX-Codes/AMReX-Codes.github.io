@@ -335,7 +335,6 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     [ "AMReX_RealVect.H", "AMReX__RealVect_8H.html", "AMReX__RealVect_8H" ],
     [ "AMReX_Reduce.H", "AMReX__Reduce_8H.html", "AMReX__Reduce_8H" ],
     [ "AMReX_Scan.H", "AMReX__Scan_8H.html", "AMReX__Scan_8H" ],
-    [ "AMReX_Slopes_K.H", "AMReX__Slopes__K_8H.html", "AMReX__Slopes__K_8H" ],
     [ "AMReX_SPACE.H", "AMReX__SPACE_8H.html", "AMReX__SPACE_8H" ],
     [ "AMReX_string_mod.F90", "AMReX__string__mod_8F90.html", "AMReX__string__mod_8F90" ],
     [ "AMReX_TagParallelFor.H", "AMReX__TagParallelFor_8H.html", "AMReX__TagParallelFor_8H" ],

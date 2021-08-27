@@ -79,7 +79,6 @@ var dir_ed0b49c97fbf22356f0af00f4f599e98 =
     [ "AMReX_EB2_ND_C.cpp", "AMReX__EB2__ND__C_8cpp.html", "AMReX__EB2__ND__C_8cpp" ],
     [ "AMReX_EB_LeastSquares_2D_K.H", "AMReX__EB__LeastSquares__2D__K_8H.html", "AMReX__EB__LeastSquares__2D__K_8H" ],
     [ "AMReX_EB_LeastSquares_3D_K.H", "AMReX__EB__LeastSquares__3D__K_8H.html", "AMReX__EB__LeastSquares__3D__K_8H" ],
-    [ "AMReX_EB_slopes_K.H", "AMReX__EB__slopes__K_8H.html", null ],
     [ "AMReX_EB_STL_utils.cpp", "AMReX__EB__STL__utils_8cpp.html", null ],
     [ "AMReX_EB_STL_utils.H", "AMReX__EB__STL__utils_8H.html", [
       [ "STLtools", "classamrex_1_1STLtools.html", "classamrex_1_1STLtools" ]
