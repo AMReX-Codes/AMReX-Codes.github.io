@@ -338,7 +338,7 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 </section>
 <section id="computing-the-fluxes-computefluxes">
 <h2>Computing the Fluxes (<a class="reference external" href="https://amrex-codes.github.io/amrex-hydro/Doxygen/html/namespaceHydroUtils.html#ab70f040557a658e70ba076c9d105bab7">ComputeFluxes</a>)<a class="headerlink" href="#computing-the-fluxes-computefluxes" title="Permalink to this headline">¶</a></h2>
-<p>The fluxes are computed from the edge states above by defining, e.g.</p>
+<p>The fluxes are computed from the edge states above by defining, e.g.,</p>
 <div class="math notranslate nohighlight">
 \[F_{i-\frac{1}{2},j,k}^{x,n+\frac{1}{2} = a_{i-\frac{1}{2},j,k} \; u^{MAC}_{i-\frac{1}{2},j,k}\; s_{i-\frac{1}{2},j,k}^{n+\frac{1}{2})\]</div>
 <p>on all x-faces with non-zero area fraction,</p>
@@ -353,13 +353,13 @@ s_R, &amp; \mathrm{if} \; u^{MAC}_{i-\frac{1}{2},j,k}\; \le  \; -\varepsilon  \;
 <h2>Constructing the update<a class="headerlink" href="#constructing-the-update" title="Permalink to this headline">¶</a></h2>
 <p>If the variable, <span class="math notranslate nohighlight">\(s\)</span> is to be updated conservatively, on all cells with <span class="math notranslate nohighlight">\(V_{i,j,k} &gt; 0\)</span> we construct</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\nabla \cdot ({\bf u}s) = (
+\[\begin{split}\nabla \cdot ({\bf u}s)^{n+\frac{1}{2}} = (
                         &amp; ( F_{i+\frac{1}{2},j,k}^{{x,n+\frac{1}{2}}} -F_{i-\frac{1}{2},j,k}^{{x,n+\frac{1}{2}}}) + \\
                         &amp; ( F_{i,j+\frac{1}{2},k}^{{y,n+\frac{1}{2}}} -F_{i,j-\frac{1}{2},k}^{{y,n+\frac{1}{2}}}) + \\
                         &amp; ( F_{i,j,k+\frac{1}{2}}^{{z,n+\frac{1}{2}}} -F_{i,j,k-\frac{1}{2}}^{{z,n+\frac{1}{2}}}) ) / V_{i,j,k}\end{split}\]</div>
 <p>while if <span class="math notranslate nohighlight">\(s\)</span> is to be updated in convective form, we construct</p>
 <div class="math notranslate nohighlight">
-\[({\bf u}\cdot \nabla s) = \nabla \cdot ({\bf u}s) - s_{i,j,k}^{{n+\frac{1}{2}}} (DU)^{MAC}\]</div>
+\[({\bf u}\cdot \nabla s)^{n+\frac{1}{2}} = \nabla \cdot ({\bf u}s)^{n+\frac{1}{2}} - s_{i,j,k}^{{n+\frac{1}{2}}} (DU)^{MAC}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}(DU)^{MAC}  = ( &amp; (a_{i+\frac{1}{2},j,k} u^{MAC}_{i+\frac{1}{2},j,k}- a_{i-\frac{1}{2},j,k} u^{MAC}_{i-\frac{1}{2},j,k}) + \\
