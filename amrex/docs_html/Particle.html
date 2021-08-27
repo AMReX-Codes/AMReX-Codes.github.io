@@ -624,29 +624,69 @@ between valid particles and neighbors will be correct.</span><a class="headerlin
 </figure>
 <p>For a <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code> that does this neighbor finding, please see
 <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborParticleContainer</span></span></code> in
-<code class="docutils literal notranslate"><span class="pre">amrex/Src/Particles/AMReX_NeighborParticleContainer.H.</span></code> This
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">ParticleContainer</span></span></code> has additional methods called <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fillNeighbors</span></span><span class="punctuation"><span class="pre">()</span></span></code>
+<code class="docutils literal notranslate"><span class="pre">amrex/Src/Particles/AMReX_NeighborParticleContainer.H.</span></code> The
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborParticleContainer</span></span></code> has additional methods called <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">fillNeighbors</span></span><span class="punctuation"><span class="pre">()</span></span></code>
 and <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">clearNeighbors</span></span><span class="punctuation"><span class="pre">()</span></span></code> that fill the <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">neighbors</span></span></code> data structure with
 copies of the proper particles. A tutorial that uses these features is
-available at <code class="docutils literal notranslate"><span class="pre">amrex/Tutorials/Particles/ShortRangeParticles</span></code>. This tutorial
-computes the forces on a given tile via direct summation by passing the real
-and neighbor particles into a Fortran subroutine, as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">ShortRangeParticleContainer</span><span class="o">::</span><span class="n">computeForces</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">MyParIter</span> <span class="n">pti</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">,</span> <span class="n">lev</span><span class="p">);</span> <span class="n">pti</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">pti</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">AoS</span><span class="o">&amp;</span> <span class="n">particles</span> <span class="o">=</span> <span class="n">pti</span><span class="p">.</span><span class="n">GetArrayOfStructs</span><span class="p">();</span>
-        <span class="kt">int</span> <span class="n">Np</span> <span class="o">=</span> <span class="n">particles</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-        <span class="n">PairIndex</span> <span class="nf">index</span><span class="p">(</span><span class="n">pti</span><span class="p">.</span><span class="n">index</span><span class="p">(),</span> <span class="n">pti</span><span class="p">.</span><span class="n">LocalTileIndex</span><span class="p">());</span>
-        <span class="kt">int</span> <span class="n">Nn</span> <span class="o">=</span> <span class="n">neighbors</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">size</span><span class="p">();</span>
-        <span class="n">amrex_compute_forces</span><span class="p">(</span><span class="n">particles</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">Np</span><span class="p">,</span>
-                             <span class="n">neighbors</span><span class="p">[</span><span class="n">index</span><span class="p">].</span><span class="n">dataPtr</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">Nn</span><span class="p">);</span>
+available at <a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#neighborlist">NeighborList</a>. In this tutorial the function
+<code class="code cpp c++ docutils literal notranslate"><span class="keyword type"><span class="pre">void</span></span> <span class="name label"><span class="pre">MDParticleContainer</span></span><span class="punctuation"><span class="pre">:</span></span><span class="name"><span class="pre">computeForces</span></span><span class="punctuation"><span class="pre">()</span></span></code>
+computes the forces on a given tile via direct summation over the real
+and neighbor particles, as follows:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">MDParticleContainer</span><span class="o">::</span><span class="n">computeForces</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">BL_PROFILE</span><span class="p">(</span><span class="s">&quot;MDParticleContainer::computeForces&quot;</span><span class="p">);</span>
+
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">lev</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">Geometry</span><span class="o">&amp;</span> <span class="n">geom</span> <span class="o">=</span> <span class="n">Geom</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
+    <span class="k">auto</span><span class="o">&amp;</span> <span class="n">plev</span>  <span class="o">=</span> <span class="n">GetParticles</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">MFIter</span> <span class="n">mfi</span> <span class="o">=</span> <span class="n">MakeMFIter</span><span class="p">(</span><span class="n">lev</span><span class="p">);</span> <span class="n">mfi</span><span class="p">.</span><span class="n">isValid</span><span class="p">();</span> <span class="o">++</span><span class="n">mfi</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">gid</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">index</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">tid</span> <span class="o">=</span> <span class="n">mfi</span><span class="p">.</span><span class="n">LocalTileIndex</span><span class="p">();</span>
+        <span class="k">auto</span> <span class="n">index</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="n">gid</span><span class="p">,</span> <span class="n">tid</span><span class="p">);</span>
+
+        <span class="k">auto</span><span class="o">&amp;</span> <span class="n">ptile</span> <span class="o">=</span> <span class="n">plev</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+        <span class="k">auto</span><span class="o">&amp;</span> <span class="n">aos</span>   <span class="o">=</span> <span class="n">ptile</span><span class="p">.</span><span class="n">GetArrayOfStructs</span><span class="p">();</span>
+        <span class="k">const</span> <span class="kt">size_t</span> <span class="n">np</span> <span class="o">=</span> <span class="n">aos</span><span class="p">.</span><span class="n">numParticles</span><span class="p">();</span>
+
+        <span class="k">auto</span> <span class="n">nbor_data</span> <span class="o">=</span> <span class="n">m_neighbor_list</span><span class="p">[</span><span class="n">lev</span><span class="p">][</span><span class="n">index</span><span class="p">].</span><span class="n">data</span><span class="p">();</span>
+        <span class="n">ParticleType</span><span class="o">*</span> <span class="n">pstruct</span> <span class="o">=</span> <span class="n">aos</span><span class="p">().</span><span class="n">dataPtr</span><span class="p">();</span>
+
+       <span class="c1">// now we loop over the neighbor list and compute the forces</span>
+        <span class="n">AMREX_FOR_1D</span> <span class="p">(</span> <span class="n">np</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="n">ParticleType</span><span class="o">&amp;</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">pstruct</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">p1</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">ax</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="n">p1</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">ay</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+            <span class="n">p1</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">az</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">p2</span> <span class="p">:</span> <span class="n">nbor_data</span><span class="p">.</span><span class="n">getNeighbors</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">Real</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+                <span class="n">Real</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">Real</span> <span class="n">dz</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">pos</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+                <span class="n">Real</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span> <span class="o">+</span> <span class="n">dz</span><span class="o">*</span><span class="n">dz</span><span class="p">;</span>
+                <span class="n">r2</span> <span class="o">=</span> <span class="n">amrex</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">Params</span><span class="o">::</span><span class="n">min_r</span><span class="o">*</span><span class="n">Params</span><span class="o">::</span><span class="n">min_r</span><span class="p">);</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">r2</span> <span class="o">&gt;</span> <span class="n">Params</span><span class="o">::</span><span class="n">cutoff</span><span class="o">*</span><span class="n">Params</span><span class="o">::</span><span class="n">cutoff</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+                <span class="n">Real</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">r2</span><span class="p">);</span>
+
+                <span class="n">Real</span> <span class="n">coef</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">Params</span><span class="o">::</span><span class="n">cutoff</span> <span class="o">/</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r2</span><span class="p">;</span>
+                <span class="n">p1</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">ax</span><span class="p">)</span> <span class="o">+=</span> <span class="n">coef</span> <span class="o">*</span> <span class="n">dx</span><span class="p">;</span>
+                <span class="n">p1</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">ay</span><span class="p">)</span> <span class="o">+=</span> <span class="n">coef</span> <span class="o">*</span> <span class="n">dy</span><span class="p">;</span>
+                <span class="n">p1</span><span class="p">.</span><span class="n">rdata</span><span class="p">(</span><span class="n">PIdx</span><span class="o">::</span><span class="n">az</span><span class="p">)</span> <span class="o">+=</span> <span class="n">coef</span> <span class="o">*</span> <span class="n">dz</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Alternatively, one can avoid doing a direct <span class="math notranslate nohighlight">\(N^2\)</span> summation over the
-particles on a tile by binning the particles by cell and building a neighbor
-list. A tutorial that demonstrates this process is
-<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#neighborlist">Neighbor List</a>. The data structure used to represent
+<p>Doing a direct <span class="math notranslate nohighlight">\(N^2\)</span> summation over the
+particles on a tile is avoided by binning the particles by cell and building a neighbor
+list.  The data structure used to represent
 the neighbor lists is illustrated in <a class="reference internal" href="#fig-particles-neighbor-list"><span class="std std-numref">Fig. 11</span></a>.</p>
 <figure class="align-default" id="id9">
 <span id="fig-particles-neighbor-list"></span><img alt="_images/neighbor_list.png" src="_images/neighbor_list.png" />
@@ -664,8 +704,7 @@ respectively. This pattern continues for all the particles on this tile.</span><
 <p>This array can then be used to compute the forces on all the particles in one
 scan. Users can define their own <code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">NeighborParticleContainer</span></span></code> subclasses
 that have their own collision criteria by overloading the virtual
-<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">check_pair</span></span></code> function. For an example of this in action, please see the
-<a class="reference external" href="https://amrex-codes.github.io/amrex/tutorials_html/Particles_Tutorial.html#neighborlist">Neighbor List</a> Tutorial.</p>
+<code class="code cpp c++ docutils literal notranslate"><span class="name"><span class="pre">check_pair</span></span></code> function.</p>
 </section>
 <section id="particle-io">
 <span id="sec-particles-io"></span><h1>Particle IO<a class="headerlink" href="#particle-io" title="Permalink to this headline">¶</a></h1>
