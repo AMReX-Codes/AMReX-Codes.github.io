@@ -16,6 +16,9 @@ var dir_0c86679044eabee43d6784ea800d973e =
     [ "AMReX_AmrMeshInSituBridge.H", "AMReX__AmrMeshInSituBridge_8H.html", [
       [ "AmrMeshInSituBridge", "classamrex_1_1AmrMeshInSituBridge.html", "classamrex_1_1AmrMeshInSituBridge" ]
     ] ],
+    [ "AMReX_AmrMeshParticleDataAdaptor.H", "AMReX__AmrMeshParticleDataAdaptor_8H.html", null ],
+    [ "AMReX_AmrMeshParticleDataAdaptorI.H", "AMReX__AmrMeshParticleDataAdaptorI_8H.html", null ],
+    [ "AMReX_AmrMeshParticleInSituBridge.H", "AMReX__AmrMeshParticleInSituBridge_8H.html", null ],
     [ "AMReX_AmrParticleDataAdaptor.H", "AMReX__AmrParticleDataAdaptor_8H.html", null ],
     [ "AMReX_AmrParticleDataAdaptorI.H", "AMReX__AmrParticleDataAdaptorI_8H.html", null ],
     [ "AMReX_AmrParticleInSituBridge.H", "AMReX__AmrParticleInSituBridge_8H.html", null ],
