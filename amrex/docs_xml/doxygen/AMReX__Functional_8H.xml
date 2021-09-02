@@ -2985,6 +2985,7 @@
       </node>
     </invincdepgraph>
     <innerclass refid="structamrex_1_1Plus" prot="public">amrex::Plus</innerclass>
+    <innerclass refid="structamrex_1_1Minus" prot="public">amrex::Minus</innerclass>
     <innerclass refid="structamrex_1_1Less" prot="public">amrex::Less</innerclass>
     <innerclass refid="structamrex_1_1Greater" prot="public">amrex::Greater</innerclass>
     <innerclass refid="structamrex_1_1LogicalAnd" prot="public">amrex::LogicalAnd</innerclass>
@@ -3013,44 +3014,53 @@
 <codeline lineno="16"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="19" refid="structamrex_1_1Less" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Less" kindref="compound">Less</ref></highlight></codeline>
+<codeline lineno="19" refid="structamrex_1_1Minus" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Minus" kindref="compound">Minus</ref></highlight></codeline>
 <codeline lineno="20"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="21" refid="structamrex_1_1Less_1a68d9d1923653bb7b36553478f57aa962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1Less_1a68d9d1923653bb7b36553478f57aa962" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="21" refid="structamrex_1_1Minus_1a62ffeb5bbfdfbd3bd1ffc9e5d589c3d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1Minus_1a62ffeb5bbfdfbd3bd1ffc9e5d589c3d8" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="22"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lhs<sp/>&lt;<sp/>rhs)<sp/>?<sp/>lhs<sp/>:<sp/>rhs;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs<sp/>-<sp/>rhs;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="25"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="28" refid="structamrex_1_1Greater" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Greater" kindref="compound">Greater</ref></highlight></codeline>
+<codeline lineno="28" refid="structamrex_1_1Less" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Less" kindref="compound">Less</ref></highlight></codeline>
 <codeline lineno="29"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="30" refid="structamrex_1_1Greater_1acfb96847fe87a76de8d9d6ac3c1126e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1Greater_1acfb96847fe87a76de8d9d6ac3c1126e1" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="30" refid="structamrex_1_1Less_1a68d9d1923653bb7b36553478f57aa962" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1Less_1a68d9d1923653bb7b36553478f57aa962" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="31"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lhs<sp/>&gt;<sp/>rhs)<sp/>?<sp/>lhs<sp/>:<sp/>rhs;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lhs<sp/>&lt;<sp/>rhs)<sp/>?<sp/>lhs<sp/>:<sp/>rhs;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="37" refid="structamrex_1_1LogicalAnd" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1LogicalAnd" kindref="compound">LogicalAnd</ref></highlight></codeline>
+<codeline lineno="37" refid="structamrex_1_1Greater" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1Greater" kindref="compound">Greater</ref></highlight></codeline>
 <codeline lineno="38"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="39" refid="structamrex_1_1LogicalAnd_1a5c318952861df63dc7c10b951dc3e434" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1LogicalAnd_1a5c318952861df63dc7c10b951dc3e434" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="39" refid="structamrex_1_1Greater_1acfb96847fe87a76de8d9d6ac3c1126e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1Greater_1acfb96847fe87a76de8d9d6ac3c1126e1" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="40"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs<sp/>&amp;&amp;<sp/>rhs;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(lhs<sp/>&gt;<sp/>rhs)<sp/>?<sp/>lhs<sp/>:<sp/>rhs;</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
-<codeline lineno="46" refid="structamrex_1_1LogicalOr" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1LogicalOr" kindref="compound">LogicalOr</ref></highlight></codeline>
+<codeline lineno="46" refid="structamrex_1_1LogicalAnd" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1LogicalAnd" kindref="compound">LogicalAnd</ref></highlight></codeline>
 <codeline lineno="47"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="48" refid="structamrex_1_1LogicalOr_1a2c58f13f24e524ecceb55f0baabff240" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1LogicalOr_1a2c58f13f24e524ecceb55f0baabff240" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="48" refid="structamrex_1_1LogicalAnd_1a5c318952861df63dc7c10b951dc3e434" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1LogicalAnd_1a5c318952861df63dc7c10b951dc3e434" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
 <codeline lineno="49"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs<sp/>||<sp/>rhs;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs<sp/>&amp;&amp;<sp/>rhs;</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="55" refid="structamrex_1_1LogicalOr" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structamrex_1_1LogicalOr" kindref="compound">LogicalOr</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57" refid="structamrex_1_1LogicalOr_1a2c58f13f24e524ecceb55f0baabff240" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>T<sp/><ref refid="structamrex_1_1LogicalOr_1a2c58f13f24e524ecceb55f0baabff240" kindref="member">operator() </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>lhs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T<sp/>&amp;<sp/>rhs)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="58"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lhs<sp/>||<sp/>rhs;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/amrex/amrex/Src/Base/AMReX_Functional.H"/>
   </compounddef>

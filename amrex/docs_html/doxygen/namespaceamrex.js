@@ -284,6 +284,7 @@ var namespaceamrex =
     [ "MFItInfo", "structamrex_1_1MFItInfo.html", "structamrex_1_1MFItInfo" ],
     [ "MFNodeBilinear", "classamrex_1_1MFNodeBilinear.html", "classamrex_1_1MFNodeBilinear" ],
     [ "MFPCInterp", "classamrex_1_1MFPCInterp.html", "classamrex_1_1MFPCInterp" ],
+    [ "Minus", "structamrex_1_1Minus.html", "structamrex_1_1Minus" ],
     [ "MLABecLaplacian", "classamrex_1_1MLABecLaplacian.html", "classamrex_1_1MLABecLaplacian" ],
     [ "MLALaplacian", "classamrex_1_1MLALaplacian.html", "classamrex_1_1MLALaplacian" ],
     [ "MLCellABecLap", "classamrex_1_1MLCellABecLap.html", "classamrex_1_1MLCellABecLap" ],

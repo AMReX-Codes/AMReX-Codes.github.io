@@ -624,6 +624,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "amrex::MFItInfo", "structamrex_1_1MFItInfo.html", null ],
+    [ "amrex::Minus< T >", "structamrex_1_1Minus.html", null ],
     [ "amrex::MLCGSolver", "classamrex_1_1MLCGSolver.html", null ],
     [ "amrex::MLLinOp", "classamrex_1_1MLLinOp.html", [
       [ "amrex::MLCellLinOp", "classamrex_1_1MLCellLinOp.html", [

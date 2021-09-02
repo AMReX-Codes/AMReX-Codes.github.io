@@ -120,6 +120,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a381dae009311cca3b100d29d0417f83e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a381dae009311cca3b100d29d0417f83e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a381dae009311cca3b100d29d0417f83e">Add</a> (T *const sum, T const value) noexcept</td></tr>
 <tr class="separator:a381dae009311cca3b100d29d0417f83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a87ab5fbe799714dcc825134aa6027"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned int), int &gt; foo = 0&gt; </td></tr>
+<tr class="memitem:a36a87ab5fbe799714dcc825134aa6027"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#a36a87ab5fbe799714dcc825134aa6027">If_device</a> (T *const sum, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
+<tr class="separator:a36a87ab5fbe799714dcc825134aa6027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8138a7c3dfae65f72813c07b8e5e856"><td class="memTemplParams" colspan="2">template&lt;class T , class Op , class Cond &gt; </td></tr>
+<tr class="memitem:ac8138a7c3dfae65f72813c07b8e5e856"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#ac8138a7c3dfae65f72813c07b8e5e856">If</a> (T *const add, T const value, Op &amp;&amp;op, Cond &amp;&amp;cond) noexcept</td></tr>
+<tr class="memdesc:ac8138a7c3dfae65f72813c07b8e5e856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conditionally perform an atomic operation.  <a href="namespaceamrex_1_1Gpu_1_1Atomic.html#ac8138a7c3dfae65f72813c07b8e5e856">More...</a><br /></td></tr>
+<tr class="separator:ac8138a7c3dfae65f72813c07b8e5e856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafa3ecc838e7a17251520a2ef125c963"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:aafa3ecc838e7a17251520a2ef125c963"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceamrex_1_1Gpu_1_1Atomic.html#aafa3ecc838e7a17251520a2ef125c963">AddNoRet</a> (T *const sum, T const value) noexcept</td></tr>
 <tr class="separator:aafa3ecc838e7a17251520a2ef125c963"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -451,6 +458,126 @@ template&lt;typename T &gt; </div>
           <td></td>
           <td class="paramtype">T const&#160;</td>
           <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8138a7c3dfae65f72813c07b8e5e856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8138a7c3dfae65f72813c07b8e5e856">&#9670;&nbsp;</a></span>If()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class Op , class Cond &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#aac52ee54727d35b2d0033b119a991618">AMREX_GPU_HOST_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool amrex::Gpu::Atomic::If </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>add</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Op &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cond &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cond</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Conditionally perform an atomic operation. </p>
+<p>Atomically updates the result at "add" with "value" using "op", but only if "cond" is true.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type pointed to by add </td></tr>
+    <tr><td class="paramname">Op</td><td>callable that takes two T argument and combines them </td></tr>
+    <tr><td class="paramname">Cond</td><td>callable that takes a "T" a returns whether to do the update</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">add</td><td>address to atomically update </td></tr>
+    <tr><td class="paramname">value</td><td>value to combine </td></tr>
+    <tr><td class="paramname">op</td><td>callable specifying the operation to use to combine *add and value </td></tr>
+    <tr><td class="paramname">cond</td><td>callable specifying the condition to test on first. The value passed in to the cond function is the would-be combined value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36a87ab5fbe799714dcc825134aa6027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a87ab5fbe799714dcc825134aa6027">&#9670;&nbsp;</a></span>If_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Op , typename Cond , std::enable_if_t&lt; sizeof(T)==sizeof(unsigned int), int &gt; foo = 0&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="AMReX__GpuQualifiers_8H.html#a4e626ebf06898d71a9e0790877f1694f">AMREX_GPU_DEVICE</a> <a class="el" href="AMReX__Extension_8H.html#a90cf7b81cd61799c87306cad156cc317">AMREX_FORCE_INLINE</a> bool amrex::Gpu::Atomic::If_device </td>
+          <td>(</td>
+          <td class="paramtype">T *const&#160;</td>
+          <td class="paramname"><em>sum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T const&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Op &amp;&amp;&#160;</td>
+          <td class="paramname"><em>op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Cond &amp;&amp;&#160;</td>
+          <td class="paramname"><em>cond</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

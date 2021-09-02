@@ -162,6 +162,7 @@ var dir_045e59958a67bf379077e0fcfc423b1e =
     ] ],
     [ "AMReX_Functional.H", "AMReX__Functional_8H.html", [
       [ "Plus", "structamrex_1_1Plus.html", "structamrex_1_1Plus" ],
+      [ "Minus", "structamrex_1_1Minus.html", "structamrex_1_1Minus" ],
       [ "Less", "structamrex_1_1Less.html", "structamrex_1_1Less" ],
       [ "Greater", "structamrex_1_1Greater.html", "structamrex_1_1Greater" ],
       [ "LogicalAnd", "structamrex_1_1LogicalAnd.html", "structamrex_1_1LogicalAnd" ],
