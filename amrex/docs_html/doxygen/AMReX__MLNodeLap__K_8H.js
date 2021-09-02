@@ -6,6 +6,6 @@ var AMReX__MLNodeLap__K_8H =
     [ "mlndlap_impose_neumann_bc", "AMReX__MLNodeLap__K_8H.html#a5d2482b4f9d89faf8934861fec9bc1b6", null ],
     [ "mlndlap_jacobi_sten", "AMReX__MLNodeLap__K_8H.html#ad804c9fcd8b74d9d8d9477fe5637e0f1", null ],
     [ "mlndlap_jacobi_sten", "AMReX__MLNodeLap__K_8H.html#a4699f3f565599c96a567615e64ea5d20", null ],
-    [ "mlndlap_normalize_sten", "AMReX__MLNodeLap__K_8H.html#a4d38e91b1499898456f708d0bec65df2", null ],
+    [ "mlndlap_normalize_sten", "AMReX__MLNodeLap__K_8H.html#ac8273b39fe595ef4e5c09b38cb01e71e", null ],
     [ "mlndlap_unimpose_neumann_bc", "AMReX__MLNodeLap__K_8H.html#a880fe3ab900c3cb4d906ff3bdb91e643", null ]
 ];
